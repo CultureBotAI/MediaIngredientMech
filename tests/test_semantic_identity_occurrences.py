@@ -18,6 +18,7 @@ from mediaingredientmech.utils.culturemech_occurrences import mim_identifier_for
         ),
         ("Nitrilotriacetic acid, trisodium salt", "CHEBI:132766", "CHEBI:132766"),
         ("Artificial Sea Salt", "MICRO:0001647", "kgmicrobe.ingredient:artificial_sea_salt"),
+        ("Ca(NO3)2•4H2O", "UNMAPPED_0049", "CHEBI:86159"),
         ("Unrelated ingredient", "CHEBI:37583", "CHEBI:37583"),
     ],
 )

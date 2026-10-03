@@ -58,6 +58,13 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   of B2 (catches the case where rows differ in trivia such as
   whitespace but share the same subject+object tuple).
 
+* **Rule B5** — one local registry namespace. A subject may use
+  ``kgmicrobe.ingredient:<slug>`` or ``kgmicrobe.compound:<slug>`` as
+  its Rule B1 registry identity, but not both for the same lowercased
+  MIM slug. The two namespaces distinguish prepared ingredients from
+  compounds; emitting both asserts two local identities for one
+  subject.
+
 * **Rule C** — every published row names the source its object came from
   (non-empty ``object_source``).
 
@@ -102,9 +109,9 @@ claw builder) or leave it in the triage TSV; CI fails as long as a
 violating row sits in ``ingredient_mappings.sssom.tsv``.
 
 Exit codes:
-  0 — every row passes Rules A, B1, B2, B3, C, D, E, F, G, H, I, J, K, L, and
+  0 — every row passes Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L, and
       (when its label source is present) B4.
-  2 — at least one row failed Rule A, B1, B2, B3, B4, C, D, E, F, G, H, I or
+  2 — at least one row failed Rule A, B1, B2, B3, B5, B4, C, D, E, F, G, H, I or
       J. (B1 contributes to exit-2 unless ``--lenient-b1`` is passed.)
 """
 from __future__ import annotations
@@ -525,6 +532,50 @@ def evaluate_rule_b3(
             f"Pick one."
         )
         yield idx, row, reason
+
+
+# ---------------------------------------------------------------------------
+# Rule B5 — one local registry namespace
+# ---------------------------------------------------------------------------
+def evaluate_rule_b5(
+    rows: list[dict[str, str]],
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Reject subjects that exact-match both kg-microbe local namespaces."""
+    registry: dict[tuple[str, str], dict[str, list[tuple[int, dict[str, str]]]]] = {}
+    for idx, row in enumerate(rows, start=1):
+        if (row.get("predicate_id") or "").strip() != "skos:exactMatch":
+            continue
+        subject_id = (row.get("subject_id") or "").strip()
+        if not subject_id.startswith("MIM:"):
+            continue
+        match = _REGISTRY_OBJECT_RE.match((row.get("object_id") or "").strip())
+        if match is None:
+            continue
+        namespace, slug = match.groups()
+        registry.setdefault((subject_id, slug.casefold()), {}).setdefault(
+            namespace,
+            [],
+        ).append((idx, row))
+
+    for (subject_id, slug), by_namespace in registry.items():
+        if not {"compound", "ingredient"} <= by_namespace.keys():
+            continue
+        object_ids = sorted({
+            (row.get("object_id") or "").strip()
+            for members in by_namespace.values()
+            for _, row in members
+        })
+        for members in by_namespace.values():
+            for idx, row in members:
+                reason = (
+                    f"Rule B5: {subject_id} exact-matches both local registry "
+                    f"namespaces for slug {slug}: {', '.join(object_ids)}. "
+                    f"kgmicrobe.ingredient and kgmicrobe.compound distinguish "
+                    f"prepared ingredients from compounds; pick the namespace "
+                    f"that matches the curated ingredient_type and remove the "
+                    f"other identity row."
+                )
+                yield idx, row, reason
 
 
 # ---------------------------------------------------------------------------
@@ -1222,6 +1273,7 @@ def main(argv: list[str]) -> int:
                 )
     _collect("Rule B2", evaluate_rule_b2(rows))
     _collect("Rule B3", evaluate_rule_b3(rows))
+    _collect("Rule B5", evaluate_rule_b5(rows))
 
     # Rule B4: warn-and-skip if any in-use prefix's transform is absent.
     # We probe each B4 prefix that actually appears in the SSSOM so the
@@ -1280,7 +1332,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I, J, K, L"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, B5, C, D, E, F, G, H, I, J, K, L"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(
@@ -1311,7 +1363,8 @@ def main(argv: list[str]) -> int:
         f"\nRejects written to {reject_display}. "
         "Fix the offending row(s) in MIM (re-emit via the claw builder, "
         "mint the missing registry CURIE for B1, dedupe pairs for B2/B3, "
-        "update object_label for B4, or remove rejected labels for E), or "
+        "resolve B5 local namespace conflicts, update object_label for B4, "
+        "or remove rejected labels for E), or "
         "remove the row from the SSSOM. "
         "CI fails while a violating row remains in "
         "ingredient_mappings.sssom.tsv.",

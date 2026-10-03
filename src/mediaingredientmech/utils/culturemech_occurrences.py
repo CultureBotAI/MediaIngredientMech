@@ -8,6 +8,7 @@ from collections.abc import Mapping
 AIR_DRIED_GARDEN_SOIL_ID = "kgmicrobe.ingredient:air-dried_garden_soil"
 BETAINE_HYDRATE_ID = "CHEBI:91242"
 CALCIUM_2_ID = "CHEBI:29108"
+CALCIUM_NITRATE_TETRAHYDRATE_ID = "CHEBI:86159"
 CALCIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:caso4_x_7_h2o"
 CITRIC_ACID_MONOHYDRATE_ID = "CHEBI:31404"
 COPPER_ID = "kgmicrobe.compound:copper"
@@ -51,6 +52,7 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
         "0.5 M Nitrilotriacetic acid, disodium salt"
     ): "kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt",
     _source_label_key("Artificial Sea Salt"): "kgmicrobe.ingredient:artificial_sea_salt",
+    _source_label_key("Ca(NO3)2•4H2O"): CALCIUM_NITRATE_TETRAHYDRATE_ID,
     _source_label_key("air-dried garden soil"): AIR_DRIED_GARDEN_SOIL_ID,
     _source_label_key("Betaine x H2O"): BETAINE_HYDRATE_ID,
     _source_label_key("1-ethyl-3-methylimidazolium lysine"): EMIM_LYSINE_ID,

@@ -54,11 +54,11 @@ FROZEN_RELEASE_HOLDS = {
 # corrected assertion and owner can use the resolution path.
 FROZEN_RELEASE_HOLD_RESOLUTIONS = {
     "MIM.hold:724-aromatic-trait-synonym": {
-        "assertion_id": "MIM.review:4174ff835afe982e4c1684fd08fa1b04cf9bc85b517fe65552badb67976df303",
+        "assertion_id": "MIM.review:e619555259b8de4a7aed8090e7ac32562f3df3a23c34371cd9cf28647f6ef26f",
         "assertion_sha256": "48222f60d12c7acb38223d3036eb44e7a7c687fb868e7dbe134a77964edb8491",
         "owner_record": "data/ingredients/mapped/Aromatic_Compound.yaml",
         "owner_record_sha256": "bbbfcafd33a763fc81b1a1bc425a4e270c791aac6e51d668726798ee16ff47b6",
-        "edge_id": "MIM.assertion:6c5d59e0f710f8bef03da8bc39aad5a6cad741653eaac9adbb2690ac6db51880",
+        "edge_id": "MIM.assertion:5727935217e75e65a63a896c7d8475b6ba83d4af02f60fc0146b80c2aeab6c5b",
         "resolution": "SOURCE_CORRECTED",
         "evidence": "reports/sssom_completion_20260921/trait-synonym-refresh.json",
         "evidence_sha256": "00eb08f04e988859ff76605bf4567114f106f73f314fbd36f66261662c45433c",

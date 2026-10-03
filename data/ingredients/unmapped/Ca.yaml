@@ -1,13 +1,10 @@
 identifier: UNMAPPED_0049
 preferred_term: Ca
-synonyms:
-- synonym_text: 'Ca(NO3)2•4H2O(CAS: 13477-34-4)'
-  synonym_type: RAW_TEXT
-  source: CultureMech
-mapping_status: UNMAPPED
+synonyms: []
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 3
-  media_count: 3
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -41,6 +38,16 @@ curation_history:
     identifier promoted by a mechanism that never decided anything is what #203 and
     #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-10-03T07:30:00+00:00'
+  curator: yaml_record_review
+  action: RETIRED_STALE_PLACEHOLDER
+  changes: Moved the exact CAS-qualified calcium nitrate tetrahydrate raw label to
+    data/ingredients/mapped/Ca_No32_X_4_H2o.yaml and retired this truncated Ca placeholder
+    so label_index no longer exposes it as a competing unmapped calcium ingredient.
+  previous_status: UNMAPPED
+  new_status: REJECTED
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 and left unmapped because
-  Ca(NO3)2•4H2O salt-hydrate identity should not be collapsed to elemental calcium.'
+  Ca(NO3)2•4H2O salt-hydrate identity should not be collapsed to elemental calcium.
+  Retired on 2026-10-03 after its exact CAS-qualified source label was moved to Ca_No32_X_4_H2o.'
 ingredient_type: SINGLE_INGREDIENT
