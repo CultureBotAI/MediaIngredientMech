@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ ingredient.preferred_term }} — MIM</title>
 <link rel="stylesheet" href="{{ path_up }}style.css">
 </head>
 <body>
 
-<nav class="breadcrumb">
+<nav class="breadcrumb" aria-label="Record navigation">
+  <a href="{{ path_up }}../browser.html">Browse ingredients</a> &middot;
+  <a href="https://culturebotai.github.io/mechs/">All Mech projects</a> &middot;
   <a href="{{ path_up }}index.html">MIM</a> &rsaquo;
   <span>{{ ingredient.identifier }}</span>
 </nav>
@@ -41,6 +44,7 @@
   </div>
 </header>
 
+<main id="main-content">
 {% include "_partials/overview.html.j2" %}
 {% if ingredient.synonyms %}{% include "_partials/synonyms.html.j2" %}{% endif %}
 {% if ingredient.chemical_properties %}{% include "_partials/chemical_properties.html.j2" %}{% endif %}
@@ -51,6 +55,7 @@
 {% if ingredient.datasets %}{% include "_partials/datasets.html.j2" %}{% endif %}
 {% if ingredient.discussions %}{% include "_partials/discussions.html.j2" %}{% endif %}
 
+</main>
 <footer>
   <small class="muted">
     Generated {{ generated_at }} from
@@ -58,5 +63,6 @@
   </small>
 </footer>
 
+<script src="{{ path_up }}../theme-toggle.js"></script>
 </body>
 </html>

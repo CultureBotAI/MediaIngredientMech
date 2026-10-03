@@ -561,7 +561,7 @@
             container.innerHTML = filteredIngredients.map(ing => `
                 <div class="ingredient-card">
                     <div class="ingredient-header">
-                        <div class="ingredient-title">${escapeHtml(ing.preferred_term)}</div>
+                        <a class="ingredient-title" href="${escapeHtml(ing.detail_page)}">${escapeHtml(ing.preferred_term)}</a>
                         <span class="badge badge-${ing.mapping_status.toLowerCase()}">${ing.mapping_status}</span>
                     </div>
 
