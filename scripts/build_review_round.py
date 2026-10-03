@@ -18,7 +18,7 @@ import subprocess
 from collections import defaultdict
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
@@ -113,9 +113,10 @@ VALIDATION_FIELDS = ["round_id", "check", "status", "detail"]
 PATH_RE = re.compile(
     r"(data/(?:ingredients|curated)/[^\s`)]+?\.yaml|"
     r"mappings/[^\s`)]+?\.tsv|"
-    r"scripts/[^\s`)]+?\.py|"
-    r"reports/[^\s`)]+?\.(?:tsv|json|md))"
+    r"scripts/[^\s`)]+?\.py)"
 )
+LIST_ITEM_RE = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+(?P<item>.+)$")
+TABLE_SEPARATOR_RE = re.compile(r"^\s*\|?(?:\s*:?-{3,}:?\s*\|)+\s*$")
 FINDING_RE = re.compile(
     r"^\*\*(?P<severity>blocker|major|minor|none)\*\*:?\s*(?P<summary>.+)",
     re.IGNORECASE,
@@ -165,6 +166,14 @@ class Bundle:
     finding_ids: str
     status: str = "planned"
     issue_number: str = ""
+
+
+@dataclass(frozen=True)
+class ParsedReport:
+    findings: list[tuple[str, str]]
+    recommended_edits: list[str]
+    followup_checks: list[str]
+    findings_section_seen: bool
 
 
 def rel(path: Path, root: Path) -> str:
@@ -218,14 +227,15 @@ def markdown_sections(text: str) -> dict[str, list[str]]:
     return dict(sections)
 
 
-def bullet_items(lines: Sequence[str]) -> list[str]:
+def markdown_list_items(lines: Sequence[str]) -> list[str]:
     items: list[str] = []
     current: list[str] = []
     for line in lines:
-        if line.startswith("- "):
+        match = LIST_ITEM_RE.match(line)
+        if match:
             if current:
                 items.append(" ".join(current))
-            current = [line[2:].strip()]
+            current = [match.group("item").strip()]
         elif current and (line.startswith("  ") or not line.strip()):
             current.append(line.strip())
     if current:
@@ -233,27 +243,106 @@ def bullet_items(lines: Sequence[str]) -> list[str]:
     return [item.strip() for item in items if item.strip()]
 
 
-def parsed_report_fields(report: Path) -> tuple[list[tuple[str, str]], list[str], list[str]]:
-    sections = markdown_sections(report.read_text(encoding="utf-8"))
-    findings: list[tuple[str, str]] = []
-    for item in bullet_items(sections.get("findings", [])):
-        if item.strip(".").casefold() == "none found":
+def is_none_item(text: str) -> bool:
+    return text.strip().strip(".").casefold() in {"none", "none found"}
+
+
+def table_cells(line: str) -> list[str]:
+    return [cell.strip() for cell in line.strip().strip("|").split("|")]
+
+
+def parse_finding_item(item: str) -> tuple[str, str]:
+    match = FINDING_RE.match(item)
+    if match:
+        return match.group("severity").casefold(), match.group("summary").strip()
+    return "", item.strip()
+
+
+def table_findings(lines: Sequence[str]) -> tuple[dict[int, list[tuple[str, str]]], set[int]]:
+    findings: dict[int, list[tuple[str, str]]] = {}
+    table_lines: set[int] = set()
+    index = 0
+    while index < len(lines) - 1:
+        if not lines[index].lstrip().startswith("|") or not TABLE_SEPARATOR_RE.match(
+            lines[index + 1]
+        ):
+            index += 1
             continue
-        match = FINDING_RE.match(item)
-        if match:
-            severity = match.group("severity").casefold()
-            summary = match.group("summary").strip()
-        else:
-            severity = ""
-            summary = item
-        findings.append((severity, summary))
+
+        table_start = index
+        table_items: list[tuple[str, str]] = []
+        headers = [normalized(header).replace(" ", "_") for header in table_cells(lines[index])]
+        table_lines.update({index, index + 1})
+        index += 2
+        while index < len(lines) and lines[index].lstrip().startswith("|"):
+            table_lines.add(index)
+            cells = table_cells(lines[index])
+            row = dict(zip(headers, cells, strict=False))
+            severity = row.get("severity", "")
+            summary_parts = [
+                row[header]
+                for header in headers
+                if header != "severity" and row.get(header) and not is_none_item(row[header])
+            ]
+            summary = "; ".join(summary_parts)
+            if summary:
+                table_items.append((severity.casefold(), summary))
+            index += 1
+        findings[table_start] = table_items
+    return findings, table_lines
+
+
+def finding_items(lines: Sequence[str]) -> list[tuple[str, str]]:
+    table_items, table_lines = table_findings(lines)
+    non_table_lines = [line for index, line in enumerate(lines) if index not in table_lines]
+
+    findings: list[tuple[str, str]] = []
+    index = 0
+    while index < len(lines):
+        if index in table_items:
+            findings.extend(table_items[index])
+            while index < len(lines) and index in table_lines:
+                index += 1
+            continue
+        if index in table_lines:
+            index += 1
+            continue
+
+        match = LIST_ITEM_RE.match(lines[index])
+        if not match:
+            index += 1
+            continue
+
+        current = [match.group("item").strip()]
+        index += 1
+        while index < len(lines) and (lines[index].startswith("  ") or not lines[index].strip()):
+            current.append(lines[index].strip())
+            index += 1
+        item = " ".join(current).strip()
+        if not is_none_item(item):
+            findings.append(parse_finding_item(item))
+
+    prose = " ".join(line.strip() for line in non_table_lines if line.strip())
+    if not findings and prose and not is_none_item(prose):
+        findings.append(parse_finding_item(prose))
+    return findings
+
+
+def parsed_report_fields(report: Path) -> ParsedReport:
+    sections = markdown_sections(report.read_text(encoding="utf-8"))
+    findings = finding_items(sections.get("findings", []))
     recommended = [
         item
-        for item in bullet_items(sections.get("recommended edits", []))
+        for item in markdown_list_items(sections.get("recommended edits", []))
         if item.strip(".").casefold() != "none"
     ]
-    checks = bullet_items(sections.get("follow-up checks", []))
-    return findings, recommended, checks
+    checks = markdown_list_items(sections.get("follow-up checks", []))
+    return ParsedReport(
+        findings=findings,
+        recommended_edits=recommended,
+        followup_checks=checks,
+        findings_section_seen="findings" in sections,
+    )
 
 
 def classify_finding(summary: str, recommended_edit: str) -> str:
@@ -340,16 +429,17 @@ def findings_from_inputs(inputs: Sequence[ReviewInput], root: Path) -> list[Find
         if SEVERITY_RANK.get(item.severity, 0) == 0:
             continue
         report = root / item.report
-        parsed_findings, recommended, checks = parsed_report_fields(report)
-        if not parsed_findings:
+        parsed = parsed_report_fields(report)
+        parsed_findings = parsed.findings
+        if not parsed_findings and not parsed.findings_section_seen:
             parsed_findings = [(item.severity, item.notes.strip())]
         for index, (severity, summary) in enumerate(parsed_findings, start=1):
             severity = severity or item.severity
             summary = summary.strip()
             if not summary:
                 continue
-            recommended_edit = recommended[0] if recommended else ""
-            followup_check = checks[0] if checks else ""
+            recommended_edit = parsed.recommended_edits[0] if parsed.recommended_edits else ""
+            followup_check = parsed.followup_checks[0] if parsed.followup_checks else ""
             category = classify_finding(summary, recommended_edit)
             owner = find_owner_path(summary, recommended_edit, item.record_path)
             finding_id = stable_id(
@@ -543,6 +633,9 @@ def build_round(
 
     issue_body_dir = out_dir / "issue_bodies"
     issue_body_dir.mkdir(exist_ok=True)
+    if force:
+        for stale_body in issue_body_dir.glob("*.md"):
+            stale_body.unlink()
 
     inputs = read_inputs(manifest, root, round_id)
     findings = findings_from_inputs(inputs, root)
@@ -601,7 +694,10 @@ def build_round(
         "kind": "yaml_record_review_issue_planning",
         "base_commit": base_commit,
         "source_manifest": rel(manifest, root),
-        "built_at": datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "built_at": datetime.now(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z"),
         "input_report_count": len(inputs),
         "finding_count": len(findings),
         "bundle_count": len(bundles),
@@ -636,7 +732,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--round-id",
-        default=datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ-yaml-review-issues"),
+        default=datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ-yaml-review-issues"),
         help="Round directory name.",
     )
     parser.add_argument(
