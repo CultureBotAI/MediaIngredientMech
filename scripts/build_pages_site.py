@@ -92,9 +92,6 @@ def check_site(repo: Path, output: Path) -> None:
     }
     if actual_pages != expected_pages:
         raise ValueError("Missing or orphaned ingredient pages")
-    for name, checksum in receipt["assets"].items():
-        if digest(output / name) != checksum:
-            raise ValueError(f"Changed generated site asset: {name}")
     required_assets = {
         "data/ingredients.json",
         "records/index.html",
@@ -105,6 +102,9 @@ def check_site(repo: Path, output: Path) -> None:
     }
     if set(receipt["assets"]) != required_assets:
         raise ValueError("Incomplete site assets")
+    for name, checksum in receipt["assets"].items():
+        if digest(output / name) != checksum:
+            raise ValueError(f"Changed generated site asset: {name}")
 
 
 def build_site(repo: Path, output: Path) -> int:
