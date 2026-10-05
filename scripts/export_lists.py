@@ -93,8 +93,17 @@ _NON_IDENTITY_QUALITIES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH"}
 
 
 def _resolves_by_ontology_label(ing: dict) -> bool:
-    """Ontology labels resolve only for identity-preserving mappings (#562)."""
-    quality = str((ing.get("ontology_mapping") or {}).get("mapping_quality") or "")
+    """Ontology labels resolve only for identity-preserving mappings (#562).
+
+    A merge tombstone carries its merge target's `identifier` but may keep the
+    term the merge rejected as provenance. That term's label names the rejected
+    term, not the survivor -- publishing it sent `trisodium phosphate` to Na2HPO4
+    and `Chelating Agent` to EDTA (#799).
+    """
+    mapping = ing.get("ontology_mapping") or {}
+    if ing.get("mapping_status") == "REJECTED" and mapping.get("ontology_id") != ing.get("identifier"):
+        return False
+    quality = str(mapping.get("mapping_quality") or "")
     return quality not in _NON_IDENTITY_QUALITIES
 
 

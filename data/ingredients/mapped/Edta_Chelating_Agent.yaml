@@ -1,4 +1,4 @@
-identifier: NCIT:C360
+identifier: CHEBI:4735
 preferred_term: EDTA (chelating agent)
 synonyms:
 - synonym_text: EDTA (chelating agent)
@@ -39,6 +39,15 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-10-05T03:21:08.217681+00:00'
+  curator: fix_799_tombstone_identifiers
+  action: CORRECTED
+  changes: Tombstone identifier NCIT:C360 -> CHEBI:4735, the merge target its MERGED_INTO
+    event names, so the REJECTED row resolves to the survivor as docs/LABEL_INDEX_CONTRACT.md
+    requires (#799). The rejected identity stays in ontology_mapping as provenance;
+    no mapping, synonym or occurrence change.
+  previous_status: REJECTED
+  new_status: REJECTED
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:EDTA_(chelating_agent));
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

@@ -132,7 +132,10 @@ The mapped term's own label, added in #365. Many records are named by formula
 name appears nowhere else on the record — neither preferred_term nor synonym.
 677 rows; 538 labels became resolvable that were not before. Term labels from
 asymmetric `NARROW_MATCH` / `BROAD_MATCH` parent-child mappings are suppressed:
-a parent's label is not a name for the child, and vice versa.
+a parent's label is not a name for the child, and vice versa. So is the term
+label of a merge tombstone whose `ontology_mapping` still holds the term the
+merge rejected: that label names the rejected term, not the survivor the
+tombstone's `identifier` points at (#799).
 
 It ranks last because it is the ontology's name for the concept, not a name the
 record claims.

@@ -1,4 +1,4 @@
-identifier: NCIT:C54713
+identifier: CHEBI:63005
 preferred_term: NaNO
 synonyms:
 - synonym_text: 'NaNO3(CAS: 7631-99-4)'
@@ -50,6 +50,15 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-10-05T03:21:08.217439+00:00'
+  curator: fix_799_tombstone_identifiers
+  action: CORRECTED
+  changes: Tombstone identifier NCIT:C54713 -> CHEBI:63005, the merge target its MERGED_INTO
+    event names, so the REJECTED row resolves to the survivor as docs/LABEL_INDEX_CONTRACT.md
+    requires (#799). The rejected identity stays in ontology_mapping as provenance;
+    no mapping, synonym or occurrence change.
+  previous_status: REJECTED
+  new_status: REJECTED
 notes: 'CultureMech placeholder_id: 1'
 ontology_mapping:
   ontology_id: NCIT:C54713

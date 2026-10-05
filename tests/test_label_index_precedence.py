@@ -185,6 +185,25 @@ def test_close_match_ontology_labels_do_not_resolve_to_local_records(tmp_path):
     ]
 
 
+def test_tombstone_does_not_publish_the_rejected_terms_label(tmp_path):
+    """A merge tombstone carries the survivor's identifier but keeps the term the
+    merge rejected as provenance. That term's label is not a name of the
+    survivor: it sent `trisodium phosphate` to Na2HPO4 (#799). The tombstone's
+    own names still resolve to the survivor."""
+    survivor = _record("CHEBI:34683", "Na2HPO4")
+    tombstone = _record("CHEBI:34683", "Sodium phosphate dibasic", status="REJECTED",
+                        ontology_id="CHEBI:37583", ontology_label="trisodium phosphate")
+    resolved = _resolve(tmp_path, [survivor, tombstone])
+
+    assert "trisodium phosphate" not in resolved
+    assert resolved["sodium phosphate dibasic"]["identifier"] == "CHEBI:34683"
+
+    # A tombstone that shares the survivor's term still publishes its label.
+    same_term = _record("CHEBI:34683", "Disodium phosphate", status="REJECTED",
+                        ontology_label="disodium hydrogenphosphate")
+    assert "disodium hydrogenphosphate" in _resolve(tmp_path / "same", [survivor, same_term])
+
+
 def test_ordering_is_deterministic_regardless_of_record_order(tmp_path):
     """`identifier` is not a unique record key — 46 identifiers are held by 117
     records — so without a full tiebreak the winner is decided by YAML order,

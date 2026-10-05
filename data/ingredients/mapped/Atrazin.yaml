@@ -1,4 +1,4 @@
-identifier: cas:1924-24-9
+identifier: CHEBI:15930
 preferred_term: Atrazin
 ontology_mapping:
   ontology_id: cas:1924-24-9
@@ -46,6 +46,15 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-10-05T03:21:08.217677+00:00'
+  curator: fix_799_tombstone_identifiers
+  action: CORRECTED
+  changes: Tombstone identifier cas:1924-24-9 -> CHEBI:15930, the merge target its
+    MERGED_INTO event names, so the REJECTED row resolves to the survivor as docs/LABEL_INDEX_CONTRACT.md
+    requires (#799). The rejected identity stays in ontology_mapping as provenance;
+    no mapping, synonym or occurrence change.
+  previous_status: REJECTED
+  new_status: REJECTED
 chemical_properties:
   cas_rn: 1924-24-9
   data_source: CultureBotHT compounds_to_cas.csv
