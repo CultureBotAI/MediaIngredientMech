@@ -74,9 +74,8 @@ def sha256(data: bytes) -> str:
 
 def dump_record(record: dict) -> bytes:
     """Serialize a record exactly as the per-record writers do."""
-    return yaml.dump(record, default_flow_style=False, sort_keys=False, allow_unicode=True).encode(
-        "utf-8"
-    )
+    text: str = yaml.dump(record, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    return text.encode("utf-8")
 
 
 def _check_counts(entry: dict, record: dict) -> None:
@@ -110,7 +109,7 @@ _SECTION_CHECKS = {"occurrence_statistics": _check_counts, "causal_graphs": _che
 def peel(content: bytes, entry: dict) -> bytes:
     """Return the bytes ``entry`` refreshed, or raise if it was not that refresh."""
     path = entry.get("source_record")
-    section = entry.get("section")
+    section = str(entry.get("section") or "")
     rule = REFRESHABLE_SECTIONS.get(section)
     if rule is None:
         raise ValueError(f"Section {section!r} is not refreshable without review: {path}")
@@ -204,7 +203,8 @@ class RecordRefreshes:
         """The record as the review bound to ``reviewed_sha256`` read it."""
         for digest, content in self.states(path):
             if digest == reviewed_sha256:
-                return yaml.safe_load(content)
+                loaded = yaml.safe_load(content)
+                return loaded if isinstance(loaded, dict) else None
         return None
 
     def advance(self, path: str, known: str, target: str) -> str:
