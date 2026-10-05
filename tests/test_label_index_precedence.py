@@ -185,23 +185,18 @@ def test_close_match_ontology_labels_do_not_resolve_to_local_records(tmp_path):
     ]
 
 
-def test_tombstone_does_not_publish_the_rejected_terms_label(tmp_path):
-    """A merge tombstone carries the survivor's identifier but keeps the term the
-    merge rejected as provenance. That term's label is not a name of the
-    survivor: it sent `trisodium phosphate` to Na2HPO4 (#799). The tombstone's
-    own names still resolve to the survivor."""
-    survivor = _record("CHEBI:34683", "Na2HPO4")
+def test_ambiguity_uses_the_live_records_chemistry_not_a_tombstones(tmp_path):
+    """A tombstone shares its survivor's identifier but may keep the rejected
+    substance's chemistry -- trisodium phosphate's formula under CHEBI:34683.
+    Record order must not let that decide a verdict (#804)."""
     tombstone = _record("CHEBI:34683", "Sodium phosphate dibasic", status="REJECTED",
-                        ontology_id="CHEBI:37583", ontology_label="trisodium phosphate")
-    resolved = _resolve(tmp_path, [survivor, tombstone])
-
-    assert "trisodium phosphate" not in resolved
-    assert resolved["sodium phosphate dibasic"]["identifier"] == "CHEBI:34683"
-
-    # A tombstone that shares the survivor's term still publishes its label.
-    same_term = _record("CHEBI:34683", "Disodium phosphate", status="REJECTED",
-                        ontology_label="disodium hydrogenphosphate")
-    assert "disodium hydrogenphosphate" in _resolve(tmp_path / "same", [survivor, same_term])
+                        formula="3Na.O4P")
+    survivor = _record("CHEBI:34683", "Na2HPO4", synonyms=["Shared"], formula="2Na.HO4P")
+    rival = _record("cas:7558-79-4", "Disodium phosphate", synonyms=["Shared"],
+                    formula="HNa2O4P")
+    for order in ([tombstone, survivor, rival], [survivor, tombstone, rival]):
+        resolved = _resolve(tmp_path / str(id(order)), order)
+        assert resolved["shared"]["ambiguity"] == "agree:same_substance"
 
 
 def test_ordering_is_deterministic_regardless_of_record_order(tmp_path):

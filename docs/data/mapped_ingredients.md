@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-10-05T03:29:09.151217+00:00
+Generated: 2026-10-05T04:13:25.589661+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -532,7 +532,7 @@ Total: 2680 ingredients
 | CHEBI:79928 | CHEBI:79928 | Asiaticoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:22653 | CHEBI:22653 | Asparagine | MAPPED | CHEBI | EXACT_MATCH | 28 |
 | CHEBI:2911 | CHEBI:2911 | Atorvastatin calcium salt trihydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:15930 | cas:1924-24-9 | Atrazin | REJECTED | CAS | FALLBACK_REGISTRY | 0 |
+| CHEBI:15930 | CHEBI:15930 | Atrazin | REJECTED | CHEBI | FALLBACK_REGISTRY | 0 |
 | CHEBI:134355 | CHEBI:134355 | Auraptene | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1405-69-2 | mesh:D001360 | Avidin | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:172520 | CHEBI:172520 | Avocadene | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -807,7 +807,7 @@ Total: 2680 ingredients
 | CHEBI:32528 | CHEBI:32528 | D-(+)-Turanose | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:10030-67-8 | CHEBI:6731 | D-(+)-melezitose monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16719 | CHEBI:16719 | D-(-)-Pantolactone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:62318 | CHEBI:16789 | D-(-)-lyxose | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:62318 | CHEBI:62318 | D-(-)-lyxose | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:4249 | CHEBI:4249 | D-(-)-tagatose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28797 | CHEBI:28797 | D-2-Aminobutyric acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:15570 | CHEBI:15570 | D-Alanine | MAPPED | CHEBI | EXACT_MATCH | 2 |
@@ -938,7 +938,7 @@ Total: 2680 ingredients
 | NCIT:C1928 | NCIT:C1928 | Dynemicin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:16586 | CHEBI:16586 | e-Amino-N-Caproic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4735 | CHEBI:4735 | EDTA (acid form) | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:4735 | NCIT:C360 | EDTA (chelating agent) | REJECTED | NCIT | LEXICAL_MATCH | 0 |
+| CHEBI:4735 | CHEBI:4735 | EDTA (chelating agent) | REJECTED | CHEBI | LEXICAL_MATCH | 0 |
 | cas:13235-36-4 | CHEBI:4735 | EDTA tetrasodium tetrahydrate salt | MAPPED | CHEBI | CLOSE_MATCH | 3 |
 | kgmicrobe.compound:e_4_aminostyryl_acetate | kgmicrobe.compound:e_4_aminostyryl_acetate | E 4 Aminostyryl Acetate | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:77543 | CHEBI:77543 | Ebselen | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1533,7 +1533,7 @@ Total: 2680 ingredients
 | CHEBI:32139 | CHEBI:32139 | NaHCO3 | MAPPED | CHEBI | EXACT_MATCH | 3168 |
 | CHEBI:26709 | CHEBI:26709 | NaHSO3 | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | cas:3374-05-8 | CHEBI:100147 | Nalidixic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:63005 | NCIT:C54713 | NaNO | REJECTED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:63005 | CHEBI:63005 | NaNO | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:78870 | CHEBI:78870 | NaNO2 | MAPPED | CHEBI | EXACT_MATCH | 30 |
 | CHEBI:63005 | CHEBI:63005 | NaNO3 | MAPPED | CHEBI | SYNONYM_MATCH | 675 |
 | CHEBI:32145 | CHEBI:32145 | NaOH | MAPPED | CHEBI | EXACT_MATCH | 1210 |
@@ -1870,7 +1870,7 @@ Total: 2680 ingredients
 | CHEBI:75226 | CHEBI:75226 | Sodium periodate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:7775-27-1 | mesh:C024625 | Sodium Persulfate | MAPPED | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_phosphate_buffer | NCIT:C29321 | Sodium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 19 |
-| CHEBI:34683 | CHEBI:37583 | Sodium phosphate dibasic | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:34683 | CHEBI:34683 | Sodium phosphate dibasic | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:13517-23-2 | CHEBI:36361 | Sodium phosphite dibasic pentahydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_potassium_phosphate_buffer | NCIT:C29321 | Sodium Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 6 |
 | CHEBI:71240 | CHEBI:71240 | Sodium pyrophosphate | MAPPED | CHEBI | EXACT_MATCH | 3 |
@@ -2091,7 +2091,7 @@ Total: 2680 ingredients
 | CHEBI:17268 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:73685 | CHEBI:73685 | n-Acetyl-glutamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:35704 | CHEBI:35704 | n-Acetyl-lysine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
-| CHEBI:47965 | CHEBI:47966 | n-Acetyl-muramic acid | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
+| CHEBI:47965 | CHEBI:47965 | n-Acetyl-muramic acid | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16870 | CHEBI:16870 | sn-glycero-3-phosphocholine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:16610 | CHEBI:16610 | spermidine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:16494 | CHEBI:16494 | α-lipoic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |

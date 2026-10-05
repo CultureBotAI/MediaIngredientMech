@@ -1,16 +1,21 @@
-"""Merge tombstones must resolve to a live record (#799).
+"""Merge tombstones must resolve to their own merge target (#799).
 
 `docs/LABEL_INDEX_CONTRACT.md` tells consumers to follow REJECTED rows, because
 a merged record's `identifier` points at its merge target. Four tombstones from
 the 2026-09-21 review kept the identity the review had rejected instead, so
-`NaNO` resolved to the nano unit prefix. CultureMech refuses such a label index
-outright, which blocked its pin refresh; these tests make MIM refuse it first.
+`NaNO` resolved to the nano unit prefix. `scripts/fix_tombstone_pointers.py`
+(#360) repairs exactly that, but nothing ran it after those merges; CultureMech
+refused the label index outright, which blocked its pin refresh. These tests
+make MIM refuse it first.
 """
 
 from __future__ import annotations
 
+import contextlib
 import csv
 import importlib.util
+import io
+import re
 from pathlib import Path
 
 import pytest
@@ -18,6 +23,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+CURIE_TARGET = re.compile(r"Merged into ([A-Za-z][\w.\-]*:[^\s,;'\"()]+)")
 
 
 @pytest.fixture(scope="module")
@@ -29,17 +35,56 @@ def records() -> list[dict]:
     ]
 
 
+def _tombstones(records):
+    for r in records:
+        history = r.get("curation_history") or []
+        if r.get("mapping_status") == "REJECTED" and any(
+            e.get("action") == "MERGED_INTO" for e in history
+        ):
+            yield r, history
+
+
 def test_every_merge_tombstone_points_at_a_live_record(records):
     live = {r["identifier"] for r in records if r.get("mapping_status") == "MAPPED"}
     dangling = sorted(
         (r["preferred_term"], r["identifier"])
-        for r in records
-        if r.get("mapping_status") == "REJECTED"
-        and any(e.get("action") == "MERGED_INTO" for e in r.get("curation_history") or [])
-        and not str(r["identifier"]).startswith("UNMAPPED_")
-        and r["identifier"] not in live
+        for r, _history in _tombstones(records)
+        if not str(r["identifier"]).startswith("UNMAPPED_") and r["identifier"] not in live
     )
     assert not dangling, f"merge tombstones on an identity no live record holds: {dangling}"
+
+
+def test_every_merge_tombstone_points_at_its_own_merge_target(records):
+    """Liveness alone would accept a tombstone pointing at the wrong live record
+    (#807). The target is the CURIE its last MERGED_INTO event names, unless a
+    later REPOINTED_TOMBSTONE_IDENTIFIER event followed the winner elsewhere."""
+    wrong = []
+    for r, history in _tombstones(records):
+        target = None
+        for event in history:
+            text = str(event.get("changes", ""))
+            if event.get("action") == "MERGED_INTO":
+                match = CURIE_TARGET.match(text)
+                target = match.group(1) if match else None
+            elif event.get("action") == "REPOINTED_TOMBSTONE_IDENTIFIER" and " -> " in text:
+                target = text.split(" -> ", 1)[1].split()[0]
+        if target and target != r["identifier"]:
+            wrong.append((r["preferred_term"], r["identifier"], target))
+    assert not wrong, f"tombstones not on their merge target: {wrong}"
+
+
+def test_no_tombstone_advertises_a_term_its_survivor_does_not_hold(records):
+    """The second #360 invariant: a tombstone's ontology_id agrees with its
+    survivor, so nothing indexing by ontology_id routes through a rejected term."""
+    live = {r["identifier"]: r for r in records if r.get("mapping_status") == "MAPPED"}
+    stale = []
+    for r, _history in _tombstones(records):
+        own = (r.get("ontology_mapping") or {}).get("ontology_id")
+        survivor = live.get(r["identifier"])
+        theirs = ((survivor or {}).get("ontology_mapping") or {}).get("ontology_id")
+        if own and theirs and own != theirs:
+            stale.append((r["preferred_term"], own, theirs))
+    assert not stale, f"tombstones advertising a term their survivor does not hold: {stale}"
 
 
 def test_published_rejected_rows_resolve_to_a_live_identifier():
@@ -60,30 +105,34 @@ def test_published_rejected_rows_resolve_to_a_live_identifier():
 
 
 @pytest.mark.parametrize(
-    ("term", "target"),
+    ("term", "old", "target"),
     [
-        ("NaNO", "CHEBI:63005"),
-        ("Atrazin", "CHEBI:15930"),
-        ("EDTA (chelating agent)", "CHEBI:4735"),
-        ("Sodium phosphate dibasic", "CHEBI:34683"),
+        ("NaNO", "NCIT:C54713", "CHEBI:63005"),
+        ("Atrazin", "cas:1924-24-9", "CHEBI:15930"),
+        ("EDTA (chelating agent)", "NCIT:C360", "CHEBI:4735"),
+        ("Sodium phosphate dibasic", "CHEBI:37583", "CHEBI:34683"),
     ],
 )
-def test_the_799_tombstones_keep_their_provenance(records, term, target):
+def test_the_799_tombstones_record_what_they_used_to_assert(records, term, old, target):
     record = next(r for r in records if r["preferred_term"] == term)
     assert record["identifier"] == target
     assert record["mapping_status"] == "REJECTED"
-    # The rejected identity is provenance, not deleted.
-    assert record["ontology_mapping"]["ontology_id"] != target
-    assert record["curation_history"][-1]["curator"] == "fix_799_tombstone_identifiers"
+    repoints = [
+        e for e in record["curation_history"]
+        if e.get("action") == "REPOINTED_TOMBSTONE_IDENTIFIER" and "(#799)" in str(e.get("changes"))
+    ]
+    assert len(repoints) == 1
+    assert str(repoints[0]["changes"]).startswith(f"identifier {old} -> {target} ")
 
 
-def test_fix_script_is_idempotent():
+def test_repointer_has_nothing_left_to_do():
+    """Re-running #360's repair on the committed corpus must be a no-op."""
     spec = importlib.util.spec_from_file_location(
-        "fix_799", ROOT / "scripts/fix_799_tombstone_identifiers.py"
+        "fix_tombstone_pointers", ROOT / "scripts/fix_tombstone_pointers.py"
     )
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    data = yaml.load(
-        (ROOT / "data/curated/mapped_ingredients.yaml").read_text(encoding="utf-8"), Loader=LOADER
-    )
-    assert module.plan(data["ingredients"]) == []
+    out = io.StringIO()
+    with contextlib.redirect_stdout(out):
+        module.main([])
+    assert "0 identifier(s) repointed, 0 ontology_id(s) refreshed" in out.getvalue()

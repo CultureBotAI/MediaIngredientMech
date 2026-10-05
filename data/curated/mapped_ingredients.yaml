@@ -41727,9 +41727,9 @@ ingredients:
 - identifier: CHEBI:15930
   preferred_term: Atrazin
   ontology_mapping:
-    ontology_id: cas:1924-24-9
-    ontology_label: Atrazin
-    ontology_source: CAS
+    ontology_id: CHEBI:15930
+    ontology_label: atrazine
+    ontology_source: CHEBI
     mapping_quality: FALLBACK_REGISTRY
     evidence:
     - evidence_type: DATABASE_MATCH
@@ -41772,15 +41772,25 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: gpt-6
-  - timestamp: '2026-10-05T03:21:08.217677+00:00'
-    curator: fix_799_tombstone_identifiers
-    action: CORRECTED
-    changes: Tombstone identifier cas:1924-24-9 -> CHEBI:15930, the merge target its
-      MERGED_INTO event names, so the REJECTED row resolves to the survivor as docs/LABEL_INDEX_CONTRACT.md
-      requires (#799). The rejected identity stays in ontology_mapping as provenance;
-      no mapping, synonym or occurrence change.
-    previous_status: REJECTED
-    new_status: REJECTED
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REPOINTED_TOMBSTONE_IDENTIFIER
+    changes: identifier cas:1924-24-9 -> CHEBI:15930 (#799). This record was merged
+      into '2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine' but kept its own
+      old identifier, so a downstream lookup on this label resolved to nothing live.
+      The target is the one named in this record's own MERGED_INTO entry; the chain
+      was followed to the first live record. A tombstone exists to keep the loser
+      resolvable.
+    llm_assisted: false
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+    changes: 'ontology_id cas:1924-24-9 -> CHEBI:15930 (#799). The merge set identifier
+      and status but left ontology_mapping untouched, so this tombstone kept advertising
+      a term it no longer asserts — anything indexing by ontology_id routed through
+      it. Now agrees with the merge target ''2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine''.
+      Provenance is unaffected: what the record used to assert is in this history.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1924-24-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -65909,8 +65919,8 @@ ingredients:
 - identifier: CHEBI:62318
   preferred_term: D-(-)-lyxose
   ontology_mapping:
-    ontology_id: CHEBI:16789
-    ontology_label: aldehydo-D-lyxose
+    ontology_id: CHEBI:62318
+    ontology_label: D-lyxose
     ontology_source: CHEBI
     mapping_quality: SYNONYM_MATCH
     evidence:
@@ -65988,6 +65998,15 @@ ingredients:
       orderability rule pointed the other way; that CAS is now carried in supplied_form
       and republished as a synonym, so nothing purchasable is lost from the identity.
       Tombstoned REJECTED so a lookup on this label still resolves, SSSOM rows dropped.'
+    llm_assisted: false
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+    changes: 'ontology_id CHEBI:16789 -> CHEBI:62318 (#799). The merge set identifier
+      and status but left ontology_mapping untouched, so this tombstone kept advertising
+      a term it no longer asserts — anything indexing by ontology_id routed through
+      it. Now agrees with the merge target ''D-lyxose''. Provenance is unaffected:
+      what the record used to assert is in this history.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 1114-34-7
@@ -77316,21 +77335,30 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: gpt-6
-  - timestamp: '2026-10-05T03:21:08.217681+00:00'
-    curator: fix_799_tombstone_identifiers
-    action: CORRECTED
-    changes: Tombstone identifier NCIT:C360 -> CHEBI:4735, the merge target its MERGED_INTO
-      event names, so the REJECTED row resolves to the survivor as docs/LABEL_INDEX_CONTRACT.md
-      requires (#799). The rejected identity stays in ontology_mapping as provenance;
-      no mapping, synonym or occurrence change.
-    previous_status: REJECTED
-    new_status: REJECTED
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REPOINTED_TOMBSTONE_IDENTIFIER
+    changes: identifier NCIT:C360 -> CHEBI:4735 (#799). This record was merged into
+      'EDTA' but kept its own old identifier, so a downstream lookup on this label
+      resolved to nothing live. The target is the one named in this record's own MERGED_INTO
+      entry; the chain was followed to the first live record. A tombstone exists to
+      keep the loser resolvable.
+    llm_assisted: false
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+    changes: 'ontology_id NCIT:C360 -> CHEBI:4735 (#799). The merge set identifier
+      and status but left ontology_mapping untouched, so this tombstone kept advertising
+      a term it no longer asserts — anything indexing by ontology_id routed through
+      it. Now agrees with the merge target ''EDTA''. Provenance is unaffected: what
+      the record used to assert is in this history.'
+    llm_assisted: false
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:EDTA_(chelating_agent));
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
-    ontology_id: NCIT:C360
-    ontology_label: Chelating Agent
-    ontology_source: NCIT
+    ontology_id: CHEBI:4735
+    ontology_label: ethylenediaminetetraacetic acid
+    ontology_source: CHEBI
     mapping_quality: LEXICAL_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
@@ -138051,20 +138079,29 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: gpt-6
-  - timestamp: '2026-10-05T03:21:08.217439+00:00'
-    curator: fix_799_tombstone_identifiers
-    action: CORRECTED
-    changes: Tombstone identifier NCIT:C54713 -> CHEBI:63005, the merge target its
-      MERGED_INTO event names, so the REJECTED row resolves to the survivor as docs/LABEL_INDEX_CONTRACT.md
-      requires (#799). The rejected identity stays in ontology_mapping as provenance;
-      no mapping, synonym or occurrence change.
-    previous_status: REJECTED
-    new_status: REJECTED
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REPOINTED_TOMBSTONE_IDENTIFIER
+    changes: identifier NCIT:C54713 -> CHEBI:63005 (#799). This record was merged
+      into 'NaNO3' but kept its own old identifier, so a downstream lookup on this
+      label resolved to nothing live. The target is the one named in this record's
+      own MERGED_INTO entry; the chain was followed to the first live record. A tombstone
+      exists to keep the loser resolvable.
+    llm_assisted: false
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+    changes: 'ontology_id NCIT:C54713 -> CHEBI:63005 (#799). The merge set identifier
+      and status but left ontology_mapping untouched, so this tombstone kept advertising
+      a term it no longer asserts — anything indexing by ontology_id routed through
+      it. Now agrees with the merge target ''NaNO3''. Provenance is unaffected: what
+      the record used to assert is in this history.'
+    llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
   ontology_mapping:
-    ontology_id: NCIT:C54713
-    ontology_label: Nano
-    ontology_source: NCIT
+    ontology_id: CHEBI:63005
+    ontology_label: sodium nitrate
+    ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
@@ -166097,8 +166134,8 @@ ingredients:
 - identifier: CHEBI:34683
   preferred_term: Sodium phosphate dibasic
   ontology_mapping:
-    ontology_id: CHEBI:37583
-    ontology_label: trisodium phosphate
+    ontology_id: CHEBI:34683
+    ontology_label: disodium hydrogenphosphate
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
@@ -166174,15 +166211,24 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: gpt-6
-  - timestamp: '2026-10-05T03:21:08.217683+00:00'
-    curator: fix_799_tombstone_identifiers
-    action: CORRECTED
-    changes: Tombstone identifier CHEBI:37583 -> CHEBI:34683, the merge target its
-      MERGED_INTO event names, so the REJECTED row resolves to the survivor as docs/LABEL_INDEX_CONTRACT.md
-      requires (#799). The rejected identity stays in ontology_mapping as provenance;
-      no mapping, synonym or occurrence change.
-    previous_status: REJECTED
-    new_status: REJECTED
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REPOINTED_TOMBSTONE_IDENTIFIER
+    changes: identifier CHEBI:37583 -> CHEBI:34683 (#799). This record was merged
+      into 'Na2HPO4' but kept its own old identifier, so a downstream lookup on this
+      label resolved to nothing live. The target is the one named in this record's
+      own MERGED_INTO entry; the chain was followed to the first live record. A tombstone
+      exists to keep the loser resolvable.
+    llm_assisted: false
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+    changes: 'ontology_id CHEBI:37583 -> CHEBI:34683 (#799). The merge set identifier
+      and status but left ontology_mapping untouched, so this tombstone kept advertising
+      a term it no longer asserts — anything indexing by ontology_id routed through
+      it. Now agrees with the merge target ''Na2HPO4''. Provenance is unaffected:
+      what the record used to assert is in this history.'
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: 3Na.O4P
@@ -185538,8 +185584,8 @@ ingredients:
 - identifier: CHEBI:47965
   preferred_term: n-Acetyl-muramic acid
   ontology_mapping:
-    ontology_id: CHEBI:47966
-    ontology_label: aldehydo-N-acetylmuramic acid
+    ontology_id: CHEBI:47965
+    ontology_label: N-acetylmuramic acid
     ontology_source: CHEBI
     mapping_quality: CAS_RN_LOOKUP
     evidence:
@@ -185609,6 +185655,15 @@ ingredients:
       in supplied_form and republished as a synonym, so nothing purchasable is lost
       from the identity. Tombstoned REJECTED so a lookup on this label still resolves,
       SSSOM rows dropped.'
+    llm_assisted: false
+  - timestamp: '2026-10-05T04:09:33.941715+00:00'
+    curator: fix_tombstone_pointers
+    action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+    changes: 'ontology_id CHEBI:47966 -> CHEBI:47965 (#799). The merge set identifier
+      and status but left ontology_mapping untouched, so this tombstone kept advertising
+      a term it no longer asserts — anything indexing by ontology_id routed through
+      it. Now agrees with the merge target ''N-acetylmuramic acid''. Provenance is
+      unaffected: what the record used to assert is in this history.'
     llm_assisted: false
   notes: Created from FEBA ontology enrichment workflow. Used in 10 FEBA media formulations.
   chemical_properties:

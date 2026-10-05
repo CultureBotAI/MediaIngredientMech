@@ -93,17 +93,8 @@ _NON_IDENTITY_QUALITIES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH"}
 
 
 def _resolves_by_ontology_label(ing: dict) -> bool:
-    """Ontology labels resolve only for identity-preserving mappings (#562).
-
-    A merge tombstone carries its merge target's `identifier` but may keep the
-    term the merge rejected as provenance. That term's label names the rejected
-    term, not the survivor -- publishing it sent `trisodium phosphate` to Na2HPO4
-    and `Chelating Agent` to EDTA (#799).
-    """
-    mapping = ing.get("ontology_mapping") or {}
-    if ing.get("mapping_status") == "REJECTED" and mapping.get("ontology_id") != ing.get("identifier"):
-        return False
-    quality = str(mapping.get("mapping_quality") or "")
+    """Ontology labels resolve only for identity-preserving mappings (#562)."""
+    quality = str((ing.get("ontology_mapping") or {}).get("mapping_quality") or "")
     return quality not in _NON_IDENTITY_QUALITIES
 
 
@@ -371,8 +362,11 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # formula. A dict comprehension would let YAML record order decide the
     # verdict, so a label's published ambiguity would change when records are
     # reordered.
+    # Live records first: a tombstone shares its survivor's identifier but may
+    # keep the rejected substance's chemistry, e.g. trisodium phosphate's
+    # formula under CHEBI:34683 (#804).
     formula_of: dict[str, str] = {}
-    for ing in ingredients:
+    for ing in sorted(ingredients, key=lambda i: i.get("mapping_status") != "MAPPED"):
         key = ing.get("identifier", "")
         if not formula_of.get(key):
             formula_of[key] = _molecular_formula(ing)
