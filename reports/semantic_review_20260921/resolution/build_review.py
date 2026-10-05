@@ -14,6 +14,7 @@ from pathlib import Path
 import yaml
 
 from mediaingredientmech.export.reviewed_sssom import load_review
+from mediaingredientmech.record_refresh import RecordRefreshes
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.validation.semantic_release import (
     adjudicate_assertions,
@@ -35,6 +36,38 @@ FROZEN_RELEASE_HOLD_REASON = (
     "from the supported release and preserve its unchanged row in the separate backlog (#724). "
     "The broader source correction in #703 remains open."
 )
+
+
+# Verified section refreshes (record_refresh). main() loads them; without them
+# every comparison below is strict byte equality, as before.
+_REFRESHES = None
+
+
+def _reviewed(name, current_hash, reviewed_hash):
+    """A review bound to ``reviewed_hash`` still applies to the record's current bytes."""
+    if current_hash == reviewed_hash:
+        return True
+    return _REFRESHES is not None and bool(name) and _REFRESHES.matches(name, reviewed_hash)
+
+
+def _as_reviewed(name, current_record, reviewed_hash):
+    """The record as the review bound to ``reviewed_hash`` read it."""
+    if _REFRESHES is None or not name:
+        return current_record
+    earlier = _REFRESHES.record_at(name, reviewed_hash) if reviewed_hash else None
+    return current_record if earlier is None else earlier
+
+
+def _matches_some_state(name, current_record, reviewed_record):
+    """For hashless plans: the current record or a verified earlier state equals it."""
+    if current_record == reviewed_record:
+        return True
+    if _REFRESHES is None or not name:
+        return False
+    return any(
+        yaml.load(content, Loader=yaml.CSafeLoader) == reviewed_record
+        for _digest, content in _REFRESHES.states(name)
+    )
 
 
 def relative(path):
@@ -91,7 +124,7 @@ def archive_historical_reviews(root, old_rows, original_records, hashes, archive
         original = original_records.get(name, {})
         path_name, expected = original.get("review_report"), original.get("report_sha256")
         if (old["verdict"] not in {"pass", "pass_with_minor_issues"}
-                or hashes.get(name) != old["record_sha256"]
+                or not _reviewed(name, hashes.get(name), old["record_sha256"])
                 or original.get("record_sha256") != old["record_sha256"]
                 or not expected or not path_name or old.get("review_report") != path_name):
             continue
@@ -124,7 +157,7 @@ def inherited_role_supported(reviews, old, owner, kind, payload_sha, edge, recor
     return any(review.get("disposition") in {
                    "ELIGIBLE_SAME_ROLE_SOURCE", "ELIGIBLE_RECIPE_SOURCE", "ELIGIBLE_PRIMARY_STUDY"}
                and review.get("source_record") == owner
-               and review.get("source_record_sha256") == record_hash
+               and _reviewed(owner, record_hash, review.get("source_record_sha256"))
                and review.get("assertion_type") == kind
                and review.get("assertion_sha256") == payload_sha
                and review.get("edge_id") == edge["id"]
@@ -143,7 +176,7 @@ def inherited_approval(old_rows, hashes, owner, kind, payload_sha, edge, asserti
     return any(old["source_record"] == owner and old["assertion_type"] == kind
                and old["assertion_sha256"] == payload_sha
                and old["verdict"] in {"pass", "pass_with_minor_issues"}
-               and hashes.get(owner) == old["record_sha256"]
+               and _reviewed(owner, hashes.get(owner), old["record_sha256"])
                and (kind == "mapping" or old["edge_id"] == edge["id"])
                and (not kind.endswith("_roles") or inherited_role_supported(
                    role_reviews, old, owner, kind, payload_sha, edge, hashes.get(owner)))
@@ -163,8 +196,9 @@ def identity_mapping_supported(record, assertion):
 
 def role_supported(item, name, record, record_hash, position, assertion):
     """Chemical identity and source position are part of the reviewed biological claim."""
-    return (item.get("source_path") == name and record_hash == item.get("after_sha256")
-            and record == item.get("after_record") and str(position) == item.get("source_position")
+    return (item.get("source_path") == name and _reviewed(name, record_hash, item.get("after_sha256"))
+            and _as_reviewed(name, record, item.get("after_sha256")) == item.get("after_record")
+            and str(position) == item.get("source_position")
             and assertion == item.get("after_assertion"))
 
 
@@ -172,20 +206,22 @@ def validate_explicit_plans(records, hashes, roles, identity_support, component_
     """Fail stale evidence before it can close either findings or current assertions."""
     for item in roles:
         name = item["source_path"]
-        if records.get(name) != item["after_record"] or hashes.get(name) != item["after_sha256"]:
+        if (not _reviewed(name, hashes.get(name), item["after_sha256"])
+                or _as_reviewed(name, records.get(name), item["after_sha256"]) != item["after_record"]):
             raise ValueError(f"Role plan no longer describes current record: {name}")
         position = int(item["source_position"]) - 1
         if records[name]["cellular_metabolic_roles"][position] != item["after_assertion"]:
             raise ValueError(f"Role plan position changed: {name}")
     for name, record in identity_support.items():
-        if records.get(name) != record:
+        if not _matches_some_state(name, records.get(name), record):
             raise ValueError(f"Identity plan no longer describes current record: {name}")
     for item in component_plans:
         name = item.get("after_path", item["source_record"])
-        if records.get(name) != item["after"] or hashes.get(name) != item["after_sha256"]:
+        if (not _reviewed(name, hashes.get(name), item["after_sha256"])
+                or _as_reviewed(name, records.get(name), item["after_sha256"]) != item["after"]):
             raise ValueError(f"Component plan no longer describes current record: {name}")
     for item in component_dispositions:
-        if hashes.get(item["current_record"]) != item["current_record_sha256"]:
+        if not _reviewed(item["current_record"], hashes.get(item["current_record"]), item["current_record_sha256"]):
             raise ValueError(f"Stale component disposition: {item['finding_id']}")
 
 
@@ -194,6 +230,8 @@ def main():
     parser.add_argument("--bundle", type=Path, required=True)
     args = parser.parse_args()
     bundle = args.bundle.resolve()
+    global _REFRESHES
+    _REFRESHES = RecordRefreshes(ROOT)
     records = {}
     hashes = {}
     for group in ("mapped", "unmapped"):
@@ -301,7 +339,7 @@ def main():
             reason = "Primary evidence inspected for the explicit organism and conditions; supplied-hydrate extensions are documented inferences."
         elif kind == "mapping" and owner in identity_support:
             source_name = owner
-            if records[source_name] != identity_support[source_name]:
+            if not _matches_some_state(source_name, records[source_name], identity_support[source_name]):
                 raise ValueError(f"Identity plan no longer describes current record: {source_name}")
             record = identity_support[source_name]
             if identity_mapping_supported(record, assertion):

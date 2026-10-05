@@ -15,6 +15,7 @@ from collections import Counter
 from pathlib import Path
 
 from mediaingredientmech.export.reviewed_sssom import _owners, digest, read_sssom, row_sha256
+from mediaingredientmech.record_refresh import RecordRefreshes
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
@@ -114,13 +115,18 @@ def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_ro
     return forward, last, state
 
 
-def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *, safeguards=()):
-    """Bind a new scientific decision to its complete row, owner and archived evidence."""
+def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *, safeguards=(), reviewed_hashes=None):
+    """Bind a new scientific decision to its complete row, owner and archived evidence.
+
+    ``reviewed_hashes`` is the set of hashes the owner's current bytes are a
+    verified section refresh of (record_refresh); without it only the current
+    hash binds.
+    """
     if (
         entry["mapping"] != mapping
         or entry["row_sha256"] != row_sha256(mapping)
         or entry["owner_record"] != owner
-        or entry["owner_record_sha256"] != owner_hash
+        or entry["owner_record_sha256"] not in (reviewed_hashes or {owner_hash})
     ):
         raise ValueError("Mapping follow-up has stale row or owner")
     if entry["disposition"] not in {"SUPPORTED", "WITHHOLD"}:
@@ -148,7 +154,7 @@ def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *,
     return entry["disposition"], entry["reason"]
 
 
-def apply_added_identity_followup(entry, mapping, owner, owner_hash, record, root):
+def apply_added_identity_followup(entry, mapping, owner, owner_hash, record, root, reviewed_hashes=None):
     """Review a newly minted local identity without approving an external grounding."""
     local_identity = (
         mapping["object_id"].startswith(("kgmicrobe.ingredient:", "kgmicrobe.compound:"))
@@ -156,7 +162,7 @@ def apply_added_identity_followup(entry, mapping, owner, owner_hash, record, roo
         and mapping["subject_label"] == mapping["object_label"] == record.get("preferred_term")
         and not mapping["other"]
     )
-    return apply_followup(entry, mapping, owner, owner_hash, [], root,
+    return apply_followup(entry, mapping, owner, owner_hash, [], root, reviewed_hashes=reviewed_hashes,
                           safeguards=[] if local_identity else ["New rows require a separate external-mapping review"])
 
 
@@ -177,6 +183,10 @@ def assemble():
     mapping_changes = [
         json.loads(path.read_text()) for path in sorted((HERE / "mapping_changes").glob("*.json"))
     ]
+    # Section refreshes (record_refresh) are verified peels, not approvals: a
+    # review bound to earlier bytes keeps applying only when the current file
+    # differs from them by refreshable sections alone.
+    refreshes = RecordRefreshes(ROOT)
     expected_hashes = dict(baseline["record_inputs"])
     plans = [("Trait", traits), ("Parent-name", parents)] + [
         (f"Mapping-change {receipt['batch']}", receipt)
@@ -187,14 +197,18 @@ def assemble():
             # A record first touched by a mapping change may be new to the reviewed
             # set (a registry mint) or a tombstone outside it; both start from
             # whatever the receipt recorded.
-            known = expected_hashes.get(entry["source_record"], entry["before_yaml_sha256"])
+            known = refreshes.advance(
+                entry["source_record"],
+                expected_hashes.get(entry["source_record"], entry["before_yaml_sha256"]),
+                entry["before_yaml_sha256"],
+            )
             if known != entry["before_yaml_sha256"]:
                 raise ValueError(f"{label} correction no longer extends the reviewed baseline")
             expected_hashes[entry["source_record"]] = entry["after_yaml_sha256"]
     _, _, mappings = read_sssom(ROOT / SOURCE)
     owners, records = _owners(ROOT, mappings)
     record_hashes = {owner: digest(ROOT / owner) for owner in set(owners)}
-    if any(record_hashes[owner] != expected_hashes.get(owner) for owner in record_hashes):
+    if any(not refreshes.matches(owner, expected_hashes.get(owner)) for owner in record_hashes):
         raise ValueError("Owner changed after scientific review; do not restamp its approval")
     prior = {int(d["source_position"]): d for d in baseline["decisions"]}
     changed_rows = {item["source_position"]: dict(item, receipt="trait-synonym-refresh.json") for item in refresh["changes"]}
@@ -321,6 +335,7 @@ def assemble():
                 followup = followups_by_key[followup_key]
                 entry["disposition"], entry["review_reason"] = apply_added_identity_followup(
                     followup, mapping, owner, record_hashes[owner], records[owner], ROOT,
+                    reviewed_hashes=refreshes.equivalents(owner),
                 )
                 entry["basis"]["mapping_followup"] = {
                     "file": "mapping_review/kgmicrobe-followup.json",
@@ -362,7 +377,7 @@ def assemble():
         if (
             original["resolution_status"] == "APPROVED"
             and mapping == previous_mapping
-            and record_hashes[owner] == baseline["record_inputs"].get(owner)
+            and refreshes.matches(owner, baseline["record_inputs"].get(owner))
         ):
             disposition = "SUPPORTED"
             reason = (
@@ -390,7 +405,7 @@ def assemble():
             entry = candidates[position]
             disposition, reason = entry["disposition"], entry["reason"]
             if disposition == "SUPPORTED" and (
-                entry["mapping"] != mapping or entry["owner_record_sha256"] != record_hashes[owner]
+                entry["mapping"] != mapping or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
                 raise ValueError("Nonmapping-cohort approval has stale owner or row")
             basis["scoped_review"] = {
@@ -403,7 +418,7 @@ def assemble():
             if disposition == "SUPPORTED" and (
                 entry["mapping"] != mapping
                 or entry["owner"] != owner
-                or entry["owner_record_sha256"] != record_hashes[owner]
+                or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
                 raise ValueError("Changed-owner approval has stale row or owner")
             basis["scoped_review"] = {
@@ -486,6 +501,7 @@ def assemble():
             followup = followups_by_key[followup_key]
             disposition, reason = apply_followup(
                 followup, mapping, owner, record_hashes[owner], explicit_holds.get(position, []), ROOT,
+                reviewed_hashes=refreshes.equivalents(owner),
                 safeguards=[basis[k] for k in ("policy", "preparation_tokens") if k in basis],
             )
             used_followups.add(followup_key)
