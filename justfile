@@ -423,7 +423,7 @@ qc-roundtrip:
       echo "(Nothing was modified — the export above went to a scratch copy.)" >&2
       exit 1
     fi
-    # The two other assertions the CI roundtrip job makes, so a record change
+    # The other assertions the CI roundtrip job makes, so a record change
     # that passes this recipe does not then fail CI (#810, #744). Indexes are
     # regenerated into a scratch directory and compared, never written in place.
     idx="$(mktemp -d)"
@@ -441,6 +441,8 @@ qc-roundtrip:
       exit 1
     fi
     uv run --frozen python scripts/check_visualization_currency.py --strict
+    # And the case-exact filename check CI runs before everything else (#813).
+    uv run --no-project python scripts/check_record_filename_case.py
 
 # Write per-record edits BACK into data/curated/, then re-export to a fixed point
 sync-curated:
