@@ -185,6 +185,20 @@ def test_close_match_ontology_labels_do_not_resolve_to_local_records(tmp_path):
     ]
 
 
+def test_ambiguity_uses_the_live_records_chemistry_not_a_tombstones(tmp_path):
+    """A tombstone shares its survivor's identifier but may keep the rejected
+    substance's chemistry -- trisodium phosphate's formula under CHEBI:34683.
+    Record order must not let that decide a verdict (#804)."""
+    tombstone = _record("CHEBI:34683", "Sodium phosphate dibasic", status="REJECTED",
+                        formula="3Na.O4P")
+    survivor = _record("CHEBI:34683", "Na2HPO4", synonyms=["Shared"], formula="2Na.HO4P")
+    rival = _record("cas:7558-79-4", "Disodium phosphate", synonyms=["Shared"],
+                    formula="HNa2O4P")
+    for order in ([tombstone, survivor, rival], [survivor, tombstone, rival]):
+        resolved = _resolve(tmp_path / str(id(order)), order)
+        assert resolved["shared"]["ambiguity"] == "agree:same_substance"
+
+
 def test_ordering_is_deterministic_regardless_of_record_order(tmp_path):
     """`identifier` is not a unique record key — 46 identifiers are held by 117
     records — so without a full tiebreak the winner is decided by YAML order,

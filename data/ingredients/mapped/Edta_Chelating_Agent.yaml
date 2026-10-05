@@ -1,4 +1,4 @@
-identifier: NCIT:C360
+identifier: CHEBI:4735
 preferred_term: EDTA (chelating agent)
 synonyms:
 - synonym_text: EDTA (chelating agent)
@@ -39,12 +39,30 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-10-05T04:09:33.941715+00:00'
+  curator: fix_tombstone_pointers
+  action: REPOINTED_TOMBSTONE_IDENTIFIER
+  changes: identifier NCIT:C360 -> CHEBI:4735 (#799). This record was merged into
+    'EDTA' but kept its own old identifier, so a downstream lookup on this label resolved
+    to nothing live. The target is the one named in this record's own MERGED_INTO
+    entry; the chain was followed to the first live record. A tombstone exists to
+    keep the loser resolvable.
+  llm_assisted: false
+- timestamp: '2026-10-05T04:09:33.941715+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id NCIT:C360 -> CHEBI:4735 (#799). The merge set identifier and
+    status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''EDTA''. Provenance is unaffected: what
+    the record used to assert is in this history.'
+  llm_assisted: false
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:EDTA_(chelating_agent));
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: NCIT:C360
-  ontology_label: Chelating Agent
-  ontology_source: NCIT
+  ontology_id: CHEBI:4735
+  ontology_label: ethylenediaminetetraacetic acid
+  ontology_source: CHEBI
   mapping_quality: LEXICAL_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH

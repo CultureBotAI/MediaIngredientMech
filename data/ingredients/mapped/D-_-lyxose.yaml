@@ -1,8 +1,8 @@
 identifier: CHEBI:62318
 preferred_term: D-(-)-lyxose
 ontology_mapping:
-  ontology_id: CHEBI:16789
-  ontology_label: aldehydo-D-lyxose
+  ontology_id: CHEBI:62318
+  ontology_label: D-lyxose
   ontology_source: CHEBI
   mapping_quality: SYNONYM_MATCH
   evidence:
@@ -79,6 +79,15 @@ curation_history:
     pointed the other way; that CAS is now carried in supplied_form and republished
     as a synonym, so nothing purchasable is lost from the identity. Tombstoned REJECTED
     so a lookup on this label still resolves, SSSOM rows dropped.'
+  llm_assisted: false
+- timestamp: '2026-10-05T04:09:33.941715+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:16789 -> CHEBI:62318 (#799). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''D-lyxose''. Provenance is unaffected: what
+    the record used to assert is in this history.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 1114-34-7

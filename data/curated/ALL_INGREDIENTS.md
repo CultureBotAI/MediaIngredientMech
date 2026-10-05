@@ -2897,7 +2897,7 @@
 | CHEBI:30089 | Acetate (carbon source) | REJECTED | CHEBI:30089 |  | 0 |
 | CHEBI:31206 | Ammonium chloride (nitrogen source) | REJECTED | CHEBI:31206 |  | 0 |
 | CHEBI:34535 | Ampicillin sodium salt | REJECTED | CHEBI:34535 |  | 0 |
-| cas:1924-24-9 | Atrazin | REJECTED | cas:1924-24-9 | CHEBI:15930 | 0 |
+| CHEBI:15930 | Atrazin | REJECTED | CHEBI:15930 | CHEBI:15930 | 0 |
 | FOODON:03315720 | Bacto Soytone | REJECTED | FOODON:03315720 | FOODON:03315720 | 0 |
 | MICRO:0000114 | Bacto Tryptic Soy Agar (Difco) | REJECTED | MICRO:0000114 |  | 0 |
 | MICRO:0000113 | Bacto Tryptic Soy Broth (Difco) | REJECTED | MICRO:0000113 |  | 0 |
@@ -2909,13 +2909,13 @@
 | CHEBI:31404 | Citric Acid•H2O | REJECTED | CHEBI:31404 |  | 0 |
 | CHEBI:53503 | CoCl2 x 6 H2O | REJECTED | CHEBI:53503 |  | 0 |
 | NCIT:C386 | Colistin sulfate salt | REJECTED | NCIT:C386 |  | 0 |
-| CHEBI:62318 | D-(-)-lyxose | REJECTED | CHEBI:16789 |  | 0 |
+| CHEBI:62318 | D-(-)-lyxose | REJECTED | CHEBI:62318 |  | 0 |
 | CHEBI:17992 | D-Sucrose | REJECTED | CHEBI:17992 |  | 0 |
 | CHEBI:75228 | D | REJECTED | CHEBI:75228 |  | 0 |
 | kgmicrobe.ingredient:fish-sperm_dna | Deoxyribonucleic acid from herring sperm | REJECTED | CHEBI:16991 |  | 0 |
 | CHEBI:17634 | Dextrose | REJECTED | CHEBI:17634 |  | 0 |
 | CHEBI:4735 | EDTA (acid form) | REJECTED | CHEBI:4735 |  | 0 |
-| NCIT:C360 | EDTA (chelating agent) | REJECTED | NCIT:C360 | CHEBI:4735 | 0 |
+| CHEBI:4735 | EDTA (chelating agent) | REJECTED | CHEBI:4735 | CHEBI:4735 | 0 |
 | CHEBI:75836 | FeSO4 x 7H2O | REJECTED | CHEBI:75836 |  | 0 |
 | CHEBI:17234 | glucose | REJECTED | CHEBI:17234 |  | 0 |
 | CHEBI:17754 | glycerol | REJECTED | CHEBI:17754 |  | 0 |
@@ -2934,7 +2934,7 @@
 | CHEBI:64758 | Na2-EDTA x 2 H2O | REJECTED | CHEBI:64758 |  | 0 |
 | CHEBI:75213 | Na2MoO4·2H2O | REJECTED | CHEBI:75213 |  | 0 |
 | CHEBI:131361 | Na2SeO3·5H2O | REJECTED | CHEBI:131361 |  | 0 |
-| NCIT:C54713 | NaNO | REJECTED | NCIT:C54713 | CHEBI:63005 | 0 |
+| CHEBI:63005 | NaNO | REJECTED | CHEBI:63005 | CHEBI:63005 | 0 |
 | CHEBI:53542 | NiCl2 x 6 H2O | REJECTED | CHEBI:53542 |  | 0 |
 | CHEBI:53437 | NiSO4 x 6 H2O | REJECTED | CHEBI:53437 |  | 0 |
 | CHEBI:61490 | Poly L Lysine Polymer | REJECTED | CHEBI:61490 |  | 0 |
@@ -2945,14 +2945,14 @@
 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI:232798 | CHEBI:232798 | 0 |
 | mesh:C025349 | Sodium metasilicate (silicate for diatom frustules) | REJECTED | mesh:C025349 |  | 0 |
 | CHEBI:63005 | Sodium nitrate (nitrogen source) | REJECTED | CHEBI:63005 |  | 0 |
-| CHEBI:37583 | Sodium phosphate dibasic | REJECTED | CHEBI:37583 | CHEBI:34683 | 0 |
+| CHEBI:34683 | Sodium phosphate dibasic | REJECTED | CHEBI:34683 | CHEBI:34683 | 0 |
 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | REJECTED | CHEBI:32150 |  | 0 |
 | CHEBI:33403 | Sulfur (powder) | REJECTED | CHEBI:33403 | CHEBI:33403 | 0 |
 | CHEBI:33403 | Sulphur | REJECTED | CHEBI:33403 | CHEBI:33403 | 0 |
 | CHEBI:16494 | Thioctic acid | REJECTED | CHEBI:16494 | CHEBI:16494 | 0 |
 | CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI:32142 |  | 0 |
 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI:17268 |  | 0 |
-| CHEBI:47965 | n-Acetyl-muramic acid | REJECTED | CHEBI:47966 |  | 0 |
+| CHEBI:47965 | n-Acetyl-muramic acid | REJECTED | CHEBI:47965 |  | 0 |
 | CHEBI:16494 | α-lipoic acid | REJECTED | CHEBI:16494 | CHEBI:16494 | 0 |
 | CHEBI:66870 | Na2S2O4 | REJECTED | CHEBI:66870 |  | 0 |
 | kgmicrobe.ingredient:na-phosphate_buffer | Na-Phosphate-Buffer | REJECTED | kgmicrobe.ingredient:na-phosphate_buffer |  | 0 |

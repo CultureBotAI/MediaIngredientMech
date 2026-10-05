@@ -362,8 +362,11 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # formula. A dict comprehension would let YAML record order decide the
     # verdict, so a label's published ambiguity would change when records are
     # reordered.
+    # Live records first: a tombstone shares its survivor's identifier but may
+    # keep the rejected substance's chemistry, e.g. trisodium phosphate's
+    # formula under CHEBI:34683 (#804).
     formula_of: dict[str, str] = {}
-    for ing in ingredients:
+    for ing in sorted(ingredients, key=lambda i: i.get("mapping_status") != "MAPPED"):
         key = ing.get("identifier", "")
         if not formula_of.get(key):
             formula_of[key] = _molecular_formula(ing)

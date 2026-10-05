@@ -42,6 +42,7 @@ Only records carrying a MERGED_INTO event are touched.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import re
 import sys
 from pathlib import Path
@@ -76,7 +77,16 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--apply", action="store_true")
+    # A later run must not stamp its events with the #360 date and issue (#799).
+    ap.add_argument("--issue", default=ISSUE, help=f"issue cited in new events (default {ISSUE})")
+    ap.add_argument("--stamp", default=STAMP, help="event timestamp, or 'now' (default: the #360 run)")
     args = ap.parse_args(argv)
+    issue = args.issue
+    stamp = datetime.now(timezone.utc).isoformat() if args.stamp == "now" else args.stamp
+    try:
+        datetime.fromisoformat(stamp)
+    except ValueError:
+        ap.error(f"--stamp must be 'now' or an ISO-8601 timestamp, got {stamp!r}")
 
     colls = {p: (yaml.safe_load(p.read_text(encoding="utf-8", errors="replace")) or {})
              for p in (MAPPED, UNMAPPED)}
@@ -159,10 +169,10 @@ def main(argv: list[str] | None = None) -> int:
                 new = str(win.get("identifier"))
                 rec["identifier"] = new
                 rec.setdefault("curation_history", []).append({
-                    "timestamp": STAMP, "curator": CURATOR,
+                    "timestamp": stamp, "curator": CURATOR,
                     "action": "REPOINTED_TOMBSTONE_IDENTIFIER",
                     "changes": (
-                        f"identifier {ident} -> {new} ({ISSUE}). This record was merged "
+                        f"identifier {ident} -> {new} ({issue}). This record was merged "
                         f"into {win.get('preferred_term')!r} but kept its own old "
                         f"identifier, so a downstream lookup on this label resolved to "
                         f"nothing live. The target is the one named in this record's own "
@@ -186,10 +196,10 @@ def main(argv: list[str] | None = None) -> int:
             om["ontology_source"] = wom.get("ontology_source") or om.get("ontology_source")
             rec["ontology_mapping"] = om
             rec.setdefault("curation_history", []).append({
-                "timestamp": STAMP, "curator": CURATOR,
+                "timestamp": stamp, "curator": CURATOR,
                 "action": "REFRESHED_TOMBSTONE_ONTOLOGY_ID",
                 "changes": (
-                    f"ontology_id {cur} -> {want} ({ISSUE}). The merge set identifier and "
+                    f"ontology_id {cur} -> {want} ({issue}). The merge set identifier and "
                     f"status but left ontology_mapping untouched, so this tombstone kept "
                     f"advertising a term it no longer asserts — anything indexing by "
                     f"ontology_id routed through it. Now agrees with the merge target "
