@@ -23,6 +23,7 @@ from urllib.parse import quote
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup
 
 from mediaingredientmech.micro_source import source_term
 
@@ -41,7 +42,10 @@ _CURIE_RESOLVERS = {
     "NCIT": "https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_{}",
     "MICRO": "https://www.ebi.ac.uk/ols4/ontologies/micro/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMICRO_{}",
     "cas": "https://commonchemistry.cas.org/detail?cas_rn={}",
-    "kgmicrobe.compound": "#",  # placeholder primary; no resolver
+    "mesh": "https://meshb.nlm.nih.gov/record/ui?ui={}",
+    "MESH": "https://meshb.nlm.nih.gov/record/ui?ui={}",
+    "BTO": "https://www.ebi.ac.uk/ols4/ontologies/bto/terms?obo_id=BTO:{}",
+    "NCBITaxon": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id={}",
     "MIM": None,
     "MediaIngredientMech": None,
 }
@@ -49,7 +53,7 @@ _CURIE_RESOLVERS = {
 
 def curie_to_url(curie: str | None) -> str:
     if not curie or ":" not in curie:
-        return "#"
+        return ""
     prefix, local = curie.split(":", 1)
     if prefix == "MICRO" and (term := source_term(curie)):
         return "https://www.ebi.ac.uk/ols4/ontologies/micro/classes/" + quote(
@@ -57,8 +61,71 @@ def curie_to_url(curie: str | None) -> str:
         )
     template = _CURIE_RESOLVERS.get(prefix)
     if not template:
-        return "#"
-    return template.format(local)
+        return ""
+    return template.format(quote(local, safe=""))
+
+
+_REFERENCE = re.compile(
+    r"https?://[^\s<>]+|(?:doi:|DOI:)?10\.\d{4,9}/[^\s<>]+|(?:[A-Za-z][A-Za-z0-9_.]*):[A-Za-z0-9._-]+"
+)
+
+
+def reference_url(value: str) -> str:
+    if value.startswith(("https://", "http://")):
+        return value
+    if re.fullmatch(r"CultureMech:\d{6}", value):
+        return (
+            "https://culturebotai.github.io/CultureMech/pages/normalized/"
+            + value.split(":")[1]
+            + ".html"
+        )
+    if value.upper().startswith("PMID:") and value[5:].isdigit():
+        return "https://pubmed.ncbi.nlm.nih.gov/" + value[5:] + "/"
+    doi = re.sub(r"(?i)^doi:", "", value)
+    if re.match(r"^10\.\d{4,9}/", doi):
+        return "https://doi.org/" + quote(doi, safe="/():;._-")
+    return curie_to_url(value)
+
+
+def linked_text(value: object) -> Markup:
+    text = str(value)
+    parts = []
+    offset = 0
+    for match in _REFERENCE.finditer(text):
+        candidate = match.group().rstrip(".,;")
+        parts.append(escape(text[offset : match.start()]))
+        url = reference_url(candidate)
+        parts.append(
+            f'<a href="{escape(url, quote=True)}" rel="noreferrer">{escape(candidate)}</a>'
+            if url
+            else escape(candidate)
+        )
+        offset = match.start() + len(candidate)
+    parts.append(escape(text[offset:]))
+    return Markup("".join(parts))
+
+
+def structured_value(value: object) -> Markup:
+    """Render curated structures without Python repr or lost evidence fields."""
+    if isinstance(value, dict):
+        return Markup(
+            '<dl class="kv">'
+            + "".join(
+                "<dt>"
+                + escape(str(k).replace("_", " ").capitalize())
+                + "</dt><dd>"
+                + str(structured_value(v))
+                + "</dd>"
+                for k, v in value.items()
+                if v is not None
+            )
+            + "</dl>"
+        )
+    if isinstance(value, list):
+        return Markup(
+            "<ul>" + "".join("<li>" + str(structured_value(v)) + "</li>" for v in value) + "</ul>"
+        )
+    return linked_text(value)
 
 
 _SLUG_RE = re.compile(r"[^A-Za-z0-9._-]+")
@@ -83,6 +150,8 @@ def make_env() -> Environment:
         lstrip_blocks=True,
     )
     env.globals["curie_to_url"] = curie_to_url
+    env.filters["linked_text"] = linked_text
+    env.filters["structured"] = structured_value
     return env
 
 
@@ -147,7 +216,7 @@ def _section(prefix: str, items: list[tuple[str, str, str]]) -> str:
         for (ident, slug, name) in sorted(items, key=lambda x: x[2].lower())
     )
     return (
-        f"<section><h2>{escape(prefix)} "
+        f'<section id="prefix-{quote(prefix, safe="")}"><h2>{escape(prefix)} '
         f'<small class="muted">({len(items)})</small></h2>'
         f'<ul class="medium-index">{rows}</ul></section>'
     )
@@ -166,7 +235,13 @@ def write_index(out_dir: Path, all_records: list[dict]) -> None:
     html = INDEX_TEMPLATE.format(
         count=rows_total,
         generated_at=_dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
-        by_prefix=sections,
+        by_prefix='<nav aria-label="Identifier groups"><ul>'
+        + "".join(
+            f'<li><a href="#prefix-{quote(p, safe="")}">{escape(p)} ({len(v)})</a></li>'
+            for p, v in sorted(by_prefix.items())
+        )
+        + "</ul></nav>"
+        + sections,
     )
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "index.html").write_text(html)

@@ -22,7 +22,8 @@ _src = _project_root / "src"
 if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
-from mediaingredientmech.render_ingredient_pages import slug_for  # noqa: E402
+from mediaingredientmech.render_ingredient_pages import slug_for
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
@@ -83,7 +84,7 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
         for component in components
     ).strip()
     searchable = (
-        f"{preferred_term} {ontology_label} {' '.join(synonyms)} {identifier}"
+        f"{preferred_term} {ontology_label} {' '.join(synonyms)} {identifier} {ontology_id}"
     ).lower()
     if component_search:
         searchable = f"{searchable} {component_search.lower()}"
@@ -91,6 +92,7 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
     # Create browser record
     record = {
         'id': identifier,
+        'record_id': mim_curie_for_stem(Path(source_file).stem),
         'preferred_term': preferred_term,
         'mapping_status': mapping_status,
         'ontology_id': ontology_id,
@@ -144,7 +146,8 @@ def export_ingredients_to_json(
                 )
                 all_ingredients.append(browser_record)
                 stats['total'] += 1
-                stats['mapped'] += 1
+                stats['mapped'] += browser_record['mapping_status'] == 'MAPPED'
+                stats['unmapped'] += browser_record['mapping_status'] == 'UNMAPPED'
             except Exception as e:
                 failures.append(f"{yaml_file.name}: {e}")
 
@@ -160,7 +163,8 @@ def export_ingredients_to_json(
                 )
                 all_ingredients.append(browser_record)
                 stats['total'] += 1
-                stats['unmapped'] += 1
+                stats['unmapped'] += browser_record['mapping_status'] == 'UNMAPPED'
+                stats['mapped'] += browser_record['mapping_status'] == 'MAPPED'
             except Exception as e:
                 failures.append(f"{yaml_file.name}: {e}")
 
@@ -179,6 +183,8 @@ def export_ingredients_to_json(
             'total_ingredients': stats['total'],
             'mapped_count': stats['mapped'],
             'unmapped_count': stats['unmapped'],
+            'status_counts': {status: sum(r['mapping_status'] == status for r in all_ingredients)
+                              for status in sorted({r['mapping_status'] for r in all_ingredients})},
             'version': '1.0.0'
         },
         'ingredients': all_ingredients

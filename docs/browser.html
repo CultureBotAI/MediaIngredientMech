@@ -449,6 +449,7 @@
                 </div>
             </div>
 
+            <p id="status-summary"></p>
             <p id="results-status" role="status" aria-live="polite" aria-atomic="true">Loading ingredients…</p>
             <div class="ingredient-list" id="ingredient-list" aria-busy="true">
                 <div class="loading">Loading ingredients...</div>
@@ -457,7 +458,7 @@
     </div>
 
     <footer>
-        <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="index.md">Schema Documentation</a></p>
+        <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="schema/index.html">Schema Documentation</a></p>
     </footer>
 
     <script>
@@ -503,10 +504,19 @@
                 if (!['total_ingredients', 'mapped_count', 'unmapped_count'].every(
                     key => Number.isInteger(counts[key]) && counts[key] >= 0) ||
                     counts.total_ingredients !== data.ingredients.length ||
-                    counts.mapped_count + counts.unmapped_count !== counts.total_ingredients) {
+                    counts.mapped_count !== data.ingredients.filter(r => r.mapping_status === 'MAPPED').length ||
+                    counts.unmapped_count !== data.ingredients.filter(r => r.mapping_status === 'UNMAPPED').length) {
                     throw new Error('Invalid ingredient counts');
                 }
                 allIngredients = data.ingredients;
+                for (const [id, field] of [['filter-status', 'mapping_status'], ['filter-source', 'ontology_source'], ['filter-quality', 'mapping_quality']]) {
+                    const control = document.getElementById(id);
+                    const allLabel = control.options[0].textContent;
+                    control.replaceChildren(new Option(allLabel, ''));
+                    const values = [...new Set(allIngredients.map(row => row[field] || ''))].sort();
+                    values.forEach(value => control.add(new Option(value || 'Not specified', value || '__missing__')));
+                }
+                applyHashFilters();
                 dataReady = true;
                 document.getElementById('subtitle').textContent =
                     `Explore ${allIngredients.length.toLocaleString()} curated media ingredients with ontology mappings`;
@@ -535,12 +545,15 @@
             document.getElementById('total-count').textContent = metadata.total_ingredients;
             document.getElementById('mapped-count').textContent = metadata.mapped_count;
             document.getElementById('unmapped-count').textContent = metadata.unmapped_count;
+            const statusCounts = new Map();
+            allIngredients.forEach(row => statusCounts.set(row.mapping_status, (statusCounts.get(row.mapping_status) || 0) + 1));
+            document.getElementById('status-summary').textContent = [...statusCounts.entries()].sort().map(([status, count]) => `${status}: ${count}`).join(' · ');
         }
 
         // Apply filters
         function applyFilters() {
             if (!dataReady) return;
-            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const searchTerm = document.getElementById('search').value.trim().toLowerCase();
             const statusFilter = document.getElementById('filter-status').value;
             const sourceFilter = document.getElementById('filter-source').value;
             const qualityFilter = document.getElementById('filter-quality').value;
@@ -548,8 +561,8 @@
             filteredIngredients = allIngredients.filter(ing => {
                 const matchesSearch = !searchTerm || ing.searchable.includes(searchTerm);
                 const matchesStatus = !statusFilter || ing.mapping_status === statusFilter;
-                const matchesSource = !sourceFilter || ing.ontology_source === sourceFilter;
-                const matchesQuality = !qualityFilter || ing.mapping_quality === qualityFilter;
+                const matchesSource = !sourceFilter || (ing.ontology_source || '__missing__') === sourceFilter;
+                const matchesQuality = !qualityFilter || (ing.mapping_quality || '__missing__') === qualityFilter;
 
                 return matchesSearch && matchesStatus && matchesSource && matchesQuality;
             });
