@@ -74,9 +74,9 @@ def sha256(data: bytes) -> str:
 
 def dump_record(record: dict) -> bytes:
     """Serialize a record exactly as the per-record writers do."""
-    return yaml.dump(
-        record, default_flow_style=False, sort_keys=False, allow_unicode=True
-    ).encode("utf-8")
+    return yaml.dump(record, default_flow_style=False, sort_keys=False, allow_unicode=True).encode(
+        "utf-8"
+    )
 
 
 def _check_counts(entry: dict, record: dict) -> None:
@@ -158,7 +158,9 @@ def _load_receipts(directory: Path) -> list[dict]:
             raise ValueError(f"Record refresh receipt {batch} lists a record twice")
         for entry in receipt["records"]:
             if entry.get("section") not in REFRESHABLE_SECTIONS:
-                raise ValueError(f"Record refresh receipt {batch} refreshes {entry.get('section')!r}")
+                raise ValueError(
+                    f"Record refresh receipt {batch} refreshes {entry.get('section')!r}"
+                )
     return receipts
 
 
