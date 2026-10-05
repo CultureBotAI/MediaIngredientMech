@@ -152,3 +152,28 @@ def test_index_has_unique_group_anchors(tmp_path):
     assert 'href="#prefix-mesh"' in html and 'id="prefix-mesh"' in html
     assert 'href="#prefix-CHEBI"' in html and 'id="prefix-CHEBI"' in html
     assert "&lt;salt&gt;" in html
+
+
+def test_maintained_markdown_schema_index_lists_enums_and_types():
+    index = (ROOT / "docs/index.md").read_text()
+    assert (
+        "[MappingStatusEnum](MappingStatusEnum.md)"
+        in index.split("## Enumerations")[1].split("## Types")[0]
+    )
+    assert "[String](String.md)" in index.split("## Types")[1]
+    for target in ["MappingStatusEnum.md", "String.md"]:
+        assert (ROOT / "docs" / target).is_file()
+
+
+def test_absent_recipe_reference_does_not_create_a_recipe_link(tmp_path, monkeypatch):
+    monkeypatch.setattr(render, "REPO_ROOT", tmp_path)
+    source = tmp_path / "mapped/Absent.yaml"
+    source.parent.mkdir()
+    source.write_text(yaml.safe_dump({"identifier": "CHEBI:15377", "preferred_term": "Water"}))
+    env = render.make_env()
+    output = tmp_path / "records"
+    output.mkdir()
+    render.render_one(env, source, output)
+    text = (output / "mapped/Absent.html").read_text()
+    assert "culturemech-reference" not in text
+    assert "/CultureMech/pages/normalized/" not in text

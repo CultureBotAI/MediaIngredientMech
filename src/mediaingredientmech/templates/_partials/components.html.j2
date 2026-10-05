@@ -13,7 +13,7 @@
       <td>{{ component.component_name }}</td>
       <td>
         {% if component.component_id %}
-          <a href="{{ curie_to_url(component.component_id) }}" rel="nofollow noreferrer"><code>{{ component.component_id }}</code></a>
+          <code>{{ component.component_id|linked_text }}</code>
         {% else %}<span class="muted">unmapped</span>{% endif %}
       </td>
       <td>{{ component.reference_scope }}</td>
@@ -32,10 +32,10 @@
   <div class="evidence">
     <div class="evidence-head">
       <span class="badge">{{ item.evidence_type }}</span>
-      <code>{{ item.source }}</code>
+      <code>{{ item.source|linked_text }}</code>
       {% if item.source_record %}<span class="muted">— {{ item.source_record }}</span>{% endif %}
     </div>
-    {% if item.notes %}<p class="explanation">{{ item.notes }}</p>{% endif %}
+    {% if item.notes %}<p class="explanation">{{ item.notes|linked_text }}</p>{% endif %}
   </div>
 {% endfor %}
 {% endif %}
