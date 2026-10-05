@@ -23,7 +23,21 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
-CURIE_TARGET = re.compile(r"Merged into ([A-Za-z][\w.\-]*:[^\s,;'\"()]+)")
+_CURIE = r"([A-Za-z][\w.\-]*:[^\s,;'\"()]+)"
+# Every wording a MERGED_INTO event uses for its target (#809).
+MERGE_TARGET_PATTERNS = (
+    re.compile(r"^Merged into " + _CURIE),
+    re.compile(r"^Merged into '[^']*' on " + _CURIE),
+    re.compile(r"into the existing " + _CURIE),
+)
+
+
+def _merge_target(text: str) -> str | None:
+    for pattern in MERGE_TARGET_PATTERNS:
+        match = pattern.search(text)
+        if match:
+            return match.group(1)
+    return None
 
 
 @pytest.fixture(scope="module")
@@ -58,18 +72,21 @@ def test_every_merge_tombstone_points_at_its_own_merge_target(records):
     """Liveness alone would accept a tombstone pointing at the wrong live record
     (#807). The target is the CURIE its last MERGED_INTO event names, unless a
     later REPOINTED_TOMBSTONE_IDENTIFIER event followed the winner elsewhere."""
-    wrong = []
+    wrong, unparsed = [], []
     for r, history in _tombstones(records):
         target = None
         for event in history:
             text = str(event.get("changes", ""))
             if event.get("action") == "MERGED_INTO":
-                match = CURIE_TARGET.match(text)
-                target = match.group(1) if match else None
+                target = _merge_target(text)
             elif event.get("action") == "REPOINTED_TOMBSTONE_IDENTIFIER" and " -> " in text:
                 target = text.split(" -> ", 1)[1].split()[0]
-        if target and target != r["identifier"]:
+        if target is None:
+            unparsed.append(r["preferred_term"])
+        elif target != r["identifier"]:
             wrong.append((r["preferred_term"], r["identifier"], target))
+    # A new wording must be added above rather than silently skipped (#809).
+    assert not unparsed, f"MERGED_INTO target not parseable: {unparsed}"
     assert not wrong, f"tombstones not on their merge target: {wrong}"
 
 

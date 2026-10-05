@@ -82,7 +82,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--stamp", default=STAMP, help="event timestamp, or 'now' (default: the #360 run)")
     args = ap.parse_args(argv)
     issue = args.issue
-    stamp = (datetime.now(timezone.utc).isoformat() if args.stamp == "now" else args.stamp)
+    stamp = datetime.now(timezone.utc).isoformat() if args.stamp == "now" else args.stamp
+    try:
+        datetime.fromisoformat(stamp)
+    except ValueError:
+        ap.error(f"--stamp must be 'now' or an ISO-8601 timestamp, got {stamp!r}")
 
     colls = {p: (yaml.safe_load(p.read_text(encoding="utf-8", errors="replace")) or {})
              for p in (MAPPED, UNMAPPED)}
