@@ -423,6 +423,24 @@ qc-roundtrip:
       echo "(Nothing was modified — the export above went to a scratch copy.)" >&2
       exit 1
     fi
+    # The two other assertions the CI roundtrip job makes, so a record change
+    # that passes this recipe does not then fail CI (#810, #744). Indexes are
+    # regenerated into a scratch directory and compared, never written in place.
+    idx="$(mktemp -d)"
+    trap 'rm -rf "$tmp" "$tree" "$idx"' EXIT
+    uv run --frozen python scripts/generate_index_files.py --output-dir "$idx" >/dev/null
+    stale=0
+    for f in "$idx"/*; do
+      if ! cmp -s "$f" "data/curated/$(basename "$f")"; then
+        echo "stale: data/curated/$(basename "$f")" >&2
+        stale=1
+      fi
+    done
+    if [ "$stale" -ne 0 ]; then
+      echo "error: data/curated indexes are stale — run 'just export-indexes' and commit the result." >&2
+      exit 1
+    fi
+    uv run --frozen python scripts/check_visualization_currency.py --strict
 
 # Write per-record edits BACK into data/curated/, then re-export to a fixed point
 sync-curated:
