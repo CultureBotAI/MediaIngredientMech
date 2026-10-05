@@ -65,6 +65,11 @@ REFRESHABLE_SECTIONS: dict[str, SectionRule] = {
     ),
 }
 
+# Sections that used to be refreshable and are now read by a review. Their
+# historical receipts still load (receipts are append-only), but they no longer
+# carry any approval: the peel stops at them. Map section -> reason (#822).
+RETIRED_SECTIONS: dict[str, str] = {}
+
 COUNT_FIELDS = ("media_count", "total_occurrences")
 
 
@@ -156,10 +161,10 @@ def _load_receipts(directory: Path) -> list[dict]:
         if len(paths) != len(set(paths)):
             raise ValueError(f"Record refresh receipt {batch} lists a record twice")
         for entry in receipt["records"]:
-            if entry.get("section") not in REFRESHABLE_SECTIONS:
-                raise ValueError(
-                    f"Record refresh receipt {batch} refreshes {entry.get('section')!r}"
-                )
+            section = entry.get("section")
+            if section not in REFRESHABLE_SECTIONS and section not in RETIRED_SECTIONS:
+                raise ValueError(f"Record refresh receipt {batch} refreshes {section!r}")
+            entry.setdefault("_batch", batch)
     return receipts
 
 
@@ -175,22 +180,58 @@ class RecordRefreshes:
             for entry in receipt["records"]:
                 self._entries.setdefault(entry["source_record"], []).append(entry)
         self._states: dict[str, list[tuple[str, bytes]]] = {}
+        self._used: dict[str, list[dict]] = {}
 
     def files(self) -> list[Path]:
         return sorted(self.directory.glob("*.json")) if self.directory.is_dir() else []
 
     def states(self, path: str) -> list[tuple[str, bytes]]:
-        """``(sha256, bytes)`` for the current file, then each verified earlier state."""
+        """``(sha256, bytes)`` for the current file, then each verified earlier state.
+
+        The peel starts at the newest entry whose ``after`` is the current file
+        (a reverted later refresh leaves its receipt behind, #827) and walks back
+        while each earlier entry's ``after`` is the state just restored. It stops
+        at an entry for a retired section (#822). A missing file has no states.
+        """
         if path not in self._states:
-            content = (self.root / path).read_bytes()
-            states = [(sha256(content), content)]
-            for entry in reversed(self._entries.get(path, [])):
-                if entry["after_yaml_sha256"] != states[-1][0]:
-                    break  # a change no receipt describes intervened; nothing earlier is equivalent
-                content = peel(content, entry)
-                states.append((entry["before_yaml_sha256"], content))
+            target = self.root / path
+            states: list[tuple[str, bytes]] = []
+            used: list[dict] = []
+            if target.is_file():
+                content = target.read_bytes()
+                states.append((sha256(content), content))
+                entries = self._entries.get(path, [])
+                start = next(
+                    (
+                        i
+                        for i in range(len(entries) - 1, -1, -1)
+                        if entries[i]["after_yaml_sha256"] == states[0][0]
+                    ),
+                    None,
+                )
+                for entry in reversed(entries[: start + 1] if start is not None else []):
+                    if entry["after_yaml_sha256"] != states[-1][0]:
+                        break  # a change no receipt describes intervened
+                    if entry.get("section") in RETIRED_SECTIONS:
+                        break  # a review reads this section now; it carries nothing
+                    content = peel(content, entry)
+                    states.append((entry["before_yaml_sha256"], content))
+                    used.append(entry)
             self._states[path] = states
+            self._used[path] = used
         return self._states[path]
+
+    def receipts_used(self, path: str, reviewed_sha256: str | None) -> list[tuple[str, str]]:
+        """``(batch, section)`` of every receipt peeled to reach ``reviewed_sha256``.
+
+        Empty when the current file is the reviewed bytes. A decision carried
+        across a refresh cites these, so the published record says the bytes
+        changed and why (#818).
+        """
+        for index, (digest, _content) in enumerate(self.states(path)):
+            if digest == reviewed_sha256:
+                return [(e["_batch"], e["section"]) for e in self._used[path][:index]]
+        return []
 
     def equivalents(self, path: str) -> set[str]:
         return {digest for digest, _content in self.states(path)}

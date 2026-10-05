@@ -43,9 +43,36 @@ def git(*args: str) -> bytes:
     return subprocess.run(["git", "-C", str(ROOT), *args], check=True, capture_output=True).stdout
 
 
+# Owners of the ingredient bundle review, whose contract still binds exact
+# record bytes (#828): refused until that contract is refresh-aware.
+BUNDLE_REVIEW = ROOT / "reports/ingredient_bundle_20260924/review.json"
+
+
+def _paths(raw: bytes) -> list[str]:
+    """NUL-separated paths from ``git ... -z`` (no C-quoting of non-ASCII names, #825)."""
+    return [p for p in raw.decode("utf-8").split("\0") if p]
+
+
+def _json_faithful(value):
+    """The value exactly as the receipt will store it, or SystemExit if JSON would alter it (#826)."""
+    try:
+        restored = json.loads(json.dumps(value, ensure_ascii=False))
+    except (TypeError, ValueError) as error:
+        raise SystemExit(f"error: section value is not JSON-representable: {error}") from error
+    if restored != value:
+        raise SystemExit("error: JSON would change the section value (non-string keys or typed scalars); quote them in YAML")
+    return restored
+
+
 def build(base: str, batch: str, section: str) -> dict:
-    changed = git("diff", "--name-only", base, "--", "data/ingredients").decode().split()
-    untracked = git("ls-files", "--others", "--exclude-standard", "--", "data/ingredients").decode().split()
+    changed = _paths(git("-c", "core.quotePath=false", "diff", "--name-only", "-z", base, "--", "data/ingredients"))
+    untracked = _paths(
+        git("-c", "core.quotePath=false", "ls-files", "-z", "--others", "--exclude-standard", "--", "data/ingredients")
+    )
+    bundle_owners = set(json.loads(BUNDLE_REVIEW.read_text()).get("record_inputs", {})) if BUNDLE_REVIEW.is_file() else set()
+    blocked = sorted(set(changed) & bundle_owners)
+    if blocked:
+        raise SystemExit(f"error: ingredient-bundle owners cannot be refreshed yet (#828): {blocked[:5]}")
     if untracked:
         raise SystemExit(f"error: untracked record files are not refreshes: {untracked[:5]}")
     records = []
@@ -61,7 +88,7 @@ def build(base: str, batch: str, section: str) -> dict:
             "section": section,
             "before_yaml_sha256": sha256(before),
             "after_yaml_sha256": sha256(after),
-            "before_value": before_record.get(section),
+            "before_value": _json_faithful(before_record.get(section)),
             "event": (after_record.get("curation_history") or [None])[-1],
         }
         try:

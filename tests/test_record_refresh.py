@@ -176,3 +176,97 @@ def test_a_mapping_followup_binds_to_any_verified_equivalent():
         assembler.apply_followup(entry, row, "A.yaml", "current-digest", [], ROOT)
     assert assembler.apply_followup(entry, row, "A.yaml", "current-digest", [], ROOT,
                                     reviewed_hashes={"current-digest", "reviewed-digest"})[0] == "WITHHOLD"
+
+
+# --- review round (#818-#828) ------------------------------------------------
+
+
+def _counts_refresh(record, *, media_delta=3, total_delta=3, event_extra=None, stats_extra=None, curator="refresh_occurrence_statistics", text=None):
+    stats = dict(record["occurrence_statistics"])
+    new = dict(stats, media_count=stats["media_count"] + media_delta,
+               total_occurrences=stats["total_occurrences"] + total_delta, **(stats_extra or {}))
+    changes = text or (f"occurrence_statistics {stats['media_count']}/{stats['total_occurrences']} -> "
+                       f"{new['media_count']}/{new['total_occurrences']} (media_count/total_occurrences)")
+    event = _event("CORRECTED", curator, changes, **(event_extra or {}))
+    return _refresh(record, "occurrence_statistics", new, event)
+
+
+@pytest.mark.parametrize("case", ["curator", "llm", "other_stats", "event_text"])
+def test_each_counts_rule_is_enforced_on_its_own(record, case):
+    """One rule broken per case, so deleting any single check fails a test (#820)."""
+    if case == "curator":
+        after, entry = _counts_refresh(record, curator="someone_else")
+    elif case == "llm":
+        after, entry = _counts_refresh(record, event_extra={"llm_assisted": True})
+    elif case == "other_stats":
+        after, entry = _counts_refresh(record, stats_extra={"source_occurrences": []})
+    else:
+        after, entry = _counts_refresh(record, text="occurrence_statistics refreshed")
+    with pytest.raises(ValueError):
+        peel(after, entry)
+
+
+def test_a_valid_counts_refresh_still_passes(record):
+    after, entry = _counts_refresh(record)
+    assert peel(after, entry) == (ROOT / SOURCE).read_bytes()
+
+
+def _install(tmp_path, content: bytes, *receipts):
+    target = tmp_path / SOURCE
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(content)
+    _write_receipts(tmp_path, *receipts)
+
+
+def test_a_retired_section_loads_but_carries_nothing(tmp_path, record, monkeypatch):
+    import mediaingredientmech.record_refresh as rr
+    after, entry = _refresh(record, "causal_graphs", GRAPH, _event())
+    _install(tmp_path, after, _receipt(1, entry))
+    assert rr.RecordRefreshes(tmp_path).matches(SOURCE, entry["before_yaml_sha256"])
+    monkeypatch.setitem(rr.RETIRED_SECTIONS, "causal_graphs", "graph edges are reviewed")
+    monkeypatch.delitem(rr.REFRESHABLE_SECTIONS, "causal_graphs")
+    refreshes = rr.RecordRefreshes(tmp_path)  # historical receipt still loads (#822)
+    assert not refreshes.matches(SOURCE, entry["before_yaml_sha256"])
+    assert refreshes.equivalents(SOURCE) == {sha256(after)}
+
+
+def test_a_missing_record_has_no_equivalents(tmp_path, record):
+    _after, entry = _refresh(record, "causal_graphs", GRAPH, _event())
+    _write_receipts(tmp_path, _receipt(1, entry))
+    refreshes = RecordRefreshes(tmp_path)  # the record file is absent (#823)
+    assert refreshes.equivalents(SOURCE) == set()
+    assert not refreshes.matches(SOURCE, entry["before_yaml_sha256"])
+
+
+def test_an_older_receipt_matching_the_current_bytes_is_used(tmp_path, record):
+    """A reverted later refresh leaves its receipt behind; the earlier one still verifies (#827)."""
+    after1, entry1 = _refresh(record, "causal_graphs", GRAPH, _event())
+    graph2 = copy.deepcopy(GRAPH) + [dict(GRAPH[0], graph_id="d_glucose_catabolism")]
+    _after2, entry2 = _refresh(yaml.safe_load(after1), "causal_graphs", graph2, _event("CAUSAL_GRAPH_UPDATED"))
+    _install(tmp_path, after1, _receipt(1, entry1), _receipt(2, entry2))  # file reverted to after1
+    refreshes = RecordRefreshes(tmp_path)
+    assert refreshes.matches(SOURCE, entry1["before_yaml_sha256"])
+    assert refreshes.receipts_used(SOURCE, entry1["before_yaml_sha256"]) == [("batch-1", "causal_graphs")]
+    assert refreshes.receipts_used(SOURCE, sha256(after1)) == []
+
+
+def _producer():
+    spec = importlib.util.spec_from_file_location("make_receipt_under_test", ROOT / "scripts/make_record_refresh_receipt.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_producer_reads_nul_separated_non_ascii_paths():
+    raw = "data/ingredients/mapped/Α-lipoic_Acid.yaml\0data/ingredients/mapped/D-glucose.yaml\0".encode()
+    assert _producer()._paths(raw) == ["data/ingredients/mapped/Α-lipoic_Acid.yaml", "data/ingredients/mapped/D-glucose.yaml"]
+
+
+@pytest.mark.parametrize("value", [{1: "x"}, {"retrieved_on": __import__("datetime").date(2026, 10, 1)}])
+def test_producer_refuses_values_json_would_change(value):
+    with pytest.raises(SystemExit):
+        _producer()._json_faithful(value)
+
+
+def test_producer_keeps_json_faithful_values():
+    assert _producer()._json_faithful(GRAPH) == GRAPH

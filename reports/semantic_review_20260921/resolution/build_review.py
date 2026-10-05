@@ -47,7 +47,23 @@ def _reviewed(name, current_hash, reviewed_hash):
     """A review bound to ``reviewed_hash`` still applies to the record's current bytes."""
     if current_hash == reviewed_hash:
         return True
+    if current_hash is None:
+        return False  # the record moved or was removed: nothing current to inherit onto (#823)
     return _REFRESHES is not None and bool(name) and _REFRESHES.matches(name, reviewed_hash)
+
+
+def _refresh_note(name, reviewed_hash):
+    """Disclosure appended to a decision inherited across a section refresh (#818)."""
+    if _REFRESHES is None or not name or not reviewed_hash:
+        return ""
+    used = _REFRESHES.receipts_used(name, reviewed_hash)
+    if not used:
+        return ""
+    names = ", ".join(f"{batch} ({section})" for batch, section in used)
+    return (
+        f" The source record now differs from the reviewed bytes only by verified section refresh(es) {names}"
+        " (src/mediaingredientmech/record_refresh.py); the reviewed assertion is unchanged."
+    )
 
 
 def _as_reviewed(name, current_record, reviewed_hash):
@@ -334,6 +350,11 @@ def main():
             proof = role_review_path if kind.endswith("_roles") else historical_evidence
             reason = ("Explicit role-level source-scope review and archived reasoning apply to the exact unchanged record, assertion and position; not a fresh growth experiment."
                       if kind.endswith("_roles") else "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.")
+            reviewed_hash = next((old["record_sha256"] for old in inherited if old["source_record"] == owner), None)
+            note = _refresh_note(owner, reviewed_hash)
+            if note:
+                reason = ("Explicit role-level source-scope review and archived reasoning apply to the reviewed record bytes, assertion and position; not a fresh growth experiment."
+                          if kind.endswith("_roles") else "Existing positive review applies to the reviewed source record bytes and assertion payload; not a fresh literature review.") + note
         if kind == "cellular_metabolic_roles" and role_supported(role_support.get(name, {}), name, records[name], hashes[name], decision["source_position"], assertion):
             proof = HERE / "roles/cellular-role-plan.json"
             reason = "Primary evidence inspected for the explicit organism and conditions; supplied-hydrate extensions are documented inferences."
@@ -346,7 +367,7 @@ def main():
                 proof = HERE / "identities/identity-plan.json" if source_name in recovered_names else BASE / "corrections/identity-plan.json"
                 reason = "This exact target, predicate and label are supported by the explicit chemical identity correction plan; this does not approve separate roles or other targets."
         elif kind == "component" and name.endswith("/GYPS.yaml"):
-            if records[name] != gyps["after"]:
+            if not _matches_some_state(name, records[name], gyps["after"]):
                 raise ValueError("GYPS differs from reviewed recipe correction")
             proof = HERE / "components/applied-changes.json"
             reason = "Original source preparation explicitly supports the partial glucose/yeast/peptone/sulfur membership."
@@ -369,7 +390,8 @@ def main():
                    HERE / "record-lineage.json", sssom_path, bundle / "manifest.json", Path(__file__),
                    historical_evidence,
                    release_holds_path,
-                   ROOT / "src/mediaingredientmech/validation/semantic_release.py"]
+                   ROOT / "src/mediaingredientmech/validation/semantic_release.py",
+                   ROOT / "src/mediaingredientmech/record_refresh.py"]
     proof_files.append(mapping_review_path)
     proof_files.extend(ROOT / name for name in mapping_review["review"]["inputs"])
     for resolution in json.loads(release_holds_path.read_text()).get("resolutions", []):

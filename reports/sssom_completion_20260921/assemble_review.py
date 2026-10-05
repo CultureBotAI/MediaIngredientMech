@@ -115,6 +115,23 @@ def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_ro
     return forward, last, state
 
 
+def refresh_disclosure(refreshes, owner, reviewed_hash):
+    """Reason text and basis entries for a decision carried across a section refresh (#818).
+
+    Empty when the owner's current bytes are the reviewed bytes, so decisions on
+    unrefreshed records keep their exact wording.
+    """
+    used = refreshes.receipts_used(owner, reviewed_hash)
+    if not used:
+        return "", []
+    names = ", ".join(f"{batch} ({section})" for batch, section in used)
+    text = (
+        f"The owner record now differs from the reviewed bytes only by verified section refresh(es) {names} "
+        "(src/mediaingredientmech/record_refresh.py); the reviewed claim itself is unchanged. "
+    )
+    return text, [{"receipt": batch, "section": section} for batch, section in used]
+
+
 def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *, safeguards=(), reviewed_hashes=None):
     """Bind a new scientific decision to its complete row, owner and archived evidence.
 
@@ -337,6 +354,10 @@ def assemble():
                     followup, mapping, owner, record_hashes[owner], records[owner], ROOT,
                     reviewed_hashes=refreshes.equivalents(owner),
                 )
+                carried, receipts = refresh_disclosure(refreshes, owner, followup["owner_record_sha256"])
+                if receipts:
+                    entry["review_reason"] = carried + entry["review_reason"]
+                    entry["basis"]["section_refresh"] = receipts
                 entry["basis"]["mapping_followup"] = {
                     "file": "mapping_review/kgmicrobe-followup.json",
                     "row_sha256": followup["row_sha256"],
@@ -380,8 +401,16 @@ def assemble():
             and refreshes.matches(owner, baseline["record_inputs"].get(owner))
         ):
             disposition = "SUPPORTED"
+            carried, receipts = refresh_disclosure(refreshes, owner, baseline["record_inputs"].get(owner))
+            if receipts:
+                basis["section_refresh"] = receipts
             reason = (
-                "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. "
+                (
+                    "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. "
+                    if not receipts
+                    else "Retain the existing explicit scientific approval for the complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. "
+                    + carried
+                )
                 + original["review_reason"]
             )
         elif mapping_change:
@@ -408,6 +437,10 @@ def assemble():
                 entry["mapping"] != mapping or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
                 raise ValueError("Nonmapping-cohort approval has stale owner or row")
+            carried, receipts = refresh_disclosure(refreshes, owner, entry["owner_record_sha256"])
+            if receipts:
+                reason = carried + reason
+                basis["section_refresh"] = receipts
             basis["scoped_review"] = {
                 "file": "mapping_review/nonmapping_cohorts.json",
                 "position": position,
@@ -421,6 +454,10 @@ def assemble():
                 or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
                 raise ValueError("Changed-owner approval has stale row or owner")
+            carried, receipts = refresh_disclosure(refreshes, owner, entry["owner_record_sha256"])
+            if receipts:
+                reason = carried + reason
+                basis["section_refresh"] = receipts
             basis["scoped_review"] = {
                 "file": "mapping_review/changed-owner-review.json",
                 "position": position,
@@ -504,6 +541,10 @@ def assemble():
                 reviewed_hashes=refreshes.equivalents(owner),
                 safeguards=[basis[k] for k in ("policy", "preparation_tokens") if k in basis],
             )
+            carried, receipts = refresh_disclosure(refreshes, owner, followup["owner_record_sha256"])
+            if receipts:
+                reason = carried + reason
+                basis["section_refresh"] = receipts
             used_followups.add(followup_key)
             basis["mapping_followup"] = {
                 "file": "mapping_review/kgmicrobe-followup.json",
@@ -555,6 +596,7 @@ def assemble():
         ROOT / "src/mediaingredientmech/export/reviewed_sssom.py",
         ROOT / "src/mediaingredientmech/review_claims.py",
         ROOT / "src/mediaingredientmech/synonym_policy.py",
+        ROOT / "src/mediaingredientmech/record_refresh.py",
         ROOT / "scripts/validate_reviewed_sssom_schema.py",
         ROOT / "reports/semantic_review_20260921/records.tsv",
         ROOT / "reports/semantic_review_20260921/resolution/historical-review-evidence.json",
