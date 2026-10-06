@@ -84,8 +84,10 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
         for component in components
     ).strip()
     searchable = (
-        f"{preferred_term} {ontology_label} {' '.join(synonyms)} {identifier} {ontology_id}"
+        f"{preferred_term} {ontology_label} {' '.join(synonyms)} {identifier}"
     ).lower()
+    if ontology_id and ontology_id.lower() != identifier.lower():
+        searchable = f"{searchable} {ontology_id.lower()}"
     if component_search:
         searchable = f"{searchable} {component_search.lower()}"
 
