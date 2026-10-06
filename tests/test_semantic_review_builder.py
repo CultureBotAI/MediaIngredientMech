@@ -313,3 +313,26 @@ def test_invalid_frozen_release_hold_stops_before_any_decision_changes(release_h
     with pytest.raises(ValueError):
         builder.apply_release_holds(**release_hold)
     assert release_hold["assertions"] == before
+
+
+@pytest.mark.parametrize("change", ["formatting", "missing_hash", "payload"])
+def test_identity_plan_requires_archived_exact_bytes(identity, change):
+    reviewed = copy.deepcopy(identity)
+    item = {"after_record": reviewed, "after_sha256": "archived-output-hash"}
+    records, hashes = {"identity.yaml": identity}, {"identity.yaml": "archived-output-hash"}
+    builder.validate_explicit_plans(records, hashes, [], {"identity.yaml": item}, [], [])
+    if change == "formatting":
+        # Parsed YAML remains identical, but the reviewed bytes no longer match.
+        hashes["identity.yaml"] = "same-yaml-new-bytes"
+    elif change == "missing_hash":
+        item.pop("after_sha256")
+    else:
+        identity["preferred_term"] = "Changed identity"
+    with pytest.raises(ValueError, match="Identity plan no longer describes"):
+        builder.validate_explicit_plans(records, hashes, [], {"identity.yaml": item}, [], [])
+
+
+def test_missing_record_and_missing_review_hash_never_match():
+    assert not builder._reviewed("missing.yaml", None, None)
+    assert not builder._reviewed("missing.yaml", None, "old-hash")
+    assert not builder._reviewed("current.yaml", "new-hash", None)

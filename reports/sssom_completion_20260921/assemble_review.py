@@ -115,35 +115,14 @@ def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_ro
     return forward, last, state
 
 
-def refresh_disclosure(refreshes, owner, reviewed_hash):
-    """Reason text and basis entries for a decision carried across a section refresh (#818).
-
-    Empty when the owner's current bytes are the reviewed bytes, so decisions on
-    unrefreshed records keep their exact wording.
-    """
-    used = refreshes.receipts_used(owner, reviewed_hash)
-    if not used:
-        return "", []
-    names = ", ".join(f"{batch} ({section})" for batch, section in used)
-    text = (
-        f"The owner record now differs from the reviewed bytes only by verified section refresh(es) {names} "
-        "(src/mediaingredientmech/record_refresh.py); the reviewed claim itself is unchanged. "
-    )
-    return text, [{"receipt": batch, "section": section} for batch, section in used]
-
-
-def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *, safeguards=(), reviewed_hashes=None):
-    """Bind a new scientific decision to its complete row, owner and archived evidence.
-
-    ``reviewed_hashes`` is the set of hashes the owner's current bytes are a
-    verified section refresh of (record_refresh); without it only the current
-    hash binds.
-    """
+def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *, safeguards=()):
+    """Bind a decision to the exact current row, owner bytes and archived evidence."""
     if (
         entry["mapping"] != mapping
         or entry["row_sha256"] != row_sha256(mapping)
         or entry["owner_record"] != owner
-        or entry["owner_record_sha256"] not in (reviewed_hashes or {owner_hash})
+        or not owner_hash
+        or entry["owner_record_sha256"] != owner_hash
     ):
         raise ValueError("Mapping follow-up has stale row or owner")
     if entry["disposition"] not in {"SUPPORTED", "WITHHOLD"}:
@@ -171,7 +150,7 @@ def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *,
     return entry["disposition"], entry["reason"]
 
 
-def apply_added_identity_followup(entry, mapping, owner, owner_hash, record, root, reviewed_hashes=None):
+def apply_added_identity_followup(entry, mapping, owner, owner_hash, record, root):
     """Review a newly minted local identity without approving an external grounding."""
     local_identity = (
         mapping["object_id"].startswith(("kgmicrobe.ingredient:", "kgmicrobe.compound:"))
@@ -179,7 +158,7 @@ def apply_added_identity_followup(entry, mapping, owner, owner_hash, record, roo
         and mapping["subject_label"] == mapping["object_label"] == record.get("preferred_term")
         and not mapping["other"]
     )
-    return apply_followup(entry, mapping, owner, owner_hash, [], root, reviewed_hashes=reviewed_hashes,
+    return apply_followup(entry, mapping, owner, owner_hash, [], root,
                           safeguards=[] if local_identity else ["New rows require a separate external-mapping review"])
 
 
@@ -200,9 +179,8 @@ def assemble():
     mapping_changes = [
         json.loads(path.read_text()) for path in sorted((HERE / "mapping_changes").glob("*.json"))
     ]
-    # Section refreshes (record_refresh) are verified peels, not approvals: a
-    # review bound to earlier bytes keeps applying only when the current file
-    # differs from them by refreshable sections alone.
+    # Section receipts remain audit inputs, but every approval and chain link
+    # binds exact record bytes. They cannot bridge a reviewed-hash mismatch.
     refreshes = RecordRefreshes(ROOT)
     expected_hashes = dict(baseline["record_inputs"])
     plans = [("Trait", traits), ("Parent-name", parents)] + [
@@ -352,12 +330,7 @@ def assemble():
                 followup = followups_by_key[followup_key]
                 entry["disposition"], entry["review_reason"] = apply_added_identity_followup(
                     followup, mapping, owner, record_hashes[owner], records[owner], ROOT,
-                    reviewed_hashes=refreshes.equivalents(owner),
                 )
-                carried, receipts = refresh_disclosure(refreshes, owner, followup["owner_record_sha256"])
-                if receipts:
-                    entry["review_reason"] = carried + entry["review_reason"]
-                    entry["basis"]["section_refresh"] = receipts
                 entry["basis"]["mapping_followup"] = {
                     "file": "mapping_review/kgmicrobe-followup.json",
                     "row_sha256": followup["row_sha256"],
@@ -401,16 +374,8 @@ def assemble():
             and refreshes.matches(owner, baseline["record_inputs"].get(owner))
         ):
             disposition = "SUPPORTED"
-            carried, receipts = refresh_disclosure(refreshes, owner, baseline["record_inputs"].get(owner))
-            if receipts:
-                basis["section_refresh"] = receipts
             reason = (
-                (
-                    "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. "
-                    if not receipts
-                    else "Retain the existing explicit scientific approval for the complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. "
-                    + carried
-                )
+                "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. "
                 + original["review_reason"]
             )
         elif mapping_change:
@@ -437,10 +402,6 @@ def assemble():
                 entry["mapping"] != mapping or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
                 raise ValueError("Nonmapping-cohort approval has stale owner or row")
-            carried, receipts = refresh_disclosure(refreshes, owner, entry["owner_record_sha256"])
-            if receipts:
-                reason = carried + reason
-                basis["section_refresh"] = receipts
             basis["scoped_review"] = {
                 "file": "mapping_review/nonmapping_cohorts.json",
                 "position": position,
@@ -454,10 +415,6 @@ def assemble():
                 or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
                 raise ValueError("Changed-owner approval has stale row or owner")
-            carried, receipts = refresh_disclosure(refreshes, owner, entry["owner_record_sha256"])
-            if receipts:
-                reason = carried + reason
-                basis["section_refresh"] = receipts
             basis["scoped_review"] = {
                 "file": "mapping_review/changed-owner-review.json",
                 "position": position,
@@ -477,6 +434,12 @@ def assemble():
             }[position]
             if tuple(mapping[k] for k in ("subject_id", "object_id", "other")) != expected:
                 raise ValueError("Explicit corrected identity or synonym set changed")
+            reviewed_owner = next(
+                (entry.get("after_yaml_sha256") for entry in traits["records"]
+                 if entry["source_record"] == owner), None,
+            )
+            if not refreshes.matches(owner, reviewed_owner):
+                raise ValueError("Explicit corrected identity review has stale owner bytes")
             disposition = "SUPPORTED"
             reason = "The archived ChEBI identity review explicitly verifies this exact target and every remaining synonym/CAS token. The source correction preserves the complete activity phrase as REJECTED_LABEL and the pinned producer excludes it. Earlier wrong arsenite aliases, where applicable, remain rejected. This decision approves only the corrected mapping."
             basis["scoped_review"] = {
@@ -538,13 +501,8 @@ def assemble():
             followup = followups_by_key[followup_key]
             disposition, reason = apply_followup(
                 followup, mapping, owner, record_hashes[owner], explicit_holds.get(position, []), ROOT,
-                reviewed_hashes=refreshes.equivalents(owner),
                 safeguards=[basis[k] for k in ("policy", "preparation_tokens") if k in basis],
             )
-            carried, receipts = refresh_disclosure(refreshes, owner, followup["owner_record_sha256"])
-            if receipts:
-                reason = carried + reason
-                basis["section_refresh"] = receipts
             used_followups.add(followup_key)
             basis["mapping_followup"] = {
                 "file": "mapping_review/kgmicrobe-followup.json",

@@ -1,30 +1,17 @@
-"""Section refreshes that keep a content-bound review attached to a record.
+"""Audit-only section-refresh receipts; approvals always require exact record bytes.
 
-Every scientific review in this repository is bound to the exact bytes of the
-records it read, so any edit to a record file withdraws the review's approval
-of that record's claims. That is the point -- but it also means a change to a
-section no review reads (recipe counts refreshed from CultureMech, a causal
-graph added beside the record's mapping) withdraws approvals that never
-depended on it.
+A receipt records a bounded section change and its appended curation event.
+``peel`` verifies that audit description against the current file by restoring
+its previous section value and reproducing the recorded before-bytes.
 
-A refresh receipt (``record_refreshes/*.json``) records, per record, the one
-section that changed, its value before (``null`` when the section is new), the
-bytes before and after, and the one curation event the change appended.
-Nothing is taken on trust: a verifier peels the receipt off the CURRENT file
--- restores the section's previous value, drops that event, re-serializes --
-and the result must hash to the recorded ``before`` exactly. Only then is the
-earlier hash an equivalent of the current file for review purposes. Any other
-change on the record stops the peel, so it never extends past a mapping
-change, a synonym edit, a role change or an unrecorded write.
+Verification does not make different record bytes equivalent for approval.
+Every edit, including occurrence counts, causal graphs, formatting and audit
+history, requires fresh approval bound to the resulting bytes. Receipt chains
+cannot advance the reviewed baseline or preserve any earlier approval.
 
-Only sections in ``REFRESHABLE_SECTIONS`` can be refreshed this way, because no
-review binds their content. A section must leave that list the moment a review
-starts to read it -- ``causal_graphs`` once graph edges are exported and
-reviewed as assertions.
-
-A receipt approves nothing. It only lets an existing review bound to the
-earlier bytes keep applying to bytes that differ by one unreviewed section and
-its audit event.
+Historical receipts remain readable and the producer can record new audit
+receipts. ``REFRESHABLE_SECTIONS`` governs their audit shape only; it grants no
+exception to the exact-byte approval policy.
 """
 
 from __future__ import annotations
@@ -57,17 +44,15 @@ REFRESHABLE_SECTIONS: dict[str, SectionRule] = {
         curators=frozenset({"refresh_occurrence_statistics"}),
         llm_assisted_allowed=False,
     ),
-    # Mechanism graphs linking the ingredient to sibling-Mech records. No
-    # review in reports/ reads them yet; they are not part of the semantic
-    # release's assertion inventory or the reviewed SSSOM.
+    # Mechanism graphs linking the ingredient to sibling-Mech records.
+    # This is an audit shape, never permission to inherit a prior approval.
     "causal_graphs": SectionRule(
         actions=frozenset({"CAUSAL_GRAPH_ADDED", "CAUSAL_GRAPH_UPDATED"}),
     ),
 }
 
-# Sections that used to be refreshable and are now read by a review. Their
-# historical receipts still load (receipts are append-only), but they no longer
-# carry any approval: the peel stops at them. Map section -> reason (#822).
+# Retired audit shapes remain loadable because receipts are append-only.
+# Neither active nor retired receipt shapes carry approvals. Section -> reason.
 RETIRED_SECTIONS: dict[str, str] = {}
 
 COUNT_FIELDS = ("media_count", "total_occurrences")
@@ -117,7 +102,7 @@ def peel(content: bytes, entry: dict) -> bytes:
     section = str(entry.get("section") or "")
     rule = REFRESHABLE_SECTIONS.get(section)
     if rule is None:
-        raise ValueError(f"Section {section!r} is not refreshable without review: {path}")
+        raise ValueError(f"Section {section!r} is not refreshable for a section audit: {path}")
     if sha256(content) != entry["after_yaml_sha256"]:
         raise ValueError(f"Record refresh does not describe the current bytes: {path}")
     if entry["before_yaml_sha256"] == entry["after_yaml_sha256"]:
@@ -169,79 +154,42 @@ def _load_receipts(directory: Path) -> list[dict]:
 
 
 class RecordRefreshes:
-    """The verified review equivalents of each record's current bytes."""
+    """Read audit receipts while exposing only the record's current exact bytes."""
 
     def __init__(self, root: Path, directory: Path | None = None):
         self.root = Path(root)
         self.directory = self.root / (directory or REFRESH_DIR)
         self.receipts = _load_receipts(self.directory) if self.directory.is_dir() else []
-        self._entries: dict[str, list[dict]] = {}
-        for receipt in self.receipts:
-            for entry in receipt["records"]:
-                self._entries.setdefault(entry["source_record"], []).append(entry)
-        self._states: dict[str, list[tuple[str, bytes]]] = {}
-        self._used: dict[str, list[dict]] = {}
 
     def files(self) -> list[Path]:
         return sorted(self.directory.glob("*.json")) if self.directory.is_dir() else []
 
     def states(self, path: str) -> list[tuple[str, bytes]]:
-        """``(sha256, bytes)`` for the current file, then each verified earlier state.
+        """The current ``(sha256, bytes)`` only; missing records have no states.
 
-        The peel starts at the newest entry whose ``after`` is the current file
-        (a reverted later refresh leaves its receipt behind, #827) and walks back
-        while each earlier entry's ``after`` is the state just restored. It stops
-        at an entry for a retired section (#822). A missing file has no states.
+        Read again on each call so a previously inspected record cannot retain
+        approval after its bytes change. Audit receipts never add prior states.
         """
-        if path not in self._states:
-            target = self.root / path
-            states: list[tuple[str, bytes]] = []
-            used: list[dict] = []
-            if target.is_file():
-                content = target.read_bytes()
-                states.append((sha256(content), content))
-                entries = self._entries.get(path, [])
-                start = next(
-                    (
-                        i
-                        for i in range(len(entries) - 1, -1, -1)
-                        if entries[i]["after_yaml_sha256"] == states[0][0]
-                    ),
-                    None,
-                )
-                for entry in reversed(entries[: start + 1] if start is not None else []):
-                    if entry["after_yaml_sha256"] != states[-1][0]:
-                        break  # a change no receipt describes intervened
-                    if entry.get("section") in RETIRED_SECTIONS:
-                        break  # a review reads this section now; it carries nothing
-                    content = peel(content, entry)
-                    states.append((entry["before_yaml_sha256"], content))
-                    used.append(entry)
-            self._states[path] = states
-            self._used[path] = used
-        return self._states[path]
+        target = self.root / path
+        if not target.is_file():
+            return []
+        content = target.read_bytes()
+        return [(sha256(content), content)]
 
     def receipts_used(self, path: str, reviewed_sha256: str | None) -> list[tuple[str, str]]:
-        """``(batch, section)`` of every receipt peeled to reach ``reviewed_sha256``.
-
-        Empty when the current file is the reviewed bytes. A decision carried
-        across a refresh cites these, so the published record says the bytes
-        changed and why (#818).
-        """
-        for index, (digest, _content) in enumerate(self.states(path)):
-            if digest == reviewed_sha256:
-                return [(e["_batch"], e["section"]) for e in self._used[path][:index]]
+        """No audit receipt can be used to carry an approval."""
         return []
 
     def equivalents(self, path: str) -> set[str]:
+        """Only the exact current record hash qualifies for a scientific review."""
         return {digest for digest, _content in self.states(path)}
 
     def matches(self, path: str, reviewed_sha256: str | None) -> bool:
-        """Whether a review bound to ``reviewed_sha256`` still applies to ``path``."""
+        """Whether the current bytes are exactly those bound by the review."""
         return reviewed_sha256 is not None and reviewed_sha256 in self.equivalents(path)
 
     def record_at(self, path: str, reviewed_sha256: str) -> dict | None:
-        """The record as the review bound to ``reviewed_sha256`` read it."""
+        """Return the current record only when the review binds its exact bytes."""
         for digest, content in self.states(path):
             if digest == reviewed_sha256:
                 loaded = yaml.safe_load(content)
@@ -249,17 +197,9 @@ class RecordRefreshes:
         return None
 
     def advance(self, path: str, known: str, target: str) -> str:
-        """Follow recorded refresh transitions from ``known`` toward ``target``.
+        """Keep the reviewed baseline unchanged, regardless of receipt transitions.
 
-        Chain bookkeeping for a later mapping-change receipt whose ``before``
-        is a refreshed hash. It grants nothing: approval still needs ``matches``.
+        Section receipts are audit history, not authority to bridge a missing
+        exact-byte review or mapping-change link (#819).
         """
-        transitions = {
-            entry["before_yaml_sha256"]: entry["after_yaml_sha256"]
-            for entry in self._entries.get(path, [])
-        }
-        seen = set()
-        while known != target and known in transitions and known not in seen:
-            seen.add(known)
-            known = transitions[known]
         return known

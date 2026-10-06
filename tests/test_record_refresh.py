@@ -1,7 +1,7 @@
-"""Section refreshes carry content-bound reviews across unreviewed sections only.
+"""Section receipts preserve audit history, never approvals across changed bytes.
 
-Built on a real record's bytes so the peel is exercised against the exact
-serialization the per-record writers produce.
+Built on a real record's bytes so both the audit peel and exact-byte review
+boundary are exercised against the maintained per-record serialization.
 """
 
 from __future__ import annotations
@@ -127,7 +127,7 @@ def _receipt(sequence: int, *entries: dict) -> dict:
             "approval": "NONE: test", "records": list(entries)}
 
 
-def test_equivalence_chains_through_successive_refreshes_and_stops_at_other_edits(tmp_path, record):
+def test_successive_verified_refreshes_still_require_fresh_approval(tmp_path, record):
     original = (ROOT / SOURCE).read_bytes()
     after1, entry1 = _refresh(record, "causal_graphs", GRAPH, _event())
     second = yaml.safe_load(after1)
@@ -138,15 +138,20 @@ def test_equivalence_chains_through_successive_refreshes_and_stops_at_other_edit
     target.write_bytes(after2)
     _write_receipts(tmp_path, _receipt(1, entry1), _receipt(2, entry2))
     refreshes = RecordRefreshes(tmp_path)
-    assert refreshes.equivalents(SOURCE) == {sha256(after2), sha256(after1), sha256(original)}
-    assert refreshes.matches(SOURCE, sha256(original))
-    assert refreshes.record_at(SOURCE, sha256(original)) == record
+    assert refreshes.equivalents(SOURCE) == {sha256(after2)}
+    assert not refreshes.matches(SOURCE, sha256(original))
+    assert not refreshes.matches(SOURCE, sha256(after1))
+    assert refreshes.matches(SOURCE, sha256(after2))
+    assert refreshes.record_at(SOURCE, sha256(original)) is None
+    assert refreshes.record_at(SOURCE, sha256(after2)) == yaml.safe_load(after2)
+    assert refreshes.receipts_used(SOURCE, sha256(original)) == []
 
-    # An unrecorded edit on top breaks every equivalence but the current bytes.
+    # Reusing the same inspector cannot retain approval after another edit.
     edited = yaml.safe_load(after2)
     edited["notes"] = "edited without a receipt"
     target.write_bytes(dump_record(edited))
-    assert RecordRefreshes(tmp_path).equivalents(SOURCE) == {sha256(dump_record(edited))}
+    assert refreshes.equivalents(SOURCE) == {sha256(dump_record(edited))}
+    assert not refreshes.matches(SOURCE, sha256(after2))
 
 
 def test_receipts_must_be_numbered_and_approval_free(tmp_path, record):
@@ -162,20 +167,22 @@ def test_receipts_must_be_numbered_and_approval_free(tmp_path, record):
         RecordRefreshes(tmp_path)
 
 
-def test_a_mapping_followup_binds_to_any_verified_equivalent():
+@pytest.mark.parametrize("disposition", ["SUPPORTED", "WITHHOLD"])
+def test_a_mapping_followup_requires_the_exact_current_owner(disposition):
     spec = importlib.util.spec_from_file_location(
         "assemble_review_refresh", ROOT / "reports/sssom_completion_20260921/assemble_review.py")
     assembler = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(assembler)
     row = {"subject_id": "MIM:A", "predicate_id": "skos:exactMatch", "object_id": "CHEBI:1", "other": ""}
     entry = {"mapping": row, "row_sha256": assembler.row_sha256(row), "owner_record": "A.yaml",
-             "owner_record_sha256": "reviewed-digest", "disposition": "WITHHOLD",
+             "owner_record_sha256": "reviewed-digest", "disposition": disposition,
+             "token_reviews": {}, "resolved_negative_reviews": [],
              "evidence_inputs": {"README.md": assembler.digest(ROOT / "README.md")},
              "identity_review": "x", "reason": "x"}
     with pytest.raises(ValueError, match="stale row or owner"):
         assembler.apply_followup(entry, row, "A.yaml", "current-digest", [], ROOT)
-    assert assembler.apply_followup(entry, row, "A.yaml", "current-digest", [], ROOT,
-                                    reviewed_hashes={"current-digest", "reviewed-digest"})[0] == "WITHHOLD"
+    entry["owner_record_sha256"] = "current-digest"
+    assert assembler.apply_followup(entry, row, "A.yaml", "current-digest", [], ROOT)[0] == disposition
 
 
 # --- review round (#818-#828) ------------------------------------------------
@@ -222,7 +229,7 @@ def test_a_retired_section_loads_but_carries_nothing(tmp_path, record, monkeypat
     import mediaingredientmech.record_refresh as rr
     after, entry = _refresh(record, "causal_graphs", GRAPH, _event())
     _install(tmp_path, after, _receipt(1, entry))
-    assert rr.RecordRefreshes(tmp_path).matches(SOURCE, entry["before_yaml_sha256"])
+    assert not rr.RecordRefreshes(tmp_path).matches(SOURCE, entry["before_yaml_sha256"])
     monkeypatch.setitem(rr.RETIRED_SECTIONS, "causal_graphs", "graph edges are reviewed")
     monkeypatch.delitem(rr.REFRESHABLE_SECTIONS, "causal_graphs")
     refreshes = rr.RecordRefreshes(tmp_path)  # historical receipt still loads (#822)
@@ -238,15 +245,16 @@ def test_a_missing_record_has_no_equivalents(tmp_path, record):
     assert not refreshes.matches(SOURCE, entry["before_yaml_sha256"])
 
 
-def test_an_older_receipt_matching_the_current_bytes_is_used(tmp_path, record):
-    """A reverted later refresh leaves its receipt behind; the earlier one still verifies (#827)."""
+def test_reverting_a_later_refresh_does_not_restore_an_earlier_approval(tmp_path, record):
+    """Historical receipts survive a revert, but only the current exact bytes qualify."""
     after1, entry1 = _refresh(record, "causal_graphs", GRAPH, _event())
     graph2 = copy.deepcopy(GRAPH) + [dict(GRAPH[0], graph_id="d_glucose_catabolism")]
     _after2, entry2 = _refresh(yaml.safe_load(after1), "causal_graphs", graph2, _event("CAUSAL_GRAPH_UPDATED"))
     _install(tmp_path, after1, _receipt(1, entry1), _receipt(2, entry2))  # file reverted to after1
     refreshes = RecordRefreshes(tmp_path)
-    assert refreshes.matches(SOURCE, entry1["before_yaml_sha256"])
-    assert refreshes.receipts_used(SOURCE, entry1["before_yaml_sha256"]) == [("batch-1", "causal_graphs")]
+    assert not refreshes.matches(SOURCE, entry1["before_yaml_sha256"])
+    assert refreshes.matches(SOURCE, sha256(after1))
+    assert refreshes.receipts_used(SOURCE, entry1["before_yaml_sha256"]) == []
     assert refreshes.receipts_used(SOURCE, sha256(after1)) == []
 
 
@@ -270,3 +278,38 @@ def test_producer_refuses_values_json_would_change(value):
 
 def test_producer_keeps_json_faithful_values():
     assert _producer()._json_faithful(GRAPH) == GRAPH
+
+
+@pytest.mark.parametrize("forged", [False, True])
+def test_audit_receipts_cannot_advance_the_reviewed_baseline(tmp_path, record, forged):
+    after, entry = _refresh(record, "causal_graphs", GRAPH, _event())
+    if forged:
+        entry["before_yaml_sha256"] = "0" * 64
+    _install(tmp_path, after, _receipt(1, entry))
+    refreshes = RecordRefreshes(tmp_path)
+    known = entry["before_yaml_sha256"]
+    assert refreshes.advance(SOURCE, known, sha256(after)) == known
+    assert not refreshes.matches(SOURCE, known)
+
+
+@pytest.mark.parametrize("change", ["whitespace", "comment", "counts", "graphs", "history"])
+def test_every_record_byte_change_requires_fresh_approval(tmp_path, record, change):
+    before = dump_record(record)
+    _install(tmp_path, before)
+    refreshes = RecordRefreshes(tmp_path)
+    assert refreshes.matches(SOURCE, sha256(before))
+    if change == "whitespace":
+        after = before + b"\n"
+    elif change == "comment":
+        after = b"# Audit comment\n" + before
+    elif change == "counts":
+        after, _ = _counts_refresh(record)
+    elif change == "graphs":
+        after, _ = _refresh(record, "causal_graphs", GRAPH, _event())
+    else:
+        record["curation_history"].append(_event())
+        after = dump_record(record)
+    (tmp_path / SOURCE).write_bytes(after)
+    assert not refreshes.matches(SOURCE, sha256(before))
+    assert refreshes.matches(SOURCE, sha256(after))
+    assert refreshes.record_at(SOURCE, sha256(before)) is None

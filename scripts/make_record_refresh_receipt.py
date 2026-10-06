@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
-"""Write a section-refresh receipt for the review chain.
+"""Write an audit-only section-refresh receipt; changed bytes need fresh approval.
 
-Run after a change confined to one refreshable section (see
-``mediaingredientmech.record_refresh.REFRESHABLE_SECTIONS``) has been synced to
-the per-record files, before committing. Every per-record file that differs
-from ``--base`` must differ only in that section plus one appended curation
-event, or nothing is written: a receipt that covered other edits would carry
-reviews past changes nobody reviewed.
-
-Each entry is verified with the same ``record_refresh.peel`` the assemblers
-use, so a receipt this writes is one they accept.
+Run after a change confined to one auditable section has been synced to the
+per-record files. Every changed record must differ from ``--base`` only in that
+section plus one appended curation event. The receipt documents that bounded
+change; it does not preserve an approval or advance the reviewed baseline.
 
 Usage:
     python scripts/make_record_refresh_receipt.py --section causal_graphs --batch causal-graphs-YYYYMMDD
@@ -43,8 +38,8 @@ def git(*args: str) -> bytes:
     return subprocess.run(["git", "-C", str(ROOT), *args], check=True, capture_output=True).stdout
 
 
-# Owners of the ingredient bundle review, whose contract still binds exact
-# record bytes (#828): refused until that contract is refresh-aware.
+# Preserve the historical producer exclusion for ingredient-bundle owners
+# (#828). All changed records, including other owners, require fresh approval.
 BUNDLE_REVIEW = ROOT / "reports/ingredient_bundle_20260924/review.json"
 
 
@@ -72,7 +67,7 @@ def build(base: str, batch: str, section: str) -> dict:
     bundle_owners = set(json.loads(BUNDLE_REVIEW.read_text()).get("record_inputs", {})) if BUNDLE_REVIEW.is_file() else set()
     blocked = sorted(set(changed) & bundle_owners)
     if blocked:
-        raise SystemExit(f"error: ingredient-bundle owners cannot be refreshed yet (#828): {blocked[:5]}")
+        raise SystemExit(f"error: ingredient-bundle owners are excluded from section audit receipts (#828): {blocked[:5]}")
     if untracked:
         raise SystemExit(f"error: untracked record files are not refreshes: {untracked[:5]}")
     records = []
@@ -110,8 +105,8 @@ def build(base: str, batch: str, section: str) -> dict:
             "no identity, mapping, synonym, role, component or evidence change."
         ),
         "approval": (
-            "NONE: this receipt approves nothing. It lets a review bound to a record's "
-            "before bytes keep applying only after the section-only difference is verified."
+            "NONE: this receipt is audit history only. Any changed record bytes require "
+            "fresh approval bound to the resulting bytes."
         ),
         "base_commit": git("rev-parse", base).decode().strip(),
         "record_count": len(records),

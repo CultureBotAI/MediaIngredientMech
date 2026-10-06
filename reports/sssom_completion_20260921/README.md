@@ -25,13 +25,15 @@ does not mean every source mapping has been scientifically approved.
   until a mapping-specific review approves the corrected mapping, and every
   owner it touches loses the byte-identical carry-forward. `make_receipt.py`
   writes one from a mutator's apply log.
-- `record_refreshes/` holds section-refresh receipts (`src/mediaingredientmech/record_refresh.py`,
-  written by `scripts/make_record_refresh_receipt.py`). A receipt covers a change confined to a
-  section no review reads (`occurrence_statistics`, `causal_graphs`) plus its one curation event.
-  The assembler, and `build_review.py` for the semantic release, verify each receipt by peeling it
-  off the current file and reproducing the reviewed bytes exactly. Only then does an approval bound
-  to those bytes keep applying. A receipt approves nothing, and any other edit to the record stops
-  the peel. Release holds still bind the exact current record and are re-bound by hand.
+- `record_refreshes/` holds audit-only section-refresh receipts
+  (`src/mediaingredientmech/record_refresh.py`, written by
+  `scripts/make_record_refresh_receipt.py`). They document bounded
+  `occurrence_statistics` or `causal_graphs` changes and their curation events.
+  Verification can reconstruct the earlier bytes for audit, but no receipt
+  preserves an approval or advances the reviewed baseline. **Any changed record
+  bytes require fresh approval**, including counts, graphs, formatting and
+  curation history. Historical receipts remain readable. The assembler,
+  semantic review builder, follow-ups and release holds bind exact bytes.
 - `mapping-evidence.json` and `review.json` bind all final decisions to current
   sources. `assemble_review.py --check` reproduces the decisions and negative
   overrides without accepting refreshed source hashes as scientific approval.

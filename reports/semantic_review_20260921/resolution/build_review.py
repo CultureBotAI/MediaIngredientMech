@@ -14,7 +14,6 @@ from pathlib import Path
 import yaml
 
 from mediaingredientmech.export.reviewed_sssom import load_review
-from mediaingredientmech.record_refresh import RecordRefreshes
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.validation.semantic_release import (
     adjudicate_assertions,
@@ -38,52 +37,15 @@ FROZEN_RELEASE_HOLD_REASON = (
 )
 
 
-# Verified section refreshes (record_refresh). main() loads them; without them
-# every comparison below is strict byte equality, as before.
-_REFRESHES = None
-
-
 def _reviewed(name, current_hash, reviewed_hash):
-    """A review bound to ``reviewed_hash`` still applies to the record's current bytes."""
-    if current_hash == reviewed_hash:
-        return True
-    if current_hash is None:
-        return False  # the record moved or was removed: nothing current to inherit onto (#823)
-    return _REFRESHES is not None and bool(name) and _REFRESHES.matches(name, reviewed_hash)
+    """Only the exact current record bytes can satisfy an existing approval."""
+    return bool(name and current_hash and reviewed_hash and current_hash == reviewed_hash)
 
 
-def _refresh_note(name, reviewed_hash):
-    """Disclosure appended to a decision inherited across a section refresh (#818)."""
-    if _REFRESHES is None or not name or not reviewed_hash:
-        return ""
-    used = _REFRESHES.receipts_used(name, reviewed_hash)
-    if not used:
-        return ""
-    names = ", ".join(f"{batch} ({section})" for batch, section in used)
-    return (
-        f" The source record now differs from the reviewed bytes only by verified section refresh(es) {names}"
-        " (src/mediaingredientmech/record_refresh.py); the reviewed assertion is unchanged."
-    )
-
-
-def _as_reviewed(name, current_record, reviewed_hash):
-    """The record as the review bound to ``reviewed_hash`` read it."""
-    if _REFRESHES is None or not name:
-        return current_record
-    earlier = _REFRESHES.record_at(name, reviewed_hash) if reviewed_hash else None
-    return current_record if earlier is None else earlier
-
-
-def _matches_some_state(name, current_record, reviewed_record):
-    """For hashless plans: the current record or a verified earlier state equals it."""
-    if current_record == reviewed_record:
-        return True
-    if _REFRESHES is None or not name:
-        return False
-    return any(
-        yaml.load(content, Loader=yaml.CSafeLoader) == reviewed_record
-        for _digest, content in _REFRESHES.states(name)
-    )
+def identity_plan_supported(item, record, record_hash):
+    """An identity plan needs its archived byte hash as well as its exact payload."""
+    return (bool(record_hash) and record_hash == item.get("after_sha256")
+            and record == item.get("after_record"))
 
 
 def relative(path):
@@ -213,7 +175,7 @@ def identity_mapping_supported(record, assertion):
 def role_supported(item, name, record, record_hash, position, assertion):
     """Chemical identity and source position are part of the reviewed biological claim."""
     return (item.get("source_path") == name and _reviewed(name, record_hash, item.get("after_sha256"))
-            and _as_reviewed(name, record, item.get("after_sha256")) == item.get("after_record")
+            and record == item.get("after_record")
             and str(position) == item.get("source_position")
             and assertion == item.get("after_assertion"))
 
@@ -223,18 +185,18 @@ def validate_explicit_plans(records, hashes, roles, identity_support, component_
     for item in roles:
         name = item["source_path"]
         if (not _reviewed(name, hashes.get(name), item["after_sha256"])
-                or _as_reviewed(name, records.get(name), item["after_sha256"]) != item["after_record"]):
+                or records.get(name) != item["after_record"]):
             raise ValueError(f"Role plan no longer describes current record: {name}")
         position = int(item["source_position"]) - 1
         if records[name]["cellular_metabolic_roles"][position] != item["after_assertion"]:
             raise ValueError(f"Role plan position changed: {name}")
-    for name, record in identity_support.items():
-        if not _matches_some_state(name, records.get(name), record):
+    for name, item in identity_support.items():
+        if not identity_plan_supported(item, records.get(name), hashes.get(name)):
             raise ValueError(f"Identity plan no longer describes current record: {name}")
     for item in component_plans:
         name = item.get("after_path", item["source_record"])
         if (not _reviewed(name, hashes.get(name), item["after_sha256"])
-                or _as_reviewed(name, records.get(name), item["after_sha256"]) != item["after"]):
+                or records.get(name) != item["after"]):
             raise ValueError(f"Component plan no longer describes current record: {name}")
     for item in component_dispositions:
         if not _reviewed(item["current_record"], hashes.get(item["current_record"]), item["current_record_sha256"]):
@@ -246,8 +208,6 @@ def main():
     parser.add_argument("--bundle", type=Path, required=True)
     args = parser.parse_args()
     bundle = args.bundle.resolve()
-    global _REFRESHES
-    _REFRESHES = RecordRefreshes(ROOT)
     records = {}
     hashes = {}
     for group in ("mapped", "unmapped"):
@@ -261,7 +221,24 @@ def main():
     roles = json.loads((HERE / "roles/cellular-role-plan.json").read_text())["records"]
     components = rows(HERE / "components/dispositions.tsv")
     current_components = json.loads((HERE / "components/applied-changes.json").read_text())
-    identity_support = {item["destination_path"]: item["after_record"] for item in initial_plan + recovered if item["after_record"]["mapping_status"] == "MAPPED"}
+    # The initial plan predates explicit after-hashes; its contemporaneous
+    # correction review already binds those exact output bytes. Never derive
+    # approval hashes from the mutable current records.
+    initial_review_path = BASE / "corrections/current-review.json"
+    initial_hashes = json.loads(initial_review_path.read_text())["record_inputs"]
+    identity_support = {
+        item["destination_path"]: {
+            "after_record": item["after_record"],
+            "after_sha256": initial_hashes.get(item["destination_path"]),
+        }
+        for item in initial_plan if item["after_record"]["mapping_status"] == "MAPPED"
+    }
+    identity_support.update({
+        item["destination_path"]: {
+            "after_record": item["after_record"], "after_sha256": item["after_sha256"],
+        }
+        for item in recovered if item["after_record"]["mapping_status"] == "MAPPED"
+    })
     validate_explicit_plans(records, hashes, roles, identity_support, current_components, components)
     component_index = {r["finding_id"]: r for r in components}
     role_index = {r["before_edge_id"]: r for r in rows(HERE / "roles/role-dispositions.tsv")}
@@ -350,24 +327,19 @@ def main():
             proof = role_review_path if kind.endswith("_roles") else historical_evidence
             reason = ("Explicit role-level source-scope review and archived reasoning apply to the exact unchanged record, assertion and position; not a fresh growth experiment."
                       if kind.endswith("_roles") else "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.")
-            reviewed_hash = next((old["record_sha256"] for old in inherited if old["source_record"] == owner), None)
-            note = _refresh_note(owner, reviewed_hash)
-            if note:
-                reason = ("Explicit role-level source-scope review and archived reasoning apply to the reviewed record bytes, assertion and position; not a fresh growth experiment."
-                          if kind.endswith("_roles") else "Existing positive review applies to the reviewed source record bytes and assertion payload; not a fresh literature review.") + note
         if kind == "cellular_metabolic_roles" and role_supported(role_support.get(name, {}), name, records[name], hashes[name], decision["source_position"], assertion):
             proof = HERE / "roles/cellular-role-plan.json"
             reason = "Primary evidence inspected for the explicit organism and conditions; supplied-hydrate extensions are documented inferences."
         elif kind == "mapping" and owner in identity_support:
             source_name = owner
-            if not _matches_some_state(source_name, records[source_name], identity_support[source_name]):
+            if not identity_plan_supported(identity_support[source_name], records[source_name], hashes[source_name]):
                 raise ValueError(f"Identity plan no longer describes current record: {source_name}")
-            record = identity_support[source_name]
+            record = identity_support[source_name]["after_record"]
             if identity_mapping_supported(record, assertion):
                 proof = HERE / "identities/identity-plan.json" if source_name in recovered_names else BASE / "corrections/identity-plan.json"
                 reason = "This exact target, predicate and label are supported by the explicit chemical identity correction plan; this does not approve separate roles or other targets."
         elif kind == "component" and name.endswith("/GYPS.yaml"):
-            if not _matches_some_state(name, records[name], gyps["after"]):
+            if not _reviewed(name, hashes[name], gyps["after_sha256"]) or records[name] != gyps["after"]:
                 raise ValueError("GYPS differs from reviewed recipe correction")
             proof = HERE / "components/applied-changes.json"
             reason = "Original source preparation explicitly supports the partial glucose/yeast/peptone/sulfur membership."
@@ -386,7 +358,7 @@ def main():
                         graph_owners, hashes, relative(release_holds_path))
     write_rows(HERE / "assertion-dispositions.tsv", assertion_rows)
     proof_files = [BASE / "manifest.json", BASE / "findings.tsv", BASE / "kgx_assertions.tsv", BASE / "records.tsv",
-                   BASE / "corrections/identity-plan.json", HERE / "finding-dispositions.tsv", HERE / "assertion-dispositions.tsv",
+                   BASE / "corrections/identity-plan.json", initial_review_path, HERE / "finding-dispositions.tsv", HERE / "assertion-dispositions.tsv",
                    HERE / "record-lineage.json", sssom_path, bundle / "manifest.json", Path(__file__),
                    historical_evidence,
                    release_holds_path,
