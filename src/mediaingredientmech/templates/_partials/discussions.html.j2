@@ -28,7 +28,7 @@
     <div class="evidence">
       {% if ev.evidence_source %}<span class="badge small">{{ ev.evidence_source }}</span>{% endif %}
       {% if ev.supports %}<span class="badge small">{{ ev.supports }}</span>{% endif %}
-      {% if ev.reference %}{% set ref = ev.reference %}{% if ref.startswith('PMID:') %}<a href="https://pubmed.ncbi.nlm.nih.gov/{{ ref|replace('PMID:','') }}/" rel="nofollow noreferrer">{{ ref }}</a>{% else %}{{ ref }}{% endif %}{% endif %}
+      {% if ev.reference %}{% set ref = ev.reference %}{% if ref.startswith('PMID:') %}<a href="https://pubmed.ncbi.nlm.nih.gov/{{ ref|replace('PMID:','') }}/" rel="nofollow noreferrer">{{ ref }}</a>{% else %}{{ ref|linked_text }}{% endif %}{% endif %}
       {% if ev.snippet %}<p class="snippet small prewrap">{{ ev.snippet }}</p>{% endif %}
       {% if ev.explanation %}<p class="muted small prewrap">{{ ev.explanation }}</p>{% endif %}
     </div>

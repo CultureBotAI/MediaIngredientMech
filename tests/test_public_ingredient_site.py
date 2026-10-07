@@ -25,7 +25,7 @@ def corpus(tmp_path, builder, monkeypatch):
     repo = tmp_path / "repo"
     docs = repo / "docs"
     docs.mkdir(parents=True)
-    for name in ("index.html", "browser.html", "theme-toggle.js"):
+    for name in ("index.html", "browser.html", "theme-toggle.js", "map-record-navigation.js", "ingredient_umap.html", "ingredient_graph.html"):
         (docs / name).write_text((ROOT / "docs" / name).read_text())
     source = repo / "data/ingredients/mapped/Mix + tea.yaml"
     source.parent.mkdir(parents=True)

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "kind": "mechanical_governed_schema_rebinding",
+  "scope": "Existing review-builder replay; no new scientific review or approval. Scientific decisions, holds, evidence, records, and graph TSV bytes are unchanged.",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/848",
+  "base_commit": "ecaa320d1b28068aae43f50446497cc35bfcc948",
+  "governed_candidate_commit": "88327bffd6d7ec7d964bdf33552d5deb0591b96c",
+  "canonical_schema_commit": "7c516fd6d694915a1c2c5829c201251c4d04ac69",
+  "builder": "reports/semantic_review_20260921/resolution/build_review.py",
+  "builder_sha256": "73b86ada8f2fad069eaec72a90481f6f6b678f8ad2d1bc58a28fcf11d12e7a35",
+  "command": "uv run --frozen python reports/semantic_review_20260921/resolution/build_review.py --bundle output/mim-kgx-710-full",
+  "review": "reports/semantic_review_20260921/resolution/current-review.json",
+  "original_review_sha256": "0c53e64969ef6087e1b82032aacafb92f8e56d7f1c51ecbfc24afbdf7edf312c",
+  "replayed_review_sha256": "aa2532e43ff9e9520398bd71785c46ac5fc9ee2440c2262628e23a599c10417f",
+  "original_manifest_sha256": "4caac6fab0bb6330767b200338ffb672a59bf0cc641ed832678ee4c1257b9515",
+  "replayed_manifest_sha256": "afb2c143250c0cadf8e345b1a1fc434974b4cb084d8d6ea5f554c178d305228e",
+  "only_manifest_change": {
+    "path": "/implementation/schema/mech_shared.yaml",
+    "base": "1a5e21eb2ee9f3584ff6af3a6906b1d442e18c41de405b1bf907c20f44eafa2a",
+    "candidate": "c2e7054fd32635e380c698282bd886a9105861009b9f0474f02bb1b80865e895"
+  },
+  "unchanged_members": {
+    "mim_nodes.tsv": {
+      "sha256": "e1f3e470febd6e8374b1dbc95d8f57069a373a9b2b8aa4c9ccfe55c8a90f1901",
+      "bytes": 10605505
+    },
+    "mim_edges.tsv": {
+      "sha256": "4d827fe0677da9192303da1d4ef7da033a9f5820c165e52afe741e459bd7c5c0",
+      "bytes": 4277650
+    },
+    "excluded_records.tsv": {
+      "sha256": "325d3c3bd42191962b89173cc86e9f31f2e96cdab272e138c29e41c736a7cdca",
+      "bytes": 392703
+    }
+  },
+  "unchanged_review_proof_files": {
+    "reports/semantic_review_20260921/resolution/finding-dispositions.tsv": "d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7",
+    "reports/semantic_review_20260921/resolution/assertion-dispositions.tsv": "3d872a9511fb5487268ec6a4eacc7606f87dc276f41a05b769654f9e17be09d8",
+    "reports/semantic_review_20260921/resolution/record-lineage.json": "997ba2c97d3323f405f9e1b980156829d5c5d9164743adb4c9aebb707f87e544",
+    "reports/semantic_review_20260921/resolution/release-holds.json": "4cc32c739edc69521fe26f871cc70511699762de1f555621406057edf1981275",
+    "reports/semantic_review_20260921/resolution/historical-review-evidence.json": "a0ce8e6066912f8a945f5df57af465cfc3cd25dc941bea1c876debd5c3ccd8b2"
+  },
+  "retained_semantic_release": "FAIL",
+  "retained_blocking_findings": 1733,
+  "retained_blocking_assertions": 2269,
+  "retained_evidence_gaps": {
+    "ambiguous_identities": 1,
+    "components_requiring_source_verification": 43,
+    "prediction_only_roles": 662,
+    "roles_without_evidence": 11
+  }
+}
