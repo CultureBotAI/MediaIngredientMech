@@ -181,6 +181,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset
@@ -229,6 +230,7 @@ attributes:
     rank: 1000
     domain_of:
     - MappingEvidence
+    - EvidenceItem
     - SupportingReference
   supports:
     name: supports
@@ -327,6 +329,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset
@@ -387,6 +390,7 @@ attributes:
     owner: MappingEvidence
     domain_of:
     - MappingEvidence
+    - EvidenceItem
     - SupportingReference
     range: string
   supports:

@@ -1,0 +1,350 @@
+# Vendored excerpt of TraitMech's LinkML schema: the causal-graph classes
+# and the enums they use, for the fleet-parity test in
+# tests/test_causal_graph_schema.py (no sibling checkout is needed in CI).
+#
+#   repository: https://github.com/CultureBotAI/TraitMech
+#   commit:     84c3430f1f99744a682979eb5523dba4e05bfaa0
+#   path:       src/traitmech/schema/traitmech.yaml
+#   blob:       300f6806f8f55fda9ddf3f866a7ae5112178f449 (git rev-parse <commit>:<path>)
+#   lines (1-based, inclusive):
+#     TraitRecord.causal_graphs 235-243
+#     EvidenceItem 270-281
+#     CausalGraph 309-346
+#     CausalNode 348-417
+#     CausalEdge 484-516
+#     ProteinExample 419-482
+#     CausalGraphScopeEnum 604-614
+#     ProteinGroundingStatusEnum 616-622
+#     UniProtEntryStatusEnum 624-630
+#     CausalNodeTypeEnum 632-678
+#
+# Every class and enum block below is a byte-for-byte copy of those source
+# lines. Only this header, the `source:` mapping, the `classes:`/`enums:` keys
+# and the `TraitRecord:`/`attributes:` wrapper around its causal_graphs
+# attribute are added. The source schema declares `default_range: string`.
+#
+# Do not edit the blocks by hand. To re-vendor at a new pin, run
+#   git -C <TraitMech checkout> show <commit>:src/traitmech/schema/traitmech.yaml
+# copy the same blocks, and update the commit in this header and in `source:`;
+# then reconcile EXPECTED_DELTAS in the test with any shape change.
+source:
+  mech: TraitMech
+  repository: https://github.com/CultureBotAI/TraitMech
+  commit: 84c3430f1f99744a682979eb5523dba4e05bfaa0
+  path: src/traitmech/schema/traitmech.yaml
+  blob: 300f6806f8f55fda9ddf3f866a7ae5112178f449
+  default_range: string
+  record_class: TraitRecord
+
+classes:
+  TraitRecord:
+    attributes:
+      causal_graphs:
+        description: >-
+          Optional causal mechanism graphs for this trait. Nodes represent
+          traits, pathways, environmental or experimental factors,
+          genes/proteins, chemicals, cellular locations, molecular functions,
+          and biological processes. Edges must carry evidence.
+        multivalued: true
+        inlined_as_list: true
+        range: CausalGraph
+
+  EvidenceItem:
+    description: A literature or database citation supporting a TraitRecord.
+    attributes:
+      reference:
+        description: PMID:..., DOI:..., or an opaque URL.
+        required: true
+        range: string
+      snippet:
+        description: Verbatim quote from the source supporting the trait claim.
+        range: string
+      notes:
+        range: string
+
+  CausalGraph:
+    description: A directed causal mechanism graph associated with a trait.
+    attributes:
+      graph_id:
+        description: Stable local graph identifier within the TraitRecord.
+        identifier: true
+        required: true
+        range: string
+      title:
+        description: Human-readable graph title.
+        range: string
+      description:
+        description: Short scope note for the graph.
+        range: string
+      scope_status:
+        description: >-
+          Curator disposition for whether this graph represents a biological
+          mechanism. NONMECHANISTIC is reserved for an explicitly reviewed
+          measurement, classification, or upper-ontology context and must be
+          explained in scope_notes. Omission is treated as REVIEW_NEEDED and is
+          a blocking coverage-audit gap; the slot remains schema-optional only
+          for protected legacy records.
+        range: CausalGraphScopeEnum
+      scope_notes:
+        description: Evidence-based rationale for the graph scope disposition.
+        range: string
+      nodes:
+        description: Nodes participating in the causal graph.
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: CausalNode
+      edges:
+        description: Evidence-backed directed causal or mechanistic edges.
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: CausalEdge
+
+  CausalNode:
+    description: >-
+      A node in a trait causal graph. GENE_OR_PROTEIN is a legacy enum label;
+      within TraitMech it is restricted to proteins and protein complexes.
+      Genes, operons, and gene clusters are metadata, not primary graph nodes.
+    attributes:
+      node_id:
+        description: Stable local node identifier used by graph edges.
+        identifier: true
+        required: true
+        range: string
+      label:
+        description: Human-readable node label.
+        required: true
+        range: string
+      node_type:
+        description: Broad semantic category used for rendering and curation.
+        required: true
+        range: CausalNodeTypeEnum
+      grounding:
+        description: >-
+          Preferred ontology or database CURIE for the node when available.
+          A taxon-agnostic gene/protein node should use a semantic family,
+          function, or complex CURIE such as GO, InterPro, NCBIfam, or
+          ComplexPortal. UniProtKB accessions are organism-specific instances
+          and belong in protein_examples, not here.
+        range: string
+        pattern: "^[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._-]+$"
+      grounding_status:
+        description: >-
+          Explicit review disposition for a GENE_OR_PROTEIN node that has no
+          exact semantic grounding. REVIEWED_LABEL_ONLY requires a reason in
+          grounding_notes. Grounded nodes do not need this field.
+        range: ProteinGroundingStatusEnum
+      grounding_notes:
+        description: >-
+          Curator rationale for retaining a GENE_OR_PROTEIN node label without
+          an exact semantic grounding.
+        range: string
+      xrefs:
+        description: Additional ontology/database CURIEs for this node.
+        multivalued: true
+        range: string
+        pattern: "^[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._-]+$"
+      description:
+        description: Optional node-specific scope note.
+        range: string
+      gene_symbols:
+        description: >-
+          Gene symbols encoding this protein or the explicit components of this
+          protein complex. Gene symbols are metadata and do not denote primary
+          causal nodes.
+        multivalued: true
+        range: string
+      operon:
+        description: >-
+          Operon or gene-cluster name encoding this protein or protein-complex
+          module. Operons are metadata and do not denote primary causal nodes.
+        range: string
+      protein_examples:
+        description: >-
+          Organism-specific UniProt protein instances illustrating this
+          taxon-agnostic GENE_OR_PROTEIN node. Each example names the source
+          taxon in which its mechanistic role was established and carries
+          mechanistic evidence. That source need not be a canonical example of
+          the trait; the UniProt record verifies identity and taxonomy but does
+          not by itself prove the causal role.
+        multivalued: true
+        inlined_as_list: true
+        range: ProteinExample
+
+  ProteinExample:
+    description: >-
+      A source-backed UniProt protein example paired with the organism in which
+      its mechanistic role was established. Reviewed Swiss-Prot entries are
+      preferred. One component accession must not be presented as an entire
+      multisubunit complex.
+    attributes:
+      uniprot_id:
+        description: Current UniProtKB primary accession.
+        required: true
+        range: string
+        pattern: "^UniProtKB:(?:[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9](?:[A-Z][A-Z0-9]{2}[0-9]){1,2})$"
+      protein_label:
+        description: Current UniProt protein name or concise source-backed name.
+        required: true
+        range: string
+      gene_symbol:
+        description: Gene symbol used by UniProt or the mechanistic source.
+        range: string
+      taxon_id:
+        description: >-
+          UniProt organism taxon for this protein instance. This source taxon
+          need not also be a canonical example of the owning trait.
+        required: true
+        range: string
+        pattern: "^NCBITaxon:[0-9]+$"
+      taxon_label:
+        description: Scientific name corresponding to taxon_id.
+        required: true
+        range: string
+      entry_status:
+        description: UniProtKB reviewed or unreviewed entry status.
+        required: true
+        range: UniProtEntryStatusEnum
+      proteome_id:
+        description: >-
+          UniProt proteome accession. Required by policy when an unreviewed
+          reference-proteome entry is used as the only available exact example.
+        range: string
+        pattern: "^UP[0-9]{9}$"
+      retrieved_on:
+        description: Date on which the UniProt metadata was verified.
+        required: true
+        range: date
+      entry_version:
+        description: UniProt entry version at retrieval time.
+        range: integer
+      sequence_version:
+        description: UniProt sequence version at retrieval time.
+        range: integer
+      role:
+        description: >-
+          Source-backed role in this mechanism, including an explicit
+          component role when the causal node denotes a multisubunit complex.
+        required: true
+        range: string
+      evidence:
+        description: >-
+          Primary-source evidence for this protein's mechanistic role in this
+          taxon. Every item must include reference, snippet, and notes.
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: EvidenceItem
+
+  CausalEdge:
+    description: An evidence-backed directed relationship in a trait causal graph.
+    attributes:
+      subject:
+        description: Local node_id of the upstream/source node.
+        required: true
+        range: string
+      predicate:
+        description: Human-readable predicate label or relation CURIE.
+        required: true
+        range: string
+      predicate_id:
+        description: Optional ontology CURIE grounding the predicate.
+        range: string
+        pattern: "^[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._-]+$"
+      object:
+        description: Local node_id of the downstream/target node.
+        required: true
+        range: string
+      description:
+        description: Short explanation of the causal claim.
+        range: string
+      evidence:
+        description: >-
+          Edge-level literature, database, or curated source support.
+          `required: true` (in contrast to TraitRecord.evidence, which is
+          optional): every causal claim must carry at least one citation
+          because, unlike trait classification, mechanism assertions are
+          not backed by METPO's own provenance.
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: EvidenceItem
+
+enums:
+
+  CausalGraphScopeEnum:
+    description: Curator disposition for a graph's mechanistic scope.
+    permissible_values:
+      MECHANISTIC:
+        description: The graph represents a source-backed biological mechanism.
+      NONMECHANISTIC:
+        description: >-
+          The record is a measurement, classification, hazard, or upper-level
+          context for which a protein-mediated causal mechanism is inapplicable.
+      REVIEW_NEEDED:
+        description: The graph still requires an explicit scope decision.
+
+  ProteinGroundingStatusEnum:
+    description: Review disposition for a protein node without an exact CURIE.
+    permissible_values:
+      REVIEWED_LABEL_ONLY:
+        description: >-
+          The graph evidence supports the protein label, but no exact family,
+          function, or complex term can be asserted without overclaiming.
+
+  UniProtEntryStatusEnum:
+    description: Curation status of a UniProtKB protein entry.
+    permissible_values:
+      REVIEWED:
+        description: Manually reviewed UniProtKB/Swiss-Prot entry.
+      UNREVIEWED:
+        description: Automatically annotated UniProtKB/TrEMBL entry.
+
+  CausalNodeTypeEnum:
+    description: Broad categories for nodes in trait causal graphs.
+    permissible_values:
+      TRAIT:
+        description: A TraitMech or METPO trait.
+      PATHWAY:
+        description: A pathway or pathway-like mechanism.
+      ENVIRONMENTAL_FACTOR:
+        description: An environmental exposure or condition.
+      EXPERIMENTAL_FACTOR:
+        description: An assay, perturbation, or experimental condition.
+      GENE_OR_PROTEIN:
+        description: >-
+          Legacy enum name restricted in TraitMech to a protein, protein family,
+          or protein complex. Genes and operons belong in node metadata.
+      RNA:
+        description: A functional RNA molecule or RNA-containing causal entity.
+      GENETIC_ELEMENT:
+        description: A non-protein mobile or chromosomal genetic element such as a plasmid or prophage.
+      CHEMICAL:
+        description: A chemical entity.
+      ORGANELLE:
+        description: A cellular organelle or microbial subcellular structure.
+      CELLULAR_LOCALIZATION:
+        description: A cellular component or localization.
+      MOLECULAR_FUNCTION:
+        description: A molecular activity or function.
+      BIOLOGICAL_PROCESS:
+        description: A biological process.
+      STATE:
+        description: >-
+          A bioenergetic or molecular state of the cell (e.g. proton
+          motive force, redox state of the quinone pool) that
+          mediates a trait mechanism. Distinct from a process: the
+          state is the gradient / steady-value, not its establishment.
+      QUALITY:
+        description: >-
+          A quality or measurable attribute of a cellular component
+          (e.g. membrane fluidity, GC content, motility speed) —
+          a PATO-style axis attached to a microbial entity that
+          modulates the trait mechanism.
+      CAPACITY:
+        description: >-
+          A metabolic or functional capacity — an electron-donating
+          pool, ATP charge, or other reservoir-of-X notion that is
+          neither a single chemical species nor a process. Examples
+          include reducing power (NADH/NADPH pool) and energy charge.
