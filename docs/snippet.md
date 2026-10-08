@@ -19,6 +19,7 @@ Alias: snippet
 | --- | --- | --- |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
+| [EvidenceItem](EvidenceItem.md) | One citation for one graph claim (fleet EvidenceItem shape) |  no  |
 
 
 
@@ -58,6 +59,7 @@ name: snippet
 alias: snippet
 domain_of:
 - MappingEvidence
+- EvidenceItem
 - SupportingReference
 range: string
 

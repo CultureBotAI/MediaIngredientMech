@@ -25,6 +25,7 @@ Alias: notes
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [NutritionalRoleAssignment](NutritionalRoleAssignment.md) | Assignment of a nutritional facet role (what element or macronutrient the ing... |  no  |
 | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |  no  |
+| [EvidenceItem](EvidenceItem.md) | One citation for one graph claim (fleet EvidenceItem shape) |  no  |
 | [CurationEvent](CurationEvent.md) | Audit trail entry for a curation action |  no  |
 | [Discussion](Discussion.md) | A thread-like record of an open question, controversy, curation todo, emergin... |  no  |
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |  no  |
@@ -80,6 +81,7 @@ domain_of:
 - CellularMetabolicRoleAssignment
 - ComponentAssertion
 - ComponentEvidence
+- EvidenceItem
 - SupportingReference
 - Discussion
 - Dataset

@@ -137,8 +137,10 @@ attributes:
   description:
     name: description
     from_schema: https://w3id.org/kg-microbe/mech-shared
-    rank: 1000
     domain_of:
+    - CausalGraph
+    - CausalNode
+    - CausalEdge
     - ProposedExperiment
     - Dataset
   approach:
@@ -231,10 +233,12 @@ attributes:
   description:
     name: description
     from_schema: https://w3id.org/kg-microbe/mech-shared
-    rank: 1000
     alias: description
     owner: ProposedExperiment
     domain_of:
+    - CausalGraph
+    - CausalNode
+    - CausalEdge
     - ProposedExperiment
     - Dataset
     range: string

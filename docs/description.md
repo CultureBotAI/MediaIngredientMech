@@ -18,6 +18,9 @@ Alias: description
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |  no  |
+| [CausalEdge](CausalEdge.md) | An evidence-backed directed relationship between two local node_ids |  no  |
+| [CausalGraph](CausalGraph.md) | A directed, evidence-backed mechanism graph for one ingredient |  no  |
+| [CausalNode](CausalNode.md) | A node in an ingredient mechanism graph |  no  |
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |  no  |
 
 
@@ -57,6 +60,9 @@ Alias: description
 name: description
 alias: description
 domain_of:
+- CausalGraph
+- CausalNode
+- CausalEdge
 - ProposedExperiment
 - Dataset
 range: string

@@ -12,6 +12,9 @@ Name: mediaingredientmech-schema
 
 | Class | Description |
 | --- | --- |
+| [CausalEdge](CausalEdge.md) | An evidence-backed directed relationship between two local node_ids |
+| [CausalGraph](CausalGraph.md) | A directed, evidence-backed mechanism graph for one ingredient |
+| [CausalNode](CausalNode.md) | A node in an ingredient mechanism graph |
 | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |
 | [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties for CHEBI-mapped ingredients |
 | [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |
@@ -22,6 +25,7 @@ Name: mediaingredientmech-schema
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |
 | [Discussion](Discussion.md) | A thread-like record of an open question, controversy, curation todo, emergin... |
 | [EnvironmentContext](EnvironmentContext.md) | Environmental context annotation for an ingredient |
+| [EvidenceItem](EvidenceItem.md) | One citation for one graph claim (fleet EvidenceItem shape) |
 | [IngredientCollection](IngredientCollection.md) | Root container for all ingredient records |
 | [IngredientRecord](IngredientRecord.md) | Core record for a media ingredient with ontology mapping, synonyms, and curat... |
 | [IngredientSynonym](IngredientSynonym.md) | Alternative name or raw text variant for an ingredient |
@@ -31,6 +35,7 @@ Name: mediaingredientmech-schema
 | [OntologyMapping](OntologyMapping.md) | Mapping to an ontology term (CHEBI, FOODON, etc |
 | [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | Assignment of a physicochemical facet role (the chemical or physical function... |
 | [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |
+| [ProteinExample](ProteinExample.md) | A source-backed UniProt protein paired with the organism in which its role in... |
 | [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |
 | [SourceOccurrence](SourceOccurrence.md) | An occurrence count attributed to a specific upstream source, with the source... |
 | [StockComponent](StockComponent.md) | One constituent in an IngredientRecord |
@@ -46,10 +51,13 @@ Name: mediaingredientmech-schema
 | [accession](accession.md) | Repository accession or CURIE, e |
 | [action](action.md) | Type of curation action |
 | [approach](approach.md) | Method/assay in brief (e |
+| [assertion_basis](assertion_basis.md) | The offline checks this edge claims; qc-causal-graphs confirms each one |
 | [attaches_to](attaches_to.md) | Hash-anchor pointers into the sections/nodes this discussion concerns: `<sect... |
+| [bridge_kind](bridge_kind.md) | Set on chemistry edges only: what the supplied form becomes, or a protonation... |
 | [cas_rn](cas_rn.md) | Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X or XXX... |
 | [catalog_number](catalog_number.md) | Vendor catalogue number, e |
 | [category](category.md) | Categorization label for partitioned unmapped collections (e |
+| [causal_graphs](causal_graphs.md) | Evidence-backed mechanism graphs explaining how this ingredient, as supplied,... |
 | [cellular_metabolic_roles](cellular_metabolic_roles.md) | Role of this ingredient inside/on the cultured microbe (e |
 | [changes](changes.md) | Description of what changed |
 | [chemical_properties](chemical_properties.md) | Chemical structure and properties (for CHEBI-mapped ingredients only) |
@@ -58,6 +66,7 @@ Name: mediaingredientmech-schema
 | [component_assertion](component_assertion.md) | Method and structured evidence for the record-level has-part claim carried by... |
 | [component_id](component_id.md) | Semantic CURIE for the component (e |
 | [component_name](component_name.md) | Component ingredient name as listed in the supporting source (e |
+| [component_ref](component_ref.md) | components[] |
 | [components](components.md) | A has-part decomposition for a STOCK_SOLUTION, NAMED_MEDIUM, or UNDEFINED_MIX... |
 | [concentration_range](concentration_range.md) | Observed concentration range (if available) |
 | [concentration_unit](concentration_unit.md) | Unit for concentration_value (e |
@@ -78,6 +87,10 @@ Name: mediaingredientmech-schema
 | [discussion_id](discussion_id.md) | Stable local identifier for this discussion thread |
 | [discussions](discussions.md) | Open questions, knowledge gaps, controversies, and curation todos attached to... |
 | [doi](doi.md) | Digital Object Identifier (e |
+| [edge_id](edge_id.md) | Stable within the graph; review dispositions and Discussions anchor on causal... |
+| [edges](edges.md) |  |
+| [entry_status](entry_status.md) |  |
+| [entry_version](entry_version.md) |  |
 | [environment_label](environment_label.md) | Canonical ENVO label for environment_term |
 | [environment_term](environment_term.md) | ENVO term CURIE (e |
 | [environmental_context](environmental_context.md) | Environmental contexts where this ingredient is relevant |
@@ -86,16 +99,25 @@ Name: mediaingredientmech-schema
 | [evidence_type](evidence_type.md) | Type of evidence |
 | [excerpt](excerpt.md) | Relevant excerpt or quote from the source |
 | [experiment_id](experiment_id.md) | Stable local id (optional; for cross-reference) |
+| [explains](explains.md) | Role assignments on this record that the graph explains, as `<facet>#<ROLE>` ... |
 | [explanation](explanation.md) | Curator (or LLM)'s rationale connecting the snippet to the |
 | [findings](findings.md) | Brief note on what the dataset shows relevant to this record |
 | [form](form.md) | The physical/chemical form supplied, e |
+| [gene_symbol](gene_symbol.md) |  |
+| [gene_symbols](gene_symbols.md) |  |
 | [generation_date](generation_date.md) | Timestamp when this collection was generated |
+| [graph_id](graph_id.md) |  |
+| [graph_kind](graph_kind.md) | What the graph explains (claw graph_facets value) |
+| [grounding](grounding.md) | CURIE for the node; for a sibling-Mech record, that record's identifier, whic... |
+| [grounding_notes](grounding_notes.md) |  |
+| [grounding_status](grounding_status.md) |  |
 | [identifier](identifier.md) | Semantic identifier for the record and its LinkML identifier slot, but not a ... |
 | [inchi](inchi.md) | IUPAC International Chemical Identifier |
 | [ingredient_type](ingredient_type.md) | Classification of entry type: single chemical ingredient vs whole named mediu... |
 | [ingredients](ingredients.md) | List of all ingredient records |
 | [kg_microbe_node_id](kg_microbe_node_id.md) | KG-Microbe node ID for this ingredient when found in the KG exactly |
 | [kind](kind.md) |  |
+| [label](label.md) | Canonical label of the grounding (ChEBI/GO label, or the sibling record's lab... |
 | [llm_assisted](llm_assisted.md) | Whether LLM assistance was used |
 | [llm_model](llm_model.md) | LLM model identifier (if llm_assisted=true) |
 | [mapped_count](mapped_count.md) | Number of mapped ingredients |
@@ -113,8 +135,12 @@ Name: mediaingredientmech-schema
 | [molecular_weight](molecular_weight.md) | Molecular weight in g/mol |
 | [name](name.md) | The product name as a catalogue would write it, e |
 | [new_status](new_status.md) | Status after this action |
+| [node_id](node_id.md) |  |
+| [node_type](node_type.md) |  |
+| [nodes](nodes.md) |  |
 | [notes](notes.md) | Free-text curation notes |
 | [nutritional_roles](nutritional_roles.md) | What element or macronutrient this ingredient supplies to the medium (e |
+| [object](object.md) |  |
 | [occurrence_count](occurrence_count.md) | Number of times this variant appears |
 | [occurrence_statistics](occurrence_statistics.md) | Usage statistics across media recipes |
 | [ontology_id](ontology_id.md) | Ontology term ID in CURIE format |
@@ -122,16 +148,22 @@ Name: mediaingredientmech-schema
 | [ontology_mapping](ontology_mapping.md) | Ontology term mapping (CHEBI/FOODON) |
 | [ontology_source](ontology_source.md) | Source ontology |
 | [organism](organism.md) | Source organism / community label (free text or CURIE) |
+| [organism_scope](organism_scope.md) | The one NCBITaxon in which the biological edges hold (a TaxonMech record wher... |
 | [perturbations](perturbations.md) | Interventions applied (e |
 | [physicochemical_roles](physicochemical_roles.md) | Chemical or physical function this ingredient performs in the medium (e |
 | [platform](platform.md) | Sequencing/assay platform |
 | [pmid](pmid.md) | PubMed ID for MEDLINE citations (e |
 | [posed_by](posed_by.md) | Curator or agent that raised the discussion |
 | [posed_date](posed_date.md) |  |
+| [predicate](predicate.md) | Canonical label of predicate_id (title in IngredientGraphPredicateEnum) |
+| [predicate_id](predicate_id.md) |  |
 | [preferred_term](preferred_term.md) | Canonical name for this ingredient |
 | [previous_status](previous_status.md) | Status before this action |
 | [prompt](prompt.md) | The open question, gap statement, or todo, in one or two sentences |
 | [proposed_experiments](proposed_experiments.md) | Optional sketches of how the gap could be resolved |
+| [protein_examples](protein_examples.md) | Organism-specific UniProtKB instances of a GENE_OR_PROTEIN node, or proteins ... |
+| [protein_label](protein_label.md) |  |
+| [proteome_id](proteome_id.md) |  |
 | [pubchem_cid](pubchem_cid.md) | PubChem Compound Identifier (CID), stored as a positive integer |
 | [publication](publication.md) | Associated publication reference (e |
 | [rationale](rationale.md) | Why this matters / what resolving it would change |
@@ -148,10 +180,14 @@ Name: mediaingredientmech-schema
 | [resolution_note](resolution_note.md) | How it was resolved (when status is RESOLVED) |
 | [resolved_date](resolved_date.md) |  |
 | [retrieval_date](retrieval_date.md) | When these properties were retrieved |
+| [retrieved_on](retrieved_on.md) | Date the UniProt metadata was verified (quote it in YAML) |
 | [role](role.md) | The community/ecological role of the organism (e |
 | [sample_count](sample_count.md) |  |
 | [sample_media](sample_media.md) | Sample media names (for reference) |
 | [sample_types](sample_types.md) | Sample/material types represented (free text or term labels) |
+| [scope_notes](scope_notes.md) |  |
+| [scope_status](scope_status.md) | Curator disposition |
+| [sequence_version](sequence_version.md) |  |
 | [smiles](smiles.md) | Simplified Molecular Input Line Entry System notation |
 | [snippet](snippet.md) | Exact substring quoted from the cited abstract that supports |
 | [solution_type](solution_type.md) | Type of solution if this is a stock/pre-mix rather than individual chemical |
@@ -161,26 +197,37 @@ Name: mediaingredientmech-schema
 | [source_path](source_path.md) | Path to the recipe within CultureMech at the time of linking, as provenance |
 | [source_record](source_record.md) | Row key, recipe identifier, source label, or other locator within source |
 | [status](status.md) |  |
+| [stoichiometry](stoichiometry.md) | ION_PART only |
+| [subject](subject.md) |  |
 | [supplied_form](supplied_form.md) | The material actually ordered and delivered for this ingredient — the thing o... |
 | [supplier](supplier.md) | Vendor, where a specific one is recorded (e |
 | [supports](supports.md) | How the cited reference relates to the mapping claim |
 | [synonym_text](synonym_text.md) | The synonym text |
 | [synonym_type](synonym_type.md) | Type of synonym |
 | [synonyms](synonyms.md) | Alternative names and raw text variants |
+| [target_mech](target_mech.md) | Owning Mech when a grounding is a record in more than one Mech and the node_t... |
+| [taxon_id](taxon_id.md) |  |
+| [taxon_label](taxon_label.md) |  |
 | [timestamp](timestamp.md) | When this action occurred |
-| [title](title.md) | Short dataset title |
+| [title](title.md) |  |
 | [total_count](total_count.md) | Total number of ingredient records |
 | [total_occurrences](total_occurrences.md) | Total number of occurrences across all media |
+| [uniprot_id](uniprot_id.md) |  |
 | [unmapped_count](unmapped_count.md) | Number of unmapped ingredients |
 | [url](url.md) | Web URL for the reference |
 | [would_refute](would_refute.md) | Outcome that would refute it |
 | [would_support](would_support.md) | Outcome that would support the hypothesis/assertion |
+| [xrefs](xrefs.md) | CURIEs denoting exactly this node's entity (e |
 
 
 ## Enumerations
 
 | Enumeration | Description |
 | --- | --- |
+| [AssertionBasisEnum](AssertionBasisEnum.md) | The offline check an edge claims (all run in CI on committed files) |
+| [BridgeKindEnum](BridgeKindEnum.md) | Closed set of chemistry edges |
+| [CausalGraphScopeEnum](CausalGraphScopeEnum.md) | Fleet scope disposition (TraitMech, CellStructureMech values) |
+| [CausalNodeTypeEnum](CausalNodeTypeEnum.md) | TraitMech's vocabulary, CellStructureMech's STRUCTURE, and MIM's anchor INGRE... |
 | [CellularMetabolicRoleEnum](CellularMetabolicRoleEnum.md) | Role of the ingredient inside or on the cultured microbe(s) — the compound's ... |
 | [CitationTypeEnum](CitationTypeEnum.md) | Type of reference or citation |
 | [CommunityOrganismRoleEnum](CommunityOrganismRoleEnum.md) | Role an organism plays in a microbial community (formerly `CellularRoleEnum`;... |
@@ -197,6 +244,8 @@ Name: mediaingredientmech-schema
 | [EnvironmentRelevanceEnum](EnvironmentRelevanceEnum.md) | Describes why an ingredient is relevant to a particular environment |
 | [EvidenceSupportEnum](EvidenceSupportEnum.md) | How a cited reference relates to the claim it is attached to |
 | [EvidenceTypeEnum](EvidenceTypeEnum.md) |  |
+| [IngredientGraphKindEnum](IngredientGraphKindEnum.md) | What a graph explains |
+| [IngredientGraphPredicateEnum](IngredientGraphPredicateEnum.md) | Closed edge vocabulary |
 | [IngredientTypeEnum](IngredientTypeEnum.md) | Classification of ingredient entry type |
 | [MappingQualityEnum](MappingQualityEnum.md) |  |
 | [MappingStatusEnum](MappingStatusEnum.md) |  |
@@ -204,9 +253,12 @@ Name: mediaingredientmech-schema
 | [NutritionalRoleEnum](NutritionalRoleEnum.md) | What element or macronutrient an ingredient supplies to the medium |
 | [OntologySourceEnum](OntologySourceEnum.md) |  |
 | [PhysicochemicalRoleEnum](PhysicochemicalRoleEnum.md) | Chemical or physical function an ingredient performs in the medium, independe... |
+| [ProteinGroundingStatusEnum](ProteinGroundingStatusEnum.md) | Review disposition for a node without an exact CURIE |
+| [SiblingMechEnum](SiblingMechEnum.md) | Fleet Mechs a node may resolve into; keys match culturebotai-claw fleet |
 | [SolutionTypeEnum](SolutionTypeEnum.md) | Type of solution for mixture ingredients (stock solutions, pre-mixes) |
 | [SupportLevelEnum](SupportLevelEnum.md) | How a SupportingReference bears on the claim it is attached to (mirrors the s... |
 | [SynonymTypeEnum](SynonymTypeEnum.md) |  |
+| [UniProtEntryStatusEnum](UniProtEntryStatusEnum.md) |  |
 
 
 ## Types

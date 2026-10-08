@@ -21,6 +21,33 @@ prefixes:
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   METPO: http://purl.obolibrary.org/obo/METPO_
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  # Causal graphs (IngredientRecord.causal_graphs): relation ontologies, node
+  # groundings, sibling-Mech record namespaces and evidence references.
+  RO: http://purl.obolibrary.org/obo/RO_
+  BFO: http://purl.obolibrary.org/obo/BFO_
+  GO: http://purl.obolibrary.org/obo/GO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  RHEA: http://purl.obolibrary.org/obo/RHEA_
+  EC: https://enzyme.expasy.org/EC/
+  TCDB: https://www.tcdb.org/search/result.php?tc=
+  NCBIfam: https://www.ncbi.nlm.nih.gov/genome/annotation_prok/evidence/
+  Pfam: https://www.ebi.ac.uk/interpro/entry/pfam/
+  InterPro: https://www.ebi.ac.uk/interpro/entry/InterPro/
+  PANTHER: http://www.pantherdb.org/panther/family.do?clsAccession=
+  PROSITE: https://prosite.expasy.org/
+  ComplexPortal: https://www.ebi.ac.uk/complexportal/complex/
+  UniProtKB: https://www.uniprot.org/uniprotkb/
+  MetaCyc: https://biocyc.org/META/NEW-IMAGE?object=
+  gomodel: http://model.geneontology.org/
+  Reactome: https://reactome.org/content/detail/
+  WikiPathways: https://www.wikipathways.org/pathways/
+  proteintraitsmech: https://w3id.org/proteintraitsmech/
+  traitmech: https://w3id.org/traitmech/
+  cellstructuremech: https://w3id.org/cellstructuremech/
+  PMID: http://www.ncbi.nlm.nih.gov/pubmed/
+  doi: https://doi.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  MIM.vocab: https://w3id.org/mediaingredientmech/vocabulary/
 
 default_prefix: mediaingredientmech
 default_range: string
@@ -254,6 +281,21 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: Public datasets (omics/sequence/phenotype) relevant to this ingredient.
+      causal_graphs:
+        description: >-
+          Evidence-backed mechanism graphs explaining how this ingredient, as
+          supplied, acts on cultured microbes. Fleet graph_list shape (TraitMech,
+          CellStructureMech), so kg-microbe-graph coverage and structure audits
+          read it with default field names. Each graph has exactly one INGREDIENT
+          node grounded to this record's identifier; every other chemical the
+          cell meets is a separate CHEMICAL node reached through typed chemistry
+          edges (CausalEdge.bridge_kind). A graph links to another record, in MIM
+          or a sibling Mech, only through a node grounding equal to that record's
+          identifier. Graphs never change identifier, ontology_mapping or
+          components and never produce SSSOM rows (MAPPING_SEMANTICS.md section 7).
+        range: CausalGraph
+        multivalued: true
+        inlined_as_list: true
     rules:
       - preconditions:
           slot_conditions:
@@ -275,6 +317,27 @@ classes:
                 - STOCK_SOLUTION
                 - NAMED_MEDIUM
                 - UNDEFINED_MIXTURE
+      - description: Only a resolved identity anchors a mechanism.
+        preconditions:
+          slot_conditions:
+            causal_graphs:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            mapping_status:
+              equals_string: MAPPED
+      - description: >-
+          A NAMED_MEDIUM carries no causal graph: CultureMech owns the recipe and
+          the constituents' records carry their mechanisms. Untyped records may
+          carry graphs.
+        preconditions:
+          slot_conditions:
+            ingredient_type:
+              equals_string: NAMED_MEDIUM
+        postconditions:
+          slot_conditions:
+            causal_graphs:
+              value_presence: ABSENT
 
   EnvironmentContext:
     description: >-
@@ -796,6 +859,285 @@ classes:
               value_presence: PRESENT
         bidirectional: true
 
+  # ---------------------------------------------------------------------------
+  # Causal graphs (IngredientRecord.causal_graphs), the fleet graph_list shape.
+  # CausalGraph, CausalNode, CausalEdge and EvidenceItem keep the slot names,
+  # ranges and requiredness of CellStructureMech's copy ("same shape as
+  # TraitMech"), with TraitMech's protein-node slots; ProteinExample is
+  # TraitMech's. MIM deltas are marked "# MIM"; graph_kind takes MIM's own enum
+  # where CellStructureMech uses its GraphKindEnum (TraitMech has no graph_kind).
+  # tests/test_causal_graph_schema.py pins this against vendored copies under
+  # tests/fixtures/fleet_graph_shapes/.
+  # ---------------------------------------------------------------------------
+
+  EvidenceItem:
+    description: >-
+      One citation for one graph claim (fleet EvidenceItem shape). The source kind
+      is read from `reference`: PMID:/doi: is literature; a
+      https://github.com/CultureBotAI/<Mech>/blob/<commit>/<path> permalink at the
+      pinned commit is a sibling record; an ontology CURIE (CHEBI:, GO:) is an
+      axiom recomputed from mappings/ontology_facts.tsv; any other CURIE
+      (RHEA:, EC:, UniProtKB:, PDB:) is a database entry. Never an LLM.
+    attributes:
+      reference:
+        description: PMID:..., doi:..., a database or ontology CURIE, or a pinned sibling-record permalink.
+        required: true
+        range: string
+        pattern: "^(?:[A-Za-z][A-Za-z0-9._-]*:\\S+|https?://\\S+)$"
+      snippet:
+        description: >-
+          Verbatim quote, only when actually verbatim: for literature from
+          references_cache/, for a sibling record from its pinned text in
+          mappings/cross_mech_assertions.jsonl, for a database entry only from a
+          cached copy in references_cache/. Never on an ontology-axiom citation.
+        range: string
+      notes:
+        description: What the source establishes for this claim. Required with literature.
+        range: string
+
+  CausalGraph:
+    description: >-
+      A directed, evidence-backed mechanism graph for one ingredient. Same shape as
+      the fleet CausalGraph. MIM: graph_id pattern, `explains`, `organism_scope`,
+      and minimum_cardinality on nodes and edges (TaxonMech #66 precedent).
+    attributes:
+      graph_id:
+        identifier: true
+        required: true
+        range: string
+        pattern: "^[a-z][a-z0-9_]*$"   # MIM
+      title:
+        range: string
+      description:
+        range: string
+      graph_kind:
+        description: What the graph explains (claw graph_facets value).
+        range: IngredientGraphKindEnum
+        required: true
+      scope_status:
+        description: >-
+          Curator disposition. NONMECHANISTIC is a reviewed graph with no cellular
+          mechanism in it (a SPECIATION graph, an indicator dye), explained in
+          scope_notes; never a deferral. Proposed or incomplete graphs are
+          REVIEW_NEEDED. MECHANISTIC only through the qc-causal-graphs scope gate.
+        range: CausalGraphScopeEnum
+        required: true
+      scope_notes:
+        range: string
+      explains:   # MIM
+        description: >-
+          Role assignments on this record that the graph explains, as
+          `<facet>#<ROLE>` hash anchors (mech_shared attaches_to convention), e.g.
+          `nutritional_roles#SULFUR_SOURCE`. Each must name a role present on the
+          record. A pointer only: a role never creates an edge and an edge never
+          creates a role.
+        multivalued: true
+        range: string
+        pattern: "^(nutritional_roles|physicochemical_roles|cellular_metabolic_roles)#[A-Z][A-Z0-9_]*$"
+      organism_scope:   # MIM
+        description: >-
+          The one NCBITaxon in which the biological edges hold (a TaxonMech record
+          where one exists). Every organism-specific source the graph cites
+          (protein_examples taxa, PathwayMech taxa) must lie on its lineage. Omit
+          only for a taxon-agnostic graph; such a graph cannot be MECHANISTIC if it
+          cites organism-specific evidence. Strains and genome assemblies are
+          reached through TaxonMech, never copied here.
+        range: string
+        pattern: "^NCBITaxon:[1-9][0-9]*$"
+      nodes:
+        required: true
+        multivalued: true
+        minimum_cardinality: 1   # MIM
+        inlined_as_list: true
+        range: CausalNode
+      edges:
+        required: true
+        multivalued: true
+        minimum_cardinality: 1   # MIM
+        inlined_as_list: true
+        range: CausalEdge
+    rules:
+      - description: A SPECIATION graph is chemistry only and never MECHANISTIC.
+        preconditions:
+          slot_conditions:
+            graph_kind:
+              equals_string: SPECIATION
+        postconditions:
+          slot_conditions:
+            scope_status:
+              equals_string: NONMECHANISTIC
+
+  CausalNode:
+    description: >-
+      A node in an ingredient mechanism graph. Exactly one INGREDIENT node per
+      graph, grounded to the record identifier. GENE_OR_PROTEIN denotes a
+      taxon-agnostic protein family, function-defined protein or complex;
+      organism-specific UniProtKB proteins are protein_examples, never groundings;
+      genes and operons are metadata.
+    attributes:
+      node_id:
+        identifier: true
+        required: true
+        range: string
+        pattern: "^[a-z][a-z0-9_]*$"   # MIM
+      label:
+        description: Canonical label of the grounding (ChEBI/GO label, or the sibling record's label).
+        required: true
+        range: string
+      node_type:
+        required: true
+        range: CausalNodeTypeEnum
+      grounding:
+        description: >-
+          CURIE for the node; for a sibling-Mech record, that record's identifier,
+          which is the only way a graph links out of the record. MIM: the local
+          part admits `~` (five MIM identifiers use it); organism, strain, genome
+          and protein-instance prefixes are refused (genome firewall).
+        range: string
+        pattern: "^(?!(?:UniProtKB|NCBITaxon|ncbi\\.assembly|kgmicrobe\\.strain|insdc|RefSeq|GenBank|ENA|biosample|bioproject|img\\.taxon|patric|gtdb):)[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._~-]+$"
+      target_mech:   # MIM
+        description: >-
+          Owning Mech when a grounding is a record in more than one Mech and the
+          node_type precedence in qc-causal-graphs does not decide it.
+        range: SiblingMechEnum
+      grounding_status:   # TraitMech
+        range: ProteinGroundingStatusEnum
+      grounding_notes:   # TraitMech
+        range: string
+      component_ref:
+        description: >-
+          components[].component_id of this record when the node is one of its own
+          components (COMPONENT edges), so graph and composition stay in step.
+        range: string
+      xrefs:
+        description: >-
+          CURIEs denoting exactly this node's entity (e.g. the GO term an EC record
+          maps to). Never the record identifier, a parent, or a related form:
+          those are separate nodes joined by an edge.
+        multivalued: true
+        range: string
+        pattern: "^[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._~-]+$"   # MIM: admits ~
+      description:
+        range: string
+      gene_symbols:   # TraitMech (its `operon` slot is not carried)
+        multivalued: true
+        range: string
+      protein_examples:   # TraitMech
+        description: >-
+          Organism-specific UniProtKB instances of a GENE_OR_PROTEIN node, or
+          proteins that enable a MOLECULAR_FUNCTION node (MIM: TraitMech allows
+          GENE_OR_PROTEIN only; ProteinTraitsMech attaches its examples to EC/RHEA
+          records). Each names the taxon in which its role was established; that
+          taxon resolves to a TaxonMech record.
+        multivalued: true
+        inlined_as_list: true
+        range: ProteinExample
+
+  CausalEdge:
+    description: >-
+      An evidence-backed directed relationship between two local node_ids. MIM:
+      edge_id (TaxonMech precedent), a closed predicate_id, bridge_kind on
+      chemistry edges, and the assertion_basis each edge claims.
+    attributes:
+      edge_id:   # MIM
+        description: Stable within the graph; review dispositions and Discussions anchor on causal_graphs#<edge_id>.
+        identifier: true
+        required: true
+        range: string
+        pattern: "^[a-z][a-z0-9_]*$"
+      subject:
+        required: true
+        range: string
+      predicate:
+        description: Canonical label of predicate_id (title in IngredientGraphPredicateEnum).
+        required: true
+        range: string
+      predicate_id:
+        required: true   # MIM: optional in TraitMech
+        range: IngredientGraphPredicateEnum
+      object:
+        required: true
+        range: string
+      description:
+        range: string
+      bridge_kind:   # MIM
+        description: >-
+          Set on chemistry edges only: what the supplied form becomes, or a
+          protonation/tautomer step between species. Each kind fixes the allowed
+          predicate_id and the bases that must verify (MAPPING_SEMANTICS.md section 7).
+          Chemistry edges are taxon-independent.
+        range: BridgeKindEnum
+      stoichiometry:   # MIM
+        description: ION_PART only. Ions released per formula unit; must equal the ChEBI SMILES component count.
+        range: integer
+        minimum_value: 1
+      assertion_basis:   # MIM
+        description: The offline checks this edge claims; qc-causal-graphs confirms each one.
+        required: true
+        multivalued: true
+        range: AssertionBasisEnum
+      evidence:
+        required: true
+        multivalued: true
+        minimum_cardinality: 1   # MIM
+        inlined_as_list: true
+        range: EvidenceItem
+    rules:
+      - preconditions:
+          slot_conditions:
+            stoichiometry:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            bridge_kind:
+              equals_string: ION_PART
+
+  ProteinExample:   # TraitMech's shape; MIM adds only evidence minimum_cardinality
+    description: >-
+      A source-backed UniProt protein paired with the organism in which its role in
+      this mechanism was established. Reviewed Swiss-Prot entries are preferred.
+      Not exported as a graph node; it is how genome-level information enters MIM.
+    attributes:
+      uniprot_id:
+        required: true
+        range: string
+        pattern: "^UniProtKB:(?:[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9](?:[A-Z][A-Z0-9]{2}[0-9]){1,2})$"
+      protein_label:
+        required: true
+        range: string
+      gene_symbol:
+        range: string
+      taxon_id:
+        required: true
+        range: string
+        pattern: "^NCBITaxon:[0-9]+$"
+      taxon_label:
+        required: true
+        range: string
+      entry_status:
+        required: true
+        range: UniProtEntryStatusEnum
+      proteome_id:
+        range: string
+        pattern: "^UP[0-9]{9}$"
+      retrieved_on:
+        description: Date the UniProt metadata was verified (quote it in YAML).
+        required: true
+        range: date
+      entry_version:
+        range: integer
+      sequence_version:
+        range: integer
+      role:
+        required: true
+        range: string
+      evidence:
+        required: true
+        multivalued: true
+        minimum_cardinality: 1   # MIM
+        inlined_as_list: true
+        range: EvidenceItem
+
 enums:
   MappingStatusEnum:
     permissible_values:
@@ -996,6 +1338,11 @@ enums:
           Legacy history value emitted when old tooling looked up a broader ChEBI
           parent. It does not denote an active MIM hierarchy edge; retain it only so
           historical curation events remain valid.
+      # --- Causal graphs (IngredientRecord.causal_graphs) ---
+      CAUSAL_GRAPH_ADDED:
+        description: A causal graph was added (record_refresh.py REFRESHABLE_SECTIONS action).
+      CAUSAL_GRAPH_UPDATED:
+        description: A graph's nodes, edges, evidence or scope changed, or a graph was withdrawn (record_refresh.py action).
 
   SynonymTypeEnum:
     permissible_values:
@@ -1399,3 +1746,472 @@ enums:
           Pre-mixed solution of defined ingredients
           (e.g., vitamin B12 solution, trace metal mix).
           Components known but premixed for convenience.
+
+  # ---------------------------------------------------------------------------
+  # Causal graphs (see the CausalGraph classes above).
+  # ---------------------------------------------------------------------------
+
+  IngredientGraphKindEnum:
+    description: >-
+      What a graph explains. `typical_roles` lists the role anchors a kind usually
+      explains; qc-causal-graphs warns on an unusual pairing, never rejects it.
+    permissible_values:
+      ASSIMILATION:
+        description: The active species is taken up and incorporated into biomass or a cellular pool.
+        annotations:
+          typical_roles: >-
+            nutritional_roles#CARBON_SOURCE nutritional_roles#NITROGEN_SOURCE
+            nutritional_roles#SULFUR_SOURCE nutritional_roles#PHOSPHATE_SOURCE
+            nutritional_roles#IRON_SOURCE nutritional_roles#TRACE_ELEMENT
+            nutritional_roles#MINERAL_SOURCE nutritional_roles#AMINO_ACID_SOURCE
+            nutritional_roles#PROTEIN_SOURCE nutritional_roles#VITAMIN_SOURCE
+            cellular_metabolic_roles#SUBSTRATE cellular_metabolic_roles#MEMBRANE_COMPONENT
+      ENERGY_CONSERVATION:
+        description: The species is an electron donor, terminal electron acceptor or energy substrate.
+        annotations:
+          typical_roles: >-
+            nutritional_roles#ENERGY_SOURCE nutritional_roles#LIGHT_SOURCE
+            cellular_metabolic_roles#ELECTRON_DONOR cellular_metabolic_roles#ELECTRON_ACCEPTOR
+      COFACTOR_FUNCTION:
+        description: The species is, or is converted into, a cofactor or prosthetic group an enzyme requires.
+        annotations:
+          typical_roles: >-
+            nutritional_roles#VITAMIN_SOURCE nutritional_roles#COFACTOR_PROVIDER
+            nutritional_roles#TRACE_ELEMENT nutritional_roles#IRON_SOURCE
+            cellular_metabolic_roles#COFACTOR cellular_metabolic_roles#PROSTHETIC_GROUP_PRECURSOR
+      REGULATION:
+        description: The species changes gene expression or protein activity without being consumed.
+        annotations:
+          typical_roles: cellular_metabolic_roles#INDUCER cellular_metabolic_roles#QUENCHER
+      INHIBITION:
+        description: >-
+          The species inhibits a target or growth. Link an AntibioticMech or
+          NaturalProductMech record by shared grounding instead of re-curating its graph.
+        annotations:
+          typical_roles: cellular_metabolic_roles#INHIBITOR physicochemical_roles#SELECTIVE_AGENT
+      STRESS_PROTECTION:
+        description: The species protects cells against a stress.
+        annotations:
+          typical_roles: cellular_metabolic_roles#OSMOPROTECTANT
+      MEDIUM_CONDITIONING:
+        description: The ingredient changes a medium property (pH, redox, osmolarity, metal availability, gel state) and through it the culture.
+        annotations:
+          typical_roles: >-
+            physicochemical_roles#BUFFER physicochemical_roles#CHELATOR
+            physicochemical_roles#REDUCING_AGENT physicochemical_roles#OXIDIZING_AGENT
+            physicochemical_roles#OSMOTIC_AGENT physicochemical_roles#SOLIDIFYING_AGENT
+            physicochemical_roles#PRECIPITATION_INHIBITOR physicochemical_roles#SURFACTANT
+            physicochemical_roles#ANTIFOAM physicochemical_roles#PH_INDICATOR
+            physicochemical_roles#REDOX_INDICATOR
+      SPECIATION:
+        description: >-
+          Chemistry only: what the supplied form becomes (bridge and COMPONENT
+          edges), with the mechanism delegated to the species' or components' own
+          MIM records. Always NONMECHANISTIC; scope_notes names those records.
+
+  CausalGraphScopeEnum:
+    description: Fleet scope disposition (TraitMech, CellStructureMech values).
+    permissible_values:
+      MECHANISTIC:
+        description: A source-backed biological mechanism that passed the qc-causal-graphs scope gate.
+      NONMECHANISTIC:
+        description: Reviewed; no cellular mechanism to model (e.g. SPECIATION). Explained in scope_notes.
+      REVIEW_NEEDED:
+        description: Proposed or incomplete; awaits an explicit scope decision.
+
+  CausalNodeTypeEnum:
+    description: >-
+      TraitMech's vocabulary, CellStructureMech's STRUCTURE, and MIM's anchor
+      INGREDIENT. No TAXON: organisms are organism_scope and protein_examples taxa.
+    permissible_values:
+      INGREDIENT:
+        description: This record as supplied; exactly one per graph; grounding equals the record identifier.
+      CHEMICAL:
+        description: Any other chemical entity (active species, metabolite, cofactor form, another MIM record).
+      GENE_OR_PROTEIN:
+        description: A taxon-agnostic protein family, function-defined protein or complex.
+      MOLECULAR_FUNCTION:
+        description: >-
+          An activity or reaction: EC, RHEA, GO molecular function, and
+          ProteinTraitsMech FUNC_TRANSPORT records (TCDB families as transport functions).
+      BIOLOGICAL_PROCESS:
+        description: A biological process (GO BP), including ProteinTraitsMech FUNC_PATHWAY records.
+      PATHWAY:
+        description: A PathwayMech record.
+      STRUCTURE:
+        description: A CellStructureMech record or GO cellular component.
+      CELLULAR_LOCALIZATION:
+        description: A location with no CellStructureMech record.
+      # ORGANELLE, CAPACITY, STATE, RNA, GENETIC_ELEMENT and the two FACTOR values
+      # are TraitMech's vocabulary, kept for fleet parity with no MIM-specific
+      # meaning. Their descriptions are TraitMech's; STATE and CAPACITY are
+      # shortened to drop TraitMech's trait-specific wording.
+      ORGANELLE:
+        description: A cellular organelle or microbial subcellular structure.
+      TRAIT:
+        description: A TraitMech class record (never an OBJECT_PROPERTY record such as METPO:2000020).
+      QUALITY:
+        description: An attribute, including a ProteinTraitsMech requirement trait (COFACTOR_REQ_*).
+      CAPACITY:
+        description: >-
+          A metabolic or functional capacity, such as reducing power or energy
+          charge, that is neither a single chemical species nor a process.
+      STATE:
+        description: >-
+          A bioenergetic or molecular state of the cell (e.g. proton motive force),
+          as distinct from the process that establishes it.
+      RNA:
+        description: A functional RNA molecule or RNA-containing causal entity.
+      GENETIC_ELEMENT:
+        description: A non-protein mobile or chromosomal genetic element such as a plasmid or prophage.
+      ENVIRONMENTAL_FACTOR:
+        description: An environmental exposure or condition.
+      EXPERIMENTAL_FACTOR:
+        description: An assay, perturbation, or experimental condition.
+
+  BridgeKindEnum:
+    description: >-
+      Closed set of chemistry edges. Each fixes its predicate_id and required bases;
+      qc-causal-graphs recomputes every one from mappings/ontology_facts.tsv.
+    permissible_values:
+      HYDRATE_PART:
+        description: Hydrate has part its anhydrous form (BFO:0000051). ONTOLOGY_AXIOM; subject is a ChEBI hydrate.
+      ION_PART:
+        description: >-
+          Salt has part a constituent ion (BFO:0000051) with stoichiometry.
+          ONTOLOGY_AXIOM when ChEBI asserts or entails it; otherwise CHEMICAL_STRUCTURE
+          (the ion's ChEBI SMILES is a '.'-component of the salt's, counts match,
+          charges balance). Transition-metal salts of carbon-containing anions also
+          need LITERATURE (complexation).
+      PROTONATION:
+        description: One ChEBI-asserted RO:0018033/RO:0018034 hop per edge. ONTOLOGY_AXIOM.
+      TAUTOMER:
+        description: ChEBI-asserted RO:0018036. ONTOLOGY_AXIOM.
+      STRUCTURAL_FORM:
+        description: >-
+          Structure-specific form is a (rdfs:subClassOf) structure-less supplied
+          class, e.g. D-glucopyranose is a D-glucose. ONTOLOGY_AXIOM (asserted
+          direct subclass) plus CHEMICAL_STRUCTURE guards: the form has a SMILES and
+          no isotopic layer, the class has no SMILES, formula and charge are equal,
+          and no other non-isotopic direct subclass shares the form's InChIKey
+          connectivity block with a different stereo block.
+      FORM_OF_PARENT:
+        description: >-
+          First hop only, from a cas:/kgmicrobe.* anchor to the ChEBI parent named
+          by the record's own SSSOM skos:broadMatch row. RECORD_SSSOM. Not re-exported.
+      COMPONENT:
+        description: >-
+          Mixture anchor has part one of its own components (BFO:0000051; node
+          component_ref). RECORD_COMPONENT. No chemistry edge may start at a
+          component node; its own record owns its speciation. Not re-exported.
+
+  AssertionBasisEnum:
+    description: The offline check an edge claims (all run in CI on committed files).
+    permissible_values:
+      LITERATURE:
+        description: PMID/doi evidence with a verbatim snippet found in references_cache (qc-evidence normalisation).
+      ONTOLOGY_AXIOM:
+        description: The triple (or a declared sub-property of it) is asserted or entailed in mappings/ontology_facts.tsv.
+      CHEMICAL_STRUCTURE:
+        description: Recomputed from ChEBI SMILES, formula, charge and InChIKey rows in mappings/ontology_facts.tsv.
+      SIBLING_RECORD:
+        description: >-
+          The pinned sibling record states the relation for exactly this grounding
+          (mappings/cross_mech_assertions.jsonl; table in MAPPING_SEMANTICS.md section 7).
+      DATABASE_RECORD:
+        description: A cached database entry (references_cache/UniProtKB_<acc>.json, Rhea directional id) states it.
+      RECORD_COMPONENT:
+        description: Restates this record's components entry; inherits its component_assertion.
+      RECORD_SSSOM:
+        description: Restates this record's own SSSOM row.
+
+  IngredientGraphPredicateEnum:
+    description: >-
+      Closed edge vocabulary. `title` is the canonical label `predicate` must carry
+      (RO labels as in ro.db). Allowed endpoint node types are enforced by
+      qc-causal-graphs; biolink_predicate is the KGX projection.
+    # Value descriptions of RO and BFO terms are the first paragraph of the term's
+    # IAO:0000115 definition, verbatim (checked against ro.db, RO release
+    # 2026-09-04). RO:0002326 has no definition there; its description restates
+    # RO's editor note and its curator note on GO usage. rdfs:subClassOf and
+    # skos:broadMatch use MIM's own wording.
+    permissible_values:
+      "BFO:0000051":
+        title: has part
+        description: >-
+          a core relation that holds between a whole and its part
+        meaning: BFO:0000051
+        annotations: {biolink_predicate: "biolink:has_part", bridge_kinds: "HYDRATE_PART ION_PART COMPONENT"}
+      "BFO:0000050":
+        title: part of
+        description: >-
+          a core relation that holds between a part and its whole
+        meaning: BFO:0000050
+        annotations: {biolink_predicate: "biolink:part_of"}
+      "rdfs:subClassOf":
+        title: is a
+        description: >-
+          RDFS subclass axiom: the subject class is a subclass of the object class (every
+          instance of the subject is an instance of the object).
+        meaning: rdfs:subClassOf
+        annotations: {biolink_predicate: "biolink:subclass_of", bridge_kinds: STRUCTURAL_FORM}
+      "skos:broadMatch":
+        title: has broader match
+        description: >-
+          SKOS mapping relation: the object is a broader concept than the subject.
+          Restates the record's own SSSOM skos:broadMatch row (FORM_OF_PARENT).
+        meaning: skos:broadMatch
+        annotations: {biolink_predicate: none, bridge_kinds: FORM_OF_PARENT}
+      "RO:0018033":
+        title: is deprotonated form of
+        description: >-
+          A is a deprotonated form of B if and only if A is chemical entity that is a
+          Brønsted–Lowry Base (i.e., can receive a proton) and by adding some nonzero
+          number of protons transforms it into B.
+        meaning: RO:0018033
+        annotations: {biolink_predicate: "biolink:related_to", bridge_kinds: PROTONATION}
+      "RO:0018034":
+        title: is protonated form of
+        description: >-
+          A is a protonated form of B if and only if A is chemical entity that is a
+          Brønsted–Lowry Acid (i.e., can give up a proton) and by removing some nonzero
+          number of protons transforms it into B.
+        meaning: RO:0018034
+        annotations: {biolink_predicate: "biolink:related_to", bridge_kinds: PROTONATION}
+      "RO:0018036":
+        title: is tautomer of
+        description: >-
+          Two chemicals are tautomers if they can be readily interconverted.
+        meaning: RO:0018036
+        annotations: {biolink_predicate: "biolink:related_to", bridge_kinds: TAUTOMER}
+      "RO:0002020":
+        title: transports
+        description: >-
+          Holds between p and c when p is a transport process or transporter activity and
+          the outcome of this p is to move c from one location to another.
+        meaning: RO:0002020
+        annotations: {biolink_predicate: "biolink:affects", object_aspect_qualifier: transport}
+      "RO:0002233":
+        title: has input
+        description: >-
+          p has input c iff: p is a process, c is a material entity, c is a participant in
+          p, c is present at the start of p, and the state of c is modified during p.
+        meaning: RO:0002233
+        annotations: {biolink_predicate: "biolink:has_input"}
+      "RO:0002234":
+        title: has output
+        description: >-
+          p has output c iff c is a participant in p, c is present at the end of p, and c
+          is not present in the same state at the beginning of p.
+        meaning: RO:0002234
+        annotations: {biolink_predicate: "biolink:has_output"}
+      "RO:0004009":
+        title: has primary input
+        description: >-
+          p has primary input c if (a) p has input c and (b) the goal of process is to
+          modify, consume, or transform c.
+        meaning: RO:0004009
+        annotations: {biolink_predicate: "biolink:has_input"}
+      "RO:0004008":
+        title: has primary output
+        description: >-
+          p has primary output c if (a) p has output c and (b) the goal of process is to
+          modify, produce, or transform c.
+        meaning: RO:0004008
+        annotations: {biolink_predicate: "biolink:has_output"}
+      "RO:0002505":
+        title: has intermediate
+        description: >-
+          p has intermediate c if and only if p has parts p1, p2 and p1 has output c, and
+          p2 has input c
+        meaning: RO:0002505
+        annotations: {biolink_predicate: "biolink:has_participant"}
+      "RO:0000057":
+        title: has participant
+        description: >-
+          a relation between a process and a continuant, in which the continuant is
+          somehow involved in the process
+        meaning: RO:0000057
+        annotations: {biolink_predicate: "biolink:has_participant"}
+      "RO:0000056":
+        title: participates in
+        description: >-
+          a relation between a continuant and a process, in which the continuant is
+          somehow involved in the process
+        meaning: RO:0000056
+        annotations: {biolink_predicate: "biolink:participates_in"}
+      "RO:0002352":
+        title: input of
+        description: >-
+          inverse of has input
+        meaning: RO:0002352
+        annotations: {biolink_predicate: "biolink:participates_in"}
+      "RO:0002353":
+        title: output of
+        description: >-
+          inverse of has output
+        meaning: RO:0002353
+        annotations: {biolink_predicate: "biolink:participates_in"}
+      "RO:0002327":
+        title: enables
+        description: >-
+          c enables p iff c is capable of p and c acts to execute p.
+        meaning: RO:0002327
+        annotations: {biolink_predicate: "biolink:enables"}
+      "RO:0002326":
+        title: contributes to
+        description: >-
+          c contributes to p when c is part of some c' that is capable of p, and c is
+          capable of some p' that is part of p (RO's editor note; RO gives no textual
+          definition). In GO usage p is a molecular function.
+        meaning: RO:0002326
+        annotations: {biolink_predicate: "biolink:contributes_to"}
+      "RO:0002331":
+        title: involved in
+        description: >-
+          c involved_in p if and only if c enables some process p', and p' is part of p
+        meaning: RO:0002331
+        annotations: {biolink_predicate: "biolink:actively_involved_in"}
+      "RO:0002224":
+        title: starts with
+        description: >-
+          x starts with y if and only if x has part y and the time point at which x starts
+          is equivalent to the time point at which y starts. Formally: α(y) = α(x) ∧ ω(y)
+          < ω(x), where α is a function that maps a process to a start point, and ω is a
+          function that maps a process to an end point.
+        meaning: RO:0002224
+        annotations: {biolink_predicate: "biolink:has_part"}
+      "RO:0002230":
+        title: ends with
+        description: >-
+          x ends with y if and only if x has part y and the time point at which x ends is
+          equivalent to the time point at which y ends. Formally: α(y) > α(x) ∧ ω(y) =
+          ω(x), where α is a function that maps a process to a start point, and ω is a
+          function that maps a process to an end point.
+        meaning: RO:0002230
+        annotations: {biolink_predicate: "biolink:has_part"}
+      "RO:0001025":
+        title: located in
+        description: >-
+          a relation between two independent continuants, the target and the location, in
+          which the target is entirely within the location
+        meaning: RO:0001025
+        annotations: {biolink_predicate: "biolink:located_in"}
+      "RO:0002342":
+        title: results in transport across
+        description: >-
+          Holds between p and m when p is a transportation or localization process and the
+          outcome of this process is to move c from one location to another, and the route
+          taken by c follows a path that crosses m.
+        meaning: RO:0002342
+        annotations: {biolink_predicate: "biolink:related_to"}
+      "RO:0002436":
+        title: molecularly interacts with
+        description: >-
+          An interaction relationship in which the two partners are molecular entities
+          that directly physically interact with each other for example via a stable
+          binding interaction or a brief interaction during which one modifies the other.
+        meaning: RO:0002436
+        annotations: {biolink_predicate: "biolink:physically_interacts_with"}
+      "RO:0000053":
+        title: has characteristic
+        description: >-
+          Inverse of characteristic_of
+        meaning: RO:0000053
+        annotations: {biolink_predicate: "biolink:has_attribute"}
+      "MIM.vocab:satisfies_cofactor_requirement":
+        title: satisfies cofactor requirement
+        description: Chemical to a ProteinTraitsMech COFACTOR_REQ_* record whose xrefs contain exactly the chemical's grounding.
+        annotations: {biolink_predicate: "biolink:related_to"}
+      "RO:0002411":
+        title: causally upstream of
+        description: >-
+          p is causally upstream of q iff p is causally related to q, the end of p
+          precedes the end of q, and p is not an occurrent part of q.
+        meaning: RO:0002411
+        annotations: {biolink_predicate: "biolink:affects"}
+      "RO:0002304":
+        title: causally upstream of, positive effect
+        description: >-
+          p is causally upstream of, positive effect q iff p is casually upstream of q,
+          and the execution of p is required for the execution of q.
+        meaning: RO:0002304
+        annotations: {biolink_predicate: "biolink:affects"}
+      "RO:0002305":
+        title: causally upstream of, negative effect
+        description: >-
+          p is causally upstream of, negative effect q iff p is casually upstream of q,
+          and the execution of p decreases the execution of q.
+        meaning: RO:0002305
+        annotations: {biolink_predicate: "biolink:affects"}
+      "RO:0002213":
+        title: positively regulates
+        description: >-
+          p positively regulates q iff p regulates q, and p increases the rate or
+          magnitude of execution of q.
+        meaning: RO:0002213
+        annotations: {biolink_predicate: "biolink:regulates"}
+      "RO:0002212":
+        title: negatively regulates
+        description: >-
+          p negatively regulates q iff p regulates q, and p decreases the rate or
+          magnitude of execution of q.
+        meaning: RO:0002212
+        annotations: {biolink_predicate: "biolink:regulates"}
+      "RO:0012006":
+        title: is small molecule inhibitor of
+        description: >-
+          a relation between a continuant and a process, in which the continuant is a
+          small molecule that inhibits the process
+        meaning: RO:0012006
+        annotations: {biolink_predicate: "biolink:affects"}
+      "RO:0002566":
+        title: causally influences
+        description: >-
+          The entity or characteristic A is causally upstream of the entity or
+          characteristic B, A having an effect on B. An entity corresponds to any
+          biological type of entity as long as a mass is measurable. A characteristic
+          corresponds to a particular specificity of an entity (e.g., phenotype, shape,
+          size).
+        meaning: RO:0002566
+        annotations: {biolink_predicate: "biolink:affects"}
+
+  SiblingMechEnum:
+    description: Fleet Mechs a node may resolve into; keys match culturebotai-claw fleet.yaml.
+    # Each description names the Mech and its record scope as its README states it.
+    permissible_values:
+      MEDIAINGREDIENTMECH:
+        description: MediaIngredientMech (this repository); growth-media ingredient records.
+      PROTEINTRAITSMECH:
+        description: >-
+          ProteinTraitsMech; protein trait records (sequence, structure and function
+          traits, including enzymatic activities and cofactor requirements).
+      PATHWAYMECH:
+        description: PathwayMech; pathway-level microbial mechanism records.
+      CELLSTRUCTUREMECH:
+        description: CellStructureMech; microbial cell structure records.
+      TRAITMECH:
+        description: TraitMech; microbial ecophysiological trait records.
+      TAXONMECH:
+        description: TaxonMech; microbial taxon records (organism_scope and protein_examples taxa resolve here).
+      ANTIBIOTICMECH:
+        description: AntibioticMech; records of chemical structures with antimicrobial activity.
+      NATURALPRODUCTMECH:
+        description: NaturalProductMech; natural product structure records.
+      HABITATMECH:
+        description: HabitatMech; microbial habitat and environment records.
+      COMMUNITYMECH:
+        description: CommunityMech; microbial community records.
+
+  ProteinGroundingStatusEnum:   # TraitMech
+    description: Review disposition for a node without an exact CURIE.
+    permissible_values:
+      REVIEWED_LABEL_ONLY:
+        description: The evidence supports the label, but no exact family, function or complex term can be asserted without overclaiming.
+
+  UniProtEntryStatusEnum:   # TraitMech
+    permissible_values:
+      REVIEWED:
+        description: UniProtKB/Swiss-Prot.
+      UNREVIEWED:
+        description: UniProtKB/TrEMBL.
