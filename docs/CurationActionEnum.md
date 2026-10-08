@@ -39,6 +39,8 @@ URI: [mediaingredientmech:CurationActionEnum](https://w3id.org/mediaingredientme
 | CLASSIFIED_DEFINED_MEDIUM | None | Legacy history value |
 | MERGED_FROM_DUPLICATES | None | Duplicate records consolidated into this representative |
 | BACKFILL_PARENT_CHEBI | None | Legacy history value emitted when old tooling looked up a broader ChEBI paren... |
+| CAUSAL_GRAPH_ADDED | None | A causal graph was added (record_refresh |
+| CAUSAL_GRAPH_UPDATED | None | A graph's nodes, edges, evidence or scope changed, or a graph was withdrawn (... |
 
 
 
@@ -164,6 +166,14 @@ permissible_values:
     description: Legacy history value emitted when old tooling looked up a broader
       ChEBI parent. It does not denote an active MIM hierarchy edge; retain it only
       so historical curation events remain valid.
+  CAUSAL_GRAPH_ADDED:
+    text: CAUSAL_GRAPH_ADDED
+    description: A causal graph was added (record_refresh.py REFRESHABLE_SECTIONS
+      action).
+  CAUSAL_GRAPH_UPDATED:
+    text: CAUSAL_GRAPH_UPDATED
+    description: A graph's nodes, edges, evidence or scope changed, or a graph was
+      withdrawn (record_refresh.py action).
 
 ```
 </details>

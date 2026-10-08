@@ -19,6 +19,17 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
  classDiagram
     class IngredientRecord
     click IngredientRecord href "../IngredientRecord/"
+      IngredientRecord : causal_graphs
+        
+          
+    
+        
+        
+        IngredientRecord --> "*" CausalGraph : causal_graphs
+        click CausalGraph href "../CausalGraph/"
+    
+
+        
       IngredientRecord : cellular_metabolic_roles
         
           
@@ -278,6 +289,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [environmental_context](environmental_context.md) | * <br/> [EnvironmentContext](EnvironmentContext.md) | Environmental contexts where this ingredient is relevant | direct |
 | [discussions](discussions.md) | * <br/> [Discussion](Discussion.md) | Open questions, knowledge gaps, controversies, and curation todos attached to... | direct |
 | [datasets](datasets.md) | * <br/> [Dataset](Dataset.md) | Public datasets (omics/sequence/phenotype) relevant to this ingredient | direct |
+| [causal_graphs](causal_graphs.md) | * <br/> [CausalGraph](CausalGraph.md) | Evidence-backed mechanism graphs explaining how this ingredient, as supplied,... | direct |
 
 
 
@@ -308,6 +320,22 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
 | slot_conditions |```{'components': {'value_presence': 'PRESENT'}}``` |```{'ingredient_type': {'equals_string_in': ['STOCK_SOLUTION', 'NAMED_MEDIUM', 'UNDEFINED_MIXTURE']}}``` | |
+
+
+
+### 
+
+| Rule Applied | Preconditions | Postconditions | Elseconditions |
+|--------------|---------------|----------------|----------------|
+| slot_conditions |```{'causal_graphs': {'value_presence': 'PRESENT'}}``` |```{'mapping_status': {'equals_string': 'MAPPED'}}``` | |
+
+
+
+### 
+
+| Rule Applied | Preconditions | Postconditions | Elseconditions |
+|--------------|---------------|----------------|----------------|
+| slot_conditions |```{'ingredient_type': {'equals_string': 'NAMED_MEDIUM'}}``` |```{'causal_graphs': {'value_presence': 'ABSENT'}}``` | |
 
 
 
@@ -374,6 +402,7 @@ attributes:
     identifier: true
     domain_of:
     - IngredientRecord
+    - CrossCorpusLink
     required: true
   preferred_term:
     name: preferred_term
@@ -450,6 +479,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset
@@ -675,6 +705,27 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  causal_graphs:
+    name: causal_graphs
+    description: Evidence-backed mechanism graphs explaining how this ingredient,
+      as supplied, acts on cultured microbes. Fleet graph_list shape (TraitMech, CellStructureMech),
+      so kg-microbe-graph coverage and structure audits read it with default field
+      names. Each graph has exactly one INGREDIENT node grounded to this record's
+      identifier; every other chemical the cell meets is a separate CHEMICAL node
+      reached through typed chemistry edges (CausalEdge.bridge_kind). A graph links
+      to another record, in MIM or a sibling Mech, only through a node grounding equal
+      to that record's identifier. Graphs never change identifier, ontology_mapping
+      or components and never produce SSSOM rows (MAPPING_SEMANTICS.md section 7).
+      This schema validates structure only; the planned offline semantic gate must
+      verify anchors, bridges, evidence and scope before record curation.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: CausalGraph
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 tree_root: true
 rules:
 - preconditions:
@@ -701,6 +752,30 @@ rules:
         - STOCK_SOLUTION
         - NAMED_MEDIUM
         - UNDEFINED_MIXTURE
+- preconditions:
+    slot_conditions:
+      causal_graphs:
+        name: causal_graphs
+        value_presence: PRESENT
+  postconditions:
+    slot_conditions:
+      mapping_status:
+        name: mapping_status
+        equals_string: MAPPED
+  description: Only a resolved identity anchors a mechanism.
+- preconditions:
+    slot_conditions:
+      ingredient_type:
+        name: ingredient_type
+        equals_string: NAMED_MEDIUM
+  postconditions:
+    slot_conditions:
+      causal_graphs:
+        name: causal_graphs
+        value_presence: ABSENT
+  description: 'A NAMED_MEDIUM carries no causal graph: CultureMech owns the recipe
+    and the constituents'' records carry their mechanisms. Untyped records may carry
+    graphs.'
 
 ```
 </details>
@@ -735,6 +810,7 @@ attributes:
     owner: IngredientRecord
     domain_of:
     - IngredientRecord
+    - CrossCorpusLink
     range: string
     required: true
   preferred_term:
@@ -827,6 +903,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset
@@ -1090,6 +1167,29 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  causal_graphs:
+    name: causal_graphs
+    description: Evidence-backed mechanism graphs explaining how this ingredient,
+      as supplied, acts on cultured microbes. Fleet graph_list shape (TraitMech, CellStructureMech),
+      so kg-microbe-graph coverage and structure audits read it with default field
+      names. Each graph has exactly one INGREDIENT node grounded to this record's
+      identifier; every other chemical the cell meets is a separate CHEMICAL node
+      reached through typed chemistry edges (CausalEdge.bridge_kind). A graph links
+      to another record, in MIM or a sibling Mech, only through a node grounding equal
+      to that record's identifier. Graphs never change identifier, ontology_mapping
+      or components and never produce SSSOM rows (MAPPING_SEMANTICS.md section 7).
+      This schema validates structure only; the planned offline semantic gate must
+      verify anchors, bridges, evidence and scope before record curation.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: causal_graphs
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: CausalGraph
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 tree_root: true
 rules:
 - preconditions:
@@ -1116,6 +1216,30 @@ rules:
         - STOCK_SOLUTION
         - NAMED_MEDIUM
         - UNDEFINED_MIXTURE
+- preconditions:
+    slot_conditions:
+      causal_graphs:
+        name: causal_graphs
+        value_presence: PRESENT
+  postconditions:
+    slot_conditions:
+      mapping_status:
+        name: mapping_status
+        equals_string: MAPPED
+  description: Only a resolved identity anchors a mechanism.
+- preconditions:
+    slot_conditions:
+      ingredient_type:
+        name: ingredient_type
+        equals_string: NAMED_MEDIUM
+  postconditions:
+    slot_conditions:
+      causal_graphs:
+        name: causal_graphs
+        value_presence: ABSENT
+  description: 'A NAMED_MEDIUM carries no causal graph: CultureMech owns the recipe
+    and the constituents'' records carry their mechanisms. Untyped records may carry
+    graphs.'
 
 ```
 </details>

@@ -119,3 +119,10 @@ when the request asks only for review.
 Use [review-yaml-category](.claude/skills/review-yaml-category/SKILL.md) to
 audit a coherent ingredient category or cohort without editing records,
 including member selection and lump/split boundaries.
+
+Before adding or changing a record's `causal_graphs`, read
+[CAUSAL_GRAPH_CONTRACT.md](docs/CAUSAL_GRAPH_CONTRACT.md); its status table says
+which parts have landed. `MAPPING_SEMANTICS.md` Section 7 governs what may
+anchor a graph, its bridges from the supplied form to the active species, and
+its links to sibling Mechs. A graph never changes `identifier`,
+`ontology_mapping`, `components` or SSSOM rows.

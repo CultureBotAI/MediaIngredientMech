@@ -126,8 +126,8 @@ attributes:
     name: reference
     description: PMID:..., DOI:..., a repository accession/CURIE, or an opaque URL.
     from_schema: https://w3id.org/kg-microbe/mech-shared
-    rank: 1000
     domain_of:
+    - EvidenceItem
     - SupportingReference
     required: true
   reference_title:
@@ -158,6 +158,7 @@ attributes:
     from_schema: https://w3id.org/kg-microbe/mech-shared
     domain_of:
     - MappingEvidence
+    - EvidenceItem
     - SupportingReference
   explanation:
     name: explanation
@@ -181,6 +182,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset
@@ -203,10 +205,10 @@ attributes:
     name: reference
     description: PMID:..., DOI:..., a repository accession/CURIE, or an opaque URL.
     from_schema: https://w3id.org/kg-microbe/mech-shared
-    rank: 1000
     alias: reference
     owner: SupportingReference
     domain_of:
+    - EvidenceItem
     - SupportingReference
     range: string
     required: true
@@ -248,6 +250,7 @@ attributes:
     owner: SupportingReference
     domain_of:
     - MappingEvidence
+    - EvidenceItem
     - SupportingReference
     range: string
   explanation:
@@ -277,6 +280,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset
