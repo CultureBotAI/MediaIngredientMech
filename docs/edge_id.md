@@ -3,7 +3,7 @@
 # Slot: edge_id 
 
 
-_Stable within the graph; review dispositions and Discussions anchor on causal_graphs#<edge_id>._
+_Stable within the graph; review dispositions and Discussions anchor on causal_graphs#<graph_id>/<edge_id>._
 
 
 
@@ -71,7 +71,7 @@ Alias: edge_id
 ```yaml
 name: edge_id
 description: Stable within the graph; review dispositions and Discussions anchor on
-  causal_graphs#<edge_id>.
+  causal_graphs#<graph_id>/<edge_id>.
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 identifier: true

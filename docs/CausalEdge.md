@@ -171,7 +171,7 @@ attributes:
   edge_id:
     name: edge_id
     description: Stable within the graph; review dispositions and Discussions anchor
-      on causal_graphs#<edge_id>.
+      on causal_graphs#<graph_id>/<edge_id>.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     identifier: true
@@ -304,7 +304,7 @@ attributes:
   edge_id:
     name: edge_id
     description: Stable within the graph; review dispositions and Discussions anchor
-      on causal_graphs#<edge_id>.
+      on causal_graphs#<graph_id>/<edge_id>.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     identifier: true

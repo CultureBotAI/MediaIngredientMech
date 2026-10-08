@@ -568,10 +568,12 @@ Rules:
   record into `record_json`, and `src/mediaingredientmech/validation/semantic_release.py`
   checks that it equals the source record, so graphs ride along with no new
   assertions.
-- **Section refresh.** `record_refresh.py` (PR #817, open on 2026-10-05) lists
-  `causal_graphs` as a refreshable section with the `CAUSAL_GRAPH_ADDED` and
-  `CAUSAL_GRAPH_UPDATED` actions. The section must leave that list in phase 2,
-  once reviews read causal edges.
+- **Section refresh.** `record_refresh.py` accepts audit receipts for
+  `causal_graphs` with the `CAUSAL_GRAPH_ADDED` and `CAUSAL_GRAPH_UPDATED`
+  actions. Since PR #817, these receipts provide provenance only: they never
+  carry approval across changed record bytes. Any graph addition or update
+  requires fresh scientific approval of the resulting record, including
+  before the phase 2 causal-edge exporter is implemented.
 - **claw coverage.** The planned MIM stanza in claw's `fleet.yaml`:
 
   ```yaml
