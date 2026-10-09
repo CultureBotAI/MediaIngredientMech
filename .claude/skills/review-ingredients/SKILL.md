@@ -9,6 +9,38 @@ created: 2026-03-15
 
 # Review Ingredients Skill
 
+## Structured Review Output
+
+For every new review or audit, follow
+[docs/record-reviews.md](../../../docs/record-reviews.md) and
+[the local profile](../../../docs/record-review-profile.md).
+Capture exact targets and input hashes before judging, preserve this skill's
+native rubric, rule IDs, scores and evidence requirements, then author the
+structured assessment and run:
+
+```bash
+uv run python scripts/record_review.py inspect --targets /tmp/review-targets.yaml
+uv run python scripts/record_review.py validate /tmp/completed-review.yaml
+uv run python scripts/record_review.py save --content /tmp/completed-review.yaml
+```
+
+Choose session-unique temporary paths. Save authoritative YAML and derived
+Markdown under `reviews/structured/<timestamp>-<slug>/`; link both in the
+final response. This output contract supersedes prose-only report examples.
+A single record uses `kind: record`; batches declare exact selection,
+population, reviewed targets and limits. Categories also state boundary decisions.
+Every reviewed target must have an assessment. Keep P1-P4 and other native
+severity/rule information with a justified common severity, and metric definitions,
+scales and denominators. Do not infer scientific approval from a native score.
+
+Raw provider drafts and deterministic validator/scan reports are diagnostic
+inputs, not completed scientific reviews. Use `scientific_review: false`
+for deterministic-only or provenance-only assessments; mark required unavailable
+checks and incomplete coverage explicitly. A valid bundle does not change native
+status, clear release holds, authorize edits, or append curation history.
+For audit-only requests, stop after assessment and persistence; any application
+steps below require curation intent.
+
 ## Overview
 
 The **Review Ingredients** skill provides quality assurance for ontology-mapped
@@ -79,7 +111,9 @@ PYTHONPATH=src python scripts/batch_review.py --source CHEBI     # filter by sou
 PYTHONPATH=src python scripts/batch_review.py --limit 10 --dry-run
 ```
 
-Output: `validation_report.md`, `validation_data.json`, `dashboard.html`. See
+Diagnostic output: `validation_report.md`, `validation_data.json`,
+`dashboard.html`. These are deterministic scan results; final assessed reviews
+must use the shared validator/saver described above. See
 [`reference/api-reference.md`](reference/api-reference.md) for the report formats.
 
 ### 3. Automated Correction (P3/P4 safe issues)
@@ -159,7 +193,8 @@ known false-positive patterns) live in
 1. **Run batch validation before publishing MIM products** — no P1 errors propagate; generates an audit trail.
 2. **Use auto-correct for P3/P4 only** — properties enrichment and synonym addition are low-risk; review P1/P2 manually.
 3. **Cache OWL files locally** — faster, offline-capable, reproducible.
-4. **Track validation history** — add validation events to `curation_history`; monitor trends.
+4. **Track review observations** — save a new structured bundle; append
+   `curation_history` only when separately authorized curation changes the record.
 5. **Batch process with checkpoints** — resume on failure; 4–8 threads; rate-limit API calls (0.5–1 s).
 6. **Verify corrections before applying** — `--dry-run` first, review the JSON plan, test on a subset.
 

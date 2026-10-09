@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Batch validate all ingredients and generate comprehensive reports.
+Batch validate ingredients and generate deterministic diagnostic reports.
+
+These outputs are not completed scientific reviews. Save final assessed
+content with scripts/record_review.py according to docs/record-reviews.md.
 
 Usage:
     python scripts/batch_review.py --output reports/validation_20260315
@@ -37,14 +40,19 @@ def load_mapped_ingredients() -> List[Dict]:
     return data.get("ingredients", [])
 
 
-def generate_markdown_report(result, output_path: Path):
+def generate_markdown_report(result, output_path: Path, records_attempted=None):
     """Generate Markdown validation report."""
     report_lines = [
         "# Ingredient Validation Report",
+        "Deterministic diagnostics only; scientific_review: false.",
+        "Not a completed scientific review. Save assessed output with scripts/record_review.py.",
         f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
         "",
         "## Summary Statistics",
-        f"- Total ingredients reviewed: {sum(result.summary.values())}",
+        "Priority percentages below are shares of diagnostic issues, not record coverage.",
+        f"- Records attempted: {records_attempted if records_attempted is not None else 'unknown'}",
+        f"- Failed validations: {len(result.failed)}",
+        f"- Total diagnostic issues: {sum(result.summary.values())}",
         f"- P1 Critical errors: {result.summary['P1']}",
         f"- P2 High-priority warnings: {result.summary['P2']} ({result.summary['P2'] / max(sum(result.summary.values()), 1) * 100:.1f}%)",
         f"- P3 Medium-priority warnings: {result.summary['P3']} ({result.summary['P3'] / max(sum(result.summary.values()), 1) * 100:.1f}%)",
@@ -126,12 +134,18 @@ def generate_markdown_report(result, output_path: Path):
     console.print(f"[green]✓ Markdown report written to {output_path}[/green]")
 
 
-def generate_json_report(result, output_path: Path):
+def generate_json_report(result, output_path: Path, records_attempted=None):
     """Generate JSON validation report."""
     report_data = {
         "metadata": {
+            "scientific_review": False,
+            "review_status": "diagnostic_only",
             "generated": datetime.now(timezone.utc).isoformat(),
-            "total_reviewed": sum(result.summary.values()),
+            "records_attempted": records_attempted,
+            "total_reviewed": (
+                records_attempted - len(result.failed) if records_attempted is not None else None
+            ),
+            "total_issues": sum(result.summary.values()),
             "summary": result.summary,
         },
         "issues": [
@@ -185,6 +199,8 @@ def generate_html_dashboard(result, output_path: Path):
 <body>
     <div class="container-fluid">
         <h1>Ingredient Validation Dashboard</h1>
+        <p>Deterministic diagnostics only; scientific_review: false.
+        Not a completed scientific review. Save assessed output with scripts/record_review.py.</p>
         <p class="text-muted">Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
 
         <div class="row mb-4">
@@ -375,8 +391,9 @@ def main():
         progress.update(task, completed=len(ingredients))
 
     # Display summary
+    console.print("Deterministic diagnostics only; not a completed scientific review.")
     console.print("\n[bold]Validation Summary:[/bold]")
-    console.print(f"  Total reviewed: {len(ingredients)}")
+    console.print(f"  Total attempted: {len(ingredients)}")
     console.print(f"  [red]P1 Critical errors: {result.summary['P1']}[/red]")
     console.print(f"  [yellow]P2 High-priority warnings: {result.summary['P2']}[/yellow]")
     console.print(f"  [blue]P3 Medium-priority warnings: {result.summary['P3']}[/blue]")
@@ -396,10 +413,10 @@ def main():
         formats = args.format.split(",")
 
         if "md" in formats:
-            generate_markdown_report(result, args.output / "validation_report.md")
+            generate_markdown_report(result, args.output / "validation_report.md", len(ingredients))
 
         if "json" in formats:
-            generate_json_report(result, args.output / "validation_data.json")
+            generate_json_report(result, args.output / "validation_data.json", len(ingredients))
 
         if "html" in formats:
             generate_html_dashboard(result, args.output / "dashboard.html")
@@ -409,7 +426,7 @@ def main():
         console.print("\n[yellow]Dry-run mode - no files written[/yellow]")
 
     # Exit code
-    return 0 if result.summary["P1"] == 0 else 1
+    return 0 if ingredients and not result.failed and result.summary["P1"] == 0 else 1
 
 
 if __name__ == "__main__":

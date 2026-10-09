@@ -13,6 +13,10 @@ metadata:
 
 ## Scope
 
+For new structured bundles, start with [Structured Review Inputs](#structured-review-inputs)
+below. The legacy manifest-based round builder only consumes historical prose
+reports; it is not an adapter for the new YAML contract.
+
 Use this skill after `review-yaml-record` or `review-yaml-category` has written
 Markdown review reports and you need to promote their findings into a durable,
 bundled GitHub issue backlog.
@@ -148,6 +152,18 @@ When a PR claims to fix a bundle:
 Mentioning an issue number in a PR is not enough. The row needs the merge
 commit and the validation evidence that closed the specific bundle.
 
+## Structured Review Inputs
+
+New scientific reviews use [docs/record-reviews.md](../../../docs/record-reviews.md).
+Validate bundles with `uv run python scripts/record_review.py check`; use their
+authoritative YAML finding IDs and stable issue keys, not parsed Markdown.
+The legacy `scripts/build_review_round.py` and manifest examples below are
+for historical prose reports only. Do not feed a structured bundle to that
+parser or infer closure from a newer clean report. For new observations, retain
+`issue_key`, cite exact `previous_occurrences`, and record inspected evidence
+and the disposition reason through the shared saver. GitHub writes still
+require the task's outbound authorization.
+
 ## Retiring Findings
 
 Retire findings only after a later review report inspects the changed
@@ -157,8 +173,8 @@ For each old fingerprint:
 
 1. Find the new report for the same record in the latest
    `reports/yaml_record_review/manifest.tsv`.
-2. Confirm the new report either has `severity=none` or explicitly omits the
-   old normalized finding.
+2. Require an explicit evidence-backed disposition of the old finding.
+   Omission or `severity=none` alone does not establish that it was resolved.
 3. Add a `retirements.tsv` row with:
    - `old_finding_id`
    - `fingerprint`
