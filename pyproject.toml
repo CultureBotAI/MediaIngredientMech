@@ -108,6 +108,7 @@ addopts = [
 ]
 
 [tool.black]
+force-exclude = '/(scripts/record_review|tests/test_record_review_contract)\.py$'
 line-length = 100
 target-version = ["py310", "py311", "py312"]
 include = '\.pyi?$'
@@ -127,9 +128,12 @@ exclude = '''
 '''
 
 [tool.ruff]
+force-exclude = true
 line-length = 100
 target-version = "py310"
 exclude = [
+    "scripts/record_review.py",
+    "tests/test_record_review_contract.py",
     "src/mediaingredientmech/schema/mapped_ingredients_schema.py",
 ]
 

@@ -9,6 +9,13 @@ set dotenv-load := true
 # enabling this changes nothing else.
 set positional-arguments := true
 
+# Validate immutable structured review bundles and their adoption contract.
+check-record-reviews:
+    uv run python scripts/record_review.py check
+
+test-record-reviews:
+    uv run --with pytest --with pytest-cov python -m pytest tests/test_record_review_contract.py --no-cov -q
+
 research_dir := "research"
 templates_dir := "templates"
 
