@@ -35,3 +35,25 @@ def test_schema_gap_route_delegates_and_preserves_native_axes():
         "separate curation intent",
     ):
         assert required in text
+
+
+def test_reconciliation_route_preserves_history_and_candidate_uncertainty():
+    profile = yaml.safe_load((ROOT / "conf/record_review.yaml").read_text())
+    path = ".claude/skills/reconcile-review-records/SKILL.md"
+    assert path in profile["skills"]
+    text = (ROOT / path).read_text()
+    for required in (
+        "docs/record-reviews.md",
+        "scripts/record_review.py save --content",
+        "previous_occurrences",
+        "scientific_review: false",
+        "PER_RECORD_AUTHORED_FIELDS",
+        "Pattern matches identify candidates, not confirmed defects.",
+        "status: deferred",
+        "certainty: provisional",
+        "current heads separately from the historical snapshot",
+        "archival provenance tag",
+        "separate checkout without the topic branch",
+        "../review-round-issues/SKILL.md",
+    ):
+        assert required in text

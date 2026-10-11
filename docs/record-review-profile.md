@@ -13,6 +13,9 @@ local rubrics are enumerated in `conf/record_review.yaml`.
 ## Routes And Native Rubrics
 
 - `review-yaml-record`: exact ingredient identity and claim review.
+- `reconcile-review-records`: reassess saved legacy or structured findings
+  against current inputs and persist evidence-backed dispositions without
+  rewriting historical reviews or promoting native scientific status.
 - `review-yaml-category`: coherent substance/form cohorts, explicit boundaries,
   evidence for lump/split decisions, and declared sample coverage.
 - `review-ingredients`: focused or batch P1-P4 mapping/quality review.

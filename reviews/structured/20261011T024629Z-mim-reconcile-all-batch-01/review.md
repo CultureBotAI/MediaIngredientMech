@@ -1,0 +1,7305 @@
+# MIM full-corpus reconciliation: batch 1/13
+
+- Review: 20261011T024629Z-mim-reconcile-all-batch-01
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-11T02:37:39.999012Z
+- Finished UTC: 2026-10-11T02:46:29Z
+- Reviewer: Codex (self_review)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+26 explicit targets in this batch of the 2953-record census; 45 historical reports retained. All target surfaces checked; scoped residuals and repairs recorded. Full historical scientific/narrative reassessment remains incomplete.
+
+## Scope And Provenance
+
+Full target coverage for bounded current-state reconciliation; NOT full scientific review or exhaustive retirement of every historical allegation.
+
+Selection: Batch 1/13 of disjoint 2953-record enumeration including ignored/untracked files. First batch prioritizes changed records, blocker floors and their exact lineage partners; remaining paths sorted and partitioned in groups of 250.
+Coverage: full; 26 reviewed / 26 in the declared population.
+Source: working_tree at Git base 378d733d51f6d66cbc936bf17c56821a1f7030fe.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-5703779de3d5d6d5 | data/ingredients/mapped/(2)-D-lyxose.yaml | maintained | (2)-D-lyxose |
+| record-c7c393946643c2bd | data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml | maintained | 05_M_Nitrilotriacetic_Acid_Disodium_Salt |
+| record-5e7776b9bffe8c42 | data/ingredients/mapped/1122-Tetrachloroethane.yaml | maintained | 1122-Tetrachloroethane |
+| record-be65b7426fab585b | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml | maintained | 2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate |
+| record-121bfb06cb059ee5 | data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml | maintained | 2-chloro-4ethylamino-6-isopropylamino-135-triazine |
+| record-31f2106d82aaa846 | data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml | maintained | 2-dimethylsuccinic_Acid |
+| record-713d67a5c5ba5163 | data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml | maintained | Apigenin_Dimethyl_Ether |
+| record-bad75fc5238b3ba8 | data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml | maintained | Arabinoxylan_Rye_Flour |
+| record-d3b0ecc34107044e | data/ingredients/mapped/Artepaulin.yaml | maintained | Artepaulin |
+| record-da76045c326b778e | data/ingredients/mapped/Artificial_Sea_Salt.yaml | maintained | Artificial_Sea_Salt |
+| record-67b4f4f91e7cf018 | data/ingredients/mapped/Atrazin.yaml | maintained | Atrazin |
+| record-fc9e896f5b234168 | data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml | maintained | Benzylhydrazine_Hydrochloride |
+| record-428f0a67e2ef5305 | data/ingredients/mapped/Ca_No32_X_4_H2o.yaml | maintained | Ca_No32_X_4_H2o |
+| record-26db4b94c97aabed | data/ingredients/mapped/D-_-lyxose.yaml | maintained | D-_-lyxose |
+| record-3685075c8b5b5eb7 | data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml | maintained | DL-2-Aminoadipic_Acid |
+| record-dd49bc63aa61b117 | data/ingredients/mapped/Edta.yaml | maintained | Edta |
+| record-02b5116af3e070ea | data/ingredients/mapped/Edta_Chelating_Agent.yaml | maintained | Edta_Chelating_Agent |
+| record-2e4090e1bf27a52d | data/ingredients/mapped/Furaltadone_Hydrochloride.yaml | maintained | Furaltadone_Hydrochloride |
+| record-ddeb567db07067be | data/ingredients/mapped/N-acetyl-muramic_Acid.yaml | maintained | N-acetyl-muramic_Acid |
+| record-9dc76df162cdd3c3 | data/ingredients/mapped/N-acetylmuramic_Acid.yaml | maintained | N-acetylmuramic_Acid |
+| record-b309242fe87da37a | data/ingredients/mapped/Na2hpo4.yaml | maintained | Na2hpo4 |
+| record-a3513ba2c7afb1a7 | data/ingredients/mapped/Nano.yaml | maintained | Nano |
+| record-a195a7daaa716895 | data/ingredients/mapped/Nano3.yaml | maintained | Nano3 |
+| record-9fb851ed17361db8 | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml | maintained | Sodium_Phosphate_Dibasic |
+| record-29b4005016928e09 | data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml | maintained | CMC_PY_Horse_Serum |
+| record-93cd2f755a63894b | data/ingredients/unmapped/Ca.yaml | maintained | Ca |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Closed-schema validation | passed | True | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | Validating 2960 files with 15 workers; schema=/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/Mechs/MediaIngredientMech/src/mediaingredientmech/schema/mediaingredientmech.yaml<br>  250/2960 files processed, 0 ERROR rows so far<br>  500/2960 files processed, 0 ERROR rows so far<br>  750/2960 files processed, 0 ERROR rows so far<br>  1000/2960 files processed, 0 ERROR rows so far<br>  1250/2960 files processed, 0 ERROR rows so far<br>  1500/2960 files processed, 0 ERROR rows so far<br>  1750/2960 files processed, 0 ERROR rows so far<br>  2000/2960 files processed, 0 ERROR rows so far<br>  2250/2960 files processed, 0 ERROR rows so far<br>  2500/2960 files processed, 0 ERROR rows so far<br>  2750/2960 files processed, 0 ERROR rows so far<br><br>=== validate-strict summary ===<br>  files scanned:      2960<br>  files with ERROR:   0<br>  total ERROR rows:   0<br>  TSV:                /tmp/mim-reconcile-all.bpnX3efo/strict-validation.tsv<br> |
+| Available SSSOM invariants | passed | True | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | WARNING: Rule B4 skipped — kg-microbe ontology transforms not found at /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/Mechs/kg-microbe/data/transformed/ontologies for prefix(es): BTO, CHEBI, ENVO, FOODON, MICRO, UBERON. To enable Rule B4 locally, check out kg-microbe at the sibling path and run its &#96;just transform&#96; recipe. (CI typically lacks these transforms; the validator does not exit-2 on B4 alone in that case.)<br>OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L. /tmp/mim-reconcile-all.bpnX3efo/sssom-rejects.tsv written with header only.<br> |
+| SSSOM versus maintained mappings | passed | True | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | SSSOM currency vs curated mapped records:<br>  GAP    (mapped record, no SSSOM row):   0<br>  ORPHAN (SSSOM row, no/REJECTED record): 0<br>  STALE  (row lacks current ontology_id): 0<br>  PREDICATE (current ontology row, wrong predicate): 0<br>  GRADE (right predicate, stale grade metadata):     0<br><br>OK: SSSOM is in sync with the curated data.<br> |
+| Generated flat export freshness and coverage | passed | True | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | freshness: 8 regenerated artifact(s) match their producers<br>coverage: all_ingredients.csv        8312/8312 curated label(s) resolvable<br>  note: 32 published label(s) map to more than one identifier — see #232 for the triage<br>coverage: mapped_ingredients.csv     7959/7959 curated label(s) resolvable<br>coverage: unmapped_ingredients.csv   360/360 curated label(s) resolvable<br>coverage: label_index.csv            8312/8312 curated label(s) indexed<br><br>OK: docs/data/ is fresh and every curated label is published.<br> |
+| Merge-target regression checks | passed | False | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | .........                                                                [100%]<br>9 passed in 38.32s<br> |
+| Ontology label/term correspondence (B4) | unavailable | True | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | Default sibling transforms absent for BTO, CHEBI, ENVO, FOODON, MICRO and UBERON. SSSOM exit 0 does not cover B4. |
+| Exhaustive scientific and source-context reassessment | skipped | True | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | This round performs bounded local reconciliation, not new primary-source verification of every old narrative allegation. Remaining claims are explicit needs_reassessment assessments. |
+| Per-record versus aggregate semantic comparison | passed | True | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | All 2953 current records match exactly one aggregate row after excluding the exporter-owned per-record overlay fields. Eight raw differences are discussions overlays, not drift. |
+| Existing structured bundle and lineage inventory | passed | True | record-5703779de3d5d6d5, record-c7c393946643c2bd, record-5e7776b9bffe8c42, record-be65b7426fab585b, record-121bfb06cb059ee5, record-31f2106d82aaa846, record-713d67a5c5ba5163, record-bad75fc5238b3ba8, record-d3b0ecc34107044e, record-da76045c326b778e, record-67b4f4f91e7cf018, record-fc9e896f5b234168, record-428f0a67e2ef5305, record-26db4b94c97aabed, record-3685075c8b5b5eb7, record-dd49bc63aa61b117, record-02b5116af3e070ea, record-2e4090e1bf27a52d, record-ddeb567db07067be, record-9dc76df162cdd3c3, record-b309242fe87da37a, record-a3513ba2c7afb1a7, record-a195a7daaa716895, record-9fb851ed17361db8, record-29b4005016928e09, record-93cd2f755a63894b | Pre-run check returned valid_reviews=0 and no_structured_reviews. Ignored-inclusive filesystem enumeration found no structured bundles or issue-round ledger files. No previous_occurrences or terminal structured findings are fabricated. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-5703779de3d5d6d5.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-5703779de3d5d6d5.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T04:46:10Z; reviewed SHA-256=62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e; current SHA-256=62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e; hash_changed=False. Reports=["reports/yaml_record_review/(2)-D-lyxose.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Active identity passes, but source_occurrences appears to omit the direct microbedecoder D-lyxose row with count 159.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-c7c393946643c2bd.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-c7c393946643c2bd.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:58:57Z; reviewed SHA-256=91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f; current SHA-256=91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f; hash_changed=False. Reports=["reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md","reports/yaml_record_review/20261001T045857Z-05_M_Nitrilotriacetic_Acid_Disodium_Salt.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md&#96; after the record changed from 9534e4229546828c3f4f2dd48ae759dd32aa9e6f7b8a084cd929699a98b08790 to 91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-5e7776b9bffe8c42.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-5e7776b9bffe8c42.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:58:59Z; reviewed SHA-256=99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e; current SHA-256=99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e; hash_changed=False. Reports=["reports/yaml_record_review/1122-Tetrachloroethane.md","reports/yaml_record_review/20261001T045859Z-1122-Tetrachloroethane.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/1122-Tetrachloroethane.md&#96; after the record changed from b0a7327db273c860ba78aaecb8864949d4579b70186a4b9869845b0425b8938c to 99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-be65b7426fab585b.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-be65b7426fab585b.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:59:00Z; reviewed SHA-256=35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048; current SHA-256=35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048; hash_changed=False. Reports=["reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md","reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md&#96; after the record changed from c723754f95dc6bcb53fdbafe6912a8545fe82b86a78989d19bdacae67e337bae to 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048; preserved the previous blocker finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-be65b7426fab585b.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-121bfb06cb059ee5.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-121bfb06cb059ee5.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-10-01T04:59:01Z; reviewed SHA-256=30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b; current SHA-256=30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b; hash_changed=False. Reports=["reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md","reports/yaml_record_review/20261001T045901Z-2-chloro-4ethylamino-6-isopropylamino-135-triazine.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md&#96; after the record changed from 5dbf00ae4cb7644279e476a238e3be0760a1b1e929b9faeeecd821f402b52a86 to 30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b; preserved the previous minor finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-31f2106d82aaa846.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-31f2106d82aaa846.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:59:02Z; reviewed SHA-256=929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62; current SHA-256=929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62; hash_changed=False. Reports=["reports/yaml_record_review/2-dimethylsuccinic_Acid.md","reports/yaml_record_review/20261001T045902Z-2-dimethylsuccinic_Acid.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/2-dimethylsuccinic_Acid.md&#96; after the record changed from dc520ce3cede726df5bc33151ccc9d201044e65cde8d66f4a4b9a936a7982b05 to 929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-713d67a5c5ba5163.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-713d67a5c5ba5163.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:23Z; reviewed SHA-256=688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8; current SHA-256=688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050123Z-Apigenin_Dimethyl_Ether.md","reports/yaml_record_review/Apigenin_Dimethyl_Ether.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Apigenin_Dimethyl_Ether.md&#96; after the record changed from fe19720fc98248fc7c7920ebcd4967cde33a788001c276faf4ed2a3e4c735a20 to 688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-bad75fc5238b3ba8.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-bad75fc5238b3ba8.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:26Z; reviewed SHA-256=eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf; current SHA-256=eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050126Z-Arabinoxylan_Rye_Flour.md","reports/yaml_record_review/Arabinoxylan_Rye_Flour.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Arabinoxylan_Rye_Flour.md&#96; after the record changed from 0fa877c442c77b43f94f673b3009f8a9bbf22c28374e4ffa7223216a091a76f7 to eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf; preserved the previous blocker finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-bad75fc5238b3ba8.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-d3b0ecc34107044e.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-d3b0ecc34107044e.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:29Z; reviewed SHA-256=b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642; current SHA-256=b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050129Z-Artepaulin.md","reports/yaml_record_review/Artepaulin.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Artepaulin.md&#96; after the record changed from 355d0245ffe0c89f4ce3c553026d4df8ce629034a64c7310d85e47a7ed59591f to b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-da76045c326b778e.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-da76045c326b778e.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:30Z; reviewed SHA-256=effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389; current SHA-256=effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050130Z-Artificial_Sea_Salt.md","reports/yaml_record_review/Artificial_Sea_Salt.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Artificial_Sea_Salt.md&#96; after the record changed from b012529ebd6f2bc6688ab74f29631ea6405d7905a005fdd67b71c07ea08ee0e4 to effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-67b4f4f91e7cf018.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-67b4f4f91e7cf018.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:31Z; reviewed SHA-256=02c2c72bf9ee60b2e83c99962397049678f1404f74a2fb8593592890d01a8cd2; current SHA-256=d61bbfeda6dfd9326d9c39111ec579b8eaeabbe7e37c3ed2dd407e35fadca71b; hash_changed=True. Reports=["reports/yaml_record_review/20261001T050131Z-Atrazin.md","reports/yaml_record_review/Atrazin.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Atrazin.md&#96; after the record changed from 3c049fdb6761ed282d77035db21d57de5e1e2ff04fa405d5a09d5fe1009d6eed to 02c2c72bf9ee60b2e83c99962397049678f1404f74a2fb8593592890d01a8cd2; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-fc9e896f5b234168.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-fc9e896f5b234168.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:36Z; reviewed SHA-256=67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc; current SHA-256=67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050136Z-Benzylhydrazine_Hydrochloride.md","reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md&#96; after the record changed from d04e663d2f1cd497e2ff07d39d2b41302bc7a256794288bc04fe89290c1e1b0f to 67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-428f0a67e2ef5305.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-428f0a67e2ef5305.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T10:32:41Z; reviewed SHA-256=efe13cbdbfcfb0d5da686a6b2ca032f3492ed50a55a790aa39fa9d135919a2c1; current SHA-256=ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907; hash_changed=True. Reports=["reports/yaml_record_review/Ca_No32_X_4_H2o.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The calcium nitrate tetrahydrate identity, SSSOM row, and aggregate copy pass, but an exact CAS-qualified label remains unmapped as Ca.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-26db4b94c97aabed.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-26db4b94c97aabed.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T13:23:22Z; reviewed SHA-256=39b02cd43bdadb3fb76b6e05e83da0e1595572741fae2f4d3e6af59a050fc701; current SHA-256=90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a; hash_changed=True. Reports=["reports/yaml_record_review/D-_-lyxose.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The rejected aldehydo tombstone correctly drops final SSSOM and points at D-lyxose, but inert stale chemistry/role data and an unreviewed cross-record baseline row remain.
+
+### Historical provisional-role concern
+
+evidence: unknown. Targets: record-26db4b94c97aabed.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-3685075c8b5b5eb7.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-3685075c8b5b5eb7.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:02:08Z; reviewed SHA-256=fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e; current SHA-256=fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050208Z-DL-2-Aminoadipic_Acid.md","reports/yaml_record_review/DL-2-Aminoadipic_Acid.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/DL-2-Aminoadipic_Acid.md&#96; after the record changed from 35142da6bf1867b5b00847f2334a6fa7380af1f43a215bfe701f4e1118f30dc4 to fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e; preserved the previous blocker finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-3685075c8b5b5eb7.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-dd49bc63aa61b117.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-dd49bc63aa61b117.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:11Z; reviewed SHA-256=d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701; current SHA-256=d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050211Z-Edta.md","reports/yaml_record_review/Edta.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Edta.md&#96; after the record changed from cd438498f4699624144f8cc48b4d756633e7949f7b0cad9202a944191067dd84 to d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701; preserved the previous major finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-dd49bc63aa61b117.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-02b5116af3e070ea.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-02b5116af3e070ea.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:02:12Z; reviewed SHA-256=85c00a1b83b9f31e8bd04b3ee56ee4b487aab3c0e18a5c0302b46b04bfee175f; current SHA-256=8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c; hash_changed=True. Reports=["reports/yaml_record_review/20261001T050212Z-Edta_Chelating_Agent.md","reports/yaml_record_review/Edta_Chelating_Agent.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Edta_Chelating_Agent.md&#96; after the record changed from 7fe6440002acca66be63af7bccb2a4e1c955511e5da0b044de2238097004d1c0 to 85c00a1b83b9f31e8bd04b3ee56ee4b487aab3c0e18a5c0302b46b04bfee175f; preserved the previous blocker finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: unknown. Targets: record-02b5116af3e070ea.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-2e4090e1bf27a52d.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-2e4090e1bf27a52d.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T17:11:13Z; reviewed SHA-256=87e18c29f00b3dc30303c304ca308b8afee481cda252dc34ba101f19d51ff259; current SHA-256=d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81; hash_changed=True. Reports=["reports/yaml_record_review/Furaltadone_Hydrochloride.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The NCIT target is exact, but the record still emits it as a narrow match plus local registry rows.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-ddeb567db07067be.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-ddeb567db07067be.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T04:33:25Z; reviewed SHA-256=b811a769cfd626a77805afc736bc8432009858e75c81c8636552dca3e9a2aca4; current SHA-256=b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0; hash_changed=True. Reports=["reports/yaml_record_review/N-acetyl-muramic_Acid.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The rejected aldehydo N-acetylmuramic acid tombstone is correctly absent from final SSSOM, but still carries stale pre-merge live-shape fields.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-9dc76df162cdd3c3.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: not_applicable. Targets: record-9dc76df162cdd3c3.
+
+The latest legacy review reports no outstanding finding. This run verifies local consistency only; it does not renew that earlier scientific pass.
+
+Latest manifest verdict=pass; severity=none; reviewed_at=2026-09-17T04:33:25Z; reviewed SHA-256=c94c85b40f68e1f703a0221bd6ca9480abae2252af0769d5c6deeaf5c1bbefff; current SHA-256=c94c85b40f68e1f703a0221bd6ca9480abae2252af0769d5c6deeaf5c1bbefff; hash_changed=False. Reports=["reports/yaml_record_review/N-acetylmuramic_Acid.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The active CHEBI:47965 N-acetylmuramic acid merge winner, supplied commercial CAS, folded aldehydo synonyms, and final exact row pass.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-b309242fe87da37a.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-b309242fe87da37a.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:51Z; reviewed SHA-256=ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4; current SHA-256=ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050251Z-Na2hpo4.md","reports/yaml_record_review/Na2hpo4.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Na2hpo4.md&#96; after the record changed from c74e5c3673d7bc297f632f942de12460f0e3e2f066aeb4212316d5af9a23fa37 to ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4; preserved the previous major finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-b309242fe87da37a.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-a3513ba2c7afb1a7.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-a3513ba2c7afb1a7.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:02:58Z; reviewed SHA-256=1158fe527bfd42ccb90a580f2c33e015550ff5e6d33bf57e96d778e04a7223ef; current SHA-256=4dd4a5ae67fec187d44f23d68fafffe2e533a1d4d85c481b6dd55fa8dfa29631; hash_changed=True. Reports=["reports/yaml_record_review/20261001T050258Z-Nano.md","reports/yaml_record_review/Nano.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Nano.md&#96; after the record changed from 3a61b91e11ba7e6fd28eee09dceb979b0c991486d871208c7e29bb6b25a56972 to 1158fe527bfd42ccb90a580f2c33e015550ff5e6d33bf57e96d778e04a7223ef; preserved the previous blocker finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-a195a7daaa716895.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-a195a7daaa716895.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:59Z; reviewed SHA-256=6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f; current SHA-256=6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050259Z-Nano3.md","reports/yaml_record_review/Nano3.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Nano3.md&#96; after the record changed from efe9b51b3e6c91c8cf78f6623da8b71dd5731bdf2603cf9a6dbf24bb1a177c0b to 6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f; preserved the previous major finding floor pending targeted retirement.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-9fb851ed17361db8.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-9fb851ed17361db8.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:03:30Z; reviewed SHA-256=aabdf39c562aff24b8326456268b4a1e0ac1716934d4d24d428072a8e138e674; current SHA-256=b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925; hash_changed=True. Reports=["reports/yaml_record_review/20261001T050330Z-Sodium_Phosphate_Dibasic.md","reports/yaml_record_review/Sodium_Phosphate_Dibasic.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Sodium_Phosphate_Dibasic.md&#96; after the record changed from b4e7a80f4f611b0cf35a46f701a382a49ac0b2d706eba3f5714fdeb79e13e955 to aabdf39c562aff24b8326456268b4a1e0ac1716934d4d24d428072a8e138e674; preserved the previous blocker finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: unknown. Targets: record-9fb851ed17361db8.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-29b4005016928e09.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-29b4005016928e09.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:47:02Z; reviewed SHA-256=39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077; current SHA-256=39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077; hash_changed=False. Reports=["reports/yaml_record_review/20261001T044702Z-CMC_PY_Horse_Serum.md","reports/yaml_record_review/CMC_PY_Horse_Serum.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Record is intentionally AMBIGUOUS after source review showed the flattened label should not be represented as one CMC/PY/horse-serum mixture.
+
+### Unresolved exact identity or preparation
+
+identity: unknown. Targets: record-29b4005016928e09.
+
+Current status=AMBIGUOUS; no supported promotion is established by this reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition review is still required.
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-93cd2f755a63894b.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-93cd2f755a63894b.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:47:04Z; reviewed SHA-256=6a03b511c5ec090b792709a429d879c28fef07ef3fda37eccf1cad8606b2320a; current SHA-256=30536efdb26bcaaa5729c3e61ca9ea9cd7372cd3ed7106834895ee8da38b14af; hash_changed=True. Reports=["reports/yaml_record_review/20261001T044704Z-Ca.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Specific single-ingredient residual remains unresolved: current evidence does not support an exact ontology or stable-registry identity.
+
+### Retired wrong mapping / stale tombstone ontology pointer
+
+identity: supported. Targets: record-67b4f4f91e7cf018.
+
+The narrow exported-mapping/pointer defect is already fixed: REJECTED tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a live merge target. This does not retire source-count, inert chemistry, role, or synonym questions.
+
+### Retired wrong mapping / stale tombstone ontology pointer
+
+identity: supported. Targets: record-02b5116af3e070ea.
+
+The narrow exported-mapping/pointer defect is already fixed: REJECTED tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a live merge target. This does not retire source-count, inert chemistry, role, or synonym questions.
+
+### Retired wrong mapping / stale tombstone ontology pointer
+
+identity: supported. Targets: record-a3513ba2c7afb1a7.
+
+The narrow exported-mapping/pointer defect is already fixed: REJECTED tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a live merge target. This does not retire source-count, inert chemistry, role, or synonym questions.
+
+### Retired wrong mapping / stale tombstone ontology pointer
+
+identity: supported. Targets: record-9fb851ed17361db8.
+
+The narrow exported-mapping/pointer defect is already fixed: REJECTED tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a live merge target. This does not retire source-count, inert chemistry, role, or synonym questions.
+
+### Retired wrong mapping / stale tombstone ontology pointer
+
+identity: supported. Targets: record-26db4b94c97aabed.
+
+The narrow exported-mapping/pointer defect is already fixed: REJECTED tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a live merge target. This does not retire source-count, inert chemistry, role, or synonym questions.
+
+### Retired wrong mapping / stale tombstone ontology pointer
+
+identity: supported. Targets: record-ddeb567db07067be.
+
+The narrow exported-mapping/pointer defect is already fixed: REJECTED tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a live merge target. This does not retire source-count, inert chemistry, role, or synonym questions.
+
+### Furaltadone hydrochloride predicate and registry-row shape
+
+grounding: supported. Targets: record-2e4090e1bf27a52d.
+
+NCIT:C217928 is now both primary and ontology identifier with EXACT_MATCH; the sole SSSOM row is skos:exactMatch to NCIT:C217928. The prior CAS/local-registry and non-exact NCIT rows are gone. This verifies the requested representation change, not fresh NCIT/CAS scientific validation.
+
+### Furaltadone CAS alias verification
+
+identity: unknown. Targets: record-2e4090e1bf27a52d.
+
+CAS 3759-92-1 remains in chemical_properties and final other. The old report explicitly requested registry-source verification; promoting NCIT does not itself establish that alias. A current resolving registry source is still needed.
+
+### CAS-qualified hydrate label and three-occurrence transfer
+
+provenance: supported. Targets: record-428f0a67e2ef5305.
+
+The specific stranded-label/3-occurrence defect is already fixed: resolving synonym is on CHEBI:86159 and in its SSSOM row; the active record and pinned membership count are 202/202; Ca is a zero-count REJECTED tombstone without a final row. This says nothing about additional occurrences in a newer sibling snapshot.
+
+### CAS-qualified hydrate label and three-occurrence transfer
+
+provenance: supported. Targets: record-93cd2f755a63894b.
+
+The specific stranded-label/3-occurrence defect is already fixed: resolving synonym is on CHEBI:86159 and in its SSSOM row; the active record and pinned membership count are 202/202; Ca is a zero-count REJECTED tombstone without a final row. This says nothing about additional occurrences in a newer sibling snapshot.
+
+### Additional unqualified hydrate occurrence conjecture
+
+quantity: unknown. Targets: record-428f0a67e2ef5305.
+
+The historical report conjectured an additional non-CAS-qualified occurrence beyond the three transferred occurrences. Agreement with the checked membership snapshot does not prove whether that separate source occurrence was included. Reconcile the exact old source row and snapshot before changing the 202 count.
+
+### Historical hydrate-review queue complaint
+
+provenance: unknown. Targets: record-428f0a67e2ef5305.
+
+The labels are represented, but NOT_IN_MIM rows explicitly say no exact preferred-term row. Decide whether this frozen table is a live synonym-inclusive queue before calling those entries incorrect; its original complaint is not automatically retired or re-opened.
+
+### Correction-receipt identity typo
+
+provenance: concern. Targets: record-428f0a67e2ef5305.
+
+The receipt prose names CHEBI:31348, whereas the actual record and changed SSSOM row name CHEBI:86159. This is a provenance-text defect, not evidence that the active hydrate mapping is wrong.
+
+### Missing direct D-lyxose source occurrence row
+
+quantity: concern. Targets: record-5703779de3d5d6d5.
+
+The local source still contains kgmicrobe.trait:d_lyxose, count 159, while the record retains only the damaged-label count 1. The direct source-count provenance remains unrepresented in this record; media counts must remain separate.
+
+### Original CMC/PY/horse-serum component-note cleanup
+
+representation: supported. Targets: record-29b4005016928e09.
+
+The old report approved a four-component mixture and requested minor explanatory-note cleanup. That representation was explicitly withdrawn: current AMBIGUOUS UNMAPPED_0740 has no component or ontology assertions and no final SSSOM row. The old note-edit request is superseded by source-context separation, not by a new scientific pass.
+
+Lineage is explicitly recorded in resolution/record-lineage.json and current curation_history. The new source-expression ambiguity remains unresolved and is tracked in #718.
+
+## Findings
+
+### f-b2082884706cee8d: Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-be65b7426fab585b.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### f-257349c4e9e602b1: Reassess prediction-only role support: Arabinoxylan (Rye Flour)
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-bad75fc5238b3ba8.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### f-021e3723b7ad50fd: Reassess prediction-only role support: D-(-)-lyxose
+
+minor / deferred / provisional; issue key: mim-reconciliation-role-support-26db4b94c97aabed.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+Disposition: The current local observation is recorded, but the named source/context or policy decision is still required; no correction is inferred.
+
+### f-46759fd5ad29eca5: Reassess prediction-only role support: DL-2-Aminoadipic acid
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-3685075c8b5b5eb7.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### f-5c902e35be083ec0: Reassess prediction-only role support: EDTA
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-dd49bc63aa61b117.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### f-0a3fe0fd2ddc2251: Reassess prediction-only role support: EDTA (chelating agent)
+
+minor / deferred / provisional; issue key: mim-reconciliation-role-support-02b5116af3e070ea.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+Disposition: The current local observation is recorded, but the named source/context or policy decision is still required; no correction is inferred.
+
+### f-582f6cb10c46fe80: Reassess prediction-only role support: Na2HPO4
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-b309242fe87da37a.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### f-2c4572e8aee9ba64: Reassess prediction-only role support: Sodium phosphate dibasic
+
+minor / deferred / provisional; issue key: mim-reconciliation-role-support-9fb851ed17361db8.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+Disposition: The current local observation is recorded, but the named source/context or policy decision is still required; no correction is inferred.
+
+### f-a7e06cacf823b6f9: Verify retained Furaltadone CAS alias
+
+minor / deferred / provisional; issue key: mim-reconciliation-cas-source-2e4090e1bf27a52d.
+
+CAS 3759-92-1 still publishes as a resolving alias, while the original report did not establish an authoritative registry match. Verify exact hydrochloride identity before retaining or rejecting this alias.
+
+Disposition: The current local observation is recorded, but the named source/context or policy decision is still required; no correction is inferred.
+
+### f-5b1b1ab939d20218: Correct calcium nitrate correction-receipt identity text
+
+minor / open / confirmed; issue key: mim-reconciliation-receipt-id-428f0a67e2ef5305.
+
+The receipt records[].change describes the transfer as targeting CHEBI:31348; current YAML and the receipt changed-row content target CHEBI:86159. Correct the receipt through its native provenance workflow, preserving the historical chain.
+
+### f-444b73747dddc915: Reconcile direct D-lyxose MicrobeDecoder occurrences
+
+major / open / confirmed; issue key: mim-reconciliation-source-count-5703779de3d5d6d5.
+
+The 159 direct D-lyxose source occurrences remain absent from source_occurrences. Verify deduplication against the damaged-label row before preserving both source rows; do not inflate CultureMech media_count.
+
+## Recommended Actions And Acceptance Checks
+
+### action-b2082884706cee8d
+
+Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-257349c4e9e602b1
+
+Reassess prediction-only role support: Arabinoxylan (Rye Flour)
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-021e3723b7ad50fd
+
+Reassess prediction-only role support: D-(-)-lyxose
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-46759fd5ad29eca5
+
+Reassess prediction-only role support: DL-2-Aminoadipic acid
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-5c902e35be083ec0
+
+Reassess prediction-only role support: EDTA
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-0a3fe0fd2ddc2251
+
+Reassess prediction-only role support: EDTA (chelating agent)
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-582f6cb10c46fe80
+
+Reassess prediction-only role support: Na2HPO4
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-2c4572e8aee9ba64
+
+Reassess prediction-only role support: Sodium phosphate dibasic
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-a7e06cacf823b6f9
+
+Verify retained Furaltadone CAS alias
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-5b1b1ab939d20218
+
+Correct calcium nitrate correction-receipt identity text
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+### action-444b73747dddc915
+
+Reconcile direct D-lyxose MicrobeDecoder occurrences
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-c47f5c761d89211f | data/ingredients/mapped/(2)-D-lyxose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[261],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":263,"mapping_status":"MAPPED","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-lyxose","sssom_rows":[{"data_row":3,"object_id":"CHEBI:62318","object_label":"D-lyxose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~282~29-D-lyxose","synonym_count":3} |
+| ev-8415d47f688bc31e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [261] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a2a559decb3bad18 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:~282~29-D-lyxose; data-row positions=[3] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":3,"object_id":"CHEBI:62318","object_label":"D-lyxose","other":"(2)-D-lyxose&#124;D-(-)-lyxose&#124;D-lyxo-pentose&#124;CAS:1114-34-7","predicate_id":"skos:exactMatch","subject_id":"MIM:~282~29-D-lyxose","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"}] |
+| ev-5b7e3f2daab7df58 | docs/data/mapped_ingredients.csv; CSV lines=[263] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62318","line":263,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose","total_occurrences":"0"}] |
+| ev-d69679219babeef0 | reports/yaml_record_review/(2)-D-lyxose.md; &#96;data/ingredients/mapped/(2)-D-lyxose.yaml&#96;:2; Verdict:4; Identity:14; Validation:36; Evidence:50; Completeness:85; Recommended Edits:96 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-e0e2a024a09f1958 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[4] | context_only | [{"current_record_sha256":"62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e","finding_id":"SEM:cd74f8ddafa04d7e9a9a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-dfaf37c1970fab58 | data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2630],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","line":2632,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","preferred_term":"0.5 M Nitrilotriacetic acid, disodium salt"}],"identifier":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","ontology_label":"0.5 M Nitrilotriacetic acid, disodium salt","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"0.5 M Nitrilotriacetic acid, disodium salt","sssom_rows":[{"data_row":10,"object_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","object_label":"0.5 M Nitrilotriacetic acid, disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:05_M_Nitrilotriacetic_Acid_Disodium_Salt","synonym_count":11} |
+| ev-5459baed567881f3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2630] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b79e28402f106c27 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:05_M_Nitrilotriacetic_Acid_Disodium_Salt; data-row positions=[10] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":10,"object_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","object_label":"0.5 M Nitrilotriacetic acid, disodium salt","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:05_M_Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-90658daac5fbfe55 | docs/data/mapped_ingredients.csv; CSV lines=[2632] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","line":2632,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"1","ontology_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","preferred_term":"0.5 M Nitrilotriacetic acid, disodium salt","total_occurrences":"1"}] |
+| ev-3816203e44cb4d17 | reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md; &#96;data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml&#96;:2; Verdict:4; Identity:13; Validation:35; Evidence:56; Completeness:86; Recommended Edits:99 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-1b229d4543da2752 | reports/yaml_record_review/20261001T045857Z-05_M_Nitrilotriacetic_Acid_Disodium_Salt.md; YAML Record Review: 0.5 M Nitrilotriacetic acid, disodium salt:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-c0eaf924ebd2b03e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[11] | context_only | [{"current_record_sha256":"91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f","finding_id":"SEM:6560d5e8cbc982dcbd1d","kind":"existing_record_review","resolution_reason":"Separate the 0.5 M disodium stock from trisodium nitrilotriacetate. Source occurrence rows explicitly name one of each. Restore the trisodium substance as its own record, carrying its chemistry and valid synonyms; withdraw those synonyms on the stock. The stock is a local preparation with a named disodium solute, no pure-substance formula or CAS. Solvent and complete recipe are not established.","resolution_status":"RESOLVED"}] |
+| ev-f07f205a486b70c3 | data/ingredients/mapped/1122-Tetrachloroethane.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2638],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:36026","line":2640,"mapping_status":"MAPPED","ontology_id":"CHEBI:36026","preferred_term":"1,1,2,2-tetrachloroethane"}],"identifier":"CHEBI:36026","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:36026","ontology_label":"1,1,2,2-tetrachloroethane","ontology_source":"CHEBI"},"preferred_term":"1,1,2,2-tetrachloroethane","sssom_rows":[{"data_row":2971,"object_id":"CHEBI:36026","object_label":"1,1,2,2-tetrachloroethane","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1122-Tetrachloroethane","synonym_count":2} |
+| ev-eceac74586eeb56a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2638] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-cfeaec5ae2b4b8b2 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:1122-Tetrachloroethane; data-row positions=[2971] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2971,"object_id":"CHEBI:36026","object_label":"1,1,2,2-tetrachloroethane","other":"1,1,2,2-Tetrachloroethane&#124;2-tetrachloroethane","predicate_id":"skos:exactMatch","subject_id":"MIM:1122-Tetrachloroethane","validation_method":"manual:original_source_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-f31ff62720a3389a | docs/data/mapped_ingredients.csv; CSV lines=[2640] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:36026","line":2640,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:36026","preferred_term":"1,1,2,2-tetrachloroethane","total_occurrences":"0"}] |
+| ev-0bff485d9e304b22 | reports/yaml_record_review/1122-Tetrachloroethane.md; &#96;data/ingredients/mapped/1122-Tetrachloroethane.yaml&#96;:2; Verdict:4; Identity:12; Validation:27; Evidence:43; Completeness:63; Recommended Edits:71 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-774fed4cfb32e51d | reports/yaml_record_review/20261001T045859Z-1122-Tetrachloroethane.md; YAML Record Review: 1,1,2,2-tetrachloroethane:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-00ccae5524e4221a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[28] | context_only | [{"current_record_sha256":"99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e","finding_id":"SEM:041e44760b57510920e6","kind":"existing_record_review","resolution_reason":"Original source identity recovered and independently matched to the published target; see identity evidence.","resolution_status":"RESOLVED"}] |
+| ev-02f435cf5dccfdbe | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2631],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2633,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic acid hemicalcium salt monohydrate"}],"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","sssom_rows":[{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","predicate_id":"skos:exactMatch"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","predicate_id":"skos:closeMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","synonym_count":0} |
+| ev-c7268fcb6e02d56e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2631] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-00c17eed8b6b9a2e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate; data-row positions=[67,68] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","other":"CAS:3470-37-9","predicate_id":"skos:exactMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","other":"CAS:3470-37-9","predicate_id":"skos:closeMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-67433528e457790b | docs/data/mapped_ingredients.csv; CSV lines=[2633] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2633,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","total_occurrences":"0"}] |
+| ev-e5efe72d4fc64111 | reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md; &#96;data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:26; Evidence:44; Completeness:59; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-51e7bc673883371d | reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md; YAML Record Review: 2-Keto-D-gluconic acid hemicalcium salt monohydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-7addb8f1b8ad326e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[50,1539,1901] | context_only | [{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:942e5e5ab8031b0237df","kind":"existing_record_review","resolution_reason":"Refine the prior blocker: MP Biomedicals explicitly uses CAS 3470-37-9 for the monohydrate, while the same CAS is used for unhydrated calcium salt. Use a distinct local hydrate identity and preserve the supplier CAS as procurement metadata rather than exact global identity. Withdraw anhydrous CID/SMILES/InChI. Formula follows the certificate hemicalcium unit plus one water, doubled to whole calcium stoichiometry. Existing close match to free acid retained as reviewed in #342, not promoted to subsumption.","resolution_status":"RESOLVED"},{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:a8369e3a18749747a18d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:28d4855c5ad15fc2384c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-e9363cdff31d7fb7 | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-a836c064de824018 | data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[324],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15930","line":326,"mapping_status":"MAPPED","ontology_id":"CHEBI:15930","preferred_term":"2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine"}],"identifier":"CHEBI:15930","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15930","ontology_label":"atrazine","ontology_source":"CHEBI"},"preferred_term":"2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine","sssom_rows":[{"data_row":78,"object_id":"CHEBI:15930","object_label":"atrazine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-chloro-4ethylamino-6-isopropylamino-135-triazine","synonym_count":6} |
+| ev-fbc7f46b211fa565 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [324] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-861ac3e8c0a0e80d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-chloro-4ethylamino-6-isopropylamino-135-triazine; data-row positions=[78] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":78,"object_id":"CHEBI:15930","object_label":"atrazine","other":"2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine&#124;2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine&#124;2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine&#124;6-chloro-N-ethyl-N'-(propan-2-yl)-1,3,5-triazine-2,4-diamine&#124;Atrazin&#124;atrazine","predicate_id":"skos:exactMatch","subject_id":"MIM:2-chloro-4ethylamino-6-isopropylamino-135-triazine","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-a2ecd0a62a60e853 | docs/data/mapped_ingredients.csv; CSV lines=[326] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15930","line":326,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:15930","preferred_term":"2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine","total_occurrences":"1"}] |
+| ev-e771bdce46c17cc5 | reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md; &#96;data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:37; Completeness:51; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-90f2b9d504eeee78 | reports/yaml_record_review/20261001T045901Z-2-chloro-4ethylamino-6-isopropylamino-135-triazine.md; YAML Record Review: 2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-a3a4101bf0ddfe8d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[60] | context_only | [{"current_record_sha256":"30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b","finding_id":"SEM:27f8035e80f5a0f0d48e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-6ed9974a81703581 | data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2639],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86537","line":2641,"mapping_status":"MAPPED","ontology_id":"CHEBI:86537","preferred_term":"2,2-dimethylsuccinic acid"}],"identifier":"CHEBI:86537","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":4,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86537","ontology_label":"2,2-dimethylsuccinic acid","ontology_source":"CHEBI"},"preferred_term":"2,2-dimethylsuccinic acid","sssom_rows":[{"data_row":2972,"object_id":"CHEBI:86537","object_label":"2,2-dimethylsuccinic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-dimethylsuccinic_Acid","synonym_count":1} |
+| ev-60e993aff82793e6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2639] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-9edc3035c46ef30c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-dimethylsuccinic_Acid; data-row positions=[2972] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2972,"object_id":"CHEBI:86537","object_label":"2,2-dimethylsuccinic acid","other":"2-dimethylsuccinic Acid","predicate_id":"skos:exactMatch","subject_id":"MIM:2-dimethylsuccinic_Acid","validation_method":"manual:original_source_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-fb168c9eb901159e | docs/data/mapped_ingredients.csv; CSV lines=[2641] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86537","line":2641,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:86537","preferred_term":"2,2-dimethylsuccinic acid","total_occurrences":"0"}] |
+| ev-288b630324b12a09 | reports/yaml_record_review/2-dimethylsuccinic_Acid.md; &#96;data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:39; Completeness:56; Recommended Edits:65 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-b69117c4e00bc991 | reports/yaml_record_review/20261001T045902Z-2-dimethylsuccinic_Acid.md; YAML Record Review: 2,2-dimethylsuccinic acid:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-d7ef04e1b3f3ab23 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[67] | context_only | [{"current_record_sha256":"929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62","finding_id":"SEM:375d53fc7b7ef4e7ce71","kind":"existing_record_review","resolution_reason":"Original source identity recovered and independently matched to the published target; see identity evidence.","resolution_status":"RESOLVED"}] |
+| ev-1b8969855f90dd61 | data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2632],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2769","line":2634,"mapping_status":"MAPPED","ontology_id":"CHEBI:2769","preferred_term":"Apigenin Dimethyl Ether"}],"identifier":"CHEBI:2769","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2769","ontology_label":"apigenin 7,4'-dimethyl ether","ontology_source":"CHEBI"},"preferred_term":"Apigenin Dimethyl Ether","sssom_rows":[{"data_row":400,"object_id":"CHEBI:2769","object_label":"apigenin 7,4'-dimethyl ether","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Apigenin_Dimethyl_Ether","synonym_count":1} |
+| ev-2ac292a7038b621f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2632] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-5f892d01ea53edcf | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Apigenin_Dimethyl_Ether; data-row positions=[400] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":400,"object_id":"CHEBI:2769","object_label":"apigenin 7,4'-dimethyl ether","other":"CAS:5128-44-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Apigenin_Dimethyl_Ether","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-70b86f174cb272f8 | docs/data/mapped_ingredients.csv; CSV lines=[2634] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:2769","line":2634,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:2769","preferred_term":"Apigenin Dimethyl Ether","total_occurrences":"0"}] |
+| ev-6de00107966a1cab | reports/yaml_record_review/20261001T050123Z-Apigenin_Dimethyl_Ether.md; YAML Record Review: Apigenin Dimethyl Ether:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-c187060b077b96b3 | reports/yaml_record_review/Apigenin_Dimethyl_Ether.md; &#96;data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml&#96;:2; Verdict:4; Identity:12; Validation:30; Evidence:47; Completeness:66; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-7d8a68b07cd75d52 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[267] | context_only | [{"current_record_sha256":"688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8","finding_id":"SEM:620089b33811e495367b","kind":"existing_record_review","resolution_reason":"Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs from imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular formula, structure and CID from ChEBI and PubChem.","resolution_status":"RESOLVED"}] |
+| ev-bba4a171b8417627 | data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2633],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2635,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan (Rye Flour)"}],"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ontology_label":"Arabinoxylan (Rye Flour)","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Arabinoxylan (Rye Flour)","sssom_rows":[{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan (Rye Flour)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinoxylan_Rye_Flour","synonym_count":0} |
+| ev-b5e76ede4ab3bfdb | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2633] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-90e4be4226cf21b4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Arabinoxylan_Rye_Flour; data-row positions=[418] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan (Rye Flour)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinoxylan_Rye_Flour","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-9e3443bdec402629 | docs/data/mapped_ingredients.csv; CSV lines=[2635] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2635,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan (Rye Flour)","total_occurrences":"0"}] |
+| ev-9a6abf8f4782c94f | reports/yaml_record_review/20261001T050126Z-Arabinoxylan_Rye_Flour.md; YAML Record Review: Arabinoxylan (Rye Flour):2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-a07906a0cd0fb75f | reports/yaml_record_review/Arabinoxylan_Rye_Flour.md; &#96;data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:37; Completeness:56; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-be40e627b1744f83 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[274,1420] | context_only | [{"current_record_sha256":"eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf","finding_id":"SEM:5efa69d40115ca620297","kind":"existing_record_review","resolution_reason":"The named rye-derived arabinoxylan material is not rye flour FOODON:03302492. A manufacturer uses exactly this name for an arabinoxylan preparation with residual protein/ash. Retain a local material identity, without asserting procurement from that supplier, exact purity, or whole-mixture equivalence to pure polymer.","resolution_status":"RESOLVED"},{"current_record_sha256":"eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf","finding_id":"SEM:125edfd9fc6563189bb1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-fc08bf645c7b3073 | data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-d1ffb6397e6b99ae | data/ingredients/mapped/Artepaulin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2640],"raw_equal":true},"docs_rows":[{"identifier":"cas:13902-54-0","line":2642,"mapping_status":"MAPPED","ontology_id":"cas:13902-54-0","preferred_term":"Artepaulin"}],"identifier":"cas:13902-54-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:13902-54-0","ontology_label":"Artepaulin","ontology_source":"CAS"},"preferred_term":"Artepaulin","sssom_rows":[{"data_row":2973,"object_id":"cas:13902-54-0","object_label":"Artepaulin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artepaulin","synonym_count":0} |
+| ev-821b10a5a18cd090 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2640] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-2926392c9add8315 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Artepaulin; data-row positions=[2973] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2973,"object_id":"cas:13902-54-0","object_label":"Artepaulin","other":"CAS:13902-54-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Artepaulin","validation_method":"manual:original_source_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-e1c64963157e6676 | docs/data/mapped_ingredients.csv; CSV lines=[2642] | supports | Published identity and count rows inspected: [{"identifier":"cas:13902-54-0","line":2642,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:13902-54-0","preferred_term":"Artepaulin","total_occurrences":"0"}] |
+| ev-1860f0d05e6afc40 | reports/yaml_record_review/20261001T050129Z-Artepaulin.md; YAML Record Review: Artepaulin:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-99f67fe6e883203e | reports/yaml_record_review/Artepaulin.md; &#96;data/ingredients/mapped/Artepaulin.yaml&#96;:2; Verdict:4; Identity:10; Validation:27; Evidence:51; Completeness:65; Recommended Edits:75 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-f4c7cdf5ab990a47 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[278] | context_only | [{"current_record_sha256":"b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642","finding_id":"SEM:fb6a2a282bb4802d07fc","kind":"existing_record_review","resolution_reason":"Original source identity recovered and independently matched to the published target; see identity evidence.","resolution_status":"RESOLVED"}] |
+| ev-51a834d9cba778b8 | data/ingredients/mapped/Artificial_Sea_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2634],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:artificial_sea_salt","line":2636,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:artificial_sea_salt","preferred_term":"Artificial Sea Salt"}],"identifier":"kgmicrobe.ingredient:artificial_sea_salt","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:artificial_sea_salt","ontology_label":"Artificial Sea Salt","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Artificial Sea Salt","sssom_rows":[{"data_row":434,"object_id":"kgmicrobe.ingredient:artificial_sea_salt","object_label":"Artificial Sea Salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artificial_Sea_Salt","synonym_count":1} |
+| ev-a9d45a9ecab2298c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2634] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d34e785c3bb0fd07 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Artificial_Sea_Salt; data-row positions=[434] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":434,"object_id":"kgmicrobe.ingredient:artificial_sea_salt","object_label":"Artificial Sea Salt","other":"Artificial Sea Salt","predicate_id":"skos:exactMatch","subject_id":"MIM:Artificial_Sea_Salt","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-c4860a81404a8d3e | docs/data/mapped_ingredients.csv; CSV lines=[2636] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:artificial_sea_salt","line":2636,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"12","ontology_id":"kgmicrobe.ingredient:artificial_sea_salt","preferred_term":"Artificial Sea Salt","total_occurrences":"12"}] |
+| ev-d108a4af373f4a61 | reports/yaml_record_review/20261001T050130Z-Artificial_Sea_Salt.md; YAML Record Review: Artificial Sea Salt:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-5b754f0f9aa66866 | reports/yaml_record_review/Artificial_Sea_Salt.md; &#96;data/ingredients/mapped/Artificial_Sea_Salt.yaml&#96;:2; Verdict:4; Identity:10; Validation:29; Evidence:53; Completeness:67; Recommended Edits:78 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-c6960bf7286cdd05 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[279] | context_only | [{"current_record_sha256":"effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389","finding_id":"SEM:f2a2df4244340a9a85e8","kind":"existing_record_review","resolution_reason":"The source is an artificial sea-salt preparation, not natural evaporated sea salt. Replace lexical MICRO:0001647 identity with a local preparation identity; no composition is invented.","resolution_status":"RESOLVED"}] |
+| ev-6653c2dc8279ffa3 | data/ingredients/mapped/Atrazin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[527],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15930","line":529,"mapping_status":"REJECTED","ontology_id":"CHEBI:15930","preferred_term":"Atrazin"}],"identifier":"CHEBI:15930","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"CHEBI:15930","ontology_label":"atrazine","ontology_source":"CHEBI"},"preferred_term":"Atrazin","sssom_rows":[],"sssom_subject":"MIM:Atrazin","synonym_count":0} |
+| ev-9c085361f3dfbd0e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [527] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-1ea5a98a2bab3f3b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Atrazin; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-60a4c27f7c084320 | docs/data/mapped_ingredients.csv; CSV lines=[529] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15930","line":529,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:15930","preferred_term":"Atrazin","total_occurrences":"0"}] |
+| ev-8205aa1ec37d7bf2 | reports/yaml_record_review/20261001T050131Z-Atrazin.md; YAML Record Review: Atrazin:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-463b4a48e533b7cd | reports/yaml_record_review/Atrazin.md; &#96;data/ingredients/mapped/Atrazin.yaml&#96;:2; Verdict:4; Identity:12; Validation:26; Evidence:42; Completeness:60; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-ee2c4fba604f54fd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[282] | context_only | [{"current_record_sha256":"d61bbfeda6dfd9326d9c39111ec579b8eaeabbe7e37c3ed2dd407e35fadca71b","finding_id":"SEM:f7b51d23ab90bda7153b","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
+| ev-8111d07c11822dfa | data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2635],"raw_equal":true},"docs_rows":[{"identifier":"cas:1073-62-7","line":2637,"mapping_status":"MAPPED","ontology_id":"cas:1073-62-7","preferred_term":"Benzylhydrazine Hydrochloride"}],"identifier":"cas:1073-62-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:1073-62-7","ontology_label":"Benzylhydrazine Hydrochloride","ontology_source":"CAS"},"preferred_term":"Benzylhydrazine Hydrochloride","sssom_rows":[{"data_row":515,"object_id":"cas:1073-62-7","object_label":"Benzylhydrazine Hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Benzylhydrazine_Hydrochloride","synonym_count":0} |
+| ev-c692b7e9f78a358c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2635] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-0d2e1dd4c7101d5e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Benzylhydrazine_Hydrochloride; data-row positions=[515] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":515,"object_id":"cas:1073-62-7","object_label":"Benzylhydrazine Hydrochloride","other":"CAS:1073-62-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Benzylhydrazine_Hydrochloride","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-9ec534ce932630d6 | docs/data/mapped_ingredients.csv; CSV lines=[2637] | supports | Published identity and count rows inspected: [{"identifier":"cas:1073-62-7","line":2637,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:1073-62-7","preferred_term":"Benzylhydrazine Hydrochloride","total_occurrences":"0"}] |
+| ev-7659d19baba41c87 | reports/yaml_record_review/20261001T050136Z-Benzylhydrazine_Hydrochloride.md; YAML Record Review: Benzylhydrazine Hydrochloride:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-c044d2ddf4652a27 | reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md; &#96;data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml&#96;:2; Verdict:4; Identity:11; Validation:28; Evidence:41; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-482db9ef83813f57 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[304] | context_only | [{"current_record_sha256":"67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc","finding_id":"SEM:fe4c487726dcd2732ce4","kind":"existing_record_review","resolution_reason":"Curate the stated benzylhydrazine hydrochloride identity using the manufacturer certificate: CAS 1073-62-7, C7H10N2.ClH. Withdraw benzylamine hydrochloride CAS 3287-99-8, CID 2724127 and one-nitrogen structure. No unverified replacement structure or PubChem CID is asserted.","resolution_status":"RESOLVED"}] |
+| ev-5f1c4a27fd8956b2 | data/ingredients/mapped/Ca_No32_X_4_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[619],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86159","line":621,"mapping_status":"MAPPED","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2 x 4 H2O"}],"identifier":"CHEBI:86159","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":202,"edge_count":202,"occurrences":202},"occurrence_statistics":{"media_count":202,"total_occurrences":202},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86159","ontology_label":"calcium nitrate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"Ca(NO3)2 x 4 H2O","sssom_rows":[{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium nitrate tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ca_No32_X_4_H2o","synonym_count":16} |
+| ev-ffef65ad416c1ff9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [619] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-9bf82673c3b69690 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ca_No32_X_4_H2o; data-row positions=[600] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium nitrate tetrahydrate","other":"(1)  Ca(NO3)2.4H2O&#124;Ca(NO3)2 x 4 H2O (0.1% w/v)&#124;Ca(NO3)2 \u00b7 4H2O&#124;Ca(NO3)2.4H2O&#124;Ca(NO3)2x4H2O&#124;Ca(NO3)2\u00b74H2O&#124;Ca(NO3)2\u30fb4H2O&#124;Calcium dinitrate tetrahydrate&#124;calcium nitrate--water (1/4)&#124;Ca(NO3)2\u20224H2O&#124;Ca(NO3)2\u20224H2O(CAS: 13477-34-4)&#124;(1)  Ca(NO3)2&#124;CAS:13477-34-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Ca_No32_X_4_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-a52bcd08a58f3db2 | docs/data/mapped_ingredients.csv; CSV lines=[621] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86159","line":621,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"202","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2 x 4 H2O","total_occurrences":"202"}] |
+| ev-ae225a452b755e57 | reports/yaml_record_review/Ca_No32_X_4_H2o.md; &#96;data/ingredients/mapped/Ca_No32_X_4_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:40; Completeness:62; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-6ae334a969568123 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[342] | context_only | [{"current_record_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","finding_id":"SEM:c30d84c4be1132e43a6e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-cf95a68be557e18a | data/ingredients/mapped/D-_-lyxose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[802],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":804,"mapping_status":"REJECTED","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-lyxose","sssom_rows":[],"sssom_subject":"MIM:D-_-lyxose","synonym_count":2} |
+| ev-fc5ac5e405c631db | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [802] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b172a2d697478a64 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-_-lyxose; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-2f0bca96872dd59c | docs/data/mapped_ingredients.csv; CSV lines=[804] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62318","line":804,"mapping_quality":"SYNONYM_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose","total_occurrences":"0"}] |
+| ev-ba0a155c673a7661 | reports/yaml_record_review/D-_-lyxose.md; &#96;data/ingredients/mapped/D-_-lyxose.yaml&#96;:2; Verdict:4; Identity:13; Validation:29; Evidence:48; Completeness:62; Recommended Edits:73 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-fc73952a5dc8d42e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[482] | context_only | [{"current_record_sha256":"90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a","finding_id":"SEM:3cd7092c7ec9685ec9af","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
+| ev-a15bffce40ab7317 | data/ingredients/mapped/D-_-lyxose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-0d52ce66bb1acd92 | data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2636],"raw_equal":true},"docs_rows":[{"identifier":"cas:542-32-5","line":2638,"mapping_status":"MAPPED","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic acid"}],"identifier":"cas:542-32-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:542-32-5","ontology_label":"DL-2-Aminoadipic acid","ontology_source":"CAS"},"preferred_term":"DL-2-Aminoadipic acid","sssom_rows":[{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-2-Aminoadipic_Acid","synonym_count":1} |
+| ev-7015ceb7e8a7bb90 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2636] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-18c4a68dac0ff81a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL-2-Aminoadipic_Acid; data-row positions=[969] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic acid","other":"CAS:542-32-5","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-2-Aminoadipic_Acid","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-58621783e546c3a8 | docs/data/mapped_ingredients.csv; CSV lines=[2638] | supports | Published identity and count rows inspected: [{"identifier":"cas:542-32-5","line":2638,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic acid","total_occurrences":"0"}] |
+| ev-952208d407f91746 | reports/yaml_record_review/20261001T050208Z-DL-2-Aminoadipic_Acid.md; YAML Record Review: DL-2-Aminoadipic acid:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-e88a3c9355bc03d1 | reports/yaml_record_review/DL-2-Aminoadipic_Acid.md; &#96;data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml&#96;:2; Verdict:4; Identity:12; Validation:29; Evidence:53; Completeness:68; Recommended Edits:80 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-a6621c60116a567c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[512,1606] | context_only | [{"current_record_sha256":"fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e","finding_id":"SEM:1d4b0b2e54c753cb4311","kind":"existing_record_review","resolution_reason":"Retain the explicitly DL source substance as CAS 542-32-5. Withdraw L-enantiomer CHEBI:37023 and its stereospecific synonym/structure; a racemate is not one enantiomer. CAS registry identity does not imply that a new exact ChEBI search was exhaustive.","resolution_status":"RESOLVED"},{"current_record_sha256":"fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e","finding_id":"SEM:f1e57873a6b7e0aa18ee","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-d4db048d962e13a6 | data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-c73f4f216dfc33a2 | data/ingredients/mapped/Edta.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[939],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":941,"mapping_status":"MAPPED","ontology_id":"CHEBI:4735","preferred_term":"EDTA"}],"identifier":"CHEBI:4735","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":568,"total_occurrences":569},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic acid","ontology_source":"CHEBI"},"preferred_term":"EDTA","sssom_rows":[{"data_row":1112,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Edta","synonym_count":10} |
+| ev-9bfa20830d140db4 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [939] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-ea1ccd424ab69c20 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Edta; data-row positions=[1112] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1112,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic acid","other":"2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate&#124;2,2',2'',2'''-(ethane-1,2-diyldiazaniumyl)tetraacetate&#124;CAS:60-00-4&#124;EDTA (acid form)&#124;EDTA (chelating agent)","predicate_id":"skos:exactMatch","subject_id":"MIM:Edta","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-c01ccfe14065740b | docs/data/mapped_ingredients.csv; CSV lines=[941] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:4735","line":941,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"568","ontology_id":"CHEBI:4735","preferred_term":"EDTA","total_occurrences":"569"}] |
+| ev-b1151af6eca2053e | reports/yaml_record_review/20261001T050211Z-Edta.md; YAML Record Review: EDTA:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-02597f04d60baf3a | reports/yaml_record_review/Edta.md; &#96;data/ingredients/mapped/Edta.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:33; Completeness:60; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-7d6e4ceca3550bd4 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[564,1501] | context_only | [{"current_record_sha256":"d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701","finding_id":"SEM:a28ca0d4dfe861e2c451","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701","finding_id":"SEM:02877e9a0c8c68ed94e9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-fac94c8574bdfaf5 | data/ingredients/mapped/Edta.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}] |
+| ev-d8b7463cace0005c | data/ingredients/mapped/Edta_Chelating_Agent.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[933],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":935,"mapping_status":"REJECTED","ontology_id":"CHEBI:4735","preferred_term":"EDTA (chelating agent)"}],"identifier":"CHEBI:4735","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic acid","ontology_source":"CHEBI"},"preferred_term":"EDTA (chelating agent)","sssom_rows":[],"sssom_subject":"MIM:Edta_Chelating_Agent","synonym_count":1} |
+| ev-44a5c78d0518be20 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [933] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6ee4d9e56424706c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Edta_Chelating_Agent; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-132825111efec404 | docs/data/mapped_ingredients.csv; CSV lines=[935] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:4735","line":935,"mapping_quality":"LEXICAL_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:4735","preferred_term":"EDTA (chelating agent)","total_occurrences":"0"}] |
+| ev-ccb73004ba17130c | reports/yaml_record_review/20261001T050212Z-Edta_Chelating_Agent.md; YAML Record Review: EDTA (chelating agent):2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-1d6b1f3ca5e20f64 | reports/yaml_record_review/Edta_Chelating_Agent.md; &#96;data/ingredients/mapped/Edta_Chelating_Agent.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:29; Completeness:53; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-257c9ccf0fbcf212 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[566,1605] | context_only | [{"current_record_sha256":"8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c","finding_id":"SEM:22c6c53bc502552aed6a","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"},{"current_record_sha256":"8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c","finding_id":"SEM:582204b4bd6dffb6e882","kind":"role_evidence","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
+| ev-5b1c4b3ce76d038e | data/ingredients/mapped/Edta_Chelating_Agent.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}] |
+| ev-92f2602ee8f36ebd | data/ingredients/mapped/Furaltadone_Hydrochloride.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2679],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C217928","line":2681,"mapping_status":"MAPPED","ontology_id":"NCIT:C217928","preferred_term":"Furaltadone hydrochloride"}],"identifier":"NCIT:C217928","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C217928","ontology_label":"Furaltadone Hydrochloride","ontology_source":"NCIT"},"preferred_term":"Furaltadone hydrochloride","sssom_rows":[{"data_row":1256,"object_id":"NCIT:C217928","object_label":"Furaltadone Hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Furaltadone_Hydrochloride","synonym_count":0} |
+| ev-6fd4802b6fb4b4d5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2679] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-065ced0d6e60ecd2 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Furaltadone_Hydrochloride; data-row positions=[1256] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1256,"object_id":"NCIT:C217928","object_label":"Furaltadone Hydrochloride","other":"CAS:3759-92-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Furaltadone_Hydrochloride","validation_method":"manual:yaml_record_review&#124;EXACT_NCIT&#124;2026-10-03"}] |
+| ev-505c7326f8238146 | docs/data/mapped_ingredients.csv; CSV lines=[2681] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C217928","line":2681,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C217928","preferred_term":"Furaltadone hydrochloride","total_occurrences":"0"}] |
+| ev-836307283d84c74a | reports/yaml_record_review/Furaltadone_Hydrochloride.md; &#96;data/ingredients/mapped/Furaltadone_Hydrochloride.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:35; Completeness:59; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-3e33246292a1173e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[640] | context_only | [{"current_record_sha256":"d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81","finding_id":"SEM:daa5a3f8cbe30f00018a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-61519568b4ae0cf4 | data/ingredients/mapped/N-acetyl-muramic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2086],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:47965","line":2088,"mapping_status":"REJECTED","ontology_id":"CHEBI:47965","preferred_term":"n-Acetyl-muramic acid"}],"identifier":"CHEBI:47965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:47965","ontology_label":"N-acetylmuramic acid","ontology_source":"CHEBI"},"preferred_term":"n-Acetyl-muramic acid","sssom_rows":[],"sssom_subject":"MIM:N-acetyl-muramic_Acid","synonym_count":3} |
+| ev-686c63a5f3e94bd4 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2086] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-4fbcd5fcb4f52d5d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:N-acetyl-muramic_Acid; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-a481814e89030983 | docs/data/mapped_ingredients.csv; CSV lines=[2088] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:47965","line":2088,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:47965","preferred_term":"n-Acetyl-muramic acid","total_occurrences":"0"}] |
+| ev-8ca709a7e5d1b923 | reports/yaml_record_review/N-acetyl-muramic_Acid.md; &#96;data/ingredients/mapped/N-acetyl-muramic_Acid.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:31; Completeness:43; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-796e72f599168446 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[965] | context_only | [{"current_record_sha256":"b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0","finding_id":"SEM:8c807384318d18621c79","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
+| ev-7280effdcd6042c0 | data/ingredients/mapped/N-acetylmuramic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1448],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:47965","line":1450,"mapping_status":"MAPPED","ontology_id":"CHEBI:47965","preferred_term":"N-acetylmuramic acid"}],"identifier":"CHEBI:47965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:47965","ontology_label":"N-acetylmuramic acid","ontology_source":"CHEBI"},"preferred_term":"N-acetylmuramic acid","sssom_rows":[{"data_row":1944,"object_id":"CHEBI:47965","object_label":"N-acetylmuramic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-acetylmuramic_Acid","synonym_count":7} |
+| ev-e2cf50f9475a4b44 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1448] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-93291c50c0b513de | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:N-acetylmuramic_Acid; data-row positions=[1944] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1944,"object_id":"CHEBI:47965","object_label":"N-acetylmuramic acid","other":"2-(acetylamino)-3-O-[(1R)-1-carboxyethyl]-2-deoxy-D-glucose&#124;2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-D-glucose&#124;acetylmuramic acid&#124;n-Acetyl-muramic acid&#124;(R)-2-acetamido-3-O-(1-carboxyethyl)-2-deoxy-D-glucose&#124;2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-aldehydo-D-glucose&#124;aldehydo-N-acetylmuramic acid&#124;CAS:10597-89-4","predicate_id":"skos:exactMatch","subject_id":"MIM:N-acetylmuramic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-2bd153635cf14066 | docs/data/mapped_ingredients.csv; CSV lines=[1450] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:47965","line":1450,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:47965","preferred_term":"N-acetylmuramic acid","total_occurrences":"12"}] |
+| ev-552c219a94608dff | reports/yaml_record_review/N-acetylmuramic_Acid.md; &#96;data/ingredients/mapped/N-acetylmuramic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:28; Completeness:42; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-e359446e57ccf9a1 | data/ingredients/mapped/Na2hpo4.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1488],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1490,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":1154,"total_occurrences":1157},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4","sssom_rows":[{"data_row":1996,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4","synonym_count":27} |
+| ev-e3f505f4a4ff0b8f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1488] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-18cc356b9a533c76 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2hpo4; data-row positions=[1996] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1996,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","other":"CAS:7558-79-4&#124;Dibasic sodium phosphate&#124;Disodium hydrogen phosphate&#124;Disodium Phosphate&#124;Na HPO&#124;Na HPO anydrous&#124;Na2H2PO4&#124;Sodium phosphate dibasic","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2hpo4","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-cf72303c847d70ab | docs/data/mapped_ingredients.csv; CSV lines=[1490] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1490,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1154","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4","total_occurrences":"1157"}] |
+| ev-1f0a36df479cc69e | reports/yaml_record_review/20261001T050251Z-Na2hpo4.md; YAML Record Review: Na2HPO4:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-8b0cd7adf97b622b | reports/yaml_record_review/Na2hpo4.md; &#96;data/ingredients/mapped/Na2hpo4.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:51; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-a8cdfa30ccd2df53 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[995] | context_only | [{"current_record_sha256":"ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4","finding_id":"SEM:45865662806389a797fd","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-e027fedfcccd6e6a | data/ingredients/mapped/Na2hpo4.yaml; physicochemical_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[1]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-0397c9698a371d0e | data/ingredients/mapped/Nano.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1528],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63005","line":1530,"mapping_status":"REJECTED","ontology_id":"CHEBI:63005","preferred_term":"NaNO"}],"identifier":"CHEBI:63005","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":674,"edge_count":674,"occurrences":675},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63005","ontology_label":"sodium nitrate","ontology_source":"CHEBI"},"preferred_term":"NaNO","sssom_rows":[],"sssom_subject":"MIM:Nano","synonym_count":3} |
+| ev-578824bd7f0aefc8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1528] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-ca377d51d8c56609 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nano; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-ba31445c10bbc35f | docs/data/mapped_ingredients.csv; CSV lines=[1530] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:63005","line":1530,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:63005","preferred_term":"NaNO","total_occurrences":"0"}] |
+| ev-626e8164a1842e65 | reports/yaml_record_review/20261001T050258Z-Nano.md; YAML Record Review: NaNO:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-1df3a1ed69398e05 | reports/yaml_record_review/Nano.md; &#96;data/ingredients/mapped/Nano.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:27; Completeness:40; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-b16b07b0286f75fd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1031] | context_only | [{"current_record_sha256":"4dd4a5ae67fec187d44f23d68fafffe2e533a1d4d85c481b6dd55fa8dfa29631","finding_id":"SEM:1fb7eb2be19cbc32d5ee","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
+| ev-00fa04ad30b67eab | data/ingredients/mapped/Nano3.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1530],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63005","line":1532,"mapping_status":"MAPPED","ontology_id":"CHEBI:63005","preferred_term":"NaNO3"}],"identifier":"CHEBI:63005","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":674,"edge_count":674,"occurrences":675},"occurrence_statistics":{"media_count":674,"total_occurrences":675},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:63005","ontology_label":"sodium nitrate","ontology_source":"CHEBI"},"preferred_term":"NaNO3","sssom_rows":[{"data_row":2041,"object_id":"CHEBI:63005","object_label":"sodium nitrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nano3","synonym_count":21} |
+| ev-ae188b575acab53d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1530] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-e32a080b27e9915f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nano3; data-row positions=[2041] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2041,"object_id":"CHEBI:63005","object_label":"sodium nitrate","other":"CAS:7631-99-4&#124;Chile saltpeter&#124;Cubic niter&#124;Na NO3&#124;NaNO&#124;NaNO3(autoclave before adding)(Fisher BP360-500)&#124;NaNO3(CAS: 7631-99-4)&#124;NaNO3(Fisher BP360-500)&#124;Nitrate de sodium&#124;Nitrate of soda&#124;Nitric acid monosodium salt&#124;Nitric acid sodium salt (1:1)&#124;Nitric acid, sodium salt&#124;Sodium nitrate (nitrogen source)&#124;Sodium saltpeter&#124;sodium trioxidonitrate(1-)&#124;Sodium(I) nitrate (1:1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Nano3","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-30e6bbd1597b0e43 | docs/data/mapped_ingredients.csv; CSV lines=[1532] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:63005","line":1532,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"674","ontology_id":"CHEBI:63005","preferred_term":"NaNO3","total_occurrences":"675"}] |
+| ev-e21c119c74391b98 | reports/yaml_record_review/20261001T050259Z-Nano3.md; YAML Record Review: NaNO3:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-b58626c8ab29cf5a | reports/yaml_record_review/Nano3.md; &#96;data/ingredients/mapped/Nano3.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:27; Completeness:41; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-731fa4996239a268 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1032] | context_only | [{"current_record_sha256":"6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f","finding_id":"SEM:7041ae8b6f8fcc168efc","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-b856f2456e7f1f9f | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1865],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1867,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1} |
+| ev-01023f719eb051de | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1865] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-293b21d7d58e152c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Phosphate_Dibasic; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-01edfa5cc0864ed4 | docs/data/mapped_ingredients.csv; CSV lines=[1867] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1867,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:34683","preferred_term":"Sodium phosphate dibasic","total_occurrences":"0"}] |
+| ev-8bb1def00d80cb77 | reports/yaml_record_review/20261001T050330Z-Sodium_Phosphate_Dibasic.md; YAML Record Review: Sodium phosphate dibasic:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-bbd664bdc2f5534f | reports/yaml_record_review/Sodium_Phosphate_Dibasic.md; &#96;data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml&#96;:2; Verdict:4; Identity:12; Validation:21; Evidence:31; Completeness:49; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-6fbe21662187ccbb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1229,1530] | context_only | [{"current_record_sha256":"b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925","finding_id":"SEM:1c30eea5a9f24672b1e6","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"},{"current_record_sha256":"b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925","finding_id":"SEM:51ff456b5478ebfbcd9f","kind":"role_evidence","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
+| ev-c1c1f0e0056ab927 | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-d21ea193995ef78b | data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[272],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0740","line":274,"mapping_status":"AMBIGUOUS","ontology_id":"","preferred_term":"CMC + PY + Horse Serum"}],"identifier":"UNMAPPED_0740","ingredient_type":null,"mapping_status":"AMBIGUOUS","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{},"preferred_term":"CMC + PY + Horse Serum","sssom_rows":[],"sssom_subject":"MIM:CMC_PY_Horse_Serum","synonym_count":1} |
+| ev-8f375d05aa1751d4 | data/curated/unmapped_ingredients.yaml; ingredients positions (zero-based): [272] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-4e6f767031b322dd | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:CMC_PY_Horse_Serum; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-2b1730631608c79a | docs/data/unmapped_ingredients.csv; CSV lines=[274] | supports | Published identity and count rows inspected: [{"identifier":"UNMAPPED_0740","line":274,"mapping_quality":"","mapping_status":"AMBIGUOUS","media_count":"0","ontology_id":"","preferred_term":"CMC + PY + Horse Serum","total_occurrences":"0"}] |
+| ev-aab82e1c9edc2f69 | reports/yaml_record_review/20261001T044702Z-CMC_PY_Horse_Serum.md; YAML Record Review: CMC + PY + Horse Serum:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60; Additional Notes:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-c04bf1d616ae4e5a | reports/yaml_record_review/CMC_PY_Horse_Serum.md; &#96;data/ingredients/mapped/CMC_PY_Horse_Serum.yaml&#96;:2; Verdict:4; Identity:11; Validation:27; Evidence:40; Completeness:61; Recommended Edits:74 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-623c6c29cbd87577 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[339,1625,1851,1907,2029] | context_only | [{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:5840ee1537d3efca2b71","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:4342978a6d6a785d5a94","kind":"component_source_scope","resolution_reason":"Love et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate and peptone-yeast cultures with horse serum. The source expression was incorrectly flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose. All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:e082de354467a9d57892","kind":"component_source_scope","resolution_reason":"Love et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate and peptone-yeast cultures with horse serum. The source expression was incorrectly flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose. All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:9885c46f9bdea8f68046","kind":"component_source_scope","resolution_reason":"Love et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate and peptone-yeast cultures with horse serum. The source expression was incorrectly flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose. All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:79edd574c1b3e3b5cbd4","kind":"component_source_scope","resolution_reason":"Love et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate and peptone-yeast cultures with horse serum. The source expression was incorrectly flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose. All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"}] |
+| ev-10708f98b4caeee4 | data/ingredients/unmapped/Ca.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[48],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0049","line":50,"mapping_status":"REJECTED","ontology_id":"","preferred_term":"Ca"}],"identifier":"UNMAPPED_0049","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Ca","sssom_rows":[],"sssom_subject":"MIM:Ca","synonym_count":0} |
+| ev-5769c2652345d2f4 | data/curated/unmapped_ingredients.yaml; ingredients positions (zero-based): [48] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-19c0af2a56bc5bf5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ca; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-f17fb53120415270 | docs/data/unmapped_ingredients.csv; CSV lines=[50] | supports | Published identity and count rows inspected: [{"identifier":"UNMAPPED_0049","line":50,"mapping_quality":"","mapping_status":"REJECTED","media_count":"0","ontology_id":"","preferred_term":"Ca","total_occurrences":"0"}] |
+| ev-ac8cc401220219c7 | reports/yaml_record_review/20261001T044704Z-Ca.md; YAML Record Review: Ca:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60; Additional Notes:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-a55f2fad24029129 | data/ingredients/mapped/Atrazin.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:15930; old pointer cas:1924-24-9 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:15930 (2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine). Atrazin is the atrazine name variant. Correct CAS is 1912-24-9; imported 1924-24-9 was erroneous. Survivor already has the exact atrazine ontology identity. Original fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:15930","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier cas:1924-24-9 -&gt; CHEBI:15930 (#799). This record was merged into '2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine' but kept its own old identifier, so a downstream lookup on this label resolved to nothing live. The target is the one named in this record's own MERGED_INTO entry; the chain was followed to the first live record. A tombstone exists to keep the loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id cas:1924-24-9 -&gt; CHEBI:15930 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target '2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-2fea0ca12c76ecd5 | data/ingredients/mapped/Edta_Chelating_Agent.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:4735; old pointer NCIT:C360 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Edta.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:4735 (EDTA). The source explicitly names EDTA; the parenthetical function does not turn the substance into the generic class of chelators. Original fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:4735","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier NCIT:C360 -&gt; CHEBI:4735 (#799). This record was merged into 'EDTA' but kept its own old identifier, so a downstream lookup on this label resolved to nothing live. The target is the one named in this record's own MERGED_INTO entry; the chain was followed to the first live record. A tombstone exists to keep the loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id NCIT:C360 -&gt; CHEBI:4735 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target 'EDTA'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-0c22dbffe6523338 | data/ingredients/mapped/Nano.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:63005; old pointer NCIT:C54713 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Nano3.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:63005 (NaNO3). The source synonyms explicitly identify NaNO3, CAS 7631-99-4 and Fisher BP360-500; NCIT:C54713 denotes the nano unit prefix. NaNO retained solely as the documented truncated source label. Original fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:63005","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier NCIT:C54713 -&gt; CHEBI:63005 (#799). This record was merged into 'NaNO3' but kept its own old identifier, so a downstream lookup on this label resolved to nothing live. The target is the one named in this record's own MERGED_INTO entry; the chain was followed to the first live record. A tombstone exists to keep the loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id NCIT:C54713 -&gt; CHEBI:63005 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target 'NaNO3'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-4f8bdfebcde635f9 | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:34683; old pointer CHEBI:37583 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Na2hpo4.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:34683 (Na2HPO4). Dibasic sodium phosphate is disodium hydrogenphosphate, not trisodium phosphate. Sodium dihydrogen phosphate is monobasic and is a REJECTED_LABEL here; its 78 recipe rows are excluded from this transfer. Original fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34683","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier CHEBI:37583 -&gt; CHEBI:34683 (#799). This record was merged into 'Na2HPO4' but kept its own old identifier, so a downstream lookup on this label resolved to nothing live. The target is the one named in this record's own MERGED_INTO entry; the chain was followed to the first live record. A tombstone exists to keep the loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id CHEBI:37583 -&gt; CHEBI:34683 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target 'Na2HPO4'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-09c57710cd75f921 | data/ingredients/mapped/D-_-lyxose.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:62318; old pointer CHEBI:16789 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/(2)-D-lyxose.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:62318 'D-lyxose'; occurrences transferred. Absorbed 'D-(-)-lyxose' (CHEBI:16789 aldehydo- form) into CHEBI:62318 (#398). Both records name the same substance \u2014 the muramic pair carry an identical CAS and formula \u2014 split across a ChEBI class term and its open-chain aldehydo- form. The class term wins because the identifier optimises for how the node READS in the knowledge graph: no catalogue sells an 'aldehydo-' tautomer, and MIM is kg-microbe's naming authority, so grounding here would rename the ChEBI node after a minor solution-equilibrium component. ChEBI does hang the commercial CAS (1114-34-7) on the aldehydo- term, which is why the earlier reading of the orderability rule pointed the other way; that CAS is now carried in supplied_form and republished as a synonym, so nothing purchasable is lost from the identity. Tombstoned REJECTED so a lookup on this label still resolves, SSSOM rows dropped.","curator":"merge_aldehydo_duplicates","llm_assisted":false,"timestamp":"2026-08-18T00:00:00+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id CHEBI:16789 -&gt; CHEBI:62318 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target 'D-lyxose'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-961c3b8d254446f2 | data/ingredients/mapped/N-acetyl-muramic_Acid.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:47965; old pointer CHEBI:47966 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/N-acetylmuramic_Acid.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:47965 'N-acetylmuramic acid'; occurrences transferred. Absorbed 'n-Acetyl-muramic acid' (CHEBI:47966 aldehydo- form) into CHEBI:47965 (#398). Both records name the same substance \u2014 the muramic pair carry an identical CAS and formula \u2014 split across a ChEBI class term and its open-chain aldehydo- form. The class term wins because the identifier optimises for how the node READS in the knowledge graph: no catalogue sells an 'aldehydo-' tautomer, and MIM is kg-microbe's naming authority, so grounding here would rename the ChEBI node after a minor solution-equilibrium component. ChEBI does hang the commercial CAS (10597-89-4) on the aldehydo- term, which is why the earlier reading of the orderability rule pointed the other way; that CAS is now carried in supplied_form and republished as a synonym, so nothing purchasable is lost from the identity. Tombstoned REJECTED so a lookup on this label still resolves, SSSOM rows dropped.","curator":"merge_aldehydo_duplicates","llm_assisted":false,"timestamp":"2026-08-18T00:00:00+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id CHEBI:47966 -&gt; CHEBI:47965 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target 'N-acetylmuramic acid'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-298e818e08d3065c | mappings/culturemech_recipe_membership.tsv; mim_identifier=CHEBI:86159; scoped_identity_corrections=2026-10-03 | supports | 202 distinct recipe edges and 202 occurrences, matching the live YAML/aggregate. The explicit three-recipe correction uses CultureMech:000171, CultureMech:000174, CultureMech:000238. |
+| ev-67fdd37d6271d0a7 | mappings/hydrate_review.tsv; lines=[345,376,486,688,778,865] | partial | Labels present in current synonyms yet tagged NOT_IN_MIM: [[345,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u30fb4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"9","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[376,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u00b74H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"6","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[486,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Calcium nitrate tetrahydrate","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"3","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[688,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2 \u00b7 4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[778,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u20224H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[865,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2.4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}]]. The table notes define these using preferred-term-only matching, so table semantics must be distinguished from current synonym coverage. |
+| ev-2a70b8383c990302 | reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json; records[source_record=data/ingredients/mapped/Ca_No32_X_4_H2o.yaml].change | supports | {"after_yaml_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","before_yaml_sha256":"efe13cbdbfcfb0d5da686a6b2ca032f3492ed50a55a790aa39fa9d135919a2c1","change":"Merged the missing CultureMech calcium nitrate tetrahydrate source occurrence/synonym into the reviewed CHEBI:31348 identity and its published SSSOM other column.","shape":"review_record_issue_resolution","source_record":"data/ingredients/mapped/Ca_No32_X_4_H2o.yaml","verification":"The review-record fix preserved the exact calcium nitrate tetrahydrate grounding and added only the raw CAS-bearing synonym and source occurrence count from the duplicate stale record."} |
+| ev-deba3eac5817996f | data/custom/microbedecoder/unmapped_labels.tsv; line 326 | supports | {"category":"biolink:PhenotypicQuality","label":"D-lyxose","occurrences":"159","placeholder_curie":"kgmicrobe.trait:d_lyxose","source_columns":"BacDive_Metabolite_utilization"} |
+| ev-fa134019994f08d1 | .venv/bin/python scripts/validate_strict.py --out /tmp/mim-reconcile-all.bpnX3efo/strict-validation.tsv; complete captured stdout/stderr | supports | Validating 2960 files with 15 workers; schema=/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/Mechs/MediaIngredientMech/src/mediaingredientmech/schema/mediaingredientmech.yaml<br>  250/2960 files processed, 0 ERROR rows so far<br>  500/2960 files processed, 0 ERROR rows so far<br>  750/2960 files processed, 0 ERROR rows so far<br>  1000/2960 files processed, 0 ERROR rows so far<br>  1250/2960 files processed, 0 ERROR rows so far<br>  1500/2960 files processed, 0 ERROR rows so far<br>  1750/2960 files processed, 0 ERROR rows so far<br>  2000/2960 files processed, 0 ERROR rows so far<br>  2250/2960 files processed, 0 ERROR rows so far<br>  2500/2960 files processed, 0 ERROR rows so far<br>  2750/2960 files processed, 0 ERROR rows so far<br><br>=== validate-strict summary ===<br>  files scanned:      2960<br>  files with ERROR:   0<br>  total ERROR rows:   0<br>  TSV:                /tmp/mim-reconcile-all.bpnX3efo/strict-validation.tsv<br> |
+| ev-3aacf0cbcb70f8a1 | .venv/bin/python scripts/validate_sssom_invariants.py --reject-tsv /tmp/mim-reconcile-all.bpnX3efo/sssom-rejects.tsv; complete captured stdout/stderr | partial | WARNING: Rule B4 skipped — kg-microbe ontology transforms not found at /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/Mechs/kg-microbe/data/transformed/ontologies for prefix(es): BTO, CHEBI, ENVO, FOODON, MICRO, UBERON. To enable Rule B4 locally, check out kg-microbe at the sibling path and run its &#96;just transform&#96; recipe. (CI typically lacks these transforms; the validator does not exit-2 on B4 alone in that case.)<br>OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L. /tmp/mim-reconcile-all.bpnX3efo/sssom-rejects.tsv written with header only.<br> |
+| ev-decded5789141cfb | .venv/bin/python scripts/reconcile_sssom.py; complete captured stdout/stderr | supports | SSSOM currency vs curated mapped records:<br>  GAP    (mapped record, no SSSOM row):   0<br>  ORPHAN (SSSOM row, no/REJECTED record): 0<br>  STALE  (row lacks current ontology_id): 0<br>  PREDICATE (current ontology row, wrong predicate): 0<br>  GRADE (right predicate, stale grade metadata):     0<br><br>OK: SSSOM is in sync with the curated data.<br> |
+| ev-3232ecb106c86e39 | .venv/bin/python scripts/check_flat_export_coverage.py; complete captured stdout/stderr | supports | freshness: 8 regenerated artifact(s) match their producers<br>coverage: all_ingredients.csv        8312/8312 curated label(s) resolvable<br>  note: 32 published label(s) map to more than one identifier — see #232 for the triage<br>coverage: mapped_ingredients.csv     7959/7959 curated label(s) resolvable<br>coverage: unmapped_ingredients.csv   360/360 curated label(s) resolvable<br>coverage: label_index.csv            8312/8312 curated label(s) indexed<br><br>OK: docs/data/ is fresh and every curated label is published.<br> |
+| ev-4180020c3661f2ad | .venv/bin/python -m pytest tests/test_merge_tombstone_targets.py -q -o addopts=''; complete captured stdout/stderr | supports | .........                                                                [100%]<br>9 passed in 38.32s<br> |
+
+## Limits And Additional Notes
+
+- scientific_review=false: no record receives renewed scientific approval. Full report prose was loaded and retained by hash, but independent claim-by-claim scientific interpretation is incomplete. Narrative-group counts are not distinct-allegation counts.
+- Rule B4 was unavailable at the validator default sibling transform path. No claim of whole-corpus ontology identity validation is made.
+- New primary literature, exact historical external source snapshots and source-context interpretations were not exhaustively checked. Passing structure/export tests cannot retire those questions.
+- Legacy notes may mix several concerns. already_fixed applies only to its named subclaim; residual narrative and native release holds remain. Refresh floors are not independent findings.
+- Supplier/catalog and RAW_TEXT labels are not categorically invalid. Only the explicitly named exported-token observations were assessed; all other synonym-scope concerns require source review.
+- Native positive role receipts may provide narrower organism/preparation support than the local role payload. Their presence prevents an automatic unsupported-role conclusion in this round.
+- Current GitHub issue titles/bodies were read for deduplication, not to prove fixes. No GitHub state or native scientific/release disposition is changed.
+- Remote main verified as 378d733d51f6d66cbc936bf17c56821a1f7030fe before assessment; worktree also contains staged reconciliation-skill documentation changes captured in inputs.
+- GitHub issue inventory: gh issue list --state all --limit 1200 --json number,title,url,body,state; 434 issues; response SHA-256=0c260ef4ae59f4e4d6a5d98b6228e432dafd4dd4fa2a39cc6c1785b62b40446b. Existing scientific backlog #718 is the bundling handoff; do not create one GitHub issue per saved finding.
+- No structured predecessors existed at start. These are first common-contract observations of legacy concerns; no resolved/rejected finding statuses or manufactured lineage are used.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261011T024629Z-mim-reconcile-all-batch-01
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'MIM full-corpus reconciliation: batch 1/13'
+started_at: '2026-10-11T02:37:39.999012Z'
+finished_at: '2026-10-11T02:46:29Z'
+reviewer:
+  identity: Codex
+  kind: agent
+  independence: self_review
+  independence_basis: Same assistant authored the reconciliation skill and participated
+    in earlier local follow-up work. Deterministic checks and agent-scoped dispositions
+    are not an independent scientific review.
+skill: reconcile-review-records
+completion: partial
+verdict: needs_curation
+scientific_review: false
+summary: 26 explicit targets in this batch of the 2953-record census; 45 historical
+  reports retained. All target surfaces checked; scoped residuals and repairs recorded.
+  Full historical scientific/narrative reassessment remains incomplete.
+source:
+  git_revision: 378d733d51f6d66cbc936bf17c56821a1f7030fe
+  state: working_tree
+  inputs:
+  - path: .claude/skills/curate-yaml-record/references/review-checklist.md
+    sha256: d4df94935abfd922e84c3512e9a9b7735240f8e266d9a3ae23bb4933926b04eb
+    role: context
+  - path: .claude/skills/reconcile-review-records/SKILL.md
+    sha256: 15b52d2b6f67396523d9a93bef1dba8ab0da220528107857de7ee4b8d8c67bbe
+    role: context
+  - path: .claude/skills/reconcile-review-records/references/legacy-findings.md
+    sha256: d7cd700f0156dc6cb49d3c3379cb9db7cfa192584547f080994bd61194b46e46
+    role: context
+  - path: .claude/skills/review-ingredients/reference/validation-rules.md
+    sha256: c9bbbd618dfc57363581aaf1aa757230acde0548e689e61fb059fb031a5b4a21
+    role: context
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: CLAUDE.md
+    sha256: ee350a4c625e606a553990a23c0a2bd926c5fe4afad4ee31defb1bf8c1194bcc
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 39d678299c584cf6bc2625e4083afaa789ccfb461d676299115ba302c2f10679
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 64e2e5c6bdf2dc3cdfd7d33931ad11c9e2efd5b5135d5f8921cc5a269518180b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: 02cc5d5da49b05dea51e64fad79536d2852423424b0bc40add947f38addc1170
+    role: context
+  - path: data/custom/microbedecoder/ingredient_candidates.tsv
+    sha256: 96a4b8c0ece00e524cffdb2b8b8c9b6678c97b05cb35860b0d09e6199e460da1
+    role: context
+  - path: data/custom/microbedecoder/unmapped_labels.tsv
+    sha256: 96975af522c3e55d5bc6f542637e071a30d1191c34a8555eb81f540cb7bfe569
+    role: context
+  - path: data/ingredients/mapped/(2)-D-lyxose.yaml
+    sha256: 62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e
+    role: target
+  - path: data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    sha256: 91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f
+    role: target
+  - path: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+    sha256: 99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e
+    role: target
+  - path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    sha256: 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048
+    role: target
+  - path: data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml
+    sha256: 30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b
+    role: target
+  - path: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+    sha256: 929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62
+    role: target
+  - path: data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml
+    sha256: 688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8
+    role: target
+  - path: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
+    sha256: eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf
+    role: target
+  - path: data/ingredients/mapped/Artepaulin.yaml
+    sha256: b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642
+    role: target
+  - path: data/ingredients/mapped/Artificial_Sea_Salt.yaml
+    sha256: effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389
+    role: target
+  - path: data/ingredients/mapped/Atrazin.yaml
+    sha256: d61bbfeda6dfd9326d9c39111ec579b8eaeabbe7e37c3ed2dd407e35fadca71b
+    role: target
+  - path: data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml
+    sha256: 67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc
+    role: target
+  - path: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+    sha256: ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907
+    role: target
+  - path: data/ingredients/mapped/D-_-lyxose.yaml
+    sha256: 90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a
+    role: target
+  - path: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
+    sha256: fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e
+    role: target
+  - path: data/ingredients/mapped/Edta.yaml
+    sha256: d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701
+    role: target
+  - path: data/ingredients/mapped/Edta_Chelating_Agent.yaml
+    sha256: 8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c
+    role: target
+  - path: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+    sha256: d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81
+    role: target
+  - path: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+    sha256: b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0
+    role: target
+  - path: data/ingredients/mapped/N-acetylmuramic_Acid.yaml
+    sha256: c94c85b40f68e1f703a0221bd6ca9480abae2252af0769d5c6deeaf5c1bbefff
+    role: target
+  - path: data/ingredients/mapped/Na2hpo4.yaml
+    sha256: ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4
+    role: target
+  - path: data/ingredients/mapped/Nano.yaml
+    sha256: 4dd4a5ae67fec187d44f23d68fafffe2e533a1d4d85c481b6dd55fa8dfa29631
+    role: target
+  - path: data/ingredients/mapped/Nano3.yaml
+    sha256: 6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f
+    role: target
+  - path: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
+    sha256: b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925
+    role: target
+  - path: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+    sha256: 39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077
+    role: target
+  - path: data/ingredients/unmapped/Ca.yaml
+    sha256: 30536efdb26bcaaa5729c3e61ca9ea9cd7372cd3ed7106834895ee8da38b14af
+    role: target
+  - path: docs/data/ingredients.json
+    sha256: 806188866d84a6d17e1b9f01ae0cefaf7fa89a77a383f86e1f1ae372961f94b6
+    role: context
+  - path: docs/data/label_index.csv
+    sha256: 4765c45d026f7f8e83e056043efb16f8f736e1a871eb168b151092ca2c934ae5
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+    role: context
+  - path: docs/data/unmapped_ingredients.csv
+    sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: justfile
+    sha256: 4f1ea2e68e0f9c76ca976456061243a608d949217d6488ae9e09877d4eda61f1
+    role: context
+  - path: mappings/culturemech_recipe_membership.tsv
+    sha256: 86b18aa886d6aae311aeb89b6139b2c4b26a6bc31b1d767c0330f2b8c89e81c1
+    role: context
+  - path: mappings/duplicate_identifier_baseline.tsv
+    sha256: a47d1af34ae797357eec7fc07dbc1ba71f1b1f2208a1d7f56e4f4d2cc415e03c
+    role: context
+  - path: mappings/hydrate_review.tsv
+    sha256: 5e6c7ea188263b73451f76f10dc29189b0e52d7085c2ddf9ee90f2e1d81ea1ba
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+    role: context
+  - path: mappings/other_cross_record_baseline.tsv
+    sha256: 891db9994ee60a063c5d4531ad93de3fb087ec651687aad9bf2384bb1a3015bd
+    role: context
+  - path: mappings/record_research_validation.tsv
+    sha256: 7e1b339c20eb07c163d4bacf36fe4f45b6e2132b83359932683ad6dddf467799
+    role: context
+  - path: reports/hydrate_grounding.tsv
+    sha256: 7329b0234d033fc1beef7a00e0728fe459e424e308d2870a2ad6e6a5ecd0eb69
+    role: context
+  - path: reports/semantic_review_20260921/corrections/current_records.tsv
+    sha256: 432b84414bb9d8da703705da62d487bfe44200485a9efa68953bc35d502039dc
+    role: context
+  - path: reports/semantic_review_20260921/resolution/components/applied-changes.json
+    sha256: a05991b681a597a8a004bb4360dec5bf43b4061dd54aaf5ad506ce965ac115da
+    role: context
+  - path: reports/semantic_review_20260921/resolution/components/before-records.json
+    sha256: 9bf6749fb8fbeeb20ab19150eca3d9604bf4fe3c30ed5c66bca77537cf5cc521
+    role: context
+  - path: reports/semantic_review_20260921/resolution/components/dispositions.tsv
+    sha256: b27b37c47f9b9049abea56bdecd7f3bf5f2e8e4764c515428f0305103448b5ee
+    role: context
+  - path: reports/semantic_review_20260921/resolution/current-review.json
+    sha256: 32397f666e8cdaf32c28ad0c0953ed89832ac97de0448c8c929989710d5aa390
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+    role: context
+  - path: reports/semantic_review_20260921/resolution/record-lineage.json
+    sha256: 997ba2c97d3323f405f9e1b980156829d5c5d9164743adb4c9aebb707f87e544
+    role: context
+  - path: reports/semantic_review_20260921/resolution/release-holds.json
+    sha256: 4cc32c739edc69521fe26f871cc70511699762de1f555621406057edf1981275
+    role: context
+  - path: reports/semantic_review_20260921/resolution/roles/role-dispositions.tsv
+    sha256: edb21ce57bf0ebb2acd46582fec5be10da86ade5433fb213fe2e454fd3f61206
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+    sha256: 7d0a5b847e1a28bf890c10d753a93a27798fb2273355fc669bed58ef8b679d93
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/issue-intersections.json
+    sha256: 7f3d9ebcabea3f11d475c839e534f3b69725aedf94d899f50817c7aed354a472
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/open-record-review-evidence.json
+    sha256: e730363eca65877ce0102495e2ab25ad1bedd609cb6f0133a7c0fb97c65e15d2
+    role: context
+  - path: reports/yaml_record_review/(2)-D-lyxose.md
+    sha256: 3a05386e5da75aed7995c2b4abde4f49fae43b92ce0b8c61db514f28afabc1e8
+    role: context
+  - path: reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md
+    sha256: 3c903f24df319eefa203b2e5fbfcacba2d5b6622483b3b4026e223fbb3edff18
+    role: context
+  - path: reports/yaml_record_review/1122-Tetrachloroethane.md
+    sha256: 3b56e4380d3dad02a256e5420d89a763589df74c9f59c8d5587d983ec73aaefe
+    role: context
+  - path: reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md
+    sha256: 8ffb2faa800379bf12ab8af0ed656ccac40692cce0fcb32d75bf9978f348ca2d
+    role: context
+  - path: reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md
+    sha256: f60f90655a0734789f0862cb1567f8e74c1642979627e1d7dea1e9f1edcae0f0
+    role: context
+  - path: reports/yaml_record_review/2-dimethylsuccinic_Acid.md
+    sha256: 75777afb1e86fd967bef96c8ecb0a79be4118ca4ee7f83a437618578d413313d
+    role: context
+  - path: reports/yaml_record_review/20261001T044702Z-CMC_PY_Horse_Serum.md
+    sha256: b289b2190727364478b7e19f73adb557040d2df430db9488095710a09af93b8e
+    role: context
+  - path: reports/yaml_record_review/20261001T044704Z-Ca.md
+    sha256: 744e7c6079668fb0d1afb7c6d8241ff89b2005ef163ebfc715b59fff780624d8
+    role: context
+  - path: reports/yaml_record_review/20261001T045857Z-05_M_Nitrilotriacetic_Acid_Disodium_Salt.md
+    sha256: c4040b05001a74a6ce72749445327647d9ab0171464f6fa2706862103f167e81
+    role: context
+  - path: reports/yaml_record_review/20261001T045859Z-1122-Tetrachloroethane.md
+    sha256: b6414adfc4e9d69a0573c360a351b45d6fedbb7ea552c345d3ac9694cdb19efd
+    role: context
+  - path: reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md
+    sha256: 39f9e8a9f91a490bb3c23287dca04eff3db2b8a3c8ef3fd3fb0596d46e926aa3
+    role: context
+  - path: reports/yaml_record_review/20261001T045901Z-2-chloro-4ethylamino-6-isopropylamino-135-triazine.md
+    sha256: 3634ed84e26ce53602bc16607de1cfccdc41cf2f21fec89ab11e1fd030330fa1
+    role: context
+  - path: reports/yaml_record_review/20261001T045902Z-2-dimethylsuccinic_Acid.md
+    sha256: 0aeee5d8659b9a6e28935e1eb714f7ee0545c057e645e9efd3f2448c19e98d49
+    role: context
+  - path: reports/yaml_record_review/20261001T050123Z-Apigenin_Dimethyl_Ether.md
+    sha256: cc07e22395cbf84e51677703ed9a5c36cda836d77f8c5d2a2750b5b28149739c
+    role: context
+  - path: reports/yaml_record_review/20261001T050126Z-Arabinoxylan_Rye_Flour.md
+    sha256: 9c821b83d361e8ac1f7ec009ee190f689fdeac8dcb82bb186c3e165dfde6d6b3
+    role: context
+  - path: reports/yaml_record_review/20261001T050129Z-Artepaulin.md
+    sha256: 52f98cac3a3b96ffa6c2f2ba5dd579ace8b31e120534c8a2caa7cfccc0532a3a
+    role: context
+  - path: reports/yaml_record_review/20261001T050130Z-Artificial_Sea_Salt.md
+    sha256: 405f31a194edfc4b470d30d7b5092ac6da400e3be72a95899767e63a1dd48e83
+    role: context
+  - path: reports/yaml_record_review/20261001T050131Z-Atrazin.md
+    sha256: 0b11a2482c6e22bb482a0f10c569e54eb767bd3e381db6ad25cc9bfe3d393cf7
+    role: context
+  - path: reports/yaml_record_review/20261001T050136Z-Benzylhydrazine_Hydrochloride.md
+    sha256: e742cf36bde1eab131722bfd3ae4b0dfa0692836ebb29b75b17ea2113859e2b7
+    role: context
+  - path: reports/yaml_record_review/20261001T050208Z-DL-2-Aminoadipic_Acid.md
+    sha256: 1f578758e86367a15c24c3ff5cbc7b15145ea88be2c2309981202bdba89ed2b0
+    role: context
+  - path: reports/yaml_record_review/20261001T050211Z-Edta.md
+    sha256: c753a87ee8233a5a62da4c84dca9b98a6ffca4be19c5efde3b12d6e8ace03997
+    role: context
+  - path: reports/yaml_record_review/20261001T050212Z-Edta_Chelating_Agent.md
+    sha256: 9baf3ca7214206c8e5a364124da0647ea1116dc73a744f1911200853840106cc
+    role: context
+  - path: reports/yaml_record_review/20261001T050251Z-Na2hpo4.md
+    sha256: 34fd51191d64c1d296038998db0a01494545692160cdad33efd2d1a463f9b1a3
+    role: context
+  - path: reports/yaml_record_review/20261001T050258Z-Nano.md
+    sha256: 5921f0b234a9f914297195ecad13354ff866111be2458d74f448fd8b8ccff2bd
+    role: context
+  - path: reports/yaml_record_review/20261001T050259Z-Nano3.md
+    sha256: 0ba59b5deccd5137632265523a85192b3d99b14fb22db0fe73bf95e44592e10a
+    role: context
+  - path: reports/yaml_record_review/20261001T050330Z-Sodium_Phosphate_Dibasic.md
+    sha256: 6b9cdecbfb5dfa70371c846d5cd63c0c2d81ad69d3692a5b260173152782012c
+    role: context
+  - path: reports/yaml_record_review/Apigenin_Dimethyl_Ether.md
+    sha256: 90862defc3223d4b54565a8d9cf2012b94da4eb28e0bde6c9b7d3b4dba6a3e89
+    role: context
+  - path: reports/yaml_record_review/Arabinoxylan_Rye_Flour.md
+    sha256: 1efc1e261d6c68cdc8859b5275176c9e56f871b8a6ecf0b21be15a5c60193c7a
+    role: context
+  - path: reports/yaml_record_review/Artepaulin.md
+    sha256: 92da11e489381bfed19b76f053124b0d6041f12b2749e75d67ac60fb1580cf1e
+    role: context
+  - path: reports/yaml_record_review/Artificial_Sea_Salt.md
+    sha256: 78fa4fe0e09df367ea8dee4d1aefe0242b7bd1060e39a14dea7d305dd807a5cb
+    role: context
+  - path: reports/yaml_record_review/Atrazin.md
+    sha256: 32884e57ba9a036cd7079ffdf37c71dd1c31cf5ff25401756229b244265b14b0
+    role: context
+  - path: reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md
+    sha256: df93febd947f1befeb59042587a78b2b51d2237a4d7d733dab59aa2b1f47a2a1
+    role: context
+  - path: reports/yaml_record_review/CMC_PY_Horse_Serum.md
+    sha256: 52b435f3a2206f1d0c703e151bfe130b82c192269f892c45838caefbe74aae38
+    role: context
+  - path: reports/yaml_record_review/Ca_No32_X_4_H2o.md
+    sha256: 98df3417ee84630599b14b0a8e6499d16aa8856773ede25a5bf6125a2fa9115d
+    role: context
+  - path: reports/yaml_record_review/D-_-lyxose.md
+    sha256: be0aad62a395320d83cb55ddee3145de547bc40b9af286089b075d97110644b7
+    role: context
+  - path: reports/yaml_record_review/DL-2-Aminoadipic_Acid.md
+    sha256: 08c0f58042e21a0a8d13a8c66666fbdb90d13406422431707bdd58d793ead516
+    role: context
+  - path: reports/yaml_record_review/Edta.md
+    sha256: ed08018334ab5795a3f5c8af20a56c182a60ef1538229fa5fe66b0be272eaf5f
+    role: context
+  - path: reports/yaml_record_review/Edta_Chelating_Agent.md
+    sha256: 5209fa2e6972b471654833d8384545752d3b5dd6f2f0f284fb22c3fc9b0f8ba7
+    role: context
+  - path: reports/yaml_record_review/Furaltadone_Hydrochloride.md
+    sha256: 4fe409820f79b03a7a779764bc8adf1fd3af60ccd368bf1e5e9f48efd8367241
+    role: context
+  - path: reports/yaml_record_review/N-acetyl-muramic_Acid.md
+    sha256: 1f202ad2343776dae63702b76262beaf912ef5321881991e1ef295d9ab520375
+    role: context
+  - path: reports/yaml_record_review/N-acetylmuramic_Acid.md
+    sha256: d50b98ddaf76c6fc121841e4ae4d90e937ec5bbc0cdc4e0d8b5386d2d6b1ad57
+    role: context
+  - path: reports/yaml_record_review/Na2hpo4.md
+    sha256: ecb2a784c5096de7b903bc233cde00b4e09e0712149cc69b873278c0007a20a1
+    role: context
+  - path: reports/yaml_record_review/Nano.md
+    sha256: 75ce90f7f377ac0b4791090f61008db9e7e6df4cd7e6ab5a31d5d3d094fea9d5
+    role: context
+  - path: reports/yaml_record_review/Nano3.md
+    sha256: 626397b7ef2a087f2dca225315fcefcc174f4709f86b7a356346deb286e06854
+    role: context
+  - path: reports/yaml_record_review/Sodium_Phosphate_Dibasic.md
+    sha256: a6a63ac3ab3222655b6eb0a07bcecc503c0c3eeb8fb782f295611a7a1c474038
+    role: context
+  - path: reports/yaml_record_review/manifest.tsv
+    sha256: 76a57b2c07138dfd4cc0aacd0bb7bc1c08a51bdb15786f4ff3e77a9d2c6c6e07
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/aggregate_records.py
+    sha256: 2fcf741a0172f15fe295967676f512a1b05f2e657ce459c4bd8e70db64fcc8c0
+    role: context
+  - path: scripts/browser_export.py
+    sha256: 15ca8c31e3df7d7b6a665cae8f22d176b73f025934ddf310707b52435ce6f315
+    role: context
+  - path: scripts/check_flat_export_coverage.py
+    sha256: 6bde697356e31bfed1c98716aaebb3dda74a0c200cc06f4ead611c252dd215df
+    role: context
+  - path: scripts/export_individual_records.py
+    sha256: a0b527e7e5ab9a12842dbe2f75b0dc80c50a72be3424f89918cfbeada95154f8
+    role: context
+  - path: scripts/export_lists.py
+    sha256: 6a03250d59ef2551d60dbd07b822f66d397e151cf9b029fe340fa1337d68d623
+    role: context
+  - path: scripts/reconcile_sssom.py
+    sha256: 7a0d1b248a1ae1777a827bde4e795474531db565c17b35beaab66fb2631daba7
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: scripts/validate_sssom_invariants.py
+    sha256: 89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77
+    role: context
+  - path: scripts/validate_strict.py
+    sha256: 5eb9890461eb077f3d6d11546ee5162d09dc32cc171f1ba8689d4b6840664a3a
+    role: context
+  - path: scripts/verify_roundtrip.py
+    sha256: 0ac813660b90a69f2a01f347f615eb12961164cacdef58e8da9447549cb68ea0
+    role: context
+  - path: src/mediaingredientmech/curie.py
+    sha256: 65349560f9f946446e5c81d90b4c42669805459bb814db508b90aeb41610e923
+    role: context
+  - path: src/mediaingredientmech/schema/history.yaml
+    sha256: b01b06f1b9a37db205c26c31ec0fd910690848507c7e1bfb73b424ac0829c52d
+    role: context
+  - path: src/mediaingredientmech/schema/mapped_ingredients_schema.yaml
+    sha256: 46a0fa42262f07b96f00c513fdd9d9dc90cad9befb1a407c3ea971e2c5eb501e
+    role: context
+  - path: src/mediaingredientmech/schema/mech_shared.yaml
+    sha256: c2e7054fd32635e380c698282bd886a9105861009b9f0474f02bb1b80865e895
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: 1be8df9638a3fd2685b37c6ff57d479ba19eb285d7917979e56b1ecbc81b16d6
+    role: context
+  - path: src/mediaingredientmech/schema/unmapped_ingredients_schema.yaml
+    sha256: 95deae1ab0b0886517ca302a860ead4123617432917797eec6234239b0266dc4
+    role: context
+  - path: tests/test_merge_tombstone_targets.py
+    sha256: 76b7a71005d91f95aaf78a6c615d84c4a0067c9d2e0aba1c0ba229023a3b817e
+    role: context
+targets:
+- target_id: record-5703779de3d5d6d5
+  path: data/ingredients/mapped/(2)-D-lyxose.yaml
+  label: (2)-D-lyxose
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/(2)-D-lyxose.yaml
+    role: maintained ingredient
+- target_id: record-c7c393946643c2bd
+  path: data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml
+  label: 05_M_Nitrilotriacetic_Acid_Disodium_Salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    role: maintained ingredient
+- target_id: record-5e7776b9bffe8c42
+  path: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+  label: 1122-Tetrachloroethane
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+    role: maintained ingredient
+- target_id: record-be65b7426fab585b
+  path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+  label: 2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    role: maintained ingredient
+- target_id: record-121bfb06cb059ee5
+  path: data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml
+  label: 2-chloro-4ethylamino-6-isopropylamino-135-triazine
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml
+    role: maintained ingredient
+- target_id: record-31f2106d82aaa846
+  path: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+  label: 2-dimethylsuccinic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+    role: maintained ingredient
+- target_id: record-713d67a5c5ba5163
+  path: data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml
+  label: Apigenin_Dimethyl_Ether
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml
+    role: maintained ingredient
+- target_id: record-bad75fc5238b3ba8
+  path: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
+  label: Arabinoxylan_Rye_Flour
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
+    role: maintained ingredient
+- target_id: record-d3b0ecc34107044e
+  path: data/ingredients/mapped/Artepaulin.yaml
+  label: Artepaulin
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artepaulin.yaml
+    role: maintained ingredient
+- target_id: record-da76045c326b778e
+  path: data/ingredients/mapped/Artificial_Sea_Salt.yaml
+  label: Artificial_Sea_Salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Artificial_Sea_Salt.yaml
+    role: maintained ingredient
+- target_id: record-67b4f4f91e7cf018
+  path: data/ingredients/mapped/Atrazin.yaml
+  label: Atrazin
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Atrazin.yaml
+    role: maintained ingredient
+- target_id: record-fc9e896f5b234168
+  path: data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml
+  label: Benzylhydrazine_Hydrochloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml
+    role: maintained ingredient
+- target_id: record-428f0a67e2ef5305
+  path: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+  label: Ca_No32_X_4_H2o
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+    role: maintained ingredient
+- target_id: record-26db4b94c97aabed
+  path: data/ingredients/mapped/D-_-lyxose.yaml
+  label: D-_-lyxose
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-_-lyxose.yaml
+    role: maintained ingredient
+- target_id: record-3685075c8b5b5eb7
+  path: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
+  label: DL-2-Aminoadipic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
+    role: maintained ingredient
+- target_id: record-dd49bc63aa61b117
+  path: data/ingredients/mapped/Edta.yaml
+  label: Edta
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Edta.yaml
+    role: maintained ingredient
+- target_id: record-02b5116af3e070ea
+  path: data/ingredients/mapped/Edta_Chelating_Agent.yaml
+  label: Edta_Chelating_Agent
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Edta_Chelating_Agent.yaml
+    role: maintained ingredient
+- target_id: record-2e4090e1bf27a52d
+  path: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+  label: Furaltadone_Hydrochloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+    role: maintained ingredient
+- target_id: record-ddeb567db07067be
+  path: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+  label: N-acetyl-muramic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+    role: maintained ingredient
+- target_id: record-9dc76df162cdd3c3
+  path: data/ingredients/mapped/N-acetylmuramic_Acid.yaml
+  label: N-acetylmuramic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/N-acetylmuramic_Acid.yaml
+    role: maintained ingredient
+- target_id: record-b309242fe87da37a
+  path: data/ingredients/mapped/Na2hpo4.yaml
+  label: Na2hpo4
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4.yaml
+    role: maintained ingredient
+- target_id: record-a3513ba2c7afb1a7
+  path: data/ingredients/mapped/Nano.yaml
+  label: Nano
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Nano.yaml
+    role: maintained ingredient
+- target_id: record-a195a7daaa716895
+  path: data/ingredients/mapped/Nano3.yaml
+  label: Nano3
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Nano3.yaml
+    role: maintained ingredient
+- target_id: record-9fb851ed17361db8
+  path: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
+  label: Sodium_Phosphate_Dibasic
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
+    role: maintained ingredient
+- target_id: record-29b4005016928e09
+  path: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+  label: CMC_PY_Horse_Serum
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+    role: maintained ingredient
+- target_id: record-93cd2f755a63894b
+  path: data/ingredients/unmapped/Ca.yaml
+  label: Ca
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Ca.yaml
+    role: maintained ingredient
+scope:
+  description: Full target coverage for bounded current-state reconciliation; NOT
+    full scientific review or exhaustive retirement of every historical allegation.
+  selection: Batch 1/13 of disjoint 2953-record enumeration including ignored/untracked
+    files. First batch prioritizes changed records, blocker floors and their exact
+    lineage partners; remaining paths sorted and partitioned in groups of 250.
+  coverage: full
+  population_size: 26
+  reviewed_target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+  exclusions: []
+checks:
+- check_id: strict
+  name: Closed-schema validation
+  status: passed
+  required: true
+  command: .venv/bin/python scripts/validate_strict.py --out /tmp/mim-reconcile-all.bpnX3efo/strict-validation.tsv
+  exit_code: 0
+  summary: "Validating 2960 files with 15 workers; schema=/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/Mechs/MediaIngredientMech/src/mediaingredientmech/schema/mediaingredientmech.yaml\n\
+    \  250/2960 files processed, 0 ERROR rows so far\n  500/2960 files processed,\
+    \ 0 ERROR rows so far\n  750/2960 files processed, 0 ERROR rows so far\n  1000/2960\
+    \ files processed, 0 ERROR rows so far\n  1250/2960 files processed, 0 ERROR rows\
+    \ so far\n  1500/2960 files processed, 0 ERROR rows so far\n  1750/2960 files\
+    \ processed, 0 ERROR rows so far\n  2000/2960 files processed, 0 ERROR rows so\
+    \ far\n  2250/2960 files processed, 0 ERROR rows so far\n  2500/2960 files processed,\
+    \ 0 ERROR rows so far\n  2750/2960 files processed, 0 ERROR rows so far\n\n===\
+    \ validate-strict summary ===\n  files scanned:      2960\n  files with ERROR:\
+    \   0\n  total ERROR rows:   0\n  TSV:                /tmp/mim-reconcile-all.bpnX3efo/strict-validation.tsv\n"
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+  evidence_ids:
+  - ev-fa134019994f08d1
+- check_id: sssom
+  name: Available SSSOM invariants
+  status: passed
+  required: true
+  command: .venv/bin/python scripts/validate_sssom_invariants.py --reject-tsv /tmp/mim-reconcile-all.bpnX3efo/sssom-rejects.tsv
+  exit_code: 0
+  summary: 'WARNING: Rule B4 skipped — kg-microbe ontology transforms not found at
+    /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/Mechs/kg-microbe/data/transformed/ontologies
+    for prefix(es): BTO, CHEBI, ENVO, FOODON, MICRO, UBERON. To enable Rule B4 locally,
+    check out kg-microbe at the sibling path and run its `just transform` recipe.
+    (CI typically lacks these transforms; the validator does not exit-2 on B4 alone
+    in that case.)
+
+    OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F,
+    G, H, I, J, K, L. /tmp/mim-reconcile-all.bpnX3efo/sssom-rejects.tsv written with
+    header only.
+
+    '
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+  evidence_ids:
+  - ev-3aacf0cbcb70f8a1
+- check_id: currency
+  name: SSSOM versus maintained mappings
+  status: passed
+  required: true
+  command: .venv/bin/python scripts/reconcile_sssom.py
+  exit_code: 0
+  summary: "SSSOM currency vs curated mapped records:\n  GAP    (mapped record, no\
+    \ SSSOM row):   0\n  ORPHAN (SSSOM row, no/REJECTED record): 0\n  STALE  (row\
+    \ lacks current ontology_id): 0\n  PREDICATE (current ontology row, wrong predicate):\
+    \ 0\n  GRADE (right predicate, stale grade metadata):     0\n\nOK: SSSOM is in\
+    \ sync with the curated data.\n"
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+  evidence_ids:
+  - ev-decded5789141cfb
+- check_id: exports
+  name: Generated flat export freshness and coverage
+  status: passed
+  required: true
+  command: .venv/bin/python scripts/check_flat_export_coverage.py
+  exit_code: 0
+  summary: "freshness: 8 regenerated artifact(s) match their producers\ncoverage:\
+    \ all_ingredients.csv        8312/8312 curated label(s) resolvable\n  note: 32\
+    \ published label(s) map to more than one identifier — see #232 for the triage\n\
+    coverage: mapped_ingredients.csv     7959/7959 curated label(s) resolvable\ncoverage:\
+    \ unmapped_ingredients.csv   360/360 curated label(s) resolvable\ncoverage: label_index.csv\
+    \            8312/8312 curated label(s) indexed\n\nOK: docs/data/ is fresh and\
+    \ every curated label is published.\n"
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+  evidence_ids:
+  - ev-3232ecb106c86e39
+- check_id: tombstones
+  name: Merge-target regression checks
+  status: passed
+  required: false
+  command: .venv/bin/python -m pytest tests/test_merge_tombstone_targets.py -q -o
+    addopts=''
+  exit_code: 0
+  summary: '.........                                                                [100%]
+
+    9 passed in 38.32s
+
+    '
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+  evidence_ids:
+  - ev-4180020c3661f2ad
+- check_id: ontology-b4
+  name: Ontology label/term correspondence (B4)
+  status: unavailable
+  required: true
+  summary: Default sibling transforms absent for BTO, CHEBI, ENVO, FOODON, MICRO and
+    UBERON. SSSOM exit 0 does not cover B4.
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+- check_id: scientific-claims
+  name: Exhaustive scientific and source-context reassessment
+  status: skipped
+  required: true
+  summary: This round performs bounded local reconciliation, not new primary-source
+    verification of every old narrative allegation. Remaining claims are explicit
+    needs_reassessment assessments.
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+- check_id: aggregate
+  name: Per-record versus aggregate semantic comparison
+  status: passed
+  required: true
+  summary: All 2953 current records match exactly one aggregate row after excluding
+    the exporter-owned per-record overlay fields. Eight raw differences are discussions
+    overlays, not drift.
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+- check_id: prior-structured
+  name: Existing structured bundle and lineage inventory
+  status: passed
+  required: true
+  command: .venv/bin/python scripts/record_review.py check
+  exit_code: 0
+  summary: Pre-run check returned valid_reviews=0 and no_structured_reviews. Ignored-inclusive
+    filesystem enumeration found no structured bundles or issue-round ledger files.
+    No previous_occurrences or terminal structured findings are fabricated.
+  target_ids:
+  - record-5703779de3d5d6d5
+  - record-c7c393946643c2bd
+  - record-5e7776b9bffe8c42
+  - record-be65b7426fab585b
+  - record-121bfb06cb059ee5
+  - record-31f2106d82aaa846
+  - record-713d67a5c5ba5163
+  - record-bad75fc5238b3ba8
+  - record-d3b0ecc34107044e
+  - record-da76045c326b778e
+  - record-67b4f4f91e7cf018
+  - record-fc9e896f5b234168
+  - record-428f0a67e2ef5305
+  - record-26db4b94c97aabed
+  - record-3685075c8b5b5eb7
+  - record-dd49bc63aa61b117
+  - record-02b5116af3e070ea
+  - record-2e4090e1bf27a52d
+  - record-ddeb567db07067be
+  - record-9dc76df162cdd3c3
+  - record-b309242fe87da37a
+  - record-a3513ba2c7afb1a7
+  - record-a195a7daaa716895
+  - record-9fb851ed17361db8
+  - record-29b4005016928e09
+  - record-93cd2f755a63894b
+evidence:
+- evidence_id: ev-c47f5c761d89211f
+  kind: record_content
+  reference: data/ingredients/mapped/(2)-D-lyxose.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[261],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":263,"mapping_status":"MAPPED","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-lyxose","sssom_rows":[{"data_row":3,"object_id":"CHEBI:62318","object_label":"D-lyxose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~282~29-D-lyxose","synonym_count":3}'
+  snapshot_sha256: 62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e
+- evidence_id: ev-8415d47f688bc31e
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [261]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-a2a559decb3bad18
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:~282~29-D-lyxose; data-row positions=[3]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":3,"object_id":"CHEBI:62318","object_label":"D-lyxose","other":"(2)-D-lyxose|D-(-)-lyxose|D-lyxo-pentose|CAS:1114-34-7","predicate_id":"skos:exactMatch","subject_id":"MIM:~282~29-D-lyxose","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-5b7e3f2daab7df58
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[263]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62318","line":263,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-d69679219babeef0
+  kind: prior_review
+  reference: reports/yaml_record_review/(2)-D-lyxose.md
+  locator: '`data/ingredients/mapped/(2)-D-lyxose.yaml`:2; Verdict:4; Identity:14;
+    Validation:36; Evidence:50; Completeness:85; Recommended Edits:96'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 3a05386e5da75aed7995c2b4abde4f49fae43b92ce0b8c61db514f28afabc1e8
+  quote: "Recommended Edits:\n1. Update the maintained per-record input\n   `data/ingredients/mapped/(2)-D-lyxose.yaml`\
+    \ so\n   `occurrence_statistics.source_occurrences` accounts for both microbedecoder\n\
+    \   rows: `kgmicrobe.trait:d_lyxose` with count `159` and\n   `kgmicrobe.trait:2_d_lyxose`\
+    \ with count `1`. Append a curation-history event\n   that names the `data/custom/microbedecoder`\
+    \ rows as the source, then run\n   `just sync-curated` and regenerate the flat\
+    \ docs exports.\n2. Remove or replace the stale top-level `notes` import sentence\
+    \ when the\n   occurrence fix is made; the later `curation_history` already records\
+    \ why the\n   damaged source string was corrected and the aldehydo record was\
+    \ folded in.\n3. Regenerate `mappings/record_research_validation.tsv` from its\
+    \ maintained\n   recipe, or mark the stale `(2)-D-lyxose` rows resolved, after\
+    \ the\n   occurrence-source fix lands."
+- evidence_id: ev-e0e2a024a09f1958
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[4]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e","finding_id":"SEM:cd74f8ddafa04d7e9a9a","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-dfaf37c1970fab58
+  kind: record_content
+  reference: data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2630],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","line":2632,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","preferred_term":"0.5
+    M Nitrilotriacetic acid, disodium salt"}],"identifier":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","ontology_label":"0.5
+    M Nitrilotriacetic acid, disodium salt","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"0.5
+    M Nitrilotriacetic acid, disodium salt","sssom_rows":[{"data_row":10,"object_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","object_label":"0.5
+    M Nitrilotriacetic acid, disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:05_M_Nitrilotriacetic_Acid_Disodium_Salt","synonym_count":11}'
+  snapshot_sha256: 91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f
+- evidence_id: ev-5459baed567881f3
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2630]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-b79e28402f106c27
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:05_M_Nitrilotriacetic_Acid_Disodium_Salt; data-row positions=[10]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":10,"object_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","object_label":"0.5
+    M Nitrilotriacetic acid, disodium salt","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:05_M_Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-90658daac5fbfe55
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2632]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","line":2632,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"1","ontology_id":"kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt","preferred_term":"0.5
+    M Nitrilotriacetic acid, disodium salt","total_occurrences":"1"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-3816203e44cb4d17
+  kind: prior_review
+  reference: reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md
+  locator: '`data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml`:2;
+    Verdict:4; Identity:13; Validation:35; Evidence:56; Completeness:86; Recommended
+    Edits:99'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 3c903f24df319eefa203b2e5fbfcacba2d5b6622483b3b4026e223fbb3edff18
+  quote: "Recommended Edits:\n1. Do not keep `CHEBI:132766` as an exact identity for\n\
+    \   `data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml`.\n\
+    \   Either remap this record to a local `kgmicrobe.ingredient:` stock-solution\n\
+    \   identifier, or merge its true disodium stock occurrences into a reviewed\n\
+    \   disodium stock record after source reconciliation.\n2. Remove the trisodium\
+    \ CAS, formula, SMILES/InChI, and exact synonyms from the\n   disodium `0.5 M`\
+    \ record. If a neat trisodium ingredient is still needed, it\n   should be maintained\
+    \ as a separate `CHEBI:132766` record whose preferred\n   term says trisodium\
+    \ and has no concentration qualifier.\n3. Change `ingredient_type` to `STOCK_SOLUTION`\
+    \ and add source-backed\n   `components` for the `0.5 M` solution, or demote to\
+    \ a non-identity pending\n   state until the solvent and concentration basis are\
+    \ known.\n4. Run `just sync-curated`, `just qc-roundtrip`, `just qc-component-partonomy`,\n\
+    \   `just validate-products`, and the docs/SSSOM export recipes after the\n  \
+    \ maintained YAML fix so trisodium labels stop resolving to the disodium stock\n\
+    \   solution in final SSSOM and docs outputs."
+- evidence_id: ev-1b229d4543da2752
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T045857Z-05_M_Nitrilotriacetic_Acid_Disodium_Salt.md
+  locator: 'YAML Record Review: 0.5 M Nitrilotriacetic acid, disodium salt:2; Target:10;
+    Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52;
+    Recommended Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: c4040b05001a74a6ce72749445327647d9ab0171464f6fa2706862103f167e81
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: 0.5 M disodium
+    stock label is exactly mapped to a trisodium ChEBI salt and publishes trisodium
+    synonyms/chemistry.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml`,
+    `just validate-terms data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml`
+    where applicable, and `just qc-sssom`.'
+- evidence_id: ev-c0eaf924ebd2b03e
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[11]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f","finding_id":"SEM:6560d5e8cbc982dcbd1d","kind":"existing_record_review","resolution_reason":"Separate
+    the 0.5 M disodium stock from trisodium nitrilotriacetate. Source occurrence rows
+    explicitly name one of each. Restore the trisodium substance as its own record,
+    carrying its chemistry and valid synonyms; withdraw those synonyms on the stock.
+    The stock is a local preparation with a named disodium solute, no pure-substance
+    formula or CAS. Solvent and complete recipe are not established.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-f07f205a486b70c3
+  kind: record_content
+  reference: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2638],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:36026","line":2640,"mapping_status":"MAPPED","ontology_id":"CHEBI:36026","preferred_term":"1,1,2,2-tetrachloroethane"}],"identifier":"CHEBI:36026","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:36026","ontology_label":"1,1,2,2-tetrachloroethane","ontology_source":"CHEBI"},"preferred_term":"1,1,2,2-tetrachloroethane","sssom_rows":[{"data_row":2971,"object_id":"CHEBI:36026","object_label":"1,1,2,2-tetrachloroethane","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1122-Tetrachloroethane","synonym_count":2}'
+  snapshot_sha256: 99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e
+- evidence_id: ev-eceac74586eeb56a
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2638]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-cfeaec5ae2b4b8b2
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:1122-Tetrachloroethane; data-row positions=[2971]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2971,"object_id":"CHEBI:36026","object_label":"1,1,2,2-tetrachloroethane","other":"1,1,2,2-Tetrachloroethane|2-tetrachloroethane","predicate_id":"skos:exactMatch","subject_id":"MIM:1122-Tetrachloroethane","validation_method":"manual:original_source_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-f31ff62720a3389a
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2640]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:36026","line":2640,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:36026","preferred_term":"1,1,2,2-tetrachloroethane","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-0bff485d9e304b22
+  kind: prior_review
+  reference: reports/yaml_record_review/1122-Tetrachloroethane.md
+  locator: '`data/ingredients/mapped/1122-Tetrachloroethane.yaml`:2; Verdict:4; Identity:12;
+    Validation:27; Evidence:43; Completeness:63; Recommended Edits:71'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 3b56e4380d3dad02a256e5420d89a763589df74c9f59c8d5587d983ec73aaefe
+  quote: "Recommended Edits:\n1. Move `data/ingredients/mapped/1122-Tetrachloroethane.yaml`\
+    \ back to an\n   ambiguous/unmapped state for the source label `2-tetrachloroethane`,\
+    \ remove\n   the exact `CHEBI:36026` identity row from SSSOM, and preserve\n \
+    \  `CHEBI:34024`/`CHEBI:36026` only as rejected or explanatory candidates.\n2.\
+    \ Regenerate `data/curated/mapped_ingredients.yaml`,\n   `data/curated/unmapped_ingredients.yaml`,\
+    \ SSSOM, docs, and label indexes\n   through the maintained sync/publish recipes\
+    \ so `2-tetrachloroethane` no\n   longer resolves uniquely to `CHEBI:36026`.\n\
+    3. Update the repair note that says `CHEBI:36026` is the only possible\n   reconstruction;\
+    \ it conflicts with `MAPPING_SEMANTICS.md` and ChEBI's\n   `CHEBI:34024` sibling."
+- evidence_id: ev-774fed4cfb32e51d
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T045859Z-1122-Tetrachloroethane.md
+  locator: 'YAML Record Review: 1,1,2,2-tetrachloroethane:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended
+    Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: b6414adfc4e9d69a0573c360a351b45d6fedbb7ea552c345d3ac9694cdb19efd
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/1122-Tetrachloroethane.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: 2-tetrachloroethane
+    is ambiguous between CHEBI:34024 and CHEBI:36026, but the record publishes an
+    unsupported exact CHEBI:36026 identity.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/1122-Tetrachloroethane.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/1122-Tetrachloroethane.yaml`,
+    `just validate-terms data/ingredients/mapped/1122-Tetrachloroethane.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-00ccae5524e4221a
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[28]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e","finding_id":"SEM:041e44760b57510920e6","kind":"existing_record_review","resolution_reason":"Original
+    source identity recovered and independently matched to the published target; see
+    identity evidence.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-02f435cf5dccfdbe
+  kind: record_content
+  reference: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2631],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2633,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate"}],"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic
+    acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium
+    salt monohydrate","sssom_rows":[{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate","predicate_id":"skos:exactMatch"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic
+    acid","predicate_id":"skos:closeMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","synonym_count":0}'
+  snapshot_sha256: 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048
+- evidence_id: ev-c7268fcb6e02d56e
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2631]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-00c17eed8b6b9a2e
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate; data-row
+    positions=[67,68]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate","other":"CAS:3470-37-9","predicate_id":"skos:exactMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic
+    acid","other":"CAS:3470-37-9","predicate_id":"skos:closeMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-67433528e457790b
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2633]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2633,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-e5efe72d4fc64111
+  kind: prior_review
+  reference: reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md
+  locator: '`data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml`:2;
+    Verdict:4; Identity:10; Validation:26; Evidence:44; Completeness:59; Recommended
+    Edits:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 8ffb2faa800379bf12ab8af0ed656ccac40692cce0fcb32d75bf9978f348ca2d
+  quote: "Recommended Edits:\n1. In\n   `data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml`,\n\
+    \   reconcile the preferred label, CAS RN, formula, SMILES, InChI, and PubChem\n\
+    \   CID so they all describe the same hydrate state.\n2. Remove or directly substantiate\
+    \ the provisional `CARBON_SOURCE` and\n   `ENERGY_SOURCE` roles.\n3. Regenerate\
+    \ `data/curated/mapped_ingredients.yaml`,\n   `mappings/ingredient_mappings.sssom.tsv`,\
+    \ docs, and mapping review queues.\n4. Re-run strict/LinkML validation, `scripts/validate_sssom_invariants.py`,\
+    \ and\n   docs/export checks after the identity and role cleanup."
+- evidence_id: ev-51e7bc673883371d
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md
+  locator: 'YAML Record Review: 2-Keto-D-gluconic acid hemicalcium salt monohydrate:2;
+    Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46;
+    Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 39f9e8a9f91a490bb3c23287dca04eff3db2b8a3c8ef3fd3fb0596d46e926aa3
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The record
+    says monohydrate, but the active CAS/formula/structure/PubChem values resolve
+    to an anhydrous calcium 2-ketogluconate.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml`,
+    `just validate-terms data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml`
+    where applicable, and `just qc-sssom`.'
+- evidence_id: ev-7addb8f1b8ad326e
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[50,1539,1901]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:942e5e5ab8031b0237df","kind":"existing_record_review","resolution_reason":"Refine
+    the prior blocker: MP Biomedicals explicitly uses CAS 3470-37-9 for the monohydrate,
+    while the same CAS is used for unhydrated calcium salt. Use a distinct local hydrate
+    identity and preserve the supplier CAS as procurement metadata rather than exact
+    global identity. Withdraw anhydrous CID/SMILES/InChI. Formula follows the certificate
+    hemicalcium unit plus one water, doubled to whole calcium stoichiometry. Existing
+    close match to free acid retained as reviewed in #342, not promoted to subsumption.","resolution_status":"RESOLVED"},{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:a8369e3a18749747a18d","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:28d4855c5ad15fc2384c","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-e9363cdff31d7fb7
+  kind: record_content
+  reference: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+  locator: nutritional_roles[0], nutritional_roles[1]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
+    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
+    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  snapshot_sha256: 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048
+- evidence_id: ev-a836c064de824018
+  kind: record_content
+  reference: data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[324],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15930","line":326,"mapping_status":"MAPPED","ontology_id":"CHEBI:15930","preferred_term":"2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine"}],"identifier":"CHEBI:15930","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15930","ontology_label":"atrazine","ontology_source":"CHEBI"},"preferred_term":"2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine","sssom_rows":[{"data_row":78,"object_id":"CHEBI:15930","object_label":"atrazine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-chloro-4ethylamino-6-isopropylamino-135-triazine","synonym_count":6}'
+  snapshot_sha256: 30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b
+- evidence_id: ev-fbc7f46b211fa565
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [324]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-861ac3e8c0a0e80d
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:2-chloro-4ethylamino-6-isopropylamino-135-triazine; data-row
+    positions=[78]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":78,"object_id":"CHEBI:15930","object_label":"atrazine","other":"2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine|2-chloro-4-ethylamino-6-isopropylamino-1,3,5-triazine|2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine|6-chloro-N-ethyl-N''-(propan-2-yl)-1,3,5-triazine-2,4-diamine|Atrazin|atrazine","predicate_id":"skos:exactMatch","subject_id":"MIM:2-chloro-4ethylamino-6-isopropylamino-135-triazine","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-a2ecd0a62a60e853
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[326]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15930","line":326,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:15930","preferred_term":"2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine","total_occurrences":"1"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-e771bdce46c17cc5
+  kind: prior_review
+  reference: reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md
+  locator: '`data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml`:2;
+    Verdict:4; Identity:10; Validation:23; Evidence:37; Completeness:51; Recommended
+    Edits:58'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: f60f90655a0734789f0862cb1567f8e74c1642979627e1d7dea1e9f1edcae0f0
+  quote: "Recommended Edits:\n1. Optionally enrich `chemical_properties` with the\
+    \ active ChEBI formula,\n   SMILES, and CAS RN in\n   `data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml`.\n\
+    2. If `mappings/record_research_validation.tsv` is intended to be a live queue,\n\
+    \   regenerate it so stale `CHEBI:15930` uncertainty no longer implies pending\n\
+    \   work.\n3. No YAML, aggregate, SSSOM, or docs identity edit is needed for the\
+    \ active\n   atrazine record."
+- evidence_id: ev-90f2b9d504eeee78
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T045901Z-2-chloro-4ethylamino-6-isopropylamino-135-triazine.md
+  locator: 'YAML Record Review: 2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine:2;
+    Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46;
+    Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 3634ed84e26ce53602bc16607de1cfccdc41cf2f21fec89ab11e1fd030330fa1
+  quote: 'Findings:
+
+    - **minor**: The previous finding set in `reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: Active CHEBI
+    atrazine identity, CultureMech alias, SSSOM, aggregate, and docs pass; only stale
+    advisory rows and optional chemistry enrichment remain.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml`,
+    `just validate-terms data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml`
+    where applicable, and `just qc-sssom`.'
+- evidence_id: ev-a3a4101bf0ddfe8d
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[60]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b","finding_id":"SEM:27f8035e80f5a0f0d48e","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-6ed9974a81703581
+  kind: record_content
+  reference: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2639],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86537","line":2641,"mapping_status":"MAPPED","ontology_id":"CHEBI:86537","preferred_term":"2,2-dimethylsuccinic
+    acid"}],"identifier":"CHEBI:86537","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":4,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86537","ontology_label":"2,2-dimethylsuccinic
+    acid","ontology_source":"CHEBI"},"preferred_term":"2,2-dimethylsuccinic acid","sssom_rows":[{"data_row":2972,"object_id":"CHEBI:86537","object_label":"2,2-dimethylsuccinic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-dimethylsuccinic_Acid","synonym_count":1}'
+  snapshot_sha256: 929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62
+- evidence_id: ev-60e993aff82793e6
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2639]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-9edc3035c46ef30c
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:2-dimethylsuccinic_Acid; data-row positions=[2972]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2972,"object_id":"CHEBI:86537","object_label":"2,2-dimethylsuccinic
+    acid","other":"2-dimethylsuccinic Acid","predicate_id":"skos:exactMatch","subject_id":"MIM:2-dimethylsuccinic_Acid","validation_method":"manual:original_source_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-fb168c9eb901159e
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2641]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86537","line":2641,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:86537","preferred_term":"2,2-dimethylsuccinic
+    acid","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-288b630324b12a09
+  kind: prior_review
+  reference: reports/yaml_record_review/2-dimethylsuccinic_Acid.md
+  locator: '`data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml`:2; Verdict:4; Identity:10;
+    Validation:24; Evidence:39; Completeness:56; Recommended Edits:65'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 75777afb1e86fd967bef96c8ecb0a79be4118ca4ee7f83a437618578d413313d
+  quote: "Recommended Edits:\n1. Revisit the source truncation for\n   `data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml`\
+    \ using\n   `mappings/truncated_locants.tsv`, `data/custom/microbedecoder/ingredient_candidates.tsv`,\n\
+    \   and the candidate ChEBI terms.\n2. If the source can be proven to be `2,2-dimethylsuccinic\
+    \ acid`, reground the\n   record to `CHEBI:86537`; if the source cannot be proven,\
+    \ change the primary\n   identifier to a local fallback and remove the exact own-identifier\
+    \ row to\n   `CHEBI:167506`.\n3. Run `just sync-curated`, `just validate-strict\n\
+    \   data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml`, `just validate-terms\n\
+    \   data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml` if the result is\n \
+    \  CHEBI-backed, `just qc-sssom`, and `just qc-flat-coverage` after that\n   curation\
+    \ edit."
+- evidence_id: ev-b69117c4e00bc991
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T045902Z-2-dimethylsuccinic_Acid.md
+  locator: 'YAML Record Review: 2,2-dimethylsuccinic acid:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended
+    Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 0aeee5d8659b9a6e28935e1eb714f7ee0545c057e645e9efd3f2448c19e98d49
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/2-dimethylsuccinic_Acid.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The record
+    publishes an exact identity row to CHEBI:167506, but CHEBI:167506 is the 2,3 isomer
+    and the record only documents a non-exact truncated-label rationale.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/2-dimethylsuccinic_Acid.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml`,
+    `just validate-terms data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-d7ef04e1b3f3ab23
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[67]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62","finding_id":"SEM:375d53fc7b7ef4e7ce71","kind":"existing_record_review","resolution_reason":"Original
+    source identity recovered and independently matched to the published target; see
+    identity evidence.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-1b8969855f90dd61
+  kind: record_content
+  reference: data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2632],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2769","line":2634,"mapping_status":"MAPPED","ontology_id":"CHEBI:2769","preferred_term":"Apigenin
+    Dimethyl Ether"}],"identifier":"CHEBI:2769","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2769","ontology_label":"apigenin
+    7,4''-dimethyl ether","ontology_source":"CHEBI"},"preferred_term":"Apigenin Dimethyl
+    Ether","sssom_rows":[{"data_row":400,"object_id":"CHEBI:2769","object_label":"apigenin
+    7,4''-dimethyl ether","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Apigenin_Dimethyl_Ether","synonym_count":1}'
+  snapshot_sha256: 688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8
+- evidence_id: ev-2ac292a7038b621f
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2632]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-5f892d01ea53edcf
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Apigenin_Dimethyl_Ether; data-row positions=[400]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":400,"object_id":"CHEBI:2769","object_label":"apigenin
+    7,4''-dimethyl ether","other":"CAS:5128-44-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Apigenin_Dimethyl_Ether","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-70b86f174cb272f8
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2634]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:2769","line":2634,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:2769","preferred_term":"Apigenin
+    Dimethyl Ether","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-6de00107966a1cab
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050123Z-Apigenin_Dimethyl_Ether.md
+  locator: 'YAML Record Review: Apigenin Dimethyl Ether:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended
+    Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: cc07e22395cbf84e51677703ed9a5c36cda836d77f8c5d2a2750b5b28149739c
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Apigenin_Dimethyl_Ether.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The record
+    conflates the Apigenin Dimethyl Ether surface with methoxymethane and a PubChem
+    CID for 4-(2-cyanophenyl)benzoic Acid.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Apigenin_Dimethyl_Ether.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml`,
+    `just validate-terms data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-c187060b077b96b3
+  kind: prior_review
+  reference: reports/yaml_record_review/Apigenin_Dimethyl_Ether.md
+  locator: '`data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml`:2; Verdict:4; Identity:12;
+    Validation:30; Evidence:47; Completeness:66; Recommended Edits:76'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 90862defc3223d4b54565a8d9cf2012b94da4eb28e0bde6c9b7d3b4dba6a3e89
+  quote: "Recommended Edits:\n- In `data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml`,\
+    \ remove the\n  `CHEBI:28887` parent, the `Methoxymethane` synonym, and the CID\
+    \ `10727789`\n  chemistry. Decide whether CAS `5728-44-9` was a source error;\
+    \ if the surface\n  label is authoritative, ground it to a flavone-shaped Apigenin\
+    \ Dimethyl Ether\n  identity such as PubChem CID `5281601` or a new exact local\
+    \ CAS fallback.\n- Regenerate synchronized products, then rerun\n  `uv run --frozen\
+    \ python scripts/validate_strict.py`,\n  `uv run --frozen linkml-term-validator\
+    \ validate-data data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml -s src/mediaingredientmech/schema/mediaingredientmech.yaml\
+    \ -t IngredientRecord --labels`,\n  and `uv run --frozen python scripts/validate_sssom_invariants.py`."
+- evidence_id: ev-7d8a68b07cd75d52
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[267]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8","finding_id":"SEM:620089b33811e495367b","kind":"existing_record_review","resolution_reason":"Resolve
+    the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG synonym of
+    apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs from imported
+    5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw methoxymethane
+    CHEBI:28887 and reject its synonym; replace the wrong molecular formula, structure
+    and CID from ChEBI and PubChem.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-bba4a171b8417627
+  kind: record_content
+  reference: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2633],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2635,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan
+    (Rye Flour)"}],"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ontology_label":"Arabinoxylan
+    (Rye Flour)","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Arabinoxylan
+    (Rye Flour)","sssom_rows":[{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan
+    (Rye Flour)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinoxylan_Rye_Flour","synonym_count":0}'
+  snapshot_sha256: eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf
+- evidence_id: ev-b5e76ede4ab3bfdb
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2633]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-90e4be4226cf21b4
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Arabinoxylan_Rye_Flour; data-row positions=[418]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan
+    (Rye Flour)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinoxylan_Rye_Flour","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-9e3443bdec402629
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2635]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2635,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan
+    (Rye Flour)","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-9a6abf8f4782c94f
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050126Z-Arabinoxylan_Rye_Flour.md
+  locator: 'YAML Record Review: Arabinoxylan (Rye Flour):2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended
+    Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 9c821b83d361e8ac1f7ec009ee190f689fdeac8dcb82bb186c3e165dfde6d6b3
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Arabinoxylan_Rye_Flour.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The active
+    FoodOn identifier and SSSOM exactMatch denote rye flour rather than the arabinoxylan
+    ingredient.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Arabinoxylan_Rye_Flour.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml`,
+    `just validate-terms data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-a07906a0cd0fb75f
+  kind: prior_review
+  reference: reports/yaml_record_review/Arabinoxylan_Rye_Flour.md
+  locator: '`data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml`:2; Verdict:4; Identity:11;
+    Validation:23; Evidence:37; Completeness:56; Recommended Edits:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1efc1e261d6c68cdc8859b5275176c9e56f871b8a6ecf0b21be15a5c60193c7a
+  quote: "Recommended Edits:\n- In `data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml`,\
+    \ replace\n  `FOODON:03302492` with an arabinoxylan-specific identity. If no exact\n\
+    \  rye-flour arabinoxylan term is available, keep a distinct local\n  `kgmicrobe.ingredient:arabinoxylan_rye_flour`\
+    \ identity and relate it to an\n  arabinoxylan parent rather than to rye flour.\n\
+    - In the same maintained record, remove `nutritional_roles.CARBON_SOURCE`\n  unless\
+    \ direct source evidence for Arabinoxylan from rye flour as a carbon\n  source\
+    \ is attached to that role.\n- Regenerate synchronized products, then rerun\n\
+    \  `uv run --frozen python scripts/validate_strict.py`,\n  `uv run linkml-term-validator\
+    \ validate-data data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml -s src/mediaingredientmech/schema/mediaingredientmech.yaml\
+    \ -t IngredientRecord --labels`,\n  and `uv run --frozen python scripts/validate_sssom_invariants.py`."
+- evidence_id: ev-be40e627b1744f83
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[274,1420]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf","finding_id":"SEM:5efa69d40115ca620297","kind":"existing_record_review","resolution_reason":"The
+    named rye-derived arabinoxylan material is not rye flour FOODON:03302492. A manufacturer
+    uses exactly this name for an arabinoxylan preparation with residual protein/ash.
+    Retain a local material identity, without asserting procurement from that supplier,
+    exact purity, or whole-mixture equivalence to pure polymer.","resolution_status":"RESOLVED"},{"current_record_sha256":"eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf","finding_id":"SEM:125edfd9fc6563189bb1","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-fc08bf645c7b3073
+  kind: record_content
+  reference: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  snapshot_sha256: eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf
+- evidence_id: ev-d1ffb6397e6b99ae
+  kind: record_content
+  reference: data/ingredients/mapped/Artepaulin.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2640],"raw_equal":true},"docs_rows":[{"identifier":"cas:13902-54-0","line":2642,"mapping_status":"MAPPED","ontology_id":"cas:13902-54-0","preferred_term":"Artepaulin"}],"identifier":"cas:13902-54-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:13902-54-0","ontology_label":"Artepaulin","ontology_source":"CAS"},"preferred_term":"Artepaulin","sssom_rows":[{"data_row":2973,"object_id":"cas:13902-54-0","object_label":"Artepaulin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artepaulin","synonym_count":0}'
+  snapshot_sha256: b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642
+- evidence_id: ev-821b10a5a18cd090
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2640]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-2926392c9add8315
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Artepaulin; data-row positions=[2973]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2973,"object_id":"cas:13902-54-0","object_label":"Artepaulin","other":"CAS:13902-54-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Artepaulin","validation_method":"manual:original_source_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-e1c64963157e6676
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2642]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:13902-54-0","line":2642,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:13902-54-0","preferred_term":"Artepaulin","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-1860f0d05e6afc40
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050129Z-Artepaulin.md
+  locator: 'YAML Record Review: Artepaulin:2; Target:10; Validation:20; Identity and
+    Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56;
+    Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 52f98cac3a3b96ffa6c2f2ba5dd579ace8b31e120534c8a2caa7cfccc0532a3a
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Artepaulin.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The CAS fallback
+    points at a PubChem CID that lacks the Artepaulin name while current PubChem and
+    ChEBI place Artepaulin on a different compound.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Artepaulin.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Artepaulin.yaml`,
+    `just validate-terms data/ingredients/mapped/Artepaulin.yaml` where applicable,
+    and `just qc-sssom`.'
+- evidence_id: ev-99f67fe6e883203e
+  kind: prior_review
+  reference: reports/yaml_record_review/Artepaulin.md
+  locator: '`data/ingredients/mapped/Artepaulin.yaml`:2; Verdict:4; Identity:10; Validation:27;
+    Evidence:51; Completeness:65; Recommended Edits:75'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 92da11e489381bfed19b76f053124b0d6041f12b2749e75d67ac60fb1580cf1e
+  quote: "Recommended Edits:\n- In `data/ingredients/mapped/Artepaulin.yaml`, re-evaluate\
+    \ the CultureBotHT\n  source name and CAS. If `Artepaulin` should follow PubChem/ChEBI,\
+    \ reground it\n  to the exact supported ChEBI/CAS identity instead of `cas:13902-54-0`.\n\
+    - If CAS `13902-54-0` is intentionally retained, rename the record to the\n  compound\
+    \ denoted by that CAS and preserve `Artepaulin` only as rejected or\n  discussion\
+    \ provenance.\n- Regenerate `data/curated/mapped_ingredients.yaml` and\n  `mappings/ingredient_mappings.sssom.tsv`\
+    \ from the maintained record and rerun\n  strict validation plus SSSOM invariants."
+- evidence_id: ev-f4c7cdf5ab990a47
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[278]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642","finding_id":"SEM:fb6a2a282bb4802d07fc","kind":"existing_record_review","resolution_reason":"Original
+    source identity recovered and independently matched to the published target; see
+    identity evidence.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-51a834d9cba778b8
+  kind: record_content
+  reference: data/ingredients/mapped/Artificial_Sea_Salt.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2634],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:artificial_sea_salt","line":2636,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:artificial_sea_salt","preferred_term":"Artificial
+    Sea Salt"}],"identifier":"kgmicrobe.ingredient:artificial_sea_salt","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:artificial_sea_salt","ontology_label":"Artificial
+    Sea Salt","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Artificial
+    Sea Salt","sssom_rows":[{"data_row":434,"object_id":"kgmicrobe.ingredient:artificial_sea_salt","object_label":"Artificial
+    Sea Salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artificial_Sea_Salt","synonym_count":1}'
+  snapshot_sha256: effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389
+- evidence_id: ev-a9d45a9ecab2298c
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2634]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-d34e785c3bb0fd07
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Artificial_Sea_Salt; data-row positions=[434]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":434,"object_id":"kgmicrobe.ingredient:artificial_sea_salt","object_label":"Artificial
+    Sea Salt","other":"Artificial Sea Salt","predicate_id":"skos:exactMatch","subject_id":"MIM:Artificial_Sea_Salt","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-c4860a81404a8d3e
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2636]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:artificial_sea_salt","line":2636,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"12","ontology_id":"kgmicrobe.ingredient:artificial_sea_salt","preferred_term":"Artificial
+    Sea Salt","total_occurrences":"12"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-d108a4af373f4a61
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050130Z-Artificial_Sea_Salt.md
+  locator: 'YAML Record Review: Artificial Sea Salt:2; Target:10; Validation:20; Identity
+    and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56;
+    Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 405f31a194edfc4b470d30d7b5092ac6da400e3be72a95899767e63a1dd48e83
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Artificial_Sea_Salt.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The record
+    exact-maps artificial sea salt to generic evaporated sea salt after a stem-substring
+    upgrade that dropped the artificial qualifier.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Artificial_Sea_Salt.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Artificial_Sea_Salt.yaml`,
+    `just validate-terms data/ingredients/mapped/Artificial_Sea_Salt.yaml` where applicable,
+    and `just qc-sssom`.'
+- evidence_id: ev-5b754f0f9aa66866
+  kind: prior_review
+  reference: reports/yaml_record_review/Artificial_Sea_Salt.md
+  locator: '`data/ingredients/mapped/Artificial_Sea_Salt.yaml`:2; Verdict:4; Identity:10;
+    Validation:29; Evidence:53; Completeness:67; Recommended Edits:78'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 78fa4fe0e09df367ea8dee4d1aefe0242b7bd1060e39a14dea7d305dd807a5cb
+  quote: "Recommended Edits:\n- In `data/ingredients/mapped/Artificial_Sea_Salt.yaml`,\
+    \ break the exact\n  mapping to `MICRO:0001647`.\n- Preserve a kg-microbe primary\
+    \ identity for the artificial sea salt mixture\n  unless an exact external ontology\
+    \ term is found; if the best external anchor\n  remains `sea salt`, record it\
+    \ as a non-identity parent or close mapping\n  according to `MAPPING_SEMANTICS.md`.\n\
+    - Add a discussion or component evidence entry that explains whether the source\n\
+    \  label denotes dry artificial sea salt, an artificial seawater solution, or\
+    \ a\n  named commercial mixture.\n- Synchronize `data/curated/mapped_ingredients.yaml`\
+    \ and\n  `mappings/ingredient_mappings.sssom.tsv`, then rerun strict validation,\
+    \ MICRO\n  OLS/product label checks, component partonomy, and SSSOM invariants."
+- evidence_id: ev-c6960bf7286cdd05
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[279]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389","finding_id":"SEM:f2a2df4244340a9a85e8","kind":"existing_record_review","resolution_reason":"The
+    source is an artificial sea-salt preparation, not natural evaporated sea salt.
+    Replace lexical MICRO:0001647 identity with a local preparation identity; no composition
+    is invented.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-6653c2dc8279ffa3
+  kind: record_content
+  reference: data/ingredients/mapped/Atrazin.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[527],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15930","line":529,"mapping_status":"REJECTED","ontology_id":"CHEBI:15930","preferred_term":"Atrazin"}],"identifier":"CHEBI:15930","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"CHEBI:15930","ontology_label":"atrazine","ontology_source":"CHEBI"},"preferred_term":"Atrazin","sssom_rows":[],"sssom_subject":"MIM:Atrazin","synonym_count":0}'
+  snapshot_sha256: d61bbfeda6dfd9326d9c39111ec579b8eaeabbe7e37c3ed2dd407e35fadca71b
+- evidence_id: ev-9c085361f3dfbd0e
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [527]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-1ea5a98a2bab3f3b
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Atrazin; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-60a4c27f7c084320
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[529]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15930","line":529,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:15930","preferred_term":"Atrazin","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-8205aa1ec37d7bf2
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050131Z-Atrazin.md
+  locator: 'YAML Record Review: Atrazin:2; Target:10; Validation:20; Identity and
+    Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56;
+    Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 0b11a2482c6e22bb482a0f10c569e54eb767bd3e381db6ad25cc9bfe3d393cf7
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Atrazin.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The record
+    exact-maps Atrazin to non-resolving CAS 1924-24-9 despite an existing CHEBI atrazine
+    record.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Atrazin.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Atrazin.yaml`,
+    `just validate-terms data/ingredients/mapped/Atrazin.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-463b4a48e533b7cd
+  kind: prior_review
+  reference: reports/yaml_record_review/Atrazin.md
+  locator: '`data/ingredients/mapped/Atrazin.yaml`:2; Verdict:4; Identity:12; Validation:26;
+    Evidence:42; Completeness:60; Recommended Edits:70'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 32884e57ba9a036cd7079ffdf37c71dd1c31cf5ff25401756229b244265b14b0
+  quote: "Recommended Edits:\n- Verify the upstream CultureBotHT entry for `Atrazin`;\
+    \ if it intended\n  atrazine, retire or merge `data/ingredients/mapped/Atrazin.yaml`\
+    \ into\n  `data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml`\n\
+    \  and preserve `Atrazin` only as a reviewed alias of `CHEBI:15930`.\n- Remove\
+    \ or correct `cas:1924-24-9` from the individual YAML, aggregate\n  collection,\
+    \ and SSSOM row; regenerate the flat exports and rerun focused\n  strict validation,\
+    \ product id/label correspondence, SSSOM invariants, and\n  flat-export coverage."
+- evidence_id: ev-ee2c4fba604f54fd
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[282]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"d61bbfeda6dfd9326d9c39111ec579b8eaeabbe7e37c3ed2dd407e35fadca71b","finding_id":"SEM:f7b51d23ab90bda7153b","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-8111d07c11822dfa
+  kind: record_content
+  reference: data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2635],"raw_equal":true},"docs_rows":[{"identifier":"cas:1073-62-7","line":2637,"mapping_status":"MAPPED","ontology_id":"cas:1073-62-7","preferred_term":"Benzylhydrazine
+    Hydrochloride"}],"identifier":"cas:1073-62-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:1073-62-7","ontology_label":"Benzylhydrazine
+    Hydrochloride","ontology_source":"CAS"},"preferred_term":"Benzylhydrazine Hydrochloride","sssom_rows":[{"data_row":515,"object_id":"cas:1073-62-7","object_label":"Benzylhydrazine
+    Hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Benzylhydrazine_Hydrochloride","synonym_count":0}'
+  snapshot_sha256: 67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc
+- evidence_id: ev-c692b7e9f78a358c
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2635]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-0d2e1dd4c7101d5e
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Benzylhydrazine_Hydrochloride; data-row positions=[515]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":515,"object_id":"cas:1073-62-7","object_label":"Benzylhydrazine
+    Hydrochloride","other":"CAS:1073-62-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Benzylhydrazine_Hydrochloride","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-9ec534ce932630d6
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2637]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:1073-62-7","line":2637,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:1073-62-7","preferred_term":"Benzylhydrazine
+    Hydrochloride","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-7659d19baba41c87
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050136Z-Benzylhydrazine_Hydrochloride.md
+  locator: 'YAML Record Review: Benzylhydrazine Hydrochloride:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended
+    Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: e742cf36bde1eab131722bfd3ae4b0dfa0692836ebb29b75b17ea2113859e2b7
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The stored
+    CAS 3287-99-8 and PubChem CID 2724127 denote benzylamine hydrochloride, not the
+    labeled two-nitrogen Benzylhydrazine Hydrochloride identity.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml`,
+    `just validate-terms data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml`
+    where applicable, and `just qc-sssom`.'
+- evidence_id: ev-c044d2ddf4652a27
+  kind: prior_review
+  reference: reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md
+  locator: '`data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml`:2; Verdict:4;
+    Identity:11; Validation:28; Evidence:41; Completeness:55; Recommended Edits:62'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: df93febd947f1befeb59042587a78b2b51d2237a4d7d733dab59aa2b1f47a2a1
+  quote: "Recommended Edits:\n- Blocker: inspect the CultureBotHT source value for\
+    \ this row and choose the\n  intended compound. If the ingredient is truly benzylhydrazine\
+    \ hydrochloride,\n  update `data/ingredients/mapped/Benzylhydrazine_Hydrochloride.yaml`\
+    \ to the\n  correct CAS fallback identity around CAS `1073-62-7` and PubChem CID\
+    \ 14084.\n  If the CAS was the intended identity, rename and relabel the record\
+    \ to\n  benzylamine hydrochloride. Then run `just sync-curated`."
+- evidence_id: ev-482db9ef83813f57
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[304]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc","finding_id":"SEM:fe4c487726dcd2732ce4","kind":"existing_record_review","resolution_reason":"Curate
+    the stated benzylhydrazine hydrochloride identity using the manufacturer certificate:
+    CAS 1073-62-7, C7H10N2.ClH. Withdraw benzylamine hydrochloride CAS 3287-99-8,
+    CID 2724127 and one-nitrogen structure. No unverified replacement structure or
+    PubChem CID is asserted.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-5f1c4a27fd8956b2
+  kind: record_content
+  reference: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[619],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86159","line":621,"mapping_status":"MAPPED","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2
+    x 4 H2O"}],"identifier":"CHEBI:86159","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":202,"edge_count":202,"occurrences":202},"occurrence_statistics":{"media_count":202,"total_occurrences":202},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86159","ontology_label":"calcium
+    nitrate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"Ca(NO3)2 x
+    4 H2O","sssom_rows":[{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium
+    nitrate tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ca_No32_X_4_H2o","synonym_count":16}'
+  snapshot_sha256: ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907
+- evidence_id: ev-ffef65ad416c1ff9
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [619]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-9bf82673c3b69690
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Ca_No32_X_4_H2o; data-row positions=[600]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium
+    nitrate tetrahydrate","other":"(1)  Ca(NO3)2.4H2O|Ca(NO3)2 x 4 H2O (0.1% w/v)|Ca(NO3)2
+    \u00b7 4H2O|Ca(NO3)2.4H2O|Ca(NO3)2x4H2O|Ca(NO3)2\u00b74H2O|Ca(NO3)2\u30fb4H2O|Calcium
+    dinitrate tetrahydrate|calcium nitrate--water (1/4)|Ca(NO3)2\u20224H2O|Ca(NO3)2\u20224H2O(CAS:
+    13477-34-4)|(1)  Ca(NO3)2|CAS:13477-34-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Ca_No32_X_4_H2o","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-a52bcd08a58f3db2
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[621]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86159","line":621,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"202","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2
+    x 4 H2O","total_occurrences":"202"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-ae225a452b755e57
+  kind: prior_review
+  reference: reports/yaml_record_review/Ca_No32_X_4_H2o.md
+  locator: '`data/ingredients/mapped/Ca_No32_X_4_H2o.yaml`:2; Verdict:4; Identity:11;
+    Validation:25; Evidence:40; Completeness:62; Recommended Edits:70'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 98df3417ee84630599b14b0a8e6499d16aa8856773ede25a5bf6125a2fa9115d
+  quote: "Recommended Edits:\n- Major: merge the calcium nitrate tetrahydrate raw\
+    \ label and three occurrences\n  from `data/ingredients/unmapped/Ca.yaml` into\n\
+    \  `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml`, retire or update the stale\n\
+    \  `UNMAPPED_0049` placeholder, refresh occurrence statistics, and regenerate\n\
+    \  `mappings/ingredient_mappings.sssom.tsv` and `docs/data/label_index.csv`.\n\
+    - Minor: refresh the hydrate-review report so the calcium nitrate tetrahydrate\n\
+    \  spellings now carried by this record no longer appear as `NOT_IN_MIM`."
+- evidence_id: ev-6ae334a969568123
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[342]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","finding_id":"SEM:c30d84c4be1132e43a6e","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-cf95a68be557e18a
+  kind: record_content
+  reference: data/ingredients/mapped/D-_-lyxose.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[802],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":804,"mapping_status":"REJECTED","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-lyxose","sssom_rows":[],"sssom_subject":"MIM:D-_-lyxose","synonym_count":2}'
+  snapshot_sha256: 90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a
+- evidence_id: ev-fc5ac5e405c631db
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [802]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-b172a2d697478a64
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:D-_-lyxose; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-2f0bca96872dd59c
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[804]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62318","line":804,"mapping_quality":"SYNONYM_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-ba0a155c673a7661
+  kind: prior_review
+  reference: reports/yaml_record_review/D-_-lyxose.md
+  locator: '`data/ingredients/mapped/D-_-lyxose.yaml`:2; Verdict:4; Identity:13; Validation:29;
+    Evidence:48; Completeness:62; Recommended Edits:73'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: be0aad62a395320d83cb55ddee3145de547bc40b9af286089b075d97110644b7
+  quote: "Recommended Edits:\n- Optionally refresh `mappings/other_cross_record_baseline.tsv`\
+    \ so the\n  `MIM:~282~29-D-lyxose` to `MIM:D-_-lyxose` duplicate is no longer\n\
+    \  `UNREVIEWED`, and prune stale chemistry/role fields from the rejected\n  tombstone\
+    \ if tombstones are no longer expected to retain inert pre-merge\n  facts. No\
+    \ final SSSOM row change is required for this tombstone."
+- evidence_id: ev-fc73952a5dc8d42e
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[482]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a","finding_id":"SEM:3cd7092c7ec9685ec9af","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-a15bffce40ab7317
+  kind: record_content
+  reference: data/ingredients/mapped/D-_-lyxose.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
+    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
+    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  snapshot_sha256: 90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a
+- evidence_id: ev-0d52ce66bb1acd92
+  kind: record_content
+  reference: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2636],"raw_equal":true},"docs_rows":[{"identifier":"cas:542-32-5","line":2638,"mapping_status":"MAPPED","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic
+    acid"}],"identifier":"cas:542-32-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:542-32-5","ontology_label":"DL-2-Aminoadipic
+    acid","ontology_source":"CAS"},"preferred_term":"DL-2-Aminoadipic acid","sssom_rows":[{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-2-Aminoadipic_Acid","synonym_count":1}'
+  snapshot_sha256: fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e
+- evidence_id: ev-7015ceb7e8a7bb90
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2636]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-18c4a68dac0ff81a
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:DL-2-Aminoadipic_Acid; data-row positions=[969]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic
+    acid","other":"CAS:542-32-5","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-2-Aminoadipic_Acid","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-58621783e546c3a8
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2638]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:542-32-5","line":2638,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic
+    acid","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-952208d407f91746
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050208Z-DL-2-Aminoadipic_Acid.md
+  locator: 'YAML Record Review: DL-2-Aminoadipic acid:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended
+    Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1f578758e86367a15c24c3ff5cbc7b15145ea88be2c2309981202bdba89ed2b0
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/DL-2-Aminoadipic_Acid.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The DL record
+    is still exact-mapped to the L-enantiomer and exports an L-specific SSSOM synonym.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/DL-2-Aminoadipic_Acid.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml`,
+    `just validate-terms data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-e88a3c9355bc03d1
+  kind: prior_review
+  reference: reports/yaml_record_review/DL-2-Aminoadipic_Acid.md
+  locator: '`data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml`:2; Verdict:4; Identity:12;
+    Validation:29; Evidence:53; Completeness:68; Recommended Edits:80'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 08c0f58042e21a0a8d13a8c66666fbdb90d13406422431707bdd58d793ead516
+  quote: "Recommended Edits:\n- Extend `scripts/fix_cas_stereochemical_identity_conflicts.py`\
+    \ to repair\n  `data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml`: preserve\n\
+    \  `cas:542-32-5` as the exact local identity, map to `CHEBI:37024` by\n  `NARROW_MATCH`,\
+    \ replace L-specific chemistry and synonyms, and emit the\n  required CAS and\
+    \ kg-microbe identity rows in final SSSOM.\n- Remove the provisional `AMINO_ACID_SOURCE`\
+    \ role or replace its\n  `COMPUTATIONAL_PREDICTION` evidence with inspected claim-level\
+    \ evidence for\n  this supplied form.\n- Regenerate synchronized curated and SSSOM\
+    \ products, then rerun\n  `uv run --frozen python scripts/validate_strict.py`,\n\
+    \  `uv run --frozen linkml-term-validator validate-data data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml\
+    \ -s src/mediaingredientmech/schema/mediaingredientmech.yaml -t IngredientRecord\
+    \ --labels`,\n  `uv run --frozen python scripts/validate_id_label_correspondence.py\
+    \ -c conf/id_label_targets.yaml`,\n  and `uv run --frozen python scripts/validate_sssom_invariants.py`."
+- evidence_id: ev-a6621c60116a567c
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[512,1606]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e","finding_id":"SEM:1d4b0b2e54c753cb4311","kind":"existing_record_review","resolution_reason":"Retain
+    the explicitly DL source substance as CAS 542-32-5. Withdraw L-enantiomer CHEBI:37023
+    and its stereospecific synonym/structure; a racemate is not one enantiomer. CAS
+    registry identity does not imply that a new exact ChEBI search was exhaustive.","resolution_status":"RESOLVED"},{"current_record_sha256":"fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e","finding_id":"SEM:f1e57873a6b7e0aa18ee","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-d4db048d962e13a6
+  kind: record_content
+  reference: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
+    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
+    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  snapshot_sha256: fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e
+- evidence_id: ev-c73f4f216dfc33a2
+  kind: record_content
+  reference: data/ingredients/mapped/Edta.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[939],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":941,"mapping_status":"MAPPED","ontology_id":"CHEBI:4735","preferred_term":"EDTA"}],"identifier":"CHEBI:4735","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":568,"total_occurrences":569},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic
+    acid","ontology_source":"CHEBI"},"preferred_term":"EDTA","sssom_rows":[{"data_row":1112,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Edta","synonym_count":10}'
+  snapshot_sha256: d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701
+- evidence_id: ev-9bfa20830d140db4
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [939]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-ea1ccd424ab69c20
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Edta; data-row positions=[1112]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1112,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic
+    acid","other":"2,2'',2'''',2''''''-(ethane-1,2-diyldiammonio)tetraacetate|2,2'',2'''',2''''''-(ethane-1,2-diyldiazaniumyl)tetraacetate|CAS:60-00-4|EDTA
+    (acid form)|EDTA (chelating agent)","predicate_id":"skos:exactMatch","subject_id":"MIM:Edta","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-c01ccfe14065740b
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[941]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:4735","line":941,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"568","ontology_id":"CHEBI:4735","preferred_term":"EDTA","total_occurrences":"569"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-b1151af6eca2053e
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050211Z-Edta.md
+  locator: 'YAML Record Review: EDTA:2; Target:10; Validation:20; Identity and Grounding:27;
+    Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61;
+    Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: c753a87ee8233a5a62da4c84dca9b98a6ffca4be19c5efde3b12d6e8ace03997
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/Edta.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The EDTA identity
+    passes, but old EDTA(2-) structure and synonyms survived the CHEBI:4735 regrounding.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Edta.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Edta.yaml`,
+    `just validate-terms data/ingredients/mapped/Edta.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-02597f04d60baf3a
+  kind: prior_review
+  reference: reports/yaml_record_review/Edta.md
+  locator: '`data/ingredients/mapped/Edta.yaml`:2; Verdict:4; Identity:11; Validation:26;
+    Evidence:33; Completeness:60; Recommended Edits:68'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: ed08018334ab5795a3f5c8af20a56c182a60ef1538229fa5fe66b0be272eaf5f
+  quote: "Recommended Edits:\n- Major: in `data/ingredients/mapped/Edta.yaml`, replace\
+    \ the stale\n  `CHEBI:64755` formula, InChI, and SMILES with properties for free-acid\n\
+    \  `CHEBI:4735` / CAS `60-00-4`.\n- Major: remove the two old `CHEBI:64755` exact\
+    \ synonyms from the active EDTA\n  synonym surface, or reclassify them as rejected/provenance-only\
+    \ so the final\n  SSSOM `other` column for `MIM:Edta` no longer exports them.\n\
+    - Major: either replace the provisional `physicochemical_roles.CHELATOR`\n  evidence\
+    \ with claim-level support for EDTA in MIM media, or remove the role.\n- After\
+    \ editing the per-record YAML, run `sync-curated`, rebuild SSSOM if\n  synonyms\
+    \ changed, and rerun `validate-all`, `qc-sssom`, strict validation,\n  and id-label\
+    \ correspondence."
+- evidence_id: ev-7d6e4ceca3550bd4
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[564,1501]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701","finding_id":"SEM:a28ca0d4dfe861e2c451","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701","finding_id":"SEM:02877e9a0c8c68ed94e9","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-fac94c8574bdfaf5
+  kind: record_content
+  reference: data/ingredients/mapped/Edta.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  snapshot_sha256: d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701
+- evidence_id: ev-d8b7463cace0005c
+  kind: record_content
+  reference: data/ingredients/mapped/Edta_Chelating_Agent.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[933],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":935,"mapping_status":"REJECTED","ontology_id":"CHEBI:4735","preferred_term":"EDTA
+    (chelating agent)"}],"identifier":"CHEBI:4735","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic
+    acid","ontology_source":"CHEBI"},"preferred_term":"EDTA (chelating agent)","sssom_rows":[],"sssom_subject":"MIM:Edta_Chelating_Agent","synonym_count":1}'
+  snapshot_sha256: 8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c
+- evidence_id: ev-44a5c78d0518be20
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [933]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-6ee4d9e56424706c
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Edta_Chelating_Agent; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-132825111efec404
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[935]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:4735","line":935,"mapping_quality":"LEXICAL_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:4735","preferred_term":"EDTA
+    (chelating agent)","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-ccb73004ba17130c
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050212Z-Edta_Chelating_Agent.md
+  locator: 'YAML Record Review: EDTA (chelating agent):2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended
+    Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 9baf3ca7214206c8e5a364124da0647ea1116dc73a744f1911200853840106cc
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Edta_Chelating_Agent.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The record
+    exact-maps an EDTA-specific label to generic NCIT:C360 Chelating Agent.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Edta_Chelating_Agent.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Edta_Chelating_Agent.yaml`,
+    `just validate-terms data/ingredients/mapped/Edta_Chelating_Agent.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-1d6b1f3ca5e20f64
+  kind: prior_review
+  reference: reports/yaml_record_review/Edta_Chelating_Agent.md
+  locator: '`data/ingredients/mapped/Edta_Chelating_Agent.yaml`:2; Verdict:4; Identity:10;
+    Validation:22; Evidence:29; Completeness:53; Recommended Edits:58'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 5209fa2e6972b471654833d8384545752d3b5dd6f2f0f284fb22c3fc9b0f8ba7
+  quote: "Recommended Edits:\n- Blocker: tombstone `data/ingredients/mapped/Edta_Chelating_Agent.yaml`\
+    \ as a\n  zero-occurrence duplicate or reground it to `CHEBI:4735` if the\n  `communitymech-unmapped`\
+    \ provenance must be preserved; either way, stop\n  exporting `MIM:Edta_Chelating_Agent\
+    \ skos:exactMatch NCIT:C360`.\n- Major: remove the provisional `CHELATOR` role\
+    \ when tombstoning or regrounding\n  the record unless claim-level evidence is\
+    \ curated.\n- After editing the per-record YAML, run `sync-curated`, rebuild or\
+    \ reconcile\n  SSSOM, and rerun `validate-all`, `qc-sssom`, strict validation,\
+    \ and id-label\n  correspondence."
+- evidence_id: ev-257c9ccf0fbcf212
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[566,1605]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c","finding_id":"SEM:22c6c53bc502552aed6a","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"},{"current_record_sha256":"8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c","finding_id":"SEM:582204b4bd6dffb6e882","kind":"role_evidence","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-5b1c4b3ce76d038e
+  kind: record_content
+  reference: data/ingredients/mapped/Edta_Chelating_Agent.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  snapshot_sha256: 8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c
+- evidence_id: ev-92f2602ee8f36ebd
+  kind: record_content
+  reference: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2679],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C217928","line":2681,"mapping_status":"MAPPED","ontology_id":"NCIT:C217928","preferred_term":"Furaltadone
+    hydrochloride"}],"identifier":"NCIT:C217928","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C217928","ontology_label":"Furaltadone
+    Hydrochloride","ontology_source":"NCIT"},"preferred_term":"Furaltadone hydrochloride","sssom_rows":[{"data_row":1256,"object_id":"NCIT:C217928","object_label":"Furaltadone
+    Hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Furaltadone_Hydrochloride","synonym_count":0}'
+  snapshot_sha256: d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81
+- evidence_id: ev-6fd4802b6fb4b4d5
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2679]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-065ced0d6e60ecd2
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Furaltadone_Hydrochloride; data-row positions=[1256]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1256,"object_id":"NCIT:C217928","object_label":"Furaltadone
+    Hydrochloride","other":"CAS:3759-92-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Furaltadone_Hydrochloride","validation_method":"manual:yaml_record_review|EXACT_NCIT|2026-10-03"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-505c7326f8238146
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2681]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C217928","line":2681,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C217928","preferred_term":"Furaltadone
+    hydrochloride","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-836307283d84c74a
+  kind: prior_review
+  reference: reports/yaml_record_review/Furaltadone_Hydrochloride.md
+  locator: '`data/ingredients/mapped/Furaltadone_Hydrochloride.yaml`:2; Verdict:4;
+    Identity:12; Validation:24; Evidence:35; Completeness:59; Recommended Edits:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 4fe409820f79b03a7a779764bc8adf1fd3af60ccd368bf1e5e9f48efd8367241
+  quote: "Recommended Edits:\n- Major: regrade `data/ingredients/mapped/Furaltadone_Hydrochloride.yaml`\
+    \ from\n  `NARROW_MATCH` to an exact NCIT mapping or promote `NCIT:C217928` as\
+    \ the\n  primary identifier, sync `data/curated/mapped_ingredients.yaml`, regenerate\n\
+    \  final SSSOM so it no longer emits `skos:narrowMatch` or unnecessary local\n\
+    \  registry rows, and rerun SSSOM invariants.\n- Minor: verify CAS RN `3759-92-1`\
+    \ from the original CultureBotHT input or\n  another registry source before keeping\
+    \ it as an exact registry identity."
+- evidence_id: ev-3e33246292a1173e
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[640]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81","finding_id":"SEM:daa5a3f8cbe30f00018a","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-61519568b4ae0cf4
+  kind: record_content
+  reference: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2086],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:47965","line":2088,"mapping_status":"REJECTED","ontology_id":"CHEBI:47965","preferred_term":"n-Acetyl-muramic
+    acid"}],"identifier":"CHEBI:47965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:47965","ontology_label":"N-acetylmuramic
+    acid","ontology_source":"CHEBI"},"preferred_term":"n-Acetyl-muramic acid","sssom_rows":[],"sssom_subject":"MIM:N-acetyl-muramic_Acid","synonym_count":3}'
+  snapshot_sha256: b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0
+- evidence_id: ev-686c63a5f3e94bd4
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2086]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-4fbcd5fcb4f52d5d
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:N-acetyl-muramic_Acid; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-a481814e89030983
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2088]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:47965","line":2088,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:47965","preferred_term":"n-Acetyl-muramic
+    acid","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-8ca709a7e5d1b923
+  kind: prior_review
+  reference: reports/yaml_record_review/N-acetyl-muramic_Acid.md
+  locator: '`data/ingredients/mapped/N-acetyl-muramic_Acid.yaml`:2; Verdict:4; Identity:12;
+    Validation:23; Evidence:31; Completeness:43; Recommended Edits:54'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1f202ad2343776dae63702b76262beaf912ef5321881991e1ef295d9ab520375
+  quote: "Recommended Edits:\n- Minor: in `data/ingredients/mapped/N-acetyl-muramic_Acid.yaml`,\
+    \ simplify the\n  rejected tombstone during a dedicated tombstone-cleanup pass\
+    \ by preserving\n  the old `CHEBI:47966` details as provenance and removing any\
+    \ live-looking\n  type or structure fields that are no longer active assertions."
+- evidence_id: ev-796e72f599168446
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[965]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0","finding_id":"SEM:8c807384318d18621c79","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-7280effdcd6042c0
+  kind: record_content
+  reference: data/ingredients/mapped/N-acetylmuramic_Acid.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1448],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:47965","line":1450,"mapping_status":"MAPPED","ontology_id":"CHEBI:47965","preferred_term":"N-acetylmuramic
+    acid"}],"identifier":"CHEBI:47965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:47965","ontology_label":"N-acetylmuramic
+    acid","ontology_source":"CHEBI"},"preferred_term":"N-acetylmuramic acid","sssom_rows":[{"data_row":1944,"object_id":"CHEBI:47965","object_label":"N-acetylmuramic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-acetylmuramic_Acid","synonym_count":7}'
+  snapshot_sha256: c94c85b40f68e1f703a0221bd6ca9480abae2252af0769d5c6deeaf5c1bbefff
+- evidence_id: ev-e2cf50f9475a4b44
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1448]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-93291c50c0b513de
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:N-acetylmuramic_Acid; data-row positions=[1944]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1944,"object_id":"CHEBI:47965","object_label":"N-acetylmuramic
+    acid","other":"2-(acetylamino)-3-O-[(1R)-1-carboxyethyl]-2-deoxy-D-glucose|2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-D-glucose|acetylmuramic
+    acid|n-Acetyl-muramic acid|(R)-2-acetamido-3-O-(1-carboxyethyl)-2-deoxy-D-glucose|2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-aldehydo-D-glucose|aldehydo-N-acetylmuramic
+    acid|CAS:10597-89-4","predicate_id":"skos:exactMatch","subject_id":"MIM:N-acetylmuramic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-2bd153635cf14066
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1450]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:47965","line":1450,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:47965","preferred_term":"N-acetylmuramic
+    acid","total_occurrences":"12"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-552c219a94608dff
+  kind: prior_review
+  reference: reports/yaml_record_review/N-acetylmuramic_Acid.md
+  locator: '`data/ingredients/mapped/N-acetylmuramic_Acid.yaml`:2; Verdict:4; Identity:10;
+    Validation:20; Evidence:28; Completeness:42; Recommended Edits:49'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: d50b98ddaf76c6fc121841e4ae4d90e937ec5bbc0cdc4e0d8b5386d2d6b1ad57
+  quote: 'Recommended Edits:
+
+    - None.'
+- evidence_id: ev-e359446e57ccf9a1
+  kind: record_content
+  reference: data/ingredients/mapped/Na2hpo4.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1488],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1490,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":1154,"total_occurrences":1157},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
+    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4","sssom_rows":[{"data_row":1996,"object_id":"CHEBI:34683","object_label":"disodium
+    hydrogenphosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4","synonym_count":27}'
+  snapshot_sha256: ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4
+- evidence_id: ev-e3f505f4a4ff0b8f
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1488]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-18cc356b9a533c76
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Na2hpo4; data-row positions=[1996]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1996,"object_id":"CHEBI:34683","object_label":"disodium
+    hydrogenphosphate","other":"CAS:7558-79-4|Dibasic sodium phosphate|Disodium hydrogen
+    phosphate|Disodium Phosphate|Na HPO|Na HPO anydrous|Na2H2PO4|Sodium phosphate
+    dibasic","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2hpo4","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-cf72303c847d70ab
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1490]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1490,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1154","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4","total_occurrences":"1157"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-1f0a36df479cc69e
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050251Z-Na2hpo4.md
+  locator: 'YAML Record Review: Na2HPO4:2; Target:10; Validation:20; Identity and
+    Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56;
+    Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 34fd51191d64c1d296038998db0a01494545692160cdad33efd2d1a463f9b1a3
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/Na2hpo4.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The exact
+    CHEBI:34683 anhydrous phosphate identity and BUFFER role pass, but final other
+    still publishes malformed formulas.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Na2hpo4.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Na2hpo4.yaml`,
+    `just validate-terms data/ingredients/mapped/Na2hpo4.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-8b0cd7adf97b622b
+  kind: prior_review
+  reference: reports/yaml_record_review/Na2hpo4.md
+  locator: '`data/ingredients/mapped/Na2hpo4.yaml`:2; Verdict:4; Identity:11; Validation:21;
+    Evidence:29; Completeness:51; Recommended Edits:59'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: ecb2a784c5096de7b903bc233cde00b4e09e0712149cc69b873278c0007a20a1
+  quote: "Recommended Edits:\n- Major: demote `Na HPO`, `Na HPO anydrous`, and `Na2H2PO4`\
+    \ to\n  `REJECTED_LABEL` or otherwise filter them from final SSSOM. Rebuild final\n\
+    \  SSSOM and rerun the final SSSOM plus product label validators.\n- Minor: remove\
+    \ or rephrase the `PMID:38524547` auto-proposed evidence object\n  so identity\
+    \ evidence relies on database matching rather than an incidental\n  cell-culture\
+    \ paper."
+- evidence_id: ev-a8cdfa30ccd2df53
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[995]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4","finding_id":"SEM:45865662806389a797fd","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-e027fedfcccd6e6a
+  kind: record_content
+  reference: data/ingredients/mapped/Na2hpo4.yaml
+  locator: physicochemical_roles[1]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"physicochemical_roles[1]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
+    in-session LLM role assignment; review recommended.","reference_text":"Assigned
+    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  snapshot_sha256: ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4
+- evidence_id: ev-0397c9698a371d0e
+  kind: record_content
+  reference: data/ingredients/mapped/Nano.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1528],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63005","line":1530,"mapping_status":"REJECTED","ontology_id":"CHEBI:63005","preferred_term":"NaNO"}],"identifier":"CHEBI:63005","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":674,"edge_count":674,"occurrences":675},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63005","ontology_label":"sodium
+    nitrate","ontology_source":"CHEBI"},"preferred_term":"NaNO","sssom_rows":[],"sssom_subject":"MIM:Nano","synonym_count":3}'
+  snapshot_sha256: 4dd4a5ae67fec187d44f23d68fafffe2e533a1d4d85c481b6dd55fa8dfa29631
+- evidence_id: ev-578824bd7f0aefc8
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1528]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-ca377d51d8c56609
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Nano; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-ba31445c10bbc35f
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1530]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:63005","line":1530,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:63005","preferred_term":"NaNO","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-626e8164a1842e65
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050258Z-Nano.md
+  locator: 'YAML Record Review: NaNO:2; Target:10; Validation:20; Identity and Grounding:27;
+    Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61;
+    Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 5921f0b234a9f914297195ecad13354ff866111be2458d74f448fd8b8ccff2bd
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Nano.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: Sodium nitrate
+    source labels are exact-mapped to NCIT:C54713 Nano, the NCIT one-billionth prefix.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Nano.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Nano.yaml`,
+    `just validate-terms data/ingredients/mapped/Nano.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-1df3a1ed69398e05
+  kind: prior_review
+  reference: reports/yaml_record_review/Nano.md
+  locator: '`data/ingredients/mapped/Nano.yaml`:2; Verdict:4; Identity:11; Validation:20;
+    Evidence:27; Completeness:40; Recommended Edits:47'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 75ce90f7f377ac0b4791090f61008db9e7e6df4cd7e6ab5a31d5d3d094fea9d5
+  quote: "Recommended Edits:\n- Blocker: merge the eight `NaNO3` occurrences and any\
+    \ useful provenance from\n  `data/ingredients/mapped/Nano.yaml` into\n  `data/ingredients/mapped/Nano3.yaml`,\
+    \ then retire this erroneous\n  `NCIT:C54713` exact mapping so final SSSOM no\
+    \ longer maps sodium nitrate\n  forms to the NCIT nano-prefix term."
+- evidence_id: ev-b16b07b0286f75fd
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1031]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"4dd4a5ae67fec187d44f23d68fafffe2e533a1d4d85c481b6dd55fa8dfa29631","finding_id":"SEM:1fb7eb2be19cbc32d5ee","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-00fa04ad30b67eab
+  kind: record_content
+  reference: data/ingredients/mapped/Nano3.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1530],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63005","line":1532,"mapping_status":"MAPPED","ontology_id":"CHEBI:63005","preferred_term":"NaNO3"}],"identifier":"CHEBI:63005","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":674,"edge_count":674,"occurrences":675},"occurrence_statistics":{"media_count":674,"total_occurrences":675},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:63005","ontology_label":"sodium
+    nitrate","ontology_source":"CHEBI"},"preferred_term":"NaNO3","sssom_rows":[{"data_row":2041,"object_id":"CHEBI:63005","object_label":"sodium
+    nitrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nano3","synonym_count":21}'
+  snapshot_sha256: 6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f
+- evidence_id: ev-ae188b575acab53d
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1530]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-e32a080b27e9915f
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Nano3; data-row positions=[2041]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2041,"object_id":"CHEBI:63005","object_label":"sodium
+    nitrate","other":"CAS:7631-99-4|Chile saltpeter|Cubic niter|Na NO3|NaNO|NaNO3(autoclave
+    before adding)(Fisher BP360-500)|NaNO3(CAS: 7631-99-4)|NaNO3(Fisher BP360-500)|Nitrate
+    de sodium|Nitrate of soda|Nitric acid monosodium salt|Nitric acid sodium salt
+    (1:1)|Nitric acid, sodium salt|Sodium nitrate (nitrogen source)|Sodium saltpeter|sodium
+    trioxidonitrate(1-)|Sodium(I) nitrate (1:1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Nano3","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-30e6bbd1597b0e43
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1532]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:63005","line":1532,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"674","ontology_id":"CHEBI:63005","preferred_term":"NaNO3","total_occurrences":"675"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-e21c119c74391b98
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050259Z-Nano3.md
+  locator: 'YAML Record Review: NaNO3:2; Target:10; Validation:20; Identity and Grounding:27;
+    Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61;
+    Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 0ba59b5deccd5137632265523a85192b3d99b14fb22db0fe73bf95e44592e10a
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/Nano3.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The exact
+    CHEBI:63005 sodium nitrate identity passes, but final other has a role-qualified
+    synonym.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Nano3.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Nano3.yaml`,
+    `just validate-terms data/ingredients/mapped/Nano3.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-b58626c8ab29cf5a
+  kind: prior_review
+  reference: reports/yaml_record_review/Nano3.md
+  locator: '`data/ingredients/mapped/Nano3.yaml`:2; Verdict:4; Identity:11; Validation:20;
+    Evidence:27; Completeness:41; Recommended Edits:48'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 626397b7ef2a087f2dca225315fcefcc174f4709f86b7a356346deb286e06854
+  quote: "Recommended Edits:\n- Major: in `data/ingredients/mapped/Nano3.yaml`, reject\
+    \ or delete\n  `Sodium nitrate (nitrogen source)`, then rebuild final SSSOM so\
+    \ `other`\n  keeps only true sodium nitrate synonyms plus `CAS:7631-99-4`."
+- evidence_id: ev-731fa4996239a268
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1032]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f","finding_id":"SEM:7041ae8b6f8fcc168efc","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-b856f2456e7f1f9f
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1865],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1867,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium
+    phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
+    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate
+    dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1}'
+  snapshot_sha256: b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925
+- evidence_id: ev-01023f719eb051de
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1865]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 32c6b9b06a2bd3b6a6e809b3d2433d96eda62f67a5f5436c471c366ec0ab184c
+- evidence_id: ev-293b21d7d58e152c
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Sodium_Phosphate_Dibasic; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-01edfa5cc0864ed4
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1867]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1867,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:34683","preferred_term":"Sodium
+    phosphate dibasic","total_occurrences":"0"}]'
+  snapshot_sha256: 5cea2d8238288e73acb50d9517a079271a516765dabf6d35636df6dad3d03b1c
+- evidence_id: ev-8bb1def00d80cb77
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050330Z-Sodium_Phosphate_Dibasic.md
+  locator: 'YAML Record Review: Sodium phosphate dibasic:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended
+    Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 6b9cdecbfb5dfa70371c846d5cd63c0c2d81ad69d3692a5b260173152782012c
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/Sodium_Phosphate_Dibasic.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: Sodium phosphate
+    dibasic is exact-mapped to trisodium phosphate and exports monosodium phosphate
+    as a synonym.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Sodium_Phosphate_Dibasic.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml`,
+    `just validate-terms data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-bbd664bdc2f5534f
+  kind: prior_review
+  reference: reports/yaml_record_review/Sodium_Phosphate_Dibasic.md
+  locator: '`data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml`:2; Verdict:4;
+    Identity:12; Validation:21; Evidence:31; Completeness:49; Recommended Edits:56'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: a6a63ac3ab3222655b6eb0a07bcecc503c0c3eeb8fb782f295611a7a1c474038
+  quote: "Recommended Edits:\n- Blocker: reground `data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml`\
+    \ to\n  a disodium phosphate identity, using an exact ontology term if one resolves\n\
+    \  and otherwise a CAS or kg-microbe registry identity.\n- Blocker: remove the\
+    \ active `Sodium dihydrogen phosphate` synonym and rebuild\n  final SSSOM so `MIM:Sodium_Phosphate_Dibasic`\
+    \ stops publishing it in `other`.\n- Major: remove `physicochemical_roles.BUFFER`\
+    \ unless a checked source supports\n  the buffer role for the regrounded record."
+- evidence_id: ev-6fbe21662187ccbb
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1229,1530]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925","finding_id":"SEM:1c30eea5a9f24672b1e6","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"},{"current_record_sha256":"b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925","finding_id":"SEM:51ff456b5478ebfbcd9f","kind":"role_evidence","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-c1c1f0e0056ab927
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
+    in-session LLM role assignment; review recommended.","reference_text":"Assigned
+    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  snapshot_sha256: b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925
+- evidence_id: ev-d21ea193995ef78b
+  kind: record_content
+  reference: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[272],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0740","line":274,"mapping_status":"AMBIGUOUS","ontology_id":"","preferred_term":"CMC
+    + PY + Horse Serum"}],"identifier":"UNMAPPED_0740","ingredient_type":null,"mapping_status":"AMBIGUOUS","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{},"preferred_term":"CMC
+    + PY + Horse Serum","sssom_rows":[],"sssom_subject":"MIM:CMC_PY_Horse_Serum","synonym_count":1}'
+  snapshot_sha256: 39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077
+- evidence_id: ev-8f375d05aa1751d4
+  kind: validation
+  reference: data/curated/unmapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [272]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 02cc5d5da49b05dea51e64fad79536d2852423424b0bc40add947f38addc1170
+- evidence_id: ev-4e6f767031b322dd
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:CMC_PY_Horse_Serum; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-2b1730631608c79a
+  kind: record_content
+  reference: docs/data/unmapped_ingredients.csv
+  locator: CSV lines=[274]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0740","line":274,"mapping_quality":"","mapping_status":"AMBIGUOUS","media_count":"0","ontology_id":"","preferred_term":"CMC
+    + PY + Horse Serum","total_occurrences":"0"}]'
+  snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+- evidence_id: ev-aab82e1c9edc2f69
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T044702Z-CMC_PY_Horse_Serum.md
+  locator: 'YAML Record Review: CMC + PY + Horse Serum:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended
+    Edits:55; Follow-up Checks:60; Additional Notes:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: b289b2190727364478b7e19f73adb557040d2df430db9488095710a09af93b8e
+  quote: 'Findings:
+
+    - **major**: `data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml` has no exact
+    identity mapping because the source expression remains ambiguous; keep it out
+    of `mappings/ingredient_mappings.sssom.tsv` until the separate source preparations
+    are represented.
+
+
+    Recommended Edits:
+
+    - Represent the separate source preparations for `data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml`
+    before promoting a mapping.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml`,
+    `just validate-terms data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-c04bf1d616ae4e5a
+  kind: prior_review
+  reference: reports/yaml_record_review/CMC_PY_Horse_Serum.md
+  locator: '`data/ingredients/mapped/CMC_PY_Horse_Serum.yaml`:2; Verdict:4; Identity:11;
+    Validation:27; Evidence:40; Completeness:61; Recommended Edits:74'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 52b435f3a2206f1d0c703e151bfe130b82c192269f892c45838caefbe74aae38
+  quote: "Recommended Edits:\n- Minor: update `data/ingredients/mapped/CMC_PY_Horse_Serum.yaml`\
+    \ top-level\n  `notes` and `ontology_mapping.evidence[0].notes` to describe the\
+    \ current\n  four-component curated decomposition; then run `just sync-curated`,\n\
+    \  `uv run --frozen python scripts/validate_component_partonomy.py`, and focused\n\
+    \  strict/SSSOM validation."
+- evidence_id: ev-623c6c29cbd87577
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[339,1625,1851,1907,2029]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:5840ee1537d3efca2b71","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:4342978a6d6a785d5a94","kind":"component_source_scope","resolution_reason":"Love
+    et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate
+    and peptone-yeast cultures with horse serum. The source expression was incorrectly
+    flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose.
+    All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:e082de354467a9d57892","kind":"component_source_scope","resolution_reason":"Love
+    et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate
+    and peptone-yeast cultures with horse serum. The source expression was incorrectly
+    flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose.
+    All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:9885c46f9bdea8f68046","kind":"component_source_scope","resolution_reason":"Love
+    et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate
+    and peptone-yeast cultures with horse serum. The source expression was incorrectly
+    flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose.
+    All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:79edd574c1b3e3b5cbd4","kind":"component_source_scope","resolution_reason":"Love
+    et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate
+    and peptone-yeast cultures with horse serum. The source expression was incorrectly
+    flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose.
+    All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: d74c8a32b618cd8b8664331c296b92f16d28ecf6208a08d0b7dc16afe6d82bf7
+- evidence_id: ev-10708f98b4caeee4
+  kind: record_content
+  reference: data/ingredients/unmapped/Ca.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[48],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0049","line":50,"mapping_status":"REJECTED","ontology_id":"","preferred_term":"Ca"}],"identifier":"UNMAPPED_0049","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Ca","sssom_rows":[],"sssom_subject":"MIM:Ca","synonym_count":0}'
+  snapshot_sha256: 30536efdb26bcaaa5729c3e61ca9ea9cd7372cd3ed7106834895ee8da38b14af
+- evidence_id: ev-5769c2652345d2f4
+  kind: validation
+  reference: data/curated/unmapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [48]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 02cc5d5da49b05dea51e64fad79536d2852423424b0bc40add947f38addc1170
+- evidence_id: ev-19c0af2a56bc5bf5
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Ca; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e
+- evidence_id: ev-f17fb53120415270
+  kind: record_content
+  reference: docs/data/unmapped_ingredients.csv
+  locator: CSV lines=[50]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0049","line":50,"mapping_quality":"","mapping_status":"REJECTED","media_count":"0","ontology_id":"","preferred_term":"Ca","total_occurrences":"0"}]'
+  snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+- evidence_id: ev-ac8cc401220219c7
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T044704Z-Ca.md
+  locator: 'YAML Record Review: Ca:2; Target:10; Validation:20; Identity and Grounding:27;
+    Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60;
+    Additional Notes:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 744e7c6079668fb0d1afb7c6d8241ff89b2005ef163ebfc715b59fff780624d8
+  quote: 'Findings:
+
+    - **major**: `data/ingredients/unmapped/Ca.yaml` remains `UNMAPPED`; no exact
+    ontology term or independently supported registry identity is recorded. Do not
+    exact-match it to a broader parent, component, hydrate, salt, or lookalike label.
+
+
+    Recommended Edits:
+
+    - Curate an exact same-form identity or decomposition for `data/ingredients/unmapped/Ca.yaml`
+    before mapping it.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/unmapped/Ca.yaml`,
+    `just validate-terms data/ingredients/unmapped/Ca.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-a55f2fad24029129
+  kind: record_content
+  reference: data/ingredients/mapped/Atrazin.yaml
+  locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Current loser points to CHEBI:15930; old pointer cas:1924-24-9 survives
+    only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/2-chloro-4ethylamino-6-isopropylamino-135-triazine.yaml"];
+    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:15930 (2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine).
+    Atrazin is the atrazine name variant. Correct CAS is 1912-24-9; imported 1924-24-9
+    was erroneous. Survivor already has the exact atrazine ontology identity. Original
+    fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:15930","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier
+    cas:1924-24-9 -> CHEBI:15930 (#799). This record was merged into ''2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine''
+    but kept its own old identifier, so a downstream lookup on this label resolved
+    to nothing live. The target is the one named in this record''s own MERGED_INTO
+    entry; the chain was followed to the first live record. A tombstone exists to
+    keep the loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
+    cas:1924-24-9 -> CHEBI:15930 (#799). The merge set identifier and status but left
+    ontology_mapping untouched, so this tombstone kept advertising a term it no longer
+    asserts \u2014 anything indexing by ontology_id routed through it. Now agrees
+    with the merge target ''2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine''.
+    Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  snapshot_sha256: d61bbfeda6dfd9326d9c39111ec579b8eaeabbe7e37c3ed2dd407e35fadca71b
+- evidence_id: ev-2fea0ca12c76ecd5
+  kind: record_content
+  reference: data/ingredients/mapped/Edta_Chelating_Agent.yaml
+  locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Current loser points to CHEBI:4735; old pointer NCIT:C360 survives only
+    as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Edta.yaml"];
+    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:4735 (EDTA).
+    The source explicitly names EDTA; the parenthetical function does not turn the
+    substance into the generic class of chelators. Original fields remain only on
+    this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:4735","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier
+    NCIT:C360 -> CHEBI:4735 (#799). This record was merged into ''EDTA'' but kept
+    its own old identifier, so a downstream lookup on this label resolved to nothing
+    live. The target is the one named in this record''s own MERGED_INTO entry; the
+    chain was followed to the first live record. A tombstone exists to keep the loser
+    resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
+    NCIT:C360 -> CHEBI:4735 (#799). The merge set identifier and status but left ontology_mapping
+    untouched, so this tombstone kept advertising a term it no longer asserts \u2014
+    anything indexing by ontology_id routed through it. Now agrees with the merge
+    target ''EDTA''. Provenance is unaffected: what the record used to assert is in
+    this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  snapshot_sha256: 8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c
+- evidence_id: ev-0c22dbffe6523338
+  kind: record_content
+  reference: data/ingredients/mapped/Nano.yaml
+  locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Current loser points to CHEBI:63005; old pointer NCIT:C54713 survives
+    only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Nano3.yaml"];
+    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:63005 (NaNO3).
+    The source synonyms explicitly identify NaNO3, CAS 7631-99-4 and Fisher BP360-500;
+    NCIT:C54713 denotes the nano unit prefix. NaNO retained solely as the documented
+    truncated source label. Original fields remain only on this excluded tombstone.
+    Evidence: https://www.ebi.ac.uk/chebi/CHEBI:63005","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier
+    NCIT:C54713 -> CHEBI:63005 (#799). This record was merged into ''NaNO3'' but kept
+    its own old identifier, so a downstream lookup on this label resolved to nothing
+    live. The target is the one named in this record''s own MERGED_INTO entry; the
+    chain was followed to the first live record. A tombstone exists to keep the loser
+    resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
+    NCIT:C54713 -> CHEBI:63005 (#799). The merge set identifier and status but left
+    ontology_mapping untouched, so this tombstone kept advertising a term it no longer
+    asserts \u2014 anything indexing by ontology_id routed through it. Now agrees
+    with the merge target ''NaNO3''. Provenance is unaffected: what the record used
+    to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  snapshot_sha256: 4dd4a5ae67fec187d44f23d68fafffe2e533a1d4d85c481b6dd55fa8dfa29631
+- evidence_id: ev-4f8bdfebcde635f9
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
+  locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Current loser points to CHEBI:34683; old pointer CHEBI:37583 survives
+    only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Na2hpo4.yaml"];
+    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:34683 (Na2HPO4).
+    Dibasic sodium phosphate is disodium hydrogenphosphate, not trisodium phosphate.
+    Sodium dihydrogen phosphate is monobasic and is a REJECTED_LABEL here; its 78
+    recipe rows are excluded from this transfer. Original fields remain only on this
+    excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34683","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier
+    CHEBI:37583 -> CHEBI:34683 (#799). This record was merged into ''Na2HPO4'' but
+    kept its own old identifier, so a downstream lookup on this label resolved to
+    nothing live. The target is the one named in this record''s own MERGED_INTO entry;
+    the chain was followed to the first live record. A tombstone exists to keep the
+    loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
+    CHEBI:37583 -> CHEBI:34683 (#799). The merge set identifier and status but left
+    ontology_mapping untouched, so this tombstone kept advertising a term it no longer
+    asserts \u2014 anything indexing by ontology_id routed through it. Now agrees
+    with the merge target ''Na2HPO4''. Provenance is unaffected: what the record used
+    to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  snapshot_sha256: b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925
+- evidence_id: ev-09c57710cd75f921
+  kind: record_content
+  reference: data/ingredients/mapped/D-_-lyxose.yaml
+  locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Current loser points to CHEBI:62318; old pointer CHEBI:16789 survives
+    only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/(2)-D-lyxose.yaml"];
+    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:62318 ''D-lyxose'';
+    occurrences transferred. Absorbed ''D-(-)-lyxose'' (CHEBI:16789 aldehydo- form)
+    into CHEBI:62318 (#398). Both records name the same substance \u2014 the muramic
+    pair carry an identical CAS and formula \u2014 split across a ChEBI class term
+    and its open-chain aldehydo- form. The class term wins because the identifier
+    optimises for how the node READS in the knowledge graph: no catalogue sells an
+    ''aldehydo-'' tautomer, and MIM is kg-microbe''s naming authority, so grounding
+    here would rename the ChEBI node after a minor solution-equilibrium component.
+    ChEBI does hang the commercial CAS (1114-34-7) on the aldehydo- term, which is
+    why the earlier reading of the orderability rule pointed the other way; that CAS
+    is now carried in supplied_form and republished as a synonym, so nothing purchasable
+    is lost from the identity. Tombstoned REJECTED so a lookup on this label still
+    resolves, SSSOM rows dropped.","curator":"merge_aldehydo_duplicates","llm_assisted":false,"timestamp":"2026-08-18T00:00:00+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
+    CHEBI:16789 -> CHEBI:62318 (#799). The merge set identifier and status but left
+    ontology_mapping untouched, so this tombstone kept advertising a term it no longer
+    asserts \u2014 anything indexing by ontology_id routed through it. Now agrees
+    with the merge target ''D-lyxose''. Provenance is unaffected: what the record
+    used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  snapshot_sha256: 90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a
+- evidence_id: ev-961c3b8d254446f2
+  kind: record_content
+  reference: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+  locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Current loser points to CHEBI:47965; old pointer CHEBI:47966 survives
+    only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/N-acetylmuramic_Acid.yaml"];
+    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:47965 ''N-acetylmuramic
+    acid''; occurrences transferred. Absorbed ''n-Acetyl-muramic acid'' (CHEBI:47966
+    aldehydo- form) into CHEBI:47965 (#398). Both records name the same substance
+    \u2014 the muramic pair carry an identical CAS and formula \u2014 split across
+    a ChEBI class term and its open-chain aldehydo- form. The class term wins because
+    the identifier optimises for how the node READS in the knowledge graph: no catalogue
+    sells an ''aldehydo-'' tautomer, and MIM is kg-microbe''s naming authority, so
+    grounding here would rename the ChEBI node after a minor solution-equilibrium
+    component. ChEBI does hang the commercial CAS (10597-89-4) on the aldehydo- term,
+    which is why the earlier reading of the orderability rule pointed the other way;
+    that CAS is now carried in supplied_form and republished as a synonym, so nothing
+    purchasable is lost from the identity. Tombstoned REJECTED so a lookup on this
+    label still resolves, SSSOM rows dropped.","curator":"merge_aldehydo_duplicates","llm_assisted":false,"timestamp":"2026-08-18T00:00:00+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
+    CHEBI:47966 -> CHEBI:47965 (#799). The merge set identifier and status but left
+    ontology_mapping untouched, so this tombstone kept advertising a term it no longer
+    asserts \u2014 anything indexing by ontology_id routed through it. Now agrees
+    with the merge target ''N-acetylmuramic acid''. Provenance is unaffected: what
+    the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  snapshot_sha256: b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0
+- evidence_id: ev-298e818e08d3065c
+  kind: record_content
+  reference: mappings/culturemech_recipe_membership.tsv
+  locator: mim_identifier=CHEBI:86159; scoped_identity_corrections=2026-10-03
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 202 distinct recipe edges and 202 occurrences, matching the live YAML/aggregate.
+    The explicit three-recipe correction uses CultureMech:000171, CultureMech:000174,
+    CultureMech:000238.
+  snapshot_sha256: 86b18aa886d6aae311aeb89b6139b2c4b26a6bc31b1d767c0330f2b8c89e81c1
+- evidence_id: ev-67fdd37d6271d0a7
+  kind: record_content
+  reference: mappings/hydrate_review.tsv
+  locator: lines=[345,376,486,688,778,865]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: 'Labels present in current synonyms yet tagged NOT_IN_MIM: [[345,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u30fb4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"9","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[376,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u00b74H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"6","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[486,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Calcium
+    nitrate tetrahydrate","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"3","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[688,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2
+    \u00b7 4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[778,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u20224H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[865,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2.4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}]].
+    The table notes define these using preferred-term-only matching, so table semantics
+    must be distinguished from current synonym coverage.'
+  snapshot_sha256: 5e6c7ea188263b73451f76f10dc29189b0e52d7085c2ddf9ee90f2e1d81ea1ba
+- evidence_id: ev-2a70b8383c990302
+  kind: record_content
+  reference: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+  locator: records[source_record=data/ingredients/mapped/Ca_No32_X_4_H2o.yaml].change
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: '{"after_yaml_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","before_yaml_sha256":"efe13cbdbfcfb0d5da686a6b2ca032f3492ed50a55a790aa39fa9d135919a2c1","change":"Merged
+    the missing CultureMech calcium nitrate tetrahydrate source occurrence/synonym
+    into the reviewed CHEBI:31348 identity and its published SSSOM other column.","shape":"review_record_issue_resolution","source_record":"data/ingredients/mapped/Ca_No32_X_4_H2o.yaml","verification":"The
+    review-record fix preserved the exact calcium nitrate tetrahydrate grounding and
+    added only the raw CAS-bearing synonym and source occurrence count from the duplicate
+    stale record."}'
+  snapshot_sha256: 7d0a5b847e1a28bf890c10d753a93a27798fb2273355fc669bed58ef8b679d93
+- evidence_id: ev-deba3eac5817996f
+  kind: record_content
+  reference: data/custom/microbedecoder/unmapped_labels.tsv
+  locator: line 326
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: '{"category":"biolink:PhenotypicQuality","label":"D-lyxose","occurrences":"159","placeholder_curie":"kgmicrobe.trait:d_lyxose","source_columns":"BacDive_Metabolite_utilization"}'
+  snapshot_sha256: 96975af522c3e55d5bc6f542637e071a30d1191c34a8555eb81f540cb7bfe569
+- evidence_id: ev-fa134019994f08d1
+  kind: validation
+  reference: .venv/bin/python scripts/validate_strict.py --out /tmp/mim-reconcile-all.bpnX3efo/strict-validation.tsv
+  locator: complete captured stdout/stderr
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: "Validating 2960 files with 15 workers; schema=/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/Mechs/MediaIngredientMech/src/mediaingredientmech/schema/mediaingredientmech.yaml\n\
+    \  250/2960 files processed, 0 ERROR rows so far\n  500/2960 files processed,\
+    \ 0 ERROR rows so far\n  750/2960 files processed, 0 ERROR rows so far\n  1000/2960\
+    \ files processed, 0 ERROR rows so far\n  1250/2960 files processed, 0 ERROR rows\
+    \ so far\n  1500/2960 files processed, 0 ERROR rows so far\n  1750/2960 files\
+    \ processed, 0 ERROR rows so far\n  2000/2960 files processed, 0 ERROR rows so\
+    \ far\n  2250/2960 files processed, 0 ERROR rows so far\n  2500/2960 files processed,\
+    \ 0 ERROR rows so far\n  2750/2960 files processed, 0 ERROR rows so far\n\n===\
+    \ validate-strict summary ===\n  files scanned:      2960\n  files with ERROR:\
+    \   0\n  total ERROR rows:   0\n  TSV:                /tmp/mim-reconcile-all.bpnX3efo/strict-validation.tsv\n"
+- evidence_id: ev-3aacf0cbcb70f8a1
+  kind: validation
+  reference: .venv/bin/python scripts/validate_sssom_invariants.py --reject-tsv /tmp/mim-reconcile-all.bpnX3efo/sssom-rejects.tsv
+  locator: complete captured stdout/stderr
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: 'WARNING: Rule B4 skipped — kg-microbe ontology transforms not found at
+    /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/Mechs/kg-microbe/data/transformed/ontologies
+    for prefix(es): BTO, CHEBI, ENVO, FOODON, MICRO, UBERON. To enable Rule B4 locally,
+    check out kg-microbe at the sibling path and run its `just transform` recipe.
+    (CI typically lacks these transforms; the validator does not exit-2 on B4 alone
+    in that case.)
+
+    OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F,
+    G, H, I, J, K, L. /tmp/mim-reconcile-all.bpnX3efo/sssom-rejects.tsv written with
+    header only.
+
+    '
+- evidence_id: ev-decded5789141cfb
+  kind: validation
+  reference: .venv/bin/python scripts/reconcile_sssom.py
+  locator: complete captured stdout/stderr
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: "SSSOM currency vs curated mapped records:\n  GAP    (mapped record, no\
+    \ SSSOM row):   0\n  ORPHAN (SSSOM row, no/REJECTED record): 0\n  STALE  (row\
+    \ lacks current ontology_id): 0\n  PREDICATE (current ontology row, wrong predicate):\
+    \ 0\n  GRADE (right predicate, stale grade metadata):     0\n\nOK: SSSOM is in\
+    \ sync with the curated data.\n"
+- evidence_id: ev-3232ecb106c86e39
+  kind: validation
+  reference: .venv/bin/python scripts/check_flat_export_coverage.py
+  locator: complete captured stdout/stderr
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: "freshness: 8 regenerated artifact(s) match their producers\ncoverage:\
+    \ all_ingredients.csv        8312/8312 curated label(s) resolvable\n  note: 32\
+    \ published label(s) map to more than one identifier — see #232 for the triage\n\
+    coverage: mapped_ingredients.csv     7959/7959 curated label(s) resolvable\ncoverage:\
+    \ unmapped_ingredients.csv   360/360 curated label(s) resolvable\ncoverage: label_index.csv\
+    \            8312/8312 curated label(s) indexed\n\nOK: docs/data/ is fresh and\
+    \ every curated label is published.\n"
+- evidence_id: ev-4180020c3661f2ad
+  kind: validation
+  reference: .venv/bin/python -m pytest tests/test_merge_tombstone_targets.py -q -o
+    addopts=''
+  locator: complete captured stdout/stderr
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: '.........                                                                [100%]
+
+    9 passed in 38.32s
+
+    '
+assessments:
+- assessment_id: a-d3c0cfc8f7c0328f
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-5703779de3d5d6d5
+  evidence_ids:
+  - ev-c47f5c761d89211f
+  - ev-8415d47f688bc31e
+  - ev-a2a559decb3bad18
+  - ev-5b7e3f2daab7df58
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-51482c45c61f047d
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-5703779de3d5d6d5
+  evidence_ids:
+  - ev-d69679219babeef0
+  - ev-c47f5c761d89211f
+  - ev-e0e2a024a09f1958
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T04:46:10Z;
+    reviewed SHA-256=62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e;
+    current SHA-256=62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e;
+    hash_changed=False. Reports=["reports/yaml_record_review/(2)-D-lyxose.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: Active identity
+    passes, but source_occurrences appears to omit the direct microbedecoder D-lyxose
+    row with count 159.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-d69679219babeef0
+    - ev-c47f5c761d89211f
+  - name: legacy-native-ids
+    value: '["SEM:cd74f8ddafa04d7e9a9a"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-c47f5c761d89211f
+    - ev-d69679219babeef0
+    - ev-e0e2a024a09f1958
+- assessment_id: a-09a545862b40a0ee
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-c7c393946643c2bd
+  evidence_ids:
+  - ev-dfaf37c1970fab58
+  - ev-5459baed567881f3
+  - ev-b79e28402f106c27
+  - ev-90658daac5fbfe55
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-92b167837d00a199
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-c7c393946643c2bd
+  evidence_ids:
+  - ev-3816203e44cb4d17
+  - ev-1b229d4543da2752
+  - ev-dfaf37c1970fab58
+  - ev-c0eaf924ebd2b03e
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:58:57Z;
+    reviewed SHA-256=91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f;
+    current SHA-256=91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f;
+    hash_changed=False. Reports=["reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md","reports/yaml_record_review/20261001T045857Z-05_M_Nitrilotriacetic_Acid_Disodium_Salt.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/05_M_Nitrilotriacetic_Acid_Disodium_Salt.md` after
+    the record changed from 9534e4229546828c3f4f2dd48ae759dd32aa9e6f7b8a084cd929699a98b08790
+    to 91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f; preserved
+    the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-3816203e44cb4d17
+    - ev-1b229d4543da2752
+    - ev-dfaf37c1970fab58
+  - name: legacy-native-ids
+    value: '["SEM:6560d5e8cbc982dcbd1d"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-dfaf37c1970fab58
+    - ev-3816203e44cb4d17
+    - ev-1b229d4543da2752
+    - ev-c0eaf924ebd2b03e
+- assessment_id: a-9566007dbcd2e59c
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-5e7776b9bffe8c42
+  evidence_ids:
+  - ev-f07f205a486b70c3
+  - ev-eceac74586eeb56a
+  - ev-cfeaec5ae2b4b8b2
+  - ev-f31ff62720a3389a
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-224a3a6ffd252d1d
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-5e7776b9bffe8c42
+  evidence_ids:
+  - ev-0bff485d9e304b22
+  - ev-774fed4cfb32e51d
+  - ev-f07f205a486b70c3
+  - ev-00ccae5524e4221a
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:58:59Z;
+    reviewed SHA-256=99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e;
+    current SHA-256=99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e;
+    hash_changed=False. Reports=["reports/yaml_record_review/1122-Tetrachloroethane.md","reports/yaml_record_review/20261001T045859Z-1122-Tetrachloroethane.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/1122-Tetrachloroethane.md` after the record changed
+    from b0a7327db273c860ba78aaecb8864949d4579b70186a4b9869845b0425b8938c to 99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e;
+    preserved the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-0bff485d9e304b22
+    - ev-774fed4cfb32e51d
+    - ev-f07f205a486b70c3
+  - name: legacy-native-ids
+    value: '["SEM:041e44760b57510920e6"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-f07f205a486b70c3
+    - ev-0bff485d9e304b22
+    - ev-774fed4cfb32e51d
+    - ev-00ccae5524e4221a
+- assessment_id: a-71d7664bfaab1f50
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-02f435cf5dccfdbe
+  - ev-c7268fcb6e02d56e
+  - ev-00c17eed8b6b9a2e
+  - ev-67433528e457790b
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-86d282da43978baf
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-e5efe72d4fc64111
+  - ev-51e7bc673883371d
+  - ev-02f435cf5dccfdbe
+  - ev-7addb8f1b8ad326e
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:59:00Z;
+    reviewed SHA-256=35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048;
+    current SHA-256=35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048;
+    hash_changed=False. Reports=["reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md","reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md`
+    after the record changed from c723754f95dc6bcb53fdbafe6912a8545fe82b86a78989d19bdacae67e337bae
+    to 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048; preserved
+    the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e5efe72d4fc64111
+    - ev-51e7bc673883371d
+    - ev-02f435cf5dccfdbe
+  - name: legacy-native-ids
+    value: '["SEM:942e5e5ab8031b0237df","SEM:a8369e3a18749747a18d","SEM:28d4855c5ad15fc2384c"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-02f435cf5dccfdbe
+    - ev-e5efe72d4fc64111
+    - ev-51e7bc673883371d
+    - ev-7addb8f1b8ad326e
+- assessment_id: a-e9363cdff31d7fb7
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-e5efe72d4fc64111
+  - ev-51e7bc673883371d
+  - ev-e9363cdff31d7fb7
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e5efe72d4fc64111
+    - ev-51e7bc673883371d
+    - ev-e9363cdff31d7fb7
+- assessment_id: a-3b6ed4cd9abbe1ea
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-121bfb06cb059ee5
+  evidence_ids:
+  - ev-a836c064de824018
+  - ev-fbc7f46b211fa565
+  - ev-861ac3e8c0a0e80d
+  - ev-a2ecd0a62a60e853
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-b0842fdf2e3ac840
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-121bfb06cb059ee5
+  evidence_ids:
+  - ev-e771bdce46c17cc5
+  - ev-90f2b9d504eeee78
+  - ev-a836c064de824018
+  - ev-a3a4101bf0ddfe8d
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-10-01T04:59:01Z;
+    reviewed SHA-256=30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b;
+    current SHA-256=30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b;
+    hash_changed=False. Reports=["reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md","reports/yaml_record_review/20261001T045901Z-2-chloro-4ethylamino-6-isopropylamino-135-triazine.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/2-chloro-4ethylamino-6-isopropylamino-135-triazine.md`
+    after the record changed from 5dbf00ae4cb7644279e476a238e3be0760a1b1e929b9faeeecd821f402b52a86
+    to 30705d7e1866a55fbcb9e5cba58f2ddd34e86073d5cb968bfaa332afab64151b; preserved
+    the previous minor finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e771bdce46c17cc5
+    - ev-90f2b9d504eeee78
+    - ev-a836c064de824018
+  - name: legacy-native-ids
+    value: '["SEM:27f8035e80f5a0f0d48e"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-a836c064de824018
+    - ev-e771bdce46c17cc5
+    - ev-90f2b9d504eeee78
+    - ev-a3a4101bf0ddfe8d
+- assessment_id: a-886315c094b22c5e
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-31f2106d82aaa846
+  evidence_ids:
+  - ev-6ed9974a81703581
+  - ev-60e993aff82793e6
+  - ev-9edc3035c46ef30c
+  - ev-fb168c9eb901159e
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-af6fc4be54badcf7
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-31f2106d82aaa846
+  evidence_ids:
+  - ev-288b630324b12a09
+  - ev-b69117c4e00bc991
+  - ev-6ed9974a81703581
+  - ev-d7ef04e1b3f3ab23
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:59:02Z;
+    reviewed SHA-256=929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62;
+    current SHA-256=929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62;
+    hash_changed=False. Reports=["reports/yaml_record_review/2-dimethylsuccinic_Acid.md","reports/yaml_record_review/20261001T045902Z-2-dimethylsuccinic_Acid.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/2-dimethylsuccinic_Acid.md` after the record changed
+    from dc520ce3cede726df5bc33151ccc9d201044e65cde8d66f4a4b9a936a7982b05 to 929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62;
+    preserved the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-288b630324b12a09
+    - ev-b69117c4e00bc991
+    - ev-6ed9974a81703581
+  - name: legacy-native-ids
+    value: '["SEM:375d53fc7b7ef4e7ce71"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-6ed9974a81703581
+    - ev-288b630324b12a09
+    - ev-b69117c4e00bc991
+    - ev-d7ef04e1b3f3ab23
+- assessment_id: a-3ef131cc6b20c5b2
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-713d67a5c5ba5163
+  evidence_ids:
+  - ev-1b8969855f90dd61
+  - ev-2ac292a7038b621f
+  - ev-5f892d01ea53edcf
+  - ev-70b86f174cb272f8
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-ef29a4bc9b859494
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-713d67a5c5ba5163
+  evidence_ids:
+  - ev-6de00107966a1cab
+  - ev-c187060b077b96b3
+  - ev-1b8969855f90dd61
+  - ev-7d8a68b07cd75d52
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:23Z;
+    reviewed SHA-256=688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8;
+    current SHA-256=688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050123Z-Apigenin_Dimethyl_Ether.md","reports/yaml_record_review/Apigenin_Dimethyl_Ether.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Apigenin_Dimethyl_Ether.md` after the record changed
+    from fe19720fc98248fc7c7920ebcd4967cde33a788001c276faf4ed2a3e4c735a20 to 688e89dc9a35a85c841cdb462c11b2b89874de379263a486d77feb74e7b4d2f8;
+    preserved the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-6de00107966a1cab
+    - ev-c187060b077b96b3
+    - ev-1b8969855f90dd61
+  - name: legacy-native-ids
+    value: '["SEM:620089b33811e495367b"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-1b8969855f90dd61
+    - ev-6de00107966a1cab
+    - ev-c187060b077b96b3
+    - ev-7d8a68b07cd75d52
+- assessment_id: a-688fe73c4b2ca750
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-bad75fc5238b3ba8
+  evidence_ids:
+  - ev-bba4a171b8417627
+  - ev-b5e76ede4ab3bfdb
+  - ev-90e4be4226cf21b4
+  - ev-9e3443bdec402629
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-5a0c14fe6fe11c3f
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-bad75fc5238b3ba8
+  evidence_ids:
+  - ev-9a6abf8f4782c94f
+  - ev-a07906a0cd0fb75f
+  - ev-bba4a171b8417627
+  - ev-be40e627b1744f83
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:26Z;
+    reviewed SHA-256=eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf;
+    current SHA-256=eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050126Z-Arabinoxylan_Rye_Flour.md","reports/yaml_record_review/Arabinoxylan_Rye_Flour.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Arabinoxylan_Rye_Flour.md` after the record changed
+    from 0fa877c442c77b43f94f673b3009f8a9bbf22c28374e4ffa7223216a091a76f7 to eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf;
+    preserved the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-9a6abf8f4782c94f
+    - ev-a07906a0cd0fb75f
+    - ev-bba4a171b8417627
+  - name: legacy-native-ids
+    value: '["SEM:5efa69d40115ca620297","SEM:125edfd9fc6563189bb1"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-bba4a171b8417627
+    - ev-9a6abf8f4782c94f
+    - ev-a07906a0cd0fb75f
+    - ev-be40e627b1744f83
+- assessment_id: a-fc08bf645c7b3073
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-bad75fc5238b3ba8
+  evidence_ids:
+  - ev-9a6abf8f4782c94f
+  - ev-a07906a0cd0fb75f
+  - ev-fc08bf645c7b3073
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-9a6abf8f4782c94f
+    - ev-a07906a0cd0fb75f
+    - ev-fc08bf645c7b3073
+- assessment_id: a-ce8ea2ec64156128
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-d3b0ecc34107044e
+  evidence_ids:
+  - ev-d1ffb6397e6b99ae
+  - ev-821b10a5a18cd090
+  - ev-2926392c9add8315
+  - ev-e1c64963157e6676
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-422ffe399e92c46c
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-d3b0ecc34107044e
+  evidence_ids:
+  - ev-1860f0d05e6afc40
+  - ev-99f67fe6e883203e
+  - ev-d1ffb6397e6b99ae
+  - ev-f4c7cdf5ab990a47
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:29Z;
+    reviewed SHA-256=b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642;
+    current SHA-256=b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050129Z-Artepaulin.md","reports/yaml_record_review/Artepaulin.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Artepaulin.md` after the record changed from 355d0245ffe0c89f4ce3c553026d4df8ce629034a64c7310d85e47a7ed59591f
+    to b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642; preserved
+    the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-1860f0d05e6afc40
+    - ev-99f67fe6e883203e
+    - ev-d1ffb6397e6b99ae
+  - name: legacy-native-ids
+    value: '["SEM:fb6a2a282bb4802d07fc"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-d1ffb6397e6b99ae
+    - ev-1860f0d05e6afc40
+    - ev-99f67fe6e883203e
+    - ev-f4c7cdf5ab990a47
+- assessment_id: a-c32754bfe1cf5ce4
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-da76045c326b778e
+  evidence_ids:
+  - ev-51a834d9cba778b8
+  - ev-a9d45a9ecab2298c
+  - ev-d34e785c3bb0fd07
+  - ev-c4860a81404a8d3e
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-1f93d7baa543e13b
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-da76045c326b778e
+  evidence_ids:
+  - ev-d108a4af373f4a61
+  - ev-5b754f0f9aa66866
+  - ev-51a834d9cba778b8
+  - ev-c6960bf7286cdd05
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:30Z;
+    reviewed SHA-256=effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389;
+    current SHA-256=effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050130Z-Artificial_Sea_Salt.md","reports/yaml_record_review/Artificial_Sea_Salt.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Artificial_Sea_Salt.md` after the record changed from
+    b012529ebd6f2bc6688ab74f29631ea6405d7905a005fdd67b71c07ea08ee0e4 to effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389;
+    preserved the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-d108a4af373f4a61
+    - ev-5b754f0f9aa66866
+    - ev-51a834d9cba778b8
+  - name: legacy-native-ids
+    value: '["SEM:f2a2df4244340a9a85e8"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-51a834d9cba778b8
+    - ev-d108a4af373f4a61
+    - ev-5b754f0f9aa66866
+    - ev-c6960bf7286cdd05
+- assessment_id: a-1f61b642eb9fbdf7
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-67b4f4f91e7cf018
+  evidence_ids:
+  - ev-6653c2dc8279ffa3
+  - ev-9c085361f3dfbd0e
+  - ev-1ea5a98a2bab3f3b
+  - ev-60a4c27f7c084320
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-724cf6dd06963046
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-67b4f4f91e7cf018
+  evidence_ids:
+  - ev-8205aa1ec37d7bf2
+  - ev-463b4a48e533b7cd
+  - ev-6653c2dc8279ffa3
+  - ev-ee2c4fba604f54fd
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:31Z;
+    reviewed SHA-256=02c2c72bf9ee60b2e83c99962397049678f1404f74a2fb8593592890d01a8cd2;
+    current SHA-256=d61bbfeda6dfd9326d9c39111ec579b8eaeabbe7e37c3ed2dd407e35fadca71b;
+    hash_changed=True. Reports=["reports/yaml_record_review/20261001T050131Z-Atrazin.md","reports/yaml_record_review/Atrazin.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Atrazin.md` after the record changed from 3c049fdb6761ed282d77035db21d57de5e1e2ff04fa405d5a09d5fe1009d6eed
+    to 02c2c72bf9ee60b2e83c99962397049678f1404f74a2fb8593592890d01a8cd2; preserved
+    the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8205aa1ec37d7bf2
+    - ev-463b4a48e533b7cd
+    - ev-6653c2dc8279ffa3
+  - name: legacy-native-ids
+    value: '["SEM:f7b51d23ab90bda7153b"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-6653c2dc8279ffa3
+    - ev-8205aa1ec37d7bf2
+    - ev-463b4a48e533b7cd
+    - ev-ee2c4fba604f54fd
+- assessment_id: a-9b7b2ba02df6ddb3
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-fc9e896f5b234168
+  evidence_ids:
+  - ev-8111d07c11822dfa
+  - ev-c692b7e9f78a358c
+  - ev-0d2e1dd4c7101d5e
+  - ev-9ec534ce932630d6
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-0632446bd1aa0a29
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-fc9e896f5b234168
+  evidence_ids:
+  - ev-7659d19baba41c87
+  - ev-c044d2ddf4652a27
+  - ev-8111d07c11822dfa
+  - ev-482db9ef83813f57
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:01:36Z;
+    reviewed SHA-256=67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc;
+    current SHA-256=67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050136Z-Benzylhydrazine_Hydrochloride.md","reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Benzylhydrazine_Hydrochloride.md` after the record
+    changed from d04e663d2f1cd497e2ff07d39d2b41302bc7a256794288bc04fe89290c1e1b0f
+    to 67593573945a67c2ee27d401b9c4e11456045df4c7773db14515c34a1761c7bc; preserved
+    the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-7659d19baba41c87
+    - ev-c044d2ddf4652a27
+    - ev-8111d07c11822dfa
+  - name: legacy-native-ids
+    value: '["SEM:fe4c487726dcd2732ce4"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-8111d07c11822dfa
+    - ev-7659d19baba41c87
+    - ev-c044d2ddf4652a27
+    - ev-482db9ef83813f57
+- assessment_id: a-65d87e315b164b65
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-5f1c4a27fd8956b2
+  - ev-ffef65ad416c1ff9
+  - ev-9bf82673c3b69690
+  - ev-a52bcd08a58f3db2
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-63eb3277e948b033
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-5f1c4a27fd8956b2
+  - ev-6ae334a969568123
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T10:32:41Z;
+    reviewed SHA-256=efe13cbdbfcfb0d5da686a6b2ca032f3492ed50a55a790aa39fa9d135919a2c1;
+    current SHA-256=ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907;
+    hash_changed=True. Reports=["reports/yaml_record_review/Ca_No32_X_4_H2o.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The calcium
+    nitrate tetrahydrate identity, SSSOM row, and aggregate copy pass, but an exact
+    CAS-qualified label remains unmapped as Ca.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-5f1c4a27fd8956b2
+  - name: legacy-native-ids
+    value: '["SEM:c30d84c4be1132e43a6e"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-5f1c4a27fd8956b2
+    - ev-ae225a452b755e57
+    - ev-6ae334a969568123
+- assessment_id: a-920d086afdaf8d35
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-26db4b94c97aabed
+  evidence_ids:
+  - ev-cf95a68be557e18a
+  - ev-fc5ac5e405c631db
+  - ev-b172a2d697478a64
+  - ev-2f0bca96872dd59c
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-3b95bfd375690b39
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-26db4b94c97aabed
+  evidence_ids:
+  - ev-ba0a155c673a7661
+  - ev-cf95a68be557e18a
+  - ev-fc73952a5dc8d42e
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T13:23:22Z;
+    reviewed SHA-256=39b02cd43bdadb3fb76b6e05e83da0e1595572741fae2f4d3e6af59a050fc701;
+    current SHA-256=90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a;
+    hash_changed=True. Reports=["reports/yaml_record_review/D-_-lyxose.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The rejected aldehydo
+    tombstone correctly drops final SSSOM and points at D-lyxose, but inert stale
+    chemistry/role data and an unreviewed cross-record baseline row remain.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ba0a155c673a7661
+    - ev-cf95a68be557e18a
+  - name: legacy-native-ids
+    value: '["SEM:3cd7092c7ec9685ec9af"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-cf95a68be557e18a
+    - ev-ba0a155c673a7661
+    - ev-fc73952a5dc8d42e
+- assessment_id: a-a15bffce40ab7317
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: unknown
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-26db4b94c97aabed
+  evidence_ids:
+  - ev-ba0a155c673a7661
+  - ev-a15bffce40ab7317
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ba0a155c673a7661
+    - ev-a15bffce40ab7317
+- assessment_id: a-e69c54682c8c2097
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-3685075c8b5b5eb7
+  evidence_ids:
+  - ev-0d52ce66bb1acd92
+  - ev-7015ceb7e8a7bb90
+  - ev-18c4a68dac0ff81a
+  - ev-58621783e546c3a8
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-bb0ccc28d581ec9a
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-3685075c8b5b5eb7
+  evidence_ids:
+  - ev-952208d407f91746
+  - ev-e88a3c9355bc03d1
+  - ev-0d52ce66bb1acd92
+  - ev-a6621c60116a567c
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:02:08Z;
+    reviewed SHA-256=fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e;
+    current SHA-256=fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050208Z-DL-2-Aminoadipic_Acid.md","reports/yaml_record_review/DL-2-Aminoadipic_Acid.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/DL-2-Aminoadipic_Acid.md` after the record changed
+    from 35142da6bf1867b5b00847f2334a6fa7380af1f43a215bfe701f4e1118f30dc4 to fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e;
+    preserved the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-952208d407f91746
+    - ev-e88a3c9355bc03d1
+    - ev-0d52ce66bb1acd92
+  - name: legacy-native-ids
+    value: '["SEM:1d4b0b2e54c753cb4311","SEM:f1e57873a6b7e0aa18ee"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-0d52ce66bb1acd92
+    - ev-952208d407f91746
+    - ev-e88a3c9355bc03d1
+    - ev-a6621c60116a567c
+- assessment_id: a-d4db048d962e13a6
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-3685075c8b5b5eb7
+  evidence_ids:
+  - ev-952208d407f91746
+  - ev-e88a3c9355bc03d1
+  - ev-d4db048d962e13a6
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-952208d407f91746
+    - ev-e88a3c9355bc03d1
+    - ev-d4db048d962e13a6
+- assessment_id: a-11bd33462d9ff443
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-dd49bc63aa61b117
+  evidence_ids:
+  - ev-c73f4f216dfc33a2
+  - ev-9bfa20830d140db4
+  - ev-ea1ccd424ab69c20
+  - ev-c01ccfe14065740b
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-89c1fc8d57c81989
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-dd49bc63aa61b117
+  evidence_ids:
+  - ev-b1151af6eca2053e
+  - ev-02597f04d60baf3a
+  - ev-c73f4f216dfc33a2
+  - ev-7d6e4ceca3550bd4
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:11Z;
+    reviewed SHA-256=d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701;
+    current SHA-256=d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050211Z-Edta.md","reports/yaml_record_review/Edta.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Edta.md` after the record changed from cd438498f4699624144f8cc48b4d756633e7949f7b0cad9202a944191067dd84
+    to d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-b1151af6eca2053e
+    - ev-02597f04d60baf3a
+    - ev-c73f4f216dfc33a2
+  - name: legacy-native-ids
+    value: '["SEM:a28ca0d4dfe861e2c451","SEM:02877e9a0c8c68ed94e9"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-c73f4f216dfc33a2
+    - ev-b1151af6eca2053e
+    - ev-02597f04d60baf3a
+    - ev-7d6e4ceca3550bd4
+- assessment_id: a-fac94c8574bdfaf5
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-dd49bc63aa61b117
+  evidence_ids:
+  - ev-b1151af6eca2053e
+  - ev-02597f04d60baf3a
+  - ev-fac94c8574bdfaf5
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-b1151af6eca2053e
+    - ev-02597f04d60baf3a
+    - ev-fac94c8574bdfaf5
+- assessment_id: a-51b7c1a90fbe4b2f
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-02b5116af3e070ea
+  evidence_ids:
+  - ev-d8b7463cace0005c
+  - ev-44a5c78d0518be20
+  - ev-6ee4d9e56424706c
+  - ev-132825111efec404
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-8a0f9d3269944733
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-02b5116af3e070ea
+  evidence_ids:
+  - ev-ccb73004ba17130c
+  - ev-1d6b1f3ca5e20f64
+  - ev-d8b7463cace0005c
+  - ev-257c9ccf0fbcf212
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:02:12Z;
+    reviewed SHA-256=85c00a1b83b9f31e8bd04b3ee56ee4b487aab3c0e18a5c0302b46b04bfee175f;
+    current SHA-256=8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c;
+    hash_changed=True. Reports=["reports/yaml_record_review/20261001T050212Z-Edta_Chelating_Agent.md","reports/yaml_record_review/Edta_Chelating_Agent.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Edta_Chelating_Agent.md` after the record changed
+    from 7fe6440002acca66be63af7bccb2a4e1c955511e5da0b044de2238097004d1c0 to 85c00a1b83b9f31e8bd04b3ee56ee4b487aab3c0e18a5c0302b46b04bfee175f;
+    preserved the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ccb73004ba17130c
+    - ev-1d6b1f3ca5e20f64
+    - ev-d8b7463cace0005c
+  - name: legacy-native-ids
+    value: '["SEM:22c6c53bc502552aed6a","SEM:582204b4bd6dffb6e882"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-d8b7463cace0005c
+    - ev-ccb73004ba17130c
+    - ev-1d6b1f3ca5e20f64
+    - ev-257c9ccf0fbcf212
+- assessment_id: a-5b1c4b3ce76d038e
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: unknown
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-02b5116af3e070ea
+  evidence_ids:
+  - ev-ccb73004ba17130c
+  - ev-1d6b1f3ca5e20f64
+  - ev-5b1c4b3ce76d038e
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ccb73004ba17130c
+    - ev-1d6b1f3ca5e20f64
+    - ev-5b1c4b3ce76d038e
+- assessment_id: a-ce0b12558cf10704
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-2e4090e1bf27a52d
+  evidence_ids:
+  - ev-92f2602ee8f36ebd
+  - ev-6fd4802b6fb4b4d5
+  - ev-065ced0d6e60ecd2
+  - ev-505c7326f8238146
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-67a4b4759d565a7a
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-2e4090e1bf27a52d
+  evidence_ids:
+  - ev-836307283d84c74a
+  - ev-92f2602ee8f36ebd
+  - ev-3e33246292a1173e
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T17:11:13Z;
+    reviewed SHA-256=87e18c29f00b3dc30303c304ca308b8afee481cda252dc34ba101f19d51ff259;
+    current SHA-256=d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81;
+    hash_changed=True. Reports=["reports/yaml_record_review/Furaltadone_Hydrochloride.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The NCIT
+    target is exact, but the record still emits it as a narrow match plus local registry
+    rows.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-836307283d84c74a
+    - ev-92f2602ee8f36ebd
+  - name: legacy-native-ids
+    value: '["SEM:daa5a3f8cbe30f00018a"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-92f2602ee8f36ebd
+    - ev-836307283d84c74a
+    - ev-3e33246292a1173e
+- assessment_id: a-19268bcd5bd8844d
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-ddeb567db07067be
+  evidence_ids:
+  - ev-61519568b4ae0cf4
+  - ev-686c63a5f3e94bd4
+  - ev-4fbcd5fcb4f52d5d
+  - ev-a481814e89030983
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-ebf9edc1260abe6d
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-ddeb567db07067be
+  evidence_ids:
+  - ev-8ca709a7e5d1b923
+  - ev-61519568b4ae0cf4
+  - ev-796e72f599168446
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T04:33:25Z;
+    reviewed SHA-256=b811a769cfd626a77805afc736bc8432009858e75c81c8636552dca3e9a2aca4;
+    current SHA-256=b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0;
+    hash_changed=True. Reports=["reports/yaml_record_review/N-acetyl-muramic_Acid.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The rejected
+    aldehydo N-acetylmuramic acid tombstone is correctly absent from final SSSOM,
+    but still carries stale pre-merge live-shape fields.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8ca709a7e5d1b923
+    - ev-61519568b4ae0cf4
+  - name: legacy-native-ids
+    value: '["SEM:8c807384318d18621c79"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-61519568b4ae0cf4
+    - ev-8ca709a7e5d1b923
+    - ev-796e72f599168446
+- assessment_id: a-8709a89ff75a5531
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-9dc76df162cdd3c3
+  evidence_ids:
+  - ev-7280effdcd6042c0
+  - ev-e2cf50f9475a4b44
+  - ev-93291c50c0b513de
+  - ev-2bd153635cf14066
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-bec1cec9435c42a8
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: not_applicable
+  summary: The latest legacy review reports no outstanding finding. This run verifies
+    local consistency only; it does not renew that earlier scientific pass.
+  target_ids:
+  - record-9dc76df162cdd3c3
+  evidence_ids:
+  - ev-552c219a94608dff
+  - ev-7280effdcd6042c0
+  details: 'Latest manifest verdict=pass; severity=none; reviewed_at=2026-09-17T04:33:25Z;
+    reviewed SHA-256=c94c85b40f68e1f703a0221bd6ca9480abae2252af0769d5c6deeaf5c1bbefff;
+    current SHA-256=c94c85b40f68e1f703a0221bd6ca9480abae2252af0769d5c6deeaf5c1bbefff;
+    hash_changed=False. Reports=["reports/yaml_record_review/N-acetylmuramic_Acid.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The active
+    CHEBI:47965 N-acetylmuramic acid merge winner, supplied commercial CAS, folded
+    aldehydo synonyms, and final exact row pass.'
+  dimensions:
+  - name: legacy-native-ids
+    value: '[]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-7280effdcd6042c0
+    - ev-552c219a94608dff
+- assessment_id: a-d307d0df4239c40f
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-b309242fe87da37a
+  evidence_ids:
+  - ev-e359446e57ccf9a1
+  - ev-e3f505f4a4ff0b8f
+  - ev-18cc356b9a533c76
+  - ev-cf72303c847d70ab
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-532c258b862e728f
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-b309242fe87da37a
+  evidence_ids:
+  - ev-1f0a36df479cc69e
+  - ev-8b0cd7adf97b622b
+  - ev-e359446e57ccf9a1
+  - ev-a8cdfa30ccd2df53
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:51Z;
+    reviewed SHA-256=ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4;
+    current SHA-256=ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050251Z-Na2hpo4.md","reports/yaml_record_review/Na2hpo4.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Na2hpo4.md` after the record changed from c74e5c3673d7bc297f632f942de12460f0e3e2f066aeb4212316d5af9a23fa37
+    to ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-1f0a36df479cc69e
+    - ev-8b0cd7adf97b622b
+    - ev-e359446e57ccf9a1
+  - name: legacy-native-ids
+    value: '["SEM:45865662806389a797fd"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-e359446e57ccf9a1
+    - ev-1f0a36df479cc69e
+    - ev-8b0cd7adf97b622b
+    - ev-a8cdfa30ccd2df53
+- assessment_id: a-e027fedfcccd6e6a
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-b309242fe87da37a
+  evidence_ids:
+  - ev-1f0a36df479cc69e
+  - ev-8b0cd7adf97b622b
+  - ev-e027fedfcccd6e6a
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-1f0a36df479cc69e
+    - ev-8b0cd7adf97b622b
+    - ev-e027fedfcccd6e6a
+- assessment_id: a-6eaf7ac6a6eb337b
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-a3513ba2c7afb1a7
+  evidence_ids:
+  - ev-0397c9698a371d0e
+  - ev-578824bd7f0aefc8
+  - ev-ca377d51d8c56609
+  - ev-ba31445c10bbc35f
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-63dd5639f9577ee5
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-a3513ba2c7afb1a7
+  evidence_ids:
+  - ev-626e8164a1842e65
+  - ev-1df3a1ed69398e05
+  - ev-0397c9698a371d0e
+  - ev-b16b07b0286f75fd
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:02:58Z;
+    reviewed SHA-256=1158fe527bfd42ccb90a580f2c33e015550ff5e6d33bf57e96d778e04a7223ef;
+    current SHA-256=4dd4a5ae67fec187d44f23d68fafffe2e533a1d4d85c481b6dd55fa8dfa29631;
+    hash_changed=True. Reports=["reports/yaml_record_review/20261001T050258Z-Nano.md","reports/yaml_record_review/Nano.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Nano.md` after the record changed from 3a61b91e11ba7e6fd28eee09dceb979b0c991486d871208c7e29bb6b25a56972
+    to 1158fe527bfd42ccb90a580f2c33e015550ff5e6d33bf57e96d778e04a7223ef; preserved
+    the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-626e8164a1842e65
+    - ev-1df3a1ed69398e05
+    - ev-0397c9698a371d0e
+  - name: legacy-native-ids
+    value: '["SEM:1fb7eb2be19cbc32d5ee"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-0397c9698a371d0e
+    - ev-626e8164a1842e65
+    - ev-1df3a1ed69398e05
+    - ev-b16b07b0286f75fd
+- assessment_id: a-bf36dbb24b712d79
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-a195a7daaa716895
+  evidence_ids:
+  - ev-00fa04ad30b67eab
+  - ev-ae188b575acab53d
+  - ev-e32a080b27e9915f
+  - ev-30e6bbd1597b0e43
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-45bed50a15fe7719
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-a195a7daaa716895
+  evidence_ids:
+  - ev-e21c119c74391b98
+  - ev-b58626c8ab29cf5a
+  - ev-00fa04ad30b67eab
+  - ev-731fa4996239a268
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:59Z;
+    reviewed SHA-256=6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f;
+    current SHA-256=6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050259Z-Nano3.md","reports/yaml_record_review/Nano3.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Nano3.md` after the record changed from efe9b51b3e6c91c8cf78f6623da8b71dd5731bdf2603cf9a6dbf24bb1a177c0b
+    to 6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e21c119c74391b98
+    - ev-b58626c8ab29cf5a
+    - ev-00fa04ad30b67eab
+  - name: legacy-native-ids
+    value: '["SEM:7041ae8b6f8fcc168efc"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-00fa04ad30b67eab
+    - ev-e21c119c74391b98
+    - ev-b58626c8ab29cf5a
+    - ev-731fa4996239a268
+- assessment_id: a-837a58f198078242
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-9fb851ed17361db8
+  evidence_ids:
+  - ev-b856f2456e7f1f9f
+  - ev-01023f719eb051de
+  - ev-293b21d7d58e152c
+  - ev-01edfa5cc0864ed4
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-09f54b8a87288e96
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-9fb851ed17361db8
+  evidence_ids:
+  - ev-8bb1def00d80cb77
+  - ev-bbd664bdc2f5534f
+  - ev-b856f2456e7f1f9f
+  - ev-6fbe21662187ccbb
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T05:03:30Z;
+    reviewed SHA-256=aabdf39c562aff24b8326456268b4a1e0ac1716934d4d24d428072a8e138e674;
+    current SHA-256=b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925;
+    hash_changed=True. Reports=["reports/yaml_record_review/20261001T050330Z-Sodium_Phosphate_Dibasic.md","reports/yaml_record_review/Sodium_Phosphate_Dibasic.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Sodium_Phosphate_Dibasic.md` after the record changed
+    from b4e7a80f4f611b0cf35a46f701a382a49ac0b2d706eba3f5714fdeb79e13e955 to aabdf39c562aff24b8326456268b4a1e0ac1716934d4d24d428072a8e138e674;
+    preserved the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8bb1def00d80cb77
+    - ev-bbd664bdc2f5534f
+    - ev-b856f2456e7f1f9f
+  - name: legacy-native-ids
+    value: '["SEM:1c30eea5a9f24672b1e6","SEM:51ff456b5478ebfbcd9f"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-b856f2456e7f1f9f
+    - ev-8bb1def00d80cb77
+    - ev-bbd664bdc2f5534f
+    - ev-6fbe21662187ccbb
+- assessment_id: a-c1c1f0e0056ab927
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: unknown
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-9fb851ed17361db8
+  evidence_ids:
+  - ev-8bb1def00d80cb77
+  - ev-bbd664bdc2f5534f
+  - ev-c1c1f0e0056ab927
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8bb1def00d80cb77
+    - ev-bbd664bdc2f5534f
+    - ev-c1c1f0e0056ab927
+- assessment_id: a-2e63c65b85717f54
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-d21ea193995ef78b
+  - ev-8f375d05aa1751d4
+  - ev-4e6f767031b322dd
+  - ev-2b1730631608c79a
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-85b588d1066a4122
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-d21ea193995ef78b
+  - ev-623c6c29cbd87577
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:47:02Z;
+    reviewed SHA-256=39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077;
+    current SHA-256=39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T044702Z-CMC_PY_Horse_Serum.md","reports/yaml_record_review/CMC_PY_Horse_Serum.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Record is
+    intentionally AMBIGUOUS after source review showed the flattened label should
+    not be represented as one CMC/PY/horse-serum mixture.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-aab82e1c9edc2f69
+    - ev-c04bf1d616ae4e5a
+    - ev-d21ea193995ef78b
+  - name: legacy-native-ids
+    value: '["SEM:5840ee1537d3efca2b71","SEM:4342978a6d6a785d5a94","SEM:e082de354467a9d57892","SEM:9885c46f9bdea8f68046","SEM:79edd574c1b3e3b5cbd4"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-d21ea193995ef78b
+    - ev-aab82e1c9edc2f69
+    - ev-c04bf1d616ae4e5a
+    - ev-623c6c29cbd87577
+- assessment_id: a-3e4dca9949a57894
+  area: identity
+  topic: Unresolved exact identity or preparation
+  outcome: unknown
+  summary: Current status=AMBIGUOUS; no supported promotion is established by this
+    reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-d21ea193995ef78b
+  - ev-4e6f767031b322dd
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-aab82e1c9edc2f69
+    - ev-c04bf1d616ae4e5a
+    - ev-d21ea193995ef78b
+    - ev-4e6f767031b322dd
+- assessment_id: a-39ab88e2f0e52198
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-93cd2f755a63894b
+  evidence_ids:
+  - ev-10708f98b4caeee4
+  - ev-5769c2652345d2f4
+  - ev-19c0af2a56bc5bf5
+  - ev-f17fb53120415270
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-5f86608b5dbbaa4a
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-93cd2f755a63894b
+  evidence_ids:
+  - ev-ac8cc401220219c7
+  - ev-10708f98b4caeee4
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:47:04Z;
+    reviewed SHA-256=6a03b511c5ec090b792709a429d879c28fef07ef3fda37eccf1cad8606b2320a;
+    current SHA-256=30536efdb26bcaaa5729c3e61ca9ea9cd7372cd3ed7106834895ee8da38b14af;
+    hash_changed=True. Reports=["reports/yaml_record_review/20261001T044704Z-Ca.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Specific
+    single-ingredient residual remains unresolved: current evidence does not support
+    an exact ontology or stable-registry identity.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ac8cc401220219c7
+    - ev-10708f98b4caeee4
+  - name: legacy-native-ids
+    value: '[]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-10708f98b4caeee4
+    - ev-ac8cc401220219c7
+- assessment_id: a-541c6c709a47a663
+  area: identity
+  topic: Retired wrong mapping / stale tombstone ontology pointer
+  outcome: supported
+  summary: 'The narrow exported-mapping/pointer defect is already fixed: REJECTED
+    tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a
+    live merge target. This does not retire source-count, inert chemistry, role, or
+    synonym questions.'
+  target_ids:
+  - record-67b4f4f91e7cf018
+  evidence_ids:
+  - ev-8205aa1ec37d7bf2
+  - ev-463b4a48e533b7cd
+  - ev-a55f2fad24029129
+  - ev-6653c2dc8279ffa3
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8205aa1ec37d7bf2
+    - ev-463b4a48e533b7cd
+    - ev-a55f2fad24029129
+    - ev-6653c2dc8279ffa3
+- assessment_id: a-a4adc8971c74c795
+  area: identity
+  topic: Retired wrong mapping / stale tombstone ontology pointer
+  outcome: supported
+  summary: 'The narrow exported-mapping/pointer defect is already fixed: REJECTED
+    tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a
+    live merge target. This does not retire source-count, inert chemistry, role, or
+    synonym questions.'
+  target_ids:
+  - record-02b5116af3e070ea
+  evidence_ids:
+  - ev-ccb73004ba17130c
+  - ev-1d6b1f3ca5e20f64
+  - ev-2fea0ca12c76ecd5
+  - ev-d8b7463cace0005c
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ccb73004ba17130c
+    - ev-1d6b1f3ca5e20f64
+    - ev-2fea0ca12c76ecd5
+    - ev-d8b7463cace0005c
+- assessment_id: a-69d5d721fb07fcef
+  area: identity
+  topic: Retired wrong mapping / stale tombstone ontology pointer
+  outcome: supported
+  summary: 'The narrow exported-mapping/pointer defect is already fixed: REJECTED
+    tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a
+    live merge target. This does not retire source-count, inert chemistry, role, or
+    synonym questions.'
+  target_ids:
+  - record-a3513ba2c7afb1a7
+  evidence_ids:
+  - ev-626e8164a1842e65
+  - ev-1df3a1ed69398e05
+  - ev-0c22dbffe6523338
+  - ev-0397c9698a371d0e
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-626e8164a1842e65
+    - ev-1df3a1ed69398e05
+    - ev-0c22dbffe6523338
+    - ev-0397c9698a371d0e
+- assessment_id: a-1fc1ec7f0b8b3261
+  area: identity
+  topic: Retired wrong mapping / stale tombstone ontology pointer
+  outcome: supported
+  summary: 'The narrow exported-mapping/pointer defect is already fixed: REJECTED
+    tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a
+    live merge target. This does not retire source-count, inert chemistry, role, or
+    synonym questions.'
+  target_ids:
+  - record-9fb851ed17361db8
+  evidence_ids:
+  - ev-8bb1def00d80cb77
+  - ev-bbd664bdc2f5534f
+  - ev-4f8bdfebcde635f9
+  - ev-b856f2456e7f1f9f
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8bb1def00d80cb77
+    - ev-bbd664bdc2f5534f
+    - ev-4f8bdfebcde635f9
+    - ev-b856f2456e7f1f9f
+- assessment_id: a-3a28e74bd1f1e23b
+  area: identity
+  topic: Retired wrong mapping / stale tombstone ontology pointer
+  outcome: supported
+  summary: 'The narrow exported-mapping/pointer defect is already fixed: REJECTED
+    tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a
+    live merge target. This does not retire source-count, inert chemistry, role, or
+    synonym questions.'
+  target_ids:
+  - record-26db4b94c97aabed
+  evidence_ids:
+  - ev-ba0a155c673a7661
+  - ev-09c57710cd75f921
+  - ev-cf95a68be557e18a
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ba0a155c673a7661
+    - ev-09c57710cd75f921
+    - ev-cf95a68be557e18a
+- assessment_id: a-11ce595ee3a203b9
+  area: identity
+  topic: Retired wrong mapping / stale tombstone ontology pointer
+  outcome: supported
+  summary: 'The narrow exported-mapping/pointer defect is already fixed: REJECTED
+    tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a
+    live merge target. This does not retire source-count, inert chemistry, role, or
+    synonym questions.'
+  target_ids:
+  - record-ddeb567db07067be
+  evidence_ids:
+  - ev-8ca709a7e5d1b923
+  - ev-961c3b8d254446f2
+  - ev-61519568b4ae0cf4
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8ca709a7e5d1b923
+    - ev-961c3b8d254446f2
+    - ev-61519568b4ae0cf4
+- assessment_id: a-b4f5a6cdab2de088
+  area: grounding
+  topic: Furaltadone hydrochloride predicate and registry-row shape
+  outcome: supported
+  summary: NCIT:C217928 is now both primary and ontology identifier with EXACT_MATCH;
+    the sole SSSOM row is skos:exactMatch to NCIT:C217928. The prior CAS/local-registry
+    and non-exact NCIT rows are gone. This verifies the requested representation change,
+    not fresh NCIT/CAS scientific validation.
+  target_ids:
+  - record-2e4090e1bf27a52d
+  evidence_ids:
+  - ev-836307283d84c74a
+  - ev-92f2602ee8f36ebd
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-836307283d84c74a
+    - ev-92f2602ee8f36ebd
+- assessment_id: a-b731be39c8dcc771
+  area: identity
+  topic: Furaltadone CAS alias verification
+  outcome: unknown
+  summary: CAS 3759-92-1 remains in chemical_properties and final other. The old report
+    explicitly requested registry-source verification; promoting NCIT does not itself
+    establish that alias. A current resolving registry source is still needed.
+  target_ids:
+  - record-2e4090e1bf27a52d
+  evidence_ids:
+  - ev-836307283d84c74a
+  - ev-92f2602ee8f36ebd
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-836307283d84c74a
+    - ev-92f2602ee8f36ebd
+- assessment_id: a-09e7e0a7b42a393a
+  area: provenance
+  topic: CAS-qualified hydrate label and three-occurrence transfer
+  outcome: supported
+  summary: 'The specific stranded-label/3-occurrence defect is already fixed: resolving
+    synonym is on CHEBI:86159 and in its SSSOM row; the active record and pinned membership
+    count are 202/202; Ca is a zero-count REJECTED tombstone without a final row.
+    This says nothing about additional occurrences in a newer sibling snapshot.'
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-ac8cc401220219c7
+  - ev-5f1c4a27fd8956b2
+  - ev-10708f98b4caeee4
+  - ev-298e818e08d3065c
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-ac8cc401220219c7
+    - ev-5f1c4a27fd8956b2
+    - ev-10708f98b4caeee4
+    - ev-298e818e08d3065c
+- assessment_id: a-5a98a9c0c31ba396
+  area: provenance
+  topic: CAS-qualified hydrate label and three-occurrence transfer
+  outcome: supported
+  summary: 'The specific stranded-label/3-occurrence defect is already fixed: resolving
+    synonym is on CHEBI:86159 and in its SSSOM row; the active record and pinned membership
+    count are 202/202; Ca is a zero-count REJECTED tombstone without a final row.
+    This says nothing about additional occurrences in a newer sibling snapshot.'
+  target_ids:
+  - record-93cd2f755a63894b
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-ac8cc401220219c7
+  - ev-5f1c4a27fd8956b2
+  - ev-10708f98b4caeee4
+  - ev-298e818e08d3065c
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-ac8cc401220219c7
+    - ev-5f1c4a27fd8956b2
+    - ev-10708f98b4caeee4
+    - ev-298e818e08d3065c
+- assessment_id: a-4aeebb5d4668eb30
+  area: quantity
+  topic: Additional unqualified hydrate occurrence conjecture
+  outcome: unknown
+  summary: The historical report conjectured an additional non-CAS-qualified occurrence
+    beyond the three transferred occurrences. Agreement with the checked membership
+    snapshot does not prove whether that separate source occurrence was included.
+    Reconcile the exact old source row and snapshot before changing the 202 count.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-ac8cc401220219c7
+  - ev-5f1c4a27fd8956b2
+  - ev-10708f98b4caeee4
+  - ev-298e818e08d3065c
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-ac8cc401220219c7
+    - ev-5f1c4a27fd8956b2
+    - ev-10708f98b4caeee4
+    - ev-298e818e08d3065c
+- assessment_id: a-a637885dfb44804e
+  area: provenance
+  topic: Historical hydrate-review queue complaint
+  outcome: unknown
+  summary: The labels are represented, but NOT_IN_MIM rows explicitly say no exact
+    preferred-term row. Decide whether this frozen table is a live synonym-inclusive
+    queue before calling those entries incorrect; its original complaint is not automatically
+    retired or re-opened.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-ac8cc401220219c7
+  - ev-5f1c4a27fd8956b2
+  - ev-10708f98b4caeee4
+  - ev-298e818e08d3065c
+  - ev-67fdd37d6271d0a7
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-ac8cc401220219c7
+    - ev-5f1c4a27fd8956b2
+    - ev-10708f98b4caeee4
+    - ev-298e818e08d3065c
+    - ev-67fdd37d6271d0a7
+- assessment_id: a-69a6790475f4be01
+  area: provenance
+  topic: Correction-receipt identity typo
+  outcome: concern
+  summary: The receipt prose names CHEBI:31348, whereas the actual record and changed
+    SSSOM row name CHEBI:86159. This is a provenance-text defect, not evidence that
+    the active hydrate mapping is wrong.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-2a70b8383c990302
+  - ev-5f1c4a27fd8956b2
+- assessment_id: a-deba3eac5817996f
+  area: quantity
+  topic: Missing direct D-lyxose source occurrence row
+  outcome: concern
+  summary: The local source still contains kgmicrobe.trait:d_lyxose, count 159, while
+    the record retains only the damaged-label count 1. The direct source-count provenance
+    remains unrepresented in this record; media counts must remain separate.
+  target_ids:
+  - record-5703779de3d5d6d5
+  evidence_ids:
+  - ev-d69679219babeef0
+  - ev-c47f5c761d89211f
+  - ev-deba3eac5817996f
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-d69679219babeef0
+    - ev-c47f5c761d89211f
+    - ev-deba3eac5817996f
+- assessment_id: a-e944a1345fdaf236
+  area: representation
+  topic: Original CMC/PY/horse-serum component-note cleanup
+  outcome: supported
+  summary: 'The old report approved a four-component mixture and requested minor explanatory-note
+    cleanup. That representation was explicitly withdrawn: current AMBIGUOUS UNMAPPED_0740
+    has no component or ontology assertions and no final SSSOM row. The old note-edit
+    request is superseded by source-context separation, not by a new scientific pass.'
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-d21ea193995ef78b
+  details: 'Lineage is explicitly recorded in resolution/record-lineage.json and current
+    curation_history. The new source-expression ambiguity remains unresolved and is
+    tracked in #718.'
+  dimensions:
+  - name: legacy-disposition
+    value: superseded
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-aab82e1c9edc2f69
+    - ev-c04bf1d616ae4e5a
+    - ev-d21ea193995ef78b
+findings:
+- finding_id: f-b2082884706cee8d
+  issue_key: mim-reconciliation-role-support-be65b7426fab585b
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium
+    salt monohydrate'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-e5efe72d4fc64111
+  - ev-51e7bc673883371d
+  - ev-e9363cdff31d7fb7
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  - nutritional_roles[1]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+- finding_id: f-257349c4e9e602b1
+  issue_key: mim-reconciliation-role-support-bad75fc5238b3ba8
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Arabinoxylan (Rye Flour)'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-bad75fc5238b3ba8
+  evidence_ids:
+  - ev-9a6abf8f4782c94f
+  - ev-a07906a0cd0fb75f
+  - ev-fc08bf645c7b3073
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+- finding_id: f-021e3723b7ad50fd
+  issue_key: mim-reconciliation-role-support-26db4b94c97aabed
+  category: evidence
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Reassess prediction-only role support: D-(-)-lyxose'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-26db4b94c97aabed
+  evidence_ids:
+  - ev-ba0a155c673a7661
+  - ev-a15bffce40ab7317
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-_-lyxose.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition_reason: The current local observation is recorded, but the named source/context
+    or policy decision is still required; no correction is inferred.
+- finding_id: f-46759fd5ad29eca5
+  issue_key: mim-reconciliation-role-support-3685075c8b5b5eb7
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: DL-2-Aminoadipic acid'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-3685075c8b5b5eb7
+  evidence_ids:
+  - ev-952208d407f91746
+  - ev-e88a3c9355bc03d1
+  - ev-d4db048d962e13a6
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+- finding_id: f-5c902e35be083ec0
+  issue_key: mim-reconciliation-role-support-dd49bc63aa61b117
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: EDTA'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-dd49bc63aa61b117
+  evidence_ids:
+  - ev-b1151af6eca2053e
+  - ev-02597f04d60baf3a
+  - ev-fac94c8574bdfaf5
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Edta.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+- finding_id: f-0a3fe0fd2ddc2251
+  issue_key: mim-reconciliation-role-support-02b5116af3e070ea
+  category: evidence
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Reassess prediction-only role support: EDTA (chelating agent)'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-02b5116af3e070ea
+  evidence_ids:
+  - ev-ccb73004ba17130c
+  - ev-1d6b1f3ca5e20f64
+  - ev-5b1c4b3ce76d038e
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Edta_Chelating_Agent.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition_reason: The current local observation is recorded, but the named source/context
+    or policy decision is still required; no correction is inferred.
+- finding_id: f-582f6cb10c46fe80
+  issue_key: mim-reconciliation-role-support-b309242fe87da37a
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Na2HPO4'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-b309242fe87da37a
+  evidence_ids:
+  - ev-1f0a36df479cc69e
+  - ev-8b0cd7adf97b622b
+  - ev-e027fedfcccd6e6a
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[1]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+- finding_id: f-2c4572e8aee9ba64
+  issue_key: mim-reconciliation-role-support-9fb851ed17361db8
+  category: evidence
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Reassess prediction-only role support: Sodium phosphate dibasic'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-9fb851ed17361db8
+  evidence_ids:
+  - ev-8bb1def00d80cb77
+  - ev-bbd664bdc2f5534f
+  - ev-c1c1f0e0056ab927
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition_reason: The current local observation is recorded, but the named source/context
+    or policy decision is still required; no correction is inferred.
+- finding_id: f-a7e06cacf823b6f9
+  issue_key: mim-reconciliation-cas-source-2e4090e1bf27a52d
+  category: identity
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: Verify retained Furaltadone CAS alias
+  description: CAS 3759-92-1 still publishes as a resolving alias, while the original
+    report did not establish an authoritative registry match. Verify exact hydrochloride
+    identity before retaining or rejecting this alias.
+  target_ids:
+  - record-2e4090e1bf27a52d
+  evidence_ids:
+  - ev-836307283d84c74a
+  - ev-92f2602ee8f36ebd
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+    role: maintained ingredient
+  field_paths:
+  - chemical_properties.cas_rn
+  - SSSOM.other
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - cas-source
+  disposition_reason: The current local observation is recorded, but the named source/context
+    or policy decision is still required; no correction is inferred.
+- finding_id: f-5b1b1ab939d20218
+  issue_key: mim-reconciliation-receipt-id-428f0a67e2ef5305
+  category: provenance
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Correct calcium nitrate correction-receipt identity text
+  description: The receipt records[].change describes the transfer as targeting CHEBI:31348;
+    current YAML and the receipt changed-row content target CHEBI:86159. Correct the
+    receipt through its native provenance workflow, preserving the historical chain.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-2a70b8383c990302
+  - ev-5f1c4a27fd8956b2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+    role: native correction receipt
+  field_paths:
+  - records[].change
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - receipt-id
+- finding_id: f-444b73747dddc915
+  issue_key: mim-reconciliation-source-count-5703779de3d5d6d5
+  category: quantity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Reconcile direct D-lyxose MicrobeDecoder occurrences
+  description: The 159 direct D-lyxose source occurrences remain absent from source_occurrences.
+    Verify deduplication against the damaged-label row before preserving both source
+    rows; do not inflate CultureMech media_count.
+  target_ids:
+  - record-5703779de3d5d6d5
+  evidence_ids:
+  - ev-d69679219babeef0
+  - ev-c47f5c761d89211f
+  - ev-deba3eac5817996f
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/(2)-D-lyxose.yaml
+    role: maintained ingredient
+  field_paths:
+  - occurrence_statistics.source_occurrences
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - source-count
+actions:
+- action_id: action-b2082884706cee8d
+  description: 'Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium
+    salt monohydrate'
+  finding_ids:
+  - f-b2082884706cee8d
+  target_ids:
+  - record-be65b7426fab585b
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-257349c4e9e602b1
+  description: 'Reassess prediction-only role support: Arabinoxylan (Rye Flour)'
+  finding_ids:
+  - f-257349c4e9e602b1
+  target_ids:
+  - record-bad75fc5238b3ba8
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-021e3723b7ad50fd
+  description: 'Reassess prediction-only role support: D-(-)-lyxose'
+  finding_ids:
+  - f-021e3723b7ad50fd
+  target_ids:
+  - record-26db4b94c97aabed
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-_-lyxose.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-46759fd5ad29eca5
+  description: 'Reassess prediction-only role support: DL-2-Aminoadipic acid'
+  finding_ids:
+  - f-46759fd5ad29eca5
+  target_ids:
+  - record-3685075c8b5b5eb7
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-5c902e35be083ec0
+  description: 'Reassess prediction-only role support: EDTA'
+  finding_ids:
+  - f-5c902e35be083ec0
+  target_ids:
+  - record-dd49bc63aa61b117
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Edta.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-0a3fe0fd2ddc2251
+  description: 'Reassess prediction-only role support: EDTA (chelating agent)'
+  finding_ids:
+  - f-0a3fe0fd2ddc2251
+  target_ids:
+  - record-02b5116af3e070ea
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Edta_Chelating_Agent.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-582f6cb10c46fe80
+  description: 'Reassess prediction-only role support: Na2HPO4'
+  finding_ids:
+  - f-582f6cb10c46fe80
+  target_ids:
+  - record-b309242fe87da37a
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-2c4572e8aee9ba64
+  description: 'Reassess prediction-only role support: Sodium phosphate dibasic'
+  finding_ids:
+  - f-2c4572e8aee9ba64
+  target_ids:
+  - record-9fb851ed17361db8
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-a7e06cacf823b6f9
+  description: Verify retained Furaltadone CAS alias
+  finding_ids:
+  - f-a7e06cacf823b6f9
+  target_ids:
+  - record-2e4090e1bf27a52d
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-5b1b1ab939d20218
+  description: Correct calcium nitrate correction-receipt identity text
+  finding_ids:
+  - f-5b1b1ab939d20218
+  target_ids:
+  - record-428f0a67e2ef5305
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+    role: native correction receipt
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+- action_id: action-444b73747dddc915
+  description: Reconcile direct D-lyxose MicrobeDecoder occurrences
+  finding_ids:
+  - f-444b73747dddc915
+  target_ids:
+  - record-5703779de3d5d6d5
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/(2)-D-lyxose.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'scientific_review=false: no record receives renewed scientific approval. Full report
+  prose was loaded and retained by hash, but independent claim-by-claim scientific
+  interpretation is incomplete. Narrative-group counts are not distinct-allegation
+  counts.'
+- Rule B4 was unavailable at the validator default sibling transform path. No claim
+  of whole-corpus ontology identity validation is made.
+- New primary literature, exact historical external source snapshots and source-context
+  interpretations were not exhaustively checked. Passing structure/export tests cannot
+  retire those questions.
+- Legacy notes may mix several concerns. already_fixed applies only to its named subclaim;
+  residual narrative and native release holds remain. Refresh floors are not independent
+  findings.
+- Supplier/catalog and RAW_TEXT labels are not categorically invalid. Only the explicitly
+  named exported-token observations were assessed; all other synonym-scope concerns
+  require source review.
+- Native positive role receipts may provide narrower organism/preparation support
+  than the local role payload. Their presence prevents an automatic unsupported-role
+  conclusion in this round.
+- Current GitHub issue titles/bodies were read for deduplication, not to prove fixes.
+  No GitHub state or native scientific/release disposition is changed.
+notes:
+- Remote main verified as 378d733d51f6d66cbc936bf17c56821a1f7030fe before assessment;
+  worktree also contains staged reconciliation-skill documentation changes captured
+  in inputs.
+- 'GitHub issue inventory: gh issue list --state all --limit 1200 --json number,title,url,body,state;
+  434 issues; response SHA-256=0c260ef4ae59f4e4d6a5d98b6228e432dafd4dd4fa2a39cc6c1785b62b40446b.
+  Existing scientific backlog #718 is the bundling handoff; do not create one GitHub
+  issue per saved finding.'
+- No structured predecessors existed at start. These are first common-contract observations
+  of legacy concerns; no resolved/rejected finding statuses or manufactured lineage
+  are used.
+tags:
+- full-corpus-reconciliation
+- partial-scientific-coverage
+- mim-all-records
+```

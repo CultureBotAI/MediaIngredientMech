@@ -13,6 +13,12 @@ metadata:
 
 ## Scope
 
+When reports may predate fixes, use
+[reconcile-review-records](../reconcile-review-records/SKILL.md) to establish
+current dispositions before proposing or closing issues. Preserve its evidence
+and legacy/structured finding links; the legacy builder does not consume the
+new reconciliation bundles automatically.
+
 For new structured bundles, start with [Structured Review Inputs](#structured-review-inputs)
 below. The legacy manifest-based round builder only consumes historical prose
 reports; it is not an adapter for the new YAML contract.
@@ -166,13 +172,16 @@ require the task's outbound authorization.
 
 ## Retiring Findings
 
-Retire findings only after a later review report inspects the changed
-`record_sha256`.
+Retire findings only after a later review inspects the current record and the
+inputs relevant to the finding. A record hash can stay unchanged while a
+mapping, source, or generator fix resolves the defect.
 
 For each old fingerprint:
 
-1. Find the new report for the same record in the latest
-   `reports/yaml_record_review/manifest.tsv`.
+1. Find the later structured reconciliation assessment or review for the same
+   finding, preserving its legacy fingerprint link. The historical
+   `reports/yaml_record_review/manifest.tsv` locates old reports; new structured
+   bundles do not replace its rows.
 2. Require an explicit evidence-backed disposition of the old finding.
    Omission or `severity=none` alone does not establish that it was resolved.
 3. Add a `retirements.tsv` row with:
