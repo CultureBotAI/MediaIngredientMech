@@ -103,6 +103,9 @@ defect against its maintained owners and published surfaces:
   identity is in dispute; a plausible label or green validator is insufficient.
 - **Occurrences and exports:** check individual and aggregate records, exact
   SSSOM rows, applicable membership edges and counts, and generated output.
+  Respect `PER_RECORD_AUTHORED_FIELDS` in `scripts/export_individual_records.py`
+  when comparing aggregate content: per-record `discussions` overlays are not
+  aggregate drift. Inspect both surfaces; do not ignore arbitrary fields.
   Keep the source snapshot explicit; a newer sibling repository does not
   silently change the denominator of an older checked snapshot.
 - **Roles, components, and evidence:** verify claim-level support and organism,
@@ -111,6 +114,16 @@ defect against its maintained owners and published surfaces:
 - **Provenance and release state:** distinguish historical notes from active
   claims. Inspect relevant correction receipts, holds, and assertion dispositions;
   a common review verdict cannot clear native SSSOM or semantic-release gates.
+
+Pattern matches identify candidates, not confirmed defects. A recipe pointer,
+concentration suffix, or damaged spelling may still be a legitimate `RAW_TEXT`
+source label. Read the exact historical allegation and current source context
+before calling it an invalid synonym; token presence alone is not that proof.
+Likewise, computational evidence proves a prediction-only payload, not a false
+biological role, and non-monotonic history needs event semantics rather than an
+automatic sorting rule. If the required context was not inspected, use
+`status: deferred`, `certainty: provisional`, and an explicit next check. Do not
+promote a regex hit plus a word somewhere in a report to a confirmed allegation.
 
 Use the narrowest documented checks in `justfile` and the local review profile.
 Record actual commands, exit codes, unavailable dependencies, and bounded search
@@ -191,6 +204,15 @@ through the configured CLAW consumer
 when available, otherwise inspect predecessor IDs, target retention, and
 competing heads explicitly; local bundle validation alone is not a lineage audit.
 
+Before authorized publication, verify that each `source.git_revision` will
+remain available under the repository's actual merge strategy. Squash/rebase
+merges can discard a topic-branch base after deletion. Prefer inspection from a
+durable main base; if a saved review already names a branch commit, preserve
+that exact commit with a documented archival provenance tag and verify it in a
+separate checkout without the topic branch. Consumers must fetch retained
+provenance tags as well as main history. Never relabel the saved base or alter
+its hashes to make a provenance check pass.
+
 When issue work is requested, hand the saved dispositions to
 [review-round-issues](../review-round-issues/SKILL.md). Preserve legacy finding
 IDs/fingerprints and structured issue keys for deduplication. Bundle verified
@@ -201,6 +223,12 @@ recording any narrower residual. A report inventory alone cannot justify closure
 When fixes are also requested, use the native curation workflow and gates, then
 inspect final bytes and save a linked successor assessment. Review `actions`
 describe proposed work, not completed fixes.
+
+Label navigation indexes with their observation round. When successors are
+saved, expose their current heads separately from the historical snapshot;
+derive counts through exact predecessor links, not by summing every observation
+or selecting the newest timestamp. Preserve competing heads and state the
+cutoff so a static index is not mistaken for a live issue queue.
 
 Report the assessed revision, coverage, disposition counts, remaining priority
 work, and unavailable checks. Link both saved YAML and Markdown. Keep counts of
