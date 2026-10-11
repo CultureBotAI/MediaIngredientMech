@@ -120,6 +120,12 @@ Use [review-yaml-category](.claude/skills/review-yaml-category/SKILL.md) to
 audit a coherent ingredient category or cohort without editing records,
 including member selection and lump/split boundaries.
 
+Use [reconcile-review-records](.claude/skills/reconcile-review-records/SKILL.md)
+to compare saved findings with current records, mappings, evidence, and fixes.
+It preserves historical reviews and saves structured dispositions for the
+existing review-round issue workflow. Reconciliation alone does not edit
+ingredient data or mutate GitHub.
+
 Before adding or changing a record's `causal_graphs`, read
 [CAUSAL_GRAPH_CONTRACT.md](docs/CAUSAL_GRAPH_CONTRACT.md); its status table says
 which parts have landed. `MAPPING_SEMANTICS.md` Section 7 governs what may
