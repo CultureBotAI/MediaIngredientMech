@@ -47,8 +47,14 @@ names. Filenames are sticky by existing directory contents, so exporting into an
 empty directory re-derives ~1150 of them differently — a comparison that looks
 alarming and means nothing.
 
-    python scripts/check_record_filename_case.py            # report
-    python scripts/check_record_filename_case.py --fix      # print git mv commands
+Files that are absent from disk or untracked also fail, which is right for CI's
+pristine checkout. Locally they are the normal state of a new, merged or deleted
+record before `git add`/`git rm`, so `just qc-roundtrip` passes `--case-only` to
+report them without failing (#864).
+
+    python scripts/check_record_filename_case.py               # report (CI)
+    python scripts/check_record_filename_case.py --case-only   # local: unstaged adds/deletes do not fail
+    python scripts/check_record_filename_case.py --fix         # print git mv commands
 """
 from __future__ import annotations
 
@@ -105,11 +111,33 @@ def find_collisions(tracked: set[str]) -> list[list[str]]:
     return [sorted(g) for g in groups.values() if len(g) > 1]
 
 
+def failure_reasons(drift: list, collisions: list, missing: list, untracked: list,
+                    case_only: bool = False) -> list[str]:
+    """One remedy per kind of failure found; empty when the check passes.
+
+    With ``case_only``, absent and untracked files are reported but do not fail.
+    """
+    reasons = []
+    if drift:
+        reasons.append("case drift: re-run with --fix for the git mv commands")
+    if collisions:
+        reasons.append("case collision: keep one spelling of each group")
+    if not case_only:
+        if missing:
+            reasons.append("absent from disk: stage the deletion (git rm) or restore the file")
+        if untracked:
+            reasons.append("untracked: stage the new file (git add) or remove it")
+    return reasons
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--fix", action="store_true",
                     help="print the git mv commands that repair the drift")
+    ap.add_argument("--case-only", action="store_true",
+                    help="fail only on case drift and collisions; report absent and "
+                         "untracked files without failing (local runs, #864)")
     args = ap.parse_args(argv)
 
     tracked, disk = tracked_paths(), disk_paths()
@@ -140,7 +168,8 @@ def main(argv: list[str] | None = None) -> int:
     for label, items in (("genuinely absent from disk", missing),
                          ("on disk but untracked", untracked)):
         if items:
-            print(f"\n{label.upper()}:")
+            note = " (reported, not failing: --case-only)" if args.case_only else ""
+            print(f"\n{label.upper()}{note}:")
             for p in items[:20]:
                 print(f"  {p}")
 
@@ -151,10 +180,17 @@ def main(argv: list[str] | None = None) -> int:
             tmp = f"{Path(was).parent}/__case_fix_{i}.yaml"
             print(f"git mv -f {was!r} {tmp!r} && git mv -f {tmp!r} {now!r}")
 
-    if drift or collisions or missing or untracked:
-        print("\nFAIL: per-record filenames do not match what git tracks. "
-              "Re-run with --fix for the repair commands.")
+    reasons = failure_reasons(drift, collisions, missing, untracked, args.case_only)
+    if reasons:
+        print("\nFAIL: per-record filenames do not match what git tracks.")
+        for reason in reasons:
+            print(f"  - {reason}")
         return 1
+    if missing or untracked:
+        print(f"\nOK (case only): no case drift or collisions; {len(missing)} absent and "
+              f"{len(untracked)} untracked record file(s) reported above. Stage them "
+              "(git add / git rm) before committing.")
+        return 0
     print("\nOK: every tracked per-record filename matches its on-disk spelling.")
     return 0
 

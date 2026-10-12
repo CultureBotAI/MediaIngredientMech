@@ -385,10 +385,16 @@ check-instruction-refs *args:
     # happened to notice. This is the mechanical version. Issue #185.
     uv run --frozen python scripts/check_instruction_refs.py {{args}}
 
-# Assert data/curated/ and data/ingredients/ still describe the same records (CI blocking)
+# Assert what the CI roundtrip job does: filename case, curated <-> per-record round trip, index and visualization currency
 qc-roundtrip:
     #!/usr/bin/env bash
     set -euo pipefail
+    # Case-exact record filenames first, as CI checks them first (#352, #813):
+    # a case-only rename is invisible to `git status` on macOS and otherwise
+    # surfaces later as a "stale" visualization. --case-only, because a new or
+    # deleted record that is not staged yet is normal locally and cannot occur
+    # in CI's pristine checkout, which runs the strict mode (#864).
+    uv run --no-project python scripts/check_record_filename_case.py --case-only
     # A per-record edit must not be silently reverted by the next
     # `just export-individual`, which projects the collection OVER the per-record
     # tree. Aggregates into a temp dir rather than data/collections/: comparing
@@ -430,6 +436,24 @@ qc-roundtrip:
       echo "(Nothing was modified — the export above went to a scratch copy.)" >&2
       exit 1
     fi
+    # The other assertions the CI roundtrip job makes, so a record change
+    # that passes this recipe does not then fail CI (#810, #744). Indexes are
+    # regenerated into a scratch directory and compared, never written in place.
+    idx="$(mktemp -d)"
+    trap 'rm -rf "$tmp" "$tree" "$idx"' EXIT
+    uv run --frozen python scripts/generate_index_files.py --output-dir "$idx" >/dev/null
+    stale=0
+    for f in "$idx"/*; do
+      if ! cmp -s "$f" "data/curated/$(basename "$f")"; then
+        echo "stale: data/curated/$(basename "$f")" >&2
+        stale=1
+      fi
+    done
+    if [ "$stale" -ne 0 ]; then
+      echo "error: data/curated indexes are stale — run 'just export-indexes' and commit the result." >&2
+      exit 1
+    fi
+    uv run --frozen python scripts/check_visualization_currency.py --strict
 
 # Write per-record edits BACK into data/curated/, then re-export to a fixed point
 sync-curated:

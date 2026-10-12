@@ -115,7 +115,9 @@ just sync-curated               # Write the per-record tree BACK into data/curat
                                 #   then re-export so the tree is a fixed point.
                                 #   This is the one you want after editing
                                 #   data/ingredients/ directly.
-just qc-roundtrip               # Assert the two surfaces agree (blocking in CI)
+just qc-roundtrip               # Assert the two surfaces agree, plus CI's
+                                #   filename-case, index and visualization
+                                #   currency checks (blocking in CI)
 just validate-individual        # Validate individual files only
 just sync-individual            # export → validate → qc-roundtrip. Treats the
                                 #   COLLECTION as truth, so it overwrites direct

@@ -5,6 +5,7 @@ Generate index files for all MediaIngredientMech records.
 Creates JSON, CSV, and Markdown exports for easy reference.
 """
 
+import argparse
 import csv
 import json
 from pathlib import Path
@@ -173,8 +174,13 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
     print(f"✓ Created {output_path}")
 
 
-def main():
+def main(argv: list[str] | None = None):
     """Generate all index files."""
+    parser = argparse.ArgumentParser(description="Generate the data/curated index files.")
+    # `just qc-roundtrip` regenerates into a scratch directory and diffs, so the
+    # local check never rewrites tracked files (#810).
+    parser.add_argument("--output-dir", type=Path, default=Path("data/curated"))
+    args = parser.parse_args(argv)
     print("=" * 80)
     print("GENERATING INDEX FILES")
     print("=" * 80)
@@ -191,7 +197,8 @@ def main():
     print(f"Total: {len(all_records)} ingredients")
     print()
 
-    output_dir = Path('data/curated')
+    output_dir = args.output_dir
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     # Generate JSON
     print("Generating JSON indexes...")
@@ -218,7 +225,7 @@ def main():
     print("✓ ALL INDEX FILES GENERATED")
     print("=" * 80)
     print()
-    print("Files created in data/curated/:")
+    print(f"Files created in {output_dir}/:")
     print("  JSON: *_index.json (machine-readable)")
     print("  CSV:  *_index.csv (spreadsheet-compatible)")
     print("  MD:   *.md (human-readable)")
