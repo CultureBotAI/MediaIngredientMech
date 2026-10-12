@@ -107,6 +107,32 @@ class TestFailureReasons:
         assert mod.failure_reasons([], [], [], [], case_only=True) == []
 
 
+class TestMainPassesTheMode:
+    """`main()` must hand --case-only to `failure_reasons`: dropping it brings
+    #864 back locally, and forcing it makes CI's strict mode lenient."""
+
+    @pytest.fixture
+    def unstaged(self, monkeypatch):
+        monkeypatch.setattr(mod, "tracked_paths", lambda: {f"{P}/Glucose.yaml", f"{P}/Deleted.yaml"})
+        monkeypatch.setattr(mod, "disk_paths", lambda: {f"{P}/Glucose.yaml", f"{P}/New.yaml"})
+
+    def test_strict_mode_fails_on_unstaged_adds_and_deletes(self, unstaged, capsys):
+        assert mod.main([]) == 1
+        assert "git add" in capsys.readouterr().out
+
+    def test_case_only_reports_them_and_passes(self, unstaged, capsys):
+        assert mod.main(["--case-only"]) == 0
+        out = capsys.readouterr().out
+        assert "UNTRACKED" in out and "ABSENT" in out
+        assert "OK (case only)" in out
+
+    def test_case_drift_fails_in_both_modes(self, monkeypatch, capsys):
+        monkeypatch.setattr(mod, "tracked_paths", lambda: {f"{P}/Thiamine_Pyrophosphate.yaml"})
+        monkeypatch.setattr(mod, "disk_paths", lambda: {f"{P}/Thiamine_pyrophosphate.yaml"})
+        assert mod.main([]) == 1
+        assert mod.main(["--case-only"]) == 1
+
+
 def _recipe(name: str) -> str:
     lines = (ROOT / "justfile").read_text().splitlines()
     body = []

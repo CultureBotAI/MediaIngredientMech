@@ -102,11 +102,12 @@ hand-wave a failing invariant or invent an identity row.
    the other checks of the CI roundtrip job: case-exact record filenames,
    current `data/curated` indexes (remedy: `just export-indexes`) and current
    published visualizations (remedy: `just generate-visualizations`).
-   `qc-flat-coverage` checks that the `docs/data/` list exports and
-   `ingredients.json` still match their producers (remedies:
-   `just export-lists`, `just export-browser`); any edit under
-   `data/ingredients/` stales at least `ingredients.json`, and this is the
-   only gate that says so before CI does (#551).
+   `qc-flat-coverage` checks that the CSV/JSON list exports, `label_index.csv`
+   and `ingredients.json` under `docs/data/` still match their producers
+   (remedies: `just export-lists`, `just export-browser`; the timestamped
+   `.md` list exports are not checked); any edit under `data/ingredients/`
+   stales at least `ingredients.json`, and this is the only gate that says so
+   before CI does (#551).
 5. For code changes, run focused tests, then the applicable broader recipes in
    `justfile`. Run `just qc` when the full data/dependency environment is
    available.

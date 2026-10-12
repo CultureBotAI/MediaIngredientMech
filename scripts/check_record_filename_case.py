@@ -186,6 +186,11 @@ def main(argv: list[str] | None = None) -> int:
         for reason in reasons:
             print(f"  - {reason}")
         return 1
+    if missing or untracked:
+        print(f"\nOK (case only): no case drift or collisions; {len(missing)} absent and "
+              f"{len(untracked)} untracked record file(s) reported above. Stage them "
+              "(git add / git rm) before committing.")
+        return 0
     print("\nOK: every tracked per-record filename matches its on-disk spelling.")
     return 0
 
