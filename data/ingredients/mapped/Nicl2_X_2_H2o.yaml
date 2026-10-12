@@ -213,7 +213,20 @@ curation_history:
     ''nickel(II) chloride''. Preserved original text and source metadata. No identity,
     mapping, role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
-kg_microbe_node_id: CHEBI:34887
+- timestamp: '2026-10-12T03:21:01.652049+00:00'
+  curator: claude
+  action: REMOVED_PARENT_IDENTITY
+  changes: Removed kg_microbe_node_id CHEBI:34887, the anhydrous nickel dichloride
+    identity. The record keeps its distinct dihydrate identifier kgmicrobe.compound:nicl2_x_2_h2o,
+    minted under §3 step 3 (#321/#334) because ChEBI has no term for this hydration
+    state, and only a CLOSE_MATCH parent annotation (#342). The stale KG node field
+    contradicted that ruling and kept the unified mapping publishing the anhydrous
+    parent as the identity (#808, culturebotai-claw#571). No replacement KG node is
+    asserted.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-5-5
 chemical_properties:
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
