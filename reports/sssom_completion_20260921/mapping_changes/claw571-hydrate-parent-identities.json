@@ -2,8 +2,8 @@
   "schema_version": 1,
   "batch": "claw571-hydrate-parent-identities",
   "sequence": 12,
-  "issue": "https://github.com/CultureBotAI/culturebotai-claw/pull/571",
-  "scope": "Withdraw two stale anhydrous KG identities while preserving the existing hydrate records and all SSSOM rows.",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/808",
+  "scope": "Withdraw six stale anhydrous KG identities from local hydrate records (culturebotai-claw#571 follow-through) while preserving the hydrate records and all SSSOM rows.",
   "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
   "before_sha256": "2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e",
   "after_sha256": "2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e",
@@ -25,6 +25,38 @@
       "after_yaml_sha256": "92a6b9e4922482d2c56ee1bdb2e4134f2b5e71fdaad8f7f8a383944317b8f578",
       "change": "Remove stale anhydrous kg_microbe_node_id CHEBI:35696 and append REMOVED_PARENT_IDENTITY provenance; identity, ontology mapping, synonyms and SSSOM rows are unchanged.",
       "verification": "The existing #321/#334 and #342 curation separates the hydrate local identifier from the CLOSE_MATCH cobalt dichloride parent. The source record and SSSOM registry row already preserve that distinction. Strict closed-schema and ontology term validations pass; removal and event were read back after the validated writer. This is a negative correction and supplies no scientific approval for any mapping or role."
+    },
+    {
+      "source_record": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+      "shape": "hydrate_parent_identity_withdrawal",
+      "before_yaml_sha256": "a1de93d0fb55264df5d2f670c96f715b1fc6de3ab7e34b5a5068fe1a7338097e",
+      "after_yaml_sha256": "39d5ebde90e841ad8e1b764deacd7174308b08e48eaab9f8d83f1e3c3417c881",
+      "change": "Remove stale anhydrous kg_microbe_node_id CHEBI:131527 and append REMOVED_PARENT_IDENTITY provenance; identity, ontology mapping, synonyms and SSSOM rows are unchanged.",
+      "verification": "The record's 2026-08-13 MINTED_REGISTRY_FOR_HYDRATE and REGRADED_HYDRATE_TO_CLOSE_MATCH events (#321/#334, #342) separate the trihydrate local identifier from the CLOSE_MATCH dipotassium hydrogen phosphate parent, and the local ChEBI build has no term for this hydration state. Removal and event were read back after the validated writer, with no other change. This is a negative correction and supplies no scientific approval for any mapping or role."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+      "shape": "hydrate_parent_identity_withdrawal",
+      "before_yaml_sha256": "c17c89b89156b9ad96ba50bb7b81a3e438f7de6cf8aa1460f4f896c69ba8b207",
+      "after_yaml_sha256": "353097162f9d8a6d6781fe95c017fb5214a29261eed2a419d976a68865eace00",
+      "change": "Remove stale anhydrous kg_microbe_node_id CHEBI:37585 and append REMOVED_PARENT_IDENTITY provenance; identity, ontology mapping, synonyms and SSSOM rows are unchanged.",
+      "verification": "The record's 2026-08-13 MINTED_REGISTRY_FOR_HYDRATE and REGRADED_HYDRATE_TO_CLOSE_MATCH events (#321/#334, #342) separate the dihydrate local identifier from the CLOSE_MATCH sodium dihydrogenphosphate parent, and the local ChEBI build has no term for this hydration state. Removal and event were read back after the validated writer, with no other change. This is a negative correction and supplies no scientific approval for any mapping or role."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+      "shape": "hydrate_parent_identity_withdrawal",
+      "before_yaml_sha256": "479f15ecd212853202ba0a0c381cb9fa8f83f12900c3c7555f67b29661549b5b",
+      "after_yaml_sha256": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+      "change": "Remove stale anhydrous kg_microbe_node_id CHEBI:34683 and append REMOVED_PARENT_IDENTITY provenance; identity, ontology mapping, synonyms and SSSOM rows are unchanged.",
+      "verification": "The record's 2026-08-13 MINTED_REGISTRY_FOR_HYDRATE and REGRADED_HYDRATE_TO_CLOSE_MATCH events (#321/#334, #342) separate the heptahydrate local identifier from the CLOSE_MATCH disodium hydrogenphosphate parent, and the local ChEBI build has no term for this hydration state. Removal and event were read back after the validated writer, with no other change. This is a negative correction and supplies no scientific approval for any mapping or role."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Nicl2_X_2_H2o.yaml",
+      "shape": "hydrate_parent_identity_withdrawal",
+      "before_yaml_sha256": "ab4f6d9e5c9b4b7bf7151b6541d357f074ac6b4876cc61fd8be82cf7c85b46dd",
+      "after_yaml_sha256": "63b0fccca5b4c6331435b5ca6f1c6b30710447cb8a4118b97cec1cc2f2e1b85a",
+      "change": "Remove stale anhydrous kg_microbe_node_id CHEBI:34887 and append REMOVED_PARENT_IDENTITY provenance; identity, ontology mapping, synonyms and SSSOM rows are unchanged.",
+      "verification": "The record's 2026-08-13 MINTED_REGISTRY_FOR_HYDRATE and REGRADED_HYDRATE_TO_CLOSE_MATCH events (#321/#334, #342) separate the dihydrate local identifier from the CLOSE_MATCH nickel dichloride parent, and the local ChEBI build has no term for this hydration state. Removal and event were read back after the validated writer, with no other change. This is a negative correction and supplies no scientific approval for any mapping or role."
     }
   ],
   "changed_rows": 0,
