@@ -98,10 +98,15 @@ hand-wave a failing invariant or invent an identity row.
 3. Synchronize the two data surfaces in the correct direction and inspect the
    resulting diff for unexpected bulk rewrites.
 4. For data changes, run `just validate-all`, `just qc-sssom`,
-   `just qc-roundtrip`, and `just qc-flat-coverage`. The last one checks that
-   every generated artifact under `docs/data/` still matches its producer; any
-   edit under `data/ingredients/` stales at least `ingredients.json`, and this
-   is the only gate that says so before CI does (#551).
+   `just qc-roundtrip`, and `just qc-flat-coverage`. `qc-roundtrip` also runs
+   the other checks of the CI roundtrip job: case-exact record filenames,
+   current `data/curated` indexes (remedy: `just export-indexes`) and current
+   published visualizations (remedy: `just generate-visualizations`).
+   `qc-flat-coverage` checks that the `docs/data/` list exports and
+   `ingredients.json` still match their producers (remedies:
+   `just export-lists`, `just export-browser`); any edit under
+   `data/ingredients/` stales at least `ingredients.json`, and this is the
+   only gate that says so before CI does (#551).
 5. For code changes, run focused tests, then the applicable broader recipes in
    `justfile`. Run `just qc` when the full data/dependency environment is
    available.

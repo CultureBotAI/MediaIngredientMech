@@ -385,10 +385,16 @@ check-instruction-refs *args:
     # happened to notice. This is the mechanical version. Issue #185.
     uv run --frozen python scripts/check_instruction_refs.py {{args}}
 
-# Assert data/curated/ and data/ingredients/ still describe the same records (CI blocking)
+# Assert what the CI roundtrip job does: filename case, curated <-> per-record round trip, index and visualization currency
 qc-roundtrip:
     #!/usr/bin/env bash
     set -euo pipefail
+    # Case-exact record filenames first, as CI checks them first (#352, #813):
+    # a case-only rename is invisible to `git status` on macOS and otherwise
+    # surfaces later as a "stale" visualization. --case-only, because a new or
+    # deleted record that is not staged yet is normal locally and cannot occur
+    # in CI's pristine checkout, which runs the strict mode (#864).
+    uv run --no-project python scripts/check_record_filename_case.py --case-only
     # A per-record edit must not be silently reverted by the next
     # `just export-individual`, which projects the collection OVER the per-record
     # tree. Aggregates into a temp dir rather than data/collections/: comparing
@@ -448,8 +454,6 @@ qc-roundtrip:
       exit 1
     fi
     uv run --frozen python scripts/check_visualization_currency.py --strict
-    # And the case-exact filename check CI runs before everything else (#813).
-    uv run --no-project python scripts/check_record_filename_case.py
 
 # Write per-record edits BACK into data/curated/, then re-export to a fixed point
 sync-curated:
