@@ -90,13 +90,13 @@ const cases = [
   ['counts-mismatch', 200, {...empty, metadata: {...empty.metadata, total_ingredients: 1}}, true],
 ];
 function element() { return {textContent: '', innerHTML: '', value: '', options: [{value:''}],
-  addEventListener() {}, setAttribute() {}, replaceChildren() {}, appendChild() {}}; }
+  addEventListener() {}, setAttribute() {}, replaceChildren(...children) { this.options = children; }, add(option) { this.options.push(option); }, appendChild() {}}; }
 (async () => {
   for (const [name, status, data, failed] of cases) {
     const elements = new Map();
     const document = {getElementById(id) {if (!elements.has(id)) elements.set(id, element()); return elements.get(id);},
       createElement: element, querySelectorAll() {return []}};
-    const context = {document, URLSearchParams, window: {location: {hash:''}, addEventListener() {}},
+    const context = {document, URLSearchParams, Option: function(text, value) { return {textContent:text, value}; }, window: {location: {hash:''}, addEventListener() {}},
       fetch: async () => ({ok: status === 200, status, json: async () => data})};
     vm.createContext(context); vm.runInContext(source, context);
     await new Promise(resolve => setImmediate(resolve));

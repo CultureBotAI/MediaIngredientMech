@@ -20,8 +20,10 @@ Alias: evidence
 | [ComponentAssertion](ComponentAssertion.md) | Provenance for one IngredientRecord |  no  |
 | [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | Assignment of a physicochemical facet role (the chemical or physical function... |  no  |
 | [OntologyMapping](OntologyMapping.md) | Mapping to an ontology term (CHEBI, FOODON, etc |  no  |
+| [CausalEdge](CausalEdge.md) | An evidence-backed directed relationship between two local node_ids |  no  |
 | [NutritionalRoleAssignment](NutritionalRoleAssignment.md) | Assignment of a nutritional facet role (what element or macronutrient the ing... |  no  |
 | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |  no  |
+| [ProteinExample](ProteinExample.md) | A source-backed UniProt protein paired with the organism in which its role in... |  no  |
 | [Discussion](Discussion.md) | A thread-like record of an open question, controversy, curation todo, emergin... |  no  |
 | [CultureMechReference](CultureMechReference.md) | A verified link from a MIM record to a CultureMech recipe, carried by stable ... |  no  |
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |  no  |
@@ -71,6 +73,8 @@ domain_of:
 - PhysicochemicalRoleAssignment
 - CellularMetabolicRoleAssignment
 - ComponentAssertion
+- CausalEdge
+- ProteinExample
 - Discussion
 - Dataset
 range: string

@@ -17,10 +17,11 @@ Alias: role
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | Assignment of a physicochemical facet role (the chemical or physical function... |  no  |
 | [NutritionalRoleAssignment](NutritionalRoleAssignment.md) | Assignment of a nutritional facet role (what element or macronutrient the ing... |  no  |
 | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |  no  |
+| [ProteinExample](ProteinExample.md) | A source-backed UniProt protein paired with the organism in which its role in... |  no  |
 | [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |  no  |
-| [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | Assignment of a physicochemical facet role (the chemical or physical function... |  no  |
 
 
 
@@ -63,6 +64,7 @@ domain_of:
 - NutritionalRoleAssignment
 - PhysicochemicalRoleAssignment
 - CellularMetabolicRoleAssignment
+- ProteinExample
 range: string
 
 ```

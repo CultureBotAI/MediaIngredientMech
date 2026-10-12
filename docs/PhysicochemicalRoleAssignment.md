@@ -128,6 +128,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ProteinExample
     range: PhysicochemicalRoleEnum
     required: true
   confidence:
@@ -152,6 +153,8 @@ attributes:
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
+    - CausalEdge
+    - ProteinExample
     - Discussion
     - Dataset
     range: RoleCitation
@@ -174,6 +177,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset
@@ -201,6 +205,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ProteinExample
     range: PhysicochemicalRoleEnum
     required: true
   confidence:
@@ -229,6 +234,8 @@ attributes:
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
+    - CausalEdge
+    - ProteinExample
     - Discussion
     - Dataset
     range: RoleCitation
@@ -253,6 +260,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset

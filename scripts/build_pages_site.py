@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import browser_export  # noqa: E402
 
 from mediaingredientmech import render_ingredient_pages as render  # noqa: E402
+from mediaingredientmech.schema_site import write_schema_site  # noqa: E402
 
 PACKAGE_ROOT = Path(render.__file__).resolve().parent
 
@@ -59,7 +60,14 @@ def build_inputs(repo: Path) -> dict[str, str]:
     files.update(
         {
             "docs/" + name: repo / "docs" / name
-            for name in ("index.html", "browser.html", "theme-toggle.js")
+            for name in (
+                "index.html",
+                "browser.html",
+                "theme-toggle.js",
+                "map-record-navigation.js",
+                "ingredient_umap.html",
+                "ingredient_graph.html",
+            )
         }
     )
     return {name: digest(path) for name, path in sorted(files.items())}
@@ -111,6 +119,12 @@ def check_site(repo: Path, output: Path) -> None:
         "browser.html",
         "theme-toggle.js",
     }
+    required_assets.update(
+        p.relative_to(output).as_posix() for p in (output / "schema").glob("*.html")
+    )
+    required_assets.add("map-record-navigation.js")
+    if not (output / "schema" / "index.html").exists():
+        raise ValueError("Missing rendered schema reference")
     if set(receipt["assets"]) != required_assets:
         raise ValueError("Incomplete site assets")
     for name, checksum in receipt["assets"].items():
@@ -158,6 +172,9 @@ def build_site(repo: Path, output: Path) -> int:
             successful.append({"ingredient": ingredient, "slug": slug})
         render.write_index(index, successful)
         shutil.copyfile(render.TEMPLATES_DIR / "style.css", index / "style.css")
+        schema_assets = write_schema_site(
+            PACKAGE_ROOT / "schema" / "mediaingredientmech.yaml", stage / "schema"
+        )
         (stage / ".nojekyll").touch()
         asset_names = (
             "data/ingredients.json",
@@ -170,7 +187,10 @@ def build_site(repo: Path, output: Path) -> int:
         receipt = {
             "build_inputs": build_inputs(repo),
             "records": records,
-            "assets": {name: digest(stage / name) for name in asset_names},
+            "assets": {
+                name: digest(stage / name)
+                for name in (*asset_names, "map-record-navigation.js", *schema_assets)
+            },
         }
         (index / "build.json").write_text(json.dumps(receipt, indent=2) + "\n")
         check_site(repo, stage)

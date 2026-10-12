@@ -167,6 +167,8 @@ attributes:
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
+    - CausalEdge
+    - ProteinExample
     - Discussion
     - Dataset
     required: true
@@ -250,6 +252,8 @@ attributes:
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
+    - CausalEdge
+    - ProteinExample
     - Discussion
     - Dataset
     range: string

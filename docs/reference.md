@@ -3,11 +3,6 @@
 # Slot: reference 
 
 
-_PMID:..., DOI:..., a repository accession/CURIE, or an opaque URL._
-
-
-
-
 
 URI: [mediaingredientmech:reference](https://w3id.org/mediaingredientmech/reference)
 Alias: reference
@@ -23,6 +18,7 @@ Alias: reference
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
+| [EvidenceItem](EvidenceItem.md) | One citation for one graph claim (fleet EvidenceItem shape) |  no  |
 
 
 
@@ -33,8 +29,6 @@ Alias: reference
 
 * Range: [String](String.md)
 
-* Required: True
-
 
 
 
@@ -42,13 +36,6 @@ Alias: reference
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -68,15 +55,11 @@ Alias: reference
 <details>
 ```yaml
 name: reference
-description: PMID:..., DOI:..., a repository accession/CURIE, or an opaque URL.
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: reference
-owner: SupportingReference
 domain_of:
+- EvidenceItem
 - SupportingReference
 range: string
-required: true
 
 ```
 </details>

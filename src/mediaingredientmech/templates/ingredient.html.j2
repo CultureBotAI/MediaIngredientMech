@@ -46,6 +46,9 @@
 
 <main id="main-content">
 {% include "_partials/overview.html.j2" %}
+{% for field, title in [('nutritional_roles', 'Nutritional roles'), ('physicochemical_roles', 'Physicochemical roles'), ('cellular_metabolic_roles', 'Cellular metabolic roles'), ('environmental_context', 'Environmental context'), ('culturemech_reference', 'Related CultureMech recipe')] %}
+{% if ingredient.get(field) %}<section id="{{ field|replace('_', '-') }}"><h2>{{ title }}</h2>{{ ingredient[field]|structured }}</section>{% endif %}
+{% endfor %}
 {% if ingredient.synonyms %}{% include "_partials/synonyms.html.j2" %}{% endif %}
 {% if ingredient.chemical_properties %}{% include "_partials/chemical_properties.html.j2" %}{% endif %}
 {% if om.evidence %}{% include "_partials/evidence.html.j2" %}{% endif %}

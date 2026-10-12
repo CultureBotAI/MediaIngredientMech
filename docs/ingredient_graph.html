@@ -612,6 +612,10 @@
                 .attr('stroke', restStroke)
                 .attr('stroke-width', restStrokeWidth)
                 .style('cursor', 'pointer')
+                .attr('tabindex', 0)
+                .attr('role', 'button')
+                .attr('aria-label', d => 'Inspect ingredient ' + d.name)
+                .on('keydown', (event, d) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); window.MimRecords.select(d); } })
                 .on('mouseover', function(event, d) {
                     d3.select(this)
                         .attr('stroke', HILITE)
@@ -645,7 +649,7 @@
                     tooltip.style('opacity', 0);
                 })
                 .on('click', (event, d) => {
-                    console.log('Clicked:', d);
+                    window.MimRecords.select(d);
                 });
 
             // Update legend
@@ -724,5 +728,6 @@
         });
     </script>
     <script src="theme-toggle.js"></script>
+<script src="map-record-navigation.js"></script>
 </body>
 </html>

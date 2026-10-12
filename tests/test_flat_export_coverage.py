@@ -274,6 +274,28 @@ def test_browser_export_does_not_change_search_text_without_components(browser_e
     assert out["searchable"] == expected
 
 
+def test_browser_export_indexes_distinct_mapped_identifier_once(browser_export):
+    rec = {
+        "identifier": "MediaIngredientMech:000001",
+        "preferred_term": "Test ingredient",
+        "ontology_mapping": {"ontology_id": "CHEBI:1", "ontology_label": "test chemical"},
+    }
+    out = browser_export.extract_ingredient_for_browser(rec, "test.yaml")
+    tokens = out["searchable"].split()
+    assert tokens.count("mediaingredientmech:000001") == 1
+    assert tokens.count("chebi:1") == 1
+
+
+def test_browser_export_deduplicates_identifier_case_in_search(browser_export):
+    rec = {
+        "identifier": "CHEBI:1",
+        "preferred_term": "Test ingredient",
+        "ontology_mapping": {"ontology_id": "chebi:1", "ontology_label": "test chemical"},
+    }
+    out = browser_export.extract_ingredient_for_browser(rec, "test.yaml")
+    assert out["searchable"].split().count("chebi:1") == 1
+
+
 def test_browser_export_exits_nonzero_when_a_record_fails(tmp_path):
     """A short catalog deploys to Pages; nothing downstream notices the gap."""
     src = (ROOT / "scripts" / "browser_export.py").read_text()

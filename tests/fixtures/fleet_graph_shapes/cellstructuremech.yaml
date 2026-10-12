@@ -1,0 +1,234 @@
+# Vendored excerpt of CellStructureMech's LinkML schema: the causal-graph classes
+# and the enums they use, for the fleet-parity test in
+# tests/test_causal_graph_schema.py (no sibling checkout is needed in CI).
+#
+#   repository: https://github.com/CultureBotAI/CellStructureMech
+#   commit:     55c4e773da4e6638a17ccc68780b3005f9f94e67
+#   path:       src/cellstructuremech/schema/cellstructuremech.yaml
+#   blob:       3ae4ee7366f839c37aa49c1b043baad0f19c02c4 (git rev-parse <commit>:<path>)
+#   lines (1-based, inclusive):
+#     CellStructureRecord.causal_graphs 284-290
+#     EvidenceItem 755-768
+#     CausalGraph 774-803
+#     CausalNode 805-833
+#     CausalEdge 835-859
+#     ProteinExample 424-460
+#     GraphKindEnum 1149-1157
+#     CausalGraphScopeEnum 1159-1163
+#     UniProtEntryStatusEnum 1165-1170
+#     CausalNodeTypeEnum 1172-1191
+#
+# Every class and enum block below is a byte-for-byte copy of those source
+# lines. Only this header, the `source:` mapping, the `classes:`/`enums:` keys
+# and the `CellStructureRecord:`/`attributes:` wrapper around its causal_graphs
+# attribute are added. The source schema declares `default_range: string`.
+#
+# Do not edit the blocks by hand. To re-vendor at a new pin, run
+#   git -C <CellStructureMech checkout> show <commit>:src/cellstructuremech/schema/cellstructuremech.yaml
+# copy the same blocks, and update the commit in this header and in `source:`;
+# then reconcile EXPECTED_DELTAS in the test with any shape change.
+source:
+  mech: CellStructureMech
+  repository: https://github.com/CultureBotAI/CellStructureMech
+  commit: 55c4e773da4e6638a17ccc68780b3005f9f94e67
+  path: src/cellstructuremech/schema/cellstructuremech.yaml
+  blob: 3ae4ee7366f839c37aa49c1b043baad0f19c02c4
+  default_range: string
+  record_class: CellStructureRecord
+
+classes:
+  CellStructureRecord:
+    attributes:
+      causal_graphs:
+        description: >-
+          Evidence-backed mechanism graphs — how the structure assembles, how
+          it does its job, what regulates it. Every edge must carry a citation.
+        multivalued: true
+        inlined_as_list: true
+        range: CausalGraph
+
+  ProteinExample:
+    description: >-
+      A source-backed UniProt protein example paired with the organism in which
+      its role in the structure was established. Reviewed Swiss-Prot entries are
+      preferred. One component accession must not be presented as an entire
+      multisubunit complex.
+    attributes:
+      uniprot_id:
+        required: true
+        range: string
+        pattern: "^UniProtKB:[A-Z0-9]+$"
+      protein_label:
+        required: true
+        range: string
+      gene_symbol:
+        range: string
+      taxon_id:
+        required: true
+        range: string
+        pattern: "^NCBITaxon:[0-9]+$"
+      taxon_label:
+        required: true
+        range: string
+      entry_status:
+        required: true
+        range: UniProtEntryStatusEnum
+      retrieved_on:
+        description: Date on which the UniProt metadata was verified.
+        required: true
+        range: date
+      role:
+        range: string
+      evidence:
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: EvidenceItem
+
+  EvidenceItem:
+    description: A literature or database citation supporting a claim.
+    attributes:
+      reference:
+        description: PMID:..., DOI:..., or an opaque URL.
+        required: true
+        range: string
+        pattern: "^(?:[A-Za-z][A-Za-z0-9._-]*:\\S+|https?://\\S+)$"
+      snippet:
+        description: Verbatim quote from the source. Only when actually verbatim.
+        range: string
+      notes:
+        description: Paraphrase of what the source establishes for this claim.
+        range: string
+
+  CausalGraph:
+    description: A directed mechanism graph associated with a structure.
+    attributes:
+      graph_id:
+        identifier: true
+        required: true
+        range: string
+      title:
+        range: string
+      description:
+        range: string
+      graph_kind:
+        description: What the graph explains — assembly, function, or regulation.
+        range: GraphKindEnum
+        required: true
+      scope_status:
+        range: CausalGraphScopeEnum
+        required: true
+      scope_notes:
+        range: string
+      nodes:
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: CausalNode
+      edges:
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: CausalEdge
+
+  CausalNode:
+    description: >-
+      A node in a mechanism graph. GENE_OR_PROTEIN is restricted to proteins,
+      protein families and protein complexes; genes and operons are metadata.
+    attributes:
+      node_id:
+        identifier: true
+        required: true
+        range: string
+      label:
+        required: true
+        range: string
+      node_type:
+        required: true
+        range: CausalNodeTypeEnum
+      grounding:
+        range: string
+        pattern: "^[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._-]+$"
+      component_ref:
+        description: >-
+          Local `component_id` on this record when the node is one of the
+          structure's own components, so graph and composition stay in step.
+        range: string
+      xrefs:
+        multivalued: true
+        range: string
+        pattern: "^[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._-]+$"
+      description:
+        range: string
+
+  CausalEdge:
+    description: An evidence-backed directed relationship in a mechanism graph.
+    attributes:
+      subject:
+        required: true
+        range: string
+      predicate:
+        required: true
+        range: string
+      predicate_id:
+        range: string
+        pattern: "^[A-Za-z][A-Za-z0-9._-]*:[A-Za-z0-9._-]+$"
+      object:
+        required: true
+        range: string
+      description:
+        range: string
+      evidence:
+        description: >-
+          `required: true` — every mechanism claim is curator-asserted and
+          must carry at least one citation.
+        required: true
+        multivalued: true
+        inlined_as_list: true
+        range: EvidenceItem
+
+enums:
+
+  GraphKindEnum:
+    permissible_values:
+      ASSEMBLY:
+        description: How the structure is built.
+      FUNCTION:
+        description: How the structure does its job.
+      REGULATION:
+        description: What controls its formation or activity.
+      DISASSEMBLY:
+
+  CausalGraphScopeEnum:
+    permissible_values:
+      MECHANISTIC:
+      NONMECHANISTIC:
+      REVIEW_NEEDED:
+
+  UniProtEntryStatusEnum:
+    permissible_values:
+      REVIEWED:
+        description: UniProtKB/Swiss-Prot.
+      UNREVIEWED:
+        description: UniProtKB/TrEMBL.
+
+  CausalNodeTypeEnum:
+    description: Same vocabulary as TraitMech, plus STRUCTURE for a CellStructureRecord node.
+    permissible_values:
+      STRUCTURE:
+        description: A CellStructureMech record or GO cellular component.
+      TRAIT:
+      PATHWAY:
+      ENVIRONMENTAL_FACTOR:
+      EXPERIMENTAL_FACTOR:
+      GENE_OR_PROTEIN:
+      RNA:
+      GENETIC_ELEMENT:
+      CHEMICAL:
+      ORGANELLE:
+      CELLULAR_LOCALIZATION:
+      MOLECULAR_FUNCTION:
+      BIOLOGICAL_PROCESS:
+      STATE:
+      QUALITY:
+      CAPACITY:

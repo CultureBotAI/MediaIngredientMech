@@ -4,6 +4,9 @@ This document is the authoritative reference for what the predicates in
 `mappings/ingredient_mappings.sssom.tsv` actually mean, why MIM uses a
 **registry/identity row pattern** alongside ontology mappings, the most common
 mistakes a curator can make, and what to do when CI rejects a row.
+Section 7 applies the same identity rules to ingredient causal graphs: what may
+anchor a graph, how a graph reaches the species a cell actually meets, and when
+it may link to a record in another Mech.
 
 It is written for a curator who has never read the kg-microbe code. You should
 not need to look at any other repository to understand the rules. Where a rule
@@ -982,10 +985,12 @@ whole record. Therefore:
   onto the mixture — that would assert that the whole *is* the part;
 - do not translate a component edge into `skos:exactMatch`, `closeMatch`,
   `narrowMatch`, or `broadMatch`; those predicates describe grounding of the whole;
-- do not use component edges to relate chemical forms. MIM currently records no
-  local relationship among records that differ in hydration, stereochemistry,
-  salt form, or grade. Whether those details create a distinct identity or live
-  in `supplied_form` is governed by Section 3; `components` decides neither;
+- do not use component edges to relate chemical forms. `components` records no
+  relationship among records that differ in hydration, stereochemistry, salt
+  form, or grade. Whether those details create a distinct identity or live in
+  `supplied_form` is governed by Section 3; `components` decides neither. A
+  causal-graph bridge (Section 7) may say what a supplied form becomes in the
+  medium, but it is not a component edge and decides no identity either;
 - do not infer a complete culturing recipe from a component list. Completeness is
   explicit in `component_assertion` and is relative to its cited evidence.
 
@@ -995,8 +1000,238 @@ ontology/registry CURIE (`EXTERNAL_TERM`), or is named but ungrounded (`UNMAPPED
 It is not a unique document key: duplicate-identifier families remain a separately
 tracked catalog defect.
 
+**Causal graphs mirror `components`; they never extend it (Section 7).** A graph
+edge with `bridge_kind: COMPONENT` restates one entry of this list: its object
+node's `component_ref` equals a `components[].component_id` of the same record,
+its basis is `RECORD_COMPONENT`, and it inherits that entry's
+`component_assertion`. A graph never adds, removes or changes a component, and no
+chemistry edge starts at a component node, because the component's own record
+owns its speciation and mechanism. The other bridge kinds (`HYDRATE_PART`,
+`ION_PART`, `PROTONATION`, `TAUTOMER`, `STRUCTURAL_FORM`, `FORM_OF_PARENT`) are
+not component edges. They say what one supplied substance becomes in the medium,
+not what a mixture contains, so a hydrate's anhydrous part or a salt's ion never
+goes into `components`, and a `components` entry never stands in for a bridge.
+`COMPONENT`, `HYDRATE_PART` and `ION_PART` edges all use `BFO:0000051` (has
+part); `bridge_kind` is what tells them apart.
+
 See `docs/stock_components.md` and run `just qc-component-partonomy` for the full
 shape and cross-record invariants.
+
+---
+
+## 7. Causal graphs: supplied form, active species and cross-Mech links
+
+An ingredient record may carry `causal_graphs`: evidence-backed mechanism graphs
+that explain how the ingredient, as supplied, acts on cultured microbes.
+`docs/CAUSAL_GRAPH_CONTRACT.md` describes the graph shape, the node types, the
+full predicate table, the evidence model and the curation procedure. This section
+owns the identity rules: what may anchor a graph, how a graph gets from the
+supplied form to the species a cell meets, and when a graph may link to another
+Mech's record. Like the rest of this file, it outranks the schema and that page.
+
+> **Status.** The `causal_graphs` schema, structural rule tests and reference
+> pages are included. No maintained record gains a graph in this change. The
+> offline semantic gate (`just qc-causal-graphs`, with committed snapshots) is
+> planned; the error codes below specify its future checks. Schema validation
+> does not verify the scientific claims or permit carrying forward approvals.
+> Wait for the semantic gate before curating graphs into maintained records,
+> and obtain fresh scientific approval after every record-byte change.
+
+**Principle.** The anchor is the record exactly as Section 3 identifies it: the
+supplied form. Species the cell meets are separate nodes with their own
+groundings. A bridge says what the supplied form becomes; it never says what the
+record is. A blocked bridge is a prompt to re-check identity under Section 3,
+never a reason to relax a guard.
+
+### 7.1 Identity gate
+
+Violations fail with `IDENTITY_GATE` unless another code is named; the schema
+enforces the first condition of A2 itself.
+
+- **A1. One anchor.** Each graph has exactly one `INGREDIENT` node, and its
+  `grounding` equals the record's `identifier` (`ANCHOR_MISMATCH` otherwise).
+- **A2. Only a resolved identity anchors a graph.** A record may carry graphs
+  only when all of the following hold:
+  - `mapping_status` is `MAPPED`, and `ingredient_type` is not `NAMED_MEDIUM`
+    (schema rules). A named medium is CultureMech's recipe, and its
+    constituents' own records carry the mechanisms. A record with no
+    `ingredient_type` may carry graphs;
+  - `ontology_mapping.mapping_quality` is not `PLACEHOLDER`;
+  - `identifier` is not listed in `mappings/duplicate_identifier_baseline.tsv`,
+    whatever the row's disposition. On 2026-10-05 every row there was an
+    unresolved family (`UNREVIEWED`, `HYDRATE_FAMILY_UNREVIEWED`,
+    `NEEDS_OWN_ID`, `NEEDS_OWN_ID_MEMBER_UNDECIDED`); for example `CHEBI:31795`
+    sits on both `MgSO4 x 7 H2O` and `MgSO4·H2O`;
+  - no other non-`REJECTED` record carries the same `identifier`. `REJECTED`
+    merge tombstones do not count: `Dextrose.yaml` (`CHEBI:17634`) does not
+    block `D-glucose.yaml`, and `Na2moo42h2o.yaml` (`CHEBI:75213`) does not
+    block `Na2moo4_X_2_H2o.yaml`.
+- **A3. Identity cannot re-enter under a second id.** No node other than the
+  anchor may carry the anchor's CURIE, or any CURIE that the record's own SSSOM
+  rows map with `skos:exactMatch` or `skos:closeMatch`.
+- **A4. `xrefs` carry exact equivalents only**, declared either by the owning
+  sibling record (`mapped_xrefs` with mapping source `ec2go` or `rhea2ec`) or by
+  the ontology (GO `hasDbXref`). Verified pairs: `GO:0061599` ↔ `RHEA:35047`,
+  `GO:0015412` ↔ `EC:7.3.2.5`, `GO:0015420` ↔ `EC:7.6.2.8`, `GO:0004325` ↔
+  `EC:4.98.1.1`. Anything else fails with `XREF_UNDECLARED`. A parent, a related
+  form or the record identifier is a separate node joined by an edge, never an
+  xref.
+- **A5. Graphs change no identity.** They write no SSSOM rows and never change
+  `identifier`, `ontology_mapping` or `components`. Hydrates, salts and
+  stereoisomers stay distinct substances (Section 3), and a bridge never
+  justifies a merge.
+- **A6. `supplied_form` is never a node.** A catalogue entry or CAS number
+  describes the purchase, not a species.
+- **A7. One node per CURIE per graph** (claw's duplicate-grounding check).
+  Compartments are expressed through protein locations, not by repeating a
+  chemical node.
+
+### 7.2 Bridge kinds (closed set)
+
+A chemistry edge carries a `bridge_kind`. The set is closed: each kind fixes its
+`predicate_id` and the basis it must verify, and the gate recomputes every
+bridge from ChEBI facts committed in `mappings/ontology_facts.tsv`, so CI needs
+no ontology database. Chemistry edges carry no organism context (L4). Every
+example below was checked against a local ChEBI build (`chebi.db`) on 2026-10-05.
+
+| `bridge_kind` | `predicate_id` | Required basis | Recomputed check | Examples |
+|---|---|---|---|---|
+| `HYDRATE_PART` | `BFO:0000051` (has part) | `ONTOLOGY_AXIOM` | The subject is entailed under `CHEBI:35505` (hydrate); ChEBI asserts subject has part object; the subject's SMILES components minus water equal the object's. | Pass: `CHEBI:75836` → `CHEBI:75832` (FeSO4·7H2O → FeSO4) and `CHEBI:75213` → `CHEBI:75215` (Na2MoO4·2H2O → Na2MoO4), both asserted. |
+| `ION_PART` | `BFO:0000051` plus `stoichiometry` | `ONTOLOGY_AXIOM` when ChEBI asserts or entails it; otherwise `CHEMICAL_STRUCTURE` | The ion's SMILES is an exact `.`-separated component of the salt's SMILES; its count equals `stoichiometry`; each component resolves to exactly one non-deprecated ChEBI term by SMILES; the component charges sum to the salt's charge. A transition-metal cation with a carbon-containing component also needs `LITERATURE` (complexation). A missing SMILES fails closed. | Pass: `CHEBI:75832` → `CHEBI:29033` iron(2+) and `CHEBI:75215` → `CHEBI:36264` molybdate (asserted); `CHEBI:63005` → `CHEBI:17632` nitrate (entailed through `CHEBI:51082` nitrate salt); `CHEBI:32149` → `CHEBI:16189` sulfate (no axiom; `O=S(=O)([O-])[O-].[Na+].[Na+]` has one sulfate component, and −2 + 2(+1) = 0). Blocked: `CHEBI:53438` iron(3+) sulfate → iron(2+) (no `[Fe+2]` component). |
+| `PROTONATION` | `RO:0018033` (is deprotonated form of) / `RO:0018034` (is protonated form of) | `ONTOLOGY_AXIOM` | One asserted ChEBI hop per edge; hops may chain. | `CHEBI:61548` `RO:0018033` `CHEBI:4170` (asserted). |
+| `TAUTOMER` | `RO:0018036` (is tautomer of) | `ONTOLOGY_AXIOM` | Asserted in ChEBI. | — |
+| `STRUCTURAL_FORM` | `rdfs:subClassOf` (is a), from the specific form to the supplied class | `ONTOLOGY_AXIOM` + `CHEMICAL_STRUCTURE` | Asserted direct subclass; the form has a SMILES and no isotopic InChI layer (`/i`); the supplied class has no SMILES; formula and charge are equal; no other non-isotopic direct subclass shares the form's InChIKey first block with a different key. | Pass: `CHEBI:4167` D-glucopyranose → `CHEBI:17634` D-glucose. Blocked: `CHEBI:17634` → `CHEBI:17234` glucose (D-glucose has no structure); `CHEBI:4167` → `CHEBI:37661` glucopyranose (rival `CHEBI:37627` L-glucopyranose shares the block `WQZGKKKJIJFFOK`); the isotopologues `CHEBI:88300` and `CHEBI:134625`. |
+| `FORM_OF_PARENT` | `skos:broadMatch` (has broader match) | `RECORD_SSSOM` | First hop only, from a `cas:` or `kgmicrobe.*` anchor to the ChEBI parent named by the record's own SSSOM `skos:broadMatch` row (Section 3, step 2); the parent must have a structure. | — |
+| `COMPONENT` | `BFO:0000051` (has part) | `RECORD_COMPONENT` | The object node's `component_ref` equals a `components[].component_id`; no chemistry edge starts at a component node (Section 6). | — |
+
+Bridges chain from the anchor toward the species. For example, `CHEBI:75836`
+iron(2+) sulfate heptahydrate has part (`HYDRATE_PART`) `CHEBI:75832` iron(2+)
+sulfate (anhydrous), which has part (`ION_PART`, stoichiometry 1) `CHEBI:29033`
+iron(2+).
+
+The guards exist because the simpler rules were wrong. "Is a" over any entailed
+ChEBI subclass admits isotopologues and the wrong stereoisomer: `CHEBI:88300` and
+`CHEBI:134625` are asserted direct subclasses of D-glucose. Has-part read off a
+formula, with no charge check, admits the wrong oxidation state. Relaxing a guard
+re-admits exactly these cases.
+
+### 7.3 Link admissibility
+
+**L1. Exact reciprocal grounding.** A graph links to another record, in MIM or a
+sibling Mech, only through a node whose `grounding` equals that record's
+identifier. An edge between a MIM node grounded C and a sibling node S is
+admitted only if the pinned record S states that relation for exactly C.
+"Pinned" means at the commit recorded for that Mech in `conf/sibling_pins.yaml`;
+the gate reads the statement from the committed snapshot
+`mappings/cross_mech_assertions.jsonl`, never from a live checkout. The match
+between S's own grounding and C is reported as one of:
+
+- **`EXACT`**: the same CURIE.
+- **`GENERIC_SPECIALISATION`** (info): S grounds a Rhea generic class (its SMILES
+  contains `*` or its formula contains R), and C is an asserted ChEBI subclass of
+  it. Example: `EC:7.6.2.8` has input `CHEBI:140785` R-cob(III)alamin, and
+  `CHEBI:17439` cyanocob(III)alamin is an asserted subclass of it.
+- **`OBSOLETE_REPLACED`** (warning; blocks `MECHANISTIC`): S uses a deprecated
+  ChEBI id whose `IAO:0100001` replacement is C. Example: `TCDB:9.A.8` lists
+  `CHEBI:34754`, replaced by `CHEBI:29033` iron(2+). Follow the one declared
+  replacement, never a chain: the deprecated ids in `TCDB:2.A.55` now resolve to
+  carotenoids.
+- **`XREF_EQUIVALENT`** (warning): S's ligand CURIE equals a ChEBI database xref
+  of C, under the declared prefix synonym `pdb.ligand` ≡ `pdb-ccd`. Example: the
+  BioLiP ligand `pdb.ligand:CNC` matches `CHEBI:17439` through its xref
+  `pdb-ccd:CNC`.
+- **`SHARED_MEMBER`** (warning): a cited family record that shares a
+  `QUALIFIED` protein example with the node states the relation. Example:
+  `PANTHER:PTHR43185` maps the FeoB family to `GO:0005886` plasma membrane, and
+  its `QUALIFIED` example `UniProtKB:P33650` is the FeoB node's protein example.
+
+Anything else fails with `RECIPROCAL_GROUNDING_MISMATCH`. If S states only the
+opposite direction, the edge gets `RECIPROCAL_DIRECTION_MISMATCH` (warning) and
+needs a `DATABASE_RECORD` or `LITERATURE` basis to establish its direction.
+Example: ProteinTraitsMech writes `EC:1.16.1.6` with `CHEBI:17439` as an output,
+while UniProt `Q9Y4U1` states `PhysiologicalDirection=right-to-left;
+Xref=Rhea:RHEA:16115`.
+
+**What the sibling record must state (`SIBLING_RECORD`).** Each predicate
+mirrors the sibling's own assertion type, which is what makes the check
+mechanical. The endpoint rules for every predicate are in
+`docs/CAUSAL_GRAPH_CONTRACT.md`.
+
+| Predicate | Typical edge | The pinned sibling record must state |
+|---|---|---|
+| transports (`RO:0002020`) | transport function, including a TCDB family → chemical | The chemical is in its `chemical_participants` with role `TRANSPORTED`. |
+| has input / has output (`RO:0002233` / `RO:0002234`) | activity, process or pathway → chemical | Its own graph has the same predicate to the same grounding. |
+| has participant (`RO:0000057`) | activity, process or pathway → chemical | The chemical is a participant, or a grounded node of its graph. |
+| part of (`BFO:0000050`) | activity or process → process or pathway | PathwayMech participants or edges place the activity or process in the pathway. |
+| input of / output of (`RO:0002352` / `RO:0002353`) | chemical → pathway, process or activity | A PathwayMech `consumes` / `produces` edge with the chemical as subject. |
+| participates in (`RO:0000056`) | chemical → trait or process | A TraitMech `MECHANISTIC` graph grounds the chemical. |
+| enables (`RO:0002327`) | protein family or structure → activity | The family's xrefs meet the activity's xref closure (depth ≤ 2 through ProteinTraitsMech `mapped_xrefs` / `xrefs`), or a CellStructureMech `functions[].grounding` names the activity. |
+| contributes to (`RO:0002326`) | subunit family → activity or process | The same xref closure. |
+| involved in (`RO:0002331`) | family or activity → process or pathway | Its xrefs name the process or pathway. |
+| located in (`RO:0001025`) | family or activity → structure or location | Its `xrefs` or `mapped_xrefs` name the location, or `SHARED_MEMBER` applies. |
+| molecularly interacts with (`RO:0002436`) | family or structure ↔ chemical | The family xrefs a GO binding term whose `RO:0004009` is the chemical (with `ONTOLOGY_AXIOM`), or a BioLiP record's ligand is the chemical and its receptor is one of the node's protein examples. |
+| satisfies cofactor requirement (`MIM.vocab:satisfies_cofactor_requirement`) | chemical → `COFACTOR_REQ_*` quality | The requirement record's `xrefs` contain exactly the chemical's grounding. |
+| has characteristic (`RO:0000053`); causally upstream of (`RO:0002411`, `RO:0002304`, `RO:0002305`) | see the predicate table | The record states the same relation for exactly these groundings (L1). |
+
+The remaining predicates never take `SIBLING_RECORD`: has part, is a, has broader
+match, the protonation and tautomer steps, has primary input / output, has
+intermediate, starts with / ends with and results in transport across rest on
+ontology, structure or record bases; positively / negatively regulates and
+causally influences rest on literature. Is small molecule inhibitor of rests on
+literature, and an AntibioticMech record with the same grounding is reported as
+a co-reference, not as support.
+
+**L2. Chemistry moves only toward what the supplied form becomes**: its parts,
+its ions, their protonation or tautomer states, and its structural forms. It
+never moves up to a broader class to reach a sibling. Claims grounded on
+`CHEBI:17234` glucose (such as TraitMech's lactic acid fermentation trait,
+`traitmech:000026`) belong on `Glucose.yaml`, not `D-glucose.yaml`. And the
+cobalamin requirement `COFACTOR_REQ_CHEBI_30411` is not reachable from
+cyanocobalamin, because `CHEBI:17439` is not a subclass of `CHEBI:30411`.
+
+**L3. Every node is reachable from the anchor** (claw's structure audit). Each
+bridged species must touch at least one non-chemistry edge; otherwise the graph
+gets `BRIDGE_WITHOUT_PURPOSE` (warning).
+
+**L4. Chemistry edges carry no organism context.** Biological edges inherit the
+graph's `organism_scope`.
+
+**L5. Mixtures use `COMPONENT` edges**, and each component's own record owns its
+speciation and mechanism (Section 6).
+
+**L6. No projection onto `MIM:<slug>`.** A bridge is never projected onto the
+`MIM:<slug>` node and never exported as `same_as` or `exact_match`; has-part on
+`MIM:<slug>` stays reserved for `components`. As with a `skos:broadMatch` row
+(#245), a bridge relates two distinct nodes and never makes them one.
+
+### 7.4 Delegation (`SPECIATION`)
+
+A salt, hydrate or stock solution may carry a `graph_kind: SPECIATION` graph:
+the anchor plus bridges or `COMPONENT` edges to species or components that are
+MIM records. The schema makes such a graph `NONMECHANISTIC`, and its
+`scope_notes` names the records that hold the mechanism. The gate warns
+`DELEGATION_TARGET_HAS_NO_MECHANISM` until a target record has a `MECHANISTIC`
+graph explaining a role of the same name.
+
+Delegation keeps the mechanistic count honest: a salt does not get a mechanism
+of its own by restating its ion's. claw counts a `SPECIATION` graph as a graph
+but not as mechanistic, and the derived links ledger
+(`mappings/cross_mech_links.tsv`) adds `VIA_SPECIES_RECORD` rows, so a salt still
+shows the sibling records reached through its species record.
+
+### 7.5 Reading a failure
+
+| Code | Severity | What to do |
+|---|---|---|
+| `IDENTITY_GATE`, `ANCHOR_MISMATCH` | error | Resolve the identity first (Section 3, the duplicate family or the placeholder), then add the graph. |
+| `XREF_UNDECLARED` | error | Remove the xref, or make the entity a separate node joined by an edge. |
+| `BRIDGE_GUARD_FAILED`, `STOICHIOMETRY_MISMATCH`, `CHARGE_IMBALANCE`, `COMPLEXATION_NEEDS_LITERATURE` | error | Re-check the record's identity under Section 3, or add literature. Never weaken the guard. |
+| `RECIPROCAL_GROUNDING_MISMATCH` | error | The sibling does not state the relation for this grounding: bridge to the species it does ground, change the target, or drop the claim. |
+| `RECIPROCAL_DIRECTION_MISMATCH`, `OBSOLETE_REPLACED`, `XREF_EQUIVALENT`, `SHARED_MEMBER`, `BRIDGE_WITHOUT_PURPOSE`, `DELEGATION_TARGET_HAS_NO_MECHANISM` | warning | Review. Establish direction with a database or literature basis; an `OBSOLETE_REPLACED` edge keeps the graph out of `MECHANISTIC`. |
+| `GENERIC_SPECIALISATION` | info | None. |
+
+The full list of gate codes, including evidence, snapshot and scope-gate
+failures, is in `docs/CAUSAL_GRAPH_CONTRACT.md`.
 
 ---
 
@@ -1009,3 +1244,5 @@ shape and cross-record invariants.
 - `docs/CURATION_GUIDE.md` — broader curation workflow (this file is
   scoped to mapping semantics specifically).
 - `docs/stock_components.md` — typed ingredient/mixture partonomy contract.
+- `docs/CAUSAL_GRAPH_CONTRACT.md` — causal graph shape, node types, predicates,
+  evidence and cross-Mech links (Section 7 governs identity and bridges).

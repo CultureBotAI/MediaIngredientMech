@@ -124,6 +124,7 @@ See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:
 - [Workflows](docs/WORKFLOWS.md) - Common operations and integration
 - [Mapping Semantics](MAPPING_SEMANTICS.md) - SSSOM predicate semantics and registry/identity row pattern
 - [Component Partonomy](docs/stock_components.md) - Typed has-part references, evidence, and validation
+- [Causal Graph Contract](docs/CAUSAL_GRAPH_CONTRACT.md) - Ingredient mechanism graphs, active-species bridges, and links to sibling Mechs
 - [MIM KGX Export](docs/KGX_EXPORT.md) - Standalone ingredient graph with mappings, roles, components, and provenance
 - [Reviewed MIM SSSOM](docs/SSSOM_RELEASE.md) - Supported mappings and a separate lossless review backlog
 - [Historical MIM graph release review](reports/semantic_review_20260921/resolution/README.md) - Published 2026-09-21 snapshot, its validated counts, and scientific backlog

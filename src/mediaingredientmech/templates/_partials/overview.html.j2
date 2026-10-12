@@ -4,14 +4,12 @@
 <dl class="kv">
   <dt>Primary identifier</dt>
   <dd>
-    <a href="{{ curie_to_url(ingredient.identifier) }}" rel="nofollow noreferrer">
-      <code>{{ ingredient.identifier }}</code></a>
+    <code>{{ ingredient.identifier|linked_text }}</code>
   </dd>
   {% if om.ontology_id and om.ontology_id != ingredient.identifier %}
   <dt>Ontology term</dt>
   <dd>
-    <a href="{{ curie_to_url(om.ontology_id) }}" rel="nofollow noreferrer">
-      <code>{{ om.ontology_id }}</code></a>
+    <code>{{ om.ontology_id|linked_text }}</code>
     {% if om.ontology_label %} &mdash; {{ om.ontology_label }}{% endif %}
   </dd>
   {% endif %}
@@ -21,7 +19,7 @@
   {% endif %}
   {% if ingredient.notes %}
   <dt>Notes</dt>
-  <dd class="prewrap">{{ ingredient.notes }}</dd>
+  <dd class="prewrap">{{ ingredient.notes|linked_text }}</dd>
   {% endif %}
   {% if ingredient.kg_microbe_node_id %}
   <dt>kg-microbe node</dt>

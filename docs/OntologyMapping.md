@@ -206,6 +206,8 @@ attributes:
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
+    - CausalEdge
+    - ProteinExample
     - Discussion
     - Dataset
     range: MappingEvidence
@@ -302,6 +304,8 @@ attributes:
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
+    - CausalEdge
+    - ProteinExample
     - Discussion
     - Dataset
     range: MappingEvidence
