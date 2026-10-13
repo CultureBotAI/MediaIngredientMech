@@ -53,8 +53,8 @@ synonyms:
   source: communitymech-unmapped
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 569
-  media_count: 568
+  total_occurrences: 574
+  media_count: 573
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -146,6 +146,14 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-10-13T02:38:19.328795+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 568/569 -> 573/574 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=41d4d39012
+    rows=197256 distinct_recipes=15467]'
 chemical_properties:
   cas_rn: 60-00-4
   data_source: PubChem API

@@ -21,8 +21,8 @@ synonyms:
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 30
-  media_count: 30
+  total_occurrences: 39
+  media_count: 39
 curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
@@ -61,6 +61,14 @@ curation_history:
     (x1 CultureMech mentions); ''Horse serum (Invitrogen)'' (x1 CultureMech mentions);
     ''Horse serum (Oxoid)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-10-13T02:38:19.328900+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 30/30 -> 39/39 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=41d4d39012
+    rows=197256 distinct_recipes=15467]'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:146); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

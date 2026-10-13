@@ -101,8 +101,8 @@ synonyms:
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 127
-  media_count: 127
+  total_occurrences: 121
+  media_count: 121
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -185,6 +185,14 @@ curation_history:
     not resolve them: ''Vitamin K1 (1 mg/ml)'' (x1 CultureMech mentions). Source:
     culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-10-13T02:38:19.329415+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 127/127 -> 121/121 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=41d4d39012
+    rows=197256 distinct_recipes=15467]'
 chemical_properties:
   cas_rn: 84-80-0
   data_source: PubChem API

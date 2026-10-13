@@ -9,8 +9,8 @@ synonyms:
   source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 1
+  media_count: 1
 curation_history:
 - timestamp: '2026-04-19T07:53:54.781350+00:00'
   curator: audit_extract_complex_media_synonyms
@@ -37,6 +37,14 @@ curation_history:
     occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
     (#226). Source: communitymech.ingredient:Bacto_Tryptic_Soy_Broth_(Difco.'
   llm_assisted: true
+- timestamp: '2026-10-13T02:38:19.328624+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=41d4d39012
+    rows=197256 distinct_recipes=15467]'
 notes: Extracted from over-conflated Trypticase_Peptone.yaml synonyms
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:

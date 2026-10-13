@@ -19,8 +19,8 @@ synonyms:
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 5
-  media_count: 5
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-04-19T07:49:33.169103+00:00'
   curator: audit_extract_complex_media_from_agar
@@ -55,6 +55,14 @@ curation_history:
     not resolve them: ''Middlebrook 7H10 Agar (Difco)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-10-13T02:38:19.329036+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 5/5 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=41d4d39012
+    rows=197256 distinct_recipes=15467]'
 notes: Extracted from over-conflated Agar.yaml synonyms; curated to the specific named
   medium NCIT:C85509 on 2026-05-11.
 kg_microbe_node_id: NCIT:C85509

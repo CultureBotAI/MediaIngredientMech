@@ -106,6 +106,14 @@ curation_history:
     ·  10 H2O''. Tokens already present on the kg-microbe ontology node were left
     out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-10-13T02:38:19.329092+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 263/263 -> 269/269 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=41d4d39012
+    rows=197256 distinct_recipes=15467]'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: 10H2O.H4B4O9.2Na
@@ -113,8 +121,8 @@ chemical_properties:
   smiles: O.O.O.O.O.O.O.O.O.O.[H]OB1O[B-]2(O[H])OB(O[H])O[B-](O[H])(O1)O2.[Na+].[Na+]
   data_source: CHEBI sqlite (oaklib)
 occurrence_statistics:
-  total_occurrences: 263
-  media_count: 263
+  total_occurrences: 269
+  media_count: 269
 physicochemical_roles:
 - role: BUFFER
   confidence: 0.7
