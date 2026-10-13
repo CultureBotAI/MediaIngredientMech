@@ -49,7 +49,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MgSO4·H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: magnesium sulfate (1:1) heptahydrate
   synonym_type: EXACT_SYNONYM
@@ -114,7 +114,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
 - synonym_text: magnesium sulfate anhydrous
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: magnesium sulphate
   synonym_type: RAW_TEXT
@@ -297,6 +297,12 @@ curation_history:
     acid magnesium salt''; ''sulphate of magnesia''. Tokens already present on the
     kg-microbe ontology node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: mediaingredientmech#878
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped wrong-hydration synonyms to REJECTED_LABEL: MgSO4·H2O, magnesium
+    sulfate anhydrous (#878).'
+  new_status: MAPPED
 chemical_properties:
   cas_rn: 10034-99-8
   data_source: OAK/CHEBI xref

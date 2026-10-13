@@ -3,7 +3,7 @@
 **Mapped**: 2611 (97.4%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 69 (2.6%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 217,653
+**Total Occurrences**: 211,982
 
 ---
 
@@ -1378,7 +1378,6 @@
 | CHEBI:31793 | MgCO3 | CHEBI:31793 | CHEBI | SYNONYM_MATCH | 11 |
 | kgmicrobe.compound:mgso4_x_6_h2o | MgSO4 x 6 H2O | CHEBI:32599 | CHEBI | NARROW_MATCH | 35 |
 | CHEBI:31795 | MgSO4 x 7 H2O | CHEBI:31795 | CHEBI | EXACT_MATCH | 5673 |
-| CHEBI:31795 | MgSO4·H2O | CHEBI:31795 | CHEBI | EXACT_MATCH | 5673 |
 | NCIT:C85509 | Middlebrook 7H10 agar | NCIT:C85509 | NCIT | EXACT_MATCH | 5 |
 | CHEBI:216282 | miharamycin A | CHEBI:216282 | CHEBI | EXACT_MATCH | 0 |
 | UBERON:0001913 | Milk | UBERON:0001913 | UBERON | EXACT_MATCH | 3 |
@@ -2622,6 +2621,7 @@
 | cas:144-33-2 | Na2-citrate | CHEBI:30769 | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:39063 | Tricine | CHEBI:39063 | CHEBI | CAS_RN_LOOKUP | 44 |
 | NCIT:C217928 | Furaltadone hydrochloride | NCIT:C217928 | NCIT | EXACT_MATCH | 0 |
+| cas:14168-73-1 | MgSO4·H2O | CHEBI:32599 | CHEBI | CLOSE_MATCH | 2 |
 
 ## Other Statuses
 

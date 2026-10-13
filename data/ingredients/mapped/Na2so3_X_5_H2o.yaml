@@ -19,10 +19,10 @@ ontology_mapping:
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
 synonyms:
 - synonym_text: Anhydrous sodium sulfite
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Sodium sulfite anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: disodium sulfite
   synonym_type: EXACT_SYNONYM
@@ -107,6 +107,12 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted. The grounding is separately wrong (#321); this corrects only
     the CAS (#334).'
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: mediaingredientmech#878
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped wrong-hydration synonyms to REJECTED_LABEL: Anhydrous sodium sulfite,
+    Sodium sulfite anhydrous (#878).'
+  new_status: MAPPED
 kg_microbe_node_id: CHEBI:86477
 chemical_properties:
   data_source: PubChem (via CHEBI:86477)

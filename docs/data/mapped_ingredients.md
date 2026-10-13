@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-10-05T04:13:25.589661+00:00
+Generated: 2026-10-13T18:34:42.329833+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1408,7 +1408,6 @@ Total: 2680 ingredients
 | CHEBI:31795 | CHEBI:31795 | MgSO47H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:mgso4_x_6_h2o | CHEBI:32599 | MgSO4 x 6 H2O | MAPPED | CHEBI | NARROW_MATCH | 35 |
 | CHEBI:31795 | CHEBI:31795 | MgSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 5673 |
-| CHEBI:31795 | CHEBI:31795 | MgSO4·H2O | MAPPED | CHEBI | EXACT_MATCH | 5673 |
 | NCIT:C85509 | NCIT:C85509 | Middlebrook 7H10 agar | MAPPED | NCIT | EXACT_MATCH | 5 |
 | CHEBI:216282 | CHEBI:216282 | miharamycin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | UBERON:0001913 | UBERON:0001913 | Milk | MAPPED | UBERON | EXACT_MATCH | 3 |
@@ -2685,3 +2684,4 @@ Total: 2680 ingredients
 | cas:144-33-2 | CHEBI:30769 | Na2-citrate | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 44 |
 | NCIT:C217928 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
+| cas:14168-73-1 | CHEBI:32599 | MgSO4·H2O | MAPPED | CHEBI | CLOSE_MATCH | 2 |

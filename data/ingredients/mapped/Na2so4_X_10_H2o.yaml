@@ -20,7 +20,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
 - synonym_text: sodium sulfate, anhydrous
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -105,6 +105,12 @@ curation_history:
     sulfate, anhydrous''. Tokens already present on the kg-microbe ontology node were
     left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: mediaingredientmech#878
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: sodium sulfate, anhydrous
+    (#878).'
+  new_status: MAPPED
 chemical_properties:
   cas_rn: 7727-73-3
   data_source: PubChem (via CHEBI:32586)
