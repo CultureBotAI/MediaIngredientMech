@@ -650,10 +650,10 @@ current mapping*, so they agree with it by construction.
 
 Check `chemical_properties.data_source` before trusting a CAS, too — a
 `data_source` of the form `PubChem (via CHEBI:…)` was also derived from the
-mapping under test. `MgSO4·H2O` carries `cas_rn 10034-99-8` sourced
-`PubChem (via CHEBI:31795)` **and** external-sweep synonyms that are all
-*heptahydrate* spellings, so a curator reading both as corroboration would
-confirm the wrong term twice. Evidence counts only when its provenance is
+mapping under test. Until #878, `MgSO4·H2O` carried `cas_rn 10034-99-8`
+sourced `PubChem (via CHEBI:31795)` **and** external-sweep synonyms that were
+all *heptahydrate* spellings, so a curator reading both as corroboration would
+have confirmed the wrong term twice. Evidence counts only when its provenance is
 independent of the mapping being tested — e.g. a CAS present from the record's
 `CREATED` event, or a name lookup on the record's own label.
 

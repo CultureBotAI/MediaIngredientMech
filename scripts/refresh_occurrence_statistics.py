@@ -119,8 +119,8 @@ def shared_identifiers(records: list[dict]) -> set[str]:
     """Identifiers carried by more than one MIM record (#225 / #334).
 
     These counts are per-identifier, so every record sharing one receives the
-    same value -- `MgSO4 x 7 H2O` and `MgSO4·H2O` both take the heptahydrate's
-    5619. That is the honest per-identifier reading, but it means media_count
+    same value -- `Na2SO3` and `Na2SO3 x 5 H2O` both take CHEBI:86477's 26
+    (#896). That is the honest per-identifier reading, but it means media_count
     MUST NOT be summed across records, and it means a hydrate cohort still
     awaiting split inherits its family's total. Flagged in the report rather
     than silently applied.

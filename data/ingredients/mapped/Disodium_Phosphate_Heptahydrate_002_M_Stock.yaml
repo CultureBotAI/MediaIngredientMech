@@ -45,10 +45,10 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: sodium hydrogen phosphate--water (1/2)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: sodium monohydrogen phosphate dihydrat
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -129,6 +129,14 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped dihydrate synonyms to REJECTED_LABEL: sodium hydrogen phosphate--water
+    (1/2), sodium monohydrogen phosphate dihydrat (#878).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 ingredient_type: STOCK_SOLUTION
 notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:131825 exact
   mapping. Disodium phosphate heptahydrate (0.02 M stock) is a stock solution ingredient;

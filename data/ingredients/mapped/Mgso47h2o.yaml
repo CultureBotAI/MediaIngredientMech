@@ -42,7 +42,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MgSO4 . H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgSO4 x 6 H2O
   synonym_type: REJECTED_LABEL
@@ -66,7 +66,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MgSO4 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgSO4 x7 H2O
   synonym_type: HYDRATE_FORM
@@ -214,6 +214,17 @@ curation_history:
     ''MgSO4 x 6H2O''. Preserved original text and source metadata. No identity, mapping,
     role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''MgSO4 . H2O'' (HYDRATE_FORM), ''MgSO4 x H2O''
+    (HYDRATE_FORM). Both name the monohydrate, but this merge tombstone resolves to
+    magnesium sulfate heptahydrate (CHEBI:31795), and the label index answered both
+    with it (#893, #811). They now resolve to MgSO4·H2O (cas:14168-73-1). Kept as
+    provenance only. No status transition is recorded, so the tombstone keeps resolving
+    through its MERGED_INTO event (#882).'
+  llm_assisted: true
+  llm_model: claude-opus-5-5
 chemical_properties:
   cas_rn: 7487-88-9
   data_source: OAK/CHEBI xref
