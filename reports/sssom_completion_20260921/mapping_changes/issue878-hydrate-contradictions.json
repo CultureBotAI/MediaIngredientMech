@@ -3,135 +3,143 @@
   "batch": "issue878-hydrate-contradictions",
   "sequence": 13,
   "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/878",
-  "scope": "Move names of a different hydration state off MAPPED hydrate records (retyped REJECTED_LABEL or relocated to the matching form) and reground the magnesium sulfate monohydrate record to its own CAS identity (#878).",
+  "scope": "Move names of a different hydration state or substance off MAPPED records (retyped REJECTED_LABEL, and relocated to the matching record where that record carries no reviewed approval), reground the magnesium sulfate monohydrate record to its own CAS with a broadMatch parent and registry row, and recount the magnesium sulfate forms after a scoped membership correction (#878, #892, #893, #897, #899).",
   "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
   "before_sha256": "2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e",
-  "after_sha256": "d2a6435ca85bdafc468d861533095bb75d36cada406b0ddff36ada6a9c7aa9a9",
+  "after_sha256": "89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9",
   "before_row_count": 2985,
-  "after_row_count": 2986,
+  "after_row_count": 2987,
   "records": [
     {
       "source_record": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
       "shape": "wrong_form_synonym_retype",
       "before_yaml_sha256": "4834333348f8e549ba039f366fc9ef327bf1b68624ea95896c11c0abe688a687",
-      "after_yaml_sha256": "8553bdebb9515113e3a1ae237fa09c5b4ffd9f14768234230ab6279e380ed7e9",
-      "change": "Retyped synonyms naming a different hydration state to REJECTED_LABEL and appended a REJECTED_WRONG_FORM_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "cd39be349f5571862ff1fcd66ad7c32f911c7186f94816e59556521b0ceb875c",
+      "change": "Retyped 'copper(II) nitrate (anhydrous)' to REJECTED_LABEL with a REJECTED_WRONG_FORM_SYNONYMS event; identifier, ontology mapping and status unchanged. No anhydrous copper(II) nitrate record exists to receive it (#900).",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml",
       "shape": "wrong_form_synonym_retype",
       "before_yaml_sha256": "b8a1c18623493fd7beeda519304b6d2b45582605bd32236e51ecae638a506eb1",
-      "after_yaml_sha256": "a2b360c532cfba9cb24dc45f6734204957e11cb0f12ea35eb8fc05a995cf0072",
-      "change": "Retyped synonyms naming a different hydration state to REJECTED_LABEL and appended a REJECTED_WRONG_FORM_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "cf67a250e7d90ccd5c5dfb55ffe9a68202b25348e2f4851f16a5531cfec84e6f",
+      "change": "Retyped the dihydrate names 'sodium hydrogen phosphate--water (1/2)' and 'sodium monohydrogen phosphate dihydrat' to REJECTED_LABEL; they move to Na2HPO4 x 2 H2O. Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml",
       "shape": "wrong_form_synonym_retype",
       "before_yaml_sha256": "1b13fecbe7cba7143af066aebb2322f97fc880d1a3668abcc7bbdd3df6c581a9",
-      "after_yaml_sha256": "fcbb902b5f49c8e7faf1c2c5dc464af2a45122d559d6dec63727724a009c2b4b",
-      "change": "Retyped synonyms naming a different hydration state to REJECTED_LABEL and appended a REJECTED_WRONG_FORM_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8",
+      "change": "Retyped the dihydrate name 'Cystein-HCl x 2 H2O (5% (w/v))' to REJECTED_LABEL; MIM has no L-cysteine hydrochloride dihydrate record to receive it (#900). Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/L-cysteine_Hydrochloride_Monohydrate.yaml",
       "shape": "wrong_form_synonym_retype",
       "before_yaml_sha256": "96e8587336ea6c7151f917b04181d3331f75a89d96097c3e63cbfa9a062bd844",
-      "after_yaml_sha256": "baf79896dbf4e1c577de66b1ae56d920e3729161c374f9694185f385bd1c0a5c",
-      "change": "Merge tombstone (REJECTED, CHEBI:91248): retyped the dihydrate synonym to REJECTED_LABEL with an event that records no status change, so the tombstone still resolves to its merge target.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "3c273994c0452bf9cd64a1d6c653ebf8a8df85509023b3b5370296bb9a1457bb",
+      "change": "Merge tombstone (REJECTED, CHEBI:91248): retyped the dihydrate name to REJECTED_LABEL with an event that records no status change, so the tombstone still resolves to its merge target. No destination record exists (#900).",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Magnesium_Chloride.yaml",
+      "shape": "wrong_form_synonym_retype",
+      "before_yaml_sha256": "f078c02120e5b3865c2799fdb2c67c450c5ca28249f29b9080ffcce1e9e548e6",
+      "after_yaml_sha256": "80426d9af40689814be985f73e7d6949f4d5e10b77679cb5b56e73e52533a549",
+      "change": "Retyped the dihydrate name 'magnesium dichloride--water (1/2)' to REJECTED_LABEL on this hexahydrate record. Not moved: MgCl2 x 2 H2O carries a reviewed approval that a new synonym would cancel (#899, #900). Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Magnesium_Sulfate.yaml",
       "shape": "relocated_form_synonyms",
       "before_yaml_sha256": "f6bcc2e50cfd37107da60e61659ec24e3f323164e569e8a91e283b6acac96f4a",
-      "after_yaml_sha256": "a9d2873e7974b9180e83c7fb5a61465682cff4b4938d14dd3742d14054f8a76d",
-      "change": "Added anhydrous or dihydrate names relocated from the hydrate record that wrongly carried them, with an ADDED_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
-    },
-    {
-      "source_record": "data/ingredients/mapped/Mgcl2.yaml",
-      "shape": "relocated_form_synonyms",
-      "before_yaml_sha256": "789573c4a0219505ff93aa1c57d26e96acf029ac664bb5baab6c6f5f37dc2642",
-      "after_yaml_sha256": "c058b0053a2d2dfba5b471270d5f2b905ee784a9d3b9fdff31026c581aa0df3b",
-      "change": "Added anhydrous or dihydrate names relocated from the hydrate record that wrongly carried them, with an ADDED_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "5fbbaa3e38928f2d5af3f2e9c24075c4472e19606b65c0f306bceb77150673c0",
+      "change": "Added 'magnesium sulfate anhydrous', moved from the heptahydrate; retyped 'MgSO .7H O' (the heptahydrate with its subscripts lost) to REJECTED_LABEL and moved it to MgSO4 x 7 H2O (#899); occurrence_statistics 677/679 -> 643/645 after the scoped membership correction. Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. Its occurrence_statistics equal its CultureMech membership edges after the scoped correction (tests/test_culturemech_membership.py). This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Mgcl2_X_6_H2o.yaml",
       "shape": "wrong_form_synonym_retype",
       "before_yaml_sha256": "1f930a1a54e43a43f00f7b47b0526f517b6d3a5675a4ef6a8fe23b79212a06b9",
-      "after_yaml_sha256": "106ee3be7910dca87b8ad074e12f83f62ac9de534184a2853b8c47c978dc410c",
-      "change": "Retyped synonyms naming a different hydration state to REJECTED_LABEL and appended a REJECTED_WRONG_FORM_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "896ab2f6a5f8eba30d091824988472827f6d10d3eaaa1e82c29bd215e6ac0baa",
+      "change": "Retyped 'Magnesium chloride anhydrous' to REJECTED_LABEL. Not relocated: Mgcl2 (CHEBI:6636) carries reviewed approvals that a new synonym would cancel (#898, #900). Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Mgso47h2o.yaml",
+      "shape": "wrong_form_synonym_retype",
+      "before_yaml_sha256": "52006cce38471e41905900ecb13eae07428bf656d3103512529b1abdc1b9ed5d",
+      "after_yaml_sha256": "0e81b74df788165509de6fe4b288db7179bc7eac3323051e9afcd5f303cfadd1",
+      "change": "Merge tombstone (REJECTED, CHEBI:31795): retyped the monohydrate spellings 'MgSO4 . H2O' and 'MgSO4 x H2O' to REJECTED_LABEL with an event that records no status change, so the tombstone still resolves to its merge target; both move to MgSO4\u00b7H2O (#893).",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
       "shape": "wrong_form_synonym_retype",
       "before_yaml_sha256": "46c1e03a01433eac55c7a4198265a42675f84d7530b3a21f5e6d631de371a33e",
-      "after_yaml_sha256": "b9048265f75039076cf00e73a665210e028dd3345c41e6b6f097b8c264a29325",
-      "change": "Retyped synonyms naming a different hydration state to REJECTED_LABEL and appended a REJECTED_WRONG_FORM_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2",
+      "change": "Retyped 'MgSO4\u00b7H2O' and 'magnesium sulfate anhydrous' to REJECTED_LABEL; added 'MgSO .7H O', moved from the anhydrous record (#899); occurrence_statistics 5619/5673 -> 5634/5688 after the scoped membership correction. Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. Its occurrence_statistics equal its CultureMech membership edges after the scoped correction (tests/test_culturemech_membership.py). This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Mgso4h2o.yaml",
       "shape": "regrounded_hydrate_identity",
       "before_yaml_sha256": "7c5c152a51c5769d7acbeacf97f2f3ac23bf9217dd12787b658039ea38207585",
-      "after_yaml_sha256": "d08736df45525b1994c1abe8d33654ad9e9249f57bc12d833fd3f53e75e1eba6",
-      "change": "Regrounded the magnesium sulfate monohydrate record from CHEBI:31795 (heptahydrate) to cas:14168-73-1 with a CLOSE_MATCH parent CHEBI:32599, retyped 14 heptahydrate names to REJECTED_LABEL, added monohydrate synonyms, reset occurrence statistics to the record's own 2 CultureMech occurrences and updated the formula.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "d91d36df2bec21cd4738f888c55ab1bbe0d0a50b453ca0589123c323a9d70c75",
+      "change": "Regrounded the magnesium sulfate monohydrate record from CHEBI:31795 (heptahydrate) to cas:14168-73-1 with NARROW_MATCH to the anhydrous parent CHEBI:32599, published as skos:broadMatch plus the Rule B1 registry row kgmicrobe.compound:mgso4h2o (#897). Retyped 14 names to REJECTED_LABEL (13 heptahydrate names and products, and '.MgSO4', which states no hydration); added 'magnesium sulfate monohydrate' and the monohydrate spellings 'MgSO4 x H2O', 'MgSO4 . H2O' and 'MgSO4\u30fbH2O' (#893); occurrence_statistics 5619/5673 -> 19/19 after the scoped membership correction (#892); chemical properties now describe the monohydrate.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. Its occurrence_statistics equal its CultureMech membership edges after the scoped correction (tests/test_culturemech_membership.py). This correction supplies no scientific approval for any mapping or role. PubChem CID 16211255 and TogoMedium M2312 (GMO_001587) name the monohydrate; ChEBI releases 255 and 256 have no monohydrate term (search quoted in the record's evidence)."
     },
     {
       "source_record": "data/ingredients/mapped/Na2hpo4_X_2_H2o.yaml",
       "shape": "relocated_form_synonyms",
       "before_yaml_sha256": "e6522a266d5ccdaf5d7371c7cb24b34861c9a405508f7ba38d44a992cd70de16",
-      "after_yaml_sha256": "646bace076ac680c0721554e2bdce432149753ee43b5611be55be229ca2b4349",
-      "change": "Added anhydrous or dihydrate names relocated from the hydrate record that wrongly carried them, with an ADDED_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "42ecfeaef3b974803cd0b00916493a2741b78f6cfb3f663c3fea1f10742aabe6",
+      "change": "Added the dihydrate names 'sodium hydrogen phosphate--water (1/2)' and 'sodium monohydrogen phosphate dihydrat', moved from the heptahydrate stock record, with an ADDED_SYNONYMS event; identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Na2so3.yaml",
       "shape": "relocated_form_synonyms",
       "before_yaml_sha256": "66b45c6e68b16f3eaaa677ee172e67acbc58b39efe1ece301da8f35b70008dff",
-      "after_yaml_sha256": "ead93d9527bd19b366695e108cbf6d475085e2d80b40a64f110fca51a8c11fdb",
-      "change": "Added anhydrous or dihydrate names relocated from the hydrate record that wrongly carried them, with an ADDED_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "840729f87247e887f68d659f5830bbc4fe695dd907ea07fa7ace0e52dbca5a9a",
+      "change": "Added 'Anhydrous sodium sulfite' and 'Sodium sulfite anhydrous', moved from Na2SO3 x 5 H2O; retyped 'Natriumsulfid' (German for sodium sulfide) to REJECTED_LABEL without moving it (#899, #900). Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Na2so3_X_5_H2o.yaml",
       "shape": "wrong_form_synonym_retype",
       "before_yaml_sha256": "0a5b7a28ced6320df990a44507f669450243712d3d9de4d9dfda7458b7feefa9",
-      "after_yaml_sha256": "a24df636b232a05e768f550529f8fc35fa2398a9846e73765c98500e1e76d171",
-      "change": "Retyped synonyms naming a different hydration state to REJECTED_LABEL and appended a REJECTED_WRONG_FORM_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "ac0d2946bafe59cc61795937c3d9077020a99ff978e6eb49538dd7b91a6d0940",
+      "change": "Retyped 'Anhydrous sodium sulfite' and 'Sodium sulfite anhydrous' to REJECTED_LABEL; they move to Na2SO3. Identifier, ontology mapping and status unchanged; the record's own identity is #896.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Na2so4.yaml",
       "shape": "relocated_form_synonyms",
       "before_yaml_sha256": "3186b66fee27399b950c491077056ea58c6352d12cecfd8358455abeb5137c07",
-      "after_yaml_sha256": "68a2ab89529d4010177129744d530315b325a5ffa5ccf7a242f4abace4ac6a1e",
-      "change": "Added anhydrous or dihydrate names relocated from the hydrate record that wrongly carried them, with an ADDED_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "a58a2bf0cb953270beb578b442267e856098cc72abb3470742c6f6a50b5e2e81",
+      "change": "Added 'sodium sulfate, anhydrous', moved from the decahydrate; retyped the decahydrate names 'Glauber's salt' and 'Glaubersalz' to REJECTED_LABEL and moved them to Na2SO4 x 10 H2O (#899). Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     },
     {
       "source_record": "data/ingredients/mapped/Na2so4_X_10_H2o.yaml",
       "shape": "wrong_form_synonym_retype",
       "before_yaml_sha256": "97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816",
-      "after_yaml_sha256": "378125a1bb86df47b5c6d6bcbf3b820b9ac6dc40ae0917f0a42170e2da7af2d1",
-      "change": "Retyped synonyms naming a different hydration state to REJECTED_LABEL and appended a REJECTED_WRONG_FORM_SYNONYMS event; identifier, ontology mapping and status unchanged.",
-      "verification": "Checked against MAPPING_SEMANTICS \u00a73: the record's preferred term, CAS and formula state the hydration form, and the moved or retyped names state a different form. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This is a negative or relocating correction and supplies no scientific approval for any mapping or role."
+      "after_yaml_sha256": "e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db",
+      "change": "Retyped 'sodium sulfate, anhydrous' to REJECTED_LABEL (moved to Na2SO4); added 'Glauber's salt' and 'Glaubersalz', ChEBI's names for CHEBI:32586 (#899). Identifier, ontology mapping and status unchanged.",
+      "verification": "Checked against MAPPING_SEMANTICS \u00a73 and local ChEBI release 255: the record's preferred term, CAS and formula state its form, and each moved or retyped name states a different hydration state or substance. just validate-all, qc-sssom, qc-roundtrip and qc-flat-coverage pass. This correction supplies no scientific approval for any mapping or role."
     }
   ],
   "changed_rows": 13,
-  "added_rows": 1,
+  "added_rows": 2,
   "removed_rows": 0,
   "touched_subjects": [
     "MIM:Cu_No32_X_3_H2o",
     "MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock",
     "MIM:L-cysteine_Hcl_X_H2o",
+    "MIM:Magnesium_Chloride",
     "MIM:Magnesium_Sulfate",
-    "MIM:Mgcl2",
     "MIM:Mgcl2_X_6_H2o",
     "MIM:Mgso4_X_7_H2o",
     "MIM:Mgso4h2o",
@@ -249,6 +257,41 @@
     },
     {
       "kind": "changed",
+      "before_position": 1743,
+      "after_position": 1743,
+      "before": {
+        "subject_id": "MIM:Magnesium_Chloride",
+        "subject_label": "Magnesium chloride",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:86345",
+        "object_label": "magnesium dichloride hexahydrate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediadive_compounds_hydrate|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=merge_identifier_collisions]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.8",
+        "comment": "",
+        "other": "MgCl2 x 6 H2O|CCRIS 3494|MgCl*6H2O|MgCl2\u22196H2O|magnesium dichloride--water (1/6)|MgCl 2|MgCl2 . 6H2O|MgCl2 x 6 H2O (200 g/l stock solution)|MgCl2x 6H2O|MgCl2x6H2O|MgCl2\u00b76 H2O|magnesium dichloride--water (1/2)|CAS:7791-18-6",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "after": {
+        "subject_id": "MIM:Magnesium_Chloride",
+        "subject_label": "Magnesium chloride",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:86345",
+        "object_label": "magnesium dichloride hexahydrate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediadive_compounds_hydrate|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=merge_identifier_collisions]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.8",
+        "comment": "",
+        "other": "MgCl2 x 6 H2O|CCRIS 3494|MgCl*6H2O|MgCl2\u22196H2O|magnesium dichloride--water (1/6)|MgCl 2|MgCl2 . 6H2O|MgCl2 x 6 H2O (200 g/l stock solution)|MgCl2x 6H2O|MgCl2x6H2O|MgCl2\u00b76 H2O|CAS:7791-18-6",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      }
+    },
+    {
+      "kind": "changed",
       "before_position": 1746,
       "after_position": 1746,
       "before": {
@@ -278,43 +321,8 @@
         "mapping_date": "2026-09-02",
         "confidence": "0.99",
         "comment": "",
-        "other": "Magnesium sulfate (1:1)|Magnesiumsulfat|Mg2SO4|MgSO .7H O|MgSO4|magnesium sulfate anhydrous|CAS:7487-88-9",
+        "other": "Magnesium sulfate (1:1)|Magnesiumsulfat|Mg2SO4|MgSO4|magnesium sulfate anhydrous|CAS:7487-88-9",
         "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
-      }
-    },
-    {
-      "kind": "changed",
-      "before_position": 1860,
-      "after_position": 1860,
-      "before": {
-        "subject_id": "MIM:Mgcl2",
-        "subject_label": "MgCl2",
-        "predicate_id": "skos:exactMatch",
-        "object_id": "CHEBI:6636",
-        "object_label": "magnesium dichloride",
-        "object_source": "obo:chebi.owl",
-        "mapping_justification": "semapv:LexicalMatching",
-        "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
-        "mapping_date": "2026-08-27",
-        "confidence": "0.8",
-        "comment": "",
-        "other": "Magnesiumchlorid|[MgCl2]|CAS:7786-30-3",
-        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
-      },
-      "after": {
-        "subject_id": "MIM:Mgcl2",
-        "subject_label": "MgCl2",
-        "predicate_id": "skos:exactMatch",
-        "object_id": "CHEBI:6636",
-        "object_label": "magnesium dichloride",
-        "object_source": "obo:chebi.owl",
-        "mapping_justification": "semapv:LexicalMatching",
-        "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
-        "mapping_date": "2026-08-27",
-        "confidence": "0.8",
-        "comment": "",
-        "other": "Magnesiumchlorid|[MgCl2]|Magnesium chloride anhydrous|CAS:7786-30-3",
-        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
       }
     },
     {
@@ -383,7 +391,7 @@
         "mapping_date": "2026-09-02",
         "confidence": "0.8",
         "comment": "",
-        "other": ".MgSO4 x 7 H2O|MgSO 4 x 7 H2O|MgSO x 7 H2O|MgSO2 x 7 H2O|MgSO4.7H2O|MgSO4x7H2O|magnesium sulfate (1:1) heptahydrate|magnesium sulphate heptahydrate|sulfuric acid magnesium salt heptahydrate|MgSO4\u20227H2O|MgSO4\u20227H2O (Sigma 230391)|MgSO4\u20227H2O(CAS: 10034-99-8)|MgSO4\u20227H2O(Sigma 230391)|magnesium sulfate--water (1/7)|MgSO4\u00b77H2O|MgSO47H2O|.MgSO4|MgSO|MgSO .7H2O|MgSO 4|MgSO2|MgSO2\u00b77H2O|MgSO4 x 7 H20|magnesium sulphate|magnesium(II) sulfate|sulfuric acid magnesium salt|sulphate of magnesia|CAS:10034-99-8",
+        "other": ".MgSO4 x 7 H2O|MgSO 4 x 7 H2O|MgSO x 7 H2O|MgSO2 x 7 H2O|MgSO4.7H2O|MgSO4x7H2O|magnesium sulfate (1:1) heptahydrate|magnesium sulphate heptahydrate|sulfuric acid magnesium salt heptahydrate|MgSO4\u20227H2O|MgSO4\u20227H2O (Sigma 230391)|MgSO4\u20227H2O(CAS: 10034-99-8)|MgSO4\u20227H2O(Sigma 230391)|magnesium sulfate--water (1/7)|MgSO4\u00b77H2O|MgSO47H2O|.MgSO4|MgSO|MgSO .7H2O|MgSO 4|MgSO2|MgSO2\u00b77H2O|MgSO4 x 7 H20|magnesium sulphate|magnesium(II) sulfate|sulfuric acid magnesium salt|sulphate of magnesia|MgSO .7H O|CAS:10034-99-8",
         "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
       }
     },
@@ -409,17 +417,17 @@
       "after": {
         "subject_id": "MIM:Mgso4h2o",
         "subject_label": "MgSO4\u00b7H2O",
-        "predicate_id": "skos:closeMatch",
+        "predicate_id": "skos:broadMatch",
         "object_id": "CHEBI:32599",
         "object_label": "magnesium sulfate",
         "object_source": "obo:chebi.owl",
         "mapping_justification": "semapv:ManualMappingCuration",
-        "source": "MIM:CultureMech|MIM:curator=fix_hydrate_contradictions_878",
-        "mapping_date": "2026-10-13",
+        "source": "MIM:CultureMech|MIM:curator=claude|MIM:MIM curation (#878)",
+        "mapping_date": "2026-10-15",
         "confidence": "0.9",
-        "comment": "Parent anchor per MAPPING_SEMANTICS Section 3: monohydrate grounded to parent magnesium sulfate CHEBI:32599 (closeMatch).",
-        "other": "magnesium sulfate monohydrate|kieserite|CAS:14168-73-1",
-        "validation_method": "manual:fix_hydrate_contradictions_878|REGISTRY|2026-10-13"
+        "comment": "Parent anchor per MAPPING_SEMANTICS Section 3 step 2 (#878, #897): ChEBI has no magnesium sulfate monohydrate term, so the record keeps its own CAS and CHEBI:32599 is the anhydrous parent.",
+        "other": "magnesium sulfate monohydrate|MgSO4 x H2O|MgSO4 . H2O|MgSO4\u30fbH2O",
+        "validation_method": "manual:issue878_hydrate_contradictions|REGISTRY|2026-10-15"
       }
     },
     {
@@ -435,18 +443,39 @@
         "object_label": "MgSO4\u00b7H2O",
         "object_source": "registry:cas",
         "mapping_justification": "semapv:ManualMappingCuration",
-        "source": "MIM:CultureMech|MIM:curator=fix_hydrate_contradictions_878",
-        "mapping_date": "2026-10-13",
+        "source": "MIM:CultureMech|MIM:curator=claude|MIM:MIM curation (#878)",
+        "mapping_date": "2026-10-15",
         "confidence": "0.99",
         "comment": "Registry/identity row preserving cas:14168-73-1 alongside parent CHEBI:32599.",
         "other": "CAS:14168-73-1",
-        "validation_method": "manual:fix_hydrate_contradictions_878|IDENTITY|2026-10-13"
+        "validation_method": "manual:issue878_hydrate_contradictions|REGISTRY|2026-10-15"
+      }
+    },
+    {
+      "kind": "added",
+      "before_position": null,
+      "after_position": 1872,
+      "before": null,
+      "after": {
+        "subject_id": "MIM:Mgso4h2o",
+        "subject_label": "MgSO4\u00b7H2O",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.compound:mgso4h2o",
+        "object_label": "MgSO4\u00b7H2O",
+        "object_source": "kgm:compound",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:curator=claude|MIM:MIM curation (#878)",
+        "mapping_date": "2026-10-15",
+        "confidence": "0.99",
+        "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:mgso4h2o alongside parent CHEBI:32599.",
+        "other": "CAS:14168-73-1",
+        "validation_method": "manual:issue878_hydrate_contradictions|REGISTRY|2026-10-15"
       }
     },
     {
       "kind": "changed",
       "before_position": 1998,
-      "after_position": 1999,
+      "after_position": 2000,
       "before": {
         "subject_id": "MIM:Na2hpo4_X_2_H2o",
         "subject_label": "Na2HPO4 x 2 H2O",
@@ -481,7 +510,7 @@
     {
       "kind": "changed",
       "before_position": 2017,
-      "after_position": 2018,
+      "after_position": 2019,
       "before": {
         "subject_id": "MIM:Na2so3",
         "subject_label": "Na2SO3",
@@ -509,14 +538,14 @@
         "mapping_date": "2026-08-27",
         "confidence": "0.99",
         "comment": "",
-        "other": "Na2SO3 x 5 H2O|Dried sodium sulfite|Natrium sulfurosum|Natriumsulfid|Sodium sulphite|Sulfurous acid, disodium salt|disodium sulfite|Anhydrous sodium sulfite|Sodium sulfite anhydrous|CAS:7757-83-7",
+        "other": "Na2SO3 x 5 H2O|Dried sodium sulfite|Natrium sulfurosum|Sodium sulphite|Sulfurous acid, disodium salt|disodium sulfite|Anhydrous sodium sulfite|Sodium sulfite anhydrous|CAS:7757-83-7",
         "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
       }
     },
     {
       "kind": "changed",
       "before_position": 2018,
-      "after_position": 2019,
+      "after_position": 2020,
       "before": {
         "subject_id": "MIM:Na2so3_X_5_H2o",
         "subject_label": "Na2SO3 x 5 H2O",
@@ -551,7 +580,7 @@
     {
       "kind": "changed",
       "before_position": 2019,
-      "after_position": 2020,
+      "after_position": 2021,
       "before": {
         "subject_id": "MIM:Na2so4",
         "subject_label": "Na2SO4",
@@ -579,14 +608,14 @@
         "mapping_date": "2026-09-02",
         "confidence": "0.99",
         "comment": "",
-        "other": "NaSO4|Natriumsulfat|disodium sulfate|disodium sulphate|salt cake|sodium sulphate|Glauber's salt|Glaubersalz|sodium sulfate, anhydrous|CAS:7757-82-6",
+        "other": "NaSO4|Natriumsulfat|disodium sulfate|disodium sulphate|salt cake|sodium sulphate|sodium sulfate, anhydrous|CAS:7757-82-6",
         "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
       }
     },
     {
       "kind": "changed",
       "before_position": 2020,
-      "after_position": 2021,
+      "after_position": 2022,
       "before": {
         "subject_id": "MIM:Na2so4_X_10_H2o",
         "subject_label": "Na2SO4 x 10 H2O",
@@ -614,7 +643,7 @@
         "mapping_date": "2026-09-02",
         "confidence": "0.8",
         "comment": "",
-        "other": "Na2SO4.10H2O|sodium sulfate--water (1/10)|CAS:7727-73-3",
+        "other": "Na2SO4.10H2O|sodium sulfate--water (1/10)|Glauber's salt|Glaubersalz|CAS:7727-73-3",
         "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
       }
     }
@@ -2490,7 +2519,6 @@
     1868,
     1869,
     1870,
-    1872,
     1873,
     1874,
     1875,
@@ -3604,6 +3632,7 @@
     2983,
     2984,
     2985,
-    2986
+    2986,
+    2987
   ]
 }

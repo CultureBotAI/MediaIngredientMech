@@ -20,7 +20,9 @@ FERROUS_SULFATE_PENTAHYDRATE_ID = "kgmicrobe.compound:feso4_x_5_h2o"
 IRON_0_ID = "CHEBI:82664"
 LIPOIC_ACID_ID = "CHEBI:16494"
 MAGNESIUM_2_ID = "CHEBI:18420"
+MAGNESIUM_SULFATE_HEPTAHYDRATE_ID = "CHEBI:31795"
 MAGNESIUM_SULFATE_HEXAHYDRATE_ID = "kgmicrobe.compound:mgso4_x_6_h2o"
+MAGNESIUM_SULFATE_MONOHYDRATE_ID = "cas:14168-73-1"
 MANGANESE_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:mnso4_x_7_h2o"
 MOLYBDENUM_ID = "kgmicrobe.compound:molybdenum"
 POTASSIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:k2so4_x_7_h2o"
@@ -91,6 +93,16 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("MgSO4 x 6 H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
     _source_label_key("MgSO4 x 6H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
     _source_label_key("MgSO4·6H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
+    # #878/#893: MgSO4·H2O left the heptahydrate for its own CAS. CultureMech
+    # still resolves these spellings to CHEBI:31795, to anhydrous CHEBI:32599,
+    # or not at all (ambiguous).
+    _source_label_key("MgSO4·H2O"): MAGNESIUM_SULFATE_MONOHYDRATE_ID,
+    _source_label_key("MgSO4 x H2O"): MAGNESIUM_SULFATE_MONOHYDRATE_ID,
+    _source_label_key("MgSO4 . H2O"): MAGNESIUM_SULFATE_MONOHYDRATE_ID,
+    _source_label_key("MgSO4・H2O"): MAGNESIUM_SULFATE_MONOHYDRATE_ID,
+    # #899: MgSO4·7H2O with its subscripts lost. CultureMech trusts MIM's old
+    # answer, the anhydrous CHEBI:32599, over the recipes' own CHEBI:31795.
+    _source_label_key("MgSO .7H O"): MAGNESIUM_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("MnSO4 . 7H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("MnSO4 x 7 H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("MnSO4 x 7H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,

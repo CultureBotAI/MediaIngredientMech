@@ -1,4 +1,4 @@
-generation_date: '2026-10-14T07:00:06.125321+00:00'
+generation_date: '2026-10-15T02:37:35.785775+00:00'
 total_count: 2680
 mapped_count: 2611
 unmapped_count: 0
@@ -62813,10 +62813,11 @@ ingredients:
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: copper(II) nitrate
       (anhydrous) (#878).'
+    previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
   chemical_properties:
@@ -74425,10 +74426,11 @@ ingredients:
     new_status: MAPPED
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped dihydrate synonyms to REJECTED_LABEL: sodium hydrogen phosphate--water
       (1/2), sodium monohydrogen phosphate dihydrat (#878).'
+    previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
   ingredient_type: STOCK_SOLUTION
@@ -105907,10 +105909,11 @@ ingredients:
       (#521).
     llm_assisted: true
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped dihydrate synonym to REJECTED_LABEL: Cystein-HCl x 2 H2O (5%
       (w/v)) (#878).'
+    previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
   chemical_properties:
@@ -108793,7 +108796,7 @@ ingredients:
       there.
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped dihydrate synonym to REJECTED_LABEL: Cystein-HCl x 2 H2O (5%
       (w/v)) (#878).'
@@ -113171,7 +113174,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: magnesium dichloride--water (1/2)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -113279,6 +113282,17 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''magnesium dichloride--water (1/2)'' (RAW_TEXT).
+      It names the dihydrate (ChEBI''s name for CHEBI:131394), not this hexahydrate
+      record. Not moved: MgCl2 x 2 H2O carries a reviewed approval that a new synonym
+      would cancel (#899, #900). Kept as provenance only.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-5-5
   chemical_properties:
     cas_rn: 7791-18-6
     data_source: OAK/CHEBI xref
@@ -113336,7 +113350,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: MgSO .7H O
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 × 7 H2O
     synonym_type: REJECTED_LABEL
@@ -113401,8 +113415,8 @@ ingredients:
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 679
-    media_count: 677
+    total_occurrences: 645
+    media_count: 643
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -113549,12 +113563,33 @@ ingredients:
     new_status: MAPPED
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: ADDED_SYNONYMS
     changes: 'Added anhydrous synonym: magnesium sulfate anhydrous (from chebi_synonym_review
       / #878).'
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''MgSO .7H O'' (EXACT_SYNONYM). It is MgSO4·7H2O
+      with its subscripts lost, the heptahydrate, not this anhydrous record; its 17
+      CCAP recipes carry CHEBI:31795 as their own term.id. Moved to MgSO4 x 7 H2O
+      (#899). Kept as provenance only; it must not resolve, be exported, or enter
+      the SSSOM other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-5-5
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'occurrence_statistics 677/679 -> 643/645 (media_count/total_occurrences),
+      recounted from the CultureMech membership edges after the scoped correction
+      of MgSO4 hydrate source labels (reports/semantic_review_20260921/corrections/2026-10-15-mgso4-hydrates.json;
+      #892, #893, #899).'
+    llm_assisted: true
+    llm_model: claude-opus-5-5
   chemical_properties:
     cas_rn: 7487-88-9
     data_source: PubChem API
@@ -118762,9 +118797,6 @@ ingredients:
   - synonym_text: magnesium dichloride
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
-  - synonym_text: Magnesium chloride anhydrous
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 291
@@ -118825,13 +118857,6 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
-    action: ADDED_SYNONYMS
-    changes: 'Added anhydrous synonym: Magnesium chloride anhydrous (from chebi_synonym_review
-      / #878).'
-    new_status: MAPPED
-    llm_assisted: true
   chemical_properties:
     cas_rn: 7786-30-3
     data_source: PubChem API
@@ -119205,10 +119230,11 @@ ingredients:
     new_status: MAPPED
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: Magnesium chloride
       anhydrous (#878).'
+    previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
   chemical_properties:
@@ -119804,7 +119830,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: MgSO4 . H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 6 H2O
     synonym_type: REJECTED_LABEL
@@ -119828,7 +119854,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: MgSO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x7 H2O
     synonym_type: HYDRATE_FORM
@@ -119976,6 +120002,17 @@ ingredients:
       6 H2O''; ''MgSO4 x 6H2O''. Preserved original text and source metadata. No identity,
       mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''MgSO4 . H2O'' (HYDRATE_FORM), ''MgSO4 x H2O''
+      (HYDRATE_FORM). Both name the monohydrate, but this merge tombstone resolves
+      to magnesium sulfate heptahydrate (CHEBI:31795), and the label index answered
+      both with it (#893, #811). They now resolve to MgSO4·H2O (cas:14168-73-1). Kept
+      as provenance only. No status transition is recorded, so the tombstone keeps
+      resolving through its MERGED_INTO event (#882).'
+    llm_assisted: true
+    llm_model: claude-opus-5-5
   chemical_properties:
     cas_rn: 7487-88-9
     data_source: OAK/CHEBI xref
@@ -120533,10 +120570,13 @@ ingredients:
   - synonym_text: sulphate of magnesia
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: MgSO .7H O
+    synonym_type: HYDRATE_FORM
+    source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 5673
-    media_count: 5619
+    total_occurrences: 5688
+    media_count: 5634
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -120704,12 +120744,29 @@ ingredients:
       kg-microbe ontology node were left out as redundant (#520).'
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped wrong-hydration synonyms to REJECTED_LABEL: MgSO4·H2O, magnesium
       sulfate anhydrous (#878).'
+    previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: ADDED_SYNONYMS
+    changes: 'Added ''MgSO .7H O'' (HYDRATE_FORM), moved from the anhydrous Magnesium
+      sulfate record: it is MgSO4·7H2O with its subscripts lost (#899).'
+    llm_assisted: true
+    llm_model: claude-opus-5-5
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'occurrence_statistics 5619/5673 -> 5634/5688 (media_count/total_occurrences),
+      recounted from the CultureMech membership edges after the scoped correction
+      of MgSO4 hydrate source labels (reports/semantic_review_20260921/corrections/2026-10-15-mgso4-hydrates.json;
+      #892, #893, #899).'
+    llm_assisted: true
+    llm_model: claude-opus-5-5
   chemical_properties:
     cas_rn: 10034-99-8
     data_source: OAK/CHEBI xref
@@ -131318,7 +131375,7 @@ ingredients:
     new_status: MAPPED
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: ADDED_SYNONYMS
     changes: 'Added dihydrate synonyms: sodium hydrogen phosphate--water (1/2), sodium
       monohydrogen phosphate dihydrat (from chebi_synonym_review / #878).'
@@ -134758,7 +134815,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Natriumsulfid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Sodium sulphite
     synonym_type: EXACT_SYNONYM
@@ -134866,12 +134923,23 @@ ingredients:
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: ADDED_SYNONYMS
     changes: 'Added anhydrous synonyms: Anhydrous sodium sulfite, Sodium sulfite anhydrous
       (from chebi_synonym_review / #878).'
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Natriumsulfid'' (EXACT_SYNONYM). It is German
+      for sodium sulfide (Natriumsulfit is the sulfite), so it does not name this
+      record. Not moved: the sodium sulfide record carries a reviewed approval that
+      a new synonym would cancel (#899, #900). Kept as provenance only.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-5-5
   chemical_properties:
     cas_rn: 7757-83-7
     data_source: PubChem API
@@ -134999,10 +135067,11 @@ ingredients:
       can be substituted. The grounding is separately wrong (#321); this corrects
       only the CAS (#334).'
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped wrong-hydration synonyms to REJECTED_LABEL: Anhydrous sodium
       sulfite, Sodium sulfite anhydrous (#878).'
+    previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
   kg_microbe_node_id: CHEBI:86477
@@ -135075,10 +135144,10 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Glauber's salt
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: Glaubersalz
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: disodium sulfate decahydrate
     synonym_type: REJECTED_LABEL
@@ -135225,12 +135294,23 @@ ingredients:
     new_status: MAPPED
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: ADDED_SYNONYMS
     changes: 'Added anhydrous synonym: sodium sulfate, anhydrous (from chebi_synonym_review
       / #878).'
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Glauber''s salt'' (RAW_TEXT), ''Glaubersalz''
+      (RAW_TEXT). Glauber''s salt is sodium sulfate decahydrate; ChEBI lists both
+      names on CHEBI:32586, not on this anhydrous term. Moved to Na2SO4 x 10 H2O (#899).
+      Kept as provenance only.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-5-5
   chemical_properties:
     cas_rn: 7757-82-6
     data_source: PubChem API
@@ -135277,6 +135357,12 @@ ingredients:
     source: chebi_synonym_review
   - synonym_text: sodium sulfate, anhydrous
     synonym_type: REJECTED_LABEL
+    source: sssom_other_backfill
+  - synonym_text: Glauber's salt
+    synonym_type: EXACT_SYNONYM
+    source: sssom_other_backfill
+  - synonym_text: Glaubersalz
+    synonym_type: EXACT_SYNONYM
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -135362,12 +135448,21 @@ ingredients:
       were left out as redundant (#520).'
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: sodium sulfate, anhydrous
       (#878).'
+    previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: ADDED_SYNONYMS
+    changes: 'Added ''Glauber''s salt'' and ''Glaubersalz'' (EXACT_SYNONYM), moved
+      from the anhydrous Na2SO4 record: both name sodium sulfate decahydrate, and
+      ChEBI lists them on CHEBI:32586 (#899).'
+    llm_assisted: true
+    llm_model: claude-opus-5-5
   chemical_properties:
     cas_rn: 7727-73-3
     data_source: PubChem (via CHEBI:32586)
@@ -221630,21 +221725,27 @@ ingredients:
     ontology_id: CHEBI:32599
     ontology_label: magnesium sulfate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: '[HISTORICAL — superseded by #878 curation: this record is monohydrate,
-        not heptahydrate] Imported from CultureMech pipeline'
+        not heptahydrate] Imported from CultureMech pipeline, quality=DIRECT_MATCH'
     - evidence_type: CURATOR_JUDGMENT
       source: MIM curation (#878)
-      notes: identifier CHEBI:31795 -> cas:14168-73-1; ontology_id CHEBI:31795 ->
-        CHEBI:32599; mapping_quality EXACT_MATCH -> CLOSE_MATCH. The record represents
-        magnesium sulfate monohydrate (MgSO4·H2O), but was incorrectly grounded to
-        CHEBI:31795 (magnesium sulfate heptahydrate). ChEBI lacks a specific term
-        for magnesium sulfate monohydrate, so the record takes its verified CAS cas:14168-73-1
-        as primary identifier (MAPPING_SEMANTICS §3 step 2) and grounds to the parent
-        compound CHEBI:32599 (magnesium sulfate) with mapping_quality CLOSE_MATCH.
+      notes: 'identifier CHEBI:31795 -> cas:14168-73-1; ontology_id CHEBI:31795 ->
+        CHEBI:32599; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is magnesium
+        sulfate monohydrate (TogoMedium M2312 lists the ingredient as GMO_001587 ''Magnesium
+        sulfate monohydrate'') but was grounded to CHEBI:31795, the heptahydrate.
+        Search for a monohydrate term, 2026-10-15: local ChEBI release 255 (labels
+        and synonyms naming magnesium sulfate with monohydrate, (1/1), hydrate or
+        kieserite; formulas H2MgO5S and Mg.O4S.H2O; xrefs to CAS 14168-73-1) found
+        only the heptahydrate CHEBI:31795; OLS4 ChEBI release 256 returned no hits
+        for ''magnesium sulfate monohydrate'' or ''kieserite'', and ''magnesium sulfate''
+        returned only CHEBI:32599 and CHEBI:31795. So the record takes its own CAS,
+        cas:14168-73-1 (PubChem CID 16211255 ''Magnesium sulfate monohydrate''), with
+        skos:broadMatch to the anhydrous parent CHEBI:32599 and the Rule B1 registry
+        row kgmicrobe.compound:mgso4h2o (MAPPING_SEMANTICS §3 step 2).'
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -221695,13 +221796,19 @@ ingredients:
   - synonym_text: magnesium sulfate monohydrate
     synonym_type: EXACT_SYNONYM
     source: PubChem CID 16211255
-  - synonym_text: kieserite
-    synonym_type: EXACT_SYNONYM
-    source: PubChem CID 16211255
+  - synonym_text: MgSO4 x H2O
+    synonym_type: HYDRATE_FORM
+    source: kg_microbe
+  - synonym_text: MgSO4 . H2O
+    synonym_type: HYDRATE_FORM
+    source: kg_microbe
+  - synonym_text: MgSO4・H2O
+    synonym_type: HYDRATE_FORM
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
+    total_occurrences: 19
+    media_count: 19
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -221771,17 +221878,35 @@ ingredients:
       out as redundant (#520).'
     llm_assisted: false
   - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: mediaingredientmech#878
+    curator: claude
     action: REGROUNDED_HYDRATE_RECORD
-    changes: Regrounded from CHEBI:31795 (magnesium sulfate heptahydrate) to parent
-      CHEBI:32599 (magnesium sulfate, closeMatch) with verified identifier cas:14168-73-1
-      (PubChem CID 16211255) per MAPPING_SEMANTICS §3 step 2. Retyped 14 heptahydrate
-      synonyms and products to REJECTED_LABEL; added monohydrate synonyms (magnesium
-      sulfate monohydrate, kieserite); reset occurrence statistics to 2/2 to match
-      the monohydrate import baseline; updated chemical properties for monohydrate
-      (#878).
+    changes: 'Regrounded from CHEBI:31795 (magnesium sulfate heptahydrate) to its
+      own CAS, cas:14168-73-1 (PubChem CID 16211255), with NARROW_MATCH to the anhydrous
+      parent CHEBI:32599 (published as skos:broadMatch plus the Rule B1 registry row)
+      per MAPPING_SEMANTICS §3 step 2; no ChEBI term exists for the monohydrate. Retyped
+      14 names to REJECTED_LABEL: 13 heptahydrate names and products and the bare
+      ''.MgSO4'', which states no hydration. Added the synonym ''magnesium sulfate
+      monohydrate''. Replaced the heptahydrate chemical properties with the monohydrate''s
+      (#878).'
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: ADDED_SYNONYMS
+    changes: Added the monohydrate spellings 'MgSO4 x H2O' and 'MgSO4 . H2O' (HYDRATE_FORM),
+      moved from the heptahydrate merge tombstone MgSO4·7H2O, and 'MgSO4・H2O' (HYDRATE_FORM),
+      a CultureMech recipe label no record carried (#893).
+    llm_assisted: true
+    llm_model: claude-opus-5-5
+  - timestamp: '2026-10-15T02:32:22+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'occurrence_statistics 5619/5673 -> 19/19 (media_count/total_occurrences),
+      recounted from the CultureMech membership edges after the scoped correction
+      of MgSO4 hydrate source labels (reports/semantic_review_20260921/corrections/2026-10-15-mgso4-hydrates.json;
+      #892, #893, #899).'
+    llm_assisted: true
+    llm_model: claude-opus-5-5
   chemical_properties:
     cas_rn: 14168-73-1
     data_source: PubChem CID 16211255

@@ -36,7 +36,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: MgSO .7H O
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgSO4 × 7 H2O
   synonym_type: REJECTED_LABEL
@@ -101,8 +101,8 @@ synonyms:
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 679
-  media_count: 677
+  total_occurrences: 645
+  media_count: 643
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -248,12 +248,33 @@ curation_history:
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-10-13T11:00:00+00:00'
-  curator: mediaingredientmech#878
+  curator: claude
   action: ADDED_SYNONYMS
   changes: 'Added anhydrous synonym: magnesium sulfate anhydrous (from chebi_synonym_review
     / #878).'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''MgSO .7H O'' (EXACT_SYNONYM). It is MgSO4·7H2O
+    with its subscripts lost, the heptahydrate, not this anhydrous record; its 17
+    CCAP recipes carry CHEBI:31795 as their own term.id. Moved to MgSO4 x 7 H2O (#899).
+    Kept as provenance only; it must not resolve, be exported, or enter the SSSOM
+    other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-5-5
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'occurrence_statistics 677/679 -> 643/645 (media_count/total_occurrences),
+    recounted from the CultureMech membership edges after the scoped correction of
+    MgSO4 hydrate source labels (reports/semantic_review_20260921/corrections/2026-10-15-mgso4-hydrates.json;
+    #892, #893, #899).'
+  llm_assisted: true
+  llm_model: claude-opus-5-5
 chemical_properties:
   cas_rn: 7487-88-9
   data_source: PubChem API

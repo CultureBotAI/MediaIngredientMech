@@ -22,9 +22,9 @@ recipe, so it is >= 1 and usually 1. Summing it over a record's edges reproduces
 documented definition the issue asks for, and the invariant the test asserts.
 
 CAUTION, and it is not a rounding error: several MIM records share one
-identifier (#225 / #334). `MgSO4 x 7 H2O` and `MgSO4·H2O` both resolve to
-CHEBI:31795, so they share these edges and a monohydrate inherits the
-heptahydrate's memberships. Most edges are keyed on CultureMech's resolved
+identifier (#225 / #334). `Na2SO3` and `Na2SO3 x 5 H2O` both resolve to
+CHEBI:86477 (#896), so they share these edges and a hydrate inherits the
+anhydrous salt's memberships. Most edges are keyed on CultureMech's resolved
 identifier, with narrow source-label overrides for records MIM split locally.
 Do not sum membership across records.
 

@@ -21,7 +21,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Natriumsulfid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Sodium sulphite
   synonym_type: EXACT_SYNONYM
@@ -128,12 +128,23 @@ curation_history:
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
 - timestamp: '2026-10-13T11:00:00+00:00'
-  curator: mediaingredientmech#878
+  curator: claude
   action: ADDED_SYNONYMS
   changes: 'Added anhydrous synonyms: Anhydrous sodium sulfite, Sodium sulfite anhydrous
     (from chebi_synonym_review / #878).'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''Natriumsulfid'' (EXACT_SYNONYM). It is German
+    for sodium sulfide (Natriumsulfit is the sulfite), so it does not name this record.
+    Not moved: the sodium sulfide record carries a reviewed approval that a new synonym
+    would cancel (#899, #900). Kept as provenance only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-5-5
 chemical_properties:
   cas_rn: 7757-83-7
   data_source: PubChem API

@@ -22,6 +22,12 @@ synonyms:
 - synonym_text: sodium sulfate, anhydrous
   synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
+- synonym_text: Glauber's salt
+  synonym_type: EXACT_SYNONYM
+  source: sssom_other_backfill
+- synonym_text: Glaubersalz
+  synonym_type: EXACT_SYNONYM
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6
@@ -106,12 +112,21 @@ curation_history:
     left out as redundant (#520).'
   llm_assisted: false
 - timestamp: '2026-10-13T11:00:00+00:00'
-  curator: mediaingredientmech#878
+  curator: claude
   action: REJECTED_WRONG_FORM_SYNONYMS
   changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: sodium sulfate, anhydrous
     (#878).'
+  previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: ADDED_SYNONYMS
+  changes: 'Added ''Glauber''s salt'' and ''Glaubersalz'' (EXACT_SYNONYM), moved from
+    the anhydrous Na2SO4 record: both name sodium sulfate decahydrate, and ChEBI lists
+    them on CHEBI:32586 (#899).'
+  llm_assisted: true
+  llm_model: claude-opus-5-5
 chemical_properties:
   cas_rn: 7727-73-3
   data_source: PubChem (via CHEBI:32586)
