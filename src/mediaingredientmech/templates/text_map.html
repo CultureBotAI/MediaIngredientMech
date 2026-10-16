@@ -639,6 +639,12 @@
             ctx.globalAlpha = 1;
         }
 
+        function esc(s) {
+            return String(s == null ? "" : s)
+                .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+        }
+
         canvas.addEventListener("mousedown", (e) => {
             isDragging = true;
             dragStart = { x: e.clientX - transform.x, y: e.clientY - transform.y };
@@ -686,10 +692,10 @@
                 tooltip.style.left = `${e.clientX + 14}px`;
                 tooltip.style.top = `${e.clientY + 14}px`;
                 tooltip.innerHTML = `
-                    <strong>${best.title}</strong><br>
-                    <span>Record: ${best.id} (${best.identifier})</span><br>
-                    <span>Status: ${best.mapping_status} | Source: ${best.ontology_source}</span><br>
-                    <span>Type: ${best.ingredient_type} | Media: ${best.media_count}</span>
+                    <strong>${esc(best.title)}</strong><br>
+                    <span>Record: ${esc(best.id)} (${esc(best.identifier)})</span><br>
+                    <span>Status: ${esc(best.mapping_status)} | Source: ${esc(best.ontology_source)}</span><br>
+                    <span>Type: ${esc(best.ingredient_type)} | Media: ${esc(best.media_count)}</span>
                 `;
             } else {
                 tooltip.style.display = "none";
@@ -703,11 +709,11 @@
             const p = hoveredPoint;
             selectedPanel.innerHTML = `
                 <div>
-                    <strong>${p.title}</strong>
-                    <span style="margin-left:0.5rem;opacity:0.8">(${p.id} · ${p.identifier} · ${p.mapping_status})</span>
+                    <strong>${esc(p.title)}</strong>
+                    <span style="margin-left:0.5rem;opacity:0.8">(${esc(p.id)} · ${esc(p.identifier)} · ${esc(p.mapping_status)})</span>
                 </div>
                 <div style="display:flex;gap:1rem;">
-                    <a href="${p.url}">Open Ingredient Page →</a>
+                    <a href="${esc(p.url)}">Open Ingredient Page →</a>
                     <a href="browser.html?q=${encodeURIComponent(p.title)}">View in Browser →</a>
                 </div>
             `;

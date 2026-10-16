@@ -114,7 +114,7 @@ def main() -> int:
     print(f"Wrote {args.json_out}")
 
     template_html = args.template.read_text(encoding="utf-8")
-    rendered_html = template_html.replace("__MAP_DATA_JSON__", json.dumps(payload))
+    rendered_html = template_html.replace("__MAP_DATA_JSON__", json.dumps(payload).replace("</", "<\\/"))
     args.html_out.parent.mkdir(parents=True, exist_ok=True)
     args.html_out.write_text(rendered_html, encoding="utf-8")
     print(f"Wrote {args.html_out}")
