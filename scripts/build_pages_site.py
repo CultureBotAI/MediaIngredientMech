@@ -70,6 +70,10 @@ def build_inputs(repo: Path) -> dict[str, str]:
             )
         }
     )
+    for optional_doc in ("404.html", "text_map.html"):
+        opt_path = repo / "docs" / optional_doc
+        if opt_path.exists():
+            files["docs/" + optional_doc] = opt_path
     return {name: digest(path) for name, path in sorted(files.items())}
 
 
@@ -119,6 +123,9 @@ def check_site(repo: Path, output: Path) -> None:
         "browser.html",
         "theme-toggle.js",
     }
+    for optional_doc in ("404.html", "text_map.html"):
+        if (repo / "docs" / optional_doc).exists():
+            required_assets.add(optional_doc)
     required_assets.update(
         p.relative_to(output).as_posix() for p in (output / "schema").glob("*.html")
     )
@@ -176,6 +183,9 @@ def build_site(repo: Path, output: Path) -> int:
             PACKAGE_ROOT / "schema" / "mediaingredientmech.yaml", stage / "schema"
         )
         (stage / ".nojekyll").touch()
+        optional_assets = tuple(
+            name for name in ("404.html", "text_map.html") if (repo / "docs" / name).exists()
+        )
         asset_names = (
             "data/ingredients.json",
             "records/index.html",
@@ -183,6 +193,7 @@ def build_site(repo: Path, output: Path) -> int:
             "index.html",
             "browser.html",
             "theme-toggle.js",
+            *optional_assets,
         )
         receipt = {
             "build_inputs": build_inputs(repo),

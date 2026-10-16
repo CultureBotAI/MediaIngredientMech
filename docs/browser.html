@@ -378,7 +378,15 @@
     <header class="header">
         <h1>MediaIngredientMech Browser</h1>
         <p id="subtitle">Explore curated media ingredients with ontology mappings</p>
-        <a href="index.html" class="nav-link">← Back to Home</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="browser.html" class="nav-link">Browse</a>
+        <a href="text_map.html" class="nav-link">Text Map</a>
+        <a href="ingredient_umap.html" class="nav-link">KG PaCMAP</a>
+        <a href="ingredient_graph.html" class="nav-link">Graph Layout</a>
+        <a href="records/index.html" class="nav-link">Record Index</a>
+        <a href="schema/index.html" class="nav-link">Schema</a>
+        <a href="index.html#downloads" class="nav-link">Downloads</a>
+        <a href="https://github.com/CultureBotAI/MediaIngredientMech" class="nav-link">GitHub</a>
         <a href="https://culturebotai.github.io/mechs/" class="nav-link">All Mech projects</a>
     </header>
 
@@ -424,6 +432,18 @@
                             <option value="MANUAL_CURATION">Manual Curation</option>
                         </select>
                     </div>
+
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By</label>
+                        <select id="sort-by">
+                            <option value="">Default Order</option>
+                            <option value="name-asc">Name (A &rarr; Z)</option>
+                            <option value="name-desc">Name (Z &rarr; A)</option>
+                            <option value="media-desc">Media Count (Most &rarr; Least)</option>
+                            <option value="occurrences-desc">Occurrences (Most &rarr; Least)</option>
+                            <option value="synonyms-desc">Synonyms (Most &rarr; Least)</option>
+                        </select>
+                    </div>
                 </div>
                 <button type="button" id="reset-filters">Clear search and filters</button>
             </div>
@@ -458,7 +478,7 @@
     </div>
 
     <footer>
-        <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="schema/index.html">Schema Documentation</a></p>
+        <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="schema/index.html">Schema Documentation</a> | <a href="index.html#downloads">Data Downloads</a> | <a href="records/build.json">Build Manifest</a></p>
     </footer>
 
     <script>
@@ -473,6 +493,26 @@
             const supported = Array.from(statusControl.options)
                 .some(option => option.value === status);
             statusControl.value = supported ? status : '';
+            const queryParams = new URLSearchParams((window.location && window.location.search) || '');
+            const qVal = queryParams.get('q');
+            if (qVal !== null) {
+                const searchControl = document.getElementById('search');
+                if (searchControl) searchControl.value = qVal;
+            }
+            const statusQ = queryParams.get('status');
+            if (statusQ && !status) {
+                const statusSup = Array.from(statusControl.options).some(opt => opt.value === statusQ);
+                if (statusSup) statusControl.value = statusQ;
+            }
+            for (const [paramKey, controlId] of [['source', 'filter-source'], ['quality', 'filter-quality'], ['sort', 'sort-by']]) {
+                const val = queryParams.get(paramKey);
+                if (val !== null) {
+                    const ctrl = document.getElementById(controlId);
+                    if (ctrl && Array.from(ctrl.options || []).some(opt => opt.value === val)) {
+                        ctrl.value = val;
+                    }
+                }
+            }
         }
 
         applyHashFilters();
@@ -488,6 +528,7 @@
             const status = document.getElementById('results-status');
             container.setAttribute('aria-busy', 'true');
             container.textContent = 'Loading ingredients…';
+            status.setAttribute('role', 'status');
             status.textContent = 'Loading ingredients…';
             try {
                 const response = await fetch('data/ingredients.json');
@@ -524,6 +565,7 @@
                 applyFilters();
             } catch (error) {
                 dataReady = false;
+                status.setAttribute('role', 'alert');
                 status.textContent = 'Ingredients could not be loaded. Retry to load the catalog.';
                 ['total-count', 'mapped-count', 'unmapped-count', 'filtered-count'].forEach(id => {
                     document.getElementById(id).textContent = 'Unavailable';
@@ -553,10 +595,24 @@
         // Apply filters
         function applyFilters() {
             if (!dataReady) return;
-            const searchTerm = document.getElementById('search').value.trim().toLowerCase();
+            const rawSearch = document.getElementById('search').value.trim();
+            const searchTerm = rawSearch.toLowerCase();
             const statusFilter = document.getElementById('filter-status').value;
             const sourceFilter = document.getElementById('filter-source').value;
             const qualityFilter = document.getElementById('filter-quality').value;
+            const sortControl = document.getElementById('sort-by');
+            const sortBy = sortControl ? sortControl.value : '';
+
+            if (typeof history !== 'undefined' && history && typeof history.replaceState === 'function' && window.location && window.location.pathname) {
+                const qParams = new URLSearchParams(window.location.search || '');
+                if (rawSearch) qParams.set('q', rawSearch); else qParams.delete('q');
+                if (statusFilter) qParams.set('status', statusFilter); else qParams.delete('status');
+                if (sourceFilter) qParams.set('source', sourceFilter); else qParams.delete('source');
+                if (qualityFilter) qParams.set('quality', qualityFilter); else qParams.delete('quality');
+                if (sortBy) qParams.set('sort', sortBy); else qParams.delete('sort');
+                const qs = qParams.toString();
+                history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + (window.location.hash || ''));
+            }
 
             filteredIngredients = allIngredients.filter(ing => {
                 const matchesSearch = !searchTerm || ing.searchable.includes(searchTerm);
@@ -566,6 +622,18 @@
 
                 return matchesSearch && matchesStatus && matchesSource && matchesQuality;
             });
+
+            if (sortBy === 'name-asc') {
+                filteredIngredients.sort((a, b) => String(a.preferred_term || '').localeCompare(String(b.preferred_term || '')));
+            } else if (sortBy === 'name-desc') {
+                filteredIngredients.sort((a, b) => String(b.preferred_term || '').localeCompare(String(a.preferred_term || '')));
+            } else if (sortBy === 'media-desc') {
+                filteredIngredients.sort((a, b) => (b.media_count || 0) - (a.media_count || 0) || String(a.preferred_term || '').localeCompare(String(b.preferred_term || '')));
+            } else if (sortBy === 'occurrences-desc') {
+                filteredIngredients.sort((a, b) => (b.total_occurrences || 0) - (a.total_occurrences || 0) || String(a.preferred_term || '').localeCompare(String(b.preferred_term || '')));
+            } else if (sortBy === 'synonyms-desc') {
+                filteredIngredients.sort((a, b) => (b.synonym_count || (b.synonyms && b.synonyms.length) || 0) - (a.synonym_count || (a.synonyms && a.synonyms.length) || 0));
+            }
 
             document.getElementById('filtered-count').textContent = filteredIngredients.length;
             document.getElementById('results-status').textContent =
@@ -611,6 +679,9 @@
                             <span class="meta-label">Curator:</span> ${ing.curator}
                         </div>
                         ` : ''}
+                        <div class="meta-item">
+                            <a href="text_map.html?q=${encodeURIComponent(ing.id || ing.preferred_term)}">View in Text Map &rarr;</a>
+                        </div>
                     </div>
 
                     ${ing.components && ing.components.length > 0 ? `
@@ -659,7 +730,9 @@
             document.getElementById('search').value = '';
             document.querySelectorAll('.filters select').forEach(control => { control.value = ''; });
             // Remove a landing-page status filter too, so reloading preserves reset.
-            if (window.location.hash) history.replaceState(null, '', window.location.pathname + window.location.search);
+            if (typeof history !== 'undefined' && history && typeof history.replaceState === 'function' && window.location && window.location.pathname) {
+                history.replaceState(null, '', window.location.pathname);
+            }
             applyFilters();
             document.getElementById('search').focus();
         });
@@ -667,6 +740,7 @@
         document.getElementById('filter-status').addEventListener('change', applyFilters);
         document.getElementById('filter-source').addEventListener('change', applyFilters);
         document.getElementById('filter-quality').addEventListener('change', applyFilters);
+        document.getElementById('sort-by').addEventListener('change', applyFilters);
     </script>
     <script src="theme-toggle.js"></script>
 </body>
