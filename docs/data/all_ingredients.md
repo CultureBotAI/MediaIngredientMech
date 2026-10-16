@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-10-13T02:54:02.534494+00:00
+Generated: 2026-10-16T07:09:21.862777+00:00
 Total: 2953 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -192,7 +192,7 @@ Total: 2953 ingredients
 | NCIT:C166659 | NCIT:C166659 | Carbomycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C386 | NCIT:C386 | Colistin Sulfate | MAPPED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C166895 | NCIT:C166895 | Lysostaphin | MAPPED | NCIT | EXACT_MATCH | 0 |
-| NCIT:C61894 | NCIT:C61894 | Polymyxin B | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C61894 | NCIT:C61894 | Polymyxin B | MAPPED | NCIT | EXACT_MATCH | 1 |
 | CHEBI:27374 | CHEBI:27374 | L-inositol | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:82679 | CHEBI:82679 | Nutriacholic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81879 | CHEBI:81879 | Rhodomycin B | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -215,7 +215,7 @@ Total: 2953 ingredients
 | CHEBI:73804 | CHEBI:73804 | Glycyl L-aspartic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15895 | CHEBI:15895 | D-galactonic Acid Lactone | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:90144 | CHEBI:90144 | O-nitrophenyl-beta-D-galactopyranosid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:15978 | CHEBI:15978 | Glycerol 3-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 7 |
+| CHEBI:15978 | CHEBI:15978 | Glycerol 3-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 8 |
 | CHEBI:24750 | CHEBI:24750 | Hydroxystreptomycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81287 | CHEBI:81287 | Neomycin F | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81430 | CHEBI:81430 | Dactimicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -256,7 +256,7 @@ Total: 2953 ingredients
 | CHEBI:73757 | CHEBI:73757 | L-alanylglycine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:63961 | CHEBI:63961 | Glycylglycylglycine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:70744 | CHEBI:70744 | Glycyl-L-proline | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:29987 | CHEBI:29987 | Glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29987 | CHEBI:29987 | Glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:30612 | CHEBI:30612 | D-glucarate | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:29994 | CHEBI:29994 | D-aspartate | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:3122 | CHEBI:3122 | Bis-4-nitrophenyl Phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -332,7 +332,7 @@ Total: 2953 ingredients
 | CHEBI:15930 | CHEBI:15930 | 2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:147155 | CHEBI:147155 | 2'-fucosyllactose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30845 | CHEBI:30845 | 2-Furoic acid | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:17905 | CHEBI:17905 | 2-Mercaptoethanesulfonate | MAPPED | CHEBI | EXACT_MATCH | 82 |
+| CHEBI:17905 | CHEBI:17905 | 2-Mercaptoethanesulfonate | MAPPED | CHEBI | EXACT_MATCH | 84 |
 | CHEBI:41218 | CHEBI:41218 | 2-Mercaptoethanol | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:48945 | CHEBI:48945 | 2-methyl-1-butanol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:53620 | CHEBI:53620 | 2-methyl-4-isothizaolin-3-one | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -445,7 +445,7 @@ Total: 2953 ingredients
 | CHEBI:15343 | CHEBI:15343 | acetaldehyde | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:30089 | CHEBI:30089 | Acetate | MAPPED | CHEBI | EXACT_MATCH | 30 |
 | CHEBI:30089 | CHEBI:30089 | Acetate (carbon source) | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:15366 | CHEBI:15366 | Acetic acid | MAPPED | CHEBI | EXACT_MATCH | 55 |
+| CHEBI:15366 | CHEBI:15366 | Acetic acid | MAPPED | CHEBI | EXACT_MATCH | 61 |
 | CHEBI:15347 | CHEBI:15347 | acetone | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:2404 | CHEBI:2404 | Acetosyringone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2781 | CHEBI:2781 | Acetovanillone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -465,16 +465,16 @@ Total: 2953 ingredients
 | CHEBI:17489 | CHEBI:17489 | Adenosine 3,5-Cyclic Monophosphate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:30832 | CHEBI:30832 | Adipic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:305-01-1 | cas:305-01-1 | Aesculetin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:2509 | CHEBI:2509 | Agar | MAPPED | CHEBI | EXACT_MATCH | 4787 |
+| CHEBI:2509 | CHEBI:2509 | Agar | MAPPED | CHEBI | EXACT_MATCH | 4797 |
 | CHEBI:2511 | CHEBI:2511 | Agarose | MAPPED | CHEBI | EXACT_MATCH | 29 |
 | FOODON:00005198 | FOODON:00005198 | Agave | MAPPED | FOODON | EXACT_MATCH | 0 |
 | CHEBI:74779 | CHEBI:74779 | Al2(SO4)3 x 18 H2O | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:221124 | CHEBI:221124 | alanosine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:alboverticillin | kgmicrobe.compound:alboverticillin | Alboverticillin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
-| CHEBI:30114 | CHEBI:30114 | AlCl3 | MAPPED | CHEBI | EXACT_MATCH | 77 |
-| CHEBI:30115 | CHEBI:30115 | AlCl3 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 49 |
-| CHEBI:86463 | CHEBI:86463 | AlK(SO4)2 | MAPPED | CHEBI | EXACT_MATCH | 233 |
-| CHEBI:86465 | CHEBI:86465 | AlK(SO4)2 x 12 H2O | MAPPED | CHEBI | EXACT_MATCH | 828 |
+| CHEBI:30114 | CHEBI:30114 | AlCl3 | MAPPED | CHEBI | EXACT_MATCH | 80 |
+| CHEBI:30115 | CHEBI:30115 | AlCl3 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 50 |
+| CHEBI:86463 | CHEBI:86463 | AlK(SO4)2 | MAPPED | CHEBI | EXACT_MATCH | 275 |
+| CHEBI:86465 | CHEBI:86465 | AlK(SO4)2 x 12 H2O | MAPPED | CHEBI | EXACT_MATCH | 842 |
 | CHEBI:15676 | CHEBI:15676 | Allantoin | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:40279 | CHEBI:40279 | Allopurinol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:172687 | CHEBI:172687 | Allura Red AC | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -494,7 +494,7 @@ Total: 2953 ingredients
 | CHEBI:2676 | CHEBI:2676 | Amoxicillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:C041989 | mesh:C041989 | Amphotericin A | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:2682 | CHEBI:2682 | Amphotericin B | MAPPED | CHEBI | EXACT_MATCH | 5 |
-| CHEBI:28971 | CHEBI:28971 | Ampicillin | MAPPED | CHEBI | EXACT_MATCH | 24 |
+| CHEBI:28971 | CHEBI:28971 | Ampicillin | MAPPED | CHEBI | EXACT_MATCH | 28 |
 | CHEBI:34535 | CHEBI:34535 | Ampicillin sodium salt | REJECTED | CHEBI | LEXICAL_MATCH | 0 |
 | kgmicrobe.ingredient:amylopectin_from_maize | CHEBI:28057 | amylopectin from maize | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28102 | CHEBI:28102 | Amylose from potato | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -520,17 +520,17 @@ Total: 2953 ingredients
 | kgmicrobe.compound:ardacin_b | NCIT:C169786 | Ardacin B | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.compound:ardacin_c | NCIT:C169786 | Ardacin C | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:233150 | CHEBI:233150 | Arecoline Hydrobromide | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:29016 | CHEBI:29016 | Arginine | MAPPED | CHEBI | EXACT_MATCH | 43 |
+| CHEBI:29016 | CHEBI:29016 | Arginine | MAPPED | CHEBI | EXACT_MATCH | 44 |
 | CHEBI:49474 | CHEBI:49474 | argon | MAPPED | CHEBI | SYNONYM_MATCH | 3 |
 | CHEBI:2825 | CHEBI:2825 | Aristolochic Acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:33655 | CHEBI:33655 | Aromatic compound | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33658 | CHEBI:33658 | Aromatic hydrocarbon | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29125 | CHEBI:29125 | Arsenate | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
-| CHEBI:22652 | CHEBI:22652 | Ascorbic acid | MAPPED | CHEBI | EXACT_MATCH | 71 |
+| CHEBI:22652 | CHEBI:22652 | Ascorbic acid | MAPPED | CHEBI | EXACT_MATCH | 72 |
 | kgmicrobe.compound:ascosin | kgmicrobe.compound:ascosin | Ascosin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | mesh:C017029 | mesh:C017029 | Asialofetuin | MAPPED | MESH | EXACT_MATCH | 2 |
 | CHEBI:79928 | CHEBI:79928 | Asiaticoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:22653 | CHEBI:22653 | Asparagine | MAPPED | CHEBI | EXACT_MATCH | 28 |
+| CHEBI:22653 | CHEBI:22653 | Asparagine | MAPPED | CHEBI | EXACT_MATCH | 29 |
 | CHEBI:2911 | CHEBI:2911 | Atorvastatin calcium salt trihydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:15930 | CHEBI:15930 | Atrazin | REJECTED | CHEBI | FALLBACK_REGISTRY | 0 |
 | CHEBI:134355 | CHEBI:134355 | Auraptene | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -550,9 +550,9 @@ Total: 2953 ingredients
 | CHEBI:63317 | CHEBI:63317 | BaCl2 | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:86153 | CHEBI:86153 | BaCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 11 |
 | kgmicrobe.compound:bacteriocin_isk_1 | kgmicrobe.compound:bacteriocin_isk_1 | Bacteriocin Isk 1 | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
-| MICRO:0000182 | MICRO:0000182 | Bacto-tryptone | MAPPED | MICRO | EXACT_MATCH | 1506 |
+| MICRO:0000182 | MICRO:0000182 | Bacto-tryptone | MAPPED | MICRO | EXACT_MATCH | 1518 |
 | MICRO:0000193 | MICRO:0000193 | Bacto brain heart infusion | MAPPED | MICRO | LEXICAL_MATCH | 34 |
-| MICRO:0000178 | MICRO:0000178 | Bacto peptone | MAPPED | MICRO | EXACT_MATCH | 2261 |
+| MICRO:0000178 | MICRO:0000178 | Bacto peptone | MAPPED | MICRO | EXACT_MATCH | 2267 |
 | FOODON:03315720 | FOODON:03315720 | Bacto Soytone | REJECTED | FOODON | CLOSE_MATCH | 0 |
 | MICRO:0000114 | MICRO:0000114 | Bacto Tryptic Soy Agar | MAPPED | MICRO | LEXICAL_MATCH | 0 |
 | MICRO:0000114 | MICRO:0000114 | Bacto Tryptic Soy Agar (Difco) | REJECTED | MICRO | LEXICAL_MATCH | 0 |
@@ -561,14 +561,14 @@ Total: 2953 ingredients
 | kgmicrobe.compound:bafilomycin | kgmicrobe.compound:bafilomycin | Bafilomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:199416 | CHEBI:199416 | Bafilomycin B1 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2979 | CHEBI:2979 | Baicalein | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| FOODON:03413797 | FOODON:03413797 | Baker's yeast | MAPPED | FOODON | EXACT_MATCH | 17 |
+| FOODON:03413797 | FOODON:03413797 | Baker's yeast | MAPPED | FOODON | EXACT_MATCH | 19 |
 | kgmicrobe.compound:bandamycin | kgmicrobe.compound:bandamycin | Bandamycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | cas:52698-84-7 | CHEBI:63934 | Bathocuproine disulfonic acid disodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate | CHEBI:78157 | Bathophenanthrolinedisulfonic acid disodium salt hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:72292 | CHEBI:72292 | Bedaquiline | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C71932 | NCIT:C71932 | Beef | MAPPED | NCIT | EXACT_MATCH | 2 |
 | kgmicrobe.ingredient:beef_brain_powder | FOODON:02020911 | Beef brain powder | MAPPED | FOODON | NARROW_MATCH | 3 |
-| FOODON:03302088 | FOODON:03302088 | Beef extract | MAPPED | FOODON | EXACT_MATCH | 338 |
+| FOODON:03302088 | FOODON:03302088 | Beef extract | MAPPED | FOODON | EXACT_MATCH | 339 |
 | FOODON:00004410 | FOODON:00004410 | Beef heart | MAPPED | FOODON | EXACT_MATCH | 158 |
 | kgmicrobe.ingredient:beef_heart_infusion | FOODON:00004410 | Beef Heart Infusion | MAPPED | FOODON | NARROW_MATCH | 2 |
 | CHEBI:3020 | CHEBI:3020 | Benzalkonium Chloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -585,7 +585,7 @@ Total: 2953 ingredients
 | CHEBI:10429 | CHEBI:10429 | Beta-Lapachone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:C000601869 | mesh:C000601869 | beta-Lipomycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:16958 | CHEBI:16958 | Beta-alanine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:15846 | CHEBI:15846 | beta-NAD | MAPPED | CHEBI | EXACT_MATCH | 30 |
+| CHEBI:15846 | CHEBI:15846 | beta-NAD | MAPPED | CHEBI | EXACT_MATCH | 31 |
 | CHEBI:36218 | CHEBI:36218 | Beta-Lactose | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
 | cas:590-46-5 | CHEBI:17750 | Betaine hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:91242 | CHEBI:91242 | Betaine x H2O | MAPPED | CHEBI | EXACT_MATCH | 18 |
@@ -596,7 +596,7 @@ Total: 2953 ingredients
 | CHEBI:22868 | CHEBI:22868 | Bile salts | MAPPED | CHEBI | LEXICAL_MATCH | 3 |
 | NCIT:C187267 | NCIT:C187267 | Bimuno | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:54443-59-3 | cas:54443-59-3 | Biochanin a diacetate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:15956 | CHEBI:15956 | Biotin | MAPPED | CHEBI | EXACT_MATCH | 2843 |
+| CHEBI:15956 | CHEBI:15956 | Biotin | MAPPED | CHEBI | EXACT_MATCH | 3008 |
 | kgmicrobe.ingredient:biotin_vitamin_solution | MICRO:0000460 | Biotin Vitamin Solution | MAPPED | MICRO | CLOSE_MATCH | 18 |
 | CHEBI:16841 | CHEBI:16841 | Bis(3-aminopropyl)amine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41250 | CHEBI:41250 | Bis-Tris | MAPPED | CHEBI | EXACT_MATCH | 4 |
@@ -604,7 +604,7 @@ Total: 2953 ingredients
 | CHEBI:34582 | CHEBI:34582 | Bleomycin sulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3148 | CHEBI:3148 | Boldine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28093 | CHEBI:28093 | Borneol | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| MICRO:0000307 | MICRO:0000307 | Bovine albumin | MAPPED | MICRO | EXACT_MATCH | 5 |
+| MICRO:0000307 | MICRO:0000307 | Bovine albumin | MAPPED | MICRO | EXACT_MATCH | 8 |
 | MICRO:0001709 | MICRO:0001709 | Bovine calf serum | MAPPED | MICRO | LEXICAL_MATCH | 11 |
 | MICRO:0000193 | MICRO:0000193 | Brain heart infusion | MAPPED | MICRO | EXACT_MATCH | 34 |
 | MICRO:0000193 | MICRO:0000193 | Brain heart infusion broth | MAPPED | MICRO | LEXICAL_MATCH | 34 |
@@ -616,20 +616,20 @@ Total: 2953 ingredients
 | CHEBI:28885 | CHEBI:28885 | Butanol | MAPPED | CHEBI | CAS_RN_LOOKUP | 4 |
 | CHEBI:85983 | CHEBI:85983 | Butyl stearate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | mesh:C521980 | mesh:C521980 | Butyl vinyl ether | MAPPED | MESH | EXACT_MATCH | 4 |
-| CHEBI:30772 | CHEBI:30772 | Butyric acid | MAPPED | CHEBI | EXACT_MATCH | 44 |
+| CHEBI:30772 | CHEBI:30772 | Butyric acid | MAPPED | CHEBI | EXACT_MATCH | 49 |
 | mesh:C010427 | mesh:C010427 | Butyricin 7423 | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:36592 | CHEBI:36592 | Butyrolactam | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:3259 | CHEBI:3259 | CCCP | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:134107 | CHEBI:134107 | CHIR-090 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31340 | CHEBI:31340 | Ca-folinate | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:31345 | CHEBI:31345 | Ca-pantothenate | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:64205 | CHEBI:64205 | Ca(NO3)2 | MAPPED | CHEBI | EXACT_MATCH | 37 |
-| CHEBI:86159 | CHEBI:86159 | Ca(NO3)2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 203 |
-| CHEBI:3312 | CHEBI:3312 | CaCl2 | MAPPED | CHEBI | EXACT_MATCH | 1020 |
+| CHEBI:64205 | CHEBI:64205 | Ca(NO3)2 | MAPPED | CHEBI | EXACT_MATCH | 38 |
+| CHEBI:86159 | CHEBI:86159 | Ca(NO3)2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 205 |
+| CHEBI:3312 | CHEBI:3312 | CaCl2 | MAPPED | CHEBI | EXACT_MATCH | 1049 |
 | CHEBI:86158 | CHEBI:86158 | CaCl22H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:86158 | CHEBI:86158 | CaCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 6118 |
+| CHEBI:86158 | CHEBI:86158 | CaCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 6250 |
 | CHEBI:91243 | CHEBI:91243 | CaCl2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 69 |
-| kgmicrobe.compound:cacl2_x_7_h2o | CHEBI:3312 | CaCl2 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 10 |
+| kgmicrobe.compound:cacl2_x_7_h2o | CHEBI:3312 | CaCl2 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 12 |
 | CHEBI:3311 | CHEBI:3311 | CaCO3 | MAPPED | CHEBI | EXACT_MATCH | 330 |
 | CHEBI:18127 | CHEBI:18127 | Cadaverine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:5743-04-4 | CHEBI:232796 | Cadmium acetate dihydrate | MAPPED | CHEBI | CLOSE_MATCH | 1 |
@@ -641,7 +641,7 @@ Total: 2953 ingredients
 | CHEBI:32596 | CHEBI:32596 | CaHPO4 | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:3312 | CHEBI:3312 | Calcium Chloride | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:31345 | CHEBI:31345 | Calcium D-Pantothenate | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:31345 | CHEBI:31345 | Calcium pantothenate | MAPPED | CHEBI | EXACT_MATCH | 2397 |
+| CHEBI:31345 | CHEBI:31345 | Calcium pantothenate | MAPPED | CHEBI | EXACT_MATCH | 2501 |
 | NCIT:C105971 | NCIT:C105971 | Calprotectin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | kgmicrobe.compound:camphomycin | kgmicrobe.compound:camphomycin | Camphomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:27656 | CHEBI:27656 | Camptothecin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -651,14 +651,14 @@ Total: 2953 ingredients
 | mesh:C033379 | mesh:C033379 | Candiplanecin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:64213 | CHEBI:64213 | Cantharidin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31348 | CHEBI:31348 | Capecitabine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:30776 | CHEBI:30776 | Caproic acid | MAPPED | CHEBI | SYNONYM_MATCH | 11 |
+| CHEBI:30776 | CHEBI:30776 | Caproic acid | MAPPED | CHEBI | SYNONYM_MATCH | 14 |
 | CHEBI:28579 | CHEBI:28579 | Caprolactam | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:191088 | CHEBI:191088 | CAPS buffer | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:3374 | CHEBI:3374 | capsaicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:183882 | CHEBI:183882 | CAPSO | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:3393 | CHEBI:3393 | Carbenicillin | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:34609 | CHEBI:34609 | Carbenicillin disodium salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:16526 | CHEBI:16526 | Carbon dioxide gas | MAPPED | CHEBI | EXACT_MATCH | 855 |
+| CHEBI:16526 | CHEBI:16526 | Carbon dioxide gas | MAPPED | CHEBI | EXACT_MATCH | 862 |
 | CHEBI:234035 | CHEBI:234035 | Carboxymethyl cellulose | MAPPED | CHEBI | SYNONYM_MATCH | 8 |
 | kgmicrobe.compound:carcinomycin | kgmicrobe.compound:carcinomycin | Carcinomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | cas:461-06-3 | CHEBI:17126 | Carnitine (Dl) Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -668,14 +668,14 @@ Total: 2953 ingredients
 | kgmicrobe.compound:caryomycin | kgmicrobe.compound:caryomycin | Caryomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:10357 | CHEBI:10357 | Caryophyllene [T(-)] | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | FOODON:03420180 | FOODON:03420180 | Casein | MAPPED | FOODON | EXACT_MATCH | 20 |
-| FOODON:03315719 | FOODON:03315719 | Casein peptone | MAPPED | FOODON | CLOSE_MATCH | 1313 |
+| FOODON:03315719 | FOODON:03315719 | Casein peptone | MAPPED | FOODON | CLOSE_MATCH | 1318 |
 | MICRO:0001366 | MICRO:0001366 | Casein hydrolysate | MAPPED | MICRO | EXACT_MATCH | 56 |
-| MICRO:0000606 | MICRO:0000606 | Casitone | MAPPED | MICRO | EXACT_MATCH | 286 |
-| CHEBI:31346 | CHEBI:31346 | CaSO4 | MAPPED | CHEBI | EXACT_MATCH | 14 |
-| CHEBI:32583 | CHEBI:32583 | CaSO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 159 |
+| MICRO:0000606 | MICRO:0000606 | Casitone | MAPPED | MICRO | EXACT_MATCH | 289 |
+| CHEBI:31346 | CHEBI:31346 | CaSO4 | MAPPED | CHEBI | EXACT_MATCH | 19 |
+| CHEBI:32583 | CHEBI:32583 | CaSO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 161 |
 | kgmicrobe.compound:caso4_x_7_h2o | CHEBI:31346 | CaSO4 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 5 |
-| CHEBI:86156 | CHEBI:86156 | Cd(NO3)2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:35458 | CHEBI:35458 | CeCl3 | MAPPED | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:86156 | CHEBI:86156 | Cd(NO3)2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:35458 | CHEBI:35458 | CeCl3 | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | kgmicrobe.compound:cecl3_x_7_h2o | CHEBI:35458 | CeCl3 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 4 |
 | CHEBI:201428 | CHEBI:201428 | Cecropin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:201469 | CHEBI:201469 | Cecropin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -689,7 +689,7 @@ Total: 2953 ingredients
 | cas:120618-65-7 | CHEBI:3508 | Ceftazidime hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:3514 | CHEBI:3514 | Ceftriaxone disodium salt hemi(heptahydrate) | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | BTO:0004304 | BTO:0004304 | Cell lysate | MAPPED | BTO | EXACT_MATCH | 2 |
-| CHEBI:17057 | CHEBI:17057 | Cellobiose | MAPPED | CHEBI | EXACT_MATCH | 272 |
+| CHEBI:17057 | CHEBI:17057 | Cellobiose | MAPPED | CHEBI | EXACT_MATCH | 276 |
 | CHEBI:49533 | CHEBI:49533 | Cellohexaose | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:62976 | CHEBI:62976 | Cellopentaose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:cellostatin | kgmicrobe.compound:cellostatin | Cellostatin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -713,7 +713,7 @@ Total: 2953 ingredients
 | CHEBI:16755 | CHEBI:16755 | Chenodeoxycholic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17029 | CHEBI:17029 | Chitin | MAPPED | CHEBI | EXACT_MATCH | 13 |
 | CHEBI:16261 | CHEBI:16261 | Chitosan | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:17698 | CHEBI:17698 | Chloramphenicol | MAPPED | CHEBI | EXACT_MATCH | 11 |
+| CHEBI:17698 | CHEBI:17698 | Chloramphenicol | MAPPED | CHEBI | EXACT_MATCH | 12 |
 | kgmicrobe.compound:chlorhexidine_diacetate_salt_hydrate | CHEBI:81711 | Chlorhexidine diacetate salt hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16112 | CHEBI:16112 | Chlorogenic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:chlororaphin | kgmicrobe.compound:chlororaphin | Chlororaphin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -736,8 +736,8 @@ Total: 2953 ingredients
 | CHEBI:27899 | CHEBI:27899 | Cisplatin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17626 | CHEBI:17626 | Citraconic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16947 | CHEBI:16947 | Citrate | MAPPED | CHEBI | SYNONYM_MATCH | 63 |
-| CHEBI:30769 | CHEBI:30769 | Citric acid | MAPPED | CHEBI | EXACT_MATCH | 113 |
-| CHEBI:31404 | CHEBI:31404 | Citric acid x H2O | MAPPED | CHEBI | EXACT_MATCH | 11 |
+| CHEBI:30769 | CHEBI:30769 | Citric acid | MAPPED | CHEBI | EXACT_MATCH | 116 |
+| CHEBI:31404 | CHEBI:31404 | Citric acid x H2O | MAPPED | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:31404 | CHEBI:31404 | Citric Acid•H2O | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:cladomycin | kgmicrobe.compound:cladomycin | Cladomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:3732 | CHEBI:3732 | Clarithromycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -745,9 +745,9 @@ Total: 2953 ingredients
 | CHEBI:3764 | CHEBI:3764 | Clotrimazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34978 | CHEBI:34978 | Cloxacillin sodium salt monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:86209 | CHEBI:86209 | Co(NO3)2 | MAPPED | CHEBI | EXACT_MATCH | 18 |
-| CHEBI:86214 | CHEBI:86214 | Co(NO3)2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 236 |
-| CHEBI:30411 | CHEBI:30411 | Cobalamine | MAPPED | CHEBI | EXACT_MATCH | 9 |
-| CHEBI:53503 | CHEBI:53503 | Cobalt chloride hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 3035 |
+| CHEBI:86214 | CHEBI:86214 | Co(NO3)2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 260 |
+| CHEBI:30411 | CHEBI:30411 | Cobalamine | MAPPED | CHEBI | EXACT_MATCH | 10 |
+| CHEBI:53503 | CHEBI:53503 | Cobalt chloride hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 3236 |
 | CHEBI:35696 | CHEBI:35696 | CoCl2 | MAPPED | CHEBI | EXACT_MATCH | 177 |
 | kgmicrobe.compound:cocl2_x_2_h2o | CHEBI:35696 | CoCl2 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 5 |
 | kgmicrobe.compound:cocl2_x_4_h2o | CHEBI:35696 | CoCl2 x 4 H2O | MAPPED | CHEBI | CLOSE_MATCH | 9 |
@@ -765,11 +765,11 @@ Total: 2953 ingredients
 | FOODON:03305103 | FOODON:03305103 | Cooked meat medium | MAPPED | FOODON | LEXICAL_MATCH | 3 |
 | FOODON:03310257 | FOODON:03310257 | Corn meal | MAPPED | FOODON | EXACT_MATCH | 9 |
 | CHEBI:53470 | CHEBI:53470 | CoSO4 | MAPPED | CHEBI | EXACT_MATCH | 68 |
-| CHEBI:91244 | CHEBI:91244 | CoSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 836 |
+| CHEBI:91244 | CHEBI:91244 | CoSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 895 |
 | FOODON:02020891 | FOODON:02020891 | Cow's milk | MAPPED | FOODON | LEXICAL_MATCH | 2 |
 | ENVO:00001998 | ENVO:00001998 | CR1 Soil | MAPPED | ENVO | CLOSE_MATCH | 66 |
 | kgmicrobe.compound:cr2_so43_x_n_h2o | CHEBI:53471 | Cr2(SO4)3 x n H2O | MAPPED | CHEBI | NARROW_MATCH | 3 |
-| CHEBI:86206 | CHEBI:86206 | Cr(NO3)3 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:86206 | CHEBI:86206 | Cr(NO3)3 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16919 | CHEBI:16919 | Creatine | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:16737 | CHEBI:16737 | Creatinine | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:86218 | CHEBI:86218 | Cresol red | MAPPED | CHEBI | EXACT_MATCH | 2 |
@@ -779,22 +779,22 @@ Total: 2953 ingredients
 | CHEBI:41688 | CHEBI:41688 | Crystal Violet | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | kgmicrobe.compound:cu_no32_x_3_h2o | CHEBI:78036 | Cu(NO3)2 x 3 H2O | MAPPED | CHEBI | CLOSE_MATCH | 2 |
 | CHEBI:53472 | CHEBI:53472 | CuCl | MAPPED | CHEBI | EXACT_MATCH | 12 |
-| CHEBI:49553 | CHEBI:49553 | CuCl2 | MAPPED | CHEBI | EXACT_MATCH | 161 |
-| CHEBI:86318 | CHEBI:86318 | CuCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 2547 |
-| CHEBI:91245 | CHEBI:91245 | CuCl2 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 34 |
+| CHEBI:49553 | CHEBI:49553 | CuCl2 | MAPPED | CHEBI | EXACT_MATCH | 163 |
+| CHEBI:86318 | CHEBI:86318 | CuCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 2625 |
+| CHEBI:91245 | CHEBI:91245 | CuCl2 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 39 |
 | kgmicrobe.compound:cucl2_x_6_h2o | CHEBI:49553 | CuCl2 x 6 H2O | MAPPED | CHEBI | CLOSE_MATCH | 9 |
 | CHEBI:78673 | CHEBI:78673 | Cumene hydroperoxide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3962 | CHEBI:3962 | Curcumin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:54724-00-4 | mesh:C038459 | Curdlan | MAPPED | MESH | NARROW_MATCH | 0 |
-| CHEBI:23414 | CHEBI:23414 | CuSO4 | MAPPED | CHEBI | EXACT_MATCH | 168 |
-| CHEBI:31440 | CHEBI:31440 | CuSO4 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 1505 |
+| CHEBI:23414 | CHEBI:23414 | CuSO4 | MAPPED | CHEBI | EXACT_MATCH | 173 |
+| CHEBI:31440 | CHEBI:31440 | CuSO4 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 1624 |
 | CHEBI:91246 | CHEBI:91246 | CuSO4 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 5 |
-| CHEBI:17439 | CHEBI:17439 | Cyanocobalamin | MAPPED | CHEBI | EXACT_MATCH | 273 |
+| CHEBI:17439 | CHEBI:17439 | Cyanocobalamin | MAPPED | CHEBI | EXACT_MATCH | 288 |
 | CHEBI:27641 | CHEBI:27641 | Cycloheximid | MAPPED | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:495055 | CHEBI:495055 | Cyclomaltoheptaose | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:4021 | CHEBI:4021 | Cyclopamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:C058276 | mesh:C058276 | Cystargin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:15356 | CHEBI:15356 | Cysteine | MAPPED | CHEBI | EXACT_MATCH | 52 |
+| CHEBI:15356 | CHEBI:15356 | Cysteine | MAPPED | CHEBI | EXACT_MATCH | 56 |
 | CHEBI:17562 | CHEBI:17562 | Cytidine | MAPPED | CHEBI | CAS_RN_LOOKUP | 15 |
 | CHEBI:17361 | CHEBI:17361 | Cytidine 5'-Monophosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4055 | CHEBI:4055 | Cytisine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -830,7 +830,7 @@ Total: 2953 ingredients
 | CHEBI:16867 | CHEBI:16867 | D-Methionine | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:16313 | CHEBI:16313 | D-Proline | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:17629-30-0 | CHEBI:189430 | D-Raffinose pentahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:16988 | CHEBI:16988 | D-Ribose | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:16988 | CHEBI:16988 | D-Ribose | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | cas:576-42-1 | CHEBI:16002 | D-Saccharic acid potassium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16523 | CHEBI:16523 | D-Serine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17992 | CHEBI:17992 | D-Sucrose | REJECTED | CHEBI | EXACT_MATCH | 0 |
@@ -840,15 +840,15 @@ Total: 2953 ingredients
 | CHEBI:15824 | CHEBI:15824 | D-Fructose | MAPPED | CHEBI | EXACT_MATCH | 54 |
 | CHEBI:12936 | CHEBI:12936 | D-Galactose | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:18024 | CHEBI:18024 | D-galacturonic acid | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:17634 | CHEBI:17634 | D-Glucose | MAPPED | CHEBI | EXACT_MATCH | 1232 |
+| CHEBI:17634 | CHEBI:17634 | D-Glucose | MAPPED | CHEBI | EXACT_MATCH | 1249 |
 | CHEBI:4178 | CHEBI:4178 | D-glucuronic acid | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:17061 | CHEBI:17061 | D-glutamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:138-86-7 | cas:138-86-7 | d-limonene | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:16899 | CHEBI:16899 | D-Mannitol | MAPPED | CHEBI | EXACT_MATCH | 35 |
-| CHEBI:16024 | CHEBI:16024 | D-Mannose | MAPPED | CHEBI | EXACT_MATCH | 12 |
+| CHEBI:16024 | CHEBI:16024 | D-Mannose | MAPPED | CHEBI | EXACT_MATCH | 13 |
 | CHEBI:17924 | CHEBI:17924 | D-Sorbitol | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16296 | CHEBI:16296 | D-tryptophan | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:65327 | CHEBI:65327 | D-Xylose | MAPPED | CHEBI | EXACT_MATCH | 26 |
+| CHEBI:65327 | CHEBI:65327 | D-Xylose | MAPPED | CHEBI | EXACT_MATCH | 28 |
 | cas:66768-39-6 | CHEBI:37492 | D-xylose 5-phosphate lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:75228 | CHEBI:75228 | D | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:19741-14-1 | cas:19741-14-1 | DAMPA | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -869,7 +869,7 @@ Total: 2953 ingredients
 | kgmicrobe.compound:danomycin | kgmicrobe.compound:danomycin | Danomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | kgmicrobe.compound:danubomycin | kgmicrobe.compound:danubomycin | Danubomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:600103 | CHEBI:600103 | Daptomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:30813 | CHEBI:30813 | Decanoic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30813 | CHEBI:30813 | Decanoic acid | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | mesh:C076135 | mesh:C076135 | Decaplanin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:28903 | CHEBI:28903 | decyl alcohol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:134742 | CHEBI:134742 | Delamanid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -888,7 +888,7 @@ Total: 2953 ingredients
 | CHEBI:17634 | CHEBI:17634 | Dextrose | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4489 | CHEBI:4489 | Diallyl sulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:23673 | CHEBI:23673 | Diaminopimelic acid | MAPPED | CHEBI | SYNONYM_MATCH | 6 |
-| CHEBI:91249 | CHEBI:91249 | Diammonium molybdate | MAPPED | CHEBI | CAS_RN_LOOKUP | 213 |
+| CHEBI:91249 | CHEBI:91249 | Diammonium molybdate | MAPPED | CHEBI | CAS_RN_LOOKUP | 215 |
 | CHEBI:28145 | CHEBI:28145 | Dibenzofuran | MAPPED | CHEBI | EXACT_MATCH | 156 |
 | CHEBI:23681 | CHEBI:23681 | Dibenzothiophene | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:247956 | CHEBI:247956 | Dibucaine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -903,7 +903,7 @@ Total: 2953 ingredients
 | CHEBI:16016 | CHEBI:16016 | Dihydroxyacetone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17437 | CHEBI:17437 | Dimethyl sulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:9349 | CHEBI:9349 | dimethyl sulfone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:28262 | CHEBI:28262 | Dimethyl sulfoxide | MAPPED | CHEBI | EXACT_MATCH | 158 |
+| CHEBI:28262 | CHEBI:28262 | Dimethyl sulfoxide | MAPPED | CHEBI | EXACT_MATCH | 160 |
 | cas:6035-49-0 | CHEBI:93172 | Dimethylfraxetin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:4337-33-1 | CHEBI:16457 | Dimethylsulfoniopropionate hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:141155 | CHEBI:141155 | Dimetridazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -911,14 +911,14 @@ Total: 2953 ingredients
 | CHEBI:46837 | CHEBI:46837 | Dipicolinic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:13521-83-0 | mesh:C000730144 | Disodium Glutarate | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:132764 | CHEBI:132764 | Disodium oxalate | MAPPED | CHEBI | SYNONYM_MATCH | 9 |
-| kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29 | CHEBI:34683 | Disodium phosphate heptahydrate (0.02 M stock) | MAPPED | CHEBI | CLOSE_MATCH | 1 |
-| CHEBI:15377 | CHEBI:15377 | Distilled water | MAPPED | CHEBI | EXACT_MATCH | 7403 |
+| kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29 | CHEBI:34683 | Disodium phosphate heptahydrate (0.02 M stock) | MAPPED | CHEBI | CLOSE_MATCH | 2 |
+| CHEBI:15377 | CHEBI:15377 | Distilled water | MAPPED | CHEBI | EXACT_MATCH | 8181 |
 | CHEBI:42160 | CHEBI:42160 | Dithionite | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
-| CHEBI:37070 | CHEBI:37070 | DL-2-Methylbutyric acid | MAPPED | CHEBI | EXACT_MATCH | 58 |
-| CHEBI:16494 | CHEBI:16494 | (DL)-alpha-Lipoic acid | MAPPED | CHEBI | EXACT_MATCH | 1768 |
+| CHEBI:37070 | CHEBI:37070 | DL-2-Methylbutyric acid | MAPPED | CHEBI | EXACT_MATCH | 77 |
+| CHEBI:16494 | CHEBI:16494 | (DL)-alpha-Lipoic acid | MAPPED | CHEBI | EXACT_MATCH | 1830 |
 | CHEBI:22660 | CHEBI:22660 | DL-aspartic acid | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:17126 | CHEBI:17126 | DL-carnitine | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
-| CHEBI:18320 | CHEBI:18320 | DL-Dithiothreitol | MAPPED | CHEBI | SYNONYM_MATCH | 127 |
+| CHEBI:18320 | CHEBI:18320 | DL-Dithiothreitol | MAPPED | CHEBI | SYNONYM_MATCH | 130 |
 | CHEBI:27570 | CHEBI:27570 | DL-Histidine | MAPPED | CHEBI | SYNONYM_MATCH | 3 |
 | CHEBI:6650 | CHEBI:6650 | DL-Malic acid | MAPPED | CHEBI | EXACT_MATCH | 42 |
 | CHEBI:16811 | CHEBI:16811 | DL-methionine | MAPPED | CHEBI | SYNONYM_MATCH | 28 |
@@ -932,7 +932,7 @@ Total: 2953 ingredients
 | mesh:C048266 | mesh:C048266 | Dopsisamine | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:31522 | CHEBI:31522 | Doxorubicin hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34730 | CHEBI:34730 | Doxycycline hyclate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:dry_cow-manure | ENVO:00003031 | Dry cow-manure | MAPPED | ENVO | NARROW_MATCH | 4 |
+| kgmicrobe.ingredient:dry_cow-manure | ENVO:00003031 | Dry cow-manure | MAPPED | ENVO | NARROW_MATCH | 5 |
 | cas:52305-04-1 | mesh:C087989 | Duartin (-) | MAPPED | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.compound:durhamycin | kgmicrobe.compound:durhamycin | Durhamycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | NCIT:C1928 | NCIT:C1928 | Dynemicin | MAPPED | NCIT | EXACT_MATCH | 0 |
@@ -944,7 +944,7 @@ Total: 2953 ingredients
 | CHEBI:77543 | CHEBI:77543 | Ebselen | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4755 | CHEBI:4755 | Econazole nitrate salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:27592 | CHEBI:27592 | Ectoine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
-| CHEBI:4735 | CHEBI:4735 | EDTA | MAPPED | CHEBI | SYNONYM_MATCH | 574 |
+| CHEBI:4735 | CHEBI:4735 | EDTA | MAPPED | CHEBI | SYNONYM_MATCH | 597 |
 | FOODON:03315772 | FOODON:03315772 | Egg yolk | MAPPED | FOODON | EXACT_MATCH | 0 |
 | CHEBI:4767 | CHEBI:4767 | Elastin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:42223 | CHEBI:42223 | Emodin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -959,7 +959,7 @@ Total: 2953 ingredients
 | mesh:C004910 | mesh:C004910 | Etamycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:4877 | CHEBI:4877 | Ethambutol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4878 | CHEBI:4878 | Ethambutol dihydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:16236 | CHEBI:16236 | Ethanol | MAPPED | CHEBI | EXACT_MATCH | 197 |
+| CHEBI:16236 | CHEBI:16236 | Ethanol | MAPPED | CHEBI | EXACT_MATCH | 202 |
 | CHEBI:16000 | CHEBI:16000 | Ethanolamine | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:4883 | CHEBI:4883 | Ethidium Bromide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4885 | CHEBI:4885 | Ethionamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -984,31 +984,31 @@ Total: 2953 ingredients
 | kgmicrobe.compound:fe2_so43_x_n_h2o | CHEBI:53438 | Fe2(SO4)3 x n H2O | MAPPED | CHEBI | NARROW_MATCH | 41 |
 | CHEBI:132767 | CHEBI:132767 | Fe4(PO4)2 | MAPPED | CHEBI | EXACT_MATCH | 11 |
 | CHEBI:30729 | CHEBI:30729 | Fe(III)-EDTA | MAPPED | CHEBI | SYNONYM_MATCH | 63 |
-| CHEBI:144421 | CHEBI:144421 | Fe(III) citrate | MAPPED | CHEBI | EXACT_MATCH | 428 |
+| CHEBI:144421 | CHEBI:144421 | Fe(III) citrate | MAPPED | CHEBI | EXACT_MATCH | 435 |
 | CHEBI:131372 | CHEBI:131372 | Fe(III)PO4 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:76181 | CHEBI:76181 | Fe(NH4)2(SO4)2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 279 |
+| CHEBI:76181 | CHEBI:76181 | Fe(NH4)2(SO4)2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 300 |
 | CHEBI:131378 | CHEBI:131378 | Fe(NH4)2(SO4)2 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 36 |
-| CHEBI:30812 | CHEBI:30812 | FeCl2 | MAPPED | CHEBI | EXACT_MATCH | 53 |
-| CHEBI:86249 | CHEBI:86249 | FeCl2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 1365 |
-| kgmicrobe.compound:fecl2_x_6_h2o | CHEBI:30812 | FeCl2 x 6 H2O | MAPPED | CHEBI | CLOSE_MATCH | 5 |
+| CHEBI:30812 | CHEBI:30812 | FeCl2 | MAPPED | CHEBI | EXACT_MATCH | 55 |
+| CHEBI:86249 | CHEBI:86249 | FeCl2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 1554 |
+| kgmicrobe.compound:fecl2_x_6_h2o | CHEBI:30812 | FeCl2 x 6 H2O | MAPPED | CHEBI | CLOSE_MATCH | 6 |
 | kgmicrobe.compound:fecl2_x_7_h2o | CHEBI:30812 | FeCl2 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 9 |
 | CHEBI:30808 | CHEBI:30808 | FeCl3 | MAPPED | CHEBI | EXACT_MATCH | 134 |
 | kgmicrobe.compound:fecl3_x_4_h2o | CHEBI:30808 | FeCl3 x 4 H2O | MAPPED | CHEBI | CLOSE_MATCH | 8 |
-| CHEBI:86254 | CHEBI:86254 | FeCl3 x 6 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 614 |
+| CHEBI:86254 | CHEBI:86254 | FeCl3 x 6 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 682 |
 | CHEBI:131371 | CHEBI:131371 | FePO4 | MAPPED | CHEBI | SYNONYM_MATCH | 3 |
-| CHEBI:31604 | CHEBI:31604 | Ferric ammonium citrate | MAPPED | CHEBI | EXACT_MATCH | 186 |
+| CHEBI:31604 | CHEBI:31604 | Ferric ammonium citrate | MAPPED | CHEBI | EXACT_MATCH | 197 |
 | CHEBI:144434 | CHEBI:144434 | Ferric citrate monohydrate | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
 | CHEBI:192761 | CHEBI:192761 | Ferrihydrite | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | mesh:C016600 | mesh:C016600 | Ferrous citrate | MAPPED | MESH | EXACT_MATCH | 5 |
 | CHEBI:219729 | CHEBI:219729 | ferroverdin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:193350 | CHEBI:193350 | Ferulic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:75832 | CHEBI:75832 | FeSO4 | MAPPED | CHEBI | SYNONYM_MATCH | 232 |
+| CHEBI:75832 | CHEBI:75832 | FeSO4 | MAPPED | CHEBI | SYNONYM_MATCH | 238 |
 | kgmicrobe.compound:feso4_x_5_h2o | CHEBI:75832 | FeSO4 x 5 H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
-| kgmicrobe.compound:feso4_x_6_h2o | CHEBI:75832 | FeSO4 x 6 H2O | MAPPED | CHEBI | NARROW_MATCH | 23 |
-| CHEBI:75836 | CHEBI:75836 | FeSO4 x 7 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 2821 |
+| kgmicrobe.compound:feso4_x_6_h2o | CHEBI:75832 | FeSO4 x 6 H2O | MAPPED | CHEBI | NARROW_MATCH | 24 |
+| CHEBI:75836 | CHEBI:75836 | FeSO4 x 7 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 3118 |
 | CHEBI:75836 | CHEBI:75836 | FeSO4 x 7H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:75834 | CHEBI:75834 | FeSO4 x H2O | MAPPED | CHEBI | EXACT_MATCH | 11 |
-| NCIT:C113696 | NCIT:C113696 | Fetal bovine serum | MAPPED | NCIT | EXACT_MATCH | 116 |
+| CHEBI:75834 | CHEBI:75834 | FeSO4 x H2O | MAPPED | CHEBI | EXACT_MATCH | 15 |
+| NCIT:C113696 | NCIT:C113696 | Fetal bovine serum | MAPPED | NCIT | EXACT_MATCH | 119 |
 | NCIT:C71971 | NCIT:C71971 | Fig | MAPPED | NCIT | EXACT_MATCH | 2 |
 | MICRO:0001597 | MICRO:0001597 | Fildes Enrichment | MAPPED | MICRO | EXACT_MATCH | 2 |
 | MICRO:0001773 | MICRO:0001773 | Filtered Seawater | MAPPED | MICRO | EXACT_MATCH | 10 |
@@ -1020,7 +1020,7 @@ Total: 2953 ingredients
 | CHEBI:28908 | CHEBI:28908 | Flavomycin | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:42491 | CHEBI:42491 | Flavone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33083 | CHEBI:33083 | Fluoranthene | MAPPED | CHEBI | EXACT_MATCH | 26 |
-| CHEBI:27470 | CHEBI:27470 | Folic acid | MAPPED | CHEBI | EXACT_MATCH | 2131 |
+| CHEBI:27470 | CHEBI:27470 | Folic acid | MAPPED | CHEBI | EXACT_MATCH | 2223 |
 | CHEBI:15640 | CHEBI:15640 | Folinic acid | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:16842 | CHEBI:16842 | Formaldehyde | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:16397 | CHEBI:16397 | Formamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1031,8 +1031,8 @@ Total: 2953 ingredients
 | cas:308066-66-2 | CHEBI:28645 | Fructooligosaccharides (FOS) | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:15946 | CHEBI:15946 | Fructose-6-phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:34393-27-6 | cas:34393-27-6 | Fructose-asparagine | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:28757 | CHEBI:28757 | Fructose | MAPPED | CHEBI | EXACT_MATCH | 87 |
-| CHEBI:33984 | CHEBI:33984 | Fucose | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:28757 | CHEBI:28757 | Fructose | MAPPED | CHEBI | EXACT_MATCH | 90 |
+| CHEBI:33984 | CHEBI:33984 | Fucose | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:18012 | CHEBI:18012 | Fumaric acid | MAPPED | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:144157 | CHEBI:144157 | Fumarprotocetraric Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:207496 | CHEBI:207496 | Furfuryl Alcohol | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1040,16 +1040,16 @@ Total: 2953 ingredients
 | cas:751-94-0 | CHEBI:29013 | Fusidic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:108321-42-2 | cas:108321-42-2 | G418 disulfate salt solution | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:11078-30-1 | CHEBI:27680 | Galactomannan from guar | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:28260 | CHEBI:28260 | Galactose | MAPPED | CHEBI | EXACT_MATCH | 14 |
+| CHEBI:28260 | CHEBI:28260 | Galactose | MAPPED | CHEBI | EXACT_MATCH | 15 |
 | cas:19046-60-7 | CHEBI:17973 | Galactose 1-phosphate dipotassium salt pentahydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:30778 | CHEBI:30778 | Gallic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:13450-90-3 | cas:13450-90-3 | Gallium(III)chloride | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:67521 | CHEBI:67521 | Gambogic Acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16865 | CHEBI:16865 | gamma-Aminobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 13 |
-| ENVO:00002263 | ENVO:00002263 | Garden soil | MAPPED | ENVO | EXACT_MATCH | 5 |
+| ENVO:00002263 | ENVO:00002263 | Garden soil | MAPPED | ENVO | EXACT_MATCH | 17 |
 | mesh:C012993 | mesh:C012993 | Gardimycin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:5291 | CHEBI:5291 | Gelatine | MAPPED | CHEBI | SYNONYM_MATCH | 11 |
-| CHEBI:85248 | CHEBI:85248 | Gelrite | MAPPED | CHEBI | SYNONYM_MATCH | 44 |
+| CHEBI:5291 | CHEBI:5291 | Gelatine | MAPPED | CHEBI | SYNONYM_MATCH | 18 |
+| CHEBI:85248 | CHEBI:85248 | Gelrite | MAPPED | CHEBI | SYNONYM_MATCH | 45 |
 | CHEBI:42768 | CHEBI:42768 | Geneticin G418 | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:5312 | CHEBI:5312 | Gentamicin sulfate salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:28066 | CHEBI:28066 | Gentibiose | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1063,23 +1063,23 @@ Total: 2953 ingredients
 | NCIT:C90636 | NCIT:C90636 | Glebomycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:11078-31-2 | CHEBI:17020 | Glucomannan (konjac) | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:24266 | CHEBI:24266 | Gluconic acid | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:17234 | CHEBI:17234 | Glucose | MAPPED | CHEBI | EXACT_MATCH | 2753 |
+| CHEBI:17234 | CHEBI:17234 | Glucose | MAPPED | CHEBI | EXACT_MATCH | 2796 |
 | CHEBI:17234 | CHEBI:17234 | glucose | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:3789-97-7 | CHEBI:32323 | Glucuronamide | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18237 | CHEBI:18237 | Glutamic acid | MAPPED | CHEBI | EXACT_MATCH | 38 |
 | CHEBI:64276 | CHEBI:64276 | Glutaraldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17859 | CHEBI:17859 | Glutaric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:16856 | CHEBI:16856 | Glutathione | MAPPED | CHEBI | EXACT_MATCH | 33 |
+| CHEBI:16856 | CHEBI:16856 | Glutathione | MAPPED | CHEBI | EXACT_MATCH | 34 |
 | CHEBI:17858 | CHEBI:17858 | Glutathione oxidized | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:79731-35-4 | CHEBI:193741 | Gly-DL-Asp | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:172669-64-6 | CHEBI:73898 | Gly-Gln monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:73801 | CHEBI:73801 | Gly-Glu | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17754 | CHEBI:17754 | Glycerol | MAPPED | CHEBI | EXACT_MATCH | 297 |
+| CHEBI:17754 | CHEBI:17754 | Glycerol | MAPPED | CHEBI | EXACT_MATCH | 303 |
 | CHEBI:17754 | CHEBI:17754 | glycerol | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:75937 | CHEBI:75937 | Glycerol mono-oleate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:75456 | CHEBI:75456 | Glycerol monostearate | MAPPED | CHEBI | SYNONYM_MATCH | 5 |
 | cas:55073-41-1 | CHEBI:26707 | Glycerol phosphate disodium salt hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:15428 | CHEBI:15428 | Glycine | MAPPED | CHEBI | EXACT_MATCH | 160 |
+| CHEBI:15428 | CHEBI:15428 | Glycine | MAPPED | CHEBI | EXACT_MATCH | 162 |
 | CHEBI:182320 | CHEBI:182320 | Glycocholic acid hydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16344 | CHEBI:16344 | Glycocyamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:28087 | CHEBI:28087 | Glycogen | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1104,15 +1104,15 @@ Total: 2953 ingredients
 | CHEBI:5550 | CHEBI:5550 | Guaiazulene | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:50-01-1 | NCIT:C47551 | Guanidine Hydrochloride | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:16235 | CHEBI:16235 | Guanine | MAPPED | CHEBI | CAS_RN_LOOKUP | 25 |
-| CHEBI:16750 | CHEBI:16750 | Guanosine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
+| CHEBI:16750 | CHEBI:16750 | Guanosine | MAPPED | CHEBI | CAS_RN_LOOKUP | 11 |
 | cas:9000-01-5 | FOODON:03412975 | Gum arabic from acacia tree | MAPPED | FOODON | NARROW_MATCH | 0 |
-| CHEBI:26642 | CHEBI:26642 | H2SeO3 | MAPPED | CHEBI | EXACT_MATCH | 25 |
-| CHEBI:26836 | CHEBI:26836 | H2SO4 | MAPPED | CHEBI | EXACT_MATCH | 325 |
+| CHEBI:26642 | CHEBI:26642 | H2SeO3 | MAPPED | CHEBI | EXACT_MATCH | 28 |
+| CHEBI:26836 | CHEBI:26836 | H2SO4 | MAPPED | CHEBI | EXACT_MATCH | 341 |
 | CHEBI:36272 | CHEBI:36272 | H2WO4 | MAPPED | CHEBI | SYNONYM_MATCH | 33 |
 | CHEBI:38267 | CHEBI:38267 | H3BO2 | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:33118 | CHEBI:33118 | H3BO3 | MAPPED | CHEBI | EXACT_MATCH | 4267 |
+| CHEBI:33118 | CHEBI:33118 | H3BO3 | MAPPED | CHEBI | EXACT_MATCH | 4464 |
 | cas:202185-84-0 | cas:202185-84-0 | HOMOPIPES | MAPPED | CAS | FALLBACK_REGISTRY | 9 |
-| CHEBI:50385 | CHEBI:50385 | Haemin | MAPPED | CHEBI | EXACT_MATCH | 254 |
+| CHEBI:50385 | CHEBI:50385 | Haemin | MAPPED | CHEBI | EXACT_MATCH | 270 |
 | kgmicrobe.compound:halomicin | kgmicrobe.compound:halomicin | Halomicin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:28172 | CHEBI:28172 | Harmaline | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27943 | CHEBI:27943 | Harmalol | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1120,11 +1120,11 @@ Total: 2953 ingredients
 | CHEBI:28121 | CHEBI:28121 | Harmine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:192558 | CHEBI:192558 | Harmol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:40580-83-4 | cas:40580-83-4 | Harmol Hydrochloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:17883 | CHEBI:17883 | HCl | MAPPED | CHEBI | EXACT_MATCH | 1345 |
+| CHEBI:17883 | CHEBI:17883 | HCl | MAPPED | CHEBI | EXACT_MATCH | 1387 |
 | CHEBI:5633 | CHEBI:5633 | Hecogenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2540 | CHEBI:2540 | Helenine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa | CHEBI:230519 | Heparin sodium salt from porcine intestinal mucosa | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:42334 | CHEBI:42334 | HEPES | MAPPED | CHEBI | EXACT_MATCH | 256 |
+| CHEBI:42334 | CHEBI:42334 | HEPES | MAPPED | CHEBI | EXACT_MATCH | 334 |
 | CHEBI:16148 | CHEBI:16148 | Heptadecane | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:32365 | CHEBI:32365 | heptadecanoic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45571 | CHEBI:45571 | Heptanoic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1138,7 +1138,7 @@ Total: 2953 ingredients
 | mesh:C031780 | mesh:C031780 | Hitachimycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:545959 | CHEBI:545959 | homovanillic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:173769 | CHEBI:173769 | homovanillyl alcohol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| MICRO:0001235 | MICRO:0001235 | Horse serum | MAPPED | MICRO | EXACT_MATCH | 39 |
+| MICRO:0001235 | MICRO:0001235 | Horse serum | MAPPED | MICRO | EXACT_MATCH | 40 |
 | kgmicrobe.compound:hortesin | kgmicrobe.compound:hortesin | Hortesin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:78330 | CHEBI:78330 | Huperzine A | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:9067-32-7 | CHEBI:201433 | Hyaluronic acid sodium salt from Streptococcus equi | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1148,13 +1148,13 @@ Total: 2953 ingredients
 | CHEBI:24632 | CHEBI:24632 | Hydrocarbon | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16240 | CHEBI:16240 | Hydrogen peroxide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16136 | CHEBI:16136 | Hydrogen sulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:18276 | CHEBI:18276 | Hydrogen gas | MAPPED | CHEBI | EXACT_MATCH | 269 |
+| CHEBI:18276 | CHEBI:18276 | Hydrogen gas | MAPPED | CHEBI | EXACT_MATCH | 270 |
 | CHEBI:17594 | CHEBI:17594 | Hydroquinone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:50819 | CHEBI:50819 | hydrous ferric oxide | MAPPED | CHEBI | LEXICAL_MATCH | 50 |
 | CHEBI:18095 | CHEBI:18095 | Hydroxy-L-Proline | MAPPED | CHEBI | CAS_RN_LOOKUP | 3 |
 | CHEBI:5807 | CHEBI:5807 | Hydroxylamine hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:44423 | CHEBI:44423 | Hydroxyurea | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:16976 | CHEBI:16976 | Hygromycin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16976 | CHEBI:16976 | Hygromycin B | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | cas:2555-28-4 | CHEBI:107662 | Hymecromone Methyl Ether | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16668 | CHEBI:16668 | Hypotaurine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17368 | CHEBI:17368 | Hypoxanthine | MAPPED | CHEBI | EXACT_MATCH | 19 |
@@ -1169,7 +1169,7 @@ Total: 2953 ingredients
 | cas:6505-45-9 | CHEBI:230840 | indole 3-acetic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:80180 | CHEBI:80180 | Indolicidin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17596 | CHEBI:17596 | Inosine | MAPPED | CHEBI | CAS_RN_LOOKUP | 36 |
-| CHEBI:24848 | CHEBI:24848 | Inositol | MAPPED | CHEBI | EXACT_MATCH | 35 |
+| CHEBI:24848 | CHEBI:24848 | Inositol | MAPPED | CHEBI | EXACT_MATCH | 37 |
 | CHEBI:15443 | CHEBI:15443 | Inulin | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:75421 | CHEBI:75421 | Iodonitrotetrazolium chloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:164200 | CHEBI:164200 | Irgasan | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1178,13 +1178,13 @@ Total: 2953 ingredients
 | CHEBI:82664 | CHEBI:82664 | Iron powder | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:46645 | CHEBI:46645 | Isobutyl alcohol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:193555 | CHEBI:193555 | Isobutyramide | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:16135 | CHEBI:16135 | Isobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 98 |
+| CHEBI:16135 | CHEBI:16135 | Isobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 117 |
 | CHEBI:310312 | CHEBI:310312 | Isoliquiritigenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28189 | CHEBI:28189 | Isomaltose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6030 | CHEBI:6030 | Isoniazid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:17824 | CHEBI:17824 | Isopropyl alcohol | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:6054 | CHEBI:6054 | Isosafrole | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:28484 | CHEBI:28484 | Isovaleric acid | MAPPED | CHEBI | EXACT_MATCH | 99 |
+| CHEBI:28484 | CHEBI:28484 | Isovaleric acid | MAPPED | CHEBI | EXACT_MATCH | 118 |
 | CHEBI:193161 | CHEBI:193161 | Isovanillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30838 | CHEBI:30838 | Itaconic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:480-14-4 | cas:480-14-4 | Izalpinin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -1192,34 +1192,34 @@ Total: 2953 ingredients
 | CHEBI:15794 | CHEBI:15794 | Juglone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32029 | CHEBI:32029 | K-acetate | MAPPED | CHEBI | EXACT_MATCH | 18 |
 | CHEBI:131526 | CHEBI:131526 | K2CO3 | MAPPED | CHEBI | EXACT_MATCH | 10 |
-| CHEBI:75249 | CHEBI:75249 | K2CrO4 | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:131527 | CHEBI:131527 | K2HPO4 | MAPPED | CHEBI | EXACT_MATCH | 4557 |
-| kgmicrobe.compound:k2hpo4_x_3_h2o | CHEBI:131527 | K2HPO4 x 3 H2O | MAPPED | CHEBI | CLOSE_MATCH | 199 |
+| CHEBI:75249 | CHEBI:75249 | K2CrO4 | MAPPED | CHEBI | EXACT_MATCH | 3 |
+| CHEBI:131527 | CHEBI:131527 | K2HPO4 | MAPPED | CHEBI | EXACT_MATCH | 4622 |
+| kgmicrobe.compound:k2hpo4_x_3_h2o | CHEBI:131527 | K2HPO4 x 3 H2O | MAPPED | CHEBI | CLOSE_MATCH | 201 |
 | CHEBI:86466 | CHEBI:86466 | K2S4O6 | MAPPED | CHEBI | EXACT_MATCH | 29 |
-| CHEBI:32036 | CHEBI:32036 | K2SO4 | MAPPED | CHEBI | EXACT_MATCH | 134 |
+| CHEBI:32036 | CHEBI:32036 | K2SO4 | MAPPED | CHEBI | EXACT_MATCH | 136 |
 | kgmicrobe.compound:k2so4_x_7_h2o | CHEBI:32036 | K2SO4 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 4 |
-| CHEBI:6104 | CHEBI:6104 | Kanamycin | MAPPED | CHEBI | EXACT_MATCH | 7 |
-| CHEBI:6109 | CHEBI:6109 | Kanamycin sulfate | MAPPED | CHEBI | EXACT_MATCH | 6 |
+| CHEBI:6104 | CHEBI:6104 | Kanamycin | MAPPED | CHEBI | EXACT_MATCH | 14 |
+| CHEBI:6109 | CHEBI:6109 | Kanamycin sulfate | MAPPED | CHEBI | EXACT_MATCH | 9 |
 | mesh:C001493 | mesh:C001493 | Kanchanomycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution | MICRO:0000460 | Kao and Michayluk vitamin solution | MAPPED | MICRO | CLOSE_MATCH | 1 |
 | CHEBI:166631 | CHEBI:166631 | Karanjin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:156288 | CHEBI:156288 | Kawain | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:32030 | CHEBI:32030 | KBr | MAPPED | CHEBI | EXACT_MATCH | 353 |
-| CHEBI:32588 | CHEBI:32588 | KCl | MAPPED | CHEBI | EXACT_MATCH | 3985 |
+| CHEBI:32030 | CHEBI:32030 | KBr | MAPPED | CHEBI | EXACT_MATCH | 364 |
+| CHEBI:32588 | CHEBI:32588 | KCl | MAPPED | CHEBI | EXACT_MATCH | 4049 |
 | mesh:C008231 | mesh:C008231 | Ketomycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:66872 | CHEBI:66872 | KF | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:63036 | CHEBI:63036 | KH2PO4 | MAPPED | CHEBI | EXACT_MATCH | 5710 |
-| CHEBI:81862 | CHEBI:81862 | KHCO3 | MAPPED | CHEBI | EXACT_MATCH | 26 |
-| CHEBI:8346 | CHEBI:8346 | KI | MAPPED | CHEBI | SYNONYM_MATCH | 182 |
+| CHEBI:63036 | CHEBI:63036 | KH2PO4 | MAPPED | CHEBI | EXACT_MATCH | 5782 |
+| CHEBI:81862 | CHEBI:81862 | KHCO3 | MAPPED | CHEBI | EXACT_MATCH | 27 |
+| CHEBI:8346 | CHEBI:8346 | KI | MAPPED | CHEBI | SYNONYM_MATCH | 195 |
 | CHEBI:220048 | CHEBI:220048 | kijanimicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:63043 | CHEBI:63043 | KNO3 | MAPPED | CHEBI | SYNONYM_MATCH | 595 |
-| CHEBI:32035 | CHEBI:32035 | KOH | MAPPED | CHEBI | SYNONYM_MATCH | 231 |
+| CHEBI:63043 | CHEBI:63043 | KNO3 | MAPPED | CHEBI | SYNONYM_MATCH | 610 |
+| CHEBI:32035 | CHEBI:32035 | KOH | MAPPED | CHEBI | SYNONYM_MATCH | 248 |
 | CHEBI:30951 | CHEBI:30951 | KSCN | MAPPED | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:4828 | CHEBI:4828 | L-(+)-Ergothioneine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:23958 | CHEBI:23958 | L-(+)-Erythrulose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17266 | CHEBI:17266 | L-(-)-sorbose | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:35619 | CHEBI:35619 | L-2-Aminobutyric acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:30849 | CHEBI:30849 | L-Arabinose | MAPPED | CHEBI | EXACT_MATCH | 3 |
+| CHEBI:30849 | CHEBI:30849 | L-Arabinose | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:5794-13-8 | NCIT:C87433 | L-Asparagine monohydrate | MAPPED | NCIT | NARROW_MATCH | 0 |
 | cas:1115-63-5 | CHEBI:17053 | L-Aspartic acid potassium salt | MAPPED | CHEBI | NARROW_MATCH | 1 |
 | cas:323194-76-9 | CHEBI:17053 | L-Aspartic acid sodium salt monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 2 |
@@ -1239,36 +1239,36 @@ Total: 2953 ingredients
 | CHEBI:18183 | CHEBI:18183 | L-Pyroglutamic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:10030-85-0 | CHEBI:62345 | L-Rhamnose monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:65328 | CHEBI:65328 | L-Xylose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:16977 | CHEBI:16977 | L-Alanine | MAPPED | CHEBI | EXACT_MATCH | 108 |
+| CHEBI:16977 | CHEBI:16977 | L-Alanine | MAPPED | CHEBI | EXACT_MATCH | 110 |
 | CHEBI:2596 | CHEBI:2596 | L-alliin | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:86658 | CHEBI:86658 | L-alpha-Phosphatidylcholine | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:16467 | CHEBI:16467 | L-Arginine | MAPPED | CHEBI | EXACT_MATCH | 104 |
-| CHEBI:31235 | CHEBI:31235 | L-Arginine x HCl | MAPPED | CHEBI | EXACT_MATCH | 13 |
-| CHEBI:29073 | CHEBI:29073 | L-Ascorbic acid | MAPPED | CHEBI | EXACT_MATCH | 21 |
-| CHEBI:17196 | CHEBI:17196 | L-Asparagine | MAPPED | CHEBI | EXACT_MATCH | 135 |
-| CHEBI:17053 | CHEBI:17053 | L-Aspartic acid | MAPPED | CHEBI | EXACT_MATCH | 43 |
-| CHEBI:17561 | CHEBI:17561 | L-Cysteine | MAPPED | CHEBI | EXACT_MATCH | 130 |
-| CHEBI:91247 | CHEBI:91247 | L-Cysteine HCl | MAPPED | CHEBI | EXACT_MATCH | 338 |
-| CHEBI:91248 | CHEBI:91248 | L-Cysteine HCl x H2O | MAPPED | CHEBI | EXACT_MATCH | 1782 |
+| CHEBI:16467 | CHEBI:16467 | L-Arginine | MAPPED | CHEBI | EXACT_MATCH | 106 |
+| CHEBI:31235 | CHEBI:31235 | L-Arginine x HCl | MAPPED | CHEBI | EXACT_MATCH | 14 |
+| CHEBI:29073 | CHEBI:29073 | L-Ascorbic acid | MAPPED | CHEBI | EXACT_MATCH | 26 |
+| CHEBI:17196 | CHEBI:17196 | L-Asparagine | MAPPED | CHEBI | EXACT_MATCH | 136 |
+| CHEBI:17053 | CHEBI:17053 | L-Aspartic acid | MAPPED | CHEBI | EXACT_MATCH | 44 |
+| CHEBI:17561 | CHEBI:17561 | L-Cysteine | MAPPED | CHEBI | EXACT_MATCH | 131 |
+| CHEBI:91247 | CHEBI:91247 | L-Cysteine HCl | MAPPED | CHEBI | EXACT_MATCH | 340 |
+| CHEBI:91248 | CHEBI:91248 | L-Cysteine HCl x H2O | MAPPED | CHEBI | EXACT_MATCH | 1824 |
 | CHEBI:35235 | CHEBI:35235 | L-cysteine zwitterion | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16283 | CHEBI:16283 | L-Cystine | MAPPED | CHEBI | EXACT_MATCH | 19 |
 | CHEBI:18287 | CHEBI:18287 | L-Fucose | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:16015 | CHEBI:16015 | L-Glutamic acid | MAPPED | CHEBI | EXACT_MATCH | 135 |
-| CHEBI:18050 | CHEBI:18050 | L-Glutamine | MAPPED | CHEBI | EXACT_MATCH | 199 |
-| CHEBI:15971 | CHEBI:15971 | L-Histidine | MAPPED | CHEBI | EXACT_MATCH | 154 |
-| CHEBI:17191 | CHEBI:17191 | L-Isoleucine | MAPPED | CHEBI | EXACT_MATCH | 122 |
-| CHEBI:15603 | CHEBI:15603 | L-Leucine | MAPPED | CHEBI | EXACT_MATCH | 133 |
-| CHEBI:18019 | CHEBI:18019 | L-Lysine | MAPPED | CHEBI | EXACT_MATCH | 84 |
+| CHEBI:16015 | CHEBI:16015 | L-Glutamic acid | MAPPED | CHEBI | EXACT_MATCH | 143 |
+| CHEBI:18050 | CHEBI:18050 | L-Glutamine | MAPPED | CHEBI | EXACT_MATCH | 208 |
+| CHEBI:15971 | CHEBI:15971 | L-Histidine | MAPPED | CHEBI | EXACT_MATCH | 156 |
+| CHEBI:17191 | CHEBI:17191 | L-Isoleucine | MAPPED | CHEBI | EXACT_MATCH | 124 |
+| CHEBI:15603 | CHEBI:15603 | L-Leucine | MAPPED | CHEBI | EXACT_MATCH | 135 |
+| CHEBI:18019 | CHEBI:18019 | L-Lysine | MAPPED | CHEBI | EXACT_MATCH | 85 |
 | CHEBI:53633 | CHEBI:53633 | L-Lysine HCl | MAPPED | CHEBI | EXACT_MATCH | 5 |
-| CHEBI:16643 | CHEBI:16643 | L-Methionine | MAPPED | CHEBI | EXACT_MATCH | 126 |
-| CHEBI:17295 | CHEBI:17295 | L-Phenylalanine | MAPPED | CHEBI | EXACT_MATCH | 115 |
-| CHEBI:17203 | CHEBI:17203 | L-Proline | MAPPED | CHEBI | EXACT_MATCH | 113 |
-| CHEBI:62345 | CHEBI:62345 | L-Rhamnose | MAPPED | CHEBI | EXACT_MATCH | 9 |
-| CHEBI:17115 | CHEBI:17115 | L-Serine | MAPPED | CHEBI | EXACT_MATCH | 120 |
-| CHEBI:16857 | CHEBI:16857 | L-Threonine | MAPPED | CHEBI | EXACT_MATCH | 88 |
-| CHEBI:16828 | CHEBI:16828 | L-Tryptophan | MAPPED | CHEBI | EXACT_MATCH | 100 |
-| CHEBI:17895 | CHEBI:17895 | L-Tyrosine | MAPPED | CHEBI | EXACT_MATCH | 79 |
-| CHEBI:16414 | CHEBI:16414 | L-Valine | MAPPED | CHEBI | EXACT_MATCH | 114 |
+| CHEBI:16643 | CHEBI:16643 | L-Methionine | MAPPED | CHEBI | EXACT_MATCH | 128 |
+| CHEBI:17295 | CHEBI:17295 | L-Phenylalanine | MAPPED | CHEBI | EXACT_MATCH | 117 |
+| CHEBI:17203 | CHEBI:17203 | L-Proline | MAPPED | CHEBI | EXACT_MATCH | 115 |
+| CHEBI:62345 | CHEBI:62345 | L-Rhamnose | MAPPED | CHEBI | EXACT_MATCH | 10 |
+| CHEBI:17115 | CHEBI:17115 | L-Serine | MAPPED | CHEBI | EXACT_MATCH | 121 |
+| CHEBI:16857 | CHEBI:16857 | L-Threonine | MAPPED | CHEBI | EXACT_MATCH | 90 |
+| CHEBI:16828 | CHEBI:16828 | L-Tryptophan | MAPPED | CHEBI | EXACT_MATCH | 102 |
+| CHEBI:17895 | CHEBI:17895 | L-Tyrosine | MAPPED | CHEBI | EXACT_MATCH | 81 |
+| CHEBI:16414 | CHEBI:16414 | L-Valine | MAPPED | CHEBI | EXACT_MATCH | 116 |
 | cas:97281-52-2 | CHEBI:28874 | L-α-Phosphatidylinositol from Glycine max (soybean) | MAPPED | CHEBI | BROAD_MATCH | 0 |
 | CHEBI:81664 | CHEBI:81664 | LL-37 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15671 | CHEBI:15671 | L(+)-Tartaric acid | MAPPED | CHEBI | EXACT_MATCH | 7 |
@@ -1278,7 +1278,7 @@ Total: 2953 ingredients
 | CHEBI:195690 | CHEBI:195690 | L-ornithine monohydrochloride | MAPPED | CHEBI | CAS_RN_LOOKUP | 2 |
 | CHEBI:53696 | CHEBI:53696 | L-tyrosine disodium salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 6 |
 | CHEBI:135737 | CHEBI:135737 | Lacidipine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| MICRO:0001365 | MICRO:0001365 | Lactalbumin hydrolysate | MAPPED | MICRO | EXACT_MATCH | 1 |
+| MICRO:0001365 | MICRO:0001365 | Lactalbumin hydrolysate | MAPPED | MICRO | EXACT_MATCH | 3 |
 | CHEBI:24996 | CHEBI:24996 | Lactate | MAPPED | CHEBI | EXACT_MATCH | 11 |
 | CHEBI:75323 | CHEBI:75323 | Lactitol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:7578-25-8 | mesh:C045442 | Lacto-N-fucopentaose I | MAPPED | MESH | NARROW_MATCH | 0 |
@@ -1306,7 +1306,7 @@ Total: 2953 ingredients
 | mesh:D002174 | mesh:D002174 | Levorin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:45630 | CHEBI:45630 | Levulinic Acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
 | kgmicrobe.ingredient:lichenan_icelandic_moss | CHEBI:6452 | Lichenan (icelandic moss) | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:48607 | CHEBI:48607 | LiCl | MAPPED | CHEBI | SYNONYM_MATCH | 14 |
+| CHEBI:48607 | CHEBI:48607 | LiCl | MAPPED | CHEBI | SYNONYM_MATCH | 16 |
 | cas:8068-05-1 | cas:8068-05-1 | Lignin alkali | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | mesh:C079132 | mesh:C079132 | Limocrocin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:16226 | CHEBI:16226 | Limonin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1317,9 +1317,9 @@ Total: 2953 ingredients
 | cas:85144-11-2 | CHEBI:48607 | Lithium chloride hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16325 | CHEBI:16325 | Lithocholic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | MICRO:0001668 | MICRO:0001668 | Liver digest | MAPPED | MICRO | EXACT_MATCH | 7 |
-| MICRO:0001363 | MICRO:0001363 | Liver extract | MAPPED | MICRO | EXACT_MATCH | 9 |
-| MICRO:0001363 | MICRO:0001363 | Liver extract concentrate | MAPPED | MICRO | LEXICAL_MATCH | 9 |
-| MICRO:0001363 | MICRO:0001363 | Liver extract infusion | MAPPED | MICRO | LEXICAL_MATCH | 9 |
+| MICRO:0001363 | MICRO:0001363 | Liver extract | MAPPED | MICRO | EXACT_MATCH | 11 |
+| MICRO:0001363 | MICRO:0001363 | Liver extract concentrate | MAPPED | MICRO | LEXICAL_MATCH | 11 |
+| MICRO:0001363 | MICRO:0001363 | Liver extract infusion | MAPPED | MICRO | LEXICAL_MATCH | 11 |
 | CHEBI:6518 | CHEBI:6518 | Lomefloxacin hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6538 | CHEBI:6538 | Loratadine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:40303 | CHEBI:40303 | Lovastatin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1331,9 +1331,9 @@ Total: 2953 ingredients
 | CHEBI:62955 | CHEBI:62955 | MES sodium salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 4 |
 | CHEBI:201898 | CHEBI:201898 | Magainin I | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:62964 | CHEBI:62964 | Magnesium acetate | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:86345 | CHEBI:86345 | Magnesium chloride | MAPPED | CHEBI | SYNONYM_MATCH | 4051 |
-| CHEBI:32599 | CHEBI:32599 | Magnesium sulfate | MAPPED | CHEBI | EXACT_MATCH | 618 |
-| CHEBI:72449 | CHEBI:72449 | Malachite green | MAPPED | CHEBI | EXACT_MATCH | 22 |
+| CHEBI:86345 | CHEBI:86345 | Magnesium chloride | MAPPED | CHEBI | SYNONYM_MATCH | 4114 |
+| CHEBI:32599 | CHEBI:32599 | Magnesium sulfate | MAPPED | CHEBI | EXACT_MATCH | 612 |
+| CHEBI:72449 | CHEBI:72449 | Malachite green | MAPPED | CHEBI | EXACT_MATCH | 24 |
 | CHEBI:25115 | CHEBI:25115 | Malate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:18300 | CHEBI:18300 | Maleic acid | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:100683-54-3 | CHEBI:51992 | Malondialdehyde tetrabutylammonium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1346,7 +1346,7 @@ Total: 2953 ingredients
 | CHEBI:68428 | CHEBI:68428 | Maltitol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:25140 | CHEBI:25140 | Maltodextrin | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:27445 | CHEBI:27445 | Maltohexaose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17306 | CHEBI:17306 | Maltose | MAPPED | CHEBI | EXACT_MATCH | 189 |
+| CHEBI:17306 | CHEBI:17306 | Maltose | MAPPED | CHEBI | EXACT_MATCH | 193 |
 | CHEBI:17306 | CHEBI:17306 | maltose | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28460 | CHEBI:28460 | Maltotetraose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:312693-63-3 | CHEBI:61993 | Maltotriose hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
@@ -1363,16 +1363,16 @@ Total: 2953 ingredients
 | MICRO:0000176 | MICRO:0000176 | Meat peptone | MAPPED | MICRO | EXACT_MATCH | 90 |
 | CHEBI:51208 | CHEBI:51208 | Mecillinam | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28053 | CHEBI:28053 | Melibiose | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:28869 | CHEBI:28869 | Menadione | MAPPED | CHEBI | EXACT_MATCH | 103 |
+| CHEBI:28869 | CHEBI:28869 | Menadione | MAPPED | CHEBI | EXACT_MATCH | 106 |
 | CHEBI:63928 | CHEBI:63928 | Menadione sodium bisulfate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:1490-04-6 | CHEBI:25187 | Menthol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:31823 | CHEBI:31823 | mercury (II) chloride | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:6770 | CHEBI:6770 | Meropenem | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:39010 | CHEBI:39010 | MES | MAPPED | CHEBI | EXACT_MATCH | 120 |
+| CHEBI:39010 | CHEBI:39010 | MES | MAPPED | CHEBI | EXACT_MATCH | 124 |
 | CHEBI:39005 | CHEBI:39005 | MES [2-(N-morpholino) ethane sulfonic acid] | MAPPED | CHEBI | SYNONYM_MATCH | 18 |
 | CHEBI:17113 | CHEBI:17113 | meso-Erythritol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16183 | CHEBI:16183 | methane | MAPPED | CHEBI | EXACT_MATCH | 8 |
-| CHEBI:17790 | CHEBI:17790 | Methanol | MAPPED | CHEBI | EXACT_MATCH | 247 |
+| CHEBI:17790 | CHEBI:17790 | Methanol | MAPPED | CHEBI | EXACT_MATCH | 248 |
 | CHEBI:44185 | CHEBI:44185 | Methotrexate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:89471-28-0 | cas:89471-28-0 | Methyl-2-Hydroxy-Phenylproprionate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:17540 | CHEBI:17540 | Methyl-B-D-galactopyranoside | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1397,9 +1397,9 @@ Total: 2953 ingredients
 | CHEBI:6909 | CHEBI:6909 | Metronidazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1915-67-9 | mesh:C554989 | Mexicanolide | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:131391 | CHEBI:131391 | Mg-citrate | MAPPED | CHEBI | SYNONYM_MATCH | 5 |
-| CHEBI:6636 | CHEBI:6636 | MgCl2 | MAPPED | CHEBI | EXACT_MATCH | 292 |
+| CHEBI:6636 | CHEBI:6636 | MgCl2 | MAPPED | CHEBI | EXACT_MATCH | 301 |
 | CHEBI:131394 | CHEBI:131394 | MgCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 29 |
-| CHEBI:86345 | CHEBI:86345 | MgCl2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 4051 |
+| CHEBI:86345 | CHEBI:86345 | MgCl2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 4114 |
 | kgmicrobe.compound:mgcl2_x_7_h2o | CHEBI:6636 | MgCl2 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 19 |
 | CHEBI:86355 | CHEBI:86355 | MgCl2 x H2O | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:86345 | CHEBI:86345 | MgCl2x 6 H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
@@ -1407,8 +1407,7 @@ Total: 2953 ingredients
 | CHEBI:31795 | CHEBI:31795 | MgSO4·7H2O | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31795 | CHEBI:31795 | MgSO47H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:mgso4_x_6_h2o | CHEBI:32599 | MgSO4 x 6 H2O | MAPPED | CHEBI | NARROW_MATCH | 36 |
-| CHEBI:31795 | CHEBI:31795 | MgSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 5744 |
-| CHEBI:31795 | CHEBI:31795 | MgSO4·H2O | MAPPED | CHEBI | EXACT_MATCH | 5744 |
+| CHEBI:31795 | CHEBI:31795 | MgSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 5890 |
 | NCIT:C85509 | NCIT:C85509 | Middlebrook 7H10 agar | MAPPED | NCIT | EXACT_MATCH | 4 |
 | CHEBI:216282 | CHEBI:216282 | miharamycin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | UBERON:0001913 | UBERON:0001913 | Milk | MAPPED | UBERON | EXACT_MATCH | 3 |
@@ -1416,21 +1415,21 @@ Total: 2953 ingredients
 | mesh:C002363 | mesh:C002363 | Minimycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:50697 | CHEBI:50697 | Minocycline hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27504 | CHEBI:27504 | Mitomycin C | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:131395 | CHEBI:131395 | MnCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 41 |
-| CHEBI:86368 | CHEBI:86368 | MnCl2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 3038 |
+| CHEBI:131395 | CHEBI:131395 | MnCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 42 |
+| CHEBI:86368 | CHEBI:86368 | MnCl2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 3315 |
 | CHEBI:63041 | CHEBI:63041 | MnCl2 | MAPPED | CHEBI | EXACT_MATCH | 153 |
 | CHEBI:136511 | CHEBI:136511 | MnO2 | MAPPED | CHEBI | EXACT_MATCH | 6 |
-| CHEBI:86360 | CHEBI:86360 | MnSO4 | MAPPED | CHEBI | EXACT_MATCH | 332 |
+| CHEBI:86360 | CHEBI:86360 | MnSO4 | MAPPED | CHEBI | EXACT_MATCH | 356 |
 | CHEBI:86364 | CHEBI:86364 | MnSO4 x 1 H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:86356 | CHEBI:86356 | MnSO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 44 |
-| CHEBI:86358 | CHEBI:86358 | MnSO4 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 130 |
-| CHEBI:131524 | CHEBI:131524 | MnSO4 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 40 |
+| CHEBI:86356 | CHEBI:86356 | MnSO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 48 |
+| CHEBI:86358 | CHEBI:86358 | MnSO4 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 141 |
+| CHEBI:131524 | CHEBI:131524 | MnSO4 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 41 |
 | CHEBI:131523 | CHEBI:131523 | MnSO4 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | kgmicrobe.compound:mnso4_x_7_h2o | CHEBI:86360 | MnSO4 x 7 H2O | MAPPED | CHEBI | NARROW_MATCH | 16 |
-| CHEBI:86364 | CHEBI:86364 | MnSO4 x H2O | MAPPED | CHEBI | EXACT_MATCH | 1237 |
+| CHEBI:86364 | CHEBI:86364 | MnSO4 x H2O | MAPPED | CHEBI | EXACT_MATCH | 1325 |
 | CHEBI:201539 | CHEBI:201539 | monazomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27617 | CHEBI:27617 | Monensin | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:30627 | CHEBI:30627 | MoO3 | MAPPED | CHEBI | EXACT_MATCH | 32 |
+| CHEBI:30627 | CHEBI:30627 | MoO3 | MAPPED | CHEBI | EXACT_MATCH | 34 |
 | CHEBI:39074 | CHEBI:39074 | MOPS | MAPPED | CHEBI | EXACT_MATCH | 91 |
 | CHEBI:75092 | CHEBI:75092 | Morin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63611 | CHEBI:63611 | Moxifloxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1440,7 +1439,7 @@ Total: 2953 ingredients
 | cas:84082-64-4 | cas:84082-64-4 | Mucin from porcine stomach,Type II | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | cas:84082-64-4 | cas:84082-64-4 | Mucin from porcine stomach type III | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | mesh:C010250 | mesh:C010250 | Mycobacidin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:17268 | CHEBI:17268 | myo-Inositol | MAPPED | CHEBI | EXACT_MATCH | 59 |
+| CHEBI:17268 | CHEBI:17268 | myo-Inositol | MAPPED | CHEBI | EXACT_MATCH | 61 |
 | CHEBI:18152 | CHEBI:18152 | Myricetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28875 | CHEBI:28875 | Myristic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:76924-95-3 | CHEBI:29640 | N-(3-oxohexanoyl)-DL-homoserine lactone | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1451,8 +1450,8 @@ Total: 2953 ingredients
 | CHEBI:21553 | CHEBI:21553 | N-Acetyl-L-glutamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17724 | CHEBI:17724 | N-N Dimethyl glycine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:39060 | CHEBI:39060 | N-(2-acetamido)-2-aminoethanesulfonic acid | MAPPED | CHEBI | EXACT_MATCH | 15 |
-| CHEBI:506227 | CHEBI:506227 | N-Acetyl-D-glucosamine | MAPPED | CHEBI | EXACT_MATCH | 29 |
-| CHEBI:59640 | CHEBI:59640 | N-Acetylglucosamine | MAPPED | CHEBI | EXACT_MATCH | 59 |
+| CHEBI:506227 | CHEBI:506227 | N-Acetyl-D-glucosamine | MAPPED | CHEBI | EXACT_MATCH | 32 |
+| CHEBI:59640 | CHEBI:59640 | N-Acetylglucosamine | MAPPED | CHEBI | EXACT_MATCH | 63 |
 | CHEBI:47965 | CHEBI:47965 | N-acetylmuramic acid | MAPPED | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:17012 | CHEBI:17012 | N-acetylneuraminic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41808 | CHEBI:41808 | n-Decane | MAPPED | CHEBI | EXACT_MATCH | 6 |
@@ -1463,80 +1462,80 @@ Total: 2953 ingredients
 | CHEBI:32850 | CHEBI:32850 | N,N,N′,N′-Tetramethylethylenediamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:172431 | CHEBI:172431 | N-Acetyl-glutamic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:113373 | CHEBI:113373 | Na-3-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:32954 | CHEBI:32954 | Na-acetate | MAPPED | CHEBI | EXACT_MATCH | 1204 |
-| CHEBI:34535 | CHEBI:34535 | Na-ampicillin | MAPPED | CHEBI | EXACT_MATCH | 12 |
-| CHEBI:113451 | CHEBI:113451 | Na-ascorbate | MAPPED | CHEBI | EXACT_MATCH | 36 |
+| CHEBI:32954 | CHEBI:32954 | Na-acetate | MAPPED | CHEBI | EXACT_MATCH | 1213 |
+| CHEBI:34535 | CHEBI:34535 | Na-ampicillin | MAPPED | CHEBI | EXACT_MATCH | 13 |
+| CHEBI:113451 | CHEBI:113451 | Na-ascorbate | MAPPED | CHEBI | EXACT_MATCH | 39 |
 | CHEBI:113455 | CHEBI:113455 | Na-benzoate | MAPPED | CHEBI | EXACT_MATCH | 56 |
-| CHEBI:64103 | CHEBI:64103 | Na-butyrate | MAPPED | CHEBI | EXACT_MATCH | 39 |
+| CHEBI:64103 | CHEBI:64103 | Na-butyrate | MAPPED | CHEBI | EXACT_MATCH | 41 |
 | CHEBI:114126 | CHEBI:114126 | Na-caproate | MAPPED | CHEBI | EXACT_MATCH | 13 |
-| kgmicrobe.compound:na-crotonate | CHEBI:41131 | Na-crotonate | MAPPED | CHEBI | NARROW_MATCH | 10 |
-| CHEBI:62965 | CHEBI:62965 | Na-formate | MAPPED | CHEBI | EXACT_MATCH | 224 |
+| kgmicrobe.compound:na-crotonate | CHEBI:41131 | Na-crotonate | MAPPED | CHEBI | NARROW_MATCH | 11 |
+| CHEBI:62965 | CHEBI:62965 | Na-formate | MAPPED | CHEBI | EXACT_MATCH | 225 |
 | CHEBI:115197 | CHEBI:115197 | Na-gallate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:64243 | CHEBI:64243 | Na-glutamate | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:232798 | CHEBI:232798 | Na-L-lactate | MAPPED | CHEBI | EXACT_MATCH | 162 |
 | CHEBI:131839 | CHEBI:131839 | Na-laurate | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:132101 | CHEBI:132101 | Na-orotate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:132106 | CHEBI:132106 | Na-propionate | MAPPED | CHEBI | EXACT_MATCH | 53 |
-| CHEBI:50144 | CHEBI:50144 | Na-pyruvate | MAPPED | CHEBI | EXACT_MATCH | 810 |
-| CHEBI:60720 | CHEBI:60720 | Na-silicate | MAPPED | CHEBI | EXACT_MATCH | 218 |
+| CHEBI:50144 | CHEBI:50144 | Na-pyruvate | MAPPED | CHEBI | EXACT_MATCH | 825 |
+| CHEBI:60720 | CHEBI:60720 | Na-silicate | MAPPED | CHEBI | EXACT_MATCH | 220 |
 | CHEBI:132109 | CHEBI:132109 | Na-stearate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:63017 | CHEBI:63017 | Na-tartrate | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:86481 | CHEBI:86481 | Na-thioglycolate | MAPPED | CHEBI | EXACT_MATCH | 172 |
+| CHEBI:86481 | CHEBI:86481 | Na-thioglycolate | MAPPED | CHEBI | EXACT_MATCH | 173 |
 | CHEBI:132748 | CHEBI:132748 | Na-vanillate | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:64734 | CHEBI:64734 | Na2-EDTA | MAPPED | CHEBI | SYNONYM_MATCH | 622 |
+| CHEBI:64734 | CHEBI:64734 | Na2-EDTA | MAPPED | CHEBI | SYNONYM_MATCH | 634 |
 | CHEBI:64758 | CHEBI:64758 | Na2-EDTA x 2 H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:115156 | CHEBI:115156 | Na2-fumarate | MAPPED | CHEBI | EXACT_MATCH | 134 |
+| CHEBI:115156 | CHEBI:115156 | Na2-fumarate | MAPPED | CHEBI | EXACT_MATCH | 139 |
 | CHEBI:91251 | CHEBI:91251 | Na2-glyoxalate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | kgmicrobe.compound:na2_alpha-ketoglutarate | CHEBI:30915 | Na2 alpha-ketoglutarate | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | CHEBI:38892 | CHEBI:38892 | Na2B4O7 | MAPPED | CHEBI | EXACT_MATCH | 9 |
-| CHEBI:131366 | CHEBI:131366 | Na2B4O7 x 10 H2O | MAPPED | CHEBI | EXACT_MATCH | 269 |
-| CHEBI:29377 | CHEBI:29377 | Na2CO3 | MAPPED | CHEBI | EXACT_MATCH | 1735 |
-| CHEBI:64758 | CHEBI:64758 | Na2EDTA·2H2O | MAPPED | CHEBI | SYNONYM_MATCH | 146 |
+| CHEBI:131366 | CHEBI:131366 | Na2B4O7 x 10 H2O | MAPPED | CHEBI | EXACT_MATCH | 279 |
+| CHEBI:29377 | CHEBI:29377 | Na2CO3 | MAPPED | CHEBI | EXACT_MATCH | 1779 |
+| CHEBI:64758 | CHEBI:64758 | Na2EDTA·2H2O | MAPPED | CHEBI | SYNONYM_MATCH | 190 |
 | CHEBI:91257 | CHEBI:91257 | Na2HAsO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 14 |
-| CHEBI:34683 | CHEBI:34683 | Na2HPO4 | MAPPED | CHEBI | EXACT_MATCH | 1117 |
+| CHEBI:34683 | CHEBI:34683 | Na2HPO4 | MAPPED | CHEBI | EXACT_MATCH | 1136 |
 | CHEBI:91259 | CHEBI:91259 | Na2HPO4 x 12 H2O | MAPPED | CHEBI | EXACT_MATCH | 179 |
-| CHEBI:91258 | CHEBI:91258 | Na2HPO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 308 |
+| CHEBI:91258 | CHEBI:91258 | Na2HPO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 312 |
 | kgmicrobe.compound:na2hpo4_x_3_h2o | CHEBI:34683 | Na2HPO4 x 3 H2O | MAPPED | CHEBI | CLOSE_MATCH | 4 |
 | kgmicrobe.compound:na2hpo4_x_6_h2o | CHEBI:34683 | Na2HPO4 x 6 H2O | MAPPED | CHEBI | CLOSE_MATCH | 7 |
 | kgmicrobe.compound:na2hpo4_x_7_h2o | CHEBI:34683 | Na2HPO4 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 32 |
-| CHEBI:75215 | CHEBI:75215 | Na2MoO4 | MAPPED | CHEBI | SYNONYM_MATCH | 211 |
+| CHEBI:75215 | CHEBI:75215 | Na2MoO4 | MAPPED | CHEBI | SYNONYM_MATCH | 216 |
 | CHEBI:75213 | CHEBI:75213 | Na2MoO4·2H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:75213 | CHEBI:75213 | Na2MoO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 4064 |
+| CHEBI:75213 | CHEBI:75213 | Na2MoO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 4259 |
 | CHEBI:86473 | CHEBI:86473 | Na2MoO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:76208 | CHEBI:76208 | Na2S | MAPPED | CHEBI | SYNONYM_MATCH | 61 |
-| CHEBI:132112 | CHEBI:132112 | Na2S2O3 | MAPPED | CHEBI | SYNONYM_MATCH | 121 |
-| CHEBI:32150 | CHEBI:32150 | Na2S2O3 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 720 |
+| CHEBI:132112 | CHEBI:132112 | Na2S2O3 | MAPPED | CHEBI | SYNONYM_MATCH | 125 |
+| CHEBI:32150 | CHEBI:32150 | Na2S2O3 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 726 |
 | CHEBI:114786 | CHEBI:114786 | Na2S2O5 | MAPPED | CHEBI | EXACT_MATCH | 6 |
-| CHEBI:76209 | CHEBI:76209 | Na2S x 9 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 2779 |
-| CHEBI:48843 | CHEBI:48843 | Na2SeO3 | MAPPED | CHEBI | EXACT_MATCH | 183 |
+| CHEBI:76209 | CHEBI:76209 | Na2S x 9 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 2859 |
+| CHEBI:48843 | CHEBI:48843 | Na2SeO3 | MAPPED | CHEBI | EXACT_MATCH | 198 |
 | CHEBI:131361 | CHEBI:131361 | Na2SeO3·5H2O | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:131361 | CHEBI:131361 | Na2SeO3 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 1608 |
-| CHEBI:77775 | CHEBI:77775 | Na2SeO4 | MAPPED | CHEBI | EXACT_MATCH | 296 |
-| CHEBI:132108 | CHEBI:132108 | Na2SiO3 x 9 H2O | MAPPED | CHEBI | EXACT_MATCH | 61 |
-| CHEBI:86477 | CHEBI:86477 | Na2SO3 | MAPPED | CHEBI | SYNONYM_MATCH | 26 |
-| CHEBI:86477 | CHEBI:86477 | Na2SO3 x 5 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 26 |
-| CHEBI:32149 | CHEBI:32149 | Na2SO4 | MAPPED | CHEBI | EXACT_MATCH | 1327 |
+| CHEBI:131361 | CHEBI:131361 | Na2SeO3 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 1662 |
+| CHEBI:77775 | CHEBI:77775 | Na2SeO4 | MAPPED | CHEBI | EXACT_MATCH | 306 |
+| CHEBI:132108 | CHEBI:132108 | Na2SiO3 x 9 H2O | MAPPED | CHEBI | EXACT_MATCH | 64 |
+| CHEBI:86477 | CHEBI:86477 | Na2SO3 | MAPPED | CHEBI | SYNONYM_MATCH | 30 |
+| CHEBI:86477 | CHEBI:86477 | Na2SO3 x 5 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 30 |
+| CHEBI:32149 | CHEBI:32149 | Na2SO4 | MAPPED | CHEBI | EXACT_MATCH | 1340 |
 | CHEBI:32586 | CHEBI:32586 | Na2SO4 x 10 H2O | MAPPED | CHEBI | EXACT_MATCH | 6 |
-| CHEBI:63940 | CHEBI:63940 | Na2WO4 | MAPPED | CHEBI | SYNONYM_MATCH | 132 |
-| CHEBI:63939 | CHEBI:63939 | Na2WO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 1606 |
-| CHEBI:32142 | CHEBI:32142 | Na3-citrate x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 268 |
-| CHEBI:63125 | CHEBI:63125 | Na3-EDTA | MAPPED | CHEBI | EXACT_MATCH | 29 |
-| CHEBI:35607 | CHEBI:35607 | Na3VO4 | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:64220 | CHEBI:64220 | Na glutamate | MAPPED | CHEBI | EXACT_MATCH | 154 |
-| CHEBI:63004 | CHEBI:63004 | NaBr | MAPPED | CHEBI | EXACT_MATCH | 316 |
-| CHEBI:26710 | CHEBI:26710 | NaCl | MAPPED | CHEBI | EXACT_MATCH | 8123 |
+| CHEBI:63940 | CHEBI:63940 | Na2WO4 | MAPPED | CHEBI | SYNONYM_MATCH | 144 |
+| CHEBI:63939 | CHEBI:63939 | Na2WO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 1660 |
+| CHEBI:32142 | CHEBI:32142 | Na3-citrate x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 278 |
+| CHEBI:63125 | CHEBI:63125 | Na3-EDTA | MAPPED | CHEBI | EXACT_MATCH | 41 |
+| CHEBI:35607 | CHEBI:35607 | Na3VO4 | MAPPED | CHEBI | EXACT_MATCH | 7 |
+| CHEBI:64220 | CHEBI:64220 | Na glutamate | MAPPED | CHEBI | EXACT_MATCH | 155 |
+| CHEBI:63004 | CHEBI:63004 | NaBr | MAPPED | CHEBI | EXACT_MATCH | 328 |
+| CHEBI:26710 | CHEBI:26710 | NaCl | MAPPED | CHEBI | EXACT_MATCH | 8281 |
 | CHEBI:65242 | CHEBI:65242 | NaClO3 | MAPPED | CHEBI | EXACT_MATCH | 16 |
-| CHEBI:28741 | CHEBI:28741 | NaF | MAPPED | CHEBI | EXACT_MATCH | 305 |
+| CHEBI:28741 | CHEBI:28741 | NaF | MAPPED | CHEBI | EXACT_MATCH | 314 |
 | CHEBI:51919 | CHEBI:51919 | Nafcillin sodium salt monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:37585 | CHEBI:37585 | NaH2PO4 | MAPPED | CHEBI | SYNONYM_MATCH | 140 |
-| kgmicrobe.compound:nah2po4_x_2_h2o | CHEBI:37585 | NaH2PO4 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 92 |
-| CHEBI:32139 | CHEBI:32139 | NaHCO3 | MAPPED | CHEBI | EXACT_MATCH | 3246 |
+| CHEBI:37585 | CHEBI:37585 | NaH2PO4 | MAPPED | CHEBI | SYNONYM_MATCH | 141 |
+| kgmicrobe.compound:nah2po4_x_2_h2o | CHEBI:37585 | NaH2PO4 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 95 |
+| CHEBI:32139 | CHEBI:32139 | NaHCO3 | MAPPED | CHEBI | EXACT_MATCH | 3322 |
 | CHEBI:26709 | CHEBI:26709 | NaHSO3 | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | cas:3374-05-8 | CHEBI:100147 | Nalidixic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:63005 | CHEBI:63005 | NaNO | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:78870 | CHEBI:78870 | NaNO2 | MAPPED | CHEBI | EXACT_MATCH | 30 |
-| CHEBI:63005 | CHEBI:63005 | NaNO3 | MAPPED | CHEBI | SYNONYM_MATCH | 676 |
-| CHEBI:32145 | CHEBI:32145 | NaOH | MAPPED | CHEBI | EXACT_MATCH | 1184 |
+| CHEBI:63005 | CHEBI:63005 | NaNO3 | MAPPED | CHEBI | SYNONYM_MATCH | 698 |
+| CHEBI:32145 | CHEBI:32145 | NaOH | MAPPED | CHEBI | EXACT_MATCH | 1250 |
 | CHEBI:16482 | CHEBI:16482 | Naphthalene | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:36336 | CHEBI:36336 | Naphthalene sulfonic acid | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:50202 | CHEBI:50202 | Naringenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1550,34 +1549,34 @@ Total: 2953 ingredients
 | CHEBI:7524 | CHEBI:7524 | Nerolidol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:91241 | CHEBI:91241 | NH4-oxalate | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:63076 | CHEBI:63076 | (NH4)2 citrate | MAPPED | CHEBI | EXACT_MATCH | 65 |
-| CHEBI:63051 | CHEBI:63051 | (NH4)2HPO4 | MAPPED | CHEBI | EXACT_MATCH | 47 |
-| CHEBI:86149 | CHEBI:86149 | (NH4)2Ni(SO4)2 | MAPPED | CHEBI | SYNONYM_MATCH | 147 |
-| CHEBI:86149 | CHEBI:86149 | (NH4)2Ni(SO4)2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 147 |
-| CHEBI:62946 | CHEBI:62946 | (NH4)2SO4 | MAPPED | CHEBI | EXACT_MATCH | 1802 |
+| CHEBI:63051 | CHEBI:63051 | (NH4)2HPO4 | MAPPED | CHEBI | EXACT_MATCH | 52 |
+| CHEBI:86149 | CHEBI:86149 | (NH4)2Ni(SO4)2 | MAPPED | CHEBI | SYNONYM_MATCH | 156 |
+| CHEBI:86149 | CHEBI:86149 | (NH4)2Ni(SO4)2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 156 |
+| CHEBI:62946 | CHEBI:62946 | (NH4)2SO4 | MAPPED | CHEBI | EXACT_MATCH | 1836 |
 | CHEBI:63037 | CHEBI:63037 | (NH4)3 citrate | MAPPED | CHEBI | EXACT_MATCH | 64 |
-| CHEBI:31206 | CHEBI:31206 | NH4Cl | MAPPED | CHEBI | EXACT_MATCH | 4720 |
+| CHEBI:31206 | CHEBI:31206 | NH4Cl | MAPPED | CHEBI | EXACT_MATCH | 4758 |
 | CHEBI:62982 | CHEBI:62982 | NH4H2PO4 | MAPPED | CHEBI | EXACT_MATCH | 17 |
 | CHEBI:184335 | CHEBI:184335 | NH4HCO3 | MAPPED | CHEBI | EXACT_MATCH | 31 |
 | CHEBI:63038 | CHEBI:63038 | (NH4)NO3 | MAPPED | CHEBI | EXACT_MATCH | 308 |
-| CHEBI:53542 | CHEBI:53542 | Nickel (II) chloride hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 3347 |
-| CHEBI:53437 | CHEBI:53437 | Nickel (II) sulfate hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 73 |
+| CHEBI:53542 | CHEBI:53542 | Nickel (II) chloride hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 3456 |
+| CHEBI:53437 | CHEBI:53437 | Nickel (II) sulfate hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 74 |
 | CHEBI:34887 | CHEBI:34887 | NiCl2 | MAPPED | CHEBI | EXACT_MATCH | 105 |
 | kgmicrobe.compound:nicl2_x_2_h2o | CHEBI:34887 | NiCl2 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 24 |
 | kgmicrobe.compound:nicl2_x_5_h2o | CHEBI:34887 | NiCl2 x 5 H2O | MAPPED | CHEBI | CLOSE_MATCH | 3 |
 | CHEBI:53542 | CHEBI:53542 | NiCl2 x 6 H2O | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17154 | CHEBI:17154 | Nicotinamide | MAPPED | CHEBI | EXACT_MATCH | 252 |
+| CHEBI:17154 | CHEBI:17154 | Nicotinamide | MAPPED | CHEBI | EXACT_MATCH | 267 |
 | CHEBI:89640 | CHEBI:89640 | Nicotinamide N-oxide | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:15940 | CHEBI:15940 | Nicotinic acid | MAPPED | CHEBI | EXACT_MATCH | 2247 |
+| CHEBI:15940 | CHEBI:15940 | Nicotinic acid | MAPPED | CHEBI | EXACT_MATCH | 2570 |
 | cas:28643-80-3 | CHEBI:201444 | Nigericin sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:71629 | CHEBI:71629 | Nisin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:53437 | CHEBI:53437 | NiSO4 x 6 H2O | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:53504 | CHEBI:53504 | NiSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:25548 | CHEBI:25548 | Nitrilotriacetate | MAPPED | CHEBI | SYNONYM_MATCH | 14 |
-| CHEBI:44557 | CHEBI:44557 | Nitrilotriacetic acid | MAPPED | CHEBI | EXACT_MATCH | 1359 |
+| CHEBI:44557 | CHEBI:44557 | Nitrilotriacetic acid | MAPPED | CHEBI | EXACT_MATCH | 1430 |
 | cas:15467-20-6 | CHEBI:44557 | Nitrilotriacetic acid disodium salt | MAPPED | CHEBI | NARROW_MATCH | 7 |
 | CHEBI:71415 | CHEBI:71415 | Nitrofurantoin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:44368 | CHEBI:44368 | Nitrofurazone | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17997 | CHEBI:17997 | Nitrogen gas | MAPPED | CHEBI | EXACT_MATCH | 1161 |
+| CHEBI:17997 | CHEBI:17997 | Nitrogen gas | MAPPED | CHEBI | EXACT_MATCH | 1171 |
 | CHEBI:17045 | CHEBI:17045 | nitrous oxide | MAPPED | CHEBI | CAS_RN_LOOKUP | 3 |
 | CHEBI:7602 | CHEBI:7602 | Nobiletin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:219652 | CHEBI:219652 | nocamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1597,7 +1596,7 @@ Total: 2953 ingredients
 | CHEBI:28837 | CHEBI:28837 | Octanoic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:37868 | CHEBI:37868 | octanol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:7731 | CHEBI:7731 | Ofloxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:16196 | CHEBI:16196 | Oleic acid | MAPPED | CHEBI | EXACT_MATCH | 14 |
+| CHEBI:16196 | CHEBI:16196 | Oleic acid | MAPPED | CHEBI | EXACT_MATCH | 19 |
 | CHEBI:16742 | CHEBI:16742 | Orotic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 6 |
 | CHEBI:52134 | CHEBI:52134 | Oxacillin sodium salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16995 | CHEBI:16995 | Oxalic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1607,7 +1606,7 @@ Total: 2953 ingredients
 | CHEBI:2672 | CHEBI:2672 | Oxymatrine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:31953 | CHEBI:31953 | Oxytetracycline hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32374 | CHEBI:32374 | p-Coumaric acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:30753 | CHEBI:30753 | p-Aminobenzoic acid | MAPPED | CHEBI | EXACT_MATCH | 2292 |
+| CHEBI:30753 | CHEBI:30753 | p-Aminobenzoic acid | MAPPED | CHEBI | EXACT_MATCH | 2466 |
 | CHEBI:17879 | CHEBI:17879 | p-Hydroxybenzoate | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | cas:64309-00-8 | cas:64309-00-8 | p-lacto-N-neo-hexaose | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:100037-69-2 | cas:100037-69-2 | PIPES sesquisodium salt | MAPPED | CAS | FALLBACK_REGISTRY | 36 |
@@ -1620,7 +1619,7 @@ Total: 2953 ingredients
 | cas:10605-02-4 | cas:10605-02-4 | Palmatine chloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:15756 | CHEBI:15756 | Palmitic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | mesh:C024500 | mesh:C024500 | Pamamycin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:16454 | CHEBI:16454 | Pantothenate | MAPPED | CHEBI | EXACT_MATCH | 36 |
+| CHEBI:16454 | CHEBI:16454 | Pantothenate | MAPPED | CHEBI | EXACT_MATCH | 37 |
 | CHEBI:7916 | CHEBI:7916 | Pantothenic acid | MAPPED | CHEBI | EXACT_MATCH | 126 |
 | CHEBI:27565 | CHEBI:27565 | para-aminosalicylic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:74661 | CHEBI:74661 | Parabanic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1628,15 +1627,15 @@ Total: 2953 ingredients
 | CHEBI:28786 | CHEBI:28786 | Paraquat dichloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:7935 | CHEBI:7935 | Paromomycin sulfate salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:7939 | CHEBI:7939 | Parthenolide | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:pasteurized_seawater | ENVO:00002149 | Pasteurized Seawater | MAPPED | ENVO | CLOSE_MATCH | 20 |
+| kgmicrobe.ingredient:pasteurized_seawater | ENVO:00002149 | Pasteurized Seawater | MAPPED | ENVO | CLOSE_MATCH | 21 |
 | NCIT:C72056 | NCIT:C72056 | Pea | MAPPED | NCIT | EXACT_MATCH | 2 |
-| CHEBI:17309 | CHEBI:17309 | Pectin | MAPPED | CHEBI | EXACT_MATCH | 15 |
+| CHEBI:17309 | CHEBI:17309 | Pectin | MAPPED | CHEBI | EXACT_MATCH | 17 |
 | cas:133108-87-9 | cas:133108-87-9 | Pediocin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:17334 | CHEBI:17334 | Penicillin | MAPPED | CHEBI | EXACT_MATCH | 5 |
-| CHEBI:51765 | CHEBI:51765 | Penicillin g | MAPPED | CHEBI | CAS_RN_LOOKUP | 5 |
+| CHEBI:51765 | CHEBI:51765 | Penicillin g | MAPPED | CHEBI | CAS_RN_LOOKUP | 6 |
 | CHEBI:17642 | CHEBI:17642 | Pentachlorophenol | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | cas:15091-98-2 | FOODON:03530244 | Pentasodium tripolyphosphate hexahydrate | MAPPED | FOODON | NARROW_MATCH | 0 |
-| MICRO:0000178 | MICRO:0000178 | Peptone | MAPPED | MICRO | EXACT_MATCH | 2261 |
+| MICRO:0000178 | MICRO:0000178 | Peptone | MAPPED | MICRO | EXACT_MATCH | 2267 |
 | CHEBI:109544 | CHEBI:109544 | Perillic Acid (-) | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15420 | CHEBI:15420 | Perillyl Alcohol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:25941 | CHEBI:25941 | peroxynitrite | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1646,7 +1645,7 @@ Total: 2953 ingredients
 | CHEBI:8055 | CHEBI:8055 | Phenazine methosulfate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:18397 | CHEBI:18397 | 2-phenylethylamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:15882 | CHEBI:15882 | Phenol | MAPPED | CHEBI | EXACT_MATCH | 8 |
-| CHEBI:31991 | CHEBI:31991 | Phenol red | MAPPED | CHEBI | EXACT_MATCH | 115 |
+| CHEBI:31991 | CHEBI:31991 | Phenol red | MAPPED | CHEBI | EXACT_MATCH | 123 |
 | CHEBI:8075 | CHEBI:8075 | Phenoxyacetic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30745 | CHEBI:30745 | Phenyl acetic acid | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:28631 | CHEBI:28631 | Phenyl propionic acid | MAPPED | CHEBI | EXACT_MATCH | 6 |
@@ -1696,10 +1695,10 @@ Total: 2953 ingredients
 | cas:74978-20-4 | NCIT:C83530 | Potassium aluminum chloride | MAPPED | NCIT | NARROW_MATCH | 1 |
 | cas:1030365-02-6 | CHEBI:15584 | potassium citramalate monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:53444 | CHEBI:53444 | Potassium dichromate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:66872 | CHEBI:66872 | potassium fluoride | MAPPED | CHEBI | EXACT_MATCH | 5 |
+| CHEBI:66872 | CHEBI:66872 | potassium fluoride | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | cas:12208-13-8 | cas:12208-13-8 | potassium hexahydroxoantimonate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:6487-48-5 | NCIT:C87592 | Potassium oxalate monohydrate | MAPPED | NCIT | NARROW_MATCH | 0 |
-| kgmicrobe.ingredient:potassium_phosphate_buffer | NCIT:C29321 | Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 49 |
+| kgmicrobe.ingredient:potassium_phosphate_buffer | NCIT:C29321 | Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 50 |
 | cas:16788-57-1 | mesh:C013216 | Potassium phosphate dibasic trihydrate | MAPPED | MESH | NARROW_MATCH | 3 |
 | CHEBI:75248 | CHEBI:75248 | potassium tellurite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:314041-10-6 | CHEBI:30463 | potassium tellurate hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
@@ -1710,10 +1709,10 @@ Total: 2953 ingredients
 | kgmicrobe.compound:primocarcin | kgmicrobe.compound:primocarcin | Primocarcin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:8431 | CHEBI:8431 | Procaine hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:26271 | CHEBI:26271 | Proline | MAPPED | CHEBI | EXACT_MATCH | 23 |
-| CHEBI:28831 | CHEBI:28831 | Propan-1-ol | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:28831 | CHEBI:28831 | Propan-1-ol | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:15725 | CHEBI:15725 | Propandiamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:51240 | CHEBI:51240 | Propidium iodide | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:30768 | CHEBI:30768 | Propionic acid | MAPPED | CHEBI | EXACT_MATCH | 33 |
+| CHEBI:30768 | CHEBI:30768 | Propionic acid | MAPPED | CHEBI | EXACT_MATCH | 38 |
 | MICRO:0000180 | MICRO:0000180 | Proteose Peptone | MAPPED | MICRO | EXACT_MATCH | 569 |
 | CHEBI:50205 | CHEBI:50205 | Protocatechualdehyde | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:36062 | CHEBI:36062 | Protocatechuic Acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1729,11 +1728,11 @@ Total: 2953 ingredients
 | CHEBI:45285 | CHEBI:45285 | Pyrazinamide | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:131529 | CHEBI:131529 | Pyridoxal hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 38 |
 | CHEBI:18405 | CHEBI:18405 | Pyridoxal phosphate | MAPPED | CHEBI | EXACT_MATCH | 10 |
-| CHEBI:16410 | CHEBI:16410 | Pyridoxamine | MAPPED | CHEBI | EXACT_MATCH | 55 |
+| CHEBI:16410 | CHEBI:16410 | Pyridoxamine | MAPPED | CHEBI | EXACT_MATCH | 56 |
 | CHEBI:131532 | CHEBI:131532 | Pyridoxamine Dihydrochloride | MAPPED | CHEBI | EXACT_MATCH | 22 |
 | CHEBI:131531 | CHEBI:131531 | Pyridoxamine hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 110 |
-| CHEBI:16709 | CHEBI:16709 | Pyridoxine | MAPPED | CHEBI | EXACT_MATCH | 52 |
-| CHEBI:30961 | CHEBI:30961 | Pyridoxine hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 2065 |
+| CHEBI:16709 | CHEBI:16709 | Pyridoxine | MAPPED | CHEBI | EXACT_MATCH | 61 |
+| CHEBI:30961 | CHEBI:30961 | Pyridoxine hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 2411 |
 | CHEBI:8673 | CHEBI:8673 | Pyrimethamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:86471 | CHEBI:86471 | Pyrite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:18135 | CHEBI:18135 | Pyrocatechol | MAPPED | CHEBI | SYNONYM_MATCH | 6 |
@@ -1752,7 +1751,7 @@ Total: 2953 ingredients
 | CHEBI:556075 | CHEBI:556075 | Radicicol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16634 | CHEBI:16634 | Raffinose | MAPPED | CHEBI | EXACT_MATCH | 8 |
 | CHEBI:29670 | CHEBI:29670 | Ramoplanin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:8806 | CHEBI:8806 | Resazurin | MAPPED | CHEBI | EXACT_MATCH | 3744 |
+| CHEBI:8806 | CHEBI:8806 | Resazurin | MAPPED | CHEBI | EXACT_MATCH | 3786 |
 | CHEBI:27881 | CHEBI:27881 | Resveratrol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:39280-21-2 | cas:39280-21-2 | Rhamnogalacturonan from soy bean pectic fibre | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:39280-21-2 | cas:39280-21-2 | Rhamnogalacturonan I from potato pectic fiber | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -1760,10 +1759,10 @@ Total: 2953 ingredients
 | cas:141-11-7 | cas:141-11-7 | Rhodinyl Acetate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:144215 | CHEBI:144215 | Rhodocladonic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:rhodomycin_a | mesh:C004977 | Rhodomycin A | MAPPED | MESH | NARROW_MATCH | 0 |
-| CHEBI:17015 | CHEBI:17015 | Riboflavin | MAPPED | CHEBI | EXACT_MATCH | 2148 |
+| CHEBI:17015 | CHEBI:17015 | Riboflavin | MAPPED | CHEBI | EXACT_MATCH | 2254 |
 | kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi | CHEBI:33697 | Ribonucleic acid from torula yeast type VI | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:33942 | CHEBI:33942 | Ribose | MAPPED | CHEBI | EXACT_MATCH | 7 |
-| CHEBI:28077 | CHEBI:28077 | Rifampicin | MAPPED | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:33942 | CHEBI:33942 | Ribose | MAPPED | CHEBI | EXACT_MATCH | 8 |
+| CHEBI:28077 | CHEBI:28077 | Rifampicin | MAPPED | CHEBI | EXACT_MATCH | 10 |
 | kgmicrobe.compound:ristocetin_b | CHEBI:85129 | Ristocetin B | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:5307-59-5 | mesh:C105206 | Robustic Acid | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:144218 | CHEBI:144218 | Roccellic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1772,7 +1771,7 @@ Total: 2953 ingredients
 | CHEBI:17226 | CHEBI:17226 | Rosmarinic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:77249 | CHEBI:77249 | Rosuvastatin calcium | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28201 | CHEBI:28201 | Rotenone | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:78672 | CHEBI:78672 | rubidium chloride | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:78672 | CHEBI:78672 | rubidium chloride | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:223718 | CHEBI:223718 | rubradirin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:21288-61-9 | cas:21288-61-9 | Rutilantinone | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:28527 | CHEBI:28527 | Rutin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1790,7 +1789,7 @@ Total: 2953 ingredients
 | cas:564-20-5 | mesh:C109395 | Sclareolide | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:17488 | CHEBI:17488 | Scopoletin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | ENVO:00002149 | ENVO:00002149 | Sea water | REJECTED | ENVO | EXACT_MATCH | 0 |
-| ENVO:00002149 | ENVO:00002149 | Seawater | MAPPED | ENVO | EXACT_MATCH | 310 |
+| ENVO:00002149 | ENVO:00002149 | Seawater | MAPPED | ENVO | EXACT_MATCH | 314 |
 | CHEBI:41865 | CHEBI:41865 | Sebacic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:75494 | CHEBI:75494 | Serine hydroxamate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28790 | CHEBI:28790 | Serotonin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1811,8 +1810,8 @@ Total: 2953 ingredients
 | CHEBI:9163 | CHEBI:9163 | Sinomenine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30563 | CHEBI:30563 | SiO2 | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | cas:53179-09-2 | CHEBI:35175 | Sisomicin sulfate salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| FOODON:03301484 | FOODON:03301484 | Skimmed milk | MAPPED | FOODON | EXACT_MATCH | 23 |
-| ENVO:00002044 | ENVO:00002044 | Sludge | MAPPED | ENVO | EXACT_MATCH | 15 |
+| FOODON:03301484 | FOODON:03301484 | Skimmed milk | MAPPED | FOODON | EXACT_MATCH | 24 |
+| ENVO:00002044 | ENVO:00002044 | Sludge | MAPPED | ENVO | EXACT_MATCH | 18 |
 | cas:29849-82-9 | CHEBI:15978 | sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:17989-41-2 | CHEBI:15978 | sn-Glycerol 3-phosphate lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:78074 | CHEBI:78074 | SnCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 7 |
@@ -1822,13 +1821,13 @@ Total: 2953 ingredients
 | CHEBI:32954 | CHEBI:32954 | Sodium acetate | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32138 | CHEBI:32138 | Sodium acetate·3H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:32138 | CHEBI:32138 | Sodium acetate trihydrate | MAPPED | CHEBI | EXACT_MATCH | 122 |
-| CHEBI:53311 | CHEBI:53311 | Sodium alginate | MAPPED | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:53311 | CHEBI:53311 | Sodium alginate | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | cas:15432-85-6 | mesh:C034426 | Sodium antimonate | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:278547 | CHEBI:278547 | Sodium azide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:132089 | CHEBI:132089 | Sodium beta-glycerophosphate | MAPPED | CHEBI | EXACT_MATCH | 26 |
 | CHEBI:75229 | CHEBI:75229 | Sodium bromate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:5968-11-6 | CHEBI:29377 | sodium carbonate monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:29377 | CHEBI:29377 | Sodium carbonate solution | MAPPED | CHEBI | LEXICAL_MATCH | 1735 |
+| CHEBI:29377 | CHEBI:29377 | Sodium carbonate solution | MAPPED | CHEBI | LEXICAL_MATCH | 1779 |
 | CHEBI:78667 | CHEBI:78667 | Sodium Chlorite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:206986-87-0 | CHEBI:26711 | Sodium cholate hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:78671 | CHEBI:78671 | Sodium Chromate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1837,7 +1836,7 @@ Total: 2953 ingredients
 | cas:920-49-0 | cas:920-49-0 | Sodium D-Lactate | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:9177 | CHEBI:9177 | sodium Deoxycholate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:145224-92-6 | CHEBI:9177 | Sodium deoxycholate monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:66870 | CHEBI:66870 | Sodium dithionite | MAPPED | CHEBI | EXACT_MATCH | 46 |
+| CHEBI:66870 | CHEBI:66870 | Sodium dithionite | MAPPED | CHEBI | EXACT_MATCH | 53 |
 | CHEBI:8984 | CHEBI:8984 | Sodium Dodecyl Sulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:546-74-7 | cas:546-74-7 | Sodium ethyl sulfate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:78292 | CHEBI:78292 | Sodium ferric EDTA | MAPPED | CHEBI | CAS_RN_LOOKUP | 29 |
@@ -1853,7 +1852,7 @@ Total: 2953 ingredients
 | CHEBI:234594 | CHEBI:234594 | Sodium iodoacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1562-00-1 | cas:1562-00-1 | sodium isethionate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:232798 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 284 |
+| CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 289 |
 | CHEBI:29678 | CHEBI:29678 | Sodium m-arsenite | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:91261 | CHEBI:91261 | Sodium malate | MAPPED | CHEBI | EXACT_MATCH | 83 |
 | CHEBI:91263 | CHEBI:91263 | Sodium maleate | MAPPED | CHEBI | EXACT_MATCH | 3 |
@@ -1869,15 +1868,15 @@ Total: 2953 ingredients
 | cas:7791-07-3 | CHEBI:132103 | Sodium perchlorate monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 1 |
 | CHEBI:75226 | CHEBI:75226 | Sodium periodate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:7775-27-1 | mesh:C024625 | Sodium Persulfate | MAPPED | MESH | NARROW_MATCH | 0 |
-| kgmicrobe.ingredient:sodium_phosphate_buffer | NCIT:C29321 | Sodium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 41 |
+| kgmicrobe.ingredient:sodium_phosphate_buffer | NCIT:C29321 | Sodium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 55 |
 | CHEBI:34683 | CHEBI:34683 | Sodium phosphate dibasic | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:13517-23-2 | CHEBI:36361 | Sodium phosphite dibasic pentahydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_potassium_phosphate_buffer | NCIT:C29321 | Sodium Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 6 |
 | CHEBI:71240 | CHEBI:71240 | Sodium pyrophosphate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | cas:7758-16-9 | NCIT:C77500 | Sodium pyrophosphate dibasic | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:9180 | CHEBI:9180 | Sodium salicylate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:63675 | CHEBI:63675 | Sodium succinate | MAPPED | CHEBI | SYNONYM_MATCH | 200 |
-| CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 26 |
+| CHEBI:63675 | CHEBI:63675 | Sodium succinate | MAPPED | CHEBI | SYNONYM_MATCH | 201 |
+| CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 28 |
 | cas:10489-48-2 | CHEBI:46612 | Sodium thiophosphate tribasic hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:32150 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:114249 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 106 |
@@ -1897,13 +1896,13 @@ Total: 2953 ingredients
 | CHEBI:81486 | CHEBI:81486 | Sphondin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:8025-81-8 | NCIT:C839 | Spiramycin | MAPPED | NCIT | NARROW_MATCH | 0 |
 | mesh:C003339 | mesh:C003339 | Sporangiomycin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:36383 | CHEBI:36383 | SrCl2 | MAPPED | CHEBI | EXACT_MATCH | 249 |
-| CHEBI:36385 | CHEBI:36385 | SrCl2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 224 |
+| CHEBI:36383 | CHEBI:36383 | SrCl2 | MAPPED | CHEBI | EXACT_MATCH | 251 |
+| CHEBI:36385 | CHEBI:36385 | SrCl2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 240 |
 | CHEBI:17164 | CHEBI:17164 | Stachyose - 70% | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:54261-98-2 | CHEBI:17164 | Stachyose hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:41958 | CHEBI:41958 | Stallimycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C1295 | NCIT:C1295 | Staphylomycin M1 | MAPPED | NCIT | EXACT_MATCH | 0 |
-| CHEBI:28017 | CHEBI:28017 | Starch | MAPPED | CHEBI | EXACT_MATCH | 760 |
+| CHEBI:28017 | CHEBI:28017 | Starch | MAPPED | CHEBI | EXACT_MATCH | 767 |
 | CHEBI:28842 | CHEBI:28842 | Stearic acid | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | NCIT:C152426 | NCIT:C152426 | Steffimycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:32158 | CHEBI:32158 | Streptomycin sulfate salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 3 |
@@ -1912,9 +1911,9 @@ Total: 2953 ingredients
 | CHEBI:9300 | CHEBI:9300 | Suberic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C120264 | NCIT:C120264 | Substrate | MAPPED | NCIT | EXACT_MATCH | 5 |
 | CHEBI:26806 | CHEBI:26806 | Succinate | MAPPED | CHEBI | EXACT_MATCH | 20 |
-| CHEBI:15741 | CHEBI:15741 | Succinic acid | MAPPED | CHEBI | EXACT_MATCH | 31 |
+| CHEBI:15741 | CHEBI:15741 | Succinic acid | MAPPED | CHEBI | EXACT_MATCH | 34 |
 | cas:36064-19-4 | cas:36064-19-4 | Sucrose-6-monophosphate dipotassium salt | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:17992 | CHEBI:17992 | Sucrose | MAPPED | CHEBI | EXACT_MATCH | 227 |
+| CHEBI:17992 | CHEBI:17992 | Sucrose | MAPPED | CHEBI | EXACT_MATCH | 235 |
 | NCIT:C71939 | NCIT:C71939 | Sugar | MAPPED | NCIT | EXACT_MATCH | 2 |
 | FOODON:00003412 | FOODON:00003412 | Sugar beet molasses | MAPPED | FOODON | LEXICAL_MATCH | 3 |
 | cas:1981-58-4 | CHEBI:102265 | Sulfamethazine sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1935,7 +1934,7 @@ Total: 2953 ingredients
 | cas:16589-24-5 | cas:16589-24-5 | Synephrine Tartrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | mesh:C003372 | mesh:C003372 | Synergistin A | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:67380 | CHEBI:67380 | syringaldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:68329 | CHEBI:68329 | Syringic Acid | MAPPED | CHEBI | EXACT_MATCH | 5 |
+| CHEBI:68329 | CHEBI:68329 | Syringic Acid | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | cas:91000-53-2 | CHEBI:191055 | TAPS sodium salt | MAPPED | CHEBI | NARROW_MATCH | 8 |
 | CHEBI:9400 | CHEBI:9400 | Tangeritin | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:75211 | CHEBI:75211 | tannic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1953,16 +1952,16 @@ Total: 2953 ingredients
 | kgmicrobe.compound:tetramethyl_ammonium_chloride | CHEBI:46020 | Tetramethyl ammonium chloride | MAPPED | CHEBI | CLOSE_MATCH | 3 |
 | CHEBI:49 | CHEBI:49 | Tetrandrine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:75193 | CHEBI:75193 | Tetrazolium violet | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:75192 | CHEBI:75192 | Thallium(I) acetate | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:75192 | CHEBI:75192 | Thallium(I) acetate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:136609 | CHEBI:136609 | Theaflavin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:30462-35-2 | CHEBI:185495 | Theaflavin Digallate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28946 | CHEBI:28946 | Theobromine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28177 | CHEBI:28177 | Theophylline | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45931 | CHEBI:45931 | Thiamin pyrophosphate | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
-| CHEBI:132751 | CHEBI:132751 | Thiamine-HCl x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 500 |
-| CHEBI:18385 | CHEBI:18385 | Thiamine | MAPPED | CHEBI | SYNONYM_MATCH | 157 |
-| CHEBI:49105 | CHEBI:49105 | Thiamine HCl | MAPPED | CHEBI | EXACT_MATCH | 1996 |
-| CHEBI:9532 | CHEBI:9532 | Thiamine pyrophosphate | MAPPED | CHEBI | SYNONYM_MATCH | 26 |
+| CHEBI:132751 | CHEBI:132751 | Thiamine-HCl x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 712 |
+| CHEBI:18385 | CHEBI:18385 | Thiamine | MAPPED | CHEBI | SYNONYM_MATCH | 178 |
+| CHEBI:49105 | CHEBI:49105 | Thiamine HCl | MAPPED | CHEBI | EXACT_MATCH | 2117 |
+| CHEBI:9532 | CHEBI:9532 | Thiamine pyrophosphate | MAPPED | CHEBI | SYNONYM_MATCH | 29 |
 | kgmicrobe.ingredient:thiamine_vitamin_solution | MICRO:0000460 | Thiamine Vitamin Solution | MAPPED | MICRO | CLOSE_MATCH | 14 |
 | CHEBI:16494 | CHEBI:16494 | Thioctic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:47869 | CHEBI:47869 | Thioglycolate | MAPPED | CHEBI | SYNONYM_MATCH | 6 |
@@ -1970,9 +1969,9 @@ Total: 2953 ingredients
 | CHEBI:26977 | CHEBI:26977 | Thiosulfate | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:36946 | CHEBI:36946 | Thiourea | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17748 | CHEBI:17748 | Thymidine | MAPPED | CHEBI | EXACT_MATCH | 13 |
-| CHEBI:17821 | CHEBI:17821 | Thymine | MAPPED | CHEBI | EXACT_MATCH | 33 |
+| CHEBI:17821 | CHEBI:17821 | Thymine | MAPPED | CHEBI | EXACT_MATCH | 35 |
 | CHEBI:113532 | CHEBI:113532 | Thymoquinone | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| mesh:C039460 | mesh:C039460 | TiCl3 | MAPPED | MESH | EXACT_MATCH | 12 |
+| mesh:C039460 | mesh:C039460 | TiCl3 | MAPPED | MESH | EXACT_MATCH | 13 |
 | CHEBI:44137 | CHEBI:44137 | Tiamulin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:35017 | CHEBI:35017 | Ticarcillin disodium salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:86482-18-0 | cas:86482-18-0 | Timentin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -1991,7 +1990,7 @@ Total: 2953 ingredients
 | CHEBI:16619 | CHEBI:16619 | Trans,Trans-Farnesol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:trans_styrylacetic_acid | kgmicrobe.compound:trans_styrylacetic_acid | Trans Styrylacetic Acid | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | mesh:C498222 | mesh:C498222 | Transvalencin A | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:27082 | CHEBI:27082 | Trehalose | MAPPED | CHEBI | EXACT_MATCH | 14 |
+| CHEBI:27082 | CHEBI:27082 | Trehalose | MAPPED | CHEBI | EXACT_MATCH | 15 |
 | CHEBI:9678 | CHEBI:9678 | Tribenuron-methyl | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:9679 | CHEBI:9679 | Tricalcium phosphate | MAPPED | CHEBI | CAS_RN_LOOKUP | 2 |
 | CHEBI:16602 | CHEBI:16602 | Trichloroethylene | MAPPED | CHEBI | EXACT_MATCH | 3 |
@@ -2000,20 +1999,20 @@ Total: 2953 ingredients
 | CHEBI:229203 | CHEBI:229203 | Trigonelline HCl | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:45924 | CHEBI:45924 | Trimethoprim | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:15724 | CHEBI:15724 | Trimethylamine-N-oxide | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:64700 | CHEBI:64700 | Trimethylamine-HCl | MAPPED | CHEBI | EXACT_MATCH | 67 |
+| CHEBI:64700 | CHEBI:64700 | Trimethylamine-HCl | MAPPED | CHEBI | EXACT_MATCH | 68 |
 | CHEBI:18139 | CHEBI:18139 | Trimethylamine | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:27135 | CHEBI:27135 | Trinitrotoluene | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:9747 | CHEBI:9747 | Triptolide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:66869 | CHEBI:66869 | Tris Acetate Stock Solution | MAPPED | CHEBI | LEXICAL_MATCH | 1 |
-| CHEBI:9754 | CHEBI:9754 | Tris base | MAPPED | CHEBI | EXACT_MATCH | 221 |
-| CHEBI:53258 | CHEBI:53258 | Trisodium citrate | MAPPED | CHEBI | EXACT_MATCH | 175 |
+| CHEBI:9754 | CHEBI:9754 | Tris base | MAPPED | CHEBI | EXACT_MATCH | 224 |
+| CHEBI:53258 | CHEBI:53258 | Trisodium citrate | MAPPED | CHEBI | EXACT_MATCH | 179 |
 | CHEBI:32142 | CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
 | mesh:C514290 | mesh:C514290 | Trisodium citrate x H2O | MAPPED | MESH | EXACT_MATCH | 3 |
 | CHEBI:9750 | CHEBI:9750 | Triton X-100 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16765 | CHEBI:16765 | Tryptamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| MICRO:0000175 | MICRO:0000175 | Trypticase | MAPPED | MICRO | CLOSE_MATCH | 794 |
-| MICRO:0000175 | MICRO:0000175 | Trypticase peptone | MAPPED | MICRO | EXACT_MATCH | 794 |
-| MICRO:0000182 | MICRO:0000182 | Tryptone | MAPPED | MICRO | EXACT_MATCH | 1506 |
+| MICRO:0000175 | MICRO:0000175 | Trypticase | MAPPED | MICRO | CLOSE_MATCH | 797 |
+| MICRO:0000175 | MICRO:0000175 | Trypticase peptone | MAPPED | MICRO | EXACT_MATCH | 797 |
+| MICRO:0000182 | MICRO:0000182 | Tryptone | MAPPED | MICRO | EXACT_MATCH | 1518 |
 | CHEBI:27897 | CHEBI:27897 | Tryptophan | MAPPED | CHEBI | EXACT_MATCH | 37 |
 | MICRO:0000183 | MICRO:0000183 | Tryptose | MAPPED | MICRO | EXACT_MATCH | 16 |
 | mesh:C108556 | mesh:C108556 | Tuberactinamine A | MAPPED | MESH | EXACT_MATCH | 0 |
@@ -2024,19 +2023,19 @@ Total: 2953 ingredients
 | CHEBI:53424 | CHEBI:53424 | Tween 20 | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
 | CHEBI:53423 | CHEBI:53423 | Tween 40 | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:53425 | CHEBI:53425 | Tween 60 | MAPPED | CHEBI | SYNONYM_MATCH | 5 |
-| CHEBI:53426 | CHEBI:53426 | Tween 80 | MAPPED | CHEBI | EXACT_MATCH | 311 |
+| CHEBI:53426 | CHEBI:53426 | Tween 80 | MAPPED | CHEBI | EXACT_MATCH | 312 |
 | CHEBI:141517 | CHEBI:141517 | Tyloxapol | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:77444 | CHEBI:77444 | undecene | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:17568 | CHEBI:17568 | Uracil | MAPPED | CHEBI | EXACT_MATCH | 34 |
+| CHEBI:17568 | CHEBI:17568 | Uracil | MAPPED | CHEBI | EXACT_MATCH | 35 |
 | cas:541-09-3 | mesh:C005460 | Uranyl acetate | MAPPED | MESH | NARROW_MATCH | 2 |
 | cas:6159-44-0 | mesh:C005460 | Uranyl Acetate Dihydrate | MAPPED | MESH | NARROW_MATCH | 0 |
-| CHEBI:16199 | CHEBI:16199 | Urea | MAPPED | CHEBI | EXACT_MATCH | 72 |
+| CHEBI:16199 | CHEBI:16199 | Urea | MAPPED | CHEBI | EXACT_MATCH | 73 |
 | CHEBI:27226 | CHEBI:27226 | Uric acid | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:16704 | CHEBI:16704 | Uridine | MAPPED | CHEBI | CAS_RN_LOOKUP | 16 |
 | cas:3387-36-8 | cas:3387-36-8 | Uridine 5-monophosphate disodium salt | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:28290-51-9 | cas:28290-51-9 | Ursololactone Acetate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:38319 | CHEBI:38319 | Usnic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17418 | CHEBI:17418 | Valeric acid | MAPPED | CHEBI | EXACT_MATCH | 98 |
+| CHEBI:17418 | CHEBI:17418 | Valeric acid | MAPPED | CHEBI | EXACT_MATCH | 113 |
 | CHEBI:16545 | CHEBI:16545 | Valerolactone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:7718-98-1 | cas:7718-98-1 | vanadium chloride | MAPPED | CAS | FALLBACK_REGISTRY | 26 |
 | CHEBI:9932 | CHEBI:9932 | Vancomycin Hydrochloride from Streptomyces orientalis | MAPPED | CHEBI | CAS_RN_LOOKUP | 2 |
@@ -2051,14 +2050,14 @@ Total: 2953 ingredients
 | CHEBI:28586 | CHEBI:28586 | Verbascose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:vermont_soil | ENVO:00001998 | Vermont Soil | MAPPED | ENVO | NARROW_MATCH | 1 |
 | CHEBI:10002 | CHEBI:10002 | Visnagin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:176843 | CHEBI:176843 | Vitamin B12 | MAPPED | CHEBI | EXACT_MATCH | 2429 |
-| CHEBI:18067 | CHEBI:18067 | Vitamin K1 | MAPPED | CHEBI | EXACT_MATCH | 121 |
+| CHEBI:176843 | CHEBI:176843 | Vitamin B12 | MAPPED | CHEBI | EXACT_MATCH | 2767 |
+| CHEBI:18067 | CHEBI:18067 | Vitamin K1 | MAPPED | CHEBI | EXACT_MATCH | 123 |
 | MICRO:0000460 | MICRO:0000460 | Vitamin solution | MAPPED | MICRO | EXACT_MATCH | 7 |
 | kgmicrobe.ingredient:vitamin_solution_~28thermophilic_formulation~29 | MICRO:0000460 | Vitamin solution (thermophilic formulation) | MAPPED | MICRO | CLOSE_MATCH | 0 |
 | kgmicrobe.ingredient:vitamin_solution_see_medium_no_403 | MICRO:0000460 | Vitamin solution see Medium No. 403 | MAPPED | MICRO | CLOSE_MATCH | 0 |
-| CHEBI:87009 | CHEBI:87009 | VOSO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 83 |
+| CHEBI:87009 | CHEBI:87009 | VOSO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 88 |
 | CHEBI:132758 | CHEBI:132758 | VOSO4 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 18 |
-| CHEBI:87020 | CHEBI:87020 | VOSO4 x n H2O | MAPPED | CHEBI | SYNONYM_MATCH | 84 |
+| CHEBI:87020 | CHEBI:87020 | VOSO4 x n H2O | MAPPED | CHEBI | SYNONYM_MATCH | 90 |
 | mesh:C012306 | mesh:C012306 | Vulgamycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:144250 | CHEBI:144250 | Vulpinic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:10033 | CHEBI:10033 | Warfarin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2075,17 +2074,17 @@ Total: 2953 ingredients
 | CHEBI:17151 | CHEBI:17151 | Xylitol | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:28309 | CHEBI:28309 | Xylobiose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:37294-28-3 | cas:37294-28-3 | Xyloglucan from tamarind | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:18222 | CHEBI:18222 | Xylose | MAPPED | CHEBI | EXACT_MATCH | 23 |
+| CHEBI:18222 | CHEBI:18222 | Xylose | MAPPED | CHEBI | EXACT_MATCH | 24 |
 | CHEBI:62972 | CHEBI:62972 | Xylotetraose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:149429 | CHEBI:149429 | Xylotriose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:yeast_extract_malt_extract_agar | FOODON:03301056 | Yeast extract-malt extract agar | MAPPED | FOODON | CLOSE_MATCH | 3 |
-| FOODON:03315426 | FOODON:03315426 | Yeast extract | MAPPED | FOODON | EXACT_MATCH | 7660 |
+| FOODON:03315426 | FOODON:03315426 | Yeast extract | MAPPED | FOODON | EXACT_MATCH | 7716 |
 | CHEBI:10100 | CHEBI:10100 | Zafirlukast | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32076 | CHEBI:32076 | Zinc Pyrithione | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:35176 | CHEBI:35176 | Zinc sulfate | MAPPED | CHEBI | EXACT_MATCH | 224 |
-| CHEBI:49976 | CHEBI:49976 | ZnCl2 | MAPPED | CHEBI | EXACT_MATCH | 1874 |
+| CHEBI:35176 | CHEBI:35176 | Zinc sulfate | MAPPED | CHEBI | EXACT_MATCH | 229 |
+| CHEBI:49976 | CHEBI:49976 | ZnCl2 | MAPPED | CHEBI | EXACT_MATCH | 1957 |
 | CHEBI:132762 | CHEBI:132762 | ZnSO4 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:32312 | CHEBI:32312 | ZnSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 2447 |
+| CHEBI:32312 | CHEBI:32312 | ZnSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 2756 |
 | CHEBI:16113 | CHEBI:16113 | cholesterol | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:41981 | CHEBI:41981 | deuterated water | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:17268 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -2096,7 +2095,7 @@ Total: 2953 ingredients
 | CHEBI:16610 | CHEBI:16610 | spermidine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:16494 | CHEBI:16494 | α-lipoic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:66455-27-4 | cas:66455-27-4 | α1-Acid Glycoprotein from bovine plasma | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| MICRO:0000182 | MICRO:0000182 | Tryptone peptone | MAPPED | MICRO | EXACT_MATCH | 1506 |
+| MICRO:0000182 | MICRO:0000182 | Tryptone peptone | MAPPED | MICRO | EXACT_MATCH | 1518 |
 | FOODON:03315720 | FOODON:03315720 | Phytone | MAPPED | FOODON | CLOSE_MATCH | 1079 |
 | FOODON:03315720 | FOODON:03315720 | Soya pepton | MAPPED | FOODON | CLOSE_MATCH | 1079 |
 | CHEBI:17521 | CHEBI:17521 | (-)-quinic Acid | MAPPED | CHEBI | EXACT_MATCH | 6 |
@@ -2163,7 +2162,7 @@ Total: 2953 ingredients
 | NCIT:C87429 | NCIT:C87429 | Arbutin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:29582 | CHEBI:29582 | Ascomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:22651 | CHEBI:22651 | Ascorbate | MAPPED | CHEBI | EXACT_MATCH | 7 |
-| CHEBI:29995 | CHEBI:29995 | Aspartate | MAPPED | CHEBI | SYNONYM_MATCH | 12 |
+| CHEBI:29995 | CHEBI:29995 | Aspartate | MAPPED | CHEBI | SYNONYM_MATCH | 13 |
 | CHEBI:40968 | CHEBI:40968 | Astaxanthin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:37923 | CHEBI:37923 | Astromicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:156452 | CHEBI:156452 | Aureothricin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2207,7 +2206,7 @@ Total: 2953 ingredients
 | CHEBI:204928 | CHEBI:204928 | Cefotaxime | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3499 | CHEBI:3499 | Cefotetan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:209807 | CHEBI:209807 | Cefoxitin | MAPPED | CHEBI | EXACT_MATCH | 1 |
-| CHEBI:3504 | CHEBI:3504 | Cefpodoxime | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3504 | CHEBI:3504 | Cefpodoxime | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:3506 | CHEBI:3506 | Cefprozil | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3508 | CHEBI:3508 | Ceftazidime | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:29007 | CHEBI:29007 | Ceftriaxone | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2222,7 +2221,7 @@ Total: 2953 ingredients
 | CHEBI:214436 | CHEBI:214436 | Cinerubin R | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:141991 | CHEBI:141991 | Cinnamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3716 | CHEBI:3716 | Cinoxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:100241 | CHEBI:100241 | Ciprofloxacin | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:100241 | CHEBI:100241 | Ciprofloxacin | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:48947 | CHEBI:48947 | Clavulanic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3745 | CHEBI:3745 | Clindamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:49566 | CHEBI:49566 | Cloxacillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2395,7 +2394,7 @@ Total: 2953 ingredients
 | CHEBI:27701 | CHEBI:27701 | Oxytetracycline | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:7934 | CHEBI:7934 | Paromomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:50199 | CHEBI:50199 | Pefloxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:28851 | CHEBI:28851 | Phenanthrene | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:28851 | CHEBI:28851 | Phenanthrene | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:27446 | CHEBI:27446 | Phenoxymethylpenicillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:18401 | CHEBI:18401 | Phenylacetate | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:50048 | CHEBI:50048 | Phenylethylamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2434,17 +2433,17 @@ Total: 2953 ingredients
 | CHEBI:80025 | CHEBI:80025 | Salinomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:221703 | CHEBI:221703 | Sandramycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15075 | CHEBI:15075 | Selenate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17822 | CHEBI:17822 | Serine | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:17822 | CHEBI:17822 | Serine | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:226519 | CHEBI:226519 | Showdomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:62983 | CHEBI:62983 | Sodium Malonate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27922 | CHEBI:27922 | Sorbose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:9215 | CHEBI:9215 | Spectinomycin | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:9215 | CHEBI:9215 | Spectinomycin | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:39207 | CHEBI:39207 | Spinosyn | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31168 | CHEBI:31168 | Spiramycin II | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15738 | CHEBI:15738 | Staurosporine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15889 | CHEBI:15889 | Sterol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45773 | CHEBI:45773 | Streptolydigin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17076 | CHEBI:17076 | Streptomycin | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:17076 | CHEBI:17076 | Streptomycin | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:26790 | CHEBI:26790 | Streptovaricin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:143136 | CHEBI:143136 | Succinamate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:9321 | CHEBI:9321 | Sulbactam | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2495,7 +2494,7 @@ Total: 2953 ingredients
 | CHEBI:404903 | CHEBI:404903 | Ertapenem | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:495056 | CHEBI:495056 | Gamma-cyclodextrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:471744 | CHEBI:471744 | Imipenem | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| FOODON:03315719 | FOODON:03315719 | Casamino acids | MAPPED | FOODON | CLOSE_MATCH | 1313 |
+| FOODON:03315719 | FOODON:03315719 | Casamino acids | MAPPED | FOODON | CLOSE_MATCH | 1318 |
 | cas:150-90-3 | CHEBI:63675 | Sodium succinate dibasic | MAPPED | CHEBI | NARROW_MATCH | 6 |
 | CHEBI:66870 | CHEBI:66870 | Na2S2O4 | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.ingredient:isovitalex | kgmicrobe.ingredient:isovitalex | Isovitalex | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 7 |
@@ -2517,7 +2516,7 @@ Total: 2953 ingredients
 | kgmicrobe.ingredient:steric_solution | kgmicrobe.ingredient:steric_solution | Steric solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
 | kgmicrobe.ingredient:trace_metal_solution | kgmicrobe.ingredient:trace_metal_solution | Trace metal solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 3 |
 | kgmicrobe.ingredient:trace_mineral_solution | kgmicrobe.ingredient:trace_mineral_solution | Trace mineral solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 9 |
-| kgmicrobe.ingredient:trace_minerals | kgmicrobe.ingredient:trace_minerals | Trace minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 6 |
+| kgmicrobe.ingredient:trace_minerals | kgmicrobe.ingredient:trace_minerals | Trace minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 13 |
 | kgmicrobe.ingredient:vitamins_solution | kgmicrobe.ingredient:vitamins_solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:vitamins_solution | kgmicrobe.ingredient:vitamins_solution | Vitamins solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
 | kgmicrobe.ingredient:vitox | kgmicrobe.ingredient:vitox | Vitox | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 3 |
@@ -2558,7 +2557,7 @@ Total: 2953 ingredients
 | FOODON:03310367 | FOODON:03310367 | Cellulose powder | MAPPED | FOODON | EXACT_MATCH | 1 |
 | MICRO:0000591 | MICRO:0000591 | chocolate agar | MAPPED | MICRO | EXACT_MATCH | 2 |
 | CHEBI:17996 | CHEBI:17996 | Cl- | MAPPED | CHEBI | SYNONYM_MATCH | 5 |
-| MICRO:0000520 | MICRO:0000520 | Clarified rumen fluid | MAPPED | MICRO | EXACT_MATCH | 14 |
+| MICRO:0000520 | MICRO:0000520 | Clarified rumen fluid | MAPPED | MICRO | EXACT_MATCH | 15 |
 | kgmicrobe.compound:copper | kgmicrobe.compound:copper | Copper | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 2 |
 | CHEBI:25399 | CHEBI:25399 | Cresol | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:38028 | CHEBI:38028 | Cyanuric acid | MAPPED | CHEBI | EXACT_MATCH | 2 |
@@ -2577,7 +2576,7 @@ Total: 2953 ingredients
 | MICRO:0001598 | MICRO:0001598 | Hemin solution (see below) | MAPPED | MICRO | SYNONYM_MATCH | 1 |
 | CHEBI:5656 | CHEBI:5656 | Hemoglobin | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:61448 | CHEBI:61448 | IPTG | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
-| FOODON:03000441 | FOODON:03000441 | liver powder | MAPPED | FOODON | SYNONYM_MATCH | 1 |
+| FOODON:03000441 | FOODON:03000441 | liver powder | MAPPED | FOODON | SYNONYM_MATCH | 2 |
 | MICRO:0001328 | MICRO:0001328 | MH agar | MAPPED | MICRO | EXACT_MATCH | 1 |
 | MICRO:0000554 | MICRO:0000554 | MRS agar (Oxoid) | MAPPED | MICRO | SYNONYM_MATCH | 1 |
 | CHEBI:18420 | CHEBI:18420 | Magnesium | REJECTED | CHEBI | EXACT_MATCH | 0 |
@@ -2607,7 +2606,7 @@ Total: 2953 ingredients
 | CHEBI:17362 | CHEBI:17362 | Quinoline | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:63247 | CHEBI:63247 | Reducing Agent | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | ENVO:00003870 | ENVO:00003870 | rice straw | MAPPED | ENVO | EXACT_MATCH | 1 |
-| FOODON:03311582 | FOODON:03311582 | Rye-bran | MAPPED | FOODON | SYNONYM_MATCH | 1 |
+| FOODON:03311582 | FOODON:03311582 | Rye-bran | MAPPED | FOODON | SYNONYM_MATCH | 3 |
 | FOODON:03301670 | FOODON:03301670 | Sake | MAPPED | FOODON | EXACT_MATCH | 3 |
 | CHEBI:30762 | CHEBI:30762 | Salicylate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | MICRO:0001230 | MICRO:0001230 | Sheep blood | MAPPED | MICRO | EXACT_MATCH | 28 |
@@ -2619,23 +2618,23 @@ Total: 2953 ingredients
 | CHEBI:17347 | CHEBI:17347 | testosterone | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:9533 | CHEBI:9533 | thiamine monophosphate | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:231499 | CHEBI:231499 | Titanium chloride | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
-| CHEBI:9765 | CHEBI:9765 | Trypsin | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:9765 | CHEBI:9765 | Trypsin | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | MICRO:0000673 | MICRO:0000673 | Trypsin (Sigma--Aldrich) | MAPPED | MICRO | SYNONYM_MATCH | 1 |
 | CHEBI:28940 | CHEBI:28940 | Vitamin D3 | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:28384 | CHEBI:28384 | Vitamin K | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:33229 | CHEBI:33229 | Vitamins | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
 | MICRO:0001723 | MICRO:0001723 | washed agar | MAPPED | MICRO | EXACT_MATCH | 1 |
-| FOODON:03411345 | FOODON:03411345 | Yeast | MAPPED | FOODON | EXACT_MATCH | 2 |
-| MICRO:0000522 | MICRO:0000522 | Yeastolate (BD; 2%, autoclaved) | MAPPED | MICRO | SYNONYM_MATCH | 5 |
+| FOODON:03411345 | FOODON:03411345 | Yeast | MAPPED | FOODON | EXACT_MATCH | 4 |
+| MICRO:0000522 | MICRO:0000522 | Yeastolate (BD; 2%, autoclaved) | MAPPED | MICRO | SYNONYM_MATCH | 6 |
 | CHEBI:62984 | CHEBI:62984 | Zinc Acetate | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:27864 | CHEBI:27864 | Dichloran (0.2% in ethanol) | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | NCIT:C217966 | NCIT:C217966 | hydroxocobalamin hydrochloride | MAPPED | NCIT | EXACT_MATCH | 1 |
 | NCIT:C120561 | NCIT:C120561 | Sodium glycerophosphate | MAPPED | NCIT | EXACT_MATCH | 25 |
-| kgmicrobe.ingredient:trace_element_solution_sl-10 | NCIT:C896 | Trace element solution SL-10 | MAPPED | NCIT | CLOSE_MATCH | 2 |
-| kgmicrobe.ingredient:air-dried_garden_soil | ENVO:00002263 | air-dried garden soil | MAPPED | ENVO | NARROW_MATCH | 5 |
-| kgmicrobe.ingredient:trace_element_solution | NCIT:C896 | Trace element solution | MAPPED | NCIT | CLOSE_MATCH | 7 |
+| kgmicrobe.ingredient:trace_element_solution_sl-10 | NCIT:C896 | Trace element solution SL-10 | MAPPED | NCIT | CLOSE_MATCH | 3 |
+| kgmicrobe.ingredient:air-dried_garden_soil | ENVO:00002263 | air-dried garden soil | MAPPED | ENVO | NARROW_MATCH | 10 |
+| kgmicrobe.ingredient:trace_element_solution | NCIT:C896 | Trace element solution | MAPPED | NCIT | CLOSE_MATCH | 11 |
 | kgmicrobe.ingredient:zeikus_trace_element_solution | NCIT:C896 | Zeikus trace element solution | MAPPED | NCIT | CLOSE_MATCH | 1 |
-| kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt | kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt | 0.5 M Nitrilotriacetic acid, disodium salt | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt | kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt | 0.5 M Nitrilotriacetic acid, disodium salt | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
 | kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate | CHEBI:27469 | 2-Keto-D-gluconic acid hemicalcium salt monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:2769 | CHEBI:2769 | Apigenin Dimethyl Ether | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:arabinoxylan_rye_flour | kgmicrobe.ingredient:arabinoxylan_rye_flour | Arabinoxylan (Rye Flour) | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2650,13 +2649,13 @@ Total: 2953 ingredients
 | CHEBI:58968 | CHEBI:58968 | 4-Hydroxynonenal | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:87346 | CHEBI:87346 | Acridine orange | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:74768 | CHEBI:74768 | Aluminium sulfate | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
-| CHEBI:86244 | CHEBI:86244 | ammonium molybdate tetrahydrate | MAPPED | CHEBI | SYNONYM_MATCH | 48 |
+| CHEBI:86244 | CHEBI:86244 | ammonium molybdate tetrahydrate | MAPPED | CHEBI | SYNONYM_MATCH | 52 |
 | NCIT:C221850 | NCIT:C221850 | Anisodamine Hydrobromide | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:190734 | CHEBI:190734 | Apramycin sulfate salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:208735 | CHEBI:208735 | Atrop Abyssomicin C | MAPPED | CHEBI | MANUAL_CURATION | 0 |
 | cas:108032-11-7 | CHEBI:69499 | Bergenin | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:49240 | CHEBI:49240 | Bisabolene | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:9001-05-2 | mesh:D002374 | Catalase | MAPPED | MESH | NARROW_MATCH | 23 |
+| cas:9001-05-2 | mesh:D002374 | Catalase | MAPPED | MESH | NARROW_MATCH | 35 |
 | CHEBI:29749 | CHEBI:29749 | Ferulate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | kgmicrobe.ingredient:algal_trace_elements_solution | MICRO:0000455 | Algal Trace Elements Solution | MAPPED | MICRO | NARROW_MATCH | 1 |
 | kgmicrobe.ingredient:b-glucan_from_oat | CHEBI:18504 | b-Glucan from Oat | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -2665,14 +2664,14 @@ Total: 2953 ingredients
 | kgmicrobe.compound:cuso4_x_4_h2o | CHEBI:23414 | CuSO4 x 4 H2O | MAPPED | CHEBI | CLOSE_MATCH | 2 |
 | CHEBI:35697 | CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:114249 | CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
-| MICRO:0002393 | MICRO:0002393 | Proteose peptone no. 2 | MAPPED | MICRO | EXACT_MATCH | 5 |
-| MICRO:0002392 | MICRO:0002392 | Rabbit serum | MAPPED | MICRO | EXACT_MATCH | 19 |
+| MICRO:0002393 | MICRO:0002393 | Proteose peptone no. 2 | MAPPED | MICRO | EXACT_MATCH | 8 |
+| MICRO:0002392 | MICRO:0002392 | Rabbit serum | MAPPED | MICRO | EXACT_MATCH | 20 |
 | MICRO:0002250 | MICRO:0002250 | V-8 Juice | MAPPED | MICRO | EXACT_MATCH | 3 |
 | CHEBI:26580 | CHEBI:26580 | Rifamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:sorbitan_monooleate | kgmicrobe.ingredient:sorbitan_monooleate | Sorbitan Monooleate | MAPPED | kgmicrobe.ingredient | EXACT_MATCH | 2 |
 | NCIT:C76253 | NCIT:C76253 | Acriflavine | MAPPED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C216370 | NCIT:C216370 | Anabasine Hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
-| NCIT:C85253 | NCIT:C85253 | bovine serum albumin | MAPPED | NCIT | EXACT_MATCH | 9 |
+| NCIT:C85253 | NCIT:C85253 | bovine serum albumin | MAPPED | NCIT | EXACT_MATCH | 17 |
 | NCIT:C79997 | NCIT:C79997 | Cotarnine Chloride | MAPPED | NCIT | EXACT_MATCH | 0 |
 | FOODON:03413132 | FOODON:03413132 | Locust bean gum | MAPPED | FOODON | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:lysozyme | kgmicrobe.ingredient:lysozyme | Lysozyme | MAPPED | kgmicrobe.ingredient | EXACT_MATCH | 0 |
@@ -2683,8 +2682,9 @@ Total: 2953 ingredients
 | FOODON:03413299 | FOODON:03413299 | Tara gum | MAPPED | FOODON | EXACT_MATCH | 0 |
 | NCIT:C183132 | NCIT:C183132 | Zymosan | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:144-33-2 | CHEBI:30769 | Na2-citrate | MAPPED | CHEBI | NARROW_MATCH | 3 |
-| CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 45 |
+| CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 48 |
 | NCIT:C217928 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
+| cas:14168-73-1 | CHEBI:32599 | MgSO4·H2O | MAPPED | CHEBI | NARROW_MATCH | 20 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |

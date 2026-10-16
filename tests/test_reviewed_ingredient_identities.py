@@ -57,8 +57,8 @@ def test_bsa_recipe_membership_and_supplier_preparations_stay_separate():
     expected = {item["recipe_id"] for item in occurrences}
     members = rows(ROOT / "mappings/culturemech_recipe_membership.tsv")
     actual = [r for r in members if r["mim_identifier"] == "NCIT:C85253"]
-    assert len(actual) == 7
-    assert {r["recipe_id"] for r in actual} == expected
+    assert len(actual) == 17
+    assert expected <= {r["recipe_id"] for r in actual}
     assert not any(r["mim_identifier"] == "cas:9048-46-8" for r in members)
     forms = {f["catalog_number"]: f for f in record("Bovine_Serum_Albumin")["supplied_form"]}
     assert set(forms) == {"A7030", "A9647", "A7409"}

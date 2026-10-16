@@ -6,8 +6,8 @@ synonyms:
   source: mim-queue
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 34
-  media_count: 34
+  total_occurrences: 29
+  media_count: 29
 curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
@@ -41,14 +41,6 @@ curation_history:
     1 Brain Heart Infusion formula.
   llm_assisted: true
   llm_model: gpt-5
-- timestamp: '2026-10-13T02:38:19.328648+00:00'
-  curator: refresh_occurrence_statistics
-  action: CORRECTED
-  changes: 'occurrence_statistics 29/29 -> 34/34 (media_count/total_occurrences),
-    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-    prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=41d4d39012
-    rows=197256 distinct_recipes=15467]'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:827); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE

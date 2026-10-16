@@ -9,8 +9,8 @@ synonyms:
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1
-  media_count: 1
+  total_occurrences: 6
+  media_count: 6
 curation_history:
 - timestamp: '2026-04-29T06:51:33.117170+00:00'
   curator: audit_add_remaining_culturebotht
@@ -53,14 +53,6 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-5
-- timestamp: '2026-10-13T02:38:19.328527+00:00'
-  curator: refresh_occurrence_statistics
-  action: CORRECTED
-  changes: 'occurrence_statistics 6/6 -> 1/1 (media_count/total_occurrences), derived
-    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
-    came from the importer retired in #453, whose media_count counted a list truncated
-    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=41d4d39012
-    rows=197256 distinct_recipes=15467]'
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   6 CultureBot media; samples: SCFM, Hans_Basal_Media, Hans_Basal_Media_plus_0.2x_20AA_mix….
   No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a vitamin stock/pre-mix.
