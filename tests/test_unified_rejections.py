@@ -76,3 +76,29 @@ def test_malformed_ledger_is_not_treated_as_no_rejections(export, text):
 
 def test_committed_export_respects_rejections():
     assert gate.check() == []
+
+
+def test_issue_894_hydrate_and_tombstone_identities():
+    with gate.ARTIFACT.open(encoding="utf-8", newline="") as handle:
+        rows = {r["ingredient_name"]: r for r in csv.DictReader(handle, delimiter="\t")}
+
+    for label in ("MgSO4·H2O", "MgSO4 x H2O", "MgSO4 . H2O", "MgSO4・H2O"):
+        row = rows[label]
+        assert row["mapping_status"] == "MAPPED"
+        assert row["mim_id"] == "cas:14168-73-1"
+        assert row["cas_rn"] == "14168-73-1"
+        assert row["chebi_id"] == ""
+        assert row["culturemech_term_id"] == ""
+        assert row["kg_microbe_node_id"] == ""
+
+    mgso4_7h2o = rows["MgSO .7H O"]
+    assert mgso4_7h2o["mapping_status"] == "MAPPED"
+    assert mgso4_7h2o["mim_id"] == "CHEBI:31795"
+    assert mgso4_7h2o["chebi_id"] == "CHEBI:31795"
+    assert mgso4_7h2o["cas_rn"] == "10034-99-8"
+
+    for label in ("L-Cysteine hydrochloride monohydrate", "L--Cysteine・HCL・H2O"):
+        row = rows[label]
+        assert row["mapping_status"] == "MAPPED"
+        assert row["mim_id"] == "CHEBI:91248"
+        assert row["chebi_id"] == "CHEBI:91248"
