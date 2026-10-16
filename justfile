@@ -828,3 +828,11 @@ validate-history target="history":
         --schema src/mediaingredientmech/schema/history.yaml \
         --target-class HistoryRecord "$target"
     fi
+
+# Generate dense BAAI/bge-large-en-v1.5 text embeddings for all ingredient records
+embed:
+    python3 scripts/embed_records.py
+
+# Project text embeddings with PaCMAP + PCA and render docs/text_map.html
+embed-map: embed
+    python3 scripts/embed_map.py

@@ -197,12 +197,18 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav aria-label="Site navigation"><a href="../browser.html">Browse ingredients</a> &middot; <a href="https://culturebotai.github.io/mechs/">All Mech projects</a></nav>
+<nav aria-label="Site navigation"><a href="../index.html">Home</a> &middot; <a href="../browser.html">Browse ingredients</a> &middot; <a href="../text_map.html">Text Map</a> &middot; <a href="../ingredient_umap.html">KG PaCMAP</a> &middot; <a href="../ingredient_graph.html">Graph Layout</a> &middot; <a href="../schema/index.html">Schema</a> &middot; <a href="../index.html#downloads">Downloads</a> &middot; <a href="https://culturebotai.github.io/mechs/">All Mech projects</a></nav>
 <header>
+<form class="record-search" action="../browser.html" method="get" role="search">
+  <label class="sr-only" for="index-search-input">Search ingredients</label>
+  <input type="search" id="index-search-input" name="q" placeholder="Search ingredients, synonyms, or ontology IDs...">
+  <button type="submit">Search</button>
+</form>
 <h1>MIM — Ingredient index</h1>
 <p class="muted">{count:,} ingredients, generated {generated_at}.</p>
 </header>
 <main>{by_prefix}</main>
+<footer>Generated {generated_at} &middot; <a href="build.json">Build provenance (SHA-256 manifest)</a> &middot; <a href="../schema/index.html">LinkML Schema</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
 <script src="../theme-toggle.js"></script>
 </body>
 </html>

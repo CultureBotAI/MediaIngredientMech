@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaIngredientMech — Text Embedding Map</title>
+    <script>
+        (() => {
+            try {
+                const stored = localStorage.getItem('mim-theme');
+                const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (stored === 'dark' || (stored !== 'light' && dark)) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (_) {}
+        })();
+    </script>
+    <style>
+        :root {
+            --primary: #7E5BC4;
+            --primary-dark: #472E7A;
+            --primary-soft: #DCD0F3;
+            --accent: #BCEBE4;
+            --bg: #F6F8F9;
+            --surface: #FFFFFF;
+            --surface-muted: #EFEBF8;
+            --text: #1B1726;
+            --text-muted: #52496A;
+            --border: #D9D2E8;
+            --shadow: rgba(27, 23, 38, 0.08);
+        }
+        html[data-theme="dark"] {
+            --primary: #DCD0F3;
+            --primary-dark: #BCEBE4;
+            --primary-soft: #2A2044;
+            --accent: #BCEBE4;
+            --bg: #120F1B;
+            --surface: #1B1628;
+            --surface-muted: #241D35;
+            --text: #F2EEFA;
+            --text-muted: #C5BADF;
+            --border: #372D4F;
+            --shadow: rgba(0, 0, 0, 0.36);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #7E5BC4 0%, #5B3FA0 100%);
+            color: #fff;
+            padding: 1.1rem 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        .header-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .header-brand h1 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .header-brand p {
+            font-size: 0.85rem;
+            opacity: 0.92;
+            margin-top: 0.15rem;
+        }
+        .top-nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .top-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.86rem;
+            font-weight: 600;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background 0.15s ease;
+        }
+        .top-nav a:hover, .top-nav a.active {
+            background: rgba(255, 255, 255, 0.26);
+        }
+        .layout-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 1.25rem;
+            display: grid;
+            grid-template-columns: 290px minmax(0, 1fr);
+            gap: 1.25rem;
+            align-items: start;
+        }
+        .facet-sidebar {
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            overflow-y: auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 6px var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        .control-block label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+        }
+        .control-block input[type="search"],
+        .control-block select {
+            width: 100%;
+            padding: 0.5rem 0.65rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        .toggle-row {
+            display: flex;
+            gap: 0.4rem;
+        }
+        .toggle-btn {
+            flex: 1;
+            padding: 0.45rem 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .toggle-btn.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        html[data-theme="dark"] .toggle-btn.active {
+            color: #120F1B;
+        }
+        .status-bar {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .reset-btn {
+            padding: 0.3rem 0.55rem;
+            font-size: 0.76rem;
+            font-weight: 600;
+            border-radius: 5px;
+            border: 1px solid var(--border);
+            background: var(--surface-muted);
+            color: var(--text);
+            cursor: pointer;
+        }
+        .facet-group {
+            border-top: 1px solid var(--border);
+            padding-top: 0.75rem;
+        }
+        .facet-group h3 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            margin-bottom: 0.45rem;
+        }
+        .facet-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.28rem;
+            max-height: 185px;
+            overflow-y: auto;
+        }
+        .facet-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            cursor: pointer;
+            padding: 0.15rem 0.2rem;
+            border-radius: 4px;
+        }
+        .facet-item:hover {
+            background: var(--surface-muted);
+        }
+        .facet-item-left {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            min-width: 0;
+        }
+        .facet-swatch {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .facet-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .facet-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+        .plot-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .canvas-card {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            box-shadow: 0 2px 6px var(--shadow);
+            overflow: hidden;
+            height: 72vh;
+            min-height: 520px;
+        }
+        #map-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: grab;
+        }
+        #map-canvas:active {
+            cursor: grabbing;
+        }
+        .canvas-toolbar {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            display: flex;
+            gap: 0.4rem;
+        }
+        .canvas-toolbar button {
+            padding: 0.38rem 0.65rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 1px 4px var(--shadow);
+        }
+        .tooltip {
+            position: fixed;
+            pointer-events: none;
+            background: rgba(27, 23, 38, 0.94);
+            color: #fff;
+            padding: 0.55rem 0.75rem;
+            border-radius: 7px;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            max-width: 320px;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .selected-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.9rem 1.1rem;
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+        .selected-panel a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .selected-panel a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 960px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+            .facet-sidebar {
+                position: static;
+                max-height: none;
+            }
+        }
+    </style>
+    <script src="theme-toggle.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="header-brand">
+                <h1>MediaIngredientMech — Text Embedding Map</h1>
+                <p>Dense semantic similarity across curated media ingredients (BAAI/bge-large-en-v1.5)</p>
+            </div>
+            <nav class="top-nav" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="browser.html">Browse</a>
+                <a href="text_map.html" class="active">Text Map</a>
+                <a href="ingredient_umap.html">KG PaCMAP</a>
+                <a href="ingredient_graph.html">Graph Layout</a>
+                <a href="records/index.html">Record Index</a>
+                <a href="schema/index.html">Schema</a>
+                <a href="index.html#downloads">Downloads</a>
+                <a href="https://github.com/CultureBotAI/MediaIngredientMech">GitHub</a>
+                <a href="https://culturebotai.github.io/mechs/">All Mech projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+        <aside class="sidebar facet-sidebar" aria-label="Embedding map filters">
+            <div class="control-block">
+                <label for="map-search">Search Ingredients</label>
+                <input type="search" id="map-search" placeholder="Name, CURIE, ontology source, type...">
+            </div>
+
+            <div class="control-block">
+                <label>Projection</label>
+                <div class="toggle-row" role="group" aria-label="Projection method">
+                    <button type="button" class="toggle-btn active" data-proj="pacmap">PaCMAP</button>
+                    <button type="button" class="toggle-btn" data-proj="pca">PCA</button>
+                </div>
+            </div>
+
+            <div class="control-block">
+                <label for="color-by">Color By</label>
+                <select id="color-by">
+                    <option value="mapping_status">Mapping Status</option>
+                    <option value="ontology_source">Ontology Source</option>
+                    <option value="mapping_quality">Mapping Quality</option>
+                    <option value="ingredient_type">Ingredient Type</option>
+                </select>
+            </div>
+
+            <div class="status-bar">
+                <span id="visible-count" role="status" aria-live="polite">0 / 0 shown</span>
+                <button type="button" class="reset-btn" id="reset-filters">Reset</button>
+            </div>
+
+            <div id="facet-container"></div>
+        </aside>
+
+        <main class="plot-column" id="main-content">
+            <div class="canvas-card">
+                <canvas id="map-canvas"></canvas>
+                <div class="canvas-toolbar">
+                    <button type="button" id="zoom-in" title="Zoom in">+</button>
+                    <button type="button" id="zoom-out" title="Zoom out">−</button>
+                    <button type="button" id="reset-view">Reset View</button>
+                </div>
+            </div>
+            <div class="selected-panel" id="selected-panel" aria-live="polite">
+                <span>Click any ingredient point to open its record or inspect details.</span>
+            </div>
+        </main>
+    </div>
+
+    <div class="tooltip" id="tooltip"></div>
+
+    <script>
+        const MAP_DATA = __MAP_DATA_JSON__;
+        const PALETTE = [
+            "#7E5BC4", "#0072B2", "#009E73", "#E69F00", "#D55E00",
+            "#CC79A7", "#56B4E9", "#332288", "#882255", "#44AA99",
+            "#999933", "#AA4499"
+        ];
+        const FACET_FIELDS = [
+            { key: "mapping_status", label: "Mapping Status" },
+            { key: "ontology_source", label: "Ontology Source" },
+            { key: "mapping_quality", label: "Mapping Quality" },
+            { key: "ingredient_type", label: "Ingredient Type" }
+        ];
+
+        const points = MAP_DATA.points || [];
+        let projection = "pacmap";
+        let colorBy = "mapping_status";
+        let searchQuery = "";
+        const activeFacets = {
+            mapping_status: new Set(),
+            ontology_source: new Set(),
+            mapping_quality: new Set(),
+            ingredient_type: new Set()
+        };
+
+        const colorMap = new Map();
+        function getColor(val) {
+            const key = val || "UNKNOWN";
+            if (!colorMap.has(key)) {
+                colorMap.set(key, PALETTE[colorMap.size % PALETTE.length]);
+            }
+            return colorMap.get(key);
+        }
+
+        const canvas = document.getElementById("map-canvas");
+        const ctx = canvas.getContext("2d");
+        const tooltip = document.getElementById("tooltip");
+        const searchInput = document.getElementById("map-search");
+        const colorBySelect = document.getElementById("color-by");
+        const visibleCountEl = document.getElementById("visible-count");
+        const selectedPanel = document.getElementById("selected-panel");
+
+        let transform = { x: 0, y: 0, k: 1 };
+        let isDragging = false;
+        let dragStart = { x: 0, y: 0 };
+        let hoveredPoint = null;
+
+        function syncQueryFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const q = params.get("q");
+            if (q !== null) {
+                searchQuery = q.trim().toLowerCase();
+                searchInput.value = q;
+            }
+            const proj = params.get("proj");
+            if (proj === "pacmap" || proj === "pca") {
+                projection = proj;
+                document.querySelectorAll(".toggle-btn").forEach((b) => {
+                    b.classList.toggle("active", b.dataset.proj === proj);
+                });
+            }
+            const cb = params.get("color");
+            if (cb && FACET_FIELDS.some(f => f.key === cb)) {
+                colorBy = cb;
+                colorBySelect.value = cb;
+            }
+            for (const f of FACET_FIELDS) {
+                const raw = params.get(f.key);
+                if (raw) {
+                    raw.split(",").map(s => s.trim()).filter(Boolean).forEach(v => activeFacets[f.key].add(v));
+                }
+            }
+        }
+
+        function syncUrlFromQuery() {
+            if (!window.history || !window.history.replaceState) return;
+            const url = new URL(window.location.href);
+            const raw = searchInput.value.trim();
+            if (raw) {
+                url.searchParams.set("q", raw);
+            } else {
+                url.searchParams.delete("q");
+            }
+            if (projection && projection !== "pacmap") {
+                url.searchParams.set("proj", projection);
+            } else {
+                url.searchParams.delete("proj");
+            }
+            if (colorBy && colorBy !== "mapping_status") {
+                url.searchParams.set("color", colorBy);
+            } else {
+                url.searchParams.delete("color");
+            }
+            for (const f of FACET_FIELDS) {
+                const vals = Array.from(activeFacets[f.key]);
+                if (vals.length > 0) {
+                    url.searchParams.set(f.key, vals.join(","));
+                } else {
+                    url.searchParams.delete(f.key);
+                }
+            }
+            window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+        }
+
+        function matchesPoint(p) {
+            if (searchQuery) {
+                const hay = `${p.title} ${p.id} ${p.identifier} ${p.ontology_id} ${p.ontology_source} ${p.mapping_status} ${p.ingredient_type}`.toLowerCase();
+                if (!hay.includes(searchQuery)) return false;
+            }
+            for (const f of FACET_FIELDS) {
+                const set = activeFacets[f.key];
+                if (set.size > 0 && !set.has(p[f.key] || "UNKNOWN")) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function rebuildColorMap() {
+            colorMap.clear();
+            const counts = new Map();
+            for (const p of points) {
+                const v = p[colorBy] || "UNKNOWN";
+                counts.set(v, (counts.get(v) || 0) + 1);
+            }
+            Array.from(counts.entries())
+                .sort((a, b) => b[1] - a[1])
+                .forEach(([val]) => getColor(val));
+        }
+
+        function renderFacets() {
+            const container = document.getElementById("facet-container");
+            container.innerHTML = "";
+            for (const f of FACET_FIELDS) {
+                const counts = new Map();
+                for (const p of points) {
+                    const v = p[f.key] || "UNKNOWN";
+                    counts.set(v, (counts.get(v) || 0) + 1);
+                }
+                const group = document.createElement("div");
+                group.className = "facet-group";
+                const h3 = document.createElement("h3");
+                h3.textContent = f.label;
+                group.appendChild(h3);
+
+                const list = document.createElement("div");
+                list.className = "facet-list";
+                Array.from(counts.entries())
+                    .sort((a, b) => b[1] - a[1])
+                    .forEach(([val, count]) => {
+                        const label = document.createElement("label");
+                        label.className = "facet-item";
+                        const left = document.createElement("span");
+                        left.className = "facet-item-left";
+
+                        const cb = document.createElement("input");
+                        cb.type = "checkbox";
+                        cb.checked = activeFacets[f.key].has(val);
+                        cb.addEventListener("change", () => {
+                            if (cb.checked) activeFacets[f.key].add(val);
+                            else activeFacets[f.key].delete(val);
+                            syncUrlFromQuery();
+                            draw();
+                        });
+                        left.appendChild(cb);
+
+                        if (f.key === colorBy) {
+                            const sw = document.createElement("span");
+                            sw.className = "facet-swatch";
+                            sw.style.background = getColor(val);
+                            left.appendChild(sw);
+                        }
+
+                        const nameSpan = document.createElement("span");
+                        nameSpan.className = "facet-name";
+                        nameSpan.textContent = val;
+                        left.appendChild(nameSpan);
+
+                        const countSpan = document.createElement("span");
+                        countSpan.className = "facet-count";
+                        countSpan.textContent = count;
+
+                        label.appendChild(left);
+                        label.appendChild(countSpan);
+                        list.appendChild(label);
+                    });
+                group.appendChild(list);
+                container.appendChild(group);
+            }
+        }
+
+        function resizeCanvas() {
+            const rect = canvas.parentElement.getBoundingClientRect();
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            draw();
+        }
+
+        function pointScreenCoords(p, width, height) {
+            const rawX = projection === "pacmap" ? p.x : p.px;
+            const rawY = projection === "pacmap" ? p.y : p.py;
+            const pad = 40;
+            const cx = pad + ((rawX + 1) / 2) * (width - 2 * pad);
+            const cy = pad + ((1 - (rawY + 1) / 2)) * (height - 2 * pad);
+            return {
+                sx: cx * transform.k + transform.x,
+                sy: cy * transform.k + transform.y
+            };
+        }
+
+        function draw() {
+            const width = canvas.clientWidth;
+            const height = canvas.clientHeight;
+            ctx.clearRect(0, 0, width, height);
+
+            let visible = 0;
+            for (const p of points) {
+                p._match = matchesPoint(p);
+                if (p._match) visible++;
+            }
+            visibleCountEl.textContent = `${visible} / ${points.length} shown`;
+
+            for (const pass of [false, true]) {
+                for (const p of points) {
+                    if (p._match !== pass) continue;
+                    const { sx, sy } = pointScreenCoords(p, width, height);
+                    p._sx = sx;
+                    p._sy = sy;
+                    ctx.beginPath();
+                    const r = p === hoveredPoint ? 7 : (pass ? 4.5 : 3);
+                    ctx.arc(sx, sy, r, 0, Math.PI * 2);
+                    ctx.fillStyle = pass ? getColor(p[colorBy]) : "rgba(150, 145, 165, 0.2)";
+                    ctx.globalAlpha = pass ? 0.82 : 0.25;
+                    ctx.fill();
+                    if (p === hoveredPoint) {
+                        ctx.globalAlpha = 1;
+                        ctx.lineWidth = 2;
+                        ctx.strokeStyle = "#1B1726";
+                        ctx.stroke();
+                    }
+                }
+            }
+            ctx.globalAlpha = 1;
+        }
+
+        canvas.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            dragStart = { x: e.clientX - transform.x, y: e.clientY - transform.y };
+        });
+
+        window.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                transform.x = e.clientX - dragStart.x;
+                transform.y = e.clientY - dragStart.y;
+                draw();
+                return;
+            }
+            const rect = canvas.getBoundingClientRect();
+            if (
+                e.clientX < rect.left || e.clientX > rect.right ||
+                e.clientY < rect.top || e.clientY > rect.bottom
+            ) {
+                if (hoveredPoint) {
+                    hoveredPoint = null;
+                    tooltip.style.display = "none";
+                    draw();
+                }
+                return;
+            }
+            const mx = e.clientX - rect.left;
+            const my = e.clientY - rect.top;
+            let best = null;
+            let bestDist = 100;
+            for (const p of points) {
+                if (!p._match) continue;
+                const dx = (p._sx || 0) - mx;
+                const dy = (p._sy || 0) - my;
+                const d2 = dx * dx + dy * dy;
+                if (d2 < bestDist) {
+                    bestDist = d2;
+                    best = p;
+                }
+            }
+            if (best !== hoveredPoint) {
+                hoveredPoint = best;
+                draw();
+            }
+            if (best) {
+                tooltip.style.display = "block";
+                tooltip.style.left = `${e.clientX + 14}px`;
+                tooltip.style.top = `${e.clientY + 14}px`;
+                tooltip.innerHTML = `
+                    <strong>${best.title}</strong><br>
+                    <span>Record: ${best.id} (${best.identifier})</span><br>
+                    <span>Status: ${best.mapping_status} | Source: ${best.ontology_source}</span><br>
+                    <span>Type: ${best.ingredient_type} | Media: ${best.media_count}</span>
+                `;
+            } else {
+                tooltip.style.display = "none";
+            }
+        });
+
+        window.addEventListener("mouseup", () => { isDragging = false; });
+
+        canvas.addEventListener("click", () => {
+            if (!hoveredPoint) return;
+            const p = hoveredPoint;
+            selectedPanel.innerHTML = `
+                <div>
+                    <strong>${p.title}</strong>
+                    <span style="margin-left:0.5rem;opacity:0.8">(${p.id} · ${p.identifier} · ${p.mapping_status})</span>
+                </div>
+                <div style="display:flex;gap:1rem;">
+                    <a href="${p.url}">Open Ingredient Page →</a>
+                    <a href="browser.html?q=${encodeURIComponent(p.title)}">View in Browser →</a>
+                </div>
+            `;
+        });
+
+        canvas.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const mx = e.clientX - rect.left;
+            const my = e.clientY - rect.top;
+            const factor = e.deltaY < 0 ? 1.15 : 0.87;
+            const nextK = Math.max(0.5, Math.min(25, transform.k * factor));
+            transform.x = mx - ((mx - transform.x) * nextK) / transform.k;
+            transform.y = my - ((my - transform.y) * nextK) / transform.k;
+            transform.k = nextK;
+            draw();
+        }, { passive: false });
+
+        document.getElementById("zoom-in").addEventListener("click", () => {
+            transform.k = Math.min(25, transform.k * 1.25);
+            draw();
+        });
+        document.getElementById("zoom-out").addEventListener("click", () => {
+            transform.k = Math.max(0.5, transform.k * 0.8);
+            draw();
+        });
+        document.getElementById("reset-view").addEventListener("click", () => {
+            transform = { x: 0, y: 0, k: 1 };
+            draw();
+        });
+
+        searchInput.addEventListener("input", () => {
+            searchQuery = searchInput.value.trim().toLowerCase();
+            syncUrlFromQuery();
+            draw();
+        });
+
+        colorBySelect.addEventListener("change", () => {
+            colorBy = colorBySelect.value;
+            rebuildColorMap();
+            renderFacets();
+            syncUrlFromQuery();
+            draw();
+        });
+
+        document.querySelectorAll(".toggle-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                document.querySelectorAll(".toggle-btn").forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
+                projection = btn.dataset.proj;
+                syncUrlFromQuery();
+                draw();
+            });
+        });
+
+        document.getElementById("reset-filters").addEventListener("click", () => {
+            searchInput.value = "";
+            searchQuery = "";
+            for (const k of Object.keys(activeFacets)) activeFacets[k].clear();
+            syncUrlFromQuery();
+            renderFacets();
+            draw();
+        });
+
+        window.addEventListener("resize", resizeCanvas);
+
+        rebuildColorMap();
+        syncQueryFromUrl();
+        renderFacets();
+        resizeCanvas();
+    </script>
+</body>
+</html>

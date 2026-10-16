@@ -21,9 +21,21 @@
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
   .hero{background:linear-gradient(135deg,var(--pastel-a),var(--pastel-b));
-        padding:64px 24px 52px;text-align:center;border-bottom:1px solid var(--line)}
+        padding:36px 24px 52px;text-align:center;border-bottom:1px solid var(--line)}
+  .top-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 auto 28px;max-width:980px}
+  .top-nav a{display:inline-block;padding:6px 13px;border-radius:999px;background:rgba(255,255,255,.55);
+             border:1px solid var(--line);color:var(--ink);font-size:.86rem;font-weight:600;text-decoration:none}
+  .top-nav a:hover,.top-nav a.active{background:rgba(255,255,255,.9);color:var(--accent);text-decoration:none}
   .hero h1{margin:0 0 .2em;font-size:2.7rem;letter-spacing:-.02em;overflow-wrap:anywhere}
   .hero .tagline{margin:0 auto;max-width:660px;font-size:1.15rem}
+  .hero-search{max-width:640px;margin:24px auto 0;display:flex;gap:8px;background:rgba(255,255,255,.92);
+               padding:6px;border-radius:999px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.07)}
+  .hero-search input{flex:1;border:none;background:transparent;padding:10px 16px;font-size:1rem;color:var(--ink);min-width:0}
+  .hero-search input:focus{outline:none}
+  .hero-search button{background:var(--accent);color:#fff;border:none;padding:10px 22px;border-radius:999px;
+                      font-size:.95rem;font-weight:600;cursor:pointer}
+  .hero-search button:hover{filter:brightness(.93)}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   .stats{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:30px}
   .stat{background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:12px;
         padding:12px 22px;min-width:120px;color:inherit;text-decoration:none}
@@ -54,6 +66,10 @@
       --ink:#ece9f4; --muted:#a39db8; --card:#1e1b29; --line:#302b40;
     }
     :root:not([data-theme="light"]) .stat{background:rgba(255,255,255,.05)}
+    :root:not([data-theme="light"]) .top-nav a{background:rgba(255,255,255,.07);color:var(--ink)}
+    :root:not([data-theme="light"]) .top-nav a:hover,:root:not([data-theme="light"]) .top-nav a.active{background:rgba(255,255,255,.15);color:var(--accent)}
+    :root:not([data-theme="light"]) .hero-search{background:#1e1b29}
+    :root:not([data-theme="light"]) .hero-search button{color:#14121c}
     :root:not([data-theme="light"]) footer{background:rgba(255,255,255,.05)}
     :root:not([data-theme="light"]) .btn{color:#14121c}
     /* brand pastel pair, dark-only: darkened fill + vivid top edge */
@@ -71,6 +87,10 @@
     --ink:#ece9f4; --muted:#a39db8; --card:#1e1b29; --line:#302b40;
   }
   :root[data-theme="dark"] .stat{background:rgba(255,255,255,.05)}
+  :root[data-theme="dark"] .top-nav a{background:rgba(255,255,255,.07);color:var(--ink)}
+  :root[data-theme="dark"] .top-nav a:hover,:root[data-theme="dark"] .top-nav a.active{background:rgba(255,255,255,.15);color:var(--accent)}
+  :root[data-theme="dark"] .hero-search{background:#1e1b29}
+  :root[data-theme="dark"] .hero-search button{color:#14121c}
   :root[data-theme="dark"] footer{background:rgba(255,255,255,.05)}
   :root[data-theme="dark"] .btn{color:#14121c}
   /* brand pastel pair, dark-only: darkened fill + vivid top edge */
@@ -91,25 +111,67 @@
 </head>
 <body>
   <header class="hero">
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="browser.html">Browse</a>
+      <a href="text_map.html">Text Map</a>
+      <a href="ingredient_umap.html">KG PaCMAP</a>
+      <a href="ingredient_graph.html">Graph Layout</a>
+      <a href="records/index.html">Record Index</a>
+      <a href="schema/index.html">Schema</a>
+      <a href="#downloads">Downloads</a>
+      <a href="https://github.com/CultureBotAI/MediaIngredientMech">GitHub</a>
+      <a href="https://culturebotai.github.io/mechs/">All Mech projects</a>
+    </nav>
     <h1>MediaIngredientMech</h1>
     <p class="tagline">Curated media-ingredient ontology mappings — CHEBI &middot; FOODON &middot; NCIT &middot; CAS.</p>
+    <form class="hero-search" action="browser.html" method="get" role="search">
+      <label class="sr-only" for="hero-search-input">Search ingredients</label>
+      <input type="search" id="hero-search-input" name="q" placeholder="Search ingredients by name, synonym, or ontology ID (CHEBI, FOODON, CAS)...">
+      <button type="submit">Search</button>
+    </form>
     <div class="stats">
       <a class="stat" href="browser.html"><b id="ingredient-count">…</b><span>ingredients</span></a>
       <a class="stat" href="browser.html#status=MAPPED"><b id="mapped-count">…</b><span>mapped</span></a>
       <a class="stat" href="browser.html#status=MAPPED"><b id="coverage-count">…</b><span>coverage</span></a>
     </div>
   </header>
-  <main class="wrap">
+  <main class="wrap" id="main-content">
     <div class="cards">
       <div class="card">
         <div class="actions"><a class="btn" href="browser.html">Browse records &rarr;</a></div>
         <h2>Record browser</h2>
-        <p>Search ingredients by name, synonym, or ontology ID; filter by source, mapping status, and mapping quality.</p>
+        <p>Search ingredients by name, synonym, or ontology ID; filter by source, mapping status, and mapping quality; sort by occurrences or media count.</p>
+      </div>
+      <div class="card">
+        <div class="actions"><a class="btn" href="text_map.html">Explore text map &rarr;</a></div>
+        <h2>Text embedding map</h2>
+        <p>Interactive 2D PaCMAP &amp; PCA projection of <code>bge-large-en-v1.5</code> ingredient text embeddings with sticky facet sidebar.</p>
       </div>
       <div class="card">
         <div class="actions"><a class="btn" href="ingredient_umap.html">Explore embedding (PaCMAP) &rarr;</a><a class="btn" href="ingredient_graph.html">Graph layout &rarr;</a></div>
         <h2>Embedding browser</h2>
         <p>Interactive PaCMAP projection of ingredient embeddings in KG-Microbe space.</p>
+      </div>
+      <div class="card">
+        <div class="actions"><a class="btn" href="schema/index.html">Schema reference &rarr;</a><a class="btn" href="IngredientRecord.md">Markdown spec &rarr;</a></div>
+        <h2>LinkML schema</h2>
+        <p>Browse classes, slots, enumerations, and types for <code>IngredientRecord</code>, ontology mappings, component partonomy, and roles.</p>
+      </div>
+      <div class="card" id="downloads">
+        <div class="actions">
+          <a class="btn" href="data/ingredients.json" download>Catalog JSON &darr;</a>
+          <a class="btn" href="data/all_ingredients.csv" download>All CSV &darr;</a>
+        </div>
+        <h2>Data downloads &amp; exports</h2>
+        <p>
+          Bulk exports:
+          <a href="data/mapped_ingredients.csv" download>Mapped CSV</a> &middot;
+          <a href="data/unmapped_ingredients.csv" download>Unmapped CSV</a> &middot;
+          <a href="data/label_index.csv" download>Label index CSV</a> &middot;
+          <a href="data/ingredient_umap.json" download>PaCMAP JSON</a> &middot;
+          <a href="records/build.json">Build receipt JSON</a>
+        </p>
       </div>
       <div class="card">
         <div class="actions"><a class="btn" href="https://github.com/CultureBotAI/MediaIngredientMech">View on GitHub &rarr;</a></div>
@@ -119,7 +181,7 @@
     </div>
   </main>
   <footer>
-    <p><a href="https://culturebotai.github.io/mechs/">All Mech projects</a></p>
+    <p><a href="https://culturebotai.github.io/mechs/">All Mech projects</a> &middot; <a href="schema/index.html">Schema Reference</a> &middot; <a href="records/build.json">Build Provenance (SHA-256 Receipt)</a> &middot; Data: CC BY 4.0 / Code: BSD-3-Clause</p>
     <div class="fam"><strong>KG-Microbe Mechs:</strong>
       <a href="https://culturebotai.github.io/CultureMech/">CultureMech</a>&middot;<strong>MediaIngredientMech</strong>&middot;<a href="https://culturebotai.github.io/CommunityMech/">CommunityMech</a>&middot;<a href="https://culturebotai.github.io/TraitMech/">TraitMech</a>&middot;<a href="https://culturebotai.github.io/proteintraitsmech/">ProteinTraitsMech</a>
     </div>
