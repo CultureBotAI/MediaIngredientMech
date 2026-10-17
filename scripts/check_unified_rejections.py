@@ -30,7 +30,7 @@ def check(artifact: Path = ARTIFACT, ledger: Path = LEDGER) -> list[str]:
                 return [f"{ledger}: incomplete rejection"]
             row = {key: value.strip() for key, value in row.items()}
             key = (row["mim_id"], row["rejected_id"])
-            if key in seen or ":" not in row["rejected_id"]:
+            if key in seen or ":" not in row["rejected_id"] or row["mim_id"].startswith("UNMAPPED"):
                 return [f"{ledger}: duplicate or invalid rejection"]
             if row["rejected_id"] == row["mim_id"]:
                 return [f"{ledger}: rejected ID equals corrected identity"]
