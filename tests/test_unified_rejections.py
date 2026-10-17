@@ -200,3 +200,38 @@ def test_issue_882_merge_tombstones_and_unified_identities():
         assert row["mim_id"] == exp_mim, label
         assert row["chebi_id"] == "", label
         assert row["culturemech_term_id"] == "", label
+
+
+def test_issue_869_and_808_no_stale_chebi_on_local_or_hydrate_records(export):
+    with gate.ARTIFACT.open(encoding="utf-8", newline="") as handle:
+        all_rows = list(csv.DictReader(handle, delimiter="\t"))
+
+    kgm_compound_with_chebi = [
+        (r["ingredient_name"], r["mim_id"], r["chebi_id"])
+        for r in all_rows
+        if r["mim_id"].startswith("kgmicrobe.compound:") and r["chebi_id"]
+    ]
+    assert kgm_compound_with_chebi == [], (
+        f"kgmicrobe.compound rows still publishing a stale chebi_id (#869): {kgm_compound_with_chebi}"
+    )
+
+    rows_by_name = {r["ingredient_name"]: r for r in all_rows}
+    for label, exp_mim in (
+        ("Adenine hydrochloride hydrate", "cas:2922-28-3"),
+        ("Maltose monohydrate", "cas:6363-53-7"),
+        ("a-Ketoglutaric acid disodium salt hydrate", "cas:305-72-6"),
+        ("Trisodium citrate x H2O", "mesh:C514290"),
+    ):
+        row = rows_by_name[label]
+        assert row["mapping_status"] == "MAPPED", label
+        assert row["mim_id"] == exp_mim, label
+        assert row["chebi_id"] == "", label
+        assert row["culturemech_term_id"] == "", label
+
+    artifact, ledger = export()
+    ledger.write_text(
+        "ingredient_name\trejected_id\tmim_id\treason\n"
+        "Na2MoO4 x H2O\tCHEBI:75215\tUNMAPPED_0819\tunmapped rejection not allowed\n"
+    )
+    assert gate.check(artifact, ledger) == [f"{ledger}: duplicate or invalid rejection"]
+
