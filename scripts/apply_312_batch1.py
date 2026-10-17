@@ -404,12 +404,13 @@ def apply_tombstone(log: list, write: bool) -> None:
     before = sha(path)
     mapping["ontology_id"] = spec["new_parent"]
     mapping["ontology_label"] = spec["new_parent_label"]
+    record["representative"] = record["identifier"]
     rejected = reject_synonym(record, *spec["reject_synonym"])
     mapping.setdefault("evidence", []).append(evidence(spec["rationale"]))
     record_curation_event(
         record, curator=CURATOR, action="CORRECTED",
         changes=f"ontology_id {spec['old_parent']} -> {spec['new_parent']} ({ISSUE}). {spec['rationale']}",
-        previous_status="REJECTED", new_status="REJECTED", llm_assisted=True, llm_model=LLM_MODEL,
+        previous_status="REJECTED", new_status=None, llm_assisted=True, llm_model=LLM_MODEL,
     )
     print(f"TOMBSTONE {spec['slug']}: {spec['old_parent']} -> {spec['new_parent']} (rejected alias: {rejected})")
     if write:

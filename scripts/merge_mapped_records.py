@@ -240,6 +240,7 @@ def main() -> int:
 
     # tombstone rather than delete, and zero the counts now they have moved
     src["mapping_status"] = "REJECTED"
+    src["representative"] = str(dst["identifier"])
     src["occurrence_statistics"] = {"total_occurrences": 0, "media_count": 0}
     src.setdefault("curation_history", []).append({
         "timestamp": stamp, "curator": args.curator, "action": "MERGED_INTO",

@@ -1,8 +1,8 @@
 # Unmapped Ingredients Index
-**Total Records**: 273
+**Total Records**: 275
 **Mapped**: 0 (0.0%)
-**Unmapped**: 260 (95.2%)
-**Other statuses**: 13 (4.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Unmapped**: 262 (95.3%)
+**Other statuses**: 13 (4.7%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 594
 
 ---
@@ -271,6 +271,8 @@
 | UNMAPPED_0587 | α-D-Glucose monohydrate | UNMAPPED | 0 |
 | UNMAPPED_0341 | Bordet-Gengou-Agar-Base | UNMAPPED | 0 |
 | UNMAPPED_0353 | Casman-Agar-Base | UNMAPPED | 0 |
+| UNMAPPED_0819 | Na2MoO4 x H2O | UNMAPPED | 0 |
+| UNMAPPED_0820 | Trisodium citrate x 3 H2O | UNMAPPED | 0 |
 
 ## Other Statuses
 

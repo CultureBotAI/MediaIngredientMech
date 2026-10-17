@@ -1,0 +1,31 @@
+identifier: UNMAPPED_0820
+preferred_term: Trisodium citrate x 3 H2O
+synonyms:
+- synonym_text: Trisodium citrate x 3 H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Trisodium citrate·3H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Trisodium citrate・3H2O
+  synonym_type: HYDRATE_FORM
+  source: CultureMech
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-10-17T01:47:05.515951+00:00'
+  curator: claude
+  action: CREATED_AS_UNMAPPED
+  changes: Create unmapped trisodium citrate trihydrate record holding the 3 trihydrate
+    surface forms retired from Trisodium_Citrate_X_2_H2o so label_index.csv keeps
+    them unmapped instead of falling back to stale anhydrous term.id CHEBI:53258 (#882).
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
+notes: Trisodium citrate trihydrate surface forms split out from dihydrate Trisodium_Citrate_X_2_H2o
+  / Na3-citrate_X_2_H2o (CHEBI:32142) so recipes carrying stale anhydrous term.id
+  CHEBI:53258 resolve to UNMAPPED rather than collapsing trihydrate onto anhydrous
+  or dihydrate (#882).
+ingredient_type: SINGLE_INGREDIENT

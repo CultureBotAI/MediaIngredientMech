@@ -1,0 +1,40 @@
+identifier: UNMAPPED_0819
+preferred_term: Na2MoO4 x H2O
+synonyms:
+- synonym_text: Na2MoO4 x H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Na2MoO4 . H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2MoO4 · H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2MoO4 × H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2MoO4.H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Na2MoO4xH2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-10-17T01:47:05.514707+00:00'
+  curator: claude
+  action: CREATED_AS_UNMAPPED
+  changes: Create unmapped sodium molybdate monohydrate record holding the 6 monohydrate
+    surface forms retired from Na2moo4 and Na2moo42h2o so label_index.csv keeps them
+    unmapped instead of falling back to stale anhydrous term.id CHEBI:75215 (#882).
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
+notes: Sodium molybdate monohydrate surface forms split out from anhydrous Na2moo4
+  (CHEBI:75215) and dihydrate Na2moo42h2o / Na2moo4_X_2_H2o (CHEBI:75213) so recipes
+  carrying stale anhydrous term.id CHEBI:75215 resolve to UNMAPPED rather than collapsing
+  monohydrate onto anhydrous or dihydrate (#882).
+ingredient_type: SINGLE_INGREDIENT

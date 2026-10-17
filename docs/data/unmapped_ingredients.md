@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-10-15T02:41:27.164898+00:00
-Total: 273 ingredients
+Generated: 2026-10-17T01:49:45.853983+00:00
+Total: 275 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -278,3 +278,5 @@ Total: 273 ingredients
 | UNMAPPED_0341 |  | Bordet-Gengou-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |
+| UNMAPPED_0819 |  | Na2MoO4 x H2O | UNMAPPED |  |  | 0 |
+| UNMAPPED_0820 |  | Trisodium citrate x 3 H2O | UNMAPPED |  |  | 0 |

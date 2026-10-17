@@ -2639,10 +2639,10 @@
 | CHEBI:40957 | Bicine | REJECTED | CHEBI:40957 |  | 0 |
 | CHEBI:31345 | Ca-pantothenate | REJECTED | CHEBI:31345 |  | 0 |
 | CHEBI:86158 | CaCl22H2O | REJECTED | CHEBI:86158 |  | 0 |
-| CHEBI:3312 | Calcium Chloride | REJECTED | CHEBI:3312 |  | 0 |
+| CHEBI:3312 | Calcium Chloride | REJECTED | CHEBI:3312 | CHEBI:3312 | 0 |
 | CHEBI:31345 | Calcium D-Pantothenate | REJECTED | CHEBI:31345 |  | 0 |
 | CHEBI:31404 | Citric Acid•H2O | REJECTED | CHEBI:31404 |  | 0 |
-| CHEBI:53503 | CoCl2 x 6 H2O | REJECTED | CHEBI:53503 |  | 0 |
+| CHEBI:53503 | CoCl2 x 6 H2O | REJECTED | CHEBI:53503 | CHEBI:53503 | 0 |
 | NCIT:C386 | Colistin sulfate salt | REJECTED | NCIT:C386 |  | 0 |
 | CHEBI:62318 | D-(-)-lyxose | REJECTED | CHEBI:62318 |  | 0 |
 | CHEBI:17992 | D-Sucrose | REJECTED | CHEBI:17992 |  | 0 |
@@ -2660,14 +2660,14 @@
 | CHEBI:16856 | L-Glutathione | REJECTED | CHEBI:16856 |  | 0 |
 | CHEBI:91248 | L-Cysteine hydrochloride monohydrate | REJECTED | CHEBI:91248 |  | 0 |
 | CHEBI:17306 | maltose | REJECTED | CHEBI:17306 |  | 0 |
-| CHEBI:86345 | MgCl2x 6 H2O | REJECTED | CHEBI:86345 |  | 0 |
+| CHEBI:86345 | MgCl2x 6 H2O | REJECTED | CHEBI:86345 | CHEBI:86345 | 0 |
 | CHEBI:31795 | MgSO4·7H2O | REJECTED | CHEBI:31795 |  | 0 |
 | CHEBI:31795 | MgSO47H2O | REJECTED | CHEBI:31795 |  | 0 |
 | CHEBI:86364 | MnSO4 x 1 H2O | REJECTED | CHEBI:86364 |  | 0 |
-| CHEBI:64243 | Na-glutamate | REJECTED | CHEBI:64243 |  | 0 |
+| CHEBI:64243 | Na-glutamate | REJECTED | CHEBI:64243 | CHEBI:64243 | 0 |
 | CHEBI:63017 | Na-tartrate | REJECTED | CHEBI:63017 |  | 0 |
 | CHEBI:64758 | Na2-EDTA x 2 H2O | REJECTED | CHEBI:64758 |  | 0 |
-| CHEBI:75213 | Na2MoO4·2H2O | REJECTED | CHEBI:75213 |  | 0 |
+| CHEBI:75213 | Na2MoO4·2H2O | REJECTED | CHEBI:75213 | CHEBI:75213 | 0 |
 | CHEBI:131361 | Na2SeO3·5H2O | REJECTED | CHEBI:131361 |  | 0 |
 | CHEBI:63005 | NaNO | REJECTED | CHEBI:63005 | CHEBI:63005 | 0 |
 | CHEBI:53542 | NiCl2 x 6 H2O | REJECTED | CHEBI:53542 |  | 0 |
@@ -2676,7 +2676,7 @@
 | ENVO:00002149 | Sea water | REJECTED | ENVO:00002149 |  | 0 |
 | CHEBI:32954 | Sodium acetate | REJECTED | CHEBI:32954 |  | 0 |
 | CHEBI:32138 | Sodium acetate·3H2O | REJECTED | CHEBI:32138 |  | 0 |
-| CHEBI:32142 | Sodium Citrate | REJECTED | CHEBI:32142 |  | 0 |
+| CHEBI:32142 | Sodium Citrate | REJECTED | CHEBI:32142 | CHEBI:32142 | 0 |
 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI:232798 | CHEBI:232798 | 0 |
 | mesh:C025349 | Sodium metasilicate (silicate for diatom frustules) | REJECTED | mesh:C025349 |  | 0 |
 | CHEBI:63005 | Sodium nitrate (nitrogen source) | REJECTED | CHEBI:63005 |  | 0 |
@@ -2685,7 +2685,7 @@
 | CHEBI:33403 | Sulfur (powder) | REJECTED | CHEBI:33403 | CHEBI:33403 | 0 |
 | CHEBI:33403 | Sulphur | REJECTED | CHEBI:33403 | CHEBI:33403 | 0 |
 | CHEBI:16494 | Thioctic acid | REJECTED | CHEBI:16494 | CHEBI:16494 | 0 |
-| CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI:32142 |  | 0 |
+| CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI:32142 | CHEBI:32142 | 0 |
 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI:17268 |  | 0 |
 | CHEBI:47965 | n-Acetyl-muramic acid | REJECTED | CHEBI:47965 |  | 0 |
 | CHEBI:16494 | α-lipoic acid | REJECTED | CHEBI:16494 | CHEBI:16494 | 0 |
@@ -2694,6 +2694,6 @@
 | kgmicrobe.ingredient:vitamins_solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient:vitamins_solution |  | 0 |
 | CHEBI:29108 | Calcium | REJECTED | CHEBI:29108 | CHEBI:29108 | 0 |
 | CHEBI:18420 | Magnesium | REJECTED | CHEBI:18420 | CHEBI:18420 | 0 |
-| CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:35697 |  | 0 |
-| CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:114249 |  | 0 |
+| CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:35697 | CHEBI:35697 | 0 |
+| CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:114249 | CHEBI:114249 | 0 |
 

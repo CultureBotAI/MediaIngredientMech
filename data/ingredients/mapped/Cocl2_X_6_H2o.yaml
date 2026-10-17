@@ -18,10 +18,10 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: CoCl2 x 2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CoCl2 x 4 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CoCl2 x 6H2O
   synonym_type: HYDRATE_FORM
@@ -53,6 +53,9 @@ synonyms:
 - synonym_text: cobalt(II) chloride
   synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
+- synonym_text: CoCl2.6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
 mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
@@ -152,6 +155,18 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:47:05.320044+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:53503 (Cobalt_chloride_hexahydrate) so
+    the post-merge REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks
+    _mim_merge_target, retype dihydrate/tetrahydrate HYDRATE_FORM tokens to REJECTED_LABEL
+    (already held on live Cocl2_X_2_H2o and Cocl2_X_4_H2o), and add CoCl2.6H2O as
+    HYDRATE_FORM so recipes labeled CoCl2.6H2O with stale anhydrous term.id CHEBI:35696
+    resolve through label_index.csv to hexahydrate CHEBI:53503 (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
 kg_microbe_node_id: CHEBI:53503
 chemical_properties:
   cas_rn: 7791-13-1
@@ -172,3 +187,4 @@ nutritional_roles:
       Simple component'
     curator_note: Widespread use in media formulations (2265 occurrences). High confidence
       based on 'Defined component' property.
+representative: CHEBI:53503
