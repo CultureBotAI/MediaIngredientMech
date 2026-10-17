@@ -61,8 +61,8 @@ def test_restored_identity_rows_and_recipe_memberships_agree():
         memberships = list(csv.DictReader((line for line in handle if not line.startswith("#")), delimiter="\t"))
     normalizer = CurieNormalizer()
     for slug, curie, count in (
-        ("Proteose_Peptone_No_2", "MICRO:0002393", 7),
-        ("Rabbit_Serum", "MICRO:0002392", 21),
+        ("Proteose_Peptone_No_2", "MICRO:0002393", 8),
+        ("Rabbit_Serum", "MICRO:0002392", 20),
         ("V-8_Juice", "MICRO:0002250", 3),
     ):
         record = yaml.safe_load((root / f"data/ingredients/mapped/{slug}.yaml").read_text())

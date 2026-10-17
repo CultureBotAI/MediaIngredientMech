@@ -21,6 +21,7 @@ ROOT = Path(__file__).parent.parent
 EXPORT = ROOT / "scripts" / "export_lists.py"
 CHECK = ROOT / "scripts" / "check_flat_export_coverage.py"
 POLICY = ROOT / "src" / "mediaingredientmech" / "synonym_policy.py"
+OCCURRENCES = ROOT / "src" / "mediaingredientmech" / "utils" / "culturemech_occurrences.py"
 
 
 def _load(path):
@@ -128,11 +129,15 @@ def build(tmp_path, records, csv_rows, header=None):
     # the gate imports the exporter's _synonyms() on purpose, so the rule for
     # what is publishable cannot drift between producing and checking
     (tmp_path / "scripts" / EXPORT.name).write_text(EXPORT.read_text())
-    (tmp_path / "src" / "mediaingredientmech").mkdir(parents=True)
+    (tmp_path / "src" / "mediaingredientmech" / "utils").mkdir(parents=True)
     (tmp_path / "src" / "mediaingredientmech" / "__init__.py").write_text("")
+    (tmp_path / "src" / "mediaingredientmech" / "utils" / "__init__.py").write_text("")
     (tmp_path / "src" / "mediaingredientmech" / "synonym_policy.py").write_text(
         POLICY.read_text()
     )
+    (
+        tmp_path / "src" / "mediaingredientmech" / "utils" / "culturemech_occurrences.py"
+    ).write_text(OCCURRENCES.read_text())
     return tmp_path
 
 

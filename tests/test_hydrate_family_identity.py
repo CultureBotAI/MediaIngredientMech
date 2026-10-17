@@ -31,13 +31,13 @@ LOCAL_SULFATE_HYDRATES = {
         "kgmicrobe.compound:feso4_x_6_h2o",
         "CHEBI:75832",
         "Fe.O4S.6H2O",
-        23,
+        24,
     ),
     "MgSO4 x 6 H2O": (
         "kgmicrobe.compound:mgso4_x_6_h2o",
         "CHEBI:32599",
         "Mg.O4S.6H2O",
-        35,
+        36,
     ),
     "MnSO4 x 7 H2O": (
         "kgmicrobe.compound:mnso4_x_7_h2o",
@@ -424,16 +424,16 @@ def test_variable_sulfate_hydrates_publish_parent_and_registry_rows(
 
 
 @pytest.mark.parametrize(
-    ("term", "old", "new"),
+    ("term", "old", "new", "expected"),
     [
-        ("Cr2(SO4)3 x n H2O", "CHEBI:53471", "kgmicrobe.compound:cr2_so43_x_n_h2o"),
-        ("Fe2(SO4)3 x n H2O", "CHEBI:53438", "kgmicrobe.compound:fe2_so43_x_n_h2o"),
+        ("Cr2(SO4)3 x n H2O", "CHEBI:53471", "kgmicrobe.compound:cr2_so43_x_n_h2o", 3),
+        ("Fe2(SO4)3 x n H2O", "CHEBI:53438", "kgmicrobe.compound:fe2_so43_x_n_h2o", 41),
     ],
 )
 def test_variable_sulfate_membership_rows_move_to_local_identity(
-    records, membership_rows, term, old, new
+    records, membership_rows, term, old, new, expected
 ):
-    expected = _by_term(records, term)["occurrence_statistics"]["media_count"]
+    assert _by_term(records, term)["identifier"] == new
     new_recipes = {row["recipe_id"] for row in membership_rows if row["mim_identifier"] == new}
     stale_old_recipes = {
         row["recipe_id"] for row in membership_rows if row["mim_identifier"] == old
@@ -521,8 +521,8 @@ def test_reviewed_hydrate_memberships_are_split_from_anhydrous_parents(
     for identifier, _, _, count in LOCAL_SULFATE_HYDRATES.values():
         assert tuple(stats[identifier]) == (count, count)
 
-    assert tuple(stats["CHEBI:31404"]) == (8, 8)
-    assert tuple(stats["CHEBI:30769"]) == (110, 113)
+    assert tuple(stats["CHEBI:31404"]) == (12, 12)
+    assert tuple(stats["CHEBI:30769"]) == (113, 116)
 
 
 def test_citric_bullet_duplicate_is_merged_into_monohydrate(records, sssom_rows):

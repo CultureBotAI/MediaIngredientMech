@@ -22,20 +22,30 @@ _src = _project_root / "src"
 if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
+from collections.abc import Mapping
 from mediaingredientmech.render_ingredient_pages import slug_for
 from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
+    effective_occurrence_statistics,
+    membership_counts,
+)
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 console = Console()
 
 
-def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
+def extract_ingredient_for_browser(
+    ingredient: dict,
+    source_file: str,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+) -> dict:
     """Extract ingredient data into browser-friendly format.
 
     Args:
         ingredient: IngredientRecord data.
         source_file: Source filename.
+        counts_by_id: Optional (media_count, total_occurrences) map from membership edges.
 
     Returns:
         Browser-friendly ingredient record.
@@ -62,9 +72,9 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
             synonyms.append(synonym_text)
 
     # Statistics
-    stats = ingredient.get('occurrence_statistics') or {}
-    total_occurrences = stats.get('total_occurrences', 0)
-    media_count = stats.get('media_count', 0)
+    media_count, total_occurrences = effective_occurrence_statistics(
+        ingredient, counts_by_id
+    )
 
     # Curation info
     curation_history = ingredient.get('curation_history', [])
@@ -120,18 +130,26 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
 
 def export_ingredients_to_json(
     ingredients_dir: Path,
-    output_file: Path
+    output_file: Path,
+    membership_path: Path | None = None,
 ) -> dict:
     """Export all ingredient files to browser JSON.
 
     Args:
         ingredients_dir: Directory with individual ingredient files.
         output_file: Output JSON file path.
+        membership_path: Optional path to culturemech_recipe_membership.tsv.
 
     Returns:
         Export statistics.
     """
     stats = {'total': 0, 'mapped': 0, 'unmapped': 0}
+    resolved_membership = (
+        membership_path
+        if membership_path is not None
+        else ingredients_dir.parent.parent / "mappings" / "culturemech_recipe_membership.tsv"
+    )
+    counts_by_id = membership_counts(resolved_membership)
 
     all_ingredients = []
     failures: list[str] = []
@@ -144,7 +162,8 @@ def export_ingredients_to_json(
                 ingredient = load_yaml(yaml_file)
                 browser_record = extract_ingredient_for_browser(
                     ingredient,
-                    f"mapped/{yaml_file.name}"
+                    f"mapped/{yaml_file.name}",
+                    counts_by_id=counts_by_id,
                 )
                 all_ingredients.append(browser_record)
                 stats['total'] += 1
@@ -161,7 +180,8 @@ def export_ingredients_to_json(
                 ingredient = load_yaml(yaml_file)
                 browser_record = extract_ingredient_for_browser(
                     ingredient,
-                    f"unmapped/{yaml_file.name}"
+                    f"unmapped/{yaml_file.name}",
+                    counts_by_id=counts_by_id,
                 )
                 all_ingredients.append(browser_record)
                 stats['total'] += 1

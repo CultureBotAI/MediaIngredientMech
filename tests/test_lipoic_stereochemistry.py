@@ -218,8 +218,8 @@ def test_lipoic_memberships_are_collapsed_to_generic_lipoic_acid(
             row["occurrences"]
         )
 
-    assert len(lipoic_rows) == 1747
-    assert counts["CHEBI:16494"] == 1748
+    assert len(lipoic_rows) == 1829
+    assert counts["CHEBI:16494"] == 1830
     assert not OLD_IDENTIFIERS & set(counts)
 
 

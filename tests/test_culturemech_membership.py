@@ -8,6 +8,7 @@ to check them against. These pin the artifact that closes that.
 
 import csv
 import importlib.util
+import json
 import subprocess
 import sys
 from collections import defaultdict
@@ -15,6 +16,11 @@ from pathlib import Path
 
 import pytest
 import yaml
+
+from mediaingredientmech.utils.culturemech_occurrences import (
+    effective_occurrence_statistics,
+    membership_counts,
+)
 
 ROOT = Path(__file__).parent.parent
 SCRIPT = ROOT / "scripts" / "build_culturemech_membership.py"
@@ -48,7 +54,8 @@ def records() -> list[dict]:
 def test_the_counts_are_reproducible_from_the_edges(edges, records):
     """The documented definition the issue asks for: counting a record's edges
     reproduces `media_count`, and summing their `occurrences` reproduces
-    `total_occurrences`.
+    `total_occurrences` across the effective statistics helper and exported
+    catalogs without mutating reviewed record YAML bytes (#817, #877).
 
     REJECTED records are excluded because curation deliberately zeroes them and
     transfers their counts to the representative they were merged into, while
@@ -60,17 +67,35 @@ def test_the_counts_are_reproducible_from_the_edges(edges, records):
         by_id[row["mim_identifier"]][0] += 1
         by_id[row["mim_identifier"]][1] += int(row["occurrences"])
 
+    counts = membership_counts(ARTIFACT)
     disagree = []
     for record in records:
         identifier = str(record.get("identifier") or "")
         if identifier not in by_id or record.get("mapping_status") == "REJECTED":
             continue
-        stats = record.get("occurrence_statistics") or {}
+        effective = effective_occurrence_statistics(record, counts)
         media, occurrences = by_id[identifier]
-        if (stats.get("media_count"), stats.get("total_occurrences")) != (media, occurrences):
-            disagree.append((record.get("preferred_term"), stats, media, occurrences))
+        if effective != (media, occurrences):
+            disagree.append((record.get("preferred_term"), effective, media, occurrences))
 
     assert not disagree, f"{len(disagree)} active record(s) disagree: {disagree[:3]}"
+
+    exported = json.loads(
+        (ROOT / "docs/data/mapped_ingredients.json").read_text(encoding="utf-8")
+    )
+    export_disagree = []
+    for entry in exported:
+        identifier = str(entry.get("identifier") or "")
+        if identifier not in by_id or entry.get("mapping_status") == "REJECTED":
+            continue
+        media, occurrences = by_id[identifier]
+        actual = (entry.get("media_count"), entry.get("total_occurrences"))
+        if actual != (media, occurrences):
+            export_disagree.append((entry.get("preferred_term"), actual, media, occurrences))
+
+    assert not export_disagree, (
+        f"{len(export_disagree)} exported record(s) disagree: {export_disagree[:3]}"
+    )
 
 
 def test_an_ingredient_in_more_than_fifty_recipes_is_represented(edges):
@@ -142,6 +167,9 @@ def test_split_trace_solutions_are_not_published_under_ncit_parent(edges):
 
     assert by_identifier["NCIT:C896"] == []
     assert by_identifier["kgmicrobe.ingredient:trace_element_solution"] == [
+        "CultureMech:007674",
+        "CultureMech:007686",
+        "CultureMech:007748",
         "CultureMech:013208",
         "CultureMech:013463",
         "CultureMech:013693",

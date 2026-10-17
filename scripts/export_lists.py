@@ -11,6 +11,7 @@ import csv
 import json
 import re
 import sys
+from collections.abc import Mapping
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,6 +27,10 @@ if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
 from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
+    effective_occurrence_statistics,
+    membership_counts,
+)
 
 console = Console()
 
@@ -144,7 +149,11 @@ def _join_synonyms(ing: dict) -> str:
     return SYNONYM_SEP.join(syns)
 
 
-def export_to_json(ingredients: list[dict], output_path: Path):
+def export_to_json(
+    ingredients: list[dict],
+    output_path: Path,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+):
     """Export ingredients to JSON format."""
     records = []
     for ing in ingredients:
@@ -166,11 +175,17 @@ def export_to_json(ingredients: list[dict], output_path: Path):
             })
 
         # Add statistics
-        if ing.get("occurrence_statistics"):
-            stats = ing["occurrence_statistics"]
+        if ing.get("occurrence_statistics") or (
+            counts_by_id
+            and ing.get("mapping_status") != "REJECTED"
+            and str(ing.get("identifier") or "") in counts_by_id
+        ):
+            media_count, total_occurrences = effective_occurrence_statistics(
+                ing, counts_by_id
+            )
             record.update({
-                "total_occurrences": stats.get("total_occurrences", 0),
-                "media_count": stats.get("media_count", 0),
+                "total_occurrences": total_occurrences,
+                "media_count": media_count,
             })
 
         records.append(record)
@@ -181,7 +196,11 @@ def export_to_json(ingredients: list[dict], output_path: Path):
     return len(records)
 
 
-def export_to_csv(ingredients: list[dict], output_path: Path):
+def export_to_csv(
+    ingredients: list[dict],
+    output_path: Path,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+):
     """Export ingredients to CSV format."""
     fieldnames = [
         "identifier",
@@ -221,11 +240,17 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
                 })
 
             # Add statistics
-            if ing.get("occurrence_statistics"):
-                stats = ing["occurrence_statistics"]
+            if ing.get("occurrence_statistics") or (
+                counts_by_id
+                and ing.get("mapping_status") != "REJECTED"
+                and str(ing.get("identifier") or "") in counts_by_id
+            ):
+                media_count, total_occurrences = effective_occurrence_statistics(
+                    ing, counts_by_id
+                )
                 row.update({
-                    "total_occurrences": stats.get("total_occurrences", 0),
-                    "media_count": stats.get("media_count", 0),
+                    "total_occurrences": total_occurrences,
+                    "media_count": media_count,
                 })
 
             writer.writerow(row)
@@ -410,7 +435,12 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     return len(rows)
 
 
-def export_to_markdown(ingredients: list[dict], output_path: Path, title: str):
+def export_to_markdown(
+    ingredients: list[dict],
+    output_path: Path,
+    title: str,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+):
     """Export ingredients to Markdown table format.
 
     Deliberately carries NO synonyms column, unlike the CSV and JSON exports
@@ -442,8 +472,12 @@ def export_to_markdown(ingredients: list[dict], output_path: Path, title: str):
             quality = om.get("mapping_quality", "")
 
         occurrences = ""
-        if ing.get("occurrence_statistics"):
-            occurrences = str(ing["occurrence_statistics"].get("total_occurrences", 0))
+        if ing.get("occurrence_statistics") or (
+            counts_by_id
+            and ing.get("mapping_status") != "REJECTED"
+            and str(ing.get("identifier") or "") in counts_by_id
+        ):
+            occurrences = str(effective_occurrence_statistics(ing, counts_by_id)[1])
 
         lines.append(f"| {id_val} | {ont_id} | {term} | {status} | {source} | {quality} | {occurrences} |")
 
@@ -502,6 +536,8 @@ def main(
     all_ingredients = mapped + unmapped
     console.print(f"\n[bold]Total: {len(all_ingredients)} ingredients[/bold]")
 
+    counts_by_id = membership_counts(Path("mappings/culturemech_recipe_membership.tsv"))
+
     # Export in requested formats
     formats_to_export = ["json", "csv", "markdown"] if format == "all" else [format]
 
@@ -511,33 +547,33 @@ def main(
         if fmt == "json":
             # Mapped JSON
             mapped_json = output_dir / "mapped_ingredients.json"
-            count = export_to_json(mapped, mapped_json)
+            count = export_to_json(mapped, mapped_json, counts_by_id)
             console.print(f"  ✓ {mapped_json} ({count} records)")
 
             # Unmapped JSON
             unmapped_json = output_dir / "unmapped_ingredients.json"
-            count = export_to_json(unmapped, unmapped_json)
+            count = export_to_json(unmapped, unmapped_json, counts_by_id)
             console.print(f"  ✓ {unmapped_json} ({count} records)")
 
             # All JSON
             all_json = output_dir / "all_ingredients.json"
-            count = export_to_json(all_ingredients, all_json)
+            count = export_to_json(all_ingredients, all_json, counts_by_id)
             console.print(f"  ✓ {all_json} ({count} records)")
 
         elif fmt == "csv":
             # Mapped CSV
             mapped_csv = output_dir / "mapped_ingredients.csv"
-            count = export_to_csv(mapped, mapped_csv)
+            count = export_to_csv(mapped, mapped_csv, counts_by_id)
             console.print(f"  ✓ {mapped_csv} ({count} records)")
 
             # Unmapped CSV
             unmapped_csv = output_dir / "unmapped_ingredients.csv"
-            count = export_to_csv(unmapped, unmapped_csv)
+            count = export_to_csv(unmapped, unmapped_csv, counts_by_id)
             console.print(f"  ✓ {unmapped_csv} ({count} records)")
 
             # All CSV
             all_csv = output_dir / "all_ingredients.csv"
-            count = export_to_csv(all_ingredients, all_csv)
+            count = export_to_csv(all_ingredients, all_csv, counts_by_id)
             console.print(f"  ✓ {all_csv} ({count} records)")
 
             # per-LABEL resolution with explicit precedence (#232)
@@ -548,17 +584,17 @@ def main(
         elif fmt == "markdown":
             # Mapped MD
             mapped_md = output_dir / "mapped_ingredients.md"
-            count = export_to_markdown(mapped, mapped_md, "Mapped Ingredients")
+            count = export_to_markdown(mapped, mapped_md, "Mapped Ingredients", counts_by_id)
             console.print(f"  ✓ {mapped_md} ({count} records)")
 
             # Unmapped MD
             unmapped_md = output_dir / "unmapped_ingredients.md"
-            count = export_to_markdown(unmapped, unmapped_md, "Unmapped Ingredients")
+            count = export_to_markdown(unmapped, unmapped_md, "Unmapped Ingredients", counts_by_id)
             console.print(f"  ✓ {unmapped_md} ({count} records)")
 
             # All MD
             all_md = output_dir / "all_ingredients.md"
-            count = export_to_markdown(all_ingredients, all_md, "All Ingredients")
+            count = export_to_markdown(all_ingredients, all_md, "All Ingredients", counts_by_id)
             console.print(f"  ✓ {all_md} ({count} records)")
 
     # Summary
