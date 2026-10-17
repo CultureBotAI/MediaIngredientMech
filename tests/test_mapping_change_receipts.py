@@ -224,3 +224,116 @@ def test_recomputed_ids_match_the_gate_and_the_exporter():
     tsv_shaped = {column: edge.get(column, "") for column in EDGE_COLUMNS}
     assert set(tsv_shaped) > set(edge)
     assert mcr._edge_id_at(tsv_shaped, 2) == edge["id"]
+
+
+def test_issue_903_replayed_from_commits_are_anchored_and_match_sha256():
+    """Every receipt's replayed_from commit must be reachable from HEAD or a review-source/* tag (#903)."""
+    import csv
+    import hashlib
+    import subprocess
+
+    root = Path(__file__).parents[1]
+    receipts = mcr.load_receipts(root)
+    replayed = [r for r in receipts if "replayed_from" in r]
+    assert replayed, "expected receipts with replayed_from provenance"
+
+    for receipt in replayed:
+        info = receipt["replayed_from"]
+        commit = info["commit"]
+        rel_path = info["path"]
+        expected_sha = info["sha256"]
+
+        in_head = (
+            subprocess.run(
+                ["git", "-C", str(root), "merge-base", "--is-ancestor", commit, "HEAD"],
+                capture_output=True,
+                check=False,
+            ).returncode
+            == 0
+        )
+        tags_out = subprocess.run(
+            ["git", "-C", str(root), "tag", "--list", "review-source/*", "--contains", commit],
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.strip()
+        assert in_head or bool(tags_out), (
+            f"Receipt {receipt['batch']} cites unanchored commit {commit}; "
+            "tag it under refs/tags/review-source/*"
+        )
+
+        blob = subprocess.run(
+            ["git", "-C", str(root), "cat-file", "-p", f"{commit}:{rel_path}"],
+            capture_output=True,
+            check=True,
+        ).stdout
+        actual_sha = hashlib.sha256(blob).hexdigest()
+        assert actual_sha == expected_sha, (
+            f"Receipt {receipt['batch']} replayed_from sha256 mismatch for {commit}:{rel_path}"
+        )
+
+
+def test_issue_902_receipt_corrected_rows_qualify_pre_receipt_reasons():
+    """Receipt-corrected rows must lead with the receipt and qualify carried pre-receipt reasons (#902)."""
+    import csv
+
+    root = Path(__file__).parents[1]
+    receipts = mcr.load_receipts(root)
+    chains = mcr.record_chains(receipts)
+    assert all("batch" in link and link["batch"] for links in chains.values() for link in links)
+
+    review = json.loads((root / "reports/sssom_completion_20260921/review.json").read_text(encoding="utf-8"))
+    evidence = json.loads(
+        (root / "reports/sssom_completion_20260921/mapping-evidence.json").read_text(encoding="utf-8")
+    )["entries"]
+
+    receipt_decisions = []
+    for decision in review["decisions"]:
+        entry = evidence[decision["evidence_key"]]
+        basis = entry["basis"]
+        if "mapping_followup" in basis:
+            continue
+        if basis.get("mapping_change") or decision.get("owner_record") in chains:
+            receipt_decisions.append((decision, basis))
+
+    assert receipt_decisions, "expected receipt-corrected rows in review.json"
+
+    for decision, basis in receipt_decisions:
+        batch = basis.get("mapping_change")
+        assert batch, f"Row {decision['source_position']} ({decision['owner_record']}) is missing mapping_change"
+        reason = decision["review_reason"]
+        if basis.get("baseline_position") is None:
+            assert reason.startswith(f"Row added by mapping-change receipt {batch} "), (
+                f"Added row {decision['source_position']} review_reason does not lead with receipt: {reason!r}"
+            )
+            continue
+        prefix = f"Mapping corrected by receipt {batch}:"
+        assert reason.startswith(prefix), (
+            f"Row {decision['source_position']} ({decision['owner_record']}) review_reason does not lead with {prefix!r}: {reason!r}"
+        )
+        tail = reason[len(prefix) :].strip()
+        if any(k in basis for k in ("scoped_review", "negative_reviews")):
+            assert "Pre-receipt " in tail and "(recorded against the pre-receipt payload):" in tail, (
+                f"Row {decision['source_position']} carried reason is not qualified as pre-receipt: {reason!r}"
+            )
+
+    findings_path = root / "reports/semantic_review_20260921/resolution/finding-dispositions.tsv"
+    with findings_path.open(encoding="utf-8", newline="") as handle:
+        finding_rows = list(csv.DictReader(handle, delimiter="\t"))
+
+    superseded_findings = [
+        row
+        for row in finding_rows
+        if row["source_record"] in chains and row["resolution_status"] in {"OPEN", "EXCLUDED_REJECTED"}
+    ]
+    assert superseded_findings, "expected receipt-superseded findings in finding-dispositions.tsv"
+    for row in superseded_findings:
+        reason = row["resolution_reason"]
+        assert reason.startswith("Mapping corrected by receipt "), (
+            f"Finding {row['finding_id']} ({row['source_record']}) resolution_reason does not lead with receipt: {reason!r}"
+        )
+        if row["resolution_status"] == "OPEN":
+            assert "Pre-receipt " in reason, (
+                f"Finding {row['finding_id']} ({row['source_record']}) resolution_reason does not qualify pre-receipt text: {reason!r}"
+            )
+

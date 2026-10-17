@@ -227,11 +227,13 @@ def assemble():
     if replayed != mappings:
         raise ValueError("Current source rows differ from the reviewed chain's replay")
     baseline_of = {current: bp for bp, current in enumerate(forward, 1) if current is not None}
-    receipt_owners = {
-        entry["source_record"]
-        for receipt in mapping_changes
-        for entry in receipt["records"]
-    }
+    receipt_batches_by_owner: dict[str, list[str]] = {}
+    for receipt in sorted(mapping_changes, key=lambda r: r["sequence"]):
+        for entry in receipt["records"]:
+            receipt_batches_by_owner.setdefault(entry["source_record"], []).append(
+                receipt["batch"]
+            )
+    receipt_owners = set(receipt_batches_by_owner)
     original_records = {
         r["source_record"]: r
         for r in csv.DictReader(
@@ -363,6 +365,22 @@ def assemble():
             correction = changed_rows.get(position, {})
             if correction.get("before") != previous_mapping or correction.get("after") != mapping:
                 raise ValueError("Mapping changed outside the reviewed synonym correction")
+        receipt_batch = (
+            mapping_change["receipt"]
+            if mapping_change
+            else (
+                receipt_batches_by_owner[owner][-1]
+                if owner in receipt_batches_by_owner
+                else None
+            )
+        )
+        receipt_reason = (
+            f"Mapping corrected by receipt {receipt_batch}: the row payload or its owner record changed after the "
+            "prior review, which therefore does not carry. The correction's verification is recorded in the receipt; "
+            "preserve the corrected claim pending a mapping-specific decision."
+            if receipt_batch
+            else None
+        )
         original = prior[position]
         disposition = "WITHHOLD"
         reason = "This assertion lacks a mapping-specific positive disposition. Its full unchanged claim is preserved for source review."
@@ -383,19 +401,20 @@ def assemble():
                 "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. "
                 + original["review_reason"]
             )
-        elif mapping_change:
-            reason = (
-                f"Mapping corrected by receipt {mapping_change['receipt']}: the row payload or its owner record changed after the "
-                "prior review, which therefore does not carry. The correction's verification is recorded in the receipt; "
-                "preserve the corrected claim pending a mapping-specific decision."
-            )
-            basis["mapping_change"] = mapping_change["receipt"]
+        elif receipt_reason:
+            reason = receipt_reason
+            basis["mapping_change"] = receipt_batch
         elif position in changed_rows:
             reason = "The synonym rejection corrects a token that is not a name of this substance, but does not itself approve the record's remaining identity and aliases. Preserve this changed row pending a complete mapping-specific decision."
             basis["synonym_correction"] = changed_rows[position]["receipt"]
         if position in concerns:
             entry = concerns[position]
-            disposition, reason = "WITHHOLD", entry["reason"]
+            disposition = "WITHHOLD"
+            reason = (
+                f"{receipt_reason} Pre-receipt concern (recorded against the pre-receipt payload): {entry['reason']}"
+                if receipt_reason
+                else entry["reason"]
+            )
             basis["scoped_review"] = {
                 "file": "mapping_review/concern_cohorts.json",
                 "position": position,
@@ -410,11 +429,15 @@ def assemble():
                     raise ValueError("Nonmapping-cohort approval has stale owner or row")
                 disposition = "WITHHOLD"
                 reason = (
-                    "A mapping-change receipt corrected the owner record after this nonmapping-cohort approval, "
-                    "which therefore does not carry; preserve the claim pending a mapping-specific decision. Original: "
+                    f"{receipt_reason} Pre-receipt nonmapping-cohort approval (recorded against the pre-receipt payload): "
                     + entry["reason"]
                 )
-                basis["mapping_change"] = "owner corrected after cohort approval"
+                basis["mapping_change"] = receipt_batch
+            elif receipt_reason:
+                reason = (
+                    f"{receipt_reason} Pre-receipt nonmapping-cohort review (recorded against the pre-receipt payload): "
+                    + entry["reason"]
+                )
             basis["scoped_review"] = {
                 "file": "mapping_review/nonmapping_cohorts.json",
                 "position": position,
@@ -431,11 +454,15 @@ def assemble():
                     raise ValueError("Changed-owner approval has stale row or owner")
                 disposition = "WITHHOLD"
                 reason = (
-                    "A mapping-change receipt corrected the owner record after this changed-owner approval, "
-                    "which therefore does not carry; preserve the claim pending a mapping-specific decision. Original: "
+                    f"{receipt_reason} Pre-receipt changed-owner approval (recorded against the pre-receipt payload): "
                     + entry["reason"]
                 )
-                basis["mapping_change"] = "owner corrected after changed-owner approval"
+                basis["mapping_change"] = receipt_batch
+            elif receipt_reason:
+                reason = (
+                    f"{receipt_reason} Pre-receipt changed-owner review (recorded against the pre-receipt payload): "
+                    + entry["reason"]
+                )
             basis["scoped_review"] = {
                 "file": "mapping_review/changed-owner-review.json",
                 "position": position,
@@ -468,14 +495,24 @@ def assemble():
                 "position": position,
                 "historical_report": original_records[owner]["review_report"],
             }
+
+        current_safeguards: list[str] = []
+
+        def _with_safeguard(prefix: str, current_reason: str) -> str:
+            current_safeguards.append(prefix)
+            if receipt_reason and current_reason.startswith(receipt_reason):
+                tail = current_reason[len(receipt_reason):].lstrip()
+                return f"{receipt_reason} {prefix}" + (f" {tail}" if tail else "")
+            return f"{prefix} {current_reason}"
+
         # Absence of proof for a precise SKOS relation remains an explicit hold.
         # exactMatch to the record's own identifier is a serialization rule,
         # and cannot strengthen an uncertain ontology grounding scientifically.
         if mapping["predicate_id"] != "skos:exactMatch":
             disposition = "WITHHOLD"
-            reason = (
-                "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. "
-                + reason
+            reason = _with_safeguard(
+                "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review.",
+                reason,
             )
             basis["policy"] = (
                 "Non-exact relations require fresh claim-level review; no inherited whole-record approval."
@@ -486,11 +523,11 @@ def assemble():
             in WEAK_EXACT_GRADES
         ):
             disposition = "WITHHOLD"
-            reason = (
+            reason = _with_safeguard(
                 "The source grounding grade is "
                 + records[owner]["ontology_mapping"]["mapping_quality"]
-                + "; identity with its own identifier does not substantiate an exact ontology equivalence. A source-scoped exact-relation review is required. "
-                + reason
+                + "; identity with its own identifier does not substantiate an exact ontology equivalence. A source-scoped exact-relation review is required.",
+                reason,
             )
             basis["policy"] = (
                 "Do not infer exact scientific equivalence from primary-identifier equality (#730)."
@@ -506,17 +543,27 @@ def assemble():
         ]
         if suspect:
             disposition = "WITHHOLD"
-            reason = (
+            reason = _with_safeguard(
                 "Preparation/concentration/instruction tokens remain in the synonym channel and need individual same-subject review: "
                 + "; ".join(suspect)
-                + ". "
-                + reason
+                + ".",
+                reason,
             )
             basis["preparation_tokens"] = suspect
         if position in explicit_holds:
             disposition = "WITHHOLD"
-            reason = " ".join(dict.fromkeys(item["reason"] for item in explicit_holds[position]))
+            held_reason = " ".join(
+                dict.fromkeys(item["reason"] for item in explicit_holds[position])
+            )
+            safeguard_clause = (" " + " ".join(current_safeguards)) if current_safeguards else ""
+            reason = (
+                f"{receipt_reason}{safeguard_clause} Pre-receipt hold (recorded against the pre-receipt payload): {held_reason}"
+                if receipt_reason
+                else held_reason
+            )
             basis["negative_reviews"] = explicit_holds[position]
+        if receipt_batch:
+            basis["mapping_change"] = receipt_batch
         followup_key = tuple(mapping[field] for field in ("subject_id", "predicate_id", "object_id"))
         if followup_key in followups_by_key:
             followup = followups_by_key[followup_key]

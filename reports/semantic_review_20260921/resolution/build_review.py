@@ -307,17 +307,27 @@ def main():
     decisions = []
     for finding in rows(BASE / "findings.tsv"):
         name = relocated.get(finding["source_record"], finding["source_record"])
+        receipt_batches = ", ".join(
+            dict.fromkeys(link["batch"] for link in chains.get(name, []) if link.get("batch"))
+        )
         decision = dict(finding, current_record=name, current_record_sha256=hashes[name],
                         resolution_status="OPEN", resolution_reason="Historical finding remains unresolved; no blanket approval.", resolution_evidence="")
         proof = None
         reason = ""
         if records[name]["mapping_status"] == "REJECTED":
             decision["resolution_status"] = "EXCLUDED_REJECTED"
-            decision["resolution_reason"] = "Source record is explicitly rejected and absent from active graph."
+            decision["resolution_reason"] = (
+                f"Mapping corrected by receipt {receipt_batches}: source record is explicitly rejected and absent from active graph."
+                if receipt_batches
+                else "Source record is explicitly rejected and absent from active graph."
+            )
         elif name in superseded:
             # A mapping-change receipt corrected this record after the identity or
             # component plan that closed the finding; the closure does not carry.
-            decision["resolution_reason"] = "The plan that closed this finding was superseded by a mapping-change receipt; no re-review has closed it since."
+            decision["resolution_reason"] = (
+                f"Mapping corrected by receipt {receipt_batches}: the plan that closed this finding was superseded by a mapping-change receipt; no re-review has closed it since. "
+                f"Pre-receipt finding (recorded against the pre-receipt payload): {finding['reason']}"
+            )
         elif finding["finding_id"] in initial_decisions:
             prior = initial_decisions[finding["finding_id"]]
             if prior["disposition"] == "IDENTITY_CORRECTED":
@@ -338,6 +348,11 @@ def main():
                 reason = item["reason"]
         if proof:
             decision.update(resolution_status="RESOLVED", resolution_reason=reason, resolution_evidence=relative(proof))
+        elif decision["resolution_status"] == "OPEN" and name not in superseded and receipt_batches:
+            decision["resolution_reason"] = (
+                f"Mapping corrected by receipt {receipt_batches}: the record changed after the baseline finding, which therefore does not describe the current record and awaits post-receipt re-review (no blanket approval). "
+                f"Pre-receipt finding (recorded against the pre-receipt payload): {finding['reason']}"
+            )
         decisions.append(decision)
     write_rows(HERE / "finding-dispositions.tsv", decisions)
     sssom_path = ROOT / "mappings/ingredient_mappings.sssom.tsv"

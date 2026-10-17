@@ -92,15 +92,16 @@ def record_digest(record) -> str:
 def record_chains(receipts: list[dict]) -> dict[str, list[dict]]:
     """source_record -> links in sequence order.
 
-    Each link carries ``before`` / ``after`` (file digests) and ``before_record``
-    (the canonical content digest of the pre-batch record, when the receipt
-    recorded one).
+    Each link carries ``batch``, ``before`` / ``after`` (file digests) and
+    ``before_record`` (the canonical content digest of the pre-batch record,
+    when the receipt recorded one).
     """
     chains: dict[str, list[dict]] = {}
     for receipt in receipts:
         for entry in receipt.get("records", []):
             chains.setdefault(entry["source_record"], []).append(
                 {
+                    "batch": receipt.get("batch"),
                     "before": entry.get("before_yaml_sha256"),
                     "after": entry["after_yaml_sha256"],
                     "before_record": entry.get("before_record_sha256"),

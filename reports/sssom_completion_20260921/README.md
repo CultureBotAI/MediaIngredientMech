@@ -25,10 +25,18 @@ does not mean every source mapping has been scientifically approved.
   until a mapping-specific review approves the corrected mapping, and every
   owner it touches loses the byte-identical carry-forward (including any
   earlier `nonmapping_cohorts.json` or `changed-owner-review.json` approval on
-  that owner, which is downgraded to `WITHHOLD`). `make_receipt.py` writes one
+  that owner, which is downgraded to `WITHHOLD`). When a receipt modifies a
+  row or its owner record, `assemble_review.py` and `resolution/build_review.py`
+  lead the withheld `review_reason` / `resolution_reason` with the receipt
+  batch and qualify any carried pre-receipt cohort, hold, or finding text as
+  recorded against the pre-receipt payload (#902). `make_receipt.py` writes one
   from a mutator's apply log; pass `--before-records <dir>` when the batch
   touches a record covered by `identities/resolutions.json` so the receipt also
-  records `before_record_sha256`.
+  records `before_record_sha256`. Receipts 7–9 (`hydrate-parent-reanchor`,
+  `hydrate-parent-reanchor-grade`, `hydrate-local-ids`) replay from the
+  pre-squash branch commit `ea697252223774072a188ae3ec23a0e2adea0778` (PR #770,
+  squash-merged as `d5abaa08`), preserved on `origin` by annotated tag
+  `review-source/20260924-ea697252` (#903).
 - `record_refreshes/` holds audit-only section-refresh receipts
   (`src/mediaingredientmech/record_refresh.py`, written by
   `scripts/make_record_refresh_receipt.py`). They document bounded
