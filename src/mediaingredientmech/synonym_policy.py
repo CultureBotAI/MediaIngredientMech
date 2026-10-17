@@ -55,3 +55,21 @@ def is_resolving_synonym(synonym: Mapping[str, Any]) -> bool:
     if synonym_type in NON_RESOLVING_SYNONYM_TYPES:
         return False
     return is_resolving_synonym_text(synonym.get("synonym_text"))
+
+
+def resolving_synonym_texts(synonyms: Any) -> list[str]:
+    """Return unique resolving synonym strings in record order."""
+    out: list[str] = []
+    for syn in synonyms or []:
+        if not isinstance(syn, Mapping) or not is_resolving_synonym(syn):
+            continue
+        text = str(syn.get("synonym_text") or "")
+        if text and text not in out:
+            out.append(text)
+    return out
+
+
+def count_resolving_synonyms(synonyms: Any) -> int:
+    """Return the count of unique resolving synonym strings."""
+    return len(resolving_synonym_texts(synonyms))
+

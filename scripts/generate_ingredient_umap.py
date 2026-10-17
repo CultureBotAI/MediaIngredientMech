@@ -7,6 +7,7 @@ import json
 import os
 import pickle
 import sys
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
@@ -28,6 +29,10 @@ if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
 from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
+from mediaingredientmech.synonym_policy import (  # noqa: E402
+    count_resolving_synonyms,
+    is_resolving_synonym,
+)
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 console = Console()
@@ -225,6 +230,8 @@ class IngredientUMAPGenerator:
                     if not found_embedding and ingredient_id.startswith('UNMAPPED'):
                         synonyms = ingredient.get('synonyms', [])
                         for syn in synonyms:
+                            if not isinstance(syn, Mapping) or not is_resolving_synonym(syn):
+                                continue
                             syn_text = syn.get('synonym_text', '')
                             import re
                             chebi_matches = re.findall(r'CHEBI:?\s*(\d+)', syn_text, re.IGNORECASE)
@@ -416,9 +423,9 @@ def build_visualization_data(
             total_occurrences = stats.get('total_occurrences', 0)
             media_count = stats.get('media_count', 0)
 
-            # Synonyms
+            # Synonyms (count only resolving synonyms; exclude REJECTED_LABEL and notes)
             synonyms = ingredient.get('synonyms', [])
-            num_synonyms = len(synonyms)
+            num_synonyms = count_resolving_synonyms(synonyms)
 
             # Chemical properties (populated for CHEBI-enriched records and
             # any record that carries a CAS-RN — see chemical_properties_enrichment.md).
@@ -449,6 +456,40 @@ def build_visualization_data(
             console.print(f"[red]Error processing {record_key} ({src_path}): {e}[/red]")
 
     return _require_unique_record_keys(visualization_data)
+
+
+def collect_visualization_exclusions(
+    ingredients_dir: Path,
+    embeddings: Mapping[str, Any],
+) -> dict[str, dict[str, str]]:
+    """Record live MAPPED records omitted because no KG-Microbe embedding exists."""
+    exclusions: dict[str, dict[str, str]] = {}
+    for category in ('mapped', 'unmapped'):
+        category_dir = ingredients_dir / category
+        if not category_dir.exists():
+            continue
+        for candidate in sorted(category_dir.glob('*.yaml')):
+            try:
+                ingredient = load_yaml(candidate)
+            except Exception:
+                continue
+            if not isinstance(ingredient, dict) or ingredient.get('mapping_status') == 'REJECTED':
+                continue
+            ingredient_id = str(ingredient.get('identifier') or '')
+            if ingredient_id.startswith('UNMAPPED'):
+                continue
+            ontology_mapping = ingredient.get('ontology_mapping') or {}
+            ontology_id = str(ontology_mapping.get('ontology_id') or '')
+            if ingredient_id in embeddings or (ontology_id and ontology_id in embeddings):
+                continue
+            record_key = mim_curie_for_stem(candidate.stem)
+            exclusions[record_key] = {
+                'identifier': ingredient_id,
+                'ontology_id': ontology_id,
+                'ontology_source': str(ontology_mapping.get('ontology_source') or ''),
+                'reason': 'no_kg_microbe_embedding',
+            }
+    return exclusions
 
 
 def _require_unique_record_keys(nodes: list[dict]) -> list[dict]:
@@ -573,6 +614,15 @@ def main(
     with open(json_output, 'w') as f:
         json.dump(viz_data, f, indent=2)
     console.print(f"[green]Saved JSON data to {json_output}[/green]")
+
+    exclusions = collect_visualization_exclusions(ingredients_dir, embeddings)
+    exclusions_output = json_output.parent / 'ingredient_visualization_exclusions.json'
+    with open(exclusions_output, 'w') as f:
+        json.dump(exclusions, f, indent=2, sort_keys=True)
+        f.write('\n')
+    console.print(
+        f"[green]Saved {len(exclusions)} visualization exclusions to {exclusions_output}[/green]"
+    )
 
     # Step 5: Generate HTML (will be done separately)
     console.print(f"\n[yellow]Next: Create HTML template at {output_path}[/yellow]")

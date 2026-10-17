@@ -24,7 +24,7 @@ if str(_src) not in sys.path:
 
 from mediaingredientmech.render_ingredient_pages import slug_for
 from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
-from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+from mediaingredientmech.synonym_policy import resolving_synonym_texts  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 console = Console()
@@ -53,13 +53,7 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
     mapping_quality = ontology_mapping.get('mapping_quality', '')
 
     # Synonyms
-    synonyms = []
-    for syn in ingredient.get('synonyms') or []:
-        if not is_resolving_synonym(syn or {}):
-            continue
-        synonym_text = syn.get('synonym_text', '')
-        if synonym_text and synonym_text not in synonyms:
-            synonyms.append(synonym_text)
+    synonyms = resolving_synonym_texts(ingredient.get('synonyms'))
 
     # Statistics
     stats = ingredient.get('occurrence_statistics') or {}
