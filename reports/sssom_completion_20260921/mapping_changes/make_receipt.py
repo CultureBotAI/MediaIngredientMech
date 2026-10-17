@@ -36,6 +36,10 @@ import hashlib
 import json
 from pathlib import Path
 
+import yaml
+
+from mediaingredientmech.validation.mapping_change_receipts import record_digest
+
 ROOT = Path(__file__).resolve().parents[3]
 HERE = Path(__file__).resolve().parent
 SOURCE = ROOT / "mappings/ingredient_mappings.sssom.tsv"
@@ -100,6 +104,12 @@ def main() -> None:
     parser.add_argument("--scope", required=True, help="one sentence: what kind of change this batch makes")
     parser.add_argument("--before-sssom", type=Path, required=True, help="byte copy of the SSSOM taken before the batch")
     parser.add_argument("--apply-log", type=Path, required=True, help="the mutator's apply log (records with before/after hashes)")
+    parser.add_argument(
+        "--before-records",
+        type=Path,
+        default=None,
+        help="optional directory (or repo root) holding pre-batch YAML records so the receipt can also record before_record_sha256 for identity-plan supersession",
+    )
     args = parser.parse_args()
     before_bytes = args.before_sssom.read_bytes()
     after_bytes = SOURCE.read_bytes()
@@ -112,14 +122,25 @@ def main() -> None:
         current = digest(path.read_bytes())
         if entry["after_yaml_sha256"] != current:
             raise ValueError(f"{entry['source_record']} changed after the apply log was written")
-        records.append({
+        item = {
             "source_record": entry["source_record"],
             "shape": entry["shape"],
             "before_yaml_sha256": entry["before_yaml_sha256"],
             "after_yaml_sha256": entry["after_yaml_sha256"],
             "change": entry["change"],
             "verification": entry["verification"],
-        })
+        }
+        if args.before_records is not None and entry["before_yaml_sha256"] is not None:
+            before_path = args.before_records / entry["source_record"]
+            if not before_path.exists():
+                before_path = args.before_records / Path(entry["source_record"]).name
+            before_bytes_record = before_path.read_bytes()
+            if digest(before_bytes_record) != entry["before_yaml_sha256"]:
+                raise ValueError(f"Pre-batch copy for {entry['source_record']} does not match before_yaml_sha256")
+            item["before_record_sha256"] = record_digest(yaml.load(before_bytes_record, Loader=yaml.CSafeLoader))
+        elif "before_record_sha256" in entry:
+            item["before_record_sha256"] = entry["before_record_sha256"]
+        records.append(item)
     touched_subjects = {c["after"]["subject_id"] if c["after"] else c["before"]["subject_id"] for c in changes}
     receipt = {
         "schema_version": 1,

@@ -23,8 +23,12 @@ does not mean every source mapping has been scientifically approved.
   positions, and a position map so the position-keyed cohorts and holds carry
   forward. It is a link, not an approval: every row it touches is withheld
   until a mapping-specific review approves the corrected mapping, and every
-  owner it touches loses the byte-identical carry-forward. `make_receipt.py`
-  writes one from a mutator's apply log.
+  owner it touches loses the byte-identical carry-forward (including any
+  earlier `nonmapping_cohorts.json` or `changed-owner-review.json` approval on
+  that owner, which is downgraded to `WITHHOLD`). `make_receipt.py` writes one
+  from a mutator's apply log; pass `--before-records <dir>` when the batch
+  touches a record covered by `identities/resolutions.json` so the receipt also
+  records `before_record_sha256`.
 - `record_refreshes/` holds audit-only section-refresh receipts
   (`src/mediaingredientmech/record_refresh.py`, written by
   `scripts/make_record_refresh_receipt.py`). They document bounded

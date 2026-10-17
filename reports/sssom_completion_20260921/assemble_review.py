@@ -227,6 +227,11 @@ def assemble():
     if replayed != mappings:
         raise ValueError("Current source rows differ from the reviewed chain's replay")
     baseline_of = {current: bp for bp, current in enumerate(forward, 1) if current is not None}
+    receipt_owners = {
+        entry["source_record"]
+        for receipt in mapping_changes
+        for entry in receipt["records"]
+    }
     original_records = {
         r["source_record"]: r
         for r in csv.DictReader(
@@ -401,7 +406,15 @@ def assemble():
             if disposition == "SUPPORTED" and (
                 entry["mapping"] != mapping or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
-                raise ValueError("Nonmapping-cohort approval has stale owner or row")
+                if owner not in receipt_owners:
+                    raise ValueError("Nonmapping-cohort approval has stale owner or row")
+                disposition = "WITHHOLD"
+                reason = (
+                    "A mapping-change receipt corrected the owner record after this nonmapping-cohort approval, "
+                    "which therefore does not carry; preserve the claim pending a mapping-specific decision. Original: "
+                    + entry["reason"]
+                )
+                basis["mapping_change"] = "owner corrected after cohort approval"
             basis["scoped_review"] = {
                 "file": "mapping_review/nonmapping_cohorts.json",
                 "position": position,
@@ -414,7 +427,15 @@ def assemble():
                 or entry["owner"] != owner
                 or not refreshes.matches(owner, entry["owner_record_sha256"])
             ):
-                raise ValueError("Changed-owner approval has stale row or owner")
+                if entry["owner"] != owner or owner not in receipt_owners:
+                    raise ValueError("Changed-owner approval has stale row or owner")
+                disposition = "WITHHOLD"
+                reason = (
+                    "A mapping-change receipt corrected the owner record after this changed-owner approval, "
+                    "which therefore does not carry; preserve the claim pending a mapping-specific decision. Original: "
+                    + entry["reason"]
+                )
+                basis["mapping_change"] = "owner corrected after changed-owner approval"
             basis["scoped_review"] = {
                 "file": "mapping_review/changed-owner-review.json",
                 "position": position,

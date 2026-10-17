@@ -336,3 +336,58 @@ def test_missing_record_and_missing_review_hash_never_match():
     assert not builder._reviewed("missing.yaml", None, None)
     assert not builder._reviewed("missing.yaml", None, "old-hash")
     assert not builder._reviewed("current.yaml", "new-hash", None)
+
+
+def _receipt_chain(name, before_hash, after_hash, before_record=None):
+    entry = {"source_record": name, "before_yaml_sha256": before_hash, "after_yaml_sha256": after_hash}
+    if before_record is not None:
+        from mediaingredientmech.validation.mapping_change_receipts import record_digest
+
+        entry["before_record_sha256"] = record_digest(before_record)
+    return {name: [{"before": before_hash, "after": after_hash, "before_record": entry.get("before_record_sha256")}]}
+
+
+def test_superseded_role_plan_does_not_fail_the_build_and_grants_nothing():
+    record = {"cellular_metabolic_roles": [{"role": "x"}]}
+    item = {"source_path": "ingredient.yaml", "after_record": record, "after_sha256": "planned-bytes",
+            "source_position": "1", "after_assertion": {"role": "x"}}
+    corrected = {"cellular_metabolic_roles": [{"role": "x"}], "identifier": "CHEBI:2"}
+    hashes = {"ingredient.yaml": "corrected-bytes"}
+    chains = _receipt_chain("ingredient.yaml", "planned-bytes", "corrected-bytes")
+    superseded = builder.validate_explicit_plans({"ingredient.yaml": corrected}, hashes, [item], {}, [], [], chains=chains)
+    assert superseded == {"ingredient.yaml"}
+    with pytest.raises(ValueError, match="Role plan no longer describes"):
+        builder.validate_explicit_plans({"ingredient.yaml": corrected}, hashes, [item], {}, [], [],
+                                        chains=_receipt_chain("ingredient.yaml", "someone-else", "corrected-bytes"))
+
+
+def test_superseded_identity_plan_requires_the_recorded_pre_batch_content():
+    planned = {"identifier": "CHEBI:1", "mapping_status": "MAPPED"}
+    corrected = {"identifier": "CHEBI:2", "mapping_status": "MAPPED"}
+    hashes = {"ingredient.yaml": "corrected-bytes"}
+    item = {"after_record": planned, "after_sha256": "old-bytes"}
+    with_content = _receipt_chain("ingredient.yaml", "old-bytes", "corrected-bytes", before_record=planned)
+    assert builder.validate_explicit_plans({"ingredient.yaml": corrected}, hashes, [], {"ingredient.yaml": item},
+                                           [], [], chains=with_content) == {"ingredient.yaml"}
+    without_content = _receipt_chain("ingredient.yaml", "old-bytes", "corrected-bytes")
+    with pytest.raises(ValueError, match="Identity plan no longer describes"):
+        builder.validate_explicit_plans({"ingredient.yaml": corrected}, hashes, [], {"ingredient.yaml": item},
+                                        [], [], chains=without_content)
+    other_start = _receipt_chain("ingredient.yaml", "old-bytes", "corrected-bytes", before_record=corrected)
+    with pytest.raises(ValueError, match="Identity plan no longer describes"):
+        builder.validate_explicit_plans({"ingredient.yaml": corrected}, hashes, [], {"ingredient.yaml": item},
+                                        [], [], chains=other_start)
+    wrong_bytes = {"after_record": planned, "after_sha256": "wrong-bytes"}
+    with pytest.raises(ValueError, match="Identity plan no longer describes"):
+        builder.validate_explicit_plans({"ingredient.yaml": corrected}, hashes, [], {"ingredient.yaml": wrong_bytes},
+                                        [], [], chains=with_content)
+
+
+def test_superseded_component_disposition_is_reported_not_fatal():
+    disposition = {"finding_id": "SEM:1", "current_record": "mixture.yaml", "current_record_sha256": "pinned"}
+    hashes = {"mixture.yaml": "corrected"}
+    chains = _receipt_chain("mixture.yaml", "pinned", "corrected")
+    assert builder.validate_explicit_plans({"mixture.yaml": {}}, hashes, [], {}, [], [disposition], chains=chains) == {"mixture.yaml"}
+    with pytest.raises(ValueError, match="Stale component disposition"):
+        builder.validate_explicit_plans({"mixture.yaml": {}}, hashes, [], {}, [], [disposition])
+

@@ -101,6 +101,26 @@ aromatic-compound mapping exclusion and the independent policy that prevents
 its hold from being removed or redirected through a rehashed ledger.
 Agent review is not human sign-off.
 
+### Superseded pins
+
+When a verified [mapping-change receipt](../../sssom_completion_20260921/README.md)
+links a record's earlier reviewed hash to its current YAML bytes (or shifts the
+SSSOM row positions above a resolved release hold), `build_review.py` and the
+release-hold validator treat the earlier pin as **superseded** rather than an
+unexplained tampering failure:
+
+- A superseded role plan, identity plan or component disposition does not block
+  the build, and it **grants no approval**—its claims fall back to `OPEN` until
+  a fresh plan reviews the post-batch record. For an identity plan (whose
+  archived target is a parsed dict plus exact bytes), the receipt touching that
+  record must also carry `before_record_sha256` matching the plan's pre-batch
+  content.
+- A `SOURCE_CORRECTED` release hold follows the receipt chain's `position_map`
+  when rows are added or removed above it, while still requiring the identical
+  corrected row payload (`assertion_sha256`), identical owner record and bytes
+  (`owner_record_sha256`), and hashed correction evidence. Removing, changing or
+  touching the held row itself never satisfies a hold resolution.
+
 SSSOM JsonSchema, PrefixMapCompleteness, and StrictCurieFormat pass for both
 mapping artifacts. The supported archive also passes the native KGX 2.7.0 reader,
 including all endpoints, predicates, and retained JSON annotations. Strict

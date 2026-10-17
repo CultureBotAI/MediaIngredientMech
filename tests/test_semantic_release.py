@@ -291,6 +291,15 @@ def reviewed_bundle(tmp_path):
         for identity in current_assertions(records, [mapping], record_hashes, _hash(sssom))
     ]
     _table(root / "assertions.tsv", decisions, list(decisions[0]))
+    repo_root = Path(__file__).resolve().parents[1]
+    validator_modules = (
+        "src/mediaingredientmech/validation/semantic_release.py",
+        "src/mediaingredientmech/validation/mapping_change_receipts.py",
+    )
+    for mod in validator_modules:
+        dest = root / mod
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes((repo_root / mod).read_bytes())
     inputs = [
         "findings.tsv",
         "dispositions.tsv",
@@ -300,6 +309,7 @@ def reviewed_bundle(tmp_path):
         "holds.json",
         "mappings/ingredient_mappings.sssom.tsv",
         "bundle/manifest.json",
+        *validator_modules,
     ]
     report = {
         "schema_version": 1,
@@ -324,6 +334,23 @@ def reviewed_bundle(tmp_path):
 def test_full_review_accepts_supported_fixture(reviewed_bundle):
     root, path = reviewed_bundle
     assert validate(root, path)["semantic_release"] == "PASS"
+
+
+@pytest.mark.parametrize(
+    "module_path",
+    [
+        "src/mediaingredientmech/validation/semantic_release.py",
+        "src/mediaingredientmech/validation/mapping_change_receipts.py",
+    ],
+)
+def test_validator_code_is_required_review_input(reviewed_bundle, module_path):
+    """#766: dropping or editing a validator module without re-pinning must fail validate()."""
+    root, path = reviewed_bundle
+    report = json.loads(path.read_text())
+    report["inputs"].pop(module_path)
+    path.write_text(json.dumps(report))
+    with pytest.raises(ValueError, match="Missing required review input"):
+        validate(root, path)
 
 
 def test_full_review_rejects_wrong_triple_even_after_freshness_hashes_updated(reviewed_bundle):
@@ -352,3 +379,4 @@ def test_review_evidence_changes_invalidate_current_approvals(reviewed_bundle):
     (root / "evidence.md").write_text("Changed evidence\n")
     with pytest.raises(ValueError, match="Stale review input: evidence.md"):
         validate(root, path)
+
