@@ -38,7 +38,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Na2citrate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na3Citrate
   synonym_type: EXACT_SYNONYM
@@ -171,6 +171,15 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.423990+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:32142 (Na3-citrate_X_2_H2o) so the post-merge
+    REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+    and retype disodium citrate CHEBI:63041 token Na2citrate to REJECTED_LABEL (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
 chemical_properties:
   cas_rn: 6132-04-3
   data_source: CultureBotHT compounds_to_cas.csv
@@ -187,3 +196,4 @@ physicochemical_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Buffer'
+representative: CHEBI:32142

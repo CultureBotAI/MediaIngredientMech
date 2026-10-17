@@ -25,22 +25,22 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2  x 7 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2  x 76 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2 X 6H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MgCl2 x 7 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2 x 7H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2x7H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2 x 6H2O
   synonym_type: HYDRATE_FORM
@@ -157,6 +157,16 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.375385+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:86345 (Mgcl2_X_6_H2o) so the post-merge
+    CORRECTED event (#312/#739) no longer blocks _mim_merge_target, and retype heptahydrate/typo
+    HYDRATE_FORM tokens to REJECTED_LABEL (heptahydrate labels are held on live Mgcl2_X_7_H2o)
+    (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
 chemical_properties:
   cas_rn: 12285-34-6
   data_source: NCI CACTUS Chemical Identifier Resolver
@@ -177,3 +187,4 @@ nutritional_roles:
       Simple component'
     curator_note: Widespread use in media formulations (7 occurrences). High confidence
       based on 'Defined component' property.
+representative: CHEBI:86345

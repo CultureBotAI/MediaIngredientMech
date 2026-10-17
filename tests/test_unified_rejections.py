@@ -102,3 +102,101 @@ def test_issue_894_hydrate_and_tombstone_identities():
         assert row["mapping_status"] == "MAPPED"
         assert row["mim_id"] == "CHEBI:91248"
         assert row["chebi_id"] == "CHEBI:91248"
+
+
+def test_issue_882_merge_tombstones_and_unified_identities():
+    import yaml
+
+    merge_actions = {"MERGED_INTO", "MERGED_INTO_EXISTING", "MERGED"}
+
+    def mim_merge_target(data: dict) -> str:
+        representative = (data.get("representative") or "").strip()
+        if representative:
+            return representative
+        for event in reversed(data.get("curation_history") or []):
+            if event.get("action") in merge_actions:
+                return (data.get("identifier") or "").strip()
+            if event.get("new_status") == "REJECTED":
+                return ""
+        return ""
+
+    root = Path(__file__).parents[1]
+    live_ids: set[str] = set()
+    tombstones: list[tuple[str, dict]] = []
+
+    for sub in ("mapped", "unmapped"):
+        for path in sorted((root / "data" / "ingredients" / sub).glob("*.yaml")):
+            rec = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            status = rec.get("mapping_status")
+            if status in ("MAPPED", "UNMAPPED"):
+                for oid in (
+                    rec.get("identifier"),
+                    (rec.get("ontology_mapping") or {}).get("ontology_id"),
+                ):
+                    if oid:
+                        live_ids.add(oid)
+            elif status == "REJECTED":
+                events = rec.get("curation_history") or []
+                if rec.get("representative") or any(ev.get("action") in merge_actions for ev in events):
+                    tombstones.append((path.name, rec))
+
+    assert len(tombstones) >= 70
+
+    for name, rec in tombstones:
+        target = mim_merge_target(rec)
+        assert target in live_ids, f"Merge tombstone {name} fails to resolve to a live record (target={target!r})"
+
+    with gate.ARTIFACT.open(encoding="utf-8", newline="") as handle:
+        rows = {r["ingredient_name"]: r for r in csv.DictReader(handle, delimiter="\t")}
+
+    rejected_rows = [k for k, r in rows.items() if r["mapping_status"] == "REJECTED"]
+    assert rejected_rows == [], f"Unexpected REJECTED rows in UNIFIED_INGREDIENT_MAPPING.tsv: {rejected_rows}"
+
+    expected_mapped = {
+        "CoCl2 x 6 H2O": ("CHEBI:53503", "CHEBI:53503"),
+        "CoCl2·6H2O": ("CHEBI:53503", "CHEBI:53503"),
+        "CoCl2・6H2O": ("CHEBI:53503", "CHEBI:53503"),
+        "CoCl2 x 6H2O": ("CHEBI:53503", "CHEBI:53503"),
+        "CoCl2 . 6H2O": ("CHEBI:53503", "CHEBI:53503"),
+        "CoCl2.6H2O": ("CHEBI:53503", "CHEBI:53503"),
+        "CoCl2 · 6H2O": ("CHEBI:53503", "CHEBI:53503"),
+        "CoCl2 × 6H2O": ("CHEBI:53503", "CHEBI:53503"),
+        "Na2MoO4·2H2O": ("CHEBI:75213", "CHEBI:75213"),
+        "Na2MoO4・2H2O": ("CHEBI:75213", "CHEBI:75213"),
+        "Na2MoO4 x 2H2O": ("CHEBI:75213", "CHEBI:75213"),
+        "Na2MoO4 . 2H2O": ("CHEBI:75213", "CHEBI:75213"),
+        "Na2MoO4 · 2H2O": ("CHEBI:75213", "CHEBI:75213"),
+        "Na2MoO4. 2H2O": ("CHEBI:75213", "CHEBI:75213"),
+        "Sodium citrate": ("CHEBI:32142", "CHEBI:32142"),
+        "Sodium Citrate": ("CHEBI:32142", "CHEBI:32142"),
+        "sodium citrate": ("CHEBI:32142", "CHEBI:32142"),
+        "Trisodium citrate x 2 H2O": ("CHEBI:32142", "CHEBI:32142"),
+        "Trisodium citrate・2H2O": ("CHEBI:32142", "CHEBI:32142"),
+        "Calcium chloride": ("CHEBI:3312", "CHEBI:3312"),
+        "calcium chloride": ("CHEBI:3312", "CHEBI:3312"),
+        "Calcium Chloride": ("CHEBI:3312", "CHEBI:3312"),
+        "MgCl2x 6 H2O": ("CHEBI:86345", "CHEBI:86345"),
+        "MgCl2 x 7H2O": ("kgmicrobe.compound:mgcl2_x_7_h2o", ""),
+        "Na-glutamate": ("CHEBI:64243", "CHEBI:64243"),
+    }
+    for label, (exp_mim, exp_chebi) in expected_mapped.items():
+        row = rows[label]
+        assert row["mapping_status"] == "MAPPED", label
+        assert row["mim_id"] == exp_mim, label
+        assert row["chebi_id"] == exp_chebi, label
+
+    expected_unmapped = {
+        "Na2MoO4 x H2O": "UNMAPPED_0819",
+        "Na2MoO4.H2O": "UNMAPPED_0819",
+        "Na2MoO4 × H2O": "UNMAPPED_0819",
+        "Na2MoO4 . H2O": "UNMAPPED_0819",
+        "Na2MoO4 · H2O": "UNMAPPED_0819",
+        "Trisodium citrate・3H2O": "UNMAPPED_0820",
+        "Trisodium citrate x 3 H2O": "UNMAPPED_0820",
+    }
+    for label, exp_mim in expected_unmapped.items():
+        row = rows[label]
+        assert row["mapping_status"] == "UNMAPPED", label
+        assert row["mim_id"] == exp_mim, label
+        assert row["chebi_id"] == "", label
+        assert row["culturemech_term_id"] == "", label

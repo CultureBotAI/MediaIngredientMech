@@ -53,7 +53,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2MoO4 . H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2MoO4 x 2 H2O (0.1% w/v)
   synonym_type: HYDRATE_FORM
@@ -65,7 +65,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2MoO4 · H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2MoO4 ⋅ 2H2O
   synonym_type: HYDRATE_FORM
@@ -74,10 +74,10 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2MoO4.H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2MoO4xH2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2MoO4⋅2H2O
   synonym_type: HYDRATE_FORM
@@ -216,6 +216,16 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.359228+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:75213 (Na2moo4_X_2_H2o) so the post-merge
+    REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+    and retype monohydrate HYDRATE_FORM tokens to REJECTED_LABEL so monohydrate labels
+    do not collapse onto dihydrate CHEBI:75213 (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
 chemical_properties:
   cas_rn: 10102-40-6
   data_source: CultureBotHT compounds_to_cas.csv
@@ -236,3 +246,4 @@ nutritional_roles:
       Simple component'
     curator_note: Widespread use in media formulations (255 occurrences). High confidence
       based on 'Defined component' property.
+representative: CHEBI:75213

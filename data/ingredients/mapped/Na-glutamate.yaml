@@ -15,10 +15,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: (2S)-2-aminopentanedioate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: L-glutamic acid dianion
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: L-glutamate
   synonym_type: REJECTED_LABEL
@@ -110,6 +110,16 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.411293+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:64243 (Sodium_L-glutamate) so the post-merge
+    REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+    and retype L-glutamate(2-) CHEBI:29984 dianion EXACT_SYNONYM tokens to REJECTED_LABEL
+    (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
 chemical_properties:
   cas_rn: 16177-21-2
   data_source: PubChem API (preprocessed)
@@ -125,3 +135,4 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Nitrogen Source'
+representative: CHEBI:64243

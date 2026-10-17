@@ -112,6 +112,7 @@ def test_occurrences_transfer_and_source_is_tombstoned(mod, tmp_path, monkeypatc
 
     assert winner["occurrence_statistics"] == {"total_occurrences": 16, "media_count": 7}
     assert loser["mapping_status"] == "REJECTED", "tombstone, not delete"
+    assert loser["representative"] == "CHEBI:1", "tombstone must record explicit representative"
     assert loser["occurrence_statistics"] == {"total_occurrences": 0, "media_count": 0}, \
         "audit_occurrence_stats flags a REJECTED record still reporting occurrences"
     syns = {s["synonym_text"] for s in winner["synonyms"]}
