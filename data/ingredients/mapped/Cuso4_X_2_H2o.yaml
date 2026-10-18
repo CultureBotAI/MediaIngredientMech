@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:23414
   ontology_label: copper(II) sulfate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -29,6 +29,11 @@ ontology_mapping:
       to the anhydrous parent, chemistry blank, anhydrous aliases REJECTED_LABEL,
       memberships only for recipes whose source label names this row (''CuSO4 x 2
       H2O'', ''CuSO4 . 2H2O'').'
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (CuSO4 x 2 H2O, identifier kgmicrobe.compound:cuso4_x_2_h2o)
+      is narrower than parent CHEBI:23414 (copper(II) sulfate); updated mapping_quality
+      CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 synonyms:
 - synonym_text: CuSO4 . 2H2O
   synonym_type: HYDRATE_FORM
@@ -169,6 +174,12 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:23414)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:

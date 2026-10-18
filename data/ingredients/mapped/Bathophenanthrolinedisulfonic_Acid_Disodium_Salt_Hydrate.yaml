@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:78157
   ontology_label: disodium 4,7-diphenyl-1,10-phenanthroline 4',4''-disulfonate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -29,6 +29,13 @@ ontology_mapping:
       A hydrate is a distinct substance containing the anhydrous form, not a specialization
       of it. closeMatch claims similarity without subsumption. The ontology_id and
       the record''s own identifier are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (Bathophenanthrolinedisulfonic acid disodium salt
+      hydrate, identifier kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate)
+      is narrower than parent CHEBI:78157 (disodium 4,7-diphenyl-1,10-phenanthroline
+      4',4''-disulfonate); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM
+      skos:broadMatch).
 synonyms:
 - synonym_text: disodium 4,4'-(1,10-phenanthroline-4,7-diyl)dibenzenesulfonate
   synonym_type: EXACT_SYNONYM
@@ -82,13 +89,23 @@ curation_history:
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_ANHYDROUS_CHEMICAL_PROPERTIES
+  changes: Removed anhydrous parent molecular_formula, inchi, and smiles from unspecified-hydrate
+    record
+  notes: Unspecified-hydration record must not carry anhydrous parent chemical properties
+    (#871).
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:78157)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 chemical_properties:
   cas_rn: 52746-49-3
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-  molecular_formula: C24H14N2O6S2.2Na
-  inchi: InChI=1S/C24H16N2O6S2.2Na/c27-33(28,29)17-5-1-15(2-6-17)19-11-13-25-23-21(19)9-10-22-20(12-14-26-24(22)23)16-3-7-18(8-4-16)34(30,31)32;;/h1-14H,(H,27,28,29)(H,30,31,32);;/q;2*+1/p-2
-  smiles: O=S(=O)([O-])c1ccc(-c2ccnc3c2ccc2c(-c4ccc(S(=O)(=O)[O-])cc4)ccnc23)cc1.[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: CHELATOR

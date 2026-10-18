@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:4735
   ontology_label: ethylenediaminetetraacetic acid
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -28,6 +28,11 @@ ontology_mapping:
       is a distinct substance containing the anhydrous form, not a specialization
       of it. closeMatch claims similarity without subsumption. The ontology_id and
       the record''s own identifier are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (EDTA tetrasodium tetrahydrate salt, identifier
+      cas:13235-36-4) is narrower than parent CHEBI:4735 (ethylenediaminetetraacetic
+      acid); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 synonyms:
 - synonym_text: Ethylenediamintetraacetic acid (EDTA)
   synonym_type: RAW_TEXT
@@ -98,6 +103,12 @@ curation_history:
     acid (EDTA)''. Tokens already present on the kg-microbe ontology node were left
     out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:4735)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 chemical_properties:
   cas_rn: 13235-36-4
   data_source: CultureBotHT compounds_to_cas.csv

@@ -53,12 +53,18 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:64736)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 ingredient_type: SINGLE_INGREDIENT
 ontology_mapping:
   ontology_id: CHEBI:64736
   ontology_label: magnesium nitrate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MediaDive ingredient 1763 (CAS 13446-18-9)
@@ -80,3 +86,8 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (magnesium nitrate hexahydrate, identifier cas:13446-18-9)
+      is narrower than parent CHEBI:64736 (magnesium nitrate); updated mapping_quality
+      CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).

@@ -256,14 +256,18 @@ curation_history:
     monohydrogen phosphate dihydrat (from chebi_synonym_review / #878).'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_ANHYDROUS_INCHI_SMILES
+  changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+    hydrate formula/CAS-RN)
+  notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
 kg_microbe_node_id: CHEBI:91258
 chemical_properties:
   cas_rn: 10028-24-7
   data_source: OAK/CHEBI xref
   retrieval_date: '2026-04-19T07:35:12.781730+00:00'
   molecular_formula: 2H2O.HO4P.2Na
-  inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-  smiles: O=P([O-])([O-])O.[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: BUFFER

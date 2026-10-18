@@ -1,0 +1,41 @@
+identifier: CHEBI:11449
+preferred_term: 2,5-didehydro-D-gluconate
+ontology_mapping:
+  ontology_id: CHEBI:11449
+  ontology_label: 2,5-didehydro-D-gluconate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#313); chebi.db
+    notes: 'Split from 5-dehydro-D-gluconate (CHEBI:58143): microbedecoder''s ''5-didehydro-D-gluconate''
+      is comma-truncated ''2,5-didehydro-D-gluconate'' (CHEBI:11449, diketo-D-gluconate),
+      a distinct chemical entity from monoketo 5-dehydro-D-gluconate.'
+    confidence_score: 0.99
+synonyms:
+- synonym_text: 5-didehydro-D-gluconate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 6
+    source_columns: BacDive_Metabolite_production|BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: SPLIT_TRUNCATED_LOCANT_SYNONYM
+  changes: Created CHEBI:11449 record for 2,5-didehydro-D-gluconate with comma-truncated
+    microbedecoder synonym '5-didehydro-D-gluconate'
+  notes: Resolved comma-truncation conflation with 5-dehydro-D-gluconate (CHEBI:58143)
+    (#313).
+chemical_properties:
+  molecular_formula: C6H7O7
+  smiles: O=C(CO)[C@@H](O)[C@H](O)C(=O)C(=O)[O-]
+  inchi: InChI=1S/C6H8O7/c7-1-2(8)4(10)3(9)5(11)6(12)13/h3-4,7,9-10H,1H2,(H,12,13)/p-1/t3-,4+/m0/s1
+  data_source: CHEBI
+  retrieval_date: '2026-10-18T14:40:00Z'

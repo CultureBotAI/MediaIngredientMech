@@ -400,8 +400,16 @@ class IngredientReviewer:
         # Apply suggestions
         for suggestion in safe_suggestions:
             if suggestion.action == "enrich_properties":
+                from mediaingredientmech.curation.ingredient_curator import (
+                    can_inherit_chebi_chemical_properties,
+                )
+
                 ontology_id = corrected.get("ontology_mapping", {}).get("ontology_id")
-                if ontology_id and ontology_id.startswith("CHEBI:"):
+                if (
+                    ontology_id
+                    and ontology_id.startswith("CHEBI:")
+                    and can_inherit_chebi_chemical_properties(corrected)
+                ):
                     props = self.enrich_from_ols(ontology_id)
                     if props:
                         corrected["chemical_properties"] = props
@@ -756,8 +764,12 @@ class IngredientReviewer:
         issues = []
         suggestions = []
 
-        # P3.1: Missing chemical properties
-        if ontology_id and ontology_id.startswith("CHEBI:"):
+        # P3.1: Missing chemical properties (only for records eligible to inherit CHEBI chemistry)
+        from mediaingredientmech.curation.ingredient_curator import (
+            can_inherit_chebi_chemical_properties,
+        )
+
+        if ontology_id and ontology_id.startswith("CHEBI:") and can_inherit_chebi_chemical_properties(ingredient_record):
             chem_props = ingredient_record.get("chemical_properties", {})
             missing_props = []
 

@@ -1,6 +1,6 @@
-generation_date: '2026-10-15T02:37:35.785775+00:00'
-total_count: 2680
-mapped_count: 2611
+generation_date: '2026-10-18T14:00:27.609187+00:00'
+total_count: 2681
+mapped_count: 2612
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o
@@ -8609,6 +8609,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:53471)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN
     or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium
     potassium sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
@@ -8620,7 +8626,7 @@ ingredients:
     ontology_id: CHEBI:53471
     ontology_label: chromium(III) sulfate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: Edison LITERATURE (PaperQA3) + local CHEBI verification
@@ -8639,6 +8645,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CrKSO42 x 12 H2O, identifier cas:7788-99-0)
+        is narrower than parent CHEBI:53471 (chromium(III) sulfate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 - identifier: cas:145224-94-8
   preferred_term: MES Hydrat
   synonyms:
@@ -17701,13 +17712,19 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:17306)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:maltose_hydrate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
     ontology_id: CHEBI:17306
     ontology_label: maltose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MIM curation (#213)
@@ -17724,6 +17741,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Maltose Hydrate, identifier kgmicrobe.compound:maltose_hydrate)
+        is narrower than parent CHEBI:17306 (maltose); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
 - identifier: kgmicrobe.compound:potassium_2-ketogluconate
   preferred_term: Potassium 2-ketogluconate
   synonyms:
@@ -22046,12 +22068,18 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:64736)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   ingredient_type: SINGLE_INGREDIENT
   ontology_mapping:
     ontology_id: CHEBI:64736
     ontology_label: magnesium nitrate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MediaDive ingredient 1763 (CAS 13446-18-9)
@@ -22073,6 +22101,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (magnesium nitrate hexahydrate, identifier cas:13446-18-9)
+        is narrower than parent CHEBI:64736 (magnesium nitrate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 - identifier: CHEBI:229630
   preferred_term: NH42CO3
   synonyms:
@@ -23055,19 +23088,19 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-4-methyl-1,3-thiazol-3-ium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-[2-(diphosphooxy)ethyl]-4-methyl-1,3-thiazol-3-ium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ThDP
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ThPP
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: thiamine-pyrophosphate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
@@ -23127,15 +23160,26 @@ ingredients:
     changes: identifier/ontology_id CHEBI:9532 -> kgmicrobe.ingredient:0_2_thiamine_pyrophosphate
       (#288/#320); a 0.2% stock solution is not the pure compound.
     llm_assisted: false
-  chemical_properties:
-    cas_rn: 154-87-0
-    data_source: NCI CACTUS Chemical Identifier Resolver
-    retrieval_date: '2026-04-05T21:52:09.127416+00:00'
-    molecular_formula: C12H19N4O7P2S
-    inchi: InChI=1S/C12H18N4O7P2S/c1-8-11(3-4-22-25(20,21)23-24(17,18)19)26-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7H,3-4,6H2,1-2H3,(H4-,13,14,15,17,18,19,20,21)/p+1
-    smiles: Cc1ncc(C[n+]2csc(CCOP(=O)(O)OP(=O)(O)O)c2C)c(N)n1
-  kg_microbe_node_id: CHEBI:9532
-  ingredient_type: SINGLE_INGREDIENT
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_STALE_KG_MICROBE_NODE_ID
+    changes: 'Removed stale kg_microbe_node_id CHEBI:9532 (current identifier: kgmicrobe.ingredient:0_2_thiamine_pyrophosphate)'
+    notes: Cross-prefix kg_microbe_node_id cleanup (#870).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped 5 non-identity synonym(s) to REJECTED_LABEL: 3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-4-methyl-1,3-thiazol-3-ium,
+      3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-[2-(diphosphooxy)ethyl]-4-methyl-1,3-thiazol-3-ium,
+      ThDP, ThPP, thiamine-pyrophosphate'
+    notes: Prevent parent/wrong-form synonyms from leaking into SSSOM `other` (#268).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_SOLUTE_CHEMICAL_PROPERTIES
+    changes: Set ingredient_type=STOCK_SOLUTION and removed solute CHEBI:9532 chemical_properties
+      (cas_rn 154-87-0, formula, InChI, SMILES)
+    notes: 0.2% aqueous stock solution must not carry pure solute chemical properties
+      (#268).
+  ingredient_type: STOCK_SOLUTION
   nutritional_roles:
   - role: VITAMIN_SOURCE
     confidence: 1.0
@@ -25210,7 +25254,7 @@ ingredients:
     ontology_id: CHEBI:17256
     ontology_label: 2'-deoxyadenosine
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -25232,6 +25276,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (2-Deoxyadenosine monohydrate, identifier cas:16373-93-6)
+        is narrower than parent CHEBI:17256 (2'-deoxyadenosine); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -25275,6 +25324,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:17256)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 16373-93-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -25732,7 +25787,7 @@ ingredients:
     ontology_id: CHEBI:27469
     ontology_label: 2-dehydro-D-gluconic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -25755,6 +25810,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (2-Keto-D-gluconic acid hemicalcium salt hydrate,
+        identifier cas:1040352-40-6) is narrower than parent CHEBI:27469 (2-dehydro-D-gluconic
+        acid); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -25805,6 +25865,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:27469)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 1040352-40-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -30197,7 +30263,7 @@ ingredients:
     ontology_id: CHEBI:16388
     ontology_label: 4-hydroxymandelic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -30218,6 +30284,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (4-Hydroxymandelic acid monohydrate, identifier
+        cas:184901-84-6) is narrower than parent CHEBI:16388 (4-hydroxymandelic acid);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: hydroxy(4-hydroxyphenyl)acetic acid
     synonym_type: EXACT_SYNONYM
@@ -30260,6 +30331,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:16388)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 184901-84-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -32006,7 +32083,7 @@ ingredients:
     ontology_id: CHEBI:74498
     ontology_label: 5-fluoroorotic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -32027,6 +32104,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (5-Fluoroorotic acid hydrate, identifier cas:207291-81-4)
+        is narrower than parent CHEBI:74498 (5-fluoroorotic acid); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: 5-fluoro-2,6-dioxo-1,2,3,6-tetrahydropyrimidine-4-carboxylic acid
     synonym_type: EXACT_SYNONYM
@@ -32069,6 +32151,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:74498)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 207291-81-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -33441,7 +33529,7 @@ ingredients:
     ontology_id: CHEBI:30915
     ontology_label: 2-oxoglutaric acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -33466,6 +33554,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (a-Ketoglutaric acid disodium salt hydrate, identifier
+        cas:305-72-6) is narrower than parent CHEBI:30915 (2-oxoglutaric acid); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: a-Ketoglutaric acid
     synonym_type: REJECTED_LABEL
@@ -33544,6 +33637,12 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:30915)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 305-72-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -35522,7 +35621,7 @@ ingredients:
     ontology_id: CHEBI:16708
     ontology_label: adenine
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -35546,6 +35645,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Adenine hydrochloride hydrate, identifier cas:2922-28-3)
+        is narrower than parent CHEBI:16708 (adenine); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -35596,6 +35700,12 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:16708)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 2922-28-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -43303,7 +43413,11 @@ ingredients:
       own MERGED_INTO entry; the chain was followed to the first live record. A tombstone
       exists to keep the loser resolvable.
     llm_assisted: false
-  kg_microbe_node_id: CHEBI:8150
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_STALE_KG_MICROBE_NODE_ID
+    changes: 'Removed stale kg_microbe_node_id CHEBI:8150 (current identifier: FOODON:03315720)'
+    notes: Cross-prefix kg_microbe_node_id cleanup (#870).
   ingredient_type: SINGLE_INGREDIENT
   representative: FOODON:03315720
 - identifier: MICRO:0000114
@@ -43908,7 +44022,7 @@ ingredients:
     ontology_id: CHEBI:78157
     ontology_label: disodium 4,7-diphenyl-1,10-phenanthroline 4',4''-disulfonate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -43933,6 +44047,13 @@ ingredients:
         A hydrate is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Bathophenanthrolinedisulfonic acid disodium
+        salt hydrate, identifier kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate)
+        is narrower than parent CHEBI:78157 (disodium 4,7-diphenyl-1,10-phenanthroline
+        4',4''-disulfonate); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM
+        skos:broadMatch).
   synonyms:
   - synonym_text: disodium 4,4'-(1,10-phenanthroline-4,7-diyl)dibenzenesulfonate
     synonym_type: EXACT_SYNONYM
@@ -43986,13 +44107,23 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_CHEMICAL_PROPERTIES
+    changes: Removed anhydrous parent molecular_formula, inchi, and smiles from unspecified-hydrate
+      record
+    notes: Unspecified-hydration record must not carry anhydrous parent chemical properties
+      (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:78157)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 52746-49-3
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C24H14N2O6S2.2Na
-    inchi: InChI=1S/C24H16N2O6S2.2Na/c27-33(28,29)17-5-1-15(2-6-17)19-11-13-25-23-21(19)9-10-22-20(12-14-26-24(22)23)16-3-7-18(8-4-16)34(30,31)32;;/h1-14H,(H,27,28,29)(H,30,31,32);;/q;2*+1/p-2
-    smiles: O=S(=O)([O-])c1ccc(-c2ccnc3c2ccc2c(-c4ccc(S(=O)(=O)[O-])cc4)ccnc23)cc1.[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: CHELATOR
@@ -45041,7 +45172,7 @@ ingredients:
     ontology_id: CHEBI:17270
     ontology_label: glycerol 2-phosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -45064,6 +45195,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Beta-Glycerophosphate disodium salt hydrate,
+        identifier cas:154804-51-0) is narrower than parent CHEBI:17270 (glycerol
+        2-phosphate); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: Na2-ß-glycerophosphate
     synonym_type: RAW_TEXT
@@ -45118,6 +45254,12 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:17270)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 154804-51-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -49502,7 +49644,7 @@ ingredients:
     ontology_id: CHEBI:3312
     ontology_label: calcium dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -49543,6 +49685,11 @@ ingredients:
         but no exact ontology term or CAS has been verified for that stated hydration
         count. CHEBI:3312 (calcium dichloride) is retained only as the closest anhydrous
         parent while the source label keeps its local kgmicrobe.compound identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CaCl2 x 7 H2O, identifier kgmicrobe.compound:cacl2_x_7_h2o)
+        is narrower than parent CHEBI:3312 (calcium dichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -49674,6 +49821,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:3312)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -49952,7 +50105,7 @@ ingredients:
     ontology_id: CHEBI:232796
     ontology_label: cadmium acetate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -49982,6 +50135,11 @@ ingredients:
         ChEBI formula ('2C2H3O2.Cd') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Cadmium acetate dihydrate, identifier cas:5743-04-4)
+        is narrower than parent CHEBI:232796 (cadmium acetate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: cadmium(2+);diacetate
     synonym_type: EXACT_SYNONYM
@@ -50033,6 +50191,12 @@ ingredients:
       value inherited from the parent rather than measured for this record. Water
       appended in ChEBI's own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:232796)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 5743-04-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -52930,11 +53094,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_STALE_KG_MICROBE_NODE_ID
+    changes: 'Removed stale kg_microbe_node_id CHEBI:3448 (current identifier: FOODON:03420180)'
+    notes: Cross-prefix kg_microbe_node_id cleanup (#870).
   chemical_properties:
     cas_rn: 9000-71-9
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-05T21:48:44.831493+00:00'
-  kg_microbe_node_id: CHEBI:3448
   ingredient_type: UNDEFINED_MIXTURE
   nutritional_roles:
   - role: NITROGEN_SOURCE
@@ -53641,7 +53809,7 @@ ingredients:
     ontology_id: CHEBI:31346
     ontology_label: calcium sulfate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -53661,6 +53829,11 @@ ingredients:
         but no exact ontology term or CAS has been verified for that stated hydration
         count. CHEBI:31346 (calcium sulfate) is retained only as the closest anhydrous
         parent while the source label keeps its local kgmicrobe.compound identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CaSO4 x 7 H2O, identifier kgmicrobe.compound:caso4_x_7_h2o)
+        is narrower than parent CHEBI:31346 (calcium sulfate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: CaSO4・7H2O
     synonym_type: HYDRATE_FORM
@@ -53786,6 +53959,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:31346)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -54011,7 +54190,7 @@ ingredients:
     ontology_id: CHEBI:35458
     ontology_label: cerium trichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -54046,6 +54225,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CeCl3 x 7 H2O, identifier kgmicrobe.compound:cecl3_x_7_h2o)
+        is narrower than parent CHEBI:35458 (cerium trichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: cerium(3+) chloride
     synonym_type: REJECTED_LABEL
@@ -54149,12 +54333,22 @@ ingredients:
       text and source metadata. No identity, mapping, role, or remaining-synonym claim
       was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:35458)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     data_source: PubChem (via CHEBI:35458)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: CeCl3.7H2O
-    inchi: InChI=1S/Ce.3ClH/h;3*1H/q+3;;;/p-3
-    smiles: '[Cl][Ce]([Cl])[Cl]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -54708,7 +54902,7 @@ ingredients:
     ontology_id: CHEBI:31380
     ontology_label: Cefsulodin sodium
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -54733,6 +54927,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Cefsulodin sodium salt hydrate, identifier kgmicrobe.compound:cefsulodin_sodium_salt_hydrate)
+        is narrower than parent CHEBI:31380 (Cefsulodin sodium); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -54784,13 +54983,23 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_CHEMICAL_PROPERTIES
+    changes: Removed anhydrous parent molecular_formula, inchi, and smiles from unspecified-hydrate
+      record
+    notes: Unspecified-hydration record must not carry anhydrous parent chemical properties
+      (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:31380)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 52152-93-9
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C22H19N4O8S2.Na
-    inchi: InChI=1S/C22H20N4O8S2.Na/c23-18(27)13-6-8-25(9-7-13)10-14-11-35-21-15(20(29)26(21)16(14)22(30)31)24-19(28)17(36(32,33)34)12-4-2-1-3-5-12;/h1-9,15,17,21H,10-11H2,(H4-,23,24,27,28,30,31,32,33,34);/q;+1/p-1/t15-,17-,21-;/m1./s1
-    smiles: '[H][C@]12SCC(C[n+]3ccc(C(N)=O)cc3)=C(C(=O)[O-])N1C(=O)[C@H]2NC(=O)[C@@H](c1ccccc1)S(=O)(=O)[O-].[Na+]'
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: SELECTIVE_AGENT
@@ -54805,7 +55014,7 @@ ingredients:
     ontology_id: CHEBI:3508
     ontology_label: ceftazidime
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -54829,6 +55038,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Ceftazidime hydrate, identifier cas:120618-65-7)
+        is narrower than parent CHEBI:3508 (ceftazidime); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -54876,6 +55090,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:3508)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 120618-65-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -57036,7 +57256,7 @@ ingredients:
     ontology_id: CHEBI:81711
     ontology_label: chlorhexidine acetate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -57061,6 +57281,12 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Chlorhexidine diacetate salt hydrate, identifier
+        kgmicrobe.compound:chlorhexidine_diacetate_salt_hydrate) is narrower than
+        parent CHEBI:81711 (chlorhexidine acetate); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: N,N''''-hexane-1,6-diylbis[N'-(4-chlorophenyl)triimidodicarbonic
       diamide] acetate (1:2)
@@ -57107,13 +57333,23 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_CHEMICAL_PROPERTIES
+    changes: Removed anhydrous parent molecular_formula, inchi, and smiles from unspecified-hydrate
+      record
+    notes: Unspecified-hydration record must not carry anhydrous parent chemical properties
+      (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:81711)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 56-95-1
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C22H30Cl2N10.2C2H4O2
-    inchi: InChI=1S/C22H30Cl2N10.2C2H4O2/c23-15-5-9-17(10-6-15)31-21(27)33-19(25)29-13-3-1-2-4-14-30-20(26)34-22(28)32-18-11-7-16(24)8-12-18;2*1-2(3)4/h5-12H,1-4,13-14H2,(H5,25,27,29,31,33)(H5,26,28,30,32,34);2*1H3,(H,3,4)
-    smiles: CC(=O)O.CC(=O)O.N=C(NCCCCCCNC(=N)NC(=N)Nc1ccc(Cl)cc1)NC(=N)Nc1ccc(Cl)cc1
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:16112
   preferred_term: Chlorogenic acid
@@ -57833,13 +58069,17 @@ ingredients:
       arises. The previous term carried no water while the label states it. Found
       by cross-checking CultureBotAI/CultureMech#272 (#374/#334).'
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 10025-73-7
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
     molecular_formula: 3Cl.Cr.6H2O
-    inchi: InChI=1S/3ClH.Cr/h3*1H;/q;;;+3/p-3
-    smiles: '[Cl-].[Cl-].[Cl-].[Cr+3]'
   ingredient_type: SINGLE_INGREDIENT
 - identifier: cas:97-41-6
   preferred_term: Chrysanthemic Acid, Ethyl Ester
@@ -60011,7 +60251,7 @@ ingredients:
     ontology_id: CHEBI:35696
     ontology_label: cobalt dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -60046,6 +60286,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CoCl2 x 2 H2O, identifier kgmicrobe.compound:cocl2_x_2_h2o)
+        is narrower than parent CHEBI:35696 (cobalt dichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: CoCl2 . 6H2O
     synonym_type: REJECTED_LABEL
@@ -60200,12 +60445,22 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:35696)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     data_source: PubChem (via CHEBI:35696)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Cl.Co.2H2O
-    inchi: InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2
-    smiles: '[Cl-].[Cl-].[Co+2]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -60220,7 +60475,7 @@ ingredients:
     ontology_id: CHEBI:35696
     ontology_label: cobalt dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -60255,6 +60510,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CoCl2 x 4 H2O, identifier kgmicrobe.compound:cocl2_x_4_h2o)
+        is narrower than parent CHEBI:35696 (cobalt dichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: CoCl2 . 6H2O
     synonym_type: REJECTED_LABEL
@@ -60409,12 +60669,22 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:35696)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     data_source: PubChem (via CHEBI:35696)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Cl.Co.4H2O
-    inchi: InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2
-    smiles: '[Cl-].[Cl-].[Co+2]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -61736,14 +62006,18 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   kg_microbe_node_id: CHEBI:91244
   chemical_properties:
     cas_rn: 10026-24-1
     data_source: PubChem (via CHEBI:53470)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Co.O4S.7H2O
-    inchi: InChI=1S/Co.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Co+2]
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -62691,143 +62965,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
-- identifier: kgmicrobe.compound:cu_no32_x_3_h2o
-  preferred_term: Cu(NO3)2 x 3 H2O
-  ontology_mapping:
-    ontology_id: CHEBI:78036
-    ontology_label: copper(II) nitrate
-    ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is
-        a hydrate of CHEBI:78036, not an exact match to it] Imported from CultureMech
-        pipeline, quality=DIRECT_MATCH'
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321/#334)
-      notes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
-        EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:78036 ('copper(II)
-        nitrate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS
-        §3 forbids, which made a distinct substance indistinguishable from its anhydrous
-        parent downstream. ChEBI has no term for this hydrate and the record carries
-        no verified CAS, so steps 1 and 2 are unavailable and step 3 applies.
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321)
-      notes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O'. The recorded value described
-        the anhydrous salt while the label names a hydrate, understating the mass
-        by 18 g/mol per water. Corrected because the label states 3 water(s) of hydration,
-        and the recorded formula was byte-identical to the anhydrous parent CHEBI:78036's
-        ChEBI formula ('Cu.2NO3') — the mark of a value inherited from the parent
-        rather than measured for this record. Water appended in ChEBI's own dot-separated
-        notation.
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#342)
-      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
-        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
-        than CHEBI:78036 (''copper(II) nitrate'') — a subsumption ChEBI itself denies:
-        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
-        compound, which is not an ancestor even transitively. A hydrate is a distinct
-        substance containing the anhydrous form, not a specialization of it. closeMatch
-        claims similarity without subsumption. The ontology_id and the record''s own
-        identifier are unchanged.'
-  synonyms:
-  - synonym_text: copper(II) nitrate (anhydrous)
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: copper(2+) dinitrate
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-09T00:32:50.689620+00:00'
-    curator: enrich_mim_cas_rn_batch
-    action: CAS_RN_ADDED
-    changes: Added CAS-RN 10031-43-3 from CultureBotHT/compounds_to_cas.csv
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: copper(II) nitrate
-      (anhydrous)'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-05-01T07:35:32.937262+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.831051+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=Cu.2NO3; inchi=InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1;
-      smiles=O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.577264+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-09T05:23:46.746528+00:00'
-    curator: correct_stale_ontology_labels.py
-    action: CORRECTED
-    changes: 'ontology_label ''Cu(NO3)2 x 3 H2O'' -> ''copper(II) nitrate'': synced
-      to canonical CHEBI label (preferred_term ''Cu(NO3)2 x 3 H2O'' unchanged).'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: mint_hydrate_registry_terms
-    action: MINTED_REGISTRY_FOR_HYDRATE
-    changes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
-      EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: add_water_of_hydration
-    action: ADDED_WATER_OF_HYDRATION
-    changes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O' (#321); the label states
-      3 water(s) of hydration, and the recorded formula was byte-identical to the
-      anhydrous parent CHEBI:78036's ChEBI formula ('Cu.2NO3') — the mark of a value
-      inherited from the parent rather than measured for this record. Water appended
-      in ChEBI's own dot-separated notation.
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: regrade_hydrate_to_close_match
-    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
-    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
-      subsumed by its anhydrous form, and ChEBI does not model it as such.
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518635+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 1/1 -> 2/2 (media_count/total_occurrences), derived
-      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
-      values came from the importer retired in #453, whose media_count counted a list
-      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: claude
-    action: REJECTED_WRONG_FORM_SYNONYMS
-    changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: copper(II) nitrate
-      (anhydrous) (#878).'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-  chemical_properties:
-    cas_rn: 10031-43-3
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cu.2NO3.3H2O
-    inchi: InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1
-    smiles: O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:53472
   preferred_term: CuCl
   ontology_mapping:
@@ -63449,7 +63586,7 @@ ingredients:
     ontology_id: CHEBI:49553
     ontology_label: copper(II) chloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -63490,6 +63627,11 @@ ingredients:
         but no exact ontology term or CAS has been verified for that stated hydration
         count. CHEBI:49553 (copper(II) chloride) is retained only as the closest anhydrous
         parent while the source label keeps its local kgmicrobe.compound identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CuCl2 x 6 H2O, identifier kgmicrobe.compound:cucl2_x_6_h2o)
+        is narrower than parent CHEBI:49553 (copper(II) chloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: CuCl2 x H2O
     synonym_type: REJECTED_LABEL
@@ -63627,6 +63769,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:49553)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -65596,7 +65744,7 @@ ingredients:
     ontology_id: CHEBI:6731
     ontology_label: melezitose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -65618,6 +65766,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (D-(+)-Melezitose hydrate, identifier cas:207511-10-2)
+        is narrower than parent CHEBI:6731 (melezitose); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: D-melezitose (melezitose)
     synonym_type: RAW_TEXT
@@ -65681,6 +65834,12 @@ ingredients:
       (melezitose)''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:6731)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 207511-10-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -66424,7 +66583,7 @@ ingredients:
     ontology_id: CHEBI:190546
     ontology_label: D-Fructose 6-Phosphate-Disodium Salt
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -66444,6 +66603,12 @@ ingredients:
         A hydrate is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (D-Fructose 6-phosphate disodium salt hydrate,
+        identifier cas:26177-86-6) is narrower than parent CHEBI:190546 (D-Fructose
+        6-Phosphate-Disodium Salt); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH
+        (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: disodium;[(2R,3R,4S)-2,3,4,6-tetrahydroxy-5-oxohexyl] phosphate
     synonym_type: EXACT_SYNONYM
@@ -66496,6 +66661,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:190546)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 26177-86-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -66518,7 +66689,7 @@ ingredients:
     ontology_id: CHEBI:18024
     ontology_label: D-galacturonic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -66549,6 +66720,11 @@ ingredients:
         ChEBI formula ('C6H10O7') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (D-Galacturonic Acid monohydrate, identifier
+        cas:91510-62-2) is narrower than parent CHEBI:18024 (D-galacturonic acid);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: D-galacturonate
     synonym_type: REJECTED_LABEL
@@ -66609,6 +66785,12 @@ ingredients:
       Preserved original text and source metadata. No identity, mapping, role, or
       remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:18024)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 91510-62-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -66948,7 +67130,7 @@ ingredients:
     ontology_id: CHEBI:4178
     ontology_label: D-glucuronic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -66969,6 +67151,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (D-Glucuronic acid sodium salt monohydrate, identifier
+        cas:207300-70-7) is narrower than parent CHEBI:4178 (D-glucuronic acid); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: (sodium salt)
     synonym_type: RAW_TEXT
@@ -67020,6 +67207,12 @@ ingredients:
       salt)''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:4178)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 207300-70-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -67306,7 +67499,7 @@ ingredients:
     ontology_id: CHEBI:17306
     ontology_label: maltose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -67333,6 +67526,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (D-Maltose monohydrate, identifier cas:6363-53-7)
+        is narrower than parent CHEBI:17306 (maltose); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: Maltose monohydrate
     synonym_type: EXACT_SYNONYM
@@ -67412,6 +67610,12 @@ ingredients:
       ''alpha-D-glucopyranosyl-(1->4)-D-glucose''. Preserved original text and source
       metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:17306)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 6363-53-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -70431,7 +70635,7 @@ ingredients:
     ontology_id: CHEBI:14336
     ontology_label: glycerol 1-phosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -70452,6 +70656,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (DL-Glycerol 1-phosphate sodium salt hydrate,
+        identifier cas:17603-42-8) is narrower than parent CHEBI:14336 (glycerol 1-phosphate);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: 2,3-dihydroxypropyl dihydrogen phosphate
     synonym_type: EXACT_SYNONYM
@@ -70506,6 +70715,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:14336)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 17603-42-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -70603,7 +70818,7 @@ ingredients:
     ontology_id: CHEBI:172950
     ontology_label: Isocitric acid, DL-
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -70628,6 +70843,12 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (DL-Isocitric acid trisodium salt hydrate, identifier
+        kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate) is narrower than
+        parent CHEBI:172950 (Isocitric acid, DL-); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: trisodium;1-hydroxypropane-1,2,3-tricarboxylate
     synonym_type: EXACT_SYNONYM
@@ -70682,13 +70903,23 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_CHEMICAL_PROPERTIES
+    changes: Removed anhydrous parent molecular_formula, inchi, and smiles from unspecified-hydrate
+      record
+    notes: Unspecified-hydration record must not carry anhydrous parent chemical properties
+      (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:172950)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 1637-73-6
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C6H5O7.3Na
-    inchi: InChI=1S/C6H8O7.3Na/c7-3(8)1-2(5(10)11)4(9)6(12)13;;;/h2,4,9H,1H2,(H,7,8)(H,10,11)(H,12,13);;;/q;3*+1/p-3
-    smiles: O=C([O-])CC(C(=O)[O-])C(O)C(=O)[O-].[Na+].[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -71772,6 +72003,11 @@ ingredients:
       the one named in this record's own MERGED_INTO entry; the chain was followed
       to the first live record. A tombstone exists to keep the loser resolvable.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_STALE_KG_MICROBE_NODE_ID
+    changes: 'Removed stale kg_microbe_node_id CHEBI:16991 (current identifier: kgmicrobe.ingredient:fish-sperm_dna)'
+    notes: Cross-prefix kg_microbe_node_id cleanup (#870).
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curator review needed.
   ontology_mapping:
@@ -71784,7 +72020,6 @@ ingredients:
       source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
       notes: Auto-upgraded from UNMAPPED_0144; matched via 'Deoxyribonucleic acid
         from herring sperm'; stem-substring
-  kg_microbe_node_id: CHEBI:16991
 - identifier: mesh:C442243
   preferred_term: Dermcidin
   synonyms:
@@ -74433,17 +74668,19 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_SOLUTE_CHEMICAL_PROPERTIES
+    changes: Removed pure-solute chemical_properties (molecular_formula, inchi, smiles,
+      molecular_weight) from STOCK_SOLUTION record
+    notes: 'Stock solutions must not inherit pure-solute chemical properties (#268,
+      #871).'
   ingredient_type: STOCK_SOLUTION
   notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:131825
     exact mapping. Disodium phosphate heptahydrate (0.02 M stock) is a stock solution
     ingredient; retain a kgmicrobe.ingredient identity and use CHEBI:34683 as a broader
     disodium hydrogenphosphate solute parent.'
   kg_microbe_node_id: kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29
-  chemical_properties:
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    molecular_weight: 141.958
-    data_source: ChEBI+PubChem
-    retrieval_date: '2026-05-23T08:30:57.822010+00:00'
 - identifier: CHEBI:15377
   preferred_term: Distilled water
   ontology_mapping:
@@ -77419,7 +77656,7 @@ ingredients:
     ontology_id: CHEBI:4735
     ontology_label: ethylenediaminetetraacetic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -77443,6 +77680,11 @@ ingredients:
         is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (EDTA tetrasodium tetrahydrate salt, identifier
+        cas:13235-36-4) is narrower than parent CHEBI:4735 (ethylenediaminetetraacetic
+        acid); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: Ethylenediamintetraacetic acid (EDTA)
     synonym_type: RAW_TEXT
@@ -77513,6 +77755,12 @@ ingredients:
       acid (EDTA)''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:4735)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 13235-36-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -81699,7 +81947,7 @@ ingredients:
     ontology_id: CHEBI:30812
     ontology_label: iron dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -81740,6 +81988,11 @@ ingredients:
         but no exact ontology term or CAS has been verified for that stated hydration
         count. CHEBI:30812 (iron dichloride) is retained only as the closest anhydrous
         parent while the source label keeps its local kgmicrobe.compound identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (FeCl2 x 6 H2O, identifier kgmicrobe.compound:fecl2_x_6_h2o)
+        is narrower than parent CHEBI:30812 (iron dichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: FeCl2 x 7 H2O
     synonym_type: REJECTED_LABEL
@@ -81857,6 +82110,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:30812)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -82170,7 +82429,7 @@ ingredients:
     ontology_id: CHEBI:30808
     ontology_label: iron trichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -82211,6 +82470,11 @@ ingredients:
         but no exact ontology term or CAS has been verified for that stated hydration
         count. CHEBI:30808 (iron trichloride) is retained only as the closest anhydrous
         parent while the source label keeps its local kgmicrobe.compound identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (FeCl3 x 4 H2O, identifier kgmicrobe.compound:fecl3_x_4_h2o)
+        is narrower than parent CHEBI:30808 (iron trichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: FeCl3·4H2O
     synonym_type: HYDRATE_FORM
@@ -82321,6 +82585,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:30808)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -84147,13 +84417,17 @@ ingredients:
       Preserved original text and source metadata. No identity, mapping, role, or
       remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 7782-63-0
     data_source: PubChem API (ontology label)
     retrieval_date: '2026-04-05T23:44:40.986504+00:00'
     molecular_formula: Fe.O4S.7H2O
-    inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Fe+2]
   kg_microbe_node_id: CHEBI:75836
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -84695,11 +84969,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_STALE_KG_MICROBE_NODE_ID
+    changes: 'Removed stale kg_microbe_node_id CHEBI:16991 (current identifier: kgmicrobe.ingredient:fish-sperm_dna)'
+    notes: Cross-prefix kg_microbe_node_id cleanup (#870).
   chemical_properties:
     cas_rn: 9007-49-2
     data_source: PubChem API (ontology label)
     retrieval_date: '2026-04-05T23:44:42.459861+00:00'
-  kg_microbe_node_id: CHEBI:16991
   ingredient_type: UNDEFINED_MIXTURE
 - identifier: MICRO:0000462
   preferred_term: Fish peptone
@@ -85707,7 +85985,7 @@ ingredients:
     ontology_id: CHEBI:201600
     ontology_label: Fosmidomycin sodium salt
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -85727,6 +86005,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Fosmidomycin sodium salt hydrate, identifier
+        cas:66508-37-0) is narrower than parent CHEBI:201600 (Fosmidomycin sodium
+        salt); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: sodium;3-[ormyl(hydroxy)amino]propyl-hydroxyphosphinate
     synonym_type: EXACT_SYNONYM
@@ -85779,6 +86062,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:201600)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 66508-37-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -87038,7 +87327,7 @@ ingredients:
     ontology_id: CHEBI:17973
     ontology_label: alpha-D-galactose 1-phosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -87061,6 +87350,11 @@ ingredients:
         is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Galactose 1-phosphate dipotassium salt pentahydrate,
+        identifier cas:19046-60-7) is narrower than parent CHEBI:17973 (alpha-D-galactose
+        1-phosphate); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -87113,6 +87407,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:17973)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 19046-60-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -89718,7 +90018,7 @@ ingredients:
     ontology_id: CHEBI:73898
     ontology_label: Gly-Gln
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -89738,6 +90038,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Gly-Gln monohydrate, identifier cas:172669-64-6)
+        is narrower than parent CHEBI:73898 (Gly-Gln); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: glycyl-L-glutamine
     synonym_type: EXACT_SYNONYM
@@ -89791,6 +90096,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:73898)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 172669-64-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -90438,7 +90749,7 @@ ingredients:
     ontology_id: CHEBI:26707
     ontology_label: glycerol phosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -90461,6 +90772,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Glycerol phosphate disodium salt hydrate, identifier
+        cas:55073-41-1) is narrower than parent CHEBI:26707 (glycerol phosphate);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -90513,6 +90829,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:26707)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 55073-41-1
     data_source: CultureBotHT compounds_to_cas.csv
@@ -91410,7 +91732,7 @@ ingredients:
     ontology_id: CHEBI:30076
     ontology_label: gold trichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -91432,6 +91754,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (gold (III) chloride hydrate, identifier cas:27988-77-8)
+        is narrower than parent CHEBI:30076 (gold trichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -91474,6 +91801,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:30076)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 27988-77-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -99716,7 +100049,7 @@ ingredients:
     ontology_id: CHEBI:131527
     ontology_label: dipotassium hydrogen phosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -99751,6 +100084,11 @@ ingredients:
         is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (K2HPO4 x 3 H2O, identifier kgmicrobe.compound:k2hpo4_x_3_h2o)
+        is narrower than parent CHEBI:131527 (dipotassium hydrogen phosphate); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -99882,12 +100220,22 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:131527)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     data_source: PubChem (via CHEBI:131527)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: HO4P.2K.3H2O
-    inchi: InChI=1S/2K.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[K+].[K+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -100220,7 +100568,7 @@ ingredients:
     ontology_id: CHEBI:32036
     ontology_label: potassium sulfate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -100240,6 +100588,11 @@ ingredients:
         but no exact ontology term or CAS has been verified for that stated hydration
         count. CHEBI:32036 (potassium sulfate) is retained only as the closest anhydrous
         parent while the source label keeps its local kgmicrobe.compound identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (K2SO4 x 7 H2O, identifier kgmicrobe.compound:k2so4_x_7_h2o)
+        is narrower than parent CHEBI:32036 (potassium sulfate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: K2SO4·7H2O
     synonym_type: HYDRATE_FORM
@@ -100351,6 +100704,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:32036)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -102939,7 +103298,7 @@ ingredients:
     ontology_id: CHEBI:17053
     ontology_label: L-aspartic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -102960,6 +103319,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (L-Aspartic acid sodium salt monohydrate, identifier
+        cas:323194-76-9) is narrower than parent CHEBI:17053 (L-aspartic acid); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: (2S)-2-aminobutanedioic acid
     synonym_type: REJECTED_LABEL
@@ -103031,6 +103395,12 @@ ingredients:
       acid''; ''ASPARTIC ACID''. Preserved original text and source metadata. No identity,
       mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:17053)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 323194-76-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -103212,7 +103582,7 @@ ingredients:
     ontology_id: CHEBI:17285
     ontology_label: L-cysteic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -103233,6 +103603,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (L-Cysteic acid monohydrate, identifier cas:23537-25-9)
+        is narrower than parent CHEBI:17285 (L-cysteic acid); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -103272,6 +103647,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:17285)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 23537-25-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -103455,7 +103836,7 @@ ingredients:
     ontology_id: CHEBI:16015
     ontology_label: L-glutamic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -103478,6 +103859,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (L-Glutamic acid monopotassium salt monohydrate,
+        identifier cas:6382-01-0) is narrower than parent CHEBI:16015 (L-glutamic
+        acid); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium
       salt
@@ -103553,6 +103939,12 @@ ingredients:
       acid''; ''GLUTAMIC ACID''. Preserved original text and source metadata. No identity,
       mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:16015)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 6382-01-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -104183,7 +104575,7 @@ ingredients:
     ontology_id: CHEBI:62345
     ontology_label: L-rhamnose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -104206,6 +104598,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (L-Rhamnose monohydrate, identifier cas:10030-85-0)
+        is narrower than parent CHEBI:62345 (L-rhamnose); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -104257,6 +104654,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:62345)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 10030-85-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -111936,7 +112339,7 @@ ingredients:
     ontology_id: CHEBI:48607
     ontology_label: lithium chloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -111957,6 +112360,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Lithium chloride hydrate, identifier cas:85144-11-2)
+        is narrower than parent CHEBI:48607 (lithium chloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -111996,6 +112404,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:48607)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 85144-11-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -115033,7 +115447,7 @@ ingredients:
     ontology_id: CHEBI:61993
     ontology_label: maltotriose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -115055,6 +115469,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Maltotriose hydrate, identifier cas:312693-63-3)
+        is narrower than parent CHEBI:61993 (maltotriose); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -115101,6 +115520,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:61993)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 312693-63-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -119262,7 +119687,7 @@ ingredients:
     ontology_id: CHEBI:6636
     ontology_label: magnesium dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -119303,6 +119728,11 @@ ingredients:
         but no exact ontology term or CAS has been verified for that stated hydration
         count. CHEBI:6636 (magnesium dichloride) is retained only as the closest anhydrous
         parent while the source label keeps its local kgmicrobe.compound identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (MgCl2 x 7 H2O, identifier kgmicrobe.compound:mgcl2_x_7_h2o)
+        is narrower than parent CHEBI:6636 (magnesium dichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: Magnesium chloride anhydrous
     synonym_type: REJECTED_LABEL
@@ -119435,6 +119865,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:6636)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -120013,13 +120449,17 @@ ingredients:
       resolving through its MERGED_INTO event (#882).'
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 7487-88-9
     data_source: OAK/CHEBI xref
     retrieval_date: '2026-04-19T07:35:12.781730+00:00'
     molecular_formula: Mg.O4S.7H2O
-    inchi: InChI=1S/Mg.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Mg+2]
   kg_microbe_node_id: CHEBI:31795
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -122086,14 +122526,18 @@ ingredients:
       text and source metadata. No identity, mapping, role, or remaining-synonym claim
       was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   kg_microbe_node_id: CHEBI:86364
   chemical_properties:
     cas_rn: 10034-96-5
     data_source: PubChem (via CHEBI:86360)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Mn.O4S.H2O
-    inchi: InChI=1S/Mn.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Mn+2]
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -129341,13 +129785,17 @@ ingredients:
       original text and source metadata. No identity, mapping, role, or remaining-synonym
       claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 7487-55-0
     data_source: PubChem API (preprocessed)
     retrieval_date: '2026-04-05T23:45:45.687263+00:00'
     molecular_formula: C10H14N2O8.2Na.2H2O
-    inchi: InChI=1S/C10H16N2O8.2Na/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20;;/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20);;/q;2*+1/p-2
-    smiles: O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-].[Na+].[Na+]
   kg_microbe_node_id: CHEBI:64758
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
@@ -131102,14 +131550,18 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   kg_microbe_node_id: CHEBI:91259
   chemical_properties:
     cas_rn: 10039-32-4
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 12H2O.HO4P.2Na
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -131381,14 +131833,18 @@ ingredients:
       monohydrogen phosphate dihydrat (from chebi_synonym_review / #878).'
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   kg_microbe_node_id: CHEBI:91258
   chemical_properties:
     cas_rn: 10028-24-7
     data_source: OAK/CHEBI xref
     retrieval_date: '2026-04-19T07:35:12.781730+00:00'
     molecular_formula: 2H2O.HO4P.2Na
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -131407,7 +131863,7 @@ ingredients:
     ontology_id: CHEBI:34683
     ontology_label: disodium hydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -131449,6 +131905,11 @@ ingredients:
         count. CHEBI:34683 (disodium hydrogenphosphate) is retained only as the closest
         anhydrous parent while the source label keeps its local kgmicrobe.compound
         identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Na2HPO4 x 3 H2O, identifier kgmicrobe.compound:na2hpo4_x_3_h2o)
+        is narrower than parent CHEBI:34683 (disodium hydrogenphosphate); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -131590,6 +132051,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:34683)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
@@ -131609,7 +132076,7 @@ ingredients:
     ontology_id: CHEBI:34683
     ontology_label: disodium hydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -131651,6 +132118,11 @@ ingredients:
         count. CHEBI:34683 (disodium hydrogenphosphate) is retained only as the closest
         anhydrous parent while the source label keeps its local kgmicrobe.compound
         identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Na2HPO4 x 6 H2O, identifier kgmicrobe.compound:na2hpo4_x_6_h2o)
+        is narrower than parent CHEBI:34683 (disodium hydrogenphosphate); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: Na2HPO4 . 12H2O
     synonym_type: REJECTED_LABEL
@@ -131798,6 +132270,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:34683)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
@@ -131813,7 +132291,7 @@ ingredients:
     ontology_id: CHEBI:34683
     ontology_label: disodium hydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -131848,6 +132326,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Na2HPO4 x 7 H2O, identifier kgmicrobe.compound:na2hpo4_x_7_h2o)
+        is narrower than parent CHEBI:34683 (disodium hydrogenphosphate); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: Na2HPO4 . 12H2O
     synonym_type: REJECTED_LABEL
@@ -132009,13 +132492,23 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:34683)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 7782-85-6
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: HO4P.2Na.7H2O
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -132491,13 +132984,17 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 10102-40-6
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-05T21:48:45.478291+00:00'
     molecular_formula: MoO4.2Na.2H2O
-    inchi: InChI=1S/Mo.2Na.4O/q;2*+1;;;2*-1
-    smiles: '[Na+].[Na+].[O]=[Mo](=[O])([O-])[O-]'
   kg_microbe_node_id: CHEBI:75213
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -134292,13 +134789,17 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 10102-18-8
     data_source: PubChem API (ontology label)
     retrieval_date: '2026-04-05T23:46:10.663385+00:00'
     molecular_formula: 2Na.O3Se.5H2O
-    inchi: InChI=1S/2Na.H2O3Se/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2
-    smiles: O=[Se]([O-])[O-].[Na+].[Na+]
   kg_microbe_node_id: CHEBI:131361
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -135074,13 +135575,17 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   kg_microbe_node_id: CHEBI:86477
   chemical_properties:
     data_source: PubChem (via CHEBI:86477)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Na.O3S.5H2O
-    inchi: InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2
-    smiles: O=S([O-])[O-].[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:32149
   preferred_term: Na2SO4
@@ -137429,7 +137934,7 @@ ingredients:
     ontology_id: CHEBI:37585
     ontology_label: sodium dihydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -137464,6 +137969,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (NaH2PO4 x 2 H2O, identifier kgmicrobe.compound:nah2po4_x_2_h2o)
+        is narrower than parent CHEBI:37585 (sodium dihydrogenphosphate); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: NaH2PO4 x 2H2O
     synonym_type: HYDRATE_FORM
@@ -137645,12 +138155,22 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:37585)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     data_source: OAK/CHEBI xref
     retrieval_date: '2026-04-19T07:35:12.781730+00:00'
     molecular_formula: H2O4P.Na.2H2O
-    inchi: InChI=1S/Na.H3O4P/c;1-5(2,3)4/h;(H3,1,2,3,4)/q+1;/p-1
-    smiles: O=P([O-])(O)O.[Na+]
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -139388,7 +139908,7 @@ ingredients:
     ontology_id: CHEBI:31635
     ontology_label: neomycin sulfate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -139411,6 +139931,12 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Neomycin trisulfate salt hydrate, identifier
+        kgmicrobe.compound:neomycin_trisulfate_salt_hydrate) is narrower than parent
+        CHEBI:31635 (neomycin sulfate); updated mapping_quality CLOSE_MATCH -> NARROW_MATCH
+        (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -139465,6 +139991,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:31635)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 1405-10-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -141915,7 +142447,7 @@ ingredients:
     ontology_id: CHEBI:34887
     ontology_label: nickel dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -141950,6 +142482,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (NiCl2 x 2 H2O, identifier kgmicrobe.compound:nicl2_x_2_h2o)
+        is narrower than parent CHEBI:34887 (nickel dichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: NiCl2 . 6H2O
     synonym_type: REJECTED_LABEL
@@ -142140,12 +142677,22 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:34887)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cl2Ni.2H2O
-    inchi: InChI=1S/2ClH.Ni/h2*1H;/q;;+2/p-2
-    smiles: '[Cl][Ni][Cl]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -142160,7 +142707,7 @@ ingredients:
     ontology_id: CHEBI:34887
     ontology_label: nickel dichloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -142201,6 +142748,11 @@ ingredients:
         but no exact ontology term or CAS has been verified for that stated hydration
         count. CHEBI:34887 (nickel dichloride) is retained only as the closest anhydrous
         parent while the source label keeps its local kgmicrobe.compound identity.
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (NiCl2 x 5 H2O, identifier kgmicrobe.compound:nicl2_x_5_h2o)
+        is narrower than parent CHEBI:34887 (nickel dichloride); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: NiCl2 . 6H2O
     synonym_type: REJECTED_LABEL
@@ -142362,6 +142914,12 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:34887)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -143541,12 +144099,16 @@ ingredients:
       sulfate''. Preserved original text and source metadata. No identity, mapping,
       role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Ni.O4S.7H2O
-    inchi: InChI=1S/Ni.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Ni+2]
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -146876,7 +147438,7 @@ ingredients:
     ontology_id: CHEBI:18394
     ontology_label: 6-O-alpha-D-glucopyranosyl-D-fructofuranose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -146899,6 +147461,11 @@ ingredients:
         A hydrate is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (palatinose hydrate, identifier cas:343336-76-5)
+        is narrower than parent CHEBI:18394 (6-O-alpha-D-glucopyranosyl-D-fructofuranose);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -146951,6 +147518,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:18394)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 343336-76-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -148963,7 +149536,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: Phenethylamine Hydrochloride
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: relabelled
   - synonym_text: Beta-phenylethylamine
     synonym_type: RAW_TEXT
@@ -149027,6 +149600,12 @@ ingredients:
       ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
       under Rule D (#438), independently of mapping quality.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped 1 non-identity synonym(s) to REJECTED_LABEL: Phenethylamine
+      Hydrochloride'
+    notes: Prevent parent/wrong-form synonyms from leaking into SSSOM `other` (#235).
   chemical_properties:
     cas_rn: 64-04-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -152270,7 +152849,7 @@ ingredients:
     ontology_id: CHEBI:15584
     ontology_label: citramalic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -152293,6 +152872,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (potassium citramalate monohydrate, identifier
+        cas:1030365-02-6) is narrower than parent CHEBI:15584 (citramalic acid); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -152336,6 +152920,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:15584)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 1030365-02-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -152845,7 +153435,7 @@ ingredients:
     ontology_id: CHEBI:30463
     ontology_label: telluric acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -152869,6 +153459,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (potassium tellurate hydrate, identifier cas:314041-10-6)
+        is narrower than parent CHEBI:30463 (telluric acid); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -152913,6 +153508,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:30463)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 314041-10-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -152928,7 +153529,7 @@ ingredients:
     ontology_id: CHEBI:75248
     ontology_label: potassium tellurite
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -152949,6 +153550,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Potassium tellurite hydrate, identifier cas:123333-66-4)
+        is narrower than parent CHEBI:75248 (potassium tellurite); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: dipotassium tellurite
     synonym_type: EXACT_SYNONYM
@@ -152991,6 +153597,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:75248)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 123333-66-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -161845,13 +162457,17 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 127-09-3
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-05T21:48:45.714029+00:00'
     molecular_formula: C2H3O2.Na.3H2O
-    inchi: InChI=1S/C2H4O2.Na/c1-2(3)4;/h1H3,(H,3,4);/q;+1/p-1
-    smiles: CC(=O)[O-].[Na+]
   kg_microbe_node_id: CHEBI:32138
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
@@ -162382,7 +162998,7 @@ ingredients:
     ontology_id: CHEBI:29377
     ontology_label: sodium carbonate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -162403,6 +163019,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (sodium carbonate monohydrate, identifier cas:5968-11-6)
+        is narrower than parent CHEBI:29377 (sodium carbonate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: disodium trioxidocarbonate
     synonym_type: REJECTED_LABEL
@@ -162465,6 +163086,12 @@ ingredients:
       trioxidocarbonate''. Preserved original text and source metadata. No identity,
       mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:29377)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 5968-11-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -162557,6 +163184,13 @@ ingredients:
       anoxic media.
     llm_assisted: true
     llm_model: gpt-5
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_SOLUTE_CHEMICAL_PROPERTIES
+    changes: Removed pure-solute chemical_properties (molecular_formula, inchi, smiles,
+      molecular_weight) from STOCK_SOLUTION record
+    notes: 'Stock solutions must not inherit pure-solute chemical properties (#268,
+      #871).'
   notes: Imported from mim-queue (source_id=mediadive.ingredient:797); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -162569,11 +163203,6 @@ ingredients:
       source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
       notes: Auto-upgraded from UNMAPPED_0523; matched via 'Sodium carbonate solution';
         stem-substring
-  chemical_properties:
-    molecular_formula: CO3.2Na
-    inchi: InChI=1S/CH2O3.2Na/c2-1(3)4;;/h(H2,2,3,4);;/q;2*+1/p-2
-    smiles: O=C([O-])[O-].[Na+].[Na+]
-    data_source: CHEBI sqlite (oaklib)
   kg_microbe_node_id: CHEBI:29377
   ingredient_type: STOCK_SOLUTION
   physicochemical_roles:
@@ -162641,7 +163270,7 @@ ingredients:
     ontology_id: CHEBI:26711
     ontology_label: sodium cholate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -162663,6 +163292,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Sodium cholate hydrate, identifier cas:206986-87-0)
+        is narrower than parent CHEBI:26711 (sodium cholate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: sodium 3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-oate
     synonym_type: EXACT_SYNONYM
@@ -162706,6 +163340,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:26711)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 206986-87-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -163139,7 +163779,7 @@ ingredients:
     ontology_id: CHEBI:9177
     ontology_label: sodium deoxycholate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -163161,6 +163801,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Sodium deoxycholate monohydrate, identifier
+        cas:145224-92-6) is narrower than parent CHEBI:9177 (sodium deoxycholate);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: Sodim deoxycholate monohydrate
     synonym_type: EXACT_SYNONYM
@@ -163216,6 +163861,12 @@ ingredients:
       Preserved original text and source metadata. No identity, mapping, role, or
       remaining-synonym claim was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:9177)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 145224-92-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -164062,13 +164713,17 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 6106-04-3
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:53:51.816519+00:00'
     molecular_formula: C5H8NO4.H2O.Na
-    inchi: InChI=1S/C5H9NO4.Na/c6-3(5(9)10)1-2-4(7)8;/h3H,1-2,6H2,(H,7,8)(H,9,10);/q;+1/p-1/t3-;/m0./s1
-    smiles: '[NH3+][C@@H](CCC(=O)[O-])C(=O)[O-].[Na+]'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: NITROGEN_SOURCE
@@ -164130,7 +164785,7 @@ ingredients:
     ontology_id: CHEBI:234148
     ontology_label: sodium hypophosphite
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -164152,6 +164807,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Sodium hypophosphite monohydrate, identifier
+        cas:10039-56-2) is narrower than parent CHEBI:234148 (sodium hypophosphite);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -164202,6 +164862,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:234148)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 10039-56-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -165474,17 +166140,19 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_SOLUTE_CHEMICAL_PROPERTIES
+    changes: Removed pure-solute chemical_properties (molecular_formula, inchi, smiles,
+      molecular_weight) from STOCK_SOLUTION record
+    notes: 'Stock solutions must not inherit pure-solute chemical properties (#268,
+      #871).'
   ingredient_type: STOCK_SOLUTION
   notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:65246 exact
     mapping. Sodium nitrate (0.70 M stock) is a stock solution ingredient; retain
     a kgmicrobe.ingredient identity and use CHEBI:63005 as a broader sodium nitrate
     solute parent.'
   kg_microbe_node_id: kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29
-  chemical_properties:
-    inchi: InChI=1S/NO3.Na/c2-1(3)4;/q-1;+1
-    molecular_weight: 84.994
-    data_source: ChEBI+PubChem
-    retrieval_date: '2026-05-23T08:31:10.185835+00:00'
 - identifier: CHEBI:63005
   preferred_term: Sodium nitrate (nitrogen source)
   synonyms:
@@ -166379,7 +167047,7 @@ ingredients:
     ontology_id: CHEBI:36361
     ontology_label: phosphorous acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -166403,6 +167071,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Sodium phosphite dibasic pentahydrate, identifier
+        cas:13517-23-2) is narrower than parent CHEBI:36361 (phosphorous acid); updated
+        mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -166440,6 +167113,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:36361)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 13517-23-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -167105,7 +167784,7 @@ ingredients:
     ontology_id: CHEBI:46612
     ontology_label: phosphorothioic acid
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -167131,6 +167810,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Sodium thiophosphate tribasic hydrate, identifier
+        cas:10489-48-2) is narrower than parent CHEBI:46612 (phosphorothioic acid);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -167176,6 +167860,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:46612)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 10489-48-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -168929,7 +169619,7 @@ ingredients:
     ontology_id: CHEBI:17164
     ontology_label: stachyose
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -168951,6 +169641,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Stachyose hydrate, identifier cas:54261-98-2)
+        is narrower than parent CHEBI:17164 (stachyose); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -169002,6 +169697,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:17164)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 54261-98-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -172303,7 +173004,7 @@ ingredients:
     ontology_id: CHEBI:134806
     ontology_label: terpin
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -172326,6 +173027,11 @@ ingredients:
         containing the anhydrous form, not a specialization of it. closeMatch claims
         similarity without subsumption. The ontology_id and the record''s own identifier
         are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Terpene hydrate, identifier cas:2451-01-6) is
+        narrower than parent CHEBI:134806 (terpin); updated mapping_quality CLOSE_MATCH
+        -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -172363,6 +173069,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:134806)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 2451-01-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -173098,6 +173810,13 @@ ingredients:
     changes: 'Marked cation/other-salt synonym(s) as REJECTED_LABEL so they cannot
       leak through SSSOM `other`: ''N,N,N-trimethylmethanaminium'' (#315).'
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_CATION_INCHI_MW
+    changes: Removed cation-only InChI (C4H12N+) and molecular_weight (74.147) inherited
+      from CHEBI:17604
+    notes: Tetramethylammonium chloride (C4H12ClN, CAS 75-57-0) must not carry the
+      naked cation InChI or MW (#871).
   notes: Imported from mim-queue (source_id=mediadive.ingredient:720); no CAS-RN or
     CHEBI/NCIT match. Curator review needed. No exact local ontology term for tetramethylammonium
     chloride was verified; retained as a kg-microbe compound with a non-identity link
@@ -173116,8 +173835,6 @@ ingredients:
   kg_microbe_node_id: kgmicrobe.compound:tetramethyl_ammonium_chloride
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
-    inchi: InChI=1S/C4H12N/c1-5(2,3)4/h1-4H3/q+1
-    molecular_weight: 74.147
     data_source: ChEBI+PubChem
     retrieval_date: '2026-05-23T08:31:13.209820+00:00'
 - identifier: CHEBI:49
@@ -177795,6 +178512,13 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_SOLUTE_CHEMICAL_PROPERTIES
+    changes: Removed pure-solute chemical_properties (molecular_formula, inchi, smiles,
+      molecular_weight) from STOCK_SOLUTION record
+    notes: 'Stock solutions must not inherit pure-solute chemical properties (#268,
+      #871).'
   notes: 'CultureMech placeholder_id: 4'
   ingredient_type: STOCK_SOLUTION
   ontology_mapping:
@@ -177807,11 +178531,6 @@ ingredients:
       source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
       notes: Auto-upgraded from UNMAPPED_0088; matched via 'Tris Acetate Stock Solution';
         stem-substring
-  chemical_properties:
-    molecular_formula: C2H4O2.C4H11NO3
-    inchi: InChI=1S/C4H11NO3.C2H4O2/c5-4(1-6,2-7)3-8;1-2(3)4/h6-8H,1-3,5H2;1H3,(H,3,4)
-    smiles: CC(=O)O.NC(CO)(CO)CO
-    data_source: CHEBI sqlite (oaklib)
   physicochemical_roles:
   - role: BUFFER
     confidence: 0.8
@@ -178490,13 +179209,17 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
   chemical_properties:
     cas_rn: 6132-04-3
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-05T21:48:45.923813+00:00'
     molecular_formula: C6H5O7.3Na.2H2O
-    inchi: InChI=1S/C6H8O7.3Na/c7-3(8)1-6(13,5(11)12)2-4(9)10;;;/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12);;;/q;3*+1/p-3
-    smiles: O=C([O-])CC(O)(CC(=O)[O-])C(=O)[O-].[Na+].[Na+].[Na+]
   kg_microbe_node_id: CHEBI:32142
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
@@ -181213,7 +181936,7 @@ ingredients:
     ontology_id: CHEBI:9932
     ontology_label: Vancomycin hydrochloride
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -181235,6 +181958,11 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Vancomycin Hydrochloride Hydrate, identifier
+        cas:123409-00-7) is narrower than parent CHEBI:9932 (Vancomycin hydrochloride);
+        updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -181283,6 +182011,12 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:9932)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties:
     cas_rn: 123409-00-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -183068,62 +183802,6 @@ ingredients:
     retrieval_date: '2026-04-29T06:04:17.380972+00:00'
     molecular_formula: C19H16O4
   ingredient_type: SINGLE_INGREDIENT
-- identifier: MICRO:0000455
-  preferred_term: WC Trace Elements Solution
-  synonyms:
-  - synonym_text: WC Trace Elements Solution
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:18:21.999971+00:00'
-    curator: resolve_unmapped_v2
-    action: AUTO_UPGRADE_TO_MICRO
-    changes: primary UNMAPPED_0066 → MICRO:0000455 (strategy=stem-match)
-    llm_assisted: false
-  - timestamp: '2026-06-09T04:56:30.248308+00:00'
-    curator: claude_in_session_curation
-    action: ANNOTATED
-    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
-      nutritional_roles.TRACE_ELEMENT'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'solution')
-      (#323)
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 8'
-  ontology_mapping:
-    ontology_id: MICRO:0000455
-    ontology_label: trace elements solution
-    ontology_source: MICRO
-    mapping_quality: LEXICAL_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
-      notes: Auto-upgraded from UNMAPPED_0066; matched via 'WC Trace Elements Solution';
-        stem-substring
-  nutritional_roles:
-  - role: TRACE_ELEMENT
-    confidence: 0.6
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Assigned by in-session Claude reasoning (no external API)
-      curator_note: Provisional in-session LLM role assignment; review recommended.
-  ingredient_type: STOCK_SOLUTION
 - identifier: CHEBI:28427
   preferred_term: Wheat Arabinoxylan
   ontology_mapping:
@@ -188311,7 +188989,7 @@ ingredients:
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:5_dehydro_d_gluconate; '
   synonyms:
   - synonym_text: 5-didehydro-D-gluconate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
@@ -188360,6 +189038,11 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
     llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped 1 non-identity synonym(s) to REJECTED_LABEL: 5-didehydro-D-gluconate'
+    notes: Prevent parent/wrong-form synonyms from leaking into SSSOM `other` (#313).
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C6H9O7
@@ -210321,11 +211004,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_STALE_KG_MICROBE_NODE_ID
+    changes: 'Removed stale kg_microbe_node_id CHEBI:78020 (current identifier: FOODON:03315719)'
+    notes: Cross-prefix kg_microbe_node_id cleanup (#870).
   chemical_properties:
     cas_rn: 65072-00-6
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-05T21:48:44.825809+00:00'
-  kg_microbe_node_id: CHEBI:78020
   ingredient_type: UNDEFINED_MIXTURE
   nutritional_roles:
   - role: PROTEIN_SOURCE
@@ -219634,7 +220321,7 @@ ingredients:
     ontology_id: CHEBI:23414
     ontology_label: copper(II) sulfate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -219660,6 +220347,11 @@ ingredients:
         local identity, closeMatch to the anhydrous parent, chemistry blank, anhydrous
         aliases REJECTED_LABEL, memberships only for recipes whose source label names
         this row (''CuSO4 x 2 H2O'', ''CuSO4 . 2H2O'').'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CuSO4 x 2 H2O, identifier kgmicrobe.compound:cuso4_x_2_h2o)
+        is narrower than parent CHEBI:23414 (copper(II) sulfate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: CuSO4 . 2H2O
     synonym_type: HYDRATE_FORM
@@ -219802,6 +220494,12 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:23414)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -219817,7 +220515,7 @@ ingredients:
     ontology_id: CHEBI:23414
     ontology_label: copper(II) sulfate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -219844,6 +220542,11 @@ ingredients:
         parent, chemistry blank until the upstream count is corrected, anhydrous aliases
         REJECTED_LABEL, memberships only for recipes whose source label names this
         row.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (CuSO4 x 4 H2O, identifier kgmicrobe.compound:cuso4_x_4_h2o)
+        is narrower than parent CHEBI:23414 (copper(II) sulfate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
   synonyms:
   - synonym_text: CuSO4 . 2H2O
     synonym_type: REJECTED_LABEL
@@ -219976,6 +220679,12 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:23414)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -221930,3 +222639,275 @@ ingredients:
   - role: MINERAL_SOURCE
     confidence: 0.8
     evidence: []
+- identifier: CHEBI:11449
+  preferred_term: 2,5-didehydro-D-gluconate
+  ontology_mapping:
+    ontology_id: CHEBI:11449
+    ontology_label: 2,5-didehydro-D-gluconate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#313); chebi.db
+      notes: 'Split from 5-dehydro-D-gluconate (CHEBI:58143): microbedecoder''s ''5-didehydro-D-gluconate''
+        is comma-truncated ''2,5-didehydro-D-gluconate'' (CHEBI:11449, diketo-D-gluconate),
+        a distinct chemical entity from monoketo 5-dehydro-D-gluconate.'
+      confidence_score: 0.99
+  synonyms:
+  - synonym_text: 5-didehydro-D-gluconate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  ingredient_type: SINGLE_INGREDIENT
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 6
+      source_columns: BacDive_Metabolite_production|BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: SPLIT_TRUNCATED_LOCANT_SYNONYM
+    changes: Created CHEBI:11449 record for 2,5-didehydro-D-gluconate with comma-truncated
+      microbedecoder synonym '5-didehydro-D-gluconate'
+    notes: Resolved comma-truncation conflation with 5-dehydro-D-gluconate (CHEBI:58143)
+      (#313).
+  chemical_properties:
+    molecular_formula: C6H7O7
+    smiles: O=C(CO)[C@@H](O)[C@H](O)C(=O)C(=O)[O-]
+    inchi: InChI=1S/C6H8O7/c7-1-2(8)4(10)3(9)5(11)6(12)13/h3-4,7,9-10H,1H2,(H,12,13)/p-1/t3-,4+/m0/s1
+    data_source: CHEBI
+    retrieval_date: '2026-10-18T14:40:00Z'
+- identifier: cas:10031-43-3
+  preferred_term: Cu(NO3)2 x 3 H2O
+  ontology_mapping:
+    ontology_id: CHEBI:78036
+    ontology_label: copper(II) nitrate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is
+        a hydrate of CHEBI:78036, not an exact match to it] Imported from CultureMech
+        pipeline, quality=DIRECT_MATCH'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321/#334)
+      notes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
+        EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:78036 ('copper(II)
+        nitrate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS
+        §3 forbids, which made a distinct substance indistinguishable from its anhydrous
+        parent downstream. ChEBI has no term for this hydrate and the record carries
+        no verified CAS, so steps 1 and 2 are unavailable and step 3 applies.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 3 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:78036's
+        ChEBI formula ('Cu.2NO3') — the mark of a value inherited from the parent
+        rather than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:78036 (''copper(II) nitrate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM hydrate review (#901)
+      notes: Specific hydrate record (Cu(NO3)2 x 3 H2O, identifier cas:10031-43-3)
+        is narrower than parent CHEBI:78036 (copper(II) nitrate); updated mapping_quality
+        CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
+  synonyms:
+  - synonym_text: copper(II) nitrate (anhydrous)
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: copper(2+) dinitrate
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-09T00:32:50.689620+00:00'
+    curator: enrich_mim_cas_rn_batch
+    action: CAS_RN_ADDED
+    changes: Added CAS-RN 10031-43-3 from CultureBotHT/compounds_to_cas.csv
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: copper(II) nitrate
+      (anhydrous)'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-01T07:35:32.937262+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.831051+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=Cu.2NO3; inchi=InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1;
+      smiles=O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.577264+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-09T05:23:46.746528+00:00'
+    curator: correct_stale_ontology_labels.py
+    action: CORRECTED
+    changes: 'ontology_label ''Cu(NO3)2 x 3 H2O'' -> ''copper(II) nitrate'': synced
+      to canonical CHEBI label (preferred_term ''Cu(NO3)2 x 3 H2O'' unchanged).'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_hydrate_registry_terms
+    action: MINTED_REGISTRY_FOR_HYDRATE
+    changes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O' (#321); the label states
+      3 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:78036's ChEBI formula ('Cu.2NO3') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518635+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 1/1 -> 2/2 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-13T11:00:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: copper(II) nitrate
+      (anhydrous) (#878).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REMOVED_ANHYDROUS_INCHI_SMILES
+    changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+      hydrate formula/CAS-RN)
+    notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped 1 non-identity synonym(s) to REJECTED_LABEL: copper(2+) dinitrate'
+    notes: Prevent parent/wrong-form synonyms from leaking into SSSOM `other` (#901).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: PROMOTED_TO_CAS_IDENTIFIER
+    changes: 'identifier: kgmicrobe.compound:cu_no32_x_3_h2o -> cas:10031-43-3'
+    notes: Promoted copper(II) nitrate trihydrate to its specific hydrate CAS-RN 10031-43-3
+      (#901).
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: UPDATED_MAPPING_QUALITY
+    changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+      CHEBI:78036)'
+    notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
+  chemical_properties:
+    cas_rn: 10031-43-3
+    data_source: CultureBotHT/compounds_to_cas.csv
+    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+    molecular_formula: Cu.2NO3.3H2O
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: kgmicrobe.ingredient:wc_trace_elements_solution
+  preferred_term: WC Trace Elements Solution
+  synonyms:
+  - synonym_text: WC Trace Elements Solution
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:18:21.999971+00:00'
+    curator: resolve_unmapped_v2
+    action: AUTO_UPGRADE_TO_MICRO
+    changes: primary UNMAPPED_0066 → MICRO:0000455 (strategy=stem-match)
+    llm_assisted: false
+  - timestamp: '2026-06-09T04:56:30.248308+00:00'
+    curator: claude_in_session_curation
+    action: ANNOTATED
+    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
+      nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'solution')
+      (#323)
+    llm_assisted: false
+  - timestamp: '2026-10-18T14:40:00Z'
+    curator: curate-yaml-record
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: 'identifier: MICRO:0000455 -> kgmicrobe.ingredient:wc_trace_elements_solution;
+      mapping_quality: LEXICAL_MATCH -> NARROW_MATCH'
+    notes: Separated named WC Trace Elements Solution from generic MICRO:0000455 (#751).
+  notes: 'CultureMech placeholder_id: 8'
+  ontology_mapping:
+    ontology_id: MICRO:0000455
+    ontology_label: trace elements solution
+    ontology_source: MICRO
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
+      notes: 'SUPERSEDED (#751): Auto-upgraded from UNMAPPED_0066; matched via ''WC
+        Trace Elements Solution''; stem-substring'
+    - evidence_type: MANUAL_CURATION
+      source: MIM trace-element solution split (#751); Guillard & Lorenzen 1972 (WC
+        Medium)
+      notes: Named WC (Wright's Cryptophyte) trace elements solution (UTEX WC Medium)
+        has a specific 6-component trace-metal + Na2EDTA formulation and is narrower
+        than the generic MICRO:0000455 'trace element solution' class; minted kgmicrobe.ingredient:wc_trace_elements_solution.
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 0.6
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Assigned by in-session Claude reasoning (no external API)
+      curator_note: Provisional in-session LLM role assignment; review recommended.
+  ingredient_type: STOCK_SOLUTION

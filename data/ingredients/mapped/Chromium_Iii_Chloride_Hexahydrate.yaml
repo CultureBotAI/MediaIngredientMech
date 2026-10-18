@@ -73,11 +73,15 @@ curation_history:
     The previous term carried no water while the label states it. Found by cross-checking
     CultureBotAI/CultureMech#272 (#374/#334).'
   llm_assisted: false
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_ANHYDROUS_INCHI_SMILES
+  changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+    hydrate formula/CAS-RN)
+  notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
 chemical_properties:
   cas_rn: 10025-73-7
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
   molecular_formula: 3Cl.Cr.6H2O
-  inchi: InChI=1S/3ClH.Cr/h3*1H;/q;;;+3/p-3
-  smiles: '[Cl-].[Cl-].[Cl-].[Cr+3]'
 ingredient_type: SINGLE_INGREDIENT

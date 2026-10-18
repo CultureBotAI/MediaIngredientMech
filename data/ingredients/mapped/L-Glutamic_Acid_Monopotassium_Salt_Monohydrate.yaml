@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:16015
   ontology_label: L-glutamic acid
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -27,6 +27,11 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (L-Glutamic acid monopotassium salt monohydrate,
+      identifier cas:6382-01-0) is narrower than parent CHEBI:16015 (L-glutamic acid);
+      updated mapping_quality CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 synonyms:
 - synonym_text: L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium
     salt
@@ -102,6 +107,12 @@ curation_history:
     acid''; ''GLUTAMIC ACID''. Preserved original text and source metadata. No identity,
     mapping, role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:16015)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 chemical_properties:
   cas_rn: 6382-01-0
   data_source: CultureBotHT compounds_to_cas.csv

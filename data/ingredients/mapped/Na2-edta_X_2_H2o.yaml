@@ -191,13 +191,17 @@ curation_history:
     text and source metadata. No identity, mapping, role, or remaining-synonym claim
     was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_ANHYDROUS_INCHI_SMILES
+  changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+    hydrate formula/CAS-RN)
+  notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
 chemical_properties:
   cas_rn: 7487-55-0
   data_source: PubChem API (preprocessed)
   retrieval_date: '2026-04-05T23:45:45.687263+00:00'
   molecular_formula: C10H14N2O8.2Na.2H2O
-  inchi: InChI=1S/C10H16N2O8.2Na/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20;;/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20);;/q;2*+1/p-2
-  smiles: O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-].[Na+].[Na+]
 kg_microbe_node_id: CHEBI:64758
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
