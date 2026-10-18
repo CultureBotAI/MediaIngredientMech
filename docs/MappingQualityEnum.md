@@ -14,8 +14,8 @@ URI: [mediaingredientmech:MappingQualityEnum](https://w3id.org/mediaingredientme
 | MANUAL_CURATION | None | Manually curated by expert |
 | LLM_ASSISTED | None | Mapping suggested by LLM, human-verified |
 | PROVISIONAL | None | Tentative mapping needing verification |
-| NARROW_MATCH | None | Ontology term is narrower than the ingredient (more specific) |
-| BROAD_MATCH | None | Ontology term is broader than the ingredient (less specific) |
+| NARROW_MATCH | None | This record is narrower than its ontology term; publishes as skos:broadMatch |
+| BROAD_MATCH | None | This record is broader than its ontology term; publishes as skos:closeMatch |
 | LEXICAL_MATCH | None | Lexical (string-level) match without semantic verification — typically a toke... |
 | CAS_RN_LOOKUP | None | Mapping resolved via CAS Registry Number lookup rather than ontology label/sy... |
 | FALLBACK_REGISTRY | None | Identity assigned via a registry-row fallback (`registry:` or `kgmicrobe |
@@ -79,12 +79,14 @@ permissible_values:
     description: Tentative mapping needing verification
   NARROW_MATCH:
     text: NARROW_MATCH
-    description: Ontology term is narrower than the ingredient (more specific). Used
-      when the ingredient name covers a class and the chosen term covers one instance/subtype
-      of that class.
+    description: This record is narrower than its ontology term; publishes as skos:broadMatch.
+      Used when the ingredient is a source-, form-, or hydrate-qualified child anchored
+      to a broader parent class or compound.
   BROAD_MATCH:
     text: BROAD_MATCH
-    description: Ontology term is broader than the ingredient (less specific).
+    description: This record is broader than its ontology term; publishes as skos:closeMatch.
+      Used when the ingredient name covers a class and the chosen term covers one
+      instance/subtype of that class.
   LEXICAL_MATCH:
     text: LEXICAL_MATCH
     description: Lexical (string-level) match without semantic verification — typically

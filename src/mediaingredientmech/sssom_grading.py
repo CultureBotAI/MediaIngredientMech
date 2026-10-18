@@ -76,6 +76,13 @@ def predicate_for(quality: str | None) -> str:
     NARROW_MATCH, where the MIM term is narrower than the ontology parent and the parent
     is therefore the broader concept (#390).
 
+    `BROAD_MATCH` ("this record is broader than its ontology term") deliberately resolves
+    to `skos:closeMatch` rather than `skos:narrowMatch` (#696, #884): `skos:narrowMatch`
+    is rare-to-nonexistent in MIM (MAPPING_SEMANTICS.md §1), and `closeMatch` asserts no
+    asymmetric child-parent edge so a misgraded `BROAD_MATCH` (historically invited by the
+    inverted schema gloss fixed in #884) cannot make an ontology class a child of a MIM
+    record downstream.
+
     Expressed as a rule rather than a table because the enumerated version covered five
     grades while the corpus uses nine -- PLACEHOLDER, CAS_RN_LOOKUP, LEXICAL_MATCH and
     BROAD_MATCH (339 records) raised KeyError on any write path that touched them (#525).

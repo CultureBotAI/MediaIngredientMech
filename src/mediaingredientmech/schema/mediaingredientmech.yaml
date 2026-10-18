@@ -1192,11 +1192,14 @@ enums:
         description: Tentative mapping needing verification
       NARROW_MATCH:
         description: >-
-          Ontology term is narrower than the ingredient (more specific). Used
-          when the ingredient name covers a class and the chosen term covers
-          one instance/subtype of that class.
+          This record is narrower than its ontology term; publishes as
+          skos:broadMatch. Used when the ingredient is a source-, form-, or
+          hydrate-qualified child anchored to a broader parent class or compound.
       BROAD_MATCH:
-        description: Ontology term is broader than the ingredient (less specific).
+        description: >-
+          This record is broader than its ontology term; publishes as
+          skos:closeMatch. Used when the ingredient name covers a class and the
+          chosen term covers one instance/subtype of that class.
       LEXICAL_MATCH:
         description: >-
           Lexical (string-level) match without semantic verification —

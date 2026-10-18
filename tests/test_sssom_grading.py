@@ -223,3 +223,39 @@ class TestPredicateAgreesWithClaw:
         claw = CLAW_BUILDER.read_text(encoding="utf-8")
         assert 'if quality == "NARROW_MATCH":' in claw
         assert 'predicate = "skos:broadMatch"' in claw
+
+
+class TestSchemaAndGradingAgreeOnAsymmetricDirection:
+    """The schema, MAPPING_SEMANTICS.md, and predicate_for must state the same direction (#884, #696)."""
+
+    def test_schema_describes_narrow_and_broad_match_from_the_record_side(self):
+        import yaml
+
+        schema_path = _REPO / "src" / "mediaingredientmech" / "schema" / "mediaingredientmech.yaml"
+        schema = yaml.safe_load(schema_path.read_text(encoding="utf-8"))
+        pvs = schema["enums"]["MappingQualityEnum"]["permissible_values"]
+
+        narrow_desc = pvs["NARROW_MATCH"]["description"]
+        broad_desc = pvs["BROAD_MATCH"]["description"]
+
+        assert "This record is narrower than its ontology term" in narrow_desc
+        assert "skos:broadMatch" in narrow_desc
+        assert "Ontology term is narrower than the ingredient" not in narrow_desc
+
+        assert "This record is broader than its ontology term" in broad_desc
+        assert "skos:closeMatch" in broad_desc
+        assert "Ontology term is broader than the ingredient" not in broad_desc
+
+        doc_text = (_REPO / "docs" / "MappingQualityEnum.md").read_text(encoding="utf-8")
+        assert "This record is narrower than its ontology term; publishes as skos:broadMatch" in doc_text
+        assert "This record is broader than its ontology term; publishes as skos:closeMatch" in doc_text
+        assert "Ontology term is narrower than the ingredient" not in doc_text
+        assert "Ontology term is broader than the ingredient" not in doc_text
+
+    def test_broad_match_deliberately_publishes_close_match(self):
+        """BROAD_MATCH resolves to skos:closeMatch so a broad grade cannot invert a class edge (#696)."""
+        assert grading.predicate_for("BROAD_MATCH") == "skos:closeMatch"
+        assert "BROAD_MATCH" in (grading.predicate_for.__doc__ or "")
+        assert "skos:closeMatch" in (grading.predicate_for.__doc__ or "")
+
+
