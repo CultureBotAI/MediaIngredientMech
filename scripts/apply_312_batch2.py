@@ -62,6 +62,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.sssom_grading import confidence_for, justification_for  # noqa: E402
 from mediaingredientmech.utils.oaklib_cache import require_db  # noqa: E402
 from mediaingredientmech.validation.write_validated import write_validated_ingredient  # noqa: E402
@@ -525,7 +526,7 @@ def prepare_sssom() -> None:
         if not spec.new_preferred_term:
             continue
         for row in rows:
-            if row["subject_id"] == f"MIM:{spec.slug}" and row["subject_label"] != spec.new_preferred_term:
+            if row["subject_id"] == mim_curie_for_stem(spec.slug) and row["subject_label"] != spec.new_preferred_term:
                 row["subject_label"] = spec.new_preferred_term
                 renamed += 1
     _write_rows(comments, fields, rows)
@@ -630,7 +631,7 @@ def finish_sssom() -> None:
         if not spec.add_registry_rows:
             continue
         record = records[spec.slug]
-        subject = f"MIM:{spec.slug}"
+        subject = mim_curie_for_stem(spec.slug)
         parent_row = next(r for r in rows if r["subject_id"] == subject and r["object_id"] == spec.ontology_id)
         cas = record["identifier"]
         registry = f"{spec.add_registry_rows}:{spec.slug.lower()}"

@@ -52,6 +52,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
     SOURCE_LABEL_IDENTIFIER_OVERRIDES,
     _source_label_key,
@@ -369,7 +370,7 @@ def finish_sssom() -> None:
     existing = {(r["subject_id"], r["object_id"]) for r in rows}
     for spec in MINTS:
         record = records[spec.slug]
-        subject = f"MIM:{spec.slug}"
+        subject = mim_curie_for_stem(spec.slug)
         if (subject, spec.new_identifier) in existing:
             continue
         parent_rows = [r for r in rows if r["subject_id"] == subject]

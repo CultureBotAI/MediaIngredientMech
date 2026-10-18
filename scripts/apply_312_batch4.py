@@ -61,6 +61,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
     SOURCE_LABEL_IDENTIFIER_OVERRIDES,
     _source_label_key,
@@ -233,8 +234,8 @@ def _stamp(row: dict, note: str, method: str) -> None:
 
 def finish_sssom() -> None:
     comments, fields, rows = _read_rows()
-    targets = {f"MIM:{spec.target_slug}": load(spec.target_slug)[1] for spec in MERGES}
-    stale = [r for r in rows if r["subject_id"] in {f"MIM:{spec.source_slug}" for spec in MERGES}]
+    targets = {mim_curie_for_stem(spec.target_slug): load(spec.target_slug)[1] for spec in MERGES}
+    stale = [r for r in rows if r["subject_id"] in {mim_curie_for_stem(spec.source_slug) for spec in MERGES}]
     if stale:
         raise SystemExit(f"{len(stale)} row(s) still name a merged subject; reconcile first")
     scrubbed = cas_fixed = 0

@@ -15,6 +15,7 @@ from pathlib import Path
 import yaml
 from jsonschema import Draft202012Validator
 
+from .curie import mim_curie_for_stem
 from .mapping_scope import (
     profile_metadata,
     read_profile_table,
@@ -317,11 +318,9 @@ ARTIFACTS = {
 
 
 def _owner_id(owner: str) -> str:
-    stem = Path(owner).stem
-    safe = re.sub(r"[^A-Za-z0-9_\-.]", lambda m: f"~{ord(m.group(0)):02X}", stem)
     if not owner.startswith("data/ingredients/") or not owner.endswith(".yaml"):
         raise ValueError("Claim owner must be an ingredient record")
-    return f"MIM:{safe}"
+    return mim_curie_for_stem(Path(owner).stem)
 
 
 def _base_table(content: bytes) -> tuple[dict, list[str], list[dict]]:

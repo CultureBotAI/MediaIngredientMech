@@ -45,6 +45,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.oaklib_cache import require_db  # noqa: E402
 from mediaingredientmech.validation.write_validated import write_validated_ingredient  # noqa: E402
 
@@ -447,7 +448,7 @@ def finish_sssom() -> None:
         rows.append(dict(row))
         added += 1
     graded = 0
-    regraded = {f"MIM:{spec.slug}": spec for spec in REGRADES}
+    regraded = {mim_curie_for_stem(spec.slug): spec for spec in REGRADES}
     for row in rows:
         spec = regraded.get(row["subject_id"])
         if not spec or row["object_id"] != spec.term:
@@ -463,7 +464,7 @@ def finish_sssom() -> None:
         graded += 1
     scrubbed = 0
     rejected_by_subject = {
-        f"MIM:{spec.slug}": {text for text, _ in spec.reject_synonyms} for spec in REANCHORS if spec.reject_synonyms
+        mim_curie_for_stem(spec.slug): {text for text, _ in spec.reject_synonyms} for spec in REANCHORS if spec.reject_synonyms
     }
     for row in rows:
         drop = rejected_by_subject.get(row["subject_id"])

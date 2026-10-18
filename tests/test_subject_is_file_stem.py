@@ -157,6 +157,7 @@ def test_merge_captures_the_stem_before_the_rewrite():
 
 @pytest.mark.parametrize("module,function", [
     ("backfill_sssom_surface_forms", "mim_curie"),
+    ("embed_records", "record_key_for_stem"),
 ])
 def test_former_copies_of_the_escape_rule_delegate(module, function):
     mod = importlib.import_module(module)
@@ -166,8 +167,11 @@ def test_former_copies_of_the_escape_rule_delegate(module, function):
 
 def test_the_alias_map_delegates():
     mod = importlib.import_module("build_curie_alias_map")
+    contract = importlib.import_module("mediaingredientmech.ingredient_bundle_contract")
     for stem in ("Glucose", "(R)-lactate"):
-        assert mod.mim_curie(f"data/ingredients/mapped/{stem}.yaml") == mim_curie_for_stem(stem)
+        rel = f"data/ingredients/mapped/{stem}.yaml"
+        assert mod.mim_curie(rel) == mim_curie_for_stem(stem)
+        assert contract._owner_id(rel) == mim_curie_for_stem(stem)
 
 
 def test_no_second_copy_of_the_escape_regex():

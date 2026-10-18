@@ -19,6 +19,10 @@ import numpy as np
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "src"))
+
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
+
 DEFAULT_MODEL = "BAAI/bge-large-en-v1.5"
 
 
@@ -28,8 +32,7 @@ def slug_for_source(category: str, path: Path) -> str:
 
 
 def record_key_for_stem(stem: str) -> str:
-    cleaned = re.sub(r"[^A-Za-z0-9._-]+", "_", stem).strip("_") or "ingredient"
-    return f"MIM:{cleaned}"
+    return mim_curie_for_stem(stem)
 
 
 def record_to_text(rec: dict[str, Any], record_id: str) -> str:

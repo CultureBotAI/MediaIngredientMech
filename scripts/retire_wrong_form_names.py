@@ -49,6 +49,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.oaklib_cache import require_db  # noqa: E402
 from mediaingredientmech.validation.write_validated import write_validated_ingredient  # noqa: E402
 
@@ -191,7 +192,7 @@ def finish_sssom() -> None:
     body = [line for line in lines if not line.startswith("#")]
     reader = csv.DictReader(io.StringIO("".join(body)), delimiter="\t")
     rows, fields = list(reader), list(reader.fieldnames or [])
-    by_subject = {f"MIM:{spec.slug}": set(spec.tokens) for spec in TARGETS}
+    by_subject = {mim_curie_for_stem(spec.slug): set(spec.tokens) for spec in TARGETS}
     scrubbed = 0
     for row in rows:
         drop = by_subject.get(row["subject_id"])

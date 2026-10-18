@@ -56,6 +56,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
     SOURCE_LABEL_IDENTIFIER_OVERRIDES,
     _source_label_key,
@@ -370,7 +371,7 @@ def finish_sssom() -> None:
             _stamp(row, "[other: CAS token removed from an asymmetric row, #403]", "OTHER")
     # rows for the minted record
     spec = NA2_CITRATE
-    subject = f"MIM:{spec['slug']}"
+    subject = mim_curie_for_stem(spec["slug"])
     existing = {(r["subject_id"], r["object_id"]) for r in rows}
     record = records[spec["slug"]]
     source = "MIM:CultureMech|MIM:curator=claude|MIM:MIM curation (#704)"
