@@ -37,7 +37,7 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MnSO4・xH2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: manganese(2+) sulfate
   synonym_type: REJECTED_LABEL
@@ -157,6 +157,15 @@ curation_history:
     ''MnSO4·7H2O''; ''manganese(2+) sulfate''. Preserved original text and source
     metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Merge tombstone (REJECTED, CHEBI:86364): retyped the unspecified-hydrate
+    spelling ''MnSO4・xH2O'' to REJECTED_LABEL with an event that records no status
+    change, so the tombstone still resolves to its merge target and the label resolves
+    uniquely to MnSO4 x H2O (#811, #882).'
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 kg_microbe_node_id: CHEBI:86364
 chemical_properties:
   cas_rn: 10034-96-5

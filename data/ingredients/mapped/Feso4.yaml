@@ -40,7 +40,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: FeSO .7H O
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ferrous sulfate (anh.)
   synonym_type: EXACT_SYNONYM
@@ -165,6 +165,15 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: Retyped the stripped-subscript heptahydrate spelling 'FeSO .7H O' to REJECTED_LABEL
+    on the anhydrous record FeSO4 (CHEBI:75832) (#868). Identifier, ontology mapping
+    and status unchanged.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 chemical_properties:
   cas_rn: 7720-78-7
   data_source: PubChem API

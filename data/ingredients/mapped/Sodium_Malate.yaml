@@ -20,34 +20,34 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: DL-Na-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Disodium L-malate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Na malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na-DL-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na-L-malate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Na-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2-DL-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Sodium DL-malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Sodium L-malate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Sodium Malate And
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: disodium (-)-malate
   synonym_type: EXACT_SYNONYM
@@ -65,7 +65,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: DL-Sodium malate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: merged_from_duplicate_mim_record
 - synonym_text: 'Properties: Organic compound, Simple component, Defined component'
   synonym_type: RAW_TEXT
@@ -212,6 +212,17 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: Retyped 5 explicit DL-racemate synonyms ('DL-Na-malate', 'Na-DL-malate',
+    'Na2-DL-malate', 'Sodium DL-malate', 'DL-Sodium malate'), 2 stereounspecified
+    salt labels ('Na malate', 'Na-malate'), and the truncated artifact 'Sodium Malate
+    And' to REJECTED_LABEL on this L-enantiomer record (CHEBI:91261 disodium (S)-malate)
+    (#868). Identifier, ontology mapping and status unchanged.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 chemical_properties:
   cas_rn: 138-09-0
   data_source: OAK/CHEBI xref

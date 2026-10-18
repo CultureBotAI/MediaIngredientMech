@@ -41,7 +41,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: EDTA.Na .2H O
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: EDTANa
   synonym_type: EXACT_SYNONYM
@@ -225,6 +225,15 @@ curation_history:
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
   llm_assisted: false
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: Retyped the stripped-subscript dihydrate spelling 'EDTA.Na .2H O' to REJECTED_LABEL
+    on the anhydrous record Na2-EDTA (CHEBI:64734) (#868). Identifier, ontology mapping
+    and status unchanged.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 kg_microbe_node_id: CHEBI:64734
 chemical_properties:
   cas_rn: 139-33-3

@@ -16,10 +16,10 @@ ontology_mapping:
       a kgmicrobe.ingredient identity with CHEBI:63005 as broader solute parent.
 synonyms:
 - synonym_text: sodium nitrate
-  synonym_type: RELATED_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: sssom_synonym_enrich_review_2026_05_10
 - synonym_text: sodium trioxidonitrate(1-)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -65,6 +65,16 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: Retyped the neat-salt synonyms 'sodium nitrate' and 'sodium trioxidonitrate(1-)'
+    to REJECTED_LABEL on the 0.70 M stock solution record so they resolve uniquely
+    to the neat Sodium nitrate record (CHEBI:63005) (#811). Identifier, ontology mapping
+    and status unchanged.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 ingredient_type: STOCK_SOLUTION
 notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:65246 exact
   mapping. Sodium nitrate (0.70 M stock) is a stock solution ingredient; retain a

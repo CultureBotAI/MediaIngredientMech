@@ -1,4 +1,4 @@
-generation_date: '2026-10-15T02:37:35.785775+00:00'
+generation_date: '2026-10-18T11:54:23.663191+00:00'
 total_count: 2680
 mapped_count: 2611
 unmapped_count: 0
@@ -36853,7 +36853,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na SiO .9H O
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Potash alum
     synonym_type: EXACT_SYNONYM
@@ -36862,7 +36862,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: ZnSO .7H O
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: aluminium potassium sulfate (1/1/2)
     synonym_type: EXACT_SYNONYM
@@ -36952,6 +36952,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the wrong-substance stripped-subscript hydrate labels 'Na SiO
+      .9H O' (sodium metasilicate nonahydrate) and 'ZnSO .7H O' (zinc sulfate heptahydrate)
+      to REJECTED_LABEL on the anhydrous potassium alum record AlK(SO4)2 (CHEBI:86463)
+      (#868). Identifier, ontology mapping and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 10043-67-1
     data_source: PubChem API
@@ -48817,7 +48827,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: CaCl .6H O
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: '[CaCl2]'
     synonym_type: EXACT_SYNONYM
@@ -48975,6 +48985,15 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the stripped-subscript hexahydrate spelling 'CaCl .6H O' to REJECTED_LABEL
+      on the anhydrous record CaCl2 (CHEBI:3312) (#868). Identifier, ontology mapping
+      and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 10043-52-4
     data_source: PubChem API
@@ -59752,7 +59771,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Cobalt(II) chloride--water (1/7)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: CoCl2 x 6 H2O
     synonym_type: RAW_TEXT
@@ -59819,6 +59838,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the heptahydrate name 'Cobalt(II) chloride--water (1/7)' to REJECTED_LABEL
+      on the hexahydrate record Cobalt chloride hexahydrate (CHEBI:53503) (#868).
+      Identifier, ontology mapping and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   notes: Created from FEBA ontology enrichment workflow. Used in 123 FEBA media formulations.
   chemical_properties:
     cas_rn: 7791-13-1
@@ -59864,7 +59892,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: CoCl .6H O
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl 2
     synonym_type: EXACT_SYNONYM
@@ -59985,6 +60013,15 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the stripped-subscript hexahydrate spelling 'CoCl .6H O' to REJECTED_LABEL
+      on the anhydrous record CoCl2 (CHEBI:35696) (#868). Identifier, ontology mapping
+      and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 7646-79-9
     data_source: PubChem (via CHEBI:35696)
@@ -61467,7 +61504,7 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: cobalt(2+) sulfate--water (1/7)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: cobalt(II) sulfate heptahydrate
     synonym_type: REJECTED_LABEL
@@ -61560,6 +61597,15 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the heptahydrate name 'cobalt(2+) sulfate--water (1/7)' to REJECTED_LABEL
+      on the anhydrous record CoSO4 (CHEBI:53470) (#868). Identifier, ontology mapping
+      and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 10124-43-3
     data_source: PubChem API
@@ -64346,44 +64392,47 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Cyanocobalamin (B )
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocobalamin (Vitamin B )
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocobalamin in
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Dicopac
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Vitamin B12 complex
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Vitamin B12  (4)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Vitamin B12  (8)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Vitamin B12  (9)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: vitamin B-12
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: vitamin B12 vitamer
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: vitamin B12 vitamers
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: vitamins B12
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (add after autoclaving)
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Vitamin B12 (cyanocobalamin)
+    synonym_type: EXACT_SYNONYM
+    source: unmapped_ols_exact_audit
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 275
@@ -64501,6 +64550,16 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped 11 vitamin B12 class/footnote synonyms to REJECTED_LABEL on
+      Cyanocobalamin (CHEBI:17439) and added ''Vitamin B12 (cyanocobalamin)'' (EXACT_SYNONYM),
+      relocated from the Vitamin B12 class record (#811, #868). Identifier, ontology
+      mapping and status unchanged.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 68-19-9
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -76397,115 +76456,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:57912
-  preferred_term: DL-Tryptophan
-  ontology_mapping:
-    ontology_id: CHEBI:57912
-    ontology_label: L-tryptophan zwitterion
-    ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-  synonyms:
-  - synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Simple component,
-      Defined component'
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  - synonym_text: 'Role: Nitrogen source; Properties: Simple component, Defined component,
-      Organic compound'
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  - synonym_text: (2S)-2-ammonio-3-(1H-indol-3-yl)propanoate
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: (2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 5
-    media_count: 5
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-05T19:51:58.519688+00:00'
-    curator: fetch_cas_rn_from_pubchem
-    action: ADDED_CAS_RN
-    changes: Added CAS-RN:200-194-9 from PubChem API via name lookup (DL-Tryptophan)
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (2S)-2-ammonio-3-(1H-indol-3-yl)propanoate,
-      (2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-05-01T07:35:33.376971+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:29.349447+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C11H12N2O2; inchi=InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2;
-      smiles=[NH3+][C@@H](Cc1cnc2ccccc12)C(=O)[O-]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:14.160260+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-29T23:35:36.111022+00:00'
-    curator: extract_roles_from_synonyms
-    action: ANNOTATED
-    changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
-      nutritional_roles.NITROGEN_SOURCE'
-  - timestamp: '2026-08-10T00:00:00+00:00'
-    curator: regrade_synonym_matches
-    action: REGRADED_EXACT_TO_SYNONYM
-    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
-      does not equal the term's primary label 'L-tryptophan zwitterion'; it matches
-      the ChEBI synonym '(2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate' on CHEBI:57912.
-      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
-      as a match to a known synonym, so the recorded grade overstated. ontology_id
-      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
-      grades emit skos:exactMatch).
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518781+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 4/4 -> 5/5 (media_count/total_occurrences), derived
-      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
-      values came from the importer retired in #453, whose media_count counted a list
-      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  chemical_properties:
-    data_source: PubChem API
-    retrieval_date: '2026-04-05T19:51:58.519606+00:00'
-    molecular_formula: C11H12N2O2
-    inchi: InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)/t9-/m0/s1
-    smiles: '[NH3+][C@@H](Cc1cnc2ccccc12)C(=O)[O-]'
-  kg_microbe_node_id: CHEBI:57912
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: NITROGEN_SOURCE
-    confidence: 1.0
-    evidence:
-    - reference_type: DATABASE_ENTRY
-      reference_text: Imported from CultureMech pipeline
-      curator_note: 'Original role text: Nitrogen Source'
 - identifier: CHEBI:197511
   preferred_term: Docosanol
   ontology_mapping:
@@ -83227,7 +83177,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: FeSO .7H O
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ferrous sulfate (anh.)
     synonym_type: EXACT_SYNONYM
@@ -83352,6 +83302,15 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the stripped-subscript heptahydrate spelling 'FeSO .7H O' to
+      REJECTED_LABEL on the anhydrous record FeSO4 (CHEBI:75832) (#868). Identifier,
+      ontology mapping and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 7720-78-7
     data_source: PubChem API
@@ -97434,8 +97393,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REMOVED_WRONG_FORM_CAS_RN
+    changes: 'Removed myo-inositol CAS 87-89-8 from the isomer-unspecified class record
+      Inositol (CHEBI:24848) so CAS:87-89-8 resolves uniquely to myo-Inositol (CHEBI:17268)
+      (#811, #868). Identifier, ontology mapping and status unchanged.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
-    cas_rn: 87-89-8
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:52:25.918404+00:00'
     molecular_formula: C6H12O6
@@ -101400,10 +101367,10 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Potassium Phosphate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: (dibasic)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: CultureMech
   - synonym_text: KH2PO4 (0.4 g/l)
     synonym_type: RAW_TEXT
@@ -101538,6 +101505,16 @@ ingredients:
       not resolve them: ''KH2PO4 (0.4 g/l)'' (x1 CultureMech mentions); ''KH2PO4 (7%
       w/v)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped the split CSV fragments ''Potassium Phosphate'' and ''(dibasic)''
+      (from ''Potassium Phosphate, dibasic'', K2HPO4) to REJECTED_LABEL on the monobasic
+      record KH2PO4 (CHEBI:63036) (#811, #868). Identifier, ontology mapping and status
+      unchanged.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 7778-77-0
     data_source: PubChem API
@@ -107991,7 +107968,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Tryptophan
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -108071,6 +108048,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped bare stereo-unspecified ''Tryptophan'' to REJECTED_LABEL on
+      L-Tryptophan (CHEBI:16828) because MIM carries a separate stereo-unspecified
+      Tryptophan record (CHEBI:27897) (#811, #868). Identifier, ontology mapping and
+      status unchanged.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 73-22-3
     data_source: PubChem API
@@ -111457,7 +111444,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: LiCl.H O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -111540,6 +111527,15 @@ ingredients:
       O''. Tokens already present on the kg-microbe ontology node were left out as
       redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the stripped-subscript monohydrate spelling 'LiCl.H O' to REJECTED_LABEL
+      on the anhydrous record LiCl (CHEBI:48607) (#868). Identifier, ontology mapping
+      and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 7447-41-8
     data_source: PubChem API
@@ -113139,7 +113135,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: MgCl*6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2∙6H2O
     synonym_type: HYDRATE_FORM
@@ -113156,13 +113152,13 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: MgCl 2
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: MgCl2 . 6H2O
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: MgCl2 x 6 H2O (200 g/l stock solution)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: MgCl2x 6H2O
     synonym_type: RAW_TEXT
@@ -113293,6 +113289,16 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped ''MgCl 2'' (anhydrous formula), ''MgCl2 x 6 H2O (200 g/l stock
+      solution)'' (stock concentration label), and ''MgCl*6H2O'' (shared collision
+      token with MgCl2 x 6 H2O) to REJECTED_LABEL (#811, #868). Identifier, ontology
+      mapping and status unchanged.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 7791-18-6
     data_source: OAK/CHEBI xref
@@ -116617,10 +116623,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  chemical_properties:
-    cas_rn: 4432-31-9
-    data_source: PubChem API
-    retrieval_date: '2026-04-05T19:52:55.073127+00:00'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REMOVED_WRONG_FORM_CAS_RN
+    changes: 'Removed CAS 4432-31-9 (free acid 2-(N-morpholino)ethanesulfonic acid,
+      CHEBI:39010) from the conjugate-base class record MES (CHEBI:39005, 2-(N-morpholino)ethanesulfonate)
+      so CAS:4432-31-9 resolves uniquely to CHEBI:39010 (#811, #868). Identifier,
+      ontology mapping and status unchanged.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   kg_microbe_node_id: CHEBI:39010
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
@@ -121965,7 +121977,7 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MnSO4・xH2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: manganese(2+) sulfate
     synonym_type: REJECTED_LABEL
@@ -122086,6 +122098,15 @@ ingredients:
       text and source metadata. No identity, mapping, role, or remaining-synonym claim
       was adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Merge tombstone (REJECTED, CHEBI:86364): retyped the unspecified-hydrate
+      spelling ''MnSO4・xH2O'' to REJECTED_LABEL with an event that records no status
+      change, so the tombstone still resolves to its merge target and the label resolves
+      uniquely to MnSO4 x H2O (#811, #882).'
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   kg_microbe_node_id: CHEBI:86364
   chemical_properties:
     cas_rn: 10034-96-5
@@ -128947,7 +128968,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: EDTA.Na .2H O
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: EDTANa
     synonym_type: EXACT_SYNONYM
@@ -129132,6 +129153,15 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the stripped-subscript dihydrate spelling 'EDTA.Na .2H O' to
+      REJECTED_LABEL on the anhydrous record Na2-EDTA (CHEBI:64734) (#868). Identifier,
+      ontology mapping and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   kg_microbe_node_id: CHEBI:64734
   chemical_properties:
     cas_rn: 139-33-3
@@ -131885,6 +131915,9 @@ ingredients:
   - synonym_text: Na2HPO4•7H2O
     synonym_type: HYDRATE_FORM
     source: unmapped_duplicate_review_2026_05_07
+  - synonym_text: Na2HPO4·7H2O
+    synonym_type: HYDRATE_FORM
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 26
@@ -132009,6 +132042,15 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: ADDED_SYNONYMS
+    changes: Added middle-dot hydrate spelling 'Na2HPO4·7H2O' (HYDRATE_FORM) on Na2HPO4
+      x 7 H2O so the MIM label index resolves this surface form directly to the heptahydrate
+      record (#808). Identifier, ontology mapping and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 7782-85-6
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -132328,7 +132370,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2MoO4 . H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 x 2 H2O (0.1% w/v)
     synonym_type: HYDRATE_FORM
@@ -132340,7 +132382,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2MoO4 · H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 ⋅ 2H2O
     synonym_type: HYDRATE_FORM
@@ -132349,10 +132391,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2MoO4.H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4xH2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4⋅2H2O
     synonym_type: HYDRATE_FORM
@@ -132491,6 +132533,15 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Merge tombstone (REJECTED, CHEBI:68623): retyped the monohydrate/unspecified-hydrate
+      spellings ''Na2MoO4 . H2O'', ''Na2MoO4 · H2O'', ''Na2MoO4.H2O'', and ''Na2MoO4xH2O''
+      to REJECTED_LABEL with an event that records no status change, so the tombstone
+      still resolves to its merge target (#811, #868, #882).'
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 10102-40-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -134656,7 +134707,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: Na2SiO3
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: Na2SiO3 x 9 H20
     synonym_type: RAW_TEXT
@@ -134776,6 +134827,15 @@ ingredients:
       x 9 H20''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped bare anhydrous formula ''Na2SiO3'' to REJECTED_LABEL on the
+      nonahydrate record Na2SiO3 x 9 H2O (#811, #868). Identifier, ontology mapping
+      and status unchanged.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   kg_microbe_node_id: CHEBI:132108
   chemical_properties:
     cas_rn: 13517-24-3
@@ -142406,7 +142466,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NiCl2 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 · 6H2O
     synonym_type: HYDRATE_FORM
@@ -142433,7 +142493,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NiCl2・H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 ∙ 6 H2O
     synonym_type: HYDRATE_FORM
@@ -142600,6 +142660,15 @@ ingredients:
       source metadata. No identity, mapping, role, or remaining-synonym claim was
       adjudicated.'
     llm_assisted: true
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Merge tombstone (REJECTED, CHEBI:53542): retyped the monohydrate/unspecified-hydrate
+      spellings ''NiCl2 x H2O'' and ''NiCl2・H2O'' to REJECTED_LABEL with an event
+      that records no status change, so the tombstone still resolves to its merge
+      target (#811, #868, #882).'
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   kg_microbe_node_id: CHEBI:53542
   chemical_properties:
     cas_rn: 7791-20-0
@@ -164936,34 +165005,34 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: DL-Na-malate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Disodium L-malate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na malate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na-DL-malate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na-L-malate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na-malate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2-DL-malate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Sodium DL-malate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Sodium L-malate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Sodium Malate And
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: disodium (-)-malate
     synonym_type: EXACT_SYNONYM
@@ -164981,7 +165050,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: DL-Sodium malate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: 'Properties: Organic compound, Simple component, Defined component'
     synonym_type: RAW_TEXT
@@ -165128,6 +165197,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped 5 explicit DL-racemate synonyms ('DL-Na-malate', 'Na-DL-malate',
+      'Na2-DL-malate', 'Sodium DL-malate', 'DL-Sodium malate'), 2 stereounspecified
+      salt labels ('Na malate', 'Na-malate'), and the truncated artifact 'Sodium Malate
+      And' to REJECTED_LABEL on this L-enantiomer record (CHEBI:91261 disodium (S)-malate)
+      (#868). Identifier, ontology mapping and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 138-09-0
     data_source: OAK/CHEBI xref
@@ -165425,10 +165505,10 @@ ingredients:
         a kgmicrobe.ingredient identity with CHEBI:63005 as broader solute parent.
   synonyms:
   - synonym_text: sodium nitrate
-    synonym_type: RELATED_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: sssom_synonym_enrich_review_2026_05_10
   - synonym_text: sodium trioxidonitrate(1-)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -165474,6 +165554,16 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the neat-salt synonyms 'sodium nitrate' and 'sodium trioxidonitrate(1-)'
+      to REJECTED_LABEL on the 0.70 M stock solution record so they resolve uniquely
+      to the neat Sodium nitrate record (CHEBI:63005) (#811). Identifier, ontology
+      mapping and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   ingredient_type: STOCK_SOLUTION
   notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:65246 exact
     mapping. Sodium nitrate (0.70 M stock) is a stock solution ingredient; retain
@@ -181880,46 +181970,46 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: CN-Cbl
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CO-CYANOCOBALAMIN
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Coalpha-[alpha-(5,6-dimethylbenzimidazolyl)]-Cobeta-cyanocobamide
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocob(III)alamin
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocobalamin
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocobalamin (B )
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocobalamin (Vitamin B )
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocobalamine
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocobalamin in
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Dicopac
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Vitamin B12 complex
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Vitamin B12  (4)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Vitamin B12  (8)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Vitamin B12  (9)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: vitamin B-12
     synonym_type: EXACT_SYNONYM
@@ -181931,7 +182021,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: merged_from_duplicate_mim_record
   - synonym_text: Vitamin B12 (cyanocobalamin)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: unmapped_ols_exact_audit
   - synonym_text: Vitamine B12
     synonym_type: EXACT_SYNONYM
@@ -182052,10 +182142,16 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-fable-5-1
-  chemical_properties:
-    cas_rn: 68-19-9
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-05T21:48:45.943272+00:00'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Removed cyanocobalamin CAS 68-19-9 and retyped 13 cyanocobalamin-specific
+      or numbered-footnote synonyms to REJECTED_LABEL on the cobalamin class record
+      Vitamin B12 (CHEBI:27683) (#811, #868). Identifier, ontology mapping and status
+      unchanged.'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   kg_microbe_node_id: CHEBI:176843
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -184858,7 +184954,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: ZnCl .6H O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -184939,6 +185035,15 @@ ingredients:
       .6H O''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: Retyped the stripped-subscript hexahydrate spelling 'ZnCl .6H O' to REJECTED_LABEL
+      on the anhydrous record ZnCl2 (CHEBI:49976) (#868). Identifier, ontology mapping
+      and status unchanged.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
   chemical_properties:
     cas_rn: 7646-85-7
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -221930,3 +222035,138 @@ ingredients:
   - role: MINERAL_SOURCE
     confidence: 0.8
     evidence: []
+- identifier: cas:54-12-6
+  preferred_term: DL-Tryptophan
+  ontology_mapping:
+    ontology_id: CHEBI:27897
+    ontology_label: tryptophan
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: '[HISTORICAL — superseded by #868 curation: DL-Tryptophan is the racemate
+        (CAS 54-12-6), not the L-enantiomer zwitterion CHEBI:57912] Imported from
+        CultureMech pipeline, quality=DIRECT_MATCH'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#868)
+      notes: identifier CHEBI:57912 -> cas:54-12-6; ontology_id CHEBI:57912 -> CHEBI:27897;
+        mapping_quality SYNONYM_MATCH -> NARROW_MATCH. The record names DL-Tryptophan
+        (the racemate, CAS 54-12-6, PubChem CID 9060), whereas CHEBI:57912 is specifically
+        the L-tryptophan zwitterion ((2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate).
+        Local ChEBI release 255 has no racemic DL-tryptophan term (CHEBI:16828 is
+        L-tryptophan, CHEBI:16796 is D-tryptophan, and CHEBI:27897 is stereo-unspecified
+        tryptophan). Per MAPPING_SEMANTICS §3 step 2, the record uses cas:54-12-6
+        as its exact registry identifier with NARROW_MATCH (skos:broadMatch) to the
+        stereo-unspecified parent CHEBI:27897 and Rule B1 registry row kgmicrobe.compound:dl-tryptophan.
+  synonyms:
+  - synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Simple component,
+      Defined component'
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: 'Role: Nitrogen source; Properties: Simple component, Defined component,
+      Organic compound'
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: (2S)-2-ammonio-3-(1H-indol-3-yl)propanoate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: (2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 5
+    media_count: 5
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-05T19:51:58.519688+00:00'
+    curator: fetch_cas_rn_from_pubchem
+    action: ADDED_CAS_RN
+    changes: Added CAS-RN:200-194-9 from PubChem API via name lookup (DL-Tryptophan)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (2S)-2-ammonio-3-(1H-indol-3-yl)propanoate,
+      (2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-01T07:35:33.376971+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:29.349447+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C11H12N2O2; inchi=InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2;
+      smiles=[NH3+][C@@H](Cc1cnc2ccccc12)C(=O)[O-]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:14.160260+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-29T23:35:36.111022+00:00'
+    curator: extract_roles_from_synonyms
+    action: ANNOTATED
+    changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
+      nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'L-tryptophan zwitterion'; it matches
+      the ChEBI synonym '(2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate' on CHEBI:57912.
+      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+      as a match to a known synonym, so the recorded grade overstated. ontology_id
+      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
+      grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518781+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 4/4 -> 5/5 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-18T11:45:00+00:00'
+    curator: claude
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: Regrounded DL-Tryptophan from CHEBI:57912 (L-tryptophan zwitterion) to
+      cas:54-12-6 with NARROW_MATCH to the stereo-unspecified parent CHEBI:27897 (tryptophan),
+      published as skos:broadMatch plus cas:54-12-6 and Rule B1 registry row kgmicrobe.compound:dl-tryptophan
+      (#868). Retyped the 2 L-zwitterion (2S) synonyms to REJECTED_LABEL and replaced
+      the L-zwitterion structure with the racemic/flat tryptophan structure and CAS
+      54-12-6.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-opus-4-7
+  chemical_properties:
+    cas_rn: 54-12-6
+    data_source: PubChem CID 9060; ChEBI:27897
+    retrieval_date: '2026-10-18T11:45:00+00:00'
+    molecular_formula: C11H12N2O2
+    inchi: InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)
+    smiles: NC(Cc1cnc2ccccc12)C(=O)O
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: NITROGEN_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_type: DATABASE_ENTRY
+      reference_text: Imported from CultureMech pipeline
+      curator_note: 'Original role text: Nitrogen Source'

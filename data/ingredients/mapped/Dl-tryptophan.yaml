@@ -1,14 +1,27 @@
-identifier: CHEBI:57912
+identifier: cas:54-12-6
 preferred_term: DL-Tryptophan
 ontology_mapping:
-  ontology_id: CHEBI:57912
-  ontology_label: L-tryptophan zwitterion
+  ontology_id: CHEBI:27897
+  ontology_label: tryptophan
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    notes: '[HISTORICAL — superseded by #868 curation: DL-Tryptophan is the racemate
+      (CAS 54-12-6), not the L-enantiomer zwitterion CHEBI:57912] Imported from CultureMech
+      pipeline, quality=DIRECT_MATCH'
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#868)
+    notes: identifier CHEBI:57912 -> cas:54-12-6; ontology_id CHEBI:57912 -> CHEBI:27897;
+      mapping_quality SYNONYM_MATCH -> NARROW_MATCH. The record names DL-Tryptophan
+      (the racemate, CAS 54-12-6, PubChem CID 9060), whereas CHEBI:57912 is specifically
+      the L-tryptophan zwitterion ((2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate).
+      Local ChEBI release 255 has no racemic DL-tryptophan term (CHEBI:16828 is L-tryptophan,
+      CHEBI:16796 is D-tryptophan, and CHEBI:27897 is stereo-unspecified tryptophan).
+      Per MAPPING_SEMANTICS §3 step 2, the record uses cas:54-12-6 as its exact registry
+      identifier with NARROW_MATCH (skos:broadMatch) to the stereo-unspecified parent
+      CHEBI:27897 and Rule B1 registry row kgmicrobe.compound:dl-tryptophan.
 synonyms:
 - synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Simple component,
     Defined component'
@@ -19,10 +32,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: (2S)-2-ammonio-3-(1H-indol-3-yl)propanoate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: (2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
@@ -92,13 +105,26 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REGROUNDED_STEREOCHEMICAL_FORM
+  changes: Regrounded DL-Tryptophan from CHEBI:57912 (L-tryptophan zwitterion) to
+    cas:54-12-6 with NARROW_MATCH to the stereo-unspecified parent CHEBI:27897 (tryptophan),
+    published as skos:broadMatch plus cas:54-12-6 and Rule B1 registry row kgmicrobe.compound:dl-tryptophan
+    (#868). Retyped the 2 L-zwitterion (2S) synonyms to REJECTED_LABEL and replaced
+    the L-zwitterion structure with the racemic/flat tryptophan structure and CAS
+    54-12-6.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 chemical_properties:
-  data_source: PubChem API
-  retrieval_date: '2026-04-05T19:51:58.519606+00:00'
+  cas_rn: 54-12-6
+  data_source: PubChem CID 9060; ChEBI:27897
+  retrieval_date: '2026-10-18T11:45:00+00:00'
   molecular_formula: C11H12N2O2
-  inchi: InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)/t9-/m0/s1
-  smiles: '[NH3+][C@@H](Cc1cnc2ccccc12)C(=O)[O-]'
-kg_microbe_node_id: CHEBI:57912
+  inchi: InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)
+  smiles: NC(Cc1cnc2ccccc12)C(=O)O
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: NITROGEN_SOURCE

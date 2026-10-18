@@ -907,7 +907,6 @@
 | CHEBI:6650 | DL-Malic acid | CHEBI:6650 | CHEBI | EXACT_MATCH | 42 |
 | CHEBI:16811 | DL-methionine | CHEBI:16811 | CHEBI | SYNONYM_MATCH | 28 |
 | CHEBI:25351 | DL-mevalonic acid | CHEBI:25351 | CHEBI | SYNONYM_MATCH | 6 |
-| CHEBI:57912 | DL-Tryptophan | CHEBI:57912 | CHEBI | SYNONYM_MATCH | 5 |
 | CHEBI:197511 | Docosanol | CHEBI:197511 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4676 | Dodecandioic acid | CHEBI:4676 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:28817 | dodecane | CHEBI:28817 | CHEBI | EXACT_MATCH | 0 |
@@ -2622,6 +2621,7 @@
 | CHEBI:39063 | Tricine | CHEBI:39063 | CHEBI | CAS_RN_LOOKUP | 48 |
 | NCIT:C217928 | Furaltadone hydrochloride | NCIT:C217928 | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | MgSO4·H2O | CHEBI:32599 | CHEBI | NARROW_MATCH | 20 |
+| cas:54-12-6 | DL-Tryptophan | CHEBI:27897 | CHEBI | NARROW_MATCH | 5 |
 
 ## Unmapped Ingredients
 

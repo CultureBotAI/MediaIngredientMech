@@ -20,6 +20,7 @@ CALCIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:caso4_x_7_h2o"
 CITRIC_ACID_MONOHYDRATE_ID = "CHEBI:31404"
 COPPER_ID = "kgmicrobe.compound:copper"
 DISODIUM_2_OXOGLUTARATE_ID = "kgmicrobe.compound:na2_alpha-ketoglutarate"
+DL_TRYPTOPHAN_ID = "cas:54-12-6"
 ELEMENTAL_SULFUR_ID = "CHEBI:33403"
 EMIM_LYSINE_ID = "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine"
 FERROUS_SULFATE_HEXAHYDRATE_ID = "kgmicrobe.compound:feso4_x_6_h2o"
@@ -71,6 +72,7 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("Elemental sulphur"): ELEMENTAL_SULFUR_ID,
     _source_label_key("Na2 alpha-ketoglutarate"): DISODIUM_2_OXOGLUTARATE_ID,
     _source_label_key("Na2 α-ketoglutarate"): DISODIUM_2_OXOGLUTARATE_ID,
+    _source_label_key("DL-Tryptophan"): DL_TRYPTOPHAN_ID,
     _source_label_key("D,L-6,8-Thioctic Acid"): LIPOIC_ACID_ID,
     _source_label_key("Thioctic acid"): LIPOIC_ACID_ID,
     _source_label_key("α-lipoic acid"): LIPOIC_ACID_ID,

@@ -36,7 +36,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Tryptophan
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -116,6 +116,15 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped bare stereo-unspecified ''Tryptophan'' to REJECTED_LABEL on L-Tryptophan
+    (CHEBI:16828) because MIM carries a separate stereo-unspecified Tryptophan record
+    (CHEBI:27897) (#811, #868). Identifier, ontology mapping and status unchanged.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 chemical_properties:
   cas_rn: 73-22-3
   data_source: PubChem API

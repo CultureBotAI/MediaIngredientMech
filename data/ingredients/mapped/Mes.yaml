@@ -73,10 +73,16 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
-chemical_properties:
-  cas_rn: 4432-31-9
-  data_source: PubChem API
-  retrieval_date: '2026-04-05T19:52:55.073127+00:00'
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REMOVED_WRONG_FORM_CAS_RN
+  changes: 'Removed CAS 4432-31-9 (free acid 2-(N-morpholino)ethanesulfonic acid,
+    CHEBI:39010) from the conjugate-base class record MES (CHEBI:39005, 2-(N-morpholino)ethanesulfonate)
+    so CAS:4432-31-9 resolves uniquely to CHEBI:39010 (#811, #868). Identifier, ontology
+    mapping and status unchanged.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 kg_microbe_node_id: CHEBI:39010
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:

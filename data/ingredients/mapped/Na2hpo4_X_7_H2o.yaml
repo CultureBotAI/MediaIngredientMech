@@ -75,6 +75,9 @@ synonyms:
 - synonym_text: Na2HPO4•7H2O
   synonym_type: HYDRATE_FORM
   source: unmapped_duplicate_review_2026_05_07
+- synonym_text: Na2HPO4·7H2O
+  synonym_type: HYDRATE_FORM
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 26
@@ -198,6 +201,15 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-opus-5-5
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: ADDED_SYNONYMS
+  changes: Added middle-dot hydrate spelling 'Na2HPO4·7H2O' (HYDRATE_FORM) on Na2HPO4
+    x 7 H2O so the MIM label index resolves this surface form directly to the heptahydrate
+    record (#808). Identifier, ontology mapping and status unchanged.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 chemical_properties:
   cas_rn: 7782-85-6
   data_source: CultureBotHT/compounds_to_cas.csv

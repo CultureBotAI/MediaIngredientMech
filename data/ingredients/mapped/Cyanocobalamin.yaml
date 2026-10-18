@@ -40,44 +40,47 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Cyanocobalamin (B )
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Cyanocobalamin (Vitamin B )
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Cyanocobalamin in
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Dicopac
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Vitamin B12 complex
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Vitamin B12  (4)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Vitamin B12  (8)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Vitamin B12  (9)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: vitamin B-12
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: vitamin B12 vitamer
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: vitamin B12 vitamers
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: vitamins B12
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: (add after autoclaving)
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: Vitamin B12 (cyanocobalamin)
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_ols_exact_audit
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 275
@@ -194,6 +197,16 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped 11 vitamin B12 class/footnote synonyms to REJECTED_LABEL on Cyanocobalamin
+    (CHEBI:17439) and added ''Vitamin B12 (cyanocobalamin)'' (EXACT_SYNONYM), relocated
+    from the Vitamin B12 class record (#811, #868). Identifier, ontology mapping and
+    status unchanged.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 chemical_properties:
   cas_rn: 68-19-9
   data_source: CultureBotHT/compounds_to_cas.csv

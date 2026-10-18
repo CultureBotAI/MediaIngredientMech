@@ -33,7 +33,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 · 6H2O
   synonym_type: HYDRATE_FORM
@@ -60,7 +60,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2・H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 ∙ 6 H2O
   synonym_type: HYDRATE_FORM
@@ -226,6 +226,15 @@ curation_history:
     chloride''; ''nickel(II) chloride''. Preserved original text and source metadata.
     No identity, mapping, role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Merge tombstone (REJECTED, CHEBI:53542): retyped the monohydrate/unspecified-hydrate
+    spellings ''NiCl2 x H2O'' and ''NiCl2・H2O'' to REJECTED_LABEL with an event that
+    records no status change, so the tombstone still resolves to its merge target
+    (#811, #868, #882).'
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 kg_microbe_node_id: CHEBI:53542
 chemical_properties:
   cas_rn: 7791-20-0

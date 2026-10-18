@@ -27,7 +27,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Cobalt(II) chloride--water (1/7)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: CoCl2 x 6 H2O
   synonym_type: RAW_TEXT
@@ -92,6 +92,15 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: Retyped the heptahydrate name 'Cobalt(II) chloride--water (1/7)' to REJECTED_LABEL
+    on the hexahydrate record Cobalt chloride hexahydrate (CHEBI:53503) (#868). Identifier,
+    ontology mapping and status unchanged.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 notes: Created from FEBA ontology enrichment workflow. Used in 123 FEBA media formulations.
 chemical_properties:
   cas_rn: 7791-13-1

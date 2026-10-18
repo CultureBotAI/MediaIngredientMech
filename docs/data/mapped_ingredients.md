@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-10-16T07:09:21.859903+00:00
+Generated: 2026-10-18T11:57:29.666627+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -923,7 +923,6 @@ Total: 2680 ingredients
 | CHEBI:6650 | CHEBI:6650 | DL-Malic acid | MAPPED | CHEBI | EXACT_MATCH | 42 |
 | CHEBI:16811 | CHEBI:16811 | DL-methionine | MAPPED | CHEBI | SYNONYM_MATCH | 28 |
 | CHEBI:25351 | CHEBI:25351 | DL-mevalonic acid | MAPPED | CHEBI | SYNONYM_MATCH | 6 |
-| CHEBI:57912 | CHEBI:57912 | DL-Tryptophan | MAPPED | CHEBI | SYNONYM_MATCH | 5 |
 | CHEBI:197511 | CHEBI:197511 | Docosanol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4676 | CHEBI:4676 | Dodecandioic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:28817 | CHEBI:28817 | dodecane | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2685,3 +2684,4 @@ Total: 2680 ingredients
 | CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 48 |
 | NCIT:C217928 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | CHEBI:32599 | MgSO4·H2O | MAPPED | CHEBI | NARROW_MATCH | 20 |
+| cas:54-12-6 | CHEBI:27897 | DL-Tryptophan | MAPPED | CHEBI | NARROW_MATCH | 5 |

@@ -14,7 +14,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: MgCl*6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2∙6H2O
   synonym_type: HYDRATE_FORM
@@ -31,13 +31,13 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: MgCl 2
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: MgCl2 . 6H2O
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
 - synonym_text: MgCl2 x 6 H2O (200 g/l stock solution)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: MgCl2x 6H2O
   synonym_type: RAW_TEXT
@@ -167,6 +167,16 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-opus-5-5
+- timestamp: '2026-10-18T11:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped ''MgCl 2'' (anhydrous formula), ''MgCl2 x 6 H2O (200 g/l stock
+    solution)'' (stock concentration label), and ''MgCl*6H2O'' (shared collision token
+    with MgCl2 x 6 H2O) to REJECTED_LABEL (#811, #868). Identifier, ontology mapping
+    and status unchanged.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-4-7
 chemical_properties:
   cas_rn: 7791-18-6
   data_source: OAK/CHEBI xref
