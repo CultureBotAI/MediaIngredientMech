@@ -131,6 +131,7 @@ def test_composite_recipe_is_frozen_from_unactivated_temporary_worktree(tmp_path
         "verify_roundtrip.py",
         "export_individual_records.py",
         "audit_duplicate_identifiers.py",
+        "audit_published_subjects.py",
         "validate_component_partonomy.py",
         "check_flat_export_coverage.py",
         "check_instruction_refs.py",

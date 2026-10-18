@@ -89,6 +89,49 @@ def _formula_elements(formula: str) -> tuple | None:
     return tuple(sorted(total.items())) or None
 
 
+def _inchi(ing: dict) -> str:
+    """Standard InChI from chemical_properties, if present (#814)."""
+    return (ing.get("chemical_properties") or {}).get("inchi", "") or ""
+
+
+_STEREO_TOKEN_RE = re.compile(
+    r"(?:^|(?<=[\s(\[-]))"
+    r"(?:"
+    r"(?P<rac>d,l|dl|rac|\(\+-\)|\(±\)|±)(?=[-\s)\]]|$)"
+    r"|(?P<dl>d|l)(?=[-)\(])"
+    r"|(?P<sign>\(\+\)|\(-\))"
+    r"|(?P<cip>\([0-9]*(?:[rs]|rs)(?:,[0-9]*[rs])*\))"
+    r"|(?P<geom>meso|cis|trans)(?=[-\s)\]])"
+    r")",
+    re.IGNORECASE,
+)
+
+
+def _stereo_descriptors(name: str) -> tuple[str, ...]:
+    """Extract normalized stereochemical tokens from an ingredient name (#814).
+
+    Formula element totals cannot distinguish enantiomers, racemates, or
+    stereo-unspecified records (`L-Histidine` vs `DL-Histidine` vs `Histidine`,
+    all C6H9N3O2). Comparing stereo descriptors alongside InChI prevents
+    `agree:same_substance` from collapsing stereochemically distinct records.
+    """
+    if not name:
+        return ()
+    tokens: set[str] = set()
+    for m in _STEREO_TOKEN_RE.finditer(name):
+        if m.group("rac"):
+            tokens.add("dl")
+        elif m.group("dl"):
+            tokens.add(m.group("dl").lower())
+        elif m.group("sign"):
+            tokens.add(m.group("sign"))
+        elif m.group("cip"):
+            tokens.add(m.group("cip").lower())
+        elif m.group("geom"):
+            tokens.add(m.group("geom").lower())
+    return tuple(sorted(tokens))
+
+
 def _ontology_label(ing: dict) -> str:
     """The mapped term's own label, e.g. `potassium hydroxide` for the record `KOH`."""
     return (ing.get("ontology_mapping") or {}).get("ontology_label", "") or ""
@@ -391,10 +434,16 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # keep the rejected substance's chemistry, e.g. trisodium phosphate's
     # formula under CHEBI:34683 (#804).
     formula_of: dict[str, str] = {}
+    inchi_of: dict[str, str] = {}
+    stereo_of: dict[str, tuple[str, ...]] = {}
     for ing in sorted(ingredients, key=lambda i: i.get("mapping_status") != "MAPPED"):
         key = ing.get("identifier", "")
         if not formula_of.get(key):
             formula_of[key] = _molecular_formula(ing)
+        if not inchi_of.get(key):
+            inchi_of[key] = _inchi(ing)
+        if key not in stereo_of and ing.get("preferred_term"):
+            stereo_of[key] = _stereo_descriptors(ing.get("preferred_term", ""))
     groups: dict[str, list[dict]] = {}
     for r in rows:
         groups.setdefault(r["label"].strip().lower(), []).append(r)
@@ -415,6 +464,14 @@ def export_label_index(ingredients: list[dict], output_path: Path):
         if len(known) > 1:
             return "conflict:different_substances"
         if all(p is not None for p in parsed):
+            inchis = [inchi_of.get(i, "") for i in sorted(ids)]
+            known_inchis = {inc for inc in inchis if inc}
+            if len(known_inchis) > 1:
+                return "conflict:different_substances"
+            if len({stereo_of.get(i, ()) for i in ids}) > 1:
+                return "conflict:different_substances"
+            if known_inchis and not all(inchis):
+                return "unresolved:partial_chemistry"
             return "agree:same_substance"
         return "unresolved:partial_chemistry"
 

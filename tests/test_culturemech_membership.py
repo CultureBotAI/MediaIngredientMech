@@ -571,3 +571,35 @@ def test_the_absent_identifiers_are_persisted_not_only_counted(mod, tmp_path, mo
     assert lines[0].startswith("# prov=x")
     assert lines[1] == "upstream_identifier\trecipes_it_would_have_contributed"
     assert lines[2:] == ["CHEBI:absent\t26", "CHEBI:other\t2"]
+
+
+def test_the_artifact_header_matches_pinned_culturemech_rev(mod):
+    """#886: the CultureMech commit MIM's edges must match is recorded in code
+    and checked against the artifact's provenance header."""
+    rev = mod.parse_header_rev(ARTIFACT)
+    assert rev is not None and rev != "unknown"
+    assert rev == mod.PINNED_CULTUREMECH_REV
+    assert mod.check_rev(ARTIFACT, mod.PINNED_CULTUREMECH_REV) == []
+    assert mod.main(["--check-rev"]) == 0
+
+
+def test_check_rev_rejects_mismatched_or_unknown_provenance(mod, tmp_path):
+    """#886: a rebuild from an unpinned or non-git tree fails the pin check."""
+    bad = tmp_path / "membership.tsv"
+    bad.write_text(
+        "# source=ingredient_occurrences.tsv culturemech_rev=deadbeef00 edges=1 recipes=1 mim_records=1\n"
+        "mim_identifier\trecipe_id\toccurrences\n",
+        encoding="utf-8",
+    )
+    errs = mod.check_rev(bad, mod.PINNED_CULTUREMECH_REV)
+    assert any("does not match PINNED_CULTUREMECH_REV" in e for e in errs)
+
+    unk = tmp_path / "unknown_rev.tsv"
+    unk.write_text(
+        "# source=ingredient_occurrences.tsv culturemech_rev=unknown edges=1 recipes=1 mim_records=1\n"
+        "mim_identifier\trecipe_id\toccurrences\n",
+        encoding="utf-8",
+    )
+    errs_unk = mod.check_rev(unk, mod.PINNED_CULTUREMECH_REV)
+    assert any("unknown" in e for e in errs_unk)
+

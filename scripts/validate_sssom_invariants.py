@@ -1146,6 +1146,85 @@ def rejected_labels(subject_id: str) -> dict[str, str]:
     return out
 
 
+_CAS_RN_RE = re.compile(r"\b(\d{2,7}-\d{2}-\d)\b")
+
+
+@cache
+def _cas_rns_for_subject(subject_id: str) -> dict[str, str]:
+    """Return ``dehyphenated_digits -> cas_rn`` for one MIM subject (#702)."""
+    try:
+        data = yaml.safe_load(
+            _yaml_path_for_subject(subject_id).read_text(encoding="utf-8")
+        ) or {}
+    except (OSError, yaml.YAMLError):
+        return {}
+    out: dict[str, str] = {}
+    chem = data.get("chemical_properties")
+    if isinstance(chem, dict) and chem.get("cas_rn"):
+        for m in _CAS_RN_RE.finditer(str(chem["cas_rn"])):
+            rn = m.group(1)
+            out[rn.replace("-", "")] = rn
+    for sf in data.get("supplied_form") or []:
+        if isinstance(sf, dict) and sf.get("cas_rn"):
+            for m in _CAS_RN_RE.finditer(str(sf["cas_rn"])):
+                rn = m.group(1)
+                out[rn.replace("-", "")] = rn
+    for syn in data.get("synonyms") or []:
+        if isinstance(syn, dict) and syn.get("synonym_text"):
+            if (syn.get("synonym_type") or "").strip().upper() == "REJECTED_LABEL":
+                continue
+            for m in _CAS_RN_RE.finditer(str(syn["synonym_text"])):
+                rn = m.group(1)
+                out[rn.replace("-", "")] = rn
+    return out
+
+
+def evaluate_rule_m(
+    rows: Iterable[dict[str, str]],
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule M — a CHEBI mapping's digits cannot equal a de-hyphenated CAS RN (#702).
+
+    Eleven records were historically mapped to ``CHEBI:<cas_without_hyphens>`` (e.g.
+    4-Hydroxyphenylacetic acid CAS 156-38-7 -> CHEBI:156387 aspyrone), polluting
+    synonyms when the enrichment sweep pulled labels from the wrong ChEBI term.
+    """
+    rows_list = list(rows)
+    row_cas_by_subject: dict[str, dict[str, str]] = {}
+    for row in rows_list:
+        subject_id = (row.get("subject_id") or "").strip()
+        if not subject_id:
+            continue
+        bucket = row_cas_by_subject.setdefault(subject_id, {})
+        obj = (row.get("object_id") or "").strip()
+        if obj.lower().startswith("cas:"):
+            rn = obj.split(":", 1)[1].strip()
+            if _CAS_RN_RE.fullmatch(rn):
+                bucket[rn.replace("-", "")] = rn
+        for token in (row.get("other") or "").split("|"):
+            for m in _CAS_RN_RE.finditer(token):
+                rn = m.group(1)
+                bucket[rn.replace("-", "")] = rn
+
+    for row_num, row in enumerate(rows_list, start=1):
+        object_id = (row.get("object_id") or "").strip()
+        if not object_id.startswith("CHEBI:"):
+            continue
+        digits = object_id.split(":", 1)[1].strip()
+        subject_id = (row.get("subject_id") or "").strip()
+        cas_map = {
+            **_cas_rns_for_subject(subject_id),
+            **row_cas_by_subject.get(subject_id, {}),
+        }
+        if digits in cas_map:
+            cas_rn = cas_map[digits]
+            yield (
+                row_num,
+                row,
+                f"Rule M: {subject_id} maps to {object_id}, whose numeric suffix "
+                f"equals the record's de-hyphenated CAS RN {cas_rn!r} (#702).",
+            )
+
+
 def evaluate_rule_e(
     rows: Iterable[dict[str, str]],
 ) -> Iterator[tuple[int, dict[str, str], str]]:
@@ -1316,6 +1395,7 @@ def main(argv: list[str]) -> int:
     _collect("Rule J", evaluate_rule_j(rows))
     _collect("Rule K", evaluate_rule_k(rows))
     _collect("Rule L", evaluate_rule_l(prelude, rows))
+    _collect("Rule M", evaluate_rule_m(rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -1332,7 +1412,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, B5, C, D, E, F, G, H, I, J, K, L"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, B5, C, D, E, F, G, H, I, J, K, L, M"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(

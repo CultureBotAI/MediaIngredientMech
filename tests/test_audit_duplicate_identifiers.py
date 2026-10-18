@@ -261,3 +261,50 @@ def test_hydrate_signal_has_no_false_positives_on_known_traps():
                  "Cadmium chloride hemipentahydrate", "Sodium Thiosulfate Pentahydrate",
                  "Potassium tellurite hydrate"):
         assert mod.HYDRATE.search(real), real
+
+
+def test_reground_updates_record_and_baseline(tmp_path):
+    recs = [
+        rec("CHEBI:1", "Glycerol"),
+        rec("CHEBI:1", "glycerol"),
+        rec("CHEBI:2", "Water"),
+        rec("CHEBI:2", "water"),
+    ]
+    repo = build(tmp_path, recs)
+    mapped_dir = repo / "data" / "ingredients" / "mapped"
+    mapped_dir.mkdir(parents=True, exist_ok=True)
+    record_file = mapped_dir / "glycerol_lc.yaml"
+    record_file.write_text(
+        yaml.safe_dump(
+            {
+                "identifier": "CHEBI:1",
+                "preferred_term": "glycerol",
+                "mapping_status": "MAPPED",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:1",
+                    "ontology_label": "glycerol",
+                    "ontology_source": "CHEBI",
+                    "mapping_quality": "EXACT_MATCH",
+                },
+            },
+            sort_keys=False,
+        )
+    )
+    assert run(repo, "--write-baseline").returncode == 0
+    out = run(
+        repo,
+        "--reground",
+        str(record_file),
+        "--identifier",
+        "CHEBI:17754",
+        "--ontology-id",
+        "CHEBI:17754",
+        "--ontology-label",
+        "glycerol",
+    )
+    assert out.returncode == 0, out.stdout + out.stderr
+    updated = yaml.safe_load(record_file.read_text())
+    assert updated["identifier"] == "CHEBI:17754"
+    assert updated["ontology_mapping"]["ontology_id"] == "CHEBI:17754"
+    assert run(repo, "--check").returncode == 0
+

@@ -101,8 +101,9 @@ patterns, and **preserves the original form as a typed synonym**:
    ontology term if one exists (`CHEBI:31795 magnesium sulfate heptahydrate`,
    `CHEBI:232425 monosodium L-glutamate hydrate`), else give the record its own
    `cas:<hydrate CAS>` identifier with a `broadMatch` to the anhydrous parent plus the
-   Rule B1 registry row. Sharing the anhydrous term's identifier is the identity-collapse
-   bug (#218, #225).
+   Rule B1 registry row. Use `just reground` (`scripts/reground_mapped_record.py`) when
+   moving an already-mapped record off an over-broad parent term (#228, #267). Sharing the
+   anhydrous term's identifier is the identity-collapse bug (#218, #225).
 2. **Incomplete-formula correction** (synonym `INCOMPLETE_FORMULA`): `K2HPO` → `K2HPO4` → "dipotassium phosphate".
 3. **Catalog-number removal** (synonym `CATALOG_VARIANT`): `NaCl (Fisher S271-500)` → `NaCl`.
 4. **Abbreviation expansion**: `dH2O` → "distilled water"; `NaOAc` → "sodium acetate".
@@ -157,6 +158,18 @@ just sync-individual
 just qc
 ```
 Full reasoning/audit trail for ambiguous cases. See `docs/CLAUDE_CODE_CURATION.md`.
+
+### D. Re-grounding an already-mapped record (#228, #267)
+```bash
+# Move a MAPPED record to a more specific ontology term or registry mint (dry-run by default):
+just reground --identifier CHEBI:64243 --preferred-term 'Sodium glutamate monohydrate' \
+  --to CHEBI:232425 --reason 'Section 3: specific hydrate term exists' --apply
+just sync-individual
+just qc
+```
+Updates `identifier`, `ontology_mapping`, `curation_history`, the SSSOM row (including the
+Rule B1 registry row when `--to` is `cas:` or `kgmicrobe.*:` with `--parent`), and recipe
+membership edges when the identifier becomes unoccupied.
 
 ---
 

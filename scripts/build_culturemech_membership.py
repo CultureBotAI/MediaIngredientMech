@@ -52,6 +52,10 @@ from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
 
 CURATED = REPO_ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 OUTPUT = REPO_ROOT / "mappings" / "culturemech_recipe_membership.tsv"
+# The CultureMech revision that MIM's published recipe membership edges and
+# effective occurrence counts are pinned against (#886). Updating this pin
+# requires rebuilding mappings/culturemech_recipe_membership.tsv from that tree.
+PINNED_CULTUREMECH_REV = "4c69a62c25"
 # The absences, which are the one signal here nobody can reconstruct later: the
 # edges are in the artifact and the counts are in the records, but an identifier
 # CultureMech grounded that MIM has no record for exists nowhere else (#498).
@@ -59,6 +63,72 @@ UNKNOWN_REPORT = REPO_ROOT / "reports" / "culturemech_membership_unknown_ids.tsv
 
 # `ingredient_json` carries a whole serialized component.
 csv.field_size_limit(1 << 30)
+
+
+def parse_header_rev(artifact: Path = OUTPUT) -> str | None:
+    """Extract `culturemech_rev=<sha>` from the first line of the artifact (#886)."""
+    if not artifact.is_file():
+        return None
+    with artifact.open(encoding="utf-8") as fh:
+        first = fh.readline().strip()
+    if not first.startswith("#"):
+        return None
+    for token in first.lstrip("#").split():
+        if token.startswith("culturemech_rev="):
+            return token.partition("=")[2].strip() or None
+    return None
+
+
+def _revs_match(rev_a: str, rev_b: str) -> bool:
+    a = rev_a.strip().lower()
+    b = rev_b.strip().lower()
+    if not a or not b or a == "unknown" or b == "unknown":
+        return False
+    return a.startswith(b) or b.startswith(a)
+
+
+def check_rev(
+    artifact: Path = OUTPUT,
+    expected_rev: str = PINNED_CULTUREMECH_REV,
+    culturemech: Path | None = None,
+) -> list[str]:
+    """Verify the artifact's `culturemech_rev` matches the recorded pin (#886)
+    and optionally a live CultureMech checkout."""
+    errors: list[str] = []
+    actual_rev = parse_header_rev(artifact)
+    if not actual_rev:
+        errors.append(f"{artifact}: missing culturemech_rev=... provenance header")
+        return errors
+    if actual_rev == "unknown":
+        errors.append(f"{artifact}: culturemech_rev is 'unknown' (uncheckable provenance)")
+    if not _revs_match(actual_rev, expected_rev):
+        errors.append(
+            f"{artifact}: header culturemech_rev={actual_rev} does not match "
+            f"PINNED_CULTUREMECH_REV={expected_rev}"
+        )
+    if culturemech is not None:
+        try:
+            res = subprocess.run(
+                ["git", "-C", str(culturemech.resolve()), "rev-parse", "HEAD"],
+                capture_output=True,
+                text=True,
+                timeout=30,
+            )
+        except (OSError, subprocess.SubprocessError) as exc:
+            errors.append(f"{culturemech}: failed to run git rev-parse HEAD: {exc}")
+            return errors
+        if res.returncode != 0:
+            errors.append(
+                f"{culturemech}: git rev-parse HEAD failed: {res.stderr.strip() or res.returncode}"
+            )
+            return errors
+        live_rev = res.stdout.strip()
+        if not _revs_match(actual_rev, live_rev):
+            errors.append(
+                f"{artifact}: header culturemech_rev={actual_rev} does not match "
+                f"CultureMech HEAD {live_rev[:10]} at {culturemech}"
+            )
+    return errors
 
 
 def provenance(occurrences: Path, edges: int, recipes: int, records: int) -> str:
@@ -141,9 +211,26 @@ def write_unknown(unknown: dict[str, int], header: str) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--occurrences", type=Path, required=True,
+    parser.add_argument("--occurrences", type=Path, required=False,
                         help="CultureMech output/ingredient_occurrences.tsv (#337)")
+    parser.add_argument("--check-rev", action="store_true",
+                        help="Verify header culturemech_rev matches PINNED_CULTUREMECH_REV (#886)")
+    parser.add_argument("--culturemech", type=Path, default=None,
+                        help="Optional CultureMech repo checkout to compare HEAD against (#886)")
     args = parser.parse_args(argv)
+
+    if args.check_rev:
+        errors = check_rev(OUTPUT, PINNED_CULTUREMECH_REV, args.culturemech)
+        if errors:
+            for err in errors:
+                print(f"FAIL: {err}", file=sys.stderr)
+            return 1
+        actual_rev = parse_header_rev(OUTPUT)
+        print(f"OK: {OUTPUT.relative_to(REPO_ROOT)} culturemech_rev={actual_rev} matches pin")
+        return 0
+
+    if args.occurrences is None:
+        parser.error("the following arguments are required: --occurrences (unless --check-rev is set)")
 
     known = mim_identifiers()
     edges, unknown = collect(args.occurrences, known)

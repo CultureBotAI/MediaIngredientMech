@@ -226,6 +226,56 @@ def write_tsv(path: Path, rows: list[dict]) -> None:
         w.writerows(rows)
 
 
+def _reground_record(
+    record_path: Path,
+    identifier: str,
+    ontology_id: str | None = None,
+    ontology_label: str | None = None,
+    ontology_source: str | None = None,
+    mapping_quality: str | None = None,
+) -> None:
+    if not record_path.is_file():
+        raise DataProblem(f"record file does not exist: {record_path}")
+    data = yaml.safe_load(record_path.read_text(encoding="utf-8")) or {}
+    old_id = data.get("identifier")
+    pref_term = data.get("preferred_term")
+    data["identifier"] = identifier
+    om = data.setdefault("ontology_mapping", {})
+    target_ont = ontology_id or identifier
+    om["ontology_id"] = target_ont
+    if ontology_label is not None:
+        om["ontology_label"] = ontology_label
+    if ontology_source is not None:
+        om["ontology_source"] = ontology_source
+    elif ":" in target_ont and not om.get("ontology_source"):
+        om["ontology_source"] = target_ont.split(":", 1)[0].upper()
+    if mapping_quality is not None:
+        om["mapping_quality"] = mapping_quality
+    record_path.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True), encoding="utf-8")
+
+    mapped_path = COLLECTIONS.get("mapped")
+    if mapped_path and mapped_path.is_file():
+        coll = yaml.safe_load(mapped_path.read_text(encoding="utf-8")) or {}
+        changed = False
+        for item in coll.get("ingredients") or []:
+            if item.get("preferred_term") == pref_term and item.get("identifier") == old_id:
+                item["identifier"] = identifier
+                item_om = item.setdefault("ontology_mapping", {})
+                item_om["ontology_id"] = target_ont
+                if ontology_label is not None:
+                    item_om["ontology_label"] = ontology_label
+                if ontology_source is not None:
+                    item_om["ontology_source"] = ontology_source
+                if mapping_quality is not None:
+                    item_om["mapping_quality"] = mapping_quality
+                changed = True
+                break
+        if changed:
+            mapped_path.write_text(
+                yaml.safe_dump(coll, sort_keys=False, allow_unicode=True), encoding="utf-8"
+            )
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     mode = ap.add_mutually_exclusive_group()
@@ -234,9 +284,29 @@ def main() -> int:
     mode.add_argument("--write-baseline", action="store_true",
                       help="seed/refresh the baseline, keeping dispositions whose members "
                            "are unchanged")
+    mode.add_argument("--reground", metavar="RECORD_YAML",
+                      help="update a record's identifier/ontology_mapping and refresh the baseline (#267)")
+    ap.add_argument("--identifier", help="new semantic identifier CURIE for --reground")
+    ap.add_argument("--ontology-id", help="new ontology_id CURIE for --reground (defaults to --identifier)")
+    ap.add_argument("--ontology-label", help="new ontology_label for --reground")
+    ap.add_argument("--ontology-source", help="new ontology_source for --reground")
+    ap.add_argument("--mapping-quality", help="new mapping_quality for --reground")
     args = ap.parse_args()
 
     try:
+        if args.reground:
+            if not args.identifier:
+                raise DataProblem("--reground requires --identifier")
+            _reground_record(
+                Path(args.reground),
+                identifier=args.identifier,
+                ontology_id=args.ontology_id,
+                ontology_label=args.ontology_label,
+                ontology_source=args.ontology_source,
+                mapping_quality=args.mapping_quality,
+            )
+            args.write_baseline = True
+
         rows, collisions = survey()
         total = sum(r["record_count"] for r in rows)
         print(f"{len(rows)} identifier(s) held by more than one record "
@@ -323,6 +393,8 @@ def main() -> int:
                   "letting this pass silently.")
         print("\nTwo records sharing an identifier both claim to BE that term. Merge them, "
               "give one a distinct identifier, or refresh the baseline deliberately:\n"
+              "  just reground --identifier <CURIE> --preferred-term '<name>' --to <NEW_CURIE> --reason '...'\n"
+              "  uv run python scripts/merge_mapped_records.py --into <CURIE> --from <CURIE> --reason '...'\n"
               "  uv run python scripts/audit_duplicate_identifiers.py --write-baseline")
         return 2
 

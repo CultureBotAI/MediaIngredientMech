@@ -470,9 +470,9 @@ earlier example here, `2-oxobutyric acid sodium salt` → `CHEBI:16763
 
 | Symptom | What it means | Action |
 |---|---|---|
-| Two records share one identifier | Same substance, or one is more specific | Same → merge. More specific → give it its own id per 1–3. |
-| One substance under two identifiers | One of them is wrong | Pick by the precedence in 1–3; re-ground the other. |
-| A hydrate/salt sits on the anhydrous/free term | Specificity collapsed into the parent | Step 1 if a specific term exists, else step 2. |
+| Two records share one identifier | Same substance, or one is more specific | Same → merge (`scripts/merge_mapped_records.py`). More specific → give it its own id per 1–3 (`just reground` / `scripts/reground_mapped_record.py`). |
+| One substance under two identifiers | One of them is wrong | Pick by the precedence in 1–3; re-ground the other (`just reground` / `scripts/reground_mapped_record.py`) or merge (`scripts/merge_mapped_records.py`). |
+| A hydrate/salt sits on the anhydrous/free term | Specificity collapsed into the parent | Step 1 if a specific term exists, else step 2 (`just reground` / `scripts/reground_mapped_record.py`). |
 | One label resolves to several identifiers | Legitimate shared synonym, or a real duplicate | If the records are the same substance it is a duplicate — merge. If not, resolve via `docs/data/label_index.csv`: **take the first row for that label** and use its `identifier`. Rows are ordered MAPPED before non-MAPPED, then `preferred_term` before `synonym`, so the first row is the best available answer. That settles 18 of the 87; the rest are synonym-vs-synonym and need a curation decision (#232). |
 
 ## What the predicate does downstream (kg-microbe, priority 11)

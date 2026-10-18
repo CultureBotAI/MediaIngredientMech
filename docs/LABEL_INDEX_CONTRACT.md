@@ -72,9 +72,9 @@ genuinely undecided can be refused rather than trusted like the rest.
 |---|---:|---|
 | `unique` | 8,745 | one identifier. Nothing to choose. |
 | `resolved:owned` | 75 | several identifiers, but a record's own `preferred_term` **is** this label, and it sorts first. Trust it. |
-| `agree:same_substance` | 8 | competitors have the **same molecular formula** — one substance, modelled twice (e.g. `L-Cysteine` and `L-cysteine zwitterion`, both C3H7NO2S). Either pick is right. |
-| `conflict:different_substances` | **162** | competitors have **different formulas**. The first row may be the wrong compound. |
-| `unresolved:partial_chemistry` | 24 | only one competitor has a formula, so it could not be decided. |
+| `agree:same_substance` | 3 | competitors have the **same molecular formula, InChI (when present), and stereochemical descriptors** — one substance, modelled twice (e.g. `L-Cysteine` and `L-cysteine zwitterion`, both C3H7NO2S with identical InChI). Either pick is right. |
+| `conflict:different_substances` | **165** | competitors have **different formulas, different InChIs, or different stereochemical descriptors** (e.g. `L-Histidine` vs `DL-Histidine`). The first row may be the wrong compound. |
+| `unresolved:partial_chemistry` | 24 | only one competitor has a formula (or InChI), so it could not be decided. |
 | `unresolved:no_chemistry` | 4 | no competitor has a formula (mixtures, environmental terms, registry mints). |
 
 **Treat `conflict:different_substances` as "this label does not identify one
@@ -95,7 +95,11 @@ a curation question, tracked in #232.
 Formulas are compared as **element totals**, not as strings: ChEBI writes salts
 in dot notation (`2K.O3Te`) and other sources collapse them (`K2O3Te`), and a
 raw comparison called potassium tellurite two substances. Hydrates are still
-distinguished — `2Cl.Co` and `2Cl.Co.6H2O` differ by six waters.
+distinguished — `2Cl.Co` and `2Cl.Co.6H2O` differ by six waters. Competitors
+sharing element totals are also checked for matching `InChI` and stereochemical
+descriptors (`L-`, `D-`, `DL-`, `(+)`, `(-)`, `cis-`, `trans-`, `meso-`) so
+enantiomers, racemates, and stereo-unspecified forms are not collapsed into
+`agree:same_substance` (#814).
 
 Note the verdict is per **label**, so every row sharing a label carries the same
 value. `unresolved:*` means *we could not check*, not *they agree* — a third of

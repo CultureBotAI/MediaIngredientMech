@@ -29,7 +29,7 @@ def _load():
 
 def _record(identifier, preferred_term, status="MAPPED", synonyms=(),
             ontology_id=None, ontology_label=None,
-            mapping_quality="EXACT_MATCH", formula=None):
+            mapping_quality="EXACT_MATCH", formula=None, inchi=None):
     r = {
         "identifier": identifier,
         "preferred_term": preferred_term,
@@ -39,8 +39,13 @@ def _record(identifier, preferred_term, status="MAPPED", synonyms=(),
                              "ontology_label": ontology_label or preferred_term,
                              "mapping_quality": mapping_quality},
     }
-    if formula:
-        r["chemical_properties"] = {"molecular_formula": formula}
+    if formula or inchi:
+        props = {}
+        if formula:
+            props["molecular_formula"] = formula
+        if inchi:
+            props["inchi"] = inchi
+        r["chemical_properties"] = props
     return r
 
 
@@ -333,7 +338,41 @@ def test_formula_lookup_ignores_record_order_for_a_shared_identifier(tmp_path):
 def test_an_unparseable_formula_is_unknown_not_disagreement(tmp_path):
     """Guessing either way is worse than saying it could not be checked."""
     got = _resolve(tmp_path, [
-        _record("CHEBI:1", "Real", formula="C6H12O6", synonyms=["shared"]),
+        _record("CHEBI:1", "Real", formula="C6H9N3O2", synonyms=["shared"]),
         _record("CHEBI:2", "Junk", formula="???", synonyms=["shared"]),
     ])
     assert got["shared"]["ambiguity"] == "unresolved:partial_chemistry"
+
+
+def test_stereoisomers_with_same_formula_are_not_same_substance(tmp_path):
+    """Formula agreement cannot distinguish enantiomers, racemates, or
+    stereo-unspecified forms (#814): `Histidine` resolved to L-Histidine
+    (CHEBI:15971) alongside DL-Histidine / histidine (CHEBI:27570) with
+    `agree:same_substance`, causing downstream resolvers to trust an arbitrary
+    stereochemical pick."""
+    got = _resolve(tmp_path, [
+        _record(
+            "CHEBI:15971",
+            "L-Histidine",
+            formula="C6H9N3O2",
+            inchi="InChI=1S/C6H9N3O2/c7-5(6(10)11)1-4-2-8-3-9-4/h2-3,5H,1,7H2,(H,8,9)(H,10,11)/t5-/m0/s1",
+            synonyms=["Histidine"],
+        ),
+        _record(
+            "CHEBI:27570",
+            "DL-Histidine",
+            ontology_label="histidine",
+            formula="C6H9N3O2",
+            inchi="InChI=1S/C6H9N3O2/c7-5(6(10)11)1-4-2-8-3-9-4/h2-3,5H,1,7H2,(H,8,9)(H,10,11)",
+        ),
+    ])
+    assert got["histidine"]["ambiguity"] == "conflict:different_substances"
+
+    # Even without InChI, differing stereo descriptors in preferred_term prevent
+    # collapsing L- vs DL- or stereo-unspecified records into agree:same_substance.
+    got_no_inchi = _resolve(tmp_path / "no_inchi", [
+        _record("CHEBI:15971", "L-Histidine", formula="C6H9N3O2", synonyms=["Histidine"]),
+        _record("CHEBI:27570", "DL-Histidine", ontology_label="histidine", formula="C6H9N3O2"),
+    ])
+    assert got_no_inchi["histidine"]["ambiguity"] == "conflict:different_substances"
+

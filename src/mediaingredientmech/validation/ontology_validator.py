@@ -109,6 +109,47 @@ def validate_curie_format(curie: str) -> str | None:
     return None
 
 
+_CAS_RN_RE = re.compile(r"\b(\d{2,7}-\d{2}-\d)\b")
+
+
+def find_cas_as_chebi_violations(rec: dict[str, Any]) -> list[tuple[str, str, str]]:
+    """Return ``(field_path, chebi_id, cas_rn)`` when a CHEBI ID's digits equal a de-hyphenated CAS RN (#702)."""
+    cas_map: dict[str, str] = {}
+    chem = rec.get("chemical_properties")
+    if isinstance(chem, dict) and chem.get("cas_rn"):
+        for m in _CAS_RN_RE.finditer(str(chem["cas_rn"])):
+            rn = m.group(1)
+            cas_map[rn.replace("-", "")] = rn
+    for sf in rec.get("supplied_form") or []:
+        if isinstance(sf, dict) and sf.get("cas_rn"):
+            for m in _CAS_RN_RE.finditer(str(sf["cas_rn"])):
+                rn = m.group(1)
+                cas_map[rn.replace("-", "")] = rn
+    for syn in rec.get("synonyms") or []:
+        if isinstance(syn, dict) and syn.get("synonym_text"):
+            if (syn.get("synonym_type") or "").strip().upper() == "REJECTED_LABEL":
+                continue
+            for m in _CAS_RN_RE.finditer(str(syn["synonym_text"])):
+                rn = m.group(1)
+                cas_map[rn.replace("-", "")] = rn
+    if not cas_map:
+        return []
+    violations: list[tuple[str, str, str]] = []
+    ident = str(rec.get("identifier") or "").strip()
+    if ident.startswith("CHEBI:"):
+        digits = ident.split(":", 1)[1].strip()
+        if digits in cas_map:
+            violations.append(("identifier", ident, cas_map[digits]))
+    mapping = rec.get("ontology_mapping")
+    if isinstance(mapping, dict):
+        oid = str(mapping.get("ontology_id") or "").strip()
+        if oid.startswith("CHEBI:"):
+            digits = oid.split(":", 1)[1].strip()
+            if digits in cas_map:
+                violations.append(("ontology_mapping.ontology_id", oid, cas_map[digits]))
+    return violations
+
+
 def validate_term_via_oak(curie: str, expected_label: str | None = None) -> list[OntologyMessage]:
     """Use OAK to verify that a term exists and optionally check its label."""
     msgs: list[OntologyMessage] = []
@@ -177,6 +218,15 @@ def validate_records(
     for i, rec in enumerate(ingredients):
         if not isinstance(rec, dict):
             continue
+        rec_prefix = path_prefix if path_prefix is not None else f"$.ingredients[{i}]"
+        for field_name, chebi_id, cas_rn in find_cas_as_chebi_violations(rec):
+            result.messages.append(
+                OntologyMessage(
+                    "error",
+                    f"{rec_prefix}.{field_name}",
+                    f"CAS-as-ChEBI violation (#702): {chebi_id} has digits matching de-hyphenated CAS RN {cas_rn}",
+                )
+            )
         mapping = rec.get("ontology_mapping")
         if not isinstance(mapping, dict):
             continue
@@ -186,11 +236,7 @@ def validate_records(
             continue
 
         result.terms_checked += 1
-        path = (
-            f"{path_prefix}.ontology_mapping"
-            if path_prefix is not None
-            else f"$.ingredients[{i}].ontology_mapping"
-        )
+        path = f"{rec_prefix}.ontology_mapping"
 
         # Format check
         fmt_err = validate_curie_format(str(oid))

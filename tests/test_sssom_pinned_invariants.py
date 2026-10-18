@@ -189,6 +189,66 @@ class TestRuleB5:
         assert all("Rule B5" in reason for _, _, reason in rejects)
 
 
+class TestRuleM:
+    """A CHEBI mapping's digits cannot equal a de-hyphenated CAS RN (#702)."""
+
+    def test_legitimate_chebi_and_cas_pass(self):
+        rows = [
+            _row(subject_id="MIM:4-Hydroxyphenylacetic_acid", object_id="CHEBI:18101"),
+            _row(
+                subject_id="MIM:4-Hydroxyphenylacetic_acid",
+                object_id="cas:156-38-7",
+                object_source="registry:cas",
+            ),
+        ]
+        assert list(mod.evaluate_rule_m(rows)) == []
+
+    def test_cas_as_chebi_from_sibling_cas_row_is_rejected(self):
+        rows = [
+            _row(subject_id="MIM:4-Hydroxyphenylacetic_acid", object_id="CHEBI:156387"),
+            _row(
+                subject_id="MIM:4-Hydroxyphenylacetic_acid",
+                object_id="cas:156-38-7",
+                object_source="registry:cas",
+            ),
+        ]
+        rejects = list(mod.evaluate_rule_m(rows))
+        assert len(rejects) == 1
+        assert "156-38-7" in rejects[0][2]
+        assert "CHEBI:156387" in rejects[0][2]
+
+    def test_cas_as_chebi_from_other_column_is_rejected(self):
+        rows = [
+            _row(
+                subject_id="MIM:Synthetic_Record",
+                object_id="CHEBI:87514",
+                other="CAS: 87-51-4|indole-3-acetic acid",
+            ),
+        ]
+        rejects = list(mod.evaluate_rule_m(rows))
+        assert len(rejects) == 1
+        assert "87-51-4" in rejects[0][2]
+
+    def test_ontology_validator_rejects_cas_as_chebi_in_yaml_record(self):
+        from mediaingredientmech.validation.ontology_validator import validate_records
+
+        bad_record = {
+            "identifier": "CHEBI:156387",
+            "preferred_term": "4-Hydroxyphenylacetic acid",
+            "mapping_status": "MAPPED",
+            "chemical_properties": {"cas_rn": "156-38-7"},
+            "ontology_mapping": {
+                "ontology_id": "CHEBI:156387",
+                "ontology_label": "4-hydroxyphenylacetic acid",
+                "ontology_source": "CHEBI",
+                "mapping_quality": "EXACT_MATCH",
+            },
+        }
+        res = validate_records(bad_record, use_oak=False)
+        assert len(res.errors) == 2
+        assert all("#702" in err.message for err in res.errors)
+
+
 def test_the_published_set_satisfies_all_pinned_rules():
     """The point of pinning them: they hold today, and must keep holding."""
     path = Path(__file__).parent.parent / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -198,9 +258,10 @@ def test_the_published_set_satisfies_all_pinned_rules():
     assert list(mod.evaluate_rule_i(rows)) == []
     assert list(mod.evaluate_rule_j(rows)) == []
     assert list(mod.evaluate_rule_b5(rows)) == []
+    assert list(mod.evaluate_rule_m(rows)) == []
 
 
-@pytest.mark.parametrize("rule", ["Rule G", "Rule H", "Rule I", "Rule J", "Rule B5"])
+@pytest.mark.parametrize("rule", ["Rule G", "Rule H", "Rule I", "Rule J", "Rule B5", "Rule M"])
 def test_each_rule_is_wired_into_the_run(rule):
     """A rule nobody calls is not a gate."""
     source = (Path(__file__).parent.parent / "scripts" / "validate_sssom_invariants.py").read_text()
