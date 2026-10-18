@@ -19,7 +19,7 @@ ontology_mapping:
       acid disodium salt'
 synonyms:
 - synonym_text: N,N-bis(carboxymethyl)glycine
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: ( disodium salt)
   synonym_type: RAW_TEXT
@@ -102,6 +102,15 @@ curation_history:
     salt)''. Tokens already present on the kg-microbe ontology node were left out
     as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''N,N-bis(carboxymethyl)glycine''.
+    Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym
+    claim was adjudicated.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 15467-20-6
   data_source: CultureBotHT compounds_to_cas.csv

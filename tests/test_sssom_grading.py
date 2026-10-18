@@ -12,6 +12,7 @@ same shape as the SSSOM validator's Rule B4, which needs kg-microbe's transforms
 
 from __future__ import annotations
 
+import os
 import re
 import sys
 from pathlib import Path
@@ -23,9 +24,16 @@ sys.path.insert(0, str(_REPO / "src"))
 
 from mediaingredientmech import sssom_grading as grading  # noqa: E402
 
-CLAW_BUILDER = (
-    _REPO.parent / "culturebotai-claw" / "scripts" / "build_mim_ingredient_sssom.py"
+# CLAW_ROOT first, then the sibling path. The sibling path alone stopped resolving
+# when the fleet moved MIM under Mechs/ while claw stayed under KG-Hub/KG-Microbe,
+# so every mirror test below skipped everywhere -- the one check meant to force
+# MIM's grading and claw's builder to move together protected nothing (#390).
+_CLAW_ROOT = (
+    Path(os.environ["CLAW_ROOT"]).expanduser()
+    if os.environ.get("CLAW_ROOT")
+    else _REPO.parent / "culturebotai-claw"
 )
+CLAW_BUILDER = _CLAW_ROOT / "scripts" / "build_mim_ingredient_sssom.py"
 
 
 class TestTheRulesThemselves:
@@ -163,10 +171,16 @@ class TestPredicateIsARuleNotATable:
     """
 
     def test_the_five_previously_enumerated_grades_are_unchanged(self):
-        """The rule must reproduce the old table exactly, or it rewrites history."""
+        """The rule must reproduce the old table exactly, or it rewrites history.
+
+        One entry moved deliberately: NARROW_MATCH published `skos:narrowMatch`
+        until #390, which under SKOS asserts the ontology parent is the narrower
+        concept. It is `skos:broadMatch` now, and the set declares
+        `predicate_semantics: skos` so consumers read it that way.
+        """
         assert grading.predicate_for("EXACT_MATCH") == "skos:exactMatch"
         assert grading.predicate_for("SYNONYM_MATCH") == "skos:exactMatch"
-        assert grading.predicate_for("NARROW_MATCH") == "skos:narrowMatch"
+        assert grading.predicate_for("NARROW_MATCH") == "skos:broadMatch"
         assert grading.predicate_for("CLOSE_MATCH") == "skos:closeMatch"
         assert grading.predicate_for("FALLBACK_REGISTRY") == "skos:closeMatch"
 
@@ -208,4 +222,4 @@ class TestPredicateAgreesWithClaw:
     def test_narrow_match_is_special_cased_the_same_way(self):
         claw = CLAW_BUILDER.read_text(encoding="utf-8")
         assert 'if quality == "NARROW_MATCH":' in claw
-        assert 'predicate = "skos:narrowMatch"' in claw
+        assert 'predicate = "skos:broadMatch"' in claw

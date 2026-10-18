@@ -78,7 +78,7 @@ def test_salt_forms_publish_parent_cas_and_kgm_identity_rows(
 
     for label, (identifier, parent, _, _) in CAS_REGROUNDINGS.items():
         parent_row = by_label[label][parent]
-        assert parent_row["predicate_id"] == "skos:narrowMatch"
+        assert parent_row["predicate_id"] == "skos:broadMatch"
         assert not any(token.startswith("cas:") for token in _other_tokens(parent_row))
 
         cas_row = by_label[label][identifier]

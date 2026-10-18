@@ -32,6 +32,7 @@ MALFORMED = {
 SULFATE_MEMBERSHIPS = {
     "kgmicrobe.compound:caso4_x_7_h2o": {
         "CultureMech:002288",
+        "CultureMech:007714",
         "CultureMech:010491",
         "CultureMech:014112",
         "CultureMech:014113",

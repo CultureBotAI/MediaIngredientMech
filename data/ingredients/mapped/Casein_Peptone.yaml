@@ -38,7 +38,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: manual
 - synonym_text: Casein hydrolysate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: casein hydrolysate
   synonym_type: EXACT_SYNONYM
@@ -97,6 +97,17 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-24T07:48:22.676543+00:00'
+  curator: claude
+  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''Casein hydrolysate'' (EXACT_SYNONYM): the acid
+    hydrolysate product has its own record (Casein_hydrolysate, MICRO:0001366) (#669).
+    Kept as provenance only; it must not resolve, be exported, or enter the SSSOM
+    other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 ingredient_type: UNDEFINED_MIXTURE
 nutritional_roles:
 - role: PROTEIN_SOURCE

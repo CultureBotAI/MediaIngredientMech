@@ -1,0 +1,59 @@
+identifier: cas:144-33-2
+preferred_term: Na2-citrate
+ontology_mapping:
+  ontology_id: CHEBI:30769
+  ontology_label: citric acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#704); PubChem CID 8950; chebi.db
+    notes: 'Na2-citrate is disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2,
+      C6H6Na2O7, InChIKey CEYULKASIQJZGP-UHFFFAOYSA-L). ChEBI has no disodium citrate
+      term, and three CultureMech recipes name it, so MAPPING_SEMANTICS Section 3
+      step 2 applies: cas: identity, broadMatch to the acid the label''s salt derives
+      from (CHEBI:30769 citric acid), Rule B1 registry row. Previously an EXACT_SYNONYM
+      on Trisodium_Citrate after a 2026-04-19 merge that conflated the two salts (#704).'
+synonyms:
+- synonym_text: Na2-citrate
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: disodium hydrogen citrate
+  synonym_type: EXACT_SYNONYM
+  source: PubChem CID 8950
+- synonym_text: disodium citrate
+  synonym_type: RELATED_SYNONYM
+  source: PubChem CID 8950
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-09-24T07:48:22.811524+00:00'
+  curator: claude
+  action: CREATED
+  changes: 'Created from the raw label ''Na2-citrate'' split off Trisodium_Citrate.
+    Na2-citrate is disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2, C6H6Na2O7,
+    InChIKey CEYULKASIQJZGP-UHFFFAOYSA-L). ChEBI has no disodium citrate term, and
+    three CultureMech recipes name it, so MAPPING_SEMANTICS Section 3 step 2 applies:
+    cas: identity, broadMatch to the acid the label''s salt derives from (CHEBI:30769
+    citric acid), Rule B1 registry row. Previously an EXACT_SYNONYM on Trisodium_Citrate
+    after a 2026-04-19 merge that conflated the two salts (#704).'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-09-24T07:50:13.754866+00:00'
+  curator: claude
+  action: REFRESHED_OCCURRENCE_STATISTICS
+  changes: 'occurrence_statistics 0/0 -> 3/3 after the #704 identity split/re-grounding
+    moved recipe memberships.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+chemical_properties:
+  cas_rn: 144-33-2
+  molecular_formula: C6H6Na2O7
+  data_source: PubChem CID 8950 (CAS 144-33-2)
+  retrieval_date: '2026-09-24T07:48:22.811507+00:00'
+ingredient_type: SINGLE_INGREDIENT

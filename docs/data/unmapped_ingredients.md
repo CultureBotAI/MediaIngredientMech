@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-09-12T10:15:44.702186+00:00
-Total: 272 ingredients
+Generated: 2026-10-16T07:09:21.862376+00:00
+Total: 273 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -53,7 +53,7 @@ Total: 272 ingredients
 | UNMAPPED_0023 |  | Bristol Medium | UNMAPPED |  |  | 6 |
 | UNMAPPED_0348 |  | Brucella Broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0359 |  | CMRL 1066 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0049 |  | Ca | UNMAPPED |  |  | 3 |
+| UNMAPPED_0049 |  | Ca | REJECTED |  |  | 0 |
 | UNMAPPED_0156 |  | Cadmium-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0170 | UBERON:0000955 | Calf brains | UNMAPPED | UBERON | NARROW_MATCH | 7 |
 | UNMAPPED_0229 |  | Calprotectin S1 | UNMAPPED |  |  | 0 |
@@ -277,3 +277,4 @@ Total: 272 ingredients
 | UNMAPPED_0734 |  | Tetrazolium | REJECTED |  |  | 0 |
 | UNMAPPED_0341 |  | Bordet-Gengou-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
+| UNMAPPED_0740 |  | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |

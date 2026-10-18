@@ -40,7 +40,7 @@ jobs:
         with:
           repository: CultureBotAI/culturebotai-claw
           # Reviewed validator code; keep aligned with scripts/.vendored_canon_ref.
-          ref: c8b8f89ecf29574d7e24f6c65cfd925aefbdd007
+          ref: a5d562962c75a2ad9efd8160b548df5944315422
           path: culturebotai-claw
           # No token. culturebotai-claw is PUBLIC, so the default GITHUB_TOKEN
           # reads it fine. It was private when this job was written, which is why
@@ -66,7 +66,10 @@ jobs:
           CLAW_ROOT: ${{ github.workspace }}/culturebotai-claw
         working-directory: MediaIngredientMech
         run: |
-          uv run --frozen python scripts/run_shared_evidence_validator.py
+          # --strict: an evidence item whose abstract is not in references_cache/
+          # fails, rather than passing as MISSING_CACHE. The cache is committed
+          # (see references_cache/README.md), so every cited PMID is on disk here.
+          uv run --frozen python scripts/run_shared_evidence_validator.py --strict
 
       - name: Upload report
         if: always()

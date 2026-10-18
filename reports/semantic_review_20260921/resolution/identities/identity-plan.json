@@ -1,0 +1,492 @@
+{
+  "status": "APPLIED",
+  "records": [
+    {
+      "source_path": "data/ingredients/unmapped/1122-Tetrachloroethane.yaml",
+      "destination_path": "data/ingredients/mapped/1122-Tetrachloroethane.yaml",
+      "before_sha256": "dc002405624306671023168ed27cd1b2d2b5d83c34a483e60d217c3f08cf8e56",
+      "before_record": {
+        "identifier": "UNMAPPED_0785",
+        "preferred_term": "2-tetrachloroethane",
+        "synonyms": [
+          {
+            "synonym_text": "2-tetrachloroethane",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          },
+          {
+            "synonym_text": "1,1,2,2-Tetrachloroethane",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "withdrawn_comma_tail_reconstruction"
+          }
+        ],
+        "mapping_status": "AMBIGUOUS",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 1,
+              "source_columns": "BacDive_Metabolite_utilization"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-05T00:01:30.894952+00:00",
+            "curator": "microbedecoder-residual-dispositions",
+            "action": "FLAGGED_NEEDS_EXPERT",
+            "changes": "Not a single-compound grounding target: raw fragment is reachable from both 1,1,1,2- (CHEBI:34024) and 1,1,2,2-tetrachloroethane (CHEBI:36026); no unique reconstruction.",
+            "previous_status": "UNMAPPED",
+            "new_status": "NEEDS_EXPERT",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/2-tetrachloroethane-edison-literature.md (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended status: `UNMAPPED` / `NEEDS_EXPERT`.** The string `2-tetrachloroethane` is not a complete, uniquely identifying chemical name. It lacks enough locants to distinguish two constitutional isomers: CURIEs discussed: CHEBI:34024, CHEBI:36026. Recorded as provenance only \u2014 no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-14T00:00:00+00:00",
+            "curator": "repair_comma_split_labels",
+            "action": "REPAIRED_COMMA_SPLIT_LABEL",
+            "previous_status": "NEEDS_EXPERT",
+            "new_status": "MAPPED",
+            "changes": "preferred_term '2-tetrachloroethane' -> '1,1,2,2-Tetrachloroethane'; UNMAPPED_0785 -> CHEBI:36026. Repaired a comma-split label (#308/#313): `2-tetrachloroethane` is the tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields `1`, `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record because bare digits are not labels. The reconstruction is unambiguous \u2014 no other compound ends in `2-tetrachloroethane`. The ingest strips commas from every chemical label, so a name containing one arrives as separate fragment records \u2014 the same mechanism that produced the `D` record resolved in #346.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-15T00:00:00+00:00",
+            "curator": "move_mapped_out_of_unmapped_collection",
+            "action": "MOVED_TO_MAPPED_COLLECTION",
+            "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection \u2014 so its mapping was curated but unpublished.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-21T21:33:25.379198+00:00",
+            "curator": "mim_semantic_review_20260921",
+            "action": "WITHDREW_UNSUPPORTED_MAPPING",
+            "changes": "Reverse unsupported comma-tail reconstruction. Both 1,1,1,2- and 1,1,2,2-tetrachloroethane can yield this fragment. Original source locants are required. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34024 ; https://www.ebi.ac.uk/chebi/CHEBI:36026 ; MAPPING_SEMANTICS.md",
+            "previous_status": "MAPPED",
+            "new_status": "AMBIGUOUS",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "notes": "Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane); no CAS-RN or CHEBI/NCIT match. Curator review needed. Semantic review 2026-09-21: Reverse unsupported comma-tail reconstruction. Both 1,1,1,2- and 1,1,2,2-tetrachloroethane can yield this fragment. Original source locants are required."
+      },
+      "after_record": {
+        "identifier": "CHEBI:36026",
+        "preferred_term": "1,1,2,2-tetrachloroethane",
+        "synonyms": [
+          {
+            "synonym_text": "2-tetrachloroethane",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          },
+          {
+            "synonym_text": "1,1,2,2-Tetrachloroethane",
+            "synonym_type": "EXACT",
+            "source": "BacDive original-source identity recovery"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 1,
+              "source_columns": "BacDive_Metabolite_utilization"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-05T00:01:30.894952+00:00",
+            "curator": "microbedecoder-residual-dispositions",
+            "action": "FLAGGED_NEEDS_EXPERT",
+            "changes": "Not a single-compound grounding target: raw fragment is reachable from both 1,1,1,2- (CHEBI:34024) and 1,1,2,2-tetrachloroethane (CHEBI:36026); no unique reconstruction.",
+            "previous_status": "UNMAPPED",
+            "new_status": "NEEDS_EXPERT",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/2-tetrachloroethane-edison-literature.md (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended status: `UNMAPPED` / `NEEDS_EXPERT`.** The string `2-tetrachloroethane` is not a complete, uniquely identifying chemical name. It lacks enough locants to distinguish two constitutional isomers: CURIEs discussed: CHEBI:34024, CHEBI:36026. Recorded as provenance only \u2014 no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-14T00:00:00+00:00",
+            "curator": "repair_comma_split_labels",
+            "action": "REPAIRED_COMMA_SPLIT_LABEL",
+            "previous_status": "NEEDS_EXPERT",
+            "new_status": "MAPPED",
+            "changes": "preferred_term '2-tetrachloroethane' -> '1,1,2,2-Tetrachloroethane'; UNMAPPED_0785 -> CHEBI:36026. Repaired a comma-split label (#308/#313): `2-tetrachloroethane` is the tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields `1`, `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record because bare digits are not labels. The reconstruction is unambiguous \u2014 no other compound ends in `2-tetrachloroethane`. The ingest strips commas from every chemical label, so a name containing one arrives as separate fragment records \u2014 the same mechanism that produced the `D` record resolved in #346.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-15T00:00:00+00:00",
+            "curator": "move_mapped_out_of_unmapped_collection",
+            "action": "MOVED_TO_MAPPED_COLLECTION",
+            "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection \u2014 so its mapping was curated but unpublished.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-21T21:33:25.379198+00:00",
+            "curator": "mim_semantic_review_20260921",
+            "action": "WITHDREW_UNSUPPORTED_MAPPING",
+            "changes": "Reverse unsupported comma-tail reconstruction. Both 1,1,1,2- and 1,1,2,2-tetrachloroethane can yield this fragment. Original source locants are required. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34024 ; https://www.ebi.ac.uk/chebi/CHEBI:36026 ; MAPPING_SEMANTICS.md",
+            "previous_status": "MAPPED",
+            "new_status": "AMBIGUOUS",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-09-22T02:07:38.917319+00:00",
+            "curator": "mim_semantic_review_710",
+            "action": "RESOLVED_FROM_ORIGINAL_SOURCE",
+            "changes": "The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane, in the sole matching source row (BacDive 140462); the same BacDive record explicitly identifies CHEBI:36026. This replaces unsupported comma-tail inference with original-source disambiguation. Evidence: https://bacdive.dsmz.de/strain/140462 ; https://www.ebi.ac.uk/chebi/CHEBI:36026",
+            "previous_status": "AMBIGUOUS",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "notes": "Original MicrobeDecoder label and BacDive term recovered during #710 review. The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane, in the sole matching source row (BacDive 140462); the same BacDive record explicitly identifies CHEBI:36026. This replaces unsupported comma-tail inference with original-source disambiguation. The raw truncated label is retained for source lookup; historical incorrect inference remains in curation history only.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:36026",
+          "ontology_label": "1,1,2,2-tetrachloroethane",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MicrobeDecoder original CSV and BacDive",
+              "notes": "The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane, in the sole matching source row (BacDive 140462); the same BacDive record explicitly identifies CHEBI:36026. This replaces unsupported comma-tail inference with original-source disambiguation. Source records: https://bacdive.dsmz.de/strain/140462 ; https://www.ebi.ac.uk/chebi/CHEBI:36026 . Hash-bound source extracts: reports/semantic_review_20260921/resolution/identities/microbedecoder-source-recovery.json"
+            }
+          ]
+        }
+      },
+      "reason": "The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane, in the sole matching source row (BacDive 140462); the same BacDive record explicitly identifies CHEBI:36026. This replaces unsupported comma-tail inference with original-source disambiguation.",
+      "evidence": [
+        "https://bacdive.dsmz.de/strain/140462",
+        "https://www.ebi.ac.uk/chebi/CHEBI:36026"
+      ],
+      "after_sha256": "99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e"
+    },
+    {
+      "source_path": "data/ingredients/unmapped/2-dimethylsuccinic_Acid.yaml",
+      "destination_path": "data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml",
+      "before_sha256": "8c151a568f0c279d5d8f3701cdea77399d0cb274a7e1ab13b6712eae13370942",
+      "before_record": {
+        "identifier": "UNMAPPED_0696",
+        "preferred_term": "2-dimethylsuccinic Acid",
+        "synonyms": [
+          {
+            "synonym_text": "2-dimethylsuccinic Acid",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          }
+        ],
+        "mapping_status": "AMBIGUOUS",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 4,
+              "source_columns": "BacDive_Metabolite_utilization"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "promote_resolved_unmapped",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false,
+            "changes": "Promoted UNMAPPED_0696 -> CHEBI:167506 \"2,3-dimethylsuccinic acid\" (CLOSE_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural definition) (#323)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-21T21:33:25.379198+00:00",
+            "curator": "mim_semantic_review_20260921",
+            "action": "WITHDREW_UNSUPPORTED_MAPPING",
+            "changes": "Withdraw unproved 2,3-isomer identity. Two methyl groups can occupy carbon 2 (2,2-dimethylsuccinic acid); the incomplete source name does not establish 2,3 substitution. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:86537 ; https://www.ebi.ac.uk/chebi/CHEBI:167506",
+            "previous_status": "MAPPED",
+            "new_status": "AMBIGUOUS",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "notes": "Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid); no CAS-RN or CHEBI/NCIT match. Curator review needed. Semantic review 2026-09-21: Withdraw unproved 2,3-isomer identity. Two methyl groups can occupy carbon 2 (2,2-dimethylsuccinic acid); the incomplete source name does not establish 2,3 substitution.",
+        "ingredient_type": "SINGLE_INGREDIENT"
+      },
+      "after_record": {
+        "identifier": "CHEBI:86537",
+        "preferred_term": "2,2-dimethylsuccinic acid",
+        "synonyms": [
+          {
+            "synonym_text": "2-dimethylsuccinic Acid",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 4,
+              "source_columns": "BacDive_Metabolite_utilization"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "promote_resolved_unmapped",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": false,
+            "changes": "Promoted UNMAPPED_0696 -> CHEBI:167506 \"2,3-dimethylsuccinic acid\" (CLOSE_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural definition) (#323)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-21T21:33:25.379198+00:00",
+            "curator": "mim_semantic_review_20260921",
+            "action": "WITHDREW_UNSUPPORTED_MAPPING",
+            "changes": "Withdraw unproved 2,3-isomer identity. Two methyl groups can occupy carbon 2 (2,2-dimethylsuccinic acid); the incomplete source name does not establish 2,3 substitution. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:86537 ; https://www.ebi.ac.uk/chebi/CHEBI:167506",
+            "previous_status": "MAPPED",
+            "new_status": "AMBIGUOUS",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-09-22T02:07:38.917319+00:00",
+            "curator": "mim_semantic_review_710",
+            "action": "RESOLVED_FROM_ORIGINAL_SOURCE",
+            "changes": "All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer CHEBI:167506 is rejected; this is a distinct constitutional isomer, not a close match. Evidence: https://bacdive.dsmz.de/strain/140942 ; https://bacdive.dsmz.de/strain/168456 ; https://bacdive.dsmz.de/strain/140923 ; https://bacdive.dsmz.de/strain/158680 ; https://www.ebi.ac.uk/chebi/CHEBI:86537",
+            "previous_status": "AMBIGUOUS",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "notes": "Original MicrobeDecoder label and BacDive term recovered during #710 review. All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer CHEBI:167506 is rejected; this is a distinct constitutional isomer, not a close match. The raw truncated label is retained for source lookup; historical incorrect inference remains in curation history only.",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:86537",
+          "ontology_label": "2,2-dimethylsuccinic acid",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MicrobeDecoder original CSV and BacDive",
+              "notes": "All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer CHEBI:167506 is rejected; this is a distinct constitutional isomer, not a close match. Source records: https://bacdive.dsmz.de/strain/140942 ; https://bacdive.dsmz.de/strain/168456 ; https://bacdive.dsmz.de/strain/140923 ; https://bacdive.dsmz.de/strain/158680 ; https://www.ebi.ac.uk/chebi/CHEBI:86537 . Hash-bound source extracts: reports/semantic_review_20260921/resolution/identities/microbedecoder-source-recovery.json"
+            }
+          ]
+        }
+      },
+      "reason": "All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer CHEBI:167506 is rejected; this is a distinct constitutional isomer, not a close match.",
+      "evidence": [
+        "https://bacdive.dsmz.de/strain/140942",
+        "https://bacdive.dsmz.de/strain/168456",
+        "https://bacdive.dsmz.de/strain/140923",
+        "https://bacdive.dsmz.de/strain/158680",
+        "https://www.ebi.ac.uk/chebi/CHEBI:86537"
+      ],
+      "after_sha256": "929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62"
+    },
+    {
+      "source_path": "data/ingredients/unmapped/Artepaulin.yaml",
+      "destination_path": "data/ingredients/mapped/Artepaulin.yaml",
+      "before_sha256": "61cf0005d67ddb5bc6fcbdf15fe1292e739f7b5ea7484350bc642d49c79dc86c",
+      "before_record": {
+        "identifier": "UNMAPPED_0819",
+        "preferred_term": "Artepaulin",
+        "synonyms": [],
+        "mapping_status": "AMBIGUOUS",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:13902-54-0 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.265793+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.591875+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-21T21:33:25.379198+00:00",
+            "curator": "mim_semantic_review_20260921",
+            "action": "WITHDREW_UNSUPPORTED_MAPPING",
+            "changes": "Withdraw conflicting CAS 13902-54-0 identity rather than guessing a stereoisomer from a name hit. Prior reviewed PubChem CAS/name queries disagree; source supplier or original structure is needed. Historical mapping and chemistry remain in the before snapshot and curation history. Evidence: reports/yaml_record_review/Artepaulin.md ; https://pubchem.ncbi.nlm.nih.gov/compound/10977881 ; https://pubchem.ncbi.nlm.nih.gov/compound/325292",
+            "previous_status": "MAPPED",
+            "new_status": "AMBIGUOUS",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Semantic review 2026-09-21: Withdraw conflicting CAS 13902-54-0 identity rather than guessing a stereoisomer from a name hit. Prior reviewed PubChem CAS/name queries disagree; source supplier or original structure is needed. Historical mapping and chemistry remain in the before snapshot and curation history."
+      },
+      "after_record": {
+        "identifier": "cas:13902-54-0",
+        "preferred_term": "Artepaulin",
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:13902-54-0 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.265793+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.591875+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-21T21:33:25.379198+00:00",
+            "curator": "mim_semantic_review_20260921",
+            "action": "WITHDREW_UNSUPPORTED_MAPPING",
+            "changes": "Withdraw conflicting CAS 13902-54-0 identity rather than guessing a stereoisomer from a name hit. Prior reviewed PubChem CAS/name queries disagree; source supplier or original structure is needed. Historical mapping and chemistry remain in the before snapshot and curation history. Evidence: reports/yaml_record_review/Artepaulin.md ; https://pubchem.ncbi.nlm.nih.gov/compound/10977881 ; https://pubchem.ncbi.nlm.nih.gov/compound/325292",
+            "previous_status": "MAPPED",
+            "new_status": "AMBIGUOUS",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-09-22T02:08:31.475377+00:00",
+            "curator": "mim_semantic_review_710",
+            "action": "RESTORED_SOURCE_BACKED_REGISTRY_IDENTITY",
+            "changes": "Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly assigns Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates that same name and CAS, and its complete stereochemical InChI exactly matches PubChem CID 10977881. PubChem name-search results are less stereochemically specified; their synonym membership does not contradict the original CAS identity. Restore only the supported CAS registry fallback. KNApSAcK displays an InChIKey inconsistent with its own InChI and PubChem key; that key is not imported. No exact CHEBI:174307 or name-search CID mapping is asserted. Structure fields remain unbackfilled. The earlier withdrawal and evidence concern remain in curation history. Evidence: https://www.knapsackfamily.com/knapsack_core/information.php?word=C00013080 ; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10977881/property/IUPACName,InChIKey,InChI,MolecularFormula/JSON",
+            "previous_status": "AMBIGUOUS",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly assigns Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates that same name and CAS, and its complete stereochemical InChI exactly matches PubChem CID 10977881. PubChem name-search results are less stereochemically specified; their synonym membership does not contradict the original CAS identity. Restore only the supported CAS registry fallback. KNApSAcK displays an InChIKey inconsistent with its own InChI and PubChem key; that key is not imported. No exact CHEBI:174307 or name-search CID mapping is asserted. Structure fields remain unbackfilled. The earlier withdrawal and evidence concern remain in curation history.",
+        "ontology_mapping": {
+          "ontology_id": "cas:13902-54-0",
+          "ontology_label": "Artepaulin",
+          "ontology_source": "CAS",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT original CSV; KNApSAcK; PubChem",
+              "notes": "Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly assigns Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates that same name and CAS, and its complete stereochemical InChI exactly matches PubChem CID 10977881. PubChem name-search results are less stereochemically specified; their synonym membership does not contradict the original CAS identity. Restore only the supported CAS registry fallback. KNApSAcK displays an InChIKey inconsistent with its own InChI and PubChem key; that key is not imported. No exact CHEBI:174307 or name-search CID mapping is asserted. Structure fields remain unbackfilled. The earlier withdrawal and evidence concern remain in curation history. Evidence: https://www.knapsackfamily.com/knapsack_core/information.php?word=C00013080 ; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10977881/property/IUPACName,InChIKey,InChI,MolecularFormula/JSON . Hash-bound source extracts and exact InChI comparison: reports/semantic_review_20260921/resolution/identities/"
+            }
+          ]
+        },
+        "chemical_properties": {
+          "cas_rn": "13902-54-0",
+          "data_source": "CultureBotHT compounds_to_cas.csv row 784; corroborated by KNApSAcK C00013080 and PubChem CID 10977881",
+          "retrieval_date": "2026-09-22T02:08:31.475368+00:00"
+        }
+      },
+      "reason": "Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly assigns Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates that same name and CAS, and its complete stereochemical InChI exactly matches PubChem CID 10977881. PubChem name-search results are less stereochemically specified; their synonym membership does not contradict the original CAS identity. Restore only the supported CAS registry fallback.",
+      "evidence": [
+        "https://www.knapsackfamily.com/knapsack_core/information.php?word=C00013080",
+        "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10977881/property/IUPACName,InChIKey,InChI,MolecularFormula/JSON"
+      ],
+      "after_sha256": "b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642"
+    }
+  ]
+}

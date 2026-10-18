@@ -18,11 +18,19 @@ NON_RESOLVING_SYNONYM_TYPES = frozenset({"REJECTED_LABEL"})
 # a name, not a name. Publishing them as resolvable labels would make internal
 # notes resolve to real ingredients.
 _CURATION_NOTE_SYNONYM_TEXT = r"^\s*(?:role|properties|cross-references?|original amount)\s*:"
+# Organism assay assertions name a relationship to an ingredient, not the
+# ingredient itself (#703). Require the complete prefix and colon: chemical
+# ratios, CURIEs, and names such as "reduction indicator" remain valid labels.
+_TRAIT_SYNONYM_TEXT = (
+    r"^\s*(?:produces|reduction|degradation|hydrolysis|electron acceptor|"
+    r"aerobic catabolization|anaerobic catabolization|assimilation|growth|"
+    r"fermentation|oxidation(?: in darkness)?)\s*:"
+)
 _BARE_PARENTHETICAL = r"^\s*\([^)]*\)\s*$"
 
 CURATION_NOTE_SYNONYM_TEXT = re.compile(_CURATION_NOTE_SYNONYM_TEXT, re.IGNORECASE)
 NON_RESOLVING_SYNONYM_TEXT = re.compile(
-    f"{_CURATION_NOTE_SYNONYM_TEXT}|{_BARE_PARENTHETICAL}",
+    f"{_CURATION_NOTE_SYNONYM_TEXT}|{_TRAIT_SYNONYM_TEXT}|{_BARE_PARENTHETICAL}",
     re.IGNORECASE,
 )
 

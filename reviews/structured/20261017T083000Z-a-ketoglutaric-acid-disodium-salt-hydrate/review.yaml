@@ -1,0 +1,355 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-a-ketoglutaric-acid-disodium-salt-hydrate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: A-Ketoglutaric_Acid_Disodium_Salt_Hydrate (data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for A-Ketoglutaric_Acid_Disodium_Salt_Hydrate
+  (data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml, record-97df33f7b4c5ae1c,
+  mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound
+  to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    sha256: bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c
+    role: target
+  - path: reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml
+    sha256: 799a1a80fa398851bced286dd0f68a97e6a22f7090d53677678dc13b92c6f076
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/20261001T050111Z-A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md
+    sha256: ec45e8cd9db08c0ccd49e444deee9265ba89f31c660cf080a44c0a913e887112
+    role: context
+  - path: reports/yaml_record_review/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md
+    sha256: 7dee5e87ca3dd06fe379e98fc7c2155da540ca9740222cff04a9c27c098b02c9
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-97df33f7b4c5ae1c
+  path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+  label: A-Ketoglutaric_Acid_Disodium_Salt_Hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-97df33f7b4c5ae1c
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-90d49bc40fac150b
+  - ev-420ae2da7e82699a
+  - ev-7b30227940897007
+  - ev-449e2a8d62921bdf
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0], nutritional_roles[1] rely only
+    on COMPUTATIONAL_PREDICTION or empty evidence.
+  target_ids:
+  - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-90d49bc40fac150b
+  - ev-73b64504e1014d7e
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-b3136020494835ab
+  - ev-fec8c7a95659559f
+  - ev-73b64504e1014d7e
+evidence:
+- evidence_id: ev-90d49bc40fac150b
+  kind: record_content
+  reference: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[426],"raw_equal":true},"docs_rows":[{"identifier":"cas:305-72-6","line":428,"mapping_status":"MAPPED","ontology_id":"CHEBI:30915","preferred_term":"a-Ketoglutaric
+    acid disodium salt hydrate"}],"identifier":"cas:305-72-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30915","ontology_label":"2-oxoglutaric
+    acid","ontology_source":"CHEBI"},"preferred_term":"a-Ketoglutaric acid disodium
+    salt hydrate","sssom_rows":[{"data_row":261,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric
+    acid","predicate_id":"skos:closeMatch"},{"data_row":262,"object_id":"cas:305-72-6","object_label":"a-Ketoglutaric
+    acid disodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","synonym_count":1}'
+  snapshot_sha256: bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c
+- evidence_id: ev-420ae2da7e82699a
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [426]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-7b30227940897007
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate; data-row positions=[261,
+    262]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":261,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric
+    acid","other":"alpha-ketoglutaric acid|CAS:305-72-6","predicate_id":"skos:closeMatch","subject_id":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","validation_method":"manual:retire_wrong_form_names|OTHER|2026-09-23"},{"data_row":262,"object_id":"cas:305-72-6","object_label":"a-Ketoglutaric
+    acid disodium salt hydrate","other":"CAS:305-72-6","predicate_id":"skos:exactMatch","subject_id":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-449e2a8d62921bdf
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[428]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:305-72-6","line":428,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:30915","preferred_term":"a-Ketoglutaric
+    acid disodium salt hydrate","total_occurrences":"11"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-b3136020494835ab
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050111Z-A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md
+  locator: 'YAML Record Review: a-Ketoglutaric acid disodium salt hydrate:2; Target:10;
+    Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52;
+    Recommended Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: ec45e8cd9db08c0ccd49e444deee9265ba89f31c660cf080a44c0a913e887112
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The CAS identity
+    and close anhydrous-acid match are intentionally preserved, but the chemistry
+    lacks hydrate water, a neutral-acid label is exported as exact other, and the
+    roles are provisional.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml`,
+    `just validate-terms data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml`
+    where applicable, and `just qc-sssom`.'
+- evidence_id: ev-fec8c7a95659559f
+  kind: prior_review
+  reference: reports/yaml_record_review/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md
+  locator: '`data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml`:2;
+    Verdict:4; Identity:11; Validation:24; Evidence:39; Completeness:60; Recommended
+    Edits:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 7dee5e87ca3dd06fe379e98fc7c2155da540ca9740222cff04a9c27c098b02c9
+  quote: "Recommended Edits:\n- Inspect the original source or supplier for CAS `305-72-6`;\
+    \ if it supports\n  an anhydrous disodium salt rather than a hydrate, remove `hydrate`\
+    \ from\n  `preferred_term`.\n- Remove `a-Ketoglutaric acid` from exact synonyms,\
+    \ or move it to\n  source-occurrence-only provenance that will not be exported\
+    \ as an exact\n  `other` surface for the salt.\n- Either add direct support for\
+    \ the carbon-source and energy-source roles or\n  remove the provisional role\
+    \ facets.\n- Regenerate `data/curated/mapped_ingredients.yaml` and\n  `mappings/ingredient_mappings.sssom.tsv`,\
+    \ then rerun strict validation, the\n  hydrate audit, and SSSOM invariants."
+- evidence_id: ev-73b64504e1014d7e
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[182,1661,1868]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:420704c247afac2ee6b0","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:52686f86bdb498ef0ed0","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:92988e22d8252691db92","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-56ffddaf213d7108
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-90d49bc40fac150b
+  - ev-420ae2da7e82699a
+  - ev-7b30227940897007
+  - ev-449e2a8d62921bdf
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-b8300412ebfd4c38
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-b3136020494835ab
+  - ev-fec8c7a95659559f
+  - ev-90d49bc40fac150b
+  - ev-73b64504e1014d7e
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:01:11Z;
+    reviewed SHA-256=bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c;
+    current SHA-256=bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050111Z-A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md","reports/yaml_record_review/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md` after
+    the record changed from 09dcea028f806cc4d490096bd79e8e1391c27d23ff523f97e732016ab83f0450
+    to bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-b3136020494835ab
+    - ev-fec8c7a95659559f
+    - ev-90d49bc40fac150b
+  - name: legacy-native-ids
+    value: '["SEM:420704c247afac2ee6b0","SEM:52686f86bdb498ef0ed0","SEM:92988e22d8252691db92"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-90d49bc40fac150b
+    - ev-b3136020494835ab
+    - ev-fec8c7a95659559f
+    - ev-73b64504e1014d7e
+- assessment_id: a-role-97df33f7b4c5ae1c
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Current role assertions on nutritional_roles[0], nutritional_roles[1] rely
+    only on COMPUTATIONAL_PREDICTION or empty evidence lists and require source-backed
+    curation support.
+  target_ids:
+  - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-90d49bc40fac150b
+  - ev-73b64504e1014d7e
+  dimensions:
+  - name: legacy-disposition
+    value: still_present
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-90d49bc40fac150b
+    - ev-73b64504e1014d7e
+findings:
+- finding_id: rec-f-role-97df33f7b4c5ae1c
+  issue_key: mim-reconciliation-role-support-97df33f7b4c5ae1c
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only or empty role support: A-Ketoglutaric_Acid_Disodium_Salt_Hydrate'
+  description: Prediction-only or empty evidence payloads remain on the named current
+    role assertions (nutritional_roles[0], nutritional_roles[1]). This confirms the
+    local evidence gap, not that the biological role is false.
+  target_ids:
+  - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-90d49bc40fac150b
+  - ev-73b64504e1014d7e
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  - nutritional_roles[1]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions:
+- action_id: rec-act-role-97df33f7b4c5ae1c
+  description: 'Reassess prediction-only or empty role support: A-Ketoglutaric_Acid_Disodium_Salt_Hydrate'
+  finding_ids:
+  - rec-f-role-97df33f7b4c5ae1c
+  target_ids:
+  - record-97df33f7b4c5ae1c
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact role fields and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024630Z-mim-reconcile-all-batch-02.

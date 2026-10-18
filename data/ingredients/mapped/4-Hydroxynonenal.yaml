@@ -1,14 +1,25 @@
-identifier: CHEBI:142593
+identifier: CHEBI:58968
 preferred_term: 4-Hydroxynonenal
 ontology_mapping:
-  ontology_id: CHEBI:142593
-  ontology_label: 4-hydroxynonenal
+  ontology_id: CHEBI:58968
+  ontology_label: (E)-4-hydroxynon-2-enal
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier CHEBI:142593 -> CHEBI:58968; ontology CHEBI:142593 (''4-hydroxynonenal'')
+      -> CHEBI:58968 (''(E)-4-hydroxynon-2-enal''); mapping_quality EXACT_MATCH ->
+      CAS_RN_LOOKUP. CHEBI:142593 ''4-hydroxynonenal'' is a class (definition: double
+      bond ''at any position''; wildcard SMILES ''*C([H])=O'', which had been copied
+      into the record; no InChIKey, no CAS). The record has carried CAS 75899-68-2
+      since creation; PubChem resolves it to CID 5283344 with InChIKey JVJFIQYAHPMBBX-FNORWQNLSA-N,
+      which is CHEBI:58968 ''(E)-4-hydroxynon-2-enal'' (synonyms ''4-hydroxynonenal'',
+      ''HNE''). Section 3 step 4''s evidence hatch: the CAS picks the member. Structure
+      fields refreshed from the term.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -37,10 +48,29 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-23T00:44:54.402559+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier CHEBI:142593 -> CHEBI:58968; ontology CHEBI:142593 (''4-hydroxynonenal'')
+    -> CHEBI:58968 (''(E)-4-hydroxynon-2-enal''); mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP.
+    CHEBI:142593 ''4-hydroxynonenal'' is a class (definition: double bond ''at any
+    position''; wildcard SMILES ''*C([H])=O'', which had been copied into the record;
+    no InChIKey, no CAS). The record has carried CAS 75899-68-2 since creation; PubChem
+    resolves it to CID 5283344 with InChIKey JVJFIQYAHPMBBX-FNORWQNLSA-N, which is
+    CHEBI:58968 ''(E)-4-hydroxynon-2-enal'' (synonyms ''4-hydroxynonenal'', ''HNE'').
+    Section 3 step 4''s evidence hatch: the CAS picks the member. Structure fields
+    refreshed from the term. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 75899-68-2
-  data_source: CultureBotHT compounds_to_cas.csv
+  data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:58968
+    (#312)
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
   molecular_formula: C9H16O2
-  smiles: '*C([H])=O'
+  smiles: '[H]C(=O)/C=C/C(O)CCCCC'
+  inchi: InChI=1S/C9H16O2/c1-2-3-4-6-9(11)7-5-8-10/h5,7-9,11H,2-4,6H2,1H3/b7-5+
+  pubchem_cid: 5283344
 ingredient_type: SINGLE_INGREDIENT

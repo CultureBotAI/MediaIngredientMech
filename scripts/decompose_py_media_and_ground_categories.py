@@ -66,6 +66,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import yaml  # noqa: E402
 
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.sssom_grading import PREDICATE_BROAD  # noqa: E402
 
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
@@ -209,7 +210,7 @@ def main(argv: list[str] | None = None) -> int:
             "previous_status": "NEEDS_EXPERT", "new_status": "MAPPED",
             "changes": f"{old_id} -> {ident}; ontology_id {onto_id} ({grade}). {note}",
             "llm_assisted": False})
-        pred = "skos:narrowMatch" if grade == "NARROW_MATCH" else "skos:exactMatch"
+        pred = PREDICATE_BROAD if grade == "NARROW_MATCH" else "skos:exactMatch"
         sssom_rows.append((label, pred, onto_id, onto_label, ident))
         gnd_out.append(f"{label[:34]:<36} {onto_id} {onto_label[:24]:<26} {grade}")
 
@@ -229,7 +230,7 @@ def main(argv: list[str] | None = None) -> int:
             row = [subj, label, pred, oid, olabel, "obo:chebi.owl",
                    "semapv:ManualMappingCuration", f"MIM:curation ({ISSUE})", "2026-08-15"]
             new.append("\t".join(row + [""] * (ncols - len(row))) + "\n")
-            if pred == "skos:narrowMatch":     # Rule B1 registry row
+            if pred == PREDICATE_BROAD:     # Rule B1 registry row
                 reg = [subj, label, "skos:exactMatch", ident, label, "kgm:compound",
                        "semapv:ManualMappingCuration", f"MIM:curation ({ISSUE})",
                        "2026-08-15"]

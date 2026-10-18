@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "source_sssom": "mappings/ingredient_mappings.sssom.tsv",
+  "source_sha256": "761b7dee1e7eef7ecd999a848f6188fe1a0d394c79a8b53b957c2e477cec9f3f",
+  "findings": [
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/730",
+      "disposition": "WITHHOLD",
+      "subject_id": "MIM:12-dichloropropane",
+      "source_position": 32,
+      "row_sha256": "aee18806e1c8a06ee1204d735fcfb531e315e9aa9c3079d9916c2d12cf16ae7f",
+      "current_mapping": {
+        "subject_id": "MIM:12-dichloropropane",
+        "subject_label": "1,2-Dichloropropane",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:82163",
+        "object_label": "rac-1,2-dichloropropane",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:MIM curation (#320)|MIM:curator=claude_culturemech_alias_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-30",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "2-dichloropropane|1,2--Dichloropropane (10 mg/ml in methanol)|CAS:78-87-5",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "unsafe_or_unresolved_tokens": [
+        "1,2--Dichloropropane (10 mg/ml in methanol)"
+      ],
+      "reason": "A concentration-qualified solution in methanol is a preparation containing 1,2-dichloropropane. Publishing its complete preparation string as a pure-compound synonym erases the solvent/concentration boundary; the prior identity review did not explicitly adjudicate this alias.",
+      "owner_record": "data/ingredients/mapped/12-dichloropropane.yaml",
+      "owner_record_sha256": "daa1826b7708c2094d5b454b451ac75463fedc9f716e26f8a3b90af5fbcc66b9",
+      "source_synonyms": [
+        {
+          "position": 1,
+          "synonym": {
+            "synonym_text": "1,2--Dichloropropane (10 mg/ml in methanol)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        }
+      ],
+      "scope": "Report-only negative disposition; no source edits or automatic synonym stripping."
+    },
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/730",
+      "disposition": "WITHHOLD",
+      "subject_id": "MIM:Cacl2_X_2_H2o",
+      "source_position": 610,
+      "row_sha256": "09f91c14cebb9893fc386bebe56c2517dd9c744b92ba6dc9128900096b5abf4c",
+      "current_mapping": {
+        "subject_id": "MIM:Cacl2_X_2_H2o",
+        "subject_label": "CaCl2 x 2 H2O",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:86158",
+        "object_label": "calcium chloride dihydrate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=ingredient_mapping_review_2026_05_05]|kgm:mediaingredientmech_reviewed[curator=merge_identifier_collisions]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "CaCl 2 X 2 H2O|CaCl2 . 2H2O|CaCl2 x 2 H2O (0.1% w/v)|CaCl2 x 2 H2O (50 g/l stock solution)|CaCl2 x 2 H2O (5M)|CaCl2 x 2 H2O solution (7%)|CaCl2 x 2H2O|CaCl2 x2H2O|CaCl2 · 2H2O|CaCl2. 2H2O|CaCl2.2H2O|CaCl2x 2H2O|CaCl2x2H2O|CaCl2·2H2O|CaCl2  x 2 H2O|CaCl2 x  2 H2O|CaCl2•2H2O|CaCl2•2H2O (Sigma C-3881)|CaCl2•2H2O(CAS: 10035-04-8)|CaCl2•2H2O(Sigma C-3881)|calcium chloride--water (1/2)|CaCl22H2O|CaCl2 × 2 H2O|CaCl2*2H2O|CAS:10035-04-8",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "unsafe_or_unresolved_tokens": [
+        "CaCl2 x 2 H2O (0.1% w/v)",
+        "CaCl2 x 2 H2O (50 g/l stock solution)",
+        "CaCl2 x 2 H2O (5M)",
+        "CaCl2 x 2 H2O solution (7%)"
+      ],
+      "reason": "These labels specify solutions or concentration-qualified preparations, but are typed HYDRATE_FORM synonyms of calcium chloride dihydrate. The labels do not denote the same supplied pure substance; the prior identity review did not adjudicate the preparation boundary.",
+      "owner_record": "data/ingredients/mapped/Cacl2_X_2_H2o.yaml",
+      "owner_record_sha256": "029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7",
+      "source_synonyms": [
+        {
+          "position": 7,
+          "synonym": {
+            "synonym_text": "CaCl2 x 2 H2O (0.1% w/v)",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          }
+        },
+        {
+          "position": 8,
+          "synonym": {
+            "synonym_text": "CaCl2 x 2 H2O (50 g/l stock solution)",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          }
+        },
+        {
+          "position": 9,
+          "synonym": {
+            "synonym_text": "CaCl2 x 2 H2O (5M)",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          }
+        },
+        {
+          "position": 10,
+          "synonym": {
+            "synonym_text": "CaCl2 x 2 H2O solution (7%)",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          }
+        }
+      ],
+      "scope": "Report-only negative disposition; no source edits or automatic synonym stripping."
+    },
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/730",
+      "disposition": "WITHHOLD",
+      "subject_id": "MIM:Nano3",
+      "source_position": 2068,
+      "row_sha256": "8a655d947bcf5a0090bb2b1acbb962b2bd46cb83009b734373d7f7706c9df5b8",
+      "current_mapping": {
+        "subject_id": "MIM:Nano3",
+        "subject_label": "NaNO3",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:63005",
+        "object_label": "sodium nitrate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:curator=mim_semantic_review_20260921",
+        "mapping_date": "2026-09-21",
+        "confidence": "0.99",
+        "comment": "Absorbed Nano. The source synonyms explicitly identify NaNO3, CAS 7631-99-4 and Fisher BP360-500; NCIT:C54713 denotes the nano unit prefix. NaNO retained solely as the documented truncated source label. Synonym dispositions and role evidence retained. Counts recomputed from distinct recipe membership where nonzero. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:63005",
+        "other": "CAS:7631-99-4|Chile saltpeter|Cubic niter|Na NO3|NaNO|NaNO3(autoclave before adding)(Fisher BP360-500)|NaNO3(CAS: 7631-99-4)|NaNO3(Fisher BP360-500)|Nitrate de sodium|Nitrate of soda|Nitric acid monosodium salt|Nitric acid sodium salt (1:1)|Nitric acid, sodium salt|Sodium nitrate (nitrogen source)|Sodium saltpeter|sodium trioxidonitrate(1-)|Sodium(I) nitrate (1:1)",
+        "validation_method": "manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"
+      },
+      "unsafe_or_unresolved_tokens": [
+        "NaNO3(autoclave before adding)(Fisher BP360-500)"
+      ],
+      "reason": "The complete label embeds an autoclaving/addition instruction. It is a preparation instruction attached to a chemical/catalog name, not an independently reviewed resolving synonym for sodium nitrate.",
+      "owner_record": "data/ingredients/mapped/Nano3.yaml",
+      "owner_record_sha256": "6ac10a54805425447c42dc2ff47eb014dd00d71ac84a3701437f070c09ad2d0f",
+      "source_synonyms": [
+        {
+          "position": 20,
+          "synonym": {
+            "synonym_text": "NaNO3(autoclave before adding)(Fisher BP360-500)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          }
+        }
+      ],
+      "scope": "Report-only negative disposition; no source edits or automatic synonym stripping."
+    },
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/730",
+      "disposition": "WITHHOLD",
+      "subject_id": "MIM:Spir_Solution",
+      "source_position": 2668,
+      "row_sha256": "652a1d3801bcaa34f849ab26f03fea619a2c5f317cec225958a6474d888c66d5",
+      "current_mapping": {
+        "subject_id": "MIM:Spir_Solution",
+        "subject_label": "Spir solution",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:spir_solution",
+        "object_label": "Spir solution",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:MIM curation (#114)|MIM:curator=promote_resolved_unmapped",
+        "mapping_date": "2026-08-06",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Spir solution 1|Spir solution 2",
+        "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+      },
+      "unsafe_or_unresolved_tokens": [
+        "Spir solution 1",
+        "Spir solution 2"
+      ],
+      "reason": "Two numbered stock-solution names are published as aliases of one local mixture identity. The current record notes that component-level recipe curation is pending; an inspected named formula is needed to establish whether solution 1 and solution 2 are the same stock or distinct preparations. This is an unresolved synonym-identity ambiguity, not a claim that either exact formula is known.",
+      "owner_record": "data/ingredients/mapped/Spir_Solution.yaml",
+      "owner_record_sha256": "ad684cf7cd788cce116eb59dbdb85ad496df473472199112b23727e195dca554",
+      "source_synonyms": [
+        {
+          "position": 0,
+          "synonym": {
+            "synonym_text": "Spir solution 1",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          }
+        },
+        {
+          "position": 1,
+          "synonym": {
+            "synonym_text": "Spir solution 2",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          }
+        }
+      ],
+      "scope": "Report-only negative disposition; no source edits or automatic synonym stripping."
+    }
+  ]
+}

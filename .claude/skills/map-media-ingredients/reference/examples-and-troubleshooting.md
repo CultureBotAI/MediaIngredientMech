@@ -35,7 +35,7 @@ synonyms:
 > collapse that produced the families tracked in #218/#225.
 >
 > **If no hydrate-specific term exists**, the record takes its own
-> `cas:<hydrate CAS>` identifier with a `skos:narrowMatch` to the anhydrous
+> `cas:<hydrate CAS>` identifier with a `skos:broadMatch` to the anhydrous
 > parent plus the Rule B1 registry row — see MAPPING_SEMANTICS.md Section 3.
 > `just report-hydrate-grounding` lists the records still in violation.
 

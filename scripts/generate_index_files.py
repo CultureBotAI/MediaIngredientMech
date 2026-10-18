@@ -5,11 +5,24 @@ Generate index files for all MediaIngredientMech records.
 Creates JSON, CSV, and Markdown exports for easy reference.
 """
 
+import argparse
 import csv
 import json
+import sys
+from collections.abc import Mapping
 from pathlib import Path
 
 import yaml
+
+_project_root = Path(__file__).resolve().parents[1]
+_src = _project_root / "src"
+if str(_src) not in sys.path:
+    sys.path.insert(0, str(_src))
+
+from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
+    effective_occurrence_statistics,
+    membership_counts,
+)
 
 
 def load_records(path: Path) -> list[dict]:
@@ -21,7 +34,18 @@ def load_records(path: Path) -> list[dict]:
     return records
 
 
-def generate_json_index(records: list[dict], output_path: Path) -> None:
+def _total_occurrences(
+    record: dict,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+) -> int:
+    return effective_occurrence_statistics(record, counts_by_id)[1]
+
+
+def generate_json_index(
+    records: list[dict],
+    output_path: Path,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+) -> None:
     """Generate JSON index with key fields."""
     index = []
 
@@ -30,7 +54,7 @@ def generate_json_index(records: list[dict], output_path: Path) -> None:
             'identifier': record.get('identifier'),
             'preferred_term': record.get('preferred_term'),
             'mapping_status': record.get('mapping_status'),
-            'occurrences': record.get('occurrence_statistics', {}).get('total_occurrences', 0),
+            'occurrences': _total_occurrences(record, counts_by_id),
         }
 
         # Add ontology mapping if exists
@@ -48,7 +72,11 @@ def generate_json_index(records: list[dict], output_path: Path) -> None:
     print(f"✓ Created {output_path} ({len(index)} records)")
 
 
-def generate_csv_index(records: list[dict], output_path: Path) -> None:
+def generate_csv_index(
+    records: list[dict],
+    output_path: Path,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+) -> None:
     """Generate CSV index with key fields."""
     with open(output_path, 'w', newline='') as f:
         # Use repository-stable LF endings so changed rows pass `git diff --check`
@@ -76,13 +104,18 @@ def generate_csv_index(records: list[dict], output_path: Path) -> None:
                 om.get('ontology_id', ''),
                 om.get('ontology_source', ''),
                 om.get('mapping_quality', ''),
-                record.get('occurrence_statistics', {}).get('total_occurrences', 0),
+                _total_occurrences(record, counts_by_id),
             ])
 
     print(f"✓ Created {output_path} ({len(records)} records)")
 
 
-def generate_markdown_index(records: list[dict], output_path: Path, title: str) -> None:
+def generate_markdown_index(
+    records: list[dict],
+    output_path: Path,
+    title: str,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+) -> None:
     """Generate Markdown index with formatted tables."""
     lines = [f"# {title}\n"]
 
@@ -91,7 +124,7 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
     mapped = sum(1 for r in records if r.get('mapping_status') == 'MAPPED')
     unmapped = sum(1 for r in records if r.get('mapping_status') == 'UNMAPPED')
     other = total - mapped - unmapped
-    total_occurrences = sum(r.get('occurrence_statistics', {}).get('total_occurrences', 0) for r in records)
+    total_occurrences = sum(_total_occurrences(r, counts_by_id) for r in records)
 
     lines.append(f"**Total Records**: {total}\n")
     lines.append(f"**Mapped**: {mapped} ({mapped/total*100:.1f}%)\n")
@@ -118,7 +151,7 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
                 f"| {om.get('ontology_id', '')} "
                 f"| {om.get('ontology_source', '')} "
                 f"| {om.get('mapping_quality', '')} "
-                f"| {record.get('occurrence_statistics', {}).get('total_occurrences', 0)} |\n"
+                f"| {_total_occurrences(record, counts_by_id)} |\n"
             )
 
         lines.append("\n")
@@ -137,7 +170,7 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
                 f"| {record.get('identifier', '')} "
                 f"| {record.get('preferred_term', '')} "
                 f"| {record.get('mapping_status', '')} "
-                f"| {record.get('occurrence_statistics', {}).get('total_occurrences', 0)} |\n"
+                f"| {_total_occurrences(record, counts_by_id)} |\n"
             )
 
         lines.append("\n")
@@ -162,7 +195,7 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
                 f"| {status or ''} "
                 f"| {om.get('ontology_id', '')} "
                 f"| {record.get('representative', '')} "
-                f"| {record.get('occurrence_statistics', {}).get('total_occurrences', 0)} |\n"
+                f"| {_total_occurrences(record, counts_by_id)} |\n"
             )
 
         lines.append("\n")
@@ -173,8 +206,13 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
     print(f"✓ Created {output_path}")
 
 
-def main():
+def main(argv: list[str] | None = None):
     """Generate all index files."""
+    parser = argparse.ArgumentParser(description="Generate the data/curated index files.")
+    # `just qc-roundtrip` regenerates into a scratch directory and diffs, so the
+    # local check never rewrites tracked files (#810).
+    parser.add_argument("--output-dir", type=Path, default=Path("data/curated"))
+    args = parser.parse_args(argv)
     print("=" * 80)
     print("GENERATING INDEX FILES")
     print("=" * 80)
@@ -191,34 +229,37 @@ def main():
     print(f"Total: {len(all_records)} ingredients")
     print()
 
-    output_dir = Path('data/curated')
+    counts_by_id = membership_counts(Path("mappings/culturemech_recipe_membership.tsv"))
+
+    output_dir = args.output_dir
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     # Generate JSON
     print("Generating JSON indexes...")
-    generate_json_index(mapped_records, output_dir / 'mapped_ingredients_index.json')
-    generate_json_index(unmapped_records, output_dir / 'unmapped_ingredients_index.json')
-    generate_json_index(all_records, output_dir / 'all_ingredients_index.json')
+    generate_json_index(mapped_records, output_dir / 'mapped_ingredients_index.json', counts_by_id)
+    generate_json_index(unmapped_records, output_dir / 'unmapped_ingredients_index.json', counts_by_id)
+    generate_json_index(all_records, output_dir / 'all_ingredients_index.json', counts_by_id)
     print()
 
     # Generate CSV
     print("Generating CSV indexes...")
-    generate_csv_index(mapped_records, output_dir / 'mapped_ingredients_index.csv')
-    generate_csv_index(unmapped_records, output_dir / 'unmapped_ingredients_index.csv')
-    generate_csv_index(all_records, output_dir / 'all_ingredients_index.csv')
+    generate_csv_index(mapped_records, output_dir / 'mapped_ingredients_index.csv', counts_by_id)
+    generate_csv_index(unmapped_records, output_dir / 'unmapped_ingredients_index.csv', counts_by_id)
+    generate_csv_index(all_records, output_dir / 'all_ingredients_index.csv', counts_by_id)
     print()
 
     # Generate Markdown
     print("Generating Markdown indexes...")
-    generate_markdown_index(mapped_records, output_dir / 'MAPPED_INGREDIENTS.md', 'Mapped Ingredients Index')
-    generate_markdown_index(unmapped_records, output_dir / 'UNMAPPED_INGREDIENTS.md', 'Unmapped Ingredients Index')
-    generate_markdown_index(all_records, output_dir / 'ALL_INGREDIENTS.md', 'Complete Ingredients Index')
+    generate_markdown_index(mapped_records, output_dir / 'MAPPED_INGREDIENTS.md', 'Mapped Ingredients Index', counts_by_id)
+    generate_markdown_index(unmapped_records, output_dir / 'UNMAPPED_INGREDIENTS.md', 'Unmapped Ingredients Index', counts_by_id)
+    generate_markdown_index(all_records, output_dir / 'ALL_INGREDIENTS.md', 'Complete Ingredients Index', counts_by_id)
     print()
 
     print("=" * 80)
     print("✓ ALL INDEX FILES GENERATED")
     print("=" * 80)
     print()
-    print("Files created in data/curated/:")
+    print(f"Files created in {output_dir}/:")
     print("  JSON: *_index.json (machine-readable)")
     print("  CSV:  *_index.csv (spreadsheet-compatible)")
     print("  MD:   *.md (human-readable)")

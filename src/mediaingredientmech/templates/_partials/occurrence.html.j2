@@ -13,7 +13,7 @@
 {% for k, v in os.items() %}
   {% if k not in ['total_occurrences', 'media_count'] %}
     <dt>{{ k|replace('_', ' ')|capitalize }}</dt>
-    <dd>{{ v }}</dd>
+    <dd>{{ v|structured }}</dd>
   {% endif %}
 {% endfor %}
 </dl>

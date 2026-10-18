@@ -1,0 +1,580 @@
+# Per-record structured review: Fatty_Acid_Mixture_See_Medium_No_266 (data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml)
+
+- Review: 20261017T083000Z-fatty-acid-mixture-see-medium-no-266
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Fatty_Acid_Mixture_See_Medium_No_266 (data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml, record-099e2c8a2a9f8f68, mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-099e2c8a2a9f8f68 | data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml | maintained | Fatty_Acid_Mixture_See_Medium_No_266 |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-099e2c8a2a9f8f68 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-099e2c8a2a9f8f68 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-099e2c8a2a9f8f68 | Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-099e2c8a2a9f8f68.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-099e2c8a2a9f8f68.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T16:08:06Z; reviewed SHA-256=00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c; current SHA-256=00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c; hash_changed=False. Reports=["reports/yaml_record_review/Fatty_Acid_Mixture_See_Medium_No_266.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The row maps a mixture or stock surface to generic CHEBI fatty acid and exports mixture labels as exact SSSOM synonyms.
+
+### Unresolved recipe-reference or truncated-concentration synonyms
+
+nomenclature: concern. Targets: record-099e2c8a2a9f8f68.
+
+Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"unresolved recipe cross-reference in a resolving synonym","token":"Fatty acid mixture (see below)"}]. Truncated concentration strings and context-dependent instructions need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as a class.
+
+### Certainty correction for the exact token observation
+
+nomenclature: unknown. Targets: record-099e2c8a2a9f8f68.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed.
+
+## Findings
+
+### rec-scope-f-853c7e2e707eedfc: Adjudicate source scope of exported tokens: Fatty acid mixture (see Medium No. 266)
+
+major / deferred / provisional; issue key: mim-reconciliation-exported-context-tokens-099e2c8a2a9f8f68.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed.
+
+Disposition: Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-1c1028720cbaed99 | data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[975],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35366","line":977,"mapping_status":"MAPPED","ontology_id":"CHEBI:35366","preferred_term":"Fatty acid mixture (see Medium No. 266)"}],"identifier":"CHEBI:35366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35366","ontology_label":"fatty acid","ontology_source":"CHEBI"},"preferred_term":"Fatty acid mixture (see Medium No. 266)","sssom_rows":[{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","synonym_count":10} |
+| ev-e8eb888036066ff2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [975] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c4a82578b9a0228b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fatty_Acid_Mixture_See_Medium_No_266; data-row positions=[1165] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty acid","other":"Fettsaeure&#124;Fettsaeuren&#124;acide gras&#124;acides gras&#124;acido graso&#124;acidos grasos&#124;fatty acids&#124;Fatty acid mixture&#124;Fatty acid mixture (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-eb0fe40fffd13d27 | docs/data/mapped_ingredients.csv; CSV lines=[977] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35366","line":977,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:35366","preferred_term":"Fatty acid mixture (see Medium No. 266)","total_occurrences":"4"}] |
+| ev-e116f44d24e1e32b | reports/yaml_record_review/Fatty_Acid_Mixture_See_Medium_No_266.md; &#96;data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:29; Completeness:51; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-49b95a1b59136d20 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[583] | context_only | [{"current_record_sha256":"00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c","finding_id":"SEM:3fe446fa58dc856afbbe","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
+| ev-997c904ed0a9e395 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-853c7e2e707eedfc] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
+| ev-66223de2980eb719 | data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[975],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35366","line":977,"mapping_status":"MAPPED","ontology_id":"CHEBI:35366","preferred_term":"Fatty acid mixture (see Medium No. 266)"}],"identifier":"CHEBI:35366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35366","ontology_label":"fatty acid","ontology_source":"CHEBI"},"preferred_term":"Fatty acid mixture (see Medium No. 266)","sssom_rows":[{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","synonym_count":10} |
+| ev-6b0f037f5dc84aa9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fatty_Acid_Mixture_See_Medium_No_266; data-row positions=[1165] | supports | Current exact-subject rows, including complete other payload: [{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty acid","other":"Fettsaeure&#124;Fettsaeuren&#124;acide gras&#124;acides gras&#124;acido graso&#124;acidos grasos&#124;fatty acids&#124;Fatty acid mixture&#124;Fatty acid mixture (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-abc54f67fc204f62 | reports/yaml_record_review/Fatty_Acid_Mixture_See_Medium_No_266.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
+| ev-10e07ce7646683c8 | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-853c7e2e707eedfc] | context_only | Predecessor structured review finding scope-f-853c7e2e707eedfc in 20261011T030852Z-mim-token-scope-reassessment |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024634Z-mim-reconcile-all-batch-06, 20261011T030852Z-mim-token-scope-reassessment.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-fatty-acid-mixture-see-medium-no-266
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Fatty_Acid_Mixture_See_Medium_No_266 (data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Fatty_Acid_Mixture_See_Medium_No_266 (data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml,
+  record-099e2c8a2a9f8f68, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+    sha256: 00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c
+    role: target
+  - path: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+    sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+    role: context
+  - path: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+    sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Fatty_Acid_Mixture_See_Medium_No_266.md
+    sha256: 1699420fb78c42ed15355504b4a30c60190cf49a03fd7ce28b1129af4a0737dd
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+    role: context
+targets:
+- target_id: record-099e2c8a2a9f8f68
+  path: data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+  label: Fatty_Acid_Mixture_See_Medium_No_266
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-099e2c8a2a9f8f68
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-1c1028720cbaed99
+  - ev-e8eb888036066ff2
+  - ev-c4a82578b9a0228b
+  - ev-eb0fe40fffd13d27
+  - ev-66223de2980eb719
+  - ev-6b0f037f5dc84aa9
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-1c1028720cbaed99
+  - ev-49b95a1b59136d20
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-e116f44d24e1e32b
+  - ev-49b95a1b59136d20
+  - ev-997c904ed0a9e395
+  - ev-abc54f67fc204f62
+  - ev-10e07ce7646683c8
+evidence:
+- evidence_id: ev-1c1028720cbaed99
+  kind: record_content
+  reference: data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[975],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35366","line":977,"mapping_status":"MAPPED","ontology_id":"CHEBI:35366","preferred_term":"Fatty
+    acid mixture (see Medium No. 266)"}],"identifier":"CHEBI:35366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35366","ontology_label":"fatty
+    acid","ontology_source":"CHEBI"},"preferred_term":"Fatty acid mixture (see Medium
+    No. 266)","sssom_rows":[{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","synonym_count":10}'
+  snapshot_sha256: 00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c
+- evidence_id: ev-e8eb888036066ff2
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [975]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-c4a82578b9a0228b
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Fatty_Acid_Mixture_See_Medium_No_266; data-row positions=[1165]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty
+    acid","other":"Fettsaeure|Fettsaeuren|acide gras|acides gras|acido graso|acidos
+    grasos|fatty acids|Fatty acid mixture|Fatty acid mixture (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-eb0fe40fffd13d27
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[977]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35366","line":977,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:35366","preferred_term":"Fatty
+    acid mixture (see Medium No. 266)","total_occurrences":"4"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-e116f44d24e1e32b
+  kind: prior_review
+  reference: reports/yaml_record_review/Fatty_Acid_Mixture_See_Medium_No_266.md
+  locator: '`data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml`:2;
+    Verdict:4; Identity:11; Validation:22; Evidence:29; Completeness:51; Recommended
+    Edits:57'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1699420fb78c42ed15355504b4a30c60190cf49a03fd7ce28b1129af4a0737dd
+  quote: "Recommended Edits:\n- Major: review the four CultureMech occurrences and\
+    \ either mint a local\n  fatty-acid-mixture stock identity or link the label to\
+    \ the concrete Medium\n  No. 266 mixture it references.\n- Major: if `CHEBI:35366`\
+    \ is retained, downgrade it to a broader parent rather\n  than an exact identity,\
+    \ remove the mixture labels from exact `other`\n  synonym export, choose the correct\
+    \ `ingredient_type`, sync\n  `data/curated/mapped_ingredients.yaml`, regenerate\n\
+    \  `mappings/ingredient_mappings.sssom.tsv`, and rerun strict validation plus\n\
+    \  the final SSSOM invariant gates."
+- evidence_id: ev-49b95a1b59136d20
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[583]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c","finding_id":"SEM:3fe446fa58dc856afbbe","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-823412d1eacb6795
+  kind: record_content
+  reference: MAPPING_SEMANTICS.md
+  locator: Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: supports
+  summary: Raw spellings may remain resolvable when they denote the same substance.
+    Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not
+    adjudicate that distinction.
+  snapshot_sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+- evidence_id: ev-997c904ed0a9e395
+  kind: prior_review
+  reference: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+  locator: findings[finding_id=f-853c7e2e707eedfc]
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Exact earlier occurrence has open/confirmed status, based on exported-token
+    presence and historical report text.
+  snapshot_sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+  quote: '{"category": "nomenclature", "certainty": "confirmed", "description": "Historical
+    tokens are still present on the exact-subject SSSOM rows: [{\"reason\":\"unresolved
+    recipe cross-reference in a resolving synonym\",\"token\":\"Fatty acid mixture
+    (see below)\"}]. Truncated concentration strings and context-dependent instructions
+    need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as
+    a class.", "evidence_ids": ["ev-e116f44d24e1e32b", "ev-c4a82578b9a0228b"], "external_issues":
+    ["https://github.com/CultureBotAI/MediaIngredientMech/issues/718"], "field_paths":
+    ["synonyms", "SSSOM.other"], "finding_id": "f-853c7e2e707eedfc", "issue_key":
+    "mim-reconciliation-exported-context-tokens-099e2c8a2a9f8f68", "owner_paths":
+    [{"path": "data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+    "repository": "CultureBotAI/MediaIngredientMech", "role": "maintained ingredient"}],
+    "severity": "major", "status": "open", "tags": ["reconciliation", "bundle-by-owner",
+    "exported-context-tokens"], "target_ids": ["record-099e2c8a2a9f8f68"], "title":
+    "Review nonportable exported tokens: Fatty acid mixture (see Medium No. 266)"}'
+- evidence_id: ev-66223de2980eb719
+  kind: record_content
+  reference: data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+  locator: identifier, ontology_mapping, synonyms and curation_history
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[975],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35366","line":977,"mapping_status":"MAPPED","ontology_id":"CHEBI:35366","preferred_term":"Fatty
+    acid mixture (see Medium No. 266)"}],"identifier":"CHEBI:35366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35366","ontology_label":"fatty
+    acid","ontology_source":"CHEBI"},"preferred_term":"Fatty acid mixture (see Medium
+    No. 266)","sssom_rows":[{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","synonym_count":10}'
+  snapshot_sha256: 00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c
+- evidence_id: ev-6b0f037f5dc84aa9
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Fatty_Acid_Mixture_See_Medium_No_266; data-row positions=[1165]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty
+    acid","other":"Fettsaeure|Fettsaeuren|acide gras|acides gras|acido graso|acidos
+    grasos|fatty acids|Fatty acid mixture|Fatty acid mixture (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-abc54f67fc204f62
+  kind: prior_review
+  reference: reports/yaml_record_review/Fatty_Acid_Mixture_See_Medium_No_266.md
+  locator: Complete historical report, including Verdict and Recommended Edits
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Historical interpretation was read in full; it is not fresh source adjudication.
+  snapshot_sha256: 1699420fb78c42ed15355504b4a30c60190cf49a03fd7ce28b1129af4a0737dd
+  quote: "# `data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml`\n\n\
+    ## Verdict\n\nNeeds curation, with major identity and final-SSSOM synonym issues.\
+    \ The target\nChEBI term is the generic fatty acid class, while the MIM source\
+    \ label denotes\na recipe-specific fatty acid mixture or stock, and mixture surface\
+    \ forms are\npublished as exact `other` synonyms.\n\n## Identity\n\n- Reviewed\
+    \ record:\n  `data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml`.\n\
+    - Identifier and grounding: `identifier: CHEBI:35366` with matching\n  `ontology_mapping.ontology_id`,\
+    \ canonical label `fatty acid`, source\n  `CHEBI`, `mapping_quality: EXACT_MATCH`,\
+    \ `mapping_status: MAPPED`, and\n  `ingredient_type: SINGLE_INGREDIENT`.\n- The\
+    \ record has 4 CultureMech recipe occurrences, refreshed from the #337\n  occurrence\
+    \ table.\n\n## Validation\n\n- `uv run --frozen python scripts/validate_strict.py\
+    \ data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml\
+    \ data/ingredients/mapped/Fe2_So43_X_N_H2o.yaml data/ingredients/mapped/Fe4_Po42.yaml\
+    \ data/ingredients/mapped/Fe_Iii-edta.yaml --out /tmp/mim_fe_batch_strict.tsv`:\n\
+    \  exited 0 for the 5-file batch; the output TSV contained only its header.\n\
+    - `uv run --frozen linkml-term-validator validate-data data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml\
+    \ data/ingredients/mapped/Fe4_Po42.yaml data/ingredients/mapped/Fe_Iii-edta.yaml\
+    \ -s src/mediaingredientmech/schema/mediaingredientmech.yaml -t IngredientRecord\
+    \ --labels`:\n  passed for the CHEBI-primary subset in this mixed batch.\n\n##\
+    \ Evidence\n\n- The matching `data/curated/mapped_ingredients.yaml` entry carries\
+    \ the same\n  ChEBI identifier, generic fatty-acid structure pattern, CultureMech\
+    \ alias\n  backfill history, and occurrence counts as the per-record YAML.\n-\
+    \ The final `mappings/ingredient_mappings.sssom.tsv` row maps\n  `MIM:Fatty_Acid_Mixture_See_Medium_No_266`\
+    \ to `CHEBI:35366` with\n  `skos:exactMatch`.\n- Major: the preferred term says\
+    \ this is a fatty acid mixture that references\n  Medium No. 266, but the record\
+    \ asserts exact identity to the generic\n  `fatty acid` ChEBI class and overwrote\
+    \ an earlier `STOCK_SOLUTION`\n  classification with `SINGLE_INGREDIENT`.\n- Major:\
+    \ the final SSSOM `other` column exports `Fatty acid mixture` and\n  `Fatty acid\
+    \ mixture (see below)`. Those are mixture or recipe-reference\n  surfaces, not\
+    \ exact synonyms of CHEBI fatty acid.\n- A hidden/ignored-inclusive search over\
+    \ `data/ingredients`, `data/curated`,\n  `mappings`, and `reports/yaml_record_review`\
+    \ for\n  `MIM:Fatty_Acid_Mixture_See_Medium_No_266`, `CHEBI:35366`, and the fatty\n\
+    \  acid mixture labels found the active YAML, aggregate copy, final SSSOM row,\n\
+    \  row-review provenance, CultureMech residual alias rows, CultureMech recipe\n\
+    \  memberships, and ignored aggregate backups.\n\n## Completeness\n\n- The CultureMech\
+    \ occurrences are populated.\n- The exact identity, type, generic structure fields,\
+    \ and final SSSOM synonyms\n  need repair before this row is semantically safe.\n\
+    \n## Recommended Edits\n\n- Major: review the four CultureMech occurrences and\
+    \ either mint a local\n  fatty-acid-mixture stock identity or link the label to\
+    \ the concrete Medium\n  No. 266 mixture it references.\n- Major: if `CHEBI:35366`\
+    \ is retained, downgrade it to a broader parent rather\n  than an exact identity,\
+    \ remove the mixture labels from exact `other`\n  synonym export, choose the correct\
+    \ `ingredient_type`, sync\n  `data/curated/mapped_ingredients.yaml`, regenerate\n\
+    \  `mappings/ingredient_mappings.sssom.tsv`, and rerun strict validation plus\n\
+    \  the final SSSOM invariant gates.\n"
+- evidence_id: ev-10e07ce7646683c8
+  kind: prior_review
+  reference: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+  locator: findings[finding_id=scope-f-853c7e2e707eedfc]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding scope-f-853c7e2e707eedfc in 20261011T030852Z-mim-token-scope-reassessment
+  snapshot_sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+assessments:
+- assessment_id: a-d3488106a957d2a2
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-1c1028720cbaed99
+  - ev-e8eb888036066ff2
+  - ev-c4a82578b9a0228b
+  - ev-eb0fe40fffd13d27
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-4c01e3fdef63ca9d
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-e116f44d24e1e32b
+  - ev-1c1028720cbaed99
+  - ev-49b95a1b59136d20
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T16:08:06Z;
+    reviewed SHA-256=00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c;
+    current SHA-256=00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c;
+    hash_changed=False. Reports=["reports/yaml_record_review/Fatty_Acid_Mixture_See_Medium_No_266.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The row
+    maps a mixture or stock surface to generic CHEBI fatty acid and exports mixture
+    labels as exact SSSOM synonyms.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e116f44d24e1e32b
+    - ev-1c1028720cbaed99
+  - name: legacy-native-ids
+    value: '["SEM:3fe446fa58dc856afbbe"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-1c1028720cbaed99
+    - ev-e116f44d24e1e32b
+    - ev-49b95a1b59136d20
+- assessment_id: a-464d54dfc5874f4b
+  area: nomenclature
+  topic: Unresolved recipe-reference or truncated-concentration synonyms
+  outcome: concern
+  summary: 'Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"unresolved
+    recipe cross-reference in a resolving synonym","token":"Fatty acid mixture (see
+    below)"}]. Truncated concentration strings and context-dependent instructions
+    need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as
+    a class.'
+  target_ids:
+  - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-e116f44d24e1e32b
+  - ev-c4a82578b9a0228b
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e116f44d24e1e32b
+    - ev-c4a82578b9a0228b
+- assessment_id: scope-f-853c7e2e707eedfc
+  area: nomenclature
+  topic: Certainty correction for the exact token observation
+  outcome: unknown
+  summary: Token presence remains reproducible, but the earlier pattern-based observation
+    did not establish whether the exact source label denotes this subject or a different
+    preparation. Fresh source-context adjudication is required before a confirmed
+    defect or label removal. This successor corrects certainty only; it does not establish
+    that the token is valid or that another identity allegation is fixed.
+  target_ids:
+  - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-997c904ed0a9e395
+  - ev-66223de2980eb719
+  - ev-6b0f037f5dc84aa9
+  - ev-abc54f67fc204f62
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Source-scope question only, not a disposition of the complete historical
+      report.
+    evidence_ids:
+    - ev-823412d1eacb6795
+    - ev-997c904ed0a9e395
+    - ev-66223de2980eb719
+    - ev-6b0f037f5dc84aa9
+    - ev-abc54f67fc204f62
+findings:
+- finding_id: rec-scope-f-853c7e2e707eedfc
+  issue_key: mim-reconciliation-exported-context-tokens-099e2c8a2a9f8f68
+  category: nomenclature
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Adjudicate source scope of exported tokens: Fatty acid mixture (see Medium
+    No. 266)'
+  description: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed.
+  target_ids:
+  - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-997c904ed0a9e395
+  - ev-66223de2980eb719
+  - ev-6b0f037f5dc84aa9
+  - ev-abc54f67fc204f62
+  - ev-10e07ce7646683c8
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+    role: maintained ingredient
+  field_paths:
+  - synonyms
+  - SSSOM.other
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - exported-context-tokens
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/861
+  disposition_reason: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T030852Z-mim-token-scope-reassessment
+    finding_id: scope-f-853c7e2e707eedfc
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024634Z-mim-reconcile-all-batch-06, 20261011T030852Z-mim-token-scope-reassessment.
+```

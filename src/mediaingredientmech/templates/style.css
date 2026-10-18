@@ -25,6 +25,13 @@ nav.breadcrumb { font-size: 0.9em; color: var(--muted);
                  margin-bottom: 0.5em; }
 nav.breadcrumb a { color: var(--accent); text-decoration: none; }
 nav.breadcrumb a:hover { text-decoration: underline; }
+.record-search { display: flex; gap: 0.5em; max-width: 480px; margin: 0.5em 0 0.75em; }
+.record-search input { flex: 1; padding: 0.45em 0.75em; border: 1px solid var(--line);
+                       border-radius: 6px; font-size: 0.92em; background: var(--bg-soft); color: var(--fg); min-width: 0; }
+.record-search button { padding: 0.45em 1em; border: none; border-radius: 6px;
+                        background: var(--accent); color: #fff; font-weight: 600; font-size: 0.9em; cursor: pointer; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+           overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .muted { color: var(--muted); }
 .small { font-size: 0.85em; }
 .right { text-align: right; }
@@ -121,4 +128,16 @@ a { color: var(--accent); }
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important;scroll-behavior:auto!important;}
+}
+
+/* Keep long identifiers and scientific tables readable on small screens. */
+* { box-sizing: border-box; }
+body { overflow-wrap: anywhere; }
+table { display: block; max-width: 100%; overflow-x: auto; }
+dl.kv { grid-template-columns: minmax(0, max-content) minmax(0, 1fr); }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 600px) {
+  body { margin: 1rem auto; padding: 0 1rem; }
+  dl.kv { grid-template-columns: minmax(0, 1fr); }
+  ul.medium-index { columns: 1; }
 }

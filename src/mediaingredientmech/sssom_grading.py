@@ -48,7 +48,14 @@ JUSTIFICATION_MANUAL = "semapv:ManualMappingCuration"
 
 PREDICATE_EXACT = "skos:exactMatch"
 PREDICATE_CLOSE = "skos:closeMatch"
-PREDICATE_NARROW = "skos:narrowMatch"
+#: A record graded NARROW_MATCH is *more specific* than its ontology term, so
+#: under SKOS the term is the broader concept and the row is a ``broadMatch``:
+#: ``A skos:broadMatch B`` asserts B is broader than A. MIM published
+#: ``narrowMatch`` here until #390, which is the inverse -- ``skos:narrowMatch``
+#: is a sub-property of ``skos:narrower``, so it asserted the ontology parent
+#: was narrower than the MIM record. The grade name and the predicate agree
+#: once the spec is applied: subject narrower <=> object broader.
+PREDICATE_BROAD = "skos:broadMatch"
 
 
 def confidence_for(quality: str | None) -> str:
@@ -65,8 +72,9 @@ def predicate_for(quality: str | None) -> str:
     """SSSOM `predicate_id` for a record's `mapping_quality`.
 
     Mirrors the builder: exact by default, `closeMatch` for any quality that is not an
-    exact identity so downstream consumers do not read it as one, and `narrowMatch` for
-    NARROW_MATCH, where the MIM term is narrower than the ontology parent.
+    exact identity so downstream consumers do not read it as one, and `broadMatch` for
+    NARROW_MATCH, where the MIM term is narrower than the ontology parent and the parent
+    is therefore the broader concept (#390).
 
     Expressed as a rule rather than a table because the enumerated version covered five
     grades while the corpus uses nine -- PLACEHOLDER, CAS_RN_LOOKUP, LEXICAL_MATCH and
@@ -74,7 +82,7 @@ def predicate_for(quality: str | None) -> str:
     """
     grade = quality or ""
     if grade == "NARROW_MATCH":
-        return PREDICATE_NARROW
+        return PREDICATE_BROAD
     if grade and grade not in EXACT_QUALITIES:
         return PREDICATE_CLOSE
     return PREDICATE_EXACT

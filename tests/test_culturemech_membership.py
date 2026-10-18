@@ -8,6 +8,7 @@ to check them against. These pin the artifact that closes that.
 
 import csv
 import importlib.util
+import json
 import subprocess
 import sys
 from collections import defaultdict
@@ -15,6 +16,11 @@ from pathlib import Path
 
 import pytest
 import yaml
+
+from mediaingredientmech.utils.culturemech_occurrences import (
+    effective_occurrence_statistics,
+    membership_counts,
+)
 
 ROOT = Path(__file__).parent.parent
 SCRIPT = ROOT / "scripts" / "build_culturemech_membership.py"
@@ -48,7 +54,8 @@ def records() -> list[dict]:
 def test_the_counts_are_reproducible_from_the_edges(edges, records):
     """The documented definition the issue asks for: counting a record's edges
     reproduces `media_count`, and summing their `occurrences` reproduces
-    `total_occurrences`.
+    `total_occurrences` across the effective statistics helper and exported
+    catalogs without mutating reviewed record YAML bytes (#817, #877).
 
     REJECTED records are excluded because curation deliberately zeroes them and
     transfers their counts to the representative they were merged into, while
@@ -60,17 +67,35 @@ def test_the_counts_are_reproducible_from_the_edges(edges, records):
         by_id[row["mim_identifier"]][0] += 1
         by_id[row["mim_identifier"]][1] += int(row["occurrences"])
 
+    counts = membership_counts(ARTIFACT)
     disagree = []
     for record in records:
         identifier = str(record.get("identifier") or "")
         if identifier not in by_id or record.get("mapping_status") == "REJECTED":
             continue
-        stats = record.get("occurrence_statistics") or {}
+        effective = effective_occurrence_statistics(record, counts)
         media, occurrences = by_id[identifier]
-        if (stats.get("media_count"), stats.get("total_occurrences")) != (media, occurrences):
-            disagree.append((record.get("preferred_term"), stats, media, occurrences))
+        if effective != (media, occurrences):
+            disagree.append((record.get("preferred_term"), effective, media, occurrences))
 
     assert not disagree, f"{len(disagree)} active record(s) disagree: {disagree[:3]}"
+
+    exported = json.loads(
+        (ROOT / "docs/data/mapped_ingredients.json").read_text(encoding="utf-8")
+    )
+    export_disagree = []
+    for entry in exported:
+        identifier = str(entry.get("identifier") or "")
+        if identifier not in by_id or entry.get("mapping_status") == "REJECTED":
+            continue
+        media, occurrences = by_id[identifier]
+        actual = (entry.get("media_count"), entry.get("total_occurrences"))
+        if actual != (media, occurrences):
+            export_disagree.append((entry.get("preferred_term"), actual, media, occurrences))
+
+    assert not export_disagree, (
+        f"{len(export_disagree)} exported record(s) disagree: {export_disagree[:3]}"
+    )
 
 
 def test_an_ingredient_in_more_than_fifty_recipes_is_represented(edges):
@@ -142,6 +167,9 @@ def test_split_trace_solutions_are_not_published_under_ncit_parent(edges):
 
     assert by_identifier["NCIT:C896"] == []
     assert by_identifier["kgmicrobe.ingredient:trace_element_solution"] == [
+        "CultureMech:007674",
+        "CultureMech:007686",
+        "CultureMech:007748",
         "CultureMech:013208",
         "CultureMech:013463",
         "CultureMech:013693",
@@ -336,6 +364,39 @@ def test_source_label_override_routes_malformed_sulfate_hydrates(mod, tmp_path):
     assert unknown == {}
 
 
+def test_source_label_override_routes_magnesium_sulfate_hydrates(mod, tmp_path):
+    """#893/#899: each monohydrate spelling reaches cas:14168-73-1 whatever
+    CultureMech resolved it to (the heptahydrate, the anhydrous salt, or nothing),
+    and the subscript-damaged heptahydrate leaves the anhydrous salt. Plain
+    MgSO4 and MgSO4 x 7 H2O keep CultureMech's answer."""
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "CHEBI:31795", "MgSO4·H2O"])
+        w.writerow(["CultureMech:000002", "", "MgSO4 x H2O"])
+        w.writerow(["CultureMech:000003", "", "MgSO4 . H2O"])
+        w.writerow(["CultureMech:000004", "CHEBI:32599", "MgSO4・H2O"])
+        w.writerow(["CultureMech:000005", "CHEBI:32599", "MgSO .7H O"])
+        w.writerow(["CultureMech:000006", "CHEBI:32599", "MgSO4"])
+        w.writerow(["CultureMech:000007", "CHEBI:31795", "MgSO4 x 7 H2O"])
+
+    collected, unknown = mod.collect(
+        source, {"CHEBI:31795", "CHEBI:32599", "cas:14168-73-1"}
+    )
+
+    assert collected == {
+        ("cas:14168-73-1", "CultureMech:000001"): 1,
+        ("cas:14168-73-1", "CultureMech:000002"): 1,
+        ("cas:14168-73-1", "CultureMech:000003"): 1,
+        ("cas:14168-73-1", "CultureMech:000004"): 1,
+        ("CHEBI:31795", "CultureMech:000005"): 1,
+        ("CHEBI:32599", "CultureMech:000006"): 1,
+        ("CHEBI:31795", "CultureMech:000007"): 1,
+    }
+    assert unknown == {}
+
+
 def test_source_label_override_routes_reviewed_hydrate_local_identities(mod, tmp_path):
     source = tmp_path / "occ.tsv"
     with source.open("w", newline="", encoding="utf-8") as fh:
@@ -359,9 +420,11 @@ def test_source_label_override_routes_reviewed_hydrate_local_identities(mod, tmp
         {
             "CHEBI:30769",
             "CHEBI:31404",
+            "CHEBI:31795",
             "CHEBI:32599",
             "CHEBI:75832",
             "CHEBI:86360",
+            "cas:14168-73-1",
             "kgmicrobe.compound:feso4_x_5_h2o",
             "kgmicrobe.compound:feso4_x_6_h2o",
             "kgmicrobe.compound:mgso4_x_6_h2o",
@@ -369,6 +432,8 @@ def test_source_label_override_routes_reviewed_hydrate_local_identities(mod, tmp
         },
     )
 
+    # MgSO .7H O and MgSO4 x H2O kept CultureMech's anhydrous answer here until
+    # #899 and #893 routed them to the heptahydrate and the monohydrate.
     assert collected == {
         ("CHEBI:30769", "CultureMech:000001"): 1,
         ("CHEBI:31404", "CultureMech:000002"): 1,
@@ -377,8 +442,8 @@ def test_source_label_override_routes_reviewed_hydrate_local_identities(mod, tmp
         ("kgmicrobe.compound:feso4_x_6_h2o", "CultureMech:000005"): 1,
         ("kgmicrobe.compound:mgso4_x_6_h2o", "CultureMech:000006"): 1,
         ("kgmicrobe.compound:mgso4_x_6_h2o", "CultureMech:000007"): 1,
-        ("CHEBI:32599", "CultureMech:000008"): 1,
-        ("CHEBI:32599", "CultureMech:000009"): 1,
+        ("CHEBI:31795", "CultureMech:000008"): 1,
+        ("cas:14168-73-1", "CultureMech:000009"): 1,
         ("kgmicrobe.compound:mnso4_x_7_h2o", "CultureMech:000010"): 1,
         ("kgmicrobe.compound:mnso4_x_7_h2o", "CultureMech:000011"): 1,
         ("CHEBI:86360", "CultureMech:000012"): 1,

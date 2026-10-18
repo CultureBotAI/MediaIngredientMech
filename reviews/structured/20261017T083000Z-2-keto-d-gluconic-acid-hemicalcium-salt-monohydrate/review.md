@@ -1,0 +1,499 @@
+# Per-record structured review: 2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate (data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml)
+
+- Review: 20261017T083000Z-2-keto-d-gluconic-acid-hemicalcium-salt-monohydrate
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for 2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate (data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml, record-be65b7426fab585b, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-be65b7426fab585b | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml | maintained | 2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-be65b7426fab585b | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-be65b7426fab585b | Role assertions on nutritional_roles[0], nutritional_roles[1] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-be65b7426fab585b | Reconciled against predecessor batch review 20261011T024629Z-mim-reconcile-all-batch-01 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-be65b7426fab585b.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-be65b7426fab585b.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:59:00Z; reviewed SHA-256=35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048; current SHA-256=35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048; hash_changed=False. Reports=["reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md","reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md&#96; after the record changed from c723754f95dc6bcb53fdbafe6912a8545fe82b86a78989d19bdacae67e337bae to 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048; preserved the previous blocker finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-be65b7426fab585b.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-b2082884706cee8d: Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-be65b7426fab585b.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-b2082884706cee8d
+
+Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-02f435cf5dccfdbe | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2630],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2632,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic acid hemicalcium salt monohydrate"}],"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","sssom_rows":[{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","predicate_id":"skos:exactMatch"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","predicate_id":"skos:closeMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","synonym_count":0} |
+| ev-c7268fcb6e02d56e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2630] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-00c17eed8b6b9a2e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate; data-row positions=[67, 68] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","other":"CAS:3470-37-9","predicate_id":"skos:exactMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","other":"CAS:3470-37-9","predicate_id":"skos:closeMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-67433528e457790b | docs/data/mapped_ingredients.csv; CSV lines=[2632] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2632,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","total_occurrences":"0"}] |
+| ev-e5efe72d4fc64111 | reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md; &#96;data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:26; Evidence:44; Completeness:59; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-51e7bc673883371d | reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md; YAML Record Review: 2-Keto-D-gluconic acid hemicalcium salt monohydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-7addb8f1b8ad326e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[50,1539,1901] | context_only | [{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:942e5e5ab8031b0237df","kind":"existing_record_review","resolution_reason":"Refine the prior blocker: MP Biomedicals explicitly uses CAS 3470-37-9 for the monohydrate, while the same CAS is used for unhydrated calcium salt. Use a distinct local hydrate identity and preserve the supplier CAS as procurement metadata rather than exact global identity. Withdraw anhydrous CID/SMILES/InChI. Formula follows the certificate hemicalcium unit plus one water, doubled to whole calcium stoichiometry. Existing close match to free acid retained as reviewed in #342, not promoted to subsumption.","resolution_status":"RESOLVED"},{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:a8369e3a18749747a18d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:28d4855c5ad15fc2384c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-e9363cdff31d7fb7 | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2630],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2632,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic acid hemicalcium salt monohydrate"}],"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","sssom_rows":[{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic acid hemicalcium salt monohydrate","predicate_id":"skos:exactMatch"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","predicate_id":"skos:closeMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","synonym_count":0} |
+| ev-dd2c808562898b9f | reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml; findings[finding_id=f-b2082884706cee8d] | context_only | Predecessor structured review finding f-b2082884706cee8d in 20261011T024629Z-mim-reconcile-all-batch-01 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024629Z-mim-reconcile-all-batch-01.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-2-keto-d-gluconic-acid-hemicalcium-salt-monohydrate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: 2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate
+  (data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for 2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate
+  (data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml,
+  record-be65b7426fab585b, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    sha256: 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048
+    role: target
+  - path: reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml
+    sha256: f87124785da2057286555db743ccdb92b70dd4dc359294bde474b4beeb816e48
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md
+    sha256: 8ffb2faa800379bf12ab8af0ed656ccac40692cce0fcb32d75bf9978f348ca2d
+    role: context
+  - path: reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md
+    sha256: 39f9e8a9f91a490bb3c23287dca04eff3db2b8a3c8ef3fd3fb0596d46e926aa3
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-be65b7426fab585b
+  path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+  label: 2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-be65b7426fab585b
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-02f435cf5dccfdbe
+  - ev-c7268fcb6e02d56e
+  - ev-00c17eed8b6b9a2e
+  - ev-67433528e457790b
+  - ev-e9363cdff31d7fb7
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0], nutritional_roles[1] rely only
+    on COMPUTATIONAL_PREDICTION or empty evidence.
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-02f435cf5dccfdbe
+  - ev-7addb8f1b8ad326e
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024629Z-mim-reconcile-all-batch-01
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-e5efe72d4fc64111
+  - ev-51e7bc673883371d
+  - ev-7addb8f1b8ad326e
+  - ev-dd2c808562898b9f
+evidence:
+- evidence_id: ev-02f435cf5dccfdbe
+  kind: record_content
+  reference: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2630],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2632,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate"}],"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic
+    acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium
+    salt monohydrate","sssom_rows":[{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate","predicate_id":"skos:exactMatch"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic
+    acid","predicate_id":"skos:closeMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","synonym_count":0}'
+  snapshot_sha256: 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048
+- evidence_id: ev-c7268fcb6e02d56e
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2630]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-00c17eed8b6b9a2e
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate; data-row
+    positions=[67, 68]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate","other":"CAS:3470-37-9","predicate_id":"skos:exactMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic
+    acid","other":"CAS:3470-37-9","predicate_id":"skos:closeMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-67433528e457790b
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2632]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2632,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-e5efe72d4fc64111
+  kind: prior_review
+  reference: reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md
+  locator: '`data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml`:2;
+    Verdict:4; Identity:10; Validation:26; Evidence:44; Completeness:59; Recommended
+    Edits:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 8ffb2faa800379bf12ab8af0ed656ccac40692cce0fcb32d75bf9978f348ca2d
+  quote: "Recommended Edits:\n1. In\n   `data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml`,\n\
+    \   reconcile the preferred label, CAS RN, formula, SMILES, InChI, and PubChem\n\
+    \   CID so they all describe the same hydrate state.\n2. Remove or directly substantiate\
+    \ the provisional `CARBON_SOURCE` and\n   `ENERGY_SOURCE` roles.\n3. Regenerate\
+    \ `data/curated/mapped_ingredients.yaml`,\n   `mappings/ingredient_mappings.sssom.tsv`,\
+    \ docs, and mapping review queues.\n4. Re-run strict/LinkML validation, `scripts/validate_sssom_invariants.py`,\
+    \ and\n   docs/export checks after the identity and role cleanup."
+- evidence_id: ev-51e7bc673883371d
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md
+  locator: 'YAML Record Review: 2-Keto-D-gluconic acid hemicalcium salt monohydrate:2;
+    Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46;
+    Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 39f9e8a9f91a490bb3c23287dca04eff3db2b8a3c8ef3fd3fb0596d46e926aa3
+  quote: 'Findings:
+
+    - **blocker**: The previous finding set in `reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The record
+    says monohydrate, but the active CAS/formula/structure/PubChem values resolve
+    to an anhydrous calcium 2-ketogluconate.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml`,
+    `just validate-terms data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml`
+    where applicable, and `just qc-sssom`.'
+- evidence_id: ev-7addb8f1b8ad326e
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[50,1539,1901]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:942e5e5ab8031b0237df","kind":"existing_record_review","resolution_reason":"Refine
+    the prior blocker: MP Biomedicals explicitly uses CAS 3470-37-9 for the monohydrate,
+    while the same CAS is used for unhydrated calcium salt. Use a distinct local hydrate
+    identity and preserve the supplier CAS as procurement metadata rather than exact
+    global identity. Withdraw anhydrous CID/SMILES/InChI. Formula follows the certificate
+    hemicalcium unit plus one water, doubled to whole calcium stoichiometry. Existing
+    close match to free acid retained as reviewed in #342, not promoted to subsumption.","resolution_status":"RESOLVED"},{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:a8369e3a18749747a18d","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048","finding_id":"SEM:28d4855c5ad15fc2384c","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-e9363cdff31d7fb7
+  kind: record_content
+  reference: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+  locator: nutritional_roles[0], nutritional_roles[1]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2630],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","line":2632,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate"}],"identifier":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic
+    acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium
+    salt monohydrate","sssom_rows":[{"data_row":67,"object_id":"kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate","object_label":"2-Keto-D-gluconic
+    acid hemicalcium salt monohydrate","predicate_id":"skos:exactMatch"},{"data_row":68,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic
+    acid","predicate_id":"skos:closeMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate","synonym_count":0}'
+  snapshot_sha256: 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048
+- evidence_id: ev-dd2c808562898b9f
+  kind: prior_review
+  reference: reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml
+  locator: findings[finding_id=f-b2082884706cee8d]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-b2082884706cee8d in 20261011T024629Z-mim-reconcile-all-batch-01
+  snapshot_sha256: f87124785da2057286555db743ccdb92b70dd4dc359294bde474b4beeb816e48
+assessments:
+- assessment_id: a-71d7664bfaab1f50
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-02f435cf5dccfdbe
+  - ev-c7268fcb6e02d56e
+  - ev-00c17eed8b6b9a2e
+  - ev-67433528e457790b
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-86d282da43978baf
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-e5efe72d4fc64111
+  - ev-51e7bc673883371d
+  - ev-02f435cf5dccfdbe
+  - ev-7addb8f1b8ad326e
+  details: 'Latest manifest verdict=needs_curation; severity=blocker; reviewed_at=2026-10-01T04:59:00Z;
+    reviewed SHA-256=35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048;
+    current SHA-256=35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048;
+    hash_changed=False. Reports=["reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md","reports/yaml_record_review/20261001T045900Z-2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.md`
+    after the record changed from c723754f95dc6bcb53fdbafe6912a8545fe82b86a78989d19bdacae67e337bae
+    to 35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048; preserved
+    the previous blocker finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e5efe72d4fc64111
+    - ev-51e7bc673883371d
+    - ev-02f435cf5dccfdbe
+  - name: legacy-native-ids
+    value: '["SEM:942e5e5ab8031b0237df","SEM:a8369e3a18749747a18d","SEM:28d4855c5ad15fc2384c"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-02f435cf5dccfdbe
+    - ev-e5efe72d4fc64111
+    - ev-51e7bc673883371d
+    - ev-7addb8f1b8ad326e
+- assessment_id: a-e9363cdff31d7fb7
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-e5efe72d4fc64111
+  - ev-51e7bc673883371d
+  - ev-e9363cdff31d7fb7
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e5efe72d4fc64111
+    - ev-51e7bc673883371d
+    - ev-e9363cdff31d7fb7
+findings:
+- finding_id: rec-f-b2082884706cee8d
+  issue_key: mim-reconciliation-role-support-be65b7426fab585b
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium
+    salt monohydrate'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-be65b7426fab585b
+  evidence_ids:
+  - ev-e5efe72d4fc64111
+  - ev-51e7bc673883371d
+  - ev-e9363cdff31d7fb7
+  - ev-dd2c808562898b9f
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  - nutritional_roles[1]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024629Z-mim-reconcile-all-batch-01
+    finding_id: f-b2082884706cee8d
+actions:
+- action_id: rec-action-b2082884706cee8d
+  description: 'Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium
+    salt monohydrate'
+  finding_ids:
+  - rec-f-b2082884706cee8d
+  target_ids:
+  - record-be65b7426fab585b
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024629Z-mim-reconcile-all-batch-01.
+```

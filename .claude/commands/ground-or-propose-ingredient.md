@@ -58,7 +58,7 @@ Cluster spelling variants and catalog-tagged forms so one decision covers all su
 120.37 and 246.47 g/mol, which is exactly what a recipe depends on, so they are separate
 records and must not share an identifier. Per **MAPPING_SEMANTICS.md Section 3**: give each
 hydration state a hydrate-specific ontology term if one exists, else its own
-`cas:<hydrate CAS>` with a `narrowMatch` to the anhydrous parent and the Rule B1 registry
+`cas:<hydrate CAS>` with a `broadMatch` to the anhydrous parent and the Rule B1 registry
 row. Grounding the anhydrous parent once and hanging the hydrate off it as a `HYDRATE_FORM`
 synonym is what produced the 32 families tracked in #218.
 

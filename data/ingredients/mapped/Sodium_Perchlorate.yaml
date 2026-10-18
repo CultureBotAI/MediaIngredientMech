@@ -84,6 +84,15 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-22T02:06:34+00:00'
+  curator: codex_issue_710_semantic_evidence_review
+  action: CORRECTED_ROLE_EVIDENCE
+  changes: Added inspected primary-publication support and bounded organism/condition
+    context to the cellular metabolic role (#710). Retained original computational
+    provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+    for the assertion-specific interpretation.
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 7601-89-0
   data_source: PubChem API
@@ -99,3 +108,13 @@ cellular_metabolic_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+  - reference_type: PEER_REVIEWED_PUBLICATION
+    doi: 10.1128/AEM.68.9.4425-4430.2002
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC124121/
+    reference_text: Chaudhuri et al. (2002). Environmental factors that control microbial
+      perchlorate reduction.
+    curator_note: The methods supply sodium perchlorate as acceptor. Results demonstrate
+      oxygen and nitrate effects; this role is restricted to the described perchlorate-respiring
+      organisms and anoxic conditions.
+  metabolic_context: Terminal electron acceptor for Dechlorosoma suillum PS and Dechloromonas
+    agitata CKB during anoxic, acetate-fed culture.

@@ -9,6 +9,38 @@ version: 2.2.0
 
 # Schema gap analysis (MIM)
 
+## Assessed Review Handoff
+
+Follow [docs/record-reviews.md](../../../docs/record-reviews.md) and
+[the local profile](../../../docs/record-review-profile.md). Running the
+validators or writer scan is diagnostic work, not a completed scientific
+review. Delegate interpreted assessments to
+[review-yaml-record](../review-yaml-record/SKILL.md) for one ingredient, or
+[review-yaml-category](../review-yaml-category/SKILL.md) for an explicit cohort
+or repository scope. Use that registered assessment route as the saved `skill`.
+
+Retain schema / instances / process as `audit_axis` assessment dimensions.
+Keep current error categories, counts, denominators, sampling and unavailable
+checks, both aggregate and per-record selectors, and actual writer ownership.
+Preserve exact substance forms, P1-P4 rules and SSSOM/release gates from the
+delegated native rubric. Hash the actual schema, maintained inputs and diagnostic
+outputs. Schema/process-only assessments use `scientific_review: false`.
+Inspect supporting evidence before any scientific finding or positive pass.
+
+Save final assessed YAML and derived Markdown under
+`reviews/structured/<timestamp>-<slug>/`, then link both:
+
+```bash
+uv run python scripts/record_review.py inspect --targets /tmp/gap-targets.yaml
+uv run python scripts/record_review.py validate /tmp/completed-gap-review.yaml
+uv run python scripts/record_review.py save --content /tmp/completed-gap-review.yaml
+```
+
+Use session-unique temporary paths. Existing TSV scans remain diagnostics;
+old assessed reports are not rewritten or migrated. Audit-only work applies
+no fixes, synchronizations, release approvals or history events. The fix
+procedure below requires separate curation intent and native guarded writers.
+
 The conceptual framework — why three axes (schema / instances / process), what each error class signals, common anti-patterns — lives once at the cross-Mech version in claw:
 https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/SKILL.md
 
@@ -144,7 +176,7 @@ grep -rnE 'open\([^)]*(mapped|unmapped)_ingredients\.yaml[^)]*["\047][wa][bt]?["
   scripts/ src/ --include='*.py'
 ```
 
-### 6. Decide and apply fixes
+### 6. Propose fixes; apply only with curation intent
 
 For each distinct error class, pick the axis and fix accordingly:
 

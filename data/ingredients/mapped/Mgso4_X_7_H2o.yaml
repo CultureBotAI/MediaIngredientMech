@@ -49,7 +49,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MgSO4·H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: magnesium sulfate (1:1) heptahydrate
   synonym_type: EXACT_SYNONYM
@@ -114,7 +114,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
 - synonym_text: magnesium sulfate anhydrous
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: magnesium sulphate
   synonym_type: RAW_TEXT
@@ -128,10 +128,13 @@ synonyms:
 - synonym_text: sulphate of magnesia
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: MgSO .7H O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 5673
-  media_count: 5619
+  total_occurrences: 5688
+  media_count: 5634
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -297,6 +300,30 @@ curation_history:
     acid magnesium salt''; ''sulphate of magnesia''. Tokens already present on the
     kg-microbe ontology node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped wrong-hydration synonyms to REJECTED_LABEL: MgSO4·H2O, magnesium
+    sulfate anhydrous (#878).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: ADDED_SYNONYMS
+  changes: 'Added ''MgSO .7H O'' (HYDRATE_FORM), moved from the anhydrous Magnesium
+    sulfate record: it is MgSO4·7H2O with its subscripts lost (#899).'
+  llm_assisted: true
+  llm_model: claude-opus-5-5
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'occurrence_statistics 5619/5673 -> 5634/5688 (media_count/total_occurrences),
+    recounted from the CultureMech membership edges after the scoped correction of
+    MgSO4 hydrate source labels (reports/semantic_review_20260921/corrections/2026-10-15-mgso4-hydrates.json;
+    #892, #893, #899).'
+  llm_assisted: true
+  llm_model: claude-opus-5-5
 chemical_properties:
   cas_rn: 10034-99-8
   data_source: OAK/CHEBI xref

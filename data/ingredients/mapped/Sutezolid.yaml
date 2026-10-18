@@ -1,19 +1,25 @@
-identifier: cas:168828-58-8
+identifier: NCIT:C152482
 preferred_term: Sutezolid
 ontology_mapping:
   ontology_id: NCIT:C152482
   ontology_label: Sutezolid
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 168828-58-8 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 168828-58-8 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Sutezolid'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Sutezolid'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity.
+      Existing InChI agrees exactly; align the previously unstereospecific SMILES.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -48,12 +54,24 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C152482 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.904526+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity.
+    Existing InChI agrees exactly; align the previously unstereospecific SMILES.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 168828-58-8
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
   molecular_formula: C16H20FN3O3S
-  smiles: CC(=O)NCC1CN(C(=O)O1)C2=CC(=C(C=C2)N3CCSCC3)F
+  smiles: CC(=O)NC[C@H]1CN(C(=O)O1)C2=CC(=C(C=C2)N3CCSCC3)F
   inchi: InChI=1S/C16H20FN3O3S/c1-11(21)18-9-13-10-20(16(22)23-13)12-2-3-15(14(17)8-12)19-4-6-24-7-5-19/h2-3,8,13H,4-7,9-10H2,1H3,(H,18,21)/t13-/m0/s1
   pubchem_cid: 465951
 ingredient_type: SINGLE_INGREDIENT
+notes: Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 establish the S identity.
+  Existing InChI agrees exactly; align the previously unstereospecific SMILES.

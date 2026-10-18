@@ -1,4 +1,4 @@
-identifier: cas:3470-37-9
+identifier: kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate
 preferred_term: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
 ontology_mapping:
   ontology_id: CHEBI:27469
@@ -6,27 +6,16 @@ ontology_mapping:
   ontology_source: CHEBI
   mapping_quality: CLOSE_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 3470-37-9 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
-  - evidence_type: DATABASE_MATCH
-    source: anchor_cas_hydrate_records
-    notes: 2-Keto-D-gluconic acid hemicalcium salt monohydrate is a hydrate/salt with
-      its own CAS and no exact ChEBI term; anchored to the parent CHEBI:27469 '2-dehydro-D-gluconic
-      acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hemicalcium
-      salt monohydrate of 2-dehydro-D-gluconic acid
-  - evidence_type: DATABASE_MATCH
-    source: MIM curation (#342)
-    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
-      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
-      than CHEBI:27469 (''2-dehydro-D-gluconic acid'') — a subsumption ChEBI itself
-      denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
-      compound, which is not an ancestor even transitively. A hydrate is a distinct
-      substance containing the anhydrous form, not a specialization of it. closeMatch
-      claims similarity without subsumption. The ontology_id and the record''s own
-      identifier are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: https://www.mpbio.com/media/document/infor/S/1/1/1/0/100365-S1110.PDF
+      ; https://www.caymanchem.com/product/35622/2-keto-d-gluconic-acid-calcium-salt
+    notes: 'Refine the prior blocker: MP Biomedicals explicitly uses CAS 3470-37-9
+      for the monohydrate, while the same CAS is used for unhydrated calcium salt.
+      Use a distinct local hydrate identity and preserve the supplier CAS as procurement
+      metadata rather than exact global identity. Withdraw anhydrous CID/SMILES/InChI.
+      Formula follows the certificate hemicalcium unit plus one water, doubled to
+      whole calcium stoichiometry. Existing close match to free acid retained as reviewed
+      in #342, not promoted to subsumption.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -83,14 +72,25 @@ curation_history:
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: CORRECTED
+  changes: 'Refine the prior blocker: MP Biomedicals explicitly uses CAS 3470-37-9
+    for the monohydrate, while the same CAS is used for unhydrated calcium salt. Use
+    a distinct local hydrate identity and preserve the supplier CAS as procurement
+    metadata rather than exact global identity. Withdraw anhydrous CID/SMILES/InChI.
+    Formula follows the certificate hemicalcium unit plus one water, doubled to whole
+    calcium stoichiometry. Existing close match to free acid retained as reviewed
+    in #342, not promoted to subsumption. Evidence: https://www.mpbio.com/media/document/infor/S/1/1/1/0/100365-S1110.PDF
+    ; https://www.caymanchem.com/product/35622/2-keto-d-gluconic-acid-calcium-salt'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
-  cas_rn: 3470-37-9
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C12H18CaO14
-  smiles: C(C(C(C(C(=O)C(=O)[O-])O)O)O)O.C(C(C(C(C(=O)C(=O)[O-])O)O)O)O.[Ca+2]
-  inchi: InChI=1S/2C6H10O7.Ca/c2*7-1-2(8)3(9)4(10)5(11)6(12)13;/h2*2-4,7-10H,1H2,(H,12,13);/q;;+2/p-2/t2*2-,3-,4+;/m11./s1
-  pubchem_cid: 25113463
+  molecular_formula: C12H18CaO14.2H2O
+  data_source: https://www.mpbio.com/media/document/infor/S/1/1/1/0/100365-S1110.PDF
+  retrieval_date: '2026-09-21T21:33:25.379198+00:00'
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE
@@ -106,3 +106,10 @@ nutritional_roles:
     reference_text: Canonical energy substrate (catabolised for energy)
     curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
       recommended.
+supplied_form:
+- name: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
+  cas_rn: 3470-37-9
+  form: hemicalcium salt monohydrate
+  supplier: MP Biomedicals
+  catalog_number: '100365'
+  notes: Documented purchasable form, not a claim of source procurement. https://www.mpbio.com/media/document/infor/S/1/1/1/0/100365-S1110.PDF

@@ -9,6 +9,13 @@ set dotenv-load := true
 # enabling this changes nothing else.
 set positional-arguments := true
 
+# Validate immutable structured review bundles and their adoption contract.
+check-record-reviews:
+    uv run python scripts/record_review.py check
+
+test-record-reviews:
+    uv run --with pytest --with pytest-cov python -m pytest tests/test_record_review_contract.py --no-cov -q
+
 research_dir := "research"
 templates_dir := "templates"
 
@@ -100,6 +107,28 @@ bump-sssom-header *ARGS:
 qc-sssom:
     uv run --frozen python scripts/validate_sssom_invariants.py
 
+# Export the complete explicit MIM ingredient graph into a new directory.
+export-kgx output="output/mim-kgx":
+    uv run --frozen python -m mediaingredientmech.export.kgx --output "$1"
+
+# Release only assertions with a current, content-bound positive review.
+# Unsupported claims and full source payloads are preserved in a separate backlog.
+export-supported-kgx report output="output/mim-supported-kgx":
+    uv run --frozen python -m mediaingredientmech.export.supported_kgx --root . --report "$1" --output "$2"
+
+# Check both exact reviewed selection and complete preservation of excluded claims.
+qc-supported-kgx report output="output/mim-supported-kgx":
+    uv run --frozen python -m mediaingredientmech.export.supported_kgx --root . --report "$1" --output "$2" --validate-only
+
+# Standalone reviewed mappings with complete dispositions and a separate backlog.
+export-reviewed-sssom report="reports/sssom_completion_20260921/review.json" output="output/mim-reviewed-sssom":
+    uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2"
+
+qc-reviewed-sssom report="reports/sssom_completion_20260921/review.json" output="output/mim-reviewed-sssom":
+    uv run --frozen python reports/sssom_completion_20260921/assemble_review.py --check
+    uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2" --validate-only
+    uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$2"
+
 # UNIFIED_INGREDIENT_MAPPING.tsv is built by claw from MIM's records plus
 # CultureMech's recipes and committed here. Nothing recorded what it was built
 # from, so it went three weeks and forty PRs stale unnoticed (#359) and ended up
@@ -114,6 +143,10 @@ qc-sssom:
 check-unified-freshness:
     uv run --frozen python scripts/check_unified_freshness.py --check
 
+# Reject known bad IDs even if an older builder regenerated and stamped them.
+check-unified-rejections:
+    uv run --frozen python scripts/check_unified_rejections.py
+
 # Record what the snapshot was built from. Run after rebuild-unified.
 stamp-unified-freshness:
     uv run --frozen python scripts/check_unified_freshness.py --stamp
@@ -121,10 +154,19 @@ stamp-unified-freshness:
 # Rebuild the snapshot. Needs CultureMech, MIM and claw checked out as siblings
 # and claw's own virtualenv: the builder imports kg_microbe_fleet, which pulls
 # in python-dotenv that MIM's venv does not carry. Stamp and commit both files.
-rebuild-unified CLAW="../../KG-Hub/KG-Microbe/culturebotai-claw" CULTUREMECH="../CultureMech":
-    {{CLAW}}/.venv/bin/python {{CLAW}}/scripts/build_unified_ingredient_mapping.py \
+#
+# The roots go in the environment as well as on the command line: claw resolves
+# them through kg_microbe_fleet.roots, which raises MechRootError when
+# CULTUREMECH_ROOT is unset even if --culturemech was passed. Each line is its
+# own shell, so a failed build aborts the recipe before the stamp -- which
+# matters, because stamping an artifact the build never rewrote records the stale
+# file as current (#699).
+rebuild-unified CLAW="../../KG-Hub/KG-Microbe/culturebotai-claw" CULTUREMECH="../CultureMech" OUTPUT="UNIFIED_INGREDIENT_MAPPING.tsv":
+    CULTUREMECH_ROOT="$(cd {{CULTUREMECH}} && pwd)" MEDIAINGREDIENTMECH_ROOT="$(pwd)" \
+        {{CLAW}}/.venv/bin/python {{CLAW}}/scripts/build_unified_ingredient_mapping.py \
         --culturemech {{CULTUREMECH}} --mim . \
-        --output UNIFIED_INGREDIENT_MAPPING.tsv --format tsv
+        --output {{OUTPUT}} --format tsv
+    just check-unified-rejections
     just stamp-unified-freshness
 
 # A merged raw label survives only as a synonym on its target, and merges add no
@@ -343,10 +385,16 @@ check-instruction-refs *args:
     # happened to notice. This is the mechanical version. Issue #185.
     uv run --frozen python scripts/check_instruction_refs.py {{args}}
 
-# Assert data/curated/ and data/ingredients/ still describe the same records (CI blocking)
+# Assert what the CI roundtrip job does: filename case, curated <-> per-record round trip, index and visualization currency
 qc-roundtrip:
     #!/usr/bin/env bash
     set -euo pipefail
+    # Case-exact record filenames first, as CI checks them first (#352, #813):
+    # a case-only rename is invisible to `git status` on macOS and otherwise
+    # surfaces later as a "stale" visualization. --case-only, because a new or
+    # deleted record that is not staged yet is normal locally and cannot occur
+    # in CI's pristine checkout, which runs the strict mode (#864).
+    uv run --no-project python scripts/check_record_filename_case.py --case-only
     # A per-record edit must not be silently reverted by the next
     # `just export-individual`, which projects the collection OVER the per-record
     # tree. Aggregates into a temp dir rather than data/collections/: comparing
@@ -388,6 +436,24 @@ qc-roundtrip:
       echo "(Nothing was modified — the export above went to a scratch copy.)" >&2
       exit 1
     fi
+    # The other assertions the CI roundtrip job makes, so a record change
+    # that passes this recipe does not then fail CI (#810, #744). Indexes are
+    # regenerated into a scratch directory and compared, never written in place.
+    idx="$(mktemp -d)"
+    trap 'rm -rf "$tmp" "$tree" "$idx"' EXIT
+    uv run --frozen python scripts/generate_index_files.py --output-dir "$idx" >/dev/null
+    stale=0
+    for f in "$idx"/*; do
+      if ! cmp -s "$f" "data/curated/$(basename "$f")"; then
+        echo "stale: data/curated/$(basename "$f")" >&2
+        stale=1
+      fi
+    done
+    if [ "$stale" -ne 0 ]; then
+      echo "error: data/curated indexes are stale — run 'just export-indexes' and commit the result." >&2
+      exit 1
+    fi
+    uv run --frozen python scripts/check_visualization_currency.py --strict
 
 # Write per-record edits BACK into data/curated/, then re-export to a fixed point
 sync-curated:
@@ -775,3 +841,19 @@ text-map-inputs *args:
 # Validate full inputs and stage the configured common map; no model inference.
 stage-text-map *args:
     uv run python scripts/stage_text_map.py "$@"
+
+# Refresh canonical semantic text-map inputs, BGE embeddings, PaCMAP/PCA bundle, and staged map (#685).
+refresh-text-map:
+    uv run --project conf/embedding-runtime --locked python scripts/text_map_inputs.py
+    HF_HUB_OFFLINE=1 uv run --project conf/embedding-runtime --locked python scripts/embedding_pipeline.py embed
+    uv run --project conf/embedding-runtime --locked python scripts/embedding_pipeline.py project
+    uv run --project conf/embedding-runtime --locked python scripts/embedding_pipeline.py verify
+    uv run python scripts/stage_text_map.py
+
+# Generate dense BAAI/bge-large-en-v1.5 text embeddings for all ingredient records
+embed:
+    python3 scripts/embed_records.py
+
+# Project text embeddings with PaCMAP + PCA and render docs/text_map.html
+embed-map: embed
+    python3 scripts/embed_map.py

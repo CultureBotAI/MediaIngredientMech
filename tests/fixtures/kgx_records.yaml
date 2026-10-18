@@ -1,0 +1,77 @@
+mapped:
+  Water_A:
+    identifier: CHEBI:15377
+    preferred_term: Water A
+    mapping_status: MAPPED
+    ingredient_type: SINGLE_INGREDIENT
+    nutritional_roles:
+    - role: CARBON_SOURCE
+      confidence: 0.6
+      evidence:
+      - reference_type: COMPUTATIONAL_PREDICTION
+        reference_text: "fixture only | not an approved biological assertion"
+    cellular_metabolic_roles:
+    - role: ELECTRON_DONOR
+      metabolic_context: fixture organism only
+      confidence: 0.5
+      evidence:
+      - doi: 10.1234/test
+        reference_text: "quoted\nmultiline evidence"
+  Water_B:
+    identifier: CHEBI:15377
+    preferred_term: Water B
+    mapping_status: MAPPED
+    ingredient_type: SINGLE_INGREDIENT
+  Mixture:
+    identifier: kgmicrobe.ingredient:fixture_mix
+    preferred_term: Fixture mixture
+    mapping_status: MAPPED
+    ingredient_type: STOCK_SOLUTION
+    ontology_mapping:
+      ontology_id: FOODON:00000001
+      ontology_label: fixture parent
+      ontology_source: FOODON
+      mapping_quality: NARROW_MATCH
+    components:
+    - component_name: Water A
+      component_id: CHEBI:15377
+      reference_scope: MIM_CATALOG
+      concentration_value: 0.1-0.5
+      concentration_unit: G_PER_L
+    - component_name: unknown fraction
+      reference_scope: UNMAPPED
+    component_assertion:
+      method: RECIPE_TRANSCRIPTION
+      completeness: PARTIAL
+      evidence:
+      - evidence_type: RECIPE_SOURCE
+        source: fixture:recipe
+    environmental_context:
+    - environment_term: ENVO:00002149
+      environment_label: sea water
+      relevance: NATURAL_SOURCE
+    culturemech_reference:
+      medium_id: CultureMech:000001
+      medium_name: candidate recipe
+      relationship: CANDIDATE_UNVERIFIED
+      evidence: Fixture candidate only; not a confirmed recipe match.
+  Rejected:
+    identifier: CHEBI:78018
+    preferred_term: rejected peptone mapping
+    mapping_status: REJECTED
+    ingredient_type: UNDEFINED_MIXTURE
+unmapped:
+  Unknown:
+    identifier: UNMAPPED_0001
+    preferred_term: Unmapped mixture
+    mapping_status: UNMAPPED
+    ingredient_type: STOCK_SOLUTION
+    components:
+    - component_name: unknown fraction
+      reference_scope: UNMAPPED
+    component_assertion:
+      method: LABEL_ENUMERATION
+      completeness: UNKNOWN
+      evidence:
+      - evidence_type: SOURCE_LABEL
+        source: fixture:label

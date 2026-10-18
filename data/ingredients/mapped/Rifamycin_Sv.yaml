@@ -9,6 +9,11 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:rifamycin_sv; '
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+    notes: Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673.
+      ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the
+      rifamycin family.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -50,11 +55,25 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-09-23T19:20:33.154400+00:00'
+  curator: kgmicrobe_scope_review
+  action: CORRECTED
+  changes: Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673.
+    ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin
+    family.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C37H47NO12
   smiles: CO[C@H]1/C=C/O[C@@]2(C)Oc3c(C)c(O)c4c(O)c(cc(O)c4c3C2=O)NC(=O)/C(C)=CC=C[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C
   inchi: InChI=1S/C37H47NO12/c1-16-11-10-12-17(2)36(46)38-23-15-24(40)26-27(32(23)44)31(43)21(6)34-28(26)35(45)37(8,50-34)48-14-13-25(47-9)18(3)33(49-22(7)39)20(5)30(42)19(4)29(16)41/h10-16,18-20,25,29-30,33,40-44H,1-9H3,(H,38,46)/b11-10+,14-13+,17-12-/t16-,18+,19+,20+,25-,29-,30+,33+,37-/m0/s1
   molecular_weight: 697.778
-  data_source: ChEBI+PubChem
+  data_source: ChEBI+PubChem; CAS verified in reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
   retrieval_date: '2026-08-13T04:29:56.454541+00:00'
+  cas_rn: 6998-60-3
+notes: Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673.
+  ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin
+  family.

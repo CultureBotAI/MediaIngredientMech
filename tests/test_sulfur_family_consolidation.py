@@ -163,7 +163,7 @@ def test_sulfur_memberships_are_collapsed_to_elemental_sulfur(membership_rows):
             row["occurrences"]
         )
 
-    assert counts["CHEBI:33403"] == 477
+    assert counts["CHEBI:33403"] == 494
     assert not OLD_IDENTIFIERS & set(counts)
 
 

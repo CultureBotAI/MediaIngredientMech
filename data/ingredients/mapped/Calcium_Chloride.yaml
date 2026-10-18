@@ -20,10 +20,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: CaCl2 × 2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CaCl2*2H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CaCl22H2O
   synonym_type: HYDRATE_FORM
@@ -126,6 +126,17 @@ curation_history:
     hydration, so this is not the hydrate/anhydrous trap that rules out the CuSO4
     and FeSO4 families. Occurrences transferred; kept as a RAW_TEXT synonym there.
   llm_assisted: false
+- timestamp: '2026-09-23T06:21:57.501233+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''CaCl2 × 2 H2O'' (HYDRATE_FORM), ''CaCl2*2H2O''
+    (HYDRATE_FORM): dihydrate labels on the anhydrous CHEBI:3312 tombstone; the dihydrate
+    is Cacl2_X_2_H2o (#232). The token is kept as provenance only; it must not resolve,
+    be exported, or enter the SSSOM other column.'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 10043-52-4
   data_source: CultureBotHT compounds_to_cas.csv

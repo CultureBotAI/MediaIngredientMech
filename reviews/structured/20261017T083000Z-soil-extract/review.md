@@ -1,0 +1,551 @@
+# Per-record structured review: Soil_Extract (data/ingredients/mapped/Soil_Extract.yaml)
+
+- Review: 20261017T083000Z-soil-extract
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Soil_Extract (data/ingredients/mapped/Soil_Extract.yaml, record-3245d67aff586e82, mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Soil_Extract.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Soil_Extract.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-3245d67aff586e82 | data/ingredients/mapped/Soil_Extract.yaml | maintained | Soil_Extract |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-3245d67aff586e82 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-3245d67aff586e82 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-3245d67aff586e82 | Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-3245d67aff586e82.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-3245d67aff586e82.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T16:00:35Z; reviewed SHA-256=6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848; current SHA-256=6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848; hash_changed=False. Reports=["reports/yaml_record_review/Soil_Extract.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact MICRO:0000457 identity and soil context pass, but final SSSOM exports recipe-specific parenthetical labels.
+
+### Unresolved recipe-reference or truncated-concentration synonyms
+
+nomenclature: concern. Targets: record-3245d67aff586e82.
+
+Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"unresolved recipe cross-reference in a resolving synonym","token":"Soil extract (see below)"}]. Truncated concentration strings and context-dependent instructions need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as a class.
+
+### Certainty correction for the exact token observation
+
+nomenclature: unknown. Targets: record-3245d67aff586e82.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed.
+
+## Findings
+
+### rec-scope-f-ef4889c5708c1269: Adjudicate source scope of exported tokens: Soil extract
+
+major / deferred / provisional; issue key: mim-reconciliation-exported-context-tokens-3245d67aff586e82.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed.
+
+Disposition: Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-49cf9b379ce12ab2 | data/ingredients/mapped/Soil_Extract.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1877],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1879,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3} |
+| ev-b3721d11c5de6ab8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1877] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6c7c43be0fc3aa35 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Soil_Extract; data-row positions=[2617] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil extract","other":"Soil extract (see below)&#124;Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-0062988cfc6ec71b | docs/data/mapped_ingredients.csv; CSV lines=[1879] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000457","line":1879,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"17","ontology_id":"MICRO:0000457","preferred_term":"Soil extract","total_occurrences":"17"}] |
+| ev-bab4ffe1afd610f2 | reports/yaml_record_review/Soil_Extract.md; &#96;data/ingredients/mapped/Soil_Extract.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:29; Completeness:40; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-b58a3241c168189c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1237] | context_only | [{"current_record_sha256":"6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848","finding_id":"SEM:aa8ec5af60ef5832161f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
+| ev-4f670ddc934d5e74 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-ef4889c5708c1269] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
+| ev-927f64381fa816f2 | data/ingredients/mapped/Soil_Extract.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1877],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1879,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3} |
+| ev-1edf0a1870e81e81 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Soil_Extract; data-row positions=[2617] | supports | Current exact-subject rows, including complete other payload: [{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil extract","other":"Soil extract (see below)&#124;Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-cefe2423553074dc | reports/yaml_record_review/Soil_Extract.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
+| ev-5d153ad8a9c430e3 | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-ef4889c5708c1269] | context_only | Predecessor structured review finding scope-f-ef4889c5708c1269 in 20261011T030852Z-mim-token-scope-reassessment |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024638Z-mim-reconcile-all-batch-11, 20261011T030852Z-mim-token-scope-reassessment.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-soil-extract
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Soil_Extract (data/ingredients/mapped/Soil_Extract.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Soil_Extract (data/ingredients/mapped/Soil_Extract.yaml,
+  record-3245d67aff586e82, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Soil_Extract.yaml
+    sha256: 6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848
+    role: target
+  - path: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+    sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+    role: context
+  - path: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+    sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Soil_Extract.md
+    sha256: ae5ccc882afbb6dc1bede0c3b61e54987fe5116620d05dd4794692387a263a84
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+    role: context
+targets:
+- target_id: record-3245d67aff586e82
+  path: data/ingredients/mapped/Soil_Extract.yaml
+  label: Soil_Extract
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Soil_Extract.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Soil_Extract.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Soil_Extract.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-3245d67aff586e82
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-3245d67aff586e82
+  evidence_ids:
+  - ev-49cf9b379ce12ab2
+  - ev-b3721d11c5de6ab8
+  - ev-6c7c43be0fc3aa35
+  - ev-0062988cfc6ec71b
+  - ev-927f64381fa816f2
+  - ev-1edf0a1870e81e81
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-3245d67aff586e82
+  evidence_ids:
+  - ev-49cf9b379ce12ab2
+  - ev-b58a3241c168189c
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-3245d67aff586e82
+  evidence_ids:
+  - ev-bab4ffe1afd610f2
+  - ev-b58a3241c168189c
+  - ev-4f670ddc934d5e74
+  - ev-cefe2423553074dc
+  - ev-5d153ad8a9c430e3
+evidence:
+- evidence_id: ev-49cf9b379ce12ab2
+  kind: record_content
+  reference: data/ingredients/mapped/Soil_Extract.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1877],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1879,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil
+    extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil
+    extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil
+    extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3}'
+  snapshot_sha256: 6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848
+- evidence_id: ev-b3721d11c5de6ab8
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1877]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-6c7c43be0fc3aa35
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Soil_Extract; data-row positions=[2617]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil
+    extract","other":"Soil extract (see below)|Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-0062988cfc6ec71b
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1879]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000457","line":1879,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"17","ontology_id":"MICRO:0000457","preferred_term":"Soil
+    extract","total_occurrences":"17"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-bab4ffe1afd610f2
+  kind: prior_review
+  reference: reports/yaml_record_review/Soil_Extract.md
+  locator: '`data/ingredients/mapped/Soil_Extract.yaml`:2; Verdict:4; Identity:10;
+    Validation:19; Evidence:29; Completeness:40; Recommended Edits:47'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: ae5ccc882afbb6dc1bede0c3b61e54987fe5116620d05dd4794692387a263a84
+  quote: "Recommended Edits:\n- Major: in `data/ingredients/mapped/Soil_Extract.yaml`,\
+    \ retype or suppress the\n  `Soil extract (see below)` and `Soil extract (SE1)`\
+    \ occurrence labels so final\n  SSSOM no longer emits them in `other`."
+- evidence_id: ev-b58a3241c168189c
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1237]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848","finding_id":"SEM:aa8ec5af60ef5832161f","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-823412d1eacb6795
+  kind: record_content
+  reference: MAPPING_SEMANTICS.md
+  locator: Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: supports
+  summary: Raw spellings may remain resolvable when they denote the same substance.
+    Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not
+    adjudicate that distinction.
+  snapshot_sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+- evidence_id: ev-4f670ddc934d5e74
+  kind: prior_review
+  reference: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+  locator: findings[finding_id=f-ef4889c5708c1269]
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Exact earlier occurrence has open/confirmed status, based on exported-token
+    presence and historical report text.
+  snapshot_sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+  quote: '{"category": "nomenclature", "certainty": "confirmed", "description": "Historical
+    tokens are still present on the exact-subject SSSOM rows: [{\"reason\":\"unresolved
+    recipe cross-reference in a resolving synonym\",\"token\":\"Soil extract (see
+    below)\"}]. Truncated concentration strings and context-dependent instructions
+    need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as
+    a class.", "evidence_ids": ["ev-bab4ffe1afd610f2", "ev-6c7c43be0fc3aa35"], "external_issues":
+    ["https://github.com/CultureBotAI/MediaIngredientMech/issues/718"], "field_paths":
+    ["synonyms", "SSSOM.other"], "finding_id": "f-ef4889c5708c1269", "issue_key":
+    "mim-reconciliation-exported-context-tokens-3245d67aff586e82", "owner_paths":
+    [{"path": "data/ingredients/mapped/Soil_Extract.yaml", "repository": "CultureBotAI/MediaIngredientMech",
+    "role": "maintained ingredient"}], "severity": "major", "status": "open", "tags":
+    ["reconciliation", "bundle-by-owner", "exported-context-tokens"], "target_ids":
+    ["record-3245d67aff586e82"], "title": "Review nonportable exported tokens: Soil
+    extract"}'
+- evidence_id: ev-927f64381fa816f2
+  kind: record_content
+  reference: data/ingredients/mapped/Soil_Extract.yaml
+  locator: identifier, ontology_mapping, synonyms and curation_history
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1877],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1879,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil
+    extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil
+    extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil
+    extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3}'
+  snapshot_sha256: 6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848
+- evidence_id: ev-1edf0a1870e81e81
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Soil_Extract; data-row positions=[2617]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil
+    extract","other":"Soil extract (see below)|Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-cefe2423553074dc
+  kind: prior_review
+  reference: reports/yaml_record_review/Soil_Extract.md
+  locator: Complete historical report, including Verdict and Recommended Edits
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Historical interpretation was read in full; it is not fresh source adjudication.
+  snapshot_sha256: ae5ccc882afbb6dc1bede0c3b61e54987fe5116620d05dd4794692387a263a84
+  quote: "# `data/ingredients/mapped/Soil_Extract.yaml`\n\n## Verdict\n\nNeeds curation\
+    \ - major. The exact `MICRO:0000457` soil extract identity,\nundefined-mixture\
+    \ type, environmental context, and occurrence count pass, but\nfinal SSSOM publishes\
+    \ recipe-specific parenthetical text as exact synonyms.\n\n## Identity\n\n- Reviewed\
+    \ record: `data/ingredients/mapped/Soil_Extract.yaml`.\n- Identifier and grounding:\
+    \ `identifier: MICRO:0000457` with\n  `ontology_mapping.ontology_id: MICRO:0000457`,\
+    \ label `soil extract`, source\n  `MICRO`, `mapping_quality: EXACT_MATCH`, `mapping_status:\
+    \ MAPPED`, and\n  `ingredient_type: UNDEFINED_MIXTURE`.\n- Occurrences: 17 source\
+    \ occurrences across 17 CultureMech media.\n\n## Validation\n\n- `uv run --frozen\
+    \ python scripts/validate_strict.py` on the 5-file batch from\n  `Soil_Extract`\
+    \ through `Sorbose`: exited 0 and wrote zero ERROR rows.\n- Direct Engine A term\
+    \ validation was skipped for this record because `MICRO`\n  is outside the OBO\
+    \ allowlist for `linkml-term-validator`; fresh\n  prefix-specific EBI OLS4 lookup\
+    \ resolved `MICRO:0000457`.\n- Local aggregate comparison found this per-record\
+    \ file synchronized with its\n  keyed row in `data/curated/mapped_ingredients.yaml`.\n\
+    \n## Evidence\n\n- Fresh EBI OLS4 lookup resolves active `MICRO:0000457` with\
+    \ label\n  `soil extract`, matching the exact MICRO grounding.\n- The environmental\
+    \ context links the extract to `ENVO:00001998` soil with\n  `NATURAL_SOURCE`,\
+    \ which matches the source material named by the ingredient.\n- Major: final SSSOM\
+    \ publishes `Soil extract (see below)` and\n  `Soil extract (SE1)` in `other`.\
+    \ The first is an instruction pointer and the\n  second is a recipe-local variant\
+    \ label, not a general exact synonym of soil\n  extract.\n\n## Completeness\n\n\
+    - The MICRO ID, label, mixture type, soil environmental context, exact row, and\n\
+    \  occurrence count agree.\n- The only consequential gap is demoting the two CultureMech\
+    \ occurrence labels\n  so they remain searchable locally without publishing as\
+    \ exact final synonyms.\n\n## Recommended Edits\n\n- Major: in `data/ingredients/mapped/Soil_Extract.yaml`,\
+    \ retype or suppress the\n  `Soil extract (see below)` and `Soil extract (SE1)`\
+    \ occurrence labels so final\n  SSSOM no longer emits them in `other`.\n"
+- evidence_id: ev-5d153ad8a9c430e3
+  kind: prior_review
+  reference: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+  locator: findings[finding_id=scope-f-ef4889c5708c1269]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding scope-f-ef4889c5708c1269 in 20261011T030852Z-mim-token-scope-reassessment
+  snapshot_sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+assessments:
+- assessment_id: a-591dea7109cd0b87
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-3245d67aff586e82
+  evidence_ids:
+  - ev-49cf9b379ce12ab2
+  - ev-b3721d11c5de6ab8
+  - ev-6c7c43be0fc3aa35
+  - ev-0062988cfc6ec71b
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-ab6dda9c0c3f55c2
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-3245d67aff586e82
+  evidence_ids:
+  - ev-bab4ffe1afd610f2
+  - ev-49cf9b379ce12ab2
+  - ev-b58a3241c168189c
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T16:00:35Z;
+    reviewed SHA-256=6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848;
+    current SHA-256=6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848;
+    hash_changed=False. Reports=["reports/yaml_record_review/Soil_Extract.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The exact MICRO:0000457
+    identity and soil context pass, but final SSSOM exports recipe-specific parenthetical
+    labels.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-bab4ffe1afd610f2
+    - ev-49cf9b379ce12ab2
+  - name: legacy-native-ids
+    value: '["SEM:aa8ec5af60ef5832161f"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-49cf9b379ce12ab2
+    - ev-bab4ffe1afd610f2
+    - ev-b58a3241c168189c
+- assessment_id: a-408d267e24b003a9
+  area: nomenclature
+  topic: Unresolved recipe-reference or truncated-concentration synonyms
+  outcome: concern
+  summary: 'Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"unresolved
+    recipe cross-reference in a resolving synonym","token":"Soil extract (see below)"}].
+    Truncated concentration strings and context-dependent instructions need scoped
+    curation. This check does not reject catalog/RAW_TEXT synonyms as a class.'
+  target_ids:
+  - record-3245d67aff586e82
+  evidence_ids:
+  - ev-bab4ffe1afd610f2
+  - ev-6c7c43be0fc3aa35
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-bab4ffe1afd610f2
+    - ev-6c7c43be0fc3aa35
+- assessment_id: scope-f-ef4889c5708c1269
+  area: nomenclature
+  topic: Certainty correction for the exact token observation
+  outcome: unknown
+  summary: Token presence remains reproducible, but the earlier pattern-based observation
+    did not establish whether the exact source label denotes this subject or a different
+    preparation. Fresh source-context adjudication is required before a confirmed
+    defect or label removal. This successor corrects certainty only; it does not establish
+    that the token is valid or that another identity allegation is fixed.
+  target_ids:
+  - record-3245d67aff586e82
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-4f670ddc934d5e74
+  - ev-927f64381fa816f2
+  - ev-1edf0a1870e81e81
+  - ev-cefe2423553074dc
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Source-scope question only, not a disposition of the complete historical
+      report.
+    evidence_ids:
+    - ev-823412d1eacb6795
+    - ev-4f670ddc934d5e74
+    - ev-927f64381fa816f2
+    - ev-1edf0a1870e81e81
+    - ev-cefe2423553074dc
+findings:
+- finding_id: rec-scope-f-ef4889c5708c1269
+  issue_key: mim-reconciliation-exported-context-tokens-3245d67aff586e82
+  category: nomenclature
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Adjudicate source scope of exported tokens: Soil extract'
+  description: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed.
+  target_ids:
+  - record-3245d67aff586e82
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-4f670ddc934d5e74
+  - ev-927f64381fa816f2
+  - ev-1edf0a1870e81e81
+  - ev-cefe2423553074dc
+  - ev-5d153ad8a9c430e3
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Soil_Extract.yaml
+    role: maintained ingredient
+  field_paths:
+  - synonyms
+  - SSSOM.other
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - exported-context-tokens
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/861
+  disposition_reason: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T030852Z-mim-token-scope-reassessment
+    finding_id: scope-f-ef4889c5708c1269
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024638Z-mim-reconcile-all-batch-11, 20261011T030852Z-mim-token-scope-reassessment.
+```

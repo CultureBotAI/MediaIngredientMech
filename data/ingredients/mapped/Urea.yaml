@@ -47,7 +47,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: 'hydrolysis: urea'
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ur
   synonym_type: EXACT_SYNONYM
@@ -126,6 +126,14 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''Urea (Sigma U5218)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''hydrolysis:
+    urea''. Preserved original text and source metadata. No identity, mapping, role,
+    or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 57-13-6
   data_source: PubChem API

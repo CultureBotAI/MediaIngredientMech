@@ -25,10 +25,10 @@ synonyms:
   synonym_type: EXACT
   source: CHEBI
 - synonym_text: (5S,6R)-5-hydroxy-6-methyl-3-[(2S,3S)-3-methyloxiran-2-yl]-5,6-dihydro-2H-pyran-2-one
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: aspyrone
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
@@ -95,6 +95,14 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 2 synonym(s) non-resolving: [''(5S,6R)-5-hydroxy-6-methyl-3-[(2S,3S)-3-methyloxiran-2-yl]-5,6-dihydro-2H-pyran-2-one'',
+    ''aspyrone'']. ChEBI gives these names to CHEBI:156387, not to this record''s
+    CHEBI:18101 -- 4-hydroxyphenylacetic acid is not aspyrone. Kept as REJECTED_LABEL
+    so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 156-38-7
   data_source: PubChem API

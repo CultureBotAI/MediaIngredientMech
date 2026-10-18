@@ -38,7 +38,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: L-Cysteine . HCl
   synonym_type: RAW_TEXT
@@ -163,6 +163,15 @@ curation_history:
     · HCl'' (x1 CultureMech mentions); ''cysteine . HCl'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-21T03:52:08Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 1 synonym(s) non-resolving: [''N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium''].
+    ChEBI gives these names to CHEBI:52891, not to this record''s CHEBI:91247 -- L-cysteine
+    hydrochloride is not the QSY9 dye at CHEBI:52891 -- its CAS 52-89-1 read as an
+    accession. Kept as REJECTED_LABEL so a rebuild cannot restore them from kg-microbe''s
+    synonym list (#669).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 52-89-1
   data_source: OAK/CHEBI xref

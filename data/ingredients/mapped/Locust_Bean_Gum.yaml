@@ -1,19 +1,27 @@
-identifier: cas:9000-40-2
+identifier: FOODON:03413132
 preferred_term: Locust bean gum
 ontology_mapping:
   ontology_id: FOODON:03413132
   ontology_label: locust bean gum
   ontology_source: FOODON
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 9000-40-2 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 9000-40-2 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: FOODON via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Locust bean gum'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Locust bean gum'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic
+      seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier
+      in supplied_form notes; it is not an exact synonym or evidence for clarified
+      gum.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -49,8 +57,31 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-09-24T07:10:47.886428+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic
+    seed-derived locust/carob gum. Retain the supplier and original autoclaved qualifier
+    in supplied_form notes; it is not an exact synonym or evidence for clarified gum.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 9000-40-2
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
 ingredient_type: SINGLE_INGREDIENT
+supplied_form:
+- name: Locust bean gum
+  cas_rn: 9000-40-2
+  supplier: Sigma-Aldrich
+  catalog_number: G0753
+  form: Ceratonia siliqua seed-derived powder
+  notes: Original CultureBotHT synonym field says 'Locust bean gum; autoclaved'. Autoclaved
+    remains a preparation qualifier, not an exact synonym. Source does not specify
+    clarified gum. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md.
+notes: Source Sigma G0753, JECFA INS 410 and FoodOn identify the same generic seed-derived
+  locust/carob gum. Retain the supplier and original autoclaved qualifier in supplied_form
+  notes; it is not an exact synonym or evidence for clarified gum.

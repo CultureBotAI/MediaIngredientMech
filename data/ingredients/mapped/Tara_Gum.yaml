@@ -1,19 +1,25 @@
-identifier: cas:39300-88-4
+identifier: FOODON:03413299
 preferred_term: Tara gum
 ontology_mapping:
   ontology_id: FOODON:03413299
   ontology_label: tara gum
   ontology_source: FOODON
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 39300-88-4 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 39300-88-4 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: FOODON via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Tara gum'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Tara gum'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on
+      tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -42,8 +48,27 @@ curation_history:
   action: BACKFILL_PARENT_FOODON
   changes: set ontology_mapping parent=FOODON:03413299 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.907686+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on
+    tara seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 39300-88-4
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
 ingredient_type: SINGLE_INGREDIENT
+supplied_form:
+- name: Tara gum
+  cas_rn: 39300-88-4
+  supplier: Biosynth
+  catalog_number: YT58656
+  notes: Original CultureBotHT catalog reference confirmed by supplier. No particular
+    viscosity grade is assigned. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md.
+notes: Original Biosynth YT58656 product/CAS, JECFA INS 417 and FoodOn agree on tara
+  seed-endosperm gum. Retain product provenance; no viscosity grade is inferred.

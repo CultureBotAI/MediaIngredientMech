@@ -91,9 +91,10 @@ PREFIX_RANK = {
     "kgmicrobe.ingredient": 11,
 }
 
-# Only these assert that subject and object denote the same thing. narrowMatch
-# in particular means the MIM subject is MORE specific, so treating the object as
-# an equivalent silently generalises the ingredient.
+# Only these assert that subject and object denote the same thing. A broadMatch
+# row in particular means the MIM subject is MORE specific than the object (the
+# object is the broader concept, #390), so treating the object as an equivalent
+# silently generalises the ingredient.
 EQUIVALENT_PREDICATES = {"skos:exactMatch"}
 
 _CURIE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9_.]*):([A-Za-z0-9_.~%\-]+)$")
@@ -109,11 +110,10 @@ def mim_curie_for_stem(stem: str) -> str:
     return f"MIM:{safe}"
 
 
-# MicrO mints ~1,472 of its 3,450 classes under a malformed IRI
-# (…/obo/MicrO.owl/MICRO_nnnnnnn). Those CURIEs do not round-trip, and the defect
-# is only visible against OLS (is_defining_ontology + IRI shape), so it cannot be
-# detected offline. This is the set verified good against OLS4; anything outside
-# it is refused rather than guessed at.
+# This set contains MICRO terms verified against canonical IRIs in OLS4.
+# Separately, micro_source validates reviewed KG-Microbe CURIEs against pinned
+# KGX labels, parents and original legacy MicrO.owl IRIs. That source-backed
+# path does not claim canonical-IRI or OLS defining-ontology verification.
 #
 # Regenerate with: python scripts/verify_micro_ids.py — note it only checks ids
 # already present in the SSSOM, so its output is a SUBSET of this set (8 entries
@@ -271,14 +271,19 @@ class CurieNormalizer:
                 "this is most likely a PubChem CID",
             )
         if canonical == "MICRO" and out not in MICRO_VERIFIED:
-            return Verdict(
-                False,
-                curie=out,
-                problem="MICRO_UNVERIFIED",
-                note="MicrO has ~1,472 classes under a malformed IRI that "
-                "do not round-trip; verify is_defining_ontology=true "
-                "on OLS4 and add to MICRO_VERIFIED before use",
-            )
+            # The bare-Python published-CURIE gate imports this module by path
+            # for its syntax/prefix constants, without installing the package.
+            from mediaingredientmech.micro_source import source_term
+
+            if source_term(out) is None:
+                return Verdict(
+                    False,
+                    curie=out,
+                    problem="MICRO_UNVERIFIED",
+                    note="MICRO term has neither canonical OLS verification nor a reviewed "
+                    "entry in the pinned KG-Microbe source; verify the term and its original IRI "
+                    "before use",
+                )
         note = "" if out == raw else f"prefix case normalised from {prefix!r}"
         return Verdict(True, curie=out, note=note)
 
@@ -320,7 +325,7 @@ class CurieNormalizer:
 
         Only ``skos:exactMatch`` rows qualify; among those the highest-ranked
         prefix wins. Returns a problem verdict — never a guess — when the subject
-        has no exact match, so a caller cannot mistake a ``narrowMatch`` for an
+        has no exact match, so a caller cannot mistake a ``broadMatch`` for an
         equivalence.
         """
         r = self.resolve(mim_curie)

@@ -48,7 +48,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: merged_from_duplicate_mim_record
 - synonym_text: (NH4)2Ni(SO4)2
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ammonium nickel(2+) sulfate--water (2/1/2/6)
   synonym_type: EXACT_SYNONYM
@@ -160,6 +160,16 @@ curation_history:
   changes: cas_rn 56110-30-6 -> 7785-20-8. 56110-30-6 is the ANHYDROUS parent's CAS;
     this record is grounded to CHEBI:86149 ammonium nickel sulfate hexahydrate, whose
     ChEBI dbxref is 7785-20-8 (#334).
+- timestamp: '2026-09-24T07:48:22.753683+00:00'
+  curator: claude
+  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''(NH4)2Ni(SO4)2'' (EXACT_SYNONYM): the anhydrous
+    salt''s label on the hexahydrate record (#669). Kept as provenance only; it must
+    not resolve, be exported, or enter the SSSOM other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 7785-20-8
   data_source: PubChem (via CHEBI:86149)

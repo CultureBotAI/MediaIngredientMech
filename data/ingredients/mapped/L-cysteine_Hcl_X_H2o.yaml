@@ -35,7 +35,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Cystein-HCl x 2 H2O (5% (w/v))
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: L-Cysteine hydrochloride monohydrate
   synonym_type: EXACT_SYNONYM
@@ -245,6 +245,14 @@ curation_history:
   action: CORRECTED
   changes: Added bullet-operator hydrate synonym Cysteine-HCl∙H2O moved from free
     L-cysteine; this spelling names L-cysteine hydrochloride hydrate CHEBI:91248 (#521).
+  llm_assisted: true
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped dihydrate synonym to REJECTED_LABEL: Cystein-HCl x 2 H2O (5% (w/v))
+    (#878).'
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: true
 chemical_properties:
   cas_rn: 7048-04-6

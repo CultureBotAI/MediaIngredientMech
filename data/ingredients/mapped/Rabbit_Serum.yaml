@@ -1,4 +1,4 @@
-identifier: kgmicrobe.ingredient:rabbit_serum
+identifier: MICRO:0002392
 preferred_term: Rabbit serum
 synonyms:
 - synonym_text: Rabbit serum
@@ -46,17 +46,36 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-09-23T17:09:56.133081+00:00'
+  curator: restore_micro_source_identities
+  action: CORRECTED
+  changes: 'Restore MICRO:0002392 ''rabbit serum'' from the pinned KG-Microbe MICRO
+    KGX (#759). Both node snapshots contain this exact class label; current KGX parent(s):
+    MICRO:0001236. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002392.
+    This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS defining-ontology
+    status. No verified CAS RN is supplied for this material.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 notes: Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: UBERON:0001977
-  ontology_label: blood serum
-  ontology_source: UBERON
-  mapping_quality: NARROW_MATCH
+  ontology_id: MICRO:0002392
+  ontology_label: rabbit serum
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: fix_micro_malformed_iris
-    notes: MICRO:0002392 is an OLS4 non-defining MicrO.owl IRI; rabbit serum has no
-      well-formed exact OBO term, so this record keeps a local identity and anchors
-      to the blood serum parent.
+    notes: 'SUPERSEDED by source-backed review #759: MICRO:0002392 is an OLS4 non-defining
+      MicrO.owl IRI; rabbit serum has no well-formed exact OBO term, so this record
+      keeps a local identity and anchors to the blood serum parent.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: src/mediaingredientmech/ontology_sources/micro/manifest.json
+    notes: 'Restore MICRO:0002392 ''rabbit serum'' from the pinned KG-Microbe MICRO
+      KGX (#759). Both node snapshots contain this exact class label; current KGX
+      parent(s): MICRO:0001236. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002392.
+      This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+      defining-ontology status. No verified CAS RN is supplied for this material.'
 ingredient_type: UNDEFINED_MIXTURE

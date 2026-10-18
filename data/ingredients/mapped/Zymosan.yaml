@@ -1,19 +1,26 @@
-identifier: cas:9010-72-4
+identifier: NCIT:C183132
 preferred_term: Zymosan
 ontology_mapping:
   ontology_id: NCIT:C183132
   ontology_label: Zymosan
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 9010-72-4 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 9010-72-4 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Zymosan'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Zymosan'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall
+      zymosan preparation. This does not equate arbitrary purified beta-glucan or
+      a single molecule with zymosan.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -42,8 +49,22 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C183132 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.910608+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall
+    zymosan preparation. This does not equate arbitrary purified beta-glucan or a
+    single molecule with zymosan.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 9010-72-4
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
 ingredient_type: SINGLE_INGREDIENT
+notes: Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan
+  preparation. This does not equate arbitrary purified beta-glucan or a single molecule
+  with zymosan.

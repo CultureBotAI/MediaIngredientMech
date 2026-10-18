@@ -1,14 +1,22 @@
-identifier: NCIT:C29406
+identifier: CHEBI:26580
 preferred_term: Rifamycin
 ontology_mapping:
-  ontology_id: NCIT:C29406
-  ontology_label: Rifamycin
-  ontology_source: NCIT
+  ontology_id: CHEBI:26580
+  ontology_label: rifamycins
+  ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
-    notes: 'Imported from microbedecoder via ols-label-exact-ncit. source_id=kgmicrobe.trait:rifamycin; '
+    notes: 'SUPERSEDED by chemical-scope review: Imported from microbedecoder via
+      ols-label-exact-ncit. source_id=kgmicrobe.trait:rifamycin; '
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+    notes: Re-ground the three unqualified MicrobeDecoder observations at unspecified
+      rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports
+      resistance. None specifies SV or a CAS. Family indexing does not imply production
+      of, or resistance to, every member. The separate Rifamycin_Sv record remains
+      CHEBI:29673; no single CAS is assigned to this family.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -44,3 +52,20 @@ curation_history:
     does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
     PENDING_REVIEW -> MAPPED.'
   llm_assisted: true
+- timestamp: '2026-09-23T19:20:33.150870+00:00'
+  curator: kgmicrobe_scope_review
+  action: CORRECTED
+  changes: Re-ground the three unqualified MicrobeDecoder observations at unspecified
+    rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports
+    resistance. None specifies SV or a CAS. Family indexing does not imply production
+    of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673;
+    no single CAS is assigned to this family.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Re-ground the three unqualified MicrobeDecoder observations at unspecified
+  rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports
+  resistance. None specifies SV or a CAS. Family indexing does not imply production
+  of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673;
+  no single CAS is assigned to this family.

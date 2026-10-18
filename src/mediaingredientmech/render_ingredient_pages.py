@@ -17,10 +17,15 @@ import argparse
 import datetime as _dt
 import re
 import sys
+from html import escape
 from pathlib import Path
+from urllib.parse import quote
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup
+
+from mediaingredientmech.micro_source import source_term
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INGREDIENTS = REPO_ROOT / "data" / "ingredients"
@@ -37,7 +42,10 @@ _CURIE_RESOLVERS = {
     "NCIT": "https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_{}",
     "MICRO": "https://www.ebi.ac.uk/ols4/ontologies/micro/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMICRO_{}",
     "cas": "https://commonchemistry.cas.org/detail?cas_rn={}",
-    "kgmicrobe.compound": "#",  # placeholder primary; no resolver
+    "mesh": "https://meshb.nlm.nih.gov/record/ui?ui={}",
+    "MESH": "https://meshb.nlm.nih.gov/record/ui?ui={}",
+    "BTO": "https://www.ebi.ac.uk/ols4/ontologies/bto/terms?obo_id=BTO:{}",
+    "NCBITaxon": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id={}",
     "MIM": None,
     "MediaIngredientMech": None,
 }
@@ -45,12 +53,79 @@ _CURIE_RESOLVERS = {
 
 def curie_to_url(curie: str | None) -> str:
     if not curie or ":" not in curie:
-        return "#"
+        return ""
     prefix, local = curie.split(":", 1)
+    if prefix == "MICRO" and (term := source_term(curie)):
+        return "https://www.ebi.ac.uk/ols4/ontologies/micro/classes/" + quote(
+            quote(term.iri, safe=""), safe=""
+        )
     template = _CURIE_RESOLVERS.get(prefix)
     if not template:
-        return "#"
-    return template.format(local)
+        return ""
+    return template.format(quote(local, safe=""))
+
+
+_REFERENCE = re.compile(
+    r"https?://[^\s<>]+|(?:doi:|DOI:)?10\.\d{4,9}/[^\s<>]+|(?:[A-Za-z][A-Za-z0-9_.]*):[A-Za-z0-9._-]+"
+)
+
+
+def reference_url(value: str) -> str:
+    if value.startswith(("https://", "http://")):
+        return value
+    if re.fullmatch(r"CultureMech:\d{6}", value):
+        return (
+            "https://culturebotai.github.io/CultureMech/pages/normalized/"
+            + value.split(":")[1]
+            + ".html"
+        )
+    if value.upper().startswith("PMID:") and value[5:].isdigit():
+        return "https://pubmed.ncbi.nlm.nih.gov/" + value[5:] + "/"
+    doi = re.sub(r"(?i)^doi:", "", value)
+    if re.match(r"^10\.\d{4,9}/", doi):
+        return "https://doi.org/" + quote(doi, safe="/():;._-")
+    return curie_to_url(value)
+
+
+def linked_text(value: object) -> Markup:
+    text = str(value)
+    parts = []
+    offset = 0
+    for match in _REFERENCE.finditer(text):
+        candidate = match.group().rstrip(".,;")
+        parts.append(escape(text[offset : match.start()]))
+        url = reference_url(candidate)
+        parts.append(
+            f'<a href="{escape(url, quote=True)}" rel="noreferrer">{escape(candidate)}</a>'
+            if url
+            else escape(candidate)
+        )
+        offset = match.start() + len(candidate)
+    parts.append(escape(text[offset:]))
+    return Markup("".join(parts))
+
+
+def structured_value(value: object) -> Markup:
+    """Render curated structures without Python repr or lost evidence fields."""
+    if isinstance(value, dict):
+        return Markup(
+            '<dl class="kv">'
+            + "".join(
+                "<dt>"
+                + escape(str(k).replace("_", " ").capitalize())
+                + "</dt><dd>"
+                + str(structured_value(v))
+                + "</dd>"
+                for k, v in value.items()
+                if v is not None
+            )
+            + "</dl>"
+        )
+    if isinstance(value, list):
+        return Markup(
+            "<ul>" + "".join("<li>" + str(structured_value(v)) + "</li>" for v in value) + "</ul>"
+        )
+    return linked_text(value)
 
 
 _SLUG_RE = re.compile(r"[^A-Za-z0-9._-]+")
@@ -75,6 +150,8 @@ def make_env() -> Environment:
         lstrip_blocks=True,
     )
     env.globals["curie_to_url"] = curie_to_url
+    env.filters["linked_text"] = linked_text
+    env.filters["structured"] = structured_value
     return env
 
 
@@ -115,15 +192,24 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MIM — Ingredient index</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<nav aria-label="Site navigation"><a href="../index.html">Home</a> &middot; <a href="../browser.html">Browse ingredients</a> &middot; <a href="../text_map.html">Text Map</a> &middot; <a href="../ingredient_umap.html">KG PaCMAP</a> &middot; <a href="../ingredient_graph.html">Graph Layout</a> &middot; <a href="../schema/index.html">Schema</a> &middot; <a href="../index.html#downloads">Downloads</a> &middot; <a href="https://culturebotai.github.io/mechs/">All Mech projects</a></nav>
 <header>
+<form class="record-search" action="../browser.html" method="get" role="search">
+  <label class="sr-only" for="index-search-input">Search ingredients</label>
+  <input type="search" id="index-search-input" name="q" placeholder="Search ingredients, synonyms, or ontology IDs...">
+  <button type="submit">Search</button>
+</form>
 <h1>MIM — Ingredient index</h1>
 <p class="muted">{count:,} ingredients, generated {generated_at}.</p>
 </header>
-{by_prefix}
+<main>{by_prefix}</main>
+<footer>Generated {generated_at} &middot; <a href="build.json">Build provenance (SHA-256 manifest)</a> &middot; <a href="../schema/index.html">LinkML Schema</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+<script src="../theme-toggle.js"></script>
 </body>
 </html>
 """
@@ -131,12 +217,12 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 
 def _section(prefix: str, items: list[tuple[str, str, str]]) -> str:
     rows = "".join(
-        f'<li><a href="ingredient/{slug}.html">{name}</a> '
-        f'<span class="muted">— <code>{ident}</code></span></li>'
+        f'<li><a href="ingredient/{escape(slug, quote=True)}.html">{escape(name)}</a> '
+        f'<span class="muted">— <code>{escape(ident)}</code></span></li>'
         for (ident, slug, name) in sorted(items, key=lambda x: x[2].lower())
     )
     return (
-        f"<section><h2>{prefix} "
+        f'<section id="prefix-{quote(prefix, safe="")}"><h2>{escape(prefix)} '
         f'<small class="muted">({len(items)})</small></h2>'
         f'<ul class="medium-index">{rows}</ul></section>'
     )
@@ -155,7 +241,13 @@ def write_index(out_dir: Path, all_records: list[dict]) -> None:
     html = INDEX_TEMPLATE.format(
         count=rows_total,
         generated_at=_dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
-        by_prefix=sections,
+        by_prefix='<nav aria-label="Identifier groups"><ul>'
+        + "".join(
+            f'<li><a href="#prefix-{quote(p, safe="")}">{escape(p)} ({len(v)})</a></li>'
+            for p, v in sorted(by_prefix.items())
+        )
+        + "</ul></nav>"
+        + sections,
     )
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "index.html").write_text(html)

@@ -31,7 +31,7 @@ they are easy to review and reverse, and clearly distinct from the higher-
 confidence synonym-derived roles.
 
 The CHEBI adapter URI defaults to the standard OAK semsql cache
-(``~/.data/oaklib/chebi.db``), resolved portably via ``Path.home()`` so it
+(``~/.data/oaklib/chebi.db`` by default), resolved through pystow so it
 works for any user who has that cache. Override with ``--chebi-db`` or the
 ``CHEBI_DB`` environment variable; pass ``--chebi-db sqlite:obo:chebi`` to let
 OAK download CHEBI if you do not already have the local copy.
@@ -53,13 +53,12 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.utils.role_facets import add_role
 from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 
-# Default to the standard OAK semsql cache location, resolved portably from the
-# user's home dir (reuses an existing local copy without re-downloading).
+# Default to the OAK semsql cache, resolved through pystow so PYSTOW_HOME is
+# honoured (#306) — reuses an existing local copy without re-downloading.
 # Overridable via --chebi-db or $CHEBI_DB; use sqlite:obo:chebi to download.
-DEFAULT_CHEBI_DB = os.environ.get(
-    "CHEBI_DB", f"sqlite:///{Path.home() / '.data' / 'oaklib' / 'chebi.db'}"
-)
+DEFAULT_CHEBI_DB = os.environ.get("CHEBI_DB", f"sqlite:///{db_path('CHEBI')}")
 HAS_ROLE = "RO:0000087"
 
 # (role, ancestor CHEBI class) in precedence order — first match wins.

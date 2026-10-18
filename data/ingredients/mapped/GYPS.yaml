@@ -84,36 +84,56 @@ curation_history:
     in a sentence is not a reference. Neither claim is strengthened: BHI was already
     composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical
     (#447).'
-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN
-  or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-09-21T00:00:00+00:00'
+  curator: mim-semantic-evidence-review
+  action: CORRECTED
+  changes: '#710: traced GYPS to Caminicella sporogenes in original MicrobeDecoder
+    data; replaced incorrect starch component with elemental sulfur using Alain et
+    al. 2002 p.1622, changed guessed abbreviation evidence to source-specific partial
+    recipe transcription, and corrected the limited CultureMech composition comparison.'
+  llm_assisted: true
+notes: MicrobeDecoder source label GYPS for Caminicella sporogenes; original species-description
+  recipe resolves the component expansion. Local registry identity is retained; this
+  is not a universal GYPS formulation.
 components:
 - component_name: glucose
   component_id: CHEBI:17234
   reference_scope: MIM_CATALOG
-  source: microbedecoder research decomposition (#213/#308)
+  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+    GYPS medium)
 - component_name: yeast extract
   component_id: FOODON:03315426
   reference_scope: MIM_CATALOG
-  source: microbedecoder research decomposition (#213/#308)
+  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+    GYPS medium)
 - component_name: peptone
   component_id: MICRO:0000178
   reference_scope: MIM_CATALOG
-  source: microbedecoder research decomposition (#213/#308)
-- component_name: starch
-  component_id: CHEBI:28017
+  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+    GYPS medium)
+- component_name: elemental sulfur
+  component_id: CHEBI:33403
   reference_scope: MIM_CATALOG
-  source: microbedecoder research decomposition (#213/#308)
+  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+    GYPS medium)
 component_assertion:
-  method: ABBREVIATION_EXPANSION
-  completeness: UNKNOWN
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
   evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://doi.org/10.1099/00207713-52-5-1621
+    source_record: p. 1622, Culture medium and conditions
+    notes: Original Caminicella sporogenes description explicitly defines GYPS using
+      glucose, yeast extract, peptone and elemental sulfur. This partial constituent
+      list omits documented sea salts, buffer, redox indicator and reducing agent;
+      quantities are not projected.
   - evidence_type: CURATED_DATASET
-    source: mappings/microbedecoder_residual_research_decomposition.tsv
-    source_record: GYPS
-    notes: 'Reviewed row: strategy=split, confidence=medium; Glucose-Yeast-Peptone
-      (DSMZ Medium 852) + Salts (or Starch). Same set as PYG family, reordered.'
-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-    variant hierarchy, or complete culturing recipe.
+    source: reports/semantic_review_20260921/resolution/components/source-contexts.json
+    source_record: database.csv row 3351; Bergey doi:10.1002/9781118960608.gbm00618
+    notes: Exact raw MicrobeDecoder substrate label GYPS belongs to Caminicella sporogenes.
+      This source context distinguishes the preparation from unrelated GYPS expansions.
+  notes: Source-specific partial partonomy. S means sulfur here, not starch. Original
+    guessed assertions are retained in the review before-records.json audit.
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:gyps
@@ -122,24 +142,17 @@ ontology_mapping:
   mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: MANUAL_CURATION
-    source: MIM curation (#213/#308)
-    notes: 'Components taken from the curated microbedecoder research decomposition
-      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
-      the label names its constituents. 4 constituent(s), 4 carrying an identifier.
-      That file was produced by the research pass and never written into the records;
-      this applies it. It resolves constituents a label split cannot — abbreviations
-      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
-      No concentrations are recorded: the curated row states none. Cross-referenced
-      to CultureMech medium CultureMech:002799 (''gyps_medium'') via culturemech_medium_name,
-      verified by COMPOSITION not by name: name matches exactly and 3 of 4 curated
-      constituents agree (glucose, peptone, yeast extract); CultureMech additionally
-      lists MES and Sea Salt and no starch, so the recipes are close but not identical.'
+    source: MIM semantic evidence review (#710)
+    notes: Local registry identity denotes the source label. Component membership
+      is separately supported by the source-specific recipe transcription; it is not
+      an ontology equivalence assertion.
 culturemech_reference:
   medium_id: CultureMech:002799
   medium_name: gyps_medium
   relationship: SIMILAR_COMPOSITION
   source_path: data/normalized_yaml/bacterial/gyps_medium.yaml
-  evidence: Close but NOT identical, so deliberately not EXACT_FORMULATION. 3 of 4
-    curated constituents agree (glucose, peptone, yeast extract); CultureMech additionally
-    lists MES and Sea Salt and no starch. The names match exactly, which is precisely
-    why the name is not the evidence (#213/#308).
+  evidence: Compared source-specific Alain et al. 2002 p.1622 GYPS with CultureMech:002799
+    (JCM J449). Both specify glucose 5 g/L, yeast extract 0.5 g/L, peptone 1 g/L and
+    sea salts 30 g/L. J449 uses MES 3.9 g/L and pH 6.0; the original uses PIPES 6.05
+    g/L, sulfur 12 g/L and pH 7.5 plus reducing agent and redox indicator. This substantiates
+    composition similarity, not exact identity or a documented variant relationship.

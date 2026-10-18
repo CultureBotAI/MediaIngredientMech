@@ -22,12 +22,15 @@ permissions:
 # Keep uv commands on the fleet runtime, including --no-project invocations.
 env:
   UV_PYTHON: "3.13"
+  RECORD_REVIEW_BASE: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before || (github.event_name == 'workflow_dispatch' && 'HEAD') || 'INVALID-REVIEW-BASE' }}
 
 jobs:
   pytest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # The worktree recipe regression test needs the real just executable.
       - uses: extractions/setup-just@v3
@@ -45,6 +48,9 @@ jobs:
         # heavy py>=3.12 dev extras (edison-client / deep-research-client) aren't
         # pulled for a hermetic unit-test run.
         run: uv sync --frozen
+
+      - name: Validate structured record reviews
+        run: just test-record-reviews
 
       - name: Run pytest
         run: uv run --with pytest --with pytest-cov pytest

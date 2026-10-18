@@ -175,14 +175,17 @@ attributes:
     name: title
     description: Short dataset title. (CommunityMech `name` migrates here.)
     from_schema: https://w3id.org/kg-microbe/mech-shared
-    rank: 1000
     domain_of:
+    - CausalGraph
     - Dataset
   description:
     name: description
     description: Human-readable description; may add nuance beyond the title.
     from_schema: https://w3id.org/kg-microbe/mech-shared
     domain_of:
+    - CausalGraph
+    - CausalNode
+    - CausalEdge
     - ProposedExperiment
     - Dataset
     recommended: true
@@ -271,6 +274,8 @@ attributes:
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
+    - CausalEdge
+    - ProteinExample
     - Discussion
     - Dataset
     range: SupportingReference
@@ -292,6 +297,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset
@@ -325,10 +331,10 @@ attributes:
     name: title
     description: Short dataset title. (CommunityMech `name` migrates here.)
     from_schema: https://w3id.org/kg-microbe/mech-shared
-    rank: 1000
     alias: title
     owner: Dataset
     domain_of:
+    - CausalGraph
     - Dataset
     range: string
   description:
@@ -338,6 +344,9 @@ attributes:
     alias: description
     owner: Dataset
     domain_of:
+    - CausalGraph
+    - CausalNode
+    - CausalEdge
     - ProposedExperiment
     - Dataset
     range: string
@@ -455,6 +464,8 @@ attributes:
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
+    - CausalEdge
+    - ProteinExample
     - Discussion
     - Dataset
     range: SupportingReference
@@ -478,6 +489,7 @@ attributes:
     - CellularMetabolicRoleAssignment
     - ComponentAssertion
     - ComponentEvidence
+    - EvidenceItem
     - SupportingReference
     - Discussion
     - Dataset

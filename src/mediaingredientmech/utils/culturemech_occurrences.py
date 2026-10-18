@@ -2,12 +2,20 @@
 
 from __future__ import annotations
 
+import csv
 import re
 from collections.abc import Mapping
+from pathlib import Path
+from typing import Any
+
+DEFAULT_MEMBERSHIP_PATH = (
+    Path(__file__).resolve().parents[3] / "mappings" / "culturemech_recipe_membership.tsv"
+)
 
 AIR_DRIED_GARDEN_SOIL_ID = "kgmicrobe.ingredient:air-dried_garden_soil"
 BETAINE_HYDRATE_ID = "CHEBI:91242"
 CALCIUM_2_ID = "CHEBI:29108"
+CALCIUM_NITRATE_TETRAHYDRATE_ID = "CHEBI:86159"
 CALCIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:caso4_x_7_h2o"
 CITRIC_ACID_MONOHYDRATE_ID = "CHEBI:31404"
 COPPER_ID = "kgmicrobe.compound:copper"
@@ -19,7 +27,9 @@ FERROUS_SULFATE_PENTAHYDRATE_ID = "kgmicrobe.compound:feso4_x_5_h2o"
 IRON_0_ID = "CHEBI:82664"
 LIPOIC_ACID_ID = "CHEBI:16494"
 MAGNESIUM_2_ID = "CHEBI:18420"
+MAGNESIUM_SULFATE_HEPTAHYDRATE_ID = "CHEBI:31795"
 MAGNESIUM_SULFATE_HEXAHYDRATE_ID = "kgmicrobe.compound:mgso4_x_6_h2o"
+MAGNESIUM_SULFATE_MONOHYDRATE_ID = "cas:14168-73-1"
 MANGANESE_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:mnso4_x_7_h2o"
 MOLYBDENUM_ID = "kgmicrobe.compound:molybdenum"
 POTASSIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:k2so4_x_7_h2o"
@@ -41,6 +51,17 @@ def _source_label_key(value: str) -> str:
 # These are source labels that CultureMech still resolves to a broader parent
 # or retired local mint, but MIM now publishes as narrower records.
 SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
+    # Reviewed source-label corrections (semantic review 2026-09-21).
+    # Do not rewrite whole old-ID groups: CHEBI:37583 included both mono-
+    # and dibasic phosphate, and CHEBI:132766 included a disodium stock.
+    _source_label_key("NaNO"): "CHEBI:63005",
+    _source_label_key("Sodium phosphate dibasic"): "CHEBI:34683",
+    _source_label_key("Sodium dihydrogen phosphate"): "CHEBI:37585",
+    _source_label_key(
+        "0.5 M Nitrilotriacetic acid, disodium salt"
+    ): "kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt",
+    _source_label_key("Artificial Sea Salt"): "kgmicrobe.ingredient:artificial_sea_salt",
+    _source_label_key("Ca(NO3)2•4H2O"): CALCIUM_NITRATE_TETRAHYDRATE_ID,
     _source_label_key("air-dried garden soil"): AIR_DRIED_GARDEN_SOIL_ID,
     _source_label_key("Betaine x H2O"): BETAINE_HYDRATE_ID,
     _source_label_key("1-ethyl-3-methylimidazolium lysine"): EMIM_LYSINE_ID,
@@ -79,6 +100,16 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("MgSO4 x 6 H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
     _source_label_key("MgSO4 x 6H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
     _source_label_key("MgSO4·6H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
+    # #878/#893: MgSO4·H2O left the heptahydrate for its own CAS. CultureMech
+    # still resolves these spellings to CHEBI:31795, to anhydrous CHEBI:32599,
+    # or not at all (ambiguous).
+    _source_label_key("MgSO4·H2O"): MAGNESIUM_SULFATE_MONOHYDRATE_ID,
+    _source_label_key("MgSO4 x H2O"): MAGNESIUM_SULFATE_MONOHYDRATE_ID,
+    _source_label_key("MgSO4 . H2O"): MAGNESIUM_SULFATE_MONOHYDRATE_ID,
+    _source_label_key("MgSO4・H2O"): MAGNESIUM_SULFATE_MONOHYDRATE_ID,
+    # #899: MgSO4·7H2O with its subscripts lost. CultureMech trusts MIM's old
+    # answer, the anhydrous CHEBI:32599, over the recipes' own CHEBI:31795.
+    _source_label_key("MgSO .7H O"): MAGNESIUM_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("MnSO4 . 7H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("MnSO4 x 7 H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("MnSO4 x 7H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
@@ -88,6 +119,28 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("K2SO4 x 7 H2O"): POTASSIUM_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("K2SO4·7H2O"): POTASSIUM_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("K2SO4・7H2O"): POTASSIUM_SULFATE_HEPTAHYDRATE_ID,
+    # #312 batch 3: registry mints for records that shared their identifier with
+    # a sibling (CHEBI:23414 with CuSO4, MICRO:0000455 with the WC solution) or
+    # left it altogether. CultureMech still resolves these labels to the old id.
+    _source_label_key(
+        "Algal Trace Elements Solution"
+    ): "kgmicrobe.ingredient:algal_trace_elements_solution",
+    _source_label_key(
+        "Casamino acids, vitamin assay (BD-Difco)"
+    ): "kgmicrobe.ingredient:casamino_acids_vitamin_assay",
+    _source_label_key(
+        "Casamino acids, vitamin assay (Difco)"
+    ): "kgmicrobe.ingredient:casamino_acids_vitamin_assay",
+    _source_label_key("CuSO4 x 4 H2O"): "kgmicrobe.compound:cuso4_x_4_h2o",
+    _source_label_key("CuSO4 x 2 H2O"): "kgmicrobe.compound:cuso4_x_2_h2o",
+    _source_label_key("CuSO4 . 2H2O"): "kgmicrobe.compound:cuso4_x_2_h2o",
+    # #312 batch 4: NaH2PO4•H2O merged into the CHEBI:114249 monohydrate record;
+    # CultureMech still resolves the label to the retired cas: identity.
+    _source_label_key("NaH2PO4•H2O"): "CHEBI:114249",
+    _source_label_key("NaH2PO4•H2O(MCIB 742)"): "CHEBI:114249",
+    # #704: Na2-citrate is disodium hydrogen citrate, split off the trisodium record;
+    # CultureMech still resolves the label to CHEBI:53258.
+    _source_label_key("Na2-citrate"): "cas:144-33-2",
 }
 
 
@@ -98,3 +151,45 @@ def mim_identifier_for_occurrence(row: Mapping[str, str]) -> str:
         source_label,
         (row.get("resolved_identifier") or "").strip(),
     )
+
+
+def membership_counts(
+    membership_path: Path = DEFAULT_MEMBERSHIP_PATH,
+) -> dict[str, tuple[int, int]]:
+    """Aggregate (media_count, total_occurrences) per mim_identifier from the membership TSV."""
+    if not membership_path.exists():
+        return {}
+    counts: dict[str, list[int]] = {}
+    with membership_path.open(newline="", encoding="utf-8") as fh:
+        rows = (line for line in fh if not line.startswith("#"))
+        for row in csv.DictReader(rows, delimiter="\t"):
+            identifier = (row.get("mim_identifier") or "").strip()
+            if not identifier:
+                continue
+            bucket = counts.setdefault(identifier, [0, 0])
+            bucket[0] += 1
+            bucket[1] += int(row["occurrences"])
+    return {k: (v[0], v[1]) for k, v in counts.items()}
+
+
+def effective_occurrence_statistics(
+    record: Mapping[str, Any],
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+) -> tuple[int, int]:
+    """Return (media_count, total_occurrences) for a record.
+
+    Active (non-REJECTED) records whose identifier is present in `counts_by_id`
+    take their counts from the rebuilt CultureMech recipe membership edge list;
+    REJECTED tombstones and unmatched records fall back to the record's stored
+    `occurrence_statistics`.
+    """
+    stats = record.get("occurrence_statistics")
+    stats_map = stats if isinstance(stats, Mapping) else {}
+    stored_media = int(stats_map.get("media_count", 0) or 0)
+    stored_total = int(stats_map.get("total_occurrences", 0) or 0)
+    if record.get("mapping_status") == "REJECTED":
+        return stored_media, stored_total
+    identifier = str(record.get("identifier") or "").strip()
+    if counts_by_id and identifier in counts_by_id:
+        return counts_by_id[identifier]
+    return stored_media, stored_total

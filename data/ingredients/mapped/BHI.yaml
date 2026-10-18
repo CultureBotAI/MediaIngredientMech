@@ -84,8 +84,17 @@ curation_history:
     in a sentence is not a reference. Neither claim is strengthened: BHI was already
     composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical
     (#447).'
-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
-  or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-09-21T00:00:00+00:00'
+  curator: mim-semantic-evidence-review
+  action: CORRECTED
+  changes: '#710: withdrew unsupported EXACT_FORMULATION equivalence to CultureMech:015492;
+    retained the link only as CANDIDATE_UNVERIFIED because the source-specific BHI
+    recipe and quantities were not compared. Original claim is preserved in the review
+    audit.'
+  llm_assisted: true
+notes: BHI is a source label for Hespellia porcina in MicrobeDecoder. Its CultureMech
+  link is an unverified candidate pending original recipe comparison; no exact formulation
+  equivalence is asserted.
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:bhi
@@ -102,9 +111,12 @@ ontology_mapping:
 culturemech_reference:
   medium_id: CultureMech:015492
   medium_name: BHI
-  relationship: EXACT_FORMULATION
+  relationship: CANDIDATE_UNVERIFIED
   source_path: data/normalized_yaml/specialized/bhi.yaml
-  evidence: 'Verified by composition, not by name: CultureMech:015492 lists Beef heart
-    + Calf brains + Proteose Peptone + Disodium phosphate + Sodium Chloride, which
-    is brain heart infusion. The name agreeing is incidental — it was the composition
-    that was checked (#213/#308).'
+  evidence: MicrobeDecoder source BHI is recorded for Hespellia porcina (database.csv
+    row 8022; Bergey doi:10.1002/9781118960608.gbm00644). CultureMech:015492 is a
+    CultureBotHT/FEBA brain-heart-infusion salt broth without supplements. The original
+    MicrobeDecoder formulation and quantities are unavailable in that row. Common
+    constituent names and abbreviation agreement do not establish either exact formulation
+    or a verified source-specific composition comparison; retain only an unverified
+    candidate.

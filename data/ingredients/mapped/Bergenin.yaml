@@ -1,15 +1,29 @@
-identifier: CHEBI:69499
+identifier: cas:108032-11-7
 preferred_term: Bergenin
 ontology_mapping:
   ontology_id: CHEBI:69499
   ontology_label: Bergenin
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
-synonyms: []
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier CHEBI:69499 -> cas:108032-11-7; ontology CHEBI:69499 (''Bergenin'')
+      -> CHEBI:69499 (''Bergenin''); mapping_quality EXACT_MATCH -> NARROW_MATCH.
+      The record''s only source-supplied identity is CAS 108032-11-7, which PubChem
+      resolves to CID 201412, C14H18O10: bergenin monohydrate (C14H16O9.H2O, MW 346.29).
+      CHEBI:69499 ''Bergenin'' is the anhydrous compound (C14H16O9, cas 477-90-7),
+      whose InChI/SMILES had been copied onto the record. ChEBI has no hydrate term,
+      so Section 3 step 2 applies: identifier cas:108032-11-7, broadMatch to CHEBI:69499
+      as the nearest parent, Rule B1 registry row. The CAS governs the form (#320).
+      Formula corrected to the monohydrate; the anhydrous InChI/SMILES are dropped.'
+synonyms:
+- synonym_text: Bergenin monohydrate
+  synonym_type: EXACT_SYNONYM
+  source: PubChem CID 201412
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -38,11 +52,28 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-23T00:44:54.478367+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier CHEBI:69499 -> cas:108032-11-7; ontology CHEBI:69499 (''Bergenin'')
+    -> CHEBI:69499 (''Bergenin''); mapping_quality EXACT_MATCH -> NARROW_MATCH. The
+    record''s only source-supplied identity is CAS 108032-11-7, which PubChem resolves
+    to CID 201412, C14H18O10: bergenin monohydrate (C14H16O9.H2O, MW 346.29). CHEBI:69499
+    ''Bergenin'' is the anhydrous compound (C14H16O9, cas 477-90-7), whose InChI/SMILES
+    had been copied onto the record. ChEBI has no hydrate term, so Section 3 step
+    2 applies: identifier cas:108032-11-7, broadMatch to CHEBI:69499 as the nearest
+    parent, Rule B1 registry row. The CAS governs the form (#320). Formula corrected
+    to the monohydrate; the anhydrous InChI/SMILES are dropped. (#312) Synonyms added:
+    Bergenin monohydrate.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 108032-11-7
-  data_source: CultureBotHT compounds_to_cas.csv
+  data_source: CultureBotHT compounds_to_cas.csv (CAS); PubChem CID 201412 (monohydrate
+    formula)
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-  molecular_formula: C14H16O9
-  inchi: InChI=1S/C14H16O9/c1-21-11-5(16)2-4-7(9(11)18)12-13(23-14(4)20)10(19)8(17)6(3-15)22-12/h2,6,8,10,12-13,15-19H,3H2,1H3/t6-,8-,10+,12+,13-/m1/s1
-  smiles: '[H][C@@]12O[C@H](CO)[C@@H](O)[C@H](O)[C@@]1([H])OC(=O)c1cc(O)c(OC)c(O)c12'
+  molecular_formula: C14H18O10
+  pubchem_cid: 201412
 ingredient_type: SINGLE_INGREDIENT

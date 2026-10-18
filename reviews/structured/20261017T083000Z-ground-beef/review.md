@@ -1,0 +1,436 @@
+# Per-record structured review: Ground_Beef (data/ingredients/mapped/Ground_Beef.yaml)
+
+- Review: 20261017T083000Z-ground-beef
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Ground_Beef (data/ingredients/mapped/Ground_Beef.yaml, record-3fa76490fe2088d4, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Ground_Beef.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Ground_Beef.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-3fa76490fe2088d4 | data/ingredients/mapped/Ground_Beef.yaml | maintained | Ground_Beef |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-3fa76490fe2088d4 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-3fa76490fe2088d4 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-3fa76490fe2088d4 | Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-3fa76490fe2088d4.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-3fa76490fe2088d4.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T18:45:53Z; reviewed SHA-256=bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e; current SHA-256=bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e; hash_changed=False. Reports=["reports/yaml_record_review/Ground_Beef.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The FoodOn ground-beef identity and occurrence count pass, but PROTEIN_SOURCE is computational.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-3fa76490fe2088d4.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-6bc9fd3da3c0fb7f: Reassess prediction-only role support: Ground beef
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-3fa76490fe2088d4.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-6bc9fd3da3c0fb7f
+
+Reassess prediction-only role support: Ground beef
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-237702560ddd02c6 | data/ingredients/mapped/Ground_Beef.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1094],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:00001282","line":1096,"mapping_status":"MAPPED","ontology_id":"FOODON:00001282","preferred_term":"Ground beef"}],"identifier":"FOODON:00001282","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":92,"edge_count":92,"occurrences":92},"occurrence_statistics":{"media_count":92,"total_occurrences":92},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"FOODON:00001282","ontology_label":"beef (ground)","ontology_source":"FOODON"},"preferred_term":"Ground beef","sssom_rows":[{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef (ground)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ground_Beef","synonym_count":1} |
+| ev-c372e7e6517325c3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1094] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-28e59a335ac21d2e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ground_Beef; data-row positions=[1375] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef (ground)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Ground_Beef","validation_method":"OLS:foodon&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-3d4e8806ee6be303 | docs/data/mapped_ingredients.csv; CSV lines=[1096] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:00001282","line":1096,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"92","ontology_id":"FOODON:00001282","preferred_term":"Ground beef","total_occurrences":"92"}] |
+| ev-2619d64ca3d791f8 | reports/yaml_record_review/Ground_Beef.md; &#96;data/ingredients/mapped/Ground_Beef.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:27; Completeness:51; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-aab36f77dd8eb226 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[706,1838] | context_only | [{"current_record_sha256":"bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e","finding_id":"SEM:ca5638c9b187c6c0ea0f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e","finding_id":"SEM:2b8ad22a3903b77ccb64","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-357e7bf13f0384ad | data/ingredients/mapped/Ground_Beef.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1094],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:00001282","line":1096,"mapping_status":"MAPPED","ontology_id":"FOODON:00001282","preferred_term":"Ground beef"}],"identifier":"FOODON:00001282","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":92,"edge_count":92,"occurrences":92},"occurrence_statistics":{"media_count":92,"total_occurrences":92},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"FOODON:00001282","ontology_label":"beef (ground)","ontology_source":"FOODON"},"preferred_term":"Ground beef","sssom_rows":[{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef (ground)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ground_Beef","synonym_count":1} |
+| ev-783465e31437fe41 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-6bc9fd3da3c0fb7f] | context_only | Predecessor structured review finding f-6bc9fd3da3c0fb7f in 20261011T024634Z-mim-reconcile-all-batch-06 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024634Z-mim-reconcile-all-batch-06.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-ground-beef
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Ground_Beef (data/ingredients/mapped/Ground_Beef.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Ground_Beef (data/ingredients/mapped/Ground_Beef.yaml,
+  record-3fa76490fe2088d4, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Ground_Beef.yaml
+    sha256: bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e
+    role: target
+  - path: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+    sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Ground_Beef.md
+    sha256: cfe0daa4dfd03b0f9e7e79015eca879d7f6462ef58ec30d4147f73987f96b30f
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-3fa76490fe2088d4
+  path: data/ingredients/mapped/Ground_Beef.yaml
+  label: Ground_Beef
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ground_Beef.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Ground_Beef.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Ground_Beef.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-3fa76490fe2088d4
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-237702560ddd02c6
+  - ev-c372e7e6517325c3
+  - ev-28e59a335ac21d2e
+  - ev-3d4e8806ee6be303
+  - ev-357e7bf13f0384ad
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-237702560ddd02c6
+  - ev-aab36f77dd8eb226
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-2619d64ca3d791f8
+  - ev-aab36f77dd8eb226
+  - ev-783465e31437fe41
+evidence:
+- evidence_id: ev-237702560ddd02c6
+  kind: record_content
+  reference: data/ingredients/mapped/Ground_Beef.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1094],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:00001282","line":1096,"mapping_status":"MAPPED","ontology_id":"FOODON:00001282","preferred_term":"Ground
+    beef"}],"identifier":"FOODON:00001282","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":92,"edge_count":92,"occurrences":92},"occurrence_statistics":{"media_count":92,"total_occurrences":92},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"FOODON:00001282","ontology_label":"beef
+    (ground)","ontology_source":"FOODON"},"preferred_term":"Ground beef","sssom_rows":[{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef
+    (ground)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ground_Beef","synonym_count":1}'
+  snapshot_sha256: bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e
+- evidence_id: ev-c372e7e6517325c3
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1094]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-28e59a335ac21d2e
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Ground_Beef; data-row positions=[1375]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef
+    (ground)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Ground_Beef","validation_method":"OLS:foodon|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-3d4e8806ee6be303
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1096]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:00001282","line":1096,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"92","ontology_id":"FOODON:00001282","preferred_term":"Ground
+    beef","total_occurrences":"92"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-2619d64ca3d791f8
+  kind: prior_review
+  reference: reports/yaml_record_review/Ground_Beef.md
+  locator: '`data/ingredients/mapped/Ground_Beef.yaml`:2; Verdict:4; Identity:10;
+    Validation:20; Evidence:27; Completeness:51; Recommended Edits:57'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: cfe0daa4dfd03b0f9e7e79015eca879d7f6462ef58ec30d4147f73987f96b30f
+  quote: "Recommended Edits:\n- Major: remove `nutritional_roles.PROTEIN_SOURCE` from\n\
+    \  `data/ingredients/mapped/Ground_Beef.yaml` unless a curated source can be\n\
+    \  attached at the role facet proving that this ingredient was used as a protein\n\
+    \  source in a medium.\n- Minor: replace the stale top-level note with current\
+    \ FoodOn grounding and\n  occurrence-provenance text."
+- evidence_id: ev-aab36f77dd8eb226
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[706,1838]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e","finding_id":"SEM:ca5638c9b187c6c0ea0f","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e","finding_id":"SEM:2b8ad22a3903b77ccb64","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-357e7bf13f0384ad
+  kind: record_content
+  reference: data/ingredients/mapped/Ground_Beef.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1094],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:00001282","line":1096,"mapping_status":"MAPPED","ontology_id":"FOODON:00001282","preferred_term":"Ground
+    beef"}],"identifier":"FOODON:00001282","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":92,"edge_count":92,"occurrences":92},"occurrence_statistics":{"media_count":92,"total_occurrences":92},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"FOODON:00001282","ontology_label":"beef
+    (ground)","ontology_source":"FOODON"},"preferred_term":"Ground beef","sssom_rows":[{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef
+    (ground)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ground_Beef","synonym_count":1}'
+  snapshot_sha256: bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e
+- evidence_id: ev-783465e31437fe41
+  kind: prior_review
+  reference: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+  locator: findings[finding_id=f-6bc9fd3da3c0fb7f]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-6bc9fd3da3c0fb7f in 20261011T024634Z-mim-reconcile-all-batch-06
+  snapshot_sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+assessments:
+- assessment_id: a-473e99cf7d84cf3d
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-237702560ddd02c6
+  - ev-c372e7e6517325c3
+  - ev-28e59a335ac21d2e
+  - ev-3d4e8806ee6be303
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-e556c84739144f7d
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-2619d64ca3d791f8
+  - ev-237702560ddd02c6
+  - ev-aab36f77dd8eb226
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T18:45:53Z;
+    reviewed SHA-256=bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e;
+    current SHA-256=bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e;
+    hash_changed=False. Reports=["reports/yaml_record_review/Ground_Beef.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The FoodOn ground-beef
+    identity and occurrence count pass, but PROTEIN_SOURCE is computational.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-2619d64ca3d791f8
+    - ev-237702560ddd02c6
+  - name: legacy-native-ids
+    value: '["SEM:ca5638c9b187c6c0ea0f","SEM:2b8ad22a3903b77ccb64"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-237702560ddd02c6
+    - ev-2619d64ca3d791f8
+    - ev-aab36f77dd8eb226
+- assessment_id: a-357e7bf13f0384ad
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-2619d64ca3d791f8
+  - ev-357e7bf13f0384ad
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-2619d64ca3d791f8
+    - ev-357e7bf13f0384ad
+findings:
+- finding_id: rec-f-6bc9fd3da3c0fb7f
+  issue_key: mim-reconciliation-role-support-3fa76490fe2088d4
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Ground beef'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-2619d64ca3d791f8
+  - ev-357e7bf13f0384ad
+  - ev-783465e31437fe41
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ground_Beef.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024634Z-mim-reconcile-all-batch-06
+    finding_id: f-6bc9fd3da3c0fb7f
+actions:
+- action_id: rec-action-6bc9fd3da3c0fb7f
+  description: 'Reassess prediction-only role support: Ground beef'
+  finding_ids:
+  - rec-f-6bc9fd3da3c0fb7f
+  target_ids:
+  - record-3fa76490fe2088d4
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ground_Beef.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024634Z-mim-reconcile-all-batch-06.
+```

@@ -201,7 +201,7 @@ def hydrate_mismatch(
         "substance onto its anhydrous parent — a different formula weight, which is "
         "what a medium recipe depends on. Per MAPPING_SEMANTICS.md Section 3: use a "
         "hydrate-specific term if one exists, else give the record its own "
-        "cas:<hydrate CAS> with a narrowMatch to this term plus the Rule B1 registry "
+        "cas:<hydrate CAS> with a broadMatch to this term plus the Rule B1 registry "
         "row. Pass allow_hydrate_mismatch=True only if you have checked and this "
         "really is the right term."
     )

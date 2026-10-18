@@ -210,3 +210,25 @@ def test_a_corrupt_sidecar_reports_rather_than_crashes(snapshot):
     problems = gate.check(artifact, provenance, inputs)
     assert problems and "not readable JSON" in problems[0]
     assert "stamp-unified-freshness" in problems[0]
+
+
+def test_a_save_yaml_backup_does_not_move_the_digest(tmp_path):
+    """`save_yaml` leaves a gitignored backups/ dir beside an edited record. If
+    the digest walked into it, a machine that had edited records would compute a
+    different digest from CI for identical records (#698)."""
+    clean = tmp_path / "clean"
+    dirty = tmp_path / "dirty"
+    for root in (clean, dirty):
+        _write(root / "mapped" / "a.yaml", "identifier: CHEBI:1\n")
+        _write(root / "unmapped" / "b.yaml", "identifier: UNMAPPED_0001\n")
+    _write(dirty / "mapped" / "backups" / "a_20260920_175906.yaml", "identifier: CHEBI:999\n")
+    assert gate.inputs_digest(clean) == gate.inputs_digest(dirty)
+    assert gate.inputs_digest(dirty)[1] == 2, "a backup must not be counted as a record"
+
+
+def test_both_category_directories_feed_the_digest(tmp_path):
+    root = tmp_path / "ingredients"
+    _write(root / "mapped" / "a.yaml", "identifier: CHEBI:1\n")
+    before = gate.inputs_digest(root)
+    _write(root / "unmapped" / "b.yaml", "identifier: UNMAPPED_0001\n")
+    assert gate.inputs_digest(root) != before

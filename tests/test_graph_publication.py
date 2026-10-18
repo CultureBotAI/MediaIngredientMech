@@ -279,3 +279,19 @@ def test_actual_local_recipes_refuse_stale_graph_before_other_commands(
         ["run", "python", "scripts/check_graph_receipts.py"]
     ]
     assert site_bytes(graph_site) == before
+
+
+def test_allow_stale_corpus_permits_corpus_drift_but_still_rejects_tampered_outputs(graph_site):
+    source = graph_site / "data/ingredients/unmapped/first.yaml"
+    source.write_text(
+        source.read_text().replace("mediadive.ingredient:1", "mediadive.ingredient:2")
+    )
+    checked = check_graph_receipts(graph_site, allow_stale_corpus=True)
+    assert len(checked) == 2
+    assert all(row.get("stale_corpus") is True for row in checked)
+
+    output = graph_site / "docs/data/ingredient_umap.json"
+    output.write_text(output.read_text() + " ")
+    with pytest.raises(ValueError, match="graph output checksum mismatch"):
+        check_graph_receipts(graph_site, allow_stale_corpus=True)
+

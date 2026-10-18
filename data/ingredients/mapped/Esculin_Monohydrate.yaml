@@ -25,7 +25,7 @@ ontology_mapping:
       hydrate, so MAPPING_SEMANTICS.md Section 3 step 1 applies.
 synonyms:
 - synonym_text: 'hydrolysis: esculin'
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: 7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside--water (1/1)
   synonym_type: EXACT_SYNONYM
@@ -84,6 +84,14 @@ curation_history:
     hydrate term, 1 stale anhydrous exact synonym(s) were replaced, and stale kg_microbe_node_id
     values were aligned where present (#321).
   llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''hydrolysis:
+    esculin''. Preserved original text and source metadata. No identity, mapping,
+    role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
 chemical_properties:
   data_source: OAK/CHEBI exact hydrate term CHEBI:73111
   retrieval_date: '2026-09-10T00:00:00+00:00'

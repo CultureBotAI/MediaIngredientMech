@@ -18,7 +18,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: LSM-15166
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -84,6 +84,14 @@ curation_history:
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
   llm_assisted: false
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 1 synonym(s) non-resolving: [''LSM-15166'']. ChEBI gives these
+    names to CHEBI:103822, not to this record''s CHEBI:30745 -- phenylacetic acid
+    is not LSM-15166. Kept as REJECTED_LABEL so a rebuild cannot restore them from
+    kg-microbe''s synonym list (#669).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 103-82-2
   data_source: PubChem API

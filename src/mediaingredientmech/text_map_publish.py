@@ -11,9 +11,14 @@ from pathlib import Path
 from mediaingredientmech.text_map_site import prepare_text_map
 
 
-def publish(root: Path) -> dict:
+def publish(root: Path, *, allow_stale_corpus: bool = False) -> dict:
     """Validate before site writes; expose the link only after successful staging."""
-    with prepare_text_map(root) as ready:
+    context = (
+        prepare_text_map(root, allow_stale_corpus=True)
+        if allow_stale_corpus
+        else prepare_text_map(root)
+    )
+    with context as ready:
         site = root / "docs"
         if ready is not None:
             ready.stage(site)
@@ -44,6 +49,17 @@ def publish(root: Path) -> dict:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
+    parser.add_argument(
+        "--allow-stale-corpus",
+        action="store_true",
+        default=os.environ.get("PAGES_ALLOW_STALE_CORPUS") == "1",
+        help="Skip staging the semantic text map when corpus inputs moved ahead of the committed bundle (#685)",
+    )
     args = parser.parse_args(argv)
-    print(json.dumps(publish(args.root.resolve()), sort_keys=True))
+    print(
+        json.dumps(
+            publish(args.root.resolve(), allow_stale_corpus=args.allow_stale_corpus),
+            sort_keys=True,
+        )
+    )
     return 0

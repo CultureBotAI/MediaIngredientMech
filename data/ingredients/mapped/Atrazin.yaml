@@ -1,9 +1,9 @@
-identifier: cas:1924-24-9
+identifier: CHEBI:15930
 preferred_term: Atrazin
 ontology_mapping:
-  ontology_id: cas:1924-24-9
-  ontology_label: Atrazin
-  ontology_source: CAS
+  ontology_id: CHEBI:15930
+  ontology_label: atrazine
+  ontology_source: CHEBI
   mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: DATABASE_MATCH
@@ -13,7 +13,7 @@ ontology_mapping:
       Hans80Anti, Hans80metals. Curator can promote to a CHEBI primary if/when CHEBI
       adds the term.'
 synonyms: []
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -35,8 +35,38 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:15930 (2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine).
+    Atrazin is the atrazine name variant. Correct CAS is 1912-24-9; imported 1924-24-9
+    was erroneous. Survivor already has the exact atrazine ontology identity. Original
+    fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:15930'
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-10-05T04:09:33.941715+00:00'
+  curator: fix_tombstone_pointers
+  action: REPOINTED_TOMBSTONE_IDENTIFIER
+  changes: identifier cas:1924-24-9 -> CHEBI:15930 (#799). This record was merged
+    into '2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine' but kept its own old
+    identifier, so a downstream lookup on this label resolved to nothing live. The
+    target is the one named in this record's own MERGED_INTO entry; the chain was
+    followed to the first live record. A tombstone exists to keep the loser resolvable.
+  llm_assisted: false
+- timestamp: '2026-10-05T04:09:33.941715+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id cas:1924-24-9 -> CHEBI:15930 (#799). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''2-chloro-4ethylamino-6-isopropylamino-1,3,5-triazine''.
+    Provenance is unaffected: what the record used to assert is in this history.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 1924-24-9
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
 ingredient_type: SINGLE_INGREDIENT
+representative: CHEBI:15930

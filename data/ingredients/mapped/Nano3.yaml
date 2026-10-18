@@ -70,10 +70,22 @@ synonyms:
 - synonym_text: Sodium nitrate (nitrogen source)
   synonym_type: RAW_TEXT
   source: merged_record
+- synonym_text: NaNO
+  synonym_type: RAW_TEXT
+  source: semantic_review_merge
+- synonym_text: 'NaNO3(CAS: 7631-99-4)'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: NaNO3(Fisher BP360-500)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: NaNO3(autoclave before adding)(Fisher BP360-500)
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 644
-  media_count: 643
+  total_occurrences: 675
+  media_count: 674
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -179,6 +191,18 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed Nano. The source synonyms explicitly identify NaNO3, CAS 7631-99-4
+    and Fisher BP360-500; NCIT:C54713 denotes the nano unit prefix. NaNO retained
+    solely as the documented truncated source label. Synonym dispositions and role
+    evidence retained. Counts recomputed from distinct recipe membership where nonzero.
+    Evidence: https://www.ebi.ac.uk/chebi/CHEBI:63005'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 7631-99-4
   data_source: PubChem API
@@ -195,3 +219,5 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Nitrogen Source'
+merged:
+- NCIT:C54713

@@ -1,23 +1,21 @@
-identifier: cas:5728-44-9
+identifier: CHEBI:2769
 preferred_term: Apigenin Dimethyl Ether
 ontology_mapping:
-  ontology_id: CHEBI:28887
-  ontology_label: dimethyl ether
+  ontology_id: CHEBI:2769
+  ontology_label: apigenin 7,4'-dimethyl ether
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 5728-44-9 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
-  - evidence_type: DATABASE_MATCH
-    source: CHEBI via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via='Apigenin Dimethyl
-      Ether'
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601
+    notes: Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG
+      synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs
+      from imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw
+      methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular
+      formula, structure and CID from ChEBI and PubChem.
 synonyms:
 - synonym_text: Methoxymethane
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -52,12 +50,25 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:28887 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: CORRECTED
+  changes: 'Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG
+    synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs from
+    imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw
+    methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular
+    formula, structure and CID from ChEBI and PubChem. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:2769
+    ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
-  cas_rn: 5728-44-9
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C14H9NO2
-  smiles: C1=CC=C(C(=C1)C#N)C2=CC=C(C=C2)C(=O)O
-  inchi: InChI=1S/C14H9NO2/c15-9-12-3-1-2-4-13(12)10-5-7-11(8-6-10)14(16)17/h1-8H,(H,16,17)
-  pubchem_cid: 10727789
+  cas_rn: 5128-44-9
+  molecular_formula: C17H14O5
+  smiles: COc1ccc(-c2cc(=O)c3c(O)cc(OC)cc3o2)cc1
+  inchi: InChI=1S/C17H14O5/c1-20-11-5-3-10(4-6-11)15-9-14(19)17-13(18)7-12(21-2)8-16(17)22-15/h3-9,18H,1-2H3
+  pubchem_cid: 5281601
+  data_source: https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601
+  retrieval_date: '2026-09-21T21:33:25.379198+00:00'
 ingredient_type: SINGLE_INGREDIENT

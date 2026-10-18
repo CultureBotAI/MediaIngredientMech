@@ -1,9 +1,12 @@
 identifier: CHEBI:36026
-preferred_term: 1,1,2,2-Tetrachloroethane
+preferred_term: 1,1,2,2-tetrachloroethane
 synonyms:
 - synonym_text: 2-tetrachloroethane
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: 1,1,2,2-Tetrachloroethane
+  synonym_type: EXACT
+  source: BacDive original-source identity recovery
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -65,20 +68,44 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
-notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane);
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: WITHDREW_UNSUPPORTED_MAPPING
+  changes: 'Reverse unsupported comma-tail reconstruction. Both 1,1,1,2- and 1,1,2,2-tetrachloroethane
+    can yield this fragment. Original source locants are required. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34024
+    ; https://www.ebi.ac.uk/chebi/CHEBI:36026 ; MAPPING_SEMANTICS.md'
+  previous_status: MAPPED
+  new_status: AMBIGUOUS
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-09-22T02:07:38.917319+00:00'
+  curator: mim_semantic_review_710
+  action: RESOLVED_FROM_ORIGINAL_SOURCE
+  changes: 'The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane,
+    in the sole matching source row (BacDive 140462); the same BacDive record explicitly
+    identifies CHEBI:36026. This replaces unsupported comma-tail inference with original-source
+    disambiguation. Evidence: https://bacdive.dsmz.de/strain/140462 ; https://www.ebi.ac.uk/chebi/CHEBI:36026'
+  previous_status: AMBIGUOUS
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Original MicrobeDecoder label and BacDive term recovered during #710 review.
+  The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane, in
+  the sole matching source row (BacDive 140462); the same BacDive record explicitly
+  identifies CHEBI:36026. This replaces unsupported comma-tail inference with original-source
+  disambiguation. The raw truncated label is retained for source lookup; historical
+  incorrect inference remains in curation history only.'
+ingredient_type: SINGLE_INGREDIENT
 ontology_mapping:
   ontology_id: CHEBI:36026
   ontology_label: 1,1,2,2-tetrachloroethane
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: MANUAL_CURATION
-    source: MIM curation (#308/#313)
-    notes: 'Repaired a comma-split label (#308/#313): `2-tetrachloroethane` is the
-      tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields `1`,
-      `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record because
-      bare digits are not labels. The reconstruction is unambiguous — no other compound
-      ends in `2-tetrachloroethane`. The ingest strips commas from every chemical
-      label, so a name containing one arrives as separate fragment records — the same
-      mechanism that produced the `D` record resolved in #346.'
+  - evidence_type: DATABASE_MATCH
+    source: MicrobeDecoder original CSV and BacDive
+    notes: 'The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane,
+      in the sole matching source row (BacDive 140462); the same BacDive record explicitly
+      identifies CHEBI:36026. This replaces unsupported comma-tail inference with
+      original-source disambiguation. Source records: https://bacdive.dsmz.de/strain/140462
+      ; https://www.ebi.ac.uk/chebi/CHEBI:36026 . Hash-bound source extracts: reports/semantic_review_20260921/resolution/identities/microbedecoder-source-recovery.json'

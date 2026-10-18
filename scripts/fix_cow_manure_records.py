@@ -60,6 +60,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import yaml  # noqa: E402
 
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.sssom_grading import PREDICATE_BROAD  # noqa: E402
 
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
@@ -188,7 +189,7 @@ def main(argv: list[str] | None = None) -> int:
         [subject, KEEP, "skos:exactMatch", MINT, KEEP,
          "kgm:ingredient", "semapv:ManualMappingCuration", prov, DATE, "0.9",
          "", "", f"manual:{CURATOR}|{DATE}"],
-        [subject, KEEP, "skos:narrowMatch", PARENT, PARENT_LABEL,
+        [subject, KEEP, PREDICATE_BROAD, PARENT, PARENT_LABEL,
          "obo:envo.owl", "semapv:ManualMappingCuration", prov, DATE, "0.9",
          "", "", f"manual:{CURATOR}|{DATE}"],
     ]

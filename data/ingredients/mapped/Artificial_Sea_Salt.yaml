@@ -1,4 +1,4 @@
-identifier: MICRO:0001647
+identifier: kgmicrobe.ingredient:artificial_sea_salt
 preferred_term: Artificial Sea Salt
 synonyms:
 - synonym_text: Artificial Sea Salt
@@ -35,15 +35,27 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: CORRECTED
+  changes: 'The source is an artificial sea-salt preparation, not natural evaporated
+    sea salt. Replace lexical MICRO:0001647 identity with a local preparation identity;
+    no composition is invented. Evidence: https://mediadive.dsmz.de/ingredients/2146'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2146); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: MICRO:0001647
-  ontology_label: sea salt
-  ontology_source: MICRO
-  mapping_quality: LEXICAL_MATCH
+  ontology_id: kgmicrobe.ingredient:artificial_sea_salt
+  ontology_label: Artificial Sea Salt
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
-    notes: Auto-upgraded from UNMAPPED_0328; matched via 'Artificial Sea Salt'; stem-substring
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/ingredients/2146
+    notes: The source is an artificial sea-salt preparation, not natural evaporated
+      sea salt. Replace lexical MICRO:0001647 identity with a local preparation identity;
+      no composition is invented.
 ingredient_type: UNDEFINED_MIXTURE

@@ -100,10 +100,16 @@ synonyms:
 - synonym_text: Na2HPO4·12H2O
   synonym_type: REJECTED_LABEL
   source: kg_microbe
+- synonym_text: Sodium phosphate dibasic
+  synonym_type: RAW_TEXT
+  source: semantic_review_merge
+- synonym_text: Sodium dihydrogen phosphate
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1124
-  media_count: 1121
+  total_occurrences: 1157
+  media_count: 1154
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -234,6 +240,18 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed Sodium_Phosphate_Dibasic. Dibasic sodium phosphate is disodium
+    hydrogenphosphate, not trisodium phosphate. Sodium dihydrogen phosphate is monobasic
+    and is a REJECTED_LABEL here; its 78 recipe rows are excluded from this transfer.
+    Synonym dispositions and role evidence retained. Counts recomputed from distinct
+    recipe membership where nonzero. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34683'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 7558-79-4
   data_source: CultureBotHT compounds_to_cas.csv
@@ -254,3 +272,11 @@ physicochemical_roles:
       component'
     curator_note: Widespread use in media formulations (637 occurrences). High confidence
       based on 'Defined component' property.
+- role: BUFFER
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+merged:
+- CHEBI:37583

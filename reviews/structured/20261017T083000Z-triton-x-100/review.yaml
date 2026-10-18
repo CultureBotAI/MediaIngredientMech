@@ -1,0 +1,337 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-triton-x-100
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Triton_X-100 (data/ingredients/mapped/Triton_X-100.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Triton_X-100 (data/ingredients/mapped/Triton_X-100.yaml,
+  record-20afc4299873882a, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Triton_X-100.yaml
+    sha256: b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa
+    role: target
+  - path: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+    sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Triton_X-100.md
+    sha256: 021b72bc057f23d52c613c0ed61fe5118b64d212c870f503a0d520c5bb8ca3fa
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-20afc4299873882a
+  path: data/ingredients/mapped/Triton_X-100.yaml
+  label: Triton_X-100
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Triton_X-100.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Triton_X-100.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Triton_X-100.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-20afc4299873882a
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-20afc4299873882a
+  evidence_ids:
+  - ev-e67facb807632826
+  - ev-218740938ea7b90a
+  - ev-97777fbd39c3c9ba
+  - ev-7811bdbd058c8e35
+  - ev-ec1be61d7aad2d80
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-20afc4299873882a
+  evidence_ids:
+  - ev-e67facb807632826
+  - ev-346e55c5a9fdb6b0
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-20afc4299873882a
+  evidence_ids:
+  - ev-e05f9ce3bc7f435f
+  - ev-346e55c5a9fdb6b0
+  - ev-2cd6cb28c99d9612
+evidence:
+- evidence_id: ev-e67facb807632826
+  kind: record_content
+  reference: data/ingredients/mapped/Triton_X-100.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2003],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9750","line":2005,"mapping_status":"MAPPED","ontology_id":"CHEBI:9750","preferred_term":"Triton
+    X-100"}],"identifier":"CHEBI:9750","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:9750","ontology_label":"Triton
+    X-100","ontology_source":"CHEBI"},"preferred_term":"Triton X-100","sssom_rows":[{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton
+    X-100","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Triton_X-100","synonym_count":0}'
+  snapshot_sha256: b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa
+- evidence_id: ev-218740938ea7b90a
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2003]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-97777fbd39c3c9ba
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Triton_X-100; data-row positions=[2838]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton
+    X-100","other":"CAS:9002-93-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Triton_X-100","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-7811bdbd058c8e35
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2005]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:9750","line":2005,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9750","preferred_term":"Triton
+    X-100","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-e05f9ce3bc7f435f
+  kind: prior_review
+  reference: reports/yaml_record_review/Triton_X-100.md
+  locator: '`data/ingredients/mapped/Triton_X-100.yaml`:2; Verdict:4; Identity:10;
+    Validation:22; Evidence:29; Issues:37; Major: `SURFACTANT` is provisional CHEBI-ancestry
+    evidence:39; Completeness:58; Recommended Edits:64'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 021b72bc057f23d52c613c0ed61fe5118b64d212c870f503a0d520c5bb8ca3fa
+  quote: "Issues:\n\n\nMajor: `SURFACTANT` is provisional CHEBI-ancestry evidence:\n\
+    The only role assertion is:\n\n```yaml\nphysicochemical_roles:\n- role: SURFACTANT\n\
+    \  confidence: 0.7\n  evidence:\n  - reference_type: COMPUTATIONAL_PREDICTION\n\
+    \    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195\n\
+    \      (surfactant (role))'\n    curator_note: Provisional role inferred from\
+    \ CHEBI is_a/has_role closure; review\n      recommended.\n```\n\nThe exact CHEBI\
+    \ and CAS identity do not independently curate the surfactant\nrole for this media\
+    \ ingredient record.\n\nRecommended Edits:\n- Replace the `SURFACTANT` computational\
+    \ prediction with curated evidence, or\n  remove `physicochemical_roles` until\
+    \ such support is added."
+- evidence_id: ev-346e55c5a9fdb6b0
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1317,2044]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa","finding_id":"SEM:a0209f9e7c1363c809f0","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa","finding_id":"SEM:cd44463461e80e082213","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-ec1be61d7aad2d80
+  kind: record_content
+  reference: data/ingredients/mapped/Triton_X-100.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2003],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9750","line":2005,"mapping_status":"MAPPED","ontology_id":"CHEBI:9750","preferred_term":"Triton
+    X-100"}],"identifier":"CHEBI:9750","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:9750","ontology_label":"Triton
+    X-100","ontology_source":"CHEBI"},"preferred_term":"Triton X-100","sssom_rows":[{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton
+    X-100","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Triton_X-100","synonym_count":0}'
+  snapshot_sha256: b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa
+- evidence_id: ev-2cd6cb28c99d9612
+  kind: prior_review
+  reference: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+  locator: findings[finding_id=f-878d0c20d909ef0b]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-878d0c20d909ef0b in 20261011T024639Z-mim-reconcile-all-batch-12
+  snapshot_sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+assessments:
+- assessment_id: a-942b5102e6a58353
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-20afc4299873882a
+  evidence_ids:
+  - ev-e67facb807632826
+  - ev-218740938ea7b90a
+  - ev-97777fbd39c3c9ba
+  - ev-7811bdbd058c8e35
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-ce13af43682486af
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-20afc4299873882a
+  evidence_ids:
+  - ev-e05f9ce3bc7f435f
+  - ev-e67facb807632826
+  - ev-346e55c5a9fdb6b0
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T19:51:50Z;
+    reviewed SHA-256=b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa;
+    current SHA-256=b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa;
+    hash_changed=False. Reports=["reports/yaml_record_review/Triton_X-100.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The exact CHEBI
+    identity and final SSSOM row pass, but SURFACTANT is provisional CHEBI-ancestry
+    evidence.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e05f9ce3bc7f435f
+    - ev-e67facb807632826
+  - name: legacy-native-ids
+    value: '["SEM:a0209f9e7c1363c809f0","SEM:cd44463461e80e082213"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-e67facb807632826
+    - ev-e05f9ce3bc7f435f
+    - ev-346e55c5a9fdb6b0
+- assessment_id: a-ec1be61d7aad2d80
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-20afc4299873882a
+  evidence_ids:
+  - ev-e05f9ce3bc7f435f
+  - ev-ec1be61d7aad2d80
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e05f9ce3bc7f435f
+    - ev-ec1be61d7aad2d80
+findings:
+- finding_id: rec-f-878d0c20d909ef0b
+  issue_key: mim-reconciliation-role-support-20afc4299873882a
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Triton X-100'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-20afc4299873882a
+  evidence_ids:
+  - ev-e05f9ce3bc7f435f
+  - ev-ec1be61d7aad2d80
+  - ev-2cd6cb28c99d9612
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Triton_X-100.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024639Z-mim-reconcile-all-batch-12
+    finding_id: f-878d0c20d909ef0b
+actions:
+- action_id: rec-action-878d0c20d909ef0b
+  description: 'Reassess prediction-only role support: Triton X-100'
+  finding_ids:
+  - rec-f-878d0c20d909ef0b
+  target_ids:
+  - record-20afc4299873882a
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Triton_X-100.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.

@@ -100,7 +100,7 @@ patterns, and **preserves the original form as a typed synonym**:
    you are in, follow **MAPPING_SEMANTICS.md Section 3**: prefer a hydrate-specific
    ontology term if one exists (`CHEBI:31795 magnesium sulfate heptahydrate`,
    `CHEBI:232425 monosodium L-glutamate hydrate`), else give the record its own
-   `cas:<hydrate CAS>` identifier with a `narrowMatch` to the anhydrous parent plus the
+   `cas:<hydrate CAS>` identifier with a `broadMatch` to the anhydrous parent plus the
    Rule B1 registry row. Sharing the anhydrous term's identifier is the identity-collapse
    bug (#218, #225).
 2. **Incomplete-formula correction** (synonym `INCOMPLETE_FORMULA`): `K2HPO` → `K2HPO4` → "dipotassium phosphate".

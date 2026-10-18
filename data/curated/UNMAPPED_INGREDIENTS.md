@@ -1,9 +1,9 @@
 # Unmapped Ingredients Index
-**Total Records**: 272
+**Total Records**: 273
 **Mapped**: 0 (0.0%)
-**Unmapped**: 261 (96.0%)
-**Other statuses**: 11 (4.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 597
+**Unmapped**: 260 (95.2%)
+**Other statuses**: 13 (4.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Total Occurrences**: 594
 
 ---
 
@@ -59,7 +59,6 @@
 | UNMAPPED_0023 | Bristol Medium | UNMAPPED | 6 |
 | UNMAPPED_0348 | Brucella Broth | UNMAPPED | 0 |
 | UNMAPPED_0359 | CMRL 1066 | UNMAPPED | 0 |
-| UNMAPPED_0049 | Ca | UNMAPPED | 3 |
 | UNMAPPED_0156 | Cadmium-NTA | UNMAPPED | 0 |
 | UNMAPPED_0170 | Calf brains | UNMAPPED | 7 |
 | UNMAPPED_0229 | Calprotectin S1 | UNMAPPED | 0 |
@@ -277,6 +276,7 @@
 
 | Identifier | Preferred Term | Status | Ontology ID | Representative | Occurrences |
 |---|---|---|---|---|---|
+| UNMAPPED_0049 | Ca | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 0129 (2 | REJECTED |  |  | 0 |
 | UNMAPPED_0736 | 3-methylacetate | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 4-Diamino-6 | REJECTED |  |  | 0 |
@@ -288,4 +288,5 @@
 | UNMAPPED_0817 | Glycyl-L-bromosuccinic Glutamic Acid | REJECTED |  |  | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
 | UNMAPPED_0734 | Tetrazolium | REJECTED |  |  | 0 |
+| UNMAPPED_0740 | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |
 

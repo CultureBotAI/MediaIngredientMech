@@ -1,12 +1,12 @@
 """Give a `cas:`-identified record its Section 3 anchor rows (#239).
 
 MAPPING_SEMANTICS.md Section 3 step 2: a substance with no exact ontology term
-takes `cas:<its own CAS>` as its identifier, a `skos:narrowMatch` to the nearest
+takes `cas:<its own CAS>` as its identifier, a `skos:broadMatch` to the nearest
 ontology parent, AND the Rule B1 registry row. 34 hydrate records satisfy all
 three. 22 have only the `cas:` id — they assert no parent at all, so Rule B1
 never fires on them (it only requires a registry row for a subject that already
-asserts a narrowMatch) and they are invisible to the rule rather than violating
-it. That is the "healthiest when it has stopped working" shape.
+asserts an asymmetric parent row) and they are invisible to the rule rather
+than violating it. That is the "healthiest when it has stopped working" shape.
 
 This adds the two missing rows and points the record's ontology_mapping at the
 parent with NARROW_MATCH, leaving the identifier alone.
@@ -32,15 +32,22 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from export_individual_records import sanitize_filename  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.sssom_grading import PREDICATE_BROAD  # noqa: E402
+from mediaingredientmech.utils.oaklib_cache import db_path, require_db  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
-CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
+CHEBI_DB = db_path("CHEBI")
 
 
 def chebi_label(curie: str) -> str:
-    con = sqlite3.connect(CHEBI_DB)
+    # `sqlite3.connect(path)` CREATES the file when it is missing, so a wrong
+    # cache path silently yields an empty database that answers every query with
+    # nothing -- which is how a 0-byte stub gets into the cache in the first
+    # place. Fail on the path, then open read-only (#687).
+    require_db("CHEBI")
+    con = sqlite3.connect(f"file:{CHEBI_DB}?mode=ro", uri=True)
     row = con.execute("select value from statements where subject=? and predicate='rdfs:label'",
                       (curie,)).fetchone()
     if not row:
@@ -120,11 +127,11 @@ def main() -> int:
         om.setdefault("evidence", []).append({
             "evidence_type": "DATABASE_MATCH", "source": args.curator,
             "notes": (f"{term} is a hydrate/salt with its own CAS and no exact ChEBI term; "
-                      f"anchored to the parent {parent} '{label}' by narrowMatch per "
+                      f"anchored to the parent {parent} '{label}' by broadMatch per "
                       f"MAPPING_SEMANTICS.md Section 3 step 2. {p['rationale']}")})
         rec.setdefault("curation_history", []).append({
             "timestamp": stamp, "curator": args.curator, "action": "CORRECTED",
-            "changes": (f"Added Section 3 anchor rows: narrowMatch {parent} '{label}' and "
+            "changes": (f"Added Section 3 anchor rows: broadMatch {parent} '{label}' and "
                         f"registry {registry}. identifier {rec['identifier']} unchanged; "
                         f"mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. {p['rationale']}"),
             "llm_assisted": True})
@@ -135,7 +142,7 @@ def main() -> int:
                      "source": f"MIM:{args.curator}|MIM:curator={args.curator}",
                      "mapping_date": args.date})
         if subject_id not in have_parent:
-            r = dict(base, predicate_id="skos:narrowMatch", object_id=parent,
+            r = dict(base, predicate_id=PREDICATE_BROAD, object_id=parent,
                      object_label=label, object_source="obo:chebi.owl", confidence="0.9")
             new_rows.append("\t".join(r[f] for f in fields) + "\n")
         if subject_id not in have_registry:
@@ -147,7 +154,7 @@ def main() -> int:
 
     print(f"anchored {len(done)}/{len(plan)}; {len(new_rows)} SSSOM row(s) to add\n")
     for ident, term, parent, label, sid in done:
-        print(f"  {sid[:38]:38} --narrowMatch--> {parent} '{label}'")
+        print(f"  {sid[:38]:38} --broadMatch--> {parent} '{label}'")
     if problems:
         print(f"\n{len(problems)} problem(s):")
         for x in problems:

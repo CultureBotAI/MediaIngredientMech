@@ -1,0 +1,52 @@
+name: QC — supported MIM graph
+
+on:
+  pull_request:
+  merge_group:
+    types: [checks_requested]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  UV_PYTHON: "3.13"
+
+jobs:
+  supported-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - name: Install locked runtime
+        run: uv sync --frozen
+      - name: Rebuild complete source graph
+        run: uv run --frozen python -m mediaingredientmech.export.kgx --output output/mim-kgx-710-full
+      - name: Validate reviewed selection and preserve the excluded claims
+        run: |
+          uv run --frozen python -m mediaingredientmech.export.supported_kgx \
+            --root . \
+            --report reports/semantic_review_20260921/resolution/current-review.json \
+            --output output/mim-kgx-710-supported
+          uv run --frozen python -m mediaingredientmech.export.supported_kgx \
+            --root . \
+            --report reports/semantic_review_20260921/resolution/current-review.json \
+            --output output/mim-kgx-710-supported --validate-only
+      - name: Validate supported SSSOM
+        run: |
+          uv run --frozen python - <<'PY'
+          from sssom.parsers import parse_sssom_table
+          from sssom.validators import SchemaValidationType, validate
+          validate(parse_sssom_table("output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv"),
+                   validation_types=[SchemaValidationType.JsonSchema,
+                                     SchemaValidationType.PrefixMapCompleteness,
+                                     SchemaValidationType.StrictCurieFormat])
+          PY
+      - name: Upload reviewed graph, mappings, and separate backlog
+        uses: actions/upload-artifact@v4
+        with:
+          name: mim-supported-graph
+          path: output/mim-kgx-710-supported/
+          if-no-files-found: error

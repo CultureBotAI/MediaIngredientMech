@@ -65,6 +65,9 @@ synonyms:
 - synonym_text: sodium phosphate monobasic anhydrous
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Sodium dihydrogen phosphate
+  synonym_type: EXACT_SYNONYM
+  source: https://www.ebi.ac.uk/chebi/CHEBI:37585
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 237
@@ -172,6 +175,17 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-09-21T21:37:56.776545+00:00'
+  curator: mim_semantic_review_20260921
+  action: CORRECTED
+  changes: 'Recover the explicit Sodium dihydrogen phosphate source label for monobasic
+    phosphate CHEBI:37585. It was incorrectly published as a synonym of Sodium phosphate
+    dibasic. Recount this record by distinct recipe membership, routing only this
+    exact source label away from the rejected CHEBI:37583 assignment. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:37585'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 7558-80-7
   data_source: PubChem API

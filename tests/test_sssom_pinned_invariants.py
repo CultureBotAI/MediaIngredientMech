@@ -151,6 +151,44 @@ class TestRuleJ:
         assert list(mod.evaluate_rule_j([_row(other="")])) == []
 
 
+class TestRuleB5:
+    """A local MIM subject cannot be both a prepared ingredient and compound."""
+
+    def test_a_single_local_namespace_passes(self):
+        rows = [
+            _row(
+                subject_id="MIM:Buffer",
+                object_id="kgmicrobe.ingredient:buffer",
+                object_source="kgm:ingredient",
+            ),
+            _row(object_id="cas:50-99-7", object_source="registry:cas"),
+        ]
+
+        assert list(mod.evaluate_rule_b5(rows)) == []
+
+    def test_dual_local_namespaces_are_rejected(self):
+        rows = [
+            _row(
+                subject_id="MIM:Buffer",
+                object_id="kgmicrobe.ingredient:buffer",
+                object_source="kgm:ingredient",
+            ),
+            _row(
+                subject_id="MIM:Buffer",
+                object_id="kgmicrobe.compound:buffer",
+                object_source="kgm:compound",
+            ),
+        ]
+
+        rejects = list(mod.evaluate_rule_b5(rows))
+        assert len(rejects) == 2
+        assert {row["object_id"] for _, row, _ in rejects} == {
+            "kgmicrobe.ingredient:buffer",
+            "kgmicrobe.compound:buffer",
+        }
+        assert all("Rule B5" in reason for _, _, reason in rejects)
+
+
 def test_the_published_set_satisfies_all_pinned_rules():
     """The point of pinning them: they hold today, and must keep holding."""
     path = Path(__file__).parent.parent / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -159,9 +197,10 @@ def test_the_published_set_satisfies_all_pinned_rules():
     assert list(mod.evaluate_rule_h(rows)) == []
     assert list(mod.evaluate_rule_i(rows)) == []
     assert list(mod.evaluate_rule_j(rows)) == []
+    assert list(mod.evaluate_rule_b5(rows)) == []
 
 
-@pytest.mark.parametrize("rule", ["Rule G", "Rule H", "Rule I", "Rule J"])
+@pytest.mark.parametrize("rule", ["Rule G", "Rule H", "Rule I", "Rule J", "Rule B5"])
 def test_each_rule_is_wired_into_the_run(rule):
     """A rule nobody calls is not a gate."""
     source = (Path(__file__).parent.parent / "scripts" / "validate_sssom_invariants.py").read_text()

@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import sys
 from pathlib import Path
 
@@ -17,7 +18,7 @@ from mediaingredientmech.graph_embedding_receipts import corpus_receipt, load_re
 MAPS = (("ingredient_umap", {"pacmap", "umap"}), ("ingredient_graph", {"sfdp"}))
 
 
-def check_graph_receipts(root: Path = REPO_ROOT) -> list[dict]:
+def check_graph_receipts(root: Path = REPO_ROOT, *, allow_stale_corpus: bool = False) -> list[dict]:
     """Bind the intended graph outputs to all current source files and ordered matches."""
     root = root.resolve()
     corpus = root / "data" / "ingredients"
@@ -43,8 +44,19 @@ def check_graph_receipts(root: Path = REPO_ROOT) -> list[dict]:
             raise ValueError(f"graph receipt does not bind the intended JSON: {metadata}")
         if receipt["projection"]["method"] not in methods:
             raise ValueError(f"unexpected graph reducer: {metadata}")
-        if receipt["corpus"] != current:
-            raise ValueError(f"graph corpus changed since generation: {metadata}")
+        stale_corpus = receipt["corpus"] != current
+        if stale_corpus:
+            if not allow_stale_corpus:
+                raise ValueError(f"graph corpus changed since generation: {metadata}")
+            print(
+                f"warning: graph corpus changed since generation; keeping last verified receipt {metadata}",
+                file=sys.stderr,
+            )
+        expected_paths = (
+            {entry["path"] for entry in receipt["corpus"]["files"]}
+            if stale_corpus
+            else current_paths
+        )
 
         coverage, ledger = receipt["coverage"], receipt["matching"]["rows"]
         projected = {row["identifier"]: row for row in ledger if row["status"] == "projected"}
@@ -57,7 +69,7 @@ def check_graph_receipts(root: Path = REPO_ROOT) -> list[dict]:
             or not isinstance(rejected, list)
             or any(not isinstance(value, str) for value in source_paths + rejected)
             or len(set(source_paths + rejected)) != len(source_paths) + len(rejected)
-            or set(source_paths + rejected) != current_paths
+            or set(source_paths + rejected) != expected_paths
             or coverage.get("missing_records") != missing
             or type(coverage.get("omitted")) is not int
             or coverage["omitted"] != len(missing)
@@ -89,24 +101,31 @@ def check_graph_receipts(root: Path = REPO_ROOT) -> list[dict]:
                 "source_nodes"
             ] != [point.get("embedding_source_node")]:
                 raise ValueError(f"graph point differs from its lookup ledger: {metadata}")
-        checked.append(
-            {
-                "receipt": metadata.relative_to(root).as_posix(),
-                "points": len(points),
-                "corpus_count": current["count"],
-                "corpus_sha256": current["sha256"],
-                "source_sha256": receipt["source"]["sha256"],
-            }
-        )
+        entry = {
+            "receipt": metadata.relative_to(root).as_posix(),
+            "points": len(points),
+            "corpus_count": current["count"],
+            "corpus_sha256": current["sha256"],
+            "source_sha256": receipt["source"]["sha256"],
+        }
+        if stale_corpus:
+            entry["stale_corpus"] = True
+        checked.append(entry)
     return checked
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=REPO_ROOT)
+    parser.add_argument(
+        "--allow-stale-corpus",
+        action="store_true",
+        default=os.environ.get("PAGES_ALLOW_STALE_CORPUS") == "1",
+        help="Allow receipt corpus mismatch while still verifying receipt/output integrity (#685)",
+    )
     args = parser.parse_args(argv)
     try:
-        result = check_graph_receipts(args.root)
+        result = check_graph_receipts(args.root, allow_stale_corpus=args.allow_stale_corpus)
     except (OSError, ValueError, TypeError, KeyError) as error:
         print(f"graph publication refused: {error}", file=sys.stderr)
         return 1

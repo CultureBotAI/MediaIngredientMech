@@ -174,6 +174,10 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
+        .ingredient-card { overflow-wrap: anywhere; min-width: 0; }
+        .ingredient-header { gap: .5rem; }
+        .ingredient-title { min-width: 0; }
+
         .ingredient-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -366,6 +370,8 @@
         :root[data-theme="dark"] .synonym-tag{background:#1e1b29;border-color:#302b40;}
         :root[data-theme="dark"] .badge-mapped{background:rgba(52,211,153,.15);color:#34d399;}
         :root[data-theme="dark"] .badge-unmapped{background:rgba(251,191,36,.15);color:#fbbf24;}
+            button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid var(--accent, #7c3aed); outline-offset: 3px; }
+        #reset-filters { margin-top: 1rem; padding: .5rem; }
     </style>
 </head>
 <body>
@@ -373,7 +379,16 @@
         <h1>MediaIngredientMech Browser</h1>
         <p id="subtitle">Explore curated media ingredients with ontology mappings</p>
 <p><a href="text-map/" data-text-map-link hidden>Semantic text map</a></p>
-        <a href="index.html" class="nav-link">← Back to Home</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="browser.html" class="nav-link">Browse</a>
+        <a href="text_map.html" class="nav-link">Text Map</a>
+        <a href="ingredient_umap.html" class="nav-link">KG PaCMAP</a>
+        <a href="ingredient_graph.html" class="nav-link">Graph Layout</a>
+        <a href="records/index.html" class="nav-link">Record Index</a>
+        <a href="schema/index.html" class="nav-link">Schema</a>
+        <a href="index.html#downloads" class="nav-link">Downloads</a>
+        <a href="https://github.com/CultureBotAI/MediaIngredientMech" class="nav-link">GitHub</a>
+        <a href="https://culturebotai.github.io/mechs/" class="nav-link">All Mech projects</a>
     </header>
 
     <p id="record-selection-notice" hidden>A specific ingredient is selected.
@@ -383,6 +398,7 @@
     <div class="layout">
         <aside class="sidebar">
             <div class="controls">
+                <label for="search">Search ingredients</label>
                 <input type="text"
                        id="search"
                        class="search-box"
@@ -421,7 +437,20 @@
                             <option value="MANUAL_CURATION">Manual Curation</option>
                         </select>
                     </div>
+
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By</label>
+                        <select id="sort-by">
+                            <option value="">Default Order</option>
+                            <option value="name-asc">Name (A &rarr; Z)</option>
+                            <option value="name-desc">Name (Z &rarr; A)</option>
+                            <option value="media-desc">Media Count (Most &rarr; Least)</option>
+                            <option value="occurrences-desc">Occurrences (Most &rarr; Least)</option>
+                            <option value="synonyms-desc">Synonyms (Most &rarr; Least)</option>
+                        </select>
+                    </div>
                 </div>
+                <button type="button" id="reset-filters">Clear search and filters</button>
             </div>
         </aside>
 
@@ -445,24 +474,37 @@
                 </div>
             </div>
 
-            <div class="ingredient-list" id="ingredient-list">
+            <p id="status-summary"></p>
+            <p id="results-status" role="status" aria-live="polite" aria-atomic="true">Loading ingredients…</p>
+            <div class="ingredient-list" id="ingredient-list" aria-busy="true">
                 <div class="loading">Loading ingredients...</div>
             </div>
         </main>
     </div>
 
     <footer>
-        <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="index.md">Schema Documentation</a></p>
+        <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="schema/index.html">Schema Documentation</a> | <a href="index.html#downloads">Data Downloads</a> | <a href="records/build.json">Build Manifest</a></p>
     </footer>
 
     <script src="record-selection.js"></script>
     <script>
         let selectedRecord = "";
+        const recordSelection = typeof MIMRecordSelection !== 'undefined' ? MIMRecordSelection : {
+            recordFromHash: hash => new URLSearchParams(String(hash).replace(/^#/, '')).get('record') || '',
+            matches: (ingredient, selected) => !selected || ingredient.source_file === selected,
+            clearRecord: hash => {
+                const parameters = new URLSearchParams(String(hash).replace(/^#/, ''));
+                parameters.delete('record');
+                const remaining = parameters.toString();
+                return remaining ? '#' + remaining : '';
+            }
+        };
         let allIngredients = [];
         let filteredIngredients = [];
+        let dataReady = true;
 
         function applyHashFilters() {
-            selectedRecord = MIMRecordSelection.recordFromHash(window.location.hash);
+            selectedRecord = recordSelection.recordFromHash(window.location.hash);
             document.getElementById('record-selection-notice').hidden = !selectedRecord;
             const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
             const status = params.get('status') || '';
@@ -481,52 +523,123 @@
         document.getElementById('clear-record-selection').addEventListener('click', () => {
             selectedRecord = '';
             document.getElementById('record-selection-notice').hidden = true;
-            const hash = MIMRecordSelection.clearRecord(window.location.hash);
+            const hash = recordSelection.clearRecord(window.location.hash);
             history.replaceState(null, '', window.location.pathname + window.location.search + hash);
             // Preserve the user's current search/status/source/quality controls.
             applyFilters();
         });
 
         // Load data
-        fetch('data/ingredients.json')
-            .then(response => response.json())
-            .then(data => {
+        // A failed request is distinct from a valid empty dataset or search.
+        async function loadIngredients() {
+            dataReady = false;
+            const container = document.getElementById('ingredient-list');
+            const status = document.getElementById('results-status');
+            container.setAttribute('aria-busy', 'true');
+            container.textContent = 'Loading ingredients…';
+            status.setAttribute('role', 'status');
+            status.textContent = 'Loading ingredients…';
+            try {
+                const response = await fetch('data/ingredients.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                if (!data || !Array.isArray(data.ingredients) || !data.metadata ||
+                    !data.ingredients.every(ing => ing && typeof ing.searchable === 'string' &&
+                        Array.isArray(ing.synonyms) && typeof ing.mapping_status === 'string' &&
+                        typeof ing.detail_page === 'string' &&
+                        /^records\/ingredient\/(mapped|unmapped)\/[A-Za-z0-9._-]+\.html$/.test(ing.detail_page))) {
+                    throw new Error('Invalid ingredient data');
+                }
+                const counts = data.metadata;
+                if (!['total_ingredients', 'mapped_count', 'unmapped_count'].every(
+                    key => Number.isInteger(counts[key]) && counts[key] >= 0) ||
+                    counts.total_ingredients !== data.ingredients.length ||
+                    counts.mapped_count !== data.ingredients.filter(r => r.mapping_status === 'MAPPED').length ||
+                    counts.unmapped_count !== data.ingredients.filter(r => r.mapping_status === 'UNMAPPED').length) {
+                    throw new Error('Invalid ingredient counts');
+                }
                 allIngredients = data.ingredients;
+                for (const [id, field] of [['filter-status', 'mapping_status'], ['filter-source', 'ontology_source'], ['filter-quality', 'mapping_quality']]) {
+                    const control = document.getElementById(id);
+                    const allLabel = control.options[0].textContent;
+                    control.replaceChildren(new Option(allLabel, ''));
+                    const values = [...new Set(allIngredients.map(row => row[field] || ''))].sort();
+                    values.forEach(value => control.add(new Option(value || 'Not specified', value || '__missing__')));
+                }
+                applyHashFilters();
+                dataReady = true;
                 document.getElementById('subtitle').textContent =
                     `Explore ${allIngredients.length.toLocaleString()} curated media ingredients with ontology mappings`;
                 updateStats(data.metadata);
                 applyFilters();
-            })
-            .catch(error => {
-                document.getElementById('ingredient-list').innerHTML =
-                    '<div class="no-results">Error loading data: ' + error + '</div>';
-            });
+            } catch (error) {
+                dataReady = false;
+                status.setAttribute('role', 'alert');
+                status.textContent = 'Ingredients could not be loaded. Retry to load the catalog.';
+                ['total-count', 'mapped-count', 'unmapped-count', 'filtered-count'].forEach(id => {
+                    document.getElementById(id).textContent = 'Unavailable';
+                });
+                container.replaceChildren();
+                const retry = document.createElement('button');
+                retry.type = 'button';
+                retry.textContent = 'Retry loading ingredients';
+                retry.addEventListener('click', loadIngredients);
+                container.appendChild(retry);
+            } finally {
+                container.setAttribute('aria-busy', 'false');
+            }
+        }
+        loadIngredients();
 
         // Update statistics
         function updateStats(metadata) {
             document.getElementById('total-count').textContent = metadata.total_ingredients;
             document.getElementById('mapped-count').textContent = metadata.mapped_count;
             document.getElementById('unmapped-count').textContent = metadata.unmapped_count;
+            const statusCounts = new Map();
+            allIngredients.forEach(row => statusCounts.set(row.mapping_status, (statusCounts.get(row.mapping_status) || 0) + 1));
+            document.getElementById('status-summary').textContent = [...statusCounts.entries()].sort().map(([status, count]) => `${status}: ${count}`).join(' · ');
         }
 
         // Apply filters
         function applyFilters() {
-            const searchTerm = document.getElementById('search').value.toLowerCase();
+            if (!dataReady) return;
+            const rawSearch = document.getElementById('search').value.trim();
+            const searchTerm = rawSearch.toLowerCase();
             const statusFilter = document.getElementById('filter-status').value;
             const sourceFilter = document.getElementById('filter-source').value;
             const qualityFilter = document.getElementById('filter-quality').value;
+            const sortControl = document.getElementById('sort-by');
+            const sortBy = sortControl ? sortControl.value : '';
 
             filteredIngredients = allIngredients.filter(ing => {
                 const matchesSearch = !searchTerm || ing.searchable.includes(searchTerm);
                 const matchesStatus = !statusFilter || ing.mapping_status === statusFilter;
-                const matchesSource = !sourceFilter || ing.ontology_source === sourceFilter;
-                const matchesQuality = !qualityFilter || ing.mapping_quality === qualityFilter;
+                const matchesSource = !sourceFilter || (ing.ontology_source || '__missing__') === sourceFilter;
+                const matchesQuality = !qualityFilter || (ing.mapping_quality || '__missing__') === qualityFilter;
 
-                return MIMRecordSelection.matches(ing, selectedRecord) &&
+                return recordSelection.matches(ing, selectedRecord) &&
                     matchesSearch && matchesStatus && matchesSource && matchesQuality;
             });
 
+            if (sortBy === 'name-asc') {
+                filteredIngredients.sort((a, b) => String(a.preferred_term || '').localeCompare(String(b.preferred_term || '')));
+            } else if (sortBy === 'name-desc') {
+                filteredIngredients.sort((a, b) => String(b.preferred_term || '').localeCompare(String(a.preferred_term || '')));
+            } else if (sortBy === 'media-desc') {
+                filteredIngredients.sort((a, b) => (b.media_count || 0) - (a.media_count || 0) || String(a.preferred_term || '').localeCompare(String(b.preferred_term || '')));
+            } else if (sortBy === 'occurrences-desc') {
+                filteredIngredients.sort((a, b) => (b.total_occurrences || 0) - (a.total_occurrences || 0) || String(a.preferred_term || '').localeCompare(String(b.preferred_term || '')));
+            } else if (sortBy === 'synonyms-desc') {
+                filteredIngredients.sort((a, b) => (b.synonym_count || (b.synonyms && b.synonyms.length) || 0) - (a.synonym_count || (a.synonyms && a.synonyms.length) || 0));
+            }
+
             document.getElementById('filtered-count').textContent = filteredIngredients.length;
+            const resultsStatus = document.getElementById('results-status');
+            if (resultsStatus) {
+                resultsStatus.textContent =
+                    `Showing ${filteredIngredients.length} of ${allIngredients.length} ingredients`;
+            }
             renderIngredients();
         }
 
@@ -542,7 +655,7 @@
             container.innerHTML = filteredIngredients.map(ing => `
                 <div class="ingredient-card">
                     <div class="ingredient-header">
-                        <div class="ingredient-title">${escapeHtml(ing.preferred_term)}</div>
+                        <a class="ingredient-title" href="${escapeHtml(ing.detail_page)}">${escapeHtml(ing.preferred_term)}</a>
                         <span class="badge badge-${ing.mapping_status.toLowerCase()}">${ing.mapping_status}</span>
                     </div>
 
@@ -568,6 +681,9 @@
                             <span class="meta-label">Curator:</span> ${ing.curator}
                         </div>
                         ` : ''}
+                        <div class="meta-item">
+                            <a href="text_map.html?q=${encodeURIComponent(ing.id || ing.preferred_term)}">View in Text Map &rarr;</a>
+                        </div>
                     </div>
 
                     ${ing.components && ing.components.length > 0 ? `
@@ -612,10 +728,21 @@
         }
 
         // Event listeners
+        document.getElementById('reset-filters').addEventListener('click', () => {
+            document.getElementById('search').value = '';
+            document.querySelectorAll('.filters select').forEach(control => { control.value = ''; });
+            // Remove a landing-page status filter too, so reloading preserves reset.
+            if (typeof history !== 'undefined' && history && typeof history.replaceState === 'function' && window.location && window.location.pathname) {
+                history.replaceState(null, '', window.location.pathname);
+            }
+            applyFilters();
+            document.getElementById('search').focus();
+        });
         document.getElementById('search').addEventListener('input', applyFilters);
         document.getElementById('filter-status').addEventListener('change', applyFilters);
         document.getElementById('filter-source').addEventListener('change', applyFilters);
         document.getElementById('filter-quality').addEventListener('change', applyFilters);
+        document.getElementById('sort-by').addEventListener('change', applyFilters);
     </script>
     <script src="theme-toggle.js"></script>
   <script src="text-map-nav.js"></script>

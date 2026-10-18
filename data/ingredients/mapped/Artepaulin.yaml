@@ -1,16 +1,5 @@
 identifier: cas:13902-54-0
 preferred_term: Artepaulin
-ontology_mapping:
-  ontology_id: cas:13902-54-0
-  ontology_label: Artepaulin
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
-  evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 13902-54-0 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -34,8 +23,68 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: WITHDREW_UNSUPPORTED_MAPPING
+  changes: 'Withdraw conflicting CAS 13902-54-0 identity rather than guessing a stereoisomer
+    from a name hit. Prior reviewed PubChem CAS/name queries disagree; source supplier
+    or original structure is needed. Historical mapping and chemistry remain in the
+    before snapshot and curation history. Evidence: reports/yaml_record_review/Artepaulin.md
+    ; https://pubchem.ncbi.nlm.nih.gov/compound/10977881 ; https://pubchem.ncbi.nlm.nih.gov/compound/325292'
+  previous_status: MAPPED
+  new_status: AMBIGUOUS
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-09-22T02:08:31.475377+00:00'
+  curator: mim_semantic_review_710
+  action: RESTORED_SOURCE_BACKED_REGISTRY_IDENTITY
+  changes: 'Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly
+    assigns Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates
+    that same name and CAS, and its complete stereochemical InChI exactly matches
+    PubChem CID 10977881. PubChem name-search results are less stereochemically specified;
+    their synonym membership does not contradict the original CAS identity. Restore
+    only the supported CAS registry fallback. KNApSAcK displays an InChIKey inconsistent
+    with its own InChI and PubChem key; that key is not imported. No exact CHEBI:174307
+    or name-search CID mapping is asserted. Structure fields remain unbackfilled.
+    The earlier withdrawal and evidence concern remain in curation history. Evidence:
+    https://www.knapsackfamily.com/knapsack_core/information.php?word=C00013080 ;
+    https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10977881/property/IUPACName,InChIKey,InChI,MolecularFormula/JSON'
+  previous_status: AMBIGUOUS
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: SINGLE_INGREDIENT
+notes: Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly assigns
+  Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates that same
+  name and CAS, and its complete stereochemical InChI exactly matches PubChem CID
+  10977881. PubChem name-search results are less stereochemically specified; their
+  synonym membership does not contradict the original CAS identity. Restore only the
+  supported CAS registry fallback. KNApSAcK displays an InChIKey inconsistent with
+  its own InChI and PubChem key; that key is not imported. No exact CHEBI:174307 or
+  name-search CID mapping is asserted. Structure fields remain unbackfilled. The earlier
+  withdrawal and evidence concern remain in curation history.
+ontology_mapping:
+  ontology_id: cas:13902-54-0
+  ontology_label: Artepaulin
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT original CSV; KNApSAcK; PubChem
+    notes: 'Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly
+      assigns Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates
+      that same name and CAS, and its complete stereochemical InChI exactly matches
+      PubChem CID 10977881. PubChem name-search results are less stereochemically
+      specified; their synonym membership does not contradict the original CAS identity.
+      Restore only the supported CAS registry fallback. KNApSAcK displays an InChIKey
+      inconsistent with its own InChI and PubChem key; that key is not imported. No
+      exact CHEBI:174307 or name-search CID mapping is asserted. Structure fields
+      remain unbackfilled. The earlier withdrawal and evidence concern remain in curation
+      history. Evidence: https://www.knapsackfamily.com/knapsack_core/information.php?word=C00013080
+      ; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10977881/property/IUPACName,InChIKey,InChI,MolecularFormula/JSON
+      . Hash-bound source extracts and exact InChI comparison: reports/semantic_review_20260921/resolution/identities/'
 chemical_properties:
   cas_rn: 13902-54-0
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-ingredient_type: SINGLE_INGREDIENT
+  data_source: CultureBotHT compounds_to_cas.csv row 784; corroborated by KNApSAcK
+    C00013080 and PubChem CID 10977881
+  retrieval_date: '2026-09-22T02:08:31.475368+00:00'

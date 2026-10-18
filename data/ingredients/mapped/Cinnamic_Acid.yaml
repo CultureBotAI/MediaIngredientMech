@@ -1,8 +1,8 @@
-identifier: CHEBI:27386
+identifier: CHEBI:35697
 preferred_term: Cinnamic acid
 ontology_mapping:
-  ontology_id: CHEBI:27386
-  ontology_label: cinnamic acid
+  ontology_id: CHEBI:35697
+  ontology_label: trans-cinnamic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -13,7 +13,7 @@ synonyms:
 - synonym_text: 3-phenylprop-2-enoic acid
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -50,6 +50,47 @@ curation_history:
     the CAS check digit and resolves on PubChem to exactly this compound; the padding
     was ingest alignment, not identity.
   llm_assisted: false
+- timestamp: '2026-09-23T04:49:29.777562+00:00'
+  curator: claude
+  action: MERGED_INTO
+  changes: Merged into CHEBI:35697 'trans-Cinnamic acid'; occurrences transferred.
+    Tombstoned REJECTED, SSSOM rows dropped. The record's only source-supplied identity
+    is CAS 140-10-3, which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the
+    geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. MAPPING_SEMANTICS Section
+    3 step 4's evidence hatch picks the trans isomer, already held by this record
+    (#312).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+- timestamp: '2026-09-23T04:53:11.442718+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'identifier CHEBI:27386 -> CHEBI:35697 on the merge tombstone, so the merged
+    name is credited to the live record that holds the identifier (Rule K; the #414
+    Mgcl2x_6_H2o precedent). The record''s only source-supplied identity is CAS 140-10-3
+    (CultureBotHT), which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the
+    geometry-unspecified CHEBI:27386''s sole CAS is 621-82-9. Section 3 step 4''s
+    evidence hatch picks the trans isomer, which Trans-cinnamic_Acid already holds,
+    so the two records denote one substance (#312).'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-09-23T05:17:01.665283+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'ontology_id CHEBI:27386 (''cinnamic acid'') -> CHEBI:35697 (''trans-cinnamic
+    acid'') on the merge tombstone, so the merged name is credited to the live record
+    that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o precedent). The record''s
+    only source-supplied identity is CAS 140-10-3 (CultureBotHT), which ChEBI xrefs
+    on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386''s
+    sole CAS is 621-82-9. Section 3 step 4''s evidence hatch picks the trans isomer,
+    which Trans-cinnamic_Acid already holds, so the two records denote one substance
+    (#312).'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 140-10-3
   data_source: CultureBotHT compounds_to_cas.csv

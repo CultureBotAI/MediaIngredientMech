@@ -6,7 +6,7 @@ authors = [
     {name = "MediaIngredientMech Contributors"}
 ]
 readme = "README.md"
-license = {text = "CC0-1.0"}
+license = {text = "BSD-3-Clause"}
 requires-python = ">=3.10"
 keywords = [
     "microbiology",
@@ -20,7 +20,7 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
-    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+    "License :: OSI Approved :: BSD License",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -43,6 +43,7 @@ dependencies = [
     # 0.7.3 widened it to <3.15. Matches CultureMech and TraitMech (#488).
     "oaklib>=0.7.3",
     "pyyaml>=6.0",
+    "jsonschema>=4.0",
     "click>=8.1.0",
     "rich>=13.0.0",
     # Used directly by chemical_properties_client, doi_resolver,
@@ -90,7 +91,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-mediaingredientmech = ["schema/*.yaml"]
+mediaingredientmech = ["schema/*.yaml", "profiles/*.yaml", "profiles/*.json", "ontology_sources/micro/*.json", "ontology_sources/micro/*.tsv"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -107,6 +108,7 @@ addopts = [
 ]
 
 [tool.black]
+force-exclude = '/(scripts/record_review|tests/test_record_review_contract)\.py$'
 line-length = 100
 target-version = ["py310", "py311", "py312"]
 include = '\.pyi?$'
@@ -126,9 +128,12 @@ exclude = '''
 '''
 
 [tool.ruff]
+force-exclude = true
 line-length = 100
 target-version = "py310"
 exclude = [
+    "scripts/record_review.py",
+    "tests/test_record_review_contract.py",
     "src/mediaingredientmech/schema/mapped_ingredients_schema.py",
 ]
 
@@ -168,6 +173,12 @@ strict_equality = true
 module = [
     "mediaingredientmech.curation.ingredient_curator",
     "mediaingredientmech.export.report_generator",
+    "mediaingredientmech.export.kgx",
+    "mediaingredientmech.export.supported_kgx",
+    "mediaingredientmech.export.reviewed_sssom",
+    "mediaingredientmech.mapping_scope",
+    "mediaingredientmech.ingredient_bundle_contract",
+    "mediaingredientmech.record_refresh",
     "mediaingredientmech.render_ingredient_pages",
     "mediaingredientmech.utils.chemical_properties_client",
     "mediaingredientmech.utils.doi_resolver",
@@ -178,6 +189,7 @@ module = [
     "mediaingredientmech.validation.component_partonomy",
     "mediaingredientmech.validation.ingredient_reviewer",
     "mediaingredientmech.validation.schema_validator",
+    "mediaingredientmech.validation.semantic_release",
     "mediaingredientmech.validation.write_validated",
 ]
 disable_error_code = ["import-not-found", "import-untyped"]

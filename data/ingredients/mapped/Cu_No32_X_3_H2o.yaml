@@ -39,7 +39,7 @@ ontology_mapping:
       are unchanged.'
 synonyms:
 - synonym_text: copper(II) nitrate (anhydrous)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: copper(2+) dinitrate
   synonym_type: EXACT_SYNONYM
@@ -117,6 +117,14 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: copper(II) nitrate
+    (anhydrous) (#878).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 10031-43-3
   data_source: CultureBotHT/compounds_to_cas.csv

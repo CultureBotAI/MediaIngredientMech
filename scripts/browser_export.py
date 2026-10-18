@@ -22,18 +22,30 @@ _src = _project_root / "src"
 if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
+from collections.abc import Mapping
+from mediaingredientmech.render_ingredient_pages import slug_for
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
+    effective_occurrence_statistics,
+    membership_counts,
+)
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 console = Console()
 
 
-def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
+def extract_ingredient_for_browser(
+    ingredient: dict,
+    source_file: str,
+    counts_by_id: Mapping[str, tuple[int, int]] | None = None,
+) -> dict:
     """Extract ingredient data into browser-friendly format.
 
     Args:
         ingredient: IngredientRecord data.
         source_file: Source filename.
+        counts_by_id: Optional (media_count, total_occurrences) map from membership edges.
 
     Returns:
         Browser-friendly ingredient record.
@@ -60,9 +72,9 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
             synonyms.append(synonym_text)
 
     # Statistics
-    stats = ingredient.get('occurrence_statistics') or {}
-    total_occurrences = stats.get('total_occurrences', 0)
-    media_count = stats.get('media_count', 0)
+    media_count, total_occurrences = effective_occurrence_statistics(
+        ingredient, counts_by_id
+    )
 
     # Curation info
     curation_history = ingredient.get('curation_history', [])
@@ -84,12 +96,15 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
     searchable = (
         f"{preferred_term} {ontology_label} {' '.join(synonyms)} {identifier}"
     ).lower()
+    if ontology_id and ontology_id.lower() != identifier.lower():
+        searchable = f"{searchable} {ontology_id.lower()}"
     if component_search:
         searchable = f"{searchable} {component_search.lower()}"
 
     # Create browser record
     record = {
         'id': identifier,
+        'record_id': mim_curie_for_stem(Path(source_file).stem),
         'preferred_term': preferred_term,
         'mapping_status': mapping_status,
         'ontology_id': ontology_id,
@@ -103,6 +118,7 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
         'last_curated': last_curated,
         'curator': curator,
         'source_file': source_file,
+        'detail_page': f'records/ingredient/{slug_for(ingredient, Path(source_file))}.html',
         # Searchable text (for quick filtering)
         'searchable': searchable
     }
@@ -114,18 +130,26 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
 
 def export_ingredients_to_json(
     ingredients_dir: Path,
-    output_file: Path
+    output_file: Path,
+    membership_path: Path | None = None,
 ) -> dict:
     """Export all ingredient files to browser JSON.
 
     Args:
         ingredients_dir: Directory with individual ingredient files.
         output_file: Output JSON file path.
+        membership_path: Optional path to culturemech_recipe_membership.tsv.
 
     Returns:
         Export statistics.
     """
     stats = {'total': 0, 'mapped': 0, 'unmapped': 0}
+    resolved_membership = (
+        membership_path
+        if membership_path is not None
+        else ingredients_dir.parent.parent / "mappings" / "culturemech_recipe_membership.tsv"
+    )
+    counts_by_id = membership_counts(resolved_membership)
 
     all_ingredients = []
     failures: list[str] = []
@@ -138,11 +162,13 @@ def export_ingredients_to_json(
                 ingredient = load_yaml(yaml_file)
                 browser_record = extract_ingredient_for_browser(
                     ingredient,
-                    f"mapped/{yaml_file.name}"
+                    f"mapped/{yaml_file.name}",
+                    counts_by_id=counts_by_id,
                 )
                 all_ingredients.append(browser_record)
                 stats['total'] += 1
-                stats['mapped'] += 1
+                stats['mapped'] += browser_record['mapping_status'] == 'MAPPED'
+                stats['unmapped'] += browser_record['mapping_status'] == 'UNMAPPED'
             except Exception as e:
                 failures.append(f"{yaml_file.name}: {e}")
 
@@ -154,11 +180,13 @@ def export_ingredients_to_json(
                 ingredient = load_yaml(yaml_file)
                 browser_record = extract_ingredient_for_browser(
                     ingredient,
-                    f"unmapped/{yaml_file.name}"
+                    f"unmapped/{yaml_file.name}",
+                    counts_by_id=counts_by_id,
                 )
                 all_ingredients.append(browser_record)
                 stats['total'] += 1
-                stats['unmapped'] += 1
+                stats['unmapped'] += browser_record['mapping_status'] == 'UNMAPPED'
+                stats['mapped'] += browser_record['mapping_status'] == 'MAPPED'
             except Exception as e:
                 failures.append(f"{yaml_file.name}: {e}")
 
@@ -177,6 +205,8 @@ def export_ingredients_to_json(
             'total_ingredients': stats['total'],
             'mapped_count': stats['mapped'],
             'unmapped_count': stats['unmapped'],
+            'status_counts': {status: sum(r['mapping_status'] == status for r in all_ingredients)
+                              for status in sorted({r['mapping_status'] for r in all_ingredients})},
             'version': '1.0.0'
         },
         'ingredients': all_ingredients

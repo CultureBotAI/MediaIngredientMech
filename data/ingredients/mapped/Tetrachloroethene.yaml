@@ -93,6 +93,15 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-22T02:06:34+00:00'
+  curator: codex_issue_710_semantic_evidence_review
+  action: CORRECTED_ROLE_EVIDENCE
+  changes: Added inspected primary-publication support and bounded organism/condition
+    context to the cellular metabolic role (#710). Retained original computational
+    provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+    for the assertion-specific interpretation.
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 127-18-4
   data_source: PubChem API
@@ -109,3 +118,15 @@ cellular_metabolic_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+  - reference_type: PEER_REVIEWED_PUBLICATION
+    doi: 10.1128/AEM.65.7.3108-3113.1999
+    pmid: '10388710'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC91463/
+    reference_text: Maymo-Gatell et al. (1999). Reductive dechlorination of chlorinated
+      ethenes and 1,2-dichloroethane by Dehalococcoides ethenogenes 195.
+    curator_note: The study demonstrates growth-linked tetrachloroethene dechlorination
+      by strain 195 with hydrogen supplying electrons. It does not imply equivalent
+      utilization by other Dehalococcoides strains or other microbes.
+  metabolic_context: Respiratory electron acceptor for Dehalococcoides ethenogenes
+    strain 195 during anaerobic reductive dechlorination with hydrogen as electron
+    donor.

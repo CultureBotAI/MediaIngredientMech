@@ -21,6 +21,7 @@ ROOT = Path(__file__).parent.parent
 EXPORT = ROOT / "scripts" / "export_lists.py"
 CHECK = ROOT / "scripts" / "check_flat_export_coverage.py"
 POLICY = ROOT / "src" / "mediaingredientmech" / "synonym_policy.py"
+OCCURRENCES = ROOT / "src" / "mediaingredientmech" / "utils" / "culturemech_occurrences.py"
 
 
 def _load(path):
@@ -128,11 +129,15 @@ def build(tmp_path, records, csv_rows, header=None):
     # the gate imports the exporter's _synonyms() on purpose, so the rule for
     # what is publishable cannot drift between producing and checking
     (tmp_path / "scripts" / EXPORT.name).write_text(EXPORT.read_text())
-    (tmp_path / "src" / "mediaingredientmech").mkdir(parents=True)
+    (tmp_path / "src" / "mediaingredientmech" / "utils").mkdir(parents=True)
     (tmp_path / "src" / "mediaingredientmech" / "__init__.py").write_text("")
+    (tmp_path / "src" / "mediaingredientmech" / "utils" / "__init__.py").write_text("")
     (tmp_path / "src" / "mediaingredientmech" / "synonym_policy.py").write_text(
         POLICY.read_text()
     )
+    (
+        tmp_path / "src" / "mediaingredientmech" / "utils" / "culturemech_occurrences.py"
+    ).write_text(OCCURRENCES.read_text())
     return tmp_path
 
 
@@ -272,6 +277,28 @@ def test_browser_export_does_not_change_search_text_without_components(browser_e
     out = browser_export.extract_ingredient_for_browser(rec, "test.yaml")
     expected = "Test ingredient test chemical example synonym CHEBI:1".lower()
     assert out["searchable"] == expected
+
+
+def test_browser_export_indexes_distinct_mapped_identifier_once(browser_export):
+    rec = {
+        "identifier": "MediaIngredientMech:000001",
+        "preferred_term": "Test ingredient",
+        "ontology_mapping": {"ontology_id": "CHEBI:1", "ontology_label": "test chemical"},
+    }
+    out = browser_export.extract_ingredient_for_browser(rec, "test.yaml")
+    tokens = out["searchable"].split()
+    assert tokens.count("mediaingredientmech:000001") == 1
+    assert tokens.count("chebi:1") == 1
+
+
+def test_browser_export_deduplicates_identifier_case_in_search(browser_export):
+    rec = {
+        "identifier": "CHEBI:1",
+        "preferred_term": "Test ingredient",
+        "ontology_mapping": {"ontology_id": "chebi:1", "ontology_label": "test chemical"},
+    }
+    out = browser_export.extract_ingredient_for_browser(rec, "test.yaml")
+    assert out["searchable"].split().count("chebi:1") == 1
 
 
 def test_browser_export_exits_nonzero_when_a_record_fails(tmp_path):

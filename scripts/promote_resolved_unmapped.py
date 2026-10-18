@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
+from mediaingredientmech.utils.oaklib_cache import db_path, oaklib_cache_dir  # noqa: E402
 from mediaingredientmech.utils.object_source import OBJECT_SOURCE, object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from export_individual_records import collect_existing_filenames, sanitize_filename
@@ -41,12 +42,12 @@ from export_individual_records import collect_existing_filenames, sanitize_filen
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
-CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
+CHEBI_DB = db_path("CHEBI")
 # Ontologies this helper can resolve a target in. NCIT matters because it carries
 # drugs and reagents ChEBI's semsql build lags on -- Polymyxin B, Lysostaphin,
 # Colistin Sulfate and Carbomycin all have exact NCIT labels while their CHEBI
 # accessions are absent locally, so a CHEBI-only helper called them unresolvable.
-_OAK = Path.home() / ".data" / "oaklib"
+_OAK = oaklib_cache_dir()
 ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
                "FOODON": _OAK / "foodon.db", "ENVO": _OAK / "envo.db",
                # MeSH is written lowercase in MIM records (mesh:C017721) but
@@ -130,11 +131,9 @@ def _label_via_ols4(cid: str) -> str:
     doc = docs[0]
     if doc.get("is_obsolete"):
         raise SystemExit(f"{cid} is obsolete in {prefix} — pick a current term")
-    # Looking a term up by obo_id routes around a malformed IRI, which is the point --
-    # but it also routes around the reason MIM gates MICRO behind MICRO_VERIFIED. MicrO
-    # has ~1,472 classes under `.../obo/MicrO.owl/MICRO_NNNNNNN` that do not round-trip:
-    # kg-microbe's ontology transform never produces them, so a published row would
-    # dangle. Refuse them here rather than let the workaround defeat the guard.
+    # An obo_id lookup alone cannot verify an unreviewed legacy IRI. Reviewed
+    # KGX exceptions are resolved separately by canonical_label before this
+    # network fallback; every other term still needs the defining-ontology check.
     if doc.get("is_defining_ontology") is False:
         raise SystemExit(
             f"{cid} has is_defining_ontology=false in OLS4 (IRI {doc.get('iri')!r}). "
@@ -154,6 +153,12 @@ def _label_via_ols4(cid: str) -> str:
 def canonical_label(cid: str) -> str:
     prefix = cid.split(":", 1)[0].upper()
     cid = f"{prefix}:{cid.split(':', 1)[1]}"      # builds store the prefix uppercase
+    if prefix == "MICRO":
+        from mediaingredientmech.micro_source import source_term
+
+        term = source_term(cid)
+        if term:
+            return term.label
     db = ONTOLOGY_DB.get(prefix)
     if db is None or not db.exists() or db.stat().st_size == 0:
         if prefix in OBJECT_SOURCE:

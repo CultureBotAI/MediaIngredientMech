@@ -4,12 +4,19 @@ ontology_mapping:
   ontology_id: CHEBI:195418
   ontology_label: 5-hydroxylaurate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: local kg-microbe CHEBI transform
     notes: Local CHEBI labels CHEBI:195418 5-hydroxylaurate with 5-hydroxydodecanoate
       as an exact synonym.
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH. The label ''5-Hydroxydodecanoate''
+      resolves through the ChEBI related synonym ''5-hydroxydodecanoate''; the primary
+      label is ''5-hydroxylaurate''. Section 0: a resolution through a unique ontology
+      synonym is SYNONYM_MATCH, not EXACT_MATCH. Identifier and term unchanged; the
+      own-identifier row stays skos:exactMatch (Rule D).'
 synonyms:
 - synonym_text: 5-Hydroxydodecanoate
   synonym_type: RAW_TEXT
@@ -40,6 +47,18 @@ curation_history:
   previous_status: UNMAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-09-22T23:25:50.793291+00:00'
+  curator: claude
+  action: REGRADED_MAPPING_QUALITY
+  changes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#312). The label ''5-Hydroxydodecanoate''
+    resolves through the ChEBI related synonym ''5-hydroxydodecanoate''; the primary
+    label is ''5-hydroxylaurate''. Section 0: a resolution through a unique ontology
+    synonym is SYNONYM_MATCH, not EXACT_MATCH. Identifier and term unchanged; the
+    own-identifier row stays skos:exactMatch (Rule D).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)); curated to CHEBI:195418
   5-hydroxylaurate by local CHEBI exact synonym review on 2026-05-11.
 kg_microbe_node_id: CHEBI:195418

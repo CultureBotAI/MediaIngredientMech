@@ -1,20 +1,28 @@
-identifier: cas:9048-46-8
+identifier: NCIT:C85253
 preferred_term: bovine serum albumin
 ontology_mapping:
   ontology_id: NCIT:C85253
   ontology_label: Bovine Serum Albumin
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN 9048-46-8 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot
-      media; samples: 7H9. Curator can promote to a CHEBI primary if/when CHEBI adds
-      the term.'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 9048-46-8 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 1 CultureBot media;
+      samples: 7H9. Curator can promote to a CHEBI primary if/when CHEBI adds the
+      term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='bovine serum albumin'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''bovine serum albumin'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies
+      CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific
+      fraction V/products as supplied forms, not exact synonyms. Preserve all seven
+      original recipe memberships and their preparation qualifiers.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -51,8 +59,44 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-24T07:10:47.880128+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies
+    CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific
+    fraction V/products as supplied forms, not exact synonyms. Preserve all seven
+    original recipe memberships and their preparation qualifiers.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 9048-46-8
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
 ingredient_type: SINGLE_INGREDIENT
+supplied_form:
+- name: Bovine Serum Albumin
+  cas_rn: 9048-46-8
+  supplier: Sigma-Aldrich
+  catalog_number: A7030
+  form: lyophilized powder; heat shock fraction; protease free; fatty acid free; essentially
+    globulin free
+  notes: Original CultureBotHT product; supplier page confirms CAS and preparation.
+    Source-specific product, not a restriction on all seven recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md.
+- name: Bovine serum albumin fraction V
+  supplier: Sigma-Aldrich
+  catalog_number: A9647
+  notes: Explicit product in CultureMech:015191 preparation note; preserved from the
+    original recipe, not assigned to other recipes. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json.
+- name: BSA solution
+  supplier: Sigma-Aldrich
+  catalog_number: A7409
+  form: solution
+  notes: Alternative product explicitly named in CultureMech:015191; no concentration
+    or independent product CAS inferred. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json.
+notes: Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies
+  CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific
+  fraction V/products as supplied forms, not exact synonyms. Preserve all seven original
+  recipe memberships and their preparation qualifiers.

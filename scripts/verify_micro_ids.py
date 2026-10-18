@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-"""Verify every MICRO id used by MIM against EBI OLS4.
+"""Verify MICRO IDs against the pinned KGX source or canonical EBI OLS4 terms.
 
-MicrO mints ~1,472 of its 3,450 classes under a malformed IRI
-(`…/obo/MicrO.owl/MICRO_nnnnnnn`). Those CURIEs do not round-trip and must not be
-emitted. The defect is invisible offline, so this checks each id against OLS4 and
-prints the set to paste into `mediaingredientmech.curie.MICRO_VERIFIED`.
+Reviewed legacy-IRI terms are verified offline from KG-Microbe's source and
+reported separately. They must not be copied into the OLS-only allowlist.
 
 Usage:  python scripts/verify_micro_ids.py [--curies MICRO:0000182 ...]
 """
@@ -20,6 +18,9 @@ import urllib.request
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "src"))
+
+from mediaingredientmech.micro_source import source_term  # noqa: E402
 
 
 def micro_ids_in_sssom() -> set[str]:
@@ -33,6 +34,9 @@ def micro_ids_in_sssom() -> set[str]:
 
 
 def check(curie: str) -> tuple[bool, str, str]:
+    term = source_term(curie)
+    if term:
+        return True, "KGX_SOURCE_LEGACY_IRI", term.label
     url = ("https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id="
            + urllib.parse.quote(curie))
     try:
@@ -44,6 +48,8 @@ def check(curie: str) -> tuple[bool, str, str]:
         return False, "NOT_FOUND", ""
     t = terms[0]
     iri, label = t.get("iri", ""), t.get("label", "")
+    if t.get("is_obsolete"):
+        return False, "OBSOLETE", label
     if "MicrO.owl/" in iri:
         return False, "MALFORMED_IRI", label
     if not t.get("is_defining_ontology"):
@@ -74,9 +80,14 @@ def main() -> int:
             print(f"  {c}  {why}  {label!r}", file=sys.stderr)
         print("", file=sys.stderr)
     print("MICRO_VERIFIED = {")
-    for c, _, label in good:
+    for c, why, label in good:
+        if why != "OK":
+            continue
         print(f'    "{c}",  # {label}')
     print("}")
+    for c, why, label in good:
+        if why == "KGX_SOURCE_LEGACY_IRI":
+            print(f"{c}: {label!r} verified against pinned KGX (legacy IRI; not OLS canonical)")
     return 1 if bad else 0
 
 

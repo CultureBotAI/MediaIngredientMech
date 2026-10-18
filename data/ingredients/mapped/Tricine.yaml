@@ -1,16 +1,24 @@
-identifier: CHEBI:46760
+identifier: CHEBI:39063
 preferred_term: Tricine
 ontology_mapping:
-  ontology_id: CHEBI:46760
-  ontology_label: tricine
+  ontology_id: CHEBI:39063
+  ontology_label: N-tris(hydroxymethyl)methylglycine
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. Used in 10 CultureBot media; samples: MOPS
       Rich Defined media noCarbon, MOPS Rich Defined media_noCarbon, MOPS minimal
       media Glucose noNitrogen….'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#704); chebi.db
+    notes: 'identifier CHEBI:46760 -> CHEBI:39063; ontology ''tricine'' -> ''N-tris(hydroxymethyl)methylglycine'';
+      mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:46760 is a grouping class
+      with a label and nothing else (no formula, InChIKey or definition); its children
+      are the neutral CHEBI:39063, which owns the structure, the systematic names
+      and the xref cas:5704-04-1 (the record''s own CAS, on no other term), and the
+      zwitterion CHEBI:46759. Section 3: the most specific stable identifier (#704).'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -51,10 +59,27 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-24T07:48:22.788923+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier CHEBI:46760 -> CHEBI:39063; ontology ''tricine'' -> ''N-tris(hydroxymethyl)methylglycine'';
+    mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:46760 is a grouping class
+    with a label and nothing else (no formula, InChIKey or definition); its children
+    are the neutral CHEBI:39063, which owns the structure, the systematic names and
+    the xref cas:5704-04-1 (the record''s own CAS, on no other term), and the zwitterion
+    CHEBI:46759. Section 3: the most specific stable identifier (#704). (#704)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 5704-04-1
-  data_source: CultureBotHT compounds_to_cas.csv
+  data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:39063
+    (#704)
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C6H13NO5
+  inchi: InChI=1S/C6H13NO5/c8-2-6(3-9,4-10)7-1-5(11)12/h7-10H,1-4H2,(H,11,12)
+  smiles: O=C(O)CNC(CO)(CO)CO
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: BUFFER

@@ -47,6 +47,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import yaml  # noqa: E402
 
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.sssom_grading import PREDICATE_BROAD  # noqa: E402
 
 COLLECTION = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -118,7 +119,7 @@ def main(argv: list[str] | None = None) -> int:
         cells = line.rstrip("\n").split("\t")
         if len(cells) < 5 or cells[1] not in labels:
             continue
-        if cells[2] != "skos:narrowMatch" or not cells[3].startswith("CHEBI:"):
+        if cells[2] != PREDICATE_BROAD or not cells[3].startswith("CHEBI:"):
             continue
         cells[2] = "skos:closeMatch"
         lines[i] = "\t".join(cells) + "\n"

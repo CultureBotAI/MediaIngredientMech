@@ -1,0 +1,1905 @@
+{
+  "issue": 710,
+  "review_date": "2026-09-21",
+  "scope": "Eight existing cellular metabolic roles only; primary-source and organism-context repair. No full-graph approval.",
+  "applied": true,
+  "records": [
+    {
+      "source_path": "data/ingredients/mapped/K2s4o6.yaml",
+      "before_sha256": "3c906e7434f4a7c67cf24d4636ebd82a40cac22c00fba7304e7ea5362303ee20",
+      "before_assertion": {
+        "role": "ELECTRON_DONOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          }
+        ]
+      },
+      "after_assertion": {
+        "role": "ELECTRON_DONOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          },
+          {
+            "reference_type": "PEER_REVIEWED_PUBLICATION",
+            "doi": "10.1007/s11274-010-0441-4",
+            "url": "https://scholarworks.montana.edu/server/api/core/bitstreams/178af696-e5b3-47aa-a0e1-182a47ab782a/content",
+            "reference_text": "Aston et al. (2011). Growth effects and assimilation of organic acids in chemostat and batch cultures of Acidithiobacillus caldus.",
+            "curator_note": "The study explicitly supplies potassium tetrathionate as the electron donor in autotrophic and mixotrophic cultures. This supports the named organism and culture conditions, not universal microbial utilization."
+          }
+        ],
+        "metabolic_context": "Electron donor during aerobic growth of Acidithiobacillus caldus in the studied tetrathionate-supplemented mineral medium."
+      },
+      "disposition": "SUPPORTED_IN_STATED_CONTEXT",
+      "support_kind": "DIRECT_PRIMARY_SUPPORT",
+      "reviewed_source_section": "Abstract, culture methods, and growth results",
+      "other_assertions_approved": false,
+      "after_sha256": "bade0e511d3938043f01fd845d12d096b882ed451aac26e98741594cda883263",
+      "original_applied_sha256": "bade0e511d3938043f01fd845d12d096b882ed451aac26e98741594cda883263",
+      "source_position": "1",
+      "after_record": {
+        "identifier": "CHEBI:86466",
+        "preferred_term": "K2S4O6",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:86466",
+          "ontology_label": "potassium tetrathionate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "Properties: Defined component, Inorganic compound, Simple component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Defined component, Simple component, Inorganic compound",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Dipotassium tetrathionate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Potassium tetrathionate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Tetrathionic acid, dipotassium salt",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 28,
+          "media_count": 28
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-09T00:32:50.689620+00:00",
+            "curator": "enrich_mim_cas_rn_batch",
+            "action": "CAS_RN_ADDED",
+            "changes": "Added CAS-RN 13932-13-3 from PubChem (via CHEBI:86466)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 3 synonyms from kg-microbe P4.4 enrichment: Dipotassium tetrathionate, Potassium tetrathionate, Tetrathionic acid, dipotassium salt",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 3 synonyms from kg-microbe P4.4 enrichment: Dipotassium tetrathionate, K2S4O6, Tetrathionic acid, dipotassium salt",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:39:23.955331+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 1 duplicate MIM record(s) into this one: Potassium_Tetrathionate.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.158844+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:30.155675+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=2K.O6S4; inchi=InChI=1S/2K.H2O6S4/c;;1-9(2,3)7-8-10(4,5)6/h;;(H,1; smiles=O=S(=O)([O-])SSS(=O)(=O)[O-].[K+].[K+]",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:15.242267+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.247980+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: ELECTRON_DONOR (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519052+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 19/19 -> 28/28 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-22T02:06:34+00:00",
+            "curator": "codex_issue_710_semantic_evidence_review",
+            "action": "CORRECTED_ROLE_EVIDENCE",
+            "changes": "Added inspected primary-publication support and bounded organism/condition context to the cellular metabolic role (#710). Retained original computational provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json for the assertion-specific interpretation.",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "kg_microbe_node_id": "CHEBI:86466",
+        "chemical_properties": {
+          "cas_rn": "13932-13-3",
+          "data_source": "PubChem (via CHEBI:86466)",
+          "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+          "molecular_formula": "2K.O6S4",
+          "inchi": "InChI=1S/2K.H2O6S4/c;;1-9(2,3)7-8-10(4,5)6/h;;(H,1,2,3)(H,4,5,6)/q2*+1;/p-2",
+          "smiles": "O=S(=O)([O-])SSS(=O)(=O)[O-].[K+].[K+]"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "cellular_metabolic_roles": [
+          {
+            "role": "ELECTRON_DONOR",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              },
+              {
+                "reference_type": "PEER_REVIEWED_PUBLICATION",
+                "doi": "10.1007/s11274-010-0441-4",
+                "url": "https://scholarworks.montana.edu/server/api/core/bitstreams/178af696-e5b3-47aa-a0e1-182a47ab782a/content",
+                "reference_text": "Aston et al. (2011). Growth effects and assimilation of organic acids in chemostat and batch cultures of Acidithiobacillus caldus.",
+                "curator_note": "The study explicitly supplies potassium tetrathionate as the electron donor in autotrophic and mixotrophic cultures. This supports the named organism and culture conditions, not universal microbial utilization."
+              }
+            ],
+            "metabolic_context": "Electron donor during aerobic growth of Acidithiobacillus caldus in the studied tetrathionate-supplemented mineral medium."
+          }
+        ]
+      }
+    },
+    {
+      "source_path": "data/ingredients/mapped/Na2s2o3.yaml",
+      "before_sha256": "88426e1fdedd3e221a240192bba9ad651fe230d524665a0d2be9a6432a580626",
+      "before_assertion": {
+        "role": "ELECTRON_DONOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          }
+        ]
+      },
+      "after_assertion": {
+        "role": "ELECTRON_DONOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          },
+          {
+            "reference_type": "PEER_REVIEWED_PUBLICATION",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382511/",
+            "reference_text": "Kato et al. (2012). Microbial interspecies electron transfer via electric currents through conductive minerals.",
+            "curator_note": "The culture method supplies 20 mM sodium thiosulfate and 20 mM sodium nitrate as donor and acceptor, respectively. Scope is limited to the studied organism and conditions."
+          }
+        ],
+        "metabolic_context": "Electron donor for Thiobacillus denitrificans during anaerobic growth with nitrate as electron acceptor in aqueous mineral medium."
+      },
+      "disposition": "SUPPORTED_IN_STATED_CONTEXT",
+      "support_kind": "DIRECT_PRIMARY_SUPPORT",
+      "reviewed_source_section": "Abstract, culture methods, and growth results",
+      "other_assertions_approved": false,
+      "after_sha256": "8721a533a7671b464ce2c9104f12e273da24ce3f1566d0b33df6b59ba2e44146",
+      "original_applied_sha256": "15675d550525b42552d2aa95d2dfc32dcae265126d2e223878198ab9ff245bc0",
+      "source_position": "1",
+      "after_record": {
+        "identifier": "CHEBI:132112",
+        "preferred_term": "Na2S2O3",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:132112",
+          "ontology_label": "sodium thiosulfate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "SYNONYM_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            },
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "cbclaw_kg_microbe_sweep",
+              "notes": "Corrected from CHEBI:59168 (nonaethylene glycol monomethyl ether \u2014 unrelated compound) to CHEBI:132112 (sodium thiosulfate). CAS-RN 7772-98-7 confirms sodium thiosulfate."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "Properties: Defined component, Inorganic compound, Simple component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Defined component, Inorganic compound, Solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Defined component, Simple component, Inorganic compound",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Inorganic compound, Simple component, Defined component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "O-methyl-nonaethyleneglycol",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "nonaethylene glycol monomethyl ether",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Sodium thiosulphate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "merged_from_duplicate_mim_record"
+          },
+          {
+            "synonym_text": "Na-thiosulfate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "merged_from_duplicate_mim_record"
+          },
+          {
+            "synonym_text": "NaS2O3",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "merged_from_duplicate_mim_record"
+          },
+          {
+            "synonym_text": "Disodium thiosulfate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Sodium hyposulfite",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Sodium oxide sulfide",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Thiosulfuric acid, disodium salt",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "disodium sulfurothioate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "(5% w/v solution)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Na2S2SO3",
+            "synonym_type": "RAW_TEXT",
+            "source": "merge_from_UNMAPPED_0472"
+          },
+          {
+            "synonym_text": "Na2S2O3 (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 119,
+          "media_count": 119
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T19:53:19.078977+00:00",
+            "curator": "fetch_cas_rn_from_pubchem",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:7772-98-7 from PubChem API via name lookup (Na2S2O3)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:45.828973+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:7772-98-7 from CultureBotHT compounds_to_cas.csv (matched: Sodium Thiosulfate)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:45.830531+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:7772-98-7 from CultureBotHT compounds_to_cas.csv (matched: Sodium thiosulfate)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:45.832214+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:7772-98-7 from CultureBotHT compounds_to_cas.csv (matched: sodium thiosulfate)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T23:45:44.857791+00:00",
+            "curator": "fetch_cas_rn_with_preprocessing",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:7772-98-7 from PubChem API (preprocessed) via name preprocessing (Na-thiosulfate)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-09T00:32:50.689620+00:00",
+            "curator": "enrich_mim_cas_rn_batch",
+            "action": "CAS_RN_ADDED",
+            "changes": "Added CAS-RN 7772-98-7 from PubChem (via CHEBI:132112)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "REMAPPED",
+            "changes": "Remapped CHEBI:59168 (nonaethylene glycol monomethyl ether) \u2192 CHEBI:132112 (sodium thiosulfate). Original CHEBI was an unrelated compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 3 synonyms from kg-microbe P4.4 enrichment: 2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol, O-methyl-nonaethyleneglycol, nonaethylene glycol monomethyl ether",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 7 synonyms from kg-microbe P4.4 enrichment: Disodium thiosulfate, Na-thiosulfate, Sodium hyposulfite, Sodium oxide sulfide, Sodium thiosulphate, ... (2 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 6 synonyms from kg-microbe P4.4 enrichment: Disodium thiosulfate, Na-thiosulfate, Sodium hyposulfite, Sodium oxide sulfide, Thiosulfuric acid, disodium salt, ... (1 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 6 synonyms from kg-microbe P4.4 enrichment: Disodium thiosulfate, Sodium hyposulfite, Sodium oxide sulfide, Sodium thiosulphate, Thiosulfuric acid, disodium salt, ... (1 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:39:23.955331+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 6 duplicate MIM record(s) into this one: Sodium_Thiosulfate.yaml, Sodium_Thiosulphate.yaml, Na-thiosulfate.yaml, Sodium_Thiosulfate_2.yaml, Nas2o3.yaml, Sodium_Thiosulfate_3.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.230698+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:31.297956+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=2Na.O3S2; inchi=InChI=1S/2Na.H2O3S2/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q; smiles=O=S(=O)([O-])[S-].[Na+].[Na+]",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:17.041910+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.248076+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: ELECTRON_DONOR (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-06-16T00:00:00+00:00",
+            "curator": "merge_duplicate_unmapped",
+            "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "changes": "Absorbed duplicate UNMAPPED_0472 \"Na2S2SO3\". Edison deep research (literature) + MediaDive recipe context + local OAK CHEBI confirm this is a garbled spelling of 'Na2S2O3' (already mapped to CHEBI:132112); promotion would PK-collide, so absorbed here as a synonym."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR"
+          },
+          {
+            "timestamp": "2026-08-10T00:00:00+00:00",
+            "curator": "regrade_synonym_matches",
+            "action": "REGRADED_EXACT_TO_SYNONYM",
+            "changes": "mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label does not equal the term's primary label 'sodium thiosulfate'; it matches the ChEBI synonym 'Sodium hyposulfite' on CHEBI:132112. The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade overstated. ontology_id is unchanged \u2014 the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519486+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 70/70 -> 119/119 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Na2S2O3 (if needed)' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-20T00:00:00Z",
+            "curator": "retire_wrong_compound_synonyms",
+            "action": "CORRECTED",
+            "changes": "Marked 3 synonym(s) non-resolving: ['2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol', 'O-methyl-nonaethyleneglycol', 'nonaethylene glycol monomethyl ether']. ChEBI gives these names to CHEBI:59168, not to this record's CHEBI:132112 -- sodium thiosulfate is not a nonaethylene glycol ether. Kept as REJECTED_LABEL so a rebuild cannot restore them from kg-microbe's synonym list (#669).",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-09-22T02:06:34+00:00",
+            "curator": "codex_issue_710_semantic_evidence_review",
+            "action": "CORRECTED_ROLE_EVIDENCE",
+            "changes": "Added inspected primary-publication support and bounded organism/condition context to the cellular metabolic role (#710). Retained original computational provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json for the assertion-specific interpretation.",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "7772-98-7",
+          "data_source": "PubChem API",
+          "retrieval_date": "2026-04-05T19:53:19.078955+00:00",
+          "molecular_formula": "2Na.O3S2",
+          "inchi": "InChI=1S/2Na.H2O3S2/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q2*+1;/p-2",
+          "smiles": "O=S(=O)([O-])[S-].[Na+].[Na+]"
+        },
+        "kg_microbe_node_id": "CHEBI:132112",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "cellular_metabolic_roles": [
+          {
+            "role": "ELECTRON_DONOR",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              },
+              {
+                "reference_type": "PEER_REVIEWED_PUBLICATION",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382511/",
+                "reference_text": "Kato et al. (2012). Microbial interspecies electron transfer via electric currents through conductive minerals.",
+                "curator_note": "The culture method supplies 20 mM sodium thiosulfate and 20 mM sodium nitrate as donor and acceptor, respectively. Scope is limited to the studied organism and conditions."
+              }
+            ],
+            "metabolic_context": "Electron donor for Thiobacillus denitrificans during anaerobic growth with nitrate as electron acceptor in aqueous mineral medium."
+          }
+        ]
+      },
+      "upstream_integration_receipt": "reports/semantic_review_20260921/resolution/roles/upstream-integration-receipt.json"
+    },
+    {
+      "source_path": "data/ingredients/mapped/Na2s2o3_X_5_H2o.yaml",
+      "before_sha256": "893ad85a605f904682d7a1c43db9726290c8bcee219a8e3fa7bc1b4e498b6c6e",
+      "before_assertion": {
+        "role": "ELECTRON_DONOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          }
+        ]
+      },
+      "after_assertion": {
+        "role": "ELECTRON_DONOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          },
+          {
+            "reference_type": "PEER_REVIEWED_PUBLICATION",
+            "doi": "10.1128/AEM.02111-16",
+            "pmid": "27565613",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5066360/",
+            "reference_text": "Levy et al. (2016). Chlorobaculum tepidum modulates amino acid composition in response to energy availability.",
+            "curator_note": "The paper tests thiosulfate-fed cultures. Applying this role to dissolved sodium thiosulfate pentahydrate is a chemical inference about the supplied anion; the study does not establish a hydrate-specific growth comparison."
+          }
+        ],
+        "metabolic_context": "Dissolved thiosulfate donor for Chlorobaculum tepidum WT2321 under the studied illuminated, anoxic culture conditions."
+      },
+      "disposition": "SUPPORTED_IN_STATED_CONTEXT",
+      "support_kind": "DISSOLVED_FORM_INFERENCE",
+      "reviewed_source_section": "Abstract, culture methods, and growth results",
+      "other_assertions_approved": false,
+      "after_sha256": "9f44114f08227176ff8d8981123a2943407ef1585543287c6e66b1914b0090dd",
+      "original_applied_sha256": "9f44114f08227176ff8d8981123a2943407ef1585543287c6e66b1914b0090dd",
+      "source_position": "1",
+      "after_record": {
+        "identifier": "CHEBI:32150",
+        "preferred_term": "Na2S2O3 x 5 H2O",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:32150",
+          "ontology_label": "sodium thiosulfate pentahydrate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "Properties: Defined component, Inorganic compound, Simple component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Inorganic compound, Simple component, Defined component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Na2S2O3 . 5H2O",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Na2S2O3 x 5 H2O (10% solution)",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Na2S2O3 x 5 H2O(24 % w/v)",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Na2S2O3 x 5H2O",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Na2S2O3.5H2O",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Na2S2O3x5H2O",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Na2S2O3\u00b75H2O",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Na2S2O3\u30fb5H2O",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "NaS2O3 x 5 H2O",
+            "synonym_type": "HYDRATE_FORM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Sodium thiosulfate pentahydrate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "disodium thiosulfate pentahydrate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "disodium thiosulphate pentahydrate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "sodium sulfurothioate hydrate (2:1:5)",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "thiosulfuric acid, disodium salt, pentahydrate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Properties: Defined component, Simple component, Inorganic compound",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Simple component, Defined component, Inorganic compound",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "sodium sulfurothioate--water (1/5)",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          },
+          {
+            "synonym_text": "Sodium Thiosulfate Pentahydrate (agar media only,sterile)(Baker 3946)",
+            "synonym_type": "RAW_TEXT",
+            "source": "MERGED_FROM Sodium Thiosulfate Pentahydrate (#414)"
+          },
+          {
+            "synonym_text": "Na2S2O3 x 5 H20",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 716,
+          "media_count": 716
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:45.490692+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:10102-17-7 from CultureBotHT compounds_to_cas.csv (matched: Na2S2O3\u00b75H2O)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:45.833775+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:10102-17-7 from CultureBotHT compounds_to_cas.csv (matched: Sodium thiosulfate pentahydrate)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-09T00:32:50.689620+00:00",
+            "curator": "enrich_mim_cas_rn_batch",
+            "action": "CAS_RN_ADDED",
+            "changes": "Added CAS-RN 10102-17-7 from PubChem (via CHEBI:32150)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 14 synonyms from kg-microbe P4.4 enrichment: Na2S2O3 . 5H2O, Na2S2O3 x 5 H2O (10% solution), Na2S2O3 x 5 H2O(24 % w/v), Na2S2O3 x 5H2O, Na2S2O3.5H2O, ... (9 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 13 synonyms from kg-microbe P4.4 enrichment: Na2S2O3 . 5H2O, Na2S2O3 x 5 H2O, Na2S2O3 x 5 H2O (10% solution), Na2S2O3 x 5 H2O(24 % w/v), Na2S2O3 x 5H2O, ... (8 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 14 synonyms from kg-microbe P4.4 enrichment: Na2S2O3 . 5H2O, Na2S2O3 x 5 H2O, Na2S2O3 x 5 H2O (10% solution), Na2S2O3 x 5 H2O(24 % w/v), Na2S2O3 x 5H2O, ... (9 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:23:20.785693+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 3 duplicate MIM record(s) into this one: Na2s2o35h2o.yaml, Sodium_Thiosulfate_Pentahydrate.yaml, Nas2o3_X_5_H2o.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.239627+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:31.307768+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=5H2O.2Na.O3S2; inchi=InChI=1S/2Na.H2O3S2.5H2O/c;;1-5(2,3)4;;;;;/h;;(H2,; smiles=O=S(=O)([O-])[S-].[H]O[H].[H]O[H].[H]O[H].[H]O[H].",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:17.052140+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.248079+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: ELECTRON_DONOR (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.807267+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'Na2S2O3 x 5 H2O' -> 'sodium thiosulfate pentahydrate': synced to canonical CHEBI label (preferred_term 'Na2S2O3 x 5 H2O' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR"
+          },
+          {
+            "timestamp": "2026-08-20T00:00:00+00:00",
+            "curator": "merge_identifier_collisions",
+            "action": "MERGED_FROM",
+            "changes": "Absorbed 'Sodium Thiosulfate Pentahydrate' (#414). Both records held CHEBI:32150 while both were live, which MIM's own rule forbids \u2014 for a mapped record the identifier IS the ontology CURIE, so two live records on it assert that two ingredients are one thing. They are one thing: formula notation versus spelled-out name of the same pentahydrate; identical CAS 10102-17-7, and both state the hydration explicitly so neither can be the anhydrous form. 'Na2S2O3 x 5 H2O' wins as the label media actually use (455 occurrences against 3); the other survives as a RAW_TEXT synonym, so label_index still answers for it.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519488+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 115/458 -> 716/716 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-02T22:41:49.137449+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'Na2S2O3 x 5 H20'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-22T02:06:34+00:00",
+            "curator": "codex_issue_710_semantic_evidence_review",
+            "action": "CORRECTED_ROLE_EVIDENCE",
+            "changes": "Added inspected primary-publication support and bounded organism/condition context to the cellular metabolic role (#710). Retained original computational provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json for the assertion-specific interpretation.",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "kg_microbe_node_id": "CHEBI:32150",
+        "chemical_properties": {
+          "cas_rn": "10102-17-7",
+          "data_source": "PubChem (via CHEBI:32150)",
+          "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+          "molecular_formula": "5H2O.2Na.O3S2",
+          "inchi": "InChI=1S/2Na.H2O3S2.5H2O/c;;1-5(2,3)4;;;;;/h;;(H2,1,2,3,4);5*1H2/q2*+1;;;;;;/p-2",
+          "smiles": "O=S(=O)([O-])[S-].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[Na+].[Na+]"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "cellular_metabolic_roles": [
+          {
+            "role": "ELECTRON_DONOR",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              },
+              {
+                "reference_type": "PEER_REVIEWED_PUBLICATION",
+                "doi": "10.1128/AEM.02111-16",
+                "pmid": "27565613",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5066360/",
+                "reference_text": "Levy et al. (2016). Chlorobaculum tepidum modulates amino acid composition in response to energy availability.",
+                "curator_note": "The paper tests thiosulfate-fed cultures. Applying this role to dissolved sodium thiosulfate pentahydrate is a chemical inference about the supplied anion; the study does not establish a hydrate-specific growth comparison."
+              }
+            ],
+            "metabolic_context": "Dissolved thiosulfate donor for Chlorobaculum tepidum WT2321 under the studied illuminated, anoxic culture conditions."
+          }
+        ]
+      }
+    },
+    {
+      "source_path": "data/ingredients/mapped/Nitrous_Oxide.yaml",
+      "before_sha256": "1d7b0c658dd8c1fc20d80f2620be3bc7c3d690a50912aa1191a2c345b76c41c9",
+      "before_assertion": {
+        "role": "ELECTRON_ACCEPTOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          }
+        ]
+      },
+      "after_assertion": {
+        "role": "ELECTRON_ACCEPTOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          },
+          {
+            "reference_type": "PEER_REVIEWED_PUBLICATION",
+            "doi": "10.1128/AEM.00409-16",
+            "pmid": "27084012",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4907195/",
+            "reference_text": "Yoon et al. (2016). Nitrous oxide reduction kinetics distinguish bacteria harboring clade I NosZ from those harboring clade II NosZ.",
+            "curator_note": "Growth and N2O consumption were measured together in the named isolates with acetate supplying electrons. The role is confined to these tested nitrous-oxide-respiring cultures."
+          }
+        ],
+        "metabolic_context": "Terminal electron acceptor during anoxic, acetate-fed growth of Dechloromonas aromatica RCB, Anaeromyxobacter dehalogenans 2CP-C, Pseudomonas stutzeri DCP-Ps1, and Shewanella loihica PV-4 at 30 degrees C."
+      },
+      "disposition": "SUPPORTED_IN_STATED_CONTEXT",
+      "support_kind": "DIRECT_PRIMARY_SUPPORT",
+      "reviewed_source_section": "Abstract, culture methods, and growth results",
+      "other_assertions_approved": false,
+      "after_sha256": "1d11386343ebe50b5f2504359b14ae0818b092f532d99768e1a897143b513932",
+      "original_applied_sha256": "1d11386343ebe50b5f2504359b14ae0818b092f532d99768e1a897143b513932",
+      "source_position": "1",
+      "after_record": {
+        "identifier": "CHEBI:17045",
+        "preferred_term": "nitrous oxide",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:17045",
+          "ontology_label": "dinitrogen oxide",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "CAS_RN_LOOKUP",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "N2O",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "unmapped_duplicate_review_2026_05_11"
+          },
+          {
+            "synonym_text": "#N2O",
+            "synonym_type": "RAW_TEXT",
+            "source": "unmapped_duplicate_review_2026_05_11"
+          },
+          {
+            "synonym_text": "oxidodinitrogen(N--N)",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 3,
+          "media_count": 3
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:34:31.158938+00:00",
+            "curator": "audit_cas_chebi_followup",
+            "action": "CREATED_FROM_CAS_LOOKUP",
+            "changes": "Created from CultureBotHT CAS-RN=10024-97-2; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). ",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.597945+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:31.701480+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=N2O; inchi=InChI=1S/N2O/c1-2-3; smiles=N#[N+][O-]",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:17.495928+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T04:17:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+            "changes": "Absorbed duplicate unmapped record N2O.yaml (UNMAPPED_0296); CultureBotHT surface form '#N2O' denotes nitrous oxide in N2O/argon media names, and local CHEBI plus SSSOM review confirms CHEBI:17045 as dinitrogen oxide.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.248125+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: ELECTRON_ACCEPTOR (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR -> cellular_metabolic_roles.ELECTRON_ACCEPTOR"
+          },
+          {
+            "timestamp": "2026-08-10T00:00:00+00:00",
+            "curator": "regrade_synonym_matches",
+            "action": "REGRADED_EXACT_TO_SYNONYM",
+            "changes": "mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label does not equal the term's primary label 'dinitrogen oxide'; it matches the ChEBI synonym 'N2O' on CHEBI:17045. The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade overstated. ontology_id is unchanged \u2014 the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-24T00:00:00+00:00",
+            "curator": "regrade_synonym_matches",
+            "action": "REGRADED_TO_CAS_RN_LOOKUP",
+            "changes": "mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created by an explicit CAS-to-ChEBI lookup and its current CAS RN 10024-97-2 uniquely resolves by ChEBI xref to CHEBI:17045 'dinitrogen oxide'. CAS_RN_LOOKUP records the method that established this mapping; a lexical grade would discard that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under Rule D (#438), independently of mapping quality.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519641+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 4/4 -> 3/3 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-22T02:06:34+00:00",
+            "curator": "codex_issue_710_semantic_evidence_review",
+            "action": "CORRECTED_ROLE_EVIDENCE",
+            "changes": "Added inspected primary-publication support and bounded organism/condition context to the cellular metabolic role (#710). Retained original computational provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json for the assertion-specific interpretation.",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "10024-97-2",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+          "molecular_formula": "N2O",
+          "inchi": "InChI=1S/N2O/c1-2-3",
+          "smiles": "N#[N+][O-]"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "cellular_metabolic_roles": [
+          {
+            "role": "ELECTRON_ACCEPTOR",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              },
+              {
+                "reference_type": "PEER_REVIEWED_PUBLICATION",
+                "doi": "10.1128/AEM.00409-16",
+                "pmid": "27084012",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4907195/",
+                "reference_text": "Yoon et al. (2016). Nitrous oxide reduction kinetics distinguish bacteria harboring clade I NosZ from those harboring clade II NosZ.",
+                "curator_note": "Growth and N2O consumption were measured together in the named isolates with acetate supplying electrons. The role is confined to these tested nitrous-oxide-respiring cultures."
+              }
+            ],
+            "metabolic_context": "Terminal electron acceptor during anoxic, acetate-fed growth of Dechloromonas aromatica RCB, Anaeromyxobacter dehalogenans 2CP-C, Pseudomonas stutzeri DCP-Ps1, and Shewanella loihica PV-4 at 30 degrees C."
+          }
+        ]
+      }
+    },
+    {
+      "source_path": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "before_sha256": "d1c9ae50b76e36da7622c4228f7020d2f4d24dd6f97db7cd979ab7643897140b",
+      "before_assertion": {
+        "role": "ELECTRON_ACCEPTOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          }
+        ]
+      },
+      "after_assertion": {
+        "role": "ELECTRON_ACCEPTOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          },
+          {
+            "reference_type": "PEER_REVIEWED_PUBLICATION",
+            "doi": "10.1128/AEM.68.9.4425-4430.2002",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC124121/",
+            "reference_text": "Chaudhuri et al. (2002). Environmental factors that control microbial perchlorate reduction.",
+            "curator_note": "The methods supply sodium perchlorate as acceptor. Results demonstrate oxygen and nitrate effects; this role is restricted to the described perchlorate-respiring organisms and anoxic conditions."
+          }
+        ],
+        "metabolic_context": "Terminal electron acceptor for Dechlorosoma suillum PS and Dechloromonas agitata CKB during anoxic, acetate-fed culture."
+      },
+      "disposition": "SUPPORTED_IN_STATED_CONTEXT",
+      "support_kind": "DIRECT_PRIMARY_SUPPORT",
+      "reviewed_source_section": "Abstract, culture methods, and growth results",
+      "other_assertions_approved": false,
+      "after_sha256": "5b8a68b008ebce2e98c040b9dfff7b5b16f2370b320bb77cf0d3db32e680e0e0",
+      "original_applied_sha256": "5b8a68b008ebce2e98c040b9dfff7b5b16f2370b320bb77cf0d3db32e680e0e0",
+      "source_position": "1",
+      "after_record": {
+        "identifier": "CHEBI:132103",
+        "preferred_term": "Sodium perchlorate",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:132103",
+          "ontology_label": "sodium perchlorate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "NaClO4",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Natriumperchlorat",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Perchlorate de sodium",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Perchloric acid, sodium salt",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 4,
+          "media_count": 4
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T19:53:54.348148+00:00",
+            "curator": "fetch_cas_rn_from_pubchem",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:7601-89-0 from PubChem API via name lookup (Sodium perchlorate)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 4 synonyms from kg-microbe P4.4 enrichment: NaClO4, Natriumperchlorat, Perchlorate de sodium, Perchloric acid, sodium salt",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.330807+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:32.424151+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=ClO4.Na; inchi=InChI=1S/ClHO4.Na/c2-1(3,4)5;/h(H,2,3,4,5);/q;+1/p; smiles=O=Cl(=O)(=O)[O-].[Na+]",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.478227+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.248212+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: ELECTRON_ACCEPTOR (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.836155+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'Sodium perchlorate' -> 'sodium perchlorate': synced to canonical CHEBI label (preferred_term 'Sodium perchlorate' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR -> cellular_metabolic_roles.ELECTRON_ACCEPTOR"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519866+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 2/2 -> 4/4 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-22T02:06:34+00:00",
+            "curator": "codex_issue_710_semantic_evidence_review",
+            "action": "CORRECTED_ROLE_EVIDENCE",
+            "changes": "Added inspected primary-publication support and bounded organism/condition context to the cellular metabolic role (#710). Retained original computational provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json for the assertion-specific interpretation.",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "7601-89-0",
+          "data_source": "PubChem API",
+          "retrieval_date": "2026-04-05T19:53:54.348099+00:00",
+          "molecular_formula": "ClO4.Na",
+          "inchi": "InChI=1S/ClHO4.Na/c2-1(3,4)5;/h(H,2,3,4,5);/q;+1/p-1",
+          "smiles": "O=Cl(=O)(=O)[O-].[Na+]"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "cellular_metabolic_roles": [
+          {
+            "role": "ELECTRON_ACCEPTOR",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              },
+              {
+                "reference_type": "PEER_REVIEWED_PUBLICATION",
+                "doi": "10.1128/AEM.68.9.4425-4430.2002",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC124121/",
+                "reference_text": "Chaudhuri et al. (2002). Environmental factors that control microbial perchlorate reduction.",
+                "curator_note": "The methods supply sodium perchlorate as acceptor. Results demonstrate oxygen and nitrate effects; this role is restricted to the described perchlorate-respiring organisms and anoxic conditions."
+              }
+            ],
+            "metabolic_context": "Terminal electron acceptor for Dechlorosoma suillum PS and Dechloromonas agitata CKB during anoxic, acetate-fed culture."
+          }
+        ]
+      }
+    },
+    {
+      "source_path": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
+      "before_sha256": "83a5b1cf514bd048c0e253a3ec7e4b99710b732587286dd370dfb27e6012de24",
+      "before_assertion": {
+        "role": "ELECTRON_ACCEPTOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          }
+        ]
+      },
+      "after_assertion": {
+        "role": "ELECTRON_ACCEPTOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          },
+          {
+            "reference_type": "PEER_REVIEWED_PUBLICATION",
+            "doi": "10.1128/AEM.68.9.4425-4430.2002",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC124121/",
+            "reference_text": "Chaudhuri et al. (2002). Environmental factors that control microbial perchlorate reduction.",
+            "curator_note": "Extending the demonstrated sodium-perchlorate role to the dissolved monohydrate is a chemical inference about perchlorate supply. The paper does not identify the monohydrate reagent or establish solid-form identity."
+          }
+        ],
+        "metabolic_context": "Dissolved perchlorate acceptor for Dechlorosoma suillum PS and Dechloromonas agitata CKB under the studied anoxic, acetate-fed conditions."
+      },
+      "disposition": "SUPPORTED_IN_STATED_CONTEXT",
+      "support_kind": "DISSOLVED_FORM_INFERENCE",
+      "reviewed_source_section": "Abstract, culture methods, and growth results",
+      "other_assertions_approved": false,
+      "after_sha256": "1f39286747eb8f3a2ec3da7919f9e6cb197221fcfef46af69a6784afd8f83ccc",
+      "original_applied_sha256": "1f39286747eb8f3a2ec3da7919f9e6cb197221fcfef46af69a6784afd8f83ccc",
+      "source_position": "1",
+      "after_record": {
+        "identifier": "cas:7791-07-3",
+        "preferred_term": "Sodium perchlorate monohydrate",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:132103",
+          "ontology_label": "sodium perchlorate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "CLOSE_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. CAS-RN 7791-07-3 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: Hans80metals, FEBA_stress. Used in 2 CultureBot media; samples: ALP defined perchlorate, ALP_defined_perchlorate. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CHEBI via OLS (stem-substring)",
+              "notes": "Parent class identified via stem-substring; matched_via='Sodium perchlorate monohydrate'"
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MIM curation (#342)",
+              "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:132103 ('sodium perchlorate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 1,
+          "media_count": 1
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:7791-07-3 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.333317+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T02:55:19.817943+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+            "changes": "molecular_formula=ClH2NaO5; smiles=O.[O-]Cl(=O)(=O)=O.[Na+]; inchi=InChI=1S/ClHO4.Na.H2O/c2-1(3,4)5;;/h(H,2,3,4,5);;1",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.482136+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T05:01:16.847686+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_CHEBI",
+            "changes": "set ontology_mapping parent=CHEBI:132103 (stem-substring)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.248215+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: ELECTRON_ACCEPTOR (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR -> cellular_metabolic_roles.ELECTRON_ACCEPTOR"
+          },
+          {
+            "timestamp": "2026-08-13T00:00:00+00:00",
+            "curator": "regrade_hydrate_to_close_match",
+            "action": "REGRADED_HYDRATE_TO_CLOSE_MATCH",
+            "changes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed by its anhydrous form, and ChEBI does not model it as such.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519868+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 2/2 -> 1/1 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-22T02:06:34+00:00",
+            "curator": "codex_issue_710_semantic_evidence_review",
+            "action": "CORRECTED_ROLE_EVIDENCE",
+            "changes": "Added inspected primary-publication support and bounded organism/condition context to the cellular metabolic role (#710). Retained original computational provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json for the assertion-specific interpretation.",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "7791-07-3",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+          "molecular_formula": "ClH2NaO5",
+          "smiles": "O.[O-]Cl(=O)(=O)=O.[Na+]",
+          "inchi": "InChI=1S/ClHO4.Na.H2O/c2-1(3,4)5;;/h(H,2,3,4,5);;1H2/q;+1;/p-1",
+          "pubchem_cid": 516899
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "cellular_metabolic_roles": [
+          {
+            "role": "ELECTRON_ACCEPTOR",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              },
+              {
+                "reference_type": "PEER_REVIEWED_PUBLICATION",
+                "doi": "10.1128/AEM.68.9.4425-4430.2002",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC124121/",
+                "reference_text": "Chaudhuri et al. (2002). Environmental factors that control microbial perchlorate reduction.",
+                "curator_note": "Extending the demonstrated sodium-perchlorate role to the dissolved monohydrate is a chemical inference about perchlorate supply. The paper does not identify the monohydrate reagent or establish solid-form identity."
+              }
+            ],
+            "metabolic_context": "Dissolved perchlorate acceptor for Dechlorosoma suillum PS and Dechloromonas agitata CKB under the studied anoxic, acetate-fed conditions."
+          }
+        ]
+      }
+    },
+    {
+      "source_path": "data/ingredients/mapped/Tetrachloroethene.yaml",
+      "before_sha256": "e13bca32bdfc597091a6ee6458eab2c0d50f3140514ef5eac0fbdb24bbbbab7a",
+      "before_assertion": {
+        "role": "ELECTRON_ACCEPTOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          }
+        ]
+      },
+      "after_assertion": {
+        "role": "ELECTRON_ACCEPTOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          },
+          {
+            "reference_type": "PEER_REVIEWED_PUBLICATION",
+            "doi": "10.1128/AEM.65.7.3108-3113.1999",
+            "pmid": "10388710",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC91463/",
+            "reference_text": "Maymo-Gatell et al. (1999). Reductive dechlorination of chlorinated ethenes and 1,2-dichloroethane by Dehalococcoides ethenogenes 195.",
+            "curator_note": "The study demonstrates growth-linked tetrachloroethene dechlorination by strain 195 with hydrogen supplying electrons. It does not imply equivalent utilization by other Dehalococcoides strains or other microbes."
+          }
+        ],
+        "metabolic_context": "Respiratory electron acceptor for Dehalococcoides ethenogenes strain 195 during anaerobic reductive dechlorination with hydrogen as electron donor."
+      },
+      "disposition": "SUPPORTED_IN_STATED_CONTEXT",
+      "support_kind": "DIRECT_PRIMARY_SUPPORT",
+      "reviewed_source_section": "Abstract, culture methods, and growth results",
+      "other_assertions_approved": false,
+      "after_sha256": "b8e43c00cd45e09f72e7e496b1cc606e1d64e44ce559fa34a1ee7a6781f07a82",
+      "original_applied_sha256": "b8e43c00cd45e09f72e7e496b1cc606e1d64e44ce559fa34a1ee7a6781f07a82",
+      "source_position": "1",
+      "after_record": {
+        "identifier": "CHEBI:17300",
+        "preferred_term": "Tetrachloroethene",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:17300",
+          "ontology_label": "tetrachloroethene",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "1,1,2,2-tetrachloroethylene",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "PCE",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "PERC",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "PERK",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Perchloroethylene",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Tetrachloraethen",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "ethylene tetrachloride",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "tetrachlorethylene",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "tetrachloroethylene",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 11,
+          "media_count": 11
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T19:54:01.253581+00:00",
+            "curator": "fetch_cas_rn_from_pubchem",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:127-18-4 from PubChem API via name lookup (Tetrachloroethene)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 9 synonyms from kg-microbe P4.4 enrichment: 1,1,2,2-tetrachloroethylene, PCE, PERC, PERK, Perchloroethylene, ... (4 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.563051+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:32.633467+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C2Cl4; inchi=InChI=1S/C2Cl4/c3-1(4)2(5)6; smiles=ClC(Cl)=C(Cl)Cl",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.776089+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.248248+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: ELECTRON_ACCEPTOR (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR -> cellular_metabolic_roles.ELECTRON_ACCEPTOR"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519945+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 8/8 -> 11/11 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-22T02:06:34+00:00",
+            "curator": "codex_issue_710_semantic_evidence_review",
+            "action": "CORRECTED_ROLE_EVIDENCE",
+            "changes": "Added inspected primary-publication support and bounded organism/condition context to the cellular metabolic role (#710). Retained original computational provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json for the assertion-specific interpretation.",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "127-18-4",
+          "data_source": "PubChem API",
+          "retrieval_date": "2026-04-05T19:54:01.253545+00:00",
+          "molecular_formula": "C2Cl4",
+          "inchi": "InChI=1S/C2Cl4/c3-1(4)2(5)6",
+          "smiles": "ClC(Cl)=C(Cl)Cl"
+        },
+        "kg_microbe_node_id": "CHEBI:17300",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "cellular_metabolic_roles": [
+          {
+            "role": "ELECTRON_ACCEPTOR",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              },
+              {
+                "reference_type": "PEER_REVIEWED_PUBLICATION",
+                "doi": "10.1128/AEM.65.7.3108-3113.1999",
+                "pmid": "10388710",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC91463/",
+                "reference_text": "Maymo-Gatell et al. (1999). Reductive dechlorination of chlorinated ethenes and 1,2-dichloroethane by Dehalococcoides ethenogenes 195.",
+                "curator_note": "The study demonstrates growth-linked tetrachloroethene dechlorination by strain 195 with hydrogen supplying electrons. It does not imply equivalent utilization by other Dehalococcoides strains or other microbes."
+              }
+            ],
+            "metabolic_context": "Respiratory electron acceptor for Dehalococcoides ethenogenes strain 195 during anaerobic reductive dechlorination with hydrogen as electron donor."
+          }
+        ]
+      }
+    },
+    {
+      "source_path": "data/ingredients/mapped/Thiosulfate.yaml",
+      "before_sha256": "797cee9ca283c5cebb88d1cc1193d9fa9e75783bdf15be2930992abf14b53736",
+      "before_assertion": {
+        "role": "ELECTRON_DONOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          }
+        ]
+      },
+      "after_assertion": {
+        "role": "ELECTRON_DONOR",
+        "confidence": 0.6,
+        "evidence": [
+          {
+            "reference_type": "COMPUTATIONAL_PREDICTION",
+            "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+            "curator_note": "Provisional in-session LLM role assignment; review recommended."
+          },
+          {
+            "reference_type": "PEER_REVIEWED_PUBLICATION",
+            "doi": "10.1128/AEM.02111-16",
+            "pmid": "27565613",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5066360/",
+            "reference_text": "Levy et al. (2016). Chlorobaculum tepidum modulates amino acid composition in response to energy availability.",
+            "curator_note": "The study varies thiosulfate as an electron donor and measures growth responses. This is organism-scoped evidence, not an assertion that all microbes use thiosulfate."
+          }
+        ],
+        "metabolic_context": "Electron donor for Chlorobaculum tepidum WT2321 during illuminated, anoxic growth in thiosulfate-supplemented Pf-7 medium."
+      },
+      "disposition": "SUPPORTED_IN_STATED_CONTEXT",
+      "support_kind": "DIRECT_PRIMARY_SUPPORT",
+      "reviewed_source_section": "Abstract, culture methods, and growth results",
+      "other_assertions_approved": false,
+      "after_sha256": "2a7055e92068a39ea08e4e758cb7e09f9fa6e6678457b0873c60993f207f4713",
+      "original_applied_sha256": "2a7055e92068a39ea08e4e758cb7e09f9fa6e6678457b0873c60993f207f4713",
+      "source_position": "1",
+      "after_record": {
+        "identifier": "CHEBI:26977",
+        "preferred_term": "Thiosulfate",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:26977",
+          "ontology_label": "thiosulfate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "ester of thiosulfuric acid",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "esters of thiosulfuric acid",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "thiosulfate ester",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "thiosulfate esters",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "thiosulfates",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "thiosulphates",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Role: Growth factor; Properties: Defined component, Inorganic compound, Simple component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 6,
+          "media_count": 6
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 6 synonyms from kg-microbe P4.4 enrichment: ester of thiosulfuric acid, esters of thiosulfuric acid, thiosulfate ester, thiosulfate esters, thiosulfates, ... (1 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:39:23.955331+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 1 duplicate MIM record(s) into this one: Thiosulfate_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:36.639393+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:18.878158+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-09T04:56:30.248256+00:00",
+            "curator": "claude_in_session_curation",
+            "action": "ANNOTATED",
+            "changes": "Added media role: ELECTRON_DONOR (confidence: 0.60)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.843790+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'Thiosulfate' -> 'thiosulfate': synced to canonical CHEBI label (preferred_term 'Thiosulfate' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519970+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 4/4 -> 6/6 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-09-22T02:06:34+00:00",
+            "curator": "codex_issue_710_semantic_evidence_review",
+            "action": "CORRECTED_ROLE_EVIDENCE",
+            "changes": "Added inspected primary-publication support and bounded organism/condition context to the cellular metabolic role (#710). Retained original computational provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json for the assertion-specific interpretation.",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "cellular_metabolic_roles": [
+          {
+            "role": "ELECTRON_DONOR",
+            "confidence": 0.6,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Assigned by in-session Claude reasoning (no external API)",
+                "curator_note": "Provisional in-session LLM role assignment; review recommended."
+              },
+              {
+                "reference_type": "PEER_REVIEWED_PUBLICATION",
+                "doi": "10.1128/AEM.02111-16",
+                "pmid": "27565613",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5066360/",
+                "reference_text": "Levy et al. (2016). Chlorobaculum tepidum modulates amino acid composition in response to energy availability.",
+                "curator_note": "The study varies thiosulfate as an electron donor and measures growth responses. This is organism-scoped evidence, not an assertion that all microbes use thiosulfate."
+              }
+            ],
+            "metabolic_context": "Electron donor for Chlorobaculum tepidum WT2321 during illuminated, anoxic growth in thiosulfate-supplemented Pf-7 medium."
+          }
+        ]
+      }
+    }
+  ],
+  "normalized_receipt_verification": {
+    "baseline_commit": "463297b4",
+    "check": "Baseline bytes equal before_sha256; only planned cellular role and one explicit curation event differ; normalized current bytes bound by after_sha256."
+  }
+}

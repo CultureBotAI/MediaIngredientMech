@@ -7,6 +7,7 @@ This adapter only supplies fresh full-corpus semantic inputs and site policy.
 from __future__ import annotations
 
 import importlib.util
+import sys
 import tempfile
 from collections.abc import Iterator
 from contextlib import contextmanager
@@ -52,7 +53,9 @@ def load_pipeline(root: Path) -> ModuleType:
 
 
 @contextmanager
-def prepare_text_map(root: Path) -> Iterator[PreparedTextMap | None]:
+def prepare_text_map(
+    root: Path, *, allow_stale_corpus: bool = False
+) -> Iterator[PreparedTextMap | None]:
     config = root / "conf" / "text_map.yaml"
     if config.is_symlink():
         raise ValueError("text map configuration must not be a symlink")
@@ -78,7 +81,21 @@ def prepare_text_map(root: Path) -> Iterator[PreparedTextMap | None]:
         if receipt["scope"] != "full":
             raise ValueError("site publication requires fresh full-corpus inputs")
         bundle = pipeline.current_bundle(source)
-        manifest = pipeline.validate_bundle(bundle, input_path=inputs)
+        try:
+            manifest = pipeline.validate_bundle(bundle, input_path=inputs)
+        except ValueError as error:
+            if not allow_stale_corpus or (
+                "map is stale relative to current adapter input" not in str(error)
+                and "bundle inputs do not match" not in str(error)
+            ):
+                raise
+            pipeline.validate_bundle(bundle)
+            print(
+                f"warning: semantic text map skipped because corpus inputs moved ahead of bundle {bundle.name}; run 'just refresh-text-map' to update (#685)",
+                file=sys.stderr,
+            )
+            yield None
+            return
         if manifest["projection"]["implementation"] != "pacmap.PaCMAP":
             raise ValueError("site publication requires the actual PaCMAP implementation")
         profile = manifest["encoder"]

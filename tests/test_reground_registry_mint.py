@@ -85,7 +85,7 @@ def test_ontology_reground_rewrites_object_and_keeps_one_row(tmp_path, monkeypat
     rows = [ln for ln in text.splitlines() if ln.startswith("MIM:")]
     assert len(rows) == 1, "an ordinary re-ground must not add a row"
     cols = rows[0].split("\t")
-    assert cols[2] == "skos:narrowMatch"
+    assert cols[2] == "skos:broadMatch"
     assert (cols[3], cols[4], cols[5]) == ("FOODON:222", "new label", "obo:foodon.owl")
     assert (cols[6], cols[7], cols[9]) == ("semapv:ManualMappingCuration", "MIM:test", "0.9")
 
@@ -105,7 +105,7 @@ def test_mint_reground_emits_the_rule_b1_pair(tmp_path, monkeypatch):
     assert len(rows) == 2, "Rule B1 needs the narrowMatch AND its registry sibling"
 
     narrow, registry = rows
-    assert narrow[2] == "skos:narrowMatch"
+    assert narrow[2] == "skos:broadMatch"
     assert (narrow[3], narrow[4], narrow[5]) == ("FOODON:222", "parent label", "obo:foodon.owl")
     assert (narrow[6], narrow[7], narrow[9]) == ("semapv:ManualMappingCuration", "MIM:test", "0.9")
 
@@ -193,8 +193,14 @@ def test_parent_label_does_not_bypass_local_oak_lookup(tmp_path, monkeypatch):
 
 
 def test_parent_label_checks_micro_allowlist():
-    with pytest.raises(SystemExit, match=re.escape("MICRO:0002393 failed CURIE validation")):
-        mod.ontology_label("MICRO:0002393", "Proteose Peptone No. 2")
+    with pytest.raises(SystemExit, match=re.escape("MICRO:0002390 failed CURIE validation")):
+        mod.ontology_label("MICRO:0002390", "unreviewed term")
+
+
+def test_source_backed_micro_label_is_resolved_and_checked():
+    assert mod.ontology_label("MICRO:0002393") == "Proteose Peptone No. 2"
+    with pytest.raises(SystemExit, match="label differs from the pinned MICRO source"):
+        mod.ontology_label("MICRO:0002393", "proteose peptone")
 
 
 def test_parent_label_is_allowed_for_verified_micro_parent():

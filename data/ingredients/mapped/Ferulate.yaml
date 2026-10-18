@@ -1,4 +1,4 @@
-identifier: CHEBI:17620
+identifier: CHEBI:29749
 preferred_term: Ferulate
 synonyms:
 - synonym_text: Ferulate
@@ -34,11 +34,26 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-09-23T00:44:54.497643+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier CHEBI:17620 -> CHEBI:29749; ontology CHEBI:17620 (''trans-ferulic
+    acid'') -> CHEBI:29749 (''trans-ferulate''); mapping_quality CLOSE_MATCH -> CLOSE_MATCH.
+    The record''s note ''CHEBI has no ferulate anion term'' was false: CHEBI:29749
+    ''trans-ferulate'' (C10H9O4, charge -1, synonym ''(E)-ferulate'') is the conjugate
+    base of CHEBI:17620 ''trans-ferulic acid'' (C10H10O4, charge 0), which the record
+    was grounded to. A bare -ate label denotes the anion (Section 3, protonation state).
+    The grade stays CLOSE_MATCH: the trans descriptor was supplied, not stated by
+    the label, and ChEBI has no geometry-unspecified ferulate anion. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: CHEBI:17620
-  ontology_label: trans-ferulic acid
+  ontology_id: CHEBI:29749
+  ontology_label: trans-ferulate
   ontology_source: CHEBI
   mapping_quality: CLOSE_MATCH
   evidence:
@@ -47,4 +62,16 @@ ontology_mapping:
     notes: Ferulate grounded to trans-ferulic acid, the naturally occurring isomer.
       CHEBI has no ferulate anion term; CLOSE_MATCH because the label is the anion
       and states no isomer (#213).
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier CHEBI:17620 -> CHEBI:29749; ontology CHEBI:17620 (''trans-ferulic
+      acid'') -> CHEBI:29749 (''trans-ferulate''); mapping_quality CLOSE_MATCH ->
+      CLOSE_MATCH. The record''s note ''CHEBI has no ferulate anion term'' was false:
+      CHEBI:29749 ''trans-ferulate'' (C10H9O4, charge -1, synonym ''(E)-ferulate'')
+      is the conjugate base of CHEBI:17620 ''trans-ferulic acid'' (C10H10O4, charge
+      0), which the record was grounded to. A bare -ate label denotes the anion (Section
+      3, protonation state). The grade stays CLOSE_MATCH: the trans descriptor was
+      supplied, not stated by the label, and ChEBI has no geometry-unspecified ferulate
+      anion.'
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties: {}

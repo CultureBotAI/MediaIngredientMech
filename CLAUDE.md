@@ -98,10 +98,16 @@ hand-wave a failing invariant or invent an identity row.
 3. Synchronize the two data surfaces in the correct direction and inspect the
    resulting diff for unexpected bulk rewrites.
 4. For data changes, run `just validate-all`, `just qc-sssom`,
-   `just qc-roundtrip`, and `just qc-flat-coverage`. The last one checks that
-   every generated artifact under `docs/data/` still matches its producer; any
-   edit under `data/ingredients/` stales at least `ingredients.json`, and this
-   is the only gate that says so before CI does (#551).
+   `just qc-roundtrip`, and `just qc-flat-coverage`. `qc-roundtrip` also runs
+   the other checks of the CI roundtrip job: case-exact record filenames,
+   current `data/curated` indexes (remedy: `just export-indexes`) and current
+   published visualizations (remedy: `just generate-visualizations`).
+   `qc-flat-coverage` checks that the CSV/JSON list exports, `label_index.csv`
+   and `ingredients.json` under `docs/data/` still match their producers
+   (remedies: `just export-lists`, `just export-browser`; the timestamped
+   `.md` list exports are not checked); any edit under `data/ingredients/`
+   stales at least `ingredients.json`, and this is the only gate that says so
+   before CI does (#551).
 5. For code changes, run focused tests, then the applicable broader recipes in
    `justfile`. Run `just qc` when the full data/dependency environment is
    available.
@@ -115,3 +121,20 @@ Use [curate-yaml-record](.claude/skills/curate-yaml-record/SKILL.md) to audit or
 curate one ingredient record. It applies the identity and mapping contract,
 keeps the individual/aggregate/SSSOM surfaces synchronized, and is read-only
 when the request asks only for review.
+
+Use [review-yaml-category](.claude/skills/review-yaml-category/SKILL.md) to
+audit a coherent ingredient category or cohort without editing records,
+including member selection and lump/split boundaries.
+
+Use [reconcile-review-records](.claude/skills/reconcile-review-records/SKILL.md)
+to compare saved findings with current records, mappings, evidence, and fixes.
+It preserves historical reviews and saves structured dispositions for the
+existing review-round issue workflow. Reconciliation alone does not edit
+ingredient data or mutate GitHub.
+
+Before adding or changing a record's `causal_graphs`, read
+[CAUSAL_GRAPH_CONTRACT.md](docs/CAUSAL_GRAPH_CONTRACT.md); its status table says
+which parts have landed. `MAPPING_SEMANTICS.md` Section 7 governs what may
+anchor a graph, its bridges from the supplied form to the active species, and
+its links to sibling Mechs. A graph never changes `identifier`,
+`ontology_mapping`, `components` or SSSOM rows.

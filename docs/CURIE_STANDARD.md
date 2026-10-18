@@ -71,16 +71,29 @@ real CHEBI range. A ceiling catches only the egregious cases. **It is not a
 substitute for checking that the id resolves**, and must never be the sole reason
 to reject an id an ontology can confirm.
 
-**MicrO's malformed IRIs.** ~1,472 of MicrO's 3,450 classes are minted under
-`…/obo/MicrO.owl/MICRO_nnnnnnn` rather than `…/obo/MICRO_nnnnnnn`. OLS4 reports
-`is_defining_ontology: false` for those and the CURIE does not round-trip. This is
-invisible offline, so `curie.py` carries an allowlist verified against OLS4;
-anything outside it is refused. Regenerate with
-`python scripts/verify_micro_ids.py`.
+**MicrO's legacy IRIs.** Some MicrO classes use
+`…/obo/MicrO.owl/MICRO_nnnnnnn` rather than `…/obo/MICRO_nnnnnnn`. A canonical
+IRI lookup can therefore fail even when the class exists in the ontology.
+`curie.py` accepts either its OLS-verified allowlist or an individually reviewed
+entry in the [pinned KG-Microbe source](../src/mediaingredientmech/ontology_sources/micro/README.md).
+The latter validates archived labels, class status, current parent relationships,
+and original IRIs offline; the surrounding snapshot nodes are not blanket approvals.
 
-Note that **term-level PURLs 404 for all of MicrO**, well-formed or not (control
-PURLs for CHEBI/FOODON/UBERON return 200). Do not use PURL status to triage this —
-use `is_defining_ontology` and the IRI shape.
+The source-backed entries are `MICRO:0002393` (Proteose Peptone No. 2),
+`MICRO:0002392` (rabbit serum), and `MICRO:0002250` (V-8 juice).
+Use `mediaingredientmech.micro_source.source_term(curie).iri` for their original
+ontology IRIs. Ingredient-page links use these legacy IRIs. Their `MICRO:`
+identifiers follow KG-Microbe's KGX convention; expanding the normal OBO prefix
+alone does not recover their original IRIs. This does not claim that OLS marks
+them as defining-ontology terms. `python scripts/verify_micro_ids.py` reports
+these source-backed results separately from canonical OLS verification.
+
+An exact MICRO identity takes precedence over a CAS/local fallback. A verified
+CAS RN remains in `chemical_properties.cas_rn` (or `supplied_form.cas_rn` when
+it identifies that form), and travels as `CAS:<rn>` in SSSOM `other` on symmetric
+rows. In KG-Microbe node output the appropriate annotation is `xref=cas:<rn>`;
+it does not replace the MICRO ID or justify an identity assertion from a broad
+mapping. The three restored records have no verified CAS RN in this source.
 
 ## 4. Which ontology term does a MIM ingredient mean?
 
@@ -94,8 +107,8 @@ MIM:14-B-D-Galactobiose -> CHEBI:36226 | cas:2152-98-9 | kgmicrobe.compound:14-b
 `CurieNormalizer.equivalent_term()` applies:
 
 1. **Filter to `skos:exactMatch`.** Only that predicate asserts the two denote the
-   same thing. `closeMatch` and `narrowMatch` are excluded — `narrowMatch` means
-   the MIM subject is *more specific*, so citing the object as an equivalent
+   same thing. `closeMatch` and `broadMatch` are excluded — a `broadMatch` row means
+   the MIM subject is *more specific* than the object, so citing the object as an equivalent
    silently generalises the ingredient. Of 2,200 published rows, 1,720 are
    `exactMatch` and **480 are not**.
 2. **Rank the survivors by prefix**: ontology terms (CHEBI < FOODON < UBERON <
@@ -105,7 +118,7 @@ MIM:14-B-D-Galactobiose -> CHEBI:36226 | cas:2152-98-9 | kgmicrobe.compound:14-b
 The rule never reaches past the `exactMatch` set to grab a better-ranked prefix
 that is only a close match. When a subject has no exact match, the call returns
 `NO_EXACT_MATCH` — a refusal, not a guess — so a caller cannot mistake a
-`narrowMatch` for an equivalence.
+`broadMatch` for an equivalence.
 
 ## 5. For consumers
 

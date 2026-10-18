@@ -37,13 +37,13 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: EDTA disodium (anhydrous)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: EDTA disodium salt (anhydrous)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Edetate disodium anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na-EDTA x 2 H2O
   synonym_type: HYDRATE_FORM
@@ -55,7 +55,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: REJECTED
 occurrence_statistics:
@@ -180,6 +180,17 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''EDTA disodium (anhydrous)'';
+    ''EDTA disodium salt (anhydrous)''; ''Edetate disodium anhydrous''; "disodium
+    2,2'',2'''',2''''''-(ethane-1,2-diyldiammonio)tetraacetate". Preserved original
+    text and source metadata. No identity, mapping, role, or remaining-synonym claim
+    was adjudicated.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7487-55-0
   data_source: PubChem API (preprocessed)

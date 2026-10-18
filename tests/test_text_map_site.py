@@ -208,3 +208,27 @@ def test_build_docs_preflights_before_other_generators():
     )
     commands = result.stdout + result.stderr
     assert commands.index("scripts/stage_text_map.py") < commands.index("gen-doc")
+
+
+def test_allow_stale_corpus_skips_staging_after_validating_bundle_integrity(tmp_path, monkeypatch):
+    pipeline, _, manifest = enable_fixture(tmp_path, monkeypatch)
+    validated_calls = []
+
+    def validate(bundle, *, input_path=None):
+        validated_calls.append(input_path)
+        if input_path is not None:
+            raise ValueError("map is stale relative to current adapter input")
+        return manifest
+
+    monkeypatch.setattr(pipeline, "validate_bundle", validate)
+    with pytest.raises(ValueError, match="map is stale relative to current adapter input"), (
+        site.prepare_text_map(tmp_path)
+    ):
+        pass
+    validated_calls.clear()
+    with site.prepare_text_map(tmp_path, allow_stale_corpus=True) as ready:
+        assert ready is None
+    assert len(validated_calls) == 2
+    assert validated_calls[0] is not None
+    assert validated_calls[1] is None
+

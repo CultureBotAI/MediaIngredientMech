@@ -1,8 +1,8 @@
 identifier: cas:128596-80-5
 preferred_term: 3'-sialyllactose sodium salt
 ontology_mapping:
-  ontology_id: CHEBI:26714
-  ontology_label: sodium salt
+  ontology_id: CHEBI:151472
+  ontology_label: N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -13,8 +13,18 @@ ontology_mapping:
       to a CHEBI primary if/when CHEBI adds the term.
   - evidence_type: DATABASE_MATCH
     source: CHEBI via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via="3'-sialyllactose
-      sodium salt"
+    notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via="3''-sialyllactose
+      sodium salt"'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent CHEBI:26714 (''sodium salt'') -> CHEBI:151472 (''N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose'').
+      CHEBI:26714 ''sodium salt'' is the class of all sodium salts: it keeps the counterion
+      and discards the compound (#322). The label names 3''-sialyllactose, and ChEBI
+      has it: CHEBI:151472 carries the related synonym "3''-sialyllactose" and xref
+      cas:35890-38-1 (the free trisaccharide). The reground_compositional_classes
+      NO_PARENT claim ''no sialyllactose term of any form'' was false. cas:128596-80-5
+      identity, NARROW_MATCH grade and both registry rows unchanged (Section 3 step
+      2, #245).'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -57,6 +67,21 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-09-22T23:25:51.030915+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:151472 (''N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose'')
+    (#312). CHEBI:26714 ''sodium salt'' is the class of all sodium salts: it keeps
+    the counterion and discards the compound (#322). The label names 3''-sialyllactose,
+    and ChEBI has it: CHEBI:151472 carries the related synonym "3''-sialyllactose"
+    and xref cas:35890-38-1 (the free trisaccharide). The reground_compositional_classes
+    NO_PARENT claim ''no sialyllactose term of any form'' was false. cas:128596-80-5
+    identity, NARROW_MATCH grade and both registry rows unchanged (Section 3 step
+    2, #245).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 128596-80-5
   data_source: CultureBotHT compounds_to_cas.csv

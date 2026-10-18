@@ -34,17 +34,38 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-09-22T23:25:50.992216+00:00'
+  curator: claude
+  action: REGRADED_MAPPING_QUALITY
+  changes: 'mapping_quality SYNONYM_MATCH -> CLOSE_MATCH (#312). ''D-galactonic Acid
+    Lactone'' is not a label or synonym of any ChEBI term: every name on CHEBI:15895
+    states gamma or 1,4, and the bare ''D-Galactonolactone'' is a synonym of the 1,5-lactone
+    CHEBI:15945. The ring size was supplied from outside ChEBI (the Biolog substrate
+    is the gamma-lactone), so the grade is CLOSE_MATCH per Section 0. Identifier unchanged;
+    the own-identifier row stays skos:exactMatch (Rule D).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_galactonic_acid_lactone);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
   ontology_id: CHEBI:15895
   ontology_label: D-galactono-1,4-lactone
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#213)
     notes: D-galactonic acid lactone is D-galactono-1,4-lactone (#213).
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'mapping_quality SYNONYM_MATCH -> CLOSE_MATCH. ''D-galactonic Acid Lactone''
+      is not a label or synonym of any ChEBI term: every name on CHEBI:15895 states
+      gamma or 1,4, and the bare ''D-Galactonolactone'' is a synonym of the 1,5-lactone
+      CHEBI:15945. The ring size was supplied from outside ChEBI (the Biolog substrate
+      is the gamma-lactone), so the grade is CLOSE_MATCH per Section 0. Identifier
+      unchanged; the own-identifier row stays skos:exactMatch (Rule D).'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C6H10O6

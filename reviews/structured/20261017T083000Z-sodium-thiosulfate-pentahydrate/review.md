@@ -1,0 +1,387 @@
+# Per-record structured review: Sodium_Thiosulfate_Pentahydrate (data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml)
+
+- Review: 20261017T083000Z-sodium-thiosulfate-pentahydrate
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Sodium_Thiosulfate_Pentahydrate (data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml, record-ed2dffbb5138e9a0, mapping_status=REJECTED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-ed2dffbb5138e9a0 | data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml | maintained | Sodium_Thiosulfate_Pentahydrate |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-ed2dffbb5138e9a0 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-ed2dffbb5138e9a0 | Role assertions on cellular_metabolic_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-ed2dffbb5138e9a0 | Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-ed2dffbb5138e9a0.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: not_applicable. Targets: record-ed2dffbb5138e9a0.
+
+The latest legacy review reports no outstanding finding. This run verifies local consistency only; it does not renew that earlier scientific pass.
+
+Latest manifest verdict=pass; severity=none; reviewed_at=2026-09-17T15:55:16Z; reviewed SHA-256=72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b; current SHA-256=72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b; hash_changed=False. Reports=["reports/yaml_record_review/Sodium_Thiosulfate_Pentahydrate.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The rejected duplicate points at the live CHEBI:32150 sodium thiosulfate pentahydrate record and emits no final row.
+
+### Historical provisional-role concern
+
+evidence: unknown. Targets: record-ed2dffbb5138e9a0.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-a37dffd307516e3b: Reassess prediction-only role support: Sodium Thiosulfate Pentahydrate
+
+minor / deferred / provisional; issue key: mim-reconciliation-role-support-ed2dffbb5138e9a0.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+Disposition: The current local observation is recorded, but the named source/context or policy decision is still required; no correction is inferred.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-40956357311a0fcc | data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1873],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1875,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2} |
+| ev-213ad69ca5576781 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1873] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-375f96e250acc08e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Thiosulfate_Pentahydrate; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-aea7eec342798573 | docs/data/mapped_ingredients.csv; CSV lines=[1875] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32150","line":1875,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:32150","preferred_term":"Sodium Thiosulfate Pentahydrate","total_occurrences":"0"}] |
+| ev-ee23fd8f49644a58 | reports/yaml_record_review/Sodium_Thiosulfate_Pentahydrate.md; &#96;data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:32; Completeness:43; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-f2b8d4362653311c | data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml; cellular_metabolic_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1873],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1875,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2} |
+| ev-1367082e08e3b388 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-a37dffd307516e3b] | context_only | Predecessor structured review finding f-a37dffd307516e3b in 20261011T024638Z-mim-reconcile-all-batch-11 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024638Z-mim-reconcile-all-batch-11.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-sodium-thiosulfate-pentahydrate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Sodium_Thiosulfate_Pentahydrate (data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=REJECTED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Sodium_Thiosulfate_Pentahydrate (data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml,
+  record-ed2dffbb5138e9a0, mapping_status=REJECTED). Records 0 open finding(s) and
+  1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
+    sha256: 72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b
+    role: target
+  - path: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+    sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Sodium_Thiosulfate_Pentahydrate.md
+    sha256: e9b792ef6e1b55b5b107c3507faac9cceda77871415a992607cadce23d7be0bc
+    role: context
+targets:
+- target_id: record-ed2dffbb5138e9a0
+  path: data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
+  label: Sodium_Thiosulfate_Pentahydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-ed2dffbb5138e9a0
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-40956357311a0fcc
+  - ev-213ad69ca5576781
+  - ev-375f96e250acc08e
+  - ev-aea7eec342798573
+  - ev-f2b8d4362653311c
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on cellular_metabolic_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-40956357311a0fcc
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-ee23fd8f49644a58
+  - ev-1367082e08e3b388
+evidence:
+- evidence_id: ev-40956357311a0fcc
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1873],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1875,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium
+    Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium
+    thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium
+    Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2}'
+  snapshot_sha256: 72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b
+- evidence_id: ev-213ad69ca5576781
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1873]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-375f96e250acc08e
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Sodium_Thiosulfate_Pentahydrate; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-aea7eec342798573
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1875]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32150","line":1875,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:32150","preferred_term":"Sodium
+    Thiosulfate Pentahydrate","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-ee23fd8f49644a58
+  kind: prior_review
+  reference: reports/yaml_record_review/Sodium_Thiosulfate_Pentahydrate.md
+  locator: '`data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml`:2; Verdict:4;
+    Identity:10; Validation:22; Evidence:32; Completeness:43; Recommended Edits:51'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: e9b792ef6e1b55b5b107c3507faac9cceda77871415a992607cadce23d7be0bc
+  quote: 'Recommended Edits:
+
+    - None for this record.'
+- evidence_id: ev-f2b8d4362653311c
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
+  locator: cellular_metabolic_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1873],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1875,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium
+    Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium
+    thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium
+    Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2}'
+  snapshot_sha256: 72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b
+- evidence_id: ev-1367082e08e3b388
+  kind: prior_review
+  reference: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+  locator: findings[finding_id=f-a37dffd307516e3b]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-a37dffd307516e3b in 20261011T024638Z-mim-reconcile-all-batch-11
+  snapshot_sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+assessments:
+- assessment_id: a-7f2533341636a03d
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-40956357311a0fcc
+  - ev-213ad69ca5576781
+  - ev-375f96e250acc08e
+  - ev-aea7eec342798573
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-5fd004dee445d1bb
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: not_applicable
+  summary: The latest legacy review reports no outstanding finding. This run verifies
+    local consistency only; it does not renew that earlier scientific pass.
+  target_ids:
+  - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-ee23fd8f49644a58
+  - ev-40956357311a0fcc
+  details: 'Latest manifest verdict=pass; severity=none; reviewed_at=2026-09-17T15:55:16Z;
+    reviewed SHA-256=72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b;
+    current SHA-256=72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b;
+    hash_changed=False. Reports=["reports/yaml_record_review/Sodium_Thiosulfate_Pentahydrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The rejected
+    duplicate points at the live CHEBI:32150 sodium thiosulfate pentahydrate record
+    and emits no final row.'
+  dimensions:
+  - name: legacy-native-ids
+    value: '[]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-40956357311a0fcc
+    - ev-ee23fd8f49644a58
+- assessment_id: a-f2b8d4362653311c
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: unknown
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-ee23fd8f49644a58
+  - ev-f2b8d4362653311c
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ee23fd8f49644a58
+    - ev-f2b8d4362653311c
+findings:
+- finding_id: rec-f-a37dffd307516e3b
+  issue_key: mim-reconciliation-role-support-ed2dffbb5138e9a0
+  category: evidence
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Reassess prediction-only role support: Sodium Thiosulfate Pentahydrate'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-ee23fd8f49644a58
+  - ev-f2b8d4362653311c
+  - ev-1367082e08e3b388
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
+    role: maintained ingredient
+  field_paths:
+  - cellular_metabolic_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition_reason: The current local observation is recorded, but the named source/context
+    or policy decision is still required; no correction is inferred.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024638Z-mim-reconcile-all-batch-11
+    finding_id: f-a37dffd307516e3b
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024638Z-mim-reconcile-all-batch-11.
+```

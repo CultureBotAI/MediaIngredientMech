@@ -10,6 +10,38 @@ tags: [sssom, validation, kg-microbe, mappings, synonyms, quality-assurance]
 
 # Review SSSOM Output
 
+## Structured Review Output
+
+For every new review or audit, follow
+[docs/record-reviews.md](../../../docs/record-reviews.md) and
+[the local profile](../../../docs/record-review-profile.md).
+Capture exact targets and input hashes before judging, preserve this skill's
+native rubric, rule IDs, scores and evidence requirements, then author the
+structured assessment and run:
+
+```bash
+uv run python scripts/record_review.py inspect --targets /tmp/review-targets.yaml
+uv run python scripts/record_review.py validate /tmp/completed-review.yaml
+uv run python scripts/record_review.py save --content /tmp/completed-review.yaml
+```
+
+Choose session-unique temporary paths. Save authoritative YAML and derived
+Markdown under `reviews/structured/<timestamp>-<slug>/`; link both in the
+final response. This output contract supersedes prose-only report examples.
+A single record uses `kind: record`; batches declare exact selection,
+population, reviewed targets and limits. Categories also state boundary decisions.
+Every reviewed target must have an assessment. Keep P1-P4 and other native
+severity/rule information with a justified common severity, and metric definitions,
+scales and denominators. Do not infer scientific approval from a native score.
+
+Raw provider drafts and deterministic validator/scan reports are diagnostic
+inputs, not completed scientific reviews. Use `scientific_review: false`
+for deterministic-only or provenance-only assessments; mark required unavailable
+checks and incomplete coverage explicitly. A valid bundle does not change native
+status, clear release holds, authorize edits, or append curation history.
+For audit-only requests, stop after assessment and persistence; any application
+steps below require curation intent.
+
 ## Core Scope
 
 Audit `mappings/ingredient_mappings.sssom.tsv` as the final published
@@ -71,9 +103,13 @@ Check each questionable row against these questions:
   `ontology_mapping.ontology_id` for the ontology row?
 - **Predicate semantics:** does `mapping_quality` map to the right SSSOM
   predicate: `EXACT_MATCH` and `SYNONYM_MATCH` to `skos:exactMatch`,
-  `CLOSE_MATCH` to `skos:closeMatch`, `NARROW_MATCH` to `skos:narrowMatch`, and
-  `BROAD_MATCH` to `skos:broadMatch`?
-- **Registry sibling:** does every `skos:narrowMatch` or `skos:broadMatch` row
+  `CLOSE_MATCH` to `skos:closeMatch`, and `NARROW_MATCH` to `skos:broadMatch`
+  (the record is narrower, so its ontology parent is the *broader* concept;
+  #390)? Every other grade, `BROAD_MATCH` included, publishes `skos:closeMatch`.
+- **Declared semantics:** does the header carry a top-level
+  `# predicate_semantics: skos`? kg-microbe treats its absence as the legacy
+  inverted convention and would read every asymmetric row backwards (Rule L).
+- **Registry sibling:** does every `skos:broadMatch` or `skos:narrowMatch` row
   have a sibling `MIM:<slug> skos:exactMatch
   kgmicrobe.{ingredient,compound}:<slug_lc>` row for the same subject?
 - **Identity rows:** is a row that maps to the record's own `identifier` always

@@ -19,10 +19,11 @@ import argparse, re, sqlite3, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 import yaml
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml
 
 COLL = Path("data/curated/mapped_ingredients.yaml")
-CHEBI_DB = f"sqlite:///{Path.home()/'.data'/'oaklib'/'chebi.db'}"
+CHEBI_DB = f"sqlite:///{db_path('CHEBI')}"
 
 def norm(s): return " ".join(str(s).strip().split()).casefold()
 
@@ -41,7 +42,7 @@ def chebi_exact(con, cid):
     return lab, exact
 
 def run(apply: bool):
-    con = sqlite3.connect(f"file:{Path.home()/'.data'/'oaklib'/'chebi.db'}?mode=ro", uri=True)
+    con = sqlite3.connect(f"file:{db_path('CHEBI')}?mode=ro", uri=True)
     data = yaml.safe_load(COLL.read_text())
     n_dropped=n_repaired=n_retyped=n_enriched=0
     EXACT_TYPES={"EXACT_SYNONYM","EXACT","RELATED_SYNONYM","RELATED","SYSTEMATIC_NAME"}

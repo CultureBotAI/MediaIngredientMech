@@ -1,0 +1,372 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-cmc-py-horse-serum
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: CMC_PY_Horse_Serum (data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=AMBIGUOUS; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for CMC_PY_Horse_Serum (data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml,
+  record-29b4005016928e09, mapping_status=AMBIGUOUS). Records 0 open finding(s) and
+  1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+    sha256: 39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077
+    role: target
+  - path: reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml
+    sha256: f87124785da2057286555db743ccdb92b70dd4dc359294bde474b4beeb816e48
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/unmapped_ingredients.csv
+    sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+    role: context
+  - path: reports/yaml_record_review/20261001T044702Z-CMC_PY_Horse_Serum.md
+    sha256: b289b2190727364478b7e19f73adb557040d2df430db9488095710a09af93b8e
+    role: context
+  - path: reports/yaml_record_review/CMC_PY_Horse_Serum.md
+    sha256: 52b435f3a2206f1d0c703e151bfe130b82c192269f892c45838caefbe74aae38
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-29b4005016928e09
+  path: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+  label: CMC_PY_Horse_Serum
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-29b4005016928e09
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-d21ea193995ef78b
+  - ev-8f375d05aa1751d4
+  - ev-4e6f767031b322dd
+  - ev-2b1730631608c79a
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-d21ea193995ef78b
+  - ev-623c6c29cbd87577
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024629Z-mim-reconcile-all-batch-01
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-623c6c29cbd87577
+evidence:
+- evidence_id: ev-d21ea193995ef78b
+  kind: record_content
+  reference: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[272],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0740","line":274,"mapping_status":"AMBIGUOUS","ontology_id":"","preferred_term":"CMC
+    + PY + Horse Serum"}],"identifier":"UNMAPPED_0740","ingredient_type":null,"mapping_status":"AMBIGUOUS","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"CMC
+    + PY + Horse Serum","sssom_rows":[],"sssom_subject":"MIM:CMC_PY_Horse_Serum","synonym_count":1}'
+  snapshot_sha256: 39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077
+- evidence_id: ev-8f375d05aa1751d4
+  kind: validation
+  reference: data/curated/unmapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [272]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+- evidence_id: ev-4e6f767031b322dd
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:CMC_PY_Horse_Serum; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-2b1730631608c79a
+  kind: record_content
+  reference: docs/data/unmapped_ingredients.csv
+  locator: CSV lines=[274]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0740","line":274,"mapping_quality":"","mapping_status":"AMBIGUOUS","media_count":"0","ontology_id":"","preferred_term":"CMC
+    + PY + Horse Serum","total_occurrences":"0"}]'
+  snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+- evidence_id: ev-aab82e1c9edc2f69
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T044702Z-CMC_PY_Horse_Serum.md
+  locator: 'YAML Record Review: CMC + PY + Horse Serum:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended
+    Edits:55; Follow-up Checks:60; Additional Notes:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: b289b2190727364478b7e19f73adb557040d2df430db9488095710a09af93b8e
+  quote: 'Findings:
+
+    - **major**: `data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml` has no exact
+    identity mapping because the source expression remains ambiguous; keep it out
+    of `mappings/ingredient_mappings.sssom.tsv` until the separate source preparations
+    are represented.
+
+
+    Recommended Edits:
+
+    - Represent the separate source preparations for `data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml`
+    before promoting a mapping.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml`,
+    `just validate-terms data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml` where
+    applicable, and `just qc-sssom`.'
+- evidence_id: ev-c04bf1d616ae4e5a
+  kind: prior_review
+  reference: reports/yaml_record_review/CMC_PY_Horse_Serum.md
+  locator: '`data/ingredients/mapped/CMC_PY_Horse_Serum.yaml`:2; Verdict:4; Identity:11;
+    Validation:27; Evidence:40; Completeness:61; Recommended Edits:74'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 52b435f3a2206f1d0c703e151bfe130b82c192269f892c45838caefbe74aae38
+  quote: "Recommended Edits:\n- Minor: update `data/ingredients/mapped/CMC_PY_Horse_Serum.yaml`\
+    \ top-level\n  `notes` and `ontology_mapping.evidence[0].notes` to describe the\
+    \ current\n  four-component curated decomposition; then run `just sync-curated`,\n\
+    \  `uv run --frozen python scripts/validate_component_partonomy.py`, and focused\n\
+    \  strict/SSSOM validation."
+- evidence_id: ev-623c6c29cbd87577
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[339,1625,1851,1907,2029]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:5840ee1537d3efca2b71","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:4342978a6d6a785d5a94","kind":"component_source_scope","resolution_reason":"Love
+    et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate
+    and peptone-yeast cultures with horse serum. The source expression was incorrectly
+    flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose.
+    All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:e082de354467a9d57892","kind":"component_source_scope","resolution_reason":"Love
+    et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate
+    and peptone-yeast cultures with horse serum. The source expression was incorrectly
+    flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose.
+    All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:9885c46f9bdea8f68046","kind":"component_source_scope","resolution_reason":"Love
+    et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate
+    and peptone-yeast cultures with horse serum. The source expression was incorrectly
+    flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose.
+    All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:79edd574c1b3e3b5cbd4","kind":"component_source_scope","resolution_reason":"Love
+    et al. 1979 (doi:10.1099/00207713-29-3-241) describes separate cooked meat-carbohydrate
+    and peptone-yeast cultures with horse serum. The source expression was incorrectly
+    flattened into one mixture, and CMC wrongly expanded as carboxymethylcellulose.
+    All four edges withdrawn; raw expression retained as AMBIGUOUS.","resolution_status":"RESOLVED"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-2e63c65b85717f54
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-d21ea193995ef78b
+  - ev-8f375d05aa1751d4
+  - ev-4e6f767031b322dd
+  - ev-2b1730631608c79a
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-85b588d1066a4122
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-d21ea193995ef78b
+  - ev-623c6c29cbd87577
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:47:02Z;
+    reviewed SHA-256=39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077;
+    current SHA-256=39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T044702Z-CMC_PY_Horse_Serum.md","reports/yaml_record_review/CMC_PY_Horse_Serum.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Record is
+    intentionally AMBIGUOUS after source review showed the flattened label should
+    not be represented as one CMC/PY/horse-serum mixture.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-aab82e1c9edc2f69
+    - ev-c04bf1d616ae4e5a
+    - ev-d21ea193995ef78b
+  - name: legacy-native-ids
+    value: '["SEM:5840ee1537d3efca2b71","SEM:4342978a6d6a785d5a94","SEM:e082de354467a9d57892","SEM:9885c46f9bdea8f68046","SEM:79edd574c1b3e3b5cbd4"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-d21ea193995ef78b
+    - ev-aab82e1c9edc2f69
+    - ev-c04bf1d616ae4e5a
+    - ev-623c6c29cbd87577
+- assessment_id: a-3e4dca9949a57894
+  area: identity
+  topic: Unresolved exact identity or preparation
+  outcome: unknown
+  summary: Current status=AMBIGUOUS; no supported promotion is established by this
+    reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-d21ea193995ef78b
+  - ev-4e6f767031b322dd
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-aab82e1c9edc2f69
+    - ev-c04bf1d616ae4e5a
+    - ev-d21ea193995ef78b
+    - ev-4e6f767031b322dd
+- assessment_id: a-e944a1345fdaf236
+  area: representation
+  topic: Original CMC/PY/horse-serum component-note cleanup
+  outcome: supported
+  summary: 'The old report approved a four-component mixture and requested minor explanatory-note
+    cleanup. That representation was explicitly withdrawn: current AMBIGUOUS UNMAPPED_0740
+    has no component or ontology assertions and no final SSSOM row. The old note-edit
+    request is superseded by source-context separation, not by a new scientific pass.'
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-d21ea193995ef78b
+  details: 'Lineage is explicitly recorded in resolution/record-lineage.json and current
+    curation_history. The new source-expression ambiguity remains unresolved and is
+    tracked in #718.'
+  dimensions:
+  - name: legacy-disposition
+    value: superseded
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-aab82e1c9edc2f69
+    - ev-c04bf1d616ae4e5a
+    - ev-d21ea193995ef78b
+findings:
+- finding_id: rec-f-unmapped-29b4005016928e09
+  issue_key: mim-reconciliation-unresolved-identity-29b4005016928e09
+  category: identity
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Unresolved exact identity or preparation: CMC_PY_Horse_Serum'
+  description: Current status=AMBIGUOUS; no supported promotion is established by
+    this reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  disposition_reason: Current status=AMBIGUOUS; no supported promotion is established
+    by this reconciliation. Preserve the unresolved source boundary; source-backed
+    identity/decomposition review is still required.
+  target_ids:
+  - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-d21ea193995ef78b
+  - ev-4e6f767031b322dd
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
+    role: maintained ingredient
+  field_paths:
+  - mapping_status
+  - ontology_id
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - unresolved-identity
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024629Z-mim-reconcile-all-batch-01.

@@ -14,16 +14,16 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
 - synonym_text: N-(tri(hydroxymethyl)methyl)glycine
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: N-[2-hydroxy-1,1-bis(hydroxymethyl)ethyl]glycine
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: N-tris(hydroxymethyl)methylglycine
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: berbaman
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -69,6 +69,23 @@ curation_history:
     ''N-tris(hydroxymethyl)methylglycine''; ''berbaman''. Tokens already present on
     the kg-microbe ontology node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 3 synonym(s) non-resolving: [''N-(tri(hydroxymethyl)methyl)glycine'',
+    ''N-[2-hydroxy-1,1-bis(hydroxymethyl)ethyl]glycine'', ''N-tris(hydroxymethyl)methylglycine''].
+    ChEBI gives these names to CHEBI:39063, not to this record''s CHEBI:16325 -- lithocholic
+    acid is not tricine. Kept as REJECTED_LABEL so a rebuild cannot restore them from
+    kg-microbe''s synonym list (#669).'
+  llm_assisted: true
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 1 synonym(s) non-resolving: [''berbaman'']. ChEBI gives these names
+    to CHEBI:35920, not to this record''s CHEBI:16325 -- lithocholic acid is not berbaman.
+    Kept as REJECTED_LABEL so a rebuild cannot restore them from kg-microbe''s synonym
+    list (#669).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 434-13-9
   data_source: CultureBotHT compounds_to_cas.csv

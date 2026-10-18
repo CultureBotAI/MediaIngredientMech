@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "scope": "Bounded adversarial review of previously APPROVED mapping rows after planned issue-intersection and nonexact-row exclusions; no approval of unexamined survivors.",
+  "methodology": [
+    "Screen original 1603 APPROVED mapping positions against exact current SSSOM payloads.",
+    "Exclude the planned #669 and #232 collisions and previously confirmed issue-intersection defects before selecting ontology exact-match survivors.",
+    "Manually inspect source evidence and historical reports for prepared materials, hydrates, and contradictions between supported source grade and published predicate.",
+    "Test the proposed source-grade guard separately; do not treat its survivor count as scientific approval.",
+    "Confirm the newly discovered nutrient-broth catalog conflation using primary manufacturer and culture-collection sources, not reseller or secondary protocol pages."
+  ],
+  "counts": {
+    "original_approved": 1603,
+    "ontology_exact_survivors_before_source_grade_guard": 1212,
+    "additional_exact_rows_held_by_grade_guard": 6,
+    "ontology_exact_survivors_after_source_grade_guard": 1206
+  },
+  "source_grade_guard_extra_holds": [
+    {
+      "source_position": 487,
+      "subject_id": "MIM:Bacto_Tryptic_Soy_Agar",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "MICRO:0000114"
+    },
+    {
+      "source_position": 488,
+      "subject_id": "MIM:Bacto_Tryptic_Soy_Broth",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "MICRO:0000113"
+    },
+    {
+      "source_position": 833,
+      "subject_id": "MIM:Cows_Milk",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "FOODON:02020891"
+    },
+    {
+      "source_position": 1323,
+      "subject_id": "MIM:Glucose_1-phosphate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:16077"
+    },
+    {
+      "source_position": 1518,
+      "subject_id": "MIM:Isocitrate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:16087"
+    },
+    {
+      "source_position": 2658,
+      "subject_id": "MIM:Soy_Peptone",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "FOODON:03315720"
+    }
+  ],
+  "findings": [
+    {
+      "id": "APPROVED-ROW-Glucose_1-phosphate",
+      "priority": "P1",
+      "kind": "EXACT_RELATION_EXCEEDS_EXPLICIT_CLOSE_REVIEW",
+      "source_position": 1323,
+      "subject_id": "MIM:Glucose_1-phosphate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:16077",
+      "mapping": {
+        "source_position": 1323,
+        "subject_id": "MIM:Glucose_1-phosphate",
+        "subject_label": "Glucose 1-phosphate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:16077",
+        "object_label": "D-glucopyranose 1-phosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:MIM curation (#213)|MIM:curator=classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed",
+        "mapping_date": "2026-08-13",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "",
+        "validation_method": "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"
+      },
+      "assertion_id": "MIM.review:180996407c37b6cfa466d01a88e626eb378499d4aa57dc0b44f970a1be76a59f",
+      "assertion_sha256": "511de5e6017ce0173e4d36b2b3214e6b4d18a26b12326e6e3a9c572f1909797e",
+      "sssom_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+      "prior_disposition": "APPROVED",
+      "source_record": "data/ingredients/mapped/Glucose_1-phosphate.yaml",
+      "source_record_sha256": "1552deda8ced71002bde65f7dd753d3be40c0fda327c6f9ed8fbc98649a40d26",
+      "source_mapping": {
+        "ontology_id": "CHEBI:16077",
+        "ontology_label": "D-glucopyranose 1-phosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#213)",
+            "notes": "Glucose 1-phosphate grounded to D-glucopyranose 1-phosphate; CLOSE_MATCH because the label states neither the anomeric configuration nor the D series (#213)."
+          }
+        ]
+      },
+      "reason": "The current row is exactMatch, while the source evidence expressly chooses CLOSE_MATCH because the input does not specify the D series or anomeric configuration. The positive historical report supports an intentionally narrower close match; it does not support the exported exact relation.",
+      "requested_disposition": "WITHHOLD",
+      "report_path": "reports/yaml_record_review/Glucose_1-phosphate.md",
+      "report_sha256": "9fc3c241f2a874509cc57080d5d00ca6a0886fb5b0d320f230c9b14ad3573fb1",
+      "report_evidence_summary": "The manually chosen close match to CHEBI:16077 is intentionally narrower than the underspecified Glucose 1-phosphate source label.",
+      "report_excerpts": [
+        "## Verdict",
+        "Pass with minor cleanup issues. The manually chosen close match to\n`CHEBI:16077` D-glucopyranose 1-phosphate is intentionally narrower than the\nunderspecified Glucose 1-phosphate source label, but the record still lacks\navailable ChEBI structure fields and carries a stale top-level import note.",
+        "- The matching aggregate `data/curated/mapped_ingredients.yaml` entry carries\n  the same ChEBI close match, 7 MicrobeDecoder source occurrences, raw source\n  synonym, single-ingredient type, and stale top-level note as the per-record\n  YAML.\n- The curation history and mapping evidence explicitly document the intended\n  close match: the source label does not state D series or anomeric\n  configuration, while `CHEBI:16077` denotes D-glucopyranose 1-phosphate.\n- The final SSSOM row maps `MIM:Glucose_1-phosphate` to `CHEBI:16077`, records\n  the manual promotion from unmapped, and leaves `other` empty.\n- Minor: `chemical_properties` is absent even though OLS4 supplies formula,\n  mass, InChI, InChIKey, and SMILES for the chosen ChEBI term.\n- Minor: the top-level `notes` still repeat the original MicrobeDecoder import\n  text saying the row had no CAS-RN or CHEBI/NCIT match and needed curator\n  review. That is stale after the issue `#213` close-match promotion.\n- A hidden/ignored-inclusive search over `data`, `src`, `tests`, `mappings`,\n  `scripts`, and `reports` found the active YAML, aggregate copies, the final\n  SSSOM row, row-review validation noting the missing structure fields,\n  generated indexes, old batch validation reports, and ignored aggregate\n  backups."
+      ],
+      "primary_sources": [],
+      "survives_original_planned_safeguards": true,
+      "survives_additional_source_grade_guard": false
+    },
+    {
+      "id": "APPROVED-ROW-Isocitrate",
+      "priority": "P1",
+      "kind": "EXACT_RELATION_EXCEEDS_EXPLICIT_CLOSE_REVIEW",
+      "source_position": 1518,
+      "subject_id": "MIM:Isocitrate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:16087",
+      "mapping": {
+        "source_position": 1518,
+        "subject_id": "MIM:Isocitrate",
+        "subject_label": "Isocitrate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:16087",
+        "object_label": "isocitrate(3-)",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:MIM curation (#213)|MIM:curator=classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-13",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "",
+        "validation_method": "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"
+      },
+      "assertion_id": "MIM.review:2d84fbc88cbb261de51ca709a106291cd9e3a04151f174d06ce92fe669d60aea",
+      "assertion_sha256": "76b1918ad7a7e9a8983c99ae518dffc33cf8636a612f21ac485af7cc4e759fcf",
+      "sssom_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+      "prior_disposition": "APPROVED",
+      "source_record": "data/ingredients/mapped/Isocitrate.yaml",
+      "source_record_sha256": "caa2a29e833e39680dd55a4af62960c72db32f52574b63e88a86b7afdce6ea37",
+      "source_mapping": {
+        "ontology_id": "CHEBI:16087",
+        "ontology_label": "isocitrate(3-)",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#213)",
+            "notes": "Bare anion label 'Isocitrate' grounded to the fully-deprotonated isocitrate(3-), the species present at growth-medium pH. The bare name is NOT a registered CHEBI synonym of this term, hence CLOSE_MATCH rather than SYNONYM_MATCH. Naive first-match enumeration would have picked the mono-anion (#213)."
+          }
+        ]
+      },
+      "reason": "The exported exactMatch asserts a fully deprotonated charge-specific species. Source evidence and the positive report preserve CLOSE_MATCH because the bare source name is not a verified synonym of that species and the assignment assumes medium pH. Equality between identifier and ontology_id cannot supply the missing exact-relation evidence.",
+      "requested_disposition": "WITHHOLD",
+      "report_path": "reports/yaml_record_review/Isocitrate.md",
+      "report_sha256": "290e87cbd289c0adfe83905ab6052e614d68526cc021a67da131c85d86716bcf",
+      "report_evidence_summary": "The reviewed #213 decision intentionally grounds the bare label to the fully deprotonated species while preserving CLOSE_MATCH.",
+      "report_excerpts": [
+        "## Verdict",
+        "Pass with minor issues. The `#213` bare-label close match to isocitrate(3-),\nMicrobeDecoder provenance, source-occurrence count, and final SSSOM row pass,\nbut the ChEBI structure fields and stale import-era `notes` need backfill.",
+        "- Reviewed record: `data/ingredients/mapped/Isocitrate.yaml`.\n- Identifier and grounding: `identifier: CHEBI:16087` with\n  `ontology_mapping.ontology_id: CHEBI:16087`, label `isocitrate(3-)`, source\n  `CHEBI`, `mapping_quality: CLOSE_MATCH`, `mapping_status: MAPPED`, and\n  `ingredient_type: SINGLE_INGREDIENT`.\n- The reviewed `#213` decision intentionally grounds the bare\n  `kgmicrobe.trait:isocitrate` label to the fully deprotonated isocitrate(3-)\n  species present at growth-medium pH, while preserving `CLOSE_MATCH` because\n  bare `Isocitrate` is not a registered ChEBI synonym of this term."
+      ],
+      "primary_sources": [],
+      "survives_original_planned_safeguards": true,
+      "survives_additional_source_grade_guard": false
+    },
+    {
+      "id": "APPROVED-ROW-Soy_Peptone",
+      "priority": "P1",
+      "kind": "EXACT_RELATION_EXCEEDS_EXPLICIT_CLOSE_REVIEW",
+      "source_position": 2658,
+      "subject_id": "MIM:Soy_Peptone",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "FOODON:03315720",
+      "mapping": {
+        "source_position": 2658,
+        "subject_id": "MIM:Soy_Peptone",
+        "subject_label": "Soy peptone",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "FOODON:03315720",
+        "object_label": "vegetable protein, hydrolyzed",
+        "object_source": "obo:foodon.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:cbclaw_foodon_promotion|MIM:MIM curation (#260)|MIM:curator=mediaingredientmech-agentic-curation",
+        "mapping_date": "2026-09-04",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Soybean peptone|Peptone from soymeal|Phytone peptone|Phytone peptone (BD-BBL)|Soytone (BD-Difco) or Phytone peptone (BD-BBL)|Soytone|Bacto Soytone|Peptic digest of soybean meal",
+        "validation_method": "OLS:foodon|SYNONYM_ENRICH|2026-07-07"
+      },
+      "assertion_id": "MIM.review:ec514a8c5f0bf83b2fc4a372d97c9b3863e60220d33d56ebbb4f7484ae21b6d2",
+      "assertion_sha256": "592cac0af777bb8b2ad2f5034effa2b51fe131ca6c45f6e659312838e8bb3dbd",
+      "sssom_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+      "prior_disposition": "APPROVED",
+      "source_record": "data/ingredients/mapped/Soy_Peptone.yaml",
+      "source_record_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+      "source_mapping": {
+        "ontology_id": "FOODON:03315720",
+        "ontology_label": "vegetable protein, hydrolyzed",
+        "ontology_source": "FOODON",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "cbclaw_foodon_promotion",
+            "notes": "Commercial food mixture - FOODON is correct parent ontology. Soy peptone is an enzymatic hydrolysate of soybean protein; mapped to FOODON parent 'vegetable protein, hydrolyzed'. No exact FOODON term for soy peptone. CLOSE_MATCH."
+          },
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#260)",
+            "notes": "Added 'Peptic digest of soybean meal' as a EXACT_SYNONYM (#260): the USP/compendial descriptor for soy peptone \u2014 the same product the record already lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`. Names the manufacturing process rather than a different substance. CultureMech uses this surface form and label_index did not contain it, so the lookup missed. No new record: FOODON:03315720 is this record's identifier, and in MIM the identifier IS the ontology CURIE, so a second record on it would be a duplicate primary key rather than added coverage."
+          }
+        ]
+      },
+      "reason": "The row exact-matches soy peptone to the broader FoodOn class vegetable protein, hydrolyzed. The source explicitly says there is no exact FoodOn term and selects CLOSE_MATCH; the positive report describes a close parent. The row therefore upgrades the reviewed scope to identity. The combined Soytone or Phytone catalog token also requires product-scope handling before any exact alias approval.",
+      "requested_disposition": "WITHHOLD",
+      "report_path": "reports/yaml_record_review/Soy_Peptone.md",
+      "report_sha256": "d38aec63d1326beee8261a06144036f7f9e4a868d7ddb89a52fcd46aa111be04",
+      "report_evidence_summary": "The soy-peptone record has a close FOODON parent. Its source says no exact FOODON term for soy peptone and CLOSE_MATCH.",
+      "report_excerpts": [
+        "## Verdict",
+        "Pass. The soy-peptone record has a close FOODON parent, curated same-product and\ncatalog aliases, a PMID/DOI-backed protein-source role, refreshed occurrence\ncounts, and a clean final SSSOM row."
+      ],
+      "primary_sources": [],
+      "survives_original_planned_safeguards": true,
+      "survives_additional_source_grade_guard": false
+    },
+    {
+      "id": "APPROVED-ROW-Nutrient_Broth_No_2",
+      "priority": "P1",
+      "kind": "CONFIRMED_DISTINCT_FORMULATIONS_COLLAPSED_AS_CATALOG_ALIASES",
+      "source_position": 2153,
+      "subject_id": "MIM:Nutrient_Broth_No_2",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "MICRO:0000082",
+      "mapping": {
+        "source_position": 2153,
+        "subject_id": "MIM:Nutrient_Broth_No_2",
+        "subject_label": "Nutrient broth No. 2",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "MICRO:0000082",
+        "object_label": "nutrient broth",
+        "object_source": "obo:micro.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:MICRO via OLS search (resolve_unmapped)|MIM:curator=claude_culturemech_alias_backfill",
+        "mapping_date": "2026-08-30",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Nutrient Broth (OXOID)|Nutrient Broth (BD cat 234000)|Nutrient Broth (Difco)|Nutrient broth (BD Difco)|Nutrient broth (BD-Difco)|Nutrient broth (NB) (Difco)",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "assertion_id": "MIM.review:b90011ac99aebcbd82516ef2eaa1572098ad84af052da2db7be98c7b41d16c46",
+      "assertion_sha256": "79bc70ec6af1a9216a43be119c962d1370e8a455dee57af50c3d7a8a26a5761b",
+      "sssom_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+      "prior_disposition": "APPROVED",
+      "source_record": "data/ingredients/mapped/Nutrient_Broth_No_2.yaml",
+      "source_record_sha256": "b4cb841422e83f9216512cea52201b2e83350d158b90052c6d7fc1514bdc3a17",
+      "source_mapping": {
+        "ontology_id": "MICRO:0000082",
+        "ontology_label": "nutrient broth",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MICRO via OLS search (resolve_unmapped)",
+            "notes": "Auto-upgraded from UNMAPPED_0482; matched via 'Nutrient broth' (name normalization); label-exact"
+          }
+        ]
+      },
+      "reason": "The EXACT_MATCH source-grade guard does not catch this row. Its approved historical report assumes Nutrient Broth No. 2 and BD 234000 are catalog aliases of one nutrient-broth subject, but primary recipes distinguish them: NBRC 1559/Oxoid CM0067B uses Lab-Lemco 10 g/L, peptone 10 g/L and NaCl 5 g/L; ATCC Medium 3 identifies BD 234000 at 8 g/L, equivalent to beef extract 3 g/L and peptone 5 g/L, with no added NaCl. The manufacturer also explicitly distinguishes No. 2 from standard Oxoid nutrient broth. Preserve the source labels but withhold their equivalence until the product identities and generic superclass mapping are separated.",
+      "requested_disposition": "WITHHOLD",
+      "report_path": "reports/yaml_record_review/Nutrient_Broth_No_2.md",
+      "report_sha256": "ecf7704abcdd50e933d61b895407135e86eef88da6c54ed23767b3d48ac6ae85",
+      "report_evidence_summary": "The prior report calls the record intentionally undefined and treats the final other values as curated catalog variants of the same nutrient-broth subject. That premise fails against the original recipe sources.",
+      "report_excerpts": [
+        "## Verdict",
+        "Pass. The record is an intentionally undefined nutrient-broth mixture mapped\nto active `MICRO:0000082`, and the final SSSOM `other` values are curated\ncatalog variants of the same nutrient-broth subject.",
+        "- Reviewed record: `data/ingredients/mapped/Nutrient_Broth_No_2.yaml`.\n- Identifier and grounding: `identifier: MICRO:0000082` with\n  `ontology_mapping.ontology_id: MICRO:0000082`, label `nutrient broth`,\n  source `MICRO`, `mapping_quality: EXACT_MATCH`, `mapping_status: MAPPED`,\n  and `ingredient_type: UNDEFINED_MIXTURE`.\n- Synonyms: six CultureMech `CATALOG_VARIANT` aliases plus the original raw\n  `Nutrient broth No. 2` surface.\n- Occurrences: 53 CultureMech media occurrences.",
+        "- A fresh prefix-specific EBI OLS4 search for `nutrient broth` in `micro`\n  resolves a single exact `MICRO:0000082` class with label `nutrient broth`.\n- `mappings/ingredient_mappings_external_prefix_ols_validation.tsv` likewise\n  records `MICRO:0000082` as `RESOLVED_EXACT_CURIE`, and\n  `mappings/ingredient_mappings_unknown_term_triage.tsv` classifies the final\n  `UNKNOWN_TERM` stamp as missing validator-prefix coverage rather than a bad\n  mapping.\n- The final SSSOM row maps `MIM:Nutrient_Broth_No_2` exactly to\n  `MICRO:0000082`; its six pipe-delimited `other` tokens are the curated\n  `CATALOG_VARIANT` aliases present in the YAML.\n- No unsupported roles, components, supplied forms, or environmental contexts\n  are asserted."
+      ],
+      "primary_sources": [
+        {
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1559",
+          "authority": "NITE NBRC culture collection",
+          "summary": "Medium 1559 is Nutrient broth No.2; Oxoid CM0067B. Per litre: Lab-Lemco 10 g, peptone 10 g, sodium chloride 5 g; pH 7.5 +/- 0.2."
+        },
+        {
+          "url": "https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/3/atcc-medium-3.pdf?rev=7510837507e64d849c62a46b5b2197a1",
+          "authority": "ATCC culture collection",
+          "summary": "Medium 3 explicitly names BD 234000 nutrient broth at 8 g/L. Scratch formula is beef extract 3 g and peptone 5 g per litre; agar is omitted for broth; pH 6.8 +/- 0.2."
+        },
+        {
+          "url": "https://www.thermofisher.com/order/catalog/product/CM0067B",
+          "authority": "Thermo Fisher/Oxoid manufacturer",
+          "summary": "Nutrient Broth No.2 is CM0067B, a preparation richer in nutrients than standard Nutrient Broth CM0001. It is not presented as an interchangeable catalog size of the standard broth."
+        }
+      ],
+      "survives_original_planned_safeguards": true,
+      "survives_additional_source_grade_guard": true
+    }
+  ],
+  "negative_control": {
+    "source_record": "data/ingredients/mapped/Atorvastatin_Calcium_Salt_Trihydrate.yaml",
+    "report": "reports/yaml_record_review/Atorvastatin_Calcium_Salt_Trihydrate.md",
+    "assessment": "The reviewed source CAS 344423-98-9 and CHEBI:2911 both specify the trihydrate, and the historical report checks three-water stoichiometry explicitly. The bounded check did not identify a hydrate mismatch here."
+  },
+  "limitations": "This was prioritized adversarial review, not a claim to have independently re-researched all 1603 approved mappings. Existing local reports and unchanged payloads remain necessary but insufficient evidence when their actual reviewed scope is narrower than the exported relation."
+}

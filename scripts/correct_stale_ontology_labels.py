@@ -42,6 +42,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.utils.oaklib_cache import oaklib_cache_dir  # noqa: E402
 
 DATA = Path("data/curated/mapped_ingredients.yaml")
 
@@ -63,7 +64,7 @@ def make_resolver():
     from oaklib import get_adapter
 
     adapters: dict = {}
-    base = Path.home() / ".data" / "oaklib"
+    base = oaklib_cache_dir()
 
     def resolve(curie: str) -> str | None:
         prefix = curie.split(":", 1)[0]

@@ -40,13 +40,13 @@ ontology_mapping:
       are unchanged.'
 synonyms:
 - synonym_text: cerium(3+) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: cerium(III) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: trichloridocerium
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -130,6 +130,15 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted. The grounding is separately wrong (#321); this corrects only
     the CAS (#334).'
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''cerium(3+) chloride'';
+    ''cerium(III) chloride''; ''trichloridocerium''. Preserved original text and source
+    metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
 chemical_properties:
   data_source: PubChem (via CHEBI:35458)
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'

@@ -1,14 +1,23 @@
-identifier: CHEBI:49235
+identifier: CHEBI:49240
 preferred_term: Bisabolene
 ontology_mapping:
-  ontology_id: CHEBI:49235
-  ontology_label: bisabolene
+  ontology_id: CHEBI:49240
+  ontology_label: alpha-bisabolene
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier CHEBI:49235 -> CHEBI:49240; ontology CHEBI:49235 (''bisabolene'')
+      -> CHEBI:49240 (''alpha-bisabolene''); mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP.
+      CHEBI:49235 ''bisabolene'' is a class (formula only, no InChIKey, no CAS; members
+      alpha, beta, gamma). The record was created from CultureBotHT with CAS 17627-44-0,
+      which ChEBI xrefs on exactly one term, CHEBI:49240 ''alpha-bisabolene''. Section
+      3 step 4''s evidence hatch: the CAS picks the member. Structure fields filled
+      from the term.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -37,9 +46,26 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-23T00:44:54.470212+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier CHEBI:49235 -> CHEBI:49240; ontology CHEBI:49235 (''bisabolene'')
+    -> CHEBI:49240 (''alpha-bisabolene''); mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP.
+    CHEBI:49235 ''bisabolene'' is a class (formula only, no InChIKey, no CAS; members
+    alpha, beta, gamma). The record was created from CultureBotHT with CAS 17627-44-0,
+    which ChEBI xrefs on exactly one term, CHEBI:49240 ''alpha-bisabolene''. Section
+    3 step 4''s evidence hatch: the CAS picks the member. Structure fields filled
+    from the term. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 17627-44-0
-  data_source: CultureBotHT compounds_to_cas.csv
+  data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:49240
+    (#312)
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
   molecular_formula: C15H24
+  inchi: InChI=1S/C15H24/c1-12(2)6-5-7-14(4)15-10-8-13(3)9-11-15/h6-8,15H,5,9-11H2,1-4H3
+  smiles: CC(C)=CCC=C(C)C1CC=C(C)CC1
 ingredient_type: SINGLE_INGREDIENT

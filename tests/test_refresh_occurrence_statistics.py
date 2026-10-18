@@ -219,8 +219,8 @@ def test_records_already_correct_are_not_rewritten(mod):
 
 
 def test_shared_identifiers_are_detected(mod):
-    """`MgSO4 x 7 H2O` and `MgSO4·H2O` share one identifier, so both take the
-    same count -- the #225/#334 duplicate cohort. Must be reported, because it
+    """`Na2SO3` and `Na2SO3 x 5 H2O` share one identifier (#896), so both take
+    the same count -- the #225/#334 duplicate cohort. Must be reported, because it
     means media_count cannot be summed across records."""
     records = [{"identifier": "CHEBI:1"}, {"identifier": "CHEBI:1"},
                {"identifier": "CHEBI:2"}, {"identifier": ""}, {"identifier": ""}]

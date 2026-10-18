@@ -25,6 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
 # (preferred_term, current identifier, corrected identifier)
@@ -33,7 +34,7 @@ REMAPS = [
     ("(S)-3-hydroxybutyrate", "CHEBI:37054", "CHEBI:11047"),
     ("L-Carnitine", "CHEBI:17126", "CHEBI:16347"),
 ]
-CHEBI_DB = f"sqlite:///{Path.home() / '.data' / 'oaklib' / 'chebi.db'}"
+CHEBI_DB = f"sqlite:///{db_path('CHEBI')}"
 
 
 def main() -> None:

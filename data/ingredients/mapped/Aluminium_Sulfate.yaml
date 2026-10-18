@@ -1,15 +1,26 @@
-identifier: CHEBI:74772
+identifier: CHEBI:74768
 preferred_term: Aluminium sulfate
 ontology_mapping:
-  ontology_id: CHEBI:74772
-  ontology_label: aluminium sulfate
+  ontology_id: CHEBI:74768
+  ontology_label: aluminium sulfate (anhydrous)
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. Used in 1 CultureBot media; samples: FW104
       COMM.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier CHEBI:74772 -> CHEBI:74768; ontology CHEBI:74772 (''aluminium
+      sulfate'') -> CHEBI:74768 (''aluminium sulfate (anhydrous)''); mapping_quality
+      EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:74772 ''aluminium sulfate'' is a class (''any
+      inorganic sulfate salt ...''; no formula, InChIKey or CAS) with three members:
+      anhydrous, hexadecahydrate, octadecahydrate. The record''s CAS 10043-01-3 came
+      from the CultureBotHT source row with FW 342.15, the anhydrous mass, and ChEBI
+      xrefs that CAS on exactly one term, CHEBI:74768 ''aluminium sulfate (anhydrous)''.
+      Section 3 step 4''s evidence hatch: the CAS picks the member; the mapping was
+      lexical, so the CAS is independent evidence.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -33,8 +44,28 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-09-23T00:44:54.446218+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier CHEBI:74772 -> CHEBI:74768; ontology CHEBI:74772 (''aluminium
+    sulfate'') -> CHEBI:74768 (''aluminium sulfate (anhydrous)''); mapping_quality
+    EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:74772 ''aluminium sulfate'' is a class (''any
+    inorganic sulfate salt ...''; no formula, InChIKey or CAS) with three members:
+    anhydrous, hexadecahydrate, octadecahydrate. The record''s CAS 10043-01-3 came
+    from the CultureBotHT source row with FW 342.15, the anhydrous mass, and ChEBI
+    xrefs that CAS on exactly one term, CHEBI:74768 ''aluminium sulfate (anhydrous)''.
+    Section 3 step 4''s evidence hatch: the CAS picks the member; the mapping was
+    lexical, so the CAS is independent evidence. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 10043-01-3
-  data_source: CultureBotHT compounds_to_cas.csv
+  data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:74768
+    (#312)
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: 2Al.3O4S
+  inchi: InChI=1S/2Al.3H2O4S/c;;3*1-5(2,3)4/h;;3*(H2,1,2,3,4)/q2*+3;;;/p-6
+  smiles: O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].[Al+3].[Al+3]
 ingredient_type: SINGLE_INGREDIENT

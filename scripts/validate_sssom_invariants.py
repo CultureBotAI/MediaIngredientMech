@@ -58,6 +58,13 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   of B2 (catches the case where rows differ in trivia such as
   whitespace but share the same subject+object tuple).
 
+* **Rule B5** — one local registry namespace. A subject may use
+  ``kgmicrobe.ingredient:<slug>`` or ``kgmicrobe.compound:<slug>`` as
+  its Rule B1 registry identity, but not both for the same lowercased
+  MIM slug. The two namespaces distinguish prepared ingredients from
+  compounds; emitting both asserts two local identities for one
+  subject.
+
 * **Rule C** — every published row names the source its object came from
   (non-empty ``object_source``).
 
@@ -102,9 +109,9 @@ claw builder) or leave it in the triage TSV; CI fails as long as a
 violating row sits in ``ingredient_mappings.sssom.tsv``.
 
 Exit codes:
-  0 — every row passes Rules A, B1, B2, B3, C, D, E, F, G, H, I, J, K, and
+  0 — every row passes Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L, and
       (when its label source is present) B4.
-  2 — at least one row failed Rule A, B1, B2, B3, B4, C, D, E, F, G, H, I or
+  2 — at least one row failed Rule A, B1, B2, B3, B5, B4, C, D, E, F, G, H, I or
       J. (B1 contributes to exit-2 unless ``--lenient-b1`` is passed.)
 """
 from __future__ import annotations
@@ -528,6 +535,50 @@ def evaluate_rule_b3(
 
 
 # ---------------------------------------------------------------------------
+# Rule B5 — one local registry namespace
+# ---------------------------------------------------------------------------
+def evaluate_rule_b5(
+    rows: list[dict[str, str]],
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Reject subjects that exact-match both kg-microbe local namespaces."""
+    registry: dict[tuple[str, str], dict[str, list[tuple[int, dict[str, str]]]]] = {}
+    for idx, row in enumerate(rows, start=1):
+        if (row.get("predicate_id") or "").strip() != "skos:exactMatch":
+            continue
+        subject_id = (row.get("subject_id") or "").strip()
+        if not subject_id.startswith("MIM:"):
+            continue
+        match = _REGISTRY_OBJECT_RE.match((row.get("object_id") or "").strip())
+        if match is None:
+            continue
+        namespace, slug = match.groups()
+        registry.setdefault((subject_id, slug.casefold()), {}).setdefault(
+            namespace,
+            [],
+        ).append((idx, row))
+
+    for (subject_id, slug), by_namespace in registry.items():
+        if not {"compound", "ingredient"} <= by_namespace.keys():
+            continue
+        object_ids = sorted({
+            (row.get("object_id") or "").strip()
+            for members in by_namespace.values()
+            for _, row in members
+        })
+        for members in by_namespace.values():
+            for idx, row in members:
+                reason = (
+                    f"Rule B5: {subject_id} exact-matches both local registry "
+                    f"namespaces for slug {slug}: {', '.join(object_ids)}. "
+                    f"kgmicrobe.ingredient and kgmicrobe.compound distinguish "
+                    f"prepared ingredients from compounds; pick the namespace "
+                    f"that matches the curated ingredient_type and remove the "
+                    f"other identity row."
+                )
+                yield idx, row, reason
+
+
+# ---------------------------------------------------------------------------
 # Rule B4 — canonical object_label drift
 # ---------------------------------------------------------------------------
 def _load_ontology_labels(prefix: str) -> dict[str, tuple[str, set[str]]] | None:
@@ -707,6 +758,70 @@ def evaluate_rule_f(
         )
 
 
+PREDICATE_SEMANTICS_KEY = "predicate_semantics"
+SKOS_SEMANTICS = "skos"
+
+
+def declared_predicate_semantics(prelude: Iterable[str]) -> str:
+    """
+    Return the set's top-level ``predicate_semantics`` declaration, or ``""``.
+
+    Parsed the way kg-microbe's reader parses it, deliberately: a top-level key
+    is ``# key: value`` with exactly one space after the ``#``. SSSOM headers
+    are nested YAML, so a key of this name under some parent means something
+    else, and a gate that accepted it would pass a file the consumer reads as
+    legacy.
+
+    :param prelude: The ``#`` header lines of the mapping set.
+    :return: The declared value, or the empty string when absent.
+    """
+    for line in prelude:
+        if not line.startswith("#"):
+            continue
+        body = line[1:].rstrip("\n")
+        if body[:1] not in ("", " ") or body[1:2] == " ":
+            continue
+        stripped = body.strip()
+        if stripped.startswith(f"{PREDICATE_SEMANTICS_KEY}:"):
+            return stripped.split(":", 1)[1].strip().strip("\"'")
+    return ""
+
+
+def evaluate_rule_l(
+    prelude: Iterable[str], rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule L — the set declares that its asymmetric predicates follow SKOS.
+
+    Since #390 a parent-anchoring row is ``skos:broadMatch``, which is what the
+    spec says and the inverse of what MIM published before. kg-microbe reads
+    the direction from one header line, ``# predicate_semantics: skos``, and
+    treats its absence as the legacy inverted convention. So the declaration is
+    load-bearing: strip that line from the flipped set and every parent edge
+    inverts -- measured, 166 of 166, with ontology terms becoming children of
+    MIM records.
+
+    The rows and the declaration live in one file, which makes them atomic on
+    publication, but nothing made them atomic on *rebuild*: a generator that
+    wrote the new rows under an old header would produce exactly that inverted
+    set, and every other rule would pass it.
+    """
+    declared = declared_predicate_semantics(prelude)
+    if declared == SKOS_SEMANTICS:
+        return
+    asymmetric = sum(
+        1 for row in rows if (row.get("predicate_id") or "").strip() in ASYMMETRIC_PREDICATES
+    )
+    yield (
+        0,
+        {},
+        f"Rule L: the header does not declare `{PREDICATE_SEMANTICS_KEY}: "
+        f"{SKOS_SEMANTICS}` at the top level (found {declared!r}). A consumer "
+        f"treats absence as the legacy inverted convention and would read all "
+        f"{asymmetric} asymmetric row(s) backwards. Add "
+        f"`# {PREDICATE_SEMANTICS_KEY}: {SKOS_SEMANTICS}` to the header (#390).",
+    )
+
+
 def evaluate_rule_g(
     prelude: Iterable[str], rows: Iterable[dict[str, str]]
 ) -> Iterator[tuple[int, dict[str, str], str]]:
@@ -837,19 +952,54 @@ def _preferred_term_owners() -> dict[str, frozenset[str]]:
     """
     Map a casefolded ``preferred_term`` to the subjects that own it.
 
-    Built from every mapped record rather than from the SSSOM's own
+    Built from every active mapped-directory record rather than from the SSSOM's own
     ``subject_label`` values: a record whose label never appears as a subject
     label still owns its name, and keying on the published labels alone misses
     44% of the cross-record cases (64 of 115).
+
+    A REJECTED record under mapped/ is a merge tombstone, and a merge moves the
+    name to its target -- so ``MIM:Acetate`` carrying "Acetate (carbon source)"
+    is the rightful holder, not a thief (#669). The name is therefore credited
+    to the live record(s) named by its explicit ``representative``. Legacy
+    tombstones without that field use their ``identifier`` instead. A reviewed
+    merge may preserve the loser's former, incorrect identifier as provenance;
+    that old identifier must not override the corrected representative (#721).
+
+    Credited, not dropped. Dropping it -- the first version of this fix -- left
+    the name with no owner at all, so *any* record could publish it unflagged:
+    ``MIM:Feso4`` carrying a heptahydrate tombstone's name passed, where on
+    ``main`` it was caught. And "REJECTED means merged" is an observed fact about
+    the corpus, not an enforced invariant, so a REJECTED record with no live
+    target keeps its own name rather than losing it. An explicit representative
+    that does not resolve never falls back to a different identifier owner.
     """
-    owners: dict[str, set[str]] = {}
+    records: list[tuple[str, dict]] = []
     for subject_id, path in _subject_to_path().items():
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         except (OSError, yaml.YAMLError):
             continue
+        records.append((subject_id, data))
+
+    def _rejected(data: dict) -> bool:
+        return str(data.get("mapping_status") or "").strip().upper() == "REJECTED"
+
+    live_by_identifier: dict[str, set[str]] = {}
+    for subject_id, data in records:
+        identifier = str(data.get("identifier") or "").strip()
+        if identifier and not _rejected(data):
+            live_by_identifier.setdefault(identifier, set()).add(subject_id)
+
+    owners: dict[str, set[str]] = {}
+    for subject_id, data in records:
         term = str(data.get("preferred_term") or "").strip()
-        if term:
+        if not term:
+            continue
+        if _rejected(data):
+            target = data.get("representative") if "representative" in data else data.get("identifier")
+            targets = live_by_identifier.get(str(target or "").strip())
+            owners.setdefault(term.casefold(), set()).update(targets or {subject_id})
+        else:
             owners.setdefault(term.casefold(), set()).add(subject_id)
     return {term: frozenset(ids) for term, ids in owners.items()}
 
@@ -1123,6 +1273,7 @@ def main(argv: list[str]) -> int:
                 )
     _collect("Rule B2", evaluate_rule_b2(rows))
     _collect("Rule B3", evaluate_rule_b3(rows))
+    _collect("Rule B5", evaluate_rule_b5(rows))
 
     # Rule B4: warn-and-skip if any in-use prefix's transform is absent.
     # We probe each B4 prefix that actually appears in the SSSOM so the
@@ -1164,6 +1315,7 @@ def main(argv: list[str]) -> int:
     _collect("Rule I", evaluate_rule_i(rows))
     _collect("Rule J", evaluate_rule_j(rows))
     _collect("Rule K", evaluate_rule_k(rows))
+    _collect("Rule L", evaluate_rule_l(prelude, rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -1180,7 +1332,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I, J, K"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, B5, C, D, E, F, G, H, I, J, K, L"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(
@@ -1211,7 +1363,8 @@ def main(argv: list[str]) -> int:
         f"\nRejects written to {reject_display}. "
         "Fix the offending row(s) in MIM (re-emit via the claw builder, "
         "mint the missing registry CURIE for B1, dedupe pairs for B2/B3, "
-        "update object_label for B4, or remove rejected labels for E), or "
+        "resolve B5 local namespace conflicts, update object_label for B4, "
+        "or remove rejected labels for E), or "
         "remove the row from the SSSOM. "
         "CI fails while a violating row remains in "
         "ingredient_mappings.sssom.tsv.",

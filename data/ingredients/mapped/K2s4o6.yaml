@@ -96,6 +96,15 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-22T02:06:34+00:00'
+  curator: codex_issue_710_semantic_evidence_review
+  action: CORRECTED_ROLE_EVIDENCE
+  changes: Added inspected primary-publication support and bounded organism/condition
+    context to the cellular metabolic role (#710). Retained original computational
+    provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+    for the assertion-specific interpretation.
+  llm_assisted: true
+  llm_model: gpt-6
 kg_microbe_node_id: CHEBI:86466
 chemical_properties:
   cas_rn: 13932-13-3
@@ -112,3 +121,13 @@ cellular_metabolic_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+  - reference_type: PEER_REVIEWED_PUBLICATION
+    doi: 10.1007/s11274-010-0441-4
+    url: https://scholarworks.montana.edu/server/api/core/bitstreams/178af696-e5b3-47aa-a0e1-182a47ab782a/content
+    reference_text: Aston et al. (2011). Growth effects and assimilation of organic
+      acids in chemostat and batch cultures of Acidithiobacillus caldus.
+    curator_note: The study explicitly supplies potassium tetrathionate as the electron
+      donor in autotrophic and mixotrophic cultures. This supports the named organism
+      and culture conditions, not universal microbial utilization.
+  metabolic_context: Electron donor during aerobic growth of Acidithiobacillus caldus
+    in the studied tetrathionate-supplemented mineral medium.

@@ -1,19 +1,27 @@
-identifier: cas:8048-52-0
+identifier: NCIT:C76253
 preferred_term: Acriflavine
 ontology_mapping:
   ontology_id: NCIT:C76253
   ontology_label: Acriflavine
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 8048-52-0 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 8048-52-0 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Acriflavine'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Acriflavine'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its
+      PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record;
+      retain source-qualified history, not an active CAS synonym or exact mapping.
+      No global CAS withdrawal is asserted.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -48,12 +56,28 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C76253 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.685884+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its
+    PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record;
+    retain source-qualified history, not an active CAS synonym or exact mapping. No
+    global CAS withdrawal is asserted.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
-  cas_rn: 8048-52-0
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  cas_rn: 65589-70-0
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
   molecular_formula: C27H25ClN6
   smiles: C[N+]1=C2C=C(C=CC2=CC3=C1C=C(C=C3)N)N.C1=CC(=CC2=NC3=C(C=CC(=C3)N)C=C21)N.[Cl-]
   inchi: InChI=1S/C14H13N3.C13H11N3.ClH/c1-17-13-7-11(15)4-2-9(13)6-10-3-5-12(16)8-14(10)17;14-10-3-1-8-5-9-2-4-11(15)7-13(9)16-12(8)6-10;/h2-8H,1H3,(H3,15,16);1-7H,14-15H2;1H
   pubchem_cid: 443101
 ingredient_type: SINGLE_INGREDIENT
+notes: FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY
+  CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain
+  source-qualified history, not an active CAS synonym or exact mapping. No global
+  CAS withdrawal is asserted.

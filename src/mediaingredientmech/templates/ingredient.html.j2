@@ -2,17 +2,31 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ ingredient.preferred_term }} — MIM</title>
 <link rel="stylesheet" href="{{ path_up }}style.css">
 </head>
 <body>
 
-<nav class="breadcrumb">
+<nav class="breadcrumb" aria-label="Record navigation">
+  <a href="{{ path_up }}../index.html">Home</a> &middot;
+  <a href="{{ path_up }}../browser.html">Browse ingredients</a> &middot;
+  <a href="{{ path_up }}../text_map.html">Text Map</a> &middot;
+  <a href="{{ path_up }}../ingredient_umap.html">KG PaCMAP</a> &middot;
+  <a href="{{ path_up }}../ingredient_graph.html">Graph Layout</a> &middot;
+  <a href="{{ path_up }}../schema/index.html">Schema</a> &middot;
+  <a href="{{ path_up }}../index.html#downloads">Downloads</a> &middot;
+  <a href="https://culturebotai.github.io/mechs/">All Mech projects</a> &middot;
   <a href="{{ path_up }}index.html">MIM</a> &rsaquo;
   <span>{{ ingredient.identifier }}</span>
 </nav>
 
 <header>
+  <form class="record-search" action="{{ path_up }}../browser.html" method="get" role="search">
+    <label class="sr-only" for="record-search-input">Search ingredients</label>
+    <input type="search" id="record-search-input" name="q" placeholder="Search ingredients, synonyms, or ontology IDs...">
+    <button type="submit">Search</button>
+  </form>
   <h1>{{ ingredient.preferred_term }}</h1>
   <div class="meta">
     <span class="curie">{{ ingredient.identifier }}</span>
@@ -38,10 +52,15 @@
     {% if om.mapping_quality %}
       <span class="badge">{{ om.mapping_quality }}</span>
     {% endif %}
+    <a class="badge" href="{{ path_up }}../text_map.html?q={{ ingredient.identifier | urlencode }}">View in Text Map &rarr;</a>
   </div>
 </header>
 
+<main id="main-content">
 {% include "_partials/overview.html.j2" %}
+{% for field, title in [('nutritional_roles', 'Nutritional roles'), ('physicochemical_roles', 'Physicochemical roles'), ('cellular_metabolic_roles', 'Cellular metabolic roles'), ('community_organism_roles', 'Community & organism roles'), ('environmental_context', 'Environmental context'), ('culturemech_reference', 'Related CultureMech recipe'), ('causal_graphs', 'Causal & mechanistic graphs'), ('cross_corpus_links', 'Cross-corpus links'), ('protein_examples', 'Protein examples'), ('proposed_experiments', 'Proposed experiments')] %}
+{% if ingredient.get(field) %}<section id="{{ field|replace('_', '-') }}"><h2>{{ title }}</h2>{{ ingredient[field]|structured }}</section>{% endif %}
+{% endfor %}
 {% if ingredient.synonyms %}{% include "_partials/synonyms.html.j2" %}{% endif %}
 {% if ingredient.chemical_properties %}{% include "_partials/chemical_properties.html.j2" %}{% endif %}
 {% if om.evidence %}{% include "_partials/evidence.html.j2" %}{% endif %}
@@ -51,12 +70,77 @@
 {% if ingredient.datasets %}{% include "_partials/datasets.html.j2" %}{% endif %}
 {% if ingredient.discussions %}{% include "_partials/discussions.html.j2" %}{% endif %}
 
+{% if om.ontology_id or ingredient.components or ingredient.nutritional_roles or ingredient.physicochemical_roles or ingredient.cellular_metabolic_roles %}
+<section id="causal-graph">
+  <h2>Role &amp; Partonomy Graph</h2>
+  <ul class="graph-edges" style="list-style:none;padding-left:0;display:grid;gap:0.45rem;">
+    {% if om.ontology_id %}
+    <li>
+      <code>{{ ingredient.preferred_term }} ({{ ingredient.identifier }})</code>
+      <strong>&rarr; [MAPPED_TO ({{ om.mapping_quality or 'CURATED' }})] &rarr;</strong>
+      {% set om_url = curie_to_url(om.ontology_id) %}
+      {% if om_url %}<a href="{{ om_url }}" rel="noreferrer"><code>{{ om.ontology_id }}</code></a>{% else %}<code>{{ om.ontology_id }}</code>{% endif %}
+      {% if om.ontology_label %} ({{ om.ontology_label }}){% endif %}
+    </li>
+    {% endif %}
+    {% for comp in (ingredient.components or []) %}
+    <li>
+      <code>{{ ingredient.preferred_term }}</code>
+      <strong>&rarr; [HAS_COMPONENT] &rarr;</strong>
+      <span>{{ comp.component_name or comp.preferred_term or 'Component' }}</span>
+      {% if comp.component_id %} (<code>{{ comp.component_id }}</code>){% endif %}
+    </li>
+    {% endfor %}
+    {% for role_item in (ingredient.nutritional_roles or []) %}
+    <li>
+      <code>{{ ingredient.preferred_term }}</code>
+      <strong>&rarr; [HAS_NUTRITIONAL_ROLE] &rarr;</strong>
+      <span>{{ role_item.role if role_item is mapping else role_item }}</span>
+    </li>
+    {% endfor %}
+    {% for role_item in (ingredient.physicochemical_roles or []) %}
+    <li>
+      <code>{{ ingredient.preferred_term }}</code>
+      <strong>&rarr; [HAS_PHYSICOCHEMICAL_ROLE] &rarr;</strong>
+      <span>{{ role_item.role if role_item is mapping else role_item }}</span>
+    </li>
+    {% endfor %}
+    {% for role_item in (ingredient.cellular_metabolic_roles or []) %}
+    <li>
+      <code>{{ ingredient.preferred_term }}</code>
+      <strong>&rarr; [PARTICIPATES_IN] &rarr;</strong>
+      <span>{{ (role_item.process or role_item.role) if role_item is mapping else role_item }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section id="cross-mech-links">
+  <h2>Cross-Mech &amp; External Links</h2>
+  <ul>
+    <li><a href="https://culturebotai.github.io/CultureMech/app.html?q={{ ingredient.preferred_term | urlencode }}">Search CultureMech media recipes for {{ ingredient.preferred_term }}</a></li>
+    <li><a href="https://culturebotai.github.io/PathwayMech/?q={{ ingredient.preferred_term | urlencode }}">Search PathwayMech pathways for {{ ingredient.preferred_term }}</a></li>
+    <li><a href="https://culturebotai.github.io/CMMMech/?q={{ ingredient.preferred_term | urlencode }}">Search CMMMech chemical/metabolic mechanisms for {{ ingredient.preferred_term }}</a></li>
+    <li><a href="https://culturebotai.github.io/NaturalProductMech/?q={{ ingredient.preferred_term | urlencode }}">Search NaturalProductMech for {{ ingredient.preferred_term }}</a></li>
+    {% set ident_url = curie_to_url(ingredient.identifier) %}
+    {% if ident_url %}
+    <li><a href="{{ ident_url }}" rel="noreferrer">External Ontology Record ({{ ingredient.identifier }})</a></li>
+    {% endif %}
+  </ul>
+</section>
+
+</main>
 <footer>
   <small class="muted">
     Generated {{ generated_at }} from
-    <code>{{ source_path }}</code>
+    <code>{{ source_path }}</code> &middot;
+    <a href="{{ path_up }}../schema/index.html">Schema</a> &middot;
+    <a href="{{ path_up }}build.json">Build Manifest</a> &middot;
+    Licensed under CC BY 4.0 (data) / BSD-3-Clause (code)
   </small>
 </footer>
 
+<script src="{{ path_up }}../theme-toggle.js"></script>
 </body>
 </html>

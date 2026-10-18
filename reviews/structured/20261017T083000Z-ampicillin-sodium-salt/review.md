@@ -1,0 +1,417 @@
+# Per-record structured review: Ampicillin_Sodium_Salt (data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml)
+
+- Review: 20261017T083000Z-ampicillin-sodium-salt
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Ampicillin_Sodium_Salt (data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml, record-24381254efcc31ff, mapping_status=REJECTED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-24381254efcc31ff | data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml | maintained | Ampicillin_Sodium_Salt |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-24381254efcc31ff | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-24381254efcc31ff | Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-24381254efcc31ff | Reconciled against predecessor batch review 20261011T024631Z-mim-reconcile-all-batch-03 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-24381254efcc31ff.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-24381254efcc31ff.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T08:11:33Z; reviewed SHA-256=e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8; current SHA-256=e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8; hash_changed=False. Reports=["reports/yaml_record_review/Ampicillin_Sodium_Salt.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The CHEBI identity and merge tombstone exist, but the rejected duplicate remains in the mapped aggregate with a provisional role and an unreviewed cross-record baseline against Na-ampicillin.
+
+### Historical provisional-role concern
+
+evidence: unknown. Targets: record-24381254efcc31ff.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-e76bc6e62b52f4f2: Reassess prediction-only role support: Ampicillin sodium salt
+
+minor / deferred / provisional; issue key: mim-reconciliation-role-support-24381254efcc31ff.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+Disposition: The current local observation is recorded, but the named source/context or policy decision is still required; no correction is inferred.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-dee0653778db13ff | data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[490],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":492,"mapping_status":"REJECTED","ontology_id":"CHEBI:34535","preferred_term":"Ampicillin sodium salt"}],"identifier":"CHEBI:34535","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin sodium","ontology_source":"CHEBI"},"preferred_term":"Ampicillin sodium salt","sssom_rows":[],"sssom_subject":"MIM:Ampicillin_Sodium_Salt","synonym_count":2} |
+| ev-eed204757e3dbfc6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [490] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a9fdf94cd803aa96 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ampicillin_Sodium_Salt; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-99ef360274baf79d | docs/data/mapped_ingredients.csv; CSV lines=[492] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34535","line":492,"mapping_quality":"LEXICAL_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:34535","preferred_term":"Ampicillin sodium salt","total_occurrences":"0"}] |
+| ev-5d443e6be7ce2949 | reports/yaml_record_review/Ampicillin_Sodium_Salt.md; &#96;data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:42; Completeness:58; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-7fc0c8aaa295051b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[256] | context_only | [{"current_record_sha256":"e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8","finding_id":"SEM:ccf7918b426e5aa460fe","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
+| ev-e01240e6dd8790bc | data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[490],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":492,"mapping_status":"REJECTED","ontology_id":"CHEBI:34535","preferred_term":"Ampicillin sodium salt"}],"identifier":"CHEBI:34535","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin sodium","ontology_source":"CHEBI"},"preferred_term":"Ampicillin sodium salt","sssom_rows":[],"sssom_subject":"MIM:Ampicillin_Sodium_Salt","synonym_count":2} |
+| ev-943e3e70b626bf56 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-e76bc6e62b52f4f2] | context_only | Predecessor structured review finding f-e76bc6e62b52f4f2 in 20261011T024631Z-mim-reconcile-all-batch-03 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024631Z-mim-reconcile-all-batch-03.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-ampicillin-sodium-salt
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Ampicillin_Sodium_Salt (data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=REJECTED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Ampicillin_Sodium_Salt (data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml,
+  record-24381254efcc31ff, mapping_status=REJECTED). Records 0 open finding(s) and
+  1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml
+    sha256: e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8
+    role: target
+  - path: reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml
+    sha256: 6b3844c17bf3608ea8f73f824efec195e906ab8d2703fef4cd97fda04f0e65bf
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Ampicillin_Sodium_Salt.md
+    sha256: c187b9f77446256b3bf105fc183e6095c1bdf5db0a6fb2daacc237614aa51a33
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-24381254efcc31ff
+  path: data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml
+  label: Ampicillin_Sodium_Salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-24381254efcc31ff
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-24381254efcc31ff
+  evidence_ids:
+  - ev-dee0653778db13ff
+  - ev-eed204757e3dbfc6
+  - ev-a9fdf94cd803aa96
+  - ev-99ef360274baf79d
+  - ev-e01240e6dd8790bc
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-24381254efcc31ff
+  evidence_ids:
+  - ev-dee0653778db13ff
+  - ev-7fc0c8aaa295051b
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024631Z-mim-reconcile-all-batch-03
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-24381254efcc31ff
+  evidence_ids:
+  - ev-5d443e6be7ce2949
+  - ev-7fc0c8aaa295051b
+  - ev-943e3e70b626bf56
+evidence:
+- evidence_id: ev-dee0653778db13ff
+  kind: record_content
+  reference: data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[490],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":492,"mapping_status":"REJECTED","ontology_id":"CHEBI:34535","preferred_term":"Ampicillin
+    sodium salt"}],"identifier":"CHEBI:34535","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Ampicillin sodium salt","sssom_rows":[],"sssom_subject":"MIM:Ampicillin_Sodium_Salt","synonym_count":2}'
+  snapshot_sha256: e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8
+- evidence_id: ev-eed204757e3dbfc6
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [490]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-a9fdf94cd803aa96
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Ampicillin_Sodium_Salt; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-99ef360274baf79d
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[492]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34535","line":492,"mapping_quality":"LEXICAL_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:34535","preferred_term":"Ampicillin
+    sodium salt","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-5d443e6be7ce2949
+  kind: prior_review
+  reference: reports/yaml_record_review/Ampicillin_Sodium_Salt.md
+  locator: '`data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml`:2; Verdict:4; Identity:12;
+    Validation:24; Evidence:42; Completeness:58; Recommended Edits:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: c187b9f77446256b3bf105fc183e6095c1bdf5db0a6fb2daacc237614aa51a33
+  quote: "Recommended Edits:\n- Finish the `Ampicillin_Sodium_Salt` to `Na-ampicillin`\
+    \ retirement by removing\n  the rejected tombstone from mapped aggregate exports,\
+    \ dropping active\n  chemistry and role facets from the tombstone if they are\
+    \ no longer maintained,\n  and marking the `mappings/other_cross_record_baseline.tsv`\
+    \ row reviewed or\n  otherwise replacing it with the intended duplicate baseline\
+    \ entry.\n- Regenerate synchronized products, then rerun\n  `uv run --frozen python\
+    \ scripts/validate_strict.py`,\n  `uv run --frozen linkml-term-validator validate-data\
+    \ data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml -s src/mediaingredientmech/schema/mediaingredientmech.yaml\
+    \ -t IngredientRecord --labels`,\n  and `uv run --frozen python scripts/validate_sssom_invariants.py`."
+- evidence_id: ev-7fc0c8aaa295051b
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[256]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8","finding_id":"SEM:ccf7918b426e5aa460fe","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-e01240e6dd8790bc
+  kind: record_content
+  reference: data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[490],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":492,"mapping_status":"REJECTED","ontology_id":"CHEBI:34535","preferred_term":"Ampicillin
+    sodium salt"}],"identifier":"CHEBI:34535","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Ampicillin sodium salt","sssom_rows":[],"sssom_subject":"MIM:Ampicillin_Sodium_Salt","synonym_count":2}'
+  snapshot_sha256: e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8
+- evidence_id: ev-943e3e70b626bf56
+  kind: prior_review
+  reference: reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml
+  locator: findings[finding_id=f-e76bc6e62b52f4f2]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-e76bc6e62b52f4f2 in 20261011T024631Z-mim-reconcile-all-batch-03
+  snapshot_sha256: 6b3844c17bf3608ea8f73f824efec195e906ab8d2703fef4cd97fda04f0e65bf
+assessments:
+- assessment_id: a-f17c840d4f49af53
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-24381254efcc31ff
+  evidence_ids:
+  - ev-dee0653778db13ff
+  - ev-eed204757e3dbfc6
+  - ev-a9fdf94cd803aa96
+  - ev-99ef360274baf79d
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-0e68d1165c29c7b9
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-24381254efcc31ff
+  evidence_ids:
+  - ev-5d443e6be7ce2949
+  - ev-dee0653778db13ff
+  - ev-7fc0c8aaa295051b
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T08:11:33Z;
+    reviewed SHA-256=e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8;
+    current SHA-256=e4562796d1c57bc6d103905a678c55b4056ab7a278aadae53d50067700fb4ac8;
+    hash_changed=False. Reports=["reports/yaml_record_review/Ampicillin_Sodium_Salt.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The CHEBI
+    identity and merge tombstone exist, but the rejected duplicate remains in the
+    mapped aggregate with a provisional role and an unreviewed cross-record baseline
+    against Na-ampicillin.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-5d443e6be7ce2949
+    - ev-dee0653778db13ff
+  - name: legacy-native-ids
+    value: '["SEM:ccf7918b426e5aa460fe"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-dee0653778db13ff
+    - ev-5d443e6be7ce2949
+    - ev-7fc0c8aaa295051b
+- assessment_id: a-e01240e6dd8790bc
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: unknown
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-24381254efcc31ff
+  evidence_ids:
+  - ev-5d443e6be7ce2949
+  - ev-e01240e6dd8790bc
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-5d443e6be7ce2949
+    - ev-e01240e6dd8790bc
+findings:
+- finding_id: rec-f-e76bc6e62b52f4f2
+  issue_key: mim-reconciliation-role-support-24381254efcc31ff
+  category: evidence
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Reassess prediction-only role support: Ampicillin sodium salt'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-24381254efcc31ff
+  evidence_ids:
+  - ev-5d443e6be7ce2949
+  - ev-e01240e6dd8790bc
+  - ev-943e3e70b626bf56
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition_reason: The current local observation is recorded, but the named source/context
+    or policy decision is still required; no correction is inferred.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024631Z-mim-reconcile-all-batch-03
+    finding_id: f-e76bc6e62b52f4f2
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024631Z-mim-reconcile-all-batch-03.
+```

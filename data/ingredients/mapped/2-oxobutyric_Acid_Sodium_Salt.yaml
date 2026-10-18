@@ -1,8 +1,8 @@
 identifier: cas:2013-26-5
 preferred_term: 2-oxobutyric acid sodium salt
 ontology_mapping:
-  ontology_id: CHEBI:16763
-  ontology_label: 2-oxobutanoate
+  ontology_id: CHEBI:30831
+  ontology_label: 2-oxobutanoic acid
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -17,12 +17,21 @@ ontology_mapping:
       sodium salt'
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#322)
-    notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:16763 (''2-oxobutanoate'').
-      The previous parent was the class of all sodium salts: it retained the counterion
-      and discarded the compound, collapsing unrelated ingredients onto one node.
-      Chosen because it is ChEBI has no ''2-oxobutanoic acid'' term, so the anion
-      is the nearest available parent for the sodium salt. The record stays cas-primary
-      per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
+    notes: 'SUPERSEDED (#312): narrowMatch parent CHEBI:26714 (''sodium salt'') ->
+      CHEBI:16763 (''2-oxobutanoate''). The previous parent was the class of all sodium
+      salts: it retained the counterion and discarded the compound, collapsing unrelated
+      ingredients onto one node. Chosen because it is ChEBI has no ''2-oxobutanoic
+      acid'' term, so the anion is the nearest available parent for the sodium salt.
+      The record stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent
+      moves.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent CHEBI:16763 (''2-oxobutanoate'') -> CHEBI:30831 (''2-oxobutanoic
+      acid''). Section 3: for a salt the broadMatch parent follows the label, and
+      ''...Acid sodium salt'' names the acid. The #322 note said ChEBI has no ''2-oxobutanoic
+      acid'' term; it does: CHEBI:30831, xref cas:600-18-0, synonym ''2-Oxobutyric
+      acid''. The anion CHEBI:16763 was the fallback for a false premise. cas: identity
+      unchanged.'
 synonyms:
 - synonym_text: Sodium 2-oxobutyrate
   synonym_type: EXACT_SYNONYM
@@ -61,6 +70,18 @@ curation_history:
     (#322); ChEBI has no '2-oxobutanoic acid' term, so the anion is the nearest available
     parent for the sodium salt.
   llm_assisted: false
+- timestamp: '2026-09-22T23:25:51.023682+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent CHEBI:16763 (''2-oxobutanoate'') -> CHEBI:30831 (''2-oxobutanoic
+    acid'') (#312). Section 3: for a salt the broadMatch parent follows the label,
+    and ''...Acid sodium salt'' names the acid. The #322 note said ChEBI has no ''2-oxobutanoic
+    acid'' term; it does: CHEBI:30831, xref cas:600-18-0, synonym ''2-Oxobutyric acid''.
+    The anion CHEBI:16763 was the fallback for a false premise. cas: identity unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 2013-26-5
   data_source: CultureBotHT compounds_to_cas.csv

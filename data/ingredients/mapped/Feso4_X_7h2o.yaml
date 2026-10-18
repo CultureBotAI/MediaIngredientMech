@@ -23,31 +23,31 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: FeSO4 x 5 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: FeSO4 x 6 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: FeSO4 x 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: FeSO4 x7 H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: FeSO4·6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: FeSO4・6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ferrous sulfate (anhydrous)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ferrous sulfate anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: iron(2+) sulfate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: REJECTED
 occurrence_statistics:
@@ -150,6 +150,17 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''FeSO4 x 5 H2O'';
+    ''FeSO4 x 6 H2O''; ''FeSO4 x 6H2O''; ''FeSO4·6H2O''; ''FeSO4・6H2O''; ''ferrous
+    sulfate (anhydrous)''; ''ferrous sulfate anhydrous''; ''iron(2+) sulfate''. Preserved
+    original text and source metadata. No identity, mapping, role, or remaining-synonym
+    claim was adjudicated.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7782-63-0
   data_source: PubChem API (ontology label)

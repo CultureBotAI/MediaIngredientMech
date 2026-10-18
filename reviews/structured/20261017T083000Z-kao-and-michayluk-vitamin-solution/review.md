@@ -1,0 +1,445 @@
+# Per-record structured review: Kao_And_Michayluk_Vitamin_Solution (data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml)
+
+- Review: 20261017T083000Z-kao-and-michayluk-vitamin-solution
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Kao_And_Michayluk_Vitamin_Solution (data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml, record-6e86be68514526f1, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-6e86be68514526f1 | data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml | maintained | Kao_And_Michayluk_Vitamin_Solution |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-6e86be68514526f1 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-6e86be68514526f1 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-6e86be68514526f1 | Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-6e86be68514526f1.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-6e86be68514526f1.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T21:35:37Z; reviewed SHA-256=23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94; current SHA-256=23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94; hash_changed=False. Reports=["reports/yaml_record_review/Kao_And_Michayluk_Vitamin_Solution.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The named formulation identity, close MICRO parent mapping, exact local registry row, occurrence count, and final SSSOM rows pass, but VITAMIN_SOURCE is only provisional name-pattern evidence.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-6e86be68514526f1.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-cbf69ab13ef97a82: Reassess prediction-only role support: Kao and Michayluk vitamin solution
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-6e86be68514526f1.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-cbf69ab13ef97a82
+
+Reassess prediction-only role support: Kao and Michayluk vitamin solution
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-bf0b1b4bae7f5b26 | data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1196],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","line":1198,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Kao and Michayluk vitamin solution"}],"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Kao and Michayluk vitamin solution","sssom_rows":[{"data_row":1538,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:closeMatch"},{"data_row":1539,"object_id":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","object_label":"Kao and Michayluk vitamin solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Kao_And_Michayluk_Vitamin_Solution","synonym_count":1} |
+| ev-9f2ec7dca0179d18 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1196] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-e8412c61e3187a1e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Kao_And_Michayluk_Vitamin_Solution; data-row positions=[1538, 1539] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1538,"object_id":"MICRO:0000460","object_label":"vitamin solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Kao_And_Michayluk_Vitamin_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1539,"object_id":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","object_label":"Kao and Michayluk vitamin solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Kao_And_Michayluk_Vitamin_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-78558a3c5bea7e14 | docs/data/mapped_ingredients.csv; CSV lines=[1198] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","line":1198,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"MICRO:0000460","preferred_term":"Kao and Michayluk vitamin solution","total_occurrences":"1"}] |
+| ev-9d30f9f38f665c02 | reports/yaml_record_review/Kao_And_Michayluk_Vitamin_Solution.md; &#96;data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:39; Completeness:63; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-4cfbff5e838e7409 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[768,1987] | context_only | [{"current_record_sha256":"23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94","finding_id":"SEM:eaf2ff769d0c4ac3f686","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94","finding_id":"SEM:a4eea7fff42b255e8dd4","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-a63bdce1111b7abd | data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1196],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","line":1198,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Kao and Michayluk vitamin solution"}],"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Kao and Michayluk vitamin solution","sssom_rows":[{"data_row":1538,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:closeMatch"},{"data_row":1539,"object_id":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","object_label":"Kao and Michayluk vitamin solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Kao_And_Michayluk_Vitamin_Solution","synonym_count":1} |
+| ev-b632cd6afe625ad6 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-cbf69ab13ef97a82] | context_only | Predecessor structured review finding f-cbf69ab13ef97a82 in 20261011T024635Z-mim-reconcile-all-batch-07 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-kao-and-michayluk-vitamin-solution
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Kao_And_Michayluk_Vitamin_Solution (data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Kao_And_Michayluk_Vitamin_Solution (data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml,
+  record-6e86be68514526f1, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+    sha256: 23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94
+    role: target
+  - path: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+    sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Kao_And_Michayluk_Vitamin_Solution.md
+    sha256: 28d12d7970fec0fdf524651cebaec59da59e2749fbd69006df55d26c650f0158
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-6e86be68514526f1
+  path: data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+  label: Kao_And_Michayluk_Vitamin_Solution
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-6e86be68514526f1
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-6e86be68514526f1
+  evidence_ids:
+  - ev-bf0b1b4bae7f5b26
+  - ev-9f2ec7dca0179d18
+  - ev-e8412c61e3187a1e
+  - ev-78558a3c5bea7e14
+  - ev-a63bdce1111b7abd
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-6e86be68514526f1
+  evidence_ids:
+  - ev-bf0b1b4bae7f5b26
+  - ev-4cfbff5e838e7409
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-6e86be68514526f1
+  evidence_ids:
+  - ev-9d30f9f38f665c02
+  - ev-4cfbff5e838e7409
+  - ev-b632cd6afe625ad6
+evidence:
+- evidence_id: ev-bf0b1b4bae7f5b26
+  kind: record_content
+  reference: data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1196],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","line":1198,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Kao
+    and Michayluk vitamin solution"}],"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
+    solution","ontology_source":"MICRO"},"preferred_term":"Kao and Michayluk vitamin
+    solution","sssom_rows":[{"data_row":1538,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","predicate_id":"skos:closeMatch"},{"data_row":1539,"object_id":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","object_label":"Kao
+    and Michayluk vitamin solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Kao_And_Michayluk_Vitamin_Solution","synonym_count":1}'
+  snapshot_sha256: 23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94
+- evidence_id: ev-9f2ec7dca0179d18
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1196]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-e8412c61e3187a1e
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Kao_And_Michayluk_Vitamin_Solution; data-row positions=[1538,
+    1539]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1538,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Kao_And_Michayluk_Vitamin_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":1539,"object_id":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","object_label":"Kao
+    and Michayluk vitamin solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Kao_And_Michayluk_Vitamin_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-78558a3c5bea7e14
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1198]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","line":1198,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"MICRO:0000460","preferred_term":"Kao
+    and Michayluk vitamin solution","total_occurrences":"1"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-9d30f9f38f665c02
+  kind: prior_review
+  reference: reports/yaml_record_review/Kao_And_Michayluk_Vitamin_Solution.md
+  locator: '`data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml`:2; Verdict:4;
+    Identity:12; Validation:23; Evidence:39; Completeness:63; Recommended Edits:70'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 28d12d7970fec0fdf524651cebaec59da59e2749fbd69006df55d26c650f0158
+  quote: "Recommended Edits:\n- Major: remove `nutritional_roles.VITAMIN_SOURCE` unless\
+    \ an inspected\n  CultureMech, MediaDive, or literature source supports this exact\
+    \ formulation\n  as a vitamin source, then rerun strict, term, round-trip, component,\
+    \ and\n  SSSOM validation.\n- Minor: refresh `notes` in\n  `data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml`\
+    \ so the\n  record no longer says curator review is still pending after the May\
+    \ local\n  identity repair."
+- evidence_id: ev-4cfbff5e838e7409
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[768,1987]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94","finding_id":"SEM:eaf2ff769d0c4ac3f686","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94","finding_id":"SEM:a4eea7fff42b255e8dd4","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-a63bdce1111b7abd
+  kind: record_content
+  reference: data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1196],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","line":1198,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Kao
+    and Michayluk vitamin solution"}],"identifier":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
+    solution","ontology_source":"MICRO"},"preferred_term":"Kao and Michayluk vitamin
+    solution","sssom_rows":[{"data_row":1538,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","predicate_id":"skos:closeMatch"},{"data_row":1539,"object_id":"kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution","object_label":"Kao
+    and Michayluk vitamin solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Kao_And_Michayluk_Vitamin_Solution","synonym_count":1}'
+  snapshot_sha256: 23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94
+- evidence_id: ev-b632cd6afe625ad6
+  kind: prior_review
+  reference: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+  locator: findings[finding_id=f-cbf69ab13ef97a82]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-cbf69ab13ef97a82 in 20261011T024635Z-mim-reconcile-all-batch-07
+  snapshot_sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+assessments:
+- assessment_id: a-179312f32cdd0055
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-6e86be68514526f1
+  evidence_ids:
+  - ev-bf0b1b4bae7f5b26
+  - ev-9f2ec7dca0179d18
+  - ev-e8412c61e3187a1e
+  - ev-78558a3c5bea7e14
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-1b6ef13eb66128e2
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-6e86be68514526f1
+  evidence_ids:
+  - ev-9d30f9f38f665c02
+  - ev-bf0b1b4bae7f5b26
+  - ev-4cfbff5e838e7409
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T21:35:37Z;
+    reviewed SHA-256=23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94;
+    current SHA-256=23900d5237c97ebb12b670a2734f96dc638e555562e4230f92a94626d590fb94;
+    hash_changed=False. Reports=["reports/yaml_record_review/Kao_And_Michayluk_Vitamin_Solution.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The named
+    formulation identity, close MICRO parent mapping, exact local registry row, occurrence
+    count, and final SSSOM rows pass, but VITAMIN_SOURCE is only provisional name-pattern
+    evidence.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-9d30f9f38f665c02
+    - ev-bf0b1b4bae7f5b26
+  - name: legacy-native-ids
+    value: '["SEM:eaf2ff769d0c4ac3f686","SEM:a4eea7fff42b255e8dd4"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-bf0b1b4bae7f5b26
+    - ev-9d30f9f38f665c02
+    - ev-4cfbff5e838e7409
+- assessment_id: a-a63bdce1111b7abd
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-6e86be68514526f1
+  evidence_ids:
+  - ev-9d30f9f38f665c02
+  - ev-a63bdce1111b7abd
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-9d30f9f38f665c02
+    - ev-a63bdce1111b7abd
+findings:
+- finding_id: rec-f-cbf69ab13ef97a82
+  issue_key: mim-reconciliation-role-support-6e86be68514526f1
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Kao and Michayluk vitamin solution'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-6e86be68514526f1
+  evidence_ids:
+  - ev-9d30f9f38f665c02
+  - ev-a63bdce1111b7abd
+  - ev-b632cd6afe625ad6
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024635Z-mim-reconcile-all-batch-07
+    finding_id: f-cbf69ab13ef97a82
+actions:
+- action_id: rec-action-cbf69ab13ef97a82
+  description: 'Reassess prediction-only role support: Kao and Michayluk vitamin solution'
+  finding_ids:
+  - rec-f-cbf69ab13ef97a82
+  target_ids:
+  - record-6e86be68514526f1
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Kao_And_Michayluk_Vitamin_Solution.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+```

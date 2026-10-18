@@ -4,6 +4,9 @@ This document is the authoritative reference for what the predicates in
 `mappings/ingredient_mappings.sssom.tsv` actually mean, why MIM uses a
 **registry/identity row pattern** alongside ontology mappings, the most common
 mistakes a curator can make, and what to do when CI rejects a row.
+Section 7 applies the same identity rules to ingredient causal graphs: what may
+anchor a graph, how a graph reaches the species a cell actually meets, and when
+it may link to a record in another Mech.
 
 It is written for a curator who has never read the kg-microbe code. You should
 not need to look at any other repository to understand the rules. Where a rule
@@ -81,13 +84,16 @@ both producers (the claw builder, human curators) and consumers (kg-microbe's
 
 ### `skos:exactMatch`
 
-> **MIM:X and Y denote the SAME entity. Bidirectional substitution is safe in
-> any graph context.**
+> **MIM:X and Y have reviewed matching chemical/material scope.
+> Canonical ID replacement follows the applicable release profile.**
 
-If `MIM:Glucose skos:exactMatch CHEBI:17234` is present, then for any
-graph operation, `MIM:Glucose` and `CHEBI:17234` are interchangeable: same
-node identity, same incoming edges, same outgoing edges. A consumer is free
-to drop one of the two CURIEs and rewrite all triples to the other.
+For `MIM:Glucose skos:exactMatch CHEBI:17234`, MIM's reviewed identity
+policy permits using the target for that scoped ingredient concept.
+`skos:exactMatch` itself is not `owl:sameAs` and does not make a source
+record, product preparation or occurrence interchangeable in every context.
+The [ingredient scope profile](docs/INGREDIENT_SCOPE_PROFILE.md) makes scope
+and identity authorization explicit; source-specific product detail and
+registry history remain separately owned claims.
 
 Use `skos:exactMatch` when:
 
@@ -101,7 +107,7 @@ Use `skos:exactMatch` when:
 Do **not** use `skos:exactMatch` when:
 
 - The ontology term is a parent/broader category and the MIM ingredient is a
-  more specific child (use `skos:narrowMatch`).
+  more specific child (use `skos:broadMatch`).
 - The two terms refer to similar but distinct entities (use `skos:closeMatch`).
 
 ### `skos:closeMatch`
@@ -128,55 +134,77 @@ Do **not** use `skos:closeMatch` as a "soft exactMatch" when you are unsure.
 If you are unsure, the correct action is to leave the row out and flag the
 ingredient for review, not to weaken the predicate.
 
-### `skos:narrowMatch`
+### `skos:broadMatch`
 
-> **MIM:X is a kind-of Y (Y is the broader/parent term). Used to anchor MIM
-> children to OBO parents. Downstream consumers MUST emit this as
-> `biolink:subclass_of` (or `rdfs:subClassOf`), NEVER as identity.**
+> **MIM:X is a form of Y, or a kind of Y (Y is the closest broader term).
+> Used to anchor MIM records to OBO parents. Downstream consumers MUST emit
+> this as `biolink:broad_match` — NOT as `biolink:subclass_of`, and NEVER as
+> identity (#245).**
+
+`skos:broadMatch` is a sub-property of `skos:broader`, and `A skos:broader B`
+means **B is broader than A**. So `MIM:Vermont_Soil skos:broadMatch
+ENVO:00001998` reads "soil is broader than Vermont Soil" — which is the
+intent. MIM published `skos:narrowMatch` for this until #390; that is the
+inverse relation, because `skos:narrowMatch` is a sub-property of
+`skos:narrower` and asserted the OBO parent was *narrower* than the MIM
+record. The grade name and the predicate still agree: a record graded
+`NARROW_MATCH` is narrower, therefore its ontology term is broader.
 
 This predicate is **asymmetric**: substitution is only legal in one
 direction (specific → general for inference like "Vermont Soil is soil"),
-and even that direction is only valid for subclass-of reasoning, not
+and even that direction is only valid for broader-than reasoning, not
 identity. The MIM child and the ontology parent are **different graph
-nodes**.
+nodes**. The row does not say *which* broader-than relation holds — strict
+subclass, salt of, hydrate of, solution of, racemate of — and that is why it
+must not be projected as `subclass_of`; see "The parent anchor means
+'form of'" below.
 
-Use `skos:narrowMatch` when:
+Use `skos:broadMatch` when:
 
 - The MIM ingredient is more specific than any available ontology term
   and you want to anchor it to the closest parent. Example: there is no
   CHEBI/ENVO term for "Vermont Soil" specifically, so `MIM:Vermont_Soil`
-  narrowMatches `ENVO:00001998 "soil"`.
-- You are asserting subclass-of, not identity. The parent term retains
-  its own identity; the MIM subject does not collapse into it.
+  broadMatches `ENVO:00001998 "soil"`.
+- You are asserting that Y is the closest broader term, not identity. The
+  parent term retains its own identity; the MIM subject does not collapse
+  into it. A salt anchored to its parent acid, a hydrate anchored to its
+  anhydrous compound and a solution anchored to its solute are all correct
+  uses (Section 3, step 2).
 
-Do **not** use `skos:narrowMatch` when:
+Do **not** use `skos:broadMatch` when:
 
 - A more specific ontology term exists. Find that term and use
   `skos:exactMatch` instead.
 - The MIM ingredient is a sibling of the ontology term, not a child.
-- You omit the registry row (Section 2). Every `narrowMatch` from a
+- You omit the registry row (Section 2). Every `broadMatch` from a
   `MIM:<slug>` subject **must** be accompanied by a registry exactMatch
-  row. This is enforced by **Rule B1**.
+  row. This is enforced by **Rule B1**, which keys on both asymmetric
+  predicates and so was unaffected by the #390 flip.
 
-### `skos:broadMatch`
+### `skos:narrowMatch`
 
-> **Inverse of narrowMatch. MIM:X is broader than Y; Y is a kind-of MIM:X.**
+> **Inverse of broadMatch. MIM:X is broader than Y; Y is a form of, or a
+> kind of, MIM:X. Consumers emit `biolink:narrow_match`, not a reversed
+> `subclass_of` (#245).**
 
 Used rarely in MIM, since the typical pattern is "MIM ingredient → OBO
-parent" (i.e. narrowMatch). The semantic guarantee is symmetric to
-narrowMatch: asymmetric, subclass-of only, not identity. If you find
-yourself reaching for `broadMatch`, double-check that the relationship
-is actually broad-to-narrow in the direction the row claims, and not a
-mislabeled `narrowMatch`.
+parent" (i.e. broadMatch). The semantic guarantee is symmetric to
+broadMatch: asymmetric, closest-broader-term only, not identity. If you find
+yourself reaching for `narrowMatch`, double-check that the relationship
+really runs broad-to-narrow in the direction the row claims, and is not a
+mislabeled `broadMatch`.
+
+The corpus published **0** `skos:narrowMatch` rows after the #390 flip, so a
+new one is worth a second look.
 
 ---
 
 ## 2. Registry/identity row pattern
 
 MIM uses two **independent kinds of mapping rows** for any ingredient that
-also asserts a `narrowMatch` to an OBO term:
+also asserts a `broadMatch` to an OBO term:
 
-1. **Ontology row** — `MIM:<slug> skos:narrowMatch <ENVO|CHEBI|FOODON|…>:<id>`
+1. **Ontology row** — `MIM:<slug> skos:broadMatch <ENVO|CHEBI|FOODON|…>:<id>`
    anchors the MIM child to its OBO parent. The object_id is an external
    ontology term.
 2. **Registry/identity row** — `MIM:<slug> skos:exactMatch
@@ -185,7 +213,7 @@ also asserts a `narrowMatch` to an OBO term:
    first-class kg-microbe CURIE.
 
 The registry row is **mandatory** whenever the same MIM subject also
-asserts any narrowMatch. This is enforced by **Rule B1** of the SSSOM
+asserts any broadMatch. This is enforced by **Rule B1** of the SSSOM
 validator (strict-by-default — a missing registry row makes CI
 fail). The claw SSSOM builder
 (`culturebotai-claw/scripts/build_mim_ingredient_sssom.py`,
@@ -205,22 +233,22 @@ closest parent is `ENVO:00001998 "soil"`. Vermont_Soil is mapped using
 
 ```tsv
 subject_id      subject_label  predicate_id      object_id                          object_label  object_source  mapping_justification        source                                                                                                          mapping_date  confidence  comment
-MIM:Vermont_Soil  Vermont Soil  skos:narrowMatch  ENVO:00001998                       soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion|MIM:specificity-loss-review (mint_kgm_ingredient)|MIM:curator=auto_classify_ingredient_type  2026-05-02    0.9
+MIM:Vermont_Soil  Vermont Soil  skos:broadMatch  ENVO:00001998                       soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion|MIM:specificity-loss-review (mint_kgm_ingredient)|MIM:curator=auto_classify_ingredient_type  2026-05-02    0.9
 MIM:Vermont_Soil  Vermont Soil  skos:exactMatch   kgmicrobe.ingredient:vermont_soil  Vermont Soil  kgm:ingredient  semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion|MIM:specificity-loss-review (mint_kgm_ingredient)|MIM:curator=auto_classify_ingredient_type  2026-05-02    0.99        Registry/identity row preserving kgmicrobe.ingredient:vermont_soil alongside parent ENVO:00001998.
 ```
 
 What the two rows together say:
 
-- "Vermont Soil **is a kind of** soil" — the narrowMatch row.
+- "Vermont Soil **is a kind of** soil" — the broadMatch row.
 - "Vermont Soil **also has a kg-microbe primary id**, namely
   `kgmicrobe.ingredient:vermont_soil`, distinct from the parent
   `ENVO:00001998`" — the registry row.
 
 ### Why both rows are required
 
-Imagine the registry row were missing — only the narrowMatch row exists.
+Imagine the registry row were missing — only the broadMatch row exists.
 A downstream consumer that calls `find_chebi_by_name("Vermont Soil")`
-walks the SSSOM by `subject_label`, finds the narrowMatch row, and
+walks the SSSOM by `subject_label`, finds the broadMatch row, and
 returns its `object_id`: **`ENVO:00001998`** (the parent "soil"). The
 consumer has now silently substituted the parent for the child. Every
 recipe that uses Vermont Soil will be indexed against the generic
@@ -231,7 +259,7 @@ adversarial review #558 round 3 flagged.
 
 With the registry row present, the same consumer call resolves to the
 exactMatch row first and returns `kgmicrobe.ingredient:vermont_soil` —
-the child's own primary id. The narrowMatch row is then available
+the child's own primary id. The broadMatch row is then available
 separately for subclass-of inference, but it is no longer the only path
 from the MIM subject to a CURIE.
 
@@ -327,7 +355,7 @@ a label that is not an identity-bearing name for the record, retain the text and
 its source as a synonym entry typed `REJECTED_LABEL`. This is a provenance-only
 disposition: it must not resolve through `label_index`, appear in searchable
 synonym exports, or enter the SSSOM `other` column. An upstream
-`skos:closeMatch`, `skos:narrowMatch`, or `skos:broadMatch` label must likewise
+`skos:closeMatch`, `skos:broadMatch`, or `skos:narrowMatch` label must likewise
 not be promoted to a synonym by discarding its predicate. The rejected entry is
 kept precisely so the same enrichment candidate cannot silently return later.
 
@@ -351,10 +379,12 @@ Work down the list and stop at the first that applies.
    `Sodium glutamate monohydrate` → `CHEBI:232425 monosodium L-glutamate hydrate`.
 
 2. **No exact term, but the substance has its own CAS.** `identifier` =
-   `cas:<its own CAS>`, `skos:narrowMatch` to the nearest ontology parent, plus
+   `cas:<its own CAS>`, `skos:broadMatch` to the nearest ontology parent, plus
    the mandatory registry row (Section 2, Rule B1).
-   `Sodium hypophosphite monohydrate` → `cas:10039-56-2`, narrowMatch
-   `sodium hypophosphite`.
+   `Sodium hypophosphite monohydrate` → `cas:10039-56-2`, broadMatch
+   `sodium hypophosphite`. The parent row says the anhydrous compound is the
+   nearest broader term; it does not claim the hydrate is a subclass of it
+   (#245).
 
    The registry row's `kgmicrobe.*` CURIE is **not a competing identifier** — it
    is the kg-microbe-namespace handle for the same MIM subject, required by
@@ -363,14 +393,14 @@ Work down the list and stop at the first that applies.
    not the subject's own registry handle.
 
    **This is already the established pattern**: 34 hydrate-labelled subjects
-   carry `cas:` exactMatch plus a parent narrowMatch plus the Rule B1 registry
+   carry `cas:` exactMatch plus a parent broadMatch plus the Rule B1 registry
    row. Note that a further **22** `cas:`-identified hydrate records have no
    parent row and no registry row, and become non-compliant with this step the
    moment it lands — they are a backlog, not counter-examples.
 
 3. **No exact term and no CAS.** Mint `kgmicrobe.compound:<slug>` (pure
    compounds) or `kgmicrobe.ingredient:<slug>` (complex/biological materials),
-   `narrowMatch` to the nearest parent, plus the registry row.
+   `broadMatch` to the nearest parent, plus the registry row.
 
 4. **The label is genuinely under-specified and an unspecified-sense parent term
    exists** — *and the record carries no independent evidence of which specific
@@ -427,11 +457,14 @@ family precedent is `CHEBI:29987 glutamate(2-)` — and because 30 bare `-ate`
 labels in this corpus sit on charged terms while only the "at least one" group
 does not.
 
-**For a salt, the `narrowMatch` parent follows the label**: where the label says
+**For a salt, the `broadMatch` parent follows the label**: where the label says
 "…Acid sodium salt" the parent is that acid, where it names a neutral compound,
 that compound. This avoids the acid-vs-anion choice entirely. Only reach for the
-anion when ChEBI has no acid term (`2-oxobutyric acid sodium salt` →
-`CHEBI:16763 2-oxobutanoate`).
+anion when ChEBI has no acid term — and check that it really has none: the
+earlier example here, `2-oxobutyric acid sodium salt` → `CHEBI:16763
+2-oxobutanoate`, rested on the claim that ChEBI lacked the acid, but
+`CHEBI:30831 2-oxobutanoic acid` exists, and the record was re-anchored to it
+(#312).
 
 ### What this decides
 
@@ -452,16 +485,16 @@ kg-microbe consumes this file as the **authoritative** ingredient-mapping source
 from this repo as a sibling checkout. Its rule:
 
 > symmetric matches (`skos:exactMatch`, `skos:closeMatch`) **overwrite the
-> canonical name** with MIM's `subject_label`; asymmetric (`narrowMatch`,
-> `broadMatch`) keep the ontology label canonical and add the MIM term as a
-> synonym.
+> canonical name** with MIM's `subject_label`; asymmetric
+> (`narrowMatch`/`broadMatch`) keep the ontology label canonical and add the
+> MIM term as a synonym.
 
 So:
 
 | predicate | effect on the ontology term in kg-microbe |
 |---|---|
 | `skos:exactMatch` / `skos:closeMatch` | **renamed** to MIM's `subject_label` |
-| `skos:narrowMatch` / `skos:broadMatch` | keeps its label; MIM's term added as a synonym, and a parent/child edge is emitted |
+| `skos:broadMatch` / `skos:narrowMatch` | keeps its label; MIM's term added as a synonym, and a `biolink:broad_match` child-to-parent edge is emitted (`subclass_of` until kg-microbe#1120 lands) |
 
 **2,805 of 2,946 rows are symmetric, and 835 carry a label that differs from the
 ontology's** — every one renames a node. That is deliberate: a recipe says `KOH`,
@@ -485,24 +518,102 @@ hydrocarbon` → `CHEBI:33658 "arene"` is one such row, and it does rename the
 ChEBI class downstream — deliberately, since MIM is the naming authority and
 `aromatic hydrocarbon` is the more recognisable name for `arene`.
 
-### The asymmetric predicates do not follow SKOS, and downstream compensates
+### The asymmetric predicates follow SKOS, and the set says so (#390)
 
-This document defines `skos:narrowMatch` as *"MIM:X is a kind-of Y (Y is the
-broader/parent term)"*. **SKOS says the opposite**: `skos:narrowMatch` is a
-sub-property of `skos:narrower`, so `A narrowMatch B` asserts that **B is
-narrower than A**. Under the spec, "MIM:X is a kind-of Y" is `skos:broadMatch`.
+MIM once defined `skos:narrowMatch` as *"MIM:X is a kind-of Y"*, which is the
+inverse of the spec: `skos:narrowMatch` is a sub-property of `skos:narrower`, so
+`A narrowMatch B` asserts **B is narrower than A**. Every parent-anchoring row
+therefore claimed the OBO parent was the more specific concept. Both definitions
+in Section 1 were inverted, consistently, so the corpus was internally coherent
+and externally wrong.
 
-Nothing is currently broken, because kg-microbe reads MIM's intent rather than
-the spec — its consolidator treats **both** asymmetric predicates identically as
-*"the MIM subject is a NARROWER concept than the ontology object"*. The 141
-`narrowMatch` rows therefore land correctly.
+Nothing broke, because kg-microbe read MIM's intent rather than the spec. That
+is also why this could not be fixed by flipping the rows alone: the reader
+compensated, so a flip on one side would have inverted every asymmetric edge.
 
-**Do not "fix" this by flipping the predicates.** That would invert 141 edges in
-kg-microbe, which compensates for the current direction. It needs a coordinated
-change on both sides, tracked as an issue. The one row that *did* disagree —
-the corpus's only `broadMatch` — was regrounded rather than flipped, because the
-term it should have used all along made the mapping symmetric and the question
-moot.
+**The mapping set now declares its semantics in its own header**, which is what
+made the cutover safe:
+
+```
+# predicate_semantics: skos
+```
+
+A consumer reads that key at the top level of the SSSOM header and applies the
+SKOS reading. **Absence means legacy** — the pre-#390 inverted convention — and
+so does any unrecognised value. Failing closed this way makes the two halves
+order-independent: an old file, or a *rebuild of old content*, carries no
+declaration and is read as legacy however new the reader is. A date threshold
+could not do that, because `mapping_set_version` is build time and a rebuild of
+unfixed content would stamp a post-cutover date onto legacy rows.
+
+The declaration and the flipped rows live in the same file, so they are atomic
+by construction — a published set can never assert one and contain the other.
+
+Consequences for curators:
+
+- The parent-anchoring predicate is now **`skos:broadMatch`** (Section 1).
+- A record graded `NARROW_MATCH` still means "this record is narrower"; its
+  published predicate is `broadMatch` because the *ontology term* is broader.
+- Rule B1 keys on both asymmetric predicates and was unaffected.
+- `skos:narrowMatch` is now rare-to-nonexistent in the corpus; treat a new one
+  as a likely mislabelled `broadMatch`.
+
+### The parent anchor means "form of", not subsumption (#245)
+
+Section 1 used to say a consumer *must* emit `broadMatch` as
+`biolink:subclass_of`. That was measured against ChEBI on 2026-09-22 (set at
+`c5993f67`, 165 `broadMatch` rows), classifying each CHEBI parent by whether
+it carries an InChIKey — a fully specified molecule — or is a class:
+
+| subject shape | parent is a… | rows |
+|---|---|---:|
+| salt-named (`…sodium salt`, `…hydrochloride`) | specific molecule | 31 |
+| hydrate-named (`MgSO4 x 6 H2O`) | specific molecule | 10 |
+| solution-named (`84 g/L NaHCO3 solution`) | specific molecule | 3 |
+| other (racemates, cation-named salts, polymers, concentrates) | specific molecule | 25 |
+| any | class (`sodium salt`, `ionic liquid`, `hydroxyflavone`) | 26 |
+| any | non-CHEBI parent (NCIT, MeSH, FOODON, ENVO, MICRO, UBERON) | 70 |
+
+**69 of the 95 CHEBI-parent rows point at a fully specified molecule.** ChEBI
+relates a salt to its parent acid, and a hydrate to its anhydrous form, with
+`has part`, not `is_a`: in `chebi.db` no term carries both `BFO:0000051` and
+`rdfs:subClassOf` to the same target (0 of 4,117 has-part edges, 0 of the
+201 on hydrate-labelled terms). A `subclass_of` edge for those rows is
+therefore false in the source ontology, and a prepared solution is not a
+kind of its solute under any model. The 26 class-parent rows are genuine
+subclass assertions ("3'-sialyllactose sodium salt is a sodium salt"). The
+70 non-CHEBI rows were not classified; their typical shape is a material
+under a material class ("Vermont Soil is a soil"), where subclass would
+hold. The row itself does not distinguish the shapes.
+
+**Ruling: keep `skos:broadMatch`, change nothing in the data, and state what
+it means.** A MIM `broadMatch` row asserts that the object is the closest
+broader term for the subject — the subject is a *form of* it (salt, hydrate,
+solution, racemate) or a *kind of* it — and asserts nothing more specific
+than that. Consequences:
+
+- Consumers **must not** project a MIM `broadMatch` row as
+  `biolink:subclass_of` / `rdfs:subClassOf`. Emit `biolink:broad_match`
+  (Biolink's predicate whose exact mapping is `skos:broadMatch`). The parent
+  link stays in the graph for navigation and grouping; no subsumption claim
+  that ChEBI contradicts is made. The kg-microbe reader change is a predicate and
+  relation swap at the MediaDive parent-edge emission (kg-microbe#1120).
+- `skos:narrowMatch`, the inverse, carries the same reading in the other
+  direction: `biolink:narrow_match`, not a reversed `subclass_of`.
+- Curators keep following Section 3 step 2. Anchoring a hydrate to its
+  anhydrous molecule, or a salt to its parent acid, is correct and required —
+  it is not an error to be "fixed" by re-pointing the row at `CHEBI:35505
+  hydrate` or `CHEBI:24866 salt`. A class parent is equally fine when it is
+  the nearest one.
+- `skos:closeMatch` was rejected for the 69 rows: it carries no direction,
+  and Rule B1's registry-row obligation is keyed on the asymmetric
+  predicates, so those records would have lost it. A new salt-of/hydrate-of
+  predicate was rejected because no consumer reads one and `has part` on the
+  SSSOM subject would assert a partonomy MIM does not curate (Section 6).
+
+Transition: MIM's own KGX exporter (`src/mediaingredientmech/export/kgx.py`)
+and the 2026-09-21 semantic-review bundle still project `subclass_of`; that
+is tracked as #734 and is a release decision, not a curation one.
 
 ### What *not* to do
 
@@ -539,10 +650,10 @@ current mapping*, so they agree with it by construction.
 
 Check `chemical_properties.data_source` before trusting a CAS, too — a
 `data_source` of the form `PubChem (via CHEBI:…)` was also derived from the
-mapping under test. `MgSO4·H2O` carries `cas_rn 10034-99-8` sourced
-`PubChem (via CHEBI:31795)` **and** external-sweep synonyms that are all
-*heptahydrate* spellings, so a curator reading both as corroboration would
-confirm the wrong term twice. Evidence counts only when its provenance is
+mapping under test. Until #878, `MgSO4·H2O` carried `cas_rn 10034-99-8`
+sourced `PubChem (via CHEBI:31795)` **and** external-sweep synonyms that were
+all *heptahydrate* spellings, so a curator reading both as corroboration would
+have confirmed the wrong term twice. Evidence counts only when its provenance is
 independent of the mapping being tested — e.g. a CAS present from the record's
 `CREATED` event, or a name lookup on the record's own label.
 
@@ -577,7 +688,7 @@ monobasic) to `CHEBI:31346 "calcium sulfate dihydrate"`:
 
 ```tsv
 subject_id     subject_label                     predicate_id      object_id     object_label              object_source  mapping_justification        source                                          mapping_date  confidence
-MIM:KH2PO4     potassium phosphate monobasic     skos:narrowMatch  CHEBI:31346   calcium sulfate dihydrate  obo:chebi.owl  semapv:ManualMappingCuration  MIM:curator=auto_classify_ingredient_type  2026-05-02    0.85
+MIM:KH2PO4     potassium phosphate monobasic     skos:broadMatch  CHEBI:31346   calcium sulfate dihydrate  obo:chebi.owl  semapv:ManualMappingCuration  MIM:curator=auto_classify_ingredient_type  2026-05-02    0.85
 ```
 
 `subject_label` = "potassium phosphate monobasic"; `object_label` =
@@ -617,7 +728,7 @@ child of the same ontology term:
 ```tsv
 subject_id          subject_label  predicate_id      object_id      object_label  object_source  mapping_justification        source                                  mapping_date  confidence
 MIM:Vermont_Soil    Vermont Soil   skos:exactMatch   ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion           2026-05-02    0.9
-MIM:Vermont_Soil    Vermont Soil   skos:narrowMatch  ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:specificity-loss-review        2026-05-02    0.9
+MIM:Vermont_Soil    Vermont Soil   skos:broadMatch  ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:specificity-loss-review        2026-05-02    0.9
 ```
 
 Both rows have the same `(subject_id, object_id) = (MIM:Vermont_Soil,
@@ -626,22 +737,22 @@ parent/child. They cannot both be true.
 
 **Rule B2** rejects this: at most one row per `(subject_id, object_id)`
 pair. **Rule B3** also rejects this specific shape: for any subject
-`MIM:<slug>` and any OBO-parent target `Y`, if `narrowMatch Y` is
+`MIM:<slug>` and any OBO-parent target `Y`, if `broadMatch Y` is
 asserted, then `exactMatch Y` must NOT be.
 
-**Antidote**: pick `narrowMatch` (the parent IS broader; Vermont Soil
+**Antidote**: pick `broadMatch` (the parent IS broader; Vermont Soil
 is not literally identical to all soil) and remove the `exactMatch`
 row. Then add the registry row to
 `kgmicrobe.ingredient:vermont_soil` per Section 2.
 
 ### Mistake 3 — Missing registry row (Rule B1)
 
-A `narrowMatch` row is present, but no registry exactMatch row
+A `broadMatch` row is present, but no registry exactMatch row
 accompanies it:
 
 ```tsv
 subject_id          subject_label  predicate_id      object_id      object_label  object_source  mapping_justification        source                       mapping_date  confidence
-MIM:Vermont_Soil    Vermont Soil   skos:narrowMatch  ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion  2026-05-02    0.9
+MIM:Vermont_Soil    Vermont Soil   skos:broadMatch  ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion  2026-05-02    0.9
 ```
 
 That's the only row for `MIM:Vermont_Soil`. There is no second row
@@ -673,7 +784,7 @@ old one:
 
 ```tsv
 subject_id          subject_label  predicate_id      object_id      object_label  object_source  mapping_justification        source                       mapping_date  confidence
-MIM:Vermont_Soil    Vermont Soil   skos:narrowMatch  ENVO:00001998  soils         obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion  2026-05-02    0.9
+MIM:Vermont_Soil    Vermont Soil   skos:broadMatch  ENVO:00001998  soils         obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion  2026-05-02    0.9
 ```
 
 `object_label = "soils"` instead of the canonical ENVO label `"soil"`.
@@ -691,7 +802,7 @@ canonical label source.
 This rule prevents the "stale child label leaking onto parent"
 pollution that kg-microbe's `purge_asymmetric_pollution()` exists to
 clean up: if a curator typed in "Vermont soil" as the `object_label`
-of a `narrowMatch ENVO:00001998` row, downstream consumers might index
+of a `broadMatch ENVO:00001998` row, downstream consumers might index
 "Vermont soil" against the ENVO parent — exactly the kind of identity
 collapse Section 2 describes.
 
@@ -748,7 +859,7 @@ This is the right option when the row reflects genuinely incorrect data.
      SSSOM was edited directly — re-run `just build-sssom` from
      claw and the reject should clear.
    - **Rule B2/B3**: pick one predicate. If the ontology term is a
-     proper parent, keep the narrowMatch and drop the exactMatch.
+     proper parent, keep the broadMatch and drop the exactMatch.
    - **Rule B4**: update `object_label` in the YAML's
      `ontology_mappings` entry to the canonical OBO label.
 3. Regenerate `mappings/ingredient_mappings.sssom.tsv` from the
@@ -874,10 +985,12 @@ whole record. Therefore:
   onto the mixture — that would assert that the whole *is* the part;
 - do not translate a component edge into `skos:exactMatch`, `closeMatch`,
   `narrowMatch`, or `broadMatch`; those predicates describe grounding of the whole;
-- do not use component edges to relate chemical forms. MIM currently records no
-  local relationship among records that differ in hydration, stereochemistry,
-  salt form, or grade. Whether those details create a distinct identity or live
-  in `supplied_form` is governed by Section 3; `components` decides neither;
+- do not use component edges to relate chemical forms. `components` records no
+  relationship among records that differ in hydration, stereochemistry, salt
+  form, or grade. Whether those details create a distinct identity or live in
+  `supplied_form` is governed by Section 3; `components` decides neither. A
+  causal-graph bridge (Section 7) may say what a supplied form becomes in the
+  medium, but it is not a component edge and decides no identity either;
 - do not infer a complete culturing recipe from a component list. Completeness is
   explicit in `component_assertion` and is relative to its cited evidence.
 
@@ -887,8 +1000,238 @@ ontology/registry CURIE (`EXTERNAL_TERM`), or is named but ungrounded (`UNMAPPED
 It is not a unique document key: duplicate-identifier families remain a separately
 tracked catalog defect.
 
+**Causal graphs mirror `components`; they never extend it (Section 7).** A graph
+edge with `bridge_kind: COMPONENT` restates one entry of this list: its object
+node's `component_ref` equals a `components[].component_id` of the same record,
+its basis is `RECORD_COMPONENT`, and it inherits that entry's
+`component_assertion`. A graph never adds, removes or changes a component, and no
+chemistry edge starts at a component node, because the component's own record
+owns its speciation and mechanism. The other bridge kinds (`HYDRATE_PART`,
+`ION_PART`, `PROTONATION`, `TAUTOMER`, `STRUCTURAL_FORM`, `FORM_OF_PARENT`) are
+not component edges. They say what one supplied substance becomes in the medium,
+not what a mixture contains, so a hydrate's anhydrous part or a salt's ion never
+goes into `components`, and a `components` entry never stands in for a bridge.
+`COMPONENT`, `HYDRATE_PART` and `ION_PART` edges all use `BFO:0000051` (has
+part); `bridge_kind` is what tells them apart.
+
 See `docs/stock_components.md` and run `just qc-component-partonomy` for the full
 shape and cross-record invariants.
+
+---
+
+## 7. Causal graphs: supplied form, active species and cross-Mech links
+
+An ingredient record may carry `causal_graphs`: evidence-backed mechanism graphs
+that explain how the ingredient, as supplied, acts on cultured microbes.
+`docs/CAUSAL_GRAPH_CONTRACT.md` describes the graph shape, the node types, the
+full predicate table, the evidence model and the curation procedure. This section
+owns the identity rules: what may anchor a graph, how a graph gets from the
+supplied form to the species a cell meets, and when a graph may link to another
+Mech's record. Like the rest of this file, it outranks the schema and that page.
+
+> **Status.** The `causal_graphs` schema, structural rule tests and reference
+> pages are included. No maintained record gains a graph in this change. The
+> offline semantic gate (`just qc-causal-graphs`, with committed snapshots) is
+> planned; the error codes below specify its future checks. Schema validation
+> does not verify the scientific claims or permit carrying forward approvals.
+> Wait for the semantic gate before curating graphs into maintained records,
+> and obtain fresh scientific approval after every record-byte change.
+
+**Principle.** The anchor is the record exactly as Section 3 identifies it: the
+supplied form. Species the cell meets are separate nodes with their own
+groundings. A bridge says what the supplied form becomes; it never says what the
+record is. A blocked bridge is a prompt to re-check identity under Section 3,
+never a reason to relax a guard.
+
+### 7.1 Identity gate
+
+Violations fail with `IDENTITY_GATE` unless another code is named; the schema
+enforces the first condition of A2 itself.
+
+- **A1. One anchor.** Each graph has exactly one `INGREDIENT` node, and its
+  `grounding` equals the record's `identifier` (`ANCHOR_MISMATCH` otherwise).
+- **A2. Only a resolved identity anchors a graph.** A record may carry graphs
+  only when all of the following hold:
+  - `mapping_status` is `MAPPED`, and `ingredient_type` is not `NAMED_MEDIUM`
+    (schema rules). A named medium is CultureMech's recipe, and its
+    constituents' own records carry the mechanisms. A record with no
+    `ingredient_type` may carry graphs;
+  - `ontology_mapping.mapping_quality` is not `PLACEHOLDER`;
+  - `identifier` is not listed in `mappings/duplicate_identifier_baseline.tsv`,
+    whatever the row's disposition. On 2026-10-05 every row there was an
+    unresolved family (`UNREVIEWED`, `HYDRATE_FAMILY_UNREVIEWED`,
+    `NEEDS_OWN_ID`, `NEEDS_OWN_ID_MEMBER_UNDECIDED`); for example `CHEBI:31795`
+    sits on both `MgSO4 x 7 H2O` and `MgSO4·H2O`;
+  - no other non-`REJECTED` record carries the same `identifier`. `REJECTED`
+    merge tombstones do not count: `Dextrose.yaml` (`CHEBI:17634`) does not
+    block `D-glucose.yaml`, and `Na2moo42h2o.yaml` (`CHEBI:75213`) does not
+    block `Na2moo4_X_2_H2o.yaml`.
+- **A3. Identity cannot re-enter under a second id.** No node other than the
+  anchor may carry the anchor's CURIE, or any CURIE that the record's own SSSOM
+  rows map with `skos:exactMatch` or `skos:closeMatch`.
+- **A4. `xrefs` carry exact equivalents only**, declared either by the owning
+  sibling record (`mapped_xrefs` with mapping source `ec2go` or `rhea2ec`) or by
+  the ontology (GO `hasDbXref`). Verified pairs: `GO:0061599` ↔ `RHEA:35047`,
+  `GO:0015412` ↔ `EC:7.3.2.5`, `GO:0015420` ↔ `EC:7.6.2.8`, `GO:0004325` ↔
+  `EC:4.98.1.1`. Anything else fails with `XREF_UNDECLARED`. A parent, a related
+  form or the record identifier is a separate node joined by an edge, never an
+  xref.
+- **A5. Graphs change no identity.** They write no SSSOM rows and never change
+  `identifier`, `ontology_mapping` or `components`. Hydrates, salts and
+  stereoisomers stay distinct substances (Section 3), and a bridge never
+  justifies a merge.
+- **A6. `supplied_form` is never a node.** A catalogue entry or CAS number
+  describes the purchase, not a species.
+- **A7. One node per CURIE per graph** (claw's duplicate-grounding check).
+  Compartments are expressed through protein locations, not by repeating a
+  chemical node.
+
+### 7.2 Bridge kinds (closed set)
+
+A chemistry edge carries a `bridge_kind`. The set is closed: each kind fixes its
+`predicate_id` and the basis it must verify, and the gate recomputes every
+bridge from ChEBI facts committed in `mappings/ontology_facts.tsv`, so CI needs
+no ontology database. Chemistry edges carry no organism context (L4). Every
+example below was checked against a local ChEBI build (`chebi.db`) on 2026-10-05.
+
+| `bridge_kind` | `predicate_id` | Required basis | Recomputed check | Examples |
+|---|---|---|---|---|
+| `HYDRATE_PART` | `BFO:0000051` (has part) | `ONTOLOGY_AXIOM` | The subject is entailed under `CHEBI:35505` (hydrate); ChEBI asserts subject has part object; the subject's SMILES components minus water equal the object's. | Pass: `CHEBI:75836` → `CHEBI:75832` (FeSO4·7H2O → FeSO4) and `CHEBI:75213` → `CHEBI:75215` (Na2MoO4·2H2O → Na2MoO4), both asserted. |
+| `ION_PART` | `BFO:0000051` plus `stoichiometry` | `ONTOLOGY_AXIOM` when ChEBI asserts or entails it; otherwise `CHEMICAL_STRUCTURE` | The ion's SMILES is an exact `.`-separated component of the salt's SMILES; its count equals `stoichiometry`; each component resolves to exactly one non-deprecated ChEBI term by SMILES; the component charges sum to the salt's charge. A transition-metal cation with a carbon-containing component also needs `LITERATURE` (complexation). A missing SMILES fails closed. | Pass: `CHEBI:75832` → `CHEBI:29033` iron(2+) and `CHEBI:75215` → `CHEBI:36264` molybdate (asserted); `CHEBI:63005` → `CHEBI:17632` nitrate (entailed through `CHEBI:51082` nitrate salt); `CHEBI:32149` → `CHEBI:16189` sulfate (no axiom; `O=S(=O)([O-])[O-].[Na+].[Na+]` has one sulfate component, and −2 + 2(+1) = 0). Blocked: `CHEBI:53438` iron(3+) sulfate → iron(2+) (no `[Fe+2]` component). |
+| `PROTONATION` | `RO:0018033` (is deprotonated form of) / `RO:0018034` (is protonated form of) | `ONTOLOGY_AXIOM` | One asserted ChEBI hop per edge; hops may chain. | `CHEBI:61548` `RO:0018033` `CHEBI:4170` (asserted). |
+| `TAUTOMER` | `RO:0018036` (is tautomer of) | `ONTOLOGY_AXIOM` | Asserted in ChEBI. | — |
+| `STRUCTURAL_FORM` | `rdfs:subClassOf` (is a), from the specific form to the supplied class | `ONTOLOGY_AXIOM` + `CHEMICAL_STRUCTURE` | Asserted direct subclass; the form has a SMILES and no isotopic InChI layer (`/i`); the supplied class has no SMILES; formula and charge are equal; no other non-isotopic direct subclass shares the form's InChIKey first block with a different key. | Pass: `CHEBI:4167` D-glucopyranose → `CHEBI:17634` D-glucose. Blocked: `CHEBI:17634` → `CHEBI:17234` glucose (D-glucose has no structure); `CHEBI:4167` → `CHEBI:37661` glucopyranose (rival `CHEBI:37627` L-glucopyranose shares the block `WQZGKKKJIJFFOK`); the isotopologues `CHEBI:88300` and `CHEBI:134625`. |
+| `FORM_OF_PARENT` | `skos:broadMatch` (has broader match) | `RECORD_SSSOM` | First hop only, from a `cas:` or `kgmicrobe.*` anchor to the ChEBI parent named by the record's own SSSOM `skos:broadMatch` row (Section 3, step 2); the parent must have a structure. | — |
+| `COMPONENT` | `BFO:0000051` (has part) | `RECORD_COMPONENT` | The object node's `component_ref` equals a `components[].component_id`; no chemistry edge starts at a component node (Section 6). | — |
+
+Bridges chain from the anchor toward the species. For example, `CHEBI:75836`
+iron(2+) sulfate heptahydrate has part (`HYDRATE_PART`) `CHEBI:75832` iron(2+)
+sulfate (anhydrous), which has part (`ION_PART`, stoichiometry 1) `CHEBI:29033`
+iron(2+).
+
+The guards exist because the simpler rules were wrong. "Is a" over any entailed
+ChEBI subclass admits isotopologues and the wrong stereoisomer: `CHEBI:88300` and
+`CHEBI:134625` are asserted direct subclasses of D-glucose. Has-part read off a
+formula, with no charge check, admits the wrong oxidation state. Relaxing a guard
+re-admits exactly these cases.
+
+### 7.3 Link admissibility
+
+**L1. Exact reciprocal grounding.** A graph links to another record, in MIM or a
+sibling Mech, only through a node whose `grounding` equals that record's
+identifier. An edge between a MIM node grounded C and a sibling node S is
+admitted only if the pinned record S states that relation for exactly C.
+"Pinned" means at the commit recorded for that Mech in `conf/sibling_pins.yaml`;
+the gate reads the statement from the committed snapshot
+`mappings/cross_mech_assertions.jsonl`, never from a live checkout. The match
+between S's own grounding and C is reported as one of:
+
+- **`EXACT`**: the same CURIE.
+- **`GENERIC_SPECIALISATION`** (info): S grounds a Rhea generic class (its SMILES
+  contains `*` or its formula contains R), and C is an asserted ChEBI subclass of
+  it. Example: `EC:7.6.2.8` has input `CHEBI:140785` R-cob(III)alamin, and
+  `CHEBI:17439` cyanocob(III)alamin is an asserted subclass of it.
+- **`OBSOLETE_REPLACED`** (warning; blocks `MECHANISTIC`): S uses a deprecated
+  ChEBI id whose `IAO:0100001` replacement is C. Example: `TCDB:9.A.8` lists
+  `CHEBI:34754`, replaced by `CHEBI:29033` iron(2+). Follow the one declared
+  replacement, never a chain: the deprecated ids in `TCDB:2.A.55` now resolve to
+  carotenoids.
+- **`XREF_EQUIVALENT`** (warning): S's ligand CURIE equals a ChEBI database xref
+  of C, under the declared prefix synonym `pdb.ligand` ≡ `pdb-ccd`. Example: the
+  BioLiP ligand `pdb.ligand:CNC` matches `CHEBI:17439` through its xref
+  `pdb-ccd:CNC`.
+- **`SHARED_MEMBER`** (warning): a cited family record that shares a
+  `QUALIFIED` protein example with the node states the relation. Example:
+  `PANTHER:PTHR43185` maps the FeoB family to `GO:0005886` plasma membrane, and
+  its `QUALIFIED` example `UniProtKB:P33650` is the FeoB node's protein example.
+
+Anything else fails with `RECIPROCAL_GROUNDING_MISMATCH`. If S states only the
+opposite direction, the edge gets `RECIPROCAL_DIRECTION_MISMATCH` (warning) and
+needs a `DATABASE_RECORD` or `LITERATURE` basis to establish its direction.
+Example: ProteinTraitsMech writes `EC:1.16.1.6` with `CHEBI:17439` as an output,
+while UniProt `Q9Y4U1` states `PhysiologicalDirection=right-to-left;
+Xref=Rhea:RHEA:16115`.
+
+**What the sibling record must state (`SIBLING_RECORD`).** Each predicate
+mirrors the sibling's own assertion type, which is what makes the check
+mechanical. The endpoint rules for every predicate are in
+`docs/CAUSAL_GRAPH_CONTRACT.md`.
+
+| Predicate | Typical edge | The pinned sibling record must state |
+|---|---|---|
+| transports (`RO:0002020`) | transport function, including a TCDB family → chemical | The chemical is in its `chemical_participants` with role `TRANSPORTED`. |
+| has input / has output (`RO:0002233` / `RO:0002234`) | activity, process or pathway → chemical | Its own graph has the same predicate to the same grounding. |
+| has participant (`RO:0000057`) | activity, process or pathway → chemical | The chemical is a participant, or a grounded node of its graph. |
+| part of (`BFO:0000050`) | activity or process → process or pathway | PathwayMech participants or edges place the activity or process in the pathway. |
+| input of / output of (`RO:0002352` / `RO:0002353`) | chemical → pathway, process or activity | A PathwayMech `consumes` / `produces` edge with the chemical as subject. |
+| participates in (`RO:0000056`) | chemical → trait or process | A TraitMech `MECHANISTIC` graph grounds the chemical. |
+| enables (`RO:0002327`) | protein family or structure → activity | The family's xrefs meet the activity's xref closure (depth ≤ 2 through ProteinTraitsMech `mapped_xrefs` / `xrefs`), or a CellStructureMech `functions[].grounding` names the activity. |
+| contributes to (`RO:0002326`) | subunit family → activity or process | The same xref closure. |
+| involved in (`RO:0002331`) | family or activity → process or pathway | Its xrefs name the process or pathway. |
+| located in (`RO:0001025`) | family or activity → structure or location | Its `xrefs` or `mapped_xrefs` name the location, or `SHARED_MEMBER` applies. |
+| molecularly interacts with (`RO:0002436`) | family or structure ↔ chemical | The family xrefs a GO binding term whose `RO:0004009` is the chemical (with `ONTOLOGY_AXIOM`), or a BioLiP record's ligand is the chemical and its receptor is one of the node's protein examples. |
+| satisfies cofactor requirement (`MIM.vocab:satisfies_cofactor_requirement`) | chemical → `COFACTOR_REQ_*` quality | The requirement record's `xrefs` contain exactly the chemical's grounding. |
+| has characteristic (`RO:0000053`); causally upstream of (`RO:0002411`, `RO:0002304`, `RO:0002305`) | see the predicate table | The record states the same relation for exactly these groundings (L1). |
+
+The remaining predicates never take `SIBLING_RECORD`: has part, is a, has broader
+match, the protonation and tautomer steps, has primary input / output, has
+intermediate, starts with / ends with and results in transport across rest on
+ontology, structure or record bases; positively / negatively regulates and
+causally influences rest on literature. Is small molecule inhibitor of rests on
+literature, and an AntibioticMech record with the same grounding is reported as
+a co-reference, not as support.
+
+**L2. Chemistry moves only toward what the supplied form becomes**: its parts,
+its ions, their protonation or tautomer states, and its structural forms. It
+never moves up to a broader class to reach a sibling. Claims grounded on
+`CHEBI:17234` glucose (such as TraitMech's lactic acid fermentation trait,
+`traitmech:000026`) belong on `Glucose.yaml`, not `D-glucose.yaml`. And the
+cobalamin requirement `COFACTOR_REQ_CHEBI_30411` is not reachable from
+cyanocobalamin, because `CHEBI:17439` is not a subclass of `CHEBI:30411`.
+
+**L3. Every node is reachable from the anchor** (claw's structure audit). Each
+bridged species must touch at least one non-chemistry edge; otherwise the graph
+gets `BRIDGE_WITHOUT_PURPOSE` (warning).
+
+**L4. Chemistry edges carry no organism context.** Biological edges inherit the
+graph's `organism_scope`.
+
+**L5. Mixtures use `COMPONENT` edges**, and each component's own record owns its
+speciation and mechanism (Section 6).
+
+**L6. No projection onto `MIM:<slug>`.** A bridge is never projected onto the
+`MIM:<slug>` node and never exported as `same_as` or `exact_match`; has-part on
+`MIM:<slug>` stays reserved for `components`. As with a `skos:broadMatch` row
+(#245), a bridge relates two distinct nodes and never makes them one.
+
+### 7.4 Delegation (`SPECIATION`)
+
+A salt, hydrate or stock solution may carry a `graph_kind: SPECIATION` graph:
+the anchor plus bridges or `COMPONENT` edges to species or components that are
+MIM records. The schema makes such a graph `NONMECHANISTIC`, and its
+`scope_notes` names the records that hold the mechanism. The gate warns
+`DELEGATION_TARGET_HAS_NO_MECHANISM` until a target record has a `MECHANISTIC`
+graph explaining a role of the same name.
+
+Delegation keeps the mechanistic count honest: a salt does not get a mechanism
+of its own by restating its ion's. claw counts a `SPECIATION` graph as a graph
+but not as mechanistic, and the derived links ledger
+(`mappings/cross_mech_links.tsv`) adds `VIA_SPECIES_RECORD` rows, so a salt still
+shows the sibling records reached through its species record.
+
+### 7.5 Reading a failure
+
+| Code | Severity | What to do |
+|---|---|---|
+| `IDENTITY_GATE`, `ANCHOR_MISMATCH` | error | Resolve the identity first (Section 3, the duplicate family or the placeholder), then add the graph. |
+| `XREF_UNDECLARED` | error | Remove the xref, or make the entity a separate node joined by an edge. |
+| `BRIDGE_GUARD_FAILED`, `STOICHIOMETRY_MISMATCH`, `CHARGE_IMBALANCE`, `COMPLEXATION_NEEDS_LITERATURE` | error | Re-check the record's identity under Section 3, or add literature. Never weaken the guard. |
+| `RECIPROCAL_GROUNDING_MISMATCH` | error | The sibling does not state the relation for this grounding: bridge to the species it does ground, change the target, or drop the claim. |
+| `RECIPROCAL_DIRECTION_MISMATCH`, `OBSOLETE_REPLACED`, `XREF_EQUIVALENT`, `SHARED_MEMBER`, `BRIDGE_WITHOUT_PURPOSE`, `DELEGATION_TARGET_HAS_NO_MECHANISM` | warning | Review. Establish direction with a database or literature basis; an `OBSOLETE_REPLACED` edge keeps the graph out of `MECHANISTIC`. |
+| `GENERIC_SPECIALISATION` | info | None. |
+
+The full list of gate codes, including evidence, snapshot and scope-gate
+failures, is in `docs/CAUSAL_GRAPH_CONTRACT.md`.
 
 ---
 
@@ -901,3 +1244,5 @@ shape and cross-record invariants.
 - `docs/CURATION_GUIDE.md` — broader curation workflow (this file is
   scoped to mapping semantics specifically).
 - `docs/stock_components.md` — typed ingredient/mixture partonomy contract.
+- `docs/CAUSAL_GRAPH_CONTRACT.md` — causal graph shape, node types, predicates,
+  evidence and cross-Mech links (Section 7 governs identity and bridges).

@@ -62,12 +62,15 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from export_individual_records import collect_existing_filenames, sanitize_filename
+from mediaingredientmech.utils.oaklib_cache import db_path, require_db  # noqa: E402
 
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 VETTED = ROOT / "mappings" / "microbedecoder_residual_grounded.tsv"
-DB = {"CHEBI": Path.home() / ".data/oaklib/chebi.db", "NCIT": Path.home() / ".data/oaklib/ncit.db"}
+# Resolved through pystow so PYSTOW_HOME is honoured; deriving this from
+# $HOME made a missing build look like a bad identifier (#306).
+DB = {"CHEBI": db_path("CHEBI"), "NCIT": db_path("NCIT")}
 # Imported, not re-declared (#385). This table existed in FOUR scripts and this
 # copy listed only CHEBI and NCIT — so promoting a FOODON, ENVO, MICRO, UBERON,
 # BTO or MESH record through here published an empty object_source (or, where
@@ -81,6 +84,10 @@ from mediaingredientmech.sssom_grading import CONFIDENCE  # noqa: E402
 
 def canonical_label(cid: str) -> str:
     pfx = cid.split(":")[0]
+    # Fail on the cache before querying it, so a missing or stub build is
+    # reported as a path problem rather than as "no rdfs:label (absent / wrong
+    # id)" -- a verdict about the identifier, which is the #197 harm (#687).
+    require_db(pfx)
     con = sqlite3.connect(f"file:{DB[pfx]}?mode=ro", uri=True)
     row = con.execute("SELECT value FROM statements WHERE subject=? AND predicate='rdfs:label'", (cid,)).fetchone()
     dep = con.execute("SELECT 1 FROM statements WHERE subject=? AND predicate='owl:deprecated'", (cid,)).fetchone()

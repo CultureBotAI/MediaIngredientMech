@@ -84,6 +84,80 @@ class TestUnicodeNormalisation:
                               {mod._nfc(p) for p in disk}) == []
 
 
+class TestFailureReasons:
+    UNSTAGED = ([f"{P}/Deleted.yaml"], [f"{P}/New.yaml"])
+
+    def test_strict_mode_fails_on_absent_and_untracked_files(self):
+        """CI's pristine checkout: neither can be in-progress work there."""
+        assert len(mod.failure_reasons([], [], *self.UNSTAGED)) == 2
+
+    def test_case_only_reports_unstaged_adds_and_deletes_without_failing(self):
+        """Locally a new or deleted record is unstaged until git add/rm (#864)."""
+        assert mod.failure_reasons([], [], *self.UNSTAGED, case_only=True) == []
+
+    def test_case_only_still_fails_on_drift_and_collisions(self):
+        drift = [(f"{P}/Thiamine_Pyrophosphate.yaml", f"{P}/Thiamine_pyrophosphate.yaml")]
+        collisions = [[f"{P}/Glucose.yaml", f"{P}/glucose.yaml"]]
+        reasons = mod.failure_reasons(drift, collisions, *self.UNSTAGED, case_only=True)
+        assert len(reasons) == 2
+        assert "--fix" in reasons[0]
+
+    def test_a_clean_tree_passes_in_both_modes(self):
+        assert mod.failure_reasons([], [], [], []) == []
+        assert mod.failure_reasons([], [], [], [], case_only=True) == []
+
+
+class TestMainPassesTheMode:
+    """`main()` must hand --case-only to `failure_reasons`: dropping it brings
+    #864 back locally, and forcing it makes CI's strict mode lenient."""
+
+    @pytest.fixture
+    def unstaged(self, monkeypatch):
+        monkeypatch.setattr(mod, "tracked_paths", lambda: {f"{P}/Glucose.yaml", f"{P}/Deleted.yaml"})
+        monkeypatch.setattr(mod, "disk_paths", lambda: {f"{P}/Glucose.yaml", f"{P}/New.yaml"})
+
+    def test_strict_mode_fails_on_unstaged_adds_and_deletes(self, unstaged, capsys):
+        assert mod.main([]) == 1
+        assert "git add" in capsys.readouterr().out
+
+    def test_case_only_reports_them_and_passes(self, unstaged, capsys):
+        assert mod.main(["--case-only"]) == 0
+        out = capsys.readouterr().out
+        assert "UNTRACKED" in out and "ABSENT" in out
+        assert "OK (case only)" in out
+
+    def test_case_drift_fails_in_both_modes(self, monkeypatch, capsys):
+        monkeypatch.setattr(mod, "tracked_paths", lambda: {f"{P}/Thiamine_Pyrophosphate.yaml"})
+        monkeypatch.setattr(mod, "disk_paths", lambda: {f"{P}/Thiamine_pyrophosphate.yaml"})
+        assert mod.main([]) == 1
+        assert mod.main(["--case-only"]) == 1
+
+
+def _recipe(name: str) -> str:
+    lines = (ROOT / "justfile").read_text().splitlines()
+    body = []
+    for line in lines[lines.index(f"{name}:") + 1:]:
+        if line and not line.startswith((" ", "\t")):
+            break
+        body.append(line)
+    return "\n".join(body)
+
+
+class TestQcRoundtripRecipe:
+    def test_checks_filename_case_first_in_case_only_mode(self):
+        """CI checks case before anything else (#352). Run later, a case-only
+        rename fails the visualization step and is misreported as stale (#864)."""
+        body = _recipe("qc-roundtrip")
+        case_check = body.index("check_record_filename_case.py --case-only")
+        assert case_check < body.index("aggregate_records.py")
+        assert case_check < body.index("check_visualization_currency.py")
+
+    def test_ci_keeps_the_strict_mode(self):
+        workflow = (ROOT / ".github" / "workflows" / "qc-roundtrip.yaml").read_text()
+        assert "check_record_filename_case.py" in workflow
+        assert "--case-only" not in workflow
+
+
 class TestAgainstTheRealRepo:
     def test_tracked_paths_are_unquoted(self):
         """`git ls-files` without -z backslash-quotes non-ASCII paths, which

@@ -85,13 +85,13 @@ synonyms:
   synonym_type: RELATED
   source: historical_nomenclature
 - synonym_text: 1-[(4-amino-2-methylpyrimidin-5-yl)methyl]-3-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-2-methylpyridinium
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: pyrithiamine diphosphate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: pyrithiamine pyrophosphate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Co-carboxylase
   synonym_type: EXACT_SYNONYM
@@ -205,6 +205,15 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 3 synonym(s) non-resolving: [''1-[(4-amino-2-methylpyrimidin-5-yl)methyl]-3-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-2-methylpyridinium'',
+    ''pyrithiamine diphosphate'', ''pyrithiamine pyrophosphate'']. ChEBI gives these
+    names to CHEBI:45395, not to this record''s CHEBI:9532 -- thiamine pyrophosphate
+    is not pyrithiamine pyrophosphate, its antagonist. Kept as REJECTED_LABEL so a
+    rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 136-09-4
   data_source: PubChem API

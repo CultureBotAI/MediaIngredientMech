@@ -15,10 +15,10 @@ ontology_mapping:
       CHEBI:16411 (indole-3-acetic acid). CAS-RN 87-51-4 confirms CHEBI:16411.
 synonyms:
 - synonym_text: ethyl 2-hexenoate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ethyl hex-2-enoate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: 1H-indol-3-ylacetic acid
   synonym_type: EXACT_SYNONYM
@@ -79,6 +79,14 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 2 synonym(s) non-resolving: [''ethyl 2-hexenoate'', ''ethyl hex-2-enoate''].
+    ChEBI gives these names to CHEBI:87514, not to this record''s CHEBI:16411 -- indole-3-acetic
+    acid is not ethyl 2-hexenoate. Kept as REJECTED_LABEL so a rebuild cannot restore
+    them from kg-microbe''s synonym list (#669).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 87-51-4
   data_source: PubChem API

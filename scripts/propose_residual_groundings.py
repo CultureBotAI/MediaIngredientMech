@@ -352,10 +352,9 @@ def recheck(report: Path, out: Path) -> int:
             continue
         prefix = curie.split(":", 1)[0]
         if prefix in ROUND_TRIP_CHECKED:
-            # MicrO has ~1,472 classes under a malformed IRI that do not round-trip:
-            # kg-microbe's ontology transform never produces them, so a published row
-            # would dangle. curie.py gates MICRO behind MICRO_VERIFIED for this reason,
-            # and a proposal on such an id is unpublishable however good the label match.
+            # Resolve reviewed KGX exceptions from the pinned MICRO source;
+            # other terms still require canonical ontology verification. A
+            # lexical match alone cannot admit an unreviewed legacy IRI.
             try:
                 promoter().canonical_label(curie)
             except SystemExit as exc:

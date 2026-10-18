@@ -1,0 +1,48 @@
+{
+  "result": "PASS",
+  "scope": "reviewed_assertion_subset",
+  "current_review_sha256": "2516e4c1b793c42569f17f8582b255c66c254c6ab14965d1eb0a78db7d76b7f4",
+  "checks": [
+    "UTF-8/LF TSV shape and unique columns",
+    "unique node and edge IDs",
+    "endpoint closure and declared CURIE prefixes",
+    "sensitive node annotations absent",
+    "JSON payloads parse and escape KGX list separators",
+    "SSSOM rows equal KGX mapping payload multiset",
+    "held aromatic-compound assertion exclusively in backlog",
+    "approved and excluded assertions disjoint and cover the full graph",
+    "KGX archive contains only manifest and byte-identical graph TSVs"
+  ],
+  "counts": {
+    "active_ingredient_record_nodes": 2874,
+    "backlog_raw_nodes": 5788,
+    "backlog_unapproved_edges": 2411,
+    "edges": 2112,
+    "full_edges": 4523,
+    "full_nodes": 5788,
+    "nodes": 4587,
+    "sssom_rows": 1603
+  },
+  "edges_by_type": {
+    "cellular_metabolic_roles": 8,
+    "component": 381,
+    "environment": 6,
+    "mapping": 1603,
+    "nutritional_roles": 97,
+    "physicochemical_roles": 17
+  },
+  "isolated_ingredient_record_nodes": 1395,
+  "retained_source_confidence_annotations": {
+    "0.8": 12,
+    "0.95": 17
+  },
+  "confidence_policy_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/662",
+  "files": {
+    "mim_nodes.tsv": "3341694edae3bc9c574b9da7d6aa5335a90861fbc6c204f65ea49d5c8f324ddf",
+    "mim_edges.tsv": "f9c896cfc907699726153758041160fee3eaa05717fe6ee23341c6395dd1ac88",
+    "ingredient_mappings.sssom.tsv": "9c80f5ab65094d843fd184a749ec946c7b55dc67a6d0bac3762b0589675a6c98",
+    "manifest.json": "1a6b09b20f80d5cf3953b2536c9d83f0965cb400eb13e91b9672e9fe7344674b",
+    "mim-kgx.tar.gz": "895b3c54d01bbf0886e7d397a2cd7d84a87cef08b150fd7779cc62dc408ac7c0",
+    "unsupported-backlog.json": "deaf7be82c495e81d5abf733bd6a292ea9a60d9a90f83ebe11e462acabebcb6f"
+  }
+}

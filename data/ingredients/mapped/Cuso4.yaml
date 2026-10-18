@@ -51,8 +51,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 187
-  media_count: 187
+  total_occurrences: 177
+  media_count: 177
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -149,6 +149,16 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-09-23T03:43:07.290807+00:00'
+  curator: claude
+  action: REFRESHED_OCCURRENCE_STATISTICS
+  changes: 'occurrence_statistics 187/187 -> 177/177 after the #312 registry mints
+    moved memberships off the shared identifier; counts follow the source label through
+    SOURCE_LABEL_IDENTIFIER_OVERRIDES.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 7758-98-7
   data_source: PubChem API (ontology label)
