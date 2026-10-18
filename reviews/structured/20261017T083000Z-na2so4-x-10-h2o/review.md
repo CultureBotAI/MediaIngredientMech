@@ -1,0 +1,444 @@
+# Per-record structured review: Na2so4_X_10_H2o (data/ingredients/mapped/Na2so4_X_10_H2o.yaml)
+
+- Review: 20261017T083000Z-na2so4-x-10-h2o
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Na2so4_X_10_H2o (data/ingredients/mapped/Na2so4_X_10_H2o.yaml, record-701cca69dd1f9420, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Na2so4_X_10_H2o.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Na2so4_X_10_H2o.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-701cca69dd1f9420 | data/ingredients/mapped/Na2so4_X_10_H2o.yaml | maintained | Na2so4_X_10_H2o |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-701cca69dd1f9420 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-701cca69dd1f9420 | Role assertions on nutritional_roles[0], nutritional_roles[1] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-701cca69dd1f9420 | Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-701cca69dd1f9420.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-701cca69dd1f9420.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T05:39:25Z; reviewed SHA-256=97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816; current SHA-256=e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db; hash_changed=True. Reports=["reports/yaml_record_review/Na2so4_X_10_H2o.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact CHEBI:32586 sodium sulfate decahydrate identity passes, but final other has an anhydrous label and roles are unsupported.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-701cca69dd1f9420.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-5ed455a75f462059: Reassess prediction-only role support: Na2SO4 x 10 H2O
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-701cca69dd1f9420.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-5ed455a75f462059
+
+Reassess prediction-only role support: Na2SO4 x 10 H2O
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-e0e47e6dc522cc45 | data/ingredients/mapped/Na2so4_X_10_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4 x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10 H2O","sssom_rows":[{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":6} |
+| ev-d9427c20d817e4a5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1510] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-17b6741dd26cc45f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2so4_X_10_H2o; data-row positions=[2022] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium sulfate decahydrate","other":"Na2SO4.10H2O&#124;sodium sulfate--water (1/10)&#124;Glauber's salt&#124;Glaubersalz&#124;CAS:7727-73-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2so4_X_10_H2o","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-7b8996dc854079bd | docs/data/mapped_ingredients.csv; CSV lines=[1512] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32586","line":1512,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4 x 10 H2O","total_occurrences":"6"}] |
+| ev-beb647a1e52ea0b6 | reports/yaml_record_review/Na2so4_X_10_H2o.md; &#96;data/ingredients/mapped/Na2so4_X_10_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:42; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-e206dcaf73e11620 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1017,1711,1895] | context_only | [{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:434cc9f9687228bed227","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:6da2f8398ea2cf586946","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:f52dcba33527b989c8de","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-b2d5278a6cabb3e3 | data/ingredients/mapped/Na2so4_X_10_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4 x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10 H2O","sssom_rows":[{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":6} |
+| ev-4e944b84c1e1160c | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-5ed455a75f462059] | context_only | Predecessor structured review finding f-5ed455a75f462059 in 20261011T024637Z-mim-reconcile-all-batch-09 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024637Z-mim-reconcile-all-batch-09.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-na2so4-x-10-h2o
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Na2so4_X_10_H2o (data/ingredients/mapped/Na2so4_X_10_H2o.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Na2so4_X_10_H2o (data/ingredients/mapped/Na2so4_X_10_H2o.yaml,
+  record-701cca69dd1f9420, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
+    sha256: e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db
+    role: target
+  - path: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+    sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Na2so4_X_10_H2o.md
+    sha256: 98f8d2c5ee85172dbd733e7c66734052b6af54222693553b5de5f3db5689c3d5
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-701cca69dd1f9420
+  path: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
+  label: Na2so4_X_10_H2o
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Na2so4_X_10_H2o.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Na2so4_X_10_H2o.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-701cca69dd1f9420
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-e0e47e6dc522cc45
+  - ev-d9427c20d817e4a5
+  - ev-17b6741dd26cc45f
+  - ev-7b8996dc854079bd
+  - ev-b2d5278a6cabb3e3
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0], nutritional_roles[1] rely only
+    on COMPUTATIONAL_PREDICTION or empty evidence.
+  target_ids:
+  - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-e0e47e6dc522cc45
+  - ev-e206dcaf73e11620
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-beb647a1e52ea0b6
+  - ev-e206dcaf73e11620
+  - ev-4e944b84c1e1160c
+evidence:
+- evidence_id: ev-e0e47e6dc522cc45
+  kind: record_content
+  reference: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4
+    x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium
+    sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10
+    H2O","sssom_rows":[{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium
+    sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":6}'
+  snapshot_sha256: e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db
+- evidence_id: ev-d9427c20d817e4a5
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1510]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-17b6741dd26cc45f
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Na2so4_X_10_H2o; data-row positions=[2022]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium
+    sulfate decahydrate","other":"Na2SO4.10H2O|sodium sulfate--water (1/10)|Glauber''s
+    salt|Glaubersalz|CAS:7727-73-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2so4_X_10_H2o","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-7b8996dc854079bd
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1512]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32586","line":1512,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4
+    x 10 H2O","total_occurrences":"6"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-beb647a1e52ea0b6
+  kind: prior_review
+  reference: reports/yaml_record_review/Na2so4_X_10_H2o.md
+  locator: '`data/ingredients/mapped/Na2so4_X_10_H2o.yaml`:2; Verdict:4; Identity:11;
+    Validation:21; Evidence:29; Completeness:42; Recommended Edits:49'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 98f8d2c5ee85172dbd733e7c66734052b6af54222693553b5de5f3db5689c3d5
+  quote: "Recommended Edits:\n- Major: in `data/ingredients/mapped/Na2so4_X_10_H2o.yaml`,\
+    \ reject or demote\n  `sodium sulfate, anhydrous` so it no longer publishes as\
+    \ an exact\n  `CHEBI:32586` synonym. Rebuild final SSSOM and rerun final SSSOM\
+    \ validation\n  plus product label validation.\n- Major: either remove `SULFUR_SOURCE`\
+    \ and `MINERAL_SOURCE` or replace their\n  missing/provisional evidence with source-backed\
+    \ role evidence. Rerun strict\n  validation and the role/output SSSOM checks after\
+    \ the role facet change."
+- evidence_id: ev-e206dcaf73e11620
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1017,1711,1895]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:434cc9f9687228bed227","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:6da2f8398ea2cf586946","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:f52dcba33527b989c8de","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-b2d5278a6cabb3e3
+  kind: record_content
+  reference: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4
+    x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium
+    sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10
+    H2O","sssom_rows":[{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium
+    sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":6}'
+  snapshot_sha256: e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db
+- evidence_id: ev-4e944b84c1e1160c
+  kind: prior_review
+  reference: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+  locator: findings[finding_id=f-5ed455a75f462059]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-5ed455a75f462059 in 20261011T024637Z-mim-reconcile-all-batch-09
+  snapshot_sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+assessments:
+- assessment_id: a-711b275e3f4039a3
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-e0e47e6dc522cc45
+  - ev-d9427c20d817e4a5
+  - ev-17b6741dd26cc45f
+  - ev-7b8996dc854079bd
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-37562cfa4de1a311
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-beb647a1e52ea0b6
+  - ev-e0e47e6dc522cc45
+  - ev-e206dcaf73e11620
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T05:39:25Z;
+    reviewed SHA-256=97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816;
+    current SHA-256=e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db;
+    hash_changed=True. Reports=["reports/yaml_record_review/Na2so4_X_10_H2o.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    CHEBI:32586 sodium sulfate decahydrate identity passes, but final other has an
+    anhydrous label and roles are unsupported.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-beb647a1e52ea0b6
+    - ev-e0e47e6dc522cc45
+  - name: legacy-native-ids
+    value: '["SEM:434cc9f9687228bed227","SEM:6da2f8398ea2cf586946","SEM:f52dcba33527b989c8de"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-e0e47e6dc522cc45
+    - ev-beb647a1e52ea0b6
+    - ev-e206dcaf73e11620
+- assessment_id: a-b2d5278a6cabb3e3
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-beb647a1e52ea0b6
+  - ev-b2d5278a6cabb3e3
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-beb647a1e52ea0b6
+    - ev-b2d5278a6cabb3e3
+findings:
+- finding_id: rec-f-5ed455a75f462059
+  issue_key: mim-reconciliation-role-support-701cca69dd1f9420
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Na2SO4 x 10 H2O'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-beb647a1e52ea0b6
+  - ev-b2d5278a6cabb3e3
+  - ev-4e944b84c1e1160c
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  - nutritional_roles[1]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024637Z-mim-reconcile-all-batch-09
+    finding_id: f-5ed455a75f462059
+actions:
+- action_id: rec-action-5ed455a75f462059
+  description: 'Reassess prediction-only role support: Na2SO4 x 10 H2O'
+  finding_ids:
+  - rec-f-5ed455a75f462059
+  target_ids:
+  - record-701cca69dd1f9420
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024637Z-mim-reconcile-all-batch-09.
+```

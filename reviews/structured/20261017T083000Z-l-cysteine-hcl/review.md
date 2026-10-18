@@ -1,0 +1,484 @@
+# Per-record structured review: L-cysteine_Hcl (data/ingredients/mapped/L-cysteine_Hcl.yaml)
+
+- Review: 20261017T083000Z-l-cysteine-hcl
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for L-cysteine_Hcl (data/ingredients/mapped/L-cysteine_Hcl.yaml, record-3d1b51043858d29c, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/L-cysteine_Hcl.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/L-cysteine_Hcl.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-3d1b51043858d29c | data/ingredients/mapped/L-cysteine_Hcl.yaml | maintained | L-cysteine_Hcl |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-3d1b51043858d29c | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-3d1b51043858d29c | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-3d1b51043858d29c | Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-3d1b51043858d29c.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-3d1b51043858d29c.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:37Z; reviewed SHA-256=299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9; current SHA-256=299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050237Z-L-cysteine_Hcl.md","reports/yaml_record_review/L-cysteine_Hcl.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/L-cysteine_Hcl.md&#96; after the record changed from a25805419e2a355a7ee972c7de199cdc04fdd74e7adaa478e491a6530c3fb9a2 to 299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9; preserved the previous major finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-3d1b51043858d29c.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-a1a0ef663225a5b5: Reassess prediction-only role support: L-Cysteine HCl
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-3d1b51043858d29c.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-a1a0ef663225a5b5
+
+Reassess prediction-only role support: L-Cysteine HCl
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-70825edfc0ce3496 | data/ingredients/mapped/L-cysteine_Hcl.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1243],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91247","line":1245,"mapping_status":"MAPPED","ontology_id":"CHEBI:91247","preferred_term":"L-Cysteine HCl"}],"identifier":"CHEBI:91247","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":302,"edge_count":302,"occurrences":302},"occurrence_statistics":{"media_count":302,"total_occurrences":302},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91247","ontology_label":"L-cysteine hydrochloride","ontology_source":"CHEBI"},"preferred_term":"L-Cysteine HCl","sssom_rows":[{"data_row":1607,"object_id":"CHEBI:91247","object_label":"L-cysteine hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-cysteine_Hcl","synonym_count":15} |
+| ev-04d4599ffd22d22c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1243] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-0c3b4a69a41609b0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-cysteine_Hcl; data-row positions=[1607] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1607,"object_id":"CHEBI:91247","object_label":"L-cysteine hydrochloride","other":"Cysteine-HCl&#124;(1R)-1-carboxy-2-sulfanylethan-1-aminium chloride&#124;(R)-Cysteine hydrochloride&#124;Cysteine monohydrochloride&#124;L-(+)-Cysteine hydrochloride&#124;L-Cysteine monohydrochloride&#124;L-Cysteiniumchloride&#124;L-cysteinium chloride&#124;L-Cysteine . HCl&#124;L--cysteine\u30fbHCl&#124;Cysteine.HCl&#124;L-cysteine \u00b7 HCl&#124;cysteine . HCl&#124;CAS:52-89-1","predicate_id":"skos:exactMatch","subject_id":"MIM:L-cysteine_Hcl","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-3ba2447f806cdc51 | docs/data/mapped_ingredients.csv; CSV lines=[1245] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91247","line":1245,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"302","ontology_id":"CHEBI:91247","preferred_term":"L-Cysteine HCl","total_occurrences":"302"}] |
+| ev-6321d30b4e612af0 | reports/yaml_record_review/20261001T050237Z-L-cysteine_Hcl.md; YAML Record Review: L-Cysteine HCl:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-b2bfe6b602d3ea9b | reports/yaml_record_review/L-cysteine_Hcl.md; &#96;data/ingredients/mapped/L-cysteine_Hcl.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:27; Completeness:51; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-39098ea681f0b2a5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[811,1514] | context_only | [{"current_record_sha256":"299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9","finding_id":"SEM:0eb7c410ab44551946dc","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9","finding_id":"SEM:295bfb847dac6f0b481e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-d111633765be1fef | data/ingredients/mapped/L-cysteine_Hcl.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1243],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91247","line":1245,"mapping_status":"MAPPED","ontology_id":"CHEBI:91247","preferred_term":"L-Cysteine HCl"}],"identifier":"CHEBI:91247","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":302,"edge_count":302,"occurrences":302},"occurrence_statistics":{"media_count":302,"total_occurrences":302},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91247","ontology_label":"L-cysteine hydrochloride","ontology_source":"CHEBI"},"preferred_term":"L-Cysteine HCl","sssom_rows":[{"data_row":1607,"object_id":"CHEBI:91247","object_label":"L-cysteine hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-cysteine_Hcl","synonym_count":15} |
+| ev-3239fd1222047c1d | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-a1a0ef663225a5b5] | context_only | Predecessor structured review finding f-a1a0ef663225a5b5 in 20261011T024635Z-mim-reconcile-all-batch-07 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-l-cysteine-hcl
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: L-cysteine_Hcl (data/ingredients/mapped/L-cysteine_Hcl.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for L-cysteine_Hcl (data/ingredients/mapped/L-cysteine_Hcl.yaml,
+  record-3d1b51043858d29c, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/L-cysteine_Hcl.yaml
+    sha256: 299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9
+    role: target
+  - path: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+    sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/20261001T050237Z-L-cysteine_Hcl.md
+    sha256: abd50c733b1ba4b88c64e610fc654c765f6275c2f5d91de8e9daa353422b7b8b
+    role: context
+  - path: reports/yaml_record_review/L-cysteine_Hcl.md
+    sha256: ff41cb299884be32656e8f83141aac95df5db8539f11b95515ef33b2176300ff
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-3d1b51043858d29c
+  path: data/ingredients/mapped/L-cysteine_Hcl.yaml
+  label: L-cysteine_Hcl
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-cysteine_Hcl.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/L-cysteine_Hcl.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/L-cysteine_Hcl.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-3d1b51043858d29c
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-3d1b51043858d29c
+  evidence_ids:
+  - ev-70825edfc0ce3496
+  - ev-04d4599ffd22d22c
+  - ev-0c3b4a69a41609b0
+  - ev-3ba2447f806cdc51
+  - ev-d111633765be1fef
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-3d1b51043858d29c
+  evidence_ids:
+  - ev-70825edfc0ce3496
+  - ev-39098ea681f0b2a5
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-3d1b51043858d29c
+  evidence_ids:
+  - ev-6321d30b4e612af0
+  - ev-b2bfe6b602d3ea9b
+  - ev-39098ea681f0b2a5
+  - ev-3239fd1222047c1d
+evidence:
+- evidence_id: ev-70825edfc0ce3496
+  kind: record_content
+  reference: data/ingredients/mapped/L-cysteine_Hcl.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1243],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91247","line":1245,"mapping_status":"MAPPED","ontology_id":"CHEBI:91247","preferred_term":"L-Cysteine
+    HCl"}],"identifier":"CHEBI:91247","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":302,"edge_count":302,"occurrences":302},"occurrence_statistics":{"media_count":302,"total_occurrences":302},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91247","ontology_label":"L-cysteine
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"L-Cysteine HCl","sssom_rows":[{"data_row":1607,"object_id":"CHEBI:91247","object_label":"L-cysteine
+    hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-cysteine_Hcl","synonym_count":15}'
+  snapshot_sha256: 299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9
+- evidence_id: ev-04d4599ffd22d22c
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1243]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-0c3b4a69a41609b0
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:L-cysteine_Hcl; data-row positions=[1607]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1607,"object_id":"CHEBI:91247","object_label":"L-cysteine
+    hydrochloride","other":"Cysteine-HCl|(1R)-1-carboxy-2-sulfanylethan-1-aminium
+    chloride|(R)-Cysteine hydrochloride|Cysteine monohydrochloride|L-(+)-Cysteine
+    hydrochloride|L-Cysteine monohydrochloride|L-Cysteiniumchloride|L-cysteinium chloride|L-Cysteine
+    . HCl|L--cysteine\u30fbHCl|Cysteine.HCl|L-cysteine \u00b7 HCl|cysteine . HCl|CAS:52-89-1","predicate_id":"skos:exactMatch","subject_id":"MIM:L-cysteine_Hcl","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-3ba2447f806cdc51
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1245]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91247","line":1245,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"302","ontology_id":"CHEBI:91247","preferred_term":"L-Cysteine
+    HCl","total_occurrences":"302"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-6321d30b4e612af0
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050237Z-L-cysteine_Hcl.md
+  locator: 'YAML Record Review: L-Cysteine HCl:2; Target:10; Validation:20; Identity
+    and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56;
+    Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: abd50c733b1ba4b88c64e610fc654c765f6275c2f5d91de8e9daa353422b7b8b
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/L-cysteine_Hcl.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The exact
+    CHEBI:91247 identity, CAS value, PubChem structure, occurrence count, and final
+    CAS token pass, but final SSSOM exports a QSY9-derived synonym and AMINO_ACID_SOURCE
+    is provisional.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/L-cysteine_Hcl.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/L-cysteine_Hcl.yaml`,
+    `just validate-terms data/ingredients/mapped/L-cysteine_Hcl.yaml` where applicable,
+    and `just qc-sssom`.'
+- evidence_id: ev-b2bfe6b602d3ea9b
+  kind: prior_review
+  reference: reports/yaml_record_review/L-cysteine_Hcl.md
+  locator: '`data/ingredients/mapped/L-cysteine_Hcl.yaml`:2; Verdict:4; Identity:11;
+    Validation:21; Evidence:27; Completeness:51; Recommended Edits:58'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: ff41cb299884be32656e8f83141aac95df5db8539f11b95515ef33b2176300ff
+  quote: "Recommended Edits:\n- Major: remove the long QSY9 exact synonym from\n \
+    \ `data/ingredients/mapped/L-cysteine_Hcl.yaml`; the historical curation events\n\
+    \  already identify CHEBI:52891 as unrelated to this hydrochloride.\n- Major:\
+    \ either replace\n  `nutritional_roles.AMINO_ACID_SOURCE` with source-backed evidence\
+    \ for this\n  exact anhydrous HCl form, or remove the provisional role.\n- Sync\
+    \ the aggregate copy and regenerate the SSSOM/docs products; rerun strict,\n \
+    \ term, round-trip, component, and SSSOM validation."
+- evidence_id: ev-39098ea681f0b2a5
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[811,1514]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9","finding_id":"SEM:0eb7c410ab44551946dc","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9","finding_id":"SEM:295bfb847dac6f0b481e","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-d111633765be1fef
+  kind: record_content
+  reference: data/ingredients/mapped/L-cysteine_Hcl.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1243],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91247","line":1245,"mapping_status":"MAPPED","ontology_id":"CHEBI:91247","preferred_term":"L-Cysteine
+    HCl"}],"identifier":"CHEBI:91247","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":302,"edge_count":302,"occurrences":302},"occurrence_statistics":{"media_count":302,"total_occurrences":302},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91247","ontology_label":"L-cysteine
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"L-Cysteine HCl","sssom_rows":[{"data_row":1607,"object_id":"CHEBI:91247","object_label":"L-cysteine
+    hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-cysteine_Hcl","synonym_count":15}'
+  snapshot_sha256: 299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9
+- evidence_id: ev-3239fd1222047c1d
+  kind: prior_review
+  reference: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+  locator: findings[finding_id=f-a1a0ef663225a5b5]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-a1a0ef663225a5b5 in 20261011T024635Z-mim-reconcile-all-batch-07
+  snapshot_sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+assessments:
+- assessment_id: a-ee63b7c10ffbea40
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-3d1b51043858d29c
+  evidence_ids:
+  - ev-70825edfc0ce3496
+  - ev-04d4599ffd22d22c
+  - ev-0c3b4a69a41609b0
+  - ev-3ba2447f806cdc51
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-3566ac8f32561fdd
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-3d1b51043858d29c
+  evidence_ids:
+  - ev-6321d30b4e612af0
+  - ev-b2bfe6b602d3ea9b
+  - ev-70825edfc0ce3496
+  - ev-39098ea681f0b2a5
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:37Z;
+    reviewed SHA-256=299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9;
+    current SHA-256=299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050237Z-L-cysteine_Hcl.md","reports/yaml_record_review/L-cysteine_Hcl.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/L-cysteine_Hcl.md` after the record changed from a25805419e2a355a7ee972c7de199cdc04fdd74e7adaa478e491a6530c3fb9a2
+    to 299086f5d96c81afc4bb08b4719afae9eda6405a8ae54c3b5b4a3be511e5b1a9; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-6321d30b4e612af0
+    - ev-b2bfe6b602d3ea9b
+    - ev-70825edfc0ce3496
+  - name: legacy-native-ids
+    value: '["SEM:0eb7c410ab44551946dc","SEM:295bfb847dac6f0b481e"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-70825edfc0ce3496
+    - ev-6321d30b4e612af0
+    - ev-b2bfe6b602d3ea9b
+    - ev-39098ea681f0b2a5
+- assessment_id: a-d111633765be1fef
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-3d1b51043858d29c
+  evidence_ids:
+  - ev-6321d30b4e612af0
+  - ev-b2bfe6b602d3ea9b
+  - ev-d111633765be1fef
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-6321d30b4e612af0
+    - ev-b2bfe6b602d3ea9b
+    - ev-d111633765be1fef
+findings:
+- finding_id: rec-f-a1a0ef663225a5b5
+  issue_key: mim-reconciliation-role-support-3d1b51043858d29c
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: L-Cysteine HCl'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-3d1b51043858d29c
+  evidence_ids:
+  - ev-6321d30b4e612af0
+  - ev-b2bfe6b602d3ea9b
+  - ev-d111633765be1fef
+  - ev-3239fd1222047c1d
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-cysteine_Hcl.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024635Z-mim-reconcile-all-batch-07
+    finding_id: f-a1a0ef663225a5b5
+actions:
+- action_id: rec-action-a1a0ef663225a5b5
+  description: 'Reassess prediction-only role support: L-Cysteine HCl'
+  finding_ids:
+  - rec-f-a1a0ef663225a5b5
+  target_ids:
+  - record-3d1b51043858d29c
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-cysteine_Hcl.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+```

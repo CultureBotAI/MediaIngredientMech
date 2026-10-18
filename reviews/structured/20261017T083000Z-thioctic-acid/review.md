@@ -1,0 +1,409 @@
+# Per-record structured review: Thioctic_Acid (data/ingredients/mapped/Thioctic_Acid.yaml)
+
+- Review: 20261017T083000Z-thioctic-acid
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Thioctic_Acid (data/ingredients/mapped/Thioctic_Acid.yaml, record-b75b34c4ba40b278, mapping_status=REJECTED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Thioctic_Acid.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Thioctic_Acid.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-b75b34c4ba40b278 | data/ingredients/mapped/Thioctic_Acid.yaml | maintained | Thioctic_Acid |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-b75b34c4ba40b278 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-b75b34c4ba40b278 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-b75b34c4ba40b278 | Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-b75b34c4ba40b278.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-b75b34c4ba40b278.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T18:42:35Z; reviewed SHA-256=1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca; current SHA-256=1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca; hash_changed=False. Reports=["reports/yaml_record_review/Thioctic_Acid.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The rejected stereochemistry tombstone emits no final SSSOM row, but stale live-record fields remain.
+
+### Historical provisional-role concern
+
+evidence: unknown. Targets: record-b75b34c4ba40b278.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-e434a5cf4d645b45: Reassess prediction-only role support: Thioctic acid
+
+minor / deferred / provisional; issue key: mim-reconciliation-role-support-b75b34c4ba40b278.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+Disposition: The current local observation is recorded, but the named source/context or policy decision is still required; no correction is inferred.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-0fa946e25f30b28c | data/ingredients/mapped/Thioctic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1960,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12} |
+| ev-15835c7d38a35b5b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1958] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-4ca8b7dd1a5a7a33 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Thioctic_Acid; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-87285206625e3d29 | docs/data/mapped_ingredients.csv; CSV lines=[1960] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":1960,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"Thioctic acid","total_occurrences":"0"}] |
+| ev-5cc39453d282735f | reports/yaml_record_review/Thioctic_Acid.md; &#96;data/ingredients/mapped/Thioctic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:31; Completeness:42; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-15ba6f7db72bd385 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1286] | context_only | [{"current_record_sha256":"1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca","finding_id":"SEM:d88be211a55dd96db73c","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
+| ev-808c5f1fddaf6102 | data/ingredients/mapped/Thioctic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1960,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12} |
+| ev-1d5d810b8b25732a | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-e434a5cf4d645b45] | context_only | Predecessor structured review finding f-e434a5cf4d645b45 in 20261011T024638Z-mim-reconcile-all-batch-11 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024638Z-mim-reconcile-all-batch-11.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-thioctic-acid
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Thioctic_Acid (data/ingredients/mapped/Thioctic_Acid.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=REJECTED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Thioctic_Acid (data/ingredients/mapped/Thioctic_Acid.yaml,
+  record-b75b34c4ba40b278, mapping_status=REJECTED). Records 0 open finding(s) and
+  1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Thioctic_Acid.yaml
+    sha256: 1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca
+    role: target
+  - path: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+    sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Thioctic_Acid.md
+    sha256: bbeccc85e992ef3a6d661a35361991d228c8556108c64dfd3d9baf36b58e89ab
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-b75b34c4ba40b278
+  path: data/ingredients/mapped/Thioctic_Acid.yaml
+  label: Thioctic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Thioctic_Acid.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Thioctic_Acid.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Thioctic_Acid.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-b75b34c4ba40b278
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-0fa946e25f30b28c
+  - ev-15835c7d38a35b5b
+  - ev-4ca8b7dd1a5a7a33
+  - ev-87285206625e3d29
+  - ev-808c5f1fddaf6102
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-0fa946e25f30b28c
+  - ev-15ba6f7db72bd385
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-5cc39453d282735f
+  - ev-15ba6f7db72bd385
+  - ev-1d5d810b8b25732a
+evidence:
+- evidence_id: ev-0fa946e25f30b28c
+  kind: record_content
+  reference: data/ingredients/mapped/Thioctic_Acid.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1960,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic
+    acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12}'
+  snapshot_sha256: 1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca
+- evidence_id: ev-15835c7d38a35b5b
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1958]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-4ca8b7dd1a5a7a33
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Thioctic_Acid; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-87285206625e3d29
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1960]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":1960,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"Thioctic
+    acid","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-5cc39453d282735f
+  kind: prior_review
+  reference: reports/yaml_record_review/Thioctic_Acid.md
+  locator: '`data/ingredients/mapped/Thioctic_Acid.yaml`:2; Verdict:4; Identity:10;
+    Validation:21; Evidence:31; Completeness:42; Recommended Edits:54'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: bbeccc85e992ef3a6d661a35361991d228c8556108c64dfd3d9baf36b58e89ab
+  quote: "Recommended Edits:\n- Minor: clear stale live-record fields from the rejected\n\
+    \  `data/ingredients/mapped/Thioctic_Acid.yaml` tombstone when tombstone cleanup\n\
+    \  is next run, then rerun strict validation and SSSOM publication."
+- evidence_id: ev-15ba6f7db72bd385
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1286]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca","finding_id":"SEM:d88be211a55dd96db73c","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-808c5f1fddaf6102
+  kind: record_content
+  reference: data/ingredients/mapped/Thioctic_Acid.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1960,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic
+    acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12}'
+  snapshot_sha256: 1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca
+- evidence_id: ev-1d5d810b8b25732a
+  kind: prior_review
+  reference: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+  locator: findings[finding_id=f-e434a5cf4d645b45]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-e434a5cf4d645b45 in 20261011T024638Z-mim-reconcile-all-batch-11
+  snapshot_sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+assessments:
+- assessment_id: a-95e654609e5f4e40
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-0fa946e25f30b28c
+  - ev-15835c7d38a35b5b
+  - ev-4ca8b7dd1a5a7a33
+  - ev-87285206625e3d29
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-a8f0dc3cd6908b52
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-5cc39453d282735f
+  - ev-0fa946e25f30b28c
+  - ev-15ba6f7db72bd385
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T18:42:35Z;
+    reviewed SHA-256=1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca;
+    current SHA-256=1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca;
+    hash_changed=False. Reports=["reports/yaml_record_review/Thioctic_Acid.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The rejected stereochemistry
+    tombstone emits no final SSSOM row, but stale live-record fields remain.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-5cc39453d282735f
+    - ev-0fa946e25f30b28c
+  - name: legacy-native-ids
+    value: '["SEM:d88be211a55dd96db73c"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-0fa946e25f30b28c
+    - ev-5cc39453d282735f
+    - ev-15ba6f7db72bd385
+- assessment_id: a-808c5f1fddaf6102
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: unknown
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-5cc39453d282735f
+  - ev-808c5f1fddaf6102
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-5cc39453d282735f
+    - ev-808c5f1fddaf6102
+findings:
+- finding_id: rec-f-e434a5cf4d645b45
+  issue_key: mim-reconciliation-role-support-b75b34c4ba40b278
+  category: evidence
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Reassess prediction-only role support: Thioctic acid'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-5cc39453d282735f
+  - ev-808c5f1fddaf6102
+  - ev-1d5d810b8b25732a
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Thioctic_Acid.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition_reason: The current local observation is recorded, but the named source/context
+    or policy decision is still required; no correction is inferred.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024638Z-mim-reconcile-all-batch-11
+    finding_id: f-e434a5cf4d645b45
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024638Z-mim-reconcile-all-batch-11.
+```

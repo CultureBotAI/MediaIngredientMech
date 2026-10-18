@@ -1,0 +1,442 @@
+# Per-record structured review: D-trehalose_Dihydrate (data/ingredients/mapped/D-trehalose_Dihydrate.yaml)
+
+- Review: 20261017T083000Z-d-trehalose-dihydrate
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for D-trehalose_Dihydrate (data/ingredients/mapped/D-trehalose_Dihydrate.yaml, record-8f1adad4bbab1bfd, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/D-trehalose_Dihydrate.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/D-trehalose_Dihydrate.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-8f1adad4bbab1bfd | data/ingredients/mapped/D-trehalose_Dihydrate.yaml | maintained | D-trehalose_Dihydrate |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-8f1adad4bbab1bfd | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-8f1adad4bbab1bfd | Role assertions on nutritional_roles[0], nutritional_roles[1] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-8f1adad4bbab1bfd | Reconciled against predecessor batch review 20261011T024633Z-mim-reconcile-all-batch-05 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-8f1adad4bbab1bfd.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-8f1adad4bbab1bfd.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T13:53:27Z; reviewed SHA-256=b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1; current SHA-256=b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1; hash_changed=False. Reports=["reports/yaml_record_review/D-trehalose_Dihydrate.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The hydrate-specific CHEBI identity, 15/15 count, CAS token, and final SSSOM synonym payload pass, but carbon and energy roles are computational.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-8f1adad4bbab1bfd.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-abce609010e501f6: Reassess prediction-only role support: D-Trehalose dihydrate
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-8f1adad4bbab1bfd.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-abce609010e501f6
+
+Reassess prediction-only role support: D-Trehalose dihydrate
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-5a35a36688f45769 | data/ingredients/mapped/D-trehalose_Dihydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[859],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232797","line":861,"mapping_status":"MAPPED","ontology_id":"CHEBI:232797","preferred_term":"D-Trehalose dihydrate"}],"identifier":"CHEBI:232797","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:232797","ontology_label":"trehalose dihydrate","ontology_source":"CHEBI"},"preferred_term":"D-Trehalose dihydrate","sssom_rows":[{"data_row":956,"object_id":"CHEBI:232797","object_label":"trehalose dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-trehalose_Dihydrate","synonym_count":2} |
+| ev-cad3876119998207 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [859] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-fe1fda42ff77d6b1 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-trehalose_Dihydrate; data-row positions=[956] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":956,"object_id":"CHEBI:232797","object_label":"trehalose dihydrate","other":"(2R,3S,4S,5R,6R)-2-(hydroxymethyl)-6-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxane-3,4,5-triol;dihydrate&#124;CAS:6138-23-4","predicate_id":"skos:exactMatch","subject_id":"MIM:D-trehalose_Dihydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-c780cd5aad39fa04 | docs/data/mapped_ingredients.csv; CSV lines=[861] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:232797","line":861,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:232797","preferred_term":"D-Trehalose dihydrate","total_occurrences":"15"}] |
+| ev-461ca85f2e1d852c | reports/yaml_record_review/D-trehalose_Dihydrate.md; &#96;data/ingredients/mapped/D-trehalose_Dihydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:38; Completeness:53; Recommended Edits:63 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-cce74f22b035299f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[507,1542,2010] | context_only | [{"current_record_sha256":"b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1","finding_id":"SEM:988f24540e6cbb8f9391","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1","finding_id":"SEM:cb70e5462441af4d7ed6","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1","finding_id":"SEM:edbdc2660c50c77d2d95","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-e9da6474a348264d | data/ingredients/mapped/D-trehalose_Dihydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[859],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232797","line":861,"mapping_status":"MAPPED","ontology_id":"CHEBI:232797","preferred_term":"D-Trehalose dihydrate"}],"identifier":"CHEBI:232797","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:232797","ontology_label":"trehalose dihydrate","ontology_source":"CHEBI"},"preferred_term":"D-Trehalose dihydrate","sssom_rows":[{"data_row":956,"object_id":"CHEBI:232797","object_label":"trehalose dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-trehalose_Dihydrate","synonym_count":2} |
+| ev-0ecc0e3446cb77f0 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-abce609010e501f6] | context_only | Predecessor structured review finding f-abce609010e501f6 in 20261011T024633Z-mim-reconcile-all-batch-05 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024633Z-mim-reconcile-all-batch-05.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-d-trehalose-dihydrate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: D-trehalose_Dihydrate (data/ingredients/mapped/D-trehalose_Dihydrate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for D-trehalose_Dihydrate (data/ingredients/mapped/D-trehalose_Dihydrate.yaml,
+  record-8f1adad4bbab1bfd, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/D-trehalose_Dihydrate.yaml
+    sha256: b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1
+    role: target
+  - path: reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml
+    sha256: 7549030a5b50ed98868ff3497507fdfbfecd07cd858c76738f734521fa9d3603
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/D-trehalose_Dihydrate.md
+    sha256: a76a963b5ec7a5159824e9821ff8835a44d18d54dc52c051f7080fc8d0b21853
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-8f1adad4bbab1bfd
+  path: data/ingredients/mapped/D-trehalose_Dihydrate.yaml
+  label: D-trehalose_Dihydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-trehalose_Dihydrate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/D-trehalose_Dihydrate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/D-trehalose_Dihydrate.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-8f1adad4bbab1bfd
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-8f1adad4bbab1bfd
+  evidence_ids:
+  - ev-5a35a36688f45769
+  - ev-cad3876119998207
+  - ev-fe1fda42ff77d6b1
+  - ev-c780cd5aad39fa04
+  - ev-e9da6474a348264d
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0], nutritional_roles[1] rely only
+    on COMPUTATIONAL_PREDICTION or empty evidence.
+  target_ids:
+  - record-8f1adad4bbab1bfd
+  evidence_ids:
+  - ev-5a35a36688f45769
+  - ev-cce74f22b035299f
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024633Z-mim-reconcile-all-batch-05
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-8f1adad4bbab1bfd
+  evidence_ids:
+  - ev-461ca85f2e1d852c
+  - ev-cce74f22b035299f
+  - ev-0ecc0e3446cb77f0
+evidence:
+- evidence_id: ev-5a35a36688f45769
+  kind: record_content
+  reference: data/ingredients/mapped/D-trehalose_Dihydrate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[859],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232797","line":861,"mapping_status":"MAPPED","ontology_id":"CHEBI:232797","preferred_term":"D-Trehalose
+    dihydrate"}],"identifier":"CHEBI:232797","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:232797","ontology_label":"trehalose
+    dihydrate","ontology_source":"CHEBI"},"preferred_term":"D-Trehalose dihydrate","sssom_rows":[{"data_row":956,"object_id":"CHEBI:232797","object_label":"trehalose
+    dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-trehalose_Dihydrate","synonym_count":2}'
+  snapshot_sha256: b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1
+- evidence_id: ev-cad3876119998207
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [859]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-fe1fda42ff77d6b1
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:D-trehalose_Dihydrate; data-row positions=[956]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":956,"object_id":"CHEBI:232797","object_label":"trehalose
+    dihydrate","other":"(2R,3S,4S,5R,6R)-2-(hydroxymethyl)-6-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxane-3,4,5-triol;dihydrate|CAS:6138-23-4","predicate_id":"skos:exactMatch","subject_id":"MIM:D-trehalose_Dihydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-c780cd5aad39fa04
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[861]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:232797","line":861,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:232797","preferred_term":"D-Trehalose
+    dihydrate","total_occurrences":"15"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-461ca85f2e1d852c
+  kind: prior_review
+  reference: reports/yaml_record_review/D-trehalose_Dihydrate.md
+  locator: '`data/ingredients/mapped/D-trehalose_Dihydrate.yaml`:2; Verdict:4; Identity:10;
+    Validation:22; Evidence:38; Completeness:53; Recommended Edits:63'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: a76a963b5ec7a5159824e9821ff8835a44d18d54dc52c051f7080fc8d0b21853
+  quote: "Recommended Edits:\n- In `data/ingredients/mapped/D-trehalose_Dihydrate.yaml`,\
+    \ remove the\n  provisional `CARBON_SOURCE` and `ENERGY_SOURCE` roles or replace\
+    \ their\n  `COMPUTATIONAL_PREDICTION` evidence with inspected claim-level evidence.\n\
+    - Regenerate synchronized curated and SSSOM products, then rerun\n  `uv run --frozen\
+    \ python scripts/validate_strict.py`,\n  `uv run --frozen linkml-term-validator\
+    \ validate-data data/ingredients/mapped/D-trehalose_Dihydrate.yaml -s src/mediaingredientmech/schema/mediaingredientmech.yaml\
+    \ -t IngredientRecord --labels`,\n  `uv run --frozen python scripts/validate_id_label_correspondence.py\
+    \ -c conf/id_label_targets.yaml`,\n  and `uv run --frozen python scripts/validate_sssom_invariants.py`."
+- evidence_id: ev-cce74f22b035299f
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[507,1542,2010]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1","finding_id":"SEM:988f24540e6cbb8f9391","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1","finding_id":"SEM:cb70e5462441af4d7ed6","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1","finding_id":"SEM:edbdc2660c50c77d2d95","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-e9da6474a348264d
+  kind: record_content
+  reference: data/ingredients/mapped/D-trehalose_Dihydrate.yaml
+  locator: nutritional_roles[0], nutritional_roles[1]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[859],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232797","line":861,"mapping_status":"MAPPED","ontology_id":"CHEBI:232797","preferred_term":"D-Trehalose
+    dihydrate"}],"identifier":"CHEBI:232797","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:232797","ontology_label":"trehalose
+    dihydrate","ontology_source":"CHEBI"},"preferred_term":"D-Trehalose dihydrate","sssom_rows":[{"data_row":956,"object_id":"CHEBI:232797","object_label":"trehalose
+    dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-trehalose_Dihydrate","synonym_count":2}'
+  snapshot_sha256: b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1
+- evidence_id: ev-0ecc0e3446cb77f0
+  kind: prior_review
+  reference: reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml
+  locator: findings[finding_id=f-abce609010e501f6]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-abce609010e501f6 in 20261011T024633Z-mim-reconcile-all-batch-05
+  snapshot_sha256: 7549030a5b50ed98868ff3497507fdfbfecd07cd858c76738f734521fa9d3603
+assessments:
+- assessment_id: a-d0aa7cd461a70e2b
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-8f1adad4bbab1bfd
+  evidence_ids:
+  - ev-5a35a36688f45769
+  - ev-cad3876119998207
+  - ev-fe1fda42ff77d6b1
+  - ev-c780cd5aad39fa04
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-d4806c400e6d0404
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-8f1adad4bbab1bfd
+  evidence_ids:
+  - ev-461ca85f2e1d852c
+  - ev-5a35a36688f45769
+  - ev-cce74f22b035299f
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T13:53:27Z;
+    reviewed SHA-256=b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1;
+    current SHA-256=b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1;
+    hash_changed=False. Reports=["reports/yaml_record_review/D-trehalose_Dihydrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The hydrate-specific
+    CHEBI identity, 15/15 count, CAS token, and final SSSOM synonym payload pass,
+    but carbon and energy roles are computational.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-461ca85f2e1d852c
+    - ev-5a35a36688f45769
+  - name: legacy-native-ids
+    value: '["SEM:988f24540e6cbb8f9391","SEM:cb70e5462441af4d7ed6","SEM:edbdc2660c50c77d2d95"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-5a35a36688f45769
+    - ev-461ca85f2e1d852c
+    - ev-cce74f22b035299f
+- assessment_id: a-e9da6474a348264d
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-8f1adad4bbab1bfd
+  evidence_ids:
+  - ev-461ca85f2e1d852c
+  - ev-e9da6474a348264d
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-461ca85f2e1d852c
+    - ev-e9da6474a348264d
+findings:
+- finding_id: rec-f-abce609010e501f6
+  issue_key: mim-reconciliation-role-support-8f1adad4bbab1bfd
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: D-Trehalose dihydrate'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-8f1adad4bbab1bfd
+  evidence_ids:
+  - ev-461ca85f2e1d852c
+  - ev-e9da6474a348264d
+  - ev-0ecc0e3446cb77f0
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-trehalose_Dihydrate.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  - nutritional_roles[1]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024633Z-mim-reconcile-all-batch-05
+    finding_id: f-abce609010e501f6
+actions:
+- action_id: rec-action-abce609010e501f6
+  description: 'Reassess prediction-only role support: D-Trehalose dihydrate'
+  finding_ids:
+  - rec-f-abce609010e501f6
+  target_ids:
+  - record-8f1adad4bbab1bfd
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-trehalose_Dihydrate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024633Z-mim-reconcile-all-batch-05.
+```

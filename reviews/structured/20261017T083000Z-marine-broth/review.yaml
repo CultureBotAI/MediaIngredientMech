@@ -1,0 +1,288 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-marine-broth
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Marine_Broth (data/ingredients/unmapped/Marine_Broth.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=UNMAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Marine_Broth (data/ingredients/unmapped/Marine_Broth.yaml,
+  record-9d020c01bbba1251, mapping_status=UNMAPPED). Records 0 open finding(s) and
+  1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/unmapped/Marine_Broth.yaml
+    sha256: 42a5aea4f5671ea994f55a48fd75e00b0c0e6ce37d592ab31d5ae537bb6ed960
+    role: target
+  - path: reviews/structured/20261011T024640Z-mim-reconcile-all-batch-13/review.yaml
+    sha256: 59cac14400d959b07cc323af966582e4f2dc3bafb95a044f47b6752bb4c20dbb
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/unmapped_ingredients.csv
+    sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+    role: context
+  - path: reports/yaml_record_review/20261001T044853Z-Marine_Broth.md
+    sha256: d35d32250e71860d92f34a3f77de07e72cf8ffdd176250a08bbd02625e340f4b
+    role: context
+targets:
+- target_id: record-9d020c01bbba1251
+  path: data/ingredients/unmapped/Marine_Broth.yaml
+  label: Marine_Broth
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Marine_Broth.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/unmapped/Marine_Broth.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/unmapped/Marine_Broth.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-9d020c01bbba1251
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-72a1574ca4941e17
+  - ev-e8ee8c29b0568f9d
+  - ev-2c14069beddf2b9b
+  - ev-a5483bf5df63f9d9
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-72a1574ca4941e17
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024640Z-mim-reconcile-all-batch-13
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-78bd46709da8f2bc
+evidence:
+- evidence_id: ev-72a1574ca4941e17
+  kind: record_content
+  reference: data/ingredients/unmapped/Marine_Broth.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[152],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0433","line":154,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"Marine
+    Broth"}],"identifier":"UNMAPPED_0433","ingredient_type":"NAMED_MEDIUM","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Marine
+    Broth","sssom_rows":[],"sssom_subject":"MIM:Marine_Broth","synonym_count":1}'
+  snapshot_sha256: 42a5aea4f5671ea994f55a48fd75e00b0c0e6ce37d592ab31d5ae537bb6ed960
+- evidence_id: ev-e8ee8c29b0568f9d
+  kind: validation
+  reference: data/curated/unmapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [152]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+- evidence_id: ev-2c14069beddf2b9b
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Marine_Broth; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-a5483bf5df63f9d9
+  kind: record_content
+  reference: docs/data/unmapped_ingredients.csv
+  locator: CSV lines=[154]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0433","line":154,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"Marine
+    Broth","total_occurrences":"0"}]'
+  snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+- evidence_id: ev-78bd46709da8f2bc
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T044853Z-Marine_Broth.md
+  locator: 'YAML Record Review: Marine Broth:2; Target:10; Validation:20; Identity
+    and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55;
+    Follow-up Checks:60; Additional Notes:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: d35d32250e71860d92f34a3f77de07e72cf8ffdd176250a08bbd02625e340f4b
+  quote: 'Findings:
+
+    - **major**: `data/ingredients/unmapped/Marine_Broth.yaml` remains `UNMAPPED`;
+    the label denotes a named medium or formulation rather than one exact chemical
+    substance. Do not exact-match it to a broader parent, component, hydrate, salt,
+    or lookalike label.
+
+
+    Recommended Edits:
+
+    - Curate an exact same-form identity or decomposition for `data/ingredients/unmapped/Marine_Broth.yaml`
+    before mapping it.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/unmapped/Marine_Broth.yaml`,
+    `just validate-terms data/ingredients/unmapped/Marine_Broth.yaml` where applicable,
+    and `just qc-sssom`.'
+assessments:
+- assessment_id: a-b55035e656529256
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-72a1574ca4941e17
+  - ev-e8ee8c29b0568f9d
+  - ev-2c14069beddf2b9b
+  - ev-a5483bf5df63f9d9
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-8e446235d8e9c06f
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-78bd46709da8f2bc
+  - ev-72a1574ca4941e17
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:48:53Z;
+    reviewed SHA-256=42a5aea4f5671ea994f55a48fd75e00b0c0e6ce37d592ab31d5ae537bb6ed960;
+    current SHA-256=42a5aea4f5671ea994f55a48fd75e00b0c0e6ce37d592ab31d5ae537bb6ed960;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T044853Z-Marine_Broth.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Named medium/formulation
+    is intentionally left unmapped until a recipe-level CultureMech representation
+    owns the formulation.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-78bd46709da8f2bc
+    - ev-72a1574ca4941e17
+  - name: legacy-native-ids
+    value: '[]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-72a1574ca4941e17
+    - ev-78bd46709da8f2bc
+- assessment_id: a-03aaea74f83b78e6
+  area: identity
+  topic: Unresolved exact identity or preparation
+  outcome: unknown
+  summary: Current status=UNMAPPED; no supported promotion is established by this
+    reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  target_ids:
+  - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-78bd46709da8f2bc
+  - ev-72a1574ca4941e17
+  - ev-2c14069beddf2b9b
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-78bd46709da8f2bc
+    - ev-72a1574ca4941e17
+    - ev-2c14069beddf2b9b
+findings:
+- finding_id: rec-f-unmapped-9d020c01bbba1251
+  issue_key: mim-reconciliation-unresolved-identity-9d020c01bbba1251
+  category: identity
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Unresolved exact identity or preparation: Marine_Broth'
+  description: Current status=UNMAPPED; no supported promotion is established by this
+    reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  disposition_reason: Current status=UNMAPPED; no supported promotion is established
+    by this reconciliation. Preserve the unresolved source boundary; source-backed
+    identity/decomposition review is still required.
+  target_ids:
+  - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-78bd46709da8f2bc
+  - ev-72a1574ca4941e17
+  - ev-2c14069beddf2b9b
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Marine_Broth.yaml
+    role: maintained ingredient
+  field_paths:
+  - mapping_status
+  - ontology_id
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - unresolved-identity
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024640Z-mim-reconcile-all-batch-13.

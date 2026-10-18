@@ -1,0 +1,434 @@
+# Per-record structured review: Tungstate (data/ingredients/mapped/Tungstate.yaml)
+
+- Review: 20261017T083000Z-tungstate
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Tungstate (data/ingredients/mapped/Tungstate.yaml, record-02608edf7d339331, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Tungstate.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Tungstate.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-02608edf7d339331 | data/ingredients/mapped/Tungstate.yaml | maintained | Tungstate |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-02608edf7d339331 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-02608edf7d339331 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-02608edf7d339331 | Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-02608edf7d339331.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-02608edf7d339331.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T20:12:39Z; reviewed SHA-256=6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443; current SHA-256=6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443; hash_changed=False. Reports=["reports/yaml_record_review/Tungstate.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact CHEBI identity and final SSSOM row pass, but TRACE_ELEMENT is a provisional in-session LLM role.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-02608edf7d339331.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-b7b6a0a1b9130c5e: Reassess prediction-only role support: Tungstate
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-02608edf7d339331.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-b7b6a0a1b9130c5e
+
+Reassess prediction-only role support: Tungstate
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-976c1f658cd2212a | data/ingredients/mapped/Tungstate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2014,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5} |
+| ev-ac354f7552f4f2a7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2012] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6a35cfaaacf2659d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tungstate; data-row positions=[2855] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","other":"TUNGSTATE(VI)ION&#124;Wolframat&#124;tetraoxidotungstate(VI)&#124;wolframate&#124;tetraoxidotungstate(2-)&#124;CAS:14311-52-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Tungstate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-c0994498bd556e76 | docs/data/mapped_ingredients.csv; CSV lines=[2014] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:46502","line":2014,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:46502","preferred_term":"Tungstate","total_occurrences":"3"}] |
+| ev-ab5bed2b8735c084 | reports/yaml_record_review/Tungstate.md; &#96;data/ingredients/mapped/Tungstate.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:31; Issues:40; Major: &#96;TRACE_ELEMENT&#96; is provisional in-session LLM evidence:42; Completeness:58; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-fbcb545bd399423b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1325,2100] | context_only | [{"current_record_sha256":"6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443","finding_id":"SEM:4de718c686f4c603592b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443","finding_id":"SEM:e39174158e42ac556803","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-1903f09736399d69 | data/ingredients/mapped/Tungstate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2014,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5} |
+| ev-31e498a0c09f018c | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-b7b6a0a1b9130c5e] | context_only | Predecessor structured review finding f-b7b6a0a1b9130c5e in 20261011T024639Z-mim-reconcile-all-batch-12 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+````yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-tungstate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Tungstate (data/ingredients/mapped/Tungstate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Tungstate (data/ingredients/mapped/Tungstate.yaml,
+  record-02608edf7d339331, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Tungstate.yaml
+    sha256: 6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443
+    role: target
+  - path: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+    sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Tungstate.md
+    sha256: d4ea2b17cbab4e0e790e2238a42366a35c39ab0e09d66a25936e837c6c115431
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-02608edf7d339331
+  path: data/ingredients/mapped/Tungstate.yaml
+  label: Tungstate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tungstate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Tungstate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Tungstate.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-02608edf7d339331
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-02608edf7d339331
+  evidence_ids:
+  - ev-976c1f658cd2212a
+  - ev-ac354f7552f4f2a7
+  - ev-6a35cfaaacf2659d
+  - ev-c0994498bd556e76
+  - ev-1903f09736399d69
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-02608edf7d339331
+  evidence_ids:
+  - ev-976c1f658cd2212a
+  - ev-fbcb545bd399423b
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-02608edf7d339331
+  evidence_ids:
+  - ev-ab5bed2b8735c084
+  - ev-fbcb545bd399423b
+  - ev-31e498a0c09f018c
+evidence:
+- evidence_id: ev-976c1f658cd2212a
+  kind: record_content
+  reference: data/ingredients/mapped/Tungstate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2014,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5}'
+  snapshot_sha256: 6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443
+- evidence_id: ev-ac354f7552f4f2a7
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2012]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-6a35cfaaacf2659d
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Tungstate; data-row positions=[2855]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","other":"TUNGSTATE(VI)ION|Wolframat|tetraoxidotungstate(VI)|wolframate|tetraoxidotungstate(2-)|CAS:14311-52-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Tungstate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-c0994498bd556e76
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2014]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:46502","line":2014,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:46502","preferred_term":"Tungstate","total_occurrences":"3"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-ab5bed2b8735c084
+  kind: prior_review
+  reference: reports/yaml_record_review/Tungstate.md
+  locator: '`data/ingredients/mapped/Tungstate.yaml`:2; Verdict:4; Identity:10; Validation:22;
+    Evidence:31; Issues:40; Major: `TRACE_ELEMENT` is provisional in-session LLM evidence:42;
+    Completeness:58; Recommended Edits:64'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: d4ea2b17cbab4e0e790e2238a42366a35c39ab0e09d66a25936e837c6c115431
+  quote: "Issues:\n\n\nMajor: `TRACE_ELEMENT` is provisional in-session LLM evidence:\n\
+    The only role assertion is:\n\n```yaml\nnutritional_roles:\n- role: TRACE_ELEMENT\n\
+    \  confidence: 0.6\n  evidence:\n  - reference_type: COMPUTATIONAL_PREDICTION\n\
+    \    reference_text: Assigned by in-session Claude reasoning (no external API)\n\
+    \    curator_note: Provisional in-session LLM role assignment; review recommended.\n\
+    ```\n\nThe exact CHEBI identity does not independently curate the trace-element\
+    \ role.\n\nRecommended Edits:\n- Replace the `TRACE_ELEMENT` computational prediction\
+    \ with curated\n  database/literature evidence for tungstate in this ingredient\
+    \ context, or\n  remove `nutritional_roles` until such support is added."
+- evidence_id: ev-fbcb545bd399423b
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1325,2100]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443","finding_id":"SEM:4de718c686f4c603592b","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443","finding_id":"SEM:e39174158e42ac556803","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-1903f09736399d69
+  kind: record_content
+  reference: data/ingredients/mapped/Tungstate.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2014,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5}'
+  snapshot_sha256: 6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443
+- evidence_id: ev-31e498a0c09f018c
+  kind: prior_review
+  reference: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+  locator: findings[finding_id=f-b7b6a0a1b9130c5e]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-b7b6a0a1b9130c5e in 20261011T024639Z-mim-reconcile-all-batch-12
+  snapshot_sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+assessments:
+- assessment_id: a-6ddeca57ca7dbb6d
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-02608edf7d339331
+  evidence_ids:
+  - ev-976c1f658cd2212a
+  - ev-ac354f7552f4f2a7
+  - ev-6a35cfaaacf2659d
+  - ev-c0994498bd556e76
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-29bd546f48e27864
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-02608edf7d339331
+  evidence_ids:
+  - ev-ab5bed2b8735c084
+  - ev-976c1f658cd2212a
+  - ev-fbcb545bd399423b
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T20:12:39Z;
+    reviewed SHA-256=6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443;
+    current SHA-256=6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443;
+    hash_changed=False. Reports=["reports/yaml_record_review/Tungstate.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The exact CHEBI
+    identity and final SSSOM row pass, but TRACE_ELEMENT is a provisional in-session
+    LLM role.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ab5bed2b8735c084
+    - ev-976c1f658cd2212a
+  - name: legacy-native-ids
+    value: '["SEM:4de718c686f4c603592b","SEM:e39174158e42ac556803"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-976c1f658cd2212a
+    - ev-ab5bed2b8735c084
+    - ev-fbcb545bd399423b
+- assessment_id: a-1903f09736399d69
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-02608edf7d339331
+  evidence_ids:
+  - ev-ab5bed2b8735c084
+  - ev-1903f09736399d69
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ab5bed2b8735c084
+    - ev-1903f09736399d69
+findings:
+- finding_id: rec-f-b7b6a0a1b9130c5e
+  issue_key: mim-reconciliation-role-support-02608edf7d339331
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Tungstate'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-02608edf7d339331
+  evidence_ids:
+  - ev-ab5bed2b8735c084
+  - ev-1903f09736399d69
+  - ev-31e498a0c09f018c
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tungstate.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024639Z-mim-reconcile-all-batch-12
+    finding_id: f-b7b6a0a1b9130c5e
+actions:
+- action_id: rec-action-b7b6a0a1b9130c5e
+  description: 'Reassess prediction-only role support: Tungstate'
+  finding_ids:
+  - rec-f-b7b6a0a1b9130c5e
+  target_ids:
+  - record-02608edf7d339331
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tungstate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+````

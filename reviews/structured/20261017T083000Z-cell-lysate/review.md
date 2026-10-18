@@ -1,0 +1,436 @@
+# Per-record structured review: Cell_Lysate (data/ingredients/mapped/Cell_Lysate.yaml)
+
+- Review: 20261017T083000Z-cell-lysate
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Cell_Lysate (data/ingredients/mapped/Cell_Lysate.yaml, record-ddc481ee9cb75f02, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Cell_Lysate.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Cell_Lysate.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-ddc481ee9cb75f02 | data/ingredients/mapped/Cell_Lysate.yaml | maintained | Cell_Lysate |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-ddc481ee9cb75f02 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-ddc481ee9cb75f02 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-ddc481ee9cb75f02 | Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-ddc481ee9cb75f02.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-ddc481ee9cb75f02.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T11:32:26Z; reviewed SHA-256=4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420; current SHA-256=4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420; hash_changed=False. Reports=["reports/yaml_record_review/Cell_Lysate.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact BTO cell lysate identity, occurrence count, SSSOM row, and aggregate copy pass, but PROTEIN_SOURCE is only a provisional name-pattern prediction.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-ddc481ee9cb75f02.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-80f3aeed027e3b9d: Reassess prediction-only role support: Cell lysate
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-ddc481ee9cb75f02.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-80f3aeed027e3b9d
+
+Reassess prediction-only role support: Cell lysate
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-38249329245699bf | data/ingredients/mapped/Cell_Lysate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[683],"raw_equal":true},"docs_rows":[{"identifier":"BTO:0004304","line":685,"mapping_status":"MAPPED","ontology_id":"BTO:0004304","preferred_term":"Cell lysate"}],"identifier":"BTO:0004304","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"BTO:0004304","ontology_label":"cell lysate","ontology_source":"BTO"},"preferred_term":"Cell lysate","sssom_rows":[{"data_row":706,"object_id":"BTO:0004304","object_label":"cell lysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cell_Lysate","synonym_count":1} |
+| ev-e98305e64c7d2282 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [683] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-8b0dcfb4011c58a4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cell_Lysate; data-row positions=[706] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":706,"object_id":"BTO:0004304","object_label":"cell lysate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cell_Lysate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-fb8d65be3b173c5e | docs/data/mapped_ingredients.csv; CSV lines=[685] | supports | Published identity and count rows inspected: [{"identifier":"BTO:0004304","line":685,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"BTO:0004304","preferred_term":"Cell lysate","total_occurrences":"2"}] |
+| ev-214b458433206981 | reports/yaml_record_review/Cell_Lysate.md; &#96;data/ingredients/mapped/Cell_Lysate.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:36; Completeness:56; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-6e09cd732124fa04 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[385,2087] | context_only | [{"current_record_sha256":"4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420","finding_id":"SEM:fc537bb1cdb4dc1ab3d9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420","finding_id":"SEM:681ad71e61f15f6cc1e4","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-5172bd305a0dd76b | data/ingredients/mapped/Cell_Lysate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[683],"raw_equal":true},"docs_rows":[{"identifier":"BTO:0004304","line":685,"mapping_status":"MAPPED","ontology_id":"BTO:0004304","preferred_term":"Cell lysate"}],"identifier":"BTO:0004304","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"BTO:0004304","ontology_label":"cell lysate","ontology_source":"BTO"},"preferred_term":"Cell lysate","sssom_rows":[{"data_row":706,"object_id":"BTO:0004304","object_label":"cell lysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cell_Lysate","synonym_count":1} |
+| ev-647d89b03b7a0c8f | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-80f3aeed027e3b9d] | context_only | Predecessor structured review finding f-80f3aeed027e3b9d in 20261011T024632Z-mim-reconcile-all-batch-04 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-cell-lysate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Cell_Lysate (data/ingredients/mapped/Cell_Lysate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Cell_Lysate (data/ingredients/mapped/Cell_Lysate.yaml,
+  record-ddc481ee9cb75f02, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Cell_Lysate.yaml
+    sha256: 4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420
+    role: target
+  - path: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+    sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Cell_Lysate.md
+    sha256: 59963826fc5d3b8f106a845211c84d16015bed5c157ae8c52d33e5c9fc78eda1
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-ddc481ee9cb75f02
+  path: data/ingredients/mapped/Cell_Lysate.yaml
+  label: Cell_Lysate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cell_Lysate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Cell_Lysate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Cell_Lysate.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-ddc481ee9cb75f02
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-38249329245699bf
+  - ev-e98305e64c7d2282
+  - ev-8b0dcfb4011c58a4
+  - ev-fb8d65be3b173c5e
+  - ev-5172bd305a0dd76b
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-38249329245699bf
+  - ev-6e09cd732124fa04
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-214b458433206981
+  - ev-6e09cd732124fa04
+  - ev-647d89b03b7a0c8f
+evidence:
+- evidence_id: ev-38249329245699bf
+  kind: record_content
+  reference: data/ingredients/mapped/Cell_Lysate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[683],"raw_equal":true},"docs_rows":[{"identifier":"BTO:0004304","line":685,"mapping_status":"MAPPED","ontology_id":"BTO:0004304","preferred_term":"Cell
+    lysate"}],"identifier":"BTO:0004304","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"BTO:0004304","ontology_label":"cell
+    lysate","ontology_source":"BTO"},"preferred_term":"Cell lysate","sssom_rows":[{"data_row":706,"object_id":"BTO:0004304","object_label":"cell
+    lysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cell_Lysate","synonym_count":1}'
+  snapshot_sha256: 4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420
+- evidence_id: ev-e98305e64c7d2282
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [683]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-8b0dcfb4011c58a4
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Cell_Lysate; data-row positions=[706]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":706,"object_id":"BTO:0004304","object_label":"cell
+    lysate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cell_Lysate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-fb8d65be3b173c5e
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[685]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"BTO:0004304","line":685,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"BTO:0004304","preferred_term":"Cell
+    lysate","total_occurrences":"2"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-214b458433206981
+  kind: prior_review
+  reference: reports/yaml_record_review/Cell_Lysate.md
+  locator: '`data/ingredients/mapped/Cell_Lysate.yaml`:2; Verdict:4; Identity:11;
+    Validation:21; Evidence:36; Completeness:56; Recommended Edits:62'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 59963826fc5d3b8f106a845211c84d16015bed5c157ae8c52d33e5c9fc78eda1
+  quote: "Recommended Edits:\n- Major: either replace `nutritional_roles.PROTEIN_SOURCE`\
+    \ with inspected\n  evidence for cell lysate as a protein source in media, or\
+    \ remove the role,\n  then rerun strict validation, SSSOM QC, aggregate roundtrip,\
+    \ and\n  `git diff --check`."
+- evidence_id: ev-6e09cd732124fa04
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[385,2087]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420","finding_id":"SEM:fc537bb1cdb4dc1ab3d9","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420","finding_id":"SEM:681ad71e61f15f6cc1e4","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-5172bd305a0dd76b
+  kind: record_content
+  reference: data/ingredients/mapped/Cell_Lysate.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[683],"raw_equal":true},"docs_rows":[{"identifier":"BTO:0004304","line":685,"mapping_status":"MAPPED","ontology_id":"BTO:0004304","preferred_term":"Cell
+    lysate"}],"identifier":"BTO:0004304","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"BTO:0004304","ontology_label":"cell
+    lysate","ontology_source":"BTO"},"preferred_term":"Cell lysate","sssom_rows":[{"data_row":706,"object_id":"BTO:0004304","object_label":"cell
+    lysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cell_Lysate","synonym_count":1}'
+  snapshot_sha256: 4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420
+- evidence_id: ev-647d89b03b7a0c8f
+  kind: prior_review
+  reference: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+  locator: findings[finding_id=f-80f3aeed027e3b9d]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-80f3aeed027e3b9d in 20261011T024632Z-mim-reconcile-all-batch-04
+  snapshot_sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+assessments:
+- assessment_id: a-21e158b71ee6fab7
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-38249329245699bf
+  - ev-e98305e64c7d2282
+  - ev-8b0dcfb4011c58a4
+  - ev-fb8d65be3b173c5e
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-969a11cbcbaa7567
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-214b458433206981
+  - ev-38249329245699bf
+  - ev-6e09cd732124fa04
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T11:32:26Z;
+    reviewed SHA-256=4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420;
+    current SHA-256=4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420;
+    hash_changed=False. Reports=["reports/yaml_record_review/Cell_Lysate.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The exact BTO cell
+    lysate identity, occurrence count, SSSOM row, and aggregate copy pass, but PROTEIN_SOURCE
+    is only a provisional name-pattern prediction.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-214b458433206981
+    - ev-38249329245699bf
+  - name: legacy-native-ids
+    value: '["SEM:fc537bb1cdb4dc1ab3d9","SEM:681ad71e61f15f6cc1e4"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-38249329245699bf
+    - ev-214b458433206981
+    - ev-6e09cd732124fa04
+- assessment_id: a-5172bd305a0dd76b
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-214b458433206981
+  - ev-5172bd305a0dd76b
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-214b458433206981
+    - ev-5172bd305a0dd76b
+findings:
+- finding_id: rec-f-80f3aeed027e3b9d
+  issue_key: mim-reconciliation-role-support-ddc481ee9cb75f02
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Cell lysate'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-214b458433206981
+  - ev-5172bd305a0dd76b
+  - ev-647d89b03b7a0c8f
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cell_Lysate.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024632Z-mim-reconcile-all-batch-04
+    finding_id: f-80f3aeed027e3b9d
+actions:
+- action_id: rec-action-80f3aeed027e3b9d
+  description: 'Reassess prediction-only role support: Cell lysate'
+  finding_ids:
+  - rec-f-80f3aeed027e3b9d
+  target_ids:
+  - record-ddc481ee9cb75f02
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cell_Lysate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.
+```

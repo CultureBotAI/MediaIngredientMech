@@ -1,0 +1,484 @@
+# Per-record structured review: Trans-cinnamic_Acid (data/ingredients/mapped/Trans-cinnamic_Acid.yaml)
+
+- Review: 20261017T083000Z-trans-cinnamic-acid
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Trans-cinnamic_Acid (data/ingredients/mapped/Trans-cinnamic_Acid.yaml, record-dfd1c5edab9ecf95, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Trans-cinnamic_Acid.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Trans-cinnamic_Acid.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-dfd1c5edab9ecf95 | data/ingredients/mapped/Trans-cinnamic_Acid.yaml | maintained | Trans-cinnamic_Acid |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-dfd1c5edab9ecf95 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-dfd1c5edab9ecf95 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-dfd1c5edab9ecf95 | Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-dfd1c5edab9ecf95.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-dfd1c5edab9ecf95.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:03:44Z; reviewed SHA-256=317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9; current SHA-256=317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050344Z-Trans-cinnamic_Acid.md","reports/yaml_record_review/Trans-cinnamic_Acid.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Trans-cinnamic_Acid.md&#96; after the record changed from a47a4dad1bd7204ee15edc4307a9491b6da91d3b51d0586e6018982e416f1003 to 317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9; preserved the previous major finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-dfd1c5edab9ecf95.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-7d085564edc4f30d: Reassess prediction-only role support: trans-Cinnamic acid
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-dfd1c5edab9ecf95.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-7d085564edc4f30d
+
+Reassess prediction-only role support: trans-Cinnamic acid
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-37e1caaa8a7b1fe6 | data/ingredients/mapped/Trans-cinnamic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1981],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1983,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12} |
+| ev-e057e43f1f9804f6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1981] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-fba76918093daf92 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trans-cinnamic_Acid; data-row positions=[2814] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic acid","other":"(2E)-3-phenyl-2-propenoic acid&#124;(2E)-3-phenylacrylic acid&#124;(2E)-3-phenylprop-2-enoic acid&#124;(E)-3-phenyl-2-propenoic acid&#124;(E)-cinnamic acid&#124;Benzeneacrylic acid&#124;PHENYLETHYLENECARBOXYLIC ACID&#124;trans-3-phenylacrylic acid&#124;trans-Zimtsaeure&#124;trans-beta-carboxystyrene&#124;Cinnamic acid&#124;CAS:621-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Trans-cinnamic_Acid","validation_method":"manual:apply_312_batch4&#124;OTHER&#124;2026-09-22"}] |
+| ev-18cf26e4054b27c2 | docs/data/mapped_ingredients.csv; CSV lines=[1983] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35697","line":1983,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic acid","total_occurrences":"3"}] |
+| ev-d0bc11f66cb02605 | reports/yaml_record_review/20261001T050344Z-Trans-cinnamic_Acid.md; YAML Record Review: trans-Cinnamic acid:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-5345e9c8c2848dc1 | reports/yaml_record_review/Trans-cinnamic_Acid.md; &#96;data/ingredients/mapped/Trans-cinnamic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:31; Issues:41; Major: &#96;CARBON_SOURCE&#96; is provisional in-session LLM evidence:43; Completeness:50; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-6444d45d048eb311 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1303,1678] | context_only | [{"current_record_sha256":"317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9","finding_id":"SEM:279c6c53fc924efb84fb","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9","finding_id":"SEM:28ca96e984997a5c1d13","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-9ce2994b1bd3058c | data/ingredients/mapped/Trans-cinnamic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1981],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1983,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12} |
+| ev-0e8f3ca6d41ef1a0 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-7d085564edc4f30d] | context_only | Predecessor structured review finding f-7d085564edc4f30d in 20261011T024639Z-mim-reconcile-all-batch-12 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-trans-cinnamic-acid
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Trans-cinnamic_Acid (data/ingredients/mapped/Trans-cinnamic_Acid.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Trans-cinnamic_Acid (data/ingredients/mapped/Trans-cinnamic_Acid.yaml,
+  record-dfd1c5edab9ecf95, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
+    sha256: 317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9
+    role: target
+  - path: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+    sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/20261001T050344Z-Trans-cinnamic_Acid.md
+    sha256: c0d32a026485c79c7ecdd34e69725f62b8350878de1e5f1bf43cd3242d6bc036
+    role: context
+  - path: reports/yaml_record_review/Trans-cinnamic_Acid.md
+    sha256: 5fea98842f86b793e7ded4e15ac31c1b2f74868f35c952bf2a437c2c7f71d9e3
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-dfd1c5edab9ecf95
+  path: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
+  label: Trans-cinnamic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Trans-cinnamic_Acid.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Trans-cinnamic_Acid.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-dfd1c5edab9ecf95
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-37e1caaa8a7b1fe6
+  - ev-e057e43f1f9804f6
+  - ev-fba76918093daf92
+  - ev-18cf26e4054b27c2
+  - ev-9ce2994b1bd3058c
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-37e1caaa8a7b1fe6
+  - ev-6444d45d048eb311
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-d0bc11f66cb02605
+  - ev-5345e9c8c2848dc1
+  - ev-6444d45d048eb311
+  - ev-0e8f3ca6d41ef1a0
+evidence:
+- evidence_id: ev-37e1caaa8a7b1fe6
+  kind: record_content
+  reference: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1981],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1983,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic
+    acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic
+    acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12}'
+  snapshot_sha256: 317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9
+- evidence_id: ev-e057e43f1f9804f6
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1981]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-fba76918093daf92
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Trans-cinnamic_Acid; data-row positions=[2814]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic
+    acid","other":"(2E)-3-phenyl-2-propenoic acid|(2E)-3-phenylacrylic acid|(2E)-3-phenylprop-2-enoic
+    acid|(E)-3-phenyl-2-propenoic acid|(E)-cinnamic acid|Benzeneacrylic acid|PHENYLETHYLENECARBOXYLIC
+    ACID|trans-3-phenylacrylic acid|trans-Zimtsaeure|trans-beta-carboxystyrene|Cinnamic
+    acid|CAS:621-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Trans-cinnamic_Acid","validation_method":"manual:apply_312_batch4|OTHER|2026-09-22"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-18cf26e4054b27c2
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1983]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35697","line":1983,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic
+    acid","total_occurrences":"3"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-d0bc11f66cb02605
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050344Z-Trans-cinnamic_Acid.md
+  locator: 'YAML Record Review: trans-Cinnamic acid:2; Target:10; Validation:20; Identity
+    and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56;
+    Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: c0d32a026485c79c7ecdd34e69725f62b8350878de1e5f1bf43cd3242d6bc036
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/Trans-cinnamic_Acid.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The exact
+    CHEBI identity and final SSSOM row pass, but CARBON_SOURCE is provisional in-session
+    LLM evidence.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Trans-cinnamic_Acid.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Trans-cinnamic_Acid.yaml`,
+    `just validate-terms data/ingredients/mapped/Trans-cinnamic_Acid.yaml` where applicable,
+    and `just qc-sssom`.'
+- evidence_id: ev-5345e9c8c2848dc1
+  kind: prior_review
+  reference: reports/yaml_record_review/Trans-cinnamic_Acid.md
+  locator: '`data/ingredients/mapped/Trans-cinnamic_Acid.yaml`:2; Verdict:4; Identity:10;
+    Validation:23; Evidence:31; Issues:41; Major: `CARBON_SOURCE` is provisional in-session
+    LLM evidence:43; Completeness:50; Recommended Edits:56'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 5fea98842f86b793e7ded4e15ac31c1b2f74868f35c952bf2a437c2c7f71d9e3
+  quote: "Issues:\n\n\nMajor: `CARBON_SOURCE` is provisional in-session LLM evidence:\n\
+    The only role assertion is still the June in-session Claude prediction with the\n\
+    curator note `Provisional in-session LLM role assignment; review recommended.`\n\
+    The exact CHEBI identity and occurrence count do not independently establish a\n\
+    carbon-source role.\n\nRecommended Edits:\n- Replace the `COMPUTATIONAL_PREDICTION`\
+    \ role evidence with curated\n  database/literature evidence, or remove `nutritional_roles`\
+    \ until such\n  support is added."
+- evidence_id: ev-6444d45d048eb311
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1303,1678]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9","finding_id":"SEM:279c6c53fc924efb84fb","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9","finding_id":"SEM:28ca96e984997a5c1d13","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-9ce2994b1bd3058c
+  kind: record_content
+  reference: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1981],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1983,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic
+    acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic
+    acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12}'
+  snapshot_sha256: 317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9
+- evidence_id: ev-0e8f3ca6d41ef1a0
+  kind: prior_review
+  reference: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+  locator: findings[finding_id=f-7d085564edc4f30d]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-7d085564edc4f30d in 20261011T024639Z-mim-reconcile-all-batch-12
+  snapshot_sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+assessments:
+- assessment_id: a-6f6567861b4737d5
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-37e1caaa8a7b1fe6
+  - ev-e057e43f1f9804f6
+  - ev-fba76918093daf92
+  - ev-18cf26e4054b27c2
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-c6e5e88feaa54725
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-d0bc11f66cb02605
+  - ev-5345e9c8c2848dc1
+  - ev-37e1caaa8a7b1fe6
+  - ev-6444d45d048eb311
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:03:44Z;
+    reviewed SHA-256=317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9;
+    current SHA-256=317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050344Z-Trans-cinnamic_Acid.md","reports/yaml_record_review/Trans-cinnamic_Acid.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Trans-cinnamic_Acid.md` after the record changed from
+    a47a4dad1bd7204ee15edc4307a9491b6da91d3b51d0586e6018982e416f1003 to 317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9;
+    preserved the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-d0bc11f66cb02605
+    - ev-5345e9c8c2848dc1
+    - ev-37e1caaa8a7b1fe6
+  - name: legacy-native-ids
+    value: '["SEM:279c6c53fc924efb84fb","SEM:28ca96e984997a5c1d13"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-37e1caaa8a7b1fe6
+    - ev-d0bc11f66cb02605
+    - ev-5345e9c8c2848dc1
+    - ev-6444d45d048eb311
+- assessment_id: a-9ce2994b1bd3058c
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-d0bc11f66cb02605
+  - ev-5345e9c8c2848dc1
+  - ev-9ce2994b1bd3058c
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-d0bc11f66cb02605
+    - ev-5345e9c8c2848dc1
+    - ev-9ce2994b1bd3058c
+findings:
+- finding_id: rec-f-7d085564edc4f30d
+  issue_key: mim-reconciliation-role-support-dfd1c5edab9ecf95
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: trans-Cinnamic acid'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-d0bc11f66cb02605
+  - ev-5345e9c8c2848dc1
+  - ev-9ce2994b1bd3058c
+  - ev-0e8f3ca6d41ef1a0
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024639Z-mim-reconcile-all-batch-12
+    finding_id: f-7d085564edc4f30d
+actions:
+- action_id: rec-action-7d085564edc4f30d
+  description: 'Reassess prediction-only role support: trans-Cinnamic acid'
+  finding_ids:
+  - rec-f-7d085564edc4f30d
+  target_ids:
+  - record-dfd1c5edab9ecf95
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+```

@@ -1,0 +1,553 @@
+# Per-record structured review: DL_Vitamins (data/ingredients/mapped/DL_Vitamins.yaml)
+
+- Review: 20261017T083000Z-dl-vitamins
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for DL_Vitamins (data/ingredients/mapped/DL_Vitamins.yaml, record-9122c364d42e8559, mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/DL_Vitamins.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/DL_Vitamins.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-9122c364d42e8559 | data/ingredients/mapped/DL_Vitamins.yaml | maintained | DL_Vitamins |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-9122c364d42e8559 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-9122c364d42e8559 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-9122c364d42e8559 | Reconciled against predecessor batch review 20261011T024633Z-mim-reconcile-all-batch-05 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-9122c364d42e8559.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: not_applicable. Targets: record-9122c364d42e8559.
+
+The latest legacy review reports no outstanding finding. This run verifies local consistency only; it does not renew that earlier scientific pass.
+
+Latest manifest verdict=pass; severity=none; reviewed_at=2026-09-16T14:07:05Z; reviewed SHA-256=41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad; current SHA-256=41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad; hash_changed=False. Reports=["reports/yaml_record_review/DL_Vitamins.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The local stock-solution identity, ten component rows, vitamin-source role, and final SSSOM alias pass.
+
+### Unresolved recipe-reference or truncated-concentration synonyms
+
+nomenclature: concern. Targets: record-9122c364d42e8559.
+
+Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"unresolved recipe cross-reference in a resolving synonym","token":"DL vitamins (see below)"}]. Truncated concentration strings and context-dependent instructions need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as a class.
+
+### Certainty correction for the exact token observation
+
+nomenclature: unknown. Targets: record-9122c364d42e8559.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. The historical report actually passes the record and explicitly accepts the raw source surface; attributing an unresolved token concern to that report was incorrect. No new source evidence was supplied to overturn its scoped conclusion.
+
+## Findings
+
+### rec-scope-f-838d67873b6673db: Adjudicate source scope of exported tokens: DL vitamins
+
+major / deferred / provisional; issue key: mim-reconciliation-exported-context-tokens-9122c364d42e8559.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. The historical report actually passes the record and explicitly accepts the raw source surface; attributing an unresolved token concern to that report was incorrect. No new source evidence was supplied to overturn its scoped conclusion.
+
+Disposition: Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. The historical report actually passes the record and explicitly accepts the raw source surface; attributing an unresolved token concern to that report was incorrect. No new source evidence was supplied to overturn its scoped conclusion.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-7204ca489d7c690d | data/ingredients/mapped/DL_Vitamins.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[134],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL vitamins"}],"identifier":"kgmicrobe.ingredient:dl_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:dl_vitamins","ontology_label":"DL vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"DL vitamins","sssom_rows":[{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL_Vitamins","synonym_count":2} |
+| ev-a67290c5d4386e74 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [134] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-ca75a3fbc1babe57 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL_Vitamins; data-row positions=[993] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL vitamins","other":"DL vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:DL_Vitamins","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-94c5f01d6fc254ae | docs/data/mapped_ingredients.csv; CSV lines=[136] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"6","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL vitamins","total_occurrences":"6"}] |
+| ev-f2a088cb2fbda7be | reports/yaml_record_review/DL_Vitamins.md; &#96;data/ingredients/mapped/DL_Vitamins.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:44; Completeness:61; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
+| ev-e6798c510d069e5f | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-838d67873b6673db] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
+| ev-f0c42034b2f08a1d | data/ingredients/mapped/DL_Vitamins.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[134],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL vitamins"}],"identifier":"kgmicrobe.ingredient:dl_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:dl_vitamins","ontology_label":"DL vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"DL vitamins","sssom_rows":[{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL_Vitamins","synonym_count":2} |
+| ev-82824a1888d907ee | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL_Vitamins; data-row positions=[993] | supports | Current exact-subject rows, including complete other payload: [{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL vitamins","other":"DL vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:DL_Vitamins","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-0bef314ac38155d7 | reports/yaml_record_review/DL_Vitamins.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
+| ev-a43e7d5a94de69e2 | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-838d67873b6673db] | context_only | Predecessor structured review finding scope-f-838d67873b6673db in 20261011T030852Z-mim-token-scope-reassessment |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024633Z-mim-reconcile-all-batch-05, 20261011T030852Z-mim-token-scope-reassessment.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-dl-vitamins
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: DL_Vitamins (data/ingredients/mapped/DL_Vitamins.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for DL_Vitamins (data/ingredients/mapped/DL_Vitamins.yaml,
+  record-9122c364d42e8559, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/DL_Vitamins.yaml
+    sha256: 41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad
+    role: target
+  - path: reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml
+    sha256: 7549030a5b50ed98868ff3497507fdfbfecd07cd858c76738f734521fa9d3603
+    role: context
+  - path: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+    sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/DL_Vitamins.md
+    sha256: e5d9436f54deaa206abe6a293a0f86a784f0fc6406f2bf28ef415ba1ac7fe1b7
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+    role: context
+targets:
+- target_id: record-9122c364d42e8559
+  path: data/ingredients/mapped/DL_Vitamins.yaml
+  label: DL_Vitamins
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL_Vitamins.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/DL_Vitamins.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/DL_Vitamins.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-9122c364d42e8559
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-9122c364d42e8559
+  evidence_ids:
+  - ev-7204ca489d7c690d
+  - ev-a67290c5d4386e74
+  - ev-ca75a3fbc1babe57
+  - ev-94c5f01d6fc254ae
+  - ev-f0c42034b2f08a1d
+  - ev-82824a1888d907ee
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-9122c364d42e8559
+  evidence_ids:
+  - ev-7204ca489d7c690d
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024633Z-mim-reconcile-all-batch-05
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-9122c364d42e8559
+  evidence_ids:
+  - ev-f2a088cb2fbda7be
+  - ev-e6798c510d069e5f
+  - ev-0bef314ac38155d7
+  - ev-a43e7d5a94de69e2
+evidence:
+- evidence_id: ev-7204ca489d7c690d
+  kind: record_content
+  reference: data/ingredients/mapped/DL_Vitamins.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[134],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL
+    vitamins"}],"identifier":"kgmicrobe.ingredient:dl_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:dl_vitamins","ontology_label":"DL
+    vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"DL vitamins","sssom_rows":[{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL
+    vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL_Vitamins","synonym_count":2}'
+  snapshot_sha256: 41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad
+- evidence_id: ev-a67290c5d4386e74
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [134]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-ca75a3fbc1babe57
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:DL_Vitamins; data-row positions=[993]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL
+    vitamins","other":"DL vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:DL_Vitamins","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-94c5f01d6fc254ae
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[136]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"6","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL
+    vitamins","total_occurrences":"6"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-f2a088cb2fbda7be
+  kind: prior_review
+  reference: reports/yaml_record_review/DL_Vitamins.md
+  locator: '`data/ingredients/mapped/DL_Vitamins.yaml`:2; Verdict:4; Identity:11;
+    Validation:26; Evidence:44; Completeness:61; Recommended Edits:70'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: e5d9436f54deaa206abe6a293a0f86a784f0fc6406f2bf28ef415ba1ac7fe1b7
+  quote: 'Recommended Edits:
+
+    - None.'
+- evidence_id: ev-823412d1eacb6795
+  kind: record_content
+  reference: MAPPING_SEMANTICS.md
+  locator: Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: supports
+  summary: Raw spellings may remain resolvable when they denote the same substance.
+    Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not
+    adjudicate that distinction.
+  snapshot_sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+- evidence_id: ev-e6798c510d069e5f
+  kind: prior_review
+  reference: reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml
+  locator: findings[finding_id=f-838d67873b6673db]
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Exact earlier occurrence has open/confirmed status, based on exported-token
+    presence and historical report text.
+  snapshot_sha256: 7549030a5b50ed98868ff3497507fdfbfecd07cd858c76738f734521fa9d3603
+  quote: '{"category": "nomenclature", "certainty": "confirmed", "description": "Historical
+    tokens are still present on the exact-subject SSSOM rows: [{\"reason\":\"unresolved
+    recipe cross-reference in a resolving synonym\",\"token\":\"DL vitamins (see below)\"}].
+    Truncated concentration strings and context-dependent instructions need scoped
+    curation. This check does not reject catalog/RAW_TEXT synonyms as a class.", "evidence_ids":
+    ["ev-f2a088cb2fbda7be", "ev-ca75a3fbc1babe57"], "external_issues": ["https://github.com/CultureBotAI/MediaIngredientMech/issues/718"],
+    "field_paths": ["synonyms", "SSSOM.other"], "finding_id": "f-838d67873b6673db",
+    "issue_key": "mim-reconciliation-exported-context-tokens-9122c364d42e8559", "owner_paths":
+    [{"path": "data/ingredients/mapped/DL_Vitamins.yaml", "repository": "CultureBotAI/MediaIngredientMech",
+    "role": "maintained ingredient"}], "severity": "major", "status": "open", "tags":
+    ["reconciliation", "bundle-by-owner", "exported-context-tokens"], "target_ids":
+    ["record-9122c364d42e8559"], "title": "Review nonportable exported tokens: DL
+    vitamins"}'
+- evidence_id: ev-f0c42034b2f08a1d
+  kind: record_content
+  reference: data/ingredients/mapped/DL_Vitamins.yaml
+  locator: identifier, ontology_mapping, synonyms and curation_history
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[134],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL
+    vitamins"}],"identifier":"kgmicrobe.ingredient:dl_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:dl_vitamins","ontology_label":"DL
+    vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"DL vitamins","sssom_rows":[{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL
+    vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL_Vitamins","synonym_count":2}'
+  snapshot_sha256: 41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad
+- evidence_id: ev-82824a1888d907ee
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:DL_Vitamins; data-row positions=[993]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL
+    vitamins","other":"DL vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:DL_Vitamins","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-0bef314ac38155d7
+  kind: prior_review
+  reference: reports/yaml_record_review/DL_Vitamins.md
+  locator: Complete historical report, including Verdict and Recommended Edits
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Historical interpretation was read in full; it is not fresh source adjudication.
+  snapshot_sha256: e5d9436f54deaa206abe6a293a0f86a784f0fc6406f2bf28ef415ba1ac7fe1b7
+  quote: "# `data/ingredients/mapped/DL_Vitamins.yaml`\n\n## Verdict\n\nPass. `DL\
+    \ vitamins` is modeled as a local kg-microbe stock solution rather than\nas one\
+    \ vitamin compound, the CultureBotHT Mixes tab supports the ten listed\nvitamin\
+    \ components and the vitamin-source role, and the final SSSOM row\npublishes only\
+    \ a true same-stock source label in `other`.\n\n## Identity\n\n- Reviewed record:\
+    \ `data/ingredients/mapped/DL_Vitamins.yaml`.\n- Identifier and grounding:\n \
+    \ `identifier: kgmicrobe.ingredient:dl_vitamins` with the same\n  `ontology_mapping.ontology_id`,\
+    \ source `kgmicrobe.ingredient`,\n  `mapping_quality: FALLBACK_REGISTRY`, and\
+    \ `mapping_status: MAPPED`.\n- The local identity is appropriate because `DL vitamins`\
+    \ is a named\n  multi-component CultureBotHT vitamin stock and the record's curation\
+    \ evidence\n  documents searches of CHEBI, NCIT, MeSH, FOODON, and ENVO that found\
+    \ no term\n  for the full preparation.\n- The record is typed as `ingredient_type:\
+    \ STOCK_SOLUTION` and\n  `solution_type: VITAMIN_MIX`, so it does not collapse\
+    \ the mix onto any single\n  component vitamin.\n\n## Validation\n\n- `uv run\
+    \ --frozen python scripts/validate_strict.py data/ingredients/mapped/DL-Tyrosine.yaml\
+    \ data/ingredients/mapped/DL-glyceraldehyde.yaml data/ingredients/mapped/DL_Vitamins.yaml\
+    \ data/ingredients/mapped/DNA_From_Salmon.yaml data/ingredients/mapped/D_-carvone.yaml`:\n\
+    \  passed; 5 files scanned, 0 ERROR rows.\n- `uv run --frozen linkml-term-validator\
+    \ validate-data data/ingredients/mapped/DL-Tyrosine.yaml data/ingredients/mapped/DL-glyceraldehyde.yaml\
+    \ data/ingredients/mapped/DL_Vitamins.yaml data/ingredients/mapped/DNA_From_Salmon.yaml\
+    \ data/ingredients/mapped/D_-carvone.yaml -s src/mediaingredientmech/schema/mediaingredientmech.yaml\
+    \ -t IngredientRecord --labels`:\n  failed when non-OBO fallback targets were\
+    \ included.\n- `uv run --frozen linkml-term-validator validate-data data/ingredients/mapped/DL-Tyrosine.yaml\
+    \ data/ingredients/mapped/DL-glyceraldehyde.yaml data/ingredients/mapped/D_-carvone.yaml\
+    \ -s src/mediaingredientmech/schema/mediaingredientmech.yaml -t IngredientRecord\
+    \ --labels`:\n  passed the 3-file ChEBI subset after skipping this\n  `kgmicrobe.ingredient:`\
+    \ fallback and `DNA_From_Salmon`.\n- `uv run --frozen python scripts/validate_component_partonomy.py`:\
+    \ passed in\n  the unchanged full-corpus validation run.\n- `uv run --frozen python\
+    \ scripts/validate_id_label_correspondence.py -c conf/id_label_targets.yaml`:\n\
+    \  passed; all id-label pairs corresponded, with full-corpus plausibility\n  warnings\
+    \ only.\n- `uv run --frozen python scripts/validate_sssom_invariants.py`: passed\
+    \ Rules\n  A, B1, B2, B3, C, D, E, F, G, H, I, J, and K; Rule B4 was skipped because\n\
+    \  the sibling kg-microbe ontology transforms were absent.\n\n## Evidence\n\n\
+    - The CultureBotHT Mixes CSV defines a 100X DL vitamins recipe with the ten\n\
+    \  component rows recorded in YAML: d-Biotin `0.02 mg/L`, Folic Acid\n  `0.02\
+    \ mg/L`, Pyridoxine HCl `0.1 mg/L`, Riboflavin `0.05 mg/L`,\n  Thiamine `0.05\
+    \ mg/L`, Nicotinic Acid `0.05 mg/L`, Pantothenic Acid\n  `0.05 mg/L`, Vitamin\
+    \ B12 `0.001 mg/L`, p-Amino Benzoic Acid `0.05 mg/L`,\n  and DL-6,8-thioctic acid\
+    \ `0.05 mg/L`.\n- The `VITAMIN_SOURCE` role has `DATABASE_ENTRY` evidence scoped\
+    \ to the same\n  Mixes tab, and the cited recipe is a vitamin premix.\n- The final\
+    \ `mappings/ingredient_mappings.sssom.tsv` row maps\n  `MIM:DL_Vitamins` to `kgmicrobe.ingredient:dl_vitamins`\
+    \ with\n  `skos:exactMatch`.\n- The final SSSOM `other` token `DL vitamins (see\
+    \ below)` is a CultureMech\n  occurrence surface for this same stock solution\
+    \ and is not an instruction or\n  non-identity note.\n\n## Completeness\n\n- The\
+    \ hidden/ignored-inclusive exact-identifier search over active `data`,\n  `mappings`,\
+    \ `docs`, `scripts`, and `tests` found no second primary record for\n  `kgmicrobe.ingredient:dl_vitamins`.\n\
+    - The component assertion is marked `COMPLETE`, and all ten component IDs are\n\
+    \  catalog references rather than external component-only identities.\n- No CAS,\
+    \ formula, or ChEBI parent is required for the full stock mixture.\n\n## Recommended\
+    \ Edits\n\n- None.\n"
+- evidence_id: ev-a43e7d5a94de69e2
+  kind: prior_review
+  reference: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+  locator: findings[finding_id=scope-f-838d67873b6673db]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding scope-f-838d67873b6673db in 20261011T030852Z-mim-token-scope-reassessment
+  snapshot_sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+assessments:
+- assessment_id: a-60ff78c329b75eb6
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-9122c364d42e8559
+  evidence_ids:
+  - ev-7204ca489d7c690d
+  - ev-a67290c5d4386e74
+  - ev-ca75a3fbc1babe57
+  - ev-94c5f01d6fc254ae
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-7092997d34ca9119
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: not_applicable
+  summary: The latest legacy review reports no outstanding finding. This run verifies
+    local consistency only; it does not renew that earlier scientific pass.
+  target_ids:
+  - record-9122c364d42e8559
+  evidence_ids:
+  - ev-f2a088cb2fbda7be
+  - ev-7204ca489d7c690d
+  details: 'Latest manifest verdict=pass; severity=none; reviewed_at=2026-09-16T14:07:05Z;
+    reviewed SHA-256=41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad;
+    current SHA-256=41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad;
+    hash_changed=False. Reports=["reports/yaml_record_review/DL_Vitamins.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The local stock-solution
+    identity, ten component rows, vitamin-source role, and final SSSOM alias pass.'
+  dimensions:
+  - name: legacy-native-ids
+    value: '[]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-7204ca489d7c690d
+    - ev-f2a088cb2fbda7be
+- assessment_id: a-f3771c2c69b3bb26
+  area: nomenclature
+  topic: Unresolved recipe-reference or truncated-concentration synonyms
+  outcome: concern
+  summary: 'Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"unresolved
+    recipe cross-reference in a resolving synonym","token":"DL vitamins (see below)"}].
+    Truncated concentration strings and context-dependent instructions need scoped
+    curation. This check does not reject catalog/RAW_TEXT synonyms as a class.'
+  target_ids:
+  - record-9122c364d42e8559
+  evidence_ids:
+  - ev-f2a088cb2fbda7be
+  - ev-ca75a3fbc1babe57
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-f2a088cb2fbda7be
+    - ev-ca75a3fbc1babe57
+- assessment_id: scope-f-838d67873b6673db
+  area: nomenclature
+  topic: Certainty correction for the exact token observation
+  outcome: unknown
+  summary: Token presence remains reproducible, but the earlier pattern-based observation
+    did not establish whether the exact source label denotes this subject or a different
+    preparation. Fresh source-context adjudication is required before a confirmed
+    defect or label removal. This successor corrects certainty only; it does not establish
+    that the token is valid or that another identity allegation is fixed. The historical
+    report actually passes the record and explicitly accepts the raw source surface;
+    attributing an unresolved token concern to that report was incorrect. No new source
+    evidence was supplied to overturn its scoped conclusion.
+  target_ids:
+  - record-9122c364d42e8559
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-e6798c510d069e5f
+  - ev-f0c42034b2f08a1d
+  - ev-82824a1888d907ee
+  - ev-0bef314ac38155d7
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Source-scope question only, not a disposition of the complete historical
+      report.
+    evidence_ids:
+    - ev-823412d1eacb6795
+    - ev-e6798c510d069e5f
+    - ev-f0c42034b2f08a1d
+    - ev-82824a1888d907ee
+    - ev-0bef314ac38155d7
+findings:
+- finding_id: rec-scope-f-838d67873b6673db
+  issue_key: mim-reconciliation-exported-context-tokens-9122c364d42e8559
+  category: nomenclature
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Adjudicate source scope of exported tokens: DL vitamins'
+  description: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed. The historical report actually passes the record and explicitly accepts
+    the raw source surface; attributing an unresolved token concern to that report
+    was incorrect. No new source evidence was supplied to overturn its scoped conclusion.
+  target_ids:
+  - record-9122c364d42e8559
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-e6798c510d069e5f
+  - ev-f0c42034b2f08a1d
+  - ev-82824a1888d907ee
+  - ev-0bef314ac38155d7
+  - ev-a43e7d5a94de69e2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL_Vitamins.yaml
+    role: maintained ingredient
+  field_paths:
+  - synonyms
+  - SSSOM.other
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - exported-context-tokens
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/861
+  disposition_reason: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed. The historical report actually passes the record and explicitly accepts
+    the raw source surface; attributing an unresolved token concern to that report
+    was incorrect. No new source evidence was supplied to overturn its scoped conclusion.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T030852Z-mim-token-scope-reassessment
+    finding_id: scope-f-838d67873b6673db
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024633Z-mim-reconcile-all-batch-05, 20261011T030852Z-mim-token-scope-reassessment.
+```

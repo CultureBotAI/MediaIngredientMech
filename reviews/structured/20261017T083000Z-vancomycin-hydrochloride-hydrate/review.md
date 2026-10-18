@@ -1,0 +1,451 @@
+# Per-record structured review: Vancomycin_Hydrochloride_Hydrate (data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml)
+
+- Review: 20261017T083000Z-vancomycin-hydrochloride-hydrate
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Vancomycin_Hydrochloride_Hydrate (data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml, record-3bcf03b479e88258, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-3bcf03b479e88258 | data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml | maintained | Vancomycin_Hydrochloride_Hydrate |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-3bcf03b479e88258 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-3bcf03b479e88258 | Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-3bcf03b479e88258 | Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-3bcf03b479e88258.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-3bcf03b479e88258.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T20:45:28Z; reviewed SHA-256=7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5; current SHA-256=7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5; hash_changed=False. Reports=["reports/yaml_record_review/Vancomycin_Hydrochloride_Hydrate.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The close parent and CAS rows exist, but the exact kg-microbe hydrate anchor remains missing and SELECTIVE_AGENT is provisional.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-3bcf03b479e88258.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-a14ddc470426557a: Reassess prediction-only role support: Vancomycin Hydrochloride Hydrate
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-3bcf03b479e88258.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-a14ddc470426557a
+
+Reassess prediction-only role support: Vancomycin Hydrochloride Hydrate
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-d28828f3e011663d | data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2034],"raw_equal":true},"docs_rows":[{"identifier":"cas:123409-00-7","line":2036,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin Hydrochloride Hydrate"}],"identifier":"cas:123409-00-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride Hydrate","sssom_rows":[{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin hydrochloride","predicate_id":"skos:closeMatch"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin Hydrochloride Hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_Hydrate","synonym_count":0} |
+| ev-b102dded7b9b5f1c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2034] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-bde7bb9e44aaf15d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vancomycin_Hydrochloride_Hydrate; data-row positions=[2888, 2889] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin hydrochloride","other":"CAS:123409-00-7","predicate_id":"skos:closeMatch","subject_id":"MIM:Vancomycin_Hydrochloride_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin Hydrochloride Hydrate","other":"CAS:123409-00-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Vancomycin_Hydrochloride_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-71f1b0aaf916bf47 | docs/data/mapped_ingredients.csv; CSV lines=[2036] | supports | Published identity and count rows inspected: [{"identifier":"cas:123409-00-7","line":2036,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin Hydrochloride Hydrate","total_occurrences":"0"}] |
+| ev-15e42c7472b3560e | reports/yaml_record_review/Vancomycin_Hydrochloride_Hydrate.md; &#96;data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:36; Issues:52; Completeness:61; Recommended Edits:69 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-d037bef0f320052e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1335,2095] | context_only | [{"current_record_sha256":"7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5","finding_id":"SEM:f0cc05c9c2b4f3f6c37b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5","finding_id":"SEM:736fb5f7d84fb0218957","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-2a0849398014421d | data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2034],"raw_equal":true},"docs_rows":[{"identifier":"cas:123409-00-7","line":2036,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin Hydrochloride Hydrate"}],"identifier":"cas:123409-00-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride Hydrate","sssom_rows":[{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin hydrochloride","predicate_id":"skos:closeMatch"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin Hydrochloride Hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_Hydrate","synonym_count":0} |
+| ev-ac3df770da05fc36 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-a14ddc470426557a] | context_only | Predecessor structured review finding f-a14ddc470426557a in 20261011T024639Z-mim-reconcile-all-batch-12 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-vancomycin-hydrochloride-hydrate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Vancomycin_Hydrochloride_Hydrate (data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Vancomycin_Hydrochloride_Hydrate (data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml,
+  record-3bcf03b479e88258, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+    sha256: 7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5
+    role: target
+  - path: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+    sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Vancomycin_Hydrochloride_Hydrate.md
+    sha256: 58672d12234616ff0559314bdf30aafbda598ae4f7dbdc309d7a7d5549ee7182
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-3bcf03b479e88258
+  path: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+  label: Vancomycin_Hydrochloride_Hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-3bcf03b479e88258
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-d28828f3e011663d
+  - ev-b102dded7b9b5f1c
+  - ev-bde7bb9e44aaf15d
+  - ev-71f1b0aaf916bf47
+  - ev-2a0849398014421d
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-d28828f3e011663d
+  - ev-d037bef0f320052e
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-15e42c7472b3560e
+  - ev-d037bef0f320052e
+  - ev-ac3df770da05fc36
+evidence:
+- evidence_id: ev-d28828f3e011663d
+  kind: record_content
+  reference: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2034],"raw_equal":true},"docs_rows":[{"identifier":"cas:123409-00-7","line":2036,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+    Hydrochloride Hydrate"}],"identifier":"cas:123409-00-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride
+    Hydrate","sssom_rows":[{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin
+    hydrochloride","predicate_id":"skos:closeMatch"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin
+    Hydrochloride Hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_Hydrate","synonym_count":0}'
+  snapshot_sha256: 7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5
+- evidence_id: ev-b102dded7b9b5f1c
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2034]'
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-bde7bb9e44aaf15d
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Vancomycin_Hydrochloride_Hydrate; data-row positions=[2888,
+    2889]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin
+    hydrochloride","other":"CAS:123409-00-7","predicate_id":"skos:closeMatch","subject_id":"MIM:Vancomycin_Hydrochloride_Hydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin
+    Hydrochloride Hydrate","other":"CAS:123409-00-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Vancomycin_Hydrochloride_Hydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-71f1b0aaf916bf47
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2036]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:123409-00-7","line":2036,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+    Hydrochloride Hydrate","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-15e42c7472b3560e
+  kind: prior_review
+  reference: reports/yaml_record_review/Vancomycin_Hydrochloride_Hydrate.md
+  locator: '`data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml`:2; Verdict:4;
+    Identity:11; Validation:25; Evidence:36; Issues:52; Completeness:61; Recommended
+    Edits:69'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 58672d12234616ff0559314bdf30aafbda598ae4f7dbdc309d7a7d5549ee7182
+  quote: "Issues:\n- Major: the exact kg-microbe hydrate anchor row tracked by\n \
+    \ `reports/hydrate_grounding.tsv` is still missing, leaving the CAS-primary\n\
+    \  hydrate represented by only the close parent and CAS fallback rows.\n- Major:\
+    \ `physicochemical_roles.SELECTIVE_AGENT` rests on\n  `COMPUTATIONAL_PREDICTION`\
+    \ evidence whose note says the name-pattern rule is\n  provisional and still needs\
+    \ review.\n\nRecommended Edits:\n- Add the missing exact local hydrate anchor\
+    \ for\n  `data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml` so the\
+    \ final\n  SSSOM no longer leaves it in the `CAS_MISSING_ANCHOR_ROWS` bucket;\
+    \ rerun\n  `report_hydrate_grounding.py`, SSSOM generation, and the SSSOM invariant\n\
+    \  checks.\n- Replace or remove this record's `physicochemical_roles.SELECTIVE_AGENT`;\
+    \ keep\n  it only if a maintained source supports vancomycin hydrochloride hydrate\
+    \ as a\n  selective agent in the specific media records that use it."
+- evidence_id: ev-d037bef0f320052e
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1335,2095]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5","finding_id":"SEM:f0cc05c9c2b4f3f6c37b","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5","finding_id":"SEM:736fb5f7d84fb0218957","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-2a0849398014421d
+  kind: record_content
+  reference: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: supports
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2034],"raw_equal":true},"docs_rows":[{"identifier":"cas:123409-00-7","line":2036,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+    Hydrochloride Hydrate"}],"identifier":"cas:123409-00-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride
+    Hydrate","sssom_rows":[{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin
+    hydrochloride","predicate_id":"skos:closeMatch"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin
+    Hydrochloride Hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_Hydrate","synonym_count":0}'
+  snapshot_sha256: 7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5
+- evidence_id: ev-ac3df770da05fc36
+  kind: prior_review
+  reference: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+  locator: findings[finding_id=f-a14ddc470426557a]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-a14ddc470426557a in 20261011T024639Z-mim-reconcile-all-batch-12
+  snapshot_sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+assessments:
+- assessment_id: a-25546ee01f136d85
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-d28828f3e011663d
+  - ev-b102dded7b9b5f1c
+  - ev-bde7bb9e44aaf15d
+  - ev-71f1b0aaf916bf47
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-76a295657c9a8471
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-15e42c7472b3560e
+  - ev-d28828f3e011663d
+  - ev-d037bef0f320052e
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T20:45:28Z;
+    reviewed SHA-256=7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5;
+    current SHA-256=7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5;
+    hash_changed=False. Reports=["reports/yaml_record_review/Vancomycin_Hydrochloride_Hydrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The close
+    parent and CAS rows exist, but the exact kg-microbe hydrate anchor remains missing
+    and SELECTIVE_AGENT is provisional.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-15e42c7472b3560e
+    - ev-d28828f3e011663d
+  - name: legacy-native-ids
+    value: '["SEM:f0cc05c9c2b4f3f6c37b","SEM:736fb5f7d84fb0218957"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-d28828f3e011663d
+    - ev-15e42c7472b3560e
+    - ev-d037bef0f320052e
+- assessment_id: a-2a0849398014421d
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-15e42c7472b3560e
+  - ev-2a0849398014421d
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-15e42c7472b3560e
+    - ev-2a0849398014421d
+findings:
+- finding_id: rec-f-a14ddc470426557a
+  issue_key: mim-reconciliation-role-support-3bcf03b479e88258
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Vancomycin Hydrochloride Hydrate'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-15e42c7472b3560e
+  - ev-2a0849398014421d
+  - ev-ac3df770da05fc36
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024639Z-mim-reconcile-all-batch-12
+    finding_id: f-a14ddc470426557a
+actions:
+- action_id: rec-action-a14ddc470426557a
+  description: 'Reassess prediction-only role support: Vancomycin Hydrochloride Hydrate'
+  finding_ids:
+  - rec-f-a14ddc470426557a
+  target_ids:
+  - record-3bcf03b479e88258
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+```
