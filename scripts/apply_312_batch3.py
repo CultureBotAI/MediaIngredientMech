@@ -163,11 +163,26 @@ MINTS: tuple[Mint, ...] = (
         source_labels=("CuSO4 x 2 H2O", "CuSO4 . 2H2O"),
         hydrate_review=True, mediadive_compound_id="the MediaDive labels 'CuSO4 x 2 H2O' and 'CuSO4 . 2H2O'",
     ),
+    Mint(
+        "Cooked_Meat_Medium", "FOODON:03305103", "kgmicrobe.ingredient:cooked_meat_medium",
+        "kgmicrobe.ingredient:cooked_meat_medium", "Cooked meat medium", "kgmicrobe.ingredient",
+        "LEXICAL_MATCH", "FALLBACK_REGISTRY",
+        "FOODON:03305103 'meat (cooked)' is the food ingredient, whereas this record is the "
+        "formulated anaerobe medium (Oxoid CM0081 / Robertson's cooked meat medium: heart muscle "
+        "granules with peptone, Lab-Lemco powder, NaCl and glucose). Two mixture records "
+        "(Modified Cooked Meat Medium, Fastidious Anaerobe Broth With Meat Granules) referenced "
+        "FOODON:03305103 as a MIM_CATALOG part; those parts are cooked meat itself (rescoped "
+        "EXTERNAL_TERM), while the medium record gets its own local registry identity "
+        "kgmicrobe.ingredient:cooked_meat_medium with no false food parent (#312, #748).",
+        drop_ontology_row="FOODON:03305103",
+        supersede_sources=("FOODON via OLS search",),
+        source_labels=("Cooked meat medium", "Cooked meat medium (Oxoid)"),
+    ),
 )
 
 # Every identifier whose memberships move in this batch: the minted ones plus the
 # siblings that used to pool them.
-AFFECTED_IDENTIFIERS = {spec.new_identifier for spec in MINTS} | {"CHEBI:23414", "MICRO:0000455"}
+AFFECTED_IDENTIFIERS = {spec.new_identifier for spec in MINTS} | {"CHEBI:23414", "MICRO:0000455", "FOODON:03305103"}
 
 
 def sha(path: Path) -> str:
@@ -540,10 +555,12 @@ def main() -> int:
                     entry = merged.get(rel)
                     current = sha(path)
                     if entry is None:
-                        merged[rel] = {"source_record": rel, "shape": "occurrence_refresh",
-                                       "before_yaml_sha256": _git_head_sha(rel), "after_yaml_sha256": current,
-                                       "change": "occurrence_statistics refreshed from the rebuilt recipe membership",
-                                       "verification": "Counts follow the source label through SOURCE_LABEL_IDENTIFIER_OVERRIDES."}
+                        head_sha = _git_head_sha(rel)
+                        if head_sha != current:
+                            merged[rel] = {"source_record": rel, "shape": "occurrence_refresh",
+                                           "before_yaml_sha256": head_sha, "after_yaml_sha256": current,
+                                           "change": "occurrence_statistics refreshed from the rebuilt recipe membership",
+                                           "verification": "Counts follow the source label through SOURCE_LABEL_IDENTIFIER_OVERRIDES."}
                     elif entry["after_yaml_sha256"] != current:
                         entry["after_yaml_sha256"] = current
                         entry["change"] += "; occurrence_statistics refreshed from the rebuilt recipe membership"

@@ -196,6 +196,20 @@ REANCHORS: tuple[Reanchor, ...] = (
         old_source="FOODON",
         supersede_sources=("FOODON via OLS (stem-substring)",),
     ),
+    Reanchor(
+        "Arabinoxylan_Rye_Flour",
+        "kgmicrobe.ingredient:arabinoxylan_rye_flour",
+        "CHEBI:28427",
+        "arabinoxylan",
+        "The record is a rye-derived arabinoxylan preparation (local identity "
+        "kgmicrobe.ingredient:arabinoxylan_rye_flour retained by the 2026-09-21 review). "
+        "Its closest broader chemical class is CHEBI:28427 'arabinoxylan' (Section 3 step 3, #245, #740); "
+        "the local registry identity and Rule B1 registry row stay unchanged.",
+        old_source="kgmicrobe.ingredient",
+        new_source="CHEBI",
+        old_quality="FALLBACK_REGISTRY",
+        new_quality="NARROW_MATCH",
+    ),
 )
 
 TOMBSTONE = {
@@ -212,12 +226,29 @@ TOMBSTONE = {
     ),
 }
 
-# One SSSOM row reconcile_sssom cannot create: a parent row for a subject that had only a registry row.
-# Rows reconcile cannot create (a parent row for a subject that had only a registry
-# row). Empty in this batch: Arabinoxylan_Rye_Flour's parent anchor is deferred,
-# because reports/semantic_review_20260921/corrections/identity-plan.json pins that
-# record's 2026-09-21 state and the resolution review refuses any later edit to it.
-NEW_ROWS: tuple[dict, ...] = ()
+# One SSSOM row reconcile_sssom cannot create: a parent row for a subject that had only a registry row (#740).
+NEW_ROWS: tuple[dict, ...] = (
+    {
+        "subject_id": "MIM:Arabinoxylan_Rye_Flour",
+        "subject_label": "Arabinoxylan (Rye Flour)",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "CHEBI:28427",
+        "object_label": "arabinoxylan",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:MIM curation (#312); chebi.db|MIM:curator=claude|MIM:curator=mim_semantic_review_20260921",
+        "mapping_date": MAPPING_DATE,
+        "confidence": "0.9",
+        "comment": (
+            "The record is a rye-derived arabinoxylan preparation (local identity "
+            "kgmicrobe.ingredient:arabinoxylan_rye_flour retained by the 2026-09-21 review). "
+            "Its closest broader chemical class is CHEBI:28427 'arabinoxylan' (Section 3 step 3, #245, #740); "
+            "the local registry identity and Rule B1 registry row stay unchanged."
+        ),
+        "other": "",
+        "validation_method": f"manual:apply_312_batch1|REANCHOR|{MAPPING_DATE}",
+    },
+)
 
 
 def sha(path: Path) -> str:
@@ -445,7 +476,8 @@ def finish_sssom() -> None:
         assert set(row) == set(fields), set(row) ^ set(fields)
         if (row["subject_id"], row["object_id"]) in existing:
             continue
-        rows.append(dict(row))
+        idx = next((i for i, r in enumerate(rows) if r["subject_id"] == row["subject_id"]), len(rows))
+        rows.insert(idx, dict(row))
         added += 1
     graded = 0
     regraded = {mim_curie_for_stem(spec.slug): spec for spec in REGRADES}

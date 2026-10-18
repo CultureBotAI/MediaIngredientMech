@@ -1,6 +1,6 @@
-generation_date: '2026-10-18T07:33:12.645720+00:00'
+generation_date: '2026-10-18T09:19:10.621122+00:00'
 total_count: 2680
-mapped_count: 2611
+mapped_count: 2609
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o
@@ -2371,12 +2371,20 @@ ingredients:
       to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
       concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-10-18T09:08:00.074754+00:00'
+    curator: claude
+    action: RESCOPED_COMPONENT
+    changes: 'components[0] ''meat (cooked)'' FOODON:03305103 reference_scope MIM_CATALOG
+      -> EXTERNAL_TERM: the MIM record that held that identifier was a formulated
+      medium, not the food; the part is the FOODON term itself (#312).'
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:fastidious_anaerobe_broth_with_meat_granules);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: meat (cooked)
     component_id: FOODON:03305103
-    reference_scope: MIM_CATALOG
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   - component_name: peptone
     component_id: MICRO:0000178
@@ -5309,12 +5317,20 @@ ingredients:
       to 1 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
       concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-10-18T09:08:01.577133+00:00'
+    curator: claude
+    action: RESCOPED_COMPONENT
+    changes: 'components[0] ''meat (cooked)'' FOODON:03305103 reference_scope MIM_CATALOG
+      -> EXTERNAL_TERM: the MIM record that held that identifier was a formulated
+      medium, not the food; the part is the FOODON term itself (#312).'
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:modified_cooked_meat_medium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: meat (cooked)
     component_id: FOODON:03305103
-    reference_scope: MIM_CATALOG
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   component_assertion:
     method: CURATED_INTERPRETATION
@@ -18823,66 +18839,6 @@ ingredients:
     molecular_weight: 164.157
     data_source: ChEBI+PubChem
     retrieval_date: '2026-08-13T04:15:10.315429+00:00'
-- identifier: CHEBI:2179
-  preferred_term: 6-deoxy-D-galactose
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:6_deoxy_d_galactose);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: promote_resolved_unmapped
-    action: PROMOTED_TO_MAPPED
-    previous_status: UNMAPPED
-    new_status: MAPPED
-    llm_assisted: false
-    changes: Promoted UNMAPPED_0793 -> CHEBI:2179 "D-fucopyranose" (SYNONYM_MATCH);
-      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
-      definition) (#323)
-    llm_assisted: false
-  - timestamp: '2026-09-10T09:35:46.753696+00:00'
-    curator: fix_lowercase_stereodescriptors
-    action: CORRECTED
-    changes: preferred_term '6-deoxy-d-galactose' -> '6-deoxy-D-galactose'; fixed
-      a lowercase D stereodescriptor parse artifact (#460).
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:6_deoxy_d_galactose);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: CHEBI:2179
-    ontology_label: D-fucopyranose
-    ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#213)
-      notes: 6-deoxy-D-galactose is D-fucose; CHEBI:2179 is its pyranose form (#213).
-  ingredient_type: SINGLE_INGREDIENT
-  chemical_properties:
-    molecular_formula: C6H12O5
-    smiles: C[C@H]1OC(O)[C@H](O)[C@@H](O)[C@H]1O
-    inchi: InChI=1S/C6H12O5/c1-2-3(7)4(8)5(9)6(10)11-2/h2-10H,1H3/t2-,3+,4+,5-,6?/m1/s1
-    molecular_weight: 164.157
-    data_source: ChEBI+PubChem
-    retrieval_date: '2026-08-13T04:15:11.457666+00:00'
 - identifier: CHEBI:67135
   preferred_term: Azomycin
   synonyms:
@@ -39411,116 +39367,6 @@ ingredients:
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
   ingredient_type: SINGLE_INGREDIENT
-  physicochemical_roles:
-  - role: SELECTIVE_AGENT
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:8612
-  preferred_term: Angustmycin
-  ontology_mapping:
-    ontology_id: CHEBI:8612
-    ontology_label: psicofuranin
-    ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    evidence:
-    - evidence_type: CURATOR_CONFIRMED_SYNONYM
-      source: kgmicrobe.compound:angustmycin
-      notes: angustmycin A is a historical/trade name for the antibiotic psicofuranin
-        — same molecule (curator-confirmed synonym).
-  synonyms:
-  - synonym_text: Psicofuranine
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  - synonym_text: 'produces: angustmycin'
-    synonym_type: REJECTED_LABEL
-    source: sssom_other_backfill
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-19T08:07:30.238506+00:00'
-    curator: audit_propose_chebi_for_unmapped
-    action: CREATED_FROM_UNMAPPED_QUEUE
-    changes: Created new ingredient from kgmicrobe.compound:angustmycin with auto-curated
-      CHEBI CHEBI:8612 (psicofuranin)
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-19T08:07:47.438922+00:00'
-    curator: user_approved_curator_synonym
-    action: CURATOR_CONFIRMED_CHEBI
-    changes: angustmycin A is a historical/trade name for the antibiotic psicofuranin
-      — same molecule (curator-confirmed synonym).
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.201588+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.022793+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C11H15N5O5; inchi=InChI=1S/C11H15N5O5/c12-9-6-10(14-3-13-9)16(4-15-6;
-      smiles=Nc1ncnc2c1ncn2[C@]1(CO)O[C@H](CO)[C@@H](O)[C@H]1O
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.504313+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-02T07:05:13.386226+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
-      physicochemical_roles.SELECTIVE_AGENT'
-  - timestamp: '2026-08-06T07:14:29.509994+00:00'
-    curator: issue_213_grounding
-    action: MERGED_FROM_UNMAPPED_DUPLICATE
-    changes: 'Absorbed UNMAPPED_0839 ''Psicofuranine'' as a RAW_TEXT synonym -- Psicofuranine
-      is a registered synonym of CHEBI:8612 psicofuranin, held by the Angustmycin
-      record; angustmycin C and psicofuranine are the same nucleoside antibiotic (#213).
-      No new SSSOM row; CHEBI:8612 is already mapped. Source: kgmicrobe.trait:psicofuranine.'
-    llm_assisted: true
-  - timestamp: '2026-08-10T00:00:00+00:00'
-    curator: regrade_synonym_matches
-    action: REGRADED_EXACT_TO_SYNONYM
-    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
-      does not equal the term's primary label 'psicofuranin'; it matches the ChEBI
-      synonym 'psicofuranine' on CHEBI:8612. The schema defines EXACT_MATCH as a direct
-      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
-      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
-      predicate is unaffected (both grades emit skos:exactMatch).
-    llm_assisted: false
-  - timestamp: '2026-09-02T17:40:44.716277+00:00'
-    curator: claude_sssom_surface_form_backfill
-    action: ADDED_SYNONYMS
-    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
-      but no curated record did, so a rebuild would have dropped them from KGX: ''produces:
-      angustmycin''. Tokens already present on the kg-microbe ontology node were left
-      out as redundant (#520).'
-    llm_assisted: false
-  - timestamp: '2026-09-22T06:14:49.563933+00:00'
-    curator: claude
-    action: REJECTED_TRAIT_SYNONYMS
-    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
-      they describe a process or organism trait, not an ingredient name (#703): ''produces:
-      angustmycin''. Preserved original text and source metadata. No identity, mapping,
-      role, or remaining-synonym claim was adjudicated.'
-    llm_assisted: true
-  ingredient_type: SINGLE_INGREDIENT
-  chemical_properties:
-    molecular_formula: C11H15N5O5
-    inchi: InChI=1S/C11H15N5O5/c12-9-6-10(14-3-13-9)16(4-15-6)11(2-18)8(20)7(19)5(1-17)21-11/h3-5,7-8,17-20H,1-2H2,(H2,12,13,14)/t5-,7-,8-,11-/m1/s1
-    smiles: Nc1ncnc2c1ncn2[C@]1(CO)O[C@H](CO)[C@@H](O)[C@H]1O
-    data_source: CHEBI sqlite (oaklib)
   physicochemical_roles:
   - role: SELECTIVE_AGENT
     confidence: 0.8
@@ -61305,65 +61151,6 @@ ingredients:
     inchi: InChI=1S/C10H10O3/c1-13-10-7-8(3-2-6-11)4-5-9(10)12/h2-7,12H,1H3/b3-2+
     smiles: COc1cc(/C=C/C=O)ccc1O
   ingredient_type: SINGLE_INGREDIENT
-- identifier: FOODON:03305103
-  preferred_term: Cooked meat medium
-  synonyms:
-  - synonym_text: Cooked meat medium
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  - synonym_text: Cooked meat medium (Oxoid)
-    synonym_type: CATALOG_VARIANT
-    source: culturemech:output/ingredient_occurrences.tsv
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T17:59:59.284679+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_UPGRADE_TO_FOODON
-    changes: primary UNMAPPED_0364 → FOODON:03305103 (fuzzy-top)
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.512701+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'meat')
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518602+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
-      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
-      values came from the importer retired in #453, whose media_count counted a list
-      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-08-30T04:48:06.233536+00:00'
-    curator: claude_culturemech_alias_backfill
-    action: ADDED_SYNONYMS
-    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
-      published label but were absent from MIM''s label index, so CultureMech could
-      not resolve them: ''Cooked meat medium (Oxoid)'' (x1 CultureMech mentions).
-      Source: culturemech:output/ingredient_occurrences.tsv.'
-    llm_assisted: false
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: FOODON:03305103
-    ontology_label: meat (cooked)
-    ontology_source: FOODON
-    mapping_quality: LEXICAL_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: FOODON via OLS search
-      notes: Auto-upgraded from 'UNMAPPED_0364'; match=fuzzy-top
-  ingredient_type: UNDEFINED_MIXTURE
 - identifier: FOODON:03310257
   preferred_term: Corn meal
   ontology_mapping:
@@ -137233,8 +137020,8 @@ ingredients:
     source: https://www.ebi.ac.uk/chebi/CHEBI:37585
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 237
-    media_count: 237
+    total_occurrences: 198
+    media_count: 198
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -137352,6 +137139,15 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-10-18T09:01:26.821601+00:00'
+    curator: claude
+    action: REFRESHED_OCCURRENCE_STATISTICS
+    changes: occurrence_statistics 237/237 -> 198/198 after the NaH2PO4 hydrate spellings'
+      recipe memberships moved to the form each names (#758).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 7558-80-7
     data_source: PubChem API
@@ -137414,19 +137210,19 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NaH2PO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NaH2PO4·2H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NaH2PO4·H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NaH2PO4・2H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NaH2PO4・H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: sodium phosphate monobasic anhydrous
     synonym_type: REJECTED_LABEL
@@ -137437,8 +137233,8 @@ ingredients:
     source: CultureMech
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 53
-    media_count: 53
+    total_occurrences: 56
+    media_count: 56
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -137590,6 +137386,25 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-18T09:01:25.447495+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: [''NaH2PO4 x H2O'', ''NaH2PO4·H2O'', ''NaH2PO4・H2O'']:
+      monohydrate spellings on the dihydrate label''s record; they now live on Sodium_phosphate_monobasic_monohydrate
+      (CHEBI:114249) (#758).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T09:01:26.833182+00:00'
+    curator: claude
+    action: REFRESHED_OCCURRENCE_STATISTICS
+    changes: occurrence_statistics 53/53 -> 56/56 after the NaH2PO4 hydrate spellings'
+      recipe memberships moved to the form each names (#758).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     data_source: OAK/CHEBI xref
     retrieval_date: '2026-04-19T07:35:12.781730+00:00'
@@ -167258,10 +167073,19 @@ ingredients:
   - synonym_text: NaH2PO4•H2O(MCIB 742)
     synonym_type: RAW_TEXT
     source: merged_record
+  - synonym_text: NaH2PO4 x H2O
+    synonym_type: HYDRATE_FORM
+    source: moved from Nah2po4_X_2_H2o (#758)
+  - synonym_text: NaH2PO4·H2O
+    synonym_type: HYDRATE_FORM
+    source: moved from Nah2po4_X_2_H2o (#758)
+  - synonym_text: NaH2PO4・H2O
+    synonym_type: HYDRATE_FORM
+    source: moved from Nah2po4_X_2_H2o (#758)
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 50
-    media_count: 50
+    total_occurrences: 86
+    media_count: 86
   curation_history:
   - timestamp: '2026-04-07T10:20:04.918526+00:00'
     curator: feba_ontology_enrichment_batch
@@ -167319,6 +167143,25 @@ ingredients:
       ''sodium dihydrogenphosphate monohydrate'' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M)
       exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate
       already holds it: one substance under two identifiers -> merge (#312).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T09:01:25.583133+00:00'
+    curator: claude
+    action: ADDED_SYNONYMS
+    changes: 'Added HYDRATE_FORM spellings [''NaH2PO4 x H2O'', ''NaH2PO4·H2O'', ''NaH2PO4・H2O''],
+      moved off Nah2po4_X_2_H2o: each names the monohydrate this record denotes (CHEBI:114249),
+      and CultureMech names them in 36 recipes (#758).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  - timestamp: '2026-10-18T09:01:26.842772+00:00'
+    curator: claude
+    action: REFRESHED_OCCURRENCE_STATISTICS
+    changes: occurrence_statistics 50/50 -> 86/86 after the NaH2PO4 hydrate spellings'
+      recipe memberships moved to the form each names (#758).
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
@@ -194658,14 +194501,23 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:d_fucose; '
-  synonyms: []
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'Absorbed 6-deoxy-d-galactose (#312, #745): ''6-deoxy-D-galactose'' is
+        the systematic name and ChEBI exact synonym of CHEBI:28847 D-fucose (1 microbedecoder
+        occurrence transferred); CHEBI:2179 D-fucopyranose was a ring-specific child
+        not stated by the source label.'
+  synonyms:
+  - synonym_text: 6-deoxy-D-galactose
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
     source_occurrences:
     - source: microbedecoder
-      count: 200
+      count: 201
       source_columns: BacDive_Metabolite_utilization
   curation_history:
   - timestamp: '2026-08-04T02:54:09.684805+00:00'
@@ -194699,6 +194551,27 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
     llm_assisted: false
+  - timestamp: '2026-10-18T09:10:53.669272+00:00'
+    curator: merge_mapped_records
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:2179 ''6-deoxy-D-galactose'': 1 synonym(s), occurrences
+      +0/0. 6-deoxy-D-galactose is the systematic name and ChEBI exact synonym of
+      CHEBI:28847 D-fucose; CHEBI:2179 D-fucopyranose is a ring-specific child not
+      stated by the source label (#312, #745) Source: kgmicrobe.trait:6_deoxy_d_galactose.'
+    llm_assisted: true
+  - timestamp: '2026-10-18T09:13:28.417428+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'evidence note added. 6-deoxy-D-galactose is the systematic name for
+      D-fucose: CHEBI:28847 ''D-fucose'' carries exact synonym ''6-deoxy-D-galactose''
+      in chebi.db, while CHEBI:2179 ''D-fucopyranose'' is the ring-closed pyranose
+      form that the source label (''6-deoxy-D-galactose'' from microbedecoder kgmicrobe.trait:6_deoxy_d_galactose)
+      does not specify. D-fucose already holds CHEBI:28847, so one substance sits
+      under two identifiers -> merge (#312, #745).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C6H12O5
@@ -217564,13 +217437,27 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-10-18T09:06:17.026206+00:00'
+    curator: claude
+    action: REGROUNDED_PARENT_TERM
+    changes: 'broadMatch parent kgmicrobe.ingredient:arabinoxylan_rye_flour (''Arabinoxylan
+      (Rye Flour)'') -> CHEBI:28427 (''arabinoxylan'') (#312). The record is a rye-derived
+      arabinoxylan preparation (local identity kgmicrobe.ingredient:arabinoxylan_rye_flour
+      retained by the 2026-09-21 review). Its closest broader chemical class is CHEBI:28427
+      ''arabinoxylan'' (Section 3 step 3, #245, #740); the local registry identity
+      and Rule B1 registry row stay unchanged. mapping_quality FALLBACK_REGISTRY ->
+      NARROW_MATCH.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curator review needed.
   ontology_mapping:
-    ontology_id: kgmicrobe.ingredient:arabinoxylan_rye_flour
-    ontology_label: Arabinoxylan (Rye Flour)
-    ontology_source: kgmicrobe.ingredient
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:28427
+    ontology_label: arabinoxylan
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: MANUAL_CURATION
       source: https://www.megazyme.com/arabinoxylan-rye-flour
@@ -217579,6 +217466,14 @@ ingredients:
         residual protein/ash. Retain a local material identity, without asserting
         procurement from that supplier, exact purity, or whole-mixture equivalence
         to pure polymer.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'parent kgmicrobe.ingredient:arabinoxylan_rye_flour (''Arabinoxylan (Rye
+        Flour)'') -> CHEBI:28427 (''arabinoxylan''). The record is a rye-derived arabinoxylan
+        preparation (local identity kgmicrobe.ingredient:arabinoxylan_rye_flour retained
+        by the 2026-09-21 review). Its closest broader chemical class is CHEBI:28427
+        ''arabinoxylan'' (Section 3 step 3, #245, #740); the local registry identity
+        and Rule B1 registry row stay unchanged.'
   nutritional_roles:
   - role: CARBON_SOURCE
     confidence: 0.8
@@ -222026,3 +221921,289 @@ ingredients:
     llm_assisted: false
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
+- identifier: kgmicrobe.ingredient:cooked_meat_medium
+  preferred_term: Cooked meat medium
+  synonyms:
+  - synonym_text: Cooked meat medium
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  - synonym_text: Cooked meat medium (Oxoid)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T17:59:59.284679+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_UPGRADE_TO_FOODON
+    changes: primary UNMAPPED_0364 → FOODON:03305103 (fuzzy-top)
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.512701+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'meat')
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518602+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Cooked meat medium (Oxoid)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-10-18T09:07:57.802919+00:00'
+    curator: claude
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: 'identifier FOODON:03305103 -> kgmicrobe.ingredient:cooked_meat_medium;
+      ontology FOODON:03305103 (''meat (cooked)'') -> kgmicrobe.ingredient:cooked_meat_medium
+      (''Cooked meat medium''); mapping_quality LEXICAL_MATCH -> FALLBACK_REGISTRY.
+      FOODON:03305103 ''meat (cooked)'' is the food ingredient, whereas this record
+      is the formulated anaerobe medium (Oxoid CM0081 / Robertson''s cooked meat medium:
+      heart muscle granules with peptone, Lab-Lemco powder, NaCl and glucose). Two
+      mixture records (Modified Cooked Meat Medium, Fastidious Anaerobe Broth With
+      Meat Granules) referenced FOODON:03305103 as a MIM_CATALOG part; those parts
+      are cooked meat itself (rescoped EXTERNAL_TERM), while the medium record gets
+      its own local registry identity kgmicrobe.ingredient:cooked_meat_medium with
+      no false food parent (#312, #748). (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:cooked_meat_medium
+    ontology_label: Cooked meat medium
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: FOODON via OLS search
+      notes: 'SUPERSEDED (#312): Auto-upgraded from ''UNMAPPED_0364''; match=fuzzy-top'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier FOODON:03305103 -> kgmicrobe.ingredient:cooked_meat_medium;
+        ontology FOODON:03305103 (''meat (cooked)'') -> kgmicrobe.ingredient:cooked_meat_medium
+        (''Cooked meat medium''); mapping_quality LEXICAL_MATCH -> FALLBACK_REGISTRY.
+        FOODON:03305103 ''meat (cooked)'' is the food ingredient, whereas this record
+        is the formulated anaerobe medium (Oxoid CM0081 / Robertson''s cooked meat
+        medium: heart muscle granules with peptone, Lab-Lemco powder, NaCl and glucose).
+        Two mixture records (Modified Cooked Meat Medium, Fastidious Anaerobe Broth
+        With Meat Granules) referenced FOODON:03305103 as a MIM_CATALOG part; those
+        parts are cooked meat itself (rescoped EXTERNAL_TERM), while the medium record
+        gets its own local registry identity kgmicrobe.ingredient:cooked_meat_medium
+        with no false food parent (#312, #748).'
+  ingredient_type: UNDEFINED_MIXTURE
+- identifier: CHEBI:28847
+  preferred_term: 6-deoxy-D-galactose
+  synonyms: []
+  mapping_status: REJECTED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:6_deoxy_d_galactose);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0793 -> CHEBI:2179 "D-fucopyranose" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+      definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-09-10T09:35:46.753696+00:00'
+    curator: fix_lowercase_stereodescriptors
+    action: CORRECTED
+    changes: preferred_term '6-deoxy-d-galactose' -> '6-deoxy-D-galactose'; fixed
+      a lowercase D stereodescriptor parse artifact (#460).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-10-18T09:10:53.669272+00:00'
+    curator: merge_mapped_records
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:28847 ''D-fucose''; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. 6-deoxy-D-galactose is the systematic name and
+      ChEBI exact synonym of CHEBI:28847 D-fucose; CHEBI:2179 D-fucopyranose is a
+      ring-specific child not stated by the source label (#312, #745)'
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
+  - timestamp: '2026-10-18T09:13:28.259427+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'identifier CHEBI:2179 -> CHEBI:28847; ontology_id CHEBI:2179 (''D-fucopyranose'')
+      -> CHEBI:28847 (''D-fucose'') on the merge tombstone, so the merged name is
+      credited to the live record that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o
+      precedent). 6-deoxy-D-galactose is the systematic name for D-fucose: CHEBI:28847
+      ''D-fucose'' carries exact synonym ''6-deoxy-D-galactose'' in chebi.db, while
+      CHEBI:2179 ''D-fucopyranose'' is the ring-closed pyranose form that the source
+      label (''6-deoxy-D-galactose'' from microbedecoder kgmicrobe.trait:6_deoxy_d_galactose)
+      does not specify. D-fucose already holds CHEBI:28847, so one substance sits
+      under two identifiers -> merge (#312, #745).'
+    previous_status: REJECTED
+    new_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:6_deoxy_d_galactose);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:28847
+    ontology_label: D-fucose
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 6-deoxy-D-galactose is D-fucose; CHEBI:2179 is its pyranose form (#213).
+  ingredient_type: SINGLE_INGREDIENT
+  chemical_properties:
+    molecular_formula: C6H12O5
+    smiles: C[C@H]1OC(O)[C@H](O)[C@@H](O)[C@H]1O
+    inchi: InChI=1S/C6H12O5/c1-2-3(7)4(8)5(9)6(10)11-2/h2-10H,1H3/t2-,3+,4+,5-,6?/m1/s1
+    molecular_weight: 164.157
+    data_source: ChEBI+PubChem
+    retrieval_date: '2026-08-13T04:15:11.457666+00:00'
+- identifier: UNMAPPED_0850
+  preferred_term: Angustmycin
+  synonyms:
+  - synonym_text: Psicofuranine
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  - synonym_text: 'produces: angustmycin'
+    synonym_type: REJECTED_LABEL
+    source: sssom_other_backfill
+  mapping_status: AMBIGUOUS
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-19T08:07:30.238506+00:00'
+    curator: audit_propose_chebi_for_unmapped
+    action: CREATED_FROM_UNMAPPED_QUEUE
+    changes: Created new ingredient from kgmicrobe.compound:angustmycin with auto-curated
+      CHEBI CHEBI:8612 (psicofuranin)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-19T08:07:47.438922+00:00'
+    curator: user_approved_curator_synonym
+    action: CURATOR_CONFIRMED_CHEBI
+    changes: angustmycin A is a historical/trade name for the antibiotic psicofuranin
+      — same molecule (curator-confirmed synonym).
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.201588+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.022793+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C11H15N5O5; inchi=InChI=1S/C11H15N5O5/c12-9-6-10(14-3-13-9)16(4-15-6;
+      smiles=Nc1ncnc2c1ncn2[C@]1(CO)O[C@H](CO)[C@@H](O)[C@H]1O
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.504313+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-02T07:05:13.386226+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+      physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-06T07:14:29.509994+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0839 ''Psicofuranine'' as a RAW_TEXT synonym -- Psicofuranine
+      is a registered synonym of CHEBI:8612 psicofuranin, held by the Angustmycin
+      record; angustmycin C and psicofuranine are the same nucleoside antibiotic (#213).
+      No new SSSOM row; CHEBI:8612 is already mapped. Source: kgmicrobe.trait:psicofuranine.'
+    llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'psicofuranin'; it matches the ChEBI
+      synonym 'psicofuranine' on CHEBI:8612. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-09-02T17:40:44.716277+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+      angustmycin''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      angustmycin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
+  - timestamp: '2026-10-18T00:00:00+00:00'
+    curator: issue_741_resolution
+    action: CORRECTED
+    changes: Demoted Angustmycin from MAPPED (CHEBI:8612 psicofuranin) to AMBIGUOUS
+      (UNMAPPED_0850) per MAPPING_SEMANTICS Section 3 step 5 (#741). The bare label
+      Angustmycin is under-specified between angustmycin A (decoyinine, CHEBI:191094,
+      C11H13N5O4) and angustmycin C (psicofuranin, CHEBI:8612, C11H15N5O5); the earlier
+      evidence note falsely equated angustmycin A with psicofuranin. Withdrew CHEBI:8612
+      ontology_mapping and psicofuranin chemical_properties; kept absorbed RAW_TEXT
+      synonym Psicofuranine (which specifically names angustmycin C, CHEBI:8612).
+    previous_status: MAPPED
+    new_status: AMBIGUOUS
+    llm_assisted: false
+  ingredient_type: SINGLE_INGREDIENT
+  physicochemical_roles:
+  - role: SELECTIVE_AGENT
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  notes: Bare label "Angustmycin" is under-specified and ambiguous between angustmycin
+    A (decoyinine, CHEBI:191094, C11H13N5O4) and angustmycin C (psicofuranin, CHEBI:8612,
+    C11H15N5O5). The earlier evidence note falsely equated angustmycin A with psicofuranin
+    (#741). Retained as AMBIGUOUS per MAPPING_SEMANTICS Section 3 step 5 with no SSSOM
+    mapping row; the absorbed RAW_TEXT synonym Psicofuranine specifically denotes
+    angustmycin C (CHEBI:8612, CAS 1874-54-0).

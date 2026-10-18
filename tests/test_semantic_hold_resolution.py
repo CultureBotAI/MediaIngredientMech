@@ -42,8 +42,20 @@ def corrected_hold():
         )
     hashes = {owner: gate.sha(ROOT / owner)}
     current = gate.current_assertions({owner: record}, mappings, hashes, gate.sha(source))
-    identity = next(r for r in current if r["assertion_id"] == resolution["assertion_id"])
+    identity = next(r for r in current if r["assertion_sha256"] == resolution["assertion_sha256"])
     claim = mappings[int(identity["source_position"]) - 1]
+    from mediaingredientmech.validation import mapping_change_receipts as mcr
+
+    baseline_position = next(
+        str(pos)
+        for pos in range(1, len(mappings) + 100)
+        if mcr._assertion_id(pos, resolution["assertion_sha256"]) == resolution["assertion_id"]
+    )
+    identity = dict(
+        identity,
+        assertion_id=resolution["assertion_id"],
+        source_position=baseline_position,
+    )
     decision = dict(
         identity,
         resolution_status="OPEN",

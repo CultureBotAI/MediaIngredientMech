@@ -2,7 +2,7 @@
 
 Issue [#729](https://github.com/CultureBotAI/MediaIngredientMech/issues/729)
 finalizes the standalone MIM SSSOM. Every source row has an explicit disposition:
-1,738 supported and 1,250 withheld, out of 2,988. Unsupported claims remain in a
+1,734 supported and 1,250 withheld, out of 2,984. Unsupported claims remain in a
 separate, lossless SSSOM backlog, as requested. Completing disposition coverage
 does not mean every source mapping has been scientifically approved.
 
@@ -58,7 +58,7 @@ above. The earlier published release remains a historical snapshot; these
 decisions supersede it for current SSSOM use.
 
 The complete source SSSOM SHA-256 is
-`b390829d6b97cc21ec4b9dd639cbd82855086bf34931ad9f1b058ebd54d839ce`.
+`320f701f826d6177740f6a2d08d3437d313cdac09f8f8c2694a48f5ea6898e87`.
 The original negative aromatic-compound review (#724/#725) is retained, with a
 separate, exact source-correction resolution. Removing a hold or rehashing its
 old payload cannot release that unsupported claim.

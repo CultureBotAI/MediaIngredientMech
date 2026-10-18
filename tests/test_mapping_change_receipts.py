@@ -161,6 +161,38 @@ def test_hold_lineage_recomputes_the_frozen_ids_at_the_baseline_position():
     assert mcr.hold_lineage([], assertions, edges, [resolution]) == {}
 
 
+def test_hold_lineage_supports_resolution_repinned_at_later_receipt_boundary():
+    """A resolution repinned after an intermediate receipt traces through the remaining suffix."""
+    receipts, assertions, edges, resolution = _lineage_fixture()
+    # Suppose the resolution was repinned at position 3 (after receipt 1, before receipt 2):
+    repinned = dict(
+        resolution,
+        assertion_id=mcr._assertion_id(3, "payload-sha"),
+        edge_id=mcr._edge_id_at(edges[0], 3),
+    )
+    earlier = {
+        "schema_version": 1,
+        "sequence": 0,
+        "batch": "b0",
+        "approval": "NONE: structural",
+        "before_sha256": "s-1",
+        "after_sha256": "s0",
+        "before_row_count": 4,
+        "after_row_count": 3,
+        "position_map": [None, 1, 2, 3],
+    }
+    lineage = mcr.hold_lineage([earlier, *receipts], assertions, edges, [repinned])
+    assert lineage == {
+        repinned["assertion_id"]: {
+            "assertion_id": assertions[0]["assertion_id"],
+            "edge_id": edges[0]["id"],
+            "baseline_position": 3,
+            "current_position": 2,
+        }
+    }
+
+
+
 @pytest.mark.parametrize("mutation", ["payload", "position", "edge", "still_present"])
 def test_hold_lineage_refuses_anything_but_an_exact_reproduction(mutation):
     receipts, assertions, edges, resolution = _lineage_fixture()

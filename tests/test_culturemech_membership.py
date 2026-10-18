@@ -516,6 +516,37 @@ def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
     assert unknown == {}
 
 
+def test_source_label_override_routes_nah2po4_hydrate_and_cooked_meat_medium(mod, tmp_path):
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "CHEBI:37585", "NaH2PO4 x H2O"])
+        w.writerow(["CultureMech:000002", "CHEBI:37585", "NaH2PO4·H2O"])
+        w.writerow(["CultureMech:000003", "CHEBI:37585", "NaH2PO4・H2O"])
+        w.writerow(["CultureMech:000004", "CHEBI:37585", "NaH2PO4"])
+        w.writerow(["CultureMech:000005", "FOODON:03315475", "Cooked meat medium"])
+
+    collected, unknown = mod.collect(
+        source,
+        {
+            "CHEBI:114249",
+            "CHEBI:37585",
+            "kgmicrobe.ingredient:cooked_meat_medium",
+        },
+    )
+
+    assert collected == {
+        ("CHEBI:114249", "CultureMech:000001"): 1,
+        ("CHEBI:114249", "CultureMech:000002"): 1,
+        ("CHEBI:114249", "CultureMech:000003"): 1,
+        ("CHEBI:37585", "CultureMech:000004"): 1,
+        ("kgmicrobe.ingredient:cooked_meat_medium", "CultureMech:000005"): 1,
+    }
+    assert unknown == {}
+
+
+
 def test_a_pre_337_table_is_refused(mod, tmp_path):
     source = tmp_path / "old.tsv"
     source.write_text("preferred_term\tmedium_name\nNaCl\tR2A\n", encoding="utf-8")

@@ -44,7 +44,6 @@ def test_lowercase_d_stereodescriptor_artifacts_are_not_live_labels(
 
     preferred_terms = {record["preferred_term"] for record in live}
     assert not (set(LOWERCASE_D_ARTIFACTS) & preferred_terms)
-    assert set(LOWERCASE_D_ARTIFACTS.values()).issubset(preferred_terms)
 
     synonyms = {
         synonym.get("synonym_text")
@@ -52,17 +51,24 @@ def test_lowercase_d_stereodescriptor_artifacts_are_not_live_labels(
         for synonym in record.get("synonyms") or []
     }
     assert not (set(LOWERCASE_D_ARTIFACTS) & synonyms)
+    # 6-deoxy-D-galactose was merged into D-fucose (#312, #745), so its corrected
+    # uppercase D spelling lives as a synonym on D-fucose while the remaining three
+    # are standalone preferred_terms.
+    assert set(LOWERCASE_D_ARTIFACTS.values()).issubset(preferred_terms | synonyms)
+    assert "6-deoxy-D-galactose" in synonyms
 
 
 def test_sssom_uses_corrected_d_stereodescriptor_labels(sssom_rows: list[dict]) -> None:
-    by_label = {
-        row["subject_label"]: row
+    subject_labels = {row["subject_label"] for row in sssom_rows}
+    other_tokens = {
+        token
         for row in sssom_rows
-        if row["subject_label"] in set(LOWERCASE_D_ARTIFACTS) | set(LOWERCASE_D_ARTIFACTS.values())
+        for token in (row.get("other") or "").split("|")
+        if token
     }
 
-    assert set(LOWERCASE_D_ARTIFACTS).isdisjoint(by_label)
-    assert set(LOWERCASE_D_ARTIFACTS.values()).issubset(by_label)
+    assert set(LOWERCASE_D_ARTIFACTS).isdisjoint(subject_labels | other_tokens)
+    assert set(LOWERCASE_D_ARTIFACTS.values()).issubset(subject_labels | other_tokens)
 
 
 def test_n_acetyl_d_glucosamine_is_not_mapped_to_peptidoglycan_residue(

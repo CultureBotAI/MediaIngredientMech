@@ -130,7 +130,7 @@ IDENTITIES: tuple[Identity, ...] = (
         "(68 records already carry mesh: primaries) with EXACT_MATCH. The CAS stays in "
         "chemical_properties and on its registry row; the kgmicrobe.compound row is dropped as "
         "#326 did for 72-Dihydroxyflavone.",
-        drop_registry_row=False,
+        drop_registry_row=True,
     ),
     Identity(
         "4-Hydroxynonenal", "CHEBI:142593", "CHEBI:58968", "CHEBI:58968",
@@ -188,7 +188,7 @@ IDENTITIES: tuple[Identity, ...] = (
         drop_chem=("inchi", "smiles"),
         new_preferred_term="Anisodamine Hydrobromide", raw_label_source="CultureBotHT",
         supersede_sources=("NCIT via OLS (stem-substring)",),
-        drop_registry_row=False, new_cas_row="55449-49-5",
+        drop_registry_row=True, new_cas_row="55449-49-5",
     ),
     Identity(
         "Aluminium_Sulfate", "CHEBI:74772", "CHEBI:74768", "CHEBI:74768",
@@ -210,7 +210,7 @@ IDENTITIES: tuple[Identity, ...] = (
         "The broadMatch parent is the substance itself; Section 3 step 1 promotes it to the "
         "identifier (#326 precedent), graded CAS_RN_LOOKUP because the CAS, not the label, "
         "established it. The CAS stays on its registry row; the kgmicrobe.compound row is dropped.",
-        inchikey_equals_pubchem_cas="65710-07-8", drop_registry_row=False,
+        inchikey_equals_pubchem_cas="65710-07-8", drop_registry_row=True,
     ),
     Identity(
         "Atrop_Abyssomicin_C", "mesh:C509797", "CHEBI:208735", "CHEBI:208735",
@@ -281,8 +281,8 @@ def sha(path: Path) -> str:
 
 
 class Terms:
-    def __init__(self) -> None:
-        self.dbs = {p: sqlite3.connect(require_db(p)) for p in ("CHEBI", "MESH", "NCIT")}
+    def __init__(self, prefixes: tuple[str, ...] = ("CHEBI", "MESH", "NCIT")) -> None:
+        self.dbs = {p: sqlite3.connect(require_db(p)) for p in prefixes}
 
     def _con(self, curie: str):
         return self.dbs[curie.split(":", 1)[0].upper()]
@@ -543,7 +543,7 @@ def finish_sssom() -> None:
     comments, fields, rows = _read_rows()
     by_slug = {spec.slug: spec for spec in IDENTITIES}
     records = {slug: load(slug)[1] for slug in by_slug}
-    terms = Terms()
+    terms = Terms(("CHEBI",))
     # Names of the term each own-identifier row left, minus the names of the term it
     # now carries: the enrichment builder filled ``other`` for the old term (#747).
     old_only: dict[str, set[str]] = {}

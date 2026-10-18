@@ -137,6 +137,16 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("Na2-citrate"): "cas:144-33-2",
     # #896: Na2SO3 x 5 H2O split off anhydrous CHEBI:86477 to a local identity.
     _source_label_key("Na2SO3 x 5 H2O"): SODIUM_SULFITE_PENTAHYDRATE_ID,
+    # #758: NaH2PO4 hydrate spellings that CultureMech still resolves to anhydrous CHEBI:37585.
+    _source_label_key("NaH2PO4 x H2O"): "CHEBI:114249",
+    _source_label_key("NaH2PO4·H2O"): "CHEBI:114249",
+    _source_label_key("NaH2PO4・H2O"): "CHEBI:114249",
+    _source_label_key("NaH2PO4 x 2H2O"): "kgmicrobe.compound:nah2po4_x_2_h2o",
+    _source_label_key("NaH2PO4·2H2O"): "kgmicrobe.compound:nah2po4_x_2_h2o",
+    _source_label_key("NaH2PO4・2H2O"): "kgmicrobe.compound:nah2po4_x_2_h2o",
+    # #748: Cooked meat medium minted a local registry identity off FOODON:03305103.
+    _source_label_key("Cooked meat medium"): "kgmicrobe.ingredient:cooked_meat_medium",
+    _source_label_key("Cooked meat medium (Oxoid)"): "kgmicrobe.ingredient:cooked_meat_medium",
 }
 
 

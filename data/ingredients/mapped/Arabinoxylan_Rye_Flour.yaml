@@ -38,13 +38,26 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-10-18T09:06:17.026206+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent kgmicrobe.ingredient:arabinoxylan_rye_flour (''Arabinoxylan
+    (Rye Flour)'') -> CHEBI:28427 (''arabinoxylan'') (#312). The record is a rye-derived
+    arabinoxylan preparation (local identity kgmicrobe.ingredient:arabinoxylan_rye_flour
+    retained by the 2026-09-21 review). Its closest broader chemical class is CHEBI:28427
+    ''arabinoxylan'' (Section 3 step 3, #245, #740); the local registry identity and
+    Rule B1 registry row stay unchanged. mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
-  ontology_id: kgmicrobe.ingredient:arabinoxylan_rye_flour
-  ontology_label: Arabinoxylan (Rye Flour)
-  ontology_source: kgmicrobe.ingredient
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:28427
+  ontology_label: arabinoxylan
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: MANUAL_CURATION
     source: https://www.megazyme.com/arabinoxylan-rye-flour
@@ -52,6 +65,14 @@ ontology_mapping:
       A manufacturer uses exactly this name for an arabinoxylan preparation with residual
       protein/ash. Retain a local material identity, without asserting procurement
       from that supplier, exact purity, or whole-mixture equivalence to pure polymer.
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent kgmicrobe.ingredient:arabinoxylan_rye_flour (''Arabinoxylan (Rye
+      Flour)'') -> CHEBI:28427 (''arabinoxylan''). The record is a rye-derived arabinoxylan
+      preparation (local identity kgmicrobe.ingredient:arabinoxylan_rye_flour retained
+      by the 2026-09-21 review). Its closest broader chemical class is CHEBI:28427
+      ''arabinoxylan'' (Section 3 step 3, #245, #740); the local registry identity
+      and Rule B1 registry row stay unchanged.'
 nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.8

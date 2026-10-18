@@ -118,6 +118,19 @@ MERGES: tuple[Merge, ...] = (
         ),
         source_labels=("NaH2PO4•H2O", "NaH2PO4•H2O(MCIB 742)"),
     ),
+    Merge(
+        "6-deoxy-d-galactose", "CHEBI:2179", "D-fucose", "CHEBI:28847",
+        "6-deoxy-D-galactose is the systematic name for D-fucose: CHEBI:28847 'D-fucose' carries "
+        "exact synonym '6-deoxy-D-galactose' in chebi.db, while CHEBI:2179 'D-fucopyranose' is the "
+        "ring-closed pyranose form that the source label ('6-deoxy-D-galactose' from microbedecoder "
+        "kgmicrobe.trait:6_deoxy_d_galactose) does not specify. D-fucose already holds CHEBI:28847, "
+        "so one substance sits under two identifiers -> merge (#312, #745).",
+        target_note=(
+            "Absorbed 6-deoxy-d-galactose (#312, #745): '6-deoxy-D-galactose' is the systematic name "
+            "and ChEBI exact synonym of CHEBI:28847 D-fucose (1 microbedecoder occurrence transferred); "
+            "CHEBI:2179 D-fucopyranose was a ring-specific child not stated by the source label."
+        ),
+    ),
 )
 
 
@@ -195,10 +208,11 @@ def post_merge(log: list, write: bool) -> None:
             print(f"SURVIVOR  {spec.target_slug}: {'; '.join(changed)}")
             if write:
                 write_validated_ingredient(record, path)
-        log.append({"source_record": str(path.relative_to(ROOT)), "shape": "merge_survivor",
-                    "before_yaml_sha256": before, "after_yaml_sha256": sha(path) if write else None,
-                    "change": f"absorbed {spec.source_slug} (synonyms, occurrences); " + ("; ".join(changed) or "no further change"),
-                    "verification": spec.reason})
+        if moves or changed:
+            log.append({"source_record": str(path.relative_to(ROOT)), "shape": "merge_survivor",
+                        "before_yaml_sha256": before, "after_yaml_sha256": sha(path) if write else None,
+                        "change": f"absorbed {spec.source_slug} (synonyms, occurrences); " + ("; ".join(changed) or "no further change"),
+                        "verification": spec.reason})
 
 
 def _git_head_sha(path: Path) -> str:

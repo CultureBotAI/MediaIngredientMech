@@ -53,10 +53,13 @@ def test_migration_is_idempotent_on_its_historical_reviewed_inventory():
     # 2 tetramethylammonium component references stayed on the cation as an
     # EXTERNAL_TERM when the standalone supplied ingredient moved to a complete
     # salt/ion-pair identity (#315).
+    # 2 meat (cooked) (FOODON:03305103) component references moved
+    # MIM_CATALOG -> EXTERNAL_TERM when `Cooked Meat Medium` was re-grounded
+    # from the food term to MICRO:0000314 (#312, #740).
     # The 2026-09-21 identity review added the explicitly named disodium
     # nitrilotriacetate solute of a 0.5 M stock as one catalog component.
-    assert scopes.count("MIM_CATALOG") == 491
-    assert scopes.count("EXTERNAL_TERM") == 10
+    assert scopes.count("MIM_CATALOG") == 489
+    assert scopes.count("EXTERNAL_TERM") == 12
     assert scopes.count("UNMAPPED") == 5
 
     by_label = {record["preferred_term"]: record for record in second}
@@ -82,7 +85,8 @@ def test_historical_migration_refuses_current_reviewed_inventory_without_changes
     assert len(parents) == 83
     assert len(scopes) == 502
     # CMC's withdrawn false blend contained three catalog terms and one
-    # external term. Other component scopes were unchanged by #710.
-    assert scopes.count("MIM_CATALOG") == 488
-    assert scopes.count("EXTERNAL_TERM") == 9
+    # external term; 2 meat (cooked) references moved MIM_CATALOG -> EXTERNAL_TERM
+    # when Cooked Meat Medium moved to MICRO:0000314 (#312, #740).
+    assert scopes.count("MIM_CATALOG") == 486
+    assert scopes.count("EXTERNAL_TERM") == 11
     assert scopes.count("UNMAPPED") == 5

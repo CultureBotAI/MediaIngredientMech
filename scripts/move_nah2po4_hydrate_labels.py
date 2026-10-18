@@ -41,6 +41,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event  # noqa: E402
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
     SOURCE_LABEL_IDENTIFIER_OVERRIDES,
     _source_label_key,
@@ -134,7 +135,10 @@ def move_memberships(occurrences: Path, targets: dict[str, str], write: bool) ->
     with occurrences.open(encoding="utf-8") as handle:
         for row in csv.DictReader(handle, delimiter="\t"):
             target = wanted.get(_source_label_key(row.get("preferred_term") or ""))
-            if target and (row.get("resolved_identifier") or "").strip() == FROM_IDENTIFIER:
+            if target and (row.get("resolved_identifier") or "").strip() in {
+                FROM_IDENTIFIER,
+                "kgmicrobe.compound:nah2po4_x_2_h2o",
+            }:
                 moves[(FROM_IDENTIFIER, row["recipe_id"])] = target
     lines = MEMBERSHIP.read_text(encoding="utf-8").splitlines(keepends=True)
     comments, header, data, counts = [], None, [], defaultdict(int)
@@ -199,6 +203,49 @@ def refresh_counts(log: list, write: bool) -> None:
                         "verification": "Counts follow the source label through SOURCE_LABEL_IDENTIFIER_OVERRIDES."})
 
 
+def move_sssom_tokens(write: bool) -> None:
+    sssom = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
+    raw = sssom.read_text(encoding="utf-8").splitlines(keepends=True)
+    comments = [line for line in raw if line.startswith("#")]
+    body = [line for line in raw if not line.startswith("#")]
+    reader = csv.DictReader(body, delimiter="\t")
+    rows = list(reader)
+    fields = list(reader.fieldnames or [])
+    changed = 0
+    for row in rows:
+        if row["subject_id"] == mim_curie_for_stem(DIHYDRATE) and row["object_id"] == FROM_IDENTIFIER:
+            tokens = [t for t in row["other"].split("|") if t]
+            removed = [t for t in tokens if t in MONOHYDRATE_STRINGS]
+            if removed:
+                row["other"] = "|".join(t for t in tokens if t not in MONOHYDRATE_STRINGS)
+                row["comment"] = (
+                    row["comment"]
+                    + f" [other: dropped {removed}: REJECTED_LABEL monohydrate spellings moved to {MONOHYDRATE} ({ISSUE})]"
+                ).strip()
+                changed += 1
+        elif row["subject_id"] == mim_curie_for_stem(MONOHYDRATE) and row["object_id"] == "CHEBI:114249":
+            tokens = [t for t in row["other"].split("|") if t]
+            cas_tokens = [t for t in tokens if t.upper().startswith("CAS:")]
+            non_cas = [t for t in tokens if not t.upper().startswith("CAS:")]
+            added = [t for t in MONOHYDRATE_STRINGS if t not in non_cas]
+            if added:
+                row["other"] = "|".join(non_cas + added + cas_tokens)
+                row["comment"] = (
+                    row["comment"]
+                    + f" [other: added {added} moved from {DIHYDRATE} ({ISSUE})]"
+                ).strip()
+                changed += 1
+    if changed and write:
+        import io
+        out = io.StringIO()
+        out.writelines(comments)
+        writer = csv.DictWriter(out, fieldnames=fields, delimiter="\t", lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+        sssom.write_text(out.getvalue(), encoding="utf-8")
+    print(f"SSSOM other-token rows updated: {changed}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--apply", action="store_true")
@@ -210,6 +257,7 @@ def main() -> int:
     move_synonyms(log, args.apply)
     move_memberships(args.occurrences, targets, args.apply)
     refresh_counts(log, args.apply)
+    move_sssom_tokens(args.apply)
     if args.apply and args.log:
         previous = json.loads(args.log.read_text())["records"] if args.log.is_file() else []
         merged = {e["source_record"]: e for e in previous}

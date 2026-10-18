@@ -1,15 +1,5 @@
-identifier: CHEBI:8612
+identifier: UNMAPPED_0850
 preferred_term: Angustmycin
-ontology_mapping:
-  ontology_id: CHEBI:8612
-  ontology_label: psicofuranin
-  ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
-  evidence:
-  - evidence_type: CURATOR_CONFIRMED_SYNONYM
-    source: kgmicrobe.compound:angustmycin
-    notes: angustmycin A is a historical/trade name for the antibiotic psicofuranin
-      — same molecule (curator-confirmed synonym).
 synonyms:
 - synonym_text: Psicofuranine
   synonym_type: RAW_TEXT
@@ -17,7 +7,7 @@ synonyms:
 - synonym_text: 'produces: angustmycin'
   synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
-mapping_status: MAPPED
+mapping_status: AMBIGUOUS
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -95,12 +85,20 @@ curation_history:
     angustmycin''. Preserved original text and source metadata. No identity, mapping,
     role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-10-18T00:00:00+00:00'
+  curator: issue_741_resolution
+  action: CORRECTED
+  changes: Demoted Angustmycin from MAPPED (CHEBI:8612 psicofuranin) to AMBIGUOUS
+    (UNMAPPED_0850) per MAPPING_SEMANTICS Section 3 step 5 (#741). The bare label
+    Angustmycin is under-specified between angustmycin A (decoyinine, CHEBI:191094,
+    C11H13N5O4) and angustmycin C (psicofuranin, CHEBI:8612, C11H15N5O5); the earlier
+    evidence note falsely equated angustmycin A with psicofuranin. Withdrew CHEBI:8612
+    ontology_mapping and psicofuranin chemical_properties; kept absorbed RAW_TEXT
+    synonym Psicofuranine (which specifically names angustmycin C, CHEBI:8612).
+  previous_status: MAPPED
+  new_status: AMBIGUOUS
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
-chemical_properties:
-  molecular_formula: C11H15N5O5
-  inchi: InChI=1S/C11H15N5O5/c12-9-6-10(14-3-13-9)16(4-15-6)11(2-18)8(20)7(19)5(1-17)21-11/h3-5,7-8,17-20H,1-2H2,(H2,12,13,14)/t5-,7-,8-,11-/m1/s1
-  smiles: Nc1ncnc2c1ncn2[C@]1(CO)O[C@H](CO)[C@@H](O)[C@H]1O
-  data_source: CHEBI sqlite (oaklib)
 physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8
@@ -108,3 +106,9 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+notes: Bare label "Angustmycin" is under-specified and ambiguous between angustmycin
+  A (decoyinine, CHEBI:191094, C11H13N5O4) and angustmycin C (psicofuranin, CHEBI:8612,
+  C11H15N5O5). The earlier evidence note falsely equated angustmycin A with psicofuranin
+  (#741). Retained as AMBIGUOUS per MAPPING_SEMANTICS Section 3 step 5 with no SSSOM
+  mapping row; the absorbed RAW_TEXT synonym Psicofuranine specifically denotes angustmycin
+  C (CHEBI:8612, CAS 1874-54-0).

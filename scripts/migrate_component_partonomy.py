@@ -363,8 +363,11 @@ def migrate(records: list[dict[str, Any]]) -> tuple[int, int]:
     # 2 tetramethylammonium component references stayed on the cation as an
     # EXTERNAL_TERM when the standalone supplied ingredient moved to a complete
     # salt/ion-pair identity (#315).
+    # 2 meat (cooked) (FOODON:03305103) component references moved
+    # MIM_CATALOG -> EXTERNAL_TERM when `Cooked Meat Medium` was re-grounded
+    # from the food term to MICRO:0000314 (#312, #740).
     # The total is unchanged, which is what the guard is for.
-    expected_scopes = {"MIM_CATALOG": 131, "EXTERNAL_TERM": 10, "UNMAPPED": 2}
+    expected_scopes = {"MIM_CATALOG": 129, "EXTERNAL_TERM": 12, "UNMAPPED": 2}
     if len(after_parents) != 54 or after_component_count != 143 or scope_counts != expected_scopes:
         raise ValueError(
             "post-migration inventory drift: "

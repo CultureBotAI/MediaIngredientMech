@@ -216,15 +216,17 @@ def hold_lineage(
     """Map each frozen hold resolution's baseline ids to the ids the same row carries now.
 
     A frozen resolution names an assertion id and an edge id computed when its
-    SSSOM row sat at a baseline position. Rows before it may since have been
-    removed by a receipt. For each resolution whose ids no longer exist, find the
-    current mapping assertion with the same payload hash, invert the composed
-    position map to its baseline position, and recompute both ids there; only an
-    exact reproduction of the frozen ids establishes the lineage.
+    SSSOM row sat at a baseline position (either before the first receipt or at
+    a later receipt boundary where the resolution was repinned). Rows before it
+    may since have been removed or added by subsequent receipts. For each
+    resolution whose ids no longer exist, find the current mapping assertion
+    with the same payload hash, invert the composed position map of the receipt
+    suffix starting at that pin to its baseline position, and recompute both ids
+    there; only an exact reproduction of the frozen ids establishes the lineage.
     """
     if not receipts:
         return {}
-    forward = forward_map(receipts)
+    suffix_forwards = [forward_map(receipts[start:]) for start in range(len(receipts))]
     current_ids = {row["assertion_id"] for row in assertions}
     edge_index = {
         (edge["source_record"], edge["assertion_type"], str(edge["source_position"])): edge
@@ -241,11 +243,20 @@ def hold_lineage(
             ) != resolution.get("assertion_sha256"):
                 continue
             current_position = int(row["source_position"])
-            origin = baseline_position(forward, current_position)
-            if origin is None or _assertion_id(origin, row["assertion_sha256"]) != frozen_id:
-                continue
             edge = edge_index.get((row["source_record"], "mapping", str(current_position)))
-            if edge is None or _edge_id_at(edge, origin) != resolution.get("edge_id"):
+            if edge is None:
+                continue
+            origin = next(
+                (
+                    pos
+                    for forward in suffix_forwards
+                    if (pos := baseline_position(forward, current_position)) is not None
+                    and _assertion_id(pos, row["assertion_sha256"]) == frozen_id
+                    and _edge_id_at(edge, pos) == resolution.get("edge_id")
+                ),
+                None,
+            )
+            if origin is None:
                 continue
             lineage[frozen_id] = {
                 "assertion_id": row["assertion_id"],
@@ -255,3 +266,4 @@ def hold_lineage(
             }
             break
     return lineage
+

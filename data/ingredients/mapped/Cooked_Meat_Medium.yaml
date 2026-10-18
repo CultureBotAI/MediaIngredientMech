@@ -1,4 +1,4 @@
-identifier: FOODON:03305103
+identifier: kgmicrobe.ingredient:cooked_meat_medium
 preferred_term: Cooked meat medium
 synonyms:
 - synonym_text: Cooked meat medium
@@ -45,15 +45,46 @@ curation_history:
     not resolve them: ''Cooked meat medium (Oxoid)'' (x1 CultureMech mentions). Source:
     culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-10-18T09:07:57.802919+00:00'
+  curator: claude
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: 'identifier FOODON:03305103 -> kgmicrobe.ingredient:cooked_meat_medium;
+    ontology FOODON:03305103 (''meat (cooked)'') -> kgmicrobe.ingredient:cooked_meat_medium
+    (''Cooked meat medium''); mapping_quality LEXICAL_MATCH -> FALLBACK_REGISTRY.
+    FOODON:03305103 ''meat (cooked)'' is the food ingredient, whereas this record
+    is the formulated anaerobe medium (Oxoid CM0081 / Robertson''s cooked meat medium:
+    heart muscle granules with peptone, Lab-Lemco powder, NaCl and glucose). Two mixture
+    records (Modified Cooked Meat Medium, Fastidious Anaerobe Broth With Meat Granules)
+    referenced FOODON:03305103 as a MIM_CATALOG part; those parts are cooked meat
+    itself (rescoped EXTERNAL_TERM), while the medium record gets its own local registry
+    identity kgmicrobe.ingredient:cooked_meat_medium with no false food parent (#312,
+    #748). (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: FOODON:03305103
-  ontology_label: meat (cooked)
-  ontology_source: FOODON
-  mapping_quality: LEXICAL_MATCH
+  ontology_id: kgmicrobe.ingredient:cooked_meat_medium
+  ontology_label: Cooked meat medium
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: DATABASE_MATCH
     source: FOODON via OLS search
-    notes: Auto-upgraded from 'UNMAPPED_0364'; match=fuzzy-top
+    notes: 'SUPERSEDED (#312): Auto-upgraded from ''UNMAPPED_0364''; match=fuzzy-top'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier FOODON:03305103 -> kgmicrobe.ingredient:cooked_meat_medium;
+      ontology FOODON:03305103 (''meat (cooked)'') -> kgmicrobe.ingredient:cooked_meat_medium
+      (''Cooked meat medium''); mapping_quality LEXICAL_MATCH -> FALLBACK_REGISTRY.
+      FOODON:03305103 ''meat (cooked)'' is the food ingredient, whereas this record
+      is the formulated anaerobe medium (Oxoid CM0081 / Robertson''s cooked meat medium:
+      heart muscle granules with peptone, Lab-Lemco powder, NaCl and glucose). Two
+      mixture records (Modified Cooked Meat Medium, Fastidious Anaerobe Broth With
+      Meat Granules) referenced FOODON:03305103 as a MIM_CATALOG part; those parts
+      are cooked meat itself (rescoped EXTERNAL_TERM), while the medium record gets
+      its own local registry identity kgmicrobe.ingredient:cooked_meat_medium with
+      no false food parent (#312, #748).'
 ingredient_type: UNDEFINED_MIXTURE

@@ -25,7 +25,7 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "b390829d6b97cc21ec4b9dd639cbd82855086bf34931ad9f1b058ebd54d839ce"
+REVIEWED_SOURCE = "320f701f826d6177740f6a2d08d3437d313cdac09f8f8c2694a48f5ea6898e87"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 
@@ -600,7 +600,18 @@ def assemble():
                 "evidence_key": key,
             }
         )
-    if used_followups != set(followups_by_key):
+    retired_followups = {
+        key
+        for key, item in followups_by_key.items()
+        if item["disposition"] == "WITHHOLD"
+        and item["owner_record"] in receipt_owners
+        and any(
+            change["kind"] == "removed" and change["before"] == item["mapping"]
+            for receipt in mapping_changes
+            for change in receipt["changes"]
+        )
+    }
+    if used_followups | retired_followups != set(followups_by_key):
         raise ValueError("Mapping follow-up refers to a missing source assertion")
     evidence = {
         "schema_version": 1,

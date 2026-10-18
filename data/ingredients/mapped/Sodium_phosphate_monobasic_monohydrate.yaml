@@ -37,10 +37,19 @@ synonyms:
 - synonym_text: NaH2PO4•H2O(MCIB 742)
   synonym_type: RAW_TEXT
   source: merged_record
+- synonym_text: NaH2PO4 x H2O
+  synonym_type: HYDRATE_FORM
+  source: moved from Nah2po4_X_2_H2o (#758)
+- synonym_text: NaH2PO4·H2O
+  synonym_type: HYDRATE_FORM
+  source: moved from Nah2po4_X_2_H2o (#758)
+- synonym_text: NaH2PO4・H2O
+  synonym_type: HYDRATE_FORM
+  source: moved from Nah2po4_X_2_H2o (#758)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 50
-  media_count: 50
+  total_occurrences: 86
+  media_count: 86
 curation_history:
 - timestamp: '2026-04-07T10:20:04.918526+00:00'
   curator: feba_ontology_enrichment_batch
@@ -98,6 +107,25 @@ curation_history:
     dihydrogenphosphate monohydrate'' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M)
     exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate
     already holds it: one substance under two identifiers -> merge (#312).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-10-18T09:01:25.583133+00:00'
+  curator: claude
+  action: ADDED_SYNONYMS
+  changes: 'Added HYDRATE_FORM spellings [''NaH2PO4 x H2O'', ''NaH2PO4·H2O'', ''NaH2PO4・H2O''],
+    moved off Nah2po4_X_2_H2o: each names the monohydrate this record denotes (CHEBI:114249),
+    and CultureMech names them in 36 recipes (#758).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-10-18T09:01:26.842772+00:00'
+  curator: claude
+  action: REFRESHED_OCCURRENCE_STATISTICS
+  changes: occurrence_statistics 50/50 -> 86/86 after the NaH2PO4 hydrate spellings'
+    recipe memberships moved to the form each names (#758).
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true

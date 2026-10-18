@@ -2652,18 +2652,6 @@
     "media_count": 0
   },
   {
-    "identifier": "CHEBI:2179",
-    "ontology_id": "CHEBI:2179",
-    "preferred_term": "6-deoxy-D-galactose",
-    "mapping_status": "MAPPED",
-    "synonyms": [],
-    "ontology_label": "D-fucopyranose",
-    "ontology_source": "CHEBI",
-    "mapping_quality": "SYNONYM_MATCH",
-    "total_occurrences": 0,
-    "media_count": 0
-  },
-  {
     "identifier": "CHEBI:67135",
     "ontology_id": "CHEBI:67135",
     "preferred_term": "Azomycin",
@@ -6594,20 +6582,6 @@
     "media_count": 0
   },
   {
-    "identifier": "CHEBI:8612",
-    "ontology_id": "CHEBI:8612",
-    "preferred_term": "Angustmycin",
-    "mapping_status": "MAPPED",
-    "synonyms": [
-      "Psicofuranine"
-    ],
-    "ontology_label": "psicofuranin",
-    "ontology_source": "CHEBI",
-    "mapping_quality": "SYNONYM_MATCH",
-    "total_occurrences": 0,
-    "media_count": 0
-  },
-  {
     "identifier": "CHEBI:201752",
     "ontology_id": "CHEBI:201752",
     "preferred_term": "Anhydrotetracycline hydrochloride",
@@ -10485,20 +10459,6 @@
     "mapping_quality": "EXACT_MATCH",
     "total_occurrences": 0,
     "media_count": 0
-  },
-  {
-    "identifier": "FOODON:03305103",
-    "ontology_id": "FOODON:03305103",
-    "preferred_term": "Cooked meat medium",
-    "mapping_status": "MAPPED",
-    "synonyms": [
-      "Cooked meat medium (Oxoid)"
-    ],
-    "ontology_label": "meat (cooked)",
-    "ontology_source": "FOODON",
-    "mapping_quality": "LEXICAL_MATCH",
-    "total_occurrences": 2,
-    "media_count": 2
   },
   {
     "identifier": "FOODON:03310257",
@@ -22905,8 +22865,8 @@
     "ontology_label": "sodium dihydrogenphosphate",
     "ontology_source": "CHEBI",
     "mapping_quality": "SYNONYM_MATCH",
-    "total_occurrences": 237,
-    "media_count": 237
+    "total_occurrences": 198,
+    "media_count": 198
   },
   {
     "identifier": "kgmicrobe.compound:nah2po4_x_2_h2o",
@@ -22915,17 +22875,14 @@
     "mapping_status": "MAPPED",
     "synonyms": [
       "NaH2PO4 x 2H2O",
-      "NaH2PO4 x H2O",
       "NaH2PO4\u00b72H2O",
-      "NaH2PO4\u00b7H2O",
-      "NaH2PO4\u30fb2H2O",
-      "NaH2PO4\u30fbH2O"
+      "NaH2PO4\u30fb2H2O"
     ],
     "ontology_label": "sodium dihydrogenphosphate",
     "ontology_source": "CHEBI",
     "mapping_quality": "CLOSE_MATCH",
-    "total_occurrences": 53,
-    "media_count": 53
+    "total_occurrences": 56,
+    "media_count": 56
   },
   {
     "identifier": "CHEBI:32139",
@@ -28259,13 +28216,16 @@
       "sodium dihydrogenphosphate monohydrate",
       "sodium dihydrogen phosphate--water (1/1)",
       "NaH2PO4\u2022H2O",
-      "NaH2PO4\u2022H2O(MCIB 742)"
+      "NaH2PO4\u2022H2O(MCIB 742)",
+      "NaH2PO4 x H2O",
+      "NaH2PO4\u00b7H2O",
+      "NaH2PO4\u30fbH2O"
     ],
     "ontology_label": "sodium dihydrogenphosphate monohydrate",
     "ontology_source": "CHEBI",
     "mapping_quality": "CAS_RN_LOOKUP",
-    "total_occurrences": 50,
-    "media_count": 50
+    "total_occurrences": 86,
+    "media_count": 86
   },
   {
     "identifier": "CHEBI:63686",
@@ -33398,7 +33358,9 @@
     "ontology_id": "CHEBI:28847",
     "preferred_term": "D-fucose",
     "mapping_status": "MAPPED",
-    "synonyms": [],
+    "synonyms": [
+      "6-deoxy-D-galactose"
+    ],
     "ontology_label": "D-fucose",
     "ontology_source": "CHEBI",
     "mapping_quality": "EXACT_MATCH",
@@ -38299,13 +38261,13 @@
   },
   {
     "identifier": "kgmicrobe.ingredient:arabinoxylan_rye_flour",
-    "ontology_id": "kgmicrobe.ingredient:arabinoxylan_rye_flour",
+    "ontology_id": "CHEBI:28427",
     "preferred_term": "Arabinoxylan (Rye Flour)",
     "mapping_status": "MAPPED",
     "synonyms": [],
-    "ontology_label": "Arabinoxylan (Rye Flour)",
-    "ontology_source": "kgmicrobe.ingredient",
-    "mapping_quality": "FALLBACK_REGISTRY",
+    "ontology_label": "arabinoxylan",
+    "ontology_source": "CHEBI",
+    "mapping_quality": "NARROW_MATCH",
     "total_occurrences": 0,
     "media_count": 0
   },
@@ -38938,6 +38900,43 @@
     "mapping_quality": "NARROW_MATCH",
     "total_occurrences": 2,
     "media_count": 2
+  },
+  {
+    "identifier": "kgmicrobe.ingredient:cooked_meat_medium",
+    "ontology_id": "kgmicrobe.ingredient:cooked_meat_medium",
+    "preferred_term": "Cooked meat medium",
+    "mapping_status": "MAPPED",
+    "synonyms": [
+      "Cooked meat medium (Oxoid)"
+    ],
+    "ontology_label": "Cooked meat medium",
+    "ontology_source": "kgmicrobe.ingredient",
+    "mapping_quality": "FALLBACK_REGISTRY",
+    "total_occurrences": 2,
+    "media_count": 2
+  },
+  {
+    "identifier": "CHEBI:28847",
+    "ontology_id": "CHEBI:28847",
+    "preferred_term": "6-deoxy-D-galactose",
+    "mapping_status": "REJECTED",
+    "synonyms": [],
+    "ontology_label": "D-fucose",
+    "ontology_source": "CHEBI",
+    "mapping_quality": "SYNONYM_MATCH",
+    "total_occurrences": 0,
+    "media_count": 0
+  },
+  {
+    "identifier": "UNMAPPED_0850",
+    "ontology_id": "",
+    "preferred_term": "Angustmycin",
+    "mapping_status": "AMBIGUOUS",
+    "synonyms": [
+      "Psicofuranine"
+    ],
+    "total_occurrences": 0,
+    "media_count": 0
   },
   {
     "identifier": "UNMAPPED_0818",

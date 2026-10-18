@@ -70,8 +70,8 @@ synonyms:
   source: https://www.ebi.ac.uk/chebi/CHEBI:37585
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 237
-  media_count: 237
+  total_occurrences: 198
+  media_count: 198
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -186,6 +186,15 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
+- timestamp: '2026-10-18T09:01:26.821601+00:00'
+  curator: claude
+  action: REFRESHED_OCCURRENCE_STATISTICS
+  changes: occurrence_statistics 237/237 -> 198/198 after the NaH2PO4 hydrate spellings'
+    recipe memberships moved to the form each names (#758).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 7558-80-7
   data_source: PubChem API

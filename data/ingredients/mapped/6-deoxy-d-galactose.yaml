@@ -1,14 +1,10 @@
-identifier: CHEBI:2179
+identifier: CHEBI:28847
 preferred_term: 6-deoxy-D-galactose
 synonyms: []
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
-  source_occurrences:
-  - source: microbedecoder
-    count: 1
-    source_columns: BacDive_Metabolite_utilization
 curation_history:
 - timestamp: '2026-08-04T02:54:09.684805+00:00'
   curator: audit_import_ingredients[microbedecoder]
@@ -39,11 +35,37 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-10-18T09:10:53.669272+00:00'
+  curator: merge_mapped_records
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:28847 ''D-fucose''; occurrences transferred. Tombstoned
+    REJECTED, SSSOM rows dropped. 6-deoxy-D-galactose is the systematic name and ChEBI
+    exact synonym of CHEBI:28847 D-fucose; CHEBI:2179 D-fucopyranose is a ring-specific
+    child not stated by the source label (#312, #745)'
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+- timestamp: '2026-10-18T09:13:28.259427+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'identifier CHEBI:2179 -> CHEBI:28847; ontology_id CHEBI:2179 (''D-fucopyranose'')
+    -> CHEBI:28847 (''D-fucose'') on the merge tombstone, so the merged name is credited
+    to the live record that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o precedent).
+    6-deoxy-D-galactose is the systematic name for D-fucose: CHEBI:28847 ''D-fucose''
+    carries exact synonym ''6-deoxy-D-galactose'' in chebi.db, while CHEBI:2179 ''D-fucopyranose''
+    is the ring-closed pyranose form that the source label (''6-deoxy-D-galactose''
+    from microbedecoder kgmicrobe.trait:6_deoxy_d_galactose) does not specify. D-fucose
+    already holds CHEBI:28847, so one substance sits under two identifiers -> merge
+    (#312, #745).'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:6_deoxy_d_galactose);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: CHEBI:2179
-  ontology_label: D-fucopyranose
+  ontology_id: CHEBI:28847
+  ontology_label: D-fucose
   ontology_source: CHEBI
   mapping_quality: SYNONYM_MATCH
   evidence:

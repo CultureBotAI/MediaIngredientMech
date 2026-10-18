@@ -43,19 +43,19 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NaH2PO4 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NaH2PO4·2H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NaH2PO4·H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NaH2PO4・2H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NaH2PO4・H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: sodium phosphate monobasic anhydrous
   synonym_type: REJECTED_LABEL
@@ -66,8 +66,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 53
-  media_count: 53
+  total_occurrences: 56
+  media_count: 56
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -218,6 +218,25 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-opus-5-5
+- timestamp: '2026-10-18T09:01:25.447495+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: [''NaH2PO4 x H2O'', ''NaH2PO4·H2O'', ''NaH2PO4・H2O'']:
+    monohydrate spellings on the dihydrate label''s record; they now live on Sodium_phosphate_monobasic_monohydrate
+    (CHEBI:114249) (#758).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-10-18T09:01:26.833182+00:00'
+  curator: claude
+  action: REFRESHED_OCCURRENCE_STATISTICS
+  changes: occurrence_statistics 53/53 -> 56/56 after the NaH2PO4 hydrate spellings'
+    recipe memberships moved to the form each names (#758).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   data_source: OAK/CHEBI xref
   retrieval_date: '2026-04-19T07:35:12.781730+00:00'

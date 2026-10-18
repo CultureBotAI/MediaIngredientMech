@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-10-18T07:19:57.536781+00:00
+Generated: 2026-10-18T09:20:16.279120+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -220,7 +220,6 @@ Total: 2680 ingredients
 | CHEBI:81287 | CHEBI:81287 | Neomycin F | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81430 | CHEBI:81430 | Dactimicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27907 | CHEBI:27907 | Alpha-L-rhamnose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:2179 | CHEBI:2179 | 6-deoxy-D-galactose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:67135 | CHEBI:67135 | Azomycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17833 | CHEBI:17833 | Gentamicin | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:71422 | CHEBI:71422 | Beta-gentiobiose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -502,7 +501,6 @@ Total: 2680 ingredients
 | CHEBI:65408 | CHEBI:65408 | Andrographolide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2716 | CHEBI:2716 | Anethole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:C002547 | mesh:C002547 | Angolamycin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:8612 | CHEBI:8612 | Angustmycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:201752 | CHEBI:201752 | Anhydrotetracycline hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:193638 | CHEBI:193638 | anthranilamide | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:30754 | CHEBI:30754 | anthranilic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -762,7 +760,6 @@ Total: 2680 ingredients
 | kgmicrobe.compound:congocidin | kgmicrobe.compound:congocidin | Congocidin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:17745 | CHEBI:17745 | coniferyl alcohol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16547 | CHEBI:16547 | coniferyl aldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| FOODON:03305103 | FOODON:03305103 | Cooked meat medium | MAPPED | FOODON | LEXICAL_MATCH | 2 |
 | FOODON:03310257 | FOODON:03310257 | Corn meal | MAPPED | FOODON | EXACT_MATCH | 6 |
 | CHEBI:53470 | CHEBI:53470 | CoSO4 | MAPPED | CHEBI | EXACT_MATCH | 64 |
 | CHEBI:91244 | CHEBI:91244 | CoSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 828 |
@@ -1526,8 +1523,8 @@ Total: 2680 ingredients
 | CHEBI:65242 | CHEBI:65242 | NaClO3 | MAPPED | CHEBI | EXACT_MATCH | 16 |
 | CHEBI:28741 | CHEBI:28741 | NaF | MAPPED | CHEBI | EXACT_MATCH | 302 |
 | CHEBI:51919 | CHEBI:51919 | Nafcillin sodium salt monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:37585 | CHEBI:37585 | NaH2PO4 | MAPPED | CHEBI | SYNONYM_MATCH | 237 |
-| kgmicrobe.compound:nah2po4_x_2_h2o | CHEBI:37585 | NaH2PO4 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 53 |
+| CHEBI:37585 | CHEBI:37585 | NaH2PO4 | MAPPED | CHEBI | SYNONYM_MATCH | 198 |
+| kgmicrobe.compound:nah2po4_x_2_h2o | CHEBI:37585 | NaH2PO4 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 56 |
 | CHEBI:32139 | CHEBI:32139 | NaHCO3 | MAPPED | CHEBI | EXACT_MATCH | 3168 |
 | CHEBI:26709 | CHEBI:26709 | NaHSO3 | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | cas:3374-05-8 | CHEBI:100147 | Nalidixic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1878,7 +1875,7 @@ Total: 2680 ingredients
 | CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 25 |
 | cas:10489-48-2 | CHEBI:46612 | Sodium thiophosphate tribasic hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:32150 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:114249 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 50 |
+| CHEBI:114249 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 86 |
 | CHEBI:63686 | CHEBI:63686 | Sodium succinate dibasic hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 20 |
 | ENVO:00001998 | ENVO:00001998 | Soil | MAPPED | ENVO | EXACT_MATCH | 46 |
 | MICRO:0000457 | MICRO:0000457 | Soil extract | MAPPED | MICRO | EXACT_MATCH | 17 |
@@ -2636,7 +2633,7 @@ Total: 2680 ingredients
 | kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt | kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt | 0.5 M Nitrilotriacetic acid, disodium salt | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
 | kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate | CHEBI:27469 | 2-Keto-D-gluconic acid hemicalcium salt monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:2769 | CHEBI:2769 | Apigenin Dimethyl Ether | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:arabinoxylan_rye_flour | kgmicrobe.ingredient:arabinoxylan_rye_flour | Arabinoxylan (Rye Flour) | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:arabinoxylan_rye_flour | CHEBI:28427 | Arabinoxylan (Rye Flour) | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:artificial_sea_salt | kgmicrobe.ingredient:artificial_sea_salt | Artificial Sea Salt | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 12 |
 | cas:1073-62-7 | cas:1073-62-7 | Benzylhydrazine Hydrochloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:542-32-5 | cas:542-32-5 | DL-2-Aminoadipic acid | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -2685,3 +2682,6 @@ Total: 2680 ingredients
 | NCIT:C217928 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | CHEBI:32599 | MgSO4·H2O | MAPPED | CHEBI | NARROW_MATCH | 19 |
 | kgmicrobe.compound:na2so3_x_5_h2o | CHEBI:86477 | Na2SO3 x 5 H2O | MAPPED | CHEBI | NARROW_MATCH | 2 |
+| kgmicrobe.ingredient:cooked_meat_medium | kgmicrobe.ingredient:cooked_meat_medium | Cooked meat medium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| CHEBI:28847 | CHEBI:28847 | 6-deoxy-D-galactose | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
+| UNMAPPED_0850 |  | Angustmycin | AMBIGUOUS |  |  | 0 |
