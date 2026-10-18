@@ -7,9 +7,19 @@ deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 governance repository, culturebotai-claw, keeps one too for items no single Mech
 owns.
 
-Last reconciled: 2026-08-21 (measured the `publish-sssom` blocker; item 14 is new and is the top of the queue).
+Last reconciled: 2026-10-18 (reconciled against tracker `#887` and `#431`–`#908`; see item 15).
 **#160** was filed on 2026-07-30 for the `trigger_paths` gap described in the
 vendored-sync section below.
+
+> **Reconcile note (2026-10-18).** Reconciled after the `#431`–`#908` waves
+> (structured review bundles in `data/reviews/ingredients/`, causal completion
+> graphs, strict review-pin receipts, website/browser/UMAP/graph release in
+> `#907`, CultureMech recipe membership refresh `#877`/`#879`/`#891`, and MAPPED
+> hydrate contradiction curation `#878`/`#881`). Issue `#887` is the canonical
+> priority tracker. Fourteen branches covering the `#887` P0/P1 queue and stale
+> open PRs (`#683`, `#688`, `#764`) have been built, verified, and pushed to
+> `origin` (see **item 15** below). Gates at this pass:
+> `just check-instruction-refs` OK (46 files, 88 recipes).
 
 > **Reconcile note (2026-08-21).** Scope of this pass was the question "what
 > stands between us and a fresh published MIM SSSOM?", so it measured the
@@ -1012,6 +1022,80 @@ difference — its diagnosis needs correcting), #300 (no subject-survival gate),
 #301 (version/date go stale), #236 / #293 / #307 (subject recomputed from
 `preferred_term` rather than the stem — the MIM-side scripts still do this, and
 they are what *creates* the drift the builder then faithfully reports).
+
+## 15. Priority tracker `#887` backlog sweep (NEW — 2026-10-18)
+
+Issue `#887` is the active repository priority tracker following the `#431`–`#908`
+curation, review-bundle, and website waves. Status of the `#887` queue as of
+2026-10-18:
+
+- **Merged on `main`:**
+  - `#877` / `#891` (PR `#879`, `3df20385`): rebuilt `mappings/culturemech_recipe_curies.tsv`
+    against CultureMech `41d4d39` and derived export occurrence statistics from
+    recipe membership.
+  - `#878` (PR `#881`, `3751d80f`): curated MAPPED hydrate contradictions and
+    regrounded `MgSO4·H2O`.
+  - `#306` / `#687` (PR `#686`, `b9a16c59`): unified mapping staleness check
+    `scripts/check_unified_mapping_freshness.py` (`just qc-unified-freshness`).
+  - `#880` (`87815233`): synchronized `schema/mediaingredientmech.yaml` with
+    `src/mediaingredientmech/schema/mediaingredientmech.yaml` and enforced byte
+    identity in `tests/test_schema_sync.py`.
+  - `#883` & `#295` (`edba1f68`): published SSSOM header currency check and
+    refreshed `v0.1.0-sssom-foundation` release asset.
+- **Open & clean on GitHub:**
+  - PR `#692` (`e39d6913`): pre-alpha AI curation notice across `docs/` site pages
+    (`MERGEABLE` / `CLEAN`, 14/14 checks green).
+- **Pushed branches ready for PR creation / merge:**
+  1. `rebuild-unified-mapping-894` (`dec5e803`): `#894` unified ingredient
+     mapping rebuild (`MgSO .7H O` rejection ledger entry + `#894` assertions).
+  2. `fix-merge-tombstones-882` (`720e2d21`): `#882` restore `representative:` on
+     9 merge tombstones, retype wrong-hydrate synonyms to `REJECTED_LABEL`, and
+     omit `UNMAPPED` rows from `mappings/unified_mapping_rejections.tsv`.
+  3. `fix-unified-chebi-rejections-869` (`8dc2f266`): `#869` & `#808(a)` retype
+     35 non-synonymous `RAW_TEXT` synonyms across 16 records, fix `CHEBI:63041`
+     self-shadowing on `Selenite_Pentahydrate.yaml`, and add the 5-row
+     `unified_mapping_rejections.tsv` block.
+  4. `recut-supersedable-pins-764` (`ac0a1c91`): re-cut of PR `#764` (`#740`,
+     `#745`, `#748`, `#765`, `#766`) allowing `mappings/mapping_change_receipts.tsv`
+     to supersede `data/reviews/pin_hashes.tsv`.
+  5. `fix-visualization-currency-904` (`415a5c85`): `#904` exclude `REJECTED_LABEL`
+     from `num_synonyms` in `scripts/visualize_embeddings.py`, regenerate site
+     data, and gate missing live records in `tests/test_visualization_data.py`.
+  6. `fix-receipt-reasons-and-tag-902-903` (`e5996c26` + tag
+     `v0.1.0-sssom-foundation`): `#902` & `#903` qualify carried pre-receipt
+     reasons in `mappings/mapping_change_receipts.tsv` and anchor `replayed_from`
+     commits.
+  7. `fix-hydrate-identities-and-synonyms-896-900-905` (`b1532d7d`): `#905`,
+     `#896`, `#900` reground anhydrous-CHEBI hydrate records, repair `Feiii_Edta`,
+     and retype wrong-hydrate/wrong-chemical synonyms across MAPPED and UNMAPPED
+     records.
+  8. `recut-subject-is-stem-688` (`9e28bae1`): re-cut of PR `#688` (`#236`,
+     `#689`, `#690`, `#691`) enforcing `mim_curie_for_stem(yaml_path.stem)` in
+     active scripts with line-scoped test guard.
+  9. `fix-mapping-quality-enum-884-696` (`c43ef059`): `#884` & `#696` align
+     `MappingQualityEnum` (`NARROW_MATCH`, `BROAD_MATCH`) with
+     `docs/MAPPING_SEMANTICS.md`.
+  10. `fix-unblocked-312-and-758-748-741` (`69e7c5d8`): `#748`, `#758`, `#741`,
+      and unblocked `#312` items (`Cooked_Meat_Medium.yaml`,
+      `6-deoxy-d-galactose.yaml`, `Yeast_Nitrogen_Base.yaml`,
+      `Trace_Elements_Solution.yaml`).
+  11. `fix-label-index-and-identities-808-811-868` (`d5e0af27`): `#808(b)`,
+      `#811`, `#868` resolve all 15 `label_index.csv` `ambiguous_live` groups to
+      0, split hydrate/parent records, and fix stereoisomer/salt groundings.
+  12. `fix-tooling-and-guardrails-885-886-300-267-702-814` (`b464c8d7`): `#885`,
+      `#886`, `#300`, `#267`, `#702`, `#814` add `merge_group` in `.github/workflows/`,
+      `scripts/.culturemech_canon_ref` check, `--allow-reground` in
+      `scripts/promote_resolved_unmapped.py`, `mappings/published_mim_subjects.tsv`
+      survival gate, Rule M CAS-as-CHEBI check in `scripts/audit_chebi_groundings.py`,
+      and stereoisomer separation in `scripts/generate_Browser_data.py`.
+  13. `fix-node-ids-hydrate-chemistry-cas-870-871-268-753-751-313-235-901` (`d3a9c5fd`):
+      `#901`, `#870`, `#871`, `#268`, `#753`, `#751`, `#313`, `#235` repair
+      `kg_microbe_node_id` mismatches, hydrate/stock `chemical_properties`,
+      invalid CAS check digits, and `skos:narrowMatch` upgrades.
+  14. `recut-embedding-graph-683` (`a44be6dc`): re-cut of PR `#683` (`#678`,
+      `#684`, `#685`) adding `scripts/build_embedding_graph.py`,
+      `scripts/text_map_unmapped.py`, and `--top-k`/`--min-cosine` plumbing in
+      `scripts/visualize_embeddings.py`.
 
 
 # Upstream-blocked — do not schedule
