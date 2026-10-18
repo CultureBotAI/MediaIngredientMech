@@ -1,4 +1,4 @@
-generation_date: '2026-10-15T02:37:35.785775+00:00'
+generation_date: '2026-10-18T07:33:12.645720+00:00'
 total_count: 2680
 mapped_count: 2611
 unmapped_count: 0
@@ -105526,6 +105526,9 @@ ingredients:
   - synonym_text: cysteine . HCl
     synonym_type: RAW_TEXT
     source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Cysteine hydrochloride
+    synonym_type: EXACT_SYNONYM
+    source: merged_from_duplicate_mim_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 302
@@ -105643,6 +105646,15 @@ ingredients:
       read as an accession. Kept as REJECTED_LABEL so a rebuild cannot restore them
       from kg-microbe''s synonym list (#669).'
     llm_assisted: true
+  - timestamp: '2026-10-17T03:45:00+00:00'
+    curator: claude
+    action: ADDED_SYNONYMS
+    changes: 'Relocated anhydrous synonym ''Cysteine hydrochloride'' (EXACT_SYNONYM,
+      source: merged_from_duplicate_mim_record) from L-cysteine_Hcl_X_H2o.yaml (CHEBI:91248)
+      to this anhydrous L-cysteine hydrochloride record (CHEBI:91247) (#905).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   chemical_properties:
     cas_rn: 52-89-1
     data_source: OAK/CHEBI xref
@@ -105713,7 +105725,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: merged_from_duplicate_mim_record
   - synonym_text: Cysteine hydrochloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: Cysteine-HCl x H2O
     synonym_type: HYDRATE_FORM
@@ -105913,6 +105925,17 @@ ingredients:
     action: REJECTED_WRONG_FORM_SYNONYMS
     changes: 'Retyped dihydrate synonym to REJECTED_LABEL: Cystein-HCl x 2 H2O (5%
       (w/v)) (#878).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-10-17T03:45:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped anhydrous synonym to REJECTED_LABEL: ''Cysteine hydrochloride''
+      (EXACT_SYNONYM, merged from Cysteine_Hydrochloride.yaml). MediaDive compound
+      1114 is anhydrous cysteine hydrochloride (formula C3H8ClNO2S, mass 157.62, CAS
+      10318-18-0, PubChem CID 25150), not the monohydrate CHEBI:91248; relocated to
+      L-cysteine_Hcl.yaml (CHEBI:91247) (#905).'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
@@ -118797,6 +118820,9 @@ ingredients:
   - synonym_text: magnesium dichloride
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Magnesium chloride anhydrous
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 291
@@ -118857,6 +118883,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-17T00:00:00+00:00'
+    curator: relocate_pr818_rejected_synonyms
+    action: ADDED_SYNONYM_FROM_HYDRATE_SIBLING
+    changes: 'Added ''Magnesium chloride anhydrous'' as EXACT_SYNONYM (source: kg_microbe),
+      relocated from Mgcl2_X_6_H2o.yaml where it was retyped to REJECTED_LABEL in
+      #758 (PR #818) because that record is the hexahydrate (CHEBI:86345) rather than
+      anhydrous MgCl2 (CHEBI:6636) (#900).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7786-30-3
     data_source: PubChem API
@@ -118896,6 +118932,9 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: magnesium dichloride dihydrate
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: magnesium dichloride--water (1/2)
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   mapping_status: MAPPED
@@ -118959,6 +118998,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-10-17T00:00:00+00:00'
+    curator: relocate_pr818_rejected_synonyms
+    action: ADDED_SYNONYM_FROM_HYDRATE_SIBLING
+    changes: 'Added ''magnesium dichloride--water (1/2)'' as EXACT_SYNONYM (source:
+      kg_microbe), relocated from Magnesium_Chloride.yaml where it was retyped to
+      REJECTED_LABEL in #758 (PR #818) because that record is hexahydrate (CHEBI:86345)
+      rather than dihydrate (CHEBI:131394) (#900).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 19098-17-0
     data_source: PubChem (via CHEBI:131394)
@@ -132998,6 +133047,9 @@ ingredients:
   - synonym_text: Sodium sulfide
     synonym_type: EXACT_SYNONYM
     source: CultureMech label unresolvable via label_index (#260)
+  - synonym_text: Natriumsulfid
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 59
@@ -133104,6 +133156,16 @@ ingredients:
     action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
     changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
       longer resolves sibling hydrate identities (#251): ''Na2S x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-10-17T00:00:00+00:00'
+    curator: relocate_pr818_rejected_synonyms
+    action: ADDED_SYNONYM_FROM_HYDRATE_SIBLING
+    changes: 'Added ''Natriumsulfid'' as EXACT_SYNONYM (source: kg_microbe), relocated
+      from Na2so3.yaml where it was retyped to REJECTED_LABEL in #758 (PR #818) because
+      Natriumsulfid is German for sodium sulfide (Na2S, CHEBI:76208) rather than sodium
+      sulfite (Na2SO3, CHEBI:86477) (#900).'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -134834,8 +134896,8 @@ ingredients:
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 26
-    media_count: 26
+    total_occurrences: 24
+    media_count: 24
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -134940,6 +135002,15 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-opus-5-5
+  - timestamp: '2026-10-17T03:45:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 26/26 -> 24/24 after moving Na2SO3 x 5 H2O memberships
+      (CultureMech:000812, CultureMech:012034) off the anhydrous parent identifier
+      CHEBI:86477 and onto kgmicrobe.compound:na2so3_x_5_h2o (#896).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7757-83-7
     data_source: PubChem API
@@ -134956,132 +135027,6 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Reducing Agent'
-- identifier: CHEBI:86477
-  preferred_term: Na2SO3 x 5 H2O
-  ontology_mapping:
-    ontology_id: CHEBI:86477
-    ontology_label: sodium sulfite
-    ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321)
-      notes: molecular_formula '2Na.O3S' -> '2Na.O3S.5H2O'. The recorded value described
-        the anhydrous salt while the label names a hydrate, understating the mass
-        by 18 g/mol per water. Corrected because the label states 5 water(s) of hydration,
-        and the recorded formula was byte-identical to the anhydrous parent CHEBI:86477's
-        ChEBI formula ('2Na.O3S') — the mark of a value inherited from the parent
-        rather than measured for this record. Water appended in ChEBI's own dot-separated
-        notation.
-  synonyms:
-  - synonym_text: Anhydrous sodium sulfite
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: Sodium sulfite anhydrous
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: disodium sulfite
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 26
-    media_count: 26
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-09T00:32:50.689620+00:00'
-    curator: enrich_mim_cas_rn_batch
-    action: CAS_RN_ADDED
-    changes: Added CAS-RN 7757-83-7 from PubChem (via CHEBI:86477)
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: Anhydrous sodium sulfite,
-      Sodium sulfite anhydrous'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-05-01T07:35:35.292074+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:31.366134+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=2Na.O3S; inchi=InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;;
-      smiles=O=S([O-])[O-].[Na+].[Na+]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:17.115173+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-09T05:23:46.808207+00:00'
-    curator: correct_stale_ontology_labels.py
-    action: CORRECTED
-    changes: 'ontology_label ''Na2SO3 x 5 H2O'' -> ''sodium sulfite'': synced to canonical
-      CHEBI label (preferred_term ''Na2SO3 x 5 H2O'' unchanged).'
-  - timestamp: '2026-08-10T00:00:00+00:00'
-    curator: regrade_synonym_matches
-    action: REGRADED_EXACT_TO_SYNONYM
-    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
-      does not equal the term's primary label 'sodium sulfite'; it matches the ChEBI
-      synonym 'Sodium sulfite anhydrous' on CHEBI:86477. The schema defines EXACT_MATCH
-      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
-      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
-      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: add_water_of_hydration
-    action: ADDED_WATER_OF_HYDRATION
-    changes: molecular_formula '2Na.O3S' -> '2Na.O3S.5H2O' (#321); the label states
-      5 water(s) of hydration, and the recorded formula was byte-identical to the
-      anhydrous parent CHEBI:86477's ChEBI formula ('2Na.O3S') — the mark of a value
-      inherited from the parent rather than measured for this record. Water appended
-      in ChEBI's own dot-separated notation.
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.519507+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 1/1 -> 26/26 (media_count/total_occurrences),
-      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-      prior values came from the importer retired in #453, whose media_count counted
-      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-08-29T04:18:06.717988+00:00'
-    curator: hydrate_family_cas
-    action: CORRECTED
-    changes: 'cas_rn 7757-83-7 REMOVED, not replaced: it is the anhydrous Na2SO3 CAS,
-      and this record names a hydrate -- a different substance with a different formula
-      weight. ChEBI has no term for this hydration state, so no authoritative value
-      can be substituted. The grounding is separately wrong (#321); this corrects
-      only the CAS (#334).'
-  - timestamp: '2026-10-13T11:00:00+00:00'
-    curator: claude
-    action: REJECTED_WRONG_FORM_SYNONYMS
-    changes: 'Retyped wrong-hydration synonyms to REJECTED_LABEL: Anhydrous sodium
-      sulfite, Sodium sulfite anhydrous (#878).'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-  kg_microbe_node_id: CHEBI:86477
-  chemical_properties:
-    data_source: PubChem (via CHEBI:86477)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: 2Na.O3S.5H2O
-    inchi: InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2
-    smiles: O=S([O-])[O-].[Na+].[Na+]
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:32149
   preferred_term: Na2SO4
   ontology_mapping:
@@ -221930,3 +221875,154 @@ ingredients:
   - role: MINERAL_SOURCE
     confidence: 0.8
     evidence: []
+- identifier: kgmicrobe.compound:na2so3_x_5_h2o
+  preferred_term: Na2SO3 x 5 H2O
+  ontology_mapping:
+    ontology_id: CHEBI:86477
+    ontology_label: sodium sulfite
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula '2Na.O3S' -> '2Na.O3S.5H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 5 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:86477's
+        ChEBI formula ('2Na.O3S') — the mark of a value inherited from the parent
+        rather than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#896)
+      notes: mediadive.compound:1201 carries the source label 'Na2SO3 x 5 H2O' in
+        CultureMech:000812 and CultureMech:012034, but ChEBI has no sodium sulfite
+        pentahydrate term and no verified CAS or crystal phase exists for the stated
+        pentahydrate. CHEBI:86477 (sodium sulfite) is retained only as the asymmetric
+        anhydrous parent (NARROW_MATCH / skos:broadMatch) while the source label keeps
+        a local kgmicrobe.compound identity and a Rule B1 registry sibling row so
+        kg-microbe does not treat the parent link as symmetric.
+  synonyms:
+  - synonym_text: Anhydrous sodium sulfite
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: Sodium sulfite anhydrous
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: disodium sulfite
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-09T00:32:50.689620+00:00'
+    curator: enrich_mim_cas_rn_batch
+    action: CAS_RN_ADDED
+    changes: Added CAS-RN 7757-83-7 from PubChem (via CHEBI:86477)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: Anhydrous sodium sulfite,
+      Sodium sulfite anhydrous'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-01T07:35:35.292074+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:31.366134+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=2Na.O3S; inchi=InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;;
+      smiles=O=S([O-])[O-].[Na+].[Na+]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:17.115173+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-09T05:23:46.808207+00:00'
+    curator: correct_stale_ontology_labels.py
+    action: CORRECTED
+    changes: 'ontology_label ''Na2SO3 x 5 H2O'' -> ''sodium sulfite'': synced to canonical
+      CHEBI label (preferred_term ''Na2SO3 x 5 H2O'' unchanged).'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium sulfite'; it matches the ChEBI
+      synonym 'Sodium sulfite anhydrous' on CHEBI:86477. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula '2Na.O3S' -> '2Na.O3S.5H2O' (#321); the label states
+      5 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:86477's ChEBI formula ('2Na.O3S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.519507+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 1/1 -> 26/26 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717988+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7757-83-7 REMOVED, not replaced: it is the anhydrous Na2SO3 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
+  - timestamp: '2026-10-13T11:00:00+00:00'
+    curator: claude
+    action: REJECTED_WRONG_FORM_SYNONYMS
+    changes: 'Retyped wrong-hydration synonyms to REJECTED_LABEL: Anhydrous sodium
+      sulfite, Sodium sulfite anhydrous (#878).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-10-17T03:45:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_HYDRATE_IDENTITY
+    changes: 'identifier CHEBI:86477 -> kgmicrobe.compound:na2so3_x_5_h2o; mapping_quality
+      SYNONYM_MATCH -> NARROW_MATCH. Cleared unverified parent-derived chemical_properties
+      {''data_source'': ''PubChem (via CHEBI:86477)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+      ''molecular_formula'': ''2Na.O3S.5H2O'', ''inchi'': ''InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2'',
+      ''smiles'': ''O=S([O-])[O-].[Na+].[Na+]''}, removed kg_microbe_node_id CHEBI:86477,
+      and marked 1 anhydrous synonym(s) (''disodium sulfite'') as REJECTED_LABEL for
+      mediadive.compound:1201 (#896, #897).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-10-17T03:45:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 26/26 -> 2/2 after moving Na2SO3 x 5 H2O memberships
+      (CultureMech:000812, CultureMech:012034) off the anhydrous parent identifier
+      CHEBI:86477 and onto kgmicrobe.compound:na2so3_x_5_h2o (#896).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
+  ingredient_type: SINGLE_INGREDIENT

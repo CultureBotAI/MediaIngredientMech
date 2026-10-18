@@ -19,6 +19,9 @@ synonyms:
 - synonym_text: magnesium dichloride dihydrate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: magnesium dichloride--water (1/2)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 29
@@ -80,6 +83,16 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-17T00:00:00+00:00'
+  curator: relocate_pr818_rejected_synonyms
+  action: ADDED_SYNONYM_FROM_HYDRATE_SIBLING
+  changes: 'Added ''magnesium dichloride--water (1/2)'' as EXACT_SYNONYM (source:
+    kg_microbe), relocated from Magnesium_Chloride.yaml where it was retyped to REJECTED_LABEL
+    in #758 (PR #818) because that record is hexahydrate (CHEBI:86345) rather than
+    dihydrate (CHEBI:131394) (#900).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 19098-17-0
   data_source: PubChem (via CHEBI:131394)

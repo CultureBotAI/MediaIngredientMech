@@ -386,6 +386,8 @@ def test_source_label_override_routes_reviewed_hydrate_local_identities(mod, tmp
         w.writerow(["CultureMech:000010", "CHEBI:86360", "MnSO4 x 7 H2O"])
         w.writerow(["CultureMech:000011", "CHEBI:86360", "MnSO4·7H2O"])
         w.writerow(["CultureMech:000012", "CHEBI:86360", "MnSO4 x n H2O"])
+        w.writerow(["CultureMech:000013", "CHEBI:86477", "Na2SO3"])
+        w.writerow(["CultureMech:000014", "CHEBI:86477", "Na2SO3 x 5 H2O"])
 
     collected, unknown = mod.collect(
         source,
@@ -396,11 +398,13 @@ def test_source_label_override_routes_reviewed_hydrate_local_identities(mod, tmp
             "CHEBI:32599",
             "CHEBI:75832",
             "CHEBI:86360",
+            "CHEBI:86477",
             "cas:14168-73-1",
             "kgmicrobe.compound:feso4_x_5_h2o",
             "kgmicrobe.compound:feso4_x_6_h2o",
             "kgmicrobe.compound:mgso4_x_6_h2o",
             "kgmicrobe.compound:mnso4_x_7_h2o",
+            "kgmicrobe.compound:na2so3_x_5_h2o",
         },
     )
 
@@ -419,6 +423,8 @@ def test_source_label_override_routes_reviewed_hydrate_local_identities(mod, tmp
         ("kgmicrobe.compound:mnso4_x_7_h2o", "CultureMech:000010"): 1,
         ("kgmicrobe.compound:mnso4_x_7_h2o", "CultureMech:000011"): 1,
         ("CHEBI:86360", "CultureMech:000012"): 1,
+        ("CHEBI:86477", "CultureMech:000013"): 1,
+        ("kgmicrobe.compound:na2so3_x_5_h2o", "CultureMech:000014"): 1,
     }
     assert unknown == {}
 

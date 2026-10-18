@@ -27,6 +27,7 @@ MANGANESE_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:mnso4_x_7_h2o"
 MOLYBDENUM_ID = "kgmicrobe.compound:molybdenum"
 POTASSIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:k2so4_x_7_h2o"
 SODIUM_CROTONATE_ID = "kgmicrobe.compound:na-crotonate"
+SODIUM_SULFITE_PENTAHYDRATE_ID = "kgmicrobe.compound:na2so3_x_5_h2o"
 TETRAMETHYL_AMMONIUM_ID = "kgmicrobe.compound:tetramethyl_ammonium"
 TRACE_ELEMENT_SOLUTION_ID = "kgmicrobe.ingredient:trace_element_solution"
 TRACE_ELEMENT_SOLUTION_SL_10_ID = "kgmicrobe.ingredient:trace_element_solution_sl-10"
@@ -134,6 +135,8 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     # #704: Na2-citrate is disodium hydrogen citrate, split off the trisodium record;
     # CultureMech still resolves the label to CHEBI:53258.
     _source_label_key("Na2-citrate"): "cas:144-33-2",
+    # #896: Na2SO3 x 5 H2O split off anhydrous CHEBI:86477 to a local identity.
+    _source_label_key("Na2SO3 x 5 H2O"): SODIUM_SULFITE_PENTAHYDRATE_ID,
 }
 
 

@@ -62,6 +62,9 @@ synonyms:
 - synonym_text: Sodium sulfide
   synonym_type: EXACT_SYNONYM
   source: CultureMech label unresolvable via label_index (#260)
+- synonym_text: Natriumsulfid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 59
@@ -167,6 +170,16 @@ curation_history:
   action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
   changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
     resolves sibling hydrate identities (#251): ''Na2S x H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-10-17T00:00:00+00:00'
+  curator: relocate_pr818_rejected_synonyms
+  action: ADDED_SYNONYM_FROM_HYDRATE_SIBLING
+  changes: 'Added ''Natriumsulfid'' as EXACT_SYNONYM (source: kg_microbe), relocated
+    from Na2so3.yaml where it was retyped to REJECTED_LABEL in #758 (PR #818) because
+    Natriumsulfid is German for sodium sulfide (Na2S, CHEBI:76208) rather than sodium
+    sulfite (Na2SO3, CHEBI:86477) (#900).'
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false

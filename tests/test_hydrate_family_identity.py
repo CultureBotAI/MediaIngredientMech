@@ -580,7 +580,93 @@ def test_reviewed_hydrate_aliases_do_not_leak_to_parent_sssom_rows(sssom_rows):
             "MnSO4 x 7H2O",
             "MnSO4.7H2O",
             "MnSO4·7H2O",
+            "Na2SO3 x 5 H2O",
         } & other:
             leaks.append((row["subject_label"], token))
 
     assert leaks == []
+
+
+def test_na2so3_pentahydrate_has_local_identity_and_broad_parent(
+    records, sssom_rows, membership_rows
+):
+    """#896: ChEBI has no sodium sulfite pentahydrate term, so Na2SO3 x 5 H2O
+    takes a local compound identity with a broadMatch parent to anhydrous
+    disodium sulfite (CHEBI:86477) and separated CultureMech recipe membership."""
+    record = _by_term(records, "Na2SO3 x 5 H2O")
+    anhydrous = _by_term(records, "Na2SO3")
+
+    assert record["identifier"] == "kgmicrobe.compound:na2so3_x_5_h2o"
+    assert record["ontology_mapping"]["ontology_id"] == "CHEBI:86477"
+    assert record["ontology_mapping"]["ontology_label"] == "sodium sulfite"
+    assert record["ontology_mapping"]["mapping_quality"] == "NARROW_MATCH"
+    assert record.get("chemical_properties") == {}
+    assert "kg_microbe_node_id" not in record
+    assert record["occurrence_statistics"] == {"total_occurrences": 2, "media_count": 2}
+    assert anhydrous["occurrence_statistics"] == {"total_occurrences": 24, "media_count": 24}
+
+    by_type = {s["synonym_text"]: s["synonym_type"] for s in record.get("synonyms") or []}
+    assert by_type == {
+        "Anhydrous sodium sulfite": "REJECTED_LABEL",
+        "Sodium sulfite anhydrous": "REJECTED_LABEL",
+        "disodium sulfite": "REJECTED_LABEL",
+    }
+
+    rows = {row["object_id"]: row for row in sssom_rows if row["subject_id"] == "MIM:Na2so3_X_5_H2o"}
+    assert set(rows) == {"CHEBI:86477", "kgmicrobe.compound:na2so3_x_5_h2o"}
+    assert rows["CHEBI:86477"]["predicate_id"] == "skos:broadMatch"
+    assert rows["CHEBI:86477"]["confidence"] == "0.9"
+    assert rows["CHEBI:86477"]["other"] == ""
+    assert rows["kgmicrobe.compound:na2so3_x_5_h2o"]["predicate_id"] == "skos:exactMatch"
+    assert rows["kgmicrobe.compound:na2so3_x_5_h2o"]["object_source"] == "kgm:compound"
+    assert rows["kgmicrobe.compound:na2so3_x_5_h2o"]["confidence"] == "0.99"
+    assert rows["kgmicrobe.compound:na2so3_x_5_h2o"]["other"] == ""
+
+    pentahydrate_recipes = sorted(
+        row["recipe_id"]
+        for row in membership_rows
+        if row["mim_identifier"] == "kgmicrobe.compound:na2so3_x_5_h2o"
+    )
+    anhydrous_recipes = [
+        row["recipe_id"] for row in membership_rows if row["mim_identifier"] == "CHEBI:86477"
+    ]
+    assert pentahydrate_recipes == ["CultureMech:000812", "CultureMech:012034"]
+    assert len(anhydrous_recipes) == 24
+    assert set(pentahydrate_recipes).isdisjoint(anhydrous_recipes)
+
+
+@pytest.mark.parametrize(
+    ("source_term", "target_term", "target_subject", "synonym_text"),
+    [
+        ("L-Cysteine HCl x H2O", "L-Cysteine HCl", "MIM:L-cysteine_Hcl", "Cysteine hydrochloride"),
+        ("MgCl2 x 6 H2O", "MgCl2", "MIM:Mgcl2", "Magnesium chloride anhydrous"),
+        (
+            "Magnesium chloride",
+            "MgCl2 x 2 H2O",
+            "MIM:Mgcl2_X_2_H2o",
+            "magnesium dichloride--water (1/2)",
+        ),
+        ("Na2SO3", "Na2S", "MIM:Na2s", "Natriumsulfid"),
+    ],
+)
+def test_relocated_hydrate_and_substance_synonyms_resolve_on_target_records(
+    records, sssom_rows, source_term, target_term, target_subject, synonym_text
+):
+    """#900, #905: wrong-form or wrong-substance synonyms retyped to REJECTED_LABEL
+    on their former record resolve as EXACT_SYNONYM on the matching destination record."""
+    source_synonyms = {
+        s["synonym_text"]: s["synonym_type"]
+        for s in _by_term(records, source_term).get("synonyms") or []
+    }
+    target_synonyms = {
+        s["synonym_text"]: s["synonym_type"]
+        for s in _by_term(records, target_term).get("synonyms") or []
+    }
+    target_row = [r for r in sssom_rows if r["subject_id"] == target_subject][0]
+    source_rows = [r for r in sssom_rows if r["subject_label"] == source_term]
+
+    assert source_synonyms[synonym_text] == "REJECTED_LABEL"
+    assert target_synonyms[synonym_text] == "EXACT_SYNONYM"
+    assert synonym_text in target_row["other"].split("|")
+    assert all(synonym_text not in (r.get("other") or "").split("|") for r in source_rows)
+

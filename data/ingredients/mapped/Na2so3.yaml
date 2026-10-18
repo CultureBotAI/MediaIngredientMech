@@ -40,8 +40,8 @@ synonyms:
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 26
-  media_count: 26
+  total_occurrences: 24
+  media_count: 24
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -145,6 +145,15 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-opus-5-5
+- timestamp: '2026-10-17T03:45:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REFRESHED_HYDRATE_OCCURRENCES
+  changes: occurrence_statistics 26/26 -> 24/24 after moving Na2SO3 x 5 H2O memberships
+    (CultureMech:000812, CultureMech:012034) off the anhydrous parent identifier CHEBI:86477
+    and onto kgmicrobe.compound:na2so3_x_5_h2o (#896).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7757-83-7
   data_source: PubChem API

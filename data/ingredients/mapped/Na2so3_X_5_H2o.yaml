@@ -1,10 +1,10 @@
-identifier: CHEBI:86477
+identifier: kgmicrobe.compound:na2so3_x_5_h2o
 preferred_term: Na2SO3 x 5 H2O
 ontology_mapping:
   ontology_id: CHEBI:86477
   ontology_label: sodium sulfite
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -17,6 +17,15 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:86477's
       ChEBI formula ('2Na.O3S') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#896)
+    notes: mediadive.compound:1201 carries the source label 'Na2SO3 x 5 H2O' in CultureMech:000812
+      and CultureMech:012034, but ChEBI has no sodium sulfite pentahydrate term and
+      no verified CAS or crystal phase exists for the stated pentahydrate. CHEBI:86477
+      (sodium sulfite) is retained only as the asymmetric anhydrous parent (NARROW_MATCH
+      / skos:broadMatch) while the source label keeps a local kgmicrobe.compound identity
+      and a Rule B1 registry sibling row so kg-microbe does not treat the parent link
+      as symmetric.
 synonyms:
 - synonym_text: Anhydrous sodium sulfite
   synonym_type: REJECTED_LABEL
@@ -25,12 +34,12 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: disodium sulfite
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 26
-  media_count: 26
+  total_occurrences: 2
+  media_count: 2
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -115,11 +124,27 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
-kg_microbe_node_id: CHEBI:86477
-chemical_properties:
-  data_source: PubChem (via CHEBI:86477)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: 2Na.O3S.5H2O
-  inchi: InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2
-  smiles: O=S([O-])[O-].[Na+].[Na+]
+- timestamp: '2026-10-17T03:45:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: LOCALIZED_HYDRATE_IDENTITY
+  changes: 'identifier CHEBI:86477 -> kgmicrobe.compound:na2so3_x_5_h2o; mapping_quality
+    SYNONYM_MATCH -> NARROW_MATCH. Cleared unverified parent-derived chemical_properties
+    {''data_source'': ''PubChem (via CHEBI:86477)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+    ''molecular_formula'': ''2Na.O3S.5H2O'', ''inchi'': ''InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2'',
+    ''smiles'': ''O=S([O-])[O-].[Na+].[Na+]''}, removed kg_microbe_node_id CHEBI:86477,
+    and marked 1 anhydrous synonym(s) (''disodium sulfite'') as REJECTED_LABEL for
+    mediadive.compound:1201 (#896, #897).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-10-17T03:45:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REFRESHED_HYDRATE_OCCURRENCES
+  changes: occurrence_statistics 26/26 -> 2/2 after moving Na2SO3 x 5 H2O memberships
+    (CultureMech:000812, CultureMech:012034) off the anhydrous parent identifier CHEBI:86477
+    and onto kgmicrobe.compound:na2so3_x_5_h2o (#896).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT

@@ -53,7 +53,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: merged_from_duplicate_mim_record
 - synonym_text: Cysteine hydrochloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: merged_from_duplicate_mim_record
 - synonym_text: Cysteine-HCl x H2O
   synonym_type: HYDRATE_FORM
@@ -251,6 +251,17 @@ curation_history:
   action: REJECTED_WRONG_FORM_SYNONYMS
   changes: 'Retyped dihydrate synonym to REJECTED_LABEL: Cystein-HCl x 2 H2O (5% (w/v))
     (#878).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-10-17T03:45:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped anhydrous synonym to REJECTED_LABEL: ''Cysteine hydrochloride''
+    (EXACT_SYNONYM, merged from Cysteine_Hydrochloride.yaml). MediaDive compound 1114
+    is anhydrous cysteine hydrochloride (formula C3H8ClNO2S, mass 157.62, CAS 10318-18-0,
+    PubChem CID 25150), not the monohydrate CHEBI:91248; relocated to L-cysteine_Hcl.yaml
+    (CHEBI:91247) (#905).'
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
