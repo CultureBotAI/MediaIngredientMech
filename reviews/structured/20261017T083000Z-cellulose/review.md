@@ -90,7 +90,7 @@ Reassess prediction-only role support: Cellulose
 | ev-79acf807a6d60326 | reports/yaml_record_review/20261001T050148Z-Cellulose.md; YAML Record Review: Cellulose:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-403ba215ef1f97c0 | reports/yaml_record_review/Cellulose.md; &#96;data/ingredients/mapped/Cellulose.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:39; Completeness:59; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5981efe47c78053d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[391,1785] | context_only | [{"current_record_sha256":"65050b762a448d04092507444502e42bc905761aa2b6aafef7e550298da8980a","finding_id":"SEM:eb3085fe7830f19d5f4f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"65050b762a448d04092507444502e42bc905761aa2b6aafef7e550298da8980a","finding_id":"SEM:c01f921127df3b5bd07a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-398ebc56fb4e3675 | data/ingredients/mapped/Cellulose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-398ebc56fb4e3675 | data/ingredients/mapped/Cellulose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[690],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18246","line":692,"mapping_status":"MAPPED","ontology_id":"CHEBI:18246","preferred_term":"Cellulose"}],"identifier":"CHEBI:18246","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":45,"edge_count":45,"occurrences":45},"occurrence_statistics":{"media_count":45,"total_occurrences":45},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18246","ontology_label":"(1-&gt;4)-beta-D-glucan","ontology_source":"CHEBI"},"preferred_term":"Cellulose","sssom_rows":[{"data_row":713,"object_id":"CHEBI:18246","object_label":"(1-&gt;4)-beta-D-glucan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cellulose","synonym_count":13} |
 | ev-93b73eb04977a19b | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-00af4c973518d5c0] | context_only | Predecessor structured review finding f-00af4c973518d5c0 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-19f48952b4ec213b
+  evidence_ids:
+  - ev-e60179a25d5327ca
+  - ev-f815bd49f749d9eb
+  - ev-71b7da2f99c48b71
+  - ev-d89a6b4a4e35552f
+  - ev-398ebc56fb4e3675
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-19f48952b4ec213b
+  evidence_ids:
+  - ev-e60179a25d5327ca
+  - ev-5981efe47c78053d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-19f48952b4ec213b
+  evidence_ids:
+  - ev-79acf807a6d60326
+  - ev-403ba215ef1f97c0
+  - ev-5981efe47c78053d
+  - ev-93b73eb04977a19b
 evidence:
 - evidence_id: ev-e60179a25d5327ca
   kind: record_content
   reference: data/ingredients/mapped/Cellulose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[690],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18246","line":692,"mapping_status":"MAPPED","ontology_id":"CHEBI:18246","preferred_term":"Cellulose"}],"identifier":"CHEBI:18246","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":45,"edge_count":45,"occurrences":45},"occurrence_statistics":{"media_count":45,"total_occurrences":45},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18246","ontology_label":"(1->4)-beta-D-glucan","ontology_source":"CHEBI"},"preferred_term":"Cellulose","sssom_rows":[{"data_row":713,"object_id":"CHEBI:18246","object_label":"(1->4)-beta-D-glucan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cellulose","synonym_count":13}'
   snapshot_sha256: 65050b762a448d04092507444502e42bc905761aa2b6aafef7e550298da8980a
@@ -213,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [690]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +236,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cellulose; data-row positions=[713]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":713,"object_id":"CHEBI:18246","object_label":"(1->4)-beta-D-glucan","other":"Optional
     ingredient (Avicel SIGMA)|Optional ingredient (Lens tissue or MN 301)|Optional
@@ -233,7 +247,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[692]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18246","line":692,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"45","ontology_id":"CHEBI:18246","preferred_term":"Cellulose","total_occurrences":"45"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -287,7 +301,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[391,1785]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"65050b762a448d04092507444502e42bc905761aa2b6aafef7e550298da8980a","finding_id":"SEM:eb3085fe7830f19d5f4f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"65050b762a448d04092507444502e42bc905761aa2b6aafef7e550298da8980a","finding_id":"SEM:c01f921127df3b5bd07a","kind":"role_evidence","resolution_reason":"Historical
@@ -297,12 +311,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cellulose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[690],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18246","line":692,"mapping_status":"MAPPED","ontology_id":"CHEBI:18246","preferred_term":"Cellulose"}],"identifier":"CHEBI:18246","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":45,"edge_count":45,"occurrences":45},"occurrence_statistics":{"media_count":45,"total_occurrences":45},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18246","ontology_label":"(1->4)-beta-D-glucan","ontology_source":"CHEBI"},"preferred_term":"Cellulose","sssom_rows":[{"data_row":713,"object_id":"CHEBI:18246","object_label":"(1->4)-beta-D-glucan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cellulose","synonym_count":13}'
   snapshot_sha256: 65050b762a448d04092507444502e42bc905761aa2b6aafef7e550298da8980a
 - evidence_id: ev-93b73eb04977a19b
   kind: prior_review

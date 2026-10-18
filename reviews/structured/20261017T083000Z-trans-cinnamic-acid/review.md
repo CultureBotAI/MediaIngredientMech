@@ -83,14 +83,14 @@ Reassess prediction-only role support: trans-Cinnamic acid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-37e1caaa8a7b1fe6 | data/ingredients/mapped/Trans-cinnamic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1982],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1984,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2812,"object_id":"CHEBI:35697","object_label":"trans-cinnamic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12} |
-| ev-e057e43f1f9804f6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1982] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-fba76918093daf92 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trans-cinnamic_Acid; data-row positions=[2812] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2812,"object_id":"CHEBI:35697","object_label":"trans-cinnamic acid","other":"(2E)-3-phenyl-2-propenoic acid&#124;(2E)-3-phenylacrylic acid&#124;(2E)-3-phenylprop-2-enoic acid&#124;(E)-3-phenyl-2-propenoic acid&#124;(E)-cinnamic acid&#124;Benzeneacrylic acid&#124;PHENYLETHYLENECARBOXYLIC ACID&#124;trans-3-phenylacrylic acid&#124;trans-Zimtsaeure&#124;trans-beta-carboxystyrene&#124;Cinnamic acid&#124;CAS:621-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Trans-cinnamic_Acid","validation_method":"manual:apply_312_batch4&#124;OTHER&#124;2026-09-22"}] |
-| ev-18cf26e4054b27c2 | docs/data/mapped_ingredients.csv; CSV lines=[1984] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35697","line":1984,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic acid","total_occurrences":"3"}] |
+| ev-37e1caaa8a7b1fe6 | data/ingredients/mapped/Trans-cinnamic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1981],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1983,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12} |
+| ev-e057e43f1f9804f6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1981] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-fba76918093daf92 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trans-cinnamic_Acid; data-row positions=[2814] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic acid","other":"(2E)-3-phenyl-2-propenoic acid&#124;(2E)-3-phenylacrylic acid&#124;(2E)-3-phenylprop-2-enoic acid&#124;(E)-3-phenyl-2-propenoic acid&#124;(E)-cinnamic acid&#124;Benzeneacrylic acid&#124;PHENYLETHYLENECARBOXYLIC ACID&#124;trans-3-phenylacrylic acid&#124;trans-Zimtsaeure&#124;trans-beta-carboxystyrene&#124;Cinnamic acid&#124;CAS:621-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Trans-cinnamic_Acid","validation_method":"manual:apply_312_batch4&#124;OTHER&#124;2026-09-22"}] |
+| ev-18cf26e4054b27c2 | docs/data/mapped_ingredients.csv; CSV lines=[1983] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35697","line":1983,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic acid","total_occurrences":"3"}] |
 | ev-d0bc11f66cb02605 | reports/yaml_record_review/20261001T050344Z-Trans-cinnamic_Acid.md; YAML Record Review: trans-Cinnamic acid:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5345e9c8c2848dc1 | reports/yaml_record_review/Trans-cinnamic_Acid.md; &#96;data/ingredients/mapped/Trans-cinnamic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:31; Issues:41; Major: &#96;CARBON_SOURCE&#96; is provisional in-session LLM evidence:43; Completeness:50; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6444d45d048eb311 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1303,1678] | context_only | [{"current_record_sha256":"317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9","finding_id":"SEM:279c6c53fc924efb84fb","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9","finding_id":"SEM:28ca96e984997a5c1d13","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9ce2994b1bd3058c | data/ingredients/mapped/Trans-cinnamic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-9ce2994b1bd3058c | data/ingredients/mapped/Trans-cinnamic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1981],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1983,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12} |
 | ev-0e8f3ca6d41ef1a0 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-7d085564edc4f30d] | context_only | Predecessor structured review finding f-7d085564edc4f30d in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-37e1caaa8a7b1fe6
+  - ev-e057e43f1f9804f6
+  - ev-fba76918093daf92
+  - ev-18cf26e4054b27c2
+  - ev-9ce2994b1bd3058c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-37e1caaa8a7b1fe6
+  - ev-6444d45d048eb311
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,24 +208,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-dfd1c5edab9ecf95
+  evidence_ids:
+  - ev-d0bc11f66cb02605
+  - ev-5345e9c8c2848dc1
+  - ev-6444d45d048eb311
+  - ev-0e8f3ca6d41ef1a0
 evidence:
 - evidence_id: ev-37e1caaa8a7b1fe6
   kind: record_content
   reference: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1982],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1984,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1981],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1983,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic
     acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic
-    acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2812,"object_id":"CHEBI:35697","object_label":"trans-cinnamic
+    acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12}'
   snapshot_sha256: 317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9
 - evidence_id: ev-e057e43f1f9804f6
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1982]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1981]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -224,10 +238,10 @@ evidence:
 - evidence_id: ev-fba76918093daf92
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trans-cinnamic_Acid; data-row positions=[2812]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Trans-cinnamic_Acid; data-row positions=[2814]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2812,"object_id":"CHEBI:35697","object_label":"trans-cinnamic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic
     acid","other":"(2E)-3-phenyl-2-propenoic acid|(2E)-3-phenylacrylic acid|(2E)-3-phenylprop-2-enoic
     acid|(E)-3-phenyl-2-propenoic acid|(E)-cinnamic acid|Benzeneacrylic acid|PHENYLETHYLENECARBOXYLIC
     ACID|trans-3-phenylacrylic acid|trans-Zimtsaeure|trans-beta-carboxystyrene|Cinnamic
@@ -236,10 +250,10 @@ evidence:
 - evidence_id: ev-18cf26e4054b27c2
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1984]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1983]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35697","line":1984,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35697","line":1983,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic
     acid","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-d0bc11f66cb02605
@@ -294,7 +308,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1303,1678]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9","finding_id":"SEM:279c6c53fc924efb84fb","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9","finding_id":"SEM:28ca96e984997a5c1d13","kind":"role_evidence","resolution_reason":"Historical
@@ -304,12 +318,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trans-cinnamic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1981],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35697","line":1983,"mapping_status":"MAPPED","ontology_id":"CHEBI:35697","preferred_term":"trans-Cinnamic
+    acid"}],"identifier":"CHEBI:35697","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35697","ontology_label":"trans-cinnamic
+    acid","ontology_source":"CHEBI"},"preferred_term":"trans-Cinnamic acid","sssom_rows":[{"data_row":2814,"object_id":"CHEBI:35697","object_label":"trans-cinnamic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trans-cinnamic_Acid","synonym_count":12}'
   snapshot_sha256: 317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9
 - evidence_id: ev-0e8f3ca6d41ef1a0
   kind: prior_review

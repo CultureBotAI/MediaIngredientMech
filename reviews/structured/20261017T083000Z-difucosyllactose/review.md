@@ -89,7 +89,7 @@ Reassess prediction-only role support: Difucosyllactose
 | ev-5bafda575b263d0d | docs/data/mapped_ingredients.csv; CSV lines=[891] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:89917","line":891,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:89917","preferred_term":"Difucosyllactose","total_occurrences":"0"}] |
 | ev-62aa2c96a593d36a | reports/yaml_record_review/Difucosyllactose.md; &#96;data/ingredients/mapped/Difucosyllactose.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:41; Completeness:64; Recommended Edits:72 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d8ece019e4c92bbd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[539,1394] | context_only | [{"current_record_sha256":"241e929b3c90cd8d94d5fd25f15582ddd0c3c4fd05f0999c715c8f996f3d9f5d","finding_id":"SEM:0fe9fe16f1bc333b727c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"241e929b3c90cd8d94d5fd25f15582ddd0c3c4fd05f0999c715c8f996f3d9f5d","finding_id":"SEM:07238c868d0bb7e26309","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b266e74552edd45d | data/ingredients/mapped/Difucosyllactose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-b266e74552edd45d | data/ingredients/mapped/Difucosyllactose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[889],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:89917","line":891,"mapping_status":"MAPPED","ontology_id":"CHEBI:89917","preferred_term":"Difucosyllactose"}],"identifier":"CHEBI:89917","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:89917","ontology_label":"Lactodifucotetraose","ontology_source":"CHEBI"},"preferred_term":"Difucosyllactose","sssom_rows":[{"data_row":1039,"object_id":"CHEBI:89917","object_label":"Lactodifucotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Difucosyllactose","synonym_count":0} |
 | ev-15172101025dbc68 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-217d7e4e136b04cf] | context_only | Predecessor structured review finding f-217d7e4e136b04cf in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-12e09c8f7581ac8b
+  evidence_ids:
+  - ev-a33f74e95b33c2c7
+  - ev-66c068a08703614d
+  - ev-f90c75184e9969d0
+  - ev-5bafda575b263d0d
+  - ev-b266e74552edd45d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-12e09c8f7581ac8b
+  evidence_ids:
+  - ev-a33f74e95b33c2c7
+  - ev-d8ece019e4c92bbd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-12e09c8f7581ac8b
+  evidence_ids:
+  - ev-62aa2c96a593d36a
+  - ev-d8ece019e4c92bbd
+  - ev-15172101025dbc68
 evidence:
 - evidence_id: ev-a33f74e95b33c2c7
   kind: record_content
   reference: data/ingredients/mapped/Difucosyllactose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[889],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:89917","line":891,"mapping_status":"MAPPED","ontology_id":"CHEBI:89917","preferred_term":"Difucosyllactose"}],"identifier":"CHEBI:89917","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:89917","ontology_label":"Lactodifucotetraose","ontology_source":"CHEBI"},"preferred_term":"Difucosyllactose","sssom_rows":[{"data_row":1039,"object_id":"CHEBI:89917","object_label":"Lactodifucotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Difucosyllactose","synonym_count":0}'
   snapshot_sha256: 241e929b3c90cd8d94d5fd25f15582ddd0c3c4fd05f0999c715c8f996f3d9f5d
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [889]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Difucosyllactose; data-row positions=[1039]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1039,"object_id":"CHEBI:89917","object_label":"Lactodifucotetraose","other":"CAS:20768-11-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Difucosyllactose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[891]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:89917","line":891,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:89917","preferred_term":"Difucosyllactose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[539,1394]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"241e929b3c90cd8d94d5fd25f15582ddd0c3c4fd05f0999c715c8f996f3d9f5d","finding_id":"SEM:0fe9fe16f1bc333b727c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"241e929b3c90cd8d94d5fd25f15582ddd0c3c4fd05f0999c715c8f996f3d9f5d","finding_id":"SEM:07238c868d0bb7e26309","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Difucosyllactose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[889],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:89917","line":891,"mapping_status":"MAPPED","ontology_id":"CHEBI:89917","preferred_term":"Difucosyllactose"}],"identifier":"CHEBI:89917","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:89917","ontology_label":"Lactodifucotetraose","ontology_source":"CHEBI"},"preferred_term":"Difucosyllactose","sssom_rows":[{"data_row":1039,"object_id":"CHEBI:89917","object_label":"Lactodifucotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Difucosyllactose","synonym_count":0}'
   snapshot_sha256: 241e929b3c90cd8d94d5fd25f15582ddd0c3c4fd05f0999c715c8f996f3d9f5d
 - evidence_id: ev-15172101025dbc68
   kind: prior_review

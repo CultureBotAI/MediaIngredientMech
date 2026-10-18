@@ -83,14 +83,14 @@ Reassess prediction-only role support: Nitrilotriacetic acid disodium salt
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-38db3be8a0a5f8a1 | data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1569],"raw_equal":true},"docs_rows":[{"identifier":"cas:15467-20-6","line":1571,"mapping_status":"MAPPED","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic acid disodium salt"}],"identifier":"cas:15467-20-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:44557","ontology_label":"nitrilotriacetic acid","ontology_source":"CHEBI"},"preferred_term":"Nitrilotriacetic acid disodium salt","sssom_rows":[{"data_row":2098,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic acid","predicate_id":"skos:broadMatch"},{"data_row":2099,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic acid disodium salt","predicate_id":"skos:exactMatch"},{"data_row":2100,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic acid disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","synonym_count":3} |
-| ev-90dcb80e3afdf2d5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1569] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-a7c886e45e869065 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nitrilotriacetic_Acid_Disodium_Salt; data-row positions=[2098,2099,2100] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2098,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2099,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic acid disodium salt","other":"CAS:15467-20-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2100,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic acid disodium salt","other":"CAS:15467-20-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-9eae027d1006750e | docs/data/mapped_ingredients.csv; CSV lines=[1571] | supports | Published identity and count rows inspected: [{"identifier":"cas:15467-20-6","line":1571,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic acid disodium salt","total_occurrences":"7"}] |
+| ev-38db3be8a0a5f8a1 | data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1568],"raw_equal":true},"docs_rows":[{"identifier":"cas:15467-20-6","line":1570,"mapping_status":"MAPPED","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic acid disodium salt"}],"identifier":"cas:15467-20-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:44557","ontology_label":"nitrilotriacetic acid","ontology_source":"CHEBI"},"preferred_term":"Nitrilotriacetic acid disodium salt","sssom_rows":[{"data_row":2100,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic acid","predicate_id":"skos:broadMatch"},{"data_row":2101,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic acid disodium salt","predicate_id":"skos:exactMatch"},{"data_row":2102,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic acid disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","synonym_count":3} |
+| ev-90dcb80e3afdf2d5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1568] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a7c886e45e869065 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nitrilotriacetic_Acid_Disodium_Salt; data-row positions=[2100, 2101, 2102] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2100,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2101,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic acid disodium salt","other":"CAS:15467-20-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2102,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic acid disodium salt","other":"CAS:15467-20-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-9eae027d1006750e | docs/data/mapped_ingredients.csv; CSV lines=[1570] | supports | Published identity and count rows inspected: [{"identifier":"cas:15467-20-6","line":1570,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic acid disodium salt","total_occurrences":"7"}] |
 | ev-2a587fcaf1056d63 | reports/yaml_record_review/20261001T050305Z-Nitrilotriacetic_Acid_Disodium_Salt.md; YAML Record Review: Nitrilotriacetic acid disodium salt:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3e3e2c1a46cec136 | reports/yaml_record_review/Nitrilotriacetic_Acid_Disodium_Salt.md; &#96;data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:28; Completeness:52; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ae61eebfb261e02b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1066,1621] | context_only | [{"current_record_sha256":"fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d","finding_id":"SEM:700d488213c27ab45a19","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d","finding_id":"SEM:962f12a7049fd739de5c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-dd297b03c84defd3 | data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}] |
+| ev-dd297b03c84defd3 | data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1568],"raw_equal":true},"docs_rows":[{"identifier":"cas:15467-20-6","line":1570,"mapping_status":"MAPPED","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic acid disodium salt"}],"identifier":"cas:15467-20-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:44557","ontology_label":"nitrilotriacetic acid","ontology_source":"CHEBI"},"preferred_term":"Nitrilotriacetic acid disodium salt","sssom_rows":[{"data_row":2100,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic acid","predicate_id":"skos:broadMatch"},{"data_row":2101,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic acid disodium salt","predicate_id":"skos:exactMatch"},{"data_row":2102,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic acid disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","synonym_count":3} |
 | ev-4e71eca05d365e7f | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-a2ac8169e2685c27] | context_only | Predecessor structured review finding f-a2ac8169e2685c27 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c058e5c5aca7d116
+  evidence_ids:
+  - ev-38db3be8a0a5f8a1
+  - ev-90dcb80e3afdf2d5
+  - ev-a7c886e45e869065
+  - ev-9eae027d1006750e
+  - ev-dd297b03c84defd3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c058e5c5aca7d116
+  evidence_ids:
+  - ev-38db3be8a0a5f8a1
+  - ev-ae61eebfb261e02b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,27 +208,32 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c058e5c5aca7d116
+  evidence_ids:
+  - ev-2a587fcaf1056d63
+  - ev-3e3e2c1a46cec136
+  - ev-ae61eebfb261e02b
+  - ev-4e71eca05d365e7f
 evidence:
 - evidence_id: ev-38db3be8a0a5f8a1
   kind: record_content
   reference: data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1569],"raw_equal":true},"docs_rows":[{"identifier":"cas:15467-20-6","line":1571,"mapping_status":"MAPPED","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1568],"raw_equal":true},"docs_rows":[{"identifier":"cas:15467-20-6","line":1570,"mapping_status":"MAPPED","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic
     acid disodium salt"}],"identifier":"cas:15467-20-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:44557","ontology_label":"nitrilotriacetic
     acid","ontology_source":"CHEBI"},"preferred_term":"Nitrilotriacetic acid disodium
-    salt","sssom_rows":[{"data_row":2098,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic
-    acid","predicate_id":"skos:broadMatch"},{"data_row":2099,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic
-    acid disodium salt","predicate_id":"skos:exactMatch"},{"data_row":2100,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic
+    salt","sssom_rows":[{"data_row":2100,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic
+    acid","predicate_id":"skos:broadMatch"},{"data_row":2101,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic
+    acid disodium salt","predicate_id":"skos:exactMatch"},{"data_row":2102,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic
     acid disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","synonym_count":3}'
   snapshot_sha256: fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d
 - evidence_id: ev-90dcb80e3afdf2d5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1569]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1568]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -227,21 +241,22 @@ evidence:
 - evidence_id: ev-a7c886e45e869065
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Nitrilotriacetic_Acid_Disodium_Salt; data-row positions=[2098,2099,2100]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Nitrilotriacetic_Acid_Disodium_Salt; data-row positions=[2100,
+    2101, 2102]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2098,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic
-    acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2099,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic
-    acid disodium salt","other":"CAS:15467-20-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2100,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2100,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic
+    acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2101,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic
+    acid disodium salt","other":"CAS:15467-20-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2102,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic
     acid disodium salt","other":"CAS:15467-20-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-9eae027d1006750e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1571]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1570]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:15467-20-6","line":1571,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:15467-20-6","line":1570,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic
     acid disodium salt","total_occurrences":"7"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-2a587fcaf1056d63
@@ -296,7 +311,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1066,1621]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d","finding_id":"SEM:700d488213c27ab45a19","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d","finding_id":"SEM:962f12a7049fd739de5c","kind":"role_evidence","resolution_reason":"Historical
@@ -306,12 +321,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1568],"raw_equal":true},"docs_rows":[{"identifier":"cas:15467-20-6","line":1570,"mapping_status":"MAPPED","ontology_id":"CHEBI:44557","preferred_term":"Nitrilotriacetic
+    acid disodium salt"}],"identifier":"cas:15467-20-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:44557","ontology_label":"nitrilotriacetic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Nitrilotriacetic acid disodium
+    salt","sssom_rows":[{"data_row":2100,"object_id":"CHEBI:44557","object_label":"nitrilotriacetic
+    acid","predicate_id":"skos:broadMatch"},{"data_row":2101,"object_id":"cas:15467-20-6","object_label":"Nitrilotriacetic
+    acid disodium salt","predicate_id":"skos:exactMatch"},{"data_row":2102,"object_id":"kgmicrobe.compound:nitrilotriacetic_acid_disodium_salt","object_label":"Nitrilotriacetic
+    acid disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nitrilotriacetic_Acid_Disodium_Salt","synonym_count":3}'
   snapshot_sha256: fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d
 - evidence_id: ev-4e71eca05d365e7f
   kind: prior_review

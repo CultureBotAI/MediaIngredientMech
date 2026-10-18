@@ -89,7 +89,7 @@ Reassess prediction-only role support: Lincomycin hydrochloride
 | ev-5e3827c27ab56c7b | docs/data/mapped_ingredients.csv; CSV lines=[1308] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:182465","line":1308,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:182465","preferred_term":"Lincomycin hydrochloride","total_occurrences":"0"}] |
 | ev-dbf0e123131123e3 | reports/yaml_record_review/Lincomycin_Hydrochloride.md; &#96;data/ingredients/mapped/Lincomycin_Hydrochloride.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8231562833de74a5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[864,1696] | context_only | [{"current_record_sha256":"68b660d221a7155db1ca49bd887f33d753f20e4b8d6736ab66d56d0ea08d2ca9","finding_id":"SEM:a007e533315a6eff3109","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"68b660d221a7155db1ca49bd887f33d753f20e4b8d6736ab66d56d0ea08d2ca9","finding_id":"SEM:12bdfb48d96757501350","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0738330eeddb24ff | data/ingredients/mapped/Lincomycin_Hydrochloride.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-0738330eeddb24ff | data/ingredients/mapped/Lincomycin_Hydrochloride.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1306],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:182465","line":1308,"mapping_status":"MAPPED","ontology_id":"CHEBI:182465","preferred_term":"Lincomycin hydrochloride"}],"identifier":"CHEBI:182465","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:182465","ontology_label":"Lincomycin hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Lincomycin hydrochloride","sssom_rows":[{"data_row":1699,"object_id":"CHEBI:182465","object_label":"Lincomycin hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lincomycin_Hydrochloride","synonym_count":1} |
 | ev-63c453ae0f466095 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-aeee1626341629ac] | context_only | Predecessor structured review finding f-aeee1626341629ac in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cb87cad7a281f629
+  evidence_ids:
+  - ev-19dde5d3b4ca8d52
+  - ev-6cd03e2100dd68e1
+  - ev-c8f38ac398a73382
+  - ev-5e3827c27ab56c7b
+  - ev-0738330eeddb24ff
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-cb87cad7a281f629
+  evidence_ids:
+  - ev-19dde5d3b4ca8d52
+  - ev-8231562833de74a5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cb87cad7a281f629
+  evidence_ids:
+  - ev-dbf0e123131123e3
+  - ev-8231562833de74a5
+  - ev-63c453ae0f466095
 evidence:
 - evidence_id: ev-19dde5d3b4ca8d52
   kind: record_content
   reference: data/ingredients/mapped/Lincomycin_Hydrochloride.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1306],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:182465","line":1308,"mapping_status":"MAPPED","ontology_id":"CHEBI:182465","preferred_term":"Lincomycin
     hydrochloride"}],"identifier":"CHEBI:182465","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:182465","ontology_label":"Lincomycin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1306]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Lincomycin_Hydrochloride; data-row positions=[1699]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1699,"object_id":"CHEBI:182465","object_label":"Lincomycin
     hydrochloride","other":"(2S,4R)-N-[(1R,2R)-2-hydroxy-1-[(2R,3R,4S,5R,6R)-3,4,5-trihydroxy-6-methylsulanyloxan-2-yl]propyl]-1-methyl-4-propylpyrrolidine-2-carboxamide;hydrochloride|CAS:859-18-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Lincomycin_Hydrochloride","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1308]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:182465","line":1308,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:182465","preferred_term":"Lincomycin
     hydrochloride","total_occurrences":"0"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[864,1696]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"68b660d221a7155db1ca49bd887f33d753f20e4b8d6736ab66d56d0ea08d2ca9","finding_id":"SEM:a007e533315a6eff3109","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"68b660d221a7155db1ca49bd887f33d753f20e4b8d6736ab66d56d0ea08d2ca9","finding_id":"SEM:12bdfb48d96757501350","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lincomycin_Hydrochloride.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1306],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:182465","line":1308,"mapping_status":"MAPPED","ontology_id":"CHEBI:182465","preferred_term":"Lincomycin
+    hydrochloride"}],"identifier":"CHEBI:182465","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:182465","ontology_label":"Lincomycin
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Lincomycin hydrochloride","sssom_rows":[{"data_row":1699,"object_id":"CHEBI:182465","object_label":"Lincomycin
+    hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lincomycin_Hydrochloride","synonym_count":1}'
   snapshot_sha256: 68b660d221a7155db1ca49bd887f33d753f20e4b8d6736ab66d56d0ea08d2ca9
 - evidence_id: ev-63c453ae0f466095
   kind: prior_review

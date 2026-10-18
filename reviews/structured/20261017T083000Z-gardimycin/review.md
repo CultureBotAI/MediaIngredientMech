@@ -89,7 +89,7 @@ Reassess prediction-only role support: Gardimycin
 | ev-d55dce46bad7aed9 | docs/data/mapped_ingredients.csv; CSV lines=[1044] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C012993","line":1044,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C012993","preferred_term":"Gardimycin","total_occurrences":"0"}] |
 | ev-096fd648584484ae | reports/yaml_record_review/Gardimycin.md; &#96;data/ingredients/mapped/Gardimycin.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:37; Completeness:59; Recommended Edits:65 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-38e5d4138900af22 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[653,1853] | context_only | [{"current_record_sha256":"5c7068640645c68734304aa4ab4934d0f4a7967cec686a61300a66b853baee39","finding_id":"SEM:4e81d99490dcb60b0d1f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5c7068640645c68734304aa4ab4934d0f4a7967cec686a61300a66b853baee39","finding_id":"SEM:4e1fb3397da93b8834d7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-630eaed597e8fa09 | data/ingredients/mapped/Gardimycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-630eaed597e8fa09 | data/ingredients/mapped/Gardimycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1042],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012993","line":1044,"mapping_status":"MAPPED","ontology_id":"mesh:C012993","preferred_term":"Gardimycin"}],"identifier":"mesh:C012993","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012993","ontology_label":"gardimycin","ontology_source":"MESH"},"preferred_term":"Gardimycin","sssom_rows":[{"data_row":1285,"object_id":"mesh:C012993","object_label":"gardimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gardimycin","synonym_count":0} |
 | ev-1c7d6fbeecfc98b1 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-ae7a584207311a4c] | context_only | Predecessor structured review finding f-ae7a584207311a4c in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c0135a4893f13c66
+  evidence_ids:
+  - ev-b0b2509f549db829
+  - ev-07615b3130c5ce26
+  - ev-85e98eaf7712e478
+  - ev-d55dce46bad7aed9
+  - ev-630eaed597e8fa09
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c0135a4893f13c66
+  evidence_ids:
+  - ev-b0b2509f549db829
+  - ev-38e5d4138900af22
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c0135a4893f13c66
+  evidence_ids:
+  - ev-096fd648584484ae
+  - ev-38e5d4138900af22
+  - ev-1c7d6fbeecfc98b1
 evidence:
 - evidence_id: ev-b0b2509f549db829
   kind: record_content
   reference: data/ingredients/mapped/Gardimycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1042],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012993","line":1044,"mapping_status":"MAPPED","ontology_id":"mesh:C012993","preferred_term":"Gardimycin"}],"identifier":"mesh:C012993","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012993","ontology_label":"gardimycin","ontology_source":"MESH"},"preferred_term":"Gardimycin","sssom_rows":[{"data_row":1285,"object_id":"mesh:C012993","object_label":"gardimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gardimycin","synonym_count":0}'
   snapshot_sha256: 5c7068640645c68734304aa4ab4934d0f4a7967cec686a61300a66b853baee39
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1042]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Gardimycin; data-row positions=[1285]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1285,"object_id":"mesh:C012993","object_label":"gardimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Gardimycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1044]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C012993","line":1044,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C012993","preferred_term":"Gardimycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -247,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[653,1853]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5c7068640645c68734304aa4ab4934d0f4a7967cec686a61300a66b853baee39","finding_id":"SEM:4e81d99490dcb60b0d1f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5c7068640645c68734304aa4ab4934d0f4a7967cec686a61300a66b853baee39","finding_id":"SEM:4e1fb3397da93b8834d7","kind":"role_evidence","resolution_reason":"Historical
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Gardimycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1042],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012993","line":1044,"mapping_status":"MAPPED","ontology_id":"mesh:C012993","preferred_term":"Gardimycin"}],"identifier":"mesh:C012993","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012993","ontology_label":"gardimycin","ontology_source":"MESH"},"preferred_term":"Gardimycin","sssom_rows":[{"data_row":1285,"object_id":"mesh:C012993","object_label":"gardimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gardimycin","synonym_count":0}'
   snapshot_sha256: 5c7068640645c68734304aa4ab4934d0f4a7967cec686a61300a66b853baee39
 - evidence_id: ev-1c7d6fbeecfc98b1
   kind: prior_review

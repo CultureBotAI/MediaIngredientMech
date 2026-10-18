@@ -90,7 +90,7 @@ Reassess prediction-only role support: Caproic acid
 | ev-199aa70fa6f3ace3 | reports/yaml_record_review/20261001T050143Z-Caproic_Acid.md; YAML Record Review: Caproic acid:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a4eb152fbf755218 | reports/yaml_record_review/Caproic_Acid.md; &#96;data/ingredients/mapped/Caproic_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:39; Completeness:51; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f95507cea27041de | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[355,1778] | context_only | [{"current_record_sha256":"49dc203c14998eedd8f69e95d0d4a8541cdc449a2507bf3bb4a35b4fddb2c3d5","finding_id":"SEM:a863593ee1f4ad4a7a42","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"49dc203c14998eedd8f69e95d0d4a8541cdc449a2507bf3bb4a35b4fddb2c3d5","finding_id":"SEM:801c1379c36a70d61e46","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-58e15ae153c20091 | data/ingredients/mapped/Caproic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-58e15ae153c20091 | data/ingredients/mapped/Caproic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[646],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30776","line":648,"mapping_status":"MAPPED","ontology_id":"CHEBI:30776","preferred_term":"Caproic acid"}],"identifier":"CHEBI:30776","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30776","ontology_label":"hexanoic acid","ontology_source":"CHEBI"},"preferred_term":"Caproic acid","sssom_rows":[{"data_row":630,"object_id":"CHEBI:30776","object_label":"hexanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Caproic_Acid","synonym_count":17} |
 | ev-01427b2ecd8bd710 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-f1059d9657bfbc03] | context_only | Predecessor structured review finding f-f1059d9657bfbc03 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-604f4ded295836c8
+  evidence_ids:
+  - ev-4aa1d97b46ff4b29
+  - ev-e82b528abf22d8a4
+  - ev-232f5a016f8a99a8
+  - ev-da3e14428024fe70
+  - ev-58e15ae153c20091
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-604f4ded295836c8
+  evidence_ids:
+  - ev-4aa1d97b46ff4b29
+  - ev-f95507cea27041de
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-604f4ded295836c8
+  evidence_ids:
+  - ev-199aa70fa6f3ace3
+  - ev-a4eb152fbf755218
+  - ev-f95507cea27041de
+  - ev-01427b2ecd8bd710
 evidence:
 - evidence_id: ev-4aa1d97b46ff4b29
   kind: record_content
   reference: data/ingredients/mapped/Caproic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[646],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30776","line":648,"mapping_status":"MAPPED","ontology_id":"CHEBI:30776","preferred_term":"Caproic
     acid"}],"identifier":"CHEBI:30776","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30776","ontology_label":"hexanoic
@@ -216,7 +230,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [646]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,7 +239,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Caproic_Acid; data-row positions=[630]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":630,"object_id":"CHEBI:30776","object_label":"hexanoic
     acid","other":"1-hexanoic acid|1-pentanecarboxylic acid|6:0|CH3-[CH2]4-COOH|Capronic
@@ -237,7 +251,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[648]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30776","line":648,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"16","ontology_id":"CHEBI:30776","preferred_term":"Caproic
     acid","total_occurrences":"16"}]'
@@ -292,7 +306,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[355,1778]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"49dc203c14998eedd8f69e95d0d4a8541cdc449a2507bf3bb4a35b4fddb2c3d5","finding_id":"SEM:a863593ee1f4ad4a7a42","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"49dc203c14998eedd8f69e95d0d4a8541cdc449a2507bf3bb4a35b4fddb2c3d5","finding_id":"SEM:801c1379c36a70d61e46","kind":"role_evidence","resolution_reason":"Historical
@@ -302,12 +316,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Caproic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[646],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30776","line":648,"mapping_status":"MAPPED","ontology_id":"CHEBI:30776","preferred_term":"Caproic
+    acid"}],"identifier":"CHEBI:30776","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30776","ontology_label":"hexanoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Caproic acid","sssom_rows":[{"data_row":630,"object_id":"CHEBI:30776","object_label":"hexanoic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Caproic_Acid","synonym_count":17}'
   snapshot_sha256: 49dc203c14998eedd8f69e95d0d4a8541cdc449a2507bf3bb4a35b4fddb2c3d5
 - evidence_id: ev-01427b2ecd8bd710
   kind: prior_review

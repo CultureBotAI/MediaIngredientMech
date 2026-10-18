@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sodium succinate dibasic hexahydrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c7572d50a5ce5ad9 | data/ingredients/mapped/Sodium_succinate_dibasic_hexahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1876],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63686","line":1878,"mapping_status":"MAPPED","ontology_id":"CHEBI:63686","preferred_term":"Sodium succinate dibasic hexahydrate"}],"identifier":"CHEBI:63686","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:63686","ontology_label":"sodium succinate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate dibasic hexahydrate","sssom_rows":[{"data_row":2613,"object_id":"CHEBI:63686","object_label":"sodium succinate hexahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_succinate_dibasic_hexahydrate","synonym_count":10} |
-| ev-3a2a6740863b5897 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1876] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-c73dca72166b257a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_succinate_dibasic_hexahydrate; data-row positions=[2613] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2613,"object_id":"CHEBI:63686","object_label":"sodium succinate hexahydrate","other":"Succinic acid disodium salt hexahydrate&#124;disodium butanedioate hexahydrate&#124;disodium butanedioate.6H2O&#124;disodium succinate hexahydrate&#124;disodium succinate.6H2O&#124;sodium succinate.6H2O&#124;disodium butanedioate--water(1/6)&#124;Disodium succinate x 6 H2O&#124;Disodium succinate\u30fb6H2O&#124;CAS:6106-21-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_succinate_dibasic_hexahydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-997f237b500b713d | docs/data/mapped_ingredients.csv; CSV lines=[1878] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:63686","line":1878,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:63686","preferred_term":"Sodium succinate dibasic hexahydrate","total_occurrences":"20"}] |
+| ev-c7572d50a5ce5ad9 | data/ingredients/mapped/Sodium_succinate_dibasic_hexahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1875],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63686","line":1877,"mapping_status":"MAPPED","ontology_id":"CHEBI:63686","preferred_term":"Sodium succinate dibasic hexahydrate"}],"identifier":"CHEBI:63686","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:63686","ontology_label":"sodium succinate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate dibasic hexahydrate","sssom_rows":[{"data_row":2615,"object_id":"CHEBI:63686","object_label":"sodium succinate hexahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_succinate_dibasic_hexahydrate","synonym_count":10} |
+| ev-3a2a6740863b5897 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1875] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c73dca72166b257a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_succinate_dibasic_hexahydrate; data-row positions=[2615] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2615,"object_id":"CHEBI:63686","object_label":"sodium succinate hexahydrate","other":"Succinic acid disodium salt hexahydrate&#124;disodium butanedioate hexahydrate&#124;disodium butanedioate.6H2O&#124;disodium succinate hexahydrate&#124;disodium succinate.6H2O&#124;sodium succinate.6H2O&#124;disodium butanedioate--water(1/6)&#124;Disodium succinate x 6 H2O&#124;Disodium succinate\u30fb6H2O&#124;CAS:6106-21-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_succinate_dibasic_hexahydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-997f237b500b713d | docs/data/mapped_ingredients.csv; CSV lines=[1877] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:63686","line":1877,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:63686","preferred_term":"Sodium succinate dibasic hexahydrate","total_occurrences":"20"}] |
 | ev-ffcba591f17501dd | reports/yaml_record_review/Sodium_succinate_dibasic_hexahydrate.md; &#96;data/ingredients/mapped/Sodium_succinate_dibasic_hexahydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:31; Completeness:44; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-08876c2feaf800d9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1236,1390,2101] | context_only | [{"current_record_sha256":"9888deb6a45d6f8199878e9711ffc0d24b03a46d8f41fcf1aaf7830b5c035507","finding_id":"SEM:a8d0091eb0e434830bc6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9888deb6a45d6f8199878e9711ffc0d24b03a46d8f41fcf1aaf7830b5c035507","finding_id":"SEM:e353c9e5ddd6c26d6b73","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9888deb6a45d6f8199878e9711ffc0d24b03a46d8f41fcf1aaf7830b5c035507","finding_id":"SEM:f286031920b4671ed7c3","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-739307edc509ade0 | data/ingredients/mapped/Sodium_succinate_dibasic_hexahydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-739307edc509ade0 | data/ingredients/mapped/Sodium_succinate_dibasic_hexahydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1875],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63686","line":1877,"mapping_status":"MAPPED","ontology_id":"CHEBI:63686","preferred_term":"Sodium succinate dibasic hexahydrate"}],"identifier":"CHEBI:63686","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:63686","ontology_label":"sodium succinate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate dibasic hexahydrate","sssom_rows":[{"data_row":2615,"object_id":"CHEBI:63686","object_label":"sodium succinate hexahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_succinate_dibasic_hexahydrate","synonym_count":10} |
 | ev-d9df5bf4a02664c1 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-b28405bb664ddac1] | context_only | Predecessor structured review finding f-b28405bb664ddac1 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0423b8195943dd2e
+  evidence_ids:
+  - ev-c7572d50a5ce5ad9
+  - ev-3a2a6740863b5897
+  - ev-c73dca72166b257a
+  - ev-997f237b500b713d
+  - ev-739307edc509ade0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-0423b8195943dd2e
+  evidence_ids:
+  - ev-c7572d50a5ce5ad9
+  - ev-08876c2feaf800d9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0423b8195943dd2e
+  evidence_ids:
+  - ev-ffcba591f17501dd
+  - ev-08876c2feaf800d9
+  - ev-d9df5bf4a02664c1
 evidence:
 - evidence_id: ev-c7572d50a5ce5ad9
   kind: record_content
   reference: data/ingredients/mapped/Sodium_succinate_dibasic_hexahydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1876],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63686","line":1878,"mapping_status":"MAPPED","ontology_id":"CHEBI:63686","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1875],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63686","line":1877,"mapping_status":"MAPPED","ontology_id":"CHEBI:63686","preferred_term":"Sodium
     succinate dibasic hexahydrate"}],"identifier":"CHEBI:63686","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:63686","ontology_label":"sodium
     succinate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate
-    dibasic hexahydrate","sssom_rows":[{"data_row":2613,"object_id":"CHEBI:63686","object_label":"sodium
+    dibasic hexahydrate","sssom_rows":[{"data_row":2615,"object_id":"CHEBI:63686","object_label":"sodium
     succinate hexahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_succinate_dibasic_hexahydrate","synonym_count":10}'
   snapshot_sha256: 9888deb6a45d6f8199878e9711ffc0d24b03a46d8f41fcf1aaf7830b5c035507
 - evidence_id: ev-3a2a6740863b5897
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1876]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1875]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,10 +234,10 @@ evidence:
 - evidence_id: ev-c73dca72166b257a
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_succinate_dibasic_hexahydrate; data-row positions=[2613]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_succinate_dibasic_hexahydrate; data-row positions=[2615]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2613,"object_id":"CHEBI:63686","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2615,"object_id":"CHEBI:63686","object_label":"sodium
     succinate hexahydrate","other":"Succinic acid disodium salt hexahydrate|disodium
     butanedioate hexahydrate|disodium butanedioate.6H2O|disodium succinate hexahydrate|disodium
     succinate.6H2O|sodium succinate.6H2O|disodium butanedioate--water(1/6)|Disodium
@@ -233,10 +246,10 @@ evidence:
 - evidence_id: ev-997f237b500b713d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1878]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1877]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:63686","line":1878,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:63686","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:63686","line":1877,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:63686","preferred_term":"Sodium
     succinate dibasic hexahydrate","total_occurrences":"20"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ffcba591f17501dd
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1236,1390,2101]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9888deb6a45d6f8199878e9711ffc0d24b03a46d8f41fcf1aaf7830b5c035507","finding_id":"SEM:a8d0091eb0e434830bc6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9888deb6a45d6f8199878e9711ffc0d24b03a46d8f41fcf1aaf7830b5c035507","finding_id":"SEM:e353c9e5ddd6c26d6b73","kind":"role_evidence","resolution_reason":"Historical
@@ -269,14 +282,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_succinate_dibasic_hexahydrate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1875],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63686","line":1877,"mapping_status":"MAPPED","ontology_id":"CHEBI:63686","preferred_term":"Sodium
+    succinate dibasic hexahydrate"}],"identifier":"CHEBI:63686","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:63686","ontology_label":"sodium
+    succinate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate
+    dibasic hexahydrate","sssom_rows":[{"data_row":2615,"object_id":"CHEBI:63686","object_label":"sodium
+    succinate hexahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_succinate_dibasic_hexahydrate","synonym_count":10}'
   snapshot_sha256: 9888deb6a45d6f8199878e9711ffc0d24b03a46d8f41fcf1aaf7830b5c035507
 - evidence_id: ev-d9df5bf4a02664c1
   kind: prior_review

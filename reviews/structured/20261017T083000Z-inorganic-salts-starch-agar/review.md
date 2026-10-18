@@ -91,7 +91,6 @@ Disposition: Current status=UNMAPPED; no supported promotion is established by t
 | ev-c444f7e3cd2a87bb | docs/data/unmapped_ingredients.csv; CSV lines=[131] | supports | Published identity and count rows inspected: [{"identifier":"UNMAPPED_0123","line":131,"mapping_quality":"NARROW_MATCH","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"CHEBI:24839","preferred_term":"Inorganic salts-starch agar","total_occurrences":"0"}] |
 | ev-e53d3870e052107b | reports/yaml_record_review/20261001T044830Z-Inorganic_Salts-starch_Agar.md; YAML Record Review: Inorganic salts-starch agar:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60; Additional Notes:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b68a993d41233c82 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1368] | context_only | [{"current_record_sha256":"76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178","finding_id":"SEM:f80c74be7a4fc78ec358","kind":"unmapped_parent_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e565dedd7f689f5e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -180,6 +179,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4330219164b9a9d8
+  evidence_ids:
+  - ev-cf38b9e55faaae34
+  - ev-4b2bb377832b8176
+  - ev-7dee3692b0a5740b
+  - ev-c444f7e3cd2a87bb
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -188,6 +192,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-4330219164b9a9d8
+  evidence_ids:
+  - ev-cf38b9e55faaae34
+  - ev-b68a993d41233c82
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,13 +203,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4330219164b9a9d8
+  evidence_ids:
+  - ev-e53d3870e052107b
+  - ev-b68a993d41233c82
 evidence:
 - evidence_id: ev-cf38b9e55faaae34
   kind: record_content
   reference: data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[129],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0123","line":131,"mapping_status":"UNMAPPED","ontology_id":"CHEBI:24839","preferred_term":"Inorganic
     salts-starch agar"}],"identifier":"UNMAPPED_0123","ingredient_type":"NAMED_MEDIUM","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:24839","ontology_label":"inorganic
@@ -212,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [129]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Inorganic_Salts-starch_Agar; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -229,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[131]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0123","line":131,"mapping_quality":"NARROW_MATCH","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"CHEBI:24839","preferred_term":"Inorganic
     salts-starch agar","total_occurrences":"0"}]'
@@ -266,18 +276,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1368]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178","finding_id":"SEM:f80c74be7a4fc78ec358","kind":"unmapped_parent_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-e565dedd7f689f5e
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-42c965c03013be49
@@ -375,7 +377,7 @@ findings:
   - record-4330219164b9a9d8
   evidence_ids:
   - ev-cf38b9e55faaae34
-  - ev-e565dedd7f689f5e
+  - ev-b68a993d41233c82
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml

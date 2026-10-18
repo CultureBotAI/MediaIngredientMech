@@ -85,11 +85,11 @@ Reassess prediction-only role support: ammonium sulfide solution
 | --- | --- | --- | --- |
 | ev-6f50ac4e5eda4555 | data/ingredients/mapped/Ammonium_Sulfide_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[484],"raw_equal":true},"docs_rows":[{"identifier":"cas:12135-76-1","line":486,"mapping_status":"MAPPED","ontology_id":"mesh:C027711","preferred_term":"ammonium sulfide solution"}],"identifier":"cas:12135-76-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C027711","ontology_label":"ammonium sulfide","ontology_source":"MESH"},"preferred_term":"ammonium sulfide solution","sssom_rows":[{"data_row":363,"object_id":"mesh:C027711","object_label":"ammonium sulfide","predicate_id":"skos:broadMatch"},{"data_row":364,"object_id":"cas:12135-76-1","object_label":"ammonium sulfide solution","predicate_id":"skos:exactMatch"},{"data_row":365,"object_id":"kgmicrobe.compound:ammonium_sulfide_solution","object_label":"ammonium sulfide solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ammonium_Sulfide_Solution","synonym_count":0} |
 | ev-07126ba2cabbf5ce | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [484] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-acc97654913fee49 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ammonium_Sulfide_Solution; data-row positions=[363,364,365] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":363,"object_id":"mesh:C027711","object_label":"ammonium sulfide","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Ammonium_Sulfide_Solution","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":364,"object_id":"cas:12135-76-1","object_label":"ammonium sulfide solution","other":"CAS:12135-76-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Sulfide_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":365,"object_id":"kgmicrobe.compound:ammonium_sulfide_solution","object_label":"ammonium sulfide solution","other":"CAS:12135-76-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Sulfide_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-acc97654913fee49 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ammonium_Sulfide_Solution; data-row positions=[363, 364, 365] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":363,"object_id":"mesh:C027711","object_label":"ammonium sulfide","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Ammonium_Sulfide_Solution","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":364,"object_id":"cas:12135-76-1","object_label":"ammonium sulfide solution","other":"CAS:12135-76-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Sulfide_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":365,"object_id":"kgmicrobe.compound:ammonium_sulfide_solution","object_label":"ammonium sulfide solution","other":"CAS:12135-76-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Sulfide_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-f9f58a91efb522b2 | docs/data/mapped_ingredients.csv; CSV lines=[486] | supports | Published identity and count rows inspected: [{"identifier":"cas:12135-76-1","line":486,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C027711","preferred_term":"ammonium sulfide solution","total_occurrences":"0"}] |
 | ev-7f73a17570967854 | reports/yaml_record_review/Ammonium_Sulfide_Solution.md; &#96;data/ingredients/mapped/Ammonium_Sulfide_Solution.yaml&#96;:2; Verdict:4; Identity:11; Validation:29; Evidence:41; Completeness:58; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-68bdb4a6ce7be3c5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[251,1617] | context_only | [{"current_record_sha256":"e775c18569adce95f5fdfc0d2224d5a584b88c296f6f975ebe012f5b571728d9","finding_id":"SEM:fc7e7855a0ad61a437bf","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e775c18569adce95f5fdfc0d2224d5a584b88c296f6f975ebe012f5b571728d9","finding_id":"SEM:c015068113300689c4ca","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bf7aa20e63f1b8ee | data/ingredients/mapped/Ammonium_Sulfide_Solution.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}] |
+| ev-bf7aa20e63f1b8ee | data/ingredients/mapped/Ammonium_Sulfide_Solution.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[484],"raw_equal":true},"docs_rows":[{"identifier":"cas:12135-76-1","line":486,"mapping_status":"MAPPED","ontology_id":"mesh:C027711","preferred_term":"ammonium sulfide solution"}],"identifier":"cas:12135-76-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C027711","ontology_label":"ammonium sulfide","ontology_source":"MESH"},"preferred_term":"ammonium sulfide solution","sssom_rows":[{"data_row":363,"object_id":"mesh:C027711","object_label":"ammonium sulfide","predicate_id":"skos:broadMatch"},{"data_row":364,"object_id":"cas:12135-76-1","object_label":"ammonium sulfide solution","predicate_id":"skos:exactMatch"},{"data_row":365,"object_id":"kgmicrobe.compound:ammonium_sulfide_solution","object_label":"ammonium sulfide solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ammonium_Sulfide_Solution","synonym_count":0} |
 | ev-f0902eb3d708d4f1 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-943817ae820f85df] | context_only | Predecessor structured review finding f-943817ae820f85df in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cb296ed65c9e41e5
+  evidence_ids:
+  - ev-6f50ac4e5eda4555
+  - ev-07126ba2cabbf5ce
+  - ev-acc97654913fee49
+  - ev-f9f58a91efb522b2
+  - ev-bf7aa20e63f1b8ee
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-cb296ed65c9e41e5
+  evidence_ids:
+  - ev-6f50ac4e5eda4555
+  - ev-68bdb4a6ce7be3c5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cb296ed65c9e41e5
+  evidence_ids:
+  - ev-7f73a17570967854
+  - ev-68bdb4a6ce7be3c5
+  - ev-f0902eb3d708d4f1
 evidence:
 - evidence_id: ev-6f50ac4e5eda4555
   kind: record_content
   reference: data/ingredients/mapped/Ammonium_Sulfide_Solution.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[484],"raw_equal":true},"docs_rows":[{"identifier":"cas:12135-76-1","line":486,"mapping_status":"MAPPED","ontology_id":"mesh:C027711","preferred_term":"ammonium
     sulfide solution"}],"identifier":"cas:12135-76-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C027711","ontology_label":"ammonium
@@ -214,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [484]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,8 +235,9 @@ evidence:
 - evidence_id: ev-acc97654913fee49
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Ammonium_Sulfide_Solution; data-row positions=[363,364,365]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Ammonium_Sulfide_Solution; data-row positions=[363, 364,
+    365]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":363,"object_id":"mesh:C027711","object_label":"ammonium
     sulfide","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Ammonium_Sulfide_Solution","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":364,"object_id":"cas:12135-76-1","object_label":"ammonium
@@ -234,7 +248,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[486]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:12135-76-1","line":486,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C027711","preferred_term":"ammonium
     sulfide solution","total_occurrences":"0"}]'
@@ -263,7 +277,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[251,1617]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e775c18569adce95f5fdfc0d2224d5a584b88c296f6f975ebe012f5b571728d9","finding_id":"SEM:fc7e7855a0ad61a437bf","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e775c18569adce95f5fdfc0d2224d5a584b88c296f6f975ebe012f5b571728d9","finding_id":"SEM:c015068113300689c4ca","kind":"role_evidence","resolution_reason":"Historical
@@ -273,12 +287,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Ammonium_Sulfide_Solution.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[484],"raw_equal":true},"docs_rows":[{"identifier":"cas:12135-76-1","line":486,"mapping_status":"MAPPED","ontology_id":"mesh:C027711","preferred_term":"ammonium
+    sulfide solution"}],"identifier":"cas:12135-76-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C027711","ontology_label":"ammonium
+    sulfide","ontology_source":"MESH"},"preferred_term":"ammonium sulfide solution","sssom_rows":[{"data_row":363,"object_id":"mesh:C027711","object_label":"ammonium
+    sulfide","predicate_id":"skos:broadMatch"},{"data_row":364,"object_id":"cas:12135-76-1","object_label":"ammonium
+    sulfide solution","predicate_id":"skos:exactMatch"},{"data_row":365,"object_id":"kgmicrobe.compound:ammonium_sulfide_solution","object_label":"ammonium
+    sulfide solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ammonium_Sulfide_Solution","synonym_count":0}'
   snapshot_sha256: e775c18569adce95f5fdfc0d2224d5a584b88c296f6f975ebe012f5b571728d9
 - evidence_id: ev-f0902eb3d708d4f1
   kind: prior_review

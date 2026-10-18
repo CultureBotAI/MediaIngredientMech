@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na2HPO4 x 7 H2O
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-a6bd9f6188ad4cf5 | data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1493],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1495,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4 x 7 H2O"}],"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4 x 7 H2O","sssom_rows":[{"data_row":2003,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","predicate_id":"skos:closeMatch"},{"data_row":2004,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4_X_7_H2o","synonym_count":12} |
-| ev-ab479ab003bb4219 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1493] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-8b55ff7e2cc903a6 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2hpo4_X_7_H2o; data-row positions=[2003,2004] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2003,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","other":"Na2HPO4.7H2O&#124;Na2HPO4\u20227H2O&#124;CAS:7782-85-6","predicate_id":"skos:closeMatch","subject_id":"MIM:Na2hpo4_X_7_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":2004,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4 x 7 H2O","other":"CAS:7782-85-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2hpo4_X_7_H2o","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
-| ev-92a1e1a32db7e2fa | docs/data/mapped_ingredients.csv; CSV lines=[1495] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1495,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"26","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4 x 7 H2O","total_occurrences":"26"}] |
+| ev-a6bd9f6188ad4cf5 | data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1492],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1494,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4 x 7 H2O"}],"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4 x 7 H2O","sssom_rows":[{"data_row":2005,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","predicate_id":"skos:closeMatch"},{"data_row":2006,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4_X_7_H2o","synonym_count":12} |
+| ev-ab479ab003bb4219 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1492] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-8b55ff7e2cc903a6 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2hpo4_X_7_H2o; data-row positions=[2005, 2006] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2005,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","other":"Na2HPO4.7H2O&#124;Na2HPO4\u20227H2O&#124;CAS:7782-85-6","predicate_id":"skos:closeMatch","subject_id":"MIM:Na2hpo4_X_7_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":2006,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4 x 7 H2O","other":"CAS:7782-85-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2hpo4_X_7_H2o","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-92a1e1a32db7e2fa | docs/data/mapped_ingredients.csv; CSV lines=[1494] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1494,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"26","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4 x 7 H2O","total_occurrences":"26"}] |
 | ev-dd2a8ee4383898a1 | reports/yaml_record_review/Na2hpo4_X_7_H2o.md; &#96;data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:29; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
-| ev-33e2b1aa8d24109d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[999,1844] | context_only | [{"current_record_sha256":"479f15ecd212853202ba0a0c381cb9fa8f83f12900c3c7555f67b29661549b5b","finding_id":"SEM:cb9ec35166086d936f70","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"479f15ecd212853202ba0a0c381cb9fa8f83f12900c3c7555f67b29661549b5b","finding_id":"SEM:e9b3da7873e18001bfdc","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b8b83ac44222ac5f | data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-33e2b1aa8d24109d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[999,1844] | context_only | [{"current_record_sha256":"e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636","finding_id":"SEM:cb9ec35166086d936f70","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636","finding_id":"SEM:e9b3da7873e18001bfdc","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-b8b83ac44222ac5f | data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1492],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1494,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4 x 7 H2O"}],"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4 x 7 H2O","sssom_rows":[{"data_row":2005,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","predicate_id":"skos:closeMatch"},{"data_row":2006,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4_X_7_H2o","synonym_count":12} |
 | ev-f9049d1e52295a48 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-e076a032ff4695c0] | context_only | Predecessor structured review finding f-e076a032ff4695c0 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e3a107cd8e4ae3b7
+  evidence_ids:
+  - ev-a6bd9f6188ad4cf5
+  - ev-ab479ab003bb4219
+  - ev-8b55ff7e2cc903a6
+  - ev-92a1e1a32db7e2fa
+  - ev-b8b83ac44222ac5f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e3a107cd8e4ae3b7
+  evidence_ids:
+  - ev-a6bd9f6188ad4cf5
+  - ev-33e2b1aa8d24109d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e3a107cd8e4ae3b7
+  evidence_ids:
+  - ev-dd2a8ee4383898a1
+  - ev-33e2b1aa8d24109d
+  - ev-f9049d1e52295a48
 evidence:
 - evidence_id: ev-a6bd9f6188ad4cf5
   kind: record_content
   reference: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1493],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1495,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1492],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1494,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4
     x 7 H2O"}],"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
-    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4 x 7 H2O","sssom_rows":[{"data_row":2003,"object_id":"CHEBI:34683","object_label":"disodium
-    hydrogenphosphate","predicate_id":"skos:closeMatch"},{"data_row":2004,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4
+    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4 x 7 H2O","sssom_rows":[{"data_row":2005,"object_id":"CHEBI:34683","object_label":"disodium
+    hydrogenphosphate","predicate_id":"skos:closeMatch"},{"data_row":2006,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4
     x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4_X_7_H2o","synonym_count":12}'
   snapshot_sha256: e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636
 - evidence_id: ev-ab479ab003bb4219
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1493]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1492]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,20 +234,20 @@ evidence:
 - evidence_id: ev-8b55ff7e2cc903a6
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na2hpo4_X_7_H2o; data-row positions=[2003,2004]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na2hpo4_X_7_H2o; data-row positions=[2005, 2006]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2003,"object_id":"CHEBI:34683","object_label":"disodium
-    hydrogenphosphate","other":"Na2HPO4.7H2O|Na2HPO4\u20227H2O|CAS:7782-85-6","predicate_id":"skos:closeMatch","subject_id":"MIM:Na2hpo4_X_7_H2o","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":2004,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2005,"object_id":"CHEBI:34683","object_label":"disodium
+    hydrogenphosphate","other":"Na2HPO4.7H2O|Na2HPO4\u20227H2O|CAS:7782-85-6","predicate_id":"skos:closeMatch","subject_id":"MIM:Na2hpo4_X_7_H2o","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":2006,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4
     x 7 H2O","other":"CAS:7782-85-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2hpo4_X_7_H2o","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-92a1e1a32db7e2fa
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1495]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1494]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1495,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"26","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1494,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"26","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4
     x 7 H2O","total_occurrences":"26"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-dd2a8ee4383898a1
@@ -260,22 +273,23 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[999,1844]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: '[{"current_record_sha256":"479f15ecd212853202ba0a0c381cb9fa8f83f12900c3c7555f67b29661549b5b","finding_id":"SEM:cb9ec35166086d936f70","kind":"existing_record_review","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"479f15ecd212853202ba0a0c381cb9fa8f83f12900c3c7555f67b29661549b5b","finding_id":"SEM:e9b3da7873e18001bfdc","kind":"role_evidence","resolution_reason":"Historical
+  summary: '[{"current_record_sha256":"e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636","finding_id":"SEM:cb9ec35166086d936f70","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636","finding_id":"SEM:e9b3da7873e18001bfdc","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 - evidence_id: ev-b8b83ac44222ac5f
   kind: record_content
   reference: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1492],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","line":1494,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4
+    x 7 H2O"}],"identifier":"kgmicrobe.compound:na2hpo4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
+    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4 x 7 H2O","sssom_rows":[{"data_row":2005,"object_id":"CHEBI:34683","object_label":"disodium
+    hydrogenphosphate","predicate_id":"skos:closeMatch"},{"data_row":2006,"object_id":"kgmicrobe.compound:na2hpo4_x_7_h2o","object_label":"Na2HPO4
+    x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4_X_7_H2o","synonym_count":12}'
   snapshot_sha256: e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636
 - evidence_id: ev-f9049d1e52295a48
   kind: prior_review

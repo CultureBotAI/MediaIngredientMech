@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f6d21728dacf2f4a
+  evidence_ids:
+  - ev-c26c9fab23cfc383
+  - ev-5b7cc26fa0ca9ac4
+  - ev-03670aebc4577e90
+  - ev-2b6aaa108eea7528
+  - ev-5de1cd67b662a56c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-f6d21728dacf2f4a
+  evidence_ids:
+  - ev-c26c9fab23cfc383
+  - ev-8ca0fdd74e7bf1c6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f6d21728dacf2f4a
+  evidence_ids:
+  - ev-eb4833803b7b084c
+  - ev-8ca0fdd74e7bf1c6
+  - ev-39b18d5eb9386990
 evidence:
 - evidence_id: ev-c26c9fab23cfc383
   kind: record_content
   reference: data/ingredients/mapped/D-_-gluconic_Acid_Gamma-lactone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[797],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16217","line":799,"mapping_status":"MAPPED","ontology_id":"CHEBI:16217","preferred_term":"D-(+)-Gluconic
     acid gamma-lactone"}],"identifier":"CHEBI:16217","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:16217","ontology_label":"D-glucono-1,5-lactone","ontology_source":"CHEBI"},"preferred_term":"D-(+)-Gluconic
@@ -106,7 +119,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [797]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,7 +128,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-_-gluconic_Acid_Gamma-lactone; data-row positions=[915]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":915,"object_id":"CHEBI:16217","object_label":"D-glucono-1,5-lactone","other":"(3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-one|Glucarolactone|CAS:90-80-2","predicate_id":"skos:exactMatch","subject_id":"MIM:D-_-gluconic_Acid_Gamma-lactone","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -123,7 +136,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[799]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16217","line":799,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16217","preferred_term":"D-(+)-Gluconic
     acid gamma-lactone","total_occurrences":"0"}]'
@@ -148,7 +161,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[481,1595,1656]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c880c993332c68d83bb4ba96a3c45500dea3ac7993dc4a515f6a2cdb91c74f5c","finding_id":"SEM:22e7e624b5dac5c70f67","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c880c993332c68d83bb4ba96a3c45500dea3ac7993dc4a515f6a2cdb91c74f5c","finding_id":"SEM:d7d92d6c6de8db5f7d2b","kind":"role_evidence","resolution_reason":"Historical
@@ -159,14 +172,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-_-gluconic_Acid_Gamma-lactone.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[797],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16217","line":799,"mapping_status":"MAPPED","ontology_id":"CHEBI:16217","preferred_term":"D-(+)-Gluconic
+    acid gamma-lactone"}],"identifier":"CHEBI:16217","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:16217","ontology_label":"D-glucono-1,5-lactone","ontology_source":"CHEBI"},"preferred_term":"D-(+)-Gluconic
+    acid gamma-lactone","sssom_rows":[{"data_row":915,"object_id":"CHEBI:16217","object_label":"D-glucono-1,5-lactone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-_-gluconic_Acid_Gamma-lactone","synonym_count":2}'
   snapshot_sha256: c880c993332c68d83bb4ba96a3c45500dea3ac7993dc4a515f6a2cdb91c74f5c
 - evidence_id: ev-39b18d5eb9386990
   kind: prior_review

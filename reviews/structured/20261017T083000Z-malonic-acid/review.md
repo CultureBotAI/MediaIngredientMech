@@ -89,7 +89,7 @@ Reassess prediction-only role support: Malonic acid
 | ev-a0ed1f7731beb7ae | docs/data/mapped_ingredients.csv; CSV lines=[1334] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:30794","line":1334,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:30794","preferred_term":"Malonic acid","total_occurrences":"0"}] |
 | ev-100d7d9f5ee2adbe | reports/yaml_record_review/Malonic_Acid.md; &#96;data/ingredients/mapped/Malonic_Acid.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:31; Completeness:41; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e85021d31ca0ea2e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[886,1703] | context_only | [{"current_record_sha256":"a08309fd1948fe27753d96d59f93b2ea1a8c0989617af864444715b0c2f95c14","finding_id":"SEM:7c344944c70d737726d3","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a08309fd1948fe27753d96d59f93b2ea1a8c0989617af864444715b0c2f95c14","finding_id":"SEM:c7d004772f7bccddd357","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f64ac988330fc46b | data/ingredients/mapped/Malonic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-f64ac988330fc46b | data/ingredients/mapped/Malonic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1332],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30794","line":1334,"mapping_status":"MAPPED","ontology_id":"CHEBI:30794","preferred_term":"Malonic acid"}],"identifier":"CHEBI:30794","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30794","ontology_label":"malonic acid","ontology_source":"CHEBI"},"preferred_term":"Malonic acid","sssom_rows":[{"data_row":1755,"object_id":"CHEBI:30794","object_label":"malonic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Malonic_Acid","synonym_count":1} |
 | ev-fb69c82f44ff87ba | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-6230b2d68ccbedc0] | context_only | Predecessor structured review finding f-6230b2d68ccbedc0 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-56858254c6a49c0b
+  evidence_ids:
+  - ev-5862ec49c297119f
+  - ev-865e8c0813a06528
+  - ev-fbfe1e3604655625
+  - ev-a0ed1f7731beb7ae
+  - ev-f64ac988330fc46b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-56858254c6a49c0b
+  evidence_ids:
+  - ev-5862ec49c297119f
+  - ev-e85021d31ca0ea2e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-56858254c6a49c0b
+  evidence_ids:
+  - ev-100d7d9f5ee2adbe
+  - ev-e85021d31ca0ea2e
+  - ev-fb69c82f44ff87ba
 evidence:
 - evidence_id: ev-5862ec49c297119f
   kind: record_content
   reference: data/ingredients/mapped/Malonic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1332],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30794","line":1334,"mapping_status":"MAPPED","ontology_id":"CHEBI:30794","preferred_term":"Malonic
     acid"}],"identifier":"CHEBI:30794","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30794","ontology_label":"malonic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1332]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Malonic_Acid; data-row positions=[1755]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1755,"object_id":"CHEBI:30794","object_label":"malonic
     acid","other":"Propanedioic acid|CAS:141-82-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Malonic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1334]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30794","line":1334,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:30794","preferred_term":"Malonic
     acid","total_occurrences":"0"}]'
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[886,1703]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a08309fd1948fe27753d96d59f93b2ea1a8c0989617af864444715b0c2f95c14","finding_id":"SEM:7c344944c70d737726d3","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a08309fd1948fe27753d96d59f93b2ea1a8c0989617af864444715b0c2f95c14","finding_id":"SEM:c7d004772f7bccddd357","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Malonic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1332],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30794","line":1334,"mapping_status":"MAPPED","ontology_id":"CHEBI:30794","preferred_term":"Malonic
+    acid"}],"identifier":"CHEBI:30794","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30794","ontology_label":"malonic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Malonic acid","sssom_rows":[{"data_row":1755,"object_id":"CHEBI:30794","object_label":"malonic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Malonic_Acid","synonym_count":1}'
   snapshot_sha256: a08309fd1948fe27753d96d59f93b2ea1a8c0989617af864444715b0c2f95c14
 - evidence_id: ev-fb69c82f44ff87ba
   kind: prior_review

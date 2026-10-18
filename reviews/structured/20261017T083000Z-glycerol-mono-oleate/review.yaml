@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-13a57002e46ca2a8
+  evidence_ids:
+  - ev-f372f84f2f7f5844
+  - ev-8eaca4e3e95bd0fd
+  - ev-e9d1157dbe23f342
+  - ev-e955060a19a84773
+  - ev-5bfebf033d0ca519
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-13a57002e46ca2a8
+  evidence_ids:
+  - ev-f372f84f2f7f5844
+  - ev-9bbbd5f079e0aed6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-13a57002e46ca2a8
+  evidence_ids:
+  - ev-6de15f7578a80b19
+  - ev-9bbbd5f079e0aed6
+  - ev-369875dd1ecdfab1
 evidence:
 - evidence_id: ev-f372f84f2f7f5844
   kind: record_content
   reference: data/ingredients/mapped/Glycerol_Mono-oleate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1071],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:75937","line":1073,"mapping_status":"MAPPED","ontology_id":"CHEBI:75937","preferred_term":"Glycerol
     mono-oleate"}],"identifier":"CHEBI:75937","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:75937","ontology_label":"monooleoylglycerol","ontology_source":"CHEBI"},"preferred_term":"Glycerol
@@ -106,7 +119,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1071]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,7 +128,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Glycerol_Mono-oleate; data-row positions=[1336]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1336,"object_id":"CHEBI:75937","object_label":"monooleoylglycerol","other":"(9Z-octadecenoyl)-glycerol|MG[18:1(omega-9)]|mono-(9Z)-octadecenoylglycerol|oleoylglycerol|CAS:129784-87-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Glycerol_Mono-oleate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -123,7 +136,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1073]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:75937","line":1073,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:75937","preferred_term":"Glycerol
     mono-oleate","total_occurrences":"3"}]'
@@ -148,7 +161,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[689,1860]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5f0ffcba2d2cd18e6e874b0e9e414398b734b95fff4f9013d1ad9dac67de2d7e","finding_id":"SEM:f8328ef1f915d2d62828","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5f0ffcba2d2cd18e6e874b0e9e414398b734b95fff4f9013d1ad9dac67de2d7e","finding_id":"SEM:83e9d62dd2d4313461f4","kind":"role_evidence","resolution_reason":"Historical
@@ -158,12 +171,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Glycerol_Mono-oleate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1071],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:75937","line":1073,"mapping_status":"MAPPED","ontology_id":"CHEBI:75937","preferred_term":"Glycerol
+    mono-oleate"}],"identifier":"CHEBI:75937","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:75937","ontology_label":"monooleoylglycerol","ontology_source":"CHEBI"},"preferred_term":"Glycerol
+    mono-oleate","sssom_rows":[{"data_row":1336,"object_id":"CHEBI:75937","object_label":"monooleoylglycerol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycerol_Mono-oleate","synonym_count":5}'
   snapshot_sha256: 5f0ffcba2d2cd18e6e874b0e9e414398b734b95fff4f9013d1ad9dac67de2d7e
 - evidence_id: ev-369875dd1ecdfab1
   kind: prior_review

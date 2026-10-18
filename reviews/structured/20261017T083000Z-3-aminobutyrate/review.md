@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-ed5adf3d583235e5 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-ed5adf3d583235e5 | Explain curation-history timestamp order: 3-aminobutyrate |
 | Role evidence and plausibility check | passed | True | record-ed5adf3d583235e5 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-ed5adf3d583235e5 | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 3-aminobutyrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-30dae3c376fe972f | data/ingredients/mapped/3-aminobutyrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2108],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:87997","line":2110,"mapping_status":"MAPPED","ontology_id":"CHEBI:87997","preferred_term":"3-aminobutyrate"}],"identifier":"CHEBI:87997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":4,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:87997","ontology_label":"3-aminobutyrate","ontology_source":"CHEBI"},"preferred_term":"3-aminobutyrate","sssom_rows":[{"data_row":137,"object_id":"CHEBI:87997","object_label":"3-aminobutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-aminobutyrate","synonym_count":0} |
-| ev-7006b33adba856cf | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2108] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-30dae3c376fe972f | data/ingredients/mapped/3-aminobutyrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2107],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:87997","line":2109,"mapping_status":"MAPPED","ontology_id":"CHEBI:87997","preferred_term":"3-aminobutyrate"}],"identifier":"CHEBI:87997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:87997","ontology_label":"3-aminobutyrate","ontology_source":"CHEBI"},"preferred_term":"3-aminobutyrate","sssom_rows":[{"data_row":137,"object_id":"CHEBI:87997","object_label":"3-aminobutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-aminobutyrate","synonym_count":0} |
+| ev-7006b33adba856cf | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2107] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-d34e74de35642ece | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:3-aminobutyrate; data-row positions=[137] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":137,"object_id":"CHEBI:87997","object_label":"3-aminobutyrate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:3-aminobutyrate","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-968b79e3faf2df4b | docs/data/mapped_ingredients.csv; CSV lines=[2110] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:87997","line":2110,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:87997","preferred_term":"3-aminobutyrate","total_occurrences":"0"}] |
+| ev-968b79e3faf2df4b | docs/data/mapped_ingredients.csv; CSV lines=[2109] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:87997","line":2109,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:87997","preferred_term":"3-aminobutyrate","total_occurrences":"0"}] |
 | ev-47078cf8ebbe5ab4 | reports/yaml_record_review/3-aminobutyrate.md; &#96;data/ingredients/mapped/3-aminobutyrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:38; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-14d8322e12249792 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[114] | context_only | [{"current_record_sha256":"afed3a0951a59b55ae47a56496b7886c1026bd7c5531e439e5a690657ee57862","finding_id":"SEM:a10d5653a7dc7b1b4ec8","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-a94883bae75bde95 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-e196a530e349e691] | context_only | Predecessor structured review finding f-e196a530e349e691 in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 3-aminobutyrate'
   target_ids:
   - record-ed5adf3d583235e5
+  evidence_ids:
+  - ev-30dae3c376fe972f
+  - ev-7006b33adba856cf
+  - ev-d34e74de35642ece
+  - ev-968b79e3faf2df4b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-ed5adf3d583235e5
+  evidence_ids:
+  - ev-30dae3c376fe972f
+  - ev-14d8322e12249792
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ed5adf3d583235e5
+  evidence_ids:
+  - ev-47078cf8ebbe5ab4
+  - ev-14d8322e12249792
+  - ev-a94883bae75bde95
 evidence:
 - evidence_id: ev-30dae3c376fe972f
   kind: record_content
   reference: data/ingredients/mapped/3-aminobutyrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2108],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:87997","line":2110,"mapping_status":"MAPPED","ontology_id":"CHEBI:87997","preferred_term":"3-aminobutyrate"}],"identifier":"CHEBI:87997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":4,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:87997","ontology_label":"3-aminobutyrate","ontology_source":"CHEBI"},"preferred_term":"3-aminobutyrate","sssom_rows":[{"data_row":137,"object_id":"CHEBI:87997","object_label":"3-aminobutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-aminobutyrate","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2107],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:87997","line":2109,"mapping_status":"MAPPED","ontology_id":"CHEBI:87997","preferred_term":"3-aminobutyrate"}],"identifier":"CHEBI:87997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:87997","ontology_label":"3-aminobutyrate","ontology_source":"CHEBI"},"preferred_term":"3-aminobutyrate","sssom_rows":[{"data_row":137,"object_id":"CHEBI:87997","object_label":"3-aminobutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-aminobutyrate","synonym_count":0}'
   snapshot_sha256: afed3a0951a59b55ae47a56496b7886c1026bd7c5531e439e5a690657ee57862
 - evidence_id: ev-7006b33adba856cf
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2108]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2107]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,17 +228,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:3-aminobutyrate; data-row positions=[137]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":137,"object_id":"CHEBI:87997","object_label":"3-aminobutyrate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:3-aminobutyrate","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-968b79e3faf2df4b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2110]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2109]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:87997","line":2110,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:87997","preferred_term":"3-aminobutyrate","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:87997","line":2109,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:87997","preferred_term":"3-aminobutyrate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-47078cf8ebbe5ab4
   kind: prior_review
@@ -253,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[114]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"afed3a0951a59b55ae47a56496b7886c1026bd7c5531e439e5a690657ee57862","finding_id":"SEM:a10d5653a7dc7b1b4ec8","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

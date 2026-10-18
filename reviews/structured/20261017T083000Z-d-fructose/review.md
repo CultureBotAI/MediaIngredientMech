@@ -90,7 +90,7 @@ Reassess prediction-only role support: D-Fructose
 | ev-1a98de84302cef15 | reports/yaml_record_review/20261001T050206Z-D-fructose.md; YAML Record Review: D-Fructose:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-bb1929287b073175 | reports/yaml_record_review/D-fructose.md; &#96;data/ingredients/mapped/D-fructose.yaml&#96;:2; Verdict:4; Identity:12; Validation:26; Evidence:46; Completeness:67; Recommended Edits:74 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3f91abe79741eb89 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[492,1752] | context_only | [{"current_record_sha256":"05b9d5a79984d5afd90077147ed421ce227ea80946344db298c80e985f8f718e","finding_id":"SEM:2b5b31e7bad35cdff218","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"05b9d5a79984d5afd90077147ed421ce227ea80946344db298c80e985f8f718e","finding_id":"SEM:cab4036a5927a7a1af55","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2a39d5467c6e9812 | data/ingredients/mapped/D-fructose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-2a39d5467c6e9812 | data/ingredients/mapped/D-fructose.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15824","line":834,"mapping_status":"MAPPED","ontology_id":"CHEBI:15824","preferred_term":"D-Fructose"}],"identifier":"CHEBI:15824","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":53,"edge_count":53,"occurrences":53},"occurrence_statistics":{"media_count":53,"total_occurrences":53},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15824","ontology_label":"D-fructose","ontology_source":"CHEBI"},"preferred_term":"D-Fructose","sssom_rows":[{"data_row":928,"object_id":"CHEBI:15824","object_label":"D-fructose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-fructose","synonym_count":9} |
 | ev-7dfe0e98fdb022aa | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-ed25667ba2cf7e98] | context_only | Predecessor structured review finding f-ed25667ba2cf7e98 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ae8efc7cf6fc5c77
+  evidence_ids:
+  - ev-0c41798cf0191686
+  - ev-24f87b350ab731fb
+  - ev-313753c68f54d274
+  - ev-fcd2e2c5c6f99a6f
+  - ev-2a39d5467c6e9812
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ae8efc7cf6fc5c77
+  evidence_ids:
+  - ev-0c41798cf0191686
+  - ev-3f91abe79741eb89
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ae8efc7cf6fc5c77
+  evidence_ids:
+  - ev-1a98de84302cef15
+  - ev-bb1929287b073175
+  - ev-3f91abe79741eb89
+  - ev-7dfe0e98fdb022aa
 evidence:
 - evidence_id: ev-0c41798cf0191686
   kind: record_content
   reference: data/ingredients/mapped/D-fructose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15824","line":834,"mapping_status":"MAPPED","ontology_id":"CHEBI:15824","preferred_term":"D-Fructose"}],"identifier":"CHEBI:15824","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":53,"edge_count":53,"occurrences":53},"occurrence_statistics":{"media_count":53,"total_occurrences":53},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15824","ontology_label":"D-fructose","ontology_source":"CHEBI"},"preferred_term":"D-Fructose","sssom_rows":[{"data_row":928,"object_id":"CHEBI:15824","object_label":"D-fructose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-fructose","synonym_count":9}'
   snapshot_sha256: 05b9d5a79984d5afd90077147ed421ce227ea80946344db298c80e985f8f718e
@@ -213,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [832]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +236,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-fructose; data-row positions=[928]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":928,"object_id":"CHEBI:15824","object_label":"D-fructose","other":"(-)-D-fructose|(2)-d-fructose|D-Fru|D-arabino-hex-2-ulose|D-laevulose|Laevulose|CAS:57-48-7","predicate_id":"skos:exactMatch","subject_id":"MIM:D-fructose","validation_method":"manual:retire_wrong_form_names|OTHER|2026-09-23"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -230,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[834]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15824","line":834,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"53","ontology_id":"CHEBI:15824","preferred_term":"D-Fructose","total_occurrences":"53"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -285,7 +299,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[492,1752]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"05b9d5a79984d5afd90077147ed421ce227ea80946344db298c80e985f8f718e","finding_id":"SEM:2b5b31e7bad35cdff218","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"05b9d5a79984d5afd90077147ed421ce227ea80946344db298c80e985f8f718e","finding_id":"SEM:cab4036a5927a7a1af55","kind":"role_evidence","resolution_reason":"Historical
@@ -295,12 +309,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-fructose.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15824","line":834,"mapping_status":"MAPPED","ontology_id":"CHEBI:15824","preferred_term":"D-Fructose"}],"identifier":"CHEBI:15824","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":53,"edge_count":53,"occurrences":53},"occurrence_statistics":{"media_count":53,"total_occurrences":53},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15824","ontology_label":"D-fructose","ontology_source":"CHEBI"},"preferred_term":"D-Fructose","sssom_rows":[{"data_row":928,"object_id":"CHEBI:15824","object_label":"D-fructose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-fructose","synonym_count":9}'
   snapshot_sha256: 05b9d5a79984d5afd90077147ed421ce227ea80946344db298c80e985f8f718e
 - evidence_id: ev-7dfe0e98fdb022aa
   kind: prior_review

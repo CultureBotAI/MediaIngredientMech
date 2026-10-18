@@ -83,13 +83,13 @@ Reassess prediction-only role support: Soya peptone
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-3e9c3f36e4b810c7 | data/ingredients/mapped/Soya_Peptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1884],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315720","line":1886,"mapping_status":"MAPPED","ontology_id":"FOODON:03315720","preferred_term":"Soya peptone"}],"identifier":"FOODON:03315720","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":833,"edge_count":833,"occurrences":1089},"occurrence_statistics":{"media_count":833,"total_occurrences":1089},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315720","ontology_label":"vegetable protein, hydrolyzed","ontology_source":"FOODON"},"preferred_term":"Soya peptone","sssom_rows":[{"data_row":2624,"object_id":"FOODON:03315720","object_label":"vegetable protein, hydrolyzed","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soya_Peptone","synonym_count":0} |
-| ev-415e2a4b2a1e873a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1884] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-cbf26c02b58d2152 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Soya_Peptone; data-row positions=[2624] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2624,"object_id":"FOODON:03315720","object_label":"vegetable protein, hydrolyzed","other":"CAS:91079-46-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Soya_Peptone","validation_method":"OLS:foodon&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-baad546e4d308331 | docs/data/mapped_ingredients.csv; CSV lines=[1886] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:03315720","line":1886,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"833","ontology_id":"FOODON:03315720","preferred_term":"Soya peptone","total_occurrences":"1089"}] |
+| ev-3e9c3f36e4b810c7 | data/ingredients/mapped/Soya_Peptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1883],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315720","line":1885,"mapping_status":"MAPPED","ontology_id":"FOODON:03315720","preferred_term":"Soya peptone"}],"identifier":"FOODON:03315720","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":833,"edge_count":833,"occurrences":1089},"occurrence_statistics":{"media_count":833,"total_occurrences":1089},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315720","ontology_label":"vegetable protein, hydrolyzed","ontology_source":"FOODON"},"preferred_term":"Soya peptone","sssom_rows":[{"data_row":2626,"object_id":"FOODON:03315720","object_label":"vegetable protein, hydrolyzed","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soya_Peptone","synonym_count":0} |
+| ev-415e2a4b2a1e873a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1883] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-cbf26c02b58d2152 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Soya_Peptone; data-row positions=[2626] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2626,"object_id":"FOODON:03315720","object_label":"vegetable protein, hydrolyzed","other":"CAS:91079-46-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Soya_Peptone","validation_method":"OLS:foodon&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-baad546e4d308331 | docs/data/mapped_ingredients.csv; CSV lines=[1885] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:03315720","line":1885,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"833","ontology_id":"FOODON:03315720","preferred_term":"Soya peptone","total_occurrences":"1089"}] |
 | ev-8e9fbf2bb31d905e | reports/yaml_record_review/Soya_Peptone.md; &#96;data/ingredients/mapped/Soya_Peptone.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:30; Completeness:45; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-dadfa742f55b2919 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1239,1574] | context_only | [{"current_record_sha256":"4002653e0decfd0e7821b4bdec8b5868f4d812225a294da510599b4497f06743","finding_id":"SEM:9d31b6b272abfd80a9d6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4002653e0decfd0e7821b4bdec8b5868f4d812225a294da510599b4497f06743","finding_id":"SEM:9ac9917c59761665a026","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b94f8128d0781f71 | data/ingredients/mapped/Soya_Peptone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-b94f8128d0781f71 | data/ingredients/mapped/Soya_Peptone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1883],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315720","line":1885,"mapping_status":"MAPPED","ontology_id":"FOODON:03315720","preferred_term":"Soya peptone"}],"identifier":"FOODON:03315720","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":833,"edge_count":833,"occurrences":1089},"occurrence_statistics":{"media_count":833,"total_occurrences":1089},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315720","ontology_label":"vegetable protein, hydrolyzed","ontology_source":"FOODON"},"preferred_term":"Soya peptone","sssom_rows":[{"data_row":2626,"object_id":"FOODON:03315720","object_label":"vegetable protein, hydrolyzed","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soya_Peptone","synonym_count":0} |
 | ev-b9476a33af9dd6b4 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-cfffccc749f8ba44] | context_only | Predecessor structured review finding f-cfffccc749f8ba44 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2bc51debd4e99f2c
+  evidence_ids:
+  - ev-3e9c3f36e4b810c7
+  - ev-415e2a4b2a1e873a
+  - ev-cbf26c02b58d2152
+  - ev-baad546e4d308331
+  - ev-b94f8128d0781f71
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-2bc51debd4e99f2c
+  evidence_ids:
+  - ev-3e9c3f36e4b810c7
+  - ev-dadfa742f55b2919
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2bc51debd4e99f2c
+  evidence_ids:
+  - ev-8e9fbf2bb31d905e
+  - ev-dadfa742f55b2919
+  - ev-b9476a33af9dd6b4
 evidence:
 - evidence_id: ev-3e9c3f36e4b810c7
   kind: record_content
   reference: data/ingredients/mapped/Soya_Peptone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1884],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315720","line":1886,"mapping_status":"MAPPED","ontology_id":"FOODON:03315720","preferred_term":"Soya
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1883],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315720","line":1885,"mapping_status":"MAPPED","ontology_id":"FOODON:03315720","preferred_term":"Soya
     peptone"}],"identifier":"FOODON:03315720","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":833,"edge_count":833,"occurrences":1089},"occurrence_statistics":{"media_count":833,"total_occurrences":1089},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315720","ontology_label":"vegetable
-    protein, hydrolyzed","ontology_source":"FOODON"},"preferred_term":"Soya peptone","sssom_rows":[{"data_row":2624,"object_id":"FOODON:03315720","object_label":"vegetable
+    protein, hydrolyzed","ontology_source":"FOODON"},"preferred_term":"Soya peptone","sssom_rows":[{"data_row":2626,"object_id":"FOODON:03315720","object_label":"vegetable
     protein, hydrolyzed","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soya_Peptone","synonym_count":0}'
   snapshot_sha256: 4002653e0decfd0e7821b4bdec8b5868f4d812225a294da510599b4497f06743
 - evidence_id: ev-415e2a4b2a1e873a
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1884]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1883]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-cbf26c02b58d2152
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Soya_Peptone; data-row positions=[2624]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Soya_Peptone; data-row positions=[2626]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2624,"object_id":"FOODON:03315720","object_label":"vegetable
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2626,"object_id":"FOODON:03315720","object_label":"vegetable
     protein, hydrolyzed","other":"CAS:91079-46-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Soya_Peptone","validation_method":"OLS:foodon|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-baad546e4d308331
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1886]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1885]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315720","line":1886,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"833","ontology_id":"FOODON:03315720","preferred_term":"Soya
+  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315720","line":1885,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"833","ontology_id":"FOODON:03315720","preferred_term":"Soya
     peptone","total_occurrences":"1089"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-8e9fbf2bb31d905e
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1239,1574]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4002653e0decfd0e7821b4bdec8b5868f4d812225a294da510599b4497f06743","finding_id":"SEM:9d31b6b272abfd80a9d6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4002653e0decfd0e7821b4bdec8b5868f4d812225a294da510599b4497f06743","finding_id":"SEM:9ac9917c59761665a026","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Soya_Peptone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1883],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315720","line":1885,"mapping_status":"MAPPED","ontology_id":"FOODON:03315720","preferred_term":"Soya
+    peptone"}],"identifier":"FOODON:03315720","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":833,"edge_count":833,"occurrences":1089},"occurrence_statistics":{"media_count":833,"total_occurrences":1089},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315720","ontology_label":"vegetable
+    protein, hydrolyzed","ontology_source":"FOODON"},"preferred_term":"Soya peptone","sssom_rows":[{"data_row":2626,"object_id":"FOODON:03315720","object_label":"vegetable
+    protein, hydrolyzed","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soya_Peptone","synonym_count":0}'
   snapshot_sha256: 4002653e0decfd0e7821b4bdec8b5868f4d812225a294da510599b4497f06743
 - evidence_id: ev-b9476a33af9dd6b4
   kind: prior_review

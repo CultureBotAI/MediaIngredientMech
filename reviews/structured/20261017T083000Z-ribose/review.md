@@ -83,13 +83,13 @@ Reassess prediction-only role support: Ribose
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c04793299fd2b9b0 | data/ingredients/mapped/Ribose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1757],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33942","line":1759,"mapping_status":"MAPPED","ontology_id":"CHEBI:33942","preferred_term":"Ribose"}],"identifier":"CHEBI:33942","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33942","ontology_label":"ribose","ontology_source":"CHEBI"},"preferred_term":"Ribose","sssom_rows":[{"data_row":2432,"object_id":"CHEBI:33942","object_label":"ribose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ribose","synonym_count":2} |
-| ev-1fcca3eb0e6f0055 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1757] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d60e3cb7533e526a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ribose; data-row positions=[2432] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2432,"object_id":"CHEBI:33942","object_label":"ribose","other":"Rib&#124;ribo-pentose","predicate_id":"skos:exactMatch","subject_id":"MIM:Ribose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-73f6dfab3705887c | docs/data/mapped_ingredients.csv; CSV lines=[1759] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:33942","line":1759,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:33942","preferred_term":"Ribose","total_occurrences":"6"}] |
+| ev-c04793299fd2b9b0 | data/ingredients/mapped/Ribose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1756],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33942","line":1758,"mapping_status":"MAPPED","ontology_id":"CHEBI:33942","preferred_term":"Ribose"}],"identifier":"CHEBI:33942","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33942","ontology_label":"ribose","ontology_source":"CHEBI"},"preferred_term":"Ribose","sssom_rows":[{"data_row":2434,"object_id":"CHEBI:33942","object_label":"ribose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ribose","synonym_count":2} |
+| ev-1fcca3eb0e6f0055 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1756] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d60e3cb7533e526a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ribose; data-row positions=[2434] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2434,"object_id":"CHEBI:33942","object_label":"ribose","other":"Rib&#124;ribo-pentose","predicate_id":"skos:exactMatch","subject_id":"MIM:Ribose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-73f6dfab3705887c | docs/data/mapped_ingredients.csv; CSV lines=[1758] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:33942","line":1758,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:33942","preferred_term":"Ribose","total_occurrences":"6"}] |
 | ev-93d12434f79757a5 | reports/yaml_record_review/Ribose.md; &#96;data/ingredients/mapped/Ribose.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-36c971fcc14b2f78 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1176,1480,1880] | context_only | [{"current_record_sha256":"964caca9c09c76a81ca23148521a5d90c1d86b49cfbf197cb58d9d09ca2aeae9","finding_id":"SEM:43e08826dd90a37b8f8f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"964caca9c09c76a81ca23148521a5d90c1d86b49cfbf197cb58d9d09ca2aeae9","finding_id":"SEM:f965a4e6dc2d64d875ca","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"964caca9c09c76a81ca23148521a5d90c1d86b49cfbf197cb58d9d09ca2aeae9","finding_id":"SEM:954d2dabb1e00504ec7d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-6fd45e763a018a41 | data/ingredients/mapped/Ribose.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-6fd45e763a018a41 | data/ingredients/mapped/Ribose.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1756],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33942","line":1758,"mapping_status":"MAPPED","ontology_id":"CHEBI:33942","preferred_term":"Ribose"}],"identifier":"CHEBI:33942","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33942","ontology_label":"ribose","ontology_source":"CHEBI"},"preferred_term":"Ribose","sssom_rows":[{"data_row":2434,"object_id":"CHEBI:33942","object_label":"ribose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ribose","synonym_count":2} |
 | ev-398db14c574a7376 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-989f14c4ce356759] | context_only | Predecessor structured review finding f-989f14c4ce356759 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-77a5e6dd7c9f6f24
+  evidence_ids:
+  - ev-c04793299fd2b9b0
+  - ev-1fcca3eb0e6f0055
+  - ev-d60e3cb7533e526a
+  - ev-73f6dfab3705887c
+  - ev-6fd45e763a018a41
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-77a5e6dd7c9f6f24
+  evidence_ids:
+  - ev-c04793299fd2b9b0
+  - ev-36c971fcc14b2f78
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-77a5e6dd7c9f6f24
+  evidence_ids:
+  - ev-93d12434f79757a5
+  - ev-36c971fcc14b2f78
+  - ev-398db14c574a7376
 evidence:
 - evidence_id: ev-c04793299fd2b9b0
   kind: record_content
   reference: data/ingredients/mapped/Ribose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1757],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33942","line":1759,"mapping_status":"MAPPED","ontology_id":"CHEBI:33942","preferred_term":"Ribose"}],"identifier":"CHEBI:33942","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33942","ontology_label":"ribose","ontology_source":"CHEBI"},"preferred_term":"Ribose","sssom_rows":[{"data_row":2432,"object_id":"CHEBI:33942","object_label":"ribose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ribose","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1756],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33942","line":1758,"mapping_status":"MAPPED","ontology_id":"CHEBI:33942","preferred_term":"Ribose"}],"identifier":"CHEBI:33942","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33942","ontology_label":"ribose","ontology_source":"CHEBI"},"preferred_term":"Ribose","sssom_rows":[{"data_row":2434,"object_id":"CHEBI:33942","object_label":"ribose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ribose","synonym_count":2}'
   snapshot_sha256: 964caca9c09c76a81ca23148521a5d90c1d86b49cfbf197cb58d9d09ca2aeae9
 - evidence_id: ev-1fcca3eb0e6f0055
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1757]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1756]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-d60e3cb7533e526a
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Ribose; data-row positions=[2432]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Ribose; data-row positions=[2434]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2432,"object_id":"CHEBI:33942","object_label":"ribose","other":"Rib|ribo-pentose","predicate_id":"skos:exactMatch","subject_id":"MIM:Ribose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2434,"object_id":"CHEBI:33942","object_label":"ribose","other":"Rib|ribo-pentose","predicate_id":"skos:exactMatch","subject_id":"MIM:Ribose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-73f6dfab3705887c
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1759]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1758]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:33942","line":1759,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:33942","preferred_term":"Ribose","total_occurrences":"6"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:33942","line":1758,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:33942","preferred_term":"Ribose","total_occurrences":"6"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-93d12434f79757a5
   kind: prior_review
@@ -244,7 +257,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1176,1480,1880]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"964caca9c09c76a81ca23148521a5d90c1d86b49cfbf197cb58d9d09ca2aeae9","finding_id":"SEM:43e08826dd90a37b8f8f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"964caca9c09c76a81ca23148521a5d90c1d86b49cfbf197cb58d9d09ca2aeae9","finding_id":"SEM:f965a4e6dc2d64d875ca","kind":"role_evidence","resolution_reason":"Historical
@@ -255,14 +268,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Ribose.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1756],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33942","line":1758,"mapping_status":"MAPPED","ontology_id":"CHEBI:33942","preferred_term":"Ribose"}],"identifier":"CHEBI:33942","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33942","ontology_label":"ribose","ontology_source":"CHEBI"},"preferred_term":"Ribose","sssom_rows":[{"data_row":2434,"object_id":"CHEBI:33942","object_label":"ribose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ribose","synonym_count":2}'
   snapshot_sha256: 964caca9c09c76a81ca23148521a5d90c1d86b49cfbf197cb58d9d09ca2aeae9
 - evidence_id: ev-398db14c574a7376
   kind: prior_review

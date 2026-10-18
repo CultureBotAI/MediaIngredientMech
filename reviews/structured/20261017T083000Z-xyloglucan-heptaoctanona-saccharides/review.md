@@ -91,7 +91,6 @@ Disposition: Current status=UNMAPPED; no supported promotion is established by t
 | ev-be5c9ee6652e0a57 | docs/data/unmapped_ingredients.csv; CSV lines=[253] | supports | Published identity and count rows inspected: [{"identifier":"UNMAPPED_0174","line":253,"mapping_quality":"NARROW_MATCH","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"CHEBI:18233","preferred_term":"Xyloglucan (hepta+octa+nona saccharides)","total_occurrences":"0"}] |
 | ev-44aff76ea63c5618 | reports/yaml_record_review/20261001T045035Z-Xyloglucan_Heptaoctanona_Saccharides.md; YAML Record Review: Xyloglucan (hepta+octa+nona saccharides):2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60; Additional Notes:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-64596d68f86a325c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1371] | context_only | [{"current_record_sha256":"295bf2d993db3c5a5090a1619dbf750bf652ff11d41a43ee388740aaeb9ac834","finding_id":"SEM:a1785b3dfacc9de89cc7","kind":"unmapped_parent_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-92582a5512632144 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/unmapped/Xyloglucan_Heptaoctanona_Saccharides.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -180,6 +179,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-72630867efa5a53d
+  evidence_ids:
+  - ev-06e8024285f5e54b
+  - ev-a4969f33bf6e8e58
+  - ev-8b121bbf216bedbf
+  - ev-be5c9ee6652e0a57
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -188,6 +192,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-72630867efa5a53d
+  evidence_ids:
+  - ev-06e8024285f5e54b
+  - ev-64596d68f86a325c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,13 +203,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-72630867efa5a53d
+  evidence_ids:
+  - ev-44aff76ea63c5618
+  - ev-64596d68f86a325c
 evidence:
 - evidence_id: ev-06e8024285f5e54b
   kind: record_content
   reference: data/ingredients/unmapped/Xyloglucan_Heptaoctanona_Saccharides.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[251],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0174","line":253,"mapping_status":"UNMAPPED","ontology_id":"CHEBI:18233","preferred_term":"Xyloglucan
     (hepta+octa+nona saccharides)"}],"identifier":"UNMAPPED_0174","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:18233","ontology_label":"xyloglucan","ontology_source":"CHEBI"},"preferred_term":"Xyloglucan
@@ -212,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [251]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Xyloglucan_Heptaoctanona_Saccharides; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -229,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[253]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0174","line":253,"mapping_quality":"NARROW_MATCH","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"CHEBI:18233","preferred_term":"Xyloglucan
     (hepta+octa+nona saccharides)","total_occurrences":"0"}]'
@@ -266,18 +276,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1371]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"295bf2d993db3c5a5090a1619dbf750bf652ff11d41a43ee388740aaeb9ac834","finding_id":"SEM:a1785b3dfacc9de89cc7","kind":"unmapped_parent_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-92582a5512632144
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/unmapped/Xyloglucan_Heptaoctanona_Saccharides.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-03a832d2dfbd7068
@@ -375,7 +377,7 @@ findings:
   - record-72630867efa5a53d
   evidence_ids:
   - ev-06e8024285f5e54b
-  - ev-92582a5512632144
+  - ev-64596d68f86a325c
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/unmapped/Xyloglucan_Heptaoctanona_Saccharides.yaml

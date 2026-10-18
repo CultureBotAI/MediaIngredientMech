@@ -167,6 +167,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-72a1574ca4941e17
+  - ev-e8ee8c29b0568f9d
+  - ev-2c14069beddf2b9b
+  - ev-a5483bf5df63f9d9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -175,6 +180,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-72a1574ca4941e17
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -183,13 +190,15 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9d020c01bbba1251
+  evidence_ids:
+  - ev-78bd46709da8f2bc
 evidence:
 - evidence_id: ev-72a1574ca4941e17
   kind: record_content
   reference: data/ingredients/unmapped/Marine_Broth.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[152],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0433","line":154,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"Marine
     Broth"}],"identifier":"UNMAPPED_0433","ingredient_type":"NAMED_MEDIUM","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Marine
@@ -199,7 +208,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [152]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -208,7 +217,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Marine_Broth; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -216,7 +225,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[154]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0433","line":154,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"Marine
     Broth","total_occurrences":"0"}]'

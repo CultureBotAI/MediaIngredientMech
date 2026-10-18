@@ -83,13 +83,13 @@ Reassess prediction-only role support: Nisin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-cf186d4f1ee5fc28 | data/ingredients/mapped/Nisin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1564],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:71629","line":1566,"mapping_status":"MAPPED","ontology_id":"CHEBI:71629","preferred_term":"Nisin"}],"identifier":"CHEBI:71629","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:71629","ontology_label":"nisin","ontology_source":"CHEBI"},"preferred_term":"Nisin","sssom_rows":[{"data_row":2093,"object_id":"CHEBI:71629","object_label":"nisin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nisin","synonym_count":1} |
-| ev-79cebfad0cbff769 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1564] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-1a141104d6b00e05 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nisin; data-row positions=[2093] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2093,"object_id":"CHEBI:71629","object_label":"nisin","other":"N-{[(1S,4S,7S,8S,11R,14S,17R,20S)-7-{[N(2)-({(3R,9S,12S,15S,21S,22S)-21-[(N(2)-{[(6R,9S,10S,15aS)-10-({[(3R,6S,12S,15S)-12-[(2S)-butan-2-yl]-6-isobutyl-15-{[(2Z)-2-(L-isoleucylamino)but-2-enoyl]amino}-9-methylene-5,8,11,14-tetraoxo-1-thia-4,7,10,13-tetraazacyclohexadecan-3-yl]carbonyl}amino)-9-methyl-1,4,11-trioxododecahydro-1H,9H-pyrrolo[2,1-i][1,4,7,10]thiatriazacyclotridecin-6-yl]carbonyl}-L-lysyl)amino]-12-isobutyl-15,22-dimethyl-9-[2-(methylsulfanyl)ethyl]-5,8,11,14,17,20-hexaoxo-1-thia-4,7,10,13,16,19-hexaazacyclodocosan-3-yl}carbonyl)-L-asparaginyl-L-methionyl-L-lysyl]amino}-14-(1H-imidazol-5-ylmethyl)-4,8,20-trimethyl-3,6,12,15,21-pentaoxo-9,19-dithia-2,5,13,16,22-pentaazabicyclo[9.9.2]docos-17-yl]carbonyl}-L-seryl-L-isoleucyl-L-histidyl-N-(3-{[(1S)-5-amino-1-carboxypentyl]amino}-3-oxoprop-1-en-2-yl)-L-valinamide&#124;CAS:1414-45-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Nisin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-dd25eb99ec0c8b79 | docs/data/mapped_ingredients.csv; CSV lines=[1566] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:71629","line":1566,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:71629","preferred_term":"Nisin","total_occurrences":"0"}] |
+| ev-cf186d4f1ee5fc28 | data/ingredients/mapped/Nisin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1563],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:71629","line":1565,"mapping_status":"MAPPED","ontology_id":"CHEBI:71629","preferred_term":"Nisin"}],"identifier":"CHEBI:71629","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:71629","ontology_label":"nisin","ontology_source":"CHEBI"},"preferred_term":"Nisin","sssom_rows":[{"data_row":2095,"object_id":"CHEBI:71629","object_label":"nisin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nisin","synonym_count":1} |
+| ev-79cebfad0cbff769 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1563] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-1a141104d6b00e05 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nisin; data-row positions=[2095] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2095,"object_id":"CHEBI:71629","object_label":"nisin","other":"N-{[(1S,4S,7S,8S,11R,14S,17R,20S)-7-{[N(2)-({(3R,9S,12S,15S,21S,22S)-21-[(N(2)-{[(6R,9S,10S,15aS)-10-({[(3R,6S,12S,15S)-12-[(2S)-butan-2-yl]-6-isobutyl-15-{[(2Z)-2-(L-isoleucylamino)but-2-enoyl]amino}-9-methylene-5,8,11,14-tetraoxo-1-thia-4,7,10,13-tetraazacyclohexadecan-3-yl]carbonyl}amino)-9-methyl-1,4,11-trioxododecahydro-1H,9H-pyrrolo[2,1-i][1,4,7,10]thiatriazacyclotridecin-6-yl]carbonyl}-L-lysyl)amino]-12-isobutyl-15,22-dimethyl-9-[2-(methylsulfanyl)ethyl]-5,8,11,14,17,20-hexaoxo-1-thia-4,7,10,13,16,19-hexaazacyclodocosan-3-yl}carbonyl)-L-asparaginyl-L-methionyl-L-lysyl]amino}-14-(1H-imidazol-5-ylmethyl)-4,8,20-trimethyl-3,6,12,15,21-pentaoxo-9,19-dithia-2,5,13,16,22-pentaazabicyclo[9.9.2]docos-17-yl]carbonyl}-L-seryl-L-isoleucyl-L-histidyl-N-(3-{[(1S)-5-amino-1-carboxypentyl]amino}-3-oxoprop-1-en-2-yl)-L-valinamide&#124;CAS:1414-45-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Nisin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-dd25eb99ec0c8b79 | docs/data/mapped_ingredients.csv; CSV lines=[1565] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:71629","line":1565,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:71629","preferred_term":"Nisin","total_occurrences":"0"}] |
 | ev-78071e9cb2e59bb6 | reports/yaml_record_review/Nisin.md; &#96;data/ingredients/mapped/Nisin.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:26; Completeness:39; Recommended Edits:45 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-dfca13454f8b5a1a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1061,1466] | context_only | [{"current_record_sha256":"aeb6ded6b1375ed852b3a3c2a4c5954d0123fb5b398263121a8a96bca6d03b45","finding_id":"SEM:e1644c13b67860c547be","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aeb6ded6b1375ed852b3a3c2a4c5954d0123fb5b398263121a8a96bca6d03b45","finding_id":"SEM:b6ca26c4a311208e0475","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2f0232123f6a7ac3 | data/ingredients/mapped/Nisin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-2f0232123f6a7ac3 | data/ingredients/mapped/Nisin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1563],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:71629","line":1565,"mapping_status":"MAPPED","ontology_id":"CHEBI:71629","preferred_term":"Nisin"}],"identifier":"CHEBI:71629","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:71629","ontology_label":"nisin","ontology_source":"CHEBI"},"preferred_term":"Nisin","sssom_rows":[{"data_row":2095,"object_id":"CHEBI:71629","object_label":"nisin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nisin","synonym_count":1} |
 | ev-42190bcce2765865 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-57a8f7b8d656041c] | context_only | Predecessor structured review finding f-57a8f7b8d656041c in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6c8878c6a593030a
+  evidence_ids:
+  - ev-cf186d4f1ee5fc28
+  - ev-79cebfad0cbff769
+  - ev-1a141104d6b00e05
+  - ev-dd25eb99ec0c8b79
+  - ev-2f0232123f6a7ac3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6c8878c6a593030a
+  evidence_ids:
+  - ev-cf186d4f1ee5fc28
+  - ev-dfca13454f8b5a1a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6c8878c6a593030a
+  evidence_ids:
+  - ev-78071e9cb2e59bb6
+  - ev-dfca13454f8b5a1a
+  - ev-42190bcce2765865
 evidence:
 - evidence_id: ev-cf186d4f1ee5fc28
   kind: record_content
   reference: data/ingredients/mapped/Nisin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1564],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:71629","line":1566,"mapping_status":"MAPPED","ontology_id":"CHEBI:71629","preferred_term":"Nisin"}],"identifier":"CHEBI:71629","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:71629","ontology_label":"nisin","ontology_source":"CHEBI"},"preferred_term":"Nisin","sssom_rows":[{"data_row":2093,"object_id":"CHEBI:71629","object_label":"nisin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nisin","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1563],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:71629","line":1565,"mapping_status":"MAPPED","ontology_id":"CHEBI:71629","preferred_term":"Nisin"}],"identifier":"CHEBI:71629","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:71629","ontology_label":"nisin","ontology_source":"CHEBI"},"preferred_term":"Nisin","sssom_rows":[{"data_row":2095,"object_id":"CHEBI:71629","object_label":"nisin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nisin","synonym_count":1}'
   snapshot_sha256: aeb6ded6b1375ed852b3a3c2a4c5954d0123fb5b398263121a8a96bca6d03b45
 - evidence_id: ev-79cebfad0cbff769
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1564]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1563]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-1a141104d6b00e05
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Nisin; data-row positions=[2093]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Nisin; data-row positions=[2095]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2093,"object_id":"CHEBI:71629","object_label":"nisin","other":"N-{[(1S,4S,7S,8S,11R,14S,17R,20S)-7-{[N(2)-({(3R,9S,12S,15S,21S,22S)-21-[(N(2)-{[(6R,9S,10S,15aS)-10-({[(3R,6S,12S,15S)-12-[(2S)-butan-2-yl]-6-isobutyl-15-{[(2Z)-2-(L-isoleucylamino)but-2-enoyl]amino}-9-methylene-5,8,11,14-tetraoxo-1-thia-4,7,10,13-tetraazacyclohexadecan-3-yl]carbonyl}amino)-9-methyl-1,4,11-trioxododecahydro-1H,9H-pyrrolo[2,1-i][1,4,7,10]thiatriazacyclotridecin-6-yl]carbonyl}-L-lysyl)amino]-12-isobutyl-15,22-dimethyl-9-[2-(methylsulfanyl)ethyl]-5,8,11,14,17,20-hexaoxo-1-thia-4,7,10,13,16,19-hexaazacyclodocosan-3-yl}carbonyl)-L-asparaginyl-L-methionyl-L-lysyl]amino}-14-(1H-imidazol-5-ylmethyl)-4,8,20-trimethyl-3,6,12,15,21-pentaoxo-9,19-dithia-2,5,13,16,22-pentaazabicyclo[9.9.2]docos-17-yl]carbonyl}-L-seryl-L-isoleucyl-L-histidyl-N-(3-{[(1S)-5-amino-1-carboxypentyl]amino}-3-oxoprop-1-en-2-yl)-L-valinamide|CAS:1414-45-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Nisin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2095,"object_id":"CHEBI:71629","object_label":"nisin","other":"N-{[(1S,4S,7S,8S,11R,14S,17R,20S)-7-{[N(2)-({(3R,9S,12S,15S,21S,22S)-21-[(N(2)-{[(6R,9S,10S,15aS)-10-({[(3R,6S,12S,15S)-12-[(2S)-butan-2-yl]-6-isobutyl-15-{[(2Z)-2-(L-isoleucylamino)but-2-enoyl]amino}-9-methylene-5,8,11,14-tetraoxo-1-thia-4,7,10,13-tetraazacyclohexadecan-3-yl]carbonyl}amino)-9-methyl-1,4,11-trioxododecahydro-1H,9H-pyrrolo[2,1-i][1,4,7,10]thiatriazacyclotridecin-6-yl]carbonyl}-L-lysyl)amino]-12-isobutyl-15,22-dimethyl-9-[2-(methylsulfanyl)ethyl]-5,8,11,14,17,20-hexaoxo-1-thia-4,7,10,13,16,19-hexaazacyclodocosan-3-yl}carbonyl)-L-asparaginyl-L-methionyl-L-lysyl]amino}-14-(1H-imidazol-5-ylmethyl)-4,8,20-trimethyl-3,6,12,15,21-pentaoxo-9,19-dithia-2,5,13,16,22-pentaazabicyclo[9.9.2]docos-17-yl]carbonyl}-L-seryl-L-isoleucyl-L-histidyl-N-(3-{[(1S)-5-amino-1-carboxypentyl]amino}-3-oxoprop-1-en-2-yl)-L-valinamide|CAS:1414-45-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Nisin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-dd25eb99ec0c8b79
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1566]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1565]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:71629","line":1566,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:71629","preferred_term":"Nisin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:71629","line":1565,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:71629","preferred_term":"Nisin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-78071e9cb2e59bb6
   kind: prior_review
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1061,1466]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"aeb6ded6b1375ed852b3a3c2a4c5954d0123fb5b398263121a8a96bca6d03b45","finding_id":"SEM:e1644c13b67860c547be","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aeb6ded6b1375ed852b3a3c2a4c5954d0123fb5b398263121a8a96bca6d03b45","finding_id":"SEM:b6ca26c4a311208e0475","kind":"role_evidence","resolution_reason":"Historical
@@ -258,12 +271,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Nisin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1563],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:71629","line":1565,"mapping_status":"MAPPED","ontology_id":"CHEBI:71629","preferred_term":"Nisin"}],"identifier":"CHEBI:71629","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:71629","ontology_label":"nisin","ontology_source":"CHEBI"},"preferred_term":"Nisin","sssom_rows":[{"data_row":2095,"object_id":"CHEBI:71629","object_label":"nisin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nisin","synonym_count":1}'
   snapshot_sha256: aeb6ded6b1375ed852b3a3c2a4c5954d0123fb5b398263121a8a96bca6d03b45
 - evidence_id: ev-42190bcce2765865
   kind: prior_review

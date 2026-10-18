@@ -83,13 +83,13 @@ Reassess prediction-only role support: Triton X-100
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-e67facb807632826 | data/ingredients/mapped/Triton_X-100.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2004],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9750","line":2006,"mapping_status":"MAPPED","ontology_id":"CHEBI:9750","preferred_term":"Triton X-100"}],"identifier":"CHEBI:9750","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:9750","ontology_label":"Triton X-100","ontology_source":"CHEBI"},"preferred_term":"Triton X-100","sssom_rows":[{"data_row":2836,"object_id":"CHEBI:9750","object_label":"Triton X-100","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Triton_X-100","synonym_count":0} |
-| ev-218740938ea7b90a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2004] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-97777fbd39c3c9ba | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Triton_X-100; data-row positions=[2836] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2836,"object_id":"CHEBI:9750","object_label":"Triton X-100","other":"CAS:9002-93-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Triton_X-100","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-7811bdbd058c8e35 | docs/data/mapped_ingredients.csv; CSV lines=[2006] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:9750","line":2006,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9750","preferred_term":"Triton X-100","total_occurrences":"0"}] |
+| ev-e67facb807632826 | data/ingredients/mapped/Triton_X-100.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2003],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9750","line":2005,"mapping_status":"MAPPED","ontology_id":"CHEBI:9750","preferred_term":"Triton X-100"}],"identifier":"CHEBI:9750","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:9750","ontology_label":"Triton X-100","ontology_source":"CHEBI"},"preferred_term":"Triton X-100","sssom_rows":[{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton X-100","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Triton_X-100","synonym_count":0} |
+| ev-218740938ea7b90a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2003] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-97777fbd39c3c9ba | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Triton_X-100; data-row positions=[2838] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton X-100","other":"CAS:9002-93-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Triton_X-100","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-7811bdbd058c8e35 | docs/data/mapped_ingredients.csv; CSV lines=[2005] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:9750","line":2005,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9750","preferred_term":"Triton X-100","total_occurrences":"0"}] |
 | ev-e05f9ce3bc7f435f | reports/yaml_record_review/Triton_X-100.md; &#96;data/ingredients/mapped/Triton_X-100.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:29; Issues:37; Major: &#96;SURFACTANT&#96; is provisional CHEBI-ancestry evidence:39; Completeness:58; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-346e55c5a9fdb6b0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1317,2044] | context_only | [{"current_record_sha256":"b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa","finding_id":"SEM:a0209f9e7c1363c809f0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa","finding_id":"SEM:cd44463461e80e082213","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ec1be61d7aad2d80 | data/ingredients/mapped/Triton_X-100.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}] |
+| ev-ec1be61d7aad2d80 | data/ingredients/mapped/Triton_X-100.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2003],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9750","line":2005,"mapping_status":"MAPPED","ontology_id":"CHEBI:9750","preferred_term":"Triton X-100"}],"identifier":"CHEBI:9750","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:9750","ontology_label":"Triton X-100","ontology_source":"CHEBI"},"preferred_term":"Triton X-100","sssom_rows":[{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton X-100","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Triton_X-100","synonym_count":0} |
 | ev-2cd6cb28c99d9612 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-878d0c20d909ef0b] | context_only | Predecessor structured review finding f-878d0c20d909ef0b in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-20afc4299873882a
+  evidence_ids:
+  - ev-e67facb807632826
+  - ev-218740938ea7b90a
+  - ev-97777fbd39c3c9ba
+  - ev-7811bdbd058c8e35
+  - ev-ec1be61d7aad2d80
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-20afc4299873882a
+  evidence_ids:
+  - ev-e67facb807632826
+  - ev-346e55c5a9fdb6b0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-20afc4299873882a
+  evidence_ids:
+  - ev-e05f9ce3bc7f435f
+  - ev-346e55c5a9fdb6b0
+  - ev-2cd6cb28c99d9612
 evidence:
 - evidence_id: ev-e67facb807632826
   kind: record_content
   reference: data/ingredients/mapped/Triton_X-100.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2004],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9750","line":2006,"mapping_status":"MAPPED","ontology_id":"CHEBI:9750","preferred_term":"Triton
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2003],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9750","line":2005,"mapping_status":"MAPPED","ontology_id":"CHEBI:9750","preferred_term":"Triton
     X-100"}],"identifier":"CHEBI:9750","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:9750","ontology_label":"Triton
-    X-100","ontology_source":"CHEBI"},"preferred_term":"Triton X-100","sssom_rows":[{"data_row":2836,"object_id":"CHEBI:9750","object_label":"Triton
+    X-100","ontology_source":"CHEBI"},"preferred_term":"Triton X-100","sssom_rows":[{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton
     X-100","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Triton_X-100","synonym_count":0}'
   snapshot_sha256: b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa
 - evidence_id: ev-218740938ea7b90a
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2004]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2003]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-97777fbd39c3c9ba
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Triton_X-100; data-row positions=[2836]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Triton_X-100; data-row positions=[2838]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2836,"object_id":"CHEBI:9750","object_label":"Triton
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton
     X-100","other":"CAS:9002-93-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Triton_X-100","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-7811bdbd058c8e35
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2006]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2005]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:9750","line":2006,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9750","preferred_term":"Triton
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:9750","line":2005,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9750","preferred_term":"Triton
     X-100","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-e05f9ce3bc7f435f
@@ -261,7 +274,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1317,2044]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa","finding_id":"SEM:a0209f9e7c1363c809f0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa","finding_id":"SEM:cd44463461e80e082213","kind":"role_evidence","resolution_reason":"Historical
@@ -271,12 +284,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Triton_X-100.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2003],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9750","line":2005,"mapping_status":"MAPPED","ontology_id":"CHEBI:9750","preferred_term":"Triton
+    X-100"}],"identifier":"CHEBI:9750","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:9750","ontology_label":"Triton
+    X-100","ontology_source":"CHEBI"},"preferred_term":"Triton X-100","sssom_rows":[{"data_row":2838,"object_id":"CHEBI:9750","object_label":"Triton
+    X-100","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Triton_X-100","synonym_count":0}'
   snapshot_sha256: b61474baea2bb074a9b489521c27559b33a0ae35acda531b6dd6b0bcb9cec3aa
 - evidence_id: ev-2cd6cb28c99d9612
   kind: prior_review

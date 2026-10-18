@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d2b9e3d9130bc906
+  evidence_ids:
+  - ev-a76d93acc3527368
+  - ev-a6919690a0981fc4
+  - ev-80da99020468f981
+  - ev-72687d4be2c08e17
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +87,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d2b9e3d9130bc906
+  evidence_ids:
+  - ev-a76d93acc3527368
+  - ev-8e5907ead9e1a2f7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +98,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d2b9e3d9130bc906
+  evidence_ids:
+  - ev-172ecad9da39aa3b
+  - ev-8e5907ead9e1a2f7
 evidence:
 - evidence_id: ev-a76d93acc3527368
   kind: record_content
   reference: data/ingredients/mapped/Ca-folinate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[616],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31340","line":618,"mapping_status":"MAPPED","ontology_id":"CHEBI:31340","preferred_term":"Ca-folinate"}],"identifier":"CHEBI:31340","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31340","ontology_label":"Calcium
     folinate","ontology_source":"CHEBI"},"preferred_term":"Ca-folinate","sssom_rows":[{"data_row":598,"object_id":"CHEBI:31340","object_label":"Calcium
@@ -106,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [616]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Ca-folinate; data-row positions=[598]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":598,"object_id":"CHEBI:31340","object_label":"Calcium
     folinate","other":"Leucovorin calcium|CAS:1492-18-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Ca-folinate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -124,7 +135,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[618]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31340","line":618,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:31340","preferred_term":"Ca-folinate","total_occurrences":"7"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -146,18 +157,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1852]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e6077448154006195021c507f681b7a4bcf115979bdf0a3f3de69040dc73532f","finding_id":"SEM:6f5d35fa2f48765080ca","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-9570be9bc1829396
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Ca-folinate.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-332e191fcd4c3258
@@ -217,7 +220,7 @@ assessments:
   - record-d2b9e3d9130bc906
   evidence_ids:
   - ev-a76d93acc3527368
-  - ev-9570be9bc1829396
+  - ev-8e5907ead9e1a2f7
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -225,7 +228,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-a76d93acc3527368
-    - ev-9570be9bc1829396
+    - ev-8e5907ead9e1a2f7
 findings:
 - finding_id: rec-f-role-d2b9e3d9130bc906
   issue_key: mim-reconciliation-role-support-d2b9e3d9130bc906
@@ -241,7 +244,7 @@ findings:
   - record-d2b9e3d9130bc906
   evidence_ids:
   - ev-a76d93acc3527368
-  - ev-9570be9bc1829396
+  - ev-8e5907ead9e1a2f7
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Ca-folinate.yaml

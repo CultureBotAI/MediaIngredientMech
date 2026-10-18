@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-037402dc74758530
+  evidence_ids:
+  - ev-c06b4db9f1b639fe
+  - ev-51f2c20a402e9ea4
+  - ev-42235dd38cbfd1c4
+  - ev-ae18f9f1268046f8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +87,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-037402dc74758530
+  evidence_ids:
+  - ev-c06b4db9f1b639fe
+  - ev-0a495fda5ab23d2b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +98,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-037402dc74758530
+  evidence_ids:
+  - ev-d8916b8b9e98aee4
+  - ev-0a495fda5ab23d2b
 evidence:
 - evidence_id: ev-c06b4db9f1b639fe
   kind: record_content
   reference: data/ingredients/mapped/Bromocresol_Purple.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[604],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86154","line":606,"mapping_status":"MAPPED","ontology_id":"CHEBI:86154","preferred_term":"Bromocresol
     purple"}],"identifier":"CHEBI:86154","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86154","ontology_label":"bromocresol
@@ -107,7 +118,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [604]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +127,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Bromocresol_Purple; data-row positions=[581]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":581,"object_id":"CHEBI:86154","object_label":"bromocresol
     purple","other":"3,3-bis(3-bromo-4-hydroxy-5-methylphenyl)-2,1lambda(6)-benzoxathiole-1,1(3H)-dione|5'',5\"\"-dibromo-o-cresolsulfophthalein|HSDB
@@ -126,7 +137,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[606]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86154","line":606,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"9","ontology_id":"CHEBI:86154","preferred_term":"Bromocresol
     purple","total_occurrences":"9"}]'
@@ -150,19 +161,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[332,1728]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9fb254c410e9df1a296ee04529f2612ffd82e240c5f3a9d9c46894fb36e948eb","finding_id":"SEM:1d36959c1496b9350e59","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9fb254c410e9df1a296ee04529f2612ffd82e240c5f3a9d9c46894fb36e948eb","finding_id":"SEM:64d82ceaa9447eb58d80","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-20c921e6ad3f3589
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Bromocresol_Purple.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-de63e655a26a622b
@@ -230,7 +233,7 @@ assessments:
   - record-037402dc74758530
   evidence_ids:
   - ev-c06b4db9f1b639fe
-  - ev-20c921e6ad3f3589
+  - ev-0a495fda5ab23d2b
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -238,7 +241,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-c06b4db9f1b639fe
-    - ev-20c921e6ad3f3589
+    - ev-0a495fda5ab23d2b
 findings:
 - finding_id: rec-f-role-037402dc74758530
   issue_key: mim-reconciliation-role-support-037402dc74758530
@@ -254,7 +257,7 @@ findings:
   - record-037402dc74758530
   evidence_ids:
   - ev-c06b4db9f1b639fe
-  - ev-20c921e6ad3f3589
+  - ev-0a495fda5ab23d2b
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Bromocresol_Purple.yaml

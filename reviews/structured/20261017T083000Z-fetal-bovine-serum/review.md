@@ -89,7 +89,7 @@ Reassess prediction-only role support: Fetal bovine serum
 | ev-960b4069dcdaa77a | docs/data/mapped_ingredients.csv; CSV lines=[1005] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C113696","line":1005,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"122","ontology_id":"NCIT:C113696","preferred_term":"Fetal bovine serum","total_occurrences":"122"}] |
 | ev-302aa2c4c19b786f | reports/yaml_record_review/Fetal_Bovine_Serum.md; &#96;data/ingredients/mapped/Fetal_Bovine_Serum.yaml&#96;:2; Verdict:4; Identity:12; Validation:27; Evidence:37; Completeness:69; Recommended Edits:79 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-77d8eb63170c4b9a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[612,1911] | context_only | [{"current_record_sha256":"adb576c3fda65e0329bdab829eb8a14e07ea1bdcb75a2fa7078dcff49c29b73f","finding_id":"SEM:ac69aebb23443acd4b25","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"adb576c3fda65e0329bdab829eb8a14e07ea1bdcb75a2fa7078dcff49c29b73f","finding_id":"SEM:487edc1d3ad68c67a7fd","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ff75aa18a3f6d267 | data/ingredients/mapped/Fetal_Bovine_Serum.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-ff75aa18a3f6d267 | data/ingredients/mapped/Fetal_Bovine_Serum.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1003],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C113696","line":1005,"mapping_status":"MAPPED","ontology_id":"NCIT:C113696","preferred_term":"Fetal bovine serum"}],"identifier":"NCIT:C113696","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":122,"edge_count":122,"occurrences":122},"occurrence_statistics":{"media_count":122,"total_occurrences":122},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C113696","ontology_label":"Fetal Bovine Serum","ontology_source":"NCIT"},"preferred_term":"Fetal bovine serum","sssom_rows":[{"data_row":1205,"object_id":"NCIT:C113696","object_label":"Fetal Bovine Serum","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fetal_Bovine_Serum","synonym_count":3} |
 | ev-0658011a39d7dfcf | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-62ba48c0722286ea] | context_only | Predecessor structured review finding f-62ba48c0722286ea in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a90502a3343e71f1
+  evidence_ids:
+  - ev-a2c16a49f75c80d7
+  - ev-bb8474abf3cc23d9
+  - ev-d97914f7d575157e
+  - ev-960b4069dcdaa77a
+  - ev-ff75aa18a3f6d267
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a90502a3343e71f1
+  evidence_ids:
+  - ev-a2c16a49f75c80d7
+  - ev-77d8eb63170c4b9a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a90502a3343e71f1
+  evidence_ids:
+  - ev-302aa2c4c19b786f
+  - ev-77d8eb63170c4b9a
+  - ev-0658011a39d7dfcf
 evidence:
 - evidence_id: ev-a2c16a49f75c80d7
   kind: record_content
   reference: data/ingredients/mapped/Fetal_Bovine_Serum.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1003],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C113696","line":1005,"mapping_status":"MAPPED","ontology_id":"NCIT:C113696","preferred_term":"Fetal
     bovine serum"}],"identifier":"NCIT:C113696","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":122,"edge_count":122,"occurrences":122},"occurrence_statistics":{"media_count":122,"total_occurrences":122},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C113696","ontology_label":"Fetal
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1003]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fetal_Bovine_Serum; data-row positions=[1205]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1205,"object_id":"NCIT:C113696","object_label":"Fetal
     Bovine Serum","other":"FBS|Fetal Bovine Serum (ATCC 30-2020)","predicate_id":"skos:exactMatch","subject_id":"MIM:Fetal_Bovine_Serum","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1005]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C113696","line":1005,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"122","ontology_id":"NCIT:C113696","preferred_term":"Fetal
     bovine serum","total_occurrences":"122"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[612,1911]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"adb576c3fda65e0329bdab829eb8a14e07ea1bdcb75a2fa7078dcff49c29b73f","finding_id":"SEM:ac69aebb23443acd4b25","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"adb576c3fda65e0329bdab829eb8a14e07ea1bdcb75a2fa7078dcff49c29b73f","finding_id":"SEM:487edc1d3ad68c67a7fd","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fetal_Bovine_Serum.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1003],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C113696","line":1005,"mapping_status":"MAPPED","ontology_id":"NCIT:C113696","preferred_term":"Fetal
+    bovine serum"}],"identifier":"NCIT:C113696","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":122,"edge_count":122,"occurrences":122},"occurrence_statistics":{"media_count":122,"total_occurrences":122},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C113696","ontology_label":"Fetal
+    Bovine Serum","ontology_source":"NCIT"},"preferred_term":"Fetal bovine serum","sssom_rows":[{"data_row":1205,"object_id":"NCIT:C113696","object_label":"Fetal
+    Bovine Serum","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fetal_Bovine_Serum","synonym_count":3}'
   snapshot_sha256: adb576c3fda65e0329bdab829eb8a14e07ea1bdcb75a2fa7078dcff49c29b73f
 - evidence_id: ev-0658011a39d7dfcf
   kind: prior_review

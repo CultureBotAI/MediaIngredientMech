@@ -82,8 +82,7 @@ Disposition: The current local observation is recorded on a REJECTED tombstone, 
 | ev-cc25e322d3b6c607 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-cysteine_Hydrochloride_Monohydrate; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
 | ev-79e9a6acb499fdae | docs/data/mapped_ingredients.csv; CSV lines=[1270] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91248","line":1270,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine hydrochloride monohydrate","total_occurrences":"0"}] |
 | ev-426dbbc77d2c75c3 | reports/yaml_record_review/L-cysteine_Hydrochloride_Monohydrate.md; &#96;data/ingredients/mapped/L-cysteine_Hydrochloride_Monohydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:28; Completeness:48; Recommended Edits:55 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
-| ev-40ac7e33b5729dda | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[813] | context_only | [{"current_record_sha256":"96e8587336ea6c7151f917b04181d3331f75a89d96097c3e63cbfa9a062bd844","finding_id":"SEM:b61c8c39b7e87a54a384","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-5a6f99a48b4cadc5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/L-cysteine_Hydrochloride_Monohydrate.yaml | context_only | Semantic review finding dispositions ledger |
+| ev-40ac7e33b5729dda | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[813] | context_only | [{"current_record_sha256":"3c273994c0452bf9cd64a1d6c653ebf8a8df85509023b3b5370296bb9a1457bb","finding_id":"SEM:b61c8c39b7e87a54a384","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
 
 ## Limits And Additional Notes
 
@@ -172,6 +171,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5f3598f9dd1372d4
+  evidence_ids:
+  - ev-c5e49d33dc9b63d2
+  - ev-414f53e226a6d174
+  - ev-cc25e322d3b6c607
+  - ev-79e9a6acb499fdae
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -180,6 +184,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5f3598f9dd1372d4
+  evidence_ids:
+  - ev-c5e49d33dc9b63d2
+  - ev-40ac7e33b5729dda
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -188,13 +195,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5f3598f9dd1372d4
+  evidence_ids:
+  - ev-426dbbc77d2c75c3
+  - ev-40ac7e33b5729dda
 evidence:
 - evidence_id: ev-c5e49d33dc9b63d2
   kind: record_content
   reference: data/ingredients/mapped/L-cysteine_Hydrochloride_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1268],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91248","line":1270,"mapping_status":"REJECTED","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine
     hydrochloride monohydrate"}],"identifier":"CHEBI:91248","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1767,"edge_count":1767,"occurrences":1768},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:91248","ontology_label":"L-cysteine
@@ -205,7 +215,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1268]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -214,7 +224,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-cysteine_Hydrochloride_Monohydrate; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -222,7 +232,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1270]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91248","line":1270,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine
     hydrochloride monohydrate","total_occurrences":"0"}]'
@@ -247,18 +257,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[813]
-  accessed_at: '2026-10-11T02:46:28Z'
-  support: context_only
-  summary: '[{"current_record_sha256":"96e8587336ea6c7151f917b04181d3331f75a89d96097c3e63cbfa9a062bd844","finding_id":"SEM:b61c8c39b7e87a54a384","kind":"existing_record_review","resolution_reason":"Source
-    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-5a6f99a48b4cadc5
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/L-cysteine_Hydrochloride_Monohydrate.yaml
   accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: Semantic review finding dispositions ledger
+  summary: '[{"current_record_sha256":"3c273994c0452bf9cd64a1d6c653ebf8a8df85509023b3b5370296bb9a1457bb","finding_id":"SEM:b61c8c39b7e87a54a384","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-d6ba11fe176e3bed
@@ -326,7 +328,7 @@ assessments:
   - record-5f3598f9dd1372d4
   evidence_ids:
   - ev-c5e49d33dc9b63d2
-  - ev-5a6f99a48b4cadc5
+  - ev-40ac7e33b5729dda
   dimensions:
   - name: legacy-disposition
     value: needs_reassessment
@@ -334,7 +336,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-c5e49d33dc9b63d2
-    - ev-5a6f99a48b4cadc5
+    - ev-40ac7e33b5729dda
 findings:
 - finding_id: rec-f-role-5f3598f9dd1372d4
   issue_key: mim-reconciliation-role-support-5f3598f9dd1372d4
@@ -350,7 +352,7 @@ findings:
   - record-5f3598f9dd1372d4
   evidence_ids:
   - ev-c5e49d33dc9b63d2
-  - ev-5a6f99a48b4cadc5
+  - ev-40ac7e33b5729dda
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/L-cysteine_Hydrochloride_Monohydrate.yaml

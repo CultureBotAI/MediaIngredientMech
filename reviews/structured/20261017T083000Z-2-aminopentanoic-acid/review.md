@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-9855b21928b33b08 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-9855b21928b33b08 | Explain curation-history timestamp order: 2-aminopentanoic Acid |
 | Role evidence and plausibility check | passed | True | record-9855b21928b33b08 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-9855b21928b33b08 | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 2-aminopentanoic Acid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-44bb1e2cdc65f6d6 | data/ingredients/mapped/2-aminopentanoic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2101],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:19475","line":2103,"mapping_status":"MAPPED","ontology_id":"CHEBI:19475","preferred_term":"2-aminopentanoic Acid"}],"identifier":"CHEBI:19475","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":3,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:19475","ontology_label":"2-aminopentanoic acid","ontology_source":"CHEBI"},"preferred_term":"2-aminopentanoic Acid","sssom_rows":[{"data_row":75,"object_id":"CHEBI:19475","object_label":"2-aminopentanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-aminopentanoic_Acid","synonym_count":0} |
-| ev-c7e2e3c5cc1f14e9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2101] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-44bb1e2cdc65f6d6 | data/ingredients/mapped/2-aminopentanoic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2100],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:19475","line":2102,"mapping_status":"MAPPED","ontology_id":"CHEBI:19475","preferred_term":"2-aminopentanoic Acid"}],"identifier":"CHEBI:19475","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:19475","ontology_label":"2-aminopentanoic acid","ontology_source":"CHEBI"},"preferred_term":"2-aminopentanoic Acid","sssom_rows":[{"data_row":75,"object_id":"CHEBI:19475","object_label":"2-aminopentanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-aminopentanoic_Acid","synonym_count":0} |
+| ev-c7e2e3c5cc1f14e9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2100] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-31cc4c399a194579 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-aminopentanoic_Acid; data-row positions=[75] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":75,"object_id":"CHEBI:19475","object_label":"2-aminopentanoic acid","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-aminopentanoic_Acid","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-5c36b1777ed539f2 | docs/data/mapped_ingredients.csv; CSV lines=[2103] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:19475","line":2103,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:19475","preferred_term":"2-aminopentanoic Acid","total_occurrences":"0"}] |
+| ev-5c36b1777ed539f2 | docs/data/mapped_ingredients.csv; CSV lines=[2102] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:19475","line":2102,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:19475","preferred_term":"2-aminopentanoic Acid","total_occurrences":"0"}] |
 | ev-33b60aed334408fc | reports/yaml_record_review/2-aminopentanoic_Acid.md; &#96;data/ingredients/mapped/2-aminopentanoic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:36; Completeness:50; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6174611bf4c58a34 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[57] | context_only | [{"current_record_sha256":"7d4fe951e65be8c35d273a78b705600d5c3498dead9c1817654acb076cccd295","finding_id":"SEM:6501769377eaefebb996","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-e5b87d7908ef8646 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-7f671c54445b7c91] | context_only | Predecessor structured review finding f-7f671c54445b7c91 in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 2-aminopentanoic Acid'
   target_ids:
   - record-9855b21928b33b08
+  evidence_ids:
+  - ev-44bb1e2cdc65f6d6
+  - ev-c7e2e3c5cc1f14e9
+  - ev-31cc4c399a194579
+  - ev-5c36b1777ed539f2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-9855b21928b33b08
+  evidence_ids:
+  - ev-44bb1e2cdc65f6d6
+  - ev-6174611bf4c58a34
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,24 +201,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9855b21928b33b08
+  evidence_ids:
+  - ev-33b60aed334408fc
+  - ev-6174611bf4c58a34
+  - ev-e5b87d7908ef8646
 evidence:
 - evidence_id: ev-44bb1e2cdc65f6d6
   kind: record_content
   reference: data/ingredients/mapped/2-aminopentanoic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2101],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:19475","line":2103,"mapping_status":"MAPPED","ontology_id":"CHEBI:19475","preferred_term":"2-aminopentanoic
-    Acid"}],"identifier":"CHEBI:19475","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":3,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:19475","ontology_label":"2-aminopentanoic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2100],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:19475","line":2102,"mapping_status":"MAPPED","ontology_id":"CHEBI:19475","preferred_term":"2-aminopentanoic
+    Acid"}],"identifier":"CHEBI:19475","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:19475","ontology_label":"2-aminopentanoic
     acid","ontology_source":"CHEBI"},"preferred_term":"2-aminopentanoic Acid","sssom_rows":[{"data_row":75,"object_id":"CHEBI:19475","object_label":"2-aminopentanoic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-aminopentanoic_Acid","synonym_count":0}'
   snapshot_sha256: 7d4fe951e65be8c35d273a78b705600d5c3498dead9c1817654acb076cccd295
 - evidence_id: ev-c7e2e3c5cc1f14e9
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2101]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2100]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-aminopentanoic_Acid; data-row positions=[75]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":75,"object_id":"CHEBI:19475","object_label":"2-aminopentanoic
     acid","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-aminopentanoic_Acid","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
@@ -228,10 +239,10 @@ evidence:
 - evidence_id: ev-5c36b1777ed539f2
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2103]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2102]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:19475","line":2103,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:19475","preferred_term":"2-aminopentanoic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:19475","line":2102,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:19475","preferred_term":"2-aminopentanoic
     Acid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-33b60aed334408fc
@@ -255,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[57]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7d4fe951e65be8c35d273a78b705600d5c3498dead9c1817654acb076cccd295","finding_id":"SEM:6501769377eaefebb996","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

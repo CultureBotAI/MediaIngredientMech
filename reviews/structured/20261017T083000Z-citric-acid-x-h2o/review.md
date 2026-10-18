@@ -89,7 +89,7 @@ Reassess prediction-only role support: Citric acid x H2O
 | ev-f37bff26bf180e07 | docs/data/mapped_ingredients.csv; CSV lines=[734] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:31404","line":734,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:31404","preferred_term":"Citric acid x H2O","total_occurrences":"8"}] |
 | ev-037b9c1d6c79ac96 | reports/yaml_record_review/Citric_Acid_X_H2o.md; &#96;data/ingredients/mapped/Citric_Acid_X_H2o.yaml&#96;:2; Verdict:4; Identity:12; Validation:25; Evidence:44; Completeness:70; Recommended Edits:78 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6e37523a1dd66254 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[421,1639,1822] | context_only | [{"current_record_sha256":"75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963","finding_id":"SEM:988b369fa53ce0a856f9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963","finding_id":"SEM:1973a5d6d3b034253ea0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963","finding_id":"SEM:1428e403a41156125079","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b647a95d5ffbde35 | data/ingredients/mapped/Citric_Acid_X_H2o.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-b647a95d5ffbde35 | data/ingredients/mapped/Citric_Acid_X_H2o.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[732],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31404","line":734,"mapping_status":"MAPPED","ontology_id":"CHEBI:31404","preferred_term":"Citric acid x H2O"}],"identifier":"CHEBI:31404","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31404","ontology_label":"Citric acid monohydrate","ontology_source":"CHEBI"},"preferred_term":"Citric acid x H2O","sssom_rows":[{"data_row":780,"object_id":"CHEBI:31404","object_label":"Citric acid monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Citric_Acid_X_H2o","synonym_count":8} |
 | ev-56f19402451b631a | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-4b6ce9af131d7a9f] | context_only | Predecessor structured review finding f-4b6ce9af131d7a9f in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-70cad0ed79a17905
+  evidence_ids:
+  - ev-698e1c6372735819
+  - ev-b92fc549fbfdec43
+  - ev-51300c413421683c
+  - ev-f37bff26bf180e07
+  - ev-b647a95d5ffbde35
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-70cad0ed79a17905
+  evidence_ids:
+  - ev-698e1c6372735819
+  - ev-6e37523a1dd66254
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-70cad0ed79a17905
+  evidence_ids:
+  - ev-037b9c1d6c79ac96
+  - ev-6e37523a1dd66254
+  - ev-56f19402451b631a
 evidence:
 - evidence_id: ev-698e1c6372735819
   kind: record_content
   reference: data/ingredients/mapped/Citric_Acid_X_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[732],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31404","line":734,"mapping_status":"MAPPED","ontology_id":"CHEBI:31404","preferred_term":"Citric
     acid x H2O"}],"identifier":"CHEBI:31404","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31404","ontology_label":"Citric
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [732]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Citric_Acid_X_H2o; data-row positions=[780]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":780,"object_id":"CHEBI:31404","object_label":"Citric
     acid monohydrate","other":"Citric acid . H2O|Citric acid\u00b7H2O|H2cit|citrate(1-)|dihydrogen
@@ -231,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[734]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31404","line":734,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:31404","preferred_term":"Citric
     acid x H2O","total_occurrences":"8"}]'
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[421,1639,1822]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963","finding_id":"SEM:988b369fa53ce0a856f9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963","finding_id":"SEM:1973a5d6d3b034253ea0","kind":"role_evidence","resolution_reason":"Historical
@@ -269,14 +282,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Citric_Acid_X_H2o.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[732],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31404","line":734,"mapping_status":"MAPPED","ontology_id":"CHEBI:31404","preferred_term":"Citric
+    acid x H2O"}],"identifier":"CHEBI:31404","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31404","ontology_label":"Citric
+    acid monohydrate","ontology_source":"CHEBI"},"preferred_term":"Citric acid x H2O","sssom_rows":[{"data_row":780,"object_id":"CHEBI:31404","object_label":"Citric
+    acid monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Citric_Acid_X_H2o","synonym_count":8}'
   snapshot_sha256: 75c89db7f05e0e7326f0c13908ef01ce265e42ae76beac714c1ef29ec00e6963
 - evidence_id: ev-56f19402451b631a
   kind: prior_review

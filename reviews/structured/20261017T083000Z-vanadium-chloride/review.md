@@ -83,13 +83,13 @@ Reassess prediction-only role support: vanadium chloride
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-3823e39e3b2ae5c0 | data/ingredients/mapped/Vanadium_Chloride.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2033],"raw_equal":true},"docs_rows":[{"identifier":"cas:7718-98-1","line":2035,"mapping_status":"MAPPED","ontology_id":"cas:7718-98-1","preferred_term":"vanadium chloride"}],"identifier":"cas:7718-98-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:7718-98-1","ontology_label":"vanadium chloride","ontology_source":"CAS"},"preferred_term":"vanadium chloride","sssom_rows":[{"data_row":2883,"object_id":"cas:7718-98-1","object_label":"vanadium chloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vanadium_Chloride","synonym_count":0} |
-| ev-1b3b3c9f07847e0e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2033] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-a0b096cbd4f08aea | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vanadium_Chloride; data-row positions=[2883] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2883,"object_id":"cas:7718-98-1","object_label":"vanadium chloride","other":"CAS:7718-98-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Vanadium_Chloride","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-fe762b333bfdae4e | docs/data/mapped_ingredients.csv; CSV lines=[2035] | supports | Published identity and count rows inspected: [{"identifier":"cas:7718-98-1","line":2035,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"26","ontology_id":"cas:7718-98-1","preferred_term":"vanadium chloride","total_occurrences":"26"}] |
+| ev-3823e39e3b2ae5c0 | data/ingredients/mapped/Vanadium_Chloride.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2032],"raw_equal":true},"docs_rows":[{"identifier":"cas:7718-98-1","line":2034,"mapping_status":"MAPPED","ontology_id":"cas:7718-98-1","preferred_term":"vanadium chloride"}],"identifier":"cas:7718-98-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:7718-98-1","ontology_label":"vanadium chloride","ontology_source":"CAS"},"preferred_term":"vanadium chloride","sssom_rows":[{"data_row":2885,"object_id":"cas:7718-98-1","object_label":"vanadium chloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vanadium_Chloride","synonym_count":0} |
+| ev-1b3b3c9f07847e0e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2032] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a0b096cbd4f08aea | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vanadium_Chloride; data-row positions=[2885] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2885,"object_id":"cas:7718-98-1","object_label":"vanadium chloride","other":"CAS:7718-98-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Vanadium_Chloride","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-fe762b333bfdae4e | docs/data/mapped_ingredients.csv; CSV lines=[2034] | supports | Published identity and count rows inspected: [{"identifier":"cas:7718-98-1","line":2034,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"26","ontology_id":"cas:7718-98-1","preferred_term":"vanadium chloride","total_occurrences":"26"}] |
 | ev-97b0dfbb6a588be6 | reports/yaml_record_review/Vanadium_Chloride.md; &#96;data/ingredients/mapped/Vanadium_Chloride.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:32; Issues:42; Completeness:49; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-111efb29a0a90bc3 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1333,1841] | context_only | [{"current_record_sha256":"c8aea81224aa456d3adaba2c0b09192b067bb612d45878774d3d6cab981aaa36","finding_id":"SEM:e09a429e69270c134871","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c8aea81224aa456d3adaba2c0b09192b067bb612d45878774d3d6cab981aaa36","finding_id":"SEM:e1a40eb4d5027f0d549d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-832e650a945d646a | data/ingredients/mapped/Vanadium_Chloride.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-832e650a945d646a | data/ingredients/mapped/Vanadium_Chloride.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2032],"raw_equal":true},"docs_rows":[{"identifier":"cas:7718-98-1","line":2034,"mapping_status":"MAPPED","ontology_id":"cas:7718-98-1","preferred_term":"vanadium chloride"}],"identifier":"cas:7718-98-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:7718-98-1","ontology_label":"vanadium chloride","ontology_source":"CAS"},"preferred_term":"vanadium chloride","sssom_rows":[{"data_row":2885,"object_id":"cas:7718-98-1","object_label":"vanadium chloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vanadium_Chloride","synonym_count":0} |
 | ev-ebcab18be4fce7e0 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-2eec3e72d6f1ae90] | context_only | Predecessor structured review finding f-2eec3e72d6f1ae90 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-83cbeeeafb19f31c
+  evidence_ids:
+  - ev-3823e39e3b2ae5c0
+  - ev-1b3b3c9f07847e0e
+  - ev-a0b096cbd4f08aea
+  - ev-fe762b333bfdae4e
+  - ev-832e650a945d646a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-83cbeeeafb19f31c
+  evidence_ids:
+  - ev-3823e39e3b2ae5c0
+  - ev-111efb29a0a90bc3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-83cbeeeafb19f31c
+  evidence_ids:
+  - ev-97b0dfbb6a588be6
+  - ev-111efb29a0a90bc3
+  - ev-ebcab18be4fce7e0
 evidence:
 - evidence_id: ev-3823e39e3b2ae5c0
   kind: record_content
   reference: data/ingredients/mapped/Vanadium_Chloride.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2033],"raw_equal":true},"docs_rows":[{"identifier":"cas:7718-98-1","line":2035,"mapping_status":"MAPPED","ontology_id":"cas:7718-98-1","preferred_term":"vanadium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2032],"raw_equal":true},"docs_rows":[{"identifier":"cas:7718-98-1","line":2034,"mapping_status":"MAPPED","ontology_id":"cas:7718-98-1","preferred_term":"vanadium
     chloride"}],"identifier":"cas:7718-98-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:7718-98-1","ontology_label":"vanadium
-    chloride","ontology_source":"CAS"},"preferred_term":"vanadium chloride","sssom_rows":[{"data_row":2883,"object_id":"cas:7718-98-1","object_label":"vanadium
+    chloride","ontology_source":"CAS"},"preferred_term":"vanadium chloride","sssom_rows":[{"data_row":2885,"object_id":"cas:7718-98-1","object_label":"vanadium
     chloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vanadium_Chloride","synonym_count":0}'
   snapshot_sha256: c8aea81224aa456d3adaba2c0b09192b067bb612d45878774d3d6cab981aaa36
 - evidence_id: ev-1b3b3c9f07847e0e
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2033]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2032]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-a0b096cbd4f08aea
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Vanadium_Chloride; data-row positions=[2883]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Vanadium_Chloride; data-row positions=[2885]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2883,"object_id":"cas:7718-98-1","object_label":"vanadium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2885,"object_id":"cas:7718-98-1","object_label":"vanadium
     chloride","other":"CAS:7718-98-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Vanadium_Chloride","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-fe762b333bfdae4e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2035]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2034]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:7718-98-1","line":2035,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"26","ontology_id":"cas:7718-98-1","preferred_term":"vanadium
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:7718-98-1","line":2034,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"26","ontology_id":"cas:7718-98-1","preferred_term":"vanadium
     chloride","total_occurrences":"26"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-97b0dfbb6a588be6
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1333,1841]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c8aea81224aa456d3adaba2c0b09192b067bb612d45878774d3d6cab981aaa36","finding_id":"SEM:e09a429e69270c134871","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c8aea81224aa456d3adaba2c0b09192b067bb612d45878774d3d6cab981aaa36","finding_id":"SEM:e1a40eb4d5027f0d549d","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Vanadium_Chloride.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2032],"raw_equal":true},"docs_rows":[{"identifier":"cas:7718-98-1","line":2034,"mapping_status":"MAPPED","ontology_id":"cas:7718-98-1","preferred_term":"vanadium
+    chloride"}],"identifier":"cas:7718-98-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:7718-98-1","ontology_label":"vanadium
+    chloride","ontology_source":"CAS"},"preferred_term":"vanadium chloride","sssom_rows":[{"data_row":2885,"object_id":"cas:7718-98-1","object_label":"vanadium
+    chloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vanadium_Chloride","synonym_count":0}'
   snapshot_sha256: c8aea81224aa456d3adaba2c0b09192b067bb612d45878774d3d6cab981aaa36
 - evidence_id: ev-ebcab18be4fce7e0
   kind: prior_review

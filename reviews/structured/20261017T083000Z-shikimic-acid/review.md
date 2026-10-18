@@ -83,13 +83,13 @@ Reassess prediction-only role support: Shikimic Acid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-b884dc73e4c0d6df | data/ingredients/mapped/Shikimic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1791],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16119","line":1793,"mapping_status":"MAPPED","ontology_id":"CHEBI:16119","preferred_term":"Shikimic Acid"}],"identifier":"CHEBI:16119","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:16119","ontology_label":"shikimic acid","ontology_source":"CHEBI"},"preferred_term":"Shikimic Acid","sssom_rows":[{"data_row":2497,"object_id":"CHEBI:16119","object_label":"shikimic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Shikimic_Acid","synonym_count":6} |
-| ev-47215a5807c97669 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1791] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-905daa3c093b1e0a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Shikimic_Acid; data-row positions=[2497] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2497,"object_id":"CHEBI:16119","object_label":"shikimic acid","other":"(3R,4S,5R)-3,4,5-trihydroxycyclohex-1-ene-1-carboxylic acid&#124;3,4,5-Trihydroxy-1-cyclohexenecarboxylic acid&#124;3alpha,4alpha,5beta-trihydroxy-1-cyclohexene-1-carboxylic acid&#124;L-shikimic acid&#124;Shikimate&#124;[3R-(3alpha,4alpha,5beta)]-3,4,5-trihydroxy-1-cyclohexene-1-carboxylic acid&#124;CAS:138-59-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Shikimic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-21df7646a5f98b1d | docs/data/mapped_ingredients.csv; CSV lines=[1793] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16119","line":1793,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:16119","preferred_term":"Shikimic Acid","total_occurrences":"10"}] |
+| ev-b884dc73e4c0d6df | data/ingredients/mapped/Shikimic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1790],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16119","line":1792,"mapping_status":"MAPPED","ontology_id":"CHEBI:16119","preferred_term":"Shikimic Acid"}],"identifier":"CHEBI:16119","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:16119","ontology_label":"shikimic acid","ontology_source":"CHEBI"},"preferred_term":"Shikimic Acid","sssom_rows":[{"data_row":2499,"object_id":"CHEBI:16119","object_label":"shikimic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Shikimic_Acid","synonym_count":6} |
+| ev-47215a5807c97669 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1790] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-905daa3c093b1e0a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Shikimic_Acid; data-row positions=[2499] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2499,"object_id":"CHEBI:16119","object_label":"shikimic acid","other":"(3R,4S,5R)-3,4,5-trihydroxycyclohex-1-ene-1-carboxylic acid&#124;3,4,5-Trihydroxy-1-cyclohexenecarboxylic acid&#124;3alpha,4alpha,5beta-trihydroxy-1-cyclohexene-1-carboxylic acid&#124;L-shikimic acid&#124;Shikimate&#124;[3R-(3alpha,4alpha,5beta)]-3,4,5-trihydroxy-1-cyclohexene-1-carboxylic acid&#124;CAS:138-59-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Shikimic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-21df7646a5f98b1d | docs/data/mapped_ingredients.csv; CSV lines=[1792] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16119","line":1792,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:16119","preferred_term":"Shikimic Acid","total_occurrences":"10"}] |
 | ev-022735d1c583188f | reports/yaml_record_review/Shikimic_Acid.md; &#96;data/ingredients/mapped/Shikimic_Acid.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a5831ea68793181b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1190,1970] | context_only | [{"current_record_sha256":"113b1d016776be8106aba662b2bf751093a032fe8b214ea6f0562a0ba790bfb2","finding_id":"SEM:127d0c7dc0a79eb46b13","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"113b1d016776be8106aba662b2bf751093a032fe8b214ea6f0562a0ba790bfb2","finding_id":"SEM:bf87cf016a840ccc776b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-665ff3cac334e64a | data/ingredients/mapped/Shikimic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-665ff3cac334e64a | data/ingredients/mapped/Shikimic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1790],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16119","line":1792,"mapping_status":"MAPPED","ontology_id":"CHEBI:16119","preferred_term":"Shikimic Acid"}],"identifier":"CHEBI:16119","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:16119","ontology_label":"shikimic acid","ontology_source":"CHEBI"},"preferred_term":"Shikimic Acid","sssom_rows":[{"data_row":2499,"object_id":"CHEBI:16119","object_label":"shikimic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Shikimic_Acid","synonym_count":6} |
 | ev-2baf2e23b68d19a8 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-a6e532256fb1ba82] | context_only | Predecessor structured review finding f-a6e532256fb1ba82 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-bf224dcf35258ba3
+  evidence_ids:
+  - ev-b884dc73e4c0d6df
+  - ev-47215a5807c97669
+  - ev-905daa3c093b1e0a
+  - ev-21df7646a5f98b1d
+  - ev-665ff3cac334e64a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-bf224dcf35258ba3
+  evidence_ids:
+  - ev-b884dc73e4c0d6df
+  - ev-a5831ea68793181b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-bf224dcf35258ba3
+  evidence_ids:
+  - ev-022735d1c583188f
+  - ev-a5831ea68793181b
+  - ev-2baf2e23b68d19a8
 evidence:
 - evidence_id: ev-b884dc73e4c0d6df
   kind: record_content
   reference: data/ingredients/mapped/Shikimic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1791],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16119","line":1793,"mapping_status":"MAPPED","ontology_id":"CHEBI:16119","preferred_term":"Shikimic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1790],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16119","line":1792,"mapping_status":"MAPPED","ontology_id":"CHEBI:16119","preferred_term":"Shikimic
     Acid"}],"identifier":"CHEBI:16119","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:16119","ontology_label":"shikimic
-    acid","ontology_source":"CHEBI"},"preferred_term":"Shikimic Acid","sssom_rows":[{"data_row":2497,"object_id":"CHEBI:16119","object_label":"shikimic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Shikimic Acid","sssom_rows":[{"data_row":2499,"object_id":"CHEBI:16119","object_label":"shikimic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Shikimic_Acid","synonym_count":6}'
   snapshot_sha256: 113b1d016776be8106aba662b2bf751093a032fe8b214ea6f0562a0ba790bfb2
 - evidence_id: ev-47215a5807c97669
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1791]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1790]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,10 +233,10 @@ evidence:
 - evidence_id: ev-905daa3c093b1e0a
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Shikimic_Acid; data-row positions=[2497]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Shikimic_Acid; data-row positions=[2499]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2497,"object_id":"CHEBI:16119","object_label":"shikimic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2499,"object_id":"CHEBI:16119","object_label":"shikimic
     acid","other":"(3R,4S,5R)-3,4,5-trihydroxycyclohex-1-ene-1-carboxylic acid|3,4,5-Trihydroxy-1-cyclohexenecarboxylic
     acid|3alpha,4alpha,5beta-trihydroxy-1-cyclohexene-1-carboxylic acid|L-shikimic
     acid|Shikimate|[3R-(3alpha,4alpha,5beta)]-3,4,5-trihydroxy-1-cyclohexene-1-carboxylic
@@ -232,10 +245,10 @@ evidence:
 - evidence_id: ev-21df7646a5f98b1d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1793]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1792]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16119","line":1793,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:16119","preferred_term":"Shikimic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16119","line":1792,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:16119","preferred_term":"Shikimic
     Acid","total_occurrences":"10"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-022735d1c583188f
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1190,1970]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"113b1d016776be8106aba662b2bf751093a032fe8b214ea6f0562a0ba790bfb2","finding_id":"SEM:127d0c7dc0a79eb46b13","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"113b1d016776be8106aba662b2bf751093a032fe8b214ea6f0562a0ba790bfb2","finding_id":"SEM:bf87cf016a840ccc776b","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Shikimic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1790],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16119","line":1792,"mapping_status":"MAPPED","ontology_id":"CHEBI:16119","preferred_term":"Shikimic
+    Acid"}],"identifier":"CHEBI:16119","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:16119","ontology_label":"shikimic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Shikimic Acid","sssom_rows":[{"data_row":2499,"object_id":"CHEBI:16119","object_label":"shikimic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Shikimic_Acid","synonym_count":6}'
   snapshot_sha256: 113b1d016776be8106aba662b2bf751093a032fe8b214ea6f0562a0ba790bfb2
 - evidence_id: ev-2baf2e23b68d19a8
   kind: prior_review

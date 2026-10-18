@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-428f0a67e2ef5305 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-428f0a67e2ef5305 | Correct calcium nitrate correction-receipt identity text |
 | Role evidence and plausibility check | passed | True | record-428f0a67e2ef5305 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-428f0a67e2ef5305 | Reconciled against predecessor batch review 20261011T024629Z-mim-reconcile-all-batch-01 and semantic review dispositions on HEAD. |
 
@@ -210,12 +210,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: Correct calcium nitrate correction-receipt identity text
   target_ids:
   - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-5f1c4a27fd8956b2
+  - ev-ffef65ad416c1ff9
+  - ev-9bf82673c3b69690
+  - ev-a52bcd08a58f3db2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -224,6 +228,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-5f1c4a27fd8956b2
+  - ev-6ae334a969568123
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -232,13 +239,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-6ae334a969568123
+  - ev-ac8cc401220219c7
+  - ev-c069d52eb03ea9a2
 evidence:
 - evidence_id: ev-5f1c4a27fd8956b2
   kind: record_content
   reference: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[619],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86159","line":621,"mapping_status":"MAPPED","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2
     x 4 H2O"}],"identifier":"CHEBI:86159","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":202,"edge_count":202,"occurrences":202},"occurrence_statistics":{"media_count":202,"total_occurrences":202},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86159","ontology_label":"calcium
@@ -250,7 +262,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [619]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -259,7 +271,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Ca_No32_X_4_H2o; data-row positions=[600]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium
     nitrate tetrahydrate","other":"(1)  Ca(NO3)2.4H2O|Ca(NO3)2 x 4 H2O (0.1% w/v)|Ca(NO3)2
@@ -271,7 +283,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[621]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86159","line":621,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"202","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2
     x 4 H2O","total_occurrences":"202"}]'
@@ -298,7 +310,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[342]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","finding_id":"SEM:c30d84c4be1132e43a6e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

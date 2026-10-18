@@ -77,6 +77,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9122c364d42e8559
+  evidence_ids:
+  - ev-7204ca489d7c690d
+  - ev-a67290c5d4386e74
+  - ev-ca75a3fbc1babe57
+  - ev-94c5f01d6fc254ae
+  - ev-f0c42034b2f08a1d
+  - ev-82824a1888d907ee
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -85,6 +92,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-9122c364d42e8559
+  evidence_ids:
+  - ev-7204ca489d7c690d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -93,13 +102,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9122c364d42e8559
+  evidence_ids:
+  - ev-f2a088cb2fbda7be
+  - ev-e6798c510d069e5f
+  - ev-0bef314ac38155d7
+  - ev-a43e7d5a94de69e2
 evidence:
 - evidence_id: ev-7204ca489d7c690d
   kind: record_content
   reference: data/ingredients/mapped/DL_Vitamins.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[134],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL
     vitamins"}],"identifier":"kgmicrobe.ingredient:dl_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:dl_vitamins","ontology_label":"DL
@@ -110,7 +124,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [134]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -119,7 +133,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:DL_Vitamins; data-row positions=[993]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL
     vitamins","other":"DL vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:DL_Vitamins","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
@@ -128,7 +142,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[136]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"6","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL
     vitamins","total_occurrences":"6"}]'
@@ -183,55 +197,21 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/DL_Vitamins.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "DL vitamins (see below)", "synonym_type": "RAW_TEXT"}], "history":
-    [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from CultureBotHT (consolidated_media.json
-    (media-only)). Used in 6 CultureBot media; samples: SCFM, Hans_Basal_Media, Hans_Basal_Media_plus_0.2x_20AA_mix\u2026.
-    No CAS-RN or CHEBI mapping available; curator review needed.", "curator": "audit_add_remaining_culturebotht",
-    "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-29T06:51:33.117170+00:00"},
-    {"action": "CLASSIFIED_STOCK_SOLUTION", "changes": "Classified as a vitamin stock/pre-mix
-    and left unmapped pending component-level recipe curation.", "curator": "mediaingredientmech-agentic-curation",
-    "llm_assisted": true, "new_status": "UNMAPPED", "previous_status": "UNMAPPED",
-    "timestamp": "2026-05-11T09:30:00Z"}, {"action": "PROMOTED_TO_MAPPED", "changes":
-    "Promoted UNMAPPED_0277 -> kgmicrobe.ingredient:dl_vitamins \"DL vitamins\" (FALLBACK_REGISTRY);
-    mapping_status UNMAPPED -> MAPPED, SSSOM row added.", "curator": "promote_resolved_unmapped",
-    "llm_assisted": false, "new_status": "MAPPED", "previous_status": "UNMAPPED",
-    "timestamp": "2026-08-06T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS", "changes":
-    "Added 1 CultureMech recipe surface form(s) that folded onto this record''s published
-    label but were absent from MIM''s label index, so CultureMech could not resolve
-    them: ''DL vitamins (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp":
-    "2026-08-30T04:48:06.233536+00:00"}, {"action": "ANNOTATED", "changes": "Transcribed
-    the CultureBotHT Mixes-tab recipe for DL vitamins and added complete component
-    partonomy for its 10 vitamin-stock constituents plus a source-backed vitamin role.",
-    "curator": "mediaingredientmech-agentic-curation", "llm_assisted": true, "llm_model":
-    "gpt-5", "new_status": "MAPPED", "timestamp": "2026-09-08T00:00:00+00:00"}], "identifier":
-    "kgmicrobe.ingredient:dl_vitamins", "mapping": {"evidence": [{"evidence_type":
-    "DATABASE_MATCH", "notes": "DL vitamins is a named, recurring multi-component
-    preparation (6 media). Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and
-    synonym with normalisation: no term denotes it, and none could -- it is a lab
-    preparation rather than a substance. Takes the STOCK_SOLUTION convention used
-    by the existing mapped records: a kgmicrobe.ingredient: mint, with no parent because
-    a multi-component mix does not narrow to any single compound (#114).", "source":
-    "MIM curation (#114)"}], "mapping_quality": "FALLBACK_REGISTRY", "ontology_id":
-    "kgmicrobe.ingredient:dl_vitamins", "ontology_label": "DL vitamins", "ontology_source":
-    "kgmicrobe.ingredient"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[134],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:dl_vitamins","line":136,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:dl_vitamins","preferred_term":"DL
+    vitamins"}],"identifier":"kgmicrobe.ingredient:dl_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:dl_vitamins","ontology_label":"DL
+    vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"DL vitamins","sssom_rows":[{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL
+    vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL_Vitamins","synonym_count":2}'
   snapshot_sha256: 41a6ce40ee3f2a5a705f041f6d20d72ecd977a2dea42c477dc997191d1be44ad
 - evidence_id: ev-82824a1888d907ee
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:DL_Vitamins
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:DL_Vitamins; data-row positions=[993]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.9", "data_row": 993, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
-    "kgmicrobe.ingredient:dl_vitamins", "object_label": "DL vitamins", "object_source":
-    "kgm:ingredient", "other": "DL vitamins (see below)", "predicate_id": "skos:exactMatch",
-    "source": "MIM:MIM curation (#114)|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:DL_Vitamins", "subject_label": "DL vitamins", "validation_method":
-    "none|UNKNOWN_TERM|2026-09-02"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":993,"object_id":"kgmicrobe.ingredient:dl_vitamins","object_label":"DL
+    vitamins","other":"DL vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:DL_Vitamins","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-0bef314ac38155d7
   kind: prior_review

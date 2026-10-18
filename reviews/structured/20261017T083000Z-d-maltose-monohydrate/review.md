@@ -85,12 +85,12 @@ Reassess prediction-only role support: D-Maltose monohydrate
 | --- | --- | --- | --- |
 | ev-cf52f0b36e5b05d0 | data/ingredients/mapped/D-Maltose_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[820],"raw_equal":true},"docs_rows":[{"identifier":"cas:6363-53-7","line":822,"mapping_status":"MAPPED","ontology_id":"CHEBI:17306","preferred_term":"D-Maltose monohydrate"}],"identifier":"cas:6363-53-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17306","ontology_label":"maltose","ontology_source":"CHEBI"},"preferred_term":"D-Maltose monohydrate","sssom_rows":[{"data_row":899,"object_id":"CHEBI:17306","object_label":"maltose","predicate_id":"skos:closeMatch"},{"data_row":900,"object_id":"cas:6363-53-7","object_label":"D-Maltose monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Maltose_Monohydrate","synonym_count":3} |
 | ev-5a59770202110ced | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [820] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-5971374973bece7c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-Maltose_Monohydrate; data-row positions=[899,900] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":899,"object_id":"CHEBI:17306","object_label":"maltose","other":"Maltose Hydrate&#124;Maltose monohydrate&#124;CAS:6363-53-7","predicate_id":"skos:closeMatch","subject_id":"MIM:D-Maltose_Monohydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":900,"object_id":"cas:6363-53-7","object_label":"D-Maltose monohydrate","other":"CAS:6363-53-7","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Maltose_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-5971374973bece7c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-Maltose_Monohydrate; data-row positions=[899, 900] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":899,"object_id":"CHEBI:17306","object_label":"maltose","other":"Maltose Hydrate&#124;Maltose monohydrate&#124;CAS:6363-53-7","predicate_id":"skos:closeMatch","subject_id":"MIM:D-Maltose_Monohydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":900,"object_id":"cas:6363-53-7","object_label":"D-Maltose monohydrate","other":"CAS:6363-53-7","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Maltose_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-2fc97bffbcba98e2 | docs/data/mapped_ingredients.csv; CSV lines=[822] | supports | Published identity and count rows inspected: [{"identifier":"cas:6363-53-7","line":822,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:17306","preferred_term":"D-Maltose monohydrate","total_occurrences":"20"}] |
 | ev-d43e25032c27b0f5 | reports/yaml_record_review/20261001T050204Z-D-Maltose_Monohydrate.md; YAML Record Review: D-Maltose monohydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-7e83c11a66ccc918 | reports/yaml_record_review/D-Maltose_Monohydrate.md; &#96;data/ingredients/mapped/D-Maltose_Monohydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:27; Evidence:47; Completeness:64; Recommended Edits:73 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d819126f552418b4 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[472,1433,2065] | context_only | [{"current_record_sha256":"cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5","finding_id":"SEM:9e4906655b1803041a38","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5","finding_id":"SEM:66f19b051fb43da60ea5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5","finding_id":"SEM:98a7eb4c30c1019ce466","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bc8b3bfd715e6e76 | data/ingredients/mapped/D-Maltose_Monohydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-bc8b3bfd715e6e76 | data/ingredients/mapped/D-Maltose_Monohydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[820],"raw_equal":true},"docs_rows":[{"identifier":"cas:6363-53-7","line":822,"mapping_status":"MAPPED","ontology_id":"CHEBI:17306","preferred_term":"D-Maltose monohydrate"}],"identifier":"cas:6363-53-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17306","ontology_label":"maltose","ontology_source":"CHEBI"},"preferred_term":"D-Maltose monohydrate","sssom_rows":[{"data_row":899,"object_id":"CHEBI:17306","object_label":"maltose","predicate_id":"skos:closeMatch"},{"data_row":900,"object_id":"cas:6363-53-7","object_label":"D-Maltose monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Maltose_Monohydrate","synonym_count":3} |
 | ev-f109d50793877920 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-d19b2ff686e8286f] | context_only | Predecessor structured review finding f-d19b2ff686e8286f in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7524783ceca7299d
+  evidence_ids:
+  - ev-cf52f0b36e5b05d0
+  - ev-5a59770202110ced
+  - ev-5971374973bece7c
+  - ev-2fc97bffbcba98e2
+  - ev-bc8b3bfd715e6e76
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-7524783ceca7299d
+  evidence_ids:
+  - ev-cf52f0b36e5b05d0
+  - ev-d819126f552418b4
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7524783ceca7299d
+  evidence_ids:
+  - ev-d43e25032c27b0f5
+  - ev-7e83c11a66ccc918
+  - ev-d819126f552418b4
+  - ev-f109d50793877920
 evidence:
 - evidence_id: ev-cf52f0b36e5b05d0
   kind: record_content
   reference: data/ingredients/mapped/D-Maltose_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[820],"raw_equal":true},"docs_rows":[{"identifier":"cas:6363-53-7","line":822,"mapping_status":"MAPPED","ontology_id":"CHEBI:17306","preferred_term":"D-Maltose
     monohydrate"}],"identifier":"cas:6363-53-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17306","ontology_label":"maltose","ontology_source":"CHEBI"},"preferred_term":"D-Maltose
@@ -216,7 +230,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [820]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -224,8 +238,8 @@ evidence:
 - evidence_id: ev-5971374973bece7c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:D-Maltose_Monohydrate; data-row positions=[899,900]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:D-Maltose_Monohydrate; data-row positions=[899, 900]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":899,"object_id":"CHEBI:17306","object_label":"maltose","other":"Maltose
     Hydrate|Maltose monohydrate|CAS:6363-53-7","predicate_id":"skos:closeMatch","subject_id":"MIM:D-Maltose_Monohydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":900,"object_id":"cas:6363-53-7","object_label":"D-Maltose
@@ -235,7 +249,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[822]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:6363-53-7","line":822,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:17306","preferred_term":"D-Maltose
     monohydrate","total_occurrences":"20"}]'
@@ -291,7 +305,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[472,1433,2065]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5","finding_id":"SEM:9e4906655b1803041a38","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5","finding_id":"SEM:66f19b051fb43da60ea5","kind":"role_evidence","resolution_reason":"Historical
@@ -302,14 +316,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Maltose_Monohydrate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[820],"raw_equal":true},"docs_rows":[{"identifier":"cas:6363-53-7","line":822,"mapping_status":"MAPPED","ontology_id":"CHEBI:17306","preferred_term":"D-Maltose
+    monohydrate"}],"identifier":"cas:6363-53-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17306","ontology_label":"maltose","ontology_source":"CHEBI"},"preferred_term":"D-Maltose
+    monohydrate","sssom_rows":[{"data_row":899,"object_id":"CHEBI:17306","object_label":"maltose","predicate_id":"skos:closeMatch"},{"data_row":900,"object_id":"cas:6363-53-7","object_label":"D-Maltose
+    monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Maltose_Monohydrate","synonym_count":3}'
   snapshot_sha256: cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5
 - evidence_id: ev-f109d50793877920
   kind: prior_review

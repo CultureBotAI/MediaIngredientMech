@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b2ffb8879652da4d
+  evidence_ids:
+  - ev-4df1169e1178d353
+  - ev-adaab9517c84df80
+  - ev-e47c6fe8af8464b6
+  - ev-ce30c4871b4881ba
+  - ev-634d11d42c76bf24
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b2ffb8879652da4d
+  evidence_ids:
+  - ev-4df1169e1178d353
+  - ev-47472816317a961a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b2ffb8879652da4d
+  evidence_ids:
+  - ev-cc945c63fa327fde
+  - ev-47472816317a961a
+  - ev-c22a51b3278f8727
 evidence:
 - evidence_id: ev-4df1169e1178d353
   kind: record_content
   reference: data/ingredients/mapped/Aburamycin_A.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[430],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:aburamycin_a","line":432,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:aburamycin_a","preferred_term":"Aburamycin
     A"}],"identifier":"kgmicrobe.compound:aburamycin_a","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:aburamycin_a","ontology_label":"Aburamycin
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [430]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Aburamycin_A; data-row positions=[271]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":271,"object_id":"kgmicrobe.compound:aburamycin_a","object_label":"Aburamycin
     A","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Aburamycin_A","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -125,7 +138,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[432]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:aburamycin_a","line":432,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:aburamycin_a","preferred_term":"Aburamycin
     A","total_occurrences":"0"}]'
@@ -150,7 +163,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[188,1598]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1e8bbe2d44aa052f9611807ae18068c5c80de30eafbd1ceafa8246cc499b7601","finding_id":"SEM:bc211c21436c0daa8ed9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1e8bbe2d44aa052f9611807ae18068c5c80de30eafbd1ceafa8246cc499b7601","finding_id":"SEM:4e782e860f267204672f","kind":"role_evidence","resolution_reason":"Historical
@@ -160,12 +173,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Aburamycin_A.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[430],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:aburamycin_a","line":432,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:aburamycin_a","preferred_term":"Aburamycin
+    A"}],"identifier":"kgmicrobe.compound:aburamycin_a","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:aburamycin_a","ontology_label":"Aburamycin
+    A","ontology_source":"kgmicrobe.compound"},"preferred_term":"Aburamycin A","sssom_rows":[{"data_row":271,"object_id":"kgmicrobe.compound:aburamycin_a","object_label":"Aburamycin
+    A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Aburamycin_A","synonym_count":0}'
   snapshot_sha256: 1e8bbe2d44aa052f9611807ae18068c5c80de30eafbd1ceafa8246cc499b7601
 - evidence_id: ev-c22a51b3278f8727
   kind: prior_review

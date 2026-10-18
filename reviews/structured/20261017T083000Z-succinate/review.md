@@ -83,13 +83,13 @@ Reassess prediction-only role support: Succinate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-1b6c64739f021ea7 | data/ingredients/mapped/Succinate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1906],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26806","line":1908,"mapping_status":"MAPPED","ontology_id":"CHEBI:26806","preferred_term":"Succinate"}],"identifier":"CHEBI:26806","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26806","ontology_label":"succinate","ontology_source":"CHEBI"},"preferred_term":"Succinate","sssom_rows":[{"data_row":2660,"object_id":"CHEBI:26806","object_label":"succinate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinate","synonym_count":7} |
-| ev-0b9e4c55d4996e3c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1906] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-26c0a9bb3dbd0095 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Succinate; data-row positions=[2660] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2660,"object_id":"CHEBI:26806","object_label":"succinate","other":"Na Succinate&#124;Na-succinate&#124;succinate anion&#124;succinates&#124;succinic acid anion&#124;CAS:56-14-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Succinate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-f7be35d4fc307016 | docs/data/mapped_ingredients.csv; CSV lines=[1908] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:26806","line":1908,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:26806","preferred_term":"Succinate","total_occurrences":"20"}] |
+| ev-1b6c64739f021ea7 | data/ingredients/mapped/Succinate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1905],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26806","line":1907,"mapping_status":"MAPPED","ontology_id":"CHEBI:26806","preferred_term":"Succinate"}],"identifier":"CHEBI:26806","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26806","ontology_label":"succinate","ontology_source":"CHEBI"},"preferred_term":"Succinate","sssom_rows":[{"data_row":2662,"object_id":"CHEBI:26806","object_label":"succinate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinate","synonym_count":7} |
+| ev-0b9e4c55d4996e3c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1905] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-26c0a9bb3dbd0095 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Succinate; data-row positions=[2662] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2662,"object_id":"CHEBI:26806","object_label":"succinate","other":"Na Succinate&#124;Na-succinate&#124;succinate anion&#124;succinates&#124;succinic acid anion&#124;CAS:56-14-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Succinate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-f7be35d4fc307016 | docs/data/mapped_ingredients.csv; CSV lines=[1907] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:26806","line":1907,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:26806","preferred_term":"Succinate","total_occurrences":"20"}] |
 | ev-2fe0bd1554ed0497 | reports/yaml_record_review/Succinate.md; &#96;data/ingredients/mapped/Succinate.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:29; Completeness:46; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-99768b5ac138ce3c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1254,1974,2074] | context_only | [{"current_record_sha256":"346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e","finding_id":"SEM:cb3cbcf83e9ae1862c41","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e","finding_id":"SEM:c597f35bf5d1178fbf47","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e","finding_id":"SEM:543221423de77c9ed268","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-1b694cef0914ee02 | data/ingredients/mapped/Succinate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-1b694cef0914ee02 | data/ingredients/mapped/Succinate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1905],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26806","line":1907,"mapping_status":"MAPPED","ontology_id":"CHEBI:26806","preferred_term":"Succinate"}],"identifier":"CHEBI:26806","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26806","ontology_label":"succinate","ontology_source":"CHEBI"},"preferred_term":"Succinate","sssom_rows":[{"data_row":2662,"object_id":"CHEBI:26806","object_label":"succinate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinate","synonym_count":7} |
 | ev-c899852b887bc89b | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-e3e251c7ec571381] | context_only | Predecessor structured review finding f-e3e251c7ec571381 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a21243d59bace146
+  evidence_ids:
+  - ev-1b6c64739f021ea7
+  - ev-0b9e4c55d4996e3c
+  - ev-26c0a9bb3dbd0095
+  - ev-f7be35d4fc307016
+  - ev-1b694cef0914ee02
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-a21243d59bace146
+  evidence_ids:
+  - ev-1b6c64739f021ea7
+  - ev-99768b5ac138ce3c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a21243d59bace146
+  evidence_ids:
+  - ev-2fe0bd1554ed0497
+  - ev-99768b5ac138ce3c
+  - ev-c899852b887bc89b
 evidence:
 - evidence_id: ev-1b6c64739f021ea7
   kind: record_content
   reference: data/ingredients/mapped/Succinate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1906],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26806","line":1908,"mapping_status":"MAPPED","ontology_id":"CHEBI:26806","preferred_term":"Succinate"}],"identifier":"CHEBI:26806","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26806","ontology_label":"succinate","ontology_source":"CHEBI"},"preferred_term":"Succinate","sssom_rows":[{"data_row":2660,"object_id":"CHEBI:26806","object_label":"succinate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinate","synonym_count":7}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1905],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26806","line":1907,"mapping_status":"MAPPED","ontology_id":"CHEBI:26806","preferred_term":"Succinate"}],"identifier":"CHEBI:26806","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26806","ontology_label":"succinate","ontology_source":"CHEBI"},"preferred_term":"Succinate","sssom_rows":[{"data_row":2662,"object_id":"CHEBI:26806","object_label":"succinate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinate","synonym_count":7}'
   snapshot_sha256: 346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e
 - evidence_id: ev-0b9e4c55d4996e3c
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1906]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1905]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,19 +230,19 @@ evidence:
 - evidence_id: ev-26c0a9bb3dbd0095
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Succinate; data-row positions=[2660]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Succinate; data-row positions=[2662]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2660,"object_id":"CHEBI:26806","object_label":"succinate","other":"Na
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2662,"object_id":"CHEBI:26806","object_label":"succinate","other":"Na
     Succinate|Na-succinate|succinate anion|succinates|succinic acid anion|CAS:56-14-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Succinate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-f7be35d4fc307016
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1908]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1907]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:26806","line":1908,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:26806","preferred_term":"Succinate","total_occurrences":"20"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:26806","line":1907,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:26806","preferred_term":"Succinate","total_occurrences":"20"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-2fe0bd1554ed0497
   kind: prior_review
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1254,1974,2074]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e","finding_id":"SEM:cb3cbcf83e9ae1862c41","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e","finding_id":"SEM:c597f35bf5d1178fbf47","kind":"role_evidence","resolution_reason":"Historical
@@ -263,14 +276,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Succinate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1905],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26806","line":1907,"mapping_status":"MAPPED","ontology_id":"CHEBI:26806","preferred_term":"Succinate"}],"identifier":"CHEBI:26806","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26806","ontology_label":"succinate","ontology_source":"CHEBI"},"preferred_term":"Succinate","sssom_rows":[{"data_row":2662,"object_id":"CHEBI:26806","object_label":"succinate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinate","synonym_count":7}'
   snapshot_sha256: 346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e
 - evidence_id: ev-c899852b887bc89b
   kind: prior_review

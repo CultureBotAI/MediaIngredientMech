@@ -77,14 +77,14 @@ Disposition: The current local observation is recorded, but the named source/con
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c06c3ca905a86233 | data/ingredients/mapped/Niso4_X_6_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1565],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53437","line":1567,"mapping_status":"REJECTED","ontology_id":"CHEBI:53437","preferred_term":"NiSO4 x 6 H2O"}],"identifier":"CHEBI:53437","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":54,"edge_count":54,"occurrences":54},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:53437","ontology_label":"nickel sulfate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"NiSO4 x 6 H2O","sssom_rows":[],"sssom_subject":"MIM:Niso4_X_6_H2o","synonym_count":6} |
-| ev-b4a790b84fa08273 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1565] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c06c3ca905a86233 | data/ingredients/mapped/Niso4_X_6_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1564],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53437","line":1566,"mapping_status":"REJECTED","ontology_id":"CHEBI:53437","preferred_term":"NiSO4 x 6 H2O"}],"identifier":"CHEBI:53437","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":54,"edge_count":54,"occurrences":54},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:53437","ontology_label":"nickel sulfate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"NiSO4 x 6 H2O","sssom_rows":[],"sssom_subject":"MIM:Niso4_X_6_H2o","synonym_count":6} |
+| ev-b4a790b84fa08273 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1564] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-6d4aaab3a0514334 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Niso4_X_6_H2o; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
-| ev-636400473188a7e8 | docs/data/mapped_ingredients.csv; CSV lines=[1567] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:53437","line":1567,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:53437","preferred_term":"NiSO4 x 6 H2O","total_occurrences":"0"}] |
+| ev-636400473188a7e8 | docs/data/mapped_ingredients.csv; CSV lines=[1566] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:53437","line":1566,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:53437","preferred_term":"NiSO4 x 6 H2O","total_occurrences":"0"}] |
 | ev-e611c3762b636a94 | reports/yaml_record_review/20261001T050303Z-Niso4_X_6_H2o.md; YAML Record Review: NiSO4 x 6 H2O:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-90cf1641ab90a223 | reports/yaml_record_review/Niso4_X_6_H2o.md; &#96;data/ingredients/mapped/Niso4_X_6_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:30; Completeness:46; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ce9ca54b919572bd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1062] | context_only | [{"current_record_sha256":"98b56c307ba25d78a1cef9b0773c5b7aaece65b6d811e0130c706d90bcce2289","finding_id":"SEM:40c78da59752cd7b40cd","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-61cebb464e4f3c46 | data/ingredients/mapped/Niso4_X_6_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-61cebb464e4f3c46 | data/ingredients/mapped/Niso4_X_6_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1564],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53437","line":1566,"mapping_status":"REJECTED","ontology_id":"CHEBI:53437","preferred_term":"NiSO4 x 6 H2O"}],"identifier":"CHEBI:53437","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":54,"edge_count":54,"occurrences":54},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:53437","ontology_label":"nickel sulfate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"NiSO4 x 6 H2O","sssom_rows":[],"sssom_subject":"MIM:Niso4_X_6_H2o","synonym_count":6} |
 | ev-0320edda73e9ce1b | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-6d236617047c992a] | context_only | Predecessor structured review finding f-6d236617047c992a in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -177,6 +177,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5e4138c912ba3b4c
+  evidence_ids:
+  - ev-c06c3ca905a86233
+  - ev-b4a790b84fa08273
+  - ev-6d4aaab3a0514334
+  - ev-636400473188a7e8
+  - ev-61cebb464e4f3c46
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -185,6 +191,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5e4138c912ba3b4c
+  evidence_ids:
+  - ev-c06c3ca905a86233
+  - ev-ce9ca54b919572bd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -193,23 +202,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5e4138c912ba3b4c
+  evidence_ids:
+  - ev-e611c3762b636a94
+  - ev-90cf1641ab90a223
+  - ev-ce9ca54b919572bd
+  - ev-0320edda73e9ce1b
 evidence:
 - evidence_id: ev-c06c3ca905a86233
   kind: record_content
   reference: data/ingredients/mapped/Niso4_X_6_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1565],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53437","line":1567,"mapping_status":"REJECTED","ontology_id":"CHEBI:53437","preferred_term":"NiSO4
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1564],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53437","line":1566,"mapping_status":"REJECTED","ontology_id":"CHEBI:53437","preferred_term":"NiSO4
     x 6 H2O"}],"identifier":"CHEBI:53437","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":54,"edge_count":54,"occurrences":54},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:53437","ontology_label":"nickel
     sulfate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"NiSO4 x 6 H2O","sssom_rows":[],"sssom_subject":"MIM:Niso4_X_6_H2o","synonym_count":6}'
   snapshot_sha256: 98b56c307ba25d78a1cef9b0773c5b7aaece65b6d811e0130c706d90bcce2289
 - evidence_id: ev-b4a790b84fa08273
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1565]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1564]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,17 +232,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Niso4_X_6_H2o; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-636400473188a7e8
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1567]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1566]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:53437","line":1567,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:53437","preferred_term":"NiSO4
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:53437","line":1566,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:53437","preferred_term":"NiSO4
     x 6 H2O","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-e611c3762b636a94
@@ -278,7 +292,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1062]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"98b56c307ba25d78a1cef9b0773c5b7aaece65b6d811e0130c706d90bcce2289","finding_id":"SEM:40c78da59752cd7b40cd","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
@@ -287,12 +301,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Niso4_X_6_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1564],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53437","line":1566,"mapping_status":"REJECTED","ontology_id":"CHEBI:53437","preferred_term":"NiSO4
+    x 6 H2O"}],"identifier":"CHEBI:53437","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":54,"edge_count":54,"occurrences":54},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:53437","ontology_label":"nickel
+    sulfate hexahydrate","ontology_source":"CHEBI"},"preferred_term":"NiSO4 x 6 H2O","sssom_rows":[],"sssom_subject":"MIM:Niso4_X_6_H2o","synonym_count":6}'
   snapshot_sha256: 98b56c307ba25d78a1cef9b0773c5b7aaece65b6d811e0130c706d90bcce2289
 - evidence_id: ev-0320edda73e9ce1b
   kind: prior_review

@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-995fde797ec152ab | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-995fde797ec152ab | Explain curation-history timestamp order: 1,2-dichloroethane |
 | Role evidence and plausibility check | passed | True | record-995fde797ec152ab | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-995fde797ec152ab | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,7 +83,7 @@ Explain curation-history timestamp order: 1,2-dichloroethane
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-a478eb46f38155f8 | data/ingredients/mapped/2-dichloroethane.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[242],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27789","line":244,"mapping_status":"MAPPED","ontology_id":"CHEBI:27789","preferred_term":"1,2-dichloroethane"}],"identifier":"CHEBI:27789","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27789","ontology_label":"1,2-dichloroethane","ontology_source":"CHEBI"},"preferred_term":"1,2-dichloroethane","sssom_rows":[{"data_row":84,"object_id":"CHEBI:27789","object_label":"1,2-dichloroethane","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-dichloroethane","synonym_count":1} |
+| ev-a478eb46f38155f8 | data/ingredients/mapped/2-dichloroethane.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[242],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27789","line":244,"mapping_status":"MAPPED","ontology_id":"CHEBI:27789","preferred_term":"1,2-dichloroethane"}],"identifier":"CHEBI:27789","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27789","ontology_label":"1,2-dichloroethane","ontology_source":"CHEBI"},"preferred_term":"1,2-dichloroethane","sssom_rows":[{"data_row":84,"object_id":"CHEBI:27789","object_label":"1,2-dichloroethane","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-dichloroethane","synonym_count":1} |
 | ev-c46d493767d82e96 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [242] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-47c413b59cf16da3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-dichloroethane; data-row positions=[84] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":84,"object_id":"CHEBI:27789","object_label":"1,2-dichloroethane","other":"2-dichloroethane","predicate_id":"skos:exactMatch","subject_id":"MIM:2-dichloroethane","validation_method":"manual:promote_resolved_unmapped&#124;PROMOTED&#124;2026-08-04"}] |
 | ev-2c5ea2618ccf1e2f | docs/data/mapped_ingredients.csv; CSV lines=[244] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:27789","line":244,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27789","preferred_term":"1,2-dichloroethane","total_occurrences":"0"}] |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 1,2-dichloroethane'
   target_ids:
   - record-995fde797ec152ab
+  evidence_ids:
+  - ev-a478eb46f38155f8
+  - ev-c46d493767d82e96
+  - ev-47c413b59cf16da3
+  - ev-2c5ea2618ccf1e2f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-995fde797ec152ab
+  evidence_ids:
+  - ev-a478eb46f38155f8
+  - ev-e573d9557475daeb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-995fde797ec152ab
+  evidence_ids:
+  - ev-0feffcc8ecbfd59a
+  - ev-e573d9557475daeb
+  - ev-2409de00468285d9
 evidence:
 - evidence_id: ev-a478eb46f38155f8
   kind: record_content
   reference: data/ingredients/mapped/2-dichloroethane.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[242],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27789","line":244,"mapping_status":"MAPPED","ontology_id":"CHEBI:27789","preferred_term":"1,2-dichloroethane"}],"identifier":"CHEBI:27789","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27789","ontology_label":"1,2-dichloroethane","ontology_source":"CHEBI"},"preferred_term":"1,2-dichloroethane","sssom_rows":[{"data_row":84,"object_id":"CHEBI:27789","object_label":"1,2-dichloroethane","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-dichloroethane","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[242],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27789","line":244,"mapping_status":"MAPPED","ontology_id":"CHEBI:27789","preferred_term":"1,2-dichloroethane"}],"identifier":"CHEBI:27789","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27789","ontology_label":"1,2-dichloroethane","ontology_source":"CHEBI"},"preferred_term":"1,2-dichloroethane","sssom_rows":[{"data_row":84,"object_id":"CHEBI:27789","object_label":"1,2-dichloroethane","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-dichloroethane","synonym_count":1}'
   snapshot_sha256: 91b5fec5e528b107b7a9292f5593dc7c59e537eedc0f831e2b7c1d84e6acc281
 - evidence_id: ev-c46d493767d82e96
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [242]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,7 +228,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-dichloroethane; data-row positions=[84]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":84,"object_id":"CHEBI:27789","object_label":"1,2-dichloroethane","other":"2-dichloroethane","predicate_id":"skos:exactMatch","subject_id":"MIM:2-dichloroethane","validation_method":"manual:promote_resolved_unmapped|PROMOTED|2026-08-04"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -225,7 +236,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[244]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:27789","line":244,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27789","preferred_term":"1,2-dichloroethane","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[66]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"91b5fec5e528b107b7a9292f5593dc7c59e537eedc0f831e2b7c1d84e6acc281","finding_id":"SEM:f27199ee678a0e83532d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

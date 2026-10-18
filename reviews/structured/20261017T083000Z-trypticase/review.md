@@ -83,13 +83,13 @@ Reassess prediction-only role support: Trypticase
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-365e57c84b8b6544 | data/ingredients/mapped/Trypticase.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2006],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000175","line":2008,"mapping_status":"MAPPED","ontology_id":"MICRO:0000175","preferred_term":"Trypticase"}],"identifier":"MICRO:0000175","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":785,"edge_count":785,"occurrences":785},"occurrence_statistics":{"media_count":785,"total_occurrences":785},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000175","ontology_label":"Trypticase peptone","ontology_source":"MICRO"},"preferred_term":"Trypticase","sssom_rows":[{"data_row":2842,"object_id":"MICRO:0000175","object_label":"Trypticase peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trypticase","synonym_count":2} |
-| ev-dc9f6175ef843519 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2006] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-ab0ddef7ebe1d84c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trypticase; data-row positions=[2842] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2842,"object_id":"MICRO:0000175","object_label":"Trypticase peptone","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trypticase","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-c07e21235a5817f5 | docs/data/mapped_ingredients.csv; CSV lines=[2008] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000175","line":2008,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"785","ontology_id":"MICRO:0000175","preferred_term":"Trypticase","total_occurrences":"785"}] |
+| ev-365e57c84b8b6544 | data/ingredients/mapped/Trypticase.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2005],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000175","line":2007,"mapping_status":"MAPPED","ontology_id":"MICRO:0000175","preferred_term":"Trypticase"}],"identifier":"MICRO:0000175","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":785,"edge_count":785,"occurrences":785},"occurrence_statistics":{"media_count":785,"total_occurrences":785},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000175","ontology_label":"Trypticase peptone","ontology_source":"MICRO"},"preferred_term":"Trypticase","sssom_rows":[{"data_row":2844,"object_id":"MICRO:0000175","object_label":"Trypticase peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trypticase","synonym_count":2} |
+| ev-dc9f6175ef843519 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2005] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-ab0ddef7ebe1d84c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trypticase; data-row positions=[2844] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2844,"object_id":"MICRO:0000175","object_label":"Trypticase peptone","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trypticase","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-c07e21235a5817f5 | docs/data/mapped_ingredients.csv; CSV lines=[2007] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000175","line":2007,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"785","ontology_id":"MICRO:0000175","preferred_term":"Trypticase","total_occurrences":"785"}] |
 | ev-42790bcdc8be1674 | reports/yaml_record_review/Trypticase.md; &#96;data/ingredients/mapped/Trypticase.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:30; Issues:41; Major: &#96;PROTEIN_SOURCE&#96; is provisional name-pattern evidence:43; Completeness:60; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f7112685fafe2c29 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1319,1943] | context_only | [{"current_record_sha256":"ced9ce2808f4e36f73e5a5aa7b2626efa2a85efd67ca1d39b4e15a61d4c454ef","finding_id":"SEM:f95b00ad17725c6a070f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ced9ce2808f4e36f73e5a5aa7b2626efa2a85efd67ca1d39b4e15a61d4c454ef","finding_id":"SEM:9b76db6217a3df5d0e69","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2a9d55e0d40db1a6 | data/ingredients/mapped/Trypticase.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-2a9d55e0d40db1a6 | data/ingredients/mapped/Trypticase.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2005],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000175","line":2007,"mapping_status":"MAPPED","ontology_id":"MICRO:0000175","preferred_term":"Trypticase"}],"identifier":"MICRO:0000175","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":785,"edge_count":785,"occurrences":785},"occurrence_statistics":{"media_count":785,"total_occurrences":785},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000175","ontology_label":"Trypticase peptone","ontology_source":"MICRO"},"preferred_term":"Trypticase","sssom_rows":[{"data_row":2844,"object_id":"MICRO:0000175","object_label":"Trypticase peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trypticase","synonym_count":2} |
 | ev-404ebecb780238c8 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-bd6aed6fc33dca6b] | context_only | Predecessor structured review finding f-bd6aed6fc33dca6b in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ee2d0633ae01eb6b
+  evidence_ids:
+  - ev-365e57c84b8b6544
+  - ev-dc9f6175ef843519
+  - ev-ab0ddef7ebe1d84c
+  - ev-c07e21235a5817f5
+  - ev-2a9d55e0d40db1a6
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ee2d0633ae01eb6b
+  evidence_ids:
+  - ev-365e57c84b8b6544
+  - ev-f7112685fafe2c29
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ee2d0633ae01eb6b
+  evidence_ids:
+  - ev-42790bcdc8be1674
+  - ev-f7112685fafe2c29
+  - ev-404ebecb780238c8
 evidence:
 - evidence_id: ev-365e57c84b8b6544
   kind: record_content
   reference: data/ingredients/mapped/Trypticase.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2006],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000175","line":2008,"mapping_status":"MAPPED","ontology_id":"MICRO:0000175","preferred_term":"Trypticase"}],"identifier":"MICRO:0000175","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":785,"edge_count":785,"occurrences":785},"occurrence_statistics":{"media_count":785,"total_occurrences":785},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000175","ontology_label":"Trypticase
-    peptone","ontology_source":"MICRO"},"preferred_term":"Trypticase","sssom_rows":[{"data_row":2842,"object_id":"MICRO:0000175","object_label":"Trypticase
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2005],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000175","line":2007,"mapping_status":"MAPPED","ontology_id":"MICRO:0000175","preferred_term":"Trypticase"}],"identifier":"MICRO:0000175","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":785,"edge_count":785,"occurrences":785},"occurrence_statistics":{"media_count":785,"total_occurrences":785},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000175","ontology_label":"Trypticase
+    peptone","ontology_source":"MICRO"},"preferred_term":"Trypticase","sssom_rows":[{"data_row":2844,"object_id":"MICRO:0000175","object_label":"Trypticase
     peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trypticase","synonym_count":2}'
   snapshot_sha256: ced9ce2808f4e36f73e5a5aa7b2626efa2a85efd67ca1d39b4e15a61d4c454ef
 - evidence_id: ev-dc9f6175ef843519
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2006]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2005]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,19 +232,19 @@ evidence:
 - evidence_id: ev-ab0ddef7ebe1d84c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trypticase; data-row positions=[2842]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Trypticase; data-row positions=[2844]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2842,"object_id":"MICRO:0000175","object_label":"Trypticase
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2844,"object_id":"MICRO:0000175","object_label":"Trypticase
     peptone","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trypticase","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-c07e21235a5817f5
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2008]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2007]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000175","line":2008,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"785","ontology_id":"MICRO:0000175","preferred_term":"Trypticase","total_occurrences":"785"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000175","line":2007,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"785","ontology_id":"MICRO:0000175","preferred_term":"Trypticase","total_occurrences":"785"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-42790bcdc8be1674
   kind: prior_review
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1319,1943]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ced9ce2808f4e36f73e5a5aa7b2626efa2a85efd67ca1d39b4e15a61d4c454ef","finding_id":"SEM:f95b00ad17725c6a070f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ced9ce2808f4e36f73e5a5aa7b2626efa2a85efd67ca1d39b4e15a61d4c454ef","finding_id":"SEM:9b76db6217a3df5d0e69","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trypticase.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2005],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000175","line":2007,"mapping_status":"MAPPED","ontology_id":"MICRO:0000175","preferred_term":"Trypticase"}],"identifier":"MICRO:0000175","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":785,"edge_count":785,"occurrences":785},"occurrence_statistics":{"media_count":785,"total_occurrences":785},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000175","ontology_label":"Trypticase
+    peptone","ontology_source":"MICRO"},"preferred_term":"Trypticase","sssom_rows":[{"data_row":2844,"object_id":"MICRO:0000175","object_label":"Trypticase
+    peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trypticase","synonym_count":2}'
   snapshot_sha256: ced9ce2808f4e36f73e5a5aa7b2626efa2a85efd67ca1d39b4e15a61d4c454ef
 - evidence_id: ev-404ebecb780238c8
   kind: prior_review

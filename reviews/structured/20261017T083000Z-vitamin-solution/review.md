@@ -83,13 +83,13 @@ Reassess prediction-only role support: Vitamin solution
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-2fe06b6f894dc7bf | data/ingredients/mapped/Vitamin_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2048],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000460","line":2050,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution"}],"identifier":"MICRO:0000460","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution","sssom_rows":[{"data_row":2908,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution","synonym_count":1} |
-| ev-4acf4514348b8f9b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2048] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-80d28ef0758ae0af | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vitamin_Solution; data-row positions=[2908] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2908,"object_id":"MICRO:0000460","object_label":"vitamin solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vitamin_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-b031866a51f27131 | docs/data/mapped_ingredients.csv; CSV lines=[2050] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000460","line":2050,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution","total_occurrences":"6"}] |
+| ev-2fe06b6f894dc7bf | data/ingredients/mapped/Vitamin_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2047],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000460","line":2049,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution"}],"identifier":"MICRO:0000460","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution","sssom_rows":[{"data_row":2910,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution","synonym_count":1} |
+| ev-4acf4514348b8f9b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2047] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-80d28ef0758ae0af | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vitamin_Solution; data-row positions=[2910] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2910,"object_id":"MICRO:0000460","object_label":"vitamin solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vitamin_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-b031866a51f27131 | docs/data/mapped_ingredients.csv; CSV lines=[2049] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000460","line":2049,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution","total_occurrences":"6"}] |
 | ev-3499e96bd733753c | reports/yaml_record_review/Vitamin_Solution.md; &#96;data/ingredients/mapped/Vitamin_Solution.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:30; Issues:39; Completeness:45; Recommended Edits:50 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-49eef4aa48a0cc9d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1339,1644] | context_only | [{"current_record_sha256":"305d7f69b9a02684450fd10df96c558cc1d7828a306bc661a9d3887fb4e57d7e","finding_id":"SEM:0086ef59025a6eb48bf4","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"305d7f69b9a02684450fd10df96c558cc1d7828a306bc661a9d3887fb4e57d7e","finding_id":"SEM:ce341e2a27dffe47ad69","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-220bb7920e9307d3 | data/ingredients/mapped/Vitamin_Solution.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-220bb7920e9307d3 | data/ingredients/mapped/Vitamin_Solution.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2047],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000460","line":2049,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution"}],"identifier":"MICRO:0000460","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution","sssom_rows":[{"data_row":2910,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution","synonym_count":1} |
 | ev-ef1b826349a661ab | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-fa85a9ae4747f803] | context_only | Predecessor structured review finding f-fa85a9ae4747f803 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6f7461b8e7007457
+  evidence_ids:
+  - ev-2fe06b6f894dc7bf
+  - ev-4acf4514348b8f9b
+  - ev-80d28ef0758ae0af
+  - ev-b031866a51f27131
+  - ev-220bb7920e9307d3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6f7461b8e7007457
+  evidence_ids:
+  - ev-2fe06b6f894dc7bf
+  - ev-49eef4aa48a0cc9d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6f7461b8e7007457
+  evidence_ids:
+  - ev-3499e96bd733753c
+  - ev-49eef4aa48a0cc9d
+  - ev-ef1b826349a661ab
 evidence:
 - evidence_id: ev-2fe06b6f894dc7bf
   kind: record_content
   reference: data/ingredients/mapped/Vitamin_Solution.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2048],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000460","line":2050,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2047],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000460","line":2049,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
     solution"}],"identifier":"MICRO:0000460","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
-    solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution","sssom_rows":[{"data_row":2908,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution","sssom_rows":[{"data_row":2910,"object_id":"MICRO:0000460","object_label":"vitamin
     solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution","synonym_count":1}'
   snapshot_sha256: 305d7f69b9a02684450fd10df96c558cc1d7828a306bc661a9d3887fb4e57d7e
 - evidence_id: ev-4acf4514348b8f9b
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2048]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2047]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-80d28ef0758ae0af
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Vitamin_Solution; data-row positions=[2908]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Vitamin_Solution; data-row positions=[2910]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2908,"object_id":"MICRO:0000460","object_label":"vitamin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2910,"object_id":"MICRO:0000460","object_label":"vitamin
     solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vitamin_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-b031866a51f27131
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2050]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2049]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000460","line":2050,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000460","line":2049,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
     solution","total_occurrences":"6"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-3499e96bd733753c
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1339,1644]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"305d7f69b9a02684450fd10df96c558cc1d7828a306bc661a9d3887fb4e57d7e","finding_id":"SEM:0086ef59025a6eb48bf4","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"305d7f69b9a02684450fd10df96c558cc1d7828a306bc661a9d3887fb4e57d7e","finding_id":"SEM:ce341e2a27dffe47ad69","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Vitamin_Solution.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2047],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000460","line":2049,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
+    solution"}],"identifier":"MICRO:0000460","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
+    solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution","sssom_rows":[{"data_row":2910,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution","synonym_count":1}'
   snapshot_sha256: 305d7f69b9a02684450fd10df96c558cc1d7828a306bc661a9d3887fb4e57d7e
 - evidence_id: ev-ef1b826349a661ab
   kind: prior_review

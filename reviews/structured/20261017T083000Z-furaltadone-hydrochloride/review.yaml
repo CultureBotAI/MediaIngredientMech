@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2e4090e1bf27a52d
+  evidence_ids:
+  - ev-92f2602ee8f36ebd
+  - ev-6fd4802b6fb4b4d5
+  - ev-065ced0d6e60ecd2
+  - ev-505c7326f8238146
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -82,6 +87,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-2e4090e1bf27a52d
+  evidence_ids:
+  - ev-92f2602ee8f36ebd
+  - ev-3e33246292a1173e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,15 +98,19 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2e4090e1bf27a52d
+  evidence_ids:
+  - ev-836307283d84c74a
+  - ev-3e33246292a1173e
+  - ev-ebbea96d3683ce6b
 evidence:
 - evidence_id: ev-92f2602ee8f36ebd
   kind: record_content
   reference: data/ingredients/mapped/Furaltadone_Hydrochloride.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2679],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C217928","line":2681,"mapping_status":"MAPPED","ontology_id":"NCIT:C217928","preferred_term":"Furaltadone
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2678],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C217928","line":2680,"mapping_status":"MAPPED","ontology_id":"NCIT:C217928","preferred_term":"Furaltadone
     hydrochloride"}],"identifier":"NCIT:C217928","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C217928","ontology_label":"Furaltadone
     Hydrochloride","ontology_source":"NCIT"},"preferred_term":"Furaltadone hydrochloride","sssom_rows":[{"data_row":1256,"object_id":"NCIT:C217928","object_label":"Furaltadone
     Hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Furaltadone_Hydrochloride","synonym_count":0}'
@@ -106,8 +118,8 @@ evidence:
 - evidence_id: ev-6fd4802b6fb4b4d5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2679]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2678]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +128,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Furaltadone_Hydrochloride; data-row positions=[1256]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1256,"object_id":"NCIT:C217928","object_label":"Furaltadone
     Hydrochloride","other":"CAS:3759-92-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Furaltadone_Hydrochloride","validation_method":"manual:yaml_record_review|EXACT_NCIT|2026-10-03"}]'
@@ -124,10 +136,10 @@ evidence:
 - evidence_id: ev-505c7326f8238146
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2681]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2680]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C217928","line":2681,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C217928","preferred_term":"Furaltadone
+  summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C217928","line":2680,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C217928","preferred_term":"Furaltadone
     hydrochloride","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-836307283d84c74a
@@ -152,7 +164,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[640]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d266285ec6a66b1ac0bb331c14f42232646f3f1c799bfb4c91b5c1c2f5808f81","finding_id":"SEM:daa5a3f8cbe30f00018a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

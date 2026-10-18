@@ -85,11 +85,11 @@ Reassess prediction-only role support: D-(+)-melezitose monohydrate
 | --- | --- | --- | --- |
 | ev-1a08869fbf3bce0d | data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[800],"raw_equal":true},"docs_rows":[{"identifier":"cas:10030-67-8","line":802,"mapping_status":"MAPPED","ontology_id":"CHEBI:6731","preferred_term":"D-(+)-melezitose monohydrate"}],"identifier":"cas:10030-67-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:6731","ontology_label":"melezitose","ontology_source":"CHEBI"},"preferred_term":"D-(+)-melezitose monohydrate","sssom_rows":[{"data_row":918,"object_id":"CHEBI:6731","object_label":"melezitose","predicate_id":"skos:closeMatch"},{"data_row":919,"object_id":"cas:10030-67-8","object_label":"D-(+)-melezitose monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-_-melezitose_Monohydrate","synonym_count":0} |
 | ev-7798084151fb89a5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [800] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-5746d95875387439 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-_-melezitose_Monohydrate; data-row positions=[918,919] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":918,"object_id":"CHEBI:6731","object_label":"melezitose","other":"CAS:10030-67-8","predicate_id":"skos:closeMatch","subject_id":"MIM:D-_-melezitose_Monohydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":919,"object_id":"cas:10030-67-8","object_label":"D-(+)-melezitose monohydrate","other":"CAS:10030-67-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-_-melezitose_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-5746d95875387439 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-_-melezitose_Monohydrate; data-row positions=[918, 919] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":918,"object_id":"CHEBI:6731","object_label":"melezitose","other":"CAS:10030-67-8","predicate_id":"skos:closeMatch","subject_id":"MIM:D-_-melezitose_Monohydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":919,"object_id":"cas:10030-67-8","object_label":"D-(+)-melezitose monohydrate","other":"CAS:10030-67-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-_-melezitose_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-c94035e5d4066ce5 | docs/data/mapped_ingredients.csv; CSV lines=[802] | supports | Published identity and count rows inspected: [{"identifier":"cas:10030-67-8","line":802,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6731","preferred_term":"D-(+)-melezitose monohydrate","total_occurrences":"0"}] |
 | ev-428f528b5d5fc36f | reports/yaml_record_review/D-_-melezitose_Monohydrate.md; &#96;data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:28; Evidence:47; Completeness:63; Recommended Edits:71 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-46b2e1282968a4b3 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[484,1802] | context_only | [{"current_record_sha256":"e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222","finding_id":"SEM:d2e2a0eef35747b36f91","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222","finding_id":"SEM:3c13edcba734032a4e08","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-4bf4571e9441fffe | data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-4bf4571e9441fffe | data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[800],"raw_equal":true},"docs_rows":[{"identifier":"cas:10030-67-8","line":802,"mapping_status":"MAPPED","ontology_id":"CHEBI:6731","preferred_term":"D-(+)-melezitose monohydrate"}],"identifier":"cas:10030-67-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:6731","ontology_label":"melezitose","ontology_source":"CHEBI"},"preferred_term":"D-(+)-melezitose monohydrate","sssom_rows":[{"data_row":918,"object_id":"CHEBI:6731","object_label":"melezitose","predicate_id":"skos:closeMatch"},{"data_row":919,"object_id":"cas:10030-67-8","object_label":"D-(+)-melezitose monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-_-melezitose_Monohydrate","synonym_count":0} |
 | ev-aa6d90d251b4d30b | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-14aa31dd7ebeaa0c] | context_only | Predecessor structured review finding f-14aa31dd7ebeaa0c in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-05159118f032f1be
+  evidence_ids:
+  - ev-1a08869fbf3bce0d
+  - ev-7798084151fb89a5
+  - ev-5746d95875387439
+  - ev-c94035e5d4066ce5
+  - ev-4bf4571e9441fffe
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-05159118f032f1be
+  evidence_ids:
+  - ev-1a08869fbf3bce0d
+  - ev-46b2e1282968a4b3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-05159118f032f1be
+  evidence_ids:
+  - ev-428f528b5d5fc36f
+  - ev-46b2e1282968a4b3
+  - ev-aa6d90d251b4d30b
 evidence:
 - evidence_id: ev-1a08869fbf3bce0d
   kind: record_content
   reference: data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[800],"raw_equal":true},"docs_rows":[{"identifier":"cas:10030-67-8","line":802,"mapping_status":"MAPPED","ontology_id":"CHEBI:6731","preferred_term":"D-(+)-melezitose
     monohydrate"}],"identifier":"cas:10030-67-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:6731","ontology_label":"melezitose","ontology_source":"CHEBI"},"preferred_term":"D-(+)-melezitose
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [800]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,8 +233,8 @@ evidence:
 - evidence_id: ev-5746d95875387439
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:D-_-melezitose_Monohydrate; data-row positions=[918,919]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:D-_-melezitose_Monohydrate; data-row positions=[918, 919]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":918,"object_id":"CHEBI:6731","object_label":"melezitose","other":"CAS:10030-67-8","predicate_id":"skos:closeMatch","subject_id":"MIM:D-_-melezitose_Monohydrate","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"},{"data_row":919,"object_id":"cas:10030-67-8","object_label":"D-(+)-melezitose
     monohydrate","other":"CAS:10030-67-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-_-melezitose_Monohydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[802]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:10030-67-8","line":802,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6731","preferred_term":"D-(+)-melezitose
     monohydrate","total_occurrences":"0"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[484,1802]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222","finding_id":"SEM:d2e2a0eef35747b36f91","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222","finding_id":"SEM:3c13edcba734032a4e08","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[800],"raw_equal":true},"docs_rows":[{"identifier":"cas:10030-67-8","line":802,"mapping_status":"MAPPED","ontology_id":"CHEBI:6731","preferred_term":"D-(+)-melezitose
+    monohydrate"}],"identifier":"cas:10030-67-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:6731","ontology_label":"melezitose","ontology_source":"CHEBI"},"preferred_term":"D-(+)-melezitose
+    monohydrate","sssom_rows":[{"data_row":918,"object_id":"CHEBI:6731","object_label":"melezitose","predicate_id":"skos:closeMatch"},{"data_row":919,"object_id":"cas:10030-67-8","object_label":"D-(+)-melezitose
+    monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-_-melezitose_Monohydrate","synonym_count":0}'
   snapshot_sha256: e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222
 - evidence_id: ev-aa6d90d251b4d30b
   kind: prior_review

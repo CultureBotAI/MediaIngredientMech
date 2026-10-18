@@ -83,13 +83,13 @@ Reassess prediction-only role support: Ofloxacin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-dbf08c7d2dd4d772 | data/ingredients/mapped/Ofloxacin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1591],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7731","line":1593,"mapping_status":"MAPPED","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin"}],"identifier":"CHEBI:7731","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:7731","ontology_label":"ofloxacin","ontology_source":"CHEBI"},"preferred_term":"Ofloxacin","sssom_rows":[{"data_row":2139,"object_id":"CHEBI:7731","object_label":"ofloxacin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ofloxacin","synonym_count":1} |
-| ev-0778b27124f13357 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1591] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-93de33d5479fbc19 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ofloxacin; data-row positions=[2139] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2139,"object_id":"CHEBI:7731","object_label":"ofloxacin","other":"rac-9-fluoro-3-methyl-10-(4-methylpiperazin-1-yl)-7-oxo-2,3-dihydro-7H-[1,4]oxazino[2,3,4-ij]quinoline-6-carboxylic acid&#124;CAS:82419-36-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Ofloxacin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-47b8c9f103e929f1 | docs/data/mapped_ingredients.csv; CSV lines=[1593] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:7731","line":1593,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin","total_occurrences":"0"}] |
+| ev-dbf08c7d2dd4d772 | data/ingredients/mapped/Ofloxacin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1590],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7731","line":1592,"mapping_status":"MAPPED","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin"}],"identifier":"CHEBI:7731","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:7731","ontology_label":"ofloxacin","ontology_source":"CHEBI"},"preferred_term":"Ofloxacin","sssom_rows":[{"data_row":2141,"object_id":"CHEBI:7731","object_label":"ofloxacin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ofloxacin","synonym_count":1} |
+| ev-0778b27124f13357 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1590] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-93de33d5479fbc19 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ofloxacin; data-row positions=[2141] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2141,"object_id":"CHEBI:7731","object_label":"ofloxacin","other":"rac-9-fluoro-3-methyl-10-(4-methylpiperazin-1-yl)-7-oxo-2,3-dihydro-7H-[1,4]oxazino[2,3,4-ij]quinoline-6-carboxylic acid&#124;CAS:82419-36-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Ofloxacin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-47b8c9f103e929f1 | docs/data/mapped_ingredients.csv; CSV lines=[1592] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:7731","line":1592,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin","total_occurrences":"0"}] |
 | ev-0da4d15242c4017f | reports/yaml_record_review/Ofloxacin.md; &#96;data/ingredients/mapped/Ofloxacin.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:28; Completeness:42; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d52f0c5323c1bfe3 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1079,1804] | context_only | [{"current_record_sha256":"734911f64e612141fe20e6620dabe9051d8cd012974d8a8fde06fb8587461e1a","finding_id":"SEM:028fcc2f5dbe7dc9f93b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"734911f64e612141fe20e6620dabe9051d8cd012974d8a8fde06fb8587461e1a","finding_id":"SEM:f8b13c1fd8ab3944c837","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-23b0698aeddb541f | data/ingredients/mapped/Ofloxacin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-23b0698aeddb541f | data/ingredients/mapped/Ofloxacin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1590],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7731","line":1592,"mapping_status":"MAPPED","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin"}],"identifier":"CHEBI:7731","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:7731","ontology_label":"ofloxacin","ontology_source":"CHEBI"},"preferred_term":"Ofloxacin","sssom_rows":[{"data_row":2141,"object_id":"CHEBI:7731","object_label":"ofloxacin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ofloxacin","synonym_count":1} |
 | ev-6e51306f39f885a4 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-3b2cd2573959d047] | context_only | Predecessor structured review finding f-3b2cd2573959d047 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d15a4a9983a421be
+  evidence_ids:
+  - ev-dbf08c7d2dd4d772
+  - ev-0778b27124f13357
+  - ev-93de33d5479fbc19
+  - ev-47b8c9f103e929f1
+  - ev-23b0698aeddb541f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d15a4a9983a421be
+  evidence_ids:
+  - ev-dbf08c7d2dd4d772
+  - ev-d52f0c5323c1bfe3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d15a4a9983a421be
+  evidence_ids:
+  - ev-0da4d15242c4017f
+  - ev-d52f0c5323c1bfe3
+  - ev-6e51306f39f885a4
 evidence:
 - evidence_id: ev-dbf08c7d2dd4d772
   kind: record_content
   reference: data/ingredients/mapped/Ofloxacin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1591],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7731","line":1593,"mapping_status":"MAPPED","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin"}],"identifier":"CHEBI:7731","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:7731","ontology_label":"ofloxacin","ontology_source":"CHEBI"},"preferred_term":"Ofloxacin","sssom_rows":[{"data_row":2139,"object_id":"CHEBI:7731","object_label":"ofloxacin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ofloxacin","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1590],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7731","line":1592,"mapping_status":"MAPPED","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin"}],"identifier":"CHEBI:7731","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:7731","ontology_label":"ofloxacin","ontology_source":"CHEBI"},"preferred_term":"Ofloxacin","sssom_rows":[{"data_row":2141,"object_id":"CHEBI:7731","object_label":"ofloxacin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ofloxacin","synonym_count":1}'
   snapshot_sha256: 734911f64e612141fe20e6620dabe9051d8cd012974d8a8fde06fb8587461e1a
 - evidence_id: ev-0778b27124f13357
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1591]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1590]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,19 +230,19 @@ evidence:
 - evidence_id: ev-93de33d5479fbc19
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Ofloxacin; data-row positions=[2139]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Ofloxacin; data-row positions=[2141]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2139,"object_id":"CHEBI:7731","object_label":"ofloxacin","other":"rac-9-fluoro-3-methyl-10-(4-methylpiperazin-1-yl)-7-oxo-2,3-dihydro-7H-[1,4]oxazino[2,3,4-ij]quinoline-6-carboxylic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2141,"object_id":"CHEBI:7731","object_label":"ofloxacin","other":"rac-9-fluoro-3-methyl-10-(4-methylpiperazin-1-yl)-7-oxo-2,3-dihydro-7H-[1,4]oxazino[2,3,4-ij]quinoline-6-carboxylic
     acid|CAS:82419-36-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Ofloxacin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-47b8c9f103e929f1
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1593]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1592]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:7731","line":1593,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:7731","line":1592,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-0da4d15242c4017f
   kind: prior_review
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1079,1804]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"734911f64e612141fe20e6620dabe9051d8cd012974d8a8fde06fb8587461e1a","finding_id":"SEM:028fcc2f5dbe7dc9f93b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"734911f64e612141fe20e6620dabe9051d8cd012974d8a8fde06fb8587461e1a","finding_id":"SEM:f8b13c1fd8ab3944c837","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Ofloxacin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1590],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7731","line":1592,"mapping_status":"MAPPED","ontology_id":"CHEBI:7731","preferred_term":"Ofloxacin"}],"identifier":"CHEBI:7731","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:7731","ontology_label":"ofloxacin","ontology_source":"CHEBI"},"preferred_term":"Ofloxacin","sssom_rows":[{"data_row":2141,"object_id":"CHEBI:7731","object_label":"ofloxacin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ofloxacin","synonym_count":1}'
   snapshot_sha256: 734911f64e612141fe20e6620dabe9051d8cd012974d8a8fde06fb8587461e1a
 - evidence_id: ev-6e51306f39f885a4
   kind: prior_review

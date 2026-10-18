@@ -83,13 +83,13 @@ Reassess prediction-only role support: Tunicamycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-845be2fe2fe8d793 | data/ingredients/mapped/Tunicamycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2014],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:29699","line":2016,"mapping_status":"MAPPED","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin"}],"identifier":"CHEBI:29699","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:29699","ontology_label":"tunicamycin","ontology_source":"CHEBI"},"preferred_term":"Tunicamycin","sssom_rows":[{"data_row":2854,"object_id":"CHEBI:29699","object_label":"tunicamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tunicamycin","synonym_count":0} |
-| ev-5e4ada30582d26d9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2014] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-eb1968402b9c8372 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tunicamycin; data-row positions=[2854] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2854,"object_id":"CHEBI:29699","object_label":"tunicamycin","other":"CAS:11089-65-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Tunicamycin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-3f0b104d8bc3ea95 | docs/data/mapped_ingredients.csv; CSV lines=[2016] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:29699","line":2016,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin","total_occurrences":"0"}] |
+| ev-845be2fe2fe8d793 | data/ingredients/mapped/Tunicamycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2013],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:29699","line":2015,"mapping_status":"MAPPED","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin"}],"identifier":"CHEBI:29699","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:29699","ontology_label":"tunicamycin","ontology_source":"CHEBI"},"preferred_term":"Tunicamycin","sssom_rows":[{"data_row":2856,"object_id":"CHEBI:29699","object_label":"tunicamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tunicamycin","synonym_count":0} |
+| ev-5e4ada30582d26d9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2013] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-eb1968402b9c8372 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tunicamycin; data-row positions=[2856] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2856,"object_id":"CHEBI:29699","object_label":"tunicamycin","other":"CAS:11089-65-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Tunicamycin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-3f0b104d8bc3ea95 | docs/data/mapped_ingredients.csv; CSV lines=[2015] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:29699","line":2015,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin","total_occurrences":"0"}] |
 | ev-409bee4b33bc5174 | reports/yaml_record_review/Tunicamycin.md; &#96;data/ingredients/mapped/Tunicamycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:32; Issues:41; Major: &#96;SELECTIVE_AGENT&#96; is provisional name-pattern evidence:43; Completeness:60; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-20d54bdae6efc4c0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1326,1795] | context_only | [{"current_record_sha256":"d6c1f7324d1f1fb0b60cd89c54e2b81950fdd873f6b32c76d3f2388a9092fe7b","finding_id":"SEM:568e7fa1ebda0e6ba3d0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d6c1f7324d1f1fb0b60cd89c54e2b81950fdd873f6b32c76d3f2388a9092fe7b","finding_id":"SEM:ccf3614c5f5ad4296830","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-78d7e077ee98ff1f | data/ingredients/mapped/Tunicamycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-78d7e077ee98ff1f | data/ingredients/mapped/Tunicamycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2013],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:29699","line":2015,"mapping_status":"MAPPED","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin"}],"identifier":"CHEBI:29699","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:29699","ontology_label":"tunicamycin","ontology_source":"CHEBI"},"preferred_term":"Tunicamycin","sssom_rows":[{"data_row":2856,"object_id":"CHEBI:29699","object_label":"tunicamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tunicamycin","synonym_count":0} |
 | ev-5ccd5d2b25a166a1 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-21a75cfeea3bb6b7] | context_only | Predecessor structured review finding f-21a75cfeea3bb6b7 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-63ff5a477f11ebf9
+  evidence_ids:
+  - ev-845be2fe2fe8d793
+  - ev-5e4ada30582d26d9
+  - ev-eb1968402b9c8372
+  - ev-3f0b104d8bc3ea95
+  - ev-78d7e077ee98ff1f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-63ff5a477f11ebf9
+  evidence_ids:
+  - ev-845be2fe2fe8d793
+  - ev-20d54bdae6efc4c0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-63ff5a477f11ebf9
+  evidence_ids:
+  - ev-409bee4b33bc5174
+  - ev-20d54bdae6efc4c0
+  - ev-5ccd5d2b25a166a1
 evidence:
 - evidence_id: ev-845be2fe2fe8d793
   kind: record_content
   reference: data/ingredients/mapped/Tunicamycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2014],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:29699","line":2016,"mapping_status":"MAPPED","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin"}],"identifier":"CHEBI:29699","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:29699","ontology_label":"tunicamycin","ontology_source":"CHEBI"},"preferred_term":"Tunicamycin","sssom_rows":[{"data_row":2854,"object_id":"CHEBI:29699","object_label":"tunicamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tunicamycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2013],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:29699","line":2015,"mapping_status":"MAPPED","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin"}],"identifier":"CHEBI:29699","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:29699","ontology_label":"tunicamycin","ontology_source":"CHEBI"},"preferred_term":"Tunicamycin","sssom_rows":[{"data_row":2856,"object_id":"CHEBI:29699","object_label":"tunicamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tunicamycin","synonym_count":0}'
   snapshot_sha256: d6c1f7324d1f1fb0b60cd89c54e2b81950fdd873f6b32c76d3f2388a9092fe7b
 - evidence_id: ev-5e4ada30582d26d9
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2014]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2013]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-eb1968402b9c8372
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tunicamycin; data-row positions=[2854]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tunicamycin; data-row positions=[2856]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2854,"object_id":"CHEBI:29699","object_label":"tunicamycin","other":"CAS:11089-65-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Tunicamycin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2856,"object_id":"CHEBI:29699","object_label":"tunicamycin","other":"CAS:11089-65-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Tunicamycin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-3f0b104d8bc3ea95
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2016]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2015]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:29699","line":2016,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:29699","line":2015,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-409bee4b33bc5174
   kind: prior_review
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1326,1795]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d6c1f7324d1f1fb0b60cd89c54e2b81950fdd873f6b32c76d3f2388a9092fe7b","finding_id":"SEM:568e7fa1ebda0e6ba3d0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d6c1f7324d1f1fb0b60cd89c54e2b81950fdd873f6b32c76d3f2388a9092fe7b","finding_id":"SEM:ccf3614c5f5ad4296830","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tunicamycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2013],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:29699","line":2015,"mapping_status":"MAPPED","ontology_id":"CHEBI:29699","preferred_term":"Tunicamycin"}],"identifier":"CHEBI:29699","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:29699","ontology_label":"tunicamycin","ontology_source":"CHEBI"},"preferred_term":"Tunicamycin","sssom_rows":[{"data_row":2856,"object_id":"CHEBI:29699","object_label":"tunicamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tunicamycin","synonym_count":0}'
   snapshot_sha256: d6c1f7324d1f1fb0b60cd89c54e2b81950fdd873f6b32c76d3f2388a9092fe7b
 - evidence_id: ev-5ccd5d2b25a166a1
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: Gentibiose
 | ev-395daf954767c2c7 | docs/data/mapped_ingredients.csv; CSV lines=[1049] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28066","line":1049,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28066","preferred_term":"Gentibiose","total_occurrences":"0"}] |
 | ev-e9447a1bbce0c7d6 | reports/yaml_record_review/Gentibiose.md; &#96;data/ingredients/mapped/Gentibiose.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:35; Completeness:56; Recommended Edits:63 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3f978b6bff684568 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[658,1545] | context_only | [{"current_record_sha256":"c1ec749eb289b72ffcbab4e33ee66694259a5de1ab9c4df8769859f2f062341b","finding_id":"SEM:2182da5a9a975b91c87c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c1ec749eb289b72ffcbab4e33ee66694259a5de1ab9c4df8769859f2f062341b","finding_id":"SEM:685ec2e2f888269efab8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2d74636f1f0a777c | data/ingredients/mapped/Gentibiose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-2d74636f1f0a777c | data/ingredients/mapped/Gentibiose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1047],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28066","line":1049,"mapping_status":"MAPPED","ontology_id":"CHEBI:28066","preferred_term":"Gentibiose"}],"identifier":"CHEBI:28066","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28066","ontology_label":"gentiobiose","ontology_source":"CHEBI"},"preferred_term":"Gentibiose","sssom_rows":[{"data_row":1292,"object_id":"CHEBI:28066","object_label":"gentiobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gentibiose","synonym_count":1} |
 | ev-a26bf8060e6c0c89 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-8c55b534f16437ad] | context_only | Predecessor structured review finding f-8c55b534f16437ad in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ce967ff2a602818f
+  evidence_ids:
+  - ev-88c813c3d181197c
+  - ev-51e8076040c85de4
+  - ev-cf8f325f2f65b32c
+  - ev-395daf954767c2c7
+  - ev-2d74636f1f0a777c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ce967ff2a602818f
+  evidence_ids:
+  - ev-88c813c3d181197c
+  - ev-3f978b6bff684568
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ce967ff2a602818f
+  evidence_ids:
+  - ev-e9447a1bbce0c7d6
+  - ev-3f978b6bff684568
+  - ev-a26bf8060e6c0c89
 evidence:
 - evidence_id: ev-88c813c3d181197c
   kind: record_content
   reference: data/ingredients/mapped/Gentibiose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1047],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28066","line":1049,"mapping_status":"MAPPED","ontology_id":"CHEBI:28066","preferred_term":"Gentibiose"}],"identifier":"CHEBI:28066","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28066","ontology_label":"gentiobiose","ontology_source":"CHEBI"},"preferred_term":"Gentibiose","sssom_rows":[{"data_row":1292,"object_id":"CHEBI:28066","object_label":"gentiobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gentibiose","synonym_count":1}'
   snapshot_sha256: c1ec749eb289b72ffcbab4e33ee66694259a5de1ab9c4df8769859f2f062341b
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1047]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Gentibiose; data-row positions=[1292]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1292,"object_id":"CHEBI:28066","object_label":"gentiobiose","other":"beta-D-glucopyranosyl-(1->6)-D-glucopyranose|CAS:554-91-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Gentibiose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1049]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28066","line":1049,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28066","preferred_term":"Gentibiose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[658,1545]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c1ec749eb289b72ffcbab4e33ee66694259a5de1ab9c4df8769859f2f062341b","finding_id":"SEM:2182da5a9a975b91c87c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c1ec749eb289b72ffcbab4e33ee66694259a5de1ab9c4df8769859f2f062341b","finding_id":"SEM:685ec2e2f888269efab8","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Gentibiose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1047],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28066","line":1049,"mapping_status":"MAPPED","ontology_id":"CHEBI:28066","preferred_term":"Gentibiose"}],"identifier":"CHEBI:28066","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28066","ontology_label":"gentiobiose","ontology_source":"CHEBI"},"preferred_term":"Gentibiose","sssom_rows":[{"data_row":1292,"object_id":"CHEBI:28066","object_label":"gentiobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gentibiose","synonym_count":1}'
   snapshot_sha256: c1ec749eb289b72ffcbab4e33ee66694259a5de1ab9c4df8769859f2f062341b
 - evidence_id: ev-a26bf8060e6c0c89
   kind: prior_review

@@ -77,14 +77,14 @@ Disposition: The current local observation is recorded, but the named source/con
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-46ced72be7134371 | data/ingredients/mapped/Mnso4_X_1_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1416],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86364","line":1418,"mapping_status":"REJECTED","ontology_id":"CHEBI:86364","preferred_term":"MnSO4 x 1 H2O"}],"identifier":"CHEBI:86364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1179,"edge_count":1179,"occurrences":1183},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86364","ontology_label":"manganese(II) sulfate monohydrate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 1 H2O","sssom_rows":[],"sssom_subject":"MIM:Mnso4_X_1_H2o","synonym_count":8} |
-| ev-d5ce5fea66724509 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1416] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-46ced72be7134371 | data/ingredients/mapped/Mnso4_X_1_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1415],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86364","line":1417,"mapping_status":"REJECTED","ontology_id":"CHEBI:86364","preferred_term":"MnSO4 x 1 H2O"}],"identifier":"CHEBI:86364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1179,"edge_count":1179,"occurrences":1183},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86364","ontology_label":"manganese(II) sulfate monohydrate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 1 H2O","sssom_rows":[],"sssom_subject":"MIM:Mnso4_X_1_H2o","synonym_count":8} |
+| ev-d5ce5fea66724509 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1415] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-706e0700d25c254e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mnso4_X_1_H2o; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
-| ev-650e8e630a9938e5 | docs/data/mapped_ingredients.csv; CSV lines=[1418] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86364","line":1418,"mapping_quality":"SYNONYM_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:86364","preferred_term":"MnSO4 x 1 H2O","total_occurrences":"0"}] |
+| ev-650e8e630a9938e5 | docs/data/mapped_ingredients.csv; CSV lines=[1417] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86364","line":1417,"mapping_quality":"SYNONYM_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:86364","preferred_term":"MnSO4 x 1 H2O","total_occurrences":"0"}] |
 | ev-d0709c0f860f8031 | reports/yaml_record_review/20261001T050246Z-Mnso4_X_1_H2o.md; YAML Record Review: MnSO4 x 1 H2O:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6f180c45db89a8bd | reports/yaml_record_review/Mnso4_X_1_H2o.md; &#96;data/ingredients/mapped/Mnso4_X_1_H2o.yaml&#96;:2; Verdict:4; Identity:13; Validation:25; Evidence:32; Completeness:42; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9741a0eb17b4b721 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[950] | context_only | [{"current_record_sha256":"d68f0e14e5f19625ae1e8476c8dfa3de4932cdf9656a9e6ae58a0a1ec438332f","finding_id":"SEM:cf46662405d0bc975934","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-9c1a7281c52e8058 | data/ingredients/mapped/Mnso4_X_1_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-9c1a7281c52e8058 | data/ingredients/mapped/Mnso4_X_1_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1415],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86364","line":1417,"mapping_status":"REJECTED","ontology_id":"CHEBI:86364","preferred_term":"MnSO4 x 1 H2O"}],"identifier":"CHEBI:86364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1179,"edge_count":1179,"occurrences":1183},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86364","ontology_label":"manganese(II) sulfate monohydrate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 1 H2O","sssom_rows":[],"sssom_subject":"MIM:Mnso4_X_1_H2o","synonym_count":8} |
 | ev-f7206be1fea0da32 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-3455d17d90738646] | context_only | Predecessor structured review finding f-3455d17d90738646 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -177,6 +177,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8fe9ff348804a593
+  evidence_ids:
+  - ev-46ced72be7134371
+  - ev-d5ce5fea66724509
+  - ev-706e0700d25c254e
+  - ev-650e8e630a9938e5
+  - ev-9c1a7281c52e8058
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -185,6 +191,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8fe9ff348804a593
+  evidence_ids:
+  - ev-46ced72be7134371
+  - ev-9741a0eb17b4b721
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -193,23 +202,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8fe9ff348804a593
+  evidence_ids:
+  - ev-d0709c0f860f8031
+  - ev-6f180c45db89a8bd
+  - ev-9741a0eb17b4b721
+  - ev-f7206be1fea0da32
 evidence:
 - evidence_id: ev-46ced72be7134371
   kind: record_content
   reference: data/ingredients/mapped/Mnso4_X_1_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1416],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86364","line":1418,"mapping_status":"REJECTED","ontology_id":"CHEBI:86364","preferred_term":"MnSO4
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1415],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86364","line":1417,"mapping_status":"REJECTED","ontology_id":"CHEBI:86364","preferred_term":"MnSO4
     x 1 H2O"}],"identifier":"CHEBI:86364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1179,"edge_count":1179,"occurrences":1183},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86364","ontology_label":"manganese(II)
     sulfate monohydrate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 1 H2O","sssom_rows":[],"sssom_subject":"MIM:Mnso4_X_1_H2o","synonym_count":8}'
   snapshot_sha256: d68f0e14e5f19625ae1e8476c8dfa3de4932cdf9656a9e6ae58a0a1ec438332f
 - evidence_id: ev-d5ce5fea66724509
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1416]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1415]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,17 +232,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Mnso4_X_1_H2o; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-650e8e630a9938e5
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1418]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1417]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86364","line":1418,"mapping_quality":"SYNONYM_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:86364","preferred_term":"MnSO4
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86364","line":1417,"mapping_quality":"SYNONYM_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:86364","preferred_term":"MnSO4
     x 1 H2O","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-d0709c0f860f8031
@@ -277,7 +291,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[950]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d68f0e14e5f19625ae1e8476c8dfa3de4932cdf9656a9e6ae58a0a1ec438332f","finding_id":"SEM:cf46662405d0bc975934","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
@@ -286,12 +300,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Mnso4_X_1_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1415],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86364","line":1417,"mapping_status":"REJECTED","ontology_id":"CHEBI:86364","preferred_term":"MnSO4
+    x 1 H2O"}],"identifier":"CHEBI:86364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1179,"edge_count":1179,"occurrences":1183},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86364","ontology_label":"manganese(II)
+    sulfate monohydrate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 1 H2O","sssom_rows":[],"sssom_subject":"MIM:Mnso4_X_1_H2o","synonym_count":8}'
   snapshot_sha256: d68f0e14e5f19625ae1e8476c8dfa3de4932cdf9656a9e6ae58a0a1ec438332f
 - evidence_id: ev-f7206be1fea0da32
   kind: prior_review

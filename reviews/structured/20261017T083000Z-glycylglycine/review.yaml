@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-81cfa3f4ed7416ca
+  evidence_ids:
+  - ev-52a8c337b0bbdae6
+  - ev-f1adbac93af583d9
+  - ev-6c35ec75a591812c
+  - ev-910772fa7a4e58f1
+  - ev-65c02b9400d6af6f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-81cfa3f4ed7416ca
+  evidence_ids:
+  - ev-52a8c337b0bbdae6
+  - ev-95e90b5e0028d7a3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-81cfa3f4ed7416ca
+  evidence_ids:
+  - ev-cb184322e64f9213
+  - ev-95e90b5e0028d7a3
+  - ev-19f4731a53a7ed6e
 evidence:
 - evidence_id: ev-52a8c337b0bbdae6
   kind: record_content
   reference: data/ingredients/mapped/Glycylglycine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1082],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17201","line":1084,"mapping_status":"REJECTED","ontology_id":"CHEBI:17201","preferred_term":"Glycylglycine"}],"identifier":"CHEBI:17201","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":14,"edge_count":14,"occurrences":14},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17201","ontology_label":"glycylglycine","ontology_source":"CHEBI"},"preferred_term":"Glycylglycine","sssom_rows":[],"sssom_subject":"MIM:Glycylglycine","synonym_count":1}'
   snapshot_sha256: 3d902b3b5870c5317df4c90d03f58ba75f356236ecb1a1dcda3a9bc4b5d461d9
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1082]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Glycylglycine; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1084]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17201","line":1084,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:17201","preferred_term":"Glycylglycine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -144,7 +157,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[701]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"3d902b3b5870c5317df4c90d03f58ba75f356236ecb1a1dcda3a9bc4b5d461d9","finding_id":"SEM:86d01fd2651c8b59ff87","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
@@ -153,12 +166,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Glycylglycine.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1082],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17201","line":1084,"mapping_status":"REJECTED","ontology_id":"CHEBI:17201","preferred_term":"Glycylglycine"}],"identifier":"CHEBI:17201","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":14,"edge_count":14,"occurrences":14},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17201","ontology_label":"glycylglycine","ontology_source":"CHEBI"},"preferred_term":"Glycylglycine","sssom_rows":[],"sssom_subject":"MIM:Glycylglycine","synonym_count":1}'
   snapshot_sha256: 3d902b3b5870c5317df4c90d03f58ba75f356236ecb1a1dcda3a9bc4b5d461d9
 - evidence_id: ev-19f4731a53a7ed6e
   kind: prior_review

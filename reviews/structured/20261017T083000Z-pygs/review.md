@@ -79,13 +79,12 @@ Disposition: The cited expansion acknowledges that S can mean salts or soluble s
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-a0f38167634eadb4 | data/ingredients/mapped/PYGS.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[56],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pygs","line":58,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pygs","preferred_term":"PYGS"}],"identifier":"kgmicrobe.ingredient:pygs","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":3,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pygs","ontology_label":"PYGS","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYGS","sssom_rows":[{"data_row":2183,"object_id":"kgmicrobe.ingredient:pygs","object_label":"PYGS","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYGS","synonym_count":1} |
+| ev-a0f38167634eadb4 | data/ingredients/mapped/PYGS.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[56],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pygs","line":58,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pygs","preferred_term":"PYGS"}],"identifier":"kgmicrobe.ingredient:pygs","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pygs","ontology_label":"PYGS","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYGS","sssom_rows":[{"data_row":2185,"object_id":"kgmicrobe.ingredient:pygs","object_label":"PYGS","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYGS","synonym_count":1} |
 | ev-41e3a492798f594c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [56] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-ce1969eb362197cc | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PYGS; data-row positions=[2183] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2183,"object_id":"kgmicrobe.ingredient:pygs","object_label":"PYGS","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYGS","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
+| ev-ce1969eb362197cc | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PYGS; data-row positions=[2185] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2185,"object_id":"kgmicrobe.ingredient:pygs","object_label":"PYGS","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYGS","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
 | ev-16ee26de41704479 | docs/data/mapped_ingredients.csv; CSV lines=[58] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:pygs","line":58,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:pygs","preferred_term":"PYGS","total_occurrences":"0"}] |
 | ev-52d20a20088c66ad | reports/yaml_record_review/PYGS.md; &#96;data/ingredients/mapped/PYGS.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:30; Completeness:45; Recommended Edits:52 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-afdf65ca5f479504 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1091,1463,1497,1722,2054,2107] | context_only | [{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:74aaa6e967e4895eab9b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:1e048edc602977bf2936","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:eb5b855741a3ae3bfba7","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:7cb86e75df178a5e5f81","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:8abe61f817d4ff766b20","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:c79b63fe97bcfe167306","kind":"ambiguous_abbreviation","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-452a9f6299ab7ea1 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/PYGS.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -174,6 +173,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-944c90268f7b375b
+  evidence_ids:
+  - ev-a0f38167634eadb4
+  - ev-41e3a492798f594c
+  - ev-ce1969eb362197cc
+  - ev-16ee26de41704479
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -182,6 +186,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-944c90268f7b375b
+  evidence_ids:
+  - ev-a0f38167634eadb4
+  - ev-afdf65ca5f479504
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -190,21 +197,24 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-944c90268f7b375b
+  evidence_ids:
+  - ev-52d20a20088c66ad
+  - ev-afdf65ca5f479504
 evidence:
 - evidence_id: ev-a0f38167634eadb4
   kind: record_content
   reference: data/ingredients/mapped/PYGS.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[56],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pygs","line":58,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pygs","preferred_term":"PYGS"}],"identifier":"kgmicrobe.ingredient:pygs","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":3,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pygs","ontology_label":"PYGS","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYGS","sssom_rows":[{"data_row":2183,"object_id":"kgmicrobe.ingredient:pygs","object_label":"PYGS","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYGS","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[56],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pygs","line":58,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pygs","preferred_term":"PYGS"}],"identifier":"kgmicrobe.ingredient:pygs","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pygs","ontology_label":"PYGS","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYGS","sssom_rows":[{"data_row":2185,"object_id":"kgmicrobe.ingredient:pygs","object_label":"PYGS","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYGS","synonym_count":1}'
   snapshot_sha256: b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52
 - evidence_id: ev-41e3a492798f594c
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [56]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -212,16 +222,16 @@ evidence:
 - evidence_id: ev-ce1969eb362197cc
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PYGS; data-row positions=[2183]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PYGS; data-row positions=[2185]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2183,"object_id":"kgmicrobe.ingredient:pygs","object_label":"PYGS","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYGS","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2185,"object_id":"kgmicrobe.ingredient:pygs","object_label":"PYGS","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYGS","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-16ee26de41704479
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[58]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:pygs","line":58,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:pygs","preferred_term":"PYGS","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -245,7 +255,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1091,1463,1497,1722,2054,2107]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:74aaa6e967e4895eab9b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:1e048edc602977bf2936","kind":"component_source_scope","resolution_reason":"Historical
@@ -254,14 +264,6 @@ evidence:
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:8abe61f817d4ff766b20","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52","finding_id":"SEM:c79b63fe97bcfe167306","kind":"ambiguous_abbreviation","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-452a9f6299ab7ea1
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/PYGS.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-f195e2c97090c067
@@ -344,7 +346,7 @@ findings:
   - record-944c90268f7b375b
   evidence_ids:
   - ev-a0f38167634eadb4
-  - ev-452a9f6299ab7ea1
+  - ev-afdf65ca5f479504
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PYGS.yaml
@@ -375,7 +377,7 @@ findings:
   - record-944c90268f7b375b
   evidence_ids:
   - ev-a0f38167634eadb4
-  - ev-452a9f6299ab7ea1
+  - ev-afdf65ca5f479504
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PYGS.yaml

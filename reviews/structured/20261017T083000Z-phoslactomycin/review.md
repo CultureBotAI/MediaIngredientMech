@@ -83,13 +83,13 @@ Reassess prediction-only role support: Phoslactomycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-bcaaeac8ab9d7cd5 | data/ingredients/mapped/Phoslactomycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1649],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:phoslactomycin","line":1651,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin"}],"identifier":"kgmicrobe.compound:phoslactomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:phoslactomycin","ontology_label":"Phoslactomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Phoslactomycin","sssom_rows":[{"data_row":2245,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phoslactomycin","synonym_count":0} |
-| ev-b81c99cfe5ec370e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1649] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-e3e91f1660dc88ce | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Phoslactomycin; data-row positions=[2245] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2245,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phoslactomycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-d58de164e4ad951e | docs/data/mapped_ingredients.csv; CSV lines=[1651] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:phoslactomycin","line":1651,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin","total_occurrences":"0"}] |
+| ev-bcaaeac8ab9d7cd5 | data/ingredients/mapped/Phoslactomycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1648],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:phoslactomycin","line":1650,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin"}],"identifier":"kgmicrobe.compound:phoslactomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:phoslactomycin","ontology_label":"Phoslactomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Phoslactomycin","sssom_rows":[{"data_row":2247,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phoslactomycin","synonym_count":0} |
+| ev-b81c99cfe5ec370e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1648] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-e3e91f1660dc88ce | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Phoslactomycin; data-row positions=[2247] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2247,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phoslactomycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-d58de164e4ad951e | docs/data/mapped_ingredients.csv; CSV lines=[1650] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:phoslactomycin","line":1650,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin","total_occurrences":"0"}] |
 | ev-cddf276c52508793 | reports/yaml_record_review/Phoslactomycin.md; &#96;data/ingredients/mapped/Phoslactomycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:34; Completeness:46; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ac00b505e08006f9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1108,1755] | context_only | [{"current_record_sha256":"668d501fc6afdf4e76ff8dfc0021a3e1351c923dae7dfa2a38e17e0c207dda7d","finding_id":"SEM:8871918dd96afd6458f5","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"668d501fc6afdf4e76ff8dfc0021a3e1351c923dae7dfa2a38e17e0c207dda7d","finding_id":"SEM:c88ad167cfcdfb9596b7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8a158957bd9bf25a | data/ingredients/mapped/Phoslactomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-8a158957bd9bf25a | data/ingredients/mapped/Phoslactomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1648],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:phoslactomycin","line":1650,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin"}],"identifier":"kgmicrobe.compound:phoslactomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:phoslactomycin","ontology_label":"Phoslactomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Phoslactomycin","sssom_rows":[{"data_row":2247,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phoslactomycin","synonym_count":0} |
 | ev-e5a29b0f5614e339 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-12111d3e0c9420d7] | context_only | Predecessor structured review finding f-12111d3e0c9420d7 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-29a7cfdfdb7dacab
+  evidence_ids:
+  - ev-bcaaeac8ab9d7cd5
+  - ev-b81c99cfe5ec370e
+  - ev-e3e91f1660dc88ce
+  - ev-d58de164e4ad951e
+  - ev-8a158957bd9bf25a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-29a7cfdfdb7dacab
+  evidence_ids:
+  - ev-bcaaeac8ab9d7cd5
+  - ev-ac00b505e08006f9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-29a7cfdfdb7dacab
+  evidence_ids:
+  - ev-cddf276c52508793
+  - ev-ac00b505e08006f9
+  - ev-e5a29b0f5614e339
 evidence:
 - evidence_id: ev-bcaaeac8ab9d7cd5
   kind: record_content
   reference: data/ingredients/mapped/Phoslactomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1649],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:phoslactomycin","line":1651,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin"}],"identifier":"kgmicrobe.compound:phoslactomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:phoslactomycin","ontology_label":"Phoslactomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Phoslactomycin","sssom_rows":[{"data_row":2245,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phoslactomycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1648],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:phoslactomycin","line":1650,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin"}],"identifier":"kgmicrobe.compound:phoslactomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:phoslactomycin","ontology_label":"Phoslactomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Phoslactomycin","sssom_rows":[{"data_row":2247,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phoslactomycin","synonym_count":0}'
   snapshot_sha256: 668d501fc6afdf4e76ff8dfc0021a3e1351c923dae7dfa2a38e17e0c207dda7d
 - evidence_id: ev-b81c99cfe5ec370e
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1649]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1648]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-e3e91f1660dc88ce
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Phoslactomycin; data-row positions=[2245]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Phoslactomycin; data-row positions=[2247]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2245,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phoslactomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2247,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phoslactomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-d58de164e4ad951e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1651]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1650]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:phoslactomycin","line":1651,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:phoslactomycin","line":1650,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-cddf276c52508793
   kind: prior_review
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1108,1755]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"668d501fc6afdf4e76ff8dfc0021a3e1351c923dae7dfa2a38e17e0c207dda7d","finding_id":"SEM:8871918dd96afd6458f5","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"668d501fc6afdf4e76ff8dfc0021a3e1351c923dae7dfa2a38e17e0c207dda7d","finding_id":"SEM:c88ad167cfcdfb9596b7","kind":"role_evidence","resolution_reason":"Historical
@@ -258,12 +271,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Phoslactomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1648],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:phoslactomycin","line":1650,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:phoslactomycin","preferred_term":"Phoslactomycin"}],"identifier":"kgmicrobe.compound:phoslactomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:phoslactomycin","ontology_label":"Phoslactomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Phoslactomycin","sssom_rows":[{"data_row":2247,"object_id":"kgmicrobe.compound:phoslactomycin","object_label":"Phoslactomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phoslactomycin","synonym_count":0}'
   snapshot_sha256: 668d501fc6afdf4e76ff8dfc0021a3e1351c923dae7dfa2a38e17e0c207dda7d
 - evidence_id: ev-e5a29b0f5614e339
   kind: prior_review

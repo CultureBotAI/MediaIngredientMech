@@ -83,13 +83,13 @@ Reassess prediction-only role support: Tryptone
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-709a6b98a9a23453 | data/ingredients/mapped/Tryptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2008],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000182","line":2010,"mapping_status":"MAPPED","ontology_id":"MICRO:0000182","preferred_term":"Tryptone"}],"identifier":"MICRO:0000182","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1583,"edge_count":1583,"occurrences":1600},"occurrence_statistics":{"media_count":1583,"total_occurrences":1600},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000182","ontology_label":"tryptone","ontology_source":"MICRO"},"preferred_term":"Tryptone","sssom_rows":[{"data_row":2844,"object_id":"MICRO:0000182","object_label":"tryptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptone","synonym_count":25} |
-| ev-a89b7d3b0488a4a3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2008] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d8948d42a4796bd2 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tryptone; data-row positions=[2844] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2844,"object_id":"MICRO:0000182","object_label":"tryptone","other":"Tryptone (Sigma T 9410)&#124;Tryptone(CAS: 91079-40-2)&#124;Tryptone(Sigma T 9410)&#124;Tryptone(Sigma T 9410))&#124;Tryptone (BD-Difco)&#124;Bacto Tryptone (Difco)&#124;Tryptone (BD 211705)&#124;Tryptone (BD Bacto)&#124;Bacto tryptone&#124;Tryptone (BD--Difco)&#124;Tryptone (Difco)&#124;Tryptone (BD BBL)&#124;Tryptone (Diffico)&#124;Tryptone (Bacto Trypton 211705)&#124;Proteose tryptone (DIFCO 0123-01)&#124;Difco Bacto- Tryptone&#124;Tryptone (VWR, J859-500G)&#124;tryptone [Difco]&#124;Tryptone (Difco 0123)&#124;Pancreatic digest of casein&#124;CAS:84843-69-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Tryptone","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-fad7ce927aa34a3d | docs/data/mapped_ingredients.csv; CSV lines=[2010] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000182","line":2010,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1583","ontology_id":"MICRO:0000182","preferred_term":"Tryptone","total_occurrences":"1600"}] |
+| ev-709a6b98a9a23453 | data/ingredients/mapped/Tryptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2007],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000182","line":2009,"mapping_status":"MAPPED","ontology_id":"MICRO:0000182","preferred_term":"Tryptone"}],"identifier":"MICRO:0000182","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1583,"edge_count":1583,"occurrences":1600},"occurrence_statistics":{"media_count":1583,"total_occurrences":1600},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000182","ontology_label":"tryptone","ontology_source":"MICRO"},"preferred_term":"Tryptone","sssom_rows":[{"data_row":2846,"object_id":"MICRO:0000182","object_label":"tryptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptone","synonym_count":25} |
+| ev-a89b7d3b0488a4a3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2007] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d8948d42a4796bd2 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tryptone; data-row positions=[2846] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2846,"object_id":"MICRO:0000182","object_label":"tryptone","other":"Tryptone (Sigma T 9410)&#124;Tryptone(CAS: 91079-40-2)&#124;Tryptone(Sigma T 9410)&#124;Tryptone(Sigma T 9410))&#124;Tryptone (BD-Difco)&#124;Bacto Tryptone (Difco)&#124;Tryptone (BD 211705)&#124;Tryptone (BD Bacto)&#124;Bacto tryptone&#124;Tryptone (BD--Difco)&#124;Tryptone (Difco)&#124;Tryptone (BD BBL)&#124;Tryptone (Diffico)&#124;Tryptone (Bacto Trypton 211705)&#124;Proteose tryptone (DIFCO 0123-01)&#124;Difco Bacto- Tryptone&#124;Tryptone (VWR, J859-500G)&#124;tryptone [Difco]&#124;Tryptone (Difco 0123)&#124;Pancreatic digest of casein&#124;CAS:84843-69-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Tryptone","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-fad7ce927aa34a3d | docs/data/mapped_ingredients.csv; CSV lines=[2009] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000182","line":2009,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1583","ontology_id":"MICRO:0000182","preferred_term":"Tryptone","total_occurrences":"1600"}] |
 | ev-01c789ab55adb9ee | reports/yaml_record_review/Tryptone.md; &#96;data/ingredients/mapped/Tryptone.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:32; Issues:40; Major: final &#96;other&#96; exports raw CAS-decorated and malformed labels:42; Major: &#96;PROTEIN_SOURCE&#96; is provisional name-pattern evidence:48; Completeness:65; Recommended Edits:72 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5aec0546f8ca9e98 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1321,1869] | context_only | [{"current_record_sha256":"2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356","finding_id":"SEM:726de2419eb1d51316b1","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356","finding_id":"SEM:c366f652ad99146e8f52","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-72200d5372082994 | data/ingredients/mapped/Tryptone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-72200d5372082994 | data/ingredients/mapped/Tryptone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2007],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000182","line":2009,"mapping_status":"MAPPED","ontology_id":"MICRO:0000182","preferred_term":"Tryptone"}],"identifier":"MICRO:0000182","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1583,"edge_count":1583,"occurrences":1600},"occurrence_statistics":{"media_count":1583,"total_occurrences":1600},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000182","ontology_label":"tryptone","ontology_source":"MICRO"},"preferred_term":"Tryptone","sssom_rows":[{"data_row":2846,"object_id":"MICRO:0000182","object_label":"tryptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptone","synonym_count":25} |
 | ev-72bde2b70da22af6 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-09e571ecd4341e4f] | context_only | Predecessor structured review finding f-09e571ecd4341e4f in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4b7c9234041ad160
+  evidence_ids:
+  - ev-709a6b98a9a23453
+  - ev-a89b7d3b0488a4a3
+  - ev-d8948d42a4796bd2
+  - ev-fad7ce927aa34a3d
+  - ev-72200d5372082994
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4b7c9234041ad160
+  evidence_ids:
+  - ev-709a6b98a9a23453
+  - ev-5aec0546f8ca9e98
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4b7c9234041ad160
+  evidence_ids:
+  - ev-01c789ab55adb9ee
+  - ev-5aec0546f8ca9e98
+  - ev-72bde2b70da22af6
 evidence:
 - evidence_id: ev-709a6b98a9a23453
   kind: record_content
   reference: data/ingredients/mapped/Tryptone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2008],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000182","line":2010,"mapping_status":"MAPPED","ontology_id":"MICRO:0000182","preferred_term":"Tryptone"}],"identifier":"MICRO:0000182","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1583,"edge_count":1583,"occurrences":1600},"occurrence_statistics":{"media_count":1583,"total_occurrences":1600},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000182","ontology_label":"tryptone","ontology_source":"MICRO"},"preferred_term":"Tryptone","sssom_rows":[{"data_row":2844,"object_id":"MICRO:0000182","object_label":"tryptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptone","synonym_count":25}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2007],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000182","line":2009,"mapping_status":"MAPPED","ontology_id":"MICRO:0000182","preferred_term":"Tryptone"}],"identifier":"MICRO:0000182","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1583,"edge_count":1583,"occurrences":1600},"occurrence_statistics":{"media_count":1583,"total_occurrences":1600},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000182","ontology_label":"tryptone","ontology_source":"MICRO"},"preferred_term":"Tryptone","sssom_rows":[{"data_row":2846,"object_id":"MICRO:0000182","object_label":"tryptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptone","synonym_count":25}'
   snapshot_sha256: 2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356
 - evidence_id: ev-a89b7d3b0488a4a3
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2008]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2007]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,10 +230,10 @@ evidence:
 - evidence_id: ev-d8948d42a4796bd2
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tryptone; data-row positions=[2844]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tryptone; data-row positions=[2846]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2844,"object_id":"MICRO:0000182","object_label":"tryptone","other":"Tryptone
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2846,"object_id":"MICRO:0000182","object_label":"tryptone","other":"Tryptone
     (Sigma T 9410)|Tryptone(CAS: 91079-40-2)|Tryptone(Sigma T 9410)|Tryptone(Sigma
     T 9410))|Tryptone (BD-Difco)|Bacto Tryptone (Difco)|Tryptone (BD 211705)|Tryptone
     (BD Bacto)|Bacto tryptone|Tryptone (BD--Difco)|Tryptone (Difco)|Tryptone (BD BBL)|Tryptone
@@ -231,10 +244,10 @@ evidence:
 - evidence_id: ev-fad7ce927aa34a3d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2010]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2009]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000182","line":2010,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1583","ontology_id":"MICRO:0000182","preferred_term":"Tryptone","total_occurrences":"1600"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000182","line":2009,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1583","ontology_id":"MICRO:0000182","preferred_term":"Tryptone","total_occurrences":"1600"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-01c789ab55adb9ee
   kind: prior_review
@@ -268,7 +281,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1321,1869]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356","finding_id":"SEM:726de2419eb1d51316b1","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356","finding_id":"SEM:c366f652ad99146e8f52","kind":"role_evidence","resolution_reason":"Historical
@@ -278,12 +291,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tryptone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2007],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000182","line":2009,"mapping_status":"MAPPED","ontology_id":"MICRO:0000182","preferred_term":"Tryptone"}],"identifier":"MICRO:0000182","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1583,"edge_count":1583,"occurrences":1600},"occurrence_statistics":{"media_count":1583,"total_occurrences":1600},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000182","ontology_label":"tryptone","ontology_source":"MICRO"},"preferred_term":"Tryptone","sssom_rows":[{"data_row":2846,"object_id":"MICRO:0000182","object_label":"tryptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptone","synonym_count":25}'
   snapshot_sha256: 2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356
 - evidence_id: ev-72bde2b70da22af6
   kind: prior_review

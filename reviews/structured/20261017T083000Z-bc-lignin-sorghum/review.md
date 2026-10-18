@@ -167,6 +167,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a8ae6229907b1b0c
+  evidence_ids:
+  - ev-75f069c4e19790ff
+  - ev-e6fa922dfc1500e6
+  - ev-f53d78a63f1a9400
+  - ev-bcf5e405bf895403
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -175,6 +180,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-a8ae6229907b1b0c
+  evidence_ids:
+  - ev-75f069c4e19790ff
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -183,13 +190,15 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a8ae6229907b1b0c
+  evidence_ids:
+  - ev-b6d299ecdea6fe17
 evidence:
 - evidence_id: ev-75f069c4e19790ff
   kind: record_content
   reference: data/ingredients/unmapped/BC_Lignin_Sorghum.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[27],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0169","line":29,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"BC
     Lignin Sorghum"}],"identifier":"UNMAPPED_0169","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"BC
@@ -199,7 +208,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [27]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -208,7 +217,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:BC_Lignin_Sorghum; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -216,7 +225,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[29]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0169","line":29,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"BC
     Lignin Sorghum","total_occurrences":"0"}]'

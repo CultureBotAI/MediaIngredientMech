@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-93fe177438927dbe
+  evidence_ids:
+  - ev-146ee72a6948e066
+  - ev-74d31be78b76af36
+  - ev-41405558cdc4bfdf
+  - ev-4db0620e603f3171
+  - ev-8e02d120abee6d65
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-93fe177438927dbe
+  evidence_ids:
+  - ev-146ee72a6948e066
+  - ev-e3d7dccf045cc767
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-93fe177438927dbe
+  evidence_ids:
+  - ev-c6c2776e2567078d
+  - ev-e3d7dccf045cc767
+  - ev-e62959ebbd218410
 evidence:
 - evidence_id: ev-146ee72a6948e066
   kind: record_content
   reference: data/ingredients/mapped/D-Glucaric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[810],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16002","line":812,"mapping_status":"MAPPED","ontology_id":"CHEBI:16002","preferred_term":"D-Glucaric
     acid"}],"identifier":"CHEBI:16002","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16002","ontology_label":"D-glucaric
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [810]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-Glucaric_Acid; data-row positions=[883]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":883,"object_id":"CHEBI:16002","object_label":"D-glucaric
     acid","other":"(2R,3S,4S,5S)-2,3,4,5-tetrahydroxyhexanedioic acid|CAS:87-73-0","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Glucaric_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -125,7 +138,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[812]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16002","line":812,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16002","preferred_term":"D-Glucaric
     acid","total_occurrences":"0"}]'
@@ -149,7 +162,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[466,1861]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"28cb4957cd4826f99337d6b52f18de2844e52af42d728a893dc307967f90d8db","finding_id":"SEM:9da2d6491b56f7bd83fb","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"28cb4957cd4826f99337d6b52f18de2844e52af42d728a893dc307967f90d8db","finding_id":"SEM:c868bbb8adc9980771b2","kind":"role_evidence","resolution_reason":"Historical
@@ -159,12 +172,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Glucaric_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[810],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16002","line":812,"mapping_status":"MAPPED","ontology_id":"CHEBI:16002","preferred_term":"D-Glucaric
+    acid"}],"identifier":"CHEBI:16002","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16002","ontology_label":"D-glucaric
+    acid","ontology_source":"CHEBI"},"preferred_term":"D-Glucaric acid","sssom_rows":[{"data_row":883,"object_id":"CHEBI:16002","object_label":"D-glucaric
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Glucaric_Acid","synonym_count":1}'
   snapshot_sha256: 28cb4957cd4826f99337d6b52f18de2844e52af42d728a893dc307967f90d8db
 - evidence_id: ev-e62959ebbd218410
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-formate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-4d4f109ad55fe8a7 | data/ingredients/mapped/Na-formate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1465],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62965","line":1467,"mapping_status":"MAPPED","ontology_id":"CHEBI:62965","preferred_term":"Na-formate"}],"identifier":"CHEBI:62965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":222,"edge_count":222,"occurrences":222},"occurrence_statistics":{"media_count":222,"total_occurrences":222},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62965","ontology_label":"sodium formate","ontology_source":"CHEBI"},"preferred_term":"Na-formate","sssom_rows":[{"data_row":1969,"object_id":"CHEBI:62965","object_label":"sodium formate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-formate","synonym_count":13} |
-| ev-24920a3fdc5384fd | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1465] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-c65a0c75e315f0fe | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-formate; data-row positions=[1969] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1969,"object_id":"CHEBI:62965","object_label":"sodium formate","other":"FORMIC ACID, NA SALT&#124;Formic acid, sodium salt (1:1)&#124;Na-formiate&#124;Sodium methanoate&#124;formic acid, sodium salt&#124;sodium formiate&#124;Sodium formate (Wako)&#124;CAS:141-53-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-formate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-e884135d41a5a0e2 | docs/data/mapped_ingredients.csv; CSV lines=[1467] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62965","line":1467,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"222","ontology_id":"CHEBI:62965","preferred_term":"Na-formate","total_occurrences":"222"}] |
+| ev-4d4f109ad55fe8a7 | data/ingredients/mapped/Na-formate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1464],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62965","line":1466,"mapping_status":"MAPPED","ontology_id":"CHEBI:62965","preferred_term":"Na-formate"}],"identifier":"CHEBI:62965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":222,"edge_count":222,"occurrences":222},"occurrence_statistics":{"media_count":222,"total_occurrences":222},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62965","ontology_label":"sodium formate","ontology_source":"CHEBI"},"preferred_term":"Na-formate","sssom_rows":[{"data_row":1971,"object_id":"CHEBI:62965","object_label":"sodium formate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-formate","synonym_count":13} |
+| ev-24920a3fdc5384fd | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1464] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c65a0c75e315f0fe | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-formate; data-row positions=[1971] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1971,"object_id":"CHEBI:62965","object_label":"sodium formate","other":"FORMIC ACID, NA SALT&#124;Formic acid, sodium salt (1:1)&#124;Na-formiate&#124;Sodium methanoate&#124;formic acid, sodium salt&#124;sodium formiate&#124;Sodium formate (Wako)&#124;CAS:141-53-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-formate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-e884135d41a5a0e2 | docs/data/mapped_ingredients.csv; CSV lines=[1466] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62965","line":1466,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"222","ontology_id":"CHEBI:62965","preferred_term":"Na-formate","total_occurrences":"222"}] |
 | ev-239fdeffeaac8cfe | reports/yaml_record_review/Na-formate.md; &#96;data/ingredients/mapped/Na-formate.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:27; Completeness:44; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-47aad8f9e221e619 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[974,1485,1579] | context_only | [{"current_record_sha256":"1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0","finding_id":"SEM:e659e7ee5b3008f49ca0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0","finding_id":"SEM:3337be92403bbe7b66a8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0","finding_id":"SEM:223235a91f96f01868fd","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-60be227dd2791d96 | data/ingredients/mapped/Na-formate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-60be227dd2791d96 | data/ingredients/mapped/Na-formate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1464],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62965","line":1466,"mapping_status":"MAPPED","ontology_id":"CHEBI:62965","preferred_term":"Na-formate"}],"identifier":"CHEBI:62965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":222,"edge_count":222,"occurrences":222},"occurrence_statistics":{"media_count":222,"total_occurrences":222},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62965","ontology_label":"sodium formate","ontology_source":"CHEBI"},"preferred_term":"Na-formate","sssom_rows":[{"data_row":1971,"object_id":"CHEBI:62965","object_label":"sodium formate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-formate","synonym_count":13} |
 | ev-1aabc8050c5cbf07 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-8476ca3228370295] | context_only | Predecessor structured review finding f-8476ca3228370295 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0efc6c2a48401f20
+  evidence_ids:
+  - ev-4d4f109ad55fe8a7
+  - ev-24920a3fdc5384fd
+  - ev-c65a0c75e315f0fe
+  - ev-e884135d41a5a0e2
+  - ev-60be227dd2791d96
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-0efc6c2a48401f20
+  evidence_ids:
+  - ev-4d4f109ad55fe8a7
+  - ev-47aad8f9e221e619
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0efc6c2a48401f20
+  evidence_ids:
+  - ev-239fdeffeaac8cfe
+  - ev-47aad8f9e221e619
+  - ev-1aabc8050c5cbf07
 evidence:
 - evidence_id: ev-4d4f109ad55fe8a7
   kind: record_content
   reference: data/ingredients/mapped/Na-formate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1465],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62965","line":1467,"mapping_status":"MAPPED","ontology_id":"CHEBI:62965","preferred_term":"Na-formate"}],"identifier":"CHEBI:62965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":222,"edge_count":222,"occurrences":222},"occurrence_statistics":{"media_count":222,"total_occurrences":222},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62965","ontology_label":"sodium
-    formate","ontology_source":"CHEBI"},"preferred_term":"Na-formate","sssom_rows":[{"data_row":1969,"object_id":"CHEBI:62965","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1464],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62965","line":1466,"mapping_status":"MAPPED","ontology_id":"CHEBI:62965","preferred_term":"Na-formate"}],"identifier":"CHEBI:62965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":222,"edge_count":222,"occurrences":222},"occurrence_statistics":{"media_count":222,"total_occurrences":222},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62965","ontology_label":"sodium
+    formate","ontology_source":"CHEBI"},"preferred_term":"Na-formate","sssom_rows":[{"data_row":1971,"object_id":"CHEBI:62965","object_label":"sodium
     formate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-formate","synonym_count":13}'
   snapshot_sha256: 1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0
 - evidence_id: ev-24920a3fdc5384fd
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1465]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1464]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-c65a0c75e315f0fe
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-formate; data-row positions=[1969]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-formate; data-row positions=[1971]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1969,"object_id":"CHEBI:62965","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1971,"object_id":"CHEBI:62965","object_label":"sodium
     formate","other":"FORMIC ACID, NA SALT|Formic acid, sodium salt (1:1)|Na-formiate|Sodium
     methanoate|formic acid, sodium salt|sodium formiate|Sodium formate (Wako)|CAS:141-53-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-formate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-e884135d41a5a0e2
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1467]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1466]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62965","line":1467,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"222","ontology_id":"CHEBI:62965","preferred_term":"Na-formate","total_occurrences":"222"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62965","line":1466,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"222","ontology_id":"CHEBI:62965","preferred_term":"Na-formate","total_occurrences":"222"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-239fdeffeaac8cfe
   kind: prior_review
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[974,1485,1579]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0","finding_id":"SEM:e659e7ee5b3008f49ca0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0","finding_id":"SEM:3337be92403bbe7b66a8","kind":"role_evidence","resolution_reason":"Historical
@@ -267,14 +280,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-formate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1464],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62965","line":1466,"mapping_status":"MAPPED","ontology_id":"CHEBI:62965","preferred_term":"Na-formate"}],"identifier":"CHEBI:62965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":222,"edge_count":222,"occurrences":222},"occurrence_statistics":{"media_count":222,"total_occurrences":222},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62965","ontology_label":"sodium
+    formate","ontology_source":"CHEBI"},"preferred_term":"Na-formate","sssom_rows":[{"data_row":1971,"object_id":"CHEBI:62965","object_label":"sodium
+    formate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-formate","synonym_count":13}'
   snapshot_sha256: 1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0
 - evidence_id: ev-1aabc8050c5cbf07
   kind: prior_review

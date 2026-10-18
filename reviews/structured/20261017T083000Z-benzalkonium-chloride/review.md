@@ -89,7 +89,7 @@ Reassess prediction-only role support: Benzalkonium Chloride
 | ev-312cfd7fda1bb24f | docs/data/mapped_ingredients.csv; CSV lines=[568] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:3020","line":568,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3020","preferred_term":"Benzalkonium Chloride","total_occurrences":"0"}] |
 | ev-9bd5aaa9d2239c8c | reports/yaml_record_review/Benzalkonium_Chloride.md; &#96;data/ingredients/mapped/Benzalkonium_Chloride.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:33; Completeness:50; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c585c9db7a8582e9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[2032] | context_only | [{"current_record_sha256":"db303175a982a9ccbd6db7aeb397289847f7dca690c94ebe8f281d8c45094c09","finding_id":"SEM:30bb6a31b0ec11205fcf","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-143115c8c8526b9e | data/ingredients/mapped/Benzalkonium_Chloride.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}] |
+| ev-143115c8c8526b9e | data/ingredients/mapped/Benzalkonium_Chloride.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[566],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3020","line":568,"mapping_status":"MAPPED","ontology_id":"CHEBI:3020","preferred_term":"Benzalkonium Chloride"}],"identifier":"CHEBI:3020","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3020","ontology_label":"benzalkonium chloride","ontology_source":"CHEBI"},"preferred_term":"Benzalkonium Chloride","sssom_rows":[{"data_row":504,"object_id":"CHEBI:3020","object_label":"benzalkonium chloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Benzalkonium_Chloride","synonym_count":0} |
 | ev-a75d55a914fab23c | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-37a95cc1ea0235e4] | context_only | Predecessor structured review finding f-37a95cc1ea0235e4 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a0cc64987723b82e
+  evidence_ids:
+  - ev-60d94bd979ece324
+  - ev-737362627e10cb9a
+  - ev-c201ea54325294eb
+  - ev-312cfd7fda1bb24f
+  - ev-143115c8c8526b9e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a0cc64987723b82e
+  evidence_ids:
+  - ev-60d94bd979ece324
+  - ev-c585c9db7a8582e9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a0cc64987723b82e
+  evidence_ids:
+  - ev-9bd5aaa9d2239c8c
+  - ev-c585c9db7a8582e9
+  - ev-a75d55a914fab23c
 evidence:
 - evidence_id: ev-60d94bd979ece324
   kind: record_content
   reference: data/ingredients/mapped/Benzalkonium_Chloride.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[566],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3020","line":568,"mapping_status":"MAPPED","ontology_id":"CHEBI:3020","preferred_term":"Benzalkonium
     Chloride"}],"identifier":"CHEBI:3020","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3020","ontology_label":"benzalkonium
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [566]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Benzalkonium_Chloride; data-row positions=[504]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":504,"object_id":"CHEBI:3020","object_label":"benzalkonium
     chloride","other":"CAS:63449-41-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Benzalkonium_Chloride","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[568]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:3020","line":568,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3020","preferred_term":"Benzalkonium
     Chloride","total_occurrences":"0"}]'
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[2032]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"db303175a982a9ccbd6db7aeb397289847f7dca690c94ebe8f281d8c45094c09","finding_id":"SEM:30bb6a31b0ec11205fcf","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -262,12 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Benzalkonium_Chloride.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[566],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3020","line":568,"mapping_status":"MAPPED","ontology_id":"CHEBI:3020","preferred_term":"Benzalkonium
+    Chloride"}],"identifier":"CHEBI:3020","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3020","ontology_label":"benzalkonium
+    chloride","ontology_source":"CHEBI"},"preferred_term":"Benzalkonium Chloride","sssom_rows":[{"data_row":504,"object_id":"CHEBI:3020","object_label":"benzalkonium
+    chloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Benzalkonium_Chloride","synonym_count":0}'
   snapshot_sha256: db303175a982a9ccbd6db7aeb397289847f7dca690c94ebe8f281d8c45094c09
 - evidence_id: ev-a75d55a914fab23c
   kind: prior_review

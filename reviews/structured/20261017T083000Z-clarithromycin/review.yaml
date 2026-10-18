@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-431ab1cc44db8cac
+  evidence_ids:
+  - ev-0b6ca98939d4c694
+  - ev-2b5674cfa3753987
+  - ev-4244ee03fce2b850
+  - ev-1ac5443b8a11de77
+  - ev-09d3b4e9539789e3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-431ab1cc44db8cac
+  evidence_ids:
+  - ev-0b6ca98939d4c694
+  - ev-9f4429b45378456c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-431ab1cc44db8cac
+  evidence_ids:
+  - ev-2836ff5a13a68581
+  - ev-9f4429b45378456c
+  - ev-ae3c76a614cba82c
 evidence:
 - evidence_id: ev-0b6ca98939d4c694
   kind: record_content
   reference: data/ingredients/mapped/Clarithromycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[735],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3732","line":737,"mapping_status":"MAPPED","ontology_id":"CHEBI:3732","preferred_term":"Clarithromycin"}],"identifier":"CHEBI:3732","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3732","ontology_label":"clarithromycin","ontology_source":"CHEBI"},"preferred_term":"Clarithromycin","sssom_rows":[{"data_row":784,"object_id":"CHEBI:3732","object_label":"clarithromycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Clarithromycin","synonym_count":1}'
   snapshot_sha256: a08a547c339de7c579a36ae16dff0bf6cbe48e6b23d26a37d6f10ec2a88c0891
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [735]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Clarithromycin; data-row positions=[784]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":784,"object_id":"CHEBI:3732","object_label":"clarithromycin","other":"O(6)-methylerythromycin|CAS:81103-11-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Clarithromycin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[737]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:3732","line":737,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3732","preferred_term":"Clarithromycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -145,7 +158,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[425,1889]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a08a547c339de7c579a36ae16dff0bf6cbe48e6b23d26a37d6f10ec2a88c0891","finding_id":"SEM:28126dc8acc4d7e433ba","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a08a547c339de7c579a36ae16dff0bf6cbe48e6b23d26a37d6f10ec2a88c0891","finding_id":"SEM:1d176ac03159eaa12e26","kind":"role_evidence","resolution_reason":"Historical
@@ -155,12 +168,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Clarithromycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[735],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3732","line":737,"mapping_status":"MAPPED","ontology_id":"CHEBI:3732","preferred_term":"Clarithromycin"}],"identifier":"CHEBI:3732","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3732","ontology_label":"clarithromycin","ontology_source":"CHEBI"},"preferred_term":"Clarithromycin","sssom_rows":[{"data_row":784,"object_id":"CHEBI:3732","object_label":"clarithromycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Clarithromycin","synonym_count":1}'
   snapshot_sha256: a08a547c339de7c579a36ae16dff0bf6cbe48e6b23d26a37d6f10ec2a88c0891
 - evidence_id: ev-ae3c76a614cba82c
   kind: prior_review

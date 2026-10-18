@@ -89,7 +89,7 @@ Reassess prediction-only role support: Hygromycin B
 | ev-501c2c5a6a7e4f81 | docs/data/mapped_ingredients.csv; CSV lines=[1151] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16976","line":1151,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16976","preferred_term":"Hygromycin B","total_occurrences":"0"}] |
 | ev-c0ab6bd716ad7f24 | reports/yaml_record_review/Hygromycin_B.md; &#96;data/ingredients/mapped/Hygromycin_B.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:32; Completeness:50; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fee66b59c7de5fac | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[744,1759] | context_only | [{"current_record_sha256":"1a9884a66362b6cac8d0be65ea9236d659e8bd1b828b6e9b9557625ec78469db","finding_id":"SEM:65120476ab539b2e5aaf","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1a9884a66362b6cac8d0be65ea9236d659e8bd1b828b6e9b9557625ec78469db","finding_id":"SEM:c381d373597f97f9c898","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a852e2a2b91b4f36 | data/ingredients/mapped/Hygromycin_B.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-a852e2a2b91b4f36 | data/ingredients/mapped/Hygromycin_B.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1149],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16976","line":1151,"mapping_status":"MAPPED","ontology_id":"CHEBI:16976","preferred_term":"Hygromycin B"}],"identifier":"CHEBI:16976","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16976","ontology_label":"hygromycin B","ontology_source":"CHEBI"},"preferred_term":"Hygromycin B","sssom_rows":[{"data_row":1464,"object_id":"CHEBI:16976","object_label":"hygromycin B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hygromycin_B","synonym_count":1} |
 | ev-730e09d2cc20d854 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-8bb046c1d3cf9f63] | context_only | Predecessor structured review finding f-8bb046c1d3cf9f63 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6c2ce6b36f209d1d
+  evidence_ids:
+  - ev-d9ae67c23f21e217
+  - ev-9ef217bdfd96056a
+  - ev-6736a242dc161340
+  - ev-501c2c5a6a7e4f81
+  - ev-a852e2a2b91b4f36
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6c2ce6b36f209d1d
+  evidence_ids:
+  - ev-d9ae67c23f21e217
+  - ev-fee66b59c7de5fac
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6c2ce6b36f209d1d
+  evidence_ids:
+  - ev-c0ab6bd716ad7f24
+  - ev-fee66b59c7de5fac
+  - ev-730e09d2cc20d854
 evidence:
 - evidence_id: ev-d9ae67c23f21e217
   kind: record_content
   reference: data/ingredients/mapped/Hygromycin_B.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1149],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16976","line":1151,"mapping_status":"MAPPED","ontology_id":"CHEBI:16976","preferred_term":"Hygromycin
     B"}],"identifier":"CHEBI:16976","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16976","ontology_label":"hygromycin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1149]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Hygromycin_B; data-row positions=[1464]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1464,"object_id":"CHEBI:16976","object_label":"hygromycin
     B","other":"(1R,2S,3R,5S,6R)-3-amino-2,6-dihydroxy-5-(methylamino)cyclohexyl O-6-amino-6-deoxy-L-glycero-D-galacto-heptopyranosylidene-(1->2-3)-beta-D-talopyranoside|CAS:31282-04-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Hygromycin_B","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1151]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16976","line":1151,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16976","preferred_term":"Hygromycin
     B","total_occurrences":"0"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[744,1759]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1a9884a66362b6cac8d0be65ea9236d659e8bd1b828b6e9b9557625ec78469db","finding_id":"SEM:65120476ab539b2e5aaf","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1a9884a66362b6cac8d0be65ea9236d659e8bd1b828b6e9b9557625ec78469db","finding_id":"SEM:c381d373597f97f9c898","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Hygromycin_B.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1149],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16976","line":1151,"mapping_status":"MAPPED","ontology_id":"CHEBI:16976","preferred_term":"Hygromycin
+    B"}],"identifier":"CHEBI:16976","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16976","ontology_label":"hygromycin
+    B","ontology_source":"CHEBI"},"preferred_term":"Hygromycin B","sssom_rows":[{"data_row":1464,"object_id":"CHEBI:16976","object_label":"hygromycin
+    B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hygromycin_B","synonym_count":1}'
   snapshot_sha256: 1a9884a66362b6cac8d0be65ea9236d659e8bd1b828b6e9b9557625ec78469db
 - evidence_id: ev-730e09d2cc20d854
   kind: prior_review

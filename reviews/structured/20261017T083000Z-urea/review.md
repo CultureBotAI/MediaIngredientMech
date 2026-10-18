@@ -83,14 +83,14 @@ Reassess prediction-only role support: Urea
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-864437a0d47f9596 | data/ingredients/mapped/Urea.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2025],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16199","line":2027,"mapping_status":"MAPPED","ontology_id":"CHEBI:16199","preferred_term":"Urea"}],"identifier":"CHEBI:16199","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":71,"edge_count":71,"occurrences":72},"occurrence_statistics":{"media_count":71,"total_occurrences":72},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16199","ontology_label":"urea","ontology_source":"CHEBI"},"preferred_term":"Urea","sssom_rows":[{"data_row":2872,"object_id":"CHEBI:16199","object_label":"urea","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Urea","synonym_count":16} |
-| ev-39e87e0110df5210 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2025] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-dc0110a4b569fd29 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Urea; data-row positions=[2872] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2872,"object_id":"CHEBI:16199","object_label":"urea","other":"1728&#124;Carbamide&#124;E927b&#124;H2NC(O)NH2&#124;Harnstoff&#124;Karbamid&#124;carbonyldiamide&#124;ur&#124;uree&#124;Urea (Sigma U5218)&#124;CAS:57-13-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Urea","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-767555e23afe54c4 | docs/data/mapped_ingredients.csv; CSV lines=[2027] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16199","line":2027,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"71","ontology_id":"CHEBI:16199","preferred_term":"Urea","total_occurrences":"72"}] |
+| ev-864437a0d47f9596 | data/ingredients/mapped/Urea.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2024],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16199","line":2026,"mapping_status":"MAPPED","ontology_id":"CHEBI:16199","preferred_term":"Urea"}],"identifier":"CHEBI:16199","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":71,"edge_count":71,"occurrences":72},"occurrence_statistics":{"media_count":71,"total_occurrences":72},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16199","ontology_label":"urea","ontology_source":"CHEBI"},"preferred_term":"Urea","sssom_rows":[{"data_row":2874,"object_id":"CHEBI:16199","object_label":"urea","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Urea","synonym_count":16} |
+| ev-39e87e0110df5210 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2024] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-dc0110a4b569fd29 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Urea; data-row positions=[2874] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2874,"object_id":"CHEBI:16199","object_label":"urea","other":"1728&#124;Carbamide&#124;E927b&#124;H2NC(O)NH2&#124;Harnstoff&#124;Karbamid&#124;carbonyldiamide&#124;ur&#124;uree&#124;Urea (Sigma U5218)&#124;CAS:57-13-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Urea","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-767555e23afe54c4 | docs/data/mapped_ingredients.csv; CSV lines=[2026] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16199","line":2026,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"71","ontology_id":"CHEBI:16199","preferred_term":"Urea","total_occurrences":"72"}] |
 | ev-c54ecab521bc6d74 | reports/yaml_record_review/20261001T050350Z-Urea.md; YAML Record Review: Urea:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3a37214cdea69bea | reports/yaml_record_review/Urea.md; &#96;data/ingredients/mapped/Urea.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:34; Issues:43; Major: final &#96;other&#96; exports process-qualified text:45; Major: &#96;NITROGEN_SOURCE&#96; is provisional in-session LLM evidence:51; Completeness:68; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-cda1dcf208514ff2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1332,1596] | context_only | [{"current_record_sha256":"f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f","finding_id":"SEM:959f5afc865660bbea4d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f","finding_id":"SEM:5649f8c39ee34f76a6c8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8b3ed752e3a23a39 | data/ingredients/mapped/Urea.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"NITROGEN_SOURCE"}}] |
+| ev-8b3ed752e3a23a39 | data/ingredients/mapped/Urea.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2024],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16199","line":2026,"mapping_status":"MAPPED","ontology_id":"CHEBI:16199","preferred_term":"Urea"}],"identifier":"CHEBI:16199","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":71,"edge_count":71,"occurrences":72},"occurrence_statistics":{"media_count":71,"total_occurrences":72},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16199","ontology_label":"urea","ontology_source":"CHEBI"},"preferred_term":"Urea","sssom_rows":[{"data_row":2874,"object_id":"CHEBI:16199","object_label":"urea","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Urea","synonym_count":16} |
 | ev-66cf6bf8c7fd05f2 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-72f1672fe104a275] | context_only | Predecessor structured review finding f-72f1672fe104a275 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-eab77be8c94bdfda
+  evidence_ids:
+  - ev-864437a0d47f9596
+  - ev-39e87e0110df5210
+  - ev-dc0110a4b569fd29
+  - ev-767555e23afe54c4
+  - ev-8b3ed752e3a23a39
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-eab77be8c94bdfda
+  evidence_ids:
+  - ev-864437a0d47f9596
+  - ev-cda1dcf208514ff2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,21 +208,26 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-eab77be8c94bdfda
+  evidence_ids:
+  - ev-c54ecab521bc6d74
+  - ev-3a37214cdea69bea
+  - ev-cda1dcf208514ff2
+  - ev-66cf6bf8c7fd05f2
 evidence:
 - evidence_id: ev-864437a0d47f9596
   kind: record_content
   reference: data/ingredients/mapped/Urea.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2025],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16199","line":2027,"mapping_status":"MAPPED","ontology_id":"CHEBI:16199","preferred_term":"Urea"}],"identifier":"CHEBI:16199","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":71,"edge_count":71,"occurrences":72},"occurrence_statistics":{"media_count":71,"total_occurrences":72},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16199","ontology_label":"urea","ontology_source":"CHEBI"},"preferred_term":"Urea","sssom_rows":[{"data_row":2872,"object_id":"CHEBI:16199","object_label":"urea","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Urea","synonym_count":16}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2024],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16199","line":2026,"mapping_status":"MAPPED","ontology_id":"CHEBI:16199","preferred_term":"Urea"}],"identifier":"CHEBI:16199","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":71,"edge_count":71,"occurrences":72},"occurrence_statistics":{"media_count":71,"total_occurrences":72},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16199","ontology_label":"urea","ontology_source":"CHEBI"},"preferred_term":"Urea","sssom_rows":[{"data_row":2874,"object_id":"CHEBI:16199","object_label":"urea","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Urea","synonym_count":16}'
   snapshot_sha256: f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f
 - evidence_id: ev-39e87e0110df5210
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2025]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2024]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,19 +235,19 @@ evidence:
 - evidence_id: ev-dc0110a4b569fd29
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Urea; data-row positions=[2872]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Urea; data-row positions=[2874]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2872,"object_id":"CHEBI:16199","object_label":"urea","other":"1728|Carbamide|E927b|H2NC(O)NH2|Harnstoff|Karbamid|carbonyldiamide|ur|uree|Urea
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2874,"object_id":"CHEBI:16199","object_label":"urea","other":"1728|Carbamide|E927b|H2NC(O)NH2|Harnstoff|Karbamid|carbonyldiamide|ur|uree|Urea
     (Sigma U5218)|CAS:57-13-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Urea","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-767555e23afe54c4
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2027]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2026]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16199","line":2027,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"71","ontology_id":"CHEBI:16199","preferred_term":"Urea","total_occurrences":"72"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16199","line":2026,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"71","ontology_id":"CHEBI:16199","preferred_term":"Urea","total_occurrences":"72"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-c54ecab521bc6d74
   kind: prior_review
@@ -295,7 +309,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1332,1596]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f","finding_id":"SEM:959f5afc865660bbea4d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f","finding_id":"SEM:5649f8c39ee34f76a6c8","kind":"role_evidence","resolution_reason":"Historical
@@ -305,12 +319,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Urea.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"NITROGEN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2024],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16199","line":2026,"mapping_status":"MAPPED","ontology_id":"CHEBI:16199","preferred_term":"Urea"}],"identifier":"CHEBI:16199","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":71,"edge_count":71,"occurrences":72},"occurrence_statistics":{"media_count":71,"total_occurrences":72},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16199","ontology_label":"urea","ontology_source":"CHEBI"},"preferred_term":"Urea","sssom_rows":[{"data_row":2874,"object_id":"CHEBI:16199","object_label":"urea","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Urea","synonym_count":16}'
   snapshot_sha256: f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f
 - evidence_id: ev-66cf6bf8c7fd05f2
   kind: prior_review

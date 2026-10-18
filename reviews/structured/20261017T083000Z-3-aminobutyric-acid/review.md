@@ -89,7 +89,7 @@ Reassess prediction-only role support: 3-aminobutyric acid
 | ev-b6ce211d4a0196eb | docs/data/mapped_ingredients.csv; CSV lines=[362] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:37081","line":362,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:37081","preferred_term":"3-aminobutyric acid","total_occurrences":"0"}] |
 | ev-f2c54cc66c765313 | reports/yaml_record_review/3-aminobutyric_Acid.md; &#96;data/ingredients/mapped/3-aminobutyric_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:39; Completeness:53; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-98c1dd396716b9ce | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[115,2016] | context_only | [{"current_record_sha256":"e251b753d79dc0f3f45ccb1ffbb9a82fc61134d23c630d183a4616c93e4b72cb","finding_id":"SEM:ef6e2871a65f26ef7d10","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e251b753d79dc0f3f45ccb1ffbb9a82fc61134d23c630d183a4616c93e4b72cb","finding_id":"SEM:d97eae1b048eeae3b0ca","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a7b3064dc946043e | data/ingredients/mapped/3-aminobutyric_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-a7b3064dc946043e | data/ingredients/mapped/3-aminobutyric_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[360],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:37081","line":362,"mapping_status":"MAPPED","ontology_id":"CHEBI:37081","preferred_term":"3-aminobutyric acid"}],"identifier":"CHEBI:37081","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:37081","ontology_label":"3-aminobutanoic acid","ontology_source":"CHEBI"},"preferred_term":"3-aminobutyric acid","sssom_rows":[{"data_row":138,"object_id":"CHEBI:37081","object_label":"3-aminobutanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-aminobutyric_Acid","synonym_count":0} |
 | ev-b65916e23b83addb | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-9fe530523e44cef0] | context_only | Predecessor structured review finding f-9fe530523e44cef0 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-47c2920d224faf2b
+  evidence_ids:
+  - ev-645ad8f1903bd80a
+  - ev-599754836ec5cb03
+  - ev-da5bf51ba87cb8b8
+  - ev-b6ce211d4a0196eb
+  - ev-a7b3064dc946043e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-47c2920d224faf2b
+  evidence_ids:
+  - ev-645ad8f1903bd80a
+  - ev-98c1dd396716b9ce
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-47c2920d224faf2b
+  evidence_ids:
+  - ev-f2c54cc66c765313
+  - ev-98c1dd396716b9ce
+  - ev-b65916e23b83addb
 evidence:
 - evidence_id: ev-645ad8f1903bd80a
   kind: record_content
   reference: data/ingredients/mapped/3-aminobutyric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[360],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:37081","line":362,"mapping_status":"MAPPED","ontology_id":"CHEBI:37081","preferred_term":"3-aminobutyric
     acid"}],"identifier":"CHEBI:37081","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:37081","ontology_label":"3-aminobutanoic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [360]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:3-aminobutyric_Acid; data-row positions=[138]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":138,"object_id":"CHEBI:37081","object_label":"3-aminobutanoic
     acid","other":"CAS:541-48-0","predicate_id":"skos:exactMatch","subject_id":"MIM:3-aminobutyric_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[362]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:37081","line":362,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:37081","preferred_term":"3-aminobutyric
     acid","total_occurrences":"0"}]'
@@ -259,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[115,2016]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e251b753d79dc0f3f45ccb1ffbb9a82fc61134d23c630d183a4616c93e4b72cb","finding_id":"SEM:ef6e2871a65f26ef7d10","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e251b753d79dc0f3f45ccb1ffbb9a82fc61134d23c630d183a4616c93e4b72cb","finding_id":"SEM:d97eae1b048eeae3b0ca","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +282,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/3-aminobutyric_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[360],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:37081","line":362,"mapping_status":"MAPPED","ontology_id":"CHEBI:37081","preferred_term":"3-aminobutyric
+    acid"}],"identifier":"CHEBI:37081","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:37081","ontology_label":"3-aminobutanoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"3-aminobutyric acid","sssom_rows":[{"data_row":138,"object_id":"CHEBI:37081","object_label":"3-aminobutanoic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-aminobutyric_Acid","synonym_count":0}'
   snapshot_sha256: e251b753d79dc0f3f45ccb1ffbb9a82fc61134d23c630d183a4616c93e4b72cb
 - evidence_id: ev-b65916e23b83addb
   kind: prior_review

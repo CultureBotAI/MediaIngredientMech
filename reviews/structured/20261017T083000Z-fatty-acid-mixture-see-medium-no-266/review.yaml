@@ -80,6 +80,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-1c1028720cbaed99
+  - ev-e8eb888036066ff2
+  - ev-c4a82578b9a0228b
+  - ev-eb0fe40fffd13d27
+  - ev-66223de2980eb719
+  - ev-6b0f037f5dc84aa9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -88,6 +95,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-1c1028720cbaed99
+  - ev-49b95a1b59136d20
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -96,13 +106,19 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-099e2c8a2a9f8f68
+  evidence_ids:
+  - ev-e116f44d24e1e32b
+  - ev-49b95a1b59136d20
+  - ev-997c904ed0a9e395
+  - ev-abc54f67fc204f62
+  - ev-10e07ce7646683c8
 evidence:
 - evidence_id: ev-1c1028720cbaed99
   kind: record_content
   reference: data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[975],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35366","line":977,"mapping_status":"MAPPED","ontology_id":"CHEBI:35366","preferred_term":"Fatty
     acid mixture (see Medium No. 266)"}],"identifier":"CHEBI:35366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35366","ontology_label":"fatty
@@ -114,7 +130,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [975]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -123,7 +139,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fatty_Acid_Mixture_See_Medium_No_266; data-row positions=[1165]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty
     acid","other":"Fettsaeure|Fettsaeuren|acide gras|acides gras|acido graso|acidos
@@ -133,7 +149,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[977]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35366","line":977,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:35366","preferred_term":"Fatty
     acid mixture (see Medium No. 266)","total_occurrences":"4"}]'
@@ -162,7 +178,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[583]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c","finding_id":"SEM:3fe446fa58dc856afbbe","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -204,63 +220,23 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Fatty acid mixture (see below)", "synonym_type": "RAW_TEXT"}],
-    "history": [{"action": "IMPORTED", "changes": "Initial import from CultureMech
-    pipeline", "curator": "import_from_culturemech", "llm_assisted": false, "new_status":
-    "MAPPED", "timestamp": "2026-03-09T06:54:18.022301+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 8 synonyms from kg-microbe P4.4 enrichment: Fatty acid, Fettsaeure,
-    Fettsaeuren, acide gras, acides gras, ... (3 more)", "curator": "cbclaw_kg_microbe_sweep",
-    "llm_assisted": true, "new_status": "MAPPED", "timestamp": "2026-04-18T00:00:00+00:00"},
-    {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=DEFINED_MEDIUM
-    (name matches medium pattern ''Medium No'')", "curator": "auto_classify_ingredient_type",
-    "llm_assisted": false, "timestamp": "2026-05-01T07:35:33.505726+00:00"}, {"action":
-    "AUTO_BACKFILL_CHEBI_CHEMISTRY", "changes": "molecular_formula=CHO2R; smiles=*C(=O)O",
-    "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp":
-    "2026-05-01T08:08:29.482671+00:00"}, {"action": "CLASSIFY_AS_STOCK_SOLUTION",
-    "changes": "name pattern ''see Medium No.'' indicates pre-mixed defined solution",
-    "curator": "auto_classify_stock_solution", "llm_assisted": false, "timestamp":
-    "2026-05-01T19:58:08.951391+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated
-    (molecular_formula))", "curator": "auto_classify_ingredient_type", "llm_assisted":
-    false, "timestamp": "2026-05-02T03:12:14.341135+00:00"}, {"action": "CORRECTED",
-    "changes": "ontology_label ''Fatty acid mixture (see Medium No. 266)'' -> ''fatty
-    acid'': synced to canonical CHEBI label (preferred_term ''Fatty acid mixture (see
-    Medium No. 266)'' unchanged).", "curator": "correct_stale_ontology_labels.py",
-    "timestamp": "2026-06-09T05:23:46.762837+00:00"}, {"action": "CORRECTED", "changes":
-    "occurrence_statistics 2/2 -> 4/4 (media_count/total_occurrences), derived from
-    distinct CultureMech recipe ids in the #337 occurrence table. The prior values
-    came from the importer retired in #453, whose media_count counted a list truncated
-    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.518810+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 2 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Fatty acid mixture'' (x3 CultureMech mentions); ''Fatty acid
-    mixture (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp":
-    "2026-08-30T04:48:06.233536+00:00"}], "identifier": "CHEBI:35366", "mapping":
-    {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Imported from CultureMech
-    pipeline, quality=DIRECT_MATCH", "source": "CultureMech"}], "mapping_quality":
-    "EXACT_MATCH", "ontology_id": "CHEBI:35366", "ontology_label": "fatty acid", "ontology_source":
-    "CHEBI"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[975],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35366","line":977,"mapping_status":"MAPPED","ontology_id":"CHEBI:35366","preferred_term":"Fatty
+    acid mixture (see Medium No. 266)"}],"identifier":"CHEBI:35366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35366","ontology_label":"fatty
+    acid","ontology_source":"CHEBI"},"preferred_term":"Fatty acid mixture (see Medium
+    No. 266)","sssom_rows":[{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","synonym_count":10}'
   snapshot_sha256: 00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c
 - evidence_id: ev-6b0f037f5dc84aa9
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Fatty_Acid_Mixture_See_Medium_No_266
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Fatty_Acid_Mixture_See_Medium_No_266; data-row positions=[1165]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.99", "data_row": 1165, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:LexicalMatching", "object_id":
-    "CHEBI:35366", "object_label": "fatty acid", "object_source": "obo:chebi.owl",
-    "other": "Fettsaeure|Fettsaeuren|acide gras|acides gras|acido graso|acidos grasos|fatty
-    acids|Fatty acid mixture|Fatty acid mixture (see below)", "predicate_id": "skos:exactMatch",
-    "source": "MIM:CultureMech|MIM:curator=claude_culturemech_alias_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=auto_classify_stock_solution]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:primary_mappings[kegg_compound]",
-    "subject_id": "MIM:Fatty_Acid_Mixture_See_Medium_No_266", "subject_label": "Fatty
-    acid mixture (see Medium No. 266)", "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1165,"object_id":"CHEBI:35366","object_label":"fatty
+    acid","other":"Fettsaeure|Fettsaeuren|acide gras|acides gras|acido graso|acidos
+    grasos|fatty acids|Fatty acid mixture|Fatty acid mixture (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Fatty_Acid_Mixture_See_Medium_No_266","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-abc54f67fc204f62
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Noformicin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-07ff1455db9ec883 | data/ingredients/mapped/Noformicin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1576],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C005642","line":1578,"mapping_status":"MAPPED","ontology_id":"mesh:C005642","preferred_term":"Noformicin"}],"identifier":"mesh:C005642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C005642","ontology_label":"noformicin","ontology_source":"MESH"},"preferred_term":"Noformicin","sssom_rows":[{"data_row":2112,"object_id":"mesh:C005642","object_label":"noformicin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Noformicin","synonym_count":0} |
-| ev-5e5a40908a9f916c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1576] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-e72e1cb8331c8cb3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Noformicin; data-row positions=[2112] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2112,"object_id":"mesh:C005642","object_label":"noformicin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Noformicin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-acd69e15680c7442 | docs/data/mapped_ingredients.csv; CSV lines=[1578] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C005642","line":1578,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C005642","preferred_term":"Noformicin","total_occurrences":"0"}] |
+| ev-07ff1455db9ec883 | data/ingredients/mapped/Noformicin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1575],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C005642","line":1577,"mapping_status":"MAPPED","ontology_id":"mesh:C005642","preferred_term":"Noformicin"}],"identifier":"mesh:C005642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C005642","ontology_label":"noformicin","ontology_source":"MESH"},"preferred_term":"Noformicin","sssom_rows":[{"data_row":2114,"object_id":"mesh:C005642","object_label":"noformicin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Noformicin","synonym_count":0} |
+| ev-5e5a40908a9f916c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1575] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-e72e1cb8331c8cb3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Noformicin; data-row positions=[2114] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2114,"object_id":"mesh:C005642","object_label":"noformicin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Noformicin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-acd69e15680c7442 | docs/data/mapped_ingredients.csv; CSV lines=[1577] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C005642","line":1577,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C005642","preferred_term":"Noformicin","total_occurrences":"0"}] |
 | ev-5acadddb85a22240 | reports/yaml_record_review/Noformicin.md; &#96;data/ingredients/mapped/Noformicin.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:25; Completeness:40; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-912dafc26e2185b9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1071,1768] | context_only | [{"current_record_sha256":"18da53cc55fbe2d673f46c8fe45f530df5236bafb828f276a099a4de5f7c0f5a","finding_id":"SEM:7e71e001421a6eb45838","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"18da53cc55fbe2d673f46c8fe45f530df5236bafb828f276a099a4de5f7c0f5a","finding_id":"SEM:ca5794b70729f32b53fa","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2d7489c5e7237a9f | data/ingredients/mapped/Noformicin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-2d7489c5e7237a9f | data/ingredients/mapped/Noformicin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1575],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C005642","line":1577,"mapping_status":"MAPPED","ontology_id":"mesh:C005642","preferred_term":"Noformicin"}],"identifier":"mesh:C005642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C005642","ontology_label":"noformicin","ontology_source":"MESH"},"preferred_term":"Noformicin","sssom_rows":[{"data_row":2114,"object_id":"mesh:C005642","object_label":"noformicin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Noformicin","synonym_count":0} |
 | ev-53d32bc0414a2c6b | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-fecdee37ea2da28d] | context_only | Predecessor structured review finding f-fecdee37ea2da28d in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d9c7fb255e88ecf5
+  evidence_ids:
+  - ev-07ff1455db9ec883
+  - ev-5e5a40908a9f916c
+  - ev-e72e1cb8331c8cb3
+  - ev-acd69e15680c7442
+  - ev-2d7489c5e7237a9f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d9c7fb255e88ecf5
+  evidence_ids:
+  - ev-07ff1455db9ec883
+  - ev-912dafc26e2185b9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d9c7fb255e88ecf5
+  evidence_ids:
+  - ev-5acadddb85a22240
+  - ev-912dafc26e2185b9
+  - ev-53d32bc0414a2c6b
 evidence:
 - evidence_id: ev-07ff1455db9ec883
   kind: record_content
   reference: data/ingredients/mapped/Noformicin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1576],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C005642","line":1578,"mapping_status":"MAPPED","ontology_id":"mesh:C005642","preferred_term":"Noformicin"}],"identifier":"mesh:C005642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C005642","ontology_label":"noformicin","ontology_source":"MESH"},"preferred_term":"Noformicin","sssom_rows":[{"data_row":2112,"object_id":"mesh:C005642","object_label":"noformicin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Noformicin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1575],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C005642","line":1577,"mapping_status":"MAPPED","ontology_id":"mesh:C005642","preferred_term":"Noformicin"}],"identifier":"mesh:C005642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C005642","ontology_label":"noformicin","ontology_source":"MESH"},"preferred_term":"Noformicin","sssom_rows":[{"data_row":2114,"object_id":"mesh:C005642","object_label":"noformicin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Noformicin","synonym_count":0}'
   snapshot_sha256: 18da53cc55fbe2d673f46c8fe45f530df5236bafb828f276a099a4de5f7c0f5a
 - evidence_id: ev-5e5a40908a9f916c
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1576]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1575]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-e72e1cb8331c8cb3
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Noformicin; data-row positions=[2112]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Noformicin; data-row positions=[2114]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2112,"object_id":"mesh:C005642","object_label":"noformicin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Noformicin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2114,"object_id":"mesh:C005642","object_label":"noformicin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Noformicin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-acd69e15680c7442
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1578]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1577]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C005642","line":1578,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C005642","preferred_term":"Noformicin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C005642","line":1577,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C005642","preferred_term":"Noformicin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-5acadddb85a22240
   kind: prior_review
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1071,1768]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"18da53cc55fbe2d673f46c8fe45f530df5236bafb828f276a099a4de5f7c0f5a","finding_id":"SEM:7e71e001421a6eb45838","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"18da53cc55fbe2d673f46c8fe45f530df5236bafb828f276a099a4de5f7c0f5a","finding_id":"SEM:ca5794b70729f32b53fa","kind":"role_evidence","resolution_reason":"Historical
@@ -258,12 +271,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Noformicin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1575],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C005642","line":1577,"mapping_status":"MAPPED","ontology_id":"mesh:C005642","preferred_term":"Noformicin"}],"identifier":"mesh:C005642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C005642","ontology_label":"noformicin","ontology_source":"MESH"},"preferred_term":"Noformicin","sssom_rows":[{"data_row":2114,"object_id":"mesh:C005642","object_label":"noformicin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Noformicin","synonym_count":0}'
   snapshot_sha256: 18da53cc55fbe2d673f46c8fe45f530df5236bafb828f276a099a4de5f7c0f5a
 - evidence_id: ev-53d32bc0414a2c6b
   kind: prior_review

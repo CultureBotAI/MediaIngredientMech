@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b5560c21c478f544
+  evidence_ids:
+  - ev-c7eaa98832d48588
+  - ev-3808eb4eccc85194
+  - ev-1e766f6cde33b14a
+  - ev-282d5189a3cb93af
+  - ev-2f289d9b72552a83
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b5560c21c478f544
+  evidence_ids:
+  - ev-c7eaa98832d48588
+  - ev-9e1320a5c7cfac46
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b5560c21c478f544
+  evidence_ids:
+  - ev-8f7ca71fbcdab8c0
+  - ev-9e1320a5c7cfac46
+  - ev-21ddb22de159bd31
 evidence:
 - evidence_id: ev-c7eaa98832d48588
   kind: record_content
   reference: data/ingredients/mapped/Mgcl2_X_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1396],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86355","line":1398,"mapping_status":"MAPPED","ontology_id":"CHEBI:86355","preferred_term":"MgCl2
     x H2O"}],"identifier":"CHEBI:86355","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86355","ontology_label":"magnesium
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1396]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Mgcl2_X_H2o; data-row positions=[1865]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1865,"object_id":"CHEBI:86355","object_label":"magnesium
     dichloride monohydrate","other":"Magnesium chloride, monohydrate|MgCl2.H2O|MgCl2\u00b7H2O|magnesium
@@ -126,7 +139,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1398]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86355","line":1398,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:86355","preferred_term":"MgCl2
     x H2O","total_occurrences":"5"}]'
@@ -149,7 +162,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[933,2015]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ce838f81f3ddd12c34d785682ba224c470f2b38be4d6e7a3695eb1cd686381bd","finding_id":"SEM:321b208fd23deda2cc0f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ce838f81f3ddd12c34d785682ba224c470f2b38be4d6e7a3695eb1cd686381bd","finding_id":"SEM:0ef555121357e676784b","kind":"role_evidence","resolution_reason":"Historical
@@ -159,12 +172,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Mgcl2_X_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"MINERAL_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1396],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86355","line":1398,"mapping_status":"MAPPED","ontology_id":"CHEBI:86355","preferred_term":"MgCl2
+    x H2O"}],"identifier":"CHEBI:86355","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86355","ontology_label":"magnesium
+    dichloride monohydrate","ontology_source":"CHEBI"},"preferred_term":"MgCl2 x H2O","sssom_rows":[{"data_row":1865,"object_id":"CHEBI:86355","object_label":"magnesium
+    dichloride monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgcl2_X_H2o","synonym_count":5}'
   snapshot_sha256: ce838f81f3ddd12c34d785682ba224c470f2b38be4d6e7a3695eb1cd686381bd
 - evidence_id: ev-21ddb22de159bd31
   kind: prior_review

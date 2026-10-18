@@ -85,11 +85,11 @@ Reassess prediction-only role support: 3'-fucosyllactose
 | --- | --- | --- | --- |
 | ev-626b28bb51b4e593 | data/ingredients/mapped/3-fucosyllactose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[361],"raw_equal":true},"docs_rows":[{"identifier":"cas:41312-47-4","line":363,"mapping_status":"MAPPED","ontology_id":"CHEBI:90065","preferred_term":"3'-fucosyllactose"}],"identifier":"cas:41312-47-4","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:90065","ontology_label":"3-fucosyllactose","ontology_source":"CHEBI"},"preferred_term":"3'-fucosyllactose","sssom_rows":[{"data_row":141,"object_id":"CHEBI:90065","object_label":"3-fucosyllactose","predicate_id":"skos:exactMatch"},{"data_row":142,"object_id":"cas:41312-47-4","object_label":"3'-fucosyllactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-fucosyllactose","synonym_count":2} |
 | ev-3a40f33e5eea069b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [361] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-47db87efc48d3bc4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:3-fucosyllactose; data-row positions=[141,142] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":141,"object_id":"CHEBI:90065","object_label":"3-fucosyllactose","other":"6-deoxy-alpha-L-galactopyranosyl-(1-&gt;3)-[beta-D-galactopyranosyl-(1-&gt;4)]-D-glucopyranose&#124;Fuc(a1-3)[Gal(b1-4)]Glc&#124;CAS:41312-47-4","predicate_id":"skos:exactMatch","subject_id":"MIM:3-fucosyllactose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":142,"object_id":"cas:41312-47-4","object_label":"3'-fucosyllactose","other":"CAS:41312-47-4","predicate_id":"skos:exactMatch","subject_id":"MIM:3-fucosyllactose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-47db87efc48d3bc4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:3-fucosyllactose; data-row positions=[141, 142] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":141,"object_id":"CHEBI:90065","object_label":"3-fucosyllactose","other":"6-deoxy-alpha-L-galactopyranosyl-(1-&gt;3)-[beta-D-galactopyranosyl-(1-&gt;4)]-D-glucopyranose&#124;Fuc(a1-3)[Gal(b1-4)]Glc&#124;CAS:41312-47-4","predicate_id":"skos:exactMatch","subject_id":"MIM:3-fucosyllactose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":142,"object_id":"cas:41312-47-4","object_label":"3'-fucosyllactose","other":"CAS:41312-47-4","predicate_id":"skos:exactMatch","subject_id":"MIM:3-fucosyllactose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-ea3250acfca50464 | docs/data/mapped_ingredients.csv; CSV lines=[363] | supports | Published identity and count rows inspected: [{"identifier":"cas:41312-47-4","line":363,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:90065","preferred_term":"3'-fucosyllactose","total_occurrences":"0"}] |
 | ev-f76a8a41a8388762 | reports/yaml_record_review/3-fucosyllactose.md; &#96;data/ingredients/mapped/3-fucosyllactose.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:39; Completeness:58; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6ac62dfc0854e7b5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[118,1451] | context_only | [{"current_record_sha256":"42b31a88125f2631aa30c20666307b40a494373b1a747d36627a6278dd383f87","finding_id":"SEM:2c78f1c1d2fcb478e748","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"42b31a88125f2631aa30c20666307b40a494373b1a747d36627a6278dd383f87","finding_id":"SEM:464de34546a9ecef9283","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2308d9da0376af6a | data/ingredients/mapped/3-fucosyllactose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-2308d9da0376af6a | data/ingredients/mapped/3-fucosyllactose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[361],"raw_equal":true},"docs_rows":[{"identifier":"cas:41312-47-4","line":363,"mapping_status":"MAPPED","ontology_id":"CHEBI:90065","preferred_term":"3'-fucosyllactose"}],"identifier":"cas:41312-47-4","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:90065","ontology_label":"3-fucosyllactose","ontology_source":"CHEBI"},"preferred_term":"3'-fucosyllactose","sssom_rows":[{"data_row":141,"object_id":"CHEBI:90065","object_label":"3-fucosyllactose","predicate_id":"skos:exactMatch"},{"data_row":142,"object_id":"cas:41312-47-4","object_label":"3'-fucosyllactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-fucosyllactose","synonym_count":2} |
 | ev-a66252e651a2dbe6 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-29dd3a02d84d0708] | context_only | Predecessor structured review finding f-29dd3a02d84d0708 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-10a47d07d73281e9
+  evidence_ids:
+  - ev-626b28bb51b4e593
+  - ev-3a40f33e5eea069b
+  - ev-47db87efc48d3bc4
+  - ev-ea3250acfca50464
+  - ev-2308d9da0376af6a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-10a47d07d73281e9
+  evidence_ids:
+  - ev-626b28bb51b4e593
+  - ev-6ac62dfc0854e7b5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-10a47d07d73281e9
+  evidence_ids:
+  - ev-f76a8a41a8388762
+  - ev-6ac62dfc0854e7b5
+  - ev-a66252e651a2dbe6
 evidence:
 - evidence_id: ev-626b28bb51b4e593
   kind: record_content
   reference: data/ingredients/mapped/3-fucosyllactose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[361],"raw_equal":true},"docs_rows":[{"identifier":"cas:41312-47-4","line":363,"mapping_status":"MAPPED","ontology_id":"CHEBI:90065","preferred_term":"3''-fucosyllactose"}],"identifier":"cas:41312-47-4","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:90065","ontology_label":"3-fucosyllactose","ontology_source":"CHEBI"},"preferred_term":"3''-fucosyllactose","sssom_rows":[{"data_row":141,"object_id":"CHEBI:90065","object_label":"3-fucosyllactose","predicate_id":"skos:exactMatch"},{"data_row":142,"object_id":"cas:41312-47-4","object_label":"3''-fucosyllactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-fucosyllactose","synonym_count":2}'
   snapshot_sha256: 42b31a88125f2631aa30c20666307b40a494373b1a747d36627a6278dd383f87
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [361]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,8 +230,8 @@ evidence:
 - evidence_id: ev-47db87efc48d3bc4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:3-fucosyllactose; data-row positions=[141,142]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:3-fucosyllactose; data-row positions=[141, 142]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":141,"object_id":"CHEBI:90065","object_label":"3-fucosyllactose","other":"6-deoxy-alpha-L-galactopyranosyl-(1->3)-[beta-D-galactopyranosyl-(1->4)]-D-glucopyranose|Fuc(a1-3)[Gal(b1-4)]Glc|CAS:41312-47-4","predicate_id":"skos:exactMatch","subject_id":"MIM:3-fucosyllactose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":142,"object_id":"cas:41312-47-4","object_label":"3''-fucosyllactose","other":"CAS:41312-47-4","predicate_id":"skos:exactMatch","subject_id":"MIM:3-fucosyllactose","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[363]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:41312-47-4","line":363,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:90065","preferred_term":"3''-fucosyllactose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[118,1451]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"42b31a88125f2631aa30c20666307b40a494373b1a747d36627a6278dd383f87","finding_id":"SEM:2c78f1c1d2fcb478e748","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"42b31a88125f2631aa30c20666307b40a494373b1a747d36627a6278dd383f87","finding_id":"SEM:464de34546a9ecef9283","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/3-fucosyllactose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[361],"raw_equal":true},"docs_rows":[{"identifier":"cas:41312-47-4","line":363,"mapping_status":"MAPPED","ontology_id":"CHEBI:90065","preferred_term":"3''-fucosyllactose"}],"identifier":"cas:41312-47-4","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:90065","ontology_label":"3-fucosyllactose","ontology_source":"CHEBI"},"preferred_term":"3''-fucosyllactose","sssom_rows":[{"data_row":141,"object_id":"CHEBI:90065","object_label":"3-fucosyllactose","predicate_id":"skos:exactMatch"},{"data_row":142,"object_id":"cas:41312-47-4","object_label":"3''-fucosyllactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-fucosyllactose","synonym_count":2}'
   snapshot_sha256: 42b31a88125f2631aa30c20666307b40a494373b1a747d36627a6278dd383f87
 - evidence_id: ev-a66252e651a2dbe6
   kind: prior_review

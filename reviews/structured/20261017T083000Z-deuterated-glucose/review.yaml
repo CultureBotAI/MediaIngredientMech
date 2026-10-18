@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6afee93083898c0f
+  evidence_ids:
+  - ev-738d75e554ce0b33
+  - ev-544245c352bedd36
+  - ev-a2377c2b46db5a12
+  - ev-3d1e804f9495369f
+  - ev-2b758950a2c9aa3c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-6afee93083898c0f
+  evidence_ids:
+  - ev-738d75e554ce0b33
+  - ev-c1752d1f918eedaf
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6afee93083898c0f
+  evidence_ids:
+  - ev-5e934b084ec3d5e3
+  - ev-c1752d1f918eedaf
+  - ev-cae1bf10513add68
 evidence:
 - evidence_id: ev-738d75e554ce0b33
   kind: record_content
   reference: data/ingredients/mapped/Deuterated_Glucose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[877],"raw_equal":true},"docs_rows":[{"identifier":"cas:201417-01-8","line":879,"mapping_status":"MAPPED","ontology_id":"NCIT:C200498","preferred_term":"deuterated
     glucose"}],"identifier":"cas:201417-01-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C200498","ontology_label":"Deuterated
@@ -109,7 +122,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [877]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -117,8 +130,8 @@ evidence:
 - evidence_id: ev-a2377c2b46db5a12
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Deuterated_Glucose; data-row positions=[1022,1023,1024]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Deuterated_Glucose; data-row positions=[1022, 1023, 1024]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1022,"object_id":"NCIT:C200498","object_label":"Deuterated
     Glucose","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Deuterated_Glucose","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1023,"object_id":"cas:201417-01-8","object_label":"deuterated
@@ -129,7 +142,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[879]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:201417-01-8","line":879,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C200498","preferred_term":"deuterated
     glucose","total_occurrences":"0"}]'
@@ -155,7 +168,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[529,1884,1979]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2482918b98a21024cd45f4b2db753342d8f4eb83997d99556171af5931d99c59","finding_id":"SEM:3702375c50724a106873","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2482918b98a21024cd45f4b2db753342d8f4eb83997d99556171af5931d99c59","finding_id":"SEM:e922e8623c4c658d1a06","kind":"role_evidence","resolution_reason":"Historical
@@ -166,14 +179,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Deuterated_Glucose.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[877],"raw_equal":true},"docs_rows":[{"identifier":"cas:201417-01-8","line":879,"mapping_status":"MAPPED","ontology_id":"NCIT:C200498","preferred_term":"deuterated
+    glucose"}],"identifier":"cas:201417-01-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C200498","ontology_label":"Deuterated
+    Glucose","ontology_source":"NCIT"},"preferred_term":"deuterated glucose","sssom_rows":[{"data_row":1022,"object_id":"NCIT:C200498","object_label":"Deuterated
+    Glucose","predicate_id":"skos:broadMatch"},{"data_row":1023,"object_id":"cas:201417-01-8","object_label":"deuterated
+    glucose","predicate_id":"skos:exactMatch"},{"data_row":1024,"object_id":"kgmicrobe.compound:deuterated_glucose","object_label":"deuterated
+    glucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Deuterated_Glucose","synonym_count":0}'
   snapshot_sha256: 2482918b98a21024cd45f4b2db753342d8f4eb83997d99556171af5931d99c59
 - evidence_id: ev-cae1bf10513add68
   kind: prior_review

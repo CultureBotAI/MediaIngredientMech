@@ -89,7 +89,7 @@ Reassess prediction-only role support: Azlocillin sodium salt
 | ev-b9b1de5dd5ba9317 | docs/data/mapped_ingredients.csv; CSV lines=[539] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:51864","line":539,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:51864","preferred_term":"Azlocillin sodium salt","total_occurrences":"0"}] |
 | ev-3d4aa9ef40d94071 | reports/yaml_record_review/Azlocillin_Sodium_Salt.md; &#96;data/ingredients/mapped/Azlocillin_Sodium_Salt.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:38; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-573bf57bbdad4975 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1936] | context_only | [{"current_record_sha256":"464a840e0fdf8c5552ad2c4ee9cacc062640bae4eca986ef1ed19f1cd8b643e8","finding_id":"SEM:fbdcab0545460de15ecd","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8900a604376eecf5 | data/ingredients/mapped/Azlocillin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-8900a604376eecf5 | data/ingredients/mapped/Azlocillin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[537],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51864","line":539,"mapping_status":"MAPPED","ontology_id":"CHEBI:51864","preferred_term":"Azlocillin sodium salt"}],"identifier":"CHEBI:51864","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51864","ontology_label":"azlocillin sodium","ontology_source":"CHEBI"},"preferred_term":"Azlocillin sodium salt","sssom_rows":[{"data_row":465,"object_id":"CHEBI:51864","object_label":"azlocillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Azlocillin_Sodium_Salt","synonym_count":1} |
 | ev-43ce2d0c7005233b | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-d9476a6ac4f3bc46] | context_only | Predecessor structured review finding f-d9476a6ac4f3bc46 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-95032164e54f6998
+  evidence_ids:
+  - ev-0602c67edc272e4b
+  - ev-5218c7745bfadd82
+  - ev-aefb839b7745837c
+  - ev-b9b1de5dd5ba9317
+  - ev-8900a604376eecf5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-95032164e54f6998
+  evidence_ids:
+  - ev-0602c67edc272e4b
+  - ev-573bf57bbdad4975
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-95032164e54f6998
+  evidence_ids:
+  - ev-3d4aa9ef40d94071
+  - ev-573bf57bbdad4975
+  - ev-43ce2d0c7005233b
 evidence:
 - evidence_id: ev-0602c67edc272e4b
   kind: record_content
   reference: data/ingredients/mapped/Azlocillin_Sodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[537],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51864","line":539,"mapping_status":"MAPPED","ontology_id":"CHEBI:51864","preferred_term":"Azlocillin
     sodium salt"}],"identifier":"CHEBI:51864","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51864","ontology_label":"azlocillin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [537]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Azlocillin_Sodium_Salt; data-row positions=[465]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":465,"object_id":"CHEBI:51864","object_label":"azlocillin
     sodium","other":"sodium 2,2-dimethyl-6beta-[(2R)-2-{[(2-oxoimidazolidin-1-yl)carbonyl]amino}-2-phenylacetamido]penam-3alpha-carboxylate|CAS:37091-65-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Azlocillin_Sodium_Salt","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[539]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:51864","line":539,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:51864","preferred_term":"Azlocillin
     sodium salt","total_occurrences":"0"}]'
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1936]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"464a840e0fdf8c5552ad2c4ee9cacc062640bae4eca986ef1ed19f1cd8b643e8","finding_id":"SEM:fbdcab0545460de15ecd","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -262,12 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Azlocillin_Sodium_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[537],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51864","line":539,"mapping_status":"MAPPED","ontology_id":"CHEBI:51864","preferred_term":"Azlocillin
+    sodium salt"}],"identifier":"CHEBI:51864","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51864","ontology_label":"azlocillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Azlocillin sodium salt","sssom_rows":[{"data_row":465,"object_id":"CHEBI:51864","object_label":"azlocillin
+    sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Azlocillin_Sodium_Salt","synonym_count":1}'
   snapshot_sha256: 464a840e0fdf8c5552ad2c4ee9cacc062640bae4eca986ef1ed19f1cd8b643e8
 - evidence_id: ev-43ce2d0c7005233b
   kind: prior_review

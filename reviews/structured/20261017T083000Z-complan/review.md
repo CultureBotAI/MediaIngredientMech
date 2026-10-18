@@ -167,6 +167,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-991ec7740785424e
+  evidence_ids:
+  - ev-4b6ddb6440054933
+  - ev-3c2701bba0f032e7
+  - ev-2eca21ef038384b0
+  - ev-2963df41694da018
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -175,6 +180,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-991ec7740785424e
+  evidence_ids:
+  - ev-4b6ddb6440054933
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -183,13 +190,15 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-991ec7740785424e
+  evidence_ids:
+  - ev-8617815854e900de
 evidence:
 - evidence_id: ev-4b6ddb6440054933
   kind: record_content
   reference: data/ingredients/unmapped/Complan.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[69],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0363","line":71,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"Complan"}],"identifier":"UNMAPPED_0363","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Complan","sssom_rows":[],"sssom_subject":"MIM:Complan","synonym_count":1}'
   snapshot_sha256: 4c42c23942d3a06a6d9560c1150bed3a521f5c59be0b4782b3259e6a1bb00023
@@ -197,7 +206,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [69]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -206,7 +215,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Complan; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -214,7 +223,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[71]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0363","line":71,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"Complan","total_occurrences":"0"}]'
   snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7

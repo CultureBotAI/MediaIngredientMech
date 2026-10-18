@@ -77,9 +77,9 @@ Disposition: Current status=UNMAPPED; no supported promotion is established by t
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-537d3ec6e1a980fe | data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[258],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0587","line":260,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"\u03b1-D-Glucose monohydrate"}],"identifier":"UNMAPPED_0587","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"\u03b1-D-Glucose monohydrate","sssom_rows":[],"sssom_subject":"MIM:~391-D-Glucose_Monohydrate","synonym_count":1} |
+| ev-537d3ec6e1a980fe | data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[258],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0587","line":260,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"\u03b1-D-Glucose monohydrate"}],"identifier":"UNMAPPED_0587","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"\u03b1-D-Glucose monohydrate","sssom_rows":[],"sssom_subject":"MIM:\u0391-D-Glucose_Monohydrate","synonym_count":1} |
 | ev-54fe57748a6d3a05 | data/curated/unmapped_ingredients.yaml; ingredients positions (zero-based): [258] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-8428227a03f986a9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:~391-D-Glucose_Monohydrate; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-8428227a03f986a9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Α-D-Glucose_Monohydrate; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
 | ev-f53a6c152e81eae5 | docs/data/unmapped_ingredients.csv; CSV lines=[260] | supports | Published identity and count rows inspected: [{"identifier":"UNMAPPED_0587","line":260,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"\u03b1-D-Glucose monohydrate","total_occurrences":"0"}] |
 | ev-3cbc07e18046bbf3 | reports/yaml_record_review/20261001T045042Z-Α-D-Glucose_Monohydrate.md; YAML Record Review: α-D-Glucose monohydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60; Additional Notes:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 
@@ -167,6 +167,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-835c12277c56d035
+  evidence_ids:
+  - ev-537d3ec6e1a980fe
+  - ev-54fe57748a6d3a05
+  - ev-8428227a03f986a9
+  - ev-f53a6c152e81eae5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -175,6 +180,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-835c12277c56d035
+  evidence_ids:
+  - ev-537d3ec6e1a980fe
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -183,23 +190,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-835c12277c56d035
+  evidence_ids:
+  - ev-3cbc07e18046bbf3
 evidence:
 - evidence_id: ev-537d3ec6e1a980fe
   kind: record_content
   reference: data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[258],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0587","line":260,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"\u03b1-D-Glucose
     monohydrate"}],"identifier":"UNMAPPED_0587","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"\u03b1-D-Glucose
-    monohydrate","sssom_rows":[],"sssom_subject":"MIM:~391-D-Glucose_Monohydrate","synonym_count":1}'
+    monohydrate","sssom_rows":[],"sssom_subject":"MIM:\u0391-D-Glucose_Monohydrate","synonym_count":1}'
   snapshot_sha256: a1dd8d6bb0cf00af9ebd94480ff558485b259adcb89d15987ec4b0ee013ba36d
 - evidence_id: ev-54fe57748a6d3a05
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [258]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -207,8 +216,8 @@ evidence:
 - evidence_id: ev-8428227a03f986a9
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:~391-D-Glucose_Monohydrate; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Α-D-Glucose_Monohydrate; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -216,7 +225,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[260]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0587","line":260,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"\u03b1-D-Glucose
     monohydrate","total_occurrences":"0"}]'

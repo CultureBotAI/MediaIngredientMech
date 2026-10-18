@@ -89,7 +89,7 @@ Reassess prediction-only role support: Maltohexaose
 | ev-471609fb5d1a63c7 | docs/data/mapped_ingredients.csv; CSV lines=[1342] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:27445","line":1342,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27445","preferred_term":"Maltohexaose","total_occurrences":"0"}] |
 | ev-b3e143e6b33a4bcd | reports/yaml_record_review/Maltohexaose.md; &#96;data/ingredients/mapped/Maltohexaose.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:30; Completeness:40; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-24a591919b3eee2e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[894,1378] | context_only | [{"current_record_sha256":"48c3e3879cf58700589fcc96f8430388714905cb3280db1450585db29868bc4d","finding_id":"SEM:e5098cc1ffe087192d90","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"48c3e3879cf58700589fcc96f8430388714905cb3280db1450585db29868bc4d","finding_id":"SEM:ab763c1d4f960e971b6b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-618a38aa4709f06a | data/ingredients/mapped/Maltohexaose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-618a38aa4709f06a | data/ingredients/mapped/Maltohexaose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1340],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27445","line":1342,"mapping_status":"MAPPED","ontology_id":"CHEBI:27445","preferred_term":"Maltohexaose"}],"identifier":"CHEBI:27445","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27445","ontology_label":"maltohexaose","ontology_source":"CHEBI"},"preferred_term":"Maltohexaose","sssom_rows":[{"data_row":1767,"object_id":"CHEBI:27445","object_label":"maltohexaose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltohexaose","synonym_count":1} |
 | ev-3f34d207db1bf01c | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-4e5f6ddf2a5bc16a] | context_only | Predecessor structured review finding f-4e5f6ddf2a5bc16a in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8d7b3864d8438b73
+  evidence_ids:
+  - ev-50cb3076047d5313
+  - ev-4e6751bf0f549aae
+  - ev-9fd3e30f4525f4b6
+  - ev-471609fb5d1a63c7
+  - ev-618a38aa4709f06a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8d7b3864d8438b73
+  evidence_ids:
+  - ev-50cb3076047d5313
+  - ev-24a591919b3eee2e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8d7b3864d8438b73
+  evidence_ids:
+  - ev-b3e143e6b33a4bcd
+  - ev-24a591919b3eee2e
+  - ev-3f34d207db1bf01c
 evidence:
 - evidence_id: ev-50cb3076047d5313
   kind: record_content
   reference: data/ingredients/mapped/Maltohexaose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1340],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27445","line":1342,"mapping_status":"MAPPED","ontology_id":"CHEBI:27445","preferred_term":"Maltohexaose"}],"identifier":"CHEBI:27445","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27445","ontology_label":"maltohexaose","ontology_source":"CHEBI"},"preferred_term":"Maltohexaose","sssom_rows":[{"data_row":1767,"object_id":"CHEBI:27445","object_label":"maltohexaose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltohexaose","synonym_count":1}'
   snapshot_sha256: 48c3e3879cf58700589fcc96f8430388714905cb3280db1450585db29868bc4d
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1340]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Maltohexaose; data-row positions=[1767]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1767,"object_id":"CHEBI:27445","object_label":"maltohexaose","other":"alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranosyl-(1->4)-D-glucose|CAS:34620-77-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Maltohexaose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1342]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:27445","line":1342,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27445","preferred_term":"Maltohexaose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -247,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[894,1378]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"48c3e3879cf58700589fcc96f8430388714905cb3280db1450585db29868bc4d","finding_id":"SEM:e5098cc1ffe087192d90","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"48c3e3879cf58700589fcc96f8430388714905cb3280db1450585db29868bc4d","finding_id":"SEM:ab763c1d4f960e971b6b","kind":"role_evidence","resolution_reason":"Historical
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Maltohexaose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1340],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27445","line":1342,"mapping_status":"MAPPED","ontology_id":"CHEBI:27445","preferred_term":"Maltohexaose"}],"identifier":"CHEBI:27445","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27445","ontology_label":"maltohexaose","ontology_source":"CHEBI"},"preferred_term":"Maltohexaose","sssom_rows":[{"data_row":1767,"object_id":"CHEBI:27445","object_label":"maltohexaose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltohexaose","synonym_count":1}'
   snapshot_sha256: 48c3e3879cf58700589fcc96f8430388714905cb3280db1450585db29868bc4d
 - evidence_id: ev-3f34d207db1bf01c
   kind: prior_review

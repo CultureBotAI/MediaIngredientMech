@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-vanillate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-71839a060c186070 | data/ingredients/mapped/Na-vanillate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1477],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132748","line":1479,"mapping_status":"MAPPED","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate"}],"identifier":"CHEBI:132748","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132748","ontology_label":"sodium vanillate","ontology_source":"CHEBI"},"preferred_term":"Na-vanillate","sssom_rows":[{"data_row":1980,"object_id":"CHEBI:132748","object_label":"sodium vanillate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-vanillate","synonym_count":2} |
-| ev-9050c95cea28b636 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1477] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-75b345fc10b8e8c7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-vanillate; data-row positions=[1980] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1980,"object_id":"CHEBI:132748","object_label":"sodium vanillate","other":"sodium 4-hydroxy-3-methoxybenzoate&#124;CAS:28508-48-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-vanillate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-4b3b30e9b203bda0 | docs/data/mapped_ingredients.csv; CSV lines=[1479] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:132748","line":1479,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate","total_occurrences":"3"}] |
+| ev-71839a060c186070 | data/ingredients/mapped/Na-vanillate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1476],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132748","line":1478,"mapping_status":"MAPPED","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate"}],"identifier":"CHEBI:132748","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132748","ontology_label":"sodium vanillate","ontology_source":"CHEBI"},"preferred_term":"Na-vanillate","sssom_rows":[{"data_row":1982,"object_id":"CHEBI:132748","object_label":"sodium vanillate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-vanillate","synonym_count":2} |
+| ev-9050c95cea28b636 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1476] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-75b345fc10b8e8c7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-vanillate; data-row positions=[1982] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1982,"object_id":"CHEBI:132748","object_label":"sodium vanillate","other":"sodium 4-hydroxy-3-methoxybenzoate&#124;CAS:28508-48-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-vanillate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-4b3b30e9b203bda0 | docs/data/mapped_ingredients.csv; CSV lines=[1478] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:132748","line":1478,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate","total_occurrences":"3"}] |
 | ev-9656d159cec9e375 | reports/yaml_record_review/Na-vanillate.md; &#96;data/ingredients/mapped/Na-vanillate.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:26; Completeness:38; Recommended Edits:44 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-881ee80926bb21d5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[984,1577] | context_only | [{"current_record_sha256":"9ddd9edfd7d77a47df419c9239e9b99e99e24c41e9e8949a5ae65fde6afab385","finding_id":"SEM:6f281a6a06e2b2f6444e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9ddd9edfd7d77a47df419c9239e9b99e99e24c41e9e8949a5ae65fde6afab385","finding_id":"SEM:d11f0dbb4c82da05db54","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-81a43ad8b5551552 | data/ingredients/mapped/Na-vanillate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-81a43ad8b5551552 | data/ingredients/mapped/Na-vanillate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1476],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132748","line":1478,"mapping_status":"MAPPED","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate"}],"identifier":"CHEBI:132748","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132748","ontology_label":"sodium vanillate","ontology_source":"CHEBI"},"preferred_term":"Na-vanillate","sssom_rows":[{"data_row":1982,"object_id":"CHEBI:132748","object_label":"sodium vanillate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-vanillate","synonym_count":2} |
 | ev-d04db2e7c8d8bde6 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-6575df5edeb084de] | context_only | Predecessor structured review finding f-6575df5edeb084de in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1ab34fe74a6ec342
+  evidence_ids:
+  - ev-71839a060c186070
+  - ev-9050c95cea28b636
+  - ev-75b345fc10b8e8c7
+  - ev-4b3b30e9b203bda0
+  - ev-81a43ad8b5551552
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1ab34fe74a6ec342
+  evidence_ids:
+  - ev-71839a060c186070
+  - ev-881ee80926bb21d5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1ab34fe74a6ec342
+  evidence_ids:
+  - ev-9656d159cec9e375
+  - ev-881ee80926bb21d5
+  - ev-d04db2e7c8d8bde6
 evidence:
 - evidence_id: ev-71839a060c186070
   kind: record_content
   reference: data/ingredients/mapped/Na-vanillate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1477],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132748","line":1479,"mapping_status":"MAPPED","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate"}],"identifier":"CHEBI:132748","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132748","ontology_label":"sodium
-    vanillate","ontology_source":"CHEBI"},"preferred_term":"Na-vanillate","sssom_rows":[{"data_row":1980,"object_id":"CHEBI:132748","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1476],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132748","line":1478,"mapping_status":"MAPPED","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate"}],"identifier":"CHEBI:132748","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132748","ontology_label":"sodium
+    vanillate","ontology_source":"CHEBI"},"preferred_term":"Na-vanillate","sssom_rows":[{"data_row":1982,"object_id":"CHEBI:132748","object_label":"sodium
     vanillate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-vanillate","synonym_count":2}'
   snapshot_sha256: 9ddd9edfd7d77a47df419c9239e9b99e99e24c41e9e8949a5ae65fde6afab385
 - evidence_id: ev-9050c95cea28b636
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1477]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1476]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,19 +232,19 @@ evidence:
 - evidence_id: ev-75b345fc10b8e8c7
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-vanillate; data-row positions=[1980]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-vanillate; data-row positions=[1982]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1980,"object_id":"CHEBI:132748","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1982,"object_id":"CHEBI:132748","object_label":"sodium
     vanillate","other":"sodium 4-hydroxy-3-methoxybenzoate|CAS:28508-48-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-vanillate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-4b3b30e9b203bda0
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1479]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1478]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:132748","line":1479,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate","total_occurrences":"3"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:132748","line":1478,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-9656d159cec9e375
   kind: prior_review
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[984,1577]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9ddd9edfd7d77a47df419c9239e9b99e99e24c41e9e8949a5ae65fde6afab385","finding_id":"SEM:6f281a6a06e2b2f6444e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9ddd9edfd7d77a47df419c9239e9b99e99e24c41e9e8949a5ae65fde6afab385","finding_id":"SEM:d11f0dbb4c82da05db54","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-vanillate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1476],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132748","line":1478,"mapping_status":"MAPPED","ontology_id":"CHEBI:132748","preferred_term":"Na-vanillate"}],"identifier":"CHEBI:132748","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132748","ontology_label":"sodium
+    vanillate","ontology_source":"CHEBI"},"preferred_term":"Na-vanillate","sssom_rows":[{"data_row":1982,"object_id":"CHEBI:132748","object_label":"sodium
+    vanillate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-vanillate","synonym_count":2}'
   snapshot_sha256: 9ddd9edfd7d77a47df419c9239e9b99e99e24c41e9e8949a5ae65fde6afab385
 - evidence_id: ev-d04db2e7c8d8bde6
   kind: prior_review

@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f0d0c59872b26b61
+  evidence_ids:
+  - ev-ccf37232e4410f7b
+  - ev-ab0fdb759a4f7bac
+  - ev-dc01179ead9f0da0
+  - ev-579fd3501a0e34c0
+  - ev-7f3563788dbbb527
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f0d0c59872b26b61
+  evidence_ids:
+  - ev-ccf37232e4410f7b
+  - ev-9b0bfe80dd81ed05
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f0d0c59872b26b61
+  evidence_ids:
+  - ev-8d3f1a20c2526a3d
+  - ev-9b0bfe80dd81ed05
+  - ev-99f45d2a0ce3847a
 evidence:
 - evidence_id: ev-ccf37232e4410f7b
   kind: record_content
   reference: data/ingredients/mapped/2-mercaptoethanesulfonate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[327],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17905","line":329,"mapping_status":"MAPPED","ontology_id":"CHEBI:17905","preferred_term":"2-Mercaptoethanesulfonate"}],"identifier":"CHEBI:17905","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":79,"edge_count":79,"occurrences":79},"occurrence_statistics":{"media_count":79,"total_occurrences":79},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17905","ontology_label":"coenzyme
     M","ontology_source":"CHEBI"},"preferred_term":"2-Mercaptoethanesulfonate","sssom_rows":[{"data_row":88,"object_id":"CHEBI:17905","object_label":"coenzyme
@@ -106,7 +119,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [327]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,7 +128,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-mercaptoethanesulfonate; data-row positions=[88]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":88,"object_id":"CHEBI:17905","object_label":"coenzyme
     M","other":"1-THIOETHANESULFONIC ACID|2-Mercaptoethanesulfonic acid|2-mercaptoethanesulphonic
@@ -127,7 +140,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[329]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17905","line":329,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"79","ontology_id":"CHEBI:17905","preferred_term":"2-Mercaptoethanesulfonate","total_occurrences":"79"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -155,7 +168,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[71,1602]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae","finding_id":"SEM:ae77d027068d240df17a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae","finding_id":"SEM:32b2ec525e94cfba240d","kind":"role_evidence","resolution_reason":"Historical
@@ -165,12 +178,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/2-mercaptoethanesulfonate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"COFACTOR_PROVIDER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[327],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17905","line":329,"mapping_status":"MAPPED","ontology_id":"CHEBI:17905","preferred_term":"2-Mercaptoethanesulfonate"}],"identifier":"CHEBI:17905","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":79,"edge_count":79,"occurrences":79},"occurrence_statistics":{"media_count":79,"total_occurrences":79},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17905","ontology_label":"coenzyme
+    M","ontology_source":"CHEBI"},"preferred_term":"2-Mercaptoethanesulfonate","sssom_rows":[{"data_row":88,"object_id":"CHEBI:17905","object_label":"coenzyme
+    M","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-mercaptoethanesulfonate","synonym_count":17}'
   snapshot_sha256: e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae
 - evidence_id: ev-99f45d2a0ce3847a
   kind: prior_review

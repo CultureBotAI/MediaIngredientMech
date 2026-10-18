@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sporangiomycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-539e04e23e1d570f | data/ingredients/mapped/Sporangiomycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1891],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C003339","line":1893,"mapping_status":"MAPPED","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin"}],"identifier":"mesh:C003339","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C003339","ontology_label":"sporangiomycin","ontology_source":"MESH"},"preferred_term":"Sporangiomycin","sssom_rows":[{"data_row":2637,"object_id":"mesh:C003339","object_label":"sporangiomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sporangiomycin","synonym_count":0} |
-| ev-449083ae4799f476 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1891] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-c097a26727840ace | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sporangiomycin; data-row positions=[2637] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2637,"object_id":"mesh:C003339","object_label":"sporangiomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Sporangiomycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-439823eab24bdfc7 | docs/data/mapped_ingredients.csv; CSV lines=[1893] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C003339","line":1893,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin","total_occurrences":"0"}] |
+| ev-539e04e23e1d570f | data/ingredients/mapped/Sporangiomycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1890],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C003339","line":1892,"mapping_status":"MAPPED","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin"}],"identifier":"mesh:C003339","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C003339","ontology_label":"sporangiomycin","ontology_source":"MESH"},"preferred_term":"Sporangiomycin","sssom_rows":[{"data_row":2639,"object_id":"mesh:C003339","object_label":"sporangiomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sporangiomycin","synonym_count":0} |
+| ev-449083ae4799f476 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1890] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c097a26727840ace | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sporangiomycin; data-row positions=[2639] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2639,"object_id":"mesh:C003339","object_label":"sporangiomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Sporangiomycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-439823eab24bdfc7 | docs/data/mapped_ingredients.csv; CSV lines=[1892] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C003339","line":1892,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin","total_occurrences":"0"}] |
 | ev-f9b82e1c28c56225 | reports/yaml_record_review/Sporangiomycin.md; &#96;data/ingredients/mapped/Sporangiomycin.yaml&#96;:2; Verdict:4; Identity:9; Validation:18; Evidence:27; Completeness:39; Recommended Edits:45 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e0aab3c08c2e4696 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1243,2014] | context_only | [{"current_record_sha256":"5e72445459f2a6190d5d0a087b2da5faa9e182d7d02468179d62f218304143ea","finding_id":"SEM:46e2e5383fc9a8b8388b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5e72445459f2a6190d5d0a087b2da5faa9e182d7d02468179d62f218304143ea","finding_id":"SEM:3b70ec779c6cf903e064","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b8637d8fe088ae19 | data/ingredients/mapped/Sporangiomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-b8637d8fe088ae19 | data/ingredients/mapped/Sporangiomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1890],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C003339","line":1892,"mapping_status":"MAPPED","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin"}],"identifier":"mesh:C003339","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C003339","ontology_label":"sporangiomycin","ontology_source":"MESH"},"preferred_term":"Sporangiomycin","sssom_rows":[{"data_row":2639,"object_id":"mesh:C003339","object_label":"sporangiomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sporangiomycin","synonym_count":0} |
 | ev-690258aaaaf9f0e1 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-680f5f4d7f31bd7f] | context_only | Predecessor structured review finding f-680f5f4d7f31bd7f in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6f1e6279347df935
+  evidence_ids:
+  - ev-539e04e23e1d570f
+  - ev-449083ae4799f476
+  - ev-c097a26727840ace
+  - ev-439823eab24bdfc7
+  - ev-b8637d8fe088ae19
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6f1e6279347df935
+  evidence_ids:
+  - ev-539e04e23e1d570f
+  - ev-e0aab3c08c2e4696
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6f1e6279347df935
+  evidence_ids:
+  - ev-f9b82e1c28c56225
+  - ev-e0aab3c08c2e4696
+  - ev-690258aaaaf9f0e1
 evidence:
 - evidence_id: ev-539e04e23e1d570f
   kind: record_content
   reference: data/ingredients/mapped/Sporangiomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1891],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C003339","line":1893,"mapping_status":"MAPPED","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin"}],"identifier":"mesh:C003339","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C003339","ontology_label":"sporangiomycin","ontology_source":"MESH"},"preferred_term":"Sporangiomycin","sssom_rows":[{"data_row":2637,"object_id":"mesh:C003339","object_label":"sporangiomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sporangiomycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1890],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C003339","line":1892,"mapping_status":"MAPPED","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin"}],"identifier":"mesh:C003339","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C003339","ontology_label":"sporangiomycin","ontology_source":"MESH"},"preferred_term":"Sporangiomycin","sssom_rows":[{"data_row":2639,"object_id":"mesh:C003339","object_label":"sporangiomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sporangiomycin","synonym_count":0}'
   snapshot_sha256: 5e72445459f2a6190d5d0a087b2da5faa9e182d7d02468179d62f218304143ea
 - evidence_id: ev-449083ae4799f476
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1891]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1890]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-c097a26727840ace
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sporangiomycin; data-row positions=[2637]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sporangiomycin; data-row positions=[2639]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2637,"object_id":"mesh:C003339","object_label":"sporangiomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Sporangiomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2639,"object_id":"mesh:C003339","object_label":"sporangiomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Sporangiomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-439823eab24bdfc7
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1893]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1892]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C003339","line":1893,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C003339","line":1892,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-f9b82e1c28c56225
   kind: prior_review
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1243,2014]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5e72445459f2a6190d5d0a087b2da5faa9e182d7d02468179d62f218304143ea","finding_id":"SEM:46e2e5383fc9a8b8388b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5e72445459f2a6190d5d0a087b2da5faa9e182d7d02468179d62f218304143ea","finding_id":"SEM:3b70ec779c6cf903e064","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sporangiomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1890],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C003339","line":1892,"mapping_status":"MAPPED","ontology_id":"mesh:C003339","preferred_term":"Sporangiomycin"}],"identifier":"mesh:C003339","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C003339","ontology_label":"sporangiomycin","ontology_source":"MESH"},"preferred_term":"Sporangiomycin","sssom_rows":[{"data_row":2639,"object_id":"mesh:C003339","object_label":"sporangiomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sporangiomycin","synonym_count":0}'
   snapshot_sha256: 5e72445459f2a6190d5d0a087b2da5faa9e182d7d02468179d62f218304143ea
 - evidence_id: ev-690258aaaaf9f0e1
   kind: prior_review

@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-015bb46c993c5694
+  evidence_ids:
+  - ev-8be506af2c1e80d2
+  - ev-227a11c737de7d43
+  - ev-bae0af78c48c3ed4
+  - ev-5a2e281f7e03f168
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -82,6 +87,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-015bb46c993c5694
+  evidence_ids:
+  - ev-8be506af2c1e80d2
+  - ev-32b0b209635523cd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,21 +98,24 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-015bb46c993c5694
+  evidence_ids:
+  - ev-d0ad24c710669e29
+  - ev-32b0b209635523cd
 evidence:
 - evidence_id: ev-8be506af2c1e80d2
   kind: record_content
   reference: data/ingredients/mapped/PY-fructose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[49],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_fructose","line":51,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_fructose","preferred_term":"PY-fructose"}],"identifier":"kgmicrobe.ingredient:py_fructose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_fructose","ontology_label":"PY-fructose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-fructose","sssom_rows":[{"data_row":2176,"object_id":"kgmicrobe.ingredient:py_fructose","object_label":"PY-fructose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-fructose","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[49],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_fructose","line":51,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_fructose","preferred_term":"PY-fructose"}],"identifier":"kgmicrobe.ingredient:py_fructose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_fructose","ontology_label":"PY-fructose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-fructose","sssom_rows":[{"data_row":2178,"object_id":"kgmicrobe.ingredient:py_fructose","object_label":"PY-fructose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-fructose","synonym_count":1}'
   snapshot_sha256: 44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6
 - evidence_id: ev-227a11c737de7d43
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [49]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -112,16 +123,16 @@ evidence:
 - evidence_id: ev-bae0af78c48c3ed4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PY-fructose; data-row positions=[2176]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PY-fructose; data-row positions=[2178]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2176,"object_id":"kgmicrobe.ingredient:py_fructose","object_label":"PY-fructose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-fructose","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2178,"object_id":"kgmicrobe.ingredient:py_fructose","object_label":"PY-fructose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-fructose","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-5a2e281f7e03f168
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[51]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:py_fructose","line":51,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:py_fructose","preferred_term":"PY-fructose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -143,20 +154,12 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1459,1591,2072]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6","finding_id":"SEM:02fd5c5ea689148396f7","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6","finding_id":"SEM:1b35b988f194187fab25","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6","finding_id":"SEM:7b2344a4ae4d5d9b5a1b","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-5a054565751957b2
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/PY-fructose.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-5e115bf063bb0287
@@ -229,7 +232,7 @@ findings:
   - record-015bb46c993c5694
   evidence_ids:
   - ev-8be506af2c1e80d2
-  - ev-5a054565751957b2
+  - ev-32b0b209635523cd
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PY-fructose.yaml

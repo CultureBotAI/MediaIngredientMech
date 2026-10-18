@@ -83,13 +83,13 @@ Reassess prediction-only role support: Phosphate Buffer Stock Solution
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-0e497ec6704070f0 | data/ingredients/mapped/Phosphate_Buffer_Stock_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1651],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1653,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate Buffer Stock Solution"}],"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate Buffer Stock Solution","sssom_rows":[{"data_row":2247,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:closeMatch"},{"data_row":2248,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate Buffer Stock Solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer_Stock_Solution","synonym_count":1} |
-| ev-127cd2e5c4bd4617 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1651] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-845d335243e475f9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Phosphate_Buffer_Stock_Solution; data-row positions=[2247,2248] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2247,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Phosphate_Buffer_Stock_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2248,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate Buffer Stock Solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphate_Buffer_Stock_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-fcd310d08ec6f85b | docs/data/mapped_ingredients.csv; CSV lines=[1653] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1653,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"NCIT:C29321","preferred_term":"Phosphate Buffer Stock Solution","total_occurrences":"1"}] |
+| ev-0e497ec6704070f0 | data/ingredients/mapped/Phosphate_Buffer_Stock_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1650],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1652,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate Buffer Stock Solution"}],"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate Buffer Stock Solution","sssom_rows":[{"data_row":2249,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:closeMatch"},{"data_row":2250,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate Buffer Stock Solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer_Stock_Solution","synonym_count":1} |
+| ev-127cd2e5c4bd4617 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1650] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-845d335243e475f9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Phosphate_Buffer_Stock_Solution; data-row positions=[2249, 2250] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2249,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Phosphate_Buffer_Stock_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2250,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate Buffer Stock Solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphate_Buffer_Stock_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-fcd310d08ec6f85b | docs/data/mapped_ingredients.csv; CSV lines=[1652] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1652,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"NCIT:C29321","preferred_term":"Phosphate Buffer Stock Solution","total_occurrences":"1"}] |
 | ev-b6e73edf19376fa3 | reports/yaml_record_review/Phosphate_Buffer_Stock_Solution.md; &#96;data/ingredients/mapped/Phosphate_Buffer_Stock_Solution.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:32; Completeness:43; Recommended Edits:50 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b5ec19a4364f50b7 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1110,1412] | context_only | [{"current_record_sha256":"34a52253b225cbd59e419fa0c2adbe9e184c871c0ab8803428c4748cb10fab11","finding_id":"SEM:a4677ba4284500073806","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"34a52253b225cbd59e419fa0c2adbe9e184c871c0ab8803428c4748cb10fab11","finding_id":"SEM:120a48daaaba1c3f60c7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-3a719530dd611306 | data/ingredients/mapped/Phosphate_Buffer_Stock_Solution.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-3a719530dd611306 | data/ingredients/mapped/Phosphate_Buffer_Stock_Solution.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1650],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1652,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate Buffer Stock Solution"}],"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate Buffer Stock Solution","sssom_rows":[{"data_row":2249,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:closeMatch"},{"data_row":2250,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate Buffer Stock Solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer_Stock_Solution","synonym_count":1} |
 | ev-e4e1a75d5994faac | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-af737f004284a08e] | context_only | Predecessor structured review finding f-af737f004284a08e in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-44e3d11fb8ea6197
+  evidence_ids:
+  - ev-0e497ec6704070f0
+  - ev-127cd2e5c4bd4617
+  - ev-845d335243e475f9
+  - ev-fcd310d08ec6f85b
+  - ev-3a719530dd611306
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-44e3d11fb8ea6197
+  evidence_ids:
+  - ev-0e497ec6704070f0
+  - ev-b5ec19a4364f50b7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-44e3d11fb8ea6197
+  evidence_ids:
+  - ev-b6e73edf19376fa3
+  - ev-b5ec19a4364f50b7
+  - ev-e4e1a75d5994faac
 evidence:
 - evidence_id: ev-0e497ec6704070f0
   kind: record_content
   reference: data/ingredients/mapped/Phosphate_Buffer_Stock_Solution.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1651],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1653,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1650],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1652,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
     Buffer Stock Solution"}],"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
-    Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate Buffer Stock Solution","sssom_rows":[{"data_row":2247,"object_id":"NCIT:C29321","object_label":"Phosphate
-    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2248,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate
+    Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate Buffer Stock Solution","sssom_rows":[{"data_row":2249,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2250,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate
     Buffer Stock Solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer_Stock_Solution","synonym_count":1}'
   snapshot_sha256: 34a52253b225cbd59e419fa0c2adbe9e184c871c0ab8803428c4748cb10fab11
 - evidence_id: ev-127cd2e5c4bd4617
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1651]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1650]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,20 +234,21 @@ evidence:
 - evidence_id: ev-845d335243e475f9
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Phosphate_Buffer_Stock_Solution; data-row positions=[2247,2248]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Phosphate_Buffer_Stock_Solution; data-row positions=[2249,
+    2250]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2247,"object_id":"NCIT:C29321","object_label":"Phosphate
-    Buffer","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Phosphate_Buffer_Stock_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2248,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2249,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Phosphate_Buffer_Stock_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2250,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate
     Buffer Stock Solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphate_Buffer_Stock_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-fcd310d08ec6f85b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1653]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1652]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1653,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1652,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
     Buffer Stock Solution","total_occurrences":"1"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-b6e73edf19376fa3
@@ -255,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1110,1412]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"34a52253b225cbd59e419fa0c2adbe9e184c871c0ab8803428c4748cb10fab11","finding_id":"SEM:a4677ba4284500073806","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"34a52253b225cbd59e419fa0c2adbe9e184c871c0ab8803428c4748cb10fab11","finding_id":"SEM:120a48daaaba1c3f60c7","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +279,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Phosphate_Buffer_Stock_Solution.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1650],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","line":1652,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
+    Buffer Stock Solution"}],"identifier":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
+    Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate Buffer Stock Solution","sssom_rows":[{"data_row":2249,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2250,"object_id":"kgmicrobe.ingredient:phosphate_buffer_stock_solution","object_label":"Phosphate
+    Buffer Stock Solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer_Stock_Solution","synonym_count":1}'
   snapshot_sha256: 34a52253b225cbd59e419fa0c2adbe9e184c871c0ab8803428c4748cb10fab11
 - evidence_id: ev-e4e1a75d5994faac
   kind: prior_review

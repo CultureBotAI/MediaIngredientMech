@@ -80,6 +80,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7059116102e92505
+  evidence_ids:
+  - ev-4abeb12a4bfada1f
+  - ev-3a8566ebb3929af6
+  - ev-63629b77a7cf13de
+  - ev-ba7f4bb6d8372b4c
+  - ev-423b314156ab28a8
+  - ev-f25801a7e385fb14
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -88,6 +95,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-7059116102e92505
+  evidence_ids:
+  - ev-4abeb12a4bfada1f
+  - ev-398332a710c03653
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -96,25 +106,31 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7059116102e92505
+  evidence_ids:
+  - ev-471a63cbca315ea9
+  - ev-398332a710c03653
+  - ev-b91360770608ed24
+  - ev-5458c3c3defc38d0
+  - ev-8334ff0030f361cc
 evidence:
 - evidence_id: ev-4abeb12a4bfada1f
   kind: record_content
   reference: data/ingredients/mapped/Mineral_Solution_See_Medium_No_976.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[11],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","line":13,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","preferred_term":"Mineral
     solution see Medium No. 976"}],"identifier":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","ontology_label":"Mineral
     solution see Medium No. 976","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Mineral
-    solution see Medium No. 976","sssom_rows":[{"data_row":1881,"object_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","object_label":"Mineral
+    solution see Medium No. 976","sssom_rows":[{"data_row":1883,"object_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","object_label":"Mineral
     solution see Medium No. 976","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mineral_Solution_See_Medium_No_976","synonym_count":2}'
   snapshot_sha256: 911de800edd62dc119f74d48432257ba1f22c2be95ebeb37f8e79385aecdd238
 - evidence_id: ev-3a8566ebb3929af6
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [11]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -122,17 +138,17 @@ evidence:
 - evidence_id: ev-63629b77a7cf13de
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Mineral_Solution_See_Medium_No_976; data-row positions=[1881]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Mineral_Solution_See_Medium_No_976; data-row positions=[1883]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1881,"object_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","object_label":"Mineral
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1883,"object_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","object_label":"Mineral
     solution see Medium No. 976","other":"Mineral solution (see Medium No. 976","predicate_id":"skos:exactMatch","subject_id":"MIM:Mineral_Solution_See_Medium_No_976","validation_method":"manual:retire_assay_labels|PROMOTED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-ba7f4bb6d8372b4c
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[13]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","line":13,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","preferred_term":"Mineral
     solution see Medium No. 976","total_occurrences":"0"}]'
@@ -157,7 +173,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[942]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"911de800edd62dc119f74d48432257ba1f22c2be95ebeb37f8e79385aecdd238","finding_id":"SEM:fcfcd9a71dccf7db1f49","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -199,86 +215,22 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Mineral_Solution_See_Medium_No_976.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Mineral solution (see Medium No. 976", "synonym_type": "RAW_TEXT"}],
-    "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue
-    (source_id=mediadive.ingredient:1958); no CAS-RN or CHEBI/NCIT match. Curator
-    review needed.", "curator": "audit_import_ingredients[mim-queue]", "llm_assisted":
-    false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"},
-    {"action": "CLASSIFY_AS_STOCK_SOLUTION", "changes": "name pattern ''see Medium
-    No.'' indicates pre-mixed defined solution", "curator": "auto_classify_stock_solution",
-    "llm_assisted": false, "timestamp": "2026-05-01T19:58:07.078790+00:00"}, {"action":
-    "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=STOCK_SOLUTION
-    (name matches solution pattern ''Mineral solution'')", "curator": "auto_classify_ingredient_type",
-    "llm_assisted": false, "timestamp": "2026-05-02T03:12:19.749949+00:00"}, {"action":
-    "PROMOTED_TO_MAPPED", "changes": "Promoted UNMAPPED_0447 -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976
-    (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
-    MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
-    -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
-    mint with no parent, because a multi-component mix does not narrow to any single
-    compound (#288).", "curator": "issue_288_stock_solutions", "llm_assisted": true,
-    "new_status": "MAPPED", "previous_status": "UNMAPPED", "timestamp": "2026-08-06T00:00:00+00:00"},
-    {"action": "FLAGGED_NEEDS_EXPERT", "changes": "Reverted the mint and flagged NEEDS_EXPERT
-    instead. \"Mineral solution see Medium No. 976\" is a CROSS-REFERENCE to another
-    medium, not the name of a substance -- minting an identifier for it would give
-    a pointer its own identity. The #288 batch minted it because it filtered on ingredient_type
-    STOCK_SOLUTION without reading the label. The referenced medium should be resolved
-    and this record either replaced by that mineral solution or retired (#288).",
-    "curator": "issue_288_stock_solutions", "llm_assisted": true, "new_status": "NEEDS_EXPERT",
-    "previous_status": "MAPPED", "timestamp": "2026-08-06T00:00:00+00:00"}, {"action":
-    "ANNOTATED", "changes": "Edison LITERATURE (PaperQA3) identity research; report
-    at research/ingredients/Mineral_Solution_See_Medium_No_976-edison-literature.md
-    (local artifact \u2014 research/ is gitignored, so the findings are quoted here
-    rather than linked). Report reached no single bolded verdict; see the report.
-    No ontology CURIE was proposed. Recorded as provenance only \u2014 no grounding
-    applied from this run. Edison''s recommendations are deliberately conservative,
-    and a plausible identifier promoted by a mechanism that never decided anything
-    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
-    or reject.", "curator": "edison_literature_identity", "llm_assisted": true, "timestamp":
-    "2026-08-06T00:00:00+00:00"}, {"action": "PROMOTED_TO_MAPPED", "changes": "UNMAPPED_0447
-    -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976 (FALLBACK_REGISTRY).
-    Minted under the #288 STOCK_SOLUTION convention: a MediaDive cross-reference to
-    the mineral/trace-elements solution of DSMZ Medium 976. The corpus already treats
-    this shape as a stock solution rather than retiring it \u2014 `Trace element solution
-    see Medium No. 187` and `Vitamin solution see Medium No. 403` are both live kgmicrobe.ingredient
-    mints under the #288 convention \u2014 so this follows its siblings. The composition
-    is not transcribed here: it lives in the referenced medium, and #288''s rule is
-    to mint the named preparation rather than inline someone else''s recipe.", "curator":
-    "retire_assay_labels", "llm_assisted": false, "new_status": "MAPPED", "previous_status":
-    "NEEDS_EXPERT", "timestamp": "2026-08-15T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Mineral solution (see Medium No. 976'' (x1 CultureMech mentions).
-    Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill",
-    "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier":
-    "kgmicrobe.ingredient:mineral_solution_see_medium_no_976", "mapping": {"evidence":
-    [{"evidence_type": "MANUAL_CURATION", "notes": "Minted under the #288 STOCK_SOLUTION
-    convention: a MediaDive cross-reference to the mineral/trace-elements solution
-    of DSMZ Medium 976. The corpus already treats this shape as a stock solution rather
-    than retiring it \u2014 `Trace element solution see Medium No. 187` and `Vitamin
-    solution see Medium No. 403` are both live kgmicrobe.ingredient mints under the
-    #288 convention \u2014 so this follows its siblings. The composition is not transcribed
-    here: it lives in the referenced medium, and #288''s rule is to mint the named
-    preparation rather than inline someone else''s recipe.", "source": "MIM curation
-    (#213/#308)"}], "mapping_quality": "FALLBACK_REGISTRY", "ontology_id": "kgmicrobe.ingredient:mineral_solution_see_medium_no_976",
-    "ontology_label": "Mineral solution see Medium No. 976", "ontology_source": "kgmicrobe.ingredient"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[11],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","line":13,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","preferred_term":"Mineral
+    solution see Medium No. 976"}],"identifier":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","ontology_label":"Mineral
+    solution see Medium No. 976","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Mineral
+    solution see Medium No. 976","sssom_rows":[{"data_row":1883,"object_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","object_label":"Mineral
+    solution see Medium No. 976","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mineral_Solution_See_Medium_No_976","synonym_count":2}'
   snapshot_sha256: 911de800edd62dc119f74d48432257ba1f22c2be95ebeb37f8e79385aecdd238
 - evidence_id: ev-f25801a7e385fb14
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Mineral_Solution_See_Medium_No_976
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Mineral_Solution_See_Medium_No_976; data-row positions=[1883]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.9", "data_row": 1881, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
-    "kgmicrobe.ingredient:mineral_solution_see_medium_no_976", "object_label": "Mineral
-    solution see Medium No. 976", "object_source": "kgm:ingredient", "other": "Mineral
-    solution (see Medium No. 976", "predicate_id": "skos:exactMatch", "source": "MIM:MIM
-    curation (#213/#308)|MIM:curator=claude_culturemech_alias_backfill", "subject_id":
-    "MIM:Mineral_Solution_See_Medium_No_976", "subject_label": "Mineral solution see
-    Medium No. 976", "validation_method": "manual:retire_assay_labels|PROMOTED|2026-08-15"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1883,"object_id":"kgmicrobe.ingredient:mineral_solution_see_medium_no_976","object_label":"Mineral
+    solution see Medium No. 976","other":"Mineral solution (see Medium No. 976","predicate_id":"skos:exactMatch","subject_id":"MIM:Mineral_Solution_See_Medium_No_976","validation_method":"manual:retire_assay_labels|PROMOTED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-5458c3c3defc38d0
   kind: prior_review

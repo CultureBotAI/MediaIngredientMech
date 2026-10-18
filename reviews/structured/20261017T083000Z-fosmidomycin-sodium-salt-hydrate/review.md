@@ -85,11 +85,11 @@ Reassess prediction-only role support: Fosmidomycin sodium salt hydrate
 | --- | --- | --- | --- |
 | ev-22e3883167cf842f | data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1020],"raw_equal":true},"docs_rows":[{"identifier":"cas:66508-37-0","line":1022,"mapping_status":"MAPPED","ontology_id":"CHEBI:201600","preferred_term":"Fosmidomycin sodium salt hydrate"}],"identifier":"cas:66508-37-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:201600","ontology_label":"Fosmidomycin sodium salt","ontology_source":"CHEBI"},"preferred_term":"Fosmidomycin sodium salt hydrate","sssom_rows":[{"data_row":1239,"object_id":"CHEBI:201600","object_label":"Fosmidomycin sodium salt","predicate_id":"skos:closeMatch"},{"data_row":1240,"object_id":"cas:66508-37-0","object_label":"Fosmidomycin sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fosmidomycin_Sodium_Salt_Hydrate","synonym_count":1} |
 | ev-0b7e1247c587c460 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1020] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-3b47a22876f86c01 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fosmidomycin_Sodium_Salt_Hydrate; data-row positions=[1239,1240] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1239,"object_id":"CHEBI:201600","object_label":"Fosmidomycin sodium salt","other":"sodium;3-[ormyl(hydroxy)amino]propyl-hydroxyphosphinate&#124;CAS:66508-37-0","predicate_id":"skos:closeMatch","subject_id":"MIM:Fosmidomycin_Sodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":1240,"object_id":"cas:66508-37-0","object_label":"Fosmidomycin sodium salt hydrate","other":"CAS:66508-37-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Fosmidomycin_Sodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-3b47a22876f86c01 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fosmidomycin_Sodium_Salt_Hydrate; data-row positions=[1239, 1240] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1239,"object_id":"CHEBI:201600","object_label":"Fosmidomycin sodium salt","other":"sodium;3-[ormyl(hydroxy)amino]propyl-hydroxyphosphinate&#124;CAS:66508-37-0","predicate_id":"skos:closeMatch","subject_id":"MIM:Fosmidomycin_Sodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":1240,"object_id":"cas:66508-37-0","object_label":"Fosmidomycin sodium salt hydrate","other":"CAS:66508-37-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Fosmidomycin_Sodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-65616bfc6f41a06c | docs/data/mapped_ingredients.csv; CSV lines=[1022] | supports | Published identity and count rows inspected: [{"identifier":"cas:66508-37-0","line":1022,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:201600","preferred_term":"Fosmidomycin sodium salt hydrate","total_occurrences":"0"}] |
 | ev-cbec1e037c58ca6b | reports/yaml_record_review/Fosmidomycin_Sodium_Salt_Hydrate.md; &#96;data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:29; Evidence:43; Completeness:74; Recommended Edits:81 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-09aa6eaed025c14b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[632,1425] | context_only | [{"current_record_sha256":"2a398c6aff946dee446120f77f33ff0039b8eccf901e965eed46f12a647b6dab","finding_id":"SEM:bc3eac6addca10191524","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2a398c6aff946dee446120f77f33ff0039b8eccf901e965eed46f12a647b6dab","finding_id":"SEM:aaa666269b047ff0d521","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-7ff23b192cdc9868 | data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-7ff23b192cdc9868 | data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1020],"raw_equal":true},"docs_rows":[{"identifier":"cas:66508-37-0","line":1022,"mapping_status":"MAPPED","ontology_id":"CHEBI:201600","preferred_term":"Fosmidomycin sodium salt hydrate"}],"identifier":"cas:66508-37-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:201600","ontology_label":"Fosmidomycin sodium salt","ontology_source":"CHEBI"},"preferred_term":"Fosmidomycin sodium salt hydrate","sssom_rows":[{"data_row":1239,"object_id":"CHEBI:201600","object_label":"Fosmidomycin sodium salt","predicate_id":"skos:closeMatch"},{"data_row":1240,"object_id":"cas:66508-37-0","object_label":"Fosmidomycin sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fosmidomycin_Sodium_Salt_Hydrate","synonym_count":1} |
 | ev-598f988b66a3c8b3 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-0b070b4258f08baf] | context_only | Predecessor structured review finding f-0b070b4258f08baf in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ba9bae2dccc00ed9
+  evidence_ids:
+  - ev-22e3883167cf842f
+  - ev-0b7e1247c587c460
+  - ev-3b47a22876f86c01
+  - ev-65616bfc6f41a06c
+  - ev-7ff23b192cdc9868
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ba9bae2dccc00ed9
+  evidence_ids:
+  - ev-22e3883167cf842f
+  - ev-09aa6eaed025c14b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ba9bae2dccc00ed9
+  evidence_ids:
+  - ev-cbec1e037c58ca6b
+  - ev-09aa6eaed025c14b
+  - ev-598f988b66a3c8b3
 evidence:
 - evidence_id: ev-22e3883167cf842f
   kind: record_content
   reference: data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1020],"raw_equal":true},"docs_rows":[{"identifier":"cas:66508-37-0","line":1022,"mapping_status":"MAPPED","ontology_id":"CHEBI:201600","preferred_term":"Fosmidomycin
     sodium salt hydrate"}],"identifier":"cas:66508-37-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:201600","ontology_label":"Fosmidomycin
@@ -214,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1020]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,8 +235,9 @@ evidence:
 - evidence_id: ev-3b47a22876f86c01
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Fosmidomycin_Sodium_Salt_Hydrate; data-row positions=[1239,1240]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Fosmidomycin_Sodium_Salt_Hydrate; data-row positions=[1239,
+    1240]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1239,"object_id":"CHEBI:201600","object_label":"Fosmidomycin
     sodium salt","other":"sodium;3-[ormyl(hydroxy)amino]propyl-hydroxyphosphinate|CAS:66508-37-0","predicate_id":"skos:closeMatch","subject_id":"MIM:Fosmidomycin_Sodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":1240,"object_id":"cas:66508-37-0","object_label":"Fosmidomycin
@@ -233,7 +247,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1022]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:66508-37-0","line":1022,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:201600","preferred_term":"Fosmidomycin
     sodium salt hydrate","total_occurrences":"0"}]'
@@ -261,7 +275,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[632,1425]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2a398c6aff946dee446120f77f33ff0039b8eccf901e965eed46f12a647b6dab","finding_id":"SEM:bc3eac6addca10191524","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2a398c6aff946dee446120f77f33ff0039b8eccf901e965eed46f12a647b6dab","finding_id":"SEM:aaa666269b047ff0d521","kind":"role_evidence","resolution_reason":"Historical
@@ -271,12 +285,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1020],"raw_equal":true},"docs_rows":[{"identifier":"cas:66508-37-0","line":1022,"mapping_status":"MAPPED","ontology_id":"CHEBI:201600","preferred_term":"Fosmidomycin
+    sodium salt hydrate"}],"identifier":"cas:66508-37-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:201600","ontology_label":"Fosmidomycin
+    sodium salt","ontology_source":"CHEBI"},"preferred_term":"Fosmidomycin sodium
+    salt hydrate","sssom_rows":[{"data_row":1239,"object_id":"CHEBI:201600","object_label":"Fosmidomycin
+    sodium salt","predicate_id":"skos:closeMatch"},{"data_row":1240,"object_id":"cas:66508-37-0","object_label":"Fosmidomycin
+    sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fosmidomycin_Sodium_Salt_Hydrate","synonym_count":1}'
   snapshot_sha256: 2a398c6aff946dee446120f77f33ff0039b8eccf901e965eed46f12a647b6dab
 - evidence_id: ev-598f988b66a3c8b3
   kind: prior_review

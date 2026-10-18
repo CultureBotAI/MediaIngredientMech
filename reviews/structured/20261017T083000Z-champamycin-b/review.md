@@ -89,7 +89,7 @@ Reassess prediction-only role support: Champamycin B
 | ev-f6bae7d287ccb255 | docs/data/mapped_ingredients.csv; CSV lines=[703] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:champamycin_b","line":703,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:champamycin_b","preferred_term":"Champamycin B","total_occurrences":"0"}] |
 | ev-53c3a1cef17d8c96 | reports/yaml_record_review/Champamycin_B.md; &#96;data/ingredients/mapped/Champamycin_B.yaml&#96;:2; Verdict:4; Identity:13; Validation:28; Evidence:46; Completeness:67; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1a853442ea118471 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[401,1848] | context_only | [{"current_record_sha256":"9f979dc23fd689052de6b88856816bf5d1a08e57d79ba3931a232fb00b80d580","finding_id":"SEM:a71331ad5f08d96b2b37","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9f979dc23fd689052de6b88856816bf5d1a08e57d79ba3931a232fb00b80d580","finding_id":"SEM:9a8a2886b51ab3873144","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-fa9eed2b76b9497e | data/ingredients/mapped/Champamycin_B.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-fa9eed2b76b9497e | data/ingredients/mapped/Champamycin_B.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[701],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:champamycin_b","line":703,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:champamycin_b","preferred_term":"Champamycin B"}],"identifier":"kgmicrobe.compound:champamycin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:champamycin_b","ontology_label":"Champamycin B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Champamycin B","sssom_rows":[{"data_row":730,"object_id":"kgmicrobe.compound:champamycin_b","object_label":"Champamycin B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Champamycin_B","synonym_count":0} |
 | ev-b5422b3d555fcb5d | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-8215b430b60880df] | context_only | Predecessor structured review finding f-8215b430b60880df in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b19da4caadc541e7
+  evidence_ids:
+  - ev-cda78b9984a8ac18
+  - ev-1b37af0660e8bd87
+  - ev-c9a0aebcb65db6be
+  - ev-f6bae7d287ccb255
+  - ev-fa9eed2b76b9497e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b19da4caadc541e7
+  evidence_ids:
+  - ev-cda78b9984a8ac18
+  - ev-1a853442ea118471
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b19da4caadc541e7
+  evidence_ids:
+  - ev-53c3a1cef17d8c96
+  - ev-1a853442ea118471
+  - ev-b5422b3d555fcb5d
 evidence:
 - evidence_id: ev-cda78b9984a8ac18
   kind: record_content
   reference: data/ingredients/mapped/Champamycin_B.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[701],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:champamycin_b","line":703,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:champamycin_b","preferred_term":"Champamycin
     B"}],"identifier":"kgmicrobe.compound:champamycin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:champamycin_b","ontology_label":"Champamycin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [701]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Champamycin_B; data-row positions=[730]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":730,"object_id":"kgmicrobe.compound:champamycin_b","object_label":"Champamycin
     B","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Champamycin_B","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[703]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:champamycin_b","line":703,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:champamycin_b","preferred_term":"Champamycin
     B","total_occurrences":"0"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[401,1848]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9f979dc23fd689052de6b88856816bf5d1a08e57d79ba3931a232fb00b80d580","finding_id":"SEM:a71331ad5f08d96b2b37","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9f979dc23fd689052de6b88856816bf5d1a08e57d79ba3931a232fb00b80d580","finding_id":"SEM:9a8a2886b51ab3873144","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Champamycin_B.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[701],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:champamycin_b","line":703,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:champamycin_b","preferred_term":"Champamycin
+    B"}],"identifier":"kgmicrobe.compound:champamycin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:champamycin_b","ontology_label":"Champamycin
+    B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Champamycin B","sssom_rows":[{"data_row":730,"object_id":"kgmicrobe.compound:champamycin_b","object_label":"Champamycin
+    B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Champamycin_B","synonym_count":0}'
   snapshot_sha256: 9f979dc23fd689052de6b88856816bf5d1a08e57d79ba3931a232fb00b80d580
 - evidence_id: ev-b5422b3d555fcb5d
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: 2,3-dihydroxybenzoic acid
 | ev-54fc9ff11a98ce46 | docs/data/mapped_ingredients.csv; CSV lines=[342] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:18026","line":342,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:18026","preferred_term":"2,3-dihydroxybenzoic acid","total_occurrences":"2"}] |
 | ev-fdb2e96b3289d3b7 | reports/yaml_record_review/23-dihydroxybenzoic_Acid.md; &#96;data/ingredients/mapped/23-dihydroxybenzoic_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:39; Completeness:55; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8e0b711bf51ad9f3 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[89,1372] | context_only | [{"current_record_sha256":"a9833424856648828345709109550cf6be56264e00acd352a19ad620dc29a401","finding_id":"SEM:c98fafed88f67be64bf8","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a9833424856648828345709109550cf6be56264e00acd352a19ad620dc29a401","finding_id":"SEM:9c811b172767eb656df5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-446bf9ebcce7ca47 | data/ingredients/mapped/23-dihydroxybenzoic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-446bf9ebcce7ca47 | data/ingredients/mapped/23-dihydroxybenzoic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[340],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18026","line":342,"mapping_status":"MAPPED","ontology_id":"CHEBI:18026","preferred_term":"2,3-dihydroxybenzoic acid"}],"identifier":"CHEBI:18026","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18026","ontology_label":"2,3-dihydroxybenzoic acid","ontology_source":"CHEBI"},"preferred_term":"2,3-dihydroxybenzoic acid","sssom_rows":[{"data_row":108,"object_id":"CHEBI:18026","object_label":"2,3-dihydroxybenzoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:23-dihydroxybenzoic_Acid","synonym_count":8} |
 | ev-389850a3fdbf7c45 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-52b001b8f5082104] | context_only | Predecessor structured review finding f-52b001b8f5082104 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0820d4473912e17e
+  evidence_ids:
+  - ev-e0ecd34d2534ff72
+  - ev-ab8c558ad1914abd
+  - ev-a0b47d66b652d95f
+  - ev-54fc9ff11a98ce46
+  - ev-446bf9ebcce7ca47
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0820d4473912e17e
+  evidence_ids:
+  - ev-e0ecd34d2534ff72
+  - ev-8e0b711bf51ad9f3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0820d4473912e17e
+  evidence_ids:
+  - ev-fdb2e96b3289d3b7
+  - ev-8e0b711bf51ad9f3
+  - ev-389850a3fdbf7c45
 evidence:
 - evidence_id: ev-e0ecd34d2534ff72
   kind: record_content
   reference: data/ingredients/mapped/23-dihydroxybenzoic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[340],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18026","line":342,"mapping_status":"MAPPED","ontology_id":"CHEBI:18026","preferred_term":"2,3-dihydroxybenzoic
     acid"}],"identifier":"CHEBI:18026","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18026","ontology_label":"2,3-dihydroxybenzoic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [340]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:23-dihydroxybenzoic_Acid; data-row positions=[108]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":108,"object_id":"CHEBI:18026","object_label":"2,3-dihydroxybenzoic
     acid","other":"2,3 DHB|2,3-DIHYDROXY-BENZOIC ACID|2-pyrocatechuic acid|3-hydroxysalicylic
@@ -231,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[342]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18026","line":342,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:18026","preferred_term":"2,3-dihydroxybenzoic
     acid","total_occurrences":"2"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[89,1372]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a9833424856648828345709109550cf6be56264e00acd352a19ad620dc29a401","finding_id":"SEM:c98fafed88f67be64bf8","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a9833424856648828345709109550cf6be56264e00acd352a19ad620dc29a401","finding_id":"SEM:9c811b172767eb656df5","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/23-dihydroxybenzoic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[340],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18026","line":342,"mapping_status":"MAPPED","ontology_id":"CHEBI:18026","preferred_term":"2,3-dihydroxybenzoic
+    acid"}],"identifier":"CHEBI:18026","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18026","ontology_label":"2,3-dihydroxybenzoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"2,3-dihydroxybenzoic acid","sssom_rows":[{"data_row":108,"object_id":"CHEBI:18026","object_label":"2,3-dihydroxybenzoic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:23-dihydroxybenzoic_Acid","synonym_count":8}'
   snapshot_sha256: a9833424856648828345709109550cf6be56264e00acd352a19ad620dc29a401
 - evidence_id: ev-389850a3fdbf7c45
   kind: prior_review

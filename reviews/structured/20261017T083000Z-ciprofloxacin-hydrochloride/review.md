@@ -89,7 +89,7 @@ Reassess prediction-only role support: Ciprofloxacin Hydrochloride
 | ev-077262979a892ef9 | docs/data/mapped_ingredients.csv; CSV lines=[729] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:59936","line":729,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:59936","preferred_term":"Ciprofloxacin Hydrochloride","total_occurrences":"0"}] |
 | ev-9e622284c7700dcb | reports/yaml_record_review/Ciprofloxacin_Hydrochloride.md; &#96;data/ingredients/mapped/Ciprofloxacin_Hydrochloride.yaml&#96;:2; Verdict:4; Identity:12; Validation:29; Evidence:46; Completeness:62; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3cea673482c969c1 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[415,1469] | context_only | [{"current_record_sha256":"c603b479e4cf40713caed857d49bcd6c2ef16689e35d7ad509d30a42e10c7f09","finding_id":"SEM:abf26ccda064bb20ab92","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c603b479e4cf40713caed857d49bcd6c2ef16689e35d7ad509d30a42e10c7f09","finding_id":"SEM:085fd6f537c620f1283e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a95123d20d89036f | data/ingredients/mapped/Ciprofloxacin_Hydrochloride.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-a95123d20d89036f | data/ingredients/mapped/Ciprofloxacin_Hydrochloride.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[727],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:59936","line":729,"mapping_status":"MAPPED","ontology_id":"CHEBI:59936","preferred_term":"Ciprofloxacin Hydrochloride"}],"identifier":"CHEBI:59936","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:59936","ontology_label":"ciprofloxacin hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"Ciprofloxacin Hydrochloride","sssom_rows":[{"data_row":772,"object_id":"CHEBI:59936","object_label":"ciprofloxacin hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ciprofloxacin_Hydrochloride","synonym_count":1} |
 | ev-7c33af394d4ce51d | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-d32ad7afb06d113b] | context_only | Predecessor structured review finding f-d32ad7afb06d113b in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5ef98ddd5adcfe0c
+  evidence_ids:
+  - ev-27858ddc8fa98986
+  - ev-52c1400ea71fcf73
+  - ev-269e51bfec9b8a65
+  - ev-077262979a892ef9
+  - ev-a95123d20d89036f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5ef98ddd5adcfe0c
+  evidence_ids:
+  - ev-27858ddc8fa98986
+  - ev-3cea673482c969c1
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5ef98ddd5adcfe0c
+  evidence_ids:
+  - ev-9e622284c7700dcb
+  - ev-3cea673482c969c1
+  - ev-7c33af394d4ce51d
 evidence:
 - evidence_id: ev-27858ddc8fa98986
   kind: record_content
   reference: data/ingredients/mapped/Ciprofloxacin_Hydrochloride.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[727],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:59936","line":729,"mapping_status":"MAPPED","ontology_id":"CHEBI:59936","preferred_term":"Ciprofloxacin
     Hydrochloride"}],"identifier":"CHEBI:59936","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:59936","ontology_label":"ciprofloxacin
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [727]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +235,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Ciprofloxacin_Hydrochloride; data-row positions=[772]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":772,"object_id":"CHEBI:59936","object_label":"ciprofloxacin
     hydrochloride hydrate","other":"1-cyclopropyl-6-fluoro-4-oxo-7-(piperazin-1-yl)-1,4-dihydroquinoline-3-carboxylic
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[729]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:59936","line":729,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:59936","preferred_term":"Ciprofloxacin
     Hydrochloride","total_occurrences":"0"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[415,1469]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c603b479e4cf40713caed857d49bcd6c2ef16689e35d7ad509d30a42e10c7f09","finding_id":"SEM:abf26ccda064bb20ab92","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c603b479e4cf40713caed857d49bcd6c2ef16689e35d7ad509d30a42e10c7f09","finding_id":"SEM:085fd6f537c620f1283e","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Ciprofloxacin_Hydrochloride.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[727],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:59936","line":729,"mapping_status":"MAPPED","ontology_id":"CHEBI:59936","preferred_term":"Ciprofloxacin
+    Hydrochloride"}],"identifier":"CHEBI:59936","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:59936","ontology_label":"ciprofloxacin
+    hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"Ciprofloxacin
+    Hydrochloride","sssom_rows":[{"data_row":772,"object_id":"CHEBI:59936","object_label":"ciprofloxacin
+    hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ciprofloxacin_Hydrochloride","synonym_count":1}'
   snapshot_sha256: c603b479e4cf40713caed857d49bcd6c2ef16689e35d7ad509d30a42e10c7f09
 - evidence_id: ev-7c33af394d4ce51d
   kind: prior_review

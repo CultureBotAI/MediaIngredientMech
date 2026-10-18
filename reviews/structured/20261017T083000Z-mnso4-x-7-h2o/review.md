@@ -83,13 +83,13 @@ Reassess prediction-only role support: MnSO4 x 7 H2O
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-72ba1836a658007a | data/ingredients/mapped/Mnso4_X_7_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1421],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1423,"mapping_status":"MAPPED","ontology_id":"CHEBI:86360","preferred_term":"MnSO4 x 7 H2O"}],"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:86360","ontology_label":"manganese(II) sulfate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 7 H2O","sssom_rows":[{"data_row":1898,"object_id":"CHEBI:86360","object_label":"manganese(II) sulfate","predicate_id":"skos:broadMatch"},{"data_row":1899,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mnso4_X_7_H2o","synonym_count":10} |
-| ev-36c891577a313392 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1421] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-569e7dc13ac267ad | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mnso4_X_7_H2o; data-row positions=[1898,1899] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1898,"object_id":"CHEBI:86360","object_label":"manganese(II) sulfate","other":"MnSO4 . 7H2O&#124;MnSO4 x 7H2O&#124;MnSO4.7H2O&#124;MnSO4\u00b77H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Mnso4_X_7_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1899,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4 x 7 H2O","other":"MnSO4 . 7H2O&#124;MnSO4 x 7H2O&#124;MnSO4.7H2O&#124;MnSO4\u00b77H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Mnso4_X_7_H2o","validation_method":""}] |
-| ev-f98f73656fb1b92b | docs/data/mapped_ingredients.csv; CSV lines=[1423] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1423,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"16","ontology_id":"CHEBI:86360","preferred_term":"MnSO4 x 7 H2O","total_occurrences":"16"}] |
+| ev-72ba1836a658007a | data/ingredients/mapped/Mnso4_X_7_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1420],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1422,"mapping_status":"MAPPED","ontology_id":"CHEBI:86360","preferred_term":"MnSO4 x 7 H2O"}],"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:86360","ontology_label":"manganese(II) sulfate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 7 H2O","sssom_rows":[{"data_row":1900,"object_id":"CHEBI:86360","object_label":"manganese(II) sulfate","predicate_id":"skos:broadMatch"},{"data_row":1901,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mnso4_X_7_H2o","synonym_count":10} |
+| ev-36c891577a313392 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1420] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-569e7dc13ac267ad | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mnso4_X_7_H2o; data-row positions=[1900, 1901] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1900,"object_id":"CHEBI:86360","object_label":"manganese(II) sulfate","other":"MnSO4 . 7H2O&#124;MnSO4 x 7H2O&#124;MnSO4.7H2O&#124;MnSO4\u00b77H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Mnso4_X_7_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1901,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4 x 7 H2O","other":"MnSO4 . 7H2O&#124;MnSO4 x 7H2O&#124;MnSO4.7H2O&#124;MnSO4\u00b77H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Mnso4_X_7_H2o","validation_method":""}] |
+| ev-f98f73656fb1b92b | docs/data/mapped_ingredients.csv; CSV lines=[1422] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1422,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"16","ontology_id":"CHEBI:86360","preferred_term":"MnSO4 x 7 H2O","total_occurrences":"16"}] |
 | ev-96aa1bd688b78f85 | reports/yaml_record_review/Mnso4_X_7_H2o.md; &#96;data/ingredients/mapped/Mnso4_X_7_H2o.yaml&#96;:2; Verdict:4; Identity:13; Validation:26; Evidence:35; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-282174b2cf45fe6f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[953,1532] | context_only | [{"current_record_sha256":"16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852","finding_id":"SEM:d1b1f0b592ccfa035dba","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852","finding_id":"SEM:4002490ae93ae3180ce0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-112045d1f4ff7909 | data/ingredients/mapped/Mnso4_X_7_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-112045d1f4ff7909 | data/ingredients/mapped/Mnso4_X_7_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1420],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1422,"mapping_status":"MAPPED","ontology_id":"CHEBI:86360","preferred_term":"MnSO4 x 7 H2O"}],"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:86360","ontology_label":"manganese(II) sulfate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 7 H2O","sssom_rows":[{"data_row":1900,"object_id":"CHEBI:86360","object_label":"manganese(II) sulfate","predicate_id":"skos:broadMatch"},{"data_row":1901,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mnso4_X_7_H2o","synonym_count":10} |
 | ev-96c81d531e180843 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-19770a0f4101119b] | context_only | Predecessor structured review finding f-19770a0f4101119b in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4560fc6cc7fa4ad9
+  evidence_ids:
+  - ev-72ba1836a658007a
+  - ev-36c891577a313392
+  - ev-569e7dc13ac267ad
+  - ev-f98f73656fb1b92b
+  - ev-112045d1f4ff7909
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4560fc6cc7fa4ad9
+  evidence_ids:
+  - ev-72ba1836a658007a
+  - ev-282174b2cf45fe6f
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4560fc6cc7fa4ad9
+  evidence_ids:
+  - ev-96aa1bd688b78f85
+  - ev-282174b2cf45fe6f
+  - ev-96c81d531e180843
 evidence:
 - evidence_id: ev-72ba1836a658007a
   kind: record_content
   reference: data/ingredients/mapped/Mnso4_X_7_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1421],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1423,"mapping_status":"MAPPED","ontology_id":"CHEBI:86360","preferred_term":"MnSO4
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1420],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1422,"mapping_status":"MAPPED","ontology_id":"CHEBI:86360","preferred_term":"MnSO4
     x 7 H2O"}],"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:86360","ontology_label":"manganese(II)
-    sulfate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 7 H2O","sssom_rows":[{"data_row":1898,"object_id":"CHEBI:86360","object_label":"manganese(II)
-    sulfate","predicate_id":"skos:broadMatch"},{"data_row":1899,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 7 H2O","sssom_rows":[{"data_row":1900,"object_id":"CHEBI:86360","object_label":"manganese(II)
+    sulfate","predicate_id":"skos:broadMatch"},{"data_row":1901,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4
     x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mnso4_X_7_H2o","synonym_count":10}'
   snapshot_sha256: 16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852
 - evidence_id: ev-36c891577a313392
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1421]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1420]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,20 +234,20 @@ evidence:
 - evidence_id: ev-569e7dc13ac267ad
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Mnso4_X_7_H2o; data-row positions=[1898,1899]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Mnso4_X_7_H2o; data-row positions=[1900, 1901]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1898,"object_id":"CHEBI:86360","object_label":"manganese(II)
-    sulfate","other":"MnSO4 . 7H2O|MnSO4 x 7H2O|MnSO4.7H2O|MnSO4\u00b77H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Mnso4_X_7_H2o","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1899,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1900,"object_id":"CHEBI:86360","object_label":"manganese(II)
+    sulfate","other":"MnSO4 . 7H2O|MnSO4 x 7H2O|MnSO4.7H2O|MnSO4\u00b77H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Mnso4_X_7_H2o","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1901,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4
     x 7 H2O","other":"MnSO4 . 7H2O|MnSO4 x 7H2O|MnSO4.7H2O|MnSO4\u00b77H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Mnso4_X_7_H2o","validation_method":""}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-f98f73656fb1b92b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1423]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1422]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1423,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"16","ontology_id":"CHEBI:86360","preferred_term":"MnSO4
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1422,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"16","ontology_id":"CHEBI:86360","preferred_term":"MnSO4
     x 7 H2O","total_occurrences":"16"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-96aa1bd688b78f85
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[953,1532]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852","finding_id":"SEM:d1b1f0b592ccfa035dba","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852","finding_id":"SEM:4002490ae93ae3180ce0","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Mnso4_X_7_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1420],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","line":1422,"mapping_status":"MAPPED","ontology_id":"CHEBI:86360","preferred_term":"MnSO4
+    x 7 H2O"}],"identifier":"kgmicrobe.compound:mnso4_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:86360","ontology_label":"manganese(II)
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"MnSO4 x 7 H2O","sssom_rows":[{"data_row":1900,"object_id":"CHEBI:86360","object_label":"manganese(II)
+    sulfate","predicate_id":"skos:broadMatch"},{"data_row":1901,"object_id":"kgmicrobe.compound:mnso4_x_7_h2o","object_label":"MnSO4
+    x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mnso4_X_7_H2o","synonym_count":10}'
   snapshot_sha256: 16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852
 - evidence_id: ev-96c81d531e180843
   kind: prior_review

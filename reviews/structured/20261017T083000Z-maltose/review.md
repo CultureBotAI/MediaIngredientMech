@@ -89,7 +89,7 @@ Reassess prediction-only role support: Maltose
 | ev-03a5089c7a0c9ed7 | docs/data/mapped_ingredients.csv; CSV lines=[1343] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17306","line":1343,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"188","ontology_id":"CHEBI:17306","preferred_term":"Maltose","total_occurrences":"189"}] |
 | ev-40a6d9c805e6d81f | reports/yaml_record_review/Maltose.md; &#96;data/ingredients/mapped/Maltose.yaml&#96;:2; Verdict:4; Identity:13; Validation:24; Evidence:31; Completeness:43; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c2fb77335ce2d3af | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[895,1559] | context_only | [{"current_record_sha256":"d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1","finding_id":"SEM:53f11e1a1286fd6915f9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1","finding_id":"SEM:5325840279eaa1487ee0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-54a50e1ceec3f707 | data/ingredients/mapped/Maltose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-54a50e1ceec3f707 | data/ingredients/mapped/Maltose.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1341],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17306","line":1343,"mapping_status":"MAPPED","ontology_id":"CHEBI:17306","preferred_term":"Maltose"}],"identifier":"CHEBI:17306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":188,"edge_count":188,"occurrences":189},"occurrence_statistics":{"media_count":188,"total_occurrences":189},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17306","ontology_label":"maltose","ontology_source":"CHEBI"},"preferred_term":"Maltose","sssom_rows":[{"data_row":1768,"object_id":"CHEBI:17306","object_label":"maltose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltose","synonym_count":26} |
 | ev-6dd9b92957db5a37 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-701533d59dabe2ee] | context_only | Predecessor structured review finding f-701533d59dabe2ee in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e30fba07cf1daca8
+  evidence_ids:
+  - ev-7c26321955c8340b
+  - ev-dfa2fc3354479067
+  - ev-701c724d7f3dc06c
+  - ev-03a5089c7a0c9ed7
+  - ev-54a50e1ceec3f707
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e30fba07cf1daca8
+  evidence_ids:
+  - ev-7c26321955c8340b
+  - ev-c2fb77335ce2d3af
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e30fba07cf1daca8
+  evidence_ids:
+  - ev-40a6d9c805e6d81f
+  - ev-c2fb77335ce2d3af
+  - ev-6dd9b92957db5a37
 evidence:
 - evidence_id: ev-7c26321955c8340b
   kind: record_content
   reference: data/ingredients/mapped/Maltose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1341],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17306","line":1343,"mapping_status":"MAPPED","ontology_id":"CHEBI:17306","preferred_term":"Maltose"}],"identifier":"CHEBI:17306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":188,"edge_count":188,"occurrences":189},"occurrence_statistics":{"media_count":188,"total_occurrences":189},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17306","ontology_label":"maltose","ontology_source":"CHEBI"},"preferred_term":"Maltose","sssom_rows":[{"data_row":1768,"object_id":"CHEBI:17306","object_label":"maltose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltose","synonym_count":26}'
   snapshot_sha256: d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1341]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Maltose; data-row positions=[1768]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1768,"object_id":"CHEBI:17306","object_label":"maltose","other":"Maltose
     Hydrate|1-alpha-D-Glucopyranosyl-4-alpha-D-glucopyranose|4-(alpha-D-glucosido)-D-glucose|4-O-alpha-D-glucopyranosyl-D-glucopyranose|4-O-alpha-D-glucopyranosyl-alpha-D-glucopyranose|Cextromaltose|D-(+)-maltose|D-maltose
@@ -228,7 +241,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1343]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17306","line":1343,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"188","ontology_id":"CHEBI:17306","preferred_term":"Maltose","total_occurrences":"189"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[895,1559]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1","finding_id":"SEM:53f11e1a1286fd6915f9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1","finding_id":"SEM:5325840279eaa1487ee0","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Maltose.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1341],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17306","line":1343,"mapping_status":"MAPPED","ontology_id":"CHEBI:17306","preferred_term":"Maltose"}],"identifier":"CHEBI:17306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":188,"edge_count":188,"occurrences":189},"occurrence_statistics":{"media_count":188,"total_occurrences":189},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17306","ontology_label":"maltose","ontology_source":"CHEBI"},"preferred_term":"Maltose","sssom_rows":[{"data_row":1768,"object_id":"CHEBI:17306","object_label":"maltose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltose","synonym_count":26}'
   snapshot_sha256: d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1
 - evidence_id: ev-6dd9b92957db5a37
   kind: prior_review

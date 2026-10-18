@@ -71,13 +71,12 @@ Disposition: Expansion/interpretation is retained as an assertion, but the exact
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-647bda3c0dc23f84 | data/ingredients/mapped/PYG.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[55],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pyg","line":57,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pyg","preferred_term":"PYG"}],"identifier":"kgmicrobe.ingredient:pyg","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":114,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg","ontology_label":"PYG","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYG","sssom_rows":[{"data_row":2182,"object_id":"kgmicrobe.ingredient:pyg","object_label":"PYG","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYG","synonym_count":1} |
+| ev-647bda3c0dc23f84 | data/ingredients/mapped/PYG.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[55],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pyg","line":57,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pyg","preferred_term":"PYG"}],"identifier":"kgmicrobe.ingredient:pyg","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg","ontology_label":"PYG","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYG","sssom_rows":[{"data_row":2184,"object_id":"kgmicrobe.ingredient:pyg","object_label":"PYG","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYG","synonym_count":1} |
 | ev-d8a874aba6ac00e6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [55] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-49a500789daf5d0d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PYG; data-row positions=[2182] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2182,"object_id":"kgmicrobe.ingredient:pyg","object_label":"PYG","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYG","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
+| ev-49a500789daf5d0d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PYG; data-row positions=[2184] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2184,"object_id":"kgmicrobe.ingredient:pyg","object_label":"PYG","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYG","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
 | ev-52a11515022034b2 | docs/data/mapped_ingredients.csv; CSV lines=[57] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:pyg","line":57,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:pyg","preferred_term":"PYG","total_occurrences":"0"}] |
 | ev-bd00027f8ab15097 | reports/yaml_record_review/PYG.md; &#96;data/ingredients/mapped/PYG.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:29; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f4337d7822a86900 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1090,1855,1975,2030] | context_only | [{"current_record_sha256":"2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83","finding_id":"SEM:221b5e55fef6d0417565","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83","finding_id":"SEM:bd092a1dc97dbe2d7627","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83","finding_id":"SEM:daaee2adea08a4acf238","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83","finding_id":"SEM:bde0616e0417d37fdc20","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9b7fa5c37ead0f6f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/PYG.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -166,6 +165,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-edbb2f79997b9e9e
+  evidence_ids:
+  - ev-647bda3c0dc23f84
+  - ev-d8a874aba6ac00e6
+  - ev-49a500789daf5d0d
+  - ev-52a11515022034b2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -174,6 +178,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-edbb2f79997b9e9e
+  evidence_ids:
+  - ev-647bda3c0dc23f84
+  - ev-f4337d7822a86900
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -182,21 +189,24 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-edbb2f79997b9e9e
+  evidence_ids:
+  - ev-bd00027f8ab15097
+  - ev-f4337d7822a86900
 evidence:
 - evidence_id: ev-647bda3c0dc23f84
   kind: record_content
   reference: data/ingredients/mapped/PYG.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[55],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pyg","line":57,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pyg","preferred_term":"PYG"}],"identifier":"kgmicrobe.ingredient:pyg","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":114,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg","ontology_label":"PYG","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYG","sssom_rows":[{"data_row":2182,"object_id":"kgmicrobe.ingredient:pyg","object_label":"PYG","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYG","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[55],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pyg","line":57,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pyg","preferred_term":"PYG"}],"identifier":"kgmicrobe.ingredient:pyg","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg","ontology_label":"PYG","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYG","sssom_rows":[{"data_row":2184,"object_id":"kgmicrobe.ingredient:pyg","object_label":"PYG","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYG","synonym_count":1}'
   snapshot_sha256: 2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83
 - evidence_id: ev-d8a874aba6ac00e6
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [55]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -204,16 +214,16 @@ evidence:
 - evidence_id: ev-49a500789daf5d0d
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PYG; data-row positions=[2182]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PYG; data-row positions=[2184]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2182,"object_id":"kgmicrobe.ingredient:pyg","object_label":"PYG","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYG","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2184,"object_id":"kgmicrobe.ingredient:pyg","object_label":"PYG","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYG","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-52a11515022034b2
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[57]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:pyg","line":57,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:pyg","preferred_term":"PYG","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -237,21 +247,13 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1090,1855,1975,2030]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83","finding_id":"SEM:221b5e55fef6d0417565","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83","finding_id":"SEM:bd092a1dc97dbe2d7627","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83","finding_id":"SEM:daaee2adea08a4acf238","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83","finding_id":"SEM:bde0616e0417d37fdc20","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-9b7fa5c37ead0f6f
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/PYG.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-378b7238a1c0d517
@@ -333,7 +335,7 @@ findings:
   - record-edbb2f79997b9e9e
   evidence_ids:
   - ev-647bda3c0dc23f84
-  - ev-9b7fa5c37ead0f6f
+  - ev-f4337d7822a86900
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PYG.yaml

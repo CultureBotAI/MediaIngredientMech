@@ -85,11 +85,11 @@ Reassess prediction-only role support: MgCl2 x 7 H2O
 | --- | --- | --- | --- |
 | ev-65c4a6d4b2bb676a | data/ingredients/mapped/Mgcl2_X_7_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1395],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","line":1397,"mapping_status":"MAPPED","ontology_id":"CHEBI:6636","preferred_term":"MgCl2 x 7 H2O"}],"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":19,"edge_count":19,"occurrences":19},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:6636","ontology_label":"magnesium dichloride","ontology_source":"CHEBI"},"preferred_term":"MgCl2 x 7 H2O","sssom_rows":[{"data_row":1863,"object_id":"CHEBI:6636","object_label":"magnesium dichloride","predicate_id":"skos:closeMatch"},{"data_row":1864,"object_id":"kgmicrobe.compound:mgcl2_x_7_h2o","object_label":"MgCl2 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgcl2_X_7_H2o","synonym_count":8} |
 | ev-4c6b19a9746c5ee4 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1395] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-259671ec49b6e411 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mgcl2_X_7_H2o; data-row positions=[1863,1864] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1863,"object_id":"CHEBI:6636","object_label":"magnesium dichloride","other":"MgCl2 x 7H2O&#124;MgCl2x7H2O&#124;MgCl2  x 7 H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Mgcl2_X_7_H2o","validation_method":""},{"data_row":1864,"object_id":"kgmicrobe.compound:mgcl2_x_7_h2o","object_label":"MgCl2 x 7 H2O","other":"MgCl2 x 7H2O&#124;MgCl2x7H2O&#124;MgCl2  x 7 H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Mgcl2_X_7_H2o","validation_method":""}] |
+| ev-259671ec49b6e411 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mgcl2_X_7_H2o; data-row positions=[1863, 1864] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1863,"object_id":"CHEBI:6636","object_label":"magnesium dichloride","other":"MgCl2 x 7H2O&#124;MgCl2x7H2O&#124;MgCl2  x 7 H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Mgcl2_X_7_H2o","validation_method":""},{"data_row":1864,"object_id":"kgmicrobe.compound:mgcl2_x_7_h2o","object_label":"MgCl2 x 7 H2O","other":"MgCl2 x 7H2O&#124;MgCl2x7H2O&#124;MgCl2  x 7 H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Mgcl2_X_7_H2o","validation_method":""}] |
 | ev-1fa58e21fdc1963a | docs/data/mapped_ingredients.csv; CSV lines=[1397] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","line":1397,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"19","ontology_id":"CHEBI:6636","preferred_term":"MgCl2 x 7 H2O","total_occurrences":"19"}] |
 | ev-d7fe42bd3d45af2b | reports/yaml_record_review/Mgcl2_X_7_H2o.md; &#96;data/ingredients/mapped/Mgcl2_X_7_H2o.yaml&#96;:2; Verdict:4; Identity:14; Validation:27; Evidence:35; Completeness:50; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ea3b05d736d4aeab | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[932,2071] | context_only | [{"current_record_sha256":"b7be6c96f9c0db49038f31d4186149cff28469ccdc95c4ddd85dcc38279689cf","finding_id":"SEM:945cf88ca506bab317a0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b7be6c96f9c0db49038f31d4186149cff28469ccdc95c4ddd85dcc38279689cf","finding_id":"SEM:b99044c5c4a06ceb2bc8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9a1f8188c064c496 | data/ingredients/mapped/Mgcl2_X_7_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"MINERAL_SOURCE"}}] |
+| ev-9a1f8188c064c496 | data/ingredients/mapped/Mgcl2_X_7_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1395],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","line":1397,"mapping_status":"MAPPED","ontology_id":"CHEBI:6636","preferred_term":"MgCl2 x 7 H2O"}],"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":19,"edge_count":19,"occurrences":19},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:6636","ontology_label":"magnesium dichloride","ontology_source":"CHEBI"},"preferred_term":"MgCl2 x 7 H2O","sssom_rows":[{"data_row":1863,"object_id":"CHEBI:6636","object_label":"magnesium dichloride","predicate_id":"skos:closeMatch"},{"data_row":1864,"object_id":"kgmicrobe.compound:mgcl2_x_7_h2o","object_label":"MgCl2 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgcl2_X_7_H2o","synonym_count":8} |
 | ev-593f5295b92999b4 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-852531fb1749d93e] | context_only | Predecessor structured review finding f-852531fb1749d93e in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0780306277dec459
+  evidence_ids:
+  - ev-65c4a6d4b2bb676a
+  - ev-4c6b19a9746c5ee4
+  - ev-259671ec49b6e411
+  - ev-1fa58e21fdc1963a
+  - ev-9a1f8188c064c496
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0780306277dec459
+  evidence_ids:
+  - ev-65c4a6d4b2bb676a
+  - ev-ea3b05d736d4aeab
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0780306277dec459
+  evidence_ids:
+  - ev-d7fe42bd3d45af2b
+  - ev-ea3b05d736d4aeab
+  - ev-593f5295b92999b4
 evidence:
 - evidence_id: ev-65c4a6d4b2bb676a
   kind: record_content
   reference: data/ingredients/mapped/Mgcl2_X_7_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1395],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","line":1397,"mapping_status":"MAPPED","ontology_id":"CHEBI:6636","preferred_term":"MgCl2
     x 7 H2O"}],"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":19,"edge_count":19,"occurrences":19},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:6636","ontology_label":"magnesium
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1395]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,8 +234,8 @@ evidence:
 - evidence_id: ev-259671ec49b6e411
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Mgcl2_X_7_H2o; data-row positions=[1863,1864]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Mgcl2_X_7_H2o; data-row positions=[1863, 1864]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1863,"object_id":"CHEBI:6636","object_label":"magnesium
     dichloride","other":"MgCl2 x 7H2O|MgCl2x7H2O|MgCl2  x 7 H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Mgcl2_X_7_H2o","validation_method":""},{"data_row":1864,"object_id":"kgmicrobe.compound:mgcl2_x_7_h2o","object_label":"MgCl2
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1397]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","line":1397,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"19","ontology_id":"CHEBI:6636","preferred_term":"MgCl2
     x 7 H2O","total_occurrences":"19"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[932,2071]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b7be6c96f9c0db49038f31d4186149cff28469ccdc95c4ddd85dcc38279689cf","finding_id":"SEM:945cf88ca506bab317a0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b7be6c96f9c0db49038f31d4186149cff28469ccdc95c4ddd85dcc38279689cf","finding_id":"SEM:b99044c5c4a06ceb2bc8","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Mgcl2_X_7_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"MINERAL_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1395],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","line":1397,"mapping_status":"MAPPED","ontology_id":"CHEBI:6636","preferred_term":"MgCl2
+    x 7 H2O"}],"identifier":"kgmicrobe.compound:mgcl2_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":19,"edge_count":19,"occurrences":19},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:6636","ontology_label":"magnesium
+    dichloride","ontology_source":"CHEBI"},"preferred_term":"MgCl2 x 7 H2O","sssom_rows":[{"data_row":1863,"object_id":"CHEBI:6636","object_label":"magnesium
+    dichloride","predicate_id":"skos:closeMatch"},{"data_row":1864,"object_id":"kgmicrobe.compound:mgcl2_x_7_h2o","object_label":"MgCl2
+    x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgcl2_X_7_H2o","synonym_count":8}'
   snapshot_sha256: b7be6c96f9c0db49038f31d4186149cff28469ccdc95c4ddd85dcc38279689cf
 - evidence_id: ev-593f5295b92999b4
   kind: prior_review

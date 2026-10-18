@@ -89,7 +89,7 @@ Reassess prediction-only role support: Bafilomycin
 | ev-eac5e91b1df17514 | docs/data/mapped_ingredients.csv; CSV lines=[555] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:bafilomycin","line":555,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:bafilomycin","preferred_term":"Bafilomycin","total_occurrences":"0"}] |
 | ev-77711b8951931d87 | reports/yaml_record_review/Bafilomycin.md; &#96;data/ingredients/mapped/Bafilomycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:25; Evidence:36; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-77e8e33b7939f49c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1938] | context_only | [{"current_record_sha256":"814a39a9689c6c97da65641128be5a32918c4ea61e95c8f9307aba7dfc376773","finding_id":"SEM:8c954ef87e091bdae730","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-3b21a505fd533d8d | data/ingredients/mapped/Bafilomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-3b21a505fd533d8d | data/ingredients/mapped/Bafilomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[553],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:bafilomycin","line":555,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:bafilomycin","preferred_term":"Bafilomycin"}],"identifier":"kgmicrobe.compound:bafilomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:bafilomycin","ontology_label":"Bafilomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Bafilomycin","sssom_rows":[{"data_row":483,"object_id":"kgmicrobe.compound:bafilomycin","object_label":"Bafilomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bafilomycin","synonym_count":0} |
 | ev-3c13da496bc959a8 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-db5a6bdf7029bfba] | context_only | Predecessor structured review finding f-db5a6bdf7029bfba in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-80f972d0309e79b4
+  evidence_ids:
+  - ev-30eb941935c9759f
+  - ev-afcd6bfdadca89ad
+  - ev-59ebc350fbc11ea3
+  - ev-eac5e91b1df17514
+  - ev-3b21a505fd533d8d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-80f972d0309e79b4
+  evidence_ids:
+  - ev-30eb941935c9759f
+  - ev-77e8e33b7939f49c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-80f972d0309e79b4
+  evidence_ids:
+  - ev-77711b8951931d87
+  - ev-77e8e33b7939f49c
+  - ev-3c13da496bc959a8
 evidence:
 - evidence_id: ev-30eb941935c9759f
   kind: record_content
   reference: data/ingredients/mapped/Bafilomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[553],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:bafilomycin","line":555,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:bafilomycin","preferred_term":"Bafilomycin"}],"identifier":"kgmicrobe.compound:bafilomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:bafilomycin","ontology_label":"Bafilomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Bafilomycin","sssom_rows":[{"data_row":483,"object_id":"kgmicrobe.compound:bafilomycin","object_label":"Bafilomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bafilomycin","synonym_count":0}'
   snapshot_sha256: 814a39a9689c6c97da65641128be5a32918c4ea61e95c8f9307aba7dfc376773
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [553]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Bafilomycin; data-row positions=[483]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":483,"object_id":"kgmicrobe.compound:bafilomycin","object_label":"Bafilomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Bafilomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[555]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:bafilomycin","line":555,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:bafilomycin","preferred_term":"Bafilomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1938]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"814a39a9689c6c97da65641128be5a32918c4ea61e95c8f9307aba7dfc376773","finding_id":"SEM:8c954ef87e091bdae730","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Bafilomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[553],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:bafilomycin","line":555,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:bafilomycin","preferred_term":"Bafilomycin"}],"identifier":"kgmicrobe.compound:bafilomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:bafilomycin","ontology_label":"Bafilomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Bafilomycin","sssom_rows":[{"data_row":483,"object_id":"kgmicrobe.compound:bafilomycin","object_label":"Bafilomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bafilomycin","synonym_count":0}'
   snapshot_sha256: 814a39a9689c6c97da65641128be5a32918c4ea61e95c8f9307aba7dfc376773
 - evidence_id: ev-3c13da496bc959a8
   kind: prior_review

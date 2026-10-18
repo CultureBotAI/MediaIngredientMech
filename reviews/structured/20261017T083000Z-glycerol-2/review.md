@@ -83,7 +83,6 @@ Disposition: The current local observation is recorded on a REJECTED tombstone, 
 | ev-7ad44afd15318b50 | docs/data/mapped_ingredients.csv; CSV lines=[1072] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17754","line":1072,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:17754","preferred_term":"glycerol","total_occurrences":"0"}] |
 | ev-5c1d8c861044fb62 | reports/yaml_record_review/Glycerol_2.md; &#96;data/ingredients/mapped/Glycerol_2.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:32; Completeness:51; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-bd13ca59d0a6ba6f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[687] | context_only | [{"current_record_sha256":"b3240086071f131249c8e39f438a22be0535cb128c258936f70339f1ae7b7344","finding_id":"SEM:549366cb4b505246028d","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-4efde99f0f9d7c57 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Glycerol_2.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -172,6 +171,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-513db52437603d7f
+  evidence_ids:
+  - ev-64ca55e66feba58b
+  - ev-34c618a82a2427ea
+  - ev-bb7929fa270a4753
+  - ev-7ad44afd15318b50
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -180,6 +184,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-513db52437603d7f
+  evidence_ids:
+  - ev-64ca55e66feba58b
+  - ev-bd13ca59d0a6ba6f
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -188,13 +195,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-513db52437603d7f
+  evidence_ids:
+  - ev-5c1d8c861044fb62
+  - ev-bd13ca59d0a6ba6f
 evidence:
 - evidence_id: ev-64ca55e66feba58b
   kind: record_content
   reference: data/ingredients/mapped/Glycerol_2.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1070],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17754","line":1072,"mapping_status":"REJECTED","ontology_id":"CHEBI:17754","preferred_term":"glycerol"}],"identifier":"CHEBI:17754","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":292,"edge_count":292,"occurrences":292},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17754","ontology_label":"glycerol","ontology_source":"CHEBI"},"preferred_term":"glycerol","sssom_rows":[],"sssom_subject":"MIM:Glycerol_2","synonym_count":14}'
   snapshot_sha256: b3240086071f131249c8e39f438a22be0535cb128c258936f70339f1ae7b7344
@@ -202,7 +212,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1070]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -211,7 +221,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Glycerol_2; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -219,7 +229,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1072]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17754","line":1072,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:17754","preferred_term":"glycerol","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -241,18 +251,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[687]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b3240086071f131249c8e39f438a22be0535cb128c258936f70339f1ae7b7344","finding_id":"SEM:549366cb4b505246028d","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-4efde99f0f9d7c57
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Glycerol_2.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-18524544575ddc5b
@@ -320,7 +322,7 @@ assessments:
   - record-513db52437603d7f
   evidence_ids:
   - ev-64ca55e66feba58b
-  - ev-4efde99f0f9d7c57
+  - ev-bd13ca59d0a6ba6f
   dimensions:
   - name: legacy-disposition
     value: needs_reassessment
@@ -328,7 +330,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-64ca55e66feba58b
-    - ev-4efde99f0f9d7c57
+    - ev-bd13ca59d0a6ba6f
 findings:
 - finding_id: rec-f-role-513db52437603d7f
   issue_key: mim-reconciliation-role-support-513db52437603d7f
@@ -344,7 +346,7 @@ findings:
   - record-513db52437603d7f
   evidence_ids:
   - ev-64ca55e66feba58b
-  - ev-4efde99f0f9d7c57
+  - ev-bd13ca59d0a6ba6f
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Glycerol_2.yaml

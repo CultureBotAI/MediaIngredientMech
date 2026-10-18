@@ -89,8 +89,8 @@ Disposition: The current local observation is recorded, but the named source/con
 | ev-2f0bca96872dd59c | docs/data/mapped_ingredients.csv; CSV lines=[804] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62318","line":804,"mapping_quality":"SYNONYM_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose","total_occurrences":"0"}] |
 | ev-ba0a155c673a7661 | reports/yaml_record_review/D-_-lyxose.md; &#96;data/ingredients/mapped/D-_-lyxose.yaml&#96;:2; Verdict:4; Identity:13; Validation:29; Evidence:48; Completeness:62; Recommended Edits:73 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fc73952a5dc8d42e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[482] | context_only | [{"current_record_sha256":"90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a","finding_id":"SEM:3cd7092c7ec9685ec9af","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-a15bffce40ab7317 | data/ingredients/mapped/D-_-lyxose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
-| ev-09c57710cd75f921 | data/ingredients/mapped/D-_-lyxose.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:62318; old pointer CHEBI:16789 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/(2)-D-lyxose.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:62318 'D-lyxose'; occurrences transferred. Absorbed 'D-(-)-lyxose' (CHEBI:16789 aldehydo- form) into CHEBI:62318 (#398). Both records name the same substance \u2014 the muramic pair carry an identical CAS and formula \u2014 split across a ChEBI class term and its open-chain aldehydo- form. The class term wins because the identifier optimises for how the node READS in the knowledge graph: no catalogue sells an 'aldehydo-' tautomer, and MIM is kg-microbe's naming authority, so grounding here would rename the ChEBI node after a minor solution-equilibrium component. ChEBI does hang the commercial CAS (1114-34-7) on the aldehydo- term, which is why the earlier reading of the orderability rule pointed the other way; that CAS is now carried in supplied_form and republished as a synonym, so nothing purchasable is lost from the identity. Tombstoned REJECTED so a lookup on this label still resolves, SSSOM rows dropped.","curator":"merge_aldehydo_duplicates","llm_assisted":false,"timestamp":"2026-08-18T00:00:00+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id CHEBI:16789 -&gt; CHEBI:62318 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target 'D-lyxose'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-a15bffce40ab7317 | data/ingredients/mapped/D-_-lyxose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[802],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":804,"mapping_status":"REJECTED","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-lyxose","sssom_rows":[],"sssom_subject":"MIM:D-_-lyxose","synonym_count":2} |
+| ev-09c57710cd75f921 | data/ingredients/mapped/D-_-lyxose.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[802],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":804,"mapping_status":"REJECTED","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-lyxose","sssom_rows":[],"sssom_subject":"MIM:D-_-lyxose","synonym_count":2} |
 | ev-034279f78ffb83be | reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml; findings[finding_id=f-021e3723b7ad50fd] | context_only | Predecessor structured review finding f-021e3723b7ad50fd in 20261011T024629Z-mim-reconcile-all-batch-01 |
 
 ## Limits And Additional Notes
@@ -180,6 +180,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-26db4b94c97aabed
+  evidence_ids:
+  - ev-cf95a68be557e18a
+  - ev-fc5ac5e405c631db
+  - ev-b172a2d697478a64
+  - ev-2f0bca96872dd59c
+  - ev-a15bffce40ab7317
+  - ev-09c57710cd75f921
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -188,6 +195,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-26db4b94c97aabed
+  evidence_ids:
+  - ev-cf95a68be557e18a
+  - ev-fc73952a5dc8d42e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,13 +206,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-26db4b94c97aabed
+  evidence_ids:
+  - ev-ba0a155c673a7661
+  - ev-fc73952a5dc8d42e
+  - ev-034279f78ffb83be
 evidence:
 - evidence_id: ev-cf95a68be557e18a
   kind: record_content
   reference: data/ingredients/mapped/D-_-lyxose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[802],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":804,"mapping_status":"REJECTED","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-lyxose","sssom_rows":[],"sssom_subject":"MIM:D-_-lyxose","synonym_count":2}'
   snapshot_sha256: 90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a
@@ -210,7 +224,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [802]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,7 +233,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-_-lyxose; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -227,7 +241,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[804]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62318","line":804,"mapping_quality":"SYNONYM_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[482]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a","finding_id":"SEM:3cd7092c7ec9685ec9af","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
@@ -260,39 +274,17 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-_-lyxose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[802],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":804,"mapping_status":"REJECTED","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-lyxose","sssom_rows":[],"sssom_subject":"MIM:D-_-lyxose","synonym_count":2}'
   snapshot_sha256: 90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a
 - evidence_id: ev-09c57710cd75f921
   kind: record_content
   reference: data/ingredients/mapped/D-_-lyxose.yaml
   locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Current loser points to CHEBI:62318; old pointer CHEBI:16789 survives
-    only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/(2)-D-lyxose.yaml"];
-    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:62318 ''D-lyxose'';
-    occurrences transferred. Absorbed ''D-(-)-lyxose'' (CHEBI:16789 aldehydo- form)
-    into CHEBI:62318 (#398). Both records name the same substance \u2014 the muramic
-    pair carry an identical CAS and formula \u2014 split across a ChEBI class term
-    and its open-chain aldehydo- form. The class term wins because the identifier
-    optimises for how the node READS in the knowledge graph: no catalogue sells an
-    ''aldehydo-'' tautomer, and MIM is kg-microbe''s naming authority, so grounding
-    here would rename the ChEBI node after a minor solution-equilibrium component.
-    ChEBI does hang the commercial CAS (1114-34-7) on the aldehydo- term, which is
-    why the earlier reading of the orderability rule pointed the other way; that CAS
-    is now carried in supplied_form and republished as a synonym, so nothing purchasable
-    is lost from the identity. Tombstoned REJECTED so a lookup on this label still
-    resolves, SSSOM rows dropped.","curator":"merge_aldehydo_duplicates","llm_assisted":false,"timestamp":"2026-08-18T00:00:00+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
-    CHEBI:16789 -> CHEBI:62318 (#799). The merge set identifier and status but left
-    ontology_mapping untouched, so this tombstone kept advertising a term it no longer
-    asserts \u2014 anything indexing by ontology_id routed through it. Now agrees
-    with the merge target ''D-lyxose''. Provenance is unaffected: what the record
-    used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[802],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":804,"mapping_status":"REJECTED","ontology_id":"CHEBI:62318","preferred_term":"D-(-)-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-lyxose","sssom_rows":[],"sssom_subject":"MIM:D-_-lyxose","synonym_count":2}'
   snapshot_sha256: 90de548740ec18dec54e38cf165e804a1353547bd1e2c7ce0c5a131bcd7ef14a
 - evidence_id: ev-034279f78ffb83be
   kind: prior_review

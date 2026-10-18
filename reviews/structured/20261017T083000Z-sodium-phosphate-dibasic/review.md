@@ -83,15 +83,15 @@ Disposition: The current local observation is recorded, but the named source/con
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-b856f2456e7f1f9f | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1865],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1867,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1} |
-| ev-01023f719eb051de | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1865] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b856f2456e7f1f9f | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1864],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1866,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1} |
+| ev-01023f719eb051de | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1864] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-293b21d7d58e152c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Phosphate_Dibasic; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
-| ev-01edfa5cc0864ed4 | docs/data/mapped_ingredients.csv; CSV lines=[1867] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1867,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:34683","preferred_term":"Sodium phosphate dibasic","total_occurrences":"0"}] |
+| ev-01edfa5cc0864ed4 | docs/data/mapped_ingredients.csv; CSV lines=[1866] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1866,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:34683","preferred_term":"Sodium phosphate dibasic","total_occurrences":"0"}] |
 | ev-8bb1def00d80cb77 | reports/yaml_record_review/20261001T050330Z-Sodium_Phosphate_Dibasic.md; YAML Record Review: Sodium phosphate dibasic:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-bbd664bdc2f5534f | reports/yaml_record_review/Sodium_Phosphate_Dibasic.md; &#96;data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml&#96;:2; Verdict:4; Identity:12; Validation:21; Evidence:31; Completeness:49; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6fbe21662187ccbb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1229,1530] | context_only | [{"current_record_sha256":"b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925","finding_id":"SEM:1c30eea5a9f24672b1e6","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"},{"current_record_sha256":"b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925","finding_id":"SEM:51ff456b5478ebfbcd9f","kind":"role_evidence","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-c1c1f0e0056ab927 | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
-| ev-4f8bdfebcde635f9 | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:34683; old pointer CHEBI:37583 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Na2hpo4.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:34683 (Na2HPO4). Dibasic sodium phosphate is disodium hydrogenphosphate, not trisodium phosphate. Sodium dihydrogen phosphate is monobasic and is a REJECTED_LABEL here; its 78 recipe rows are excluded from this transfer. Original fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34683","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier CHEBI:37583 -&gt; CHEBI:34683 (#799). This record was merged into 'Na2HPO4' but kept its own old identifier, so a downstream lookup on this label resolved to nothing live. The target is the one named in this record's own MERGED_INTO entry; the chain was followed to the first live record. A tombstone exists to keep the loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id CHEBI:37583 -&gt; CHEBI:34683 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target 'Na2HPO4'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-c1c1f0e0056ab927 | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1864],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1866,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1} |
+| ev-4f8bdfebcde635f9 | data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1864],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1866,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1} |
 | ev-8c33d45c256f6c4b | reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml; findings[finding_id=f-2c4572e8aee9ba64] | context_only | Predecessor structured review finding f-2c4572e8aee9ba64 in 20261011T024629Z-mim-reconcile-all-batch-01 |
 
 ## Limits And Additional Notes
@@ -184,6 +184,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9fb851ed17361db8
+  evidence_ids:
+  - ev-b856f2456e7f1f9f
+  - ev-01023f719eb051de
+  - ev-293b21d7d58e152c
+  - ev-01edfa5cc0864ed4
+  - ev-c1c1f0e0056ab927
+  - ev-4f8bdfebcde635f9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -192,6 +199,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9fb851ed17361db8
+  evidence_ids:
+  - ev-b856f2456e7f1f9f
+  - ev-6fbe21662187ccbb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -200,15 +210,20 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9fb851ed17361db8
+  evidence_ids:
+  - ev-8bb1def00d80cb77
+  - ev-bbd664bdc2f5534f
+  - ev-6fbe21662187ccbb
+  - ev-8c33d45c256f6c4b
 evidence:
 - evidence_id: ev-b856f2456e7f1f9f
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1865],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1867,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1864],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1866,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium
     phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
     hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate
     dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1}'
@@ -216,8 +231,8 @@ evidence:
 - evidence_id: ev-01023f719eb051de
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1865]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1864]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -226,17 +241,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Sodium_Phosphate_Dibasic; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-01edfa5cc0864ed4
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1867]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1866]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1867,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:34683","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1866,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:34683","preferred_term":"Sodium
     phosphate dibasic","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-8bb1def00d80cb77
@@ -289,7 +304,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1229,1530]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925","finding_id":"SEM:1c30eea5a9f24672b1e6","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"},{"current_record_sha256":"b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925","finding_id":"SEM:51ff456b5478ebfbcd9f","kind":"role_evidence","resolution_reason":"Source
@@ -299,36 +314,23 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1864],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1866,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium
+    phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
+    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate
+    dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1}'
   snapshot_sha256: b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925
 - evidence_id: ev-4f8bdfebcde635f9
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml
   locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Current loser points to CHEBI:34683; old pointer CHEBI:37583 survives
-    only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Na2hpo4.yaml"];
-    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:34683 (Na2HPO4).
-    Dibasic sodium phosphate is disodium hydrogenphosphate, not trisodium phosphate.
-    Sodium dihydrogen phosphate is monobasic and is a REJECTED_LABEL here; its 78
-    recipe rows are excluded from this transfer. Original fields remain only on this
-    excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34683","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier
-    CHEBI:37583 -> CHEBI:34683 (#799). This record was merged into ''Na2HPO4'' but
-    kept its own old identifier, so a downstream lookup on this label resolved to
-    nothing live. The target is the one named in this record''s own MERGED_INTO entry;
-    the chain was followed to the first live record. A tombstone exists to keep the
-    loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
-    CHEBI:37583 -> CHEBI:34683 (#799). The merge set identifier and status but left
-    ontology_mapping untouched, so this tombstone kept advertising a term it no longer
-    asserts \u2014 anything indexing by ontology_id routed through it. Now agrees
-    with the merge target ''Na2HPO4''. Provenance is unaffected: what the record used
-    to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1864],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1866,"mapping_status":"REJECTED","ontology_id":"CHEBI:34683","preferred_term":"Sodium
+    phosphate dibasic"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
+    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate
+    dibasic","sssom_rows":[],"sssom_subject":"MIM:Sodium_Phosphate_Dibasic","synonym_count":1}'
   snapshot_sha256: b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925
 - evidence_id: ev-8c33d45c256f6c4b
   kind: prior_review

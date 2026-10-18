@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na2SO4 x 10 H2O
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-e0e47e6dc522cc45 | data/ingredients/mapped/Na2so4_X_10_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1511],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1513,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4 x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10 H2O","sssom_rows":[{"data_row":2020,"object_id":"CHEBI:32586","object_label":"sodium sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":4} |
-| ev-d9427c20d817e4a5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1511] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-17b6741dd26cc45f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2so4_X_10_H2o; data-row positions=[2020] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2020,"object_id":"CHEBI:32586","object_label":"sodium sulfate decahydrate","other":"Na2SO4.10H2O&#124;sodium sulfate--water (1/10)&#124;sodium sulfate, anhydrous&#124;CAS:7727-73-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2so4_X_10_H2o","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-7b8996dc854079bd | docs/data/mapped_ingredients.csv; CSV lines=[1513] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32586","line":1513,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4 x 10 H2O","total_occurrences":"6"}] |
+| ev-e0e47e6dc522cc45 | data/ingredients/mapped/Na2so4_X_10_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4 x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10 H2O","sssom_rows":[{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":6} |
+| ev-d9427c20d817e4a5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1510] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-17b6741dd26cc45f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2so4_X_10_H2o; data-row positions=[2022] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium sulfate decahydrate","other":"Na2SO4.10H2O&#124;sodium sulfate--water (1/10)&#124;Glauber's salt&#124;Glaubersalz&#124;CAS:7727-73-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2so4_X_10_H2o","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-7b8996dc854079bd | docs/data/mapped_ingredients.csv; CSV lines=[1512] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32586","line":1512,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4 x 10 H2O","total_occurrences":"6"}] |
 | ev-beb647a1e52ea0b6 | reports/yaml_record_review/Na2so4_X_10_H2o.md; &#96;data/ingredients/mapped/Na2so4_X_10_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:42; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
-| ev-e206dcaf73e11620 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1017,1711,1895] | context_only | [{"current_record_sha256":"97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816","finding_id":"SEM:434cc9f9687228bed227","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816","finding_id":"SEM:6da2f8398ea2cf586946","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816","finding_id":"SEM:f52dcba33527b989c8de","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b2d5278a6cabb3e3 | data/ingredients/mapped/Na2so4_X_10_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SULFUR_SOURCE"}}] |
+| ev-e206dcaf73e11620 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1017,1711,1895] | context_only | [{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:434cc9f9687228bed227","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:6da2f8398ea2cf586946","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:f52dcba33527b989c8de","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-b2d5278a6cabb3e3 | data/ingredients/mapped/Na2so4_X_10_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4 x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10 H2O","sssom_rows":[{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":6} |
 | ev-4e944b84c1e1160c | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-5ed455a75f462059] | context_only | Predecessor structured review finding f-5ed455a75f462059 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-e0e47e6dc522cc45
+  - ev-d9427c20d817e4a5
+  - ev-17b6741dd26cc45f
+  - ev-7b8996dc854079bd
+  - ev-b2d5278a6cabb3e3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-e0e47e6dc522cc45
+  - ev-e206dcaf73e11620
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-701cca69dd1f9420
+  evidence_ids:
+  - ev-beb647a1e52ea0b6
+  - ev-e206dcaf73e11620
+  - ev-4e944b84c1e1160c
 evidence:
 - evidence_id: ev-e0e47e6dc522cc45
   kind: record_content
   reference: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1511],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1513,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4
     x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium
     sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10
-    H2O","sssom_rows":[{"data_row":2020,"object_id":"CHEBI:32586","object_label":"sodium
-    sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":4}'
+    H2O","sssom_rows":[{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium
+    sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":6}'
   snapshot_sha256: e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db
 - evidence_id: ev-d9427c20d817e4a5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1511]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1510]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,20 +234,20 @@ evidence:
 - evidence_id: ev-17b6741dd26cc45f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na2so4_X_10_H2o; data-row positions=[2020]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na2so4_X_10_H2o; data-row positions=[2022]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2020,"object_id":"CHEBI:32586","object_label":"sodium
-    sulfate decahydrate","other":"Na2SO4.10H2O|sodium sulfate--water (1/10)|sodium
-    sulfate, anhydrous|CAS:7727-73-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2so4_X_10_H2o","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium
+    sulfate decahydrate","other":"Na2SO4.10H2O|sodium sulfate--water (1/10)|Glauber''s
+    salt|Glaubersalz|CAS:7727-73-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2so4_X_10_H2o","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-7b8996dc854079bd
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1513]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1512]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32586","line":1513,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32586","line":1512,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4
     x 10 H2O","total_occurrences":"6"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-beb647a1e52ea0b6
@@ -259,23 +272,24 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1017,1711,1895]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: '[{"current_record_sha256":"97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816","finding_id":"SEM:434cc9f9687228bed227","kind":"existing_record_review","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816","finding_id":"SEM:6da2f8398ea2cf586946","kind":"role_evidence","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"97b46a55099bdc697adf06c7eee543dd6eecae1391ef5d4425c4aa149a2f0816","finding_id":"SEM:f52dcba33527b989c8de","kind":"role_evidence","resolution_reason":"Historical
+  summary: '[{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:434cc9f9687228bed227","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:6da2f8398ea2cf586946","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db","finding_id":"SEM:f52dcba33527b989c8de","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 - evidence_id: ev-b2d5278a6cabb3e3
   kind: record_content
   reference: data/ingredients/mapped/Na2so4_X_10_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SULFUR_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32586","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32586","preferred_term":"Na2SO4
+    x 10 H2O"}],"identifier":"CHEBI:32586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32586","ontology_label":"sodium
+    sulfate decahydrate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4 x 10
+    H2O","sssom_rows":[{"data_row":2022,"object_id":"CHEBI:32586","object_label":"sodium
+    sulfate decahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4_X_10_H2o","synonym_count":6}'
   snapshot_sha256: e25cd0e310177053e9204e5fe1718d8dcf18594fb1a7764262a47429c26ad8db
 - evidence_id: ev-4e944b84c1e1160c
   kind: prior_review

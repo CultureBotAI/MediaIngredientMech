@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sodium malate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-6273acdf8f9854af | data/ingredients/mapped/Sodium_Malate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1850],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91261","line":1852,"mapping_status":"MAPPED","ontology_id":"CHEBI:91261","preferred_term":"Sodium malate"}],"identifier":"CHEBI:91261","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":82,"edge_count":82,"occurrences":82},"occurrence_statistics":{"media_count":82,"total_occurrences":82},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91261","ontology_label":"disodium (S)-malate","ontology_source":"CHEBI"},"preferred_term":"Sodium malate","sssom_rows":[{"data_row":2574,"object_id":"CHEBI:91261","object_label":"disodium (S)-malate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Malate","synonym_count":21} |
-| ev-aa0ae125598ed824 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1850] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-94e1748427ee3f5c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Malate; data-row positions=[2574] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2574,"object_id":"CHEBI:91261","object_label":"disodium (S)-malate","other":"(S)-disodium malate&#124;DL-Na-malate&#124;Disodium L-malate&#124;Na malate&#124;Na-DL-malate&#124;Na-L-malate&#124;Na-malate&#124;Na2-DL-malate&#124;Sodium DL-malate&#124;Sodium L-malate&#124;Sodium Malate And&#124;disodium (-)-malate&#124;disodium (2S)-2-hydroxybutanedioate&#124;l-Apfelsaure als natrium salz&#124;l-Malic acid, sodium salt&#124;DL-Sodium malate&#124;CAS:138-09-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Malate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-223fabc5dcc016ff | docs/data/mapped_ingredients.csv; CSV lines=[1852] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91261","line":1852,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"82","ontology_id":"CHEBI:91261","preferred_term":"Sodium malate","total_occurrences":"82"}] |
+| ev-6273acdf8f9854af | data/ingredients/mapped/Sodium_Malate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1849],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91261","line":1851,"mapping_status":"MAPPED","ontology_id":"CHEBI:91261","preferred_term":"Sodium malate"}],"identifier":"CHEBI:91261","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":82,"edge_count":82,"occurrences":82},"occurrence_statistics":{"media_count":82,"total_occurrences":82},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91261","ontology_label":"disodium (S)-malate","ontology_source":"CHEBI"},"preferred_term":"Sodium malate","sssom_rows":[{"data_row":2576,"object_id":"CHEBI:91261","object_label":"disodium (S)-malate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Malate","synonym_count":21} |
+| ev-aa0ae125598ed824 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1849] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-94e1748427ee3f5c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Malate; data-row positions=[2576] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2576,"object_id":"CHEBI:91261","object_label":"disodium (S)-malate","other":"(S)-disodium malate&#124;DL-Na-malate&#124;Disodium L-malate&#124;Na malate&#124;Na-DL-malate&#124;Na-L-malate&#124;Na-malate&#124;Na2-DL-malate&#124;Sodium DL-malate&#124;Sodium L-malate&#124;Sodium Malate And&#124;disodium (-)-malate&#124;disodium (2S)-2-hydroxybutanedioate&#124;l-Apfelsaure als natrium salz&#124;l-Malic acid, sodium salt&#124;DL-Sodium malate&#124;CAS:138-09-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Malate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-223fabc5dcc016ff | docs/data/mapped_ingredients.csv; CSV lines=[1851] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91261","line":1851,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"82","ontology_id":"CHEBI:91261","preferred_term":"Sodium malate","total_occurrences":"82"}] |
 | ev-4a7c8f237c0c51c4 | reports/yaml_record_review/Sodium_Malate.md; &#96;data/ingredients/mapped/Sodium_Malate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c7b2f59e1b4b5929 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1221,1556,1942] | context_only | [{"current_record_sha256":"74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9","finding_id":"SEM:6f60d965a284fea0b873","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9","finding_id":"SEM:41f58665766dbbf47a65","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9","finding_id":"SEM:12b177906033f5e98176","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b5ba6d50cbfcee39 | data/ingredients/mapped/Sodium_Malate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-b5ba6d50cbfcee39 | data/ingredients/mapped/Sodium_Malate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1849],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91261","line":1851,"mapping_status":"MAPPED","ontology_id":"CHEBI:91261","preferred_term":"Sodium malate"}],"identifier":"CHEBI:91261","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":82,"edge_count":82,"occurrences":82},"occurrence_statistics":{"media_count":82,"total_occurrences":82},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91261","ontology_label":"disodium (S)-malate","ontology_source":"CHEBI"},"preferred_term":"Sodium malate","sssom_rows":[{"data_row":2576,"object_id":"CHEBI:91261","object_label":"disodium (S)-malate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Malate","synonym_count":21} |
 | ev-33bd8196515ff9f1 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-0bfbef3038fc7291] | context_only | Predecessor structured review finding f-0bfbef3038fc7291 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5df4d0fda4e975be
+  evidence_ids:
+  - ev-6273acdf8f9854af
+  - ev-aa0ae125598ed824
+  - ev-94e1748427ee3f5c
+  - ev-223fabc5dcc016ff
+  - ev-b5ba6d50cbfcee39
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-5df4d0fda4e975be
+  evidence_ids:
+  - ev-6273acdf8f9854af
+  - ev-c7b2f59e1b4b5929
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5df4d0fda4e975be
+  evidence_ids:
+  - ev-4a7c8f237c0c51c4
+  - ev-c7b2f59e1b4b5929
+  - ev-33bd8196515ff9f1
 evidence:
 - evidence_id: ev-6273acdf8f9854af
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Malate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1850],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91261","line":1852,"mapping_status":"MAPPED","ontology_id":"CHEBI:91261","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1849],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91261","line":1851,"mapping_status":"MAPPED","ontology_id":"CHEBI:91261","preferred_term":"Sodium
     malate"}],"identifier":"CHEBI:91261","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":82,"edge_count":82,"occurrences":82},"occurrence_statistics":{"media_count":82,"total_occurrences":82},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91261","ontology_label":"disodium
-    (S)-malate","ontology_source":"CHEBI"},"preferred_term":"Sodium malate","sssom_rows":[{"data_row":2574,"object_id":"CHEBI:91261","object_label":"disodium
+    (S)-malate","ontology_source":"CHEBI"},"preferred_term":"Sodium malate","sssom_rows":[{"data_row":2576,"object_id":"CHEBI:91261","object_label":"disodium
     (S)-malate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Malate","synonym_count":21}'
   snapshot_sha256: 74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9
 - evidence_id: ev-aa0ae125598ed824
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1850]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1849]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,10 +233,10 @@ evidence:
 - evidence_id: ev-94e1748427ee3f5c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_Malate; data-row positions=[2574]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_Malate; data-row positions=[2576]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2574,"object_id":"CHEBI:91261","object_label":"disodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2576,"object_id":"CHEBI:91261","object_label":"disodium
     (S)-malate","other":"(S)-disodium malate|DL-Na-malate|Disodium L-malate|Na malate|Na-DL-malate|Na-L-malate|Na-malate|Na2-DL-malate|Sodium
     DL-malate|Sodium L-malate|Sodium Malate And|disodium (-)-malate|disodium (2S)-2-hydroxybutanedioate|l-Apfelsaure
     als natrium salz|l-Malic acid, sodium salt|DL-Sodium malate|CAS:138-09-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Malate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -231,10 +244,10 @@ evidence:
 - evidence_id: ev-223fabc5dcc016ff
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1852]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1851]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91261","line":1852,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"82","ontology_id":"CHEBI:91261","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91261","line":1851,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"82","ontology_id":"CHEBI:91261","preferred_term":"Sodium
     malate","total_occurrences":"82"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-4a7c8f237c0c51c4
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1221,1556,1942]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9","finding_id":"SEM:6f60d965a284fea0b873","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9","finding_id":"SEM:41f58665766dbbf47a65","kind":"role_evidence","resolution_reason":"Historical
@@ -262,14 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Malate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1849],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91261","line":1851,"mapping_status":"MAPPED","ontology_id":"CHEBI:91261","preferred_term":"Sodium
+    malate"}],"identifier":"CHEBI:91261","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":82,"edge_count":82,"occurrences":82},"occurrence_statistics":{"media_count":82,"total_occurrences":82},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91261","ontology_label":"disodium
+    (S)-malate","ontology_source":"CHEBI"},"preferred_term":"Sodium malate","sssom_rows":[{"data_row":2576,"object_id":"CHEBI:91261","object_label":"disodium
+    (S)-malate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Malate","synonym_count":21}'
   snapshot_sha256: 74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9
 - evidence_id: ev-33bd8196515ff9f1
   kind: prior_review

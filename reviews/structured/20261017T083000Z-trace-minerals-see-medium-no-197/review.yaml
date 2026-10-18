@@ -71,6 +71,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cd8fbaa6d97cc300
+  evidence_ids:
+  - ev-ca01f78cf883c942
+  - ev-b45a7f2754c177a8
+  - ev-17671e8e01e8f9ae
+  - ev-e097032f42c40dc0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -79,6 +84,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-cd8fbaa6d97cc300
+  evidence_ids:
+  - ev-ca01f78cf883c942
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -87,13 +94,15 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cd8fbaa6d97cc300
+  evidence_ids:
+  - ev-647b34388ee85552
 evidence:
 - evidence_id: ev-ca01f78cf883c942
   kind: record_content
   reference: data/ingredients/unmapped/Trace_Minerals_See_Medium_No_197.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[230],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0554","line":232,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"Trace
     minerals see Medium No. 197"}],"identifier":"UNMAPPED_0554","ingredient_type":"NAMED_MEDIUM","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Trace
@@ -103,7 +112,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [230]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -112,7 +121,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Trace_Minerals_See_Medium_No_197; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -120,7 +129,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[232]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0554","line":232,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"Trace
     minerals see Medium No. 197","total_occurrences":"0"}]'

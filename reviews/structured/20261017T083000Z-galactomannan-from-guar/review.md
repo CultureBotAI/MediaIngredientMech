@@ -85,11 +85,11 @@ Reassess prediction-only role support: Galactomannan from guar
 | --- | --- | --- | --- |
 | ev-98337aada90aae95 | data/ingredients/mapped/Galactomannan_From_Guar.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1034],"raw_equal":true},"docs_rows":[{"identifier":"cas:11078-30-1","line":1036,"mapping_status":"MAPPED","ontology_id":"CHEBI:27680","preferred_term":"Galactomannan from guar"}],"identifier":"cas:11078-30-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:27680","ontology_label":"galactomannan","ontology_source":"CHEBI"},"preferred_term":"Galactomannan from guar","sssom_rows":[{"data_row":1270,"object_id":"CHEBI:27680","object_label":"galactomannan","predicate_id":"skos:broadMatch"},{"data_row":1271,"object_id":"cas:11078-30-1","object_label":"Galactomannan from guar","predicate_id":"skos:exactMatch"},{"data_row":1272,"object_id":"kgmicrobe.compound:galactomannan_from_guar","object_label":"Galactomannan from guar","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Galactomannan_From_Guar","synonym_count":0} |
 | ev-0450b4faa65bc8d6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1034] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6428c700f824f7a7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Galactomannan_From_Guar; data-row positions=[1270,1271,1272] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1270,"object_id":"CHEBI:27680","object_label":"galactomannan","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Galactomannan_From_Guar","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1271,"object_id":"cas:11078-30-1","object_label":"Galactomannan from guar","other":"CAS:11078-30-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Galactomannan_From_Guar","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1272,"object_id":"kgmicrobe.compound:galactomannan_from_guar","object_label":"Galactomannan from guar","other":"CAS:11078-30-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Galactomannan_From_Guar","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-6428c700f824f7a7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Galactomannan_From_Guar; data-row positions=[1270, 1271, 1272] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1270,"object_id":"CHEBI:27680","object_label":"galactomannan","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Galactomannan_From_Guar","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1271,"object_id":"cas:11078-30-1","object_label":"Galactomannan from guar","other":"CAS:11078-30-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Galactomannan_From_Guar","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1272,"object_id":"kgmicrobe.compound:galactomannan_from_guar","object_label":"Galactomannan from guar","other":"CAS:11078-30-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Galactomannan_From_Guar","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-7fbe0e7197b4bea7 | docs/data/mapped_ingredients.csv; CSV lines=[1036] | supports | Published identity and count rows inspected: [{"identifier":"cas:11078-30-1","line":1036,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27680","preferred_term":"Galactomannan from guar","total_occurrences":"0"}] |
 | ev-dbbabd39a8419575 | reports/yaml_record_review/Galactomannan_From_Guar.md; &#96;data/ingredients/mapped/Galactomannan_From_Guar.yaml&#96;:2; Verdict:4; Identity:12; Validation:27; Evidence:38; Completeness:63; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1e50c223ec123e38 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[647,1740] | context_only | [{"current_record_sha256":"2bfe4e60f59cdfcebfb2c0c9edc8d180e1331ef2645533ea72b340098650a10d","finding_id":"SEM:2cf575d1b3e3caa5bf34","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2bfe4e60f59cdfcebfb2c0c9edc8d180e1331ef2645533ea72b340098650a10d","finding_id":"SEM:0c69b8c2c9a2ef7fd035","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d73b22a9eecd7bfb | data/ingredients/mapped/Galactomannan_From_Guar.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-d73b22a9eecd7bfb | data/ingredients/mapped/Galactomannan_From_Guar.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1034],"raw_equal":true},"docs_rows":[{"identifier":"cas:11078-30-1","line":1036,"mapping_status":"MAPPED","ontology_id":"CHEBI:27680","preferred_term":"Galactomannan from guar"}],"identifier":"cas:11078-30-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:27680","ontology_label":"galactomannan","ontology_source":"CHEBI"},"preferred_term":"Galactomannan from guar","sssom_rows":[{"data_row":1270,"object_id":"CHEBI:27680","object_label":"galactomannan","predicate_id":"skos:broadMatch"},{"data_row":1271,"object_id":"cas:11078-30-1","object_label":"Galactomannan from guar","predicate_id":"skos:exactMatch"},{"data_row":1272,"object_id":"kgmicrobe.compound:galactomannan_from_guar","object_label":"Galactomannan from guar","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Galactomannan_From_Guar","synonym_count":0} |
 | ev-9bfa87490ccfc659 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-cecbfef9f8803a5d] | context_only | Predecessor structured review finding f-cecbfef9f8803a5d in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d827eea134261413
+  evidence_ids:
+  - ev-98337aada90aae95
+  - ev-0450b4faa65bc8d6
+  - ev-6428c700f824f7a7
+  - ev-7fbe0e7197b4bea7
+  - ev-d73b22a9eecd7bfb
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d827eea134261413
+  evidence_ids:
+  - ev-98337aada90aae95
+  - ev-1e50c223ec123e38
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d827eea134261413
+  evidence_ids:
+  - ev-dbbabd39a8419575
+  - ev-1e50c223ec123e38
+  - ev-9bfa87490ccfc659
 evidence:
 - evidence_id: ev-98337aada90aae95
   kind: record_content
   reference: data/ingredients/mapped/Galactomannan_From_Guar.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1034],"raw_equal":true},"docs_rows":[{"identifier":"cas:11078-30-1","line":1036,"mapping_status":"MAPPED","ontology_id":"CHEBI:27680","preferred_term":"Galactomannan
     from guar"}],"identifier":"cas:11078-30-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:27680","ontology_label":"galactomannan","ontology_source":"CHEBI"},"preferred_term":"Galactomannan
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1034]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,8 +234,9 @@ evidence:
 - evidence_id: ev-6428c700f824f7a7
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Galactomannan_From_Guar; data-row positions=[1270,1271,1272]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Galactomannan_From_Guar; data-row positions=[1270, 1271,
+    1272]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1270,"object_id":"CHEBI:27680","object_label":"galactomannan","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Galactomannan_From_Guar","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1271,"object_id":"cas:11078-30-1","object_label":"Galactomannan
     from guar","other":"CAS:11078-30-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Galactomannan_From_Guar","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":1272,"object_id":"kgmicrobe.compound:galactomannan_from_guar","object_label":"Galactomannan
@@ -232,7 +246,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1036]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:11078-30-1","line":1036,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27680","preferred_term":"Galactomannan
     from guar","total_occurrences":"0"}]'
@@ -259,7 +273,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[647,1740]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2bfe4e60f59cdfcebfb2c0c9edc8d180e1331ef2645533ea72b340098650a10d","finding_id":"SEM:2cf575d1b3e3caa5bf34","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2bfe4e60f59cdfcebfb2c0c9edc8d180e1331ef2645533ea72b340098650a10d","finding_id":"SEM:0c69b8c2c9a2ef7fd035","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +283,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Galactomannan_From_Guar.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1034],"raw_equal":true},"docs_rows":[{"identifier":"cas:11078-30-1","line":1036,"mapping_status":"MAPPED","ontology_id":"CHEBI:27680","preferred_term":"Galactomannan
+    from guar"}],"identifier":"cas:11078-30-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:27680","ontology_label":"galactomannan","ontology_source":"CHEBI"},"preferred_term":"Galactomannan
+    from guar","sssom_rows":[{"data_row":1270,"object_id":"CHEBI:27680","object_label":"galactomannan","predicate_id":"skos:broadMatch"},{"data_row":1271,"object_id":"cas:11078-30-1","object_label":"Galactomannan
+    from guar","predicate_id":"skos:exactMatch"},{"data_row":1272,"object_id":"kgmicrobe.compound:galactomannan_from_guar","object_label":"Galactomannan
+    from guar","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Galactomannan_From_Guar","synonym_count":0}'
   snapshot_sha256: 2bfe4e60f59cdfcebfb2c0c9edc8d180e1331ef2645533ea72b340098650a10d
 - evidence_id: ev-9bfa87490ccfc659
   kind: prior_review

@@ -85,11 +85,11 @@ Reassess prediction-only role support: DL-Glycerol 1-phosphate sodium salt hydra
 | --- | --- | --- | --- |
 | ev-a00cfe5e6a94d095 | data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[854],"raw_equal":true},"docs_rows":[{"identifier":"cas:17603-42-8","line":856,"mapping_status":"MAPPED","ontology_id":"CHEBI:14336","preferred_term":"DL-Glycerol 1-phosphate sodium salt hydrate"}],"identifier":"cas:17603-42-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:14336","ontology_label":"glycerol 1-phosphate","ontology_source":"CHEBI"},"preferred_term":"DL-Glycerol 1-phosphate sodium salt hydrate","sssom_rows":[{"data_row":982,"object_id":"CHEBI:14336","object_label":"glycerol 1-phosphate","predicate_id":"skos:closeMatch"},{"data_row":983,"object_id":"cas:17603-42-8","object_label":"DL-Glycerol 1-phosphate sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate","synonym_count":2} |
 | ev-0101fa39b4e26fe8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [854] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6e878bfe9a8ab59c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate; data-row positions=[982,983] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":982,"object_id":"CHEBI:14336","object_label":"glycerol 1-phosphate","other":"2,3-dihydroxypropyl dihydrogen phosphate&#124;glycerol 1-(dihydrogen phosphate)&#124;CAS:17603-42-8","predicate_id":"skos:closeMatch","subject_id":"MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":983,"object_id":"cas:17603-42-8","object_label":"DL-Glycerol 1-phosphate sodium salt hydrate","other":"CAS:17603-42-8","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-6e878bfe9a8ab59c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate; data-row positions=[982, 983] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":982,"object_id":"CHEBI:14336","object_label":"glycerol 1-phosphate","other":"2,3-dihydroxypropyl dihydrogen phosphate&#124;glycerol 1-(dihydrogen phosphate)&#124;CAS:17603-42-8","predicate_id":"skos:closeMatch","subject_id":"MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":983,"object_id":"cas:17603-42-8","object_label":"DL-Glycerol 1-phosphate sodium salt hydrate","other":"CAS:17603-42-8","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-5e70ec870f2ca25e | docs/data/mapped_ingredients.csv; CSV lines=[856] | supports | Published identity and count rows inspected: [{"identifier":"cas:17603-42-8","line":856,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:14336","preferred_term":"DL-Glycerol 1-phosphate sodium salt hydrate","total_occurrences":"0"}] |
 | ev-7cf1d2a42c86a111 | reports/yaml_record_review/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.md; &#96;data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:28; Evidence:46; Completeness:64; Recommended Edits:74 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3d3c1c86e097a7b6 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[515,1668] | context_only | [{"current_record_sha256":"fc7137a89b528e627681988eaaf830873870d9be682bb4cb1b87b5ee09094c0f","finding_id":"SEM:fa2370d6680f2d27a50d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fc7137a89b528e627681988eaaf830873870d9be682bb4cb1b87b5ee09094c0f","finding_id":"SEM:7656cdece25e08808381","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c430efaf698a2275 | data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-c430efaf698a2275 | data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[854],"raw_equal":true},"docs_rows":[{"identifier":"cas:17603-42-8","line":856,"mapping_status":"MAPPED","ontology_id":"CHEBI:14336","preferred_term":"DL-Glycerol 1-phosphate sodium salt hydrate"}],"identifier":"cas:17603-42-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:14336","ontology_label":"glycerol 1-phosphate","ontology_source":"CHEBI"},"preferred_term":"DL-Glycerol 1-phosphate sodium salt hydrate","sssom_rows":[{"data_row":982,"object_id":"CHEBI:14336","object_label":"glycerol 1-phosphate","predicate_id":"skos:closeMatch"},{"data_row":983,"object_id":"cas:17603-42-8","object_label":"DL-Glycerol 1-phosphate sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate","synonym_count":2} |
 | ev-8e48d125092c43ed | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-bdfc9a1123bdb1cf] | context_only | Predecessor structured review finding f-bdfc9a1123bdb1cf in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -181,6 +181,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-de1c1a0d7fba6736
+  evidence_ids:
+  - ev-a00cfe5e6a94d095
+  - ev-0101fa39b4e26fe8
+  - ev-6e878bfe9a8ab59c
+  - ev-5e70ec870f2ca25e
+  - ev-c430efaf698a2275
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -189,6 +195,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-de1c1a0d7fba6736
+  evidence_ids:
+  - ev-a00cfe5e6a94d095
+  - ev-3d3c1c86e097a7b6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -197,13 +206,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-de1c1a0d7fba6736
+  evidence_ids:
+  - ev-7cf1d2a42c86a111
+  - ev-3d3c1c86e097a7b6
+  - ev-8e48d125092c43ed
 evidence:
 - evidence_id: ev-a00cfe5e6a94d095
   kind: record_content
   reference: data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[854],"raw_equal":true},"docs_rows":[{"identifier":"cas:17603-42-8","line":856,"mapping_status":"MAPPED","ontology_id":"CHEBI:14336","preferred_term":"DL-Glycerol
     1-phosphate sodium salt hydrate"}],"identifier":"cas:17603-42-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:14336","ontology_label":"glycerol
@@ -216,7 +229,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [854]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -224,8 +237,9 @@ evidence:
 - evidence_id: ev-6e878bfe9a8ab59c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate; data-row positions=[982,983]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate; data-row positions=[982,
+    983]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":982,"object_id":"CHEBI:14336","object_label":"glycerol
     1-phosphate","other":"2,3-dihydroxypropyl dihydrogen phosphate|glycerol 1-(dihydrogen
@@ -236,7 +250,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[856]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:17603-42-8","line":856,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:14336","preferred_term":"DL-Glycerol
     1-phosphate sodium salt hydrate","total_occurrences":"0"}]'
@@ -268,7 +282,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[515,1668]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"fc7137a89b528e627681988eaaf830873870d9be682bb4cb1b87b5ee09094c0f","finding_id":"SEM:fa2370d6680f2d27a50d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fc7137a89b528e627681988eaaf830873870d9be682bb4cb1b87b5ee09094c0f","finding_id":"SEM:7656cdece25e08808381","kind":"role_evidence","resolution_reason":"Historical
@@ -278,12 +292,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[854],"raw_equal":true},"docs_rows":[{"identifier":"cas:17603-42-8","line":856,"mapping_status":"MAPPED","ontology_id":"CHEBI:14336","preferred_term":"DL-Glycerol
+    1-phosphate sodium salt hydrate"}],"identifier":"cas:17603-42-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:14336","ontology_label":"glycerol
+    1-phosphate","ontology_source":"CHEBI"},"preferred_term":"DL-Glycerol 1-phosphate
+    sodium salt hydrate","sssom_rows":[{"data_row":982,"object_id":"CHEBI:14336","object_label":"glycerol
+    1-phosphate","predicate_id":"skos:closeMatch"},{"data_row":983,"object_id":"cas:17603-42-8","object_label":"DL-Glycerol
+    1-phosphate sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate","synonym_count":2}'
   snapshot_sha256: fc7137a89b528e627681988eaaf830873870d9be682bb4cb1b87b5ee09094c0f
 - evidence_id: ev-8e48d125092c43ed
   kind: prior_review

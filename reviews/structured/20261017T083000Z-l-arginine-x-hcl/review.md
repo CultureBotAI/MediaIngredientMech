@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-Arginine x HCl
 | ev-81041f556a85cc10 | docs/data/mapped_ingredients.csv; CSV lines=[1240] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:31235","line":1240,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:31235","preferred_term":"L-Arginine x HCl","total_occurrences":"11"}] |
 | ev-1bccc57bcc81f0e6 | reports/yaml_record_review/L-arginine_X_Hcl.md; &#96;data/ingredients/mapped/L-arginine_X_Hcl.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:27; Completeness:48; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-0ce1c1a7446545e5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[806,1381] | context_only | [{"current_record_sha256":"113333c6a9887ebcbb7b4336988b28e428f4d4a0bf94be156abc4ead0971b9da","finding_id":"SEM:f6061529791ce570e347","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"113333c6a9887ebcbb7b4336988b28e428f4d4a0bf94be156abc4ead0971b9da","finding_id":"SEM:6bd4a180ca60d7d8eb63","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-3e5067dfef3b585c | data/ingredients/mapped/L-arginine_X_Hcl.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-3e5067dfef3b585c | data/ingredients/mapped/L-arginine_X_Hcl.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1238],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31235","line":1240,"mapping_status":"MAPPED","ontology_id":"CHEBI:31235","preferred_term":"L-Arginine x HCl"}],"identifier":"CHEBI:31235","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31235","ontology_label":"Arginine hydrochloride","ontology_source":"CHEBI"},"preferred_term":"L-Arginine x HCl","sssom_rows":[{"data_row":1600,"object_id":"CHEBI:31235","object_label":"Arginine hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-arginine_X_Hcl","synonym_count":2} |
 | ev-57b9b8b53a2b1a59 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-3d71caad5862dccd] | context_only | Predecessor structured review finding f-3d71caad5862dccd in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9b6b5871f25f41b2
+  evidence_ids:
+  - ev-0309173069b18368
+  - ev-df57ccff5f7bc3c3
+  - ev-ea996041b07ee9ba
+  - ev-81041f556a85cc10
+  - ev-3e5067dfef3b585c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9b6b5871f25f41b2
+  evidence_ids:
+  - ev-0309173069b18368
+  - ev-0ce1c1a7446545e5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9b6b5871f25f41b2
+  evidence_ids:
+  - ev-1bccc57bcc81f0e6
+  - ev-0ce1c1a7446545e5
+  - ev-57b9b8b53a2b1a59
 evidence:
 - evidence_id: ev-0309173069b18368
   kind: record_content
   reference: data/ingredients/mapped/L-arginine_X_Hcl.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1238],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31235","line":1240,"mapping_status":"MAPPED","ontology_id":"CHEBI:31235","preferred_term":"L-Arginine
     x HCl"}],"identifier":"CHEBI:31235","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31235","ontology_label":"Arginine
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1238]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-arginine_X_Hcl; data-row positions=[1600]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1600,"object_id":"CHEBI:31235","object_label":"Arginine
     hydrochloride","other":"L-Arginine x HCI|CAS:1119-34-2","predicate_id":"skos:exactMatch","subject_id":"MIM:L-arginine_X_Hcl","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1240]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31235","line":1240,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:31235","preferred_term":"L-Arginine
     x HCl","total_occurrences":"11"}]'
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[806,1381]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"113333c6a9887ebcbb7b4336988b28e428f4d4a0bf94be156abc4ead0971b9da","finding_id":"SEM:f6061529791ce570e347","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"113333c6a9887ebcbb7b4336988b28e428f4d4a0bf94be156abc4ead0971b9da","finding_id":"SEM:6bd4a180ca60d7d8eb63","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-arginine_X_Hcl.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1238],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31235","line":1240,"mapping_status":"MAPPED","ontology_id":"CHEBI:31235","preferred_term":"L-Arginine
+    x HCl"}],"identifier":"CHEBI:31235","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31235","ontology_label":"Arginine
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"L-Arginine x HCl","sssom_rows":[{"data_row":1600,"object_id":"CHEBI:31235","object_label":"Arginine
+    hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-arginine_X_Hcl","synonym_count":2}'
   snapshot_sha256: 113333c6a9887ebcbb7b4336988b28e428f4d4a0bf94be156abc4ead0971b9da
 - evidence_id: ev-57b9b8b53a2b1a59
   kind: prior_review

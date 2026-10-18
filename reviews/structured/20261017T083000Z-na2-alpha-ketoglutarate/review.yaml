@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-159a15f9d3899077
+  evidence_ids:
+  - ev-c668a245953536ad
+  - ev-faa543fc9e0833b2
+  - ev-8a5ce66a08805a9d
+  - ev-3a4b7b61f4d9091e
+  - ev-bbc88eaf27c8d251
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-159a15f9d3899077
+  evidence_ids:
+  - ev-c668a245953536ad
+  - ev-a8da9d6f7e6f46ec
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,25 +99,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-159a15f9d3899077
+  evidence_ids:
+  - ev-fecaf1b521582776
+  - ev-a8da9d6f7e6f46ec
+  - ev-384913230440f234
 evidence:
 - evidence_id: ev-c668a245953536ad
   kind: record_content
   reference: data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1482],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2_alpha-ketoglutarate","line":1484,"mapping_status":"MAPPED","ontology_id":"CHEBI:30915","preferred_term":"Na2
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1481],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2_alpha-ketoglutarate","line":1483,"mapping_status":"MAPPED","ontology_id":"CHEBI:30915","preferred_term":"Na2
     alpha-ketoglutarate"}],"identifier":"kgmicrobe.compound:na2_alpha-ketoglutarate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:30915","ontology_label":"2-oxoglutaric
-    acid","ontology_source":"CHEBI"},"preferred_term":"Na2 alpha-ketoglutarate","sssom_rows":[{"data_row":1986,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric
-    acid","predicate_id":"skos:broadMatch"},{"data_row":1987,"object_id":"kgmicrobe.compound:na2_alpha-ketoglutarate","object_label":"Na2
+    acid","ontology_source":"CHEBI"},"preferred_term":"Na2 alpha-ketoglutarate","sssom_rows":[{"data_row":1988,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric
+    acid","predicate_id":"skos:broadMatch"},{"data_row":1989,"object_id":"kgmicrobe.compound:na2_alpha-ketoglutarate","object_label":"Na2
     alpha-ketoglutarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2_Alpha-ketoglutarate","synonym_count":6}'
   snapshot_sha256: 0ee10fb6f9aacd8905e6ef3a4fef393e3d294b12f5c593339a78e5797fe8a58d
 - evidence_id: ev-faa543fc9e0833b2
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1482]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1481]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,20 +129,20 @@ evidence:
 - evidence_id: ev-8a5ce66a08805a9d
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na2_Alpha-ketoglutarate; data-row positions=[1986,1987]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na2_Alpha-ketoglutarate; data-row positions=[1988, 1989]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1986,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric
-    acid","other":"Na2 \u03b1-ketoglutarate","predicate_id":"skos:broadMatch","subject_id":"MIM:Na2_Alpha-ketoglutarate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1987,"object_id":"kgmicrobe.compound:na2_alpha-ketoglutarate","object_label":"Na2
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1988,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric
+    acid","other":"Na2 \u03b1-ketoglutarate","predicate_id":"skos:broadMatch","subject_id":"MIM:Na2_Alpha-ketoglutarate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1989,"object_id":"kgmicrobe.compound:na2_alpha-ketoglutarate","object_label":"Na2
     alpha-ketoglutarate","other":"Na2 \u03b1-ketoglutarate","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2_Alpha-ketoglutarate","validation_method":""}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-3a4b7b61f4d9091e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1484]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1483]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:na2_alpha-ketoglutarate","line":1484,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:30915","preferred_term":"Na2
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:na2_alpha-ketoglutarate","line":1483,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:30915","preferred_term":"Na2
     alpha-ketoglutarate","total_occurrences":"4"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-fecaf1b521582776
@@ -152,7 +165,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[989,1733,1935]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0ee10fb6f9aacd8905e6ef3a4fef393e3d294b12f5c593339a78e5797fe8a58d","finding_id":"SEM:f31a492dd63f2b8f8c90","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0ee10fb6f9aacd8905e6ef3a4fef393e3d294b12f5c593339a78e5797fe8a58d","finding_id":"SEM:a0294f766cd44d283beb","kind":"role_evidence","resolution_reason":"Historical
@@ -163,14 +176,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1481],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:na2_alpha-ketoglutarate","line":1483,"mapping_status":"MAPPED","ontology_id":"CHEBI:30915","preferred_term":"Na2
+    alpha-ketoglutarate"}],"identifier":"kgmicrobe.compound:na2_alpha-ketoglutarate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:30915","ontology_label":"2-oxoglutaric
+    acid","ontology_source":"CHEBI"},"preferred_term":"Na2 alpha-ketoglutarate","sssom_rows":[{"data_row":1988,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric
+    acid","predicate_id":"skos:broadMatch"},{"data_row":1989,"object_id":"kgmicrobe.compound:na2_alpha-ketoglutarate","object_label":"Na2
+    alpha-ketoglutarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2_Alpha-ketoglutarate","synonym_count":6}'
   snapshot_sha256: 0ee10fb6f9aacd8905e6ef3a4fef393e3d294b12f5c593339a78e5797fe8a58d
 - evidence_id: ev-384913230440f234
   kind: prior_review

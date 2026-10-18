@@ -83,16 +83,16 @@ Disposition: Token presence remains reproducible, but the earlier pattern-based 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-4c2dd24bad57632f | data/ingredients/mapped/Modified_Trace_Vitamins.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2499],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2501,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified trace vitamins"}],"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","ontology_label":"Modified trace vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Modified trace vitamins","sssom_rows":[{"data_row":1903,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified trace vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Modified_Trace_Vitamins","synonym_count":2} |
-| ev-ad1fd681bfcacb06 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2499] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-e485d8da83247c1c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Modified_Trace_Vitamins; data-row positions=[1903] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1903,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified trace vitamins","other":"Modified trace vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Modified_Trace_Vitamins","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
-| ev-5f1ad78384afb238 | docs/data/mapped_ingredients.csv; CSV lines=[2501] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2501,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"2","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified trace vitamins","total_occurrences":"2"}] |
+| ev-4c2dd24bad57632f | data/ingredients/mapped/Modified_Trace_Vitamins.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2498],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2500,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified trace vitamins"}],"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","ontology_label":"Modified trace vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Modified trace vitamins","sssom_rows":[{"data_row":1905,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified trace vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Modified_Trace_Vitamins","synonym_count":2} |
+| ev-ad1fd681bfcacb06 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2498] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-e485d8da83247c1c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Modified_Trace_Vitamins; data-row positions=[1905] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1905,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified trace vitamins","other":"Modified trace vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Modified_Trace_Vitamins","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-5f1ad78384afb238 | docs/data/mapped_ingredients.csv; CSV lines=[2500] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2500,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"2","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified trace vitamins","total_occurrences":"2"}] |
 | ev-a8586fb48ab7ffa9 | reports/yaml_record_review/Modified_Trace_Vitamins.md; &#96;data/ingredients/mapped/Modified_Trace_Vitamins.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:32; Completeness:43; Recommended Edits:50 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-342517d22b716860 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[954] | context_only | [{"current_record_sha256":"4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c","finding_id":"SEM:b336554c878b13b4f95b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-a1a7bf32cb2806bb | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-d3696f2daf45c433] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-5830b871d91efa8c | data/ingredients/mapped/Modified_Trace_Vitamins.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Modified trace vitamins (see below)", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2017); no CAS-RN or CHEBI/NCIT match. Curator review needed.", "curator": "audit_import_ingredients[mim-queue]", "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"}, {"action": "CLASSIFIED_STOCK_SOLUTION", "changes": "Classified as a modified trace vitamin stock mixture and left unmapped pending component list and formulation-specific curation.", "curator": "mediaingredientmech-agentic-curation", "llm_assisted": true, "new_status": "UNMAPPED", "previous_status": "UNMAPPED", "timestamp": "2026-05-11T08:03:00Z"}, {"action": "PROMOTED_TO_MAPPED", "changes": "Promoted UNMAPPED_0452 -&gt; kgmicrobe.ingredient:modified_trace_vitamins (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288).", "curator": "issue_288_stock_solutions", "llm_assisted": true, "new_status": "MAPPED", "previous_status": "UNMAPPED", "timestamp": "2026-08-06T00:00:00+00:00"}, {"action": "CORRECTED", "changes": "occurrence_statistics 0/0 -&gt; 2/2 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics", "timestamp": "2026-08-27T03:16:39.520286+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Modified trace vitamins (see below)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier": "kgmicrobe.ingredient:modified_trace_vitamins", "mapping": {"evidence": [{"evidence_type": "MANUAL_CURATION", "notes": "A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288).", "source": "MIM curation (#288)"}], "mapping_quality": "FALLBACK_REGISTRY", "ontology_id": "kgmicrobe.ingredient:modified_trace_vitamins", "ontology_label": "Modified trace vitamins", "ontology_source": "kgmicrobe.ingredient"}} |
-| ev-7c6192e7f288bdf0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Modified_Trace_Vitamins | supports | [{"comment": "", "confidence": "0.9", "data_row": 1903, "mapping_date": "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:modified_trace_vitamins", "object_label": "Modified trace vitamins", "object_source": "kgm:ingredient", "other": "Modified trace vitamins (see below)", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#288)&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Modified_Trace_Vitamins", "subject_label": "Modified trace vitamins", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-5830b871d91efa8c | data/ingredients/mapped/Modified_Trace_Vitamins.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2498],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2500,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified trace vitamins"}],"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","ontology_label":"Modified trace vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Modified trace vitamins","sssom_rows":[{"data_row":1905,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified trace vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Modified_Trace_Vitamins","synonym_count":2} |
+| ev-7c6192e7f288bdf0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Modified_Trace_Vitamins; data-row positions=[1905] | supports | Current exact-subject rows, including complete other payload: [{"data_row":1905,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified trace vitamins","other":"Modified trace vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Modified_Trace_Vitamins","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
 | ev-1659306e55f45a0b | reports/yaml_record_review/Modified_Trace_Vitamins.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-9d36fb33365bc628 | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-d3696f2daf45c433] | context_only | Predecessor structured review finding scope-f-d3696f2daf45c433 in 20261011T030852Z-mim-token-scope-reassessment |
 
@@ -189,6 +189,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4253636d94bcf2f1
+  evidence_ids:
+  - ev-4c2dd24bad57632f
+  - ev-ad1fd681bfcacb06
+  - ev-e485d8da83247c1c
+  - ev-5f1ad78384afb238
+  - ev-5830b871d91efa8c
+  - ev-7c6192e7f288bdf0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -197,6 +204,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-4253636d94bcf2f1
+  evidence_ids:
+  - ev-4c2dd24bad57632f
+  - ev-342517d22b716860
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -205,25 +215,31 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4253636d94bcf2f1
+  evidence_ids:
+  - ev-a8586fb48ab7ffa9
+  - ev-342517d22b716860
+  - ev-a1a7bf32cb2806bb
+  - ev-1659306e55f45a0b
+  - ev-9d36fb33365bc628
 evidence:
 - evidence_id: ev-4c2dd24bad57632f
   kind: record_content
   reference: data/ingredients/mapped/Modified_Trace_Vitamins.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2499],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2501,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2498],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2500,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified
     trace vitamins"}],"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","ontology_label":"Modified
     trace vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Modified
-    trace vitamins","sssom_rows":[{"data_row":1903,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified
+    trace vitamins","sssom_rows":[{"data_row":1905,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified
     trace vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Modified_Trace_Vitamins","synonym_count":2}'
   snapshot_sha256: 4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c
 - evidence_id: ev-ad1fd681bfcacb06
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2499]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2498]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -231,19 +247,19 @@ evidence:
 - evidence_id: ev-e485d8da83247c1c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Modified_Trace_Vitamins; data-row positions=[1903]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Modified_Trace_Vitamins; data-row positions=[1905]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1903,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1905,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified
     trace vitamins","other":"Modified trace vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Modified_Trace_Vitamins","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-5f1ad78384afb238
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2501]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2500]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2501,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"2","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2500,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"2","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified
     trace vitamins","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-a8586fb48ab7ffa9
@@ -264,7 +280,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[954]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c","finding_id":"SEM:b336554c878b13b4f95b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -306,58 +322,22 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Modified_Trace_Vitamins.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Modified trace vitamins (see below)", "synonym_type": "RAW_TEXT"}],
-    "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue
-    (source_id=mediadive.ingredient:2017); no CAS-RN or CHEBI/NCIT match. Curator
-    review needed.", "curator": "audit_import_ingredients[mim-queue]", "llm_assisted":
-    false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"},
-    {"action": "CLASSIFIED_STOCK_SOLUTION", "changes": "Classified as a modified trace
-    vitamin stock mixture and left unmapped pending component list and formulation-specific
-    curation.", "curator": "mediaingredientmech-agentic-curation", "llm_assisted":
-    true, "new_status": "UNMAPPED", "previous_status": "UNMAPPED", "timestamp": "2026-05-11T08:03:00Z"},
-    {"action": "PROMOTED_TO_MAPPED", "changes": "Promoted UNMAPPED_0452 -> kgmicrobe.ingredient:modified_trace_vitamins
-    (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
-    MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
-    -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
-    mint with no parent, because a multi-component mix does not narrow to any single
-    compound (#288).", "curator": "issue_288_stock_solutions", "llm_assisted": true,
-    "new_status": "MAPPED", "previous_status": "UNMAPPED", "timestamp": "2026-08-06T00:00:00+00:00"},
-    {"action": "CORRECTED", "changes": "occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences),
-    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-    prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.520286+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Modified trace vitamins (see below)'' (x1 CultureMech mentions).
-    Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill",
-    "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier":
-    "kgmicrobe.ingredient:modified_trace_vitamins", "mapping": {"evidence": [{"evidence_type":
-    "MANUAL_CURATION", "notes": "A named multi-component preparation. Searched CHEBI,
-    NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none
-    could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention:
-    a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
-    not narrow to any single compound (#288).", "source": "MIM curation (#288)"}],
-    "mapping_quality": "FALLBACK_REGISTRY", "ontology_id": "kgmicrobe.ingredient:modified_trace_vitamins",
-    "ontology_label": "Modified trace vitamins", "ontology_source": "kgmicrobe.ingredient"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2498],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","line":2500,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","preferred_term":"Modified
+    trace vitamins"}],"identifier":"kgmicrobe.ingredient:modified_trace_vitamins","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:modified_trace_vitamins","ontology_label":"Modified
+    trace vitamins","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Modified
+    trace vitamins","sssom_rows":[{"data_row":1905,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified
+    trace vitamins","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Modified_Trace_Vitamins","synonym_count":2}'
   snapshot_sha256: 4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c
 - evidence_id: ev-7c6192e7f288bdf0
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Modified_Trace_Vitamins
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Modified_Trace_Vitamins; data-row positions=[1905]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.9", "data_row": 1903, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
-    "kgmicrobe.ingredient:modified_trace_vitamins", "object_label": "Modified trace
-    vitamins", "object_source": "kgm:ingredient", "other": "Modified trace vitamins
-    (see below)", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#288)|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Modified_Trace_Vitamins", "subject_label": "Modified trace
-    vitamins", "validation_method": "none|UNKNOWN_TERM|2026-09-02"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1905,"object_id":"kgmicrobe.ingredient:modified_trace_vitamins","object_label":"Modified
+    trace vitamins","other":"Modified trace vitamins (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Modified_Trace_Vitamins","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-1659306e55f45a0b
   kind: prior_review

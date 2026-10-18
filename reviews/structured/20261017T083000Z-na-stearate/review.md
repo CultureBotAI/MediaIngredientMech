@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-stearate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-77c50f268bf68643 | data/ingredients/mapped/Na-stearate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1474],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132109","line":1476,"mapping_status":"MAPPED","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate"}],"identifier":"CHEBI:132109","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132109","ontology_label":"sodium octadecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-stearate","sssom_rows":[{"data_row":1978,"object_id":"CHEBI:132109","object_label":"sodium octadecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-stearate","synonym_count":4} |
-| ev-241ac0d895554099 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1474] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-5cd38a039413c16c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-stearate; data-row positions=[1978] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1978,"object_id":"CHEBI:132109","object_label":"sodium octadecanoate","other":"Octadecanoic acid, sodium salt&#124;Stearic acid, sodium salt&#124;sodium stearate&#124;CAS:822-16-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-stearate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-a265d8e6833510d2 | docs/data/mapped_ingredients.csv; CSV lines=[1476] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:132109","line":1476,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate","total_occurrences":"3"}] |
+| ev-77c50f268bf68643 | data/ingredients/mapped/Na-stearate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1473],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132109","line":1475,"mapping_status":"MAPPED","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate"}],"identifier":"CHEBI:132109","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132109","ontology_label":"sodium octadecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-stearate","sssom_rows":[{"data_row":1980,"object_id":"CHEBI:132109","object_label":"sodium octadecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-stearate","synonym_count":4} |
+| ev-241ac0d895554099 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1473] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-5cd38a039413c16c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-stearate; data-row positions=[1980] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1980,"object_id":"CHEBI:132109","object_label":"sodium octadecanoate","other":"Octadecanoic acid, sodium salt&#124;Stearic acid, sodium salt&#124;sodium stearate&#124;CAS:822-16-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-stearate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-a265d8e6833510d2 | docs/data/mapped_ingredients.csv; CSV lines=[1475] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:132109","line":1475,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate","total_occurrences":"3"}] |
 | ev-ac320132f18b68b1 | reports/yaml_record_review/Na-stearate.md; &#96;data/ingredients/mapped/Na-stearate.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:27; Completeness:38; Recommended Edits:44 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f002acfe33c6878a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[981,2011] | context_only | [{"current_record_sha256":"51532547e6cc93a873def26898ab576bb34fafd988d3254f4a91b7fe810c558d","finding_id":"SEM:7a8b966bc50379e6d716","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"51532547e6cc93a873def26898ab576bb34fafd988d3254f4a91b7fe810c558d","finding_id":"SEM:87ac51213bd0f4e75c3f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d01deb166a9b6c98 | data/ingredients/mapped/Na-stearate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}] |
+| ev-d01deb166a9b6c98 | data/ingredients/mapped/Na-stearate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1473],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132109","line":1475,"mapping_status":"MAPPED","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate"}],"identifier":"CHEBI:132109","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132109","ontology_label":"sodium octadecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-stearate","sssom_rows":[{"data_row":1980,"object_id":"CHEBI:132109","object_label":"sodium octadecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-stearate","synonym_count":4} |
 | ev-105e2ff6a695a8a9 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-641361f3ac015a6b] | context_only | Predecessor structured review finding f-641361f3ac015a6b in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9fd515657847bbc7
+  evidence_ids:
+  - ev-77c50f268bf68643
+  - ev-241ac0d895554099
+  - ev-5cd38a039413c16c
+  - ev-a265d8e6833510d2
+  - ev-d01deb166a9b6c98
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9fd515657847bbc7
+  evidence_ids:
+  - ev-77c50f268bf68643
+  - ev-f002acfe33c6878a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9fd515657847bbc7
+  evidence_ids:
+  - ev-ac320132f18b68b1
+  - ev-f002acfe33c6878a
+  - ev-105e2ff6a695a8a9
 evidence:
 - evidence_id: ev-77c50f268bf68643
   kind: record_content
   reference: data/ingredients/mapped/Na-stearate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1474],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132109","line":1476,"mapping_status":"MAPPED","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate"}],"identifier":"CHEBI:132109","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132109","ontology_label":"sodium
-    octadecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-stearate","sssom_rows":[{"data_row":1978,"object_id":"CHEBI:132109","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1473],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132109","line":1475,"mapping_status":"MAPPED","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate"}],"identifier":"CHEBI:132109","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132109","ontology_label":"sodium
+    octadecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-stearate","sssom_rows":[{"data_row":1980,"object_id":"CHEBI:132109","object_label":"sodium
     octadecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-stearate","synonym_count":4}'
   snapshot_sha256: 51532547e6cc93a873def26898ab576bb34fafd988d3254f4a91b7fe810c558d
 - evidence_id: ev-241ac0d895554099
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1474]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1473]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-5cd38a039413c16c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-stearate; data-row positions=[1978]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-stearate; data-row positions=[1980]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1978,"object_id":"CHEBI:132109","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1980,"object_id":"CHEBI:132109","object_label":"sodium
     octadecanoate","other":"Octadecanoic acid, sodium salt|Stearic acid, sodium salt|sodium
     stearate|CAS:822-16-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-stearate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-a265d8e6833510d2
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1476]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1475]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:132109","line":1476,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate","total_occurrences":"3"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:132109","line":1475,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ac320132f18b68b1
   kind: prior_review
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[981,2011]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"51532547e6cc93a873def26898ab576bb34fafd988d3254f4a91b7fe810c558d","finding_id":"SEM:7a8b966bc50379e6d716","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"51532547e6cc93a873def26898ab576bb34fafd988d3254f4a91b7fe810c558d","finding_id":"SEM:87ac51213bd0f4e75c3f","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-stearate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1473],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132109","line":1475,"mapping_status":"MAPPED","ontology_id":"CHEBI:132109","preferred_term":"Na-stearate"}],"identifier":"CHEBI:132109","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132109","ontology_label":"sodium
+    octadecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-stearate","sssom_rows":[{"data_row":1980,"object_id":"CHEBI:132109","object_label":"sodium
+    octadecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-stearate","synonym_count":4}'
   snapshot_sha256: 51532547e6cc93a873def26898ab576bb34fafd988d3254f4a91b7fe810c558d
 - evidence_id: ev-105e2ff6a695a8a9
   kind: prior_review

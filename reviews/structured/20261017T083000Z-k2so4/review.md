@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: K2so4
 | ev-5a760b0633cc43d3 | docs/data/mapped_ingredients.csv; CSV lines=[1193] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32036","line":1193,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"134","ontology_id":"CHEBI:32036","preferred_term":"K2SO4","total_occurrences":"134"}] |
 | ev-8de65ebdef1170fa | reports/yaml_record_review/K2so4.md; &#96;data/ingredients/mapped/K2so4.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:32; Completeness:53; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-76ee94bef7af8ec0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[762,1796] | context_only | [{"current_record_sha256":"a43742aeccc029ced184b849f361af8d73b0eb0be015f53ad65551afcc7504d7","finding_id":"SEM:f6a530cd721fee1f63b8","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a43742aeccc029ced184b849f361af8d73b0eb0be015f53ad65551afcc7504d7","finding_id":"SEM:18afa95719dbfcdf40a9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-79d6c77b539fc074 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/K2so4.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9c254050ddda2eec
+  evidence_ids:
+  - ev-432d39a41a6cf8ca
+  - ev-1dd2b517ed701a95
+  - ev-ad2b5f67a86fa814
+  - ev-5a760b0633cc43d3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9c254050ddda2eec
+  evidence_ids:
+  - ev-432d39a41a6cf8ca
+  - ev-76ee94bef7af8ec0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9c254050ddda2eec
+  evidence_ids:
+  - ev-8de65ebdef1170fa
+  - ev-76ee94bef7af8ec0
 evidence:
 - evidence_id: ev-432d39a41a6cf8ca
   kind: record_content
   reference: data/ingredients/mapped/K2so4.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1191],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32036","line":1193,"mapping_status":"MAPPED","ontology_id":"CHEBI:32036","preferred_term":"K2SO4"}],"identifier":"CHEBI:32036","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":134,"edge_count":134,"occurrences":134},"occurrence_statistics":{"media_count":134,"total_occurrences":134},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32036","ontology_label":"potassium
     sulfate","ontology_source":"CHEBI"},"preferred_term":"K2SO4","sssom_rows":[{"data_row":1529,"object_id":"CHEBI:32036","object_label":"potassium
@@ -210,7 +220,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1191]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,7 +229,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:K2so4; data-row positions=[1529]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1529,"object_id":"CHEBI:32036","object_label":"potassium
     sulfate","other":"Kaliumsulfat|dipotassium sulfate|potassium sulphate|CAS:7778-80-5","predicate_id":"skos:exactMatch","subject_id":"MIM:K2so4","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -228,7 +238,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1193]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32036","line":1193,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"134","ontology_id":"CHEBI:32036","preferred_term":"K2SO4","total_occurrences":"134"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -253,19 +263,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[762,1796]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a43742aeccc029ced184b849f361af8d73b0eb0be015f53ad65551afcc7504d7","finding_id":"SEM:f6a530cd721fee1f63b8","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a43742aeccc029ced184b849f361af8d73b0eb0be015f53ad65551afcc7504d7","finding_id":"SEM:18afa95719dbfcdf40a9","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-79d6c77b539fc074
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/K2so4.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-f68ad4ee39aa8908
@@ -334,7 +336,7 @@ assessments:
   - record-9c254050ddda2eec
   evidence_ids:
   - ev-432d39a41a6cf8ca
-  - ev-79d6c77b539fc074
+  - ev-76ee94bef7af8ec0
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -342,7 +344,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-432d39a41a6cf8ca
-    - ev-79d6c77b539fc074
+    - ev-76ee94bef7af8ec0
 findings:
 - finding_id: rec-f-role-9c254050ddda2eec
   issue_key: mim-reconciliation-role-support-9c254050ddda2eec
@@ -358,7 +360,7 @@ findings:
   - record-9c254050ddda2eec
   evidence_ids:
   - ev-432d39a41a6cf8ca
-  - ev-79d6c77b539fc074
+  - ev-76ee94bef7af8ec0
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/K2so4.yaml

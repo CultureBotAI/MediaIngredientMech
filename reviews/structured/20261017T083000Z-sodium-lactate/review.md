@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sodium lactate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-b7c8361101fd4ae9 | data/ingredients/mapped/Sodium_Lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1848],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:75228","line":1850,"mapping_status":"MAPPED","ontology_id":"CHEBI:75228","preferred_term":"Sodium lactate"}],"identifier":"CHEBI:75228","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":283,"edge_count":283,"occurrences":283},"occurrence_statistics":{"media_count":283,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"BacDive_Antibiotic_resistance&#124;BacDive_Antibiotic_sensitivity"}],"total_occurrences":283},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:75228","ontology_label":"sodium lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium lactate","sssom_rows":[{"data_row":2572,"object_id":"CHEBI:75228","object_label":"sodium lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Lactate","synonym_count":29} |
-| ev-91fd4dbf9a330e81 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1848] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-082d3a509ff5ed9c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Lactate; data-row positions=[2572] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2572,"object_id":"CHEBI:75228","object_label":"sodium lactate","other":"1 M Sodium lactate&#124;2-Hydroxypropanoic acid, monosodium salt&#124;DL-Na-lactate&#124;E325&#124;Lactic acid sodium salt&#124;Lactic acid, monosodium salt&#124;Mediject L&#124;Monosodium 2-hydroxypropanoate&#124;Monosodium lactate&#124;Na-(DL)-lactate&#124;Na-DL-lactate&#124;Sodium alpha-hydroxypropionate&#124;sodium 2-hydroxypropanoate&#124;Na-lactate&#124;Sodium DL-lactate&#124;Lactate (sodium salt)&#124;1 % Sodium Lactate&#124;D,L-lactic acid, sodium salt&#124;CAS:72-17-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Lactate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-b81b6aff4b92723c | docs/data/mapped_ingredients.csv; CSV lines=[1850] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:75228","line":1850,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"283","ontology_id":"CHEBI:75228","preferred_term":"Sodium lactate","total_occurrences":"283"}] |
+| ev-b7c8361101fd4ae9 | data/ingredients/mapped/Sodium_Lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1847],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:75228","line":1849,"mapping_status":"MAPPED","ontology_id":"CHEBI:75228","preferred_term":"Sodium lactate"}],"identifier":"CHEBI:75228","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":283,"edge_count":283,"occurrences":283},"occurrence_statistics":{"media_count":283,"total_occurrences":283},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:75228","ontology_label":"sodium lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium lactate","sssom_rows":[{"data_row":2574,"object_id":"CHEBI:75228","object_label":"sodium lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Lactate","synonym_count":29} |
+| ev-91fd4dbf9a330e81 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1847] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-082d3a509ff5ed9c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Lactate; data-row positions=[2574] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2574,"object_id":"CHEBI:75228","object_label":"sodium lactate","other":"1 M Sodium lactate&#124;2-Hydroxypropanoic acid, monosodium salt&#124;DL-Na-lactate&#124;E325&#124;Lactic acid sodium salt&#124;Lactic acid, monosodium salt&#124;Mediject L&#124;Monosodium 2-hydroxypropanoate&#124;Monosodium lactate&#124;Na-(DL)-lactate&#124;Na-DL-lactate&#124;Sodium alpha-hydroxypropionate&#124;sodium 2-hydroxypropanoate&#124;Na-lactate&#124;Sodium DL-lactate&#124;Lactate (sodium salt)&#124;1 % Sodium Lactate&#124;D,L-lactic acid, sodium salt&#124;CAS:72-17-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Lactate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-b81b6aff4b92723c | docs/data/mapped_ingredients.csv; CSV lines=[1849] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:75228","line":1849,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"283","ontology_id":"CHEBI:75228","preferred_term":"Sodium lactate","total_occurrences":"283"}] |
 | ev-8837ac710e866881 | reports/yaml_record_review/Sodium_Lactate.md; &#96;data/ingredients/mapped/Sodium_Lactate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-823664cca56b93c5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1220,1996] | context_only | [{"current_record_sha256":"56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6","finding_id":"SEM:eca76ae60af955e41359","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6","finding_id":"SEM:99d18fbacb8a4994abe1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d5e7097a882d2940 | data/ingredients/mapped/Sodium_Lactate.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-d5e7097a882d2940 | data/ingredients/mapped/Sodium_Lactate.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1847],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:75228","line":1849,"mapping_status":"MAPPED","ontology_id":"CHEBI:75228","preferred_term":"Sodium lactate"}],"identifier":"CHEBI:75228","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":283,"edge_count":283,"occurrences":283},"occurrence_statistics":{"media_count":283,"total_occurrences":283},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:75228","ontology_label":"sodium lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium lactate","sssom_rows":[{"data_row":2574,"object_id":"CHEBI:75228","object_label":"sodium lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Lactate","synonym_count":29} |
 | ev-d9ce9395fdbde69f | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-1f2105e73357b890] | context_only | Predecessor structured review finding f-1f2105e73357b890 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7835366638448a62
+  evidence_ids:
+  - ev-b7c8361101fd4ae9
+  - ev-91fd4dbf9a330e81
+  - ev-082d3a509ff5ed9c
+  - ev-b81b6aff4b92723c
+  - ev-d5e7097a882d2940
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7835366638448a62
+  evidence_ids:
+  - ev-b7c8361101fd4ae9
+  - ev-823664cca56b93c5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7835366638448a62
+  evidence_ids:
+  - ev-8837ac710e866881
+  - ev-823664cca56b93c5
+  - ev-d9ce9395fdbde69f
 evidence:
 - evidence_id: ev-b7c8361101fd4ae9
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Lactate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1848],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:75228","line":1850,"mapping_status":"MAPPED","ontology_id":"CHEBI:75228","preferred_term":"Sodium
-    lactate"}],"identifier":"CHEBI:75228","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":283,"edge_count":283,"occurrences":283},"occurrence_statistics":{"media_count":283,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity"}],"total_occurrences":283},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:75228","ontology_label":"sodium
-    lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium lactate","sssom_rows":[{"data_row":2572,"object_id":"CHEBI:75228","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1847],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:75228","line":1849,"mapping_status":"MAPPED","ontology_id":"CHEBI:75228","preferred_term":"Sodium
+    lactate"}],"identifier":"CHEBI:75228","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":283,"edge_count":283,"occurrences":283},"occurrence_statistics":{"media_count":283,"total_occurrences":283},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:75228","ontology_label":"sodium
+    lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium lactate","sssom_rows":[{"data_row":2574,"object_id":"CHEBI:75228","object_label":"sodium
     lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Lactate","synonym_count":29}'
   snapshot_sha256: 56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6
 - evidence_id: ev-91fd4dbf9a330e81
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1848]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1847]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,10 +233,10 @@ evidence:
 - evidence_id: ev-082d3a509ff5ed9c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_Lactate; data-row positions=[2572]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_Lactate; data-row positions=[2574]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2572,"object_id":"CHEBI:75228","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2574,"object_id":"CHEBI:75228","object_label":"sodium
     lactate","other":"1 M Sodium lactate|2-Hydroxypropanoic acid, monosodium salt|DL-Na-lactate|E325|Lactic
     acid sodium salt|Lactic acid, monosodium salt|Mediject L|Monosodium 2-hydroxypropanoate|Monosodium
     lactate|Na-(DL)-lactate|Na-DL-lactate|Sodium alpha-hydroxypropionate|sodium 2-hydroxypropanoate|Na-lactate|Sodium
@@ -232,10 +245,10 @@ evidence:
 - evidence_id: ev-b81b6aff4b92723c
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1850]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1849]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:75228","line":1850,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"283","ontology_id":"CHEBI:75228","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:75228","line":1849,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"283","ontology_id":"CHEBI:75228","preferred_term":"Sodium
     lactate","total_occurrences":"283"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-8837ac710e866881
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1220,1996]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6","finding_id":"SEM:eca76ae60af955e41359","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6","finding_id":"SEM:99d18fbacb8a4994abe1","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Lactate.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1847],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:75228","line":1849,"mapping_status":"MAPPED","ontology_id":"CHEBI:75228","preferred_term":"Sodium
+    lactate"}],"identifier":"CHEBI:75228","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":283,"edge_count":283,"occurrences":283},"occurrence_statistics":{"media_count":283,"total_occurrences":283},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:75228","ontology_label":"sodium
+    lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium lactate","sssom_rows":[{"data_row":2574,"object_id":"CHEBI:75228","object_label":"sodium
+    lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Lactate","synonym_count":29}'
   snapshot_sha256: 56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6
 - evidence_id: ev-d9ce9395fdbde69f
   kind: prior_review

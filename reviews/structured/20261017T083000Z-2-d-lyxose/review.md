@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-5703779de3d5d6d5 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-5703779de3d5d6d5 | Reconcile direct D-lyxose MicrobeDecoder occurrences |
 | Role evidence and plausibility check | passed | True | record-5703779de3d5d6d5 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-5703779de3d5d6d5 | Reconciled against predecessor batch review 20261011T024629Z-mim-reconcile-all-batch-01 and semantic review dispositions on HEAD. |
 
@@ -83,9 +83,9 @@ Reconcile direct D-lyxose MicrobeDecoder occurrences
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c47f5c761d89211f | data/ingredients/mapped/(2)-D-lyxose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[261],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":263,"mapping_status":"MAPPED","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-lyxose","sssom_rows":[{"data_row":3,"object_id":"CHEBI:62318","object_label":"D-lyxose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~282~29-D-lyxose","synonym_count":3} |
+| ev-c47f5c761d89211f | data/ingredients/mapped/(2)-D-lyxose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[261],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":263,"mapping_status":"MAPPED","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-lyxose","sssom_rows":[],"sssom_subject":"MIM:(2)-D-lyxose","synonym_count":3} |
 | ev-8415d47f688bc31e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [261] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-a2a559decb3bad18 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:~282~29-D-lyxose; data-row positions=[3] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":3,"object_id":"CHEBI:62318","object_label":"D-lyxose","other":"(2)-D-lyxose&#124;D-(-)-lyxose&#124;D-lyxo-pentose&#124;CAS:1114-34-7","predicate_id":"skos:exactMatch","subject_id":"MIM:~282~29-D-lyxose","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"}] |
+| ev-a2a559decb3bad18 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:(2)-D-lyxose; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
 | ev-5b7e3f2daab7df58 | docs/data/mapped_ingredients.csv; CSV lines=[263] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62318","line":263,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose","total_occurrences":"0"}] |
 | ev-d69679219babeef0 | reports/yaml_record_review/(2)-D-lyxose.md; &#96;data/ingredients/mapped/(2)-D-lyxose.yaml&#96;:2; Verdict:4; Identity:14; Validation:36; Evidence:50; Completeness:85; Recommended Edits:96 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e0e2a024a09f1958 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[4] | context_only | [{"current_record_sha256":"62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e","finding_id":"SEM:cd74f8ddafa04d7e9a9a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
@@ -176,12 +176,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: Reconcile direct D-lyxose MicrobeDecoder occurrences
   target_ids:
   - record-5703779de3d5d6d5
+  evidence_ids:
+  - ev-c47f5c761d89211f
+  - ev-8415d47f688bc31e
+  - ev-a2a559decb3bad18
+  - ev-5b7e3f2daab7df58
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -190,6 +194,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-5703779de3d5d6d5
+  evidence_ids:
+  - ev-c47f5c761d89211f
+  - ev-e0e2a024a09f1958
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -198,21 +205,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5703779de3d5d6d5
+  evidence_ids:
+  - ev-d69679219babeef0
+  - ev-e0e2a024a09f1958
+  - ev-e07f5b645ccdb4e7
 evidence:
 - evidence_id: ev-c47f5c761d89211f
   kind: record_content
   reference: data/ingredients/mapped/(2)-D-lyxose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[261],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":263,"mapping_status":"MAPPED","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-lyxose","sssom_rows":[{"data_row":3,"object_id":"CHEBI:62318","object_label":"D-lyxose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~282~29-D-lyxose","synonym_count":3}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[261],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62318","line":263,"mapping_status":"MAPPED","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose"}],"identifier":"CHEBI:62318","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62318","ontology_label":"D-lyxose","ontology_source":"CHEBI"},"preferred_term":"D-lyxose","sssom_rows":[],"sssom_subject":"MIM:(2)-D-lyxose","synonym_count":3}'
   snapshot_sha256: 62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e
 - evidence_id: ev-8415d47f688bc31e
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [261]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,16 +231,16 @@ evidence:
 - evidence_id: ev-a2a559decb3bad18
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:~282~29-D-lyxose; data-row positions=[3]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:(2)-D-lyxose; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":3,"object_id":"CHEBI:62318","object_label":"D-lyxose","other":"(2)-D-lyxose|D-(-)-lyxose|D-lyxo-pentose|CAS:1114-34-7","predicate_id":"skos:exactMatch","subject_id":"MIM:~282~29-D-lyxose","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"}]'
+  summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-5b7e3f2daab7df58
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[263]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62318","line":263,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62318","preferred_term":"D-lyxose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -259,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[4]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e","finding_id":"SEM:cd74f8ddafa04d7e9a9a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

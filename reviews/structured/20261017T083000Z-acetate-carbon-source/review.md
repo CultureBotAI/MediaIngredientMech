@@ -83,7 +83,6 @@ Disposition: The current local observation is recorded on a REJECTED tombstone, 
 | ev-b117bb3e7c1ec547 | docs/data/mapped_ingredients.csv; CSV lines=[441] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:30089","line":441,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:30089","preferred_term":"Acetate (carbon source)","total_occurrences":"0"}] |
 | ev-51b97333355626da | reports/yaml_record_review/Acetate_Carbon_Source.md; &#96;data/ingredients/mapped/Acetate_Carbon_Source.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:42; Completeness:62; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5ac3e2b3ff95dcb6 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[196] | context_only | [{"current_record_sha256":"ab66b23c404877bcdb21cead87083ef1f7df4aacaa817ab3dab495c606626061","finding_id":"SEM:54d1f802b16ed4120fab","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-c2cb31daca219be9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Acetate_Carbon_Source.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -172,6 +171,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2410003b5461b69f
+  evidence_ids:
+  - ev-2ded0937bbcbab9c
+  - ev-510ede3f1a840ca6
+  - ev-04d0c7e649f12343
+  - ev-b117bb3e7c1ec547
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -180,6 +184,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-2410003b5461b69f
+  evidence_ids:
+  - ev-2ded0937bbcbab9c
+  - ev-5ac3e2b3ff95dcb6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -188,13 +195,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2410003b5461b69f
+  evidence_ids:
+  - ev-51b97333355626da
+  - ev-5ac3e2b3ff95dcb6
 evidence:
 - evidence_id: ev-2ded0937bbcbab9c
   kind: record_content
   reference: data/ingredients/mapped/Acetate_Carbon_Source.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[439],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30089","line":441,"mapping_status":"REJECTED","ontology_id":"CHEBI:30089","preferred_term":"Acetate
     (carbon source)"}],"identifier":"CHEBI:30089","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":48,"edge_count":48,"occurrences":48},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30089","ontology_label":"acetate","ontology_source":"CHEBI"},"preferred_term":"Acetate
@@ -204,7 +214,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [439]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -213,7 +223,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Acetate_Carbon_Source; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -221,7 +231,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[441]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30089","line":441,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:30089","preferred_term":"Acetate
     (carbon source)","total_occurrences":"0"}]'
@@ -245,18 +255,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[196]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ab66b23c404877bcdb21cead87083ef1f7df4aacaa817ab3dab495c606626061","finding_id":"SEM:54d1f802b16ed4120fab","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-c2cb31daca219be9
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Acetate_Carbon_Source.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-4033fc10b214a2f0
@@ -325,7 +327,7 @@ assessments:
   - record-2410003b5461b69f
   evidence_ids:
   - ev-2ded0937bbcbab9c
-  - ev-c2cb31daca219be9
+  - ev-5ac3e2b3ff95dcb6
   dimensions:
   - name: legacy-disposition
     value: needs_reassessment
@@ -333,7 +335,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-2ded0937bbcbab9c
-    - ev-c2cb31daca219be9
+    - ev-5ac3e2b3ff95dcb6
 findings:
 - finding_id: rec-f-role-2410003b5461b69f
   issue_key: mim-reconciliation-role-support-2410003b5461b69f
@@ -349,7 +351,7 @@ findings:
   - record-2410003b5461b69f
   evidence_ids:
   - ev-2ded0937bbcbab9c
-  - ev-c2cb31daca219be9
+  - ev-5ac3e2b3ff95dcb6
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Acetate_Carbon_Source.yaml

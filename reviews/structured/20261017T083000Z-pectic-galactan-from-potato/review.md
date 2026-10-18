@@ -167,6 +167,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8902b361ea0c8805
+  evidence_ids:
+  - ev-a1a36d6087d58589
+  - ev-69e33b9309c05a38
+  - ev-824da7978abbe9c5
+  - ev-8429bbc5cdebc081
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -175,6 +180,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-8902b361ea0c8805
+  evidence_ids:
+  - ev-a1a36d6087d58589
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -183,13 +190,15 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8902b361ea0c8805
+  evidence_ids:
+  - ev-321b754aacdad3ca
 evidence:
 - evidence_id: ev-a1a36d6087d58589
   kind: record_content
   reference: data/ingredients/unmapped/Pectic_Galactan_From_Potato.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[182],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0231","line":184,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"Pectic
     galactan from potato"}],"identifier":"UNMAPPED_0231","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{},"preferred_term":"Pectic
@@ -199,7 +208,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [182]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -208,7 +217,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Pectic_Galactan_From_Potato; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -216,7 +225,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[184]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0231","line":184,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"1","ontology_id":"","preferred_term":"Pectic
     galactan from potato","total_occurrences":"1"}]'

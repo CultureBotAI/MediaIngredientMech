@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-Isoleucine
 | ev-d41dae5e41a2695b | docs/data/mapped_ingredients.csv; CSV lines=[1253] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17191","line":1253,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"123","ontology_id":"CHEBI:17191","preferred_term":"L-Isoleucine","total_occurrences":"123"}] |
 | ev-d69bad4497ba3242 | reports/yaml_record_review/L-isoleucine.md; &#96;data/ingredients/mapped/L-isoleucine.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:28; Completeness:48; Recommended Edits:55 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fdbe605d4d369bdf | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[821,1834] | context_only | [{"current_record_sha256":"99e0766213e7e0256649861781be48f690a85a4709a1d57d7cc5f936a0cef809","finding_id":"SEM:b57b7986fbb08d620fd5","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"99e0766213e7e0256649861781be48f690a85a4709a1d57d7cc5f936a0cef809","finding_id":"SEM:d2437654e70591c1adb7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-419a99fa0213bf63 | data/ingredients/mapped/L-isoleucine.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-419a99fa0213bf63 | data/ingredients/mapped/L-isoleucine.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1251],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17191","line":1253,"mapping_status":"MAPPED","ontology_id":"CHEBI:17191","preferred_term":"L-Isoleucine"}],"identifier":"CHEBI:17191","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":123,"edge_count":123,"occurrences":123},"occurrence_statistics":{"media_count":123,"total_occurrences":123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17191","ontology_label":"L-isoleucine","ontology_source":"CHEBI"},"preferred_term":"L-Isoleucine","sssom_rows":[{"data_row":1621,"object_id":"CHEBI:17191","object_label":"L-isoleucine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-isoleucine","synonym_count":5} |
 | ev-96e9ceace89968e4 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-b4ee345c056e99f1] | context_only | Predecessor structured review finding f-b4ee345c056e99f1 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-63027fe75761d8c8
+  evidence_ids:
+  - ev-e0fac4d4bc14f7af
+  - ev-e01d7f2478770d75
+  - ev-c88fce826636f0c2
+  - ev-d41dae5e41a2695b
+  - ev-419a99fa0213bf63
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-63027fe75761d8c8
+  evidence_ids:
+  - ev-e0fac4d4bc14f7af
+  - ev-fdbe605d4d369bdf
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-63027fe75761d8c8
+  evidence_ids:
+  - ev-d69bad4497ba3242
+  - ev-fdbe605d4d369bdf
+  - ev-96e9ceace89968e4
 evidence:
 - evidence_id: ev-e0fac4d4bc14f7af
   kind: record_content
   reference: data/ingredients/mapped/L-isoleucine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1251],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17191","line":1253,"mapping_status":"MAPPED","ontology_id":"CHEBI:17191","preferred_term":"L-Isoleucine"}],"identifier":"CHEBI:17191","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":123,"edge_count":123,"occurrences":123},"occurrence_statistics":{"media_count":123,"total_occurrences":123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17191","ontology_label":"L-isoleucine","ontology_source":"CHEBI"},"preferred_term":"L-Isoleucine","sssom_rows":[{"data_row":1621,"object_id":"CHEBI:17191","object_label":"L-isoleucine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-isoleucine","synonym_count":5}'
   snapshot_sha256: 99e0766213e7e0256649861781be48f690a85a4709a1d57d7cc5f936a0cef809
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1251]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-isoleucine; data-row positions=[1621]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1621,"object_id":"CHEBI:17191","object_label":"L-isoleucine","other":"Isoleucine|(2S,3S)-2-amino-3-methylpentanoic
     acid|2-Amino-3-methylvaleric acid|alpha-amino-beta-methylvaleric acid|CAS:73-32-5","predicate_id":"skos:exactMatch","subject_id":"MIM:L-isoleucine","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1253]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17191","line":1253,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"123","ontology_id":"CHEBI:17191","preferred_term":"L-Isoleucine","total_occurrences":"123"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[821,1834]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"99e0766213e7e0256649861781be48f690a85a4709a1d57d7cc5f936a0cef809","finding_id":"SEM:b57b7986fbb08d620fd5","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"99e0766213e7e0256649861781be48f690a85a4709a1d57d7cc5f936a0cef809","finding_id":"SEM:d2437654e70591c1adb7","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-isoleucine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1251],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17191","line":1253,"mapping_status":"MAPPED","ontology_id":"CHEBI:17191","preferred_term":"L-Isoleucine"}],"identifier":"CHEBI:17191","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":123,"edge_count":123,"occurrences":123},"occurrence_statistics":{"media_count":123,"total_occurrences":123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17191","ontology_label":"L-isoleucine","ontology_source":"CHEBI"},"preferred_term":"L-Isoleucine","sssom_rows":[{"data_row":1621,"object_id":"CHEBI:17191","object_label":"L-isoleucine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-isoleucine","synonym_count":5}'
   snapshot_sha256: 99e0766213e7e0256649861781be48f690a85a4709a1d57d7cc5f936a0cef809
 - evidence_id: ev-96e9ceace89968e4
   kind: prior_review

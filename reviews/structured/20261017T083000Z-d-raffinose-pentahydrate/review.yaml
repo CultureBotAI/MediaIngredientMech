@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-33582a299a07d746
+  evidence_ids:
+  - ev-74d382c7d0ed9070
+  - ev-6890dabdfef2ada8
+  - ev-297c3b68fd8ffe97
+  - ev-c3bf0a0d1250ee2b
+  - ev-26caf769e191d1b6
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-33582a299a07d746
+  evidence_ids:
+  - ev-74d382c7d0ed9070
+  - ev-a51f67c803a32983
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-33582a299a07d746
+  evidence_ids:
+  - ev-d321e73e176de72a
+  - ev-a51f67c803a32983
+  - ev-b194f10c355f911c
 evidence:
 - evidence_id: ev-74d382c7d0ed9070
   kind: record_content
   reference: data/ingredients/mapped/D-Raffinose_Pentahydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[824],"raw_equal":true},"docs_rows":[{"identifier":"cas:17629-30-0","line":826,"mapping_status":"MAPPED","ontology_id":"CHEBI:189430","preferred_term":"D-Raffinose
     pentahydrate"}],"identifier":"cas:17629-30-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:189430","ontology_label":"Raffinose
@@ -109,7 +122,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [824]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -117,8 +130,9 @@ evidence:
 - evidence_id: ev-297c3b68fd8ffe97
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:D-Raffinose_Pentahydrate; data-row positions=[906,907,908]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:D-Raffinose_Pentahydrate; data-row positions=[906, 907,
+    908]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":906,"object_id":"CHEBI:189430","object_label":"Raffinose
     Pentahydrate","other":"(2S,3R,4S,5R,6R)-2-[[(2R,3S,4S,5R,6R)-6-[(2S,3S,4S,5R)-3,4-dihydroxy-2,5-bis(hydroxymethyl)oxolan-2-yl]oxy-3,4,5-trihydroxyoxan-2-yl]methoxy]-6-(hydroxymethyl)oxane-3,4,5-triol;pentahydrate","predicate_id":"skos:broadMatch","subject_id":"MIM:D-Raffinose_Pentahydrate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":907,"object_id":"cas:17629-30-0","object_label":"D-Raffinose
@@ -129,7 +143,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[826]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:17629-30-0","line":826,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:189430","preferred_term":"D-Raffinose
     pentahydrate","total_occurrences":"0"}]'
@@ -157,7 +171,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[476,1571]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"3b0200dd4a0b0e7127b13ba0a4b278c6faa094562534f9b72a4f4c4870b87c49","finding_id":"SEM:167a4a3c3b13354872cd","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"3b0200dd4a0b0e7127b13ba0a4b278c6faa094562534f9b72a4f4c4870b87c49","finding_id":"SEM:e7b4dba58cd6005df762","kind":"role_evidence","resolution_reason":"Historical
@@ -167,12 +181,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Raffinose_Pentahydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[824],"raw_equal":true},"docs_rows":[{"identifier":"cas:17629-30-0","line":826,"mapping_status":"MAPPED","ontology_id":"CHEBI:189430","preferred_term":"D-Raffinose
+    pentahydrate"}],"identifier":"cas:17629-30-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:189430","ontology_label":"Raffinose
+    Pentahydrate","ontology_source":"CHEBI"},"preferred_term":"D-Raffinose pentahydrate","sssom_rows":[{"data_row":906,"object_id":"CHEBI:189430","object_label":"Raffinose
+    Pentahydrate","predicate_id":"skos:broadMatch"},{"data_row":907,"object_id":"cas:17629-30-0","object_label":"D-Raffinose
+    pentahydrate","predicate_id":"skos:exactMatch"},{"data_row":908,"object_id":"kgmicrobe.compound:d-raffinose_pentahydrate","object_label":"D-Raffinose
+    pentahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Raffinose_Pentahydrate","synonym_count":1}'
   snapshot_sha256: 3b0200dd4a0b0e7127b13ba0a4b278c6faa094562534f9b72a4f4c4870b87c49
 - evidence_id: ev-b194f10c355f911c
   kind: prior_review

@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a7f0a572e7f633ba
+  evidence_ids:
+  - ev-379bc8b3c89ada2b
+  - ev-4e8411e437184d4a
+  - ev-328168a41e0f8b79
+  - ev-b32e1317ba5ccec2
+  - ev-e82a8bb1b5c01af2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a7f0a572e7f633ba
+  evidence_ids:
+  - ev-379bc8b3c89ada2b
+  - ev-9691d33191423f75
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a7f0a572e7f633ba
+  evidence_ids:
+  - ev-5a896c4b80e797e1
+  - ev-9691d33191423f75
+  - ev-cccee1f45502846c
 evidence:
 - evidence_id: ev-379bc8b3c89ada2b
   kind: record_content
   reference: data/ingredients/mapped/Hexadecane.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1126],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45296","line":1128,"mapping_status":"MAPPED","ontology_id":"CHEBI:45296","preferred_term":"Hexadecane"}],"identifier":"CHEBI:45296","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":21,"edge_count":21,"occurrences":21},"occurrence_statistics":{"media_count":21,"total_occurrences":21},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:45296","ontology_label":"hexadecane","ontology_source":"CHEBI"},"preferred_term":"Hexadecane","sssom_rows":[{"data_row":1426,"object_id":"CHEBI:45296","object_label":"hexadecane","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hexadecane","synonym_count":8}'
   snapshot_sha256: 9434d50224d75f9974445e21a9e530941a569ce2133efa91e23dab641bc76dc2
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1126]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Hexadecane; data-row positions=[1426]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1426,"object_id":"CHEBI:45296","object_label":"hexadecane","other":"CH3-[CH2]14-CH3|Cetan|Hexadekan|Zetan|cetane|n-cetane|n-hexadecane|CAS:544-76-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Hexadecane","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1128]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:45296","line":1128,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"21","ontology_id":"CHEBI:45296","preferred_term":"Hexadecane","total_occurrences":"21"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -144,7 +157,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[730,2045]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9434d50224d75f9974445e21a9e530941a569ce2133efa91e23dab641bc76dc2","finding_id":"SEM:2e7440b26dc208396d34","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9434d50224d75f9974445e21a9e530941a569ce2133efa91e23dab641bc76dc2","finding_id":"SEM:e967e99bd54516fc8b72","kind":"role_evidence","resolution_reason":"Historical
@@ -154,12 +167,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Hexadecane.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1126],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45296","line":1128,"mapping_status":"MAPPED","ontology_id":"CHEBI:45296","preferred_term":"Hexadecane"}],"identifier":"CHEBI:45296","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":21,"edge_count":21,"occurrences":21},"occurrence_statistics":{"media_count":21,"total_occurrences":21},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:45296","ontology_label":"hexadecane","ontology_source":"CHEBI"},"preferred_term":"Hexadecane","sssom_rows":[{"data_row":1426,"object_id":"CHEBI:45296","object_label":"hexadecane","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hexadecane","synonym_count":8}'
   snapshot_sha256: 9434d50224d75f9974445e21a9e530941a569ce2133efa91e23dab641bc76dc2
 - evidence_id: ev-cccee1f45502846c
   kind: prior_review

@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-eed66082cb7c6692 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-eed66082cb7c6692 | Explain curation-history timestamp order: (R)-amygdalin |
 | Role evidence and plausibility check | passed | True | record-eed66082cb7c6692 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-eed66082cb7c6692 | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -89,10 +89,10 @@ Explain curation-history timestamp order: (R)-amygdalin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-7935ad332ef20e24 | data/ingredients/mapped/(R)-amygdalin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2095],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17019","line":2097,"mapping_status":"MAPPED","ontology_id":"CHEBI:17019","preferred_term":"(R)-amygdalin"}],"identifier":"CHEBI:17019","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17019","ontology_label":"(R)-amygdalin","ontology_source":"CHEBI"},"preferred_term":"(R)-amygdalin","sssom_rows":[{"data_row":4,"object_id":"CHEBI:17019","object_label":"(R)-amygdalin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~28R~29-amygdalin","synonym_count":0} |
-| ev-cd95076c996e95c1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2095] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-a04b85ea27816560 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:~28R~29-amygdalin; data-row positions=[4] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":4,"object_id":"CHEBI:17019","object_label":"(R)-amygdalin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:~28R~29-amygdalin","validation_method":"OLS:chebi&#124;CONFIRMED&#124;2026-09-02"}] |
-| ev-2533b178f1c7a72d | docs/data/mapped_ingredients.csv; CSV lines=[2097] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17019","line":2097,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17019","preferred_term":"(R)-amygdalin","total_occurrences":"0"}] |
+| ev-7935ad332ef20e24 | data/ingredients/mapped/(R)-amygdalin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2094],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17019","line":2096,"mapping_status":"MAPPED","ontology_id":"CHEBI:17019","preferred_term":"(R)-amygdalin"}],"identifier":"CHEBI:17019","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17019","ontology_label":"(R)-amygdalin","ontology_source":"CHEBI"},"preferred_term":"(R)-amygdalin","sssom_rows":[],"sssom_subject":"MIM:(R)-amygdalin","synonym_count":0} |
+| ev-cd95076c996e95c1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2094] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a04b85ea27816560 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:(R)-amygdalin; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-2533b178f1c7a72d | docs/data/mapped_ingredients.csv; CSV lines=[2096] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17019","line":2096,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17019","preferred_term":"(R)-amygdalin","total_occurrences":"0"}] |
 | ev-f10d9d4db9c55a15 | reports/yaml_record_review/(R)-amygdalin.md; &#96;data/ingredients/mapped/(R)-amygdalin.yaml&#96;:2; Verdict:4; Identity:13; Validation:38; Evidence:50; Completeness:77; Recommended Edits:91 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-bdebb5dc90e1fd7d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[5] | context_only | [{"current_record_sha256":"9f6e3cb70cbde2c2f3d0352b23bde746980d76be60857207d9447016a3d9f574","finding_id":"SEM:c4aa94f8cc2420c04b3c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-083f33d45e5e93c3 | mappings/record_research_validation.tsv; lines=[745,746] | partial | FIELD_MISSING entries conflict with populated current fields: [{"field":"chemical_properties","row":{"detail":"'chemical_properties' is unset; report supplies a value","documented_rationale":"no","evidence":"Available and unpopulated: &#96;C20H27NO11&#96;, charge 0, avg mass 457.432, monoisotopic 457.15841, InChIKey &#96;XUCIJNAGGSZNQT-JHSLDZJXSA-N&#96; (\u00a73)","identifier":"CHEBI:17019","kind":"FIELD_MISSING","lane":"claude","line":745,"mapping_quality":"EXACT_MATCH","preferred_term":"(R)-amygdalin","priority":"P3","promoted_by":"review-ingredients","recorded":"CHEBI:17019","slug":"(R)-amygdalin","status_dir":"mapped"}},{"field":"chemical_properties","row":{"detail":"'chemical_properties.cas_rn' is unset; report supplies a value","documented_rationale":"no","evidence":"29883-15-6** \u2014 verified to this exact stereoisomer by two independent routes and check-digit-valid (\u00a73)","identifier":"CHEBI:17019","kind":"FIELD_MISSING","lane":"claude","line":746,"mapping_quality":"EXACT_MATCH","preferred_term":"(R)-amygdalin","priority":"P3","promoted_by":"review-ingredients","recorded":"CHEBI:17019","slug":"(R)-amygdalin","status_dir":"mapped"}}] |
@@ -182,12 +182,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: (R)-amygdalin'
   target_ids:
   - record-eed66082cb7c6692
+  evidence_ids:
+  - ev-7935ad332ef20e24
+  - ev-cd95076c996e95c1
+  - ev-a04b85ea27816560
+  - ev-2533b178f1c7a72d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -196,6 +200,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-eed66082cb7c6692
+  evidence_ids:
+  - ev-7935ad332ef20e24
+  - ev-bdebb5dc90e1fd7d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -204,21 +211,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-eed66082cb7c6692
+  evidence_ids:
+  - ev-f10d9d4db9c55a15
+  - ev-bdebb5dc90e1fd7d
+  - ev-714f49e1367fb107
 evidence:
 - evidence_id: ev-7935ad332ef20e24
   kind: record_content
   reference: data/ingredients/mapped/(R)-amygdalin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2095],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17019","line":2097,"mapping_status":"MAPPED","ontology_id":"CHEBI:17019","preferred_term":"(R)-amygdalin"}],"identifier":"CHEBI:17019","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17019","ontology_label":"(R)-amygdalin","ontology_source":"CHEBI"},"preferred_term":"(R)-amygdalin","sssom_rows":[{"data_row":4,"object_id":"CHEBI:17019","object_label":"(R)-amygdalin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~28R~29-amygdalin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2094],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17019","line":2096,"mapping_status":"MAPPED","ontology_id":"CHEBI:17019","preferred_term":"(R)-amygdalin"}],"identifier":"CHEBI:17019","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17019","ontology_label":"(R)-amygdalin","ontology_source":"CHEBI"},"preferred_term":"(R)-amygdalin","sssom_rows":[],"sssom_subject":"MIM:(R)-amygdalin","synonym_count":0}'
   snapshot_sha256: 9f6e3cb70cbde2c2f3d0352b23bde746980d76be60857207d9447016a3d9f574
 - evidence_id: ev-cd95076c996e95c1
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2095]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2094]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -226,18 +237,18 @@ evidence:
 - evidence_id: ev-a04b85ea27816560
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:~28R~29-amygdalin; data-row positions=[4]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:(R)-amygdalin; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":4,"object_id":"CHEBI:17019","object_label":"(R)-amygdalin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:~28R~29-amygdalin","validation_method":"OLS:chebi|CONFIRMED|2026-09-02"}]'
+  summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-2533b178f1c7a72d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2097]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2096]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17019","line":2097,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17019","preferred_term":"(R)-amygdalin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17019","line":2096,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17019","preferred_term":"(R)-amygdalin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-f10d9d4db9c55a15
   kind: prior_review
@@ -264,7 +275,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[5]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9f6e3cb70cbde2c2f3d0352b23bde746980d76be60857207d9447016a3d9f574","finding_id":"SEM:c4aa94f8cc2420c04b3c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

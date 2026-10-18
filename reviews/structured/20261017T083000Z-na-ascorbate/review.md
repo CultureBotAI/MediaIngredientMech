@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-ascorbate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-e7f58f767c4690b3 | data/ingredients/mapped/Na-ascorbate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1460],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113451","line":1462,"mapping_status":"MAPPED","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate"}],"identifier":"CHEBI:113451","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":38,"edge_count":38,"occurrences":38},"occurrence_statistics":{"media_count":38,"total_occurrences":38},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113451","ontology_label":"sodium ascorbate","ontology_source":"CHEBI"},"preferred_term":"Na-ascorbate","sssom_rows":[{"data_row":1962,"object_id":"CHEBI:113451","object_label":"sodium ascorbate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ascorbate","synonym_count":14} |
-| ev-39778731bb474757 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1460] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6b46c70360c809f7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-ascorbate; data-row positions=[1962] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1962,"object_id":"CHEBI:113451","object_label":"sodium ascorbate","other":"L-ascorbic acid sodium salt&#124;L-ascorbic acid, monosodium salt&#124;ascorbate de sodium&#124;ascorbic acid sodium salt&#124;monosodium L-ascorbate&#124;natrii ascorbas&#124;sodium (2R)-2-[(1S)-1,2-dihydroxyethyl]-4-hydroxy-5-oxo-2,5-dihydrofuran-3-olate&#124;sodium L-ascorbate&#124;vitamin C sodium&#124;vitamin C, sodium salt&#124;CAS:134-03-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-ascorbate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-a46cf4efc073fb5f | docs/data/mapped_ingredients.csv; CSV lines=[1462] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:113451","line":1462,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"38","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate","total_occurrences":"38"}] |
+| ev-e7f58f767c4690b3 | data/ingredients/mapped/Na-ascorbate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1459],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113451","line":1461,"mapping_status":"MAPPED","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate"}],"identifier":"CHEBI:113451","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":38,"edge_count":38,"occurrences":38},"occurrence_statistics":{"media_count":38,"total_occurrences":38},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113451","ontology_label":"sodium ascorbate","ontology_source":"CHEBI"},"preferred_term":"Na-ascorbate","sssom_rows":[{"data_row":1964,"object_id":"CHEBI:113451","object_label":"sodium ascorbate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ascorbate","synonym_count":14} |
+| ev-39778731bb474757 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1459] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6b46c70360c809f7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-ascorbate; data-row positions=[1964] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1964,"object_id":"CHEBI:113451","object_label":"sodium ascorbate","other":"L-ascorbic acid sodium salt&#124;L-ascorbic acid, monosodium salt&#124;ascorbate de sodium&#124;ascorbic acid sodium salt&#124;monosodium L-ascorbate&#124;natrii ascorbas&#124;sodium (2R)-2-[(1S)-1,2-dihydroxyethyl]-4-hydroxy-5-oxo-2,5-dihydrofuran-3-olate&#124;sodium L-ascorbate&#124;vitamin C sodium&#124;vitamin C, sodium salt&#124;CAS:134-03-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-ascorbate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-a46cf4efc073fb5f | docs/data/mapped_ingredients.csv; CSV lines=[1461] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:113451","line":1461,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"38","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate","total_occurrences":"38"}] |
 | ev-5137aa245a013ffa | reports/yaml_record_review/Na-ascorbate.md; &#96;data/ingredients/mapped/Na-ascorbate.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:27; Completeness:40; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-dc4a6af2ce86cf41 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[969,2013] | context_only | [{"current_record_sha256":"0783f68dffa179a9579250d7f8a131a96781f2189f4672b63c2408cc07ea7c5e","finding_id":"SEM:4d78c372c8c615ea59f2","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0783f68dffa179a9579250d7f8a131a96781f2189f4672b63c2408cc07ea7c5e","finding_id":"SEM:67bd1af3559b8e07ba48","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-90828192655c007e | data/ingredients/mapped/Na-ascorbate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-90828192655c007e | data/ingredients/mapped/Na-ascorbate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1459],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113451","line":1461,"mapping_status":"MAPPED","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate"}],"identifier":"CHEBI:113451","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":38,"edge_count":38,"occurrences":38},"occurrence_statistics":{"media_count":38,"total_occurrences":38},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113451","ontology_label":"sodium ascorbate","ontology_source":"CHEBI"},"preferred_term":"Na-ascorbate","sssom_rows":[{"data_row":1964,"object_id":"CHEBI:113451","object_label":"sodium ascorbate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ascorbate","synonym_count":14} |
 | ev-d7888082bbaa6f7e | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-d529b6e683d18f34] | context_only | Predecessor structured review finding f-d529b6e683d18f34 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1460ff9880c39741
+  evidence_ids:
+  - ev-e7f58f767c4690b3
+  - ev-39778731bb474757
+  - ev-6b46c70360c809f7
+  - ev-a46cf4efc073fb5f
+  - ev-90828192655c007e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1460ff9880c39741
+  evidence_ids:
+  - ev-e7f58f767c4690b3
+  - ev-dc4a6af2ce86cf41
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1460ff9880c39741
+  evidence_ids:
+  - ev-5137aa245a013ffa
+  - ev-dc4a6af2ce86cf41
+  - ev-d7888082bbaa6f7e
 evidence:
 - evidence_id: ev-e7f58f767c4690b3
   kind: record_content
   reference: data/ingredients/mapped/Na-ascorbate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1460],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113451","line":1462,"mapping_status":"MAPPED","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate"}],"identifier":"CHEBI:113451","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":38,"edge_count":38,"occurrences":38},"occurrence_statistics":{"media_count":38,"total_occurrences":38},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113451","ontology_label":"sodium
-    ascorbate","ontology_source":"CHEBI"},"preferred_term":"Na-ascorbate","sssom_rows":[{"data_row":1962,"object_id":"CHEBI:113451","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1459],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113451","line":1461,"mapping_status":"MAPPED","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate"}],"identifier":"CHEBI:113451","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":38,"edge_count":38,"occurrences":38},"occurrence_statistics":{"media_count":38,"total_occurrences":38},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113451","ontology_label":"sodium
+    ascorbate","ontology_source":"CHEBI"},"preferred_term":"Na-ascorbate","sssom_rows":[{"data_row":1964,"object_id":"CHEBI:113451","object_label":"sodium
     ascorbate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ascorbate","synonym_count":14}'
   snapshot_sha256: 0783f68dffa179a9579250d7f8a131a96781f2189f4672b63c2408cc07ea7c5e
 - evidence_id: ev-39778731bb474757
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1460]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1459]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,10 +232,10 @@ evidence:
 - evidence_id: ev-6b46c70360c809f7
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-ascorbate; data-row positions=[1962]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-ascorbate; data-row positions=[1964]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1962,"object_id":"CHEBI:113451","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1964,"object_id":"CHEBI:113451","object_label":"sodium
     ascorbate","other":"L-ascorbic acid sodium salt|L-ascorbic acid, monosodium salt|ascorbate
     de sodium|ascorbic acid sodium salt|monosodium L-ascorbate|natrii ascorbas|sodium
     (2R)-2-[(1S)-1,2-dihydroxyethyl]-4-hydroxy-5-oxo-2,5-dihydrofuran-3-olate|sodium
@@ -231,10 +244,10 @@ evidence:
 - evidence_id: ev-a46cf4efc073fb5f
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1462]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1461]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:113451","line":1462,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"38","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate","total_occurrences":"38"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:113451","line":1461,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"38","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate","total_occurrences":"38"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-5137aa245a013ffa
   kind: prior_review
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[969,2013]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0783f68dffa179a9579250d7f8a131a96781f2189f4672b63c2408cc07ea7c5e","finding_id":"SEM:4d78c372c8c615ea59f2","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0783f68dffa179a9579250d7f8a131a96781f2189f4672b63c2408cc07ea7c5e","finding_id":"SEM:67bd1af3559b8e07ba48","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-ascorbate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1459],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113451","line":1461,"mapping_status":"MAPPED","ontology_id":"CHEBI:113451","preferred_term":"Na-ascorbate"}],"identifier":"CHEBI:113451","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":38,"edge_count":38,"occurrences":38},"occurrence_statistics":{"media_count":38,"total_occurrences":38},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113451","ontology_label":"sodium
+    ascorbate","ontology_source":"CHEBI"},"preferred_term":"Na-ascorbate","sssom_rows":[{"data_row":1964,"object_id":"CHEBI:113451","object_label":"sodium
+    ascorbate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ascorbate","synonym_count":14}'
   snapshot_sha256: 0783f68dffa179a9579250d7f8a131a96781f2189f4672b63c2408cc07ea7c5e
 - evidence_id: ev-d7888082bbaa6f7e
   kind: prior_review

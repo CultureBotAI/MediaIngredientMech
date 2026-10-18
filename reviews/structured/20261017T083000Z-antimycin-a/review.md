@@ -89,7 +89,7 @@ Reassess prediction-only role support: Antimycin A
 | ev-97a49ea20a206ef8 | docs/data/mapped_ingredients.csv; CSV lines=[503] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:2762","line":503,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:2762","preferred_term":"Antimycin A","total_occurrences":"0"}] |
 | ev-c09b93873498b767 | reports/yaml_record_review/Antimycin_A.md; &#96;data/ingredients/mapped/Antimycin_A.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:40; Completeness:60; Recommended Edits:69 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-625298acdd2a6c38 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[266,1988] | context_only | [{"current_record_sha256":"53b2ae1d271c05dc3c0cbcf7612d367df95a906463fee7eb5dbb91fa5251e1a0","finding_id":"SEM:5454f9cd0e1889155a93","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"53b2ae1d271c05dc3c0cbcf7612d367df95a906463fee7eb5dbb91fa5251e1a0","finding_id":"SEM:bddf69732999c7870e1c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bf18ff9f3ccd8588 | data/ingredients/mapped/Antimycin_A.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-bf18ff9f3ccd8588 | data/ingredients/mapped/Antimycin_A.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[501],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2762","line":503,"mapping_status":"MAPPED","ontology_id":"CHEBI:2762","preferred_term":"Antimycin A"}],"identifier":"CHEBI:2762","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2762","ontology_label":"antimycin A","ontology_source":"CHEBI"},"preferred_term":"Antimycin A","sssom_rows":[{"data_row":394,"object_id":"CHEBI:2762","object_label":"antimycin A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Antimycin_A","synonym_count":1} |
 | ev-64927cd242906f83 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-243e667bf81faeb8] | context_only | Predecessor structured review finding f-243e667bf81faeb8 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e95259f65a0bb6d9
+  evidence_ids:
+  - ev-3ea54081b1a4504e
+  - ev-c5fd2dc8afb8a0c8
+  - ev-f2f5b7c92f08abbd
+  - ev-97a49ea20a206ef8
+  - ev-bf18ff9f3ccd8588
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e95259f65a0bb6d9
+  evidence_ids:
+  - ev-3ea54081b1a4504e
+  - ev-625298acdd2a6c38
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e95259f65a0bb6d9
+  evidence_ids:
+  - ev-c09b93873498b767
+  - ev-625298acdd2a6c38
+  - ev-64927cd242906f83
 evidence:
 - evidence_id: ev-3ea54081b1a4504e
   kind: record_content
   reference: data/ingredients/mapped/Antimycin_A.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[501],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2762","line":503,"mapping_status":"MAPPED","ontology_id":"CHEBI:2762","preferred_term":"Antimycin
     A"}],"identifier":"CHEBI:2762","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2762","ontology_label":"antimycin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [501]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Antimycin_A; data-row positions=[394]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":394,"object_id":"CHEBI:2762","object_label":"antimycin
     A","other":"(2R,3S,6S,7R,8R)-3-[(3-formamido-2-hydroxybenzoyl)amino]-8-hexyl-2,6-dimethyl-4,9-dioxo-1,5-dioxonan-7-yl
@@ -231,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[503]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:2762","line":503,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:2762","preferred_term":"Antimycin
     A","total_occurrences":"0"}]'
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[266,1988]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"53b2ae1d271c05dc3c0cbcf7612d367df95a906463fee7eb5dbb91fa5251e1a0","finding_id":"SEM:5454f9cd0e1889155a93","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"53b2ae1d271c05dc3c0cbcf7612d367df95a906463fee7eb5dbb91fa5251e1a0","finding_id":"SEM:bddf69732999c7870e1c","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Antimycin_A.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[501],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2762","line":503,"mapping_status":"MAPPED","ontology_id":"CHEBI:2762","preferred_term":"Antimycin
+    A"}],"identifier":"CHEBI:2762","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2762","ontology_label":"antimycin
+    A","ontology_source":"CHEBI"},"preferred_term":"Antimycin A","sssom_rows":[{"data_row":394,"object_id":"CHEBI:2762","object_label":"antimycin
+    A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Antimycin_A","synonym_count":1}'
   snapshot_sha256: 53b2ae1d271c05dc3c0cbcf7612d367df95a906463fee7eb5dbb91fa5251e1a0
 - evidence_id: ev-64927cd242906f83
   kind: prior_review

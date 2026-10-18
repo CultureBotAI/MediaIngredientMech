@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-bd48f6264749ea16
+  evidence_ids:
+  - ev-be7e04c4b9b49997
+  - ev-c41365eec70da96d
+  - ev-f73ec4fee09c87b4
+  - ev-18ee35df3356c92c
+  - ev-e04c848232fa843f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-bd48f6264749ea16
+  evidence_ids:
+  - ev-be7e04c4b9b49997
+  - ev-7822a035d98199db
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-bd48f6264749ea16
+  evidence_ids:
+  - ev-98000bfa93cf1255
+  - ev-7822a035d98199db
+  - ev-70a248b0560160cb
 evidence:
 - evidence_id: ev-be7e04c4b9b49997
   kind: record_content
   reference: data/ingredients/mapped/M-xylene.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1322],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28488","line":1324,"mapping_status":"MAPPED","ontology_id":"CHEBI:28488","preferred_term":"m-Xylene"}],"identifier":"CHEBI:28488","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28488","ontology_label":"m-xylene","ontology_source":"CHEBI"},"preferred_term":"m-Xylene","sssom_rows":[{"data_row":1725,"object_id":"CHEBI:28488","object_label":"m-xylene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:M-xylene","synonym_count":8}'
   snapshot_sha256: 31f4e266d3794ee7494468b5e6801cf0d98126e9c51db8b89fc86be253a7027d
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1322]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:M-xylene; data-row positions=[1725]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1725,"object_id":"CHEBI:28488","object_label":"m-xylene","other":"1,3-Dimethylbenzene|1,3-Dimethylbenzol|1,3-Xylene|3-xylene|m-Xylol|m-dimethylbenzene|m-methyltoluene|meta-xylene|CAS:108-38-3","predicate_id":"skos:exactMatch","subject_id":"MIM:M-xylene","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1324]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28488","line":1324,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"9","ontology_id":"CHEBI:28488","preferred_term":"m-Xylene","total_occurrences":"9"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -142,7 +155,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[875,1713]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"31f4e266d3794ee7494468b5e6801cf0d98126e9c51db8b89fc86be253a7027d","finding_id":"SEM:895f6bfd07ee1bf23750","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"31f4e266d3794ee7494468b5e6801cf0d98126e9c51db8b89fc86be253a7027d","finding_id":"SEM:cb51dcc00007ef0cc9f7","kind":"role_evidence","resolution_reason":"Historical
@@ -152,12 +165,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/M-xylene.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1322],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28488","line":1324,"mapping_status":"MAPPED","ontology_id":"CHEBI:28488","preferred_term":"m-Xylene"}],"identifier":"CHEBI:28488","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28488","ontology_label":"m-xylene","ontology_source":"CHEBI"},"preferred_term":"m-Xylene","sssom_rows":[{"data_row":1725,"object_id":"CHEBI:28488","object_label":"m-xylene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:M-xylene","synonym_count":8}'
   snapshot_sha256: 31f4e266d3794ee7494468b5e6801cf0d98126e9c51db8b89fc86be253a7027d
 - evidence_id: ev-70a248b0560160cb
   kind: prior_review

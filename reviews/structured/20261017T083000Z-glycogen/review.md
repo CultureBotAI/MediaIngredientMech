@@ -83,13 +83,13 @@ Reassess prediction-only role support: Glycogen
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-5df1c8982c80f418 | data/ingredients/mapped/Glycogen.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1077],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28087","line":1079,"mapping_status":"MAPPED","ontology_id":"CHEBI:28087","preferred_term":"Glycogen"}],"identifier":"CHEBI:28087","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":662,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28087","ontology_label":"glycogen","ontology_source":"CHEBI"},"preferred_term":"Glycogen","sssom_rows":[{"data_row":1344,"object_id":"CHEBI:28087","object_label":"glycogen","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycogen","synonym_count":2} |
+| ev-5df1c8982c80f418 | data/ingredients/mapped/Glycogen.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1077],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28087","line":1079,"mapping_status":"MAPPED","ontology_id":"CHEBI:28087","preferred_term":"Glycogen"}],"identifier":"CHEBI:28087","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28087","ontology_label":"glycogen","ontology_source":"CHEBI"},"preferred_term":"Glycogen","sssom_rows":[{"data_row":1344,"object_id":"CHEBI:28087","object_label":"glycogen","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycogen","synonym_count":2} |
 | ev-f06455756e5fefbd | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1077] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-5624377babfe92fa | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Glycogen; data-row positions=[1344] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1344,"object_id":"CHEBI:28087","object_label":"glycogen","other":"autoclaved, Glycogen&#124;(+)-D-glycogen","predicate_id":"skos:exactMatch","subject_id":"MIM:Glycogen","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
 | ev-2577a474254f6e40 | docs/data/mapped_ingredients.csv; CSV lines=[1079] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28087","line":1079,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28087","preferred_term":"Glycogen","total_occurrences":"0"}] |
 | ev-bd97fbcba804b507 | reports/yaml_record_review/Glycogen.md; &#96;data/ingredients/mapped/Glycogen.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:29; Completeness:54; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-df3769201c81c601 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[695,1521] | context_only | [{"current_record_sha256":"e08ed6464b997f04310e182867ac07bf3f023799cb44b035597a2f40df866ba7","finding_id":"SEM:b6f3c744610d5cf199e1","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e08ed6464b997f04310e182867ac07bf3f023799cb44b035597a2f40df866ba7","finding_id":"SEM:830b9db6373607678252","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-4aa60b204829457a | data/ingredients/mapped/Glycogen.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-4aa60b204829457a | data/ingredients/mapped/Glycogen.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1077],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28087","line":1079,"mapping_status":"MAPPED","ontology_id":"CHEBI:28087","preferred_term":"Glycogen"}],"identifier":"CHEBI:28087","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28087","ontology_label":"glycogen","ontology_source":"CHEBI"},"preferred_term":"Glycogen","sssom_rows":[{"data_row":1344,"object_id":"CHEBI:28087","object_label":"glycogen","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycogen","synonym_count":2} |
 | ev-237db4e4c115043b | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-7ca5ec09b0ed7beb] | context_only | Predecessor structured review finding f-7ca5ec09b0ed7beb in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-94ed12154213a109
+  evidence_ids:
+  - ev-5df1c8982c80f418
+  - ev-f06455756e5fefbd
+  - ev-5624377babfe92fa
+  - ev-2577a474254f6e40
+  - ev-4aa60b204829457a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-94ed12154213a109
+  evidence_ids:
+  - ev-5df1c8982c80f418
+  - ev-df3769201c81c601
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-94ed12154213a109
+  evidence_ids:
+  - ev-bd97fbcba804b507
+  - ev-df3769201c81c601
+  - ev-237db4e4c115043b
 evidence:
 - evidence_id: ev-5df1c8982c80f418
   kind: record_content
   reference: data/ingredients/mapped/Glycogen.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1077],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28087","line":1079,"mapping_status":"MAPPED","ontology_id":"CHEBI:28087","preferred_term":"Glycogen"}],"identifier":"CHEBI:28087","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":662,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28087","ontology_label":"glycogen","ontology_source":"CHEBI"},"preferred_term":"Glycogen","sssom_rows":[{"data_row":1344,"object_id":"CHEBI:28087","object_label":"glycogen","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycogen","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1077],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28087","line":1079,"mapping_status":"MAPPED","ontology_id":"CHEBI:28087","preferred_term":"Glycogen"}],"identifier":"CHEBI:28087","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28087","ontology_label":"glycogen","ontology_source":"CHEBI"},"preferred_term":"Glycogen","sssom_rows":[{"data_row":1344,"object_id":"CHEBI:28087","object_label":"glycogen","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycogen","synonym_count":2}'
   snapshot_sha256: e08ed6464b997f04310e182867ac07bf3f023799cb44b035597a2f40df866ba7
 - evidence_id: ev-f06455756e5fefbd
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1077]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Glycogen; data-row positions=[1344]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1344,"object_id":"CHEBI:28087","object_label":"glycogen","other":"autoclaved,
     Glycogen|(+)-D-glycogen","predicate_id":"skos:exactMatch","subject_id":"MIM:Glycogen","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1079]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28087","line":1079,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28087","preferred_term":"Glycogen","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[695,1521]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e08ed6464b997f04310e182867ac07bf3f023799cb44b035597a2f40df866ba7","finding_id":"SEM:b6f3c744610d5cf199e1","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e08ed6464b997f04310e182867ac07bf3f023799cb44b035597a2f40df866ba7","finding_id":"SEM:830b9db6373607678252","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Glycogen.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1077],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28087","line":1079,"mapping_status":"MAPPED","ontology_id":"CHEBI:28087","preferred_term":"Glycogen"}],"identifier":"CHEBI:28087","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28087","ontology_label":"glycogen","ontology_source":"CHEBI"},"preferred_term":"Glycogen","sssom_rows":[{"data_row":1344,"object_id":"CHEBI:28087","object_label":"glycogen","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycogen","synonym_count":2}'
   snapshot_sha256: e08ed6464b997f04310e182867ac07bf3f023799cb44b035597a2f40df866ba7
 - evidence_id: ev-237db4e4c115043b
   kind: prior_review

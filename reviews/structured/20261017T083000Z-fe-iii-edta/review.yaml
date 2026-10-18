@@ -77,6 +77,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-41f4535c09a79d8e
+  evidence_ids:
+  - ev-d85f0328f8e40e01
+  - ev-74214f979b505d4a
+  - ev-03d572775c61a22b
+  - ev-a37f622390cd1e39
+  - ev-588677f948bf8ce7
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -85,6 +91,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-41f4535c09a79d8e
+  evidence_ids:
+  - ev-d85f0328f8e40e01
+  - ev-66e0151834e2306e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -93,13 +102,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-41f4535c09a79d8e
+  evidence_ids:
+  - ev-c77288b83b9dc91b
+  - ev-c15eac1b267c8444
+  - ev-66e0151834e2306e
+  - ev-b0f071ce1ec9fd78
 evidence:
 - evidence_id: ev-d85f0328f8e40e01
   kind: record_content
   reference: data/ingredients/mapped/Fe_Iii-edta.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[978],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30729","line":980,"mapping_status":"MAPPED","ontology_id":"CHEBI:30729","preferred_term":"Fe(III)-EDTA"}],"identifier":"CHEBI:30729","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":58,"edge_count":58,"occurrences":58},"occurrence_statistics":{"media_count":58,"total_occurrences":58},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30729","ontology_label":"ethylenediaminetetraacetatoferrate(1-)","ontology_source":"CHEBI"},"preferred_term":"Fe(III)-EDTA","sssom_rows":[{"data_row":1169,"object_id":"CHEBI:30729","object_label":"ethylenediaminetetraacetatoferrate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe_Iii-edta","synonym_count":13}'
   snapshot_sha256: 583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2
@@ -107,7 +121,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [978]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +130,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fe_Iii-edta; data-row positions=[1169]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1169,"object_id":"CHEBI:30729","object_label":"ethylenediaminetetraacetatoferrate(1-)","other":"(ethane-1,2-diyldinitrilo)tetraacetatoferrate(III)|Fe(III)\u00b7EDTA|Ferric
     EDTA|FE EDTA|Iron(III)-edta|ethylenediaminetetraacetatoferrate|(ethane-1,2-diyldinitrilo)tetraacetatoferrate(1-)|Fe(III)\u30fbEDTA|Fe(III)-EDTA
@@ -126,7 +140,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[980]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30729","line":980,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"58","ontology_id":"CHEBI:30729","preferred_term":"Fe(III)-EDTA","total_occurrences":"58"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -180,7 +194,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[586,1983]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2","finding_id":"SEM:d80aa2af505c76f5f11c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2","finding_id":"SEM:3f459286406b52c30097","kind":"role_evidence","resolution_reason":"Historical
@@ -190,12 +204,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fe_Iii-edta.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[978],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30729","line":980,"mapping_status":"MAPPED","ontology_id":"CHEBI:30729","preferred_term":"Fe(III)-EDTA"}],"identifier":"CHEBI:30729","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":58,"edge_count":58,"occurrences":58},"occurrence_statistics":{"media_count":58,"total_occurrences":58},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30729","ontology_label":"ethylenediaminetetraacetatoferrate(1-)","ontology_source":"CHEBI"},"preferred_term":"Fe(III)-EDTA","sssom_rows":[{"data_row":1169,"object_id":"CHEBI:30729","object_label":"ethylenediaminetetraacetatoferrate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe_Iii-edta","synonym_count":13}'
   snapshot_sha256: 583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2
 - evidence_id: ev-b0f071ce1ec9fd78
   kind: prior_review

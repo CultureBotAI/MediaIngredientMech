@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-20ff83a4a26f11ed
+  evidence_ids:
+  - ev-4dcc491db48f3965
+  - ev-99308fbab0603119
+  - ev-d33e37c659658016
+  - ev-5c61d50e8eef8ed9
+  - ev-18db429c95724a66
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-20ff83a4a26f11ed
+  evidence_ids:
+  - ev-4dcc491db48f3965
+  - ev-c78c384c8a9b1351
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-20ff83a4a26f11ed
+  evidence_ids:
+  - ev-72455c9c869db4d4
+  - ev-c78c384c8a9b1351
+  - ev-b59d331af768218d
 evidence:
 - evidence_id: ev-4dcc491db48f3965
   kind: record_content
   reference: data/ingredients/mapped/L-ornithine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1269],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15729","line":1271,"mapping_status":"MAPPED","ontology_id":"CHEBI:15729","preferred_term":"L-Ornithine"}],"identifier":"CHEBI:15729","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:15729","ontology_label":"L-ornithine","ontology_source":"CHEBI"},"preferred_term":"L-Ornithine","sssom_rows":[{"data_row":1630,"object_id":"CHEBI:15729","object_label":"L-ornithine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-ornithine","synonym_count":6}'
   snapshot_sha256: 932ce49c03922cfa00ca81546222fc43f0ee4a33aa4037ce2ae5d6bff9c29405
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1269]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-ornithine; data-row positions=[1630]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1630,"object_id":"CHEBI:15729","object_label":"L-ornithine","other":"(2S)-2,5-diaminopentanoic
     acid|(S)-2,5-Diaminopentanoate|(S)-2,5-Diaminopentanoic acid|(S)-2,5-diaminovaleric
@@ -123,7 +136,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1271]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15729","line":1271,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:15729","preferred_term":"L-Ornithine","total_occurrences":"11"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -147,7 +160,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[828,2098]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"932ce49c03922cfa00ca81546222fc43f0ee4a33aa4037ce2ae5d6bff9c29405","finding_id":"SEM:ed6ca9b162570d2d7b62","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"932ce49c03922cfa00ca81546222fc43f0ee4a33aa4037ce2ae5d6bff9c29405","finding_id":"SEM:366b7ebd16a4abe03473","kind":"role_evidence","resolution_reason":"Historical
@@ -157,12 +170,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-ornithine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1269],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15729","line":1271,"mapping_status":"MAPPED","ontology_id":"CHEBI:15729","preferred_term":"L-Ornithine"}],"identifier":"CHEBI:15729","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:15729","ontology_label":"L-ornithine","ontology_source":"CHEBI"},"preferred_term":"L-Ornithine","sssom_rows":[{"data_row":1630,"object_id":"CHEBI:15729","object_label":"L-ornithine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-ornithine","synonym_count":6}'
   snapshot_sha256: 932ce49c03922cfa00ca81546222fc43f0ee4a33aa4037ce2ae5d6bff9c29405
 - evidence_id: ev-b59d331af768218d
   kind: prior_review

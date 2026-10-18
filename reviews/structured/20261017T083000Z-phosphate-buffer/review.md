@@ -83,13 +83,13 @@ Reassess prediction-only role support: Phosphate buffer
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-e1385556ddda87d6 | data/ingredients/mapped/Phosphate_Buffer.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1650],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C29321","line":1652,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate buffer"}],"identifier":"NCIT:C29321","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate buffer","sssom_rows":[{"data_row":2246,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer","synonym_count":0} |
-| ev-2f229aa945844168 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1650] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-f291959ff0a3d373 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Phosphate_Buffer; data-row positions=[2246] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2246,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphate_Buffer","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-204dcf8d5f3b52f4 | docs/data/mapped_ingredients.csv; CSV lines=[1652] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C29321","line":1652,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"NCIT:C29321","preferred_term":"Phosphate buffer","total_occurrences":"10"}] |
+| ev-e1385556ddda87d6 | data/ingredients/mapped/Phosphate_Buffer.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1649],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C29321","line":1651,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate buffer"}],"identifier":"NCIT:C29321","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate buffer","sssom_rows":[{"data_row":2248,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer","synonym_count":0} |
+| ev-2f229aa945844168 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1649] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-f291959ff0a3d373 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Phosphate_Buffer; data-row positions=[2248] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2248,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphate_Buffer","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-204dcf8d5f3b52f4 | docs/data/mapped_ingredients.csv; CSV lines=[1651] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C29321","line":1651,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"NCIT:C29321","preferred_term":"Phosphate buffer","total_occurrences":"10"}] |
 | ev-6fdbfa08a49db260 | reports/yaml_record_review/Phosphate_Buffer.md; &#96;data/ingredients/mapped/Phosphate_Buffer.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:32; Completeness:42; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-988fd0cdd3d43b5c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1109,1526] | context_only | [{"current_record_sha256":"b7dbf9e01a946b4d1e3f4df66240769545d1f9fa4e693f866187ae6a5b7b4ed9","finding_id":"SEM:09332be6b576a4b21b8c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b7dbf9e01a946b4d1e3f4df66240769545d1f9fa4e693f866187ae6a5b7b4ed9","finding_id":"SEM:acdd678836259252cc9e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-056092d9d9412bc1 | data/ingredients/mapped/Phosphate_Buffer.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-056092d9d9412bc1 | data/ingredients/mapped/Phosphate_Buffer.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1649],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C29321","line":1651,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate buffer"}],"identifier":"NCIT:C29321","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate buffer","sssom_rows":[{"data_row":2248,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer","synonym_count":0} |
 | ev-9621f7f7bb44bff9 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-6187ba03347b5a45] | context_only | Predecessor structured review finding f-6187ba03347b5a45 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f251cdb6559571f1
+  evidence_ids:
+  - ev-e1385556ddda87d6
+  - ev-2f229aa945844168
+  - ev-f291959ff0a3d373
+  - ev-204dcf8d5f3b52f4
+  - ev-056092d9d9412bc1
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f251cdb6559571f1
+  evidence_ids:
+  - ev-e1385556ddda87d6
+  - ev-988fd0cdd3d43b5c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f251cdb6559571f1
+  evidence_ids:
+  - ev-6fdbfa08a49db260
+  - ev-988fd0cdd3d43b5c
+  - ev-9621f7f7bb44bff9
 evidence:
 - evidence_id: ev-e1385556ddda87d6
   kind: record_content
   reference: data/ingredients/mapped/Phosphate_Buffer.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1650],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C29321","line":1652,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1649],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C29321","line":1651,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
     buffer"}],"identifier":"NCIT:C29321","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
-    Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate buffer","sssom_rows":[{"data_row":2246,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate buffer","sssom_rows":[{"data_row":2248,"object_id":"NCIT:C29321","object_label":"Phosphate
     Buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer","synonym_count":0}'
   snapshot_sha256: b7dbf9e01a946b4d1e3f4df66240769545d1f9fa4e693f866187ae6a5b7b4ed9
 - evidence_id: ev-2f229aa945844168
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1650]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1649]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-f291959ff0a3d373
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Phosphate_Buffer; data-row positions=[2246]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Phosphate_Buffer; data-row positions=[2248]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2246,"object_id":"NCIT:C29321","object_label":"Phosphate
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2248,"object_id":"NCIT:C29321","object_label":"Phosphate
     Buffer","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-204dcf8d5f3b52f4
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1652]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1651]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C29321","line":1652,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
+  summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C29321","line":1651,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
     buffer","total_occurrences":"10"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-6fdbfa08a49db260
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1109,1526]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b7dbf9e01a946b4d1e3f4df66240769545d1f9fa4e693f866187ae6a5b7b4ed9","finding_id":"SEM:09332be6b576a4b21b8c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b7dbf9e01a946b4d1e3f4df66240769545d1f9fa4e693f866187ae6a5b7b4ed9","finding_id":"SEM:acdd678836259252cc9e","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Phosphate_Buffer.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1649],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C29321","line":1651,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Phosphate
+    buffer"}],"identifier":"NCIT:C29321","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
+    Buffer","ontology_source":"NCIT"},"preferred_term":"Phosphate buffer","sssom_rows":[{"data_row":2248,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphate_Buffer","synonym_count":0}'
   snapshot_sha256: b7dbf9e01a946b4d1e3f4df66240769545d1f9fa4e693f866187ae6a5b7b4ed9
 - evidence_id: ev-9621f7f7bb44bff9
   kind: prior_review

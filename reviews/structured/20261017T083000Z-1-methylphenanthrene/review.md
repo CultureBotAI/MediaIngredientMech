@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-8bb8ac8a0e5de018 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-8bb8ac8a0e5de018 | Explain curation-history timestamp order: 1-methylphenanthrene |
 | Role evidence and plausibility check | passed | True | record-8bb8ac8a0e5de018 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-8bb8ac8a0e5de018 | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 1-methylphenanthrene
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-32f94c0266962a6f | data/ingredients/mapped/1-methylphenanthrene.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2100],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35860","line":2102,"mapping_status":"MAPPED","ontology_id":"CHEBI:35860","preferred_term":"1-methylphenanthrene"}],"identifier":"CHEBI:35860","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35860","ontology_label":"1-methylphenanthrene","ontology_source":"CHEBI"},"preferred_term":"1-methylphenanthrene","sssom_rows":[{"data_row":23,"object_id":"CHEBI:35860","object_label":"1-methylphenanthrene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1-methylphenanthrene","synonym_count":0} |
-| ev-824b8b2c3002754c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2100] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-32f94c0266962a6f | data/ingredients/mapped/1-methylphenanthrene.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2099],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35860","line":2101,"mapping_status":"MAPPED","ontology_id":"CHEBI:35860","preferred_term":"1-methylphenanthrene"}],"identifier":"CHEBI:35860","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35860","ontology_label":"1-methylphenanthrene","ontology_source":"CHEBI"},"preferred_term":"1-methylphenanthrene","sssom_rows":[{"data_row":23,"object_id":"CHEBI:35860","object_label":"1-methylphenanthrene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1-methylphenanthrene","synonym_count":0} |
+| ev-824b8b2c3002754c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2099] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-d01405900864671a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:1-methylphenanthrene; data-row positions=[23] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":23,"object_id":"CHEBI:35860","object_label":"1-methylphenanthrene","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:1-methylphenanthrene","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-5dae8d5fe76444fc | docs/data/mapped_ingredients.csv; CSV lines=[2102] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35860","line":2102,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:35860","preferred_term":"1-methylphenanthrene","total_occurrences":"0"}] |
+| ev-5dae8d5fe76444fc | docs/data/mapped_ingredients.csv; CSV lines=[2101] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35860","line":2101,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:35860","preferred_term":"1-methylphenanthrene","total_occurrences":"0"}] |
 | ev-097bb94c08da9b12 | reports/yaml_record_review/1-methylphenanthrene.md; &#96;data/ingredients/mapped/1-methylphenanthrene.yaml&#96;:2; Verdict:4; Identity:12; Validation:27; Evidence:57; Completeness:87; Recommended Edits:99 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-289e2bfc5b10024c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[20] | context_only | [{"current_record_sha256":"8cc4a3001604adfe0a69ddf0c97834feb9c579731ac23c8aa5a3d2d27bfddd04","finding_id":"SEM:9f82dddc361f96ec319d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-4e9876d4b59bba17 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-8724f3e14c641797] | context_only | Predecessor structured review finding f-8724f3e14c641797 in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 1-methylphenanthrene'
   target_ids:
   - record-8bb8ac8a0e5de018
+  evidence_ids:
+  - ev-32f94c0266962a6f
+  - ev-824b8b2c3002754c
+  - ev-d01405900864671a
+  - ev-5dae8d5fe76444fc
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-8bb8ac8a0e5de018
+  evidence_ids:
+  - ev-32f94c0266962a6f
+  - ev-289e2bfc5b10024c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8bb8ac8a0e5de018
+  evidence_ids:
+  - ev-097bb94c08da9b12
+  - ev-289e2bfc5b10024c
+  - ev-4e9876d4b59bba17
 evidence:
 - evidence_id: ev-32f94c0266962a6f
   kind: record_content
   reference: data/ingredients/mapped/1-methylphenanthrene.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2100],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35860","line":2102,"mapping_status":"MAPPED","ontology_id":"CHEBI:35860","preferred_term":"1-methylphenanthrene"}],"identifier":"CHEBI:35860","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35860","ontology_label":"1-methylphenanthrene","ontology_source":"CHEBI"},"preferred_term":"1-methylphenanthrene","sssom_rows":[{"data_row":23,"object_id":"CHEBI:35860","object_label":"1-methylphenanthrene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1-methylphenanthrene","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2099],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35860","line":2101,"mapping_status":"MAPPED","ontology_id":"CHEBI:35860","preferred_term":"1-methylphenanthrene"}],"identifier":"CHEBI:35860","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35860","ontology_label":"1-methylphenanthrene","ontology_source":"CHEBI"},"preferred_term":"1-methylphenanthrene","sssom_rows":[{"data_row":23,"object_id":"CHEBI:35860","object_label":"1-methylphenanthrene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1-methylphenanthrene","synonym_count":0}'
   snapshot_sha256: 8cc4a3001604adfe0a69ddf0c97834feb9c579731ac23c8aa5a3d2d27bfddd04
 - evidence_id: ev-824b8b2c3002754c
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2100]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2099]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,17 +228,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:1-methylphenanthrene; data-row positions=[23]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":23,"object_id":"CHEBI:35860","object_label":"1-methylphenanthrene","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:1-methylphenanthrene","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-5dae8d5fe76444fc
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2102]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2101]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35860","line":2102,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:35860","preferred_term":"1-methylphenanthrene","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35860","line":2101,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:35860","preferred_term":"1-methylphenanthrene","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-097bb94c08da9b12
   kind: prior_review
@@ -250,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[20]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"8cc4a3001604adfe0a69ddf0c97834feb9c579731ac23c8aa5a3d2d27bfddd04","finding_id":"SEM:9f82dddc361f96ec319d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

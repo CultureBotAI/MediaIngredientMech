@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-Carnitine
 | ev-29a8239e0e244f18 | docs/data/mapped_ingredients.csv; CSV lines=[1220] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16347","line":1220,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:16347","preferred_term":"L-Carnitine","total_occurrences":"2"}] |
 | ev-da3ace7836567544 | reports/yaml_record_review/L-Carnitine.md; &#96;data/ingredients/mapped/L-Carnitine.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:32; Completeness:54; Recommended Edits:63 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b9bb4b044f1517d9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[785,1638] | context_only | [{"current_record_sha256":"83717e970a478ac8248672c11d82a8d91f5732ea5e520bd388f2060e3632e754","finding_id":"SEM:f5cb6848c17e8b169ecc","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"83717e970a478ac8248672c11d82a8d91f5732ea5e520bd388f2060e3632e754","finding_id":"SEM:ad17281b70a7304e78ac","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-86a3590e7bda0723 | data/ingredients/mapped/L-Carnitine.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-86a3590e7bda0723 | data/ingredients/mapped/L-Carnitine.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1218],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16347","line":1220,"mapping_status":"MAPPED","ontology_id":"CHEBI:16347","preferred_term":"L-Carnitine"}],"identifier":"CHEBI:16347","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:16347","ontology_label":"(R)-carnitine","ontology_source":"CHEBI"},"preferred_term":"L-Carnitine","sssom_rows":[{"data_row":1565,"object_id":"CHEBI:16347","object_label":"(R)-carnitine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Carnitine","synonym_count":2} |
 | ev-07e3e0d309d5f5c1 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-b5530c70eab2b4a4] | context_only | Predecessor structured review finding f-b5530c70eab2b4a4 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-235fa915e6835391
+  evidence_ids:
+  - ev-2d48e5552efe353b
+  - ev-59eeef2cb04e0290
+  - ev-691a751a20180833
+  - ev-29a8239e0e244f18
+  - ev-86a3590e7bda0723
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-235fa915e6835391
+  evidence_ids:
+  - ev-2d48e5552efe353b
+  - ev-b9bb4b044f1517d9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-235fa915e6835391
+  evidence_ids:
+  - ev-da3ace7836567544
+  - ev-b9bb4b044f1517d9
+  - ev-07e3e0d309d5f5c1
 evidence:
 - evidence_id: ev-2d48e5552efe353b
   kind: record_content
   reference: data/ingredients/mapped/L-Carnitine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1218],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16347","line":1220,"mapping_status":"MAPPED","ontology_id":"CHEBI:16347","preferred_term":"L-Carnitine"}],"identifier":"CHEBI:16347","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:16347","ontology_label":"(R)-carnitine","ontology_source":"CHEBI"},"preferred_term":"L-Carnitine","sssom_rows":[{"data_row":1565,"object_id":"CHEBI:16347","object_label":"(R)-carnitine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Carnitine","synonym_count":2}'
   snapshot_sha256: 83717e970a478ac8248672c11d82a8d91f5732ea5e520bd388f2060e3632e754
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1218]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-Carnitine; data-row positions=[1565]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1565,"object_id":"CHEBI:16347","object_label":"(R)-carnitine","other":"(3R)-3-hydroxy-4-(trimethylammonio)butanoate","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Carnitine","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1220]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16347","line":1220,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:16347","preferred_term":"L-Carnitine","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[785,1638]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"83717e970a478ac8248672c11d82a8d91f5732ea5e520bd388f2060e3632e754","finding_id":"SEM:f5cb6848c17e8b169ecc","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"83717e970a478ac8248672c11d82a8d91f5732ea5e520bd388f2060e3632e754","finding_id":"SEM:ad17281b70a7304e78ac","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Carnitine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1218],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16347","line":1220,"mapping_status":"MAPPED","ontology_id":"CHEBI:16347","preferred_term":"L-Carnitine"}],"identifier":"CHEBI:16347","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:16347","ontology_label":"(R)-carnitine","ontology_source":"CHEBI"},"preferred_term":"L-Carnitine","sssom_rows":[{"data_row":1565,"object_id":"CHEBI:16347","object_label":"(R)-carnitine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Carnitine","synonym_count":2}'
   snapshot_sha256: 83717e970a478ac8248672c11d82a8d91f5732ea5e520bd388f2060e3632e754
 - evidence_id: ev-07e3e0d309d5f5c1
   kind: prior_review

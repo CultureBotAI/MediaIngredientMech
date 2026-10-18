@@ -77,6 +77,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-29b4005016928e09
+  evidence_ids:
+  - ev-d21ea193995ef78b
+  - ev-8f375d05aa1751d4
+  - ev-4e6f767031b322dd
+  - ev-2b1730631608c79a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -85,6 +90,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-29b4005016928e09
+  evidence_ids:
+  - ev-d21ea193995ef78b
+  - ev-623c6c29cbd87577
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -93,23 +101,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-29b4005016928e09
+  evidence_ids:
+  - ev-aab82e1c9edc2f69
+  - ev-c04bf1d616ae4e5a
+  - ev-623c6c29cbd87577
 evidence:
 - evidence_id: ev-d21ea193995ef78b
   kind: record_content
   reference: data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[272],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0740","line":274,"mapping_status":"AMBIGUOUS","ontology_id":"","preferred_term":"CMC
-    + PY + Horse Serum"}],"identifier":"UNMAPPED_0740","ingredient_type":null,"mapping_status":"AMBIGUOUS","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{},"preferred_term":"CMC
+    + PY + Horse Serum"}],"identifier":"UNMAPPED_0740","ingredient_type":null,"mapping_status":"AMBIGUOUS","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"CMC
     + PY + Horse Serum","sssom_rows":[],"sssom_subject":"MIM:CMC_PY_Horse_Serum","synonym_count":1}'
   snapshot_sha256: 39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077
 - evidence_id: ev-8f375d05aa1751d4
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [272]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -118,7 +130,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:CMC_PY_Horse_Serum; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -126,7 +138,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[274]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0740","line":274,"mapping_quality":"","mapping_status":"AMBIGUOUS","media_count":"0","ontology_id":"","preferred_term":"CMC
     + PY + Horse Serum","total_occurrences":"0"}]'
@@ -179,7 +191,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[339,1625,1851,1907,2029]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:5840ee1537d3efca2b71","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077","finding_id":"SEM:4342978a6d6a785d5a94","kind":"component_source_scope","resolution_reason":"Love

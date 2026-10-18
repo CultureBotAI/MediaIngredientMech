@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-26231e6f8f0e406a | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-26231e6f8f0e406a | Explain curation-history timestamp order: (S)-azetidine-2-carboxylic Acid |
 | Role evidence and plausibility check | passed | True | record-26231e6f8f0e406a | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-26231e6f8f0e406a | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: (S)-azetidine-2-carboxylic Acid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-2199db99b5683f66 | data/ingredients/mapped/(S)-azetidine-2-carboxylic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2098],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6198","line":2100,"mapping_status":"MAPPED","ontology_id":"CHEBI:6198","preferred_term":"(S)-azetidine-2-carboxylic Acid"}],"identifier":"CHEBI:6198","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_production"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:6198","ontology_label":"(S)-azetidine-2-carboxylic acid","ontology_source":"CHEBI"},"preferred_term":"(S)-azetidine-2-carboxylic Acid","sssom_rows":[{"data_row":7,"object_id":"CHEBI:6198","object_label":"(S)-azetidine-2-carboxylic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~28S~29-azetidine-2-carboxylic_Acid","synonym_count":0} |
-| ev-b283700609f211d3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2098] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-3661a87619722c98 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:~28S~29-azetidine-2-carboxylic_Acid; data-row positions=[7] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":7,"object_id":"CHEBI:6198","object_label":"(S)-azetidine-2-carboxylic acid","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:~28S~29-azetidine-2-carboxylic_Acid","validation_method":"OLS:chebi&#124;CONFIRMED&#124;2026-09-02"}] |
-| ev-aa8ebda4eb154258 | docs/data/mapped_ingredients.csv; CSV lines=[2100] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:6198","line":2100,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6198","preferred_term":"(S)-azetidine-2-carboxylic Acid","total_occurrences":"0"}] |
+| ev-2199db99b5683f66 | data/ingredients/mapped/(S)-azetidine-2-carboxylic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2097],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6198","line":2099,"mapping_status":"MAPPED","ontology_id":"CHEBI:6198","preferred_term":"(S)-azetidine-2-carboxylic Acid"}],"identifier":"CHEBI:6198","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:6198","ontology_label":"(S)-azetidine-2-carboxylic acid","ontology_source":"CHEBI"},"preferred_term":"(S)-azetidine-2-carboxylic Acid","sssom_rows":[],"sssom_subject":"MIM:(S)-azetidine-2-carboxylic_Acid","synonym_count":0} |
+| ev-b283700609f211d3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2097] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-3661a87619722c98 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:(S)-azetidine-2-carboxylic_Acid; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-aa8ebda4eb154258 | docs/data/mapped_ingredients.csv; CSV lines=[2099] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:6198","line":2099,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6198","preferred_term":"(S)-azetidine-2-carboxylic Acid","total_occurrences":"0"}] |
 | ev-2d2ab096ea656277 | reports/yaml_record_review/(S)-azetidine-2-carboxylic_Acid.md; &#96;data/ingredients/mapped/(S)-azetidine-2-carboxylic_Acid.yaml&#96;:2; Verdict:4; Identity:13; Validation:43; Evidence:63; Completeness:89; Recommended Edits:105 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a7788fa5039354b5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[8] | context_only | [{"current_record_sha256":"8e26520c847b822c596a5cc3bf6206fac862adf5a1e2b4b2ed3d6d80ebdab792","finding_id":"SEM:eb55833288c00d2fd411","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-02e598e91a397076 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-586cd124536bc61a] | context_only | Predecessor structured review finding f-586cd124536bc61a in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: (S)-azetidine-2-carboxylic Acid'
   target_ids:
   - record-26231e6f8f0e406a
+  evidence_ids:
+  - ev-2199db99b5683f66
+  - ev-b283700609f211d3
+  - ev-3661a87619722c98
+  - ev-aa8ebda4eb154258
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-26231e6f8f0e406a
+  evidence_ids:
+  - ev-2199db99b5683f66
+  - ev-a7788fa5039354b5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,25 +201,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-26231e6f8f0e406a
+  evidence_ids:
+  - ev-2d2ab096ea656277
+  - ev-a7788fa5039354b5
+  - ev-02e598e91a397076
 evidence:
 - evidence_id: ev-2199db99b5683f66
   kind: record_content
   reference: data/ingredients/mapped/(S)-azetidine-2-carboxylic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2098],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6198","line":2100,"mapping_status":"MAPPED","ontology_id":"CHEBI:6198","preferred_term":"(S)-azetidine-2-carboxylic
-    Acid"}],"identifier":"CHEBI:6198","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_production"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:6198","ontology_label":"(S)-azetidine-2-carboxylic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2097],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6198","line":2099,"mapping_status":"MAPPED","ontology_id":"CHEBI:6198","preferred_term":"(S)-azetidine-2-carboxylic
+    Acid"}],"identifier":"CHEBI:6198","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:6198","ontology_label":"(S)-azetidine-2-carboxylic
     acid","ontology_source":"CHEBI"},"preferred_term":"(S)-azetidine-2-carboxylic
-    Acid","sssom_rows":[{"data_row":7,"object_id":"CHEBI:6198","object_label":"(S)-azetidine-2-carboxylic
-    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~28S~29-azetidine-2-carboxylic_Acid","synonym_count":0}'
+    Acid","sssom_rows":[],"sssom_subject":"MIM:(S)-azetidine-2-carboxylic_Acid","synonym_count":0}'
   snapshot_sha256: 8e26520c847b822c596a5cc3bf6206fac862adf5a1e2b4b2ed3d6d80ebdab792
 - evidence_id: ev-b283700609f211d3
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2098]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2097]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +230,18 @@ evidence:
 - evidence_id: ev-3661a87619722c98
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:~28S~29-azetidine-2-carboxylic_Acid; data-row positions=[7]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:(S)-azetidine-2-carboxylic_Acid; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":7,"object_id":"CHEBI:6198","object_label":"(S)-azetidine-2-carboxylic
-    acid","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:~28S~29-azetidine-2-carboxylic_Acid","validation_method":"OLS:chebi|CONFIRMED|2026-09-02"}]'
+  summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-aa8ebda4eb154258
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2100]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2099]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:6198","line":2100,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6198","preferred_term":"(S)-azetidine-2-carboxylic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:6198","line":2099,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6198","preferred_term":"(S)-azetidine-2-carboxylic
     Acid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-2d2ab096ea656277
@@ -261,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[8]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"8e26520c847b822c596a5cc3bf6206fac862adf5a1e2b4b2ed3d6d80ebdab792","finding_id":"SEM:eb55833288c00d2fd411","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

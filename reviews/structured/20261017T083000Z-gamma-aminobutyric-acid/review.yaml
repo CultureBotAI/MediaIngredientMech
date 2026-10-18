@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f455a9625b3a3c26
+  evidence_ids:
+  - ev-1c7355dbc7fc314c
+  - ev-e823aee13ca6d487
+  - ev-1a0c89582fb401dd
+  - ev-ac08984d45a5f035
+  - ev-b5a0f2ff3d875401
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f455a9625b3a3c26
+  evidence_ids:
+  - ev-1c7355dbc7fc314c
+  - ev-3a6e26d6c21742a2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f455a9625b3a3c26
+  evidence_ids:
+  - ev-7a35932c13c12781
+  - ev-3a6e26d6c21742a2
+  - ev-6a4bc842bba66ff5
 evidence:
 - evidence_id: ev-1c7355dbc7fc314c
   kind: record_content
   reference: data/ingredients/mapped/Gamma-aminobutyric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1040],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16865","line":1042,"mapping_status":"MAPPED","ontology_id":"CHEBI:16865","preferred_term":"gamma-Aminobutyric
     acid"}],"identifier":"CHEBI:16865","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":13,"edge_count":13,"occurrences":13},"occurrence_statistics":{"media_count":13,"total_occurrences":13},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16865","ontology_label":"gamma-aminobutyric
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1040]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Gamma-aminobutyric_Acid; data-row positions=[1282]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1282,"object_id":"CHEBI:16865","object_label":"gamma-aminobutyric
     acid","other":"2-aminobutyrate|4-Aminobutanoic acid|4-Aminobutyric acid|4Abu|GABA|GAMMA-AMINO-BUTANOIC
@@ -128,7 +141,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1042]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16865","line":1042,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"13","ontology_id":"CHEBI:16865","preferred_term":"gamma-Aminobutyric
     acid","total_occurrences":"13"}]'
@@ -154,7 +167,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[651,1603]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"15a7301b5861a2afcf2689e028c6ecbbe2c22b55deb102054f1ba5f5836c83df","finding_id":"SEM:cdd70d6880163a701cad","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"15a7301b5861a2afcf2689e028c6ecbbe2c22b55deb102054f1ba5f5836c83df","finding_id":"SEM:49f187bbd710cc53bcc3","kind":"role_evidence","resolution_reason":"Historical
@@ -164,12 +177,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Gamma-aminobutyric_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1040],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16865","line":1042,"mapping_status":"MAPPED","ontology_id":"CHEBI:16865","preferred_term":"gamma-Aminobutyric
+    acid"}],"identifier":"CHEBI:16865","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":13,"edge_count":13,"occurrences":13},"occurrence_statistics":{"media_count":13,"total_occurrences":13},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16865","ontology_label":"gamma-aminobutyric
+    acid","ontology_source":"CHEBI"},"preferred_term":"gamma-Aminobutyric acid","sssom_rows":[{"data_row":1282,"object_id":"CHEBI:16865","object_label":"gamma-aminobutyric
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gamma-aminobutyric_Acid","synonym_count":13}'
   snapshot_sha256: 15a7301b5861a2afcf2689e028c6ecbbe2c22b55deb102054f1ba5f5836c83df
 - evidence_id: ev-6a4bc842bba66ff5
   kind: prior_review

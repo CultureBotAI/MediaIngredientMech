@@ -83,13 +83,13 @@ Reassess prediction-only role support: N-(2-acetamido)-2-aminoethanesulfonic aci
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-d76be3b720152b3b | data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1445],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39060","line":1447,"mapping_status":"MAPPED","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic acid"}],"identifier":"CHEBI:39060","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39060","ontology_label":"N-(2-acetamido)-2-aminoethanesulfonic acid","ontology_source":"CHEBI"},"preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic acid","sssom_rows":[{"data_row":1933,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid","synonym_count":3} |
-| ev-12edfe1e0b9e3111 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1445] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-fbd2be53c59c5f78 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid; data-row positions=[1933] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1933,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic acid","other":"2-[(2-amino-2-oxoethyl)amino]ethanesulfonic acid&#124;N-(carbamoylmethyl)taurine&#124;ACES&#124;CAS:7365-82-4","predicate_id":"skos:exactMatch","subject_id":"MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-e02745e94b551340 | docs/data/mapped_ingredients.csv; CSV lines=[1447] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:39060","line":1447,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic acid","total_occurrences":"15"}] |
+| ev-d76be3b720152b3b | data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39060","line":1446,"mapping_status":"MAPPED","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic acid"}],"identifier":"CHEBI:39060","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39060","ontology_label":"N-(2-acetamido)-2-aminoethanesulfonic acid","ontology_source":"CHEBI"},"preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic acid","sssom_rows":[{"data_row":1935,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid","synonym_count":3} |
+| ev-12edfe1e0b9e3111 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1444] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-fbd2be53c59c5f78 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid; data-row positions=[1935] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1935,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic acid","other":"2-[(2-amino-2-oxoethyl)amino]ethanesulfonic acid&#124;N-(carbamoylmethyl)taurine&#124;ACES&#124;CAS:7365-82-4","predicate_id":"skos:exactMatch","subject_id":"MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-e02745e94b551340 | docs/data/mapped_ingredients.csv; CSV lines=[1446] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:39060","line":1446,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic acid","total_occurrences":"15"}] |
 | ev-0f36594c7fae760b | reports/yaml_record_review/N-_2-acetamido-2-aminoethanesulfonic_Acid.md; &#96;data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:32; Completeness:44; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-93d2c511e1bee041 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[964,1388] | context_only | [{"current_record_sha256":"b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41","finding_id":"SEM:5a2c0af0541563cf865f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41","finding_id":"SEM:5eabb91ffa88729698b1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-dde4e734c713beee | data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35225 (buffer (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-dde4e734c713beee | data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39060","line":1446,"mapping_status":"MAPPED","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic acid"}],"identifier":"CHEBI:39060","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39060","ontology_label":"N-(2-acetamido)-2-aminoethanesulfonic acid","ontology_source":"CHEBI"},"preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic acid","sssom_rows":[{"data_row":1935,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid","synonym_count":3} |
 | ev-ed4af220f374c769 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-b5ed966c0f4e8b7b] | context_only | Predecessor structured review finding f-b5ed966c0f4e8b7b in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -180,6 +180,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-36d37b9457dc4401
+  evidence_ids:
+  - ev-d76be3b720152b3b
+  - ev-12edfe1e0b9e3111
+  - ev-fbd2be53c59c5f78
+  - ev-e02745e94b551340
+  - ev-dde4e734c713beee
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -188,6 +194,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-36d37b9457dc4401
+  evidence_ids:
+  - ev-d76be3b720152b3b
+  - ev-93d2c511e1bee041
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,25 +205,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-36d37b9457dc4401
+  evidence_ids:
+  - ev-0f36594c7fae760b
+  - ev-93d2c511e1bee041
+  - ev-ed4af220f374c769
 evidence:
 - evidence_id: ev-d76be3b720152b3b
   kind: record_content
   reference: data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1445],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39060","line":1447,"mapping_status":"MAPPED","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39060","line":1446,"mapping_status":"MAPPED","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic
     acid"}],"identifier":"CHEBI:39060","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39060","ontology_label":"N-(2-acetamido)-2-aminoethanesulfonic
     acid","ontology_source":"CHEBI"},"preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic
-    acid","sssom_rows":[{"data_row":1933,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic
+    acid","sssom_rows":[{"data_row":1935,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid","synonym_count":3}'
   snapshot_sha256: b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41
 - evidence_id: ev-12edfe1e0b9e3111
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1445]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1444]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,19 +235,19 @@ evidence:
 - evidence_id: ev-fbd2be53c59c5f78
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid; data-row positions=[1933]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid; data-row positions=[1935]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1933,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1935,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic
     acid","other":"2-[(2-amino-2-oxoethyl)amino]ethanesulfonic acid|N-(carbamoylmethyl)taurine|ACES|CAS:7365-82-4","predicate_id":"skos:exactMatch","subject_id":"MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-e02745e94b551340
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1447]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1446]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:39060","line":1447,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:39060","line":1446,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic
     acid","total_occurrences":"15"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-0f36594c7fae760b
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[964,1388]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41","finding_id":"SEM:5a2c0af0541563cf865f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41","finding_id":"SEM:5eabb91ffa88729698b1","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:35225 (buffer (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39060","line":1446,"mapping_status":"MAPPED","ontology_id":"CHEBI:39060","preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic
+    acid"}],"identifier":"CHEBI:39060","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39060","ontology_label":"N-(2-acetamido)-2-aminoethanesulfonic
+    acid","ontology_source":"CHEBI"},"preferred_term":"N-(2-acetamido)-2-aminoethanesulfonic
+    acid","sssom_rows":[{"data_row":1935,"object_id":"CHEBI:39060","object_label":"N-(2-acetamido)-2-aminoethanesulfonic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-_2-acetamido-2-aminoethanesulfonic_Acid","synonym_count":3}'
   snapshot_sha256: b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41
 - evidence_id: ev-ed4af220f374c769
   kind: prior_review

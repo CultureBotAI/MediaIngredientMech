@@ -85,11 +85,11 @@ Reassess prediction-only role support: FeCl2 x 6 H2O
 | --- | --- | --- | --- |
 | ev-42ea00ee0c601e31 | data/ingredients/mapped/Fecl2_X_6_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[985],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","line":987,"mapping_status":"MAPPED","ontology_id":"CHEBI:30812","preferred_term":"FeCl2 x 6 H2O"}],"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30812","ontology_label":"iron dichloride","ontology_source":"CHEBI"},"preferred_term":"FeCl2 x 6 H2O","sssom_rows":[{"data_row":1176,"object_id":"CHEBI:30812","object_label":"iron dichloride","predicate_id":"skos:closeMatch"},{"data_row":1177,"object_id":"kgmicrobe.compound:fecl2_x_6_h2o","object_label":"FeCl2 x 6 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fecl2_X_6_H2o","synonym_count":5} |
 | ev-5028b283bd3a4bad | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [985] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-88d755c134874f30 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fecl2_X_6_H2o; data-row positions=[1176,1177] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1176,"object_id":"CHEBI:30812","object_label":"iron dichloride","other":"FeCl2\u00b76H2O&#124;FeCl2\u22c56H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Fecl2_X_6_H2o","validation_method":""},{"data_row":1177,"object_id":"kgmicrobe.compound:fecl2_x_6_h2o","object_label":"FeCl2 x 6 H2O","other":"FeCl2\u00b76H2O&#124;FeCl2\u22c56H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Fecl2_X_6_H2o","validation_method":""}] |
+| ev-88d755c134874f30 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fecl2_X_6_H2o; data-row positions=[1176, 1177] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1176,"object_id":"CHEBI:30812","object_label":"iron dichloride","other":"FeCl2\u00b76H2O&#124;FeCl2\u22c56H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Fecl2_X_6_H2o","validation_method":""},{"data_row":1177,"object_id":"kgmicrobe.compound:fecl2_x_6_h2o","object_label":"FeCl2 x 6 H2O","other":"FeCl2\u00b76H2O&#124;FeCl2\u22c56H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Fecl2_X_6_H2o","validation_method":""}] |
 | ev-e421f7f0eacfee17 | docs/data/mapped_ingredients.csv; CSV lines=[987] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","line":987,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:30812","preferred_term":"FeCl2 x 6 H2O","total_occurrences":"4"}] |
 | ev-5c210a0f7e1c0eac | reports/yaml_record_review/Fecl2_X_6_H2o.md; &#96;data/ingredients/mapped/Fecl2_X_6_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:30; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fba654e852d3021b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[591,2012] | context_only | [{"current_record_sha256":"c56b9a20c09865b1d8b36ff05f507120b2439b721431c0b0e8107563c5891a10","finding_id":"SEM:c5b95a97f06442dcc40a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c56b9a20c09865b1d8b36ff05f507120b2439b721431c0b0e8107563c5891a10","finding_id":"SEM:9db8a774122132bfabe9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d155e6b00b59b55b | data/ingredients/mapped/Fecl2_X_6_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"IRON_SOURCE"}}] |
+| ev-d155e6b00b59b55b | data/ingredients/mapped/Fecl2_X_6_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[985],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","line":987,"mapping_status":"MAPPED","ontology_id":"CHEBI:30812","preferred_term":"FeCl2 x 6 H2O"}],"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30812","ontology_label":"iron dichloride","ontology_source":"CHEBI"},"preferred_term":"FeCl2 x 6 H2O","sssom_rows":[{"data_row":1176,"object_id":"CHEBI:30812","object_label":"iron dichloride","predicate_id":"skos:closeMatch"},{"data_row":1177,"object_id":"kgmicrobe.compound:fecl2_x_6_h2o","object_label":"FeCl2 x 6 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fecl2_X_6_H2o","synonym_count":5} |
 | ev-0ca05d71c53fa2ad | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-2ad22fc32591d5cd] | context_only | Predecessor structured review finding f-2ad22fc32591d5cd in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d6ff7c373f6cd6d0
+  evidence_ids:
+  - ev-42ea00ee0c601e31
+  - ev-5028b283bd3a4bad
+  - ev-88d755c134874f30
+  - ev-e421f7f0eacfee17
+  - ev-d155e6b00b59b55b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d6ff7c373f6cd6d0
+  evidence_ids:
+  - ev-42ea00ee0c601e31
+  - ev-fba654e852d3021b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d6ff7c373f6cd6d0
+  evidence_ids:
+  - ev-5c210a0f7e1c0eac
+  - ev-fba654e852d3021b
+  - ev-0ca05d71c53fa2ad
 evidence:
 - evidence_id: ev-42ea00ee0c601e31
   kind: record_content
   reference: data/ingredients/mapped/Fecl2_X_6_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[985],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","line":987,"mapping_status":"MAPPED","ontology_id":"CHEBI:30812","preferred_term":"FeCl2
     x 6 H2O"}],"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30812","ontology_label":"iron
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [985]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,8 +234,8 @@ evidence:
 - evidence_id: ev-88d755c134874f30
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Fecl2_X_6_H2o; data-row positions=[1176,1177]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Fecl2_X_6_H2o; data-row positions=[1176, 1177]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1176,"object_id":"CHEBI:30812","object_label":"iron
     dichloride","other":"FeCl2\u00b76H2O|FeCl2\u22c56H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Fecl2_X_6_H2o","validation_method":""},{"data_row":1177,"object_id":"kgmicrobe.compound:fecl2_x_6_h2o","object_label":"FeCl2
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[987]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","line":987,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:30812","preferred_term":"FeCl2
     x 6 H2O","total_occurrences":"4"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[591,2012]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c56b9a20c09865b1d8b36ff05f507120b2439b721431c0b0e8107563c5891a10","finding_id":"SEM:c5b95a97f06442dcc40a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c56b9a20c09865b1d8b36ff05f507120b2439b721431c0b0e8107563c5891a10","finding_id":"SEM:9db8a774122132bfabe9","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fecl2_X_6_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"IRON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[985],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","line":987,"mapping_status":"MAPPED","ontology_id":"CHEBI:30812","preferred_term":"FeCl2
+    x 6 H2O"}],"identifier":"kgmicrobe.compound:fecl2_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30812","ontology_label":"iron
+    dichloride","ontology_source":"CHEBI"},"preferred_term":"FeCl2 x 6 H2O","sssom_rows":[{"data_row":1176,"object_id":"CHEBI:30812","object_label":"iron
+    dichloride","predicate_id":"skos:closeMatch"},{"data_row":1177,"object_id":"kgmicrobe.compound:fecl2_x_6_h2o","object_label":"FeCl2
+    x 6 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fecl2_X_6_H2o","synonym_count":5}'
   snapshot_sha256: c56b9a20c09865b1d8b36ff05f507120b2439b721431c0b0e8107563c5891a10
 - evidence_id: ev-0ca05d71c53fa2ad
   kind: prior_review

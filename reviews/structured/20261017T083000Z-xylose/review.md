@@ -83,13 +83,13 @@ Reassess prediction-only role support: Xylose
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-f8a97f883cc431e5 | data/ingredients/mapped/Xylose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2070],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18222","line":2072,"mapping_status":"MAPPED","ontology_id":"CHEBI:18222","preferred_term":"Xylose"}],"identifier":"CHEBI:18222","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18222","ontology_label":"xylose","ontology_source":"CHEBI"},"preferred_term":"Xylose","sssom_rows":[{"data_row":2943,"object_id":"CHEBI:18222","object_label":"xylose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylose","synonym_count":9} |
-| ev-2bdb7bee2791f4d0 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2070] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-1d046b543cbdd955 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Xylose; data-row positions=[2943] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2943,"object_id":"CHEBI:18222","object_label":"xylose","other":"DL-xylose&#124;Xyl&#124;xylo-pentose","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-bda0e74ae7b46c44 | docs/data/mapped_ingredients.csv; CSV lines=[2072] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:18222","line":2072,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"23","ontology_id":"CHEBI:18222","preferred_term":"Xylose","total_occurrences":"23"}] |
+| ev-f8a97f883cc431e5 | data/ingredients/mapped/Xylose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2069],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18222","line":2071,"mapping_status":"MAPPED","ontology_id":"CHEBI:18222","preferred_term":"Xylose"}],"identifier":"CHEBI:18222","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18222","ontology_label":"xylose","ontology_source":"CHEBI"},"preferred_term":"Xylose","sssom_rows":[{"data_row":2945,"object_id":"CHEBI:18222","object_label":"xylose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylose","synonym_count":9} |
+| ev-2bdb7bee2791f4d0 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2069] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-1d046b543cbdd955 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Xylose; data-row positions=[2945] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2945,"object_id":"CHEBI:18222","object_label":"xylose","other":"DL-xylose&#124;Xyl&#124;xylo-pentose","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-bda0e74ae7b46c44 | docs/data/mapped_ingredients.csv; CSV lines=[2071] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:18222","line":2071,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"23","ontology_id":"CHEBI:18222","preferred_term":"Xylose","total_occurrences":"23"}] |
 | ev-3f3be65f6385f6db | reports/yaml_record_review/Xylose.md; &#96;data/ingredients/mapped/Xylose.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:32; Issues:43; Completeness:49; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e271cf6fe5e50f50 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1355,1657] | context_only | [{"current_record_sha256":"7ab6e9db5d436e4c42b39acb608931301d88ea13b75d04e4a8453e1afd0432b2","finding_id":"SEM:351d6cf56abb18ba275e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7ab6e9db5d436e4c42b39acb608931301d88ea13b75d04e4a8453e1afd0432b2","finding_id":"SEM:1652cf405efb2ae44281","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a7c112928ada580b | data/ingredients/mapped/Xylose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-a7c112928ada580b | data/ingredients/mapped/Xylose.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2069],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18222","line":2071,"mapping_status":"MAPPED","ontology_id":"CHEBI:18222","preferred_term":"Xylose"}],"identifier":"CHEBI:18222","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18222","ontology_label":"xylose","ontology_source":"CHEBI"},"preferred_term":"Xylose","sssom_rows":[{"data_row":2945,"object_id":"CHEBI:18222","object_label":"xylose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylose","synonym_count":9} |
 | ev-b18ff86920f0881e | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-0879733503d410f3] | context_only | Predecessor structured review finding f-0879733503d410f3 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f3cbe11ce4691791
+  evidence_ids:
+  - ev-f8a97f883cc431e5
+  - ev-2bdb7bee2791f4d0
+  - ev-1d046b543cbdd955
+  - ev-bda0e74ae7b46c44
+  - ev-a7c112928ada580b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f3cbe11ce4691791
+  evidence_ids:
+  - ev-f8a97f883cc431e5
+  - ev-e271cf6fe5e50f50
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f3cbe11ce4691791
+  evidence_ids:
+  - ev-3f3be65f6385f6db
+  - ev-e271cf6fe5e50f50
+  - ev-b18ff86920f0881e
 evidence:
 - evidence_id: ev-f8a97f883cc431e5
   kind: record_content
   reference: data/ingredients/mapped/Xylose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2070],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18222","line":2072,"mapping_status":"MAPPED","ontology_id":"CHEBI:18222","preferred_term":"Xylose"}],"identifier":"CHEBI:18222","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18222","ontology_label":"xylose","ontology_source":"CHEBI"},"preferred_term":"Xylose","sssom_rows":[{"data_row":2943,"object_id":"CHEBI:18222","object_label":"xylose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylose","synonym_count":9}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2069],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18222","line":2071,"mapping_status":"MAPPED","ontology_id":"CHEBI:18222","preferred_term":"Xylose"}],"identifier":"CHEBI:18222","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18222","ontology_label":"xylose","ontology_source":"CHEBI"},"preferred_term":"Xylose","sssom_rows":[{"data_row":2945,"object_id":"CHEBI:18222","object_label":"xylose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylose","synonym_count":9}'
   snapshot_sha256: 7ab6e9db5d436e4c42b39acb608931301d88ea13b75d04e4a8453e1afd0432b2
 - evidence_id: ev-2bdb7bee2791f4d0
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2070]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2069]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-1d046b543cbdd955
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Xylose; data-row positions=[2943]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Xylose; data-row positions=[2945]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2943,"object_id":"CHEBI:18222","object_label":"xylose","other":"DL-xylose|Xyl|xylo-pentose","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2945,"object_id":"CHEBI:18222","object_label":"xylose","other":"DL-xylose|Xyl|xylo-pentose","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-bda0e74ae7b46c44
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2072]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2071]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18222","line":2072,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"23","ontology_id":"CHEBI:18222","preferred_term":"Xylose","total_occurrences":"23"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18222","line":2071,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"23","ontology_id":"CHEBI:18222","preferred_term":"Xylose","total_occurrences":"23"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-3f3be65f6385f6db
   kind: prior_review
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1355,1657]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7ab6e9db5d436e4c42b39acb608931301d88ea13b75d04e4a8453e1afd0432b2","finding_id":"SEM:351d6cf56abb18ba275e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7ab6e9db5d436e4c42b39acb608931301d88ea13b75d04e4a8453e1afd0432b2","finding_id":"SEM:1652cf405efb2ae44281","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Xylose.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2069],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18222","line":2071,"mapping_status":"MAPPED","ontology_id":"CHEBI:18222","preferred_term":"Xylose"}],"identifier":"CHEBI:18222","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:18222","ontology_label":"xylose","ontology_source":"CHEBI"},"preferred_term":"Xylose","sssom_rows":[{"data_row":2945,"object_id":"CHEBI:18222","object_label":"xylose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylose","synonym_count":9}'
   snapshot_sha256: 7ab6e9db5d436e4c42b39acb608931301d88ea13b75d04e4a8453e1afd0432b2
 - evidence_id: ev-b18ff86920f0881e
   kind: prior_review

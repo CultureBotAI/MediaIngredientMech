@@ -89,7 +89,7 @@ Reassess prediction-only role support: Acetylated xylan
 | ev-74ac0380b2ad15f0 | docs/data/mapped_ingredients.csv; CSV lines=[446] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:134431","line":446,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:134431","preferred_term":"Acetylated xylan","total_occurrences":"0"}] |
 | ev-a3a05e6961949c0a | reports/yaml_record_review/Acetylated_Xylan.md; &#96;data/ingredients/mapped/Acetylated_Xylan.yaml&#96;:2; Verdict:4; Identity:10; Validation:26; Evidence:47; Completeness:66; Recommended Edits:75 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2526f29eb5205618 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[200,1850] | context_only | [{"current_record_sha256":"4d9d3f0b69a7539f44bffeeffa810af887d05e1eb9320148d29f3af6d4b0bb81","finding_id":"SEM:4c8789b6a6a4d78bf607","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4d9d3f0b69a7539f44bffeeffa810af887d05e1eb9320148d29f3af6d4b0bb81","finding_id":"SEM:241c5f792dbb5b0ba2a3","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-89185ff7c47d9a12 | data/ingredients/mapped/Acetylated_Xylan.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-89185ff7c47d9a12 | data/ingredients/mapped/Acetylated_Xylan.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:134431","line":446,"mapping_status":"MAPPED","ontology_id":"CHEBI:134431","preferred_term":"Acetylated xylan"}],"identifier":"CHEBI:134431","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:134431","ontology_label":"acetyl xylan","ontology_source":"CHEBI"},"preferred_term":"Acetylated xylan","sssom_rows":[{"data_row":287,"object_id":"CHEBI:134431","object_label":"acetyl xylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Acetylated_Xylan","synonym_count":2} |
 | ev-90894d81ed0d52be | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-5183a3b5f7129822] | context_only | Predecessor structured review finding f-5183a3b5f7129822 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6636c369082c89c1
+  evidence_ids:
+  - ev-1691195fb6d76313
+  - ev-629d6532499ddd41
+  - ev-29d41411b21fd332
+  - ev-74ac0380b2ad15f0
+  - ev-89185ff7c47d9a12
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6636c369082c89c1
+  evidence_ids:
+  - ev-1691195fb6d76313
+  - ev-2526f29eb5205618
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6636c369082c89c1
+  evidence_ids:
+  - ev-a3a05e6961949c0a
+  - ev-2526f29eb5205618
+  - ev-90894d81ed0d52be
 evidence:
 - evidence_id: ev-1691195fb6d76313
   kind: record_content
   reference: data/ingredients/mapped/Acetylated_Xylan.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:134431","line":446,"mapping_status":"MAPPED","ontology_id":"CHEBI:134431","preferred_term":"Acetylated
     xylan"}],"identifier":"CHEBI:134431","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:134431","ontology_label":"acetyl
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [444]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Acetylated_Xylan; data-row positions=[287]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":287,"object_id":"CHEBI:134431","object_label":"acetyl
     xylan","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Acetylated_Xylan","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[446]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:134431","line":446,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:134431","preferred_term":"Acetylated
     xylan","total_occurrences":"0"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[200,1850]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4d9d3f0b69a7539f44bffeeffa810af887d05e1eb9320148d29f3af6d4b0bb81","finding_id":"SEM:4c8789b6a6a4d78bf607","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4d9d3f0b69a7539f44bffeeffa810af887d05e1eb9320148d29f3af6d4b0bb81","finding_id":"SEM:241c5f792dbb5b0ba2a3","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Acetylated_Xylan.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:134431","line":446,"mapping_status":"MAPPED","ontology_id":"CHEBI:134431","preferred_term":"Acetylated
+    xylan"}],"identifier":"CHEBI:134431","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:134431","ontology_label":"acetyl
+    xylan","ontology_source":"CHEBI"},"preferred_term":"Acetylated xylan","sssom_rows":[{"data_row":287,"object_id":"CHEBI:134431","object_label":"acetyl
+    xylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Acetylated_Xylan","synonym_count":2}'
   snapshot_sha256: 4d9d3f0b69a7539f44bffeeffa810af887d05e1eb9320148d29f3af6d4b0bb81
 - evidence_id: ev-90894d81ed0d52be
   kind: prior_review

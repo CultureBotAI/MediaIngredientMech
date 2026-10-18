@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-d2ce0a2e73572186 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-d2ce0a2e73572186 | Explain curation-history timestamp order: 2-naphthyl Dihydrogen Phosphate |
 | Role evidence and plausibility check | passed | True | record-d2ce0a2e73572186 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-d2ce0a2e73572186 | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 2-naphthyl Dihydrogen Phosphate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-969e5f0a27b5b0d5 | data/ingredients/mapped/2-naphthyl_Dihydrogen_Phosphate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2104],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91043","line":2106,"mapping_status":"MAPPED","ontology_id":"CHEBI:91043","preferred_term":"2-naphthyl Dihydrogen Phosphate"}],"identifier":"CHEBI:91043","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":3,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91043","ontology_label":"2-naphthyl dihydrogen phosphate","ontology_source":"CHEBI"},"preferred_term":"2-naphthyl Dihydrogen Phosphate","sssom_rows":[{"data_row":93,"object_id":"CHEBI:91043","object_label":"2-naphthyl dihydrogen phosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-naphthyl_Dihydrogen_Phosphate","synonym_count":0} |
-| ev-f22b4dae33c6ffdc | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2104] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-969e5f0a27b5b0d5 | data/ingredients/mapped/2-naphthyl_Dihydrogen_Phosphate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2103],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91043","line":2105,"mapping_status":"MAPPED","ontology_id":"CHEBI:91043","preferred_term":"2-naphthyl Dihydrogen Phosphate"}],"identifier":"CHEBI:91043","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91043","ontology_label":"2-naphthyl dihydrogen phosphate","ontology_source":"CHEBI"},"preferred_term":"2-naphthyl Dihydrogen Phosphate","sssom_rows":[{"data_row":93,"object_id":"CHEBI:91043","object_label":"2-naphthyl dihydrogen phosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-naphthyl_Dihydrogen_Phosphate","synonym_count":0} |
+| ev-f22b4dae33c6ffdc | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2103] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-d068c73cb3238faa | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-naphthyl_Dihydrogen_Phosphate; data-row positions=[93] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":93,"object_id":"CHEBI:91043","object_label":"2-naphthyl dihydrogen phosphate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-naphthyl_Dihydrogen_Phosphate","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-5ca7227c764ee15d | docs/data/mapped_ingredients.csv; CSV lines=[2106] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91043","line":2106,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:91043","preferred_term":"2-naphthyl Dihydrogen Phosphate","total_occurrences":"0"}] |
+| ev-5ca7227c764ee15d | docs/data/mapped_ingredients.csv; CSV lines=[2105] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91043","line":2105,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:91043","preferred_term":"2-naphthyl Dihydrogen Phosphate","total_occurrences":"0"}] |
 | ev-fe096df76f17e647 | reports/yaml_record_review/2-naphthyl_Dihydrogen_Phosphate.md; &#96;data/ingredients/mapped/2-naphthyl_Dihydrogen_Phosphate.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:35; Completeness:53; Recommended Edits:60 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-06103d27f0272054 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[76] | context_only | [{"current_record_sha256":"a87575e1ee19bf00c13f5d0e48d3f7a1a37169bbfd2d738408385f4b5d2bf5ce","finding_id":"SEM:d001cf7e6b3b5e9bd2cb","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-7aeec0f135d63709 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-cd6b4c06175bc72f] | context_only | Predecessor structured review finding f-cd6b4c06175bc72f in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 2-naphthyl Dihydrogen Phosphate'
   target_ids:
   - record-d2ce0a2e73572186
+  evidence_ids:
+  - ev-969e5f0a27b5b0d5
+  - ev-f22b4dae33c6ffdc
+  - ev-d068c73cb3238faa
+  - ev-5ca7227c764ee15d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-d2ce0a2e73572186
+  evidence_ids:
+  - ev-969e5f0a27b5b0d5
+  - ev-06103d27f0272054
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,16 +201,20 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d2ce0a2e73572186
+  evidence_ids:
+  - ev-fe096df76f17e647
+  - ev-06103d27f0272054
+  - ev-7aeec0f135d63709
 evidence:
 - evidence_id: ev-969e5f0a27b5b0d5
   kind: record_content
   reference: data/ingredients/mapped/2-naphthyl_Dihydrogen_Phosphate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2104],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91043","line":2106,"mapping_status":"MAPPED","ontology_id":"CHEBI:91043","preferred_term":"2-naphthyl
-    Dihydrogen Phosphate"}],"identifier":"CHEBI:91043","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":3,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91043","ontology_label":"2-naphthyl
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2103],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91043","line":2105,"mapping_status":"MAPPED","ontology_id":"CHEBI:91043","preferred_term":"2-naphthyl
+    Dihydrogen Phosphate"}],"identifier":"CHEBI:91043","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91043","ontology_label":"2-naphthyl
     dihydrogen phosphate","ontology_source":"CHEBI"},"preferred_term":"2-naphthyl
     Dihydrogen Phosphate","sssom_rows":[{"data_row":93,"object_id":"CHEBI:91043","object_label":"2-naphthyl
     dihydrogen phosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-naphthyl_Dihydrogen_Phosphate","synonym_count":0}'
@@ -211,8 +222,8 @@ evidence:
 - evidence_id: ev-f22b4dae33c6ffdc
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2104]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2103]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +232,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-naphthyl_Dihydrogen_Phosphate; data-row positions=[93]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":93,"object_id":"CHEBI:91043","object_label":"2-naphthyl
     dihydrogen phosphate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-naphthyl_Dihydrogen_Phosphate","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
@@ -229,10 +240,10 @@ evidence:
 - evidence_id: ev-5ca7227c764ee15d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2106]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2105]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91043","line":2106,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:91043","preferred_term":"2-naphthyl
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91043","line":2105,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:91043","preferred_term":"2-naphthyl
     Dihydrogen Phosphate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-fe096df76f17e647
@@ -255,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[76]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a87575e1ee19bf00c13f5d0e48d3f7a1a37169bbfd2d738408385f4b5d2bf5ce","finding_id":"SEM:d001cf7e6b3b5e9bd2cb","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

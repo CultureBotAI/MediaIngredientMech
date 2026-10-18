@@ -89,7 +89,7 @@ Reassess prediction-only role support: Fructose
 | ev-a71256e1e4a04e39 | docs/data/mapped_ingredients.csv; CSV lines=[1028] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28757","line":1028,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"87","ontology_id":"CHEBI:28757","preferred_term":"Fructose","total_occurrences":"87"}] |
 | ev-3abe266caa0578bc | reports/yaml_record_review/Fructose.md; &#96;data/ingredients/mapped/Fructose.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:37; Completeness:63; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-82010cde4556eae4 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[636,1771] | context_only | [{"current_record_sha256":"b93915faf35edad102dfc40b3bfab8ec5fa889da4d39b733444b556da5d0e9dd","finding_id":"SEM:a2c2c485621ad90b2c26","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b93915faf35edad102dfc40b3bfab8ec5fa889da4d39b733444b556da5d0e9dd","finding_id":"SEM:4ebcdce83fe1def668dc","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-17685492551ceed0 | data/ingredients/mapped/Fructose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-17685492551ceed0 | data/ingredients/mapped/Fructose.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1026],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28757","line":1028,"mapping_status":"MAPPED","ontology_id":"CHEBI:28757","preferred_term":"Fructose"}],"identifier":"CHEBI:28757","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":87,"edge_count":87,"occurrences":87},"occurrence_statistics":{"media_count":87,"total_occurrences":87},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28757","ontology_label":"fructose","ontology_source":"CHEBI"},"preferred_term":"Fructose","sssom_rows":[{"data_row":1249,"object_id":"CHEBI:28757","object_label":"fructose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fructose","synonym_count":14} |
 | ev-cf794cc81f50250f | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-7e206857922725a9] | context_only | Predecessor structured review finding f-7e206857922725a9 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4992b112a961ec13
+  evidence_ids:
+  - ev-1f60402deb113ae6
+  - ev-3ca5acff60ed4c63
+  - ev-d83ad444051291e0
+  - ev-a71256e1e4a04e39
+  - ev-17685492551ceed0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4992b112a961ec13
+  evidence_ids:
+  - ev-1f60402deb113ae6
+  - ev-82010cde4556eae4
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4992b112a961ec13
+  evidence_ids:
+  - ev-3abe266caa0578bc
+  - ev-82010cde4556eae4
+  - ev-cf794cc81f50250f
 evidence:
 - evidence_id: ev-1f60402deb113ae6
   kind: record_content
   reference: data/ingredients/mapped/Fructose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1026],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28757","line":1028,"mapping_status":"MAPPED","ontology_id":"CHEBI:28757","preferred_term":"Fructose"}],"identifier":"CHEBI:28757","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":87,"edge_count":87,"occurrences":87},"occurrence_statistics":{"media_count":87,"total_occurrences":87},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28757","ontology_label":"fructose","ontology_source":"CHEBI"},"preferred_term":"Fructose","sssom_rows":[{"data_row":1249,"object_id":"CHEBI:28757","object_label":"fructose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fructose","synonym_count":14}'
   snapshot_sha256: b93915faf35edad102dfc40b3bfab8ec5fa889da4d39b733444b556da5d0e9dd
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1026]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fructose; data-row positions=[1249]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1249,"object_id":"CHEBI:28757","object_label":"fructose","other":"Fru|Fruchtzucker|Fruktose|arabino-Hexulose|arabino-hex-2-ulose|beta-D-Fructose|beta-D-arabino-Hexulose|beta-Fruit
     sugar|beta-Levulose|CAS:53188-23-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Fructose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1028]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28757","line":1028,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"87","ontology_id":"CHEBI:28757","preferred_term":"Fructose","total_occurrences":"87"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[636,1771]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b93915faf35edad102dfc40b3bfab8ec5fa889da4d39b733444b556da5d0e9dd","finding_id":"SEM:a2c2c485621ad90b2c26","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b93915faf35edad102dfc40b3bfab8ec5fa889da4d39b733444b556da5d0e9dd","finding_id":"SEM:4ebcdce83fe1def668dc","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fructose.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1026],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28757","line":1028,"mapping_status":"MAPPED","ontology_id":"CHEBI:28757","preferred_term":"Fructose"}],"identifier":"CHEBI:28757","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":87,"edge_count":87,"occurrences":87},"occurrence_statistics":{"media_count":87,"total_occurrences":87},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28757","ontology_label":"fructose","ontology_source":"CHEBI"},"preferred_term":"Fructose","sssom_rows":[{"data_row":1249,"object_id":"CHEBI:28757","object_label":"fructose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fructose","synonym_count":14}'
   snapshot_sha256: b93915faf35edad102dfc40b3bfab8ec5fa889da4d39b733444b556da5d0e9dd
 - evidence_id: ev-cf794cc81f50250f
   kind: prior_review

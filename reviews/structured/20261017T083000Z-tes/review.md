@@ -83,13 +83,13 @@ Reassess prediction-only role support: TES
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-85cf22f17099ec59 | data/ingredients/mapped/Tes.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1939],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39035","line":1941,"mapping_status":"MAPPED","ontology_id":"CHEBI:39035","preferred_term":"TES"}],"identifier":"CHEBI:39035","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39035","ontology_label":"TES","ontology_source":"CHEBI"},"preferred_term":"TES","sssom_rows":[{"data_row":2732,"object_id":"CHEBI:39035","object_label":"TES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tes","synonym_count":4} |
-| ev-5196311612467a21 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1939] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6bab08865950c876 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tes; data-row positions=[2732] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2732,"object_id":"CHEBI:39035","object_label":"TES","other":"TES buffer&#124;TES buffer(Sigma T 1375)&#124;TES (Dry Buffer)&#124;CAS:7365-44-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Tes","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-219594ce476a11b4 | docs/data/mapped_ingredients.csv; CSV lines=[1941] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:39035","line":1941,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:39035","preferred_term":"TES","total_occurrences":"20"}] |
+| ev-85cf22f17099ec59 | data/ingredients/mapped/Tes.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1938],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39035","line":1940,"mapping_status":"MAPPED","ontology_id":"CHEBI:39035","preferred_term":"TES"}],"identifier":"CHEBI:39035","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39035","ontology_label":"TES","ontology_source":"CHEBI"},"preferred_term":"TES","sssom_rows":[{"data_row":2734,"object_id":"CHEBI:39035","object_label":"TES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tes","synonym_count":4} |
+| ev-5196311612467a21 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1938] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6bab08865950c876 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tes; data-row positions=[2734] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2734,"object_id":"CHEBI:39035","object_label":"TES","other":"TES buffer&#124;TES buffer(Sigma T 1375)&#124;TES (Dry Buffer)&#124;CAS:7365-44-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Tes","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-219594ce476a11b4 | docs/data/mapped_ingredients.csv; CSV lines=[1940] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:39035","line":1940,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:39035","preferred_term":"TES","total_occurrences":"20"}] |
 | ev-14e44f80bd415469 | reports/yaml_record_review/Tes.md; &#96;data/ingredients/mapped/Tes.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:30; Completeness:46; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d4daf9b651858673 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1273,1774] | context_only | [{"current_record_sha256":"a14ca054460e6ede69aaea67d8e48fa507ff619393aabb6e75ff414fe2e0ba2b","finding_id":"SEM:d4b0a49f55610a210033","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a14ca054460e6ede69aaea67d8e48fa507ff619393aabb6e75ff414fe2e0ba2b","finding_id":"SEM:05e89803c6d6a0eac18a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0a1a17d11a794836 | data/ingredients/mapped/Tes.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-0a1a17d11a794836 | data/ingredients/mapped/Tes.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1938],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39035","line":1940,"mapping_status":"MAPPED","ontology_id":"CHEBI:39035","preferred_term":"TES"}],"identifier":"CHEBI:39035","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39035","ontology_label":"TES","ontology_source":"CHEBI"},"preferred_term":"TES","sssom_rows":[{"data_row":2734,"object_id":"CHEBI:39035","object_label":"TES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tes","synonym_count":4} |
 | ev-a1d6b82b00cf5506 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-5c0ccf9b53e172b1] | context_only | Predecessor structured review finding f-5c0ccf9b53e172b1 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ba7684fd01604d15
+  evidence_ids:
+  - ev-85cf22f17099ec59
+  - ev-5196311612467a21
+  - ev-6bab08865950c876
+  - ev-219594ce476a11b4
+  - ev-0a1a17d11a794836
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ba7684fd01604d15
+  evidence_ids:
+  - ev-85cf22f17099ec59
+  - ev-d4daf9b651858673
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ba7684fd01604d15
+  evidence_ids:
+  - ev-14e44f80bd415469
+  - ev-d4daf9b651858673
+  - ev-a1d6b82b00cf5506
 evidence:
 - evidence_id: ev-85cf22f17099ec59
   kind: record_content
   reference: data/ingredients/mapped/Tes.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1939],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39035","line":1941,"mapping_status":"MAPPED","ontology_id":"CHEBI:39035","preferred_term":"TES"}],"identifier":"CHEBI:39035","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39035","ontology_label":"TES","ontology_source":"CHEBI"},"preferred_term":"TES","sssom_rows":[{"data_row":2732,"object_id":"CHEBI:39035","object_label":"TES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tes","synonym_count":4}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1938],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39035","line":1940,"mapping_status":"MAPPED","ontology_id":"CHEBI:39035","preferred_term":"TES"}],"identifier":"CHEBI:39035","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39035","ontology_label":"TES","ontology_source":"CHEBI"},"preferred_term":"TES","sssom_rows":[{"data_row":2734,"object_id":"CHEBI:39035","object_label":"TES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tes","synonym_count":4}'
   snapshot_sha256: a14ca054460e6ede69aaea67d8e48fa507ff619393aabb6e75ff414fe2e0ba2b
 - evidence_id: ev-5196311612467a21
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1939]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1938]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,19 +230,19 @@ evidence:
 - evidence_id: ev-6bab08865950c876
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tes; data-row positions=[2732]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tes; data-row positions=[2734]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2732,"object_id":"CHEBI:39035","object_label":"TES","other":"TES
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2734,"object_id":"CHEBI:39035","object_label":"TES","other":"TES
     buffer|TES buffer(Sigma T 1375)|TES (Dry Buffer)|CAS:7365-44-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Tes","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-219594ce476a11b4
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1941]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1940]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:39035","line":1941,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:39035","preferred_term":"TES","total_occurrences":"20"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:39035","line":1940,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:39035","preferred_term":"TES","total_occurrences":"20"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-14e44f80bd415469
   kind: prior_review
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1273,1774]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a14ca054460e6ede69aaea67d8e48fa507ff619393aabb6e75ff414fe2e0ba2b","finding_id":"SEM:d4b0a49f55610a210033","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a14ca054460e6ede69aaea67d8e48fa507ff619393aabb6e75ff414fe2e0ba2b","finding_id":"SEM:05e89803c6d6a0eac18a","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tes.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1938],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39035","line":1940,"mapping_status":"MAPPED","ontology_id":"CHEBI:39035","preferred_term":"TES"}],"identifier":"CHEBI:39035","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39035","ontology_label":"TES","ontology_source":"CHEBI"},"preferred_term":"TES","sssom_rows":[{"data_row":2734,"object_id":"CHEBI:39035","object_label":"TES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tes","synonym_count":4}'
   snapshot_sha256: a14ca054460e6ede69aaea67d8e48fa507ff619393aabb6e75ff414fe2e0ba2b
 - evidence_id: ev-a1d6b82b00cf5506
   kind: prior_review

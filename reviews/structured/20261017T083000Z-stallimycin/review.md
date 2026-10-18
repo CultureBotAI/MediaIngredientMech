@@ -83,14 +83,14 @@ Reassess prediction-only role support: Stallimycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-d8404f54cd73f6e8 | data/ingredients/mapped/Stallimycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1896],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41958","line":1898,"mapping_status":"MAPPED","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin"}],"identifier":"CHEBI:41958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41958","ontology_label":"DISTAMYCIN A","ontology_source":"CHEBI"},"preferred_term":"Stallimycin","sssom_rows":[{"data_row":2643,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stallimycin","synonym_count":1} |
-| ev-f775319ed7a85bf2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1896] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-f6875002b489d6d4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Stallimycin; data-row positions=[2643] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2643,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN A","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Stallimycin","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-8f8c2606e0052856 | docs/data/mapped_ingredients.csv; CSV lines=[1898] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:41958","line":1898,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin","total_occurrences":"0"}] |
+| ev-d8404f54cd73f6e8 | data/ingredients/mapped/Stallimycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1895],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41958","line":1897,"mapping_status":"MAPPED","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin"}],"identifier":"CHEBI:41958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41958","ontology_label":"DISTAMYCIN A","ontology_source":"CHEBI"},"preferred_term":"Stallimycin","sssom_rows":[{"data_row":2645,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stallimycin","synonym_count":1} |
+| ev-f775319ed7a85bf2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1895] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-f6875002b489d6d4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Stallimycin; data-row positions=[2645] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2645,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN A","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Stallimycin","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-8f8c2606e0052856 | docs/data/mapped_ingredients.csv; CSV lines=[1897] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:41958","line":1897,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin","total_occurrences":"0"}] |
 | ev-5d1f5e603d15b9b9 | reports/yaml_record_review/20261001T050334Z-Stallimycin.md; YAML Record Review: Stallimycin:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2e03352c7d6372de | reports/yaml_record_review/Stallimycin.md; &#96;data/ingredients/mapped/Stallimycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:28; Completeness:42; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-61ab20443377335a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1248,1672] | context_only | [{"current_record_sha256":"ba4c8c0afdef4efcba7627f20e2b08664a8bd693818b203b89e27e481f8317e0","finding_id":"SEM:698da5183d01f757701f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ba4c8c0afdef4efcba7627f20e2b08664a8bd693818b203b89e27e481f8317e0","finding_id":"SEM:11d4a445f01edf009995","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8fc0064058b3d767 | data/ingredients/mapped/Stallimycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-8fc0064058b3d767 | data/ingredients/mapped/Stallimycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1895],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41958","line":1897,"mapping_status":"MAPPED","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin"}],"identifier":"CHEBI:41958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41958","ontology_label":"DISTAMYCIN A","ontology_source":"CHEBI"},"preferred_term":"Stallimycin","sssom_rows":[{"data_row":2645,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stallimycin","synonym_count":1} |
 | ev-9dab1862a82bb904 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-9b52fda31fbf7590] | context_only | Predecessor structured review finding f-9b52fda31fbf7590 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3425ba504802dcc8
+  evidence_ids:
+  - ev-d8404f54cd73f6e8
+  - ev-f775319ed7a85bf2
+  - ev-f6875002b489d6d4
+  - ev-8f8c2606e0052856
+  - ev-8fc0064058b3d767
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3425ba504802dcc8
+  evidence_ids:
+  - ev-d8404f54cd73f6e8
+  - ev-61ab20443377335a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,23 +208,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3425ba504802dcc8
+  evidence_ids:
+  - ev-5d1f5e603d15b9b9
+  - ev-2e03352c7d6372de
+  - ev-61ab20443377335a
+  - ev-9dab1862a82bb904
 evidence:
 - evidence_id: ev-d8404f54cd73f6e8
   kind: record_content
   reference: data/ingredients/mapped/Stallimycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1896],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41958","line":1898,"mapping_status":"MAPPED","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin"}],"identifier":"CHEBI:41958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41958","ontology_label":"DISTAMYCIN
-    A","ontology_source":"CHEBI"},"preferred_term":"Stallimycin","sssom_rows":[{"data_row":2643,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1895],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41958","line":1897,"mapping_status":"MAPPED","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin"}],"identifier":"CHEBI:41958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41958","ontology_label":"DISTAMYCIN
+    A","ontology_source":"CHEBI"},"preferred_term":"Stallimycin","sssom_rows":[{"data_row":2645,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN
     A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stallimycin","synonym_count":1}'
   snapshot_sha256: ba4c8c0afdef4efcba7627f20e2b08664a8bd693818b203b89e27e481f8317e0
 - evidence_id: ev-f775319ed7a85bf2
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1896]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1895]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -223,19 +237,19 @@ evidence:
 - evidence_id: ev-f6875002b489d6d4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Stallimycin; data-row positions=[2643]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Stallimycin; data-row positions=[2645]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2643,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2645,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN
     A","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Stallimycin","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-8f8c2606e0052856
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1898]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1897]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:41958","line":1898,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:41958","line":1897,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-5d1f5e603d15b9b9
   kind: prior_review
@@ -286,7 +300,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1248,1672]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ba4c8c0afdef4efcba7627f20e2b08664a8bd693818b203b89e27e481f8317e0","finding_id":"SEM:698da5183d01f757701f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ba4c8c0afdef4efcba7627f20e2b08664a8bd693818b203b89e27e481f8317e0","finding_id":"SEM:11d4a445f01edf009995","kind":"role_evidence","resolution_reason":"Historical
@@ -296,12 +310,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Stallimycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1895],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41958","line":1897,"mapping_status":"MAPPED","ontology_id":"CHEBI:41958","preferred_term":"Stallimycin"}],"identifier":"CHEBI:41958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41958","ontology_label":"DISTAMYCIN
+    A","ontology_source":"CHEBI"},"preferred_term":"Stallimycin","sssom_rows":[{"data_row":2645,"object_id":"CHEBI:41958","object_label":"DISTAMYCIN
+    A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stallimycin","synonym_count":1}'
   snapshot_sha256: ba4c8c0afdef4efcba7627f20e2b08664a8bd693818b203b89e27e481f8317e0
 - evidence_id: ev-9dab1862a82bb904
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Tyloxapol
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-a46b6e46a5ac07fd | data/ingredients/mapped/Tyloxapol.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2020],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:141517","line":2022,"mapping_status":"MAPPED","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol"}],"identifier":"CHEBI:141517","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:141517","ontology_label":"tyloxapol","ontology_source":"CHEBI"},"preferred_term":"Tyloxapol","sssom_rows":[{"data_row":2860,"object_id":"CHEBI:141517","object_label":"tyloxapol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tyloxapol","synonym_count":0} |
-| ev-0df57ed8c7e51ba6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2020] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-79b545b43d3ce30a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tyloxapol; data-row positions=[2860] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2860,"object_id":"CHEBI:141517","object_label":"tyloxapol","other":"CAS:25301-02-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Tyloxapol","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-a4d876861719188b | docs/data/mapped_ingredients.csv; CSV lines=[2022] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:141517","line":2022,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol","total_occurrences":"2"}] |
+| ev-a46b6e46a5ac07fd | data/ingredients/mapped/Tyloxapol.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2019],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:141517","line":2021,"mapping_status":"MAPPED","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol"}],"identifier":"CHEBI:141517","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:141517","ontology_label":"tyloxapol","ontology_source":"CHEBI"},"preferred_term":"Tyloxapol","sssom_rows":[{"data_row":2862,"object_id":"CHEBI:141517","object_label":"tyloxapol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tyloxapol","synonym_count":0} |
+| ev-0df57ed8c7e51ba6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2019] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-79b545b43d3ce30a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tyloxapol; data-row positions=[2862] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2862,"object_id":"CHEBI:141517","object_label":"tyloxapol","other":"CAS:25301-02-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Tyloxapol","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-a4d876861719188b | docs/data/mapped_ingredients.csv; CSV lines=[2021] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:141517","line":2021,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol","total_occurrences":"2"}] |
 | ev-24866f7c4e6a6d06 | reports/yaml_record_review/Tyloxapol.md; &#96;data/ingredients/mapped/Tyloxapol.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:31; Issues:40; Major: &#96;SURFACTANT&#96; is provisional in-session LLM evidence:42; Completeness:59; Recommended Edits:65 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-17b423b4181923c6 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1330,1963] | context_only | [{"current_record_sha256":"50a3e3c7569c8497308a61b1014826b8a0ae728667020d8534218b6b1e6f96a8","finding_id":"SEM:bc51e52713904ab30143","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"50a3e3c7569c8497308a61b1014826b8a0ae728667020d8534218b6b1e6f96a8","finding_id":"SEM:2028d8e9b541635f4a57","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-08b1c8d03d9308fc | data/ingredients/mapped/Tyloxapol.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}] |
+| ev-08b1c8d03d9308fc | data/ingredients/mapped/Tyloxapol.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2019],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:141517","line":2021,"mapping_status":"MAPPED","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol"}],"identifier":"CHEBI:141517","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:141517","ontology_label":"tyloxapol","ontology_source":"CHEBI"},"preferred_term":"Tyloxapol","sssom_rows":[{"data_row":2862,"object_id":"CHEBI:141517","object_label":"tyloxapol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tyloxapol","synonym_count":0} |
 | ev-854b9f9b4e79618e | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-c29d24361a8d2de6] | context_only | Predecessor structured review finding f-c29d24361a8d2de6 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-dbef879267b82021
+  evidence_ids:
+  - ev-a46b6e46a5ac07fd
+  - ev-0df57ed8c7e51ba6
+  - ev-79b545b43d3ce30a
+  - ev-a4d876861719188b
+  - ev-08b1c8d03d9308fc
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-dbef879267b82021
+  evidence_ids:
+  - ev-a46b6e46a5ac07fd
+  - ev-17b423b4181923c6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-dbef879267b82021
+  evidence_ids:
+  - ev-24866f7c4e6a6d06
+  - ev-17b423b4181923c6
+  - ev-854b9f9b4e79618e
 evidence:
 - evidence_id: ev-a46b6e46a5ac07fd
   kind: record_content
   reference: data/ingredients/mapped/Tyloxapol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2020],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:141517","line":2022,"mapping_status":"MAPPED","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol"}],"identifier":"CHEBI:141517","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:141517","ontology_label":"tyloxapol","ontology_source":"CHEBI"},"preferred_term":"Tyloxapol","sssom_rows":[{"data_row":2860,"object_id":"CHEBI:141517","object_label":"tyloxapol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tyloxapol","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2019],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:141517","line":2021,"mapping_status":"MAPPED","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol"}],"identifier":"CHEBI:141517","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:141517","ontology_label":"tyloxapol","ontology_source":"CHEBI"},"preferred_term":"Tyloxapol","sssom_rows":[{"data_row":2862,"object_id":"CHEBI:141517","object_label":"tyloxapol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tyloxapol","synonym_count":0}'
   snapshot_sha256: 50a3e3c7569c8497308a61b1014826b8a0ae728667020d8534218b6b1e6f96a8
 - evidence_id: ev-0df57ed8c7e51ba6
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2020]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2019]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-79b545b43d3ce30a
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tyloxapol; data-row positions=[2860]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tyloxapol; data-row positions=[2862]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2860,"object_id":"CHEBI:141517","object_label":"tyloxapol","other":"CAS:25301-02-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Tyloxapol","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2862,"object_id":"CHEBI:141517","object_label":"tyloxapol","other":"CAS:25301-02-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Tyloxapol","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-a4d876861719188b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2022]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2021]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:141517","line":2022,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol","total_occurrences":"2"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:141517","line":2021,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-24866f7c4e6a6d06
   kind: prior_review
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1330,1963]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"50a3e3c7569c8497308a61b1014826b8a0ae728667020d8534218b6b1e6f96a8","finding_id":"SEM:bc51e52713904ab30143","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"50a3e3c7569c8497308a61b1014826b8a0ae728667020d8534218b6b1e6f96a8","finding_id":"SEM:2028d8e9b541635f4a57","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tyloxapol.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2019],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:141517","line":2021,"mapping_status":"MAPPED","ontology_id":"CHEBI:141517","preferred_term":"Tyloxapol"}],"identifier":"CHEBI:141517","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:141517","ontology_label":"tyloxapol","ontology_source":"CHEBI"},"preferred_term":"Tyloxapol","sssom_rows":[{"data_row":2862,"object_id":"CHEBI:141517","object_label":"tyloxapol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tyloxapol","synonym_count":0}'
   snapshot_sha256: 50a3e3c7569c8497308a61b1014826b8a0ae728667020d8534218b6b1e6f96a8
 - evidence_id: ev-854b9f9b4e79618e
   kind: prior_review

@@ -167,6 +167,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ffe16e229f348803
+  evidence_ids:
+  - ev-0c6bbea6b537443c
+  - ev-47373a28a84e8285
+  - ev-59606b4ad5193954
+  - ev-f53f0595529e08ee
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -175,6 +180,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-ffe16e229f348803
+  evidence_ids:
+  - ev-0c6bbea6b537443c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -183,13 +190,15 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ffe16e229f348803
+  evidence_ids:
+  - ev-91b3729449ed6610
 evidence:
 - evidence_id: ev-0c6bbea6b537443c
   kind: record_content
   reference: data/ingredients/unmapped/ZMB_ALS.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[256],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0272","line":258,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"ZMB_ALS"}],"identifier":"UNMAPPED_0272","ingredient_type":"NAMED_MEDIUM","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":33,"total_occurrences":33},"ontology_mapping":{},"preferred_term":"ZMB_ALS","sssom_rows":[],"sssom_subject":"MIM:ZMB_ALS","synonym_count":1}'
   snapshot_sha256: 43cfafcde49b6e5b65dcb7809fc086ade6bd9573cef4ab97cd4abd4792b0f6d3
@@ -197,7 +206,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [256]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -206,7 +215,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:ZMB_ALS; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -214,7 +223,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[258]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0272","line":258,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"33","ontology_id":"","preferred_term":"ZMB_ALS","total_occurrences":"33"}]'
   snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7

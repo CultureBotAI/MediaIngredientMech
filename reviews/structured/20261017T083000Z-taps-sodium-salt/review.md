@@ -83,13 +83,13 @@ Reassess prediction-only role support: TAPS sodium salt
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-69e149b325ea7ee9 | data/ingredients/mapped/TAPS_Sodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1931],"raw_equal":true},"docs_rows":[{"identifier":"cas:91000-53-2","line":1933,"mapping_status":"MAPPED","ontology_id":"CHEBI:191055","preferred_term":"TAPS sodium salt"}],"identifier":"cas:91000-53-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:191055","ontology_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","ontology_source":"CHEBI"},"preferred_term":"TAPS sodium salt","sssom_rows":[{"data_row":2707,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","predicate_id":"skos:broadMatch"},{"data_row":2708,"object_id":"cas:91000-53-2","object_label":"TAPS sodium salt","predicate_id":"skos:exactMatch"},{"data_row":2709,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TAPS_Sodium_Salt","synonym_count":1} |
-| ev-62fed400e1bb0a6a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1931] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-e9a32d6ba9c88079 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:TAPS_Sodium_Salt; data-row positions=[2707,2708,2709] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2707,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","other":"TAPS","predicate_id":"skos:broadMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2708,"object_id":"cas:91000-53-2","object_label":"TAPS sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2709,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-9101df8977c4fe24 | docs/data/mapped_ingredients.csv; CSV lines=[1933] | supports | Published identity and count rows inspected: [{"identifier":"cas:91000-53-2","line":1933,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:191055","preferred_term":"TAPS sodium salt","total_occurrences":"8"}] |
+| ev-69e149b325ea7ee9 | data/ingredients/mapped/TAPS_Sodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1930],"raw_equal":true},"docs_rows":[{"identifier":"cas:91000-53-2","line":1932,"mapping_status":"MAPPED","ontology_id":"CHEBI:191055","preferred_term":"TAPS sodium salt"}],"identifier":"cas:91000-53-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:191055","ontology_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","ontology_source":"CHEBI"},"preferred_term":"TAPS sodium salt","sssom_rows":[{"data_row":2709,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","predicate_id":"skos:broadMatch"},{"data_row":2710,"object_id":"cas:91000-53-2","object_label":"TAPS sodium salt","predicate_id":"skos:exactMatch"},{"data_row":2711,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TAPS_Sodium_Salt","synonym_count":1} |
+| ev-62fed400e1bb0a6a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1930] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-e9a32d6ba9c88079 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:TAPS_Sodium_Salt; data-row positions=[2709, 2710, 2711] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2709,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","other":"TAPS","predicate_id":"skos:broadMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2710,"object_id":"cas:91000-53-2","object_label":"TAPS sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2711,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-9101df8977c4fe24 | docs/data/mapped_ingredients.csv; CSV lines=[1932] | supports | Published identity and count rows inspected: [{"identifier":"cas:91000-53-2","line":1932,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:191055","preferred_term":"TAPS sodium salt","total_occurrences":"8"}] |
 | ev-727aea1d6eba8e41 | reports/yaml_record_review/TAPS_Sodium_Salt.md; &#96;data/ingredients/mapped/TAPS_Sodium_Salt.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:34; Completeness:52; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-08fa23f763826348 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1266,1883] | context_only | [{"current_record_sha256":"8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6","finding_id":"SEM:9b1e1626df5abe4247d3","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6","finding_id":"SEM:58dd0dd15c4fcf3672f2","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-978d3b9b37714158 | data/ingredients/mapped/TAPS_Sodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-978d3b9b37714158 | data/ingredients/mapped/TAPS_Sodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1930],"raw_equal":true},"docs_rows":[{"identifier":"cas:91000-53-2","line":1932,"mapping_status":"MAPPED","ontology_id":"CHEBI:191055","preferred_term":"TAPS sodium salt"}],"identifier":"cas:91000-53-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:191055","ontology_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","ontology_source":"CHEBI"},"preferred_term":"TAPS sodium salt","sssom_rows":[{"data_row":2709,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","predicate_id":"skos:broadMatch"},{"data_row":2710,"object_id":"cas:91000-53-2","object_label":"TAPS sodium salt","predicate_id":"skos:exactMatch"},{"data_row":2711,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TAPS_Sodium_Salt","synonym_count":1} |
 | ev-6b2a3c0677ae73a5 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-50c214ef030cff62] | context_only | Predecessor structured review finding f-50c214ef030cff62 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d51b3cb278de0aa9
+  evidence_ids:
+  - ev-69e149b325ea7ee9
+  - ev-62fed400e1bb0a6a
+  - ev-e9a32d6ba9c88079
+  - ev-9101df8977c4fe24
+  - ev-978d3b9b37714158
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d51b3cb278de0aa9
+  evidence_ids:
+  - ev-69e149b325ea7ee9
+  - ev-08fa23f763826348
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,26 +204,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d51b3cb278de0aa9
+  evidence_ids:
+  - ev-727aea1d6eba8e41
+  - ev-08fa23f763826348
+  - ev-6b2a3c0677ae73a5
 evidence:
 - evidence_id: ev-69e149b325ea7ee9
   kind: record_content
   reference: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1931],"raw_equal":true},"docs_rows":[{"identifier":"cas:91000-53-2","line":1933,"mapping_status":"MAPPED","ontology_id":"CHEBI:191055","preferred_term":"TAPS
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1930],"raw_equal":true},"docs_rows":[{"identifier":"cas:91000-53-2","line":1932,"mapping_status":"MAPPED","ontology_id":"CHEBI:191055","preferred_term":"TAPS
     sodium salt"}],"identifier":"cas:91000-53-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:191055","ontology_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
-    acid","ontology_source":"CHEBI"},"preferred_term":"TAPS sodium salt","sssom_rows":[{"data_row":2707,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
-    acid","predicate_id":"skos:broadMatch"},{"data_row":2708,"object_id":"cas:91000-53-2","object_label":"TAPS
-    sodium salt","predicate_id":"skos:exactMatch"},{"data_row":2709,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS
+    acid","ontology_source":"CHEBI"},"preferred_term":"TAPS sodium salt","sssom_rows":[{"data_row":2709,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+    acid","predicate_id":"skos:broadMatch"},{"data_row":2710,"object_id":"cas:91000-53-2","object_label":"TAPS
+    sodium salt","predicate_id":"skos:exactMatch"},{"data_row":2711,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS
     sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TAPS_Sodium_Salt","synonym_count":1}'
   snapshot_sha256: 8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6
 - evidence_id: ev-62fed400e1bb0a6a
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1931]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1930]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,21 +235,21 @@ evidence:
 - evidence_id: ev-e9a32d6ba9c88079
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:TAPS_Sodium_Salt; data-row positions=[2707,2708,2709]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:TAPS_Sodium_Salt; data-row positions=[2709, 2710, 2711]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2707,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
-    acid","other":"TAPS","predicate_id":"skos:broadMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2708,"object_id":"cas:91000-53-2","object_label":"TAPS
-    sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2709,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2709,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+    acid","other":"TAPS","predicate_id":"skos:broadMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2710,"object_id":"cas:91000-53-2","object_label":"TAPS
+    sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2711,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS
     sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-9101df8977c4fe24
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1933]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1932]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:91000-53-2","line":1933,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:191055","preferred_term":"TAPS
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:91000-53-2","line":1932,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:191055","preferred_term":"TAPS
     sodium salt","total_occurrences":"8"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-727aea1d6eba8e41
@@ -262,7 +275,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1266,1883]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6","finding_id":"SEM:9b1e1626df5abe4247d3","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6","finding_id":"SEM:58dd0dd15c4fcf3672f2","kind":"role_evidence","resolution_reason":"Historical
@@ -272,12 +285,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1930],"raw_equal":true},"docs_rows":[{"identifier":"cas:91000-53-2","line":1932,"mapping_status":"MAPPED","ontology_id":"CHEBI:191055","preferred_term":"TAPS
+    sodium salt"}],"identifier":"cas:91000-53-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:191055","ontology_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+    acid","ontology_source":"CHEBI"},"preferred_term":"TAPS sodium salt","sssom_rows":[{"data_row":2709,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+    acid","predicate_id":"skos:broadMatch"},{"data_row":2710,"object_id":"cas:91000-53-2","object_label":"TAPS
+    sodium salt","predicate_id":"skos:exactMatch"},{"data_row":2711,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS
+    sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TAPS_Sodium_Salt","synonym_count":1}'
   snapshot_sha256: 8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6
 - evidence_id: ev-6b2a3c0677ae73a5
   kind: prior_review

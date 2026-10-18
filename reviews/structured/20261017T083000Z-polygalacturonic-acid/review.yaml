@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c83aff00ace293b6
+  evidence_ids:
+  - ev-2066f9adb218e6b1
+  - ev-eab04e07c82f206a
+  - ev-bce003c49acad01f
+  - ev-de5a1f5ae7f38556
+  - ev-40ee1bdf8a69473c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c83aff00ace293b6
+  evidence_ids:
+  - ev-2066f9adb218e6b1
+  - ev-ce991fadc54640d7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,24 +99,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c83aff00ace293b6
+  evidence_ids:
+  - ev-f3bfa7462c30249e
+  - ev-ce991fadc54640d7
+  - ev-7916c1fd22fdc9d7
 evidence:
 - evidence_id: ev-2066f9adb218e6b1
   kind: record_content
   reference: data/ingredients/mapped/Polygalacturonic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1680],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62969","line":1682,"mapping_status":"MAPPED","ontology_id":"CHEBI:62969","preferred_term":"polygalacturonic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1679],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62969","line":1681,"mapping_status":"MAPPED","ontology_id":"CHEBI:62969","preferred_term":"polygalacturonic
     acid"}],"identifier":"CHEBI:62969","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62969","ontology_label":"polygalacturonic
-    acid","ontology_source":"CHEBI"},"preferred_term":"polygalacturonic acid","sssom_rows":[{"data_row":2290,"object_id":"CHEBI:62969","object_label":"polygalacturonic
+    acid","ontology_source":"CHEBI"},"preferred_term":"polygalacturonic acid","sssom_rows":[{"data_row":2292,"object_id":"CHEBI:62969","object_label":"polygalacturonic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polygalacturonic_Acid","synonym_count":3}'
   snapshot_sha256: 71217e544fdd05389911435778dbf66db3e0a26abc9a20fc253c2cd09621ceae
 - evidence_id: ev-eab04e07c82f206a
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1680]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1679]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,20 +128,20 @@ evidence:
 - evidence_id: ev-bce003c49acad01f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Polygalacturonic_Acid; data-row positions=[2290]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Polygalacturonic_Acid; data-row positions=[2292]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2290,"object_id":"CHEBI:62969","object_label":"polygalacturonic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2292,"object_id":"CHEBI:62969","object_label":"polygalacturonic
     acid","other":"polygalacturonic acid (ultrapure)|filtered, polygalacturonic acid
     (ultrapure)|autoclaved, polygalacturonic acid|CAS:25990-10-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Polygalacturonic_Acid","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-de5a1f5ae7f38556
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1682]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1681]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62969","line":1682,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62969","preferred_term":"polygalacturonic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62969","line":1681,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62969","preferred_term":"polygalacturonic
     acid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-f3bfa7462c30249e
@@ -145,7 +158,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1127,1535]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"71217e544fdd05389911435778dbf66db3e0a26abc9a20fc253c2cd09621ceae","finding_id":"SEM:5e34b52e8efe1b7ff8a1","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"71217e544fdd05389911435778dbf66db3e0a26abc9a20fc253c2cd09621ceae","finding_id":"SEM:653f93944c05bf572439","kind":"role_evidence","resolution_reason":"Historical
@@ -155,12 +168,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Polygalacturonic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1679],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62969","line":1681,"mapping_status":"MAPPED","ontology_id":"CHEBI:62969","preferred_term":"polygalacturonic
+    acid"}],"identifier":"CHEBI:62969","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62969","ontology_label":"polygalacturonic
+    acid","ontology_source":"CHEBI"},"preferred_term":"polygalacturonic acid","sssom_rows":[{"data_row":2292,"object_id":"CHEBI:62969","object_label":"polygalacturonic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polygalacturonic_Acid","synonym_count":3}'
   snapshot_sha256: 71217e544fdd05389911435778dbf66db3e0a26abc9a20fc253c2cd09621ceae
 - evidence_id: ev-7916c1fd22fdc9d7
   kind: prior_review

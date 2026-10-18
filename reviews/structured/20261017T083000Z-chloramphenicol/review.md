@@ -89,7 +89,7 @@ Reassess prediction-only role support: Chloramphenicol
 | ev-532b91e82629ef6f | docs/data/mapped_ingredients.csv; CSV lines=[710] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17698","line":710,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"9","ontology_id":"CHEBI:17698","preferred_term":"Chloramphenicol","total_occurrences":"9"}] |
 | ev-a5bd7c4b19c713ed | reports/yaml_record_review/Chloramphenicol.md; &#96;data/ingredients/mapped/Chloramphenicol.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:39; Completeness:55; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f2c87cd51287ac1a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[405,1730] | context_only | [{"current_record_sha256":"f3ec216ebcf3427e177a988d2c4461a3cf1275a8ed9d73c756aa530039844c6c","finding_id":"SEM:1dc99434ed5993616f35","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f3ec216ebcf3427e177a988d2c4461a3cf1275a8ed9d73c756aa530039844c6c","finding_id":"SEM:0db85b270e5d66a6f314","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c09715ce8b58ac2e | data/ingredients/mapped/Chloramphenicol.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-c09715ce8b58ac2e | data/ingredients/mapped/Chloramphenicol.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[708],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17698","line":710,"mapping_status":"MAPPED","ontology_id":"CHEBI:17698","preferred_term":"Chloramphenicol"}],"identifier":"CHEBI:17698","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17698","ontology_label":"chloramphenicol","ontology_source":"CHEBI"},"preferred_term":"Chloramphenicol","sssom_rows":[{"data_row":739,"object_id":"CHEBI:17698","object_label":"chloramphenicol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Chloramphenicol","synonym_count":3} |
 | ev-1ddaff811a17445b | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-77c61846a000bf0d] | context_only | Predecessor structured review finding f-77c61846a000bf0d in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f2afb274e236ddac
+  evidence_ids:
+  - ev-5fcbd1e1837b7c3a
+  - ev-7e62eadaf7be5bce
+  - ev-d475e1c073c412d7
+  - ev-532b91e82629ef6f
+  - ev-c09715ce8b58ac2e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f2afb274e236ddac
+  evidence_ids:
+  - ev-5fcbd1e1837b7c3a
+  - ev-f2c87cd51287ac1a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f2afb274e236ddac
+  evidence_ids:
+  - ev-a5bd7c4b19c713ed
+  - ev-f2c87cd51287ac1a
+  - ev-1ddaff811a17445b
 evidence:
 - evidence_id: ev-5fcbd1e1837b7c3a
   kind: record_content
   reference: data/ingredients/mapped/Chloramphenicol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[708],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17698","line":710,"mapping_status":"MAPPED","ontology_id":"CHEBI:17698","preferred_term":"Chloramphenicol"}],"identifier":"CHEBI:17698","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17698","ontology_label":"chloramphenicol","ontology_source":"CHEBI"},"preferred_term":"Chloramphenicol","sssom_rows":[{"data_row":739,"object_id":"CHEBI:17698","object_label":"chloramphenicol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Chloramphenicol","synonym_count":3}'
   snapshot_sha256: f3ec216ebcf3427e177a988d2c4461a3cf1275a8ed9d73c756aa530039844c6c
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [708]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Chloramphenicol; data-row positions=[739]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":739,"object_id":"CHEBI:17698","object_label":"chloramphenicol","other":"2,2-dichloro-N-[(1R,2R)-2-hydroxy-1-(hydroxymethyl)-2-(4-nitrophenyl)ethyl]acetamide|(-)-Chloramphenicol|chloramphenicol
     (if needed)|CAS:56-75-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Chloramphenicol","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[710]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17698","line":710,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"9","ontology_id":"CHEBI:17698","preferred_term":"Chloramphenicol","total_occurrences":"9"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[405,1730]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f3ec216ebcf3427e177a988d2c4461a3cf1275a8ed9d73c756aa530039844c6c","finding_id":"SEM:1dc99434ed5993616f35","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f3ec216ebcf3427e177a988d2c4461a3cf1275a8ed9d73c756aa530039844c6c","finding_id":"SEM:0db85b270e5d66a6f314","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Chloramphenicol.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[708],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17698","line":710,"mapping_status":"MAPPED","ontology_id":"CHEBI:17698","preferred_term":"Chloramphenicol"}],"identifier":"CHEBI:17698","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17698","ontology_label":"chloramphenicol","ontology_source":"CHEBI"},"preferred_term":"Chloramphenicol","sssom_rows":[{"data_row":739,"object_id":"CHEBI:17698","object_label":"chloramphenicol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Chloramphenicol","synonym_count":3}'
   snapshot_sha256: f3ec216ebcf3427e177a988d2c4461a3cf1275a8ed9d73c756aa530039844c6c
 - evidence_id: ev-1ddaff811a17445b
   kind: prior_review

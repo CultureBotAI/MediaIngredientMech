@@ -89,7 +89,7 @@ Reassess prediction-only role support: Beta-alanine
 | ev-a14661d7238699a6 | docs/data/mapped_ingredients.csv; CSV lines=[581] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16958","line":581,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16958","preferred_term":"Beta-alanine","total_occurrences":"0"}] |
 | ev-3cbcb82c55161c46 | reports/yaml_record_review/Beta-alanine.md; &#96;data/ingredients/mapped/Beta-alanine.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:32; Completeness:44; Recommended Edits:52 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-183657a9415e2dbe | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1669] | context_only | [{"current_record_sha256":"e736cb76673134314c66a4ebb3d60e51d018f912d6f11f77daa93d9f03c8d67e","finding_id":"SEM:9dce66a63900255250b7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-6f9a911a68fe7730 | data/ingredients/mapped/Beta-alanine.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-6f9a911a68fe7730 | data/ingredients/mapped/Beta-alanine.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[579],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16958","line":581,"mapping_status":"MAPPED","ontology_id":"CHEBI:16958","preferred_term":"Beta-alanine"}],"identifier":"CHEBI:16958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16958","ontology_label":"beta-alanine","ontology_source":"CHEBI"},"preferred_term":"Beta-alanine","sssom_rows":[{"data_row":530,"object_id":"CHEBI:16958","object_label":"beta-alanine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beta-alanine","synonym_count":2} |
 | ev-2ffb9d96c31c0083 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-0365ddd88187c9ef] | context_only | Predecessor structured review finding f-0365ddd88187c9ef in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-703df86cb2cb2fb8
+  evidence_ids:
+  - ev-fbc615aace2e69ab
+  - ev-8b78cc360f5c8604
+  - ev-bffa98436371f431
+  - ev-a14661d7238699a6
+  - ev-6f9a911a68fe7730
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-703df86cb2cb2fb8
+  evidence_ids:
+  - ev-fbc615aace2e69ab
+  - ev-183657a9415e2dbe
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-703df86cb2cb2fb8
+  evidence_ids:
+  - ev-3cbcb82c55161c46
+  - ev-183657a9415e2dbe
+  - ev-2ffb9d96c31c0083
 evidence:
 - evidence_id: ev-fbc615aace2e69ab
   kind: record_content
   reference: data/ingredients/mapped/Beta-alanine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[579],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16958","line":581,"mapping_status":"MAPPED","ontology_id":"CHEBI:16958","preferred_term":"Beta-alanine"}],"identifier":"CHEBI:16958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16958","ontology_label":"beta-alanine","ontology_source":"CHEBI"},"preferred_term":"Beta-alanine","sssom_rows":[{"data_row":530,"object_id":"CHEBI:16958","object_label":"beta-alanine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beta-alanine","synonym_count":2}'
   snapshot_sha256: e736cb76673134314c66a4ebb3d60e51d018f912d6f11f77daa93d9f03c8d67e
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [579]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Beta-alanine; data-row positions=[530]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":530,"object_id":"CHEBI:16958","object_label":"beta-alanine","other":"B-alanine|3-aminopropanoic
     acid|CAS:107-95-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Beta-alanine","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[581]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16958","line":581,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16958","preferred_term":"Beta-alanine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1669]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e736cb76673134314c66a4ebb3d60e51d018f912d6f11f77daa93d9f03c8d67e","finding_id":"SEM:9dce66a63900255250b7","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -258,12 +271,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Beta-alanine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[579],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16958","line":581,"mapping_status":"MAPPED","ontology_id":"CHEBI:16958","preferred_term":"Beta-alanine"}],"identifier":"CHEBI:16958","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16958","ontology_label":"beta-alanine","ontology_source":"CHEBI"},"preferred_term":"Beta-alanine","sssom_rows":[{"data_row":530,"object_id":"CHEBI:16958","object_label":"beta-alanine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beta-alanine","synonym_count":2}'
   snapshot_sha256: e736cb76673134314c66a4ebb3d60e51d018f912d6f11f77daa93d9f03c8d67e
 - evidence_id: ev-2ffb9d96c31c0083
   kind: prior_review

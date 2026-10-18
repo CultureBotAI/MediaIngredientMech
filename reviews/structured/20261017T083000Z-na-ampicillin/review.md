@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-ampicillin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-7c2dd2f3119f9335 | data/ingredients/mapped/Na-ampicillin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1459],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":1461,"mapping_status":"MAPPED","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin"}],"identifier":"CHEBI:34535","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin sodium","ontology_source":"CHEBI"},"preferred_term":"Na-ampicillin","sssom_rows":[{"data_row":1961,"object_id":"CHEBI:34535","object_label":"ampicillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ampicillin","synonym_count":10} |
-| ev-2ff365ec412bd34d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1459] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-545b3f29881a9dc3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-ampicillin; data-row positions=[1961] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1961,"object_id":"CHEBI:34535","object_label":"ampicillin sodium","other":"Austrapen&#124;D(-)-alpha-aminobenzylpenicillin sodium salt&#124;ampicillin natrium&#124;monosodium D-(-)-6-(2-amino-2-phenylacetamido)-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo(3.2.0)heptane-2-carboxylate&#124;sodium (2S,5R,6R)-6-{[(2R)-2-amino-2-phenylacetyl]amino}-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylate&#124;sodium 6beta-[(2R)-2-amino-2-phenylacetamido]-2,2-dimethylpenam-3alpha-carboxylate&#124;sodium D-(-)-alpha-aminobenzylpenicillin&#124;sodium ampicillin&#124;Ampicillin sodium salt&#124;CAS:69-52-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-ampicillin","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-92e3b46108e806c5 | docs/data/mapped_ingredients.csv; CSV lines=[1461] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34535","line":1461,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin","total_occurrences":"12"}] |
+| ev-7c2dd2f3119f9335 | data/ingredients/mapped/Na-ampicillin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1458],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":1460,"mapping_status":"MAPPED","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin"}],"identifier":"CHEBI:34535","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin sodium","ontology_source":"CHEBI"},"preferred_term":"Na-ampicillin","sssom_rows":[{"data_row":1963,"object_id":"CHEBI:34535","object_label":"ampicillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ampicillin","synonym_count":10} |
+| ev-2ff365ec412bd34d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1458] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-545b3f29881a9dc3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-ampicillin; data-row positions=[1963] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1963,"object_id":"CHEBI:34535","object_label":"ampicillin sodium","other":"Austrapen&#124;D(-)-alpha-aminobenzylpenicillin sodium salt&#124;ampicillin natrium&#124;monosodium D-(-)-6-(2-amino-2-phenylacetamido)-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo(3.2.0)heptane-2-carboxylate&#124;sodium (2S,5R,6R)-6-{[(2R)-2-amino-2-phenylacetyl]amino}-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylate&#124;sodium 6beta-[(2R)-2-amino-2-phenylacetamido]-2,2-dimethylpenam-3alpha-carboxylate&#124;sodium D-(-)-alpha-aminobenzylpenicillin&#124;sodium ampicillin&#124;Ampicillin sodium salt&#124;CAS:69-52-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-ampicillin","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-92e3b46108e806c5 | docs/data/mapped_ingredients.csv; CSV lines=[1460] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34535","line":1460,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin","total_occurrences":"12"}] |
 | ev-ca60272c84e70ca6 | reports/yaml_record_review/Na-ampicillin.md; &#96;data/ingredients/mapped/Na-ampicillin.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:27; Completeness:41; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a1ede6e44e80a8a8 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[968,2007] | context_only | [{"current_record_sha256":"def2647ee221c1256dbdd1cc95b2cfc5f05fb13f4fdd4250d471dfe94edc4ec2","finding_id":"SEM:9375061634834d76114b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"def2647ee221c1256dbdd1cc95b2cfc5f05fb13f4fdd4250d471dfe94edc4ec2","finding_id":"SEM:6586f0fa5465c2ab1ea6","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d767672b401a68c0 | data/ingredients/mapped/Na-ampicillin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-d767672b401a68c0 | data/ingredients/mapped/Na-ampicillin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1458],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":1460,"mapping_status":"MAPPED","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin"}],"identifier":"CHEBI:34535","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin sodium","ontology_source":"CHEBI"},"preferred_term":"Na-ampicillin","sssom_rows":[{"data_row":1963,"object_id":"CHEBI:34535","object_label":"ampicillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ampicillin","synonym_count":10} |
 | ev-7545499aecafa9da | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-51bcfdceec1a7afb] | context_only | Predecessor structured review finding f-51bcfdceec1a7afb in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-09fcfa2b32327521
+  evidence_ids:
+  - ev-7c2dd2f3119f9335
+  - ev-2ff365ec412bd34d
+  - ev-545b3f29881a9dc3
+  - ev-92e3b46108e806c5
+  - ev-d767672b401a68c0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-09fcfa2b32327521
+  evidence_ids:
+  - ev-7c2dd2f3119f9335
+  - ev-a1ede6e44e80a8a8
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-09fcfa2b32327521
+  evidence_ids:
+  - ev-ca60272c84e70ca6
+  - ev-a1ede6e44e80a8a8
+  - ev-7545499aecafa9da
 evidence:
 - evidence_id: ev-7c2dd2f3119f9335
   kind: record_content
   reference: data/ingredients/mapped/Na-ampicillin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1459],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":1461,"mapping_status":"MAPPED","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin"}],"identifier":"CHEBI:34535","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin
-    sodium","ontology_source":"CHEBI"},"preferred_term":"Na-ampicillin","sssom_rows":[{"data_row":1961,"object_id":"CHEBI:34535","object_label":"ampicillin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1458],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":1460,"mapping_status":"MAPPED","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin"}],"identifier":"CHEBI:34535","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Na-ampicillin","sssom_rows":[{"data_row":1963,"object_id":"CHEBI:34535","object_label":"ampicillin
     sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ampicillin","synonym_count":10}'
   snapshot_sha256: def2647ee221c1256dbdd1cc95b2cfc5f05fb13f4fdd4250d471dfe94edc4ec2
 - evidence_id: ev-2ff365ec412bd34d
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1459]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1458]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,10 +232,10 @@ evidence:
 - evidence_id: ev-545b3f29881a9dc3
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-ampicillin; data-row positions=[1961]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-ampicillin; data-row positions=[1963]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1961,"object_id":"CHEBI:34535","object_label":"ampicillin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1963,"object_id":"CHEBI:34535","object_label":"ampicillin
     sodium","other":"Austrapen|D(-)-alpha-aminobenzylpenicillin sodium salt|ampicillin
     natrium|monosodium D-(-)-6-(2-amino-2-phenylacetamido)-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo(3.2.0)heptane-2-carboxylate|sodium
     (2S,5R,6R)-6-{[(2R)-2-amino-2-phenylacetyl]amino}-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylate|sodium
@@ -232,10 +245,10 @@ evidence:
 - evidence_id: ev-92e3b46108e806c5
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1461]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1460]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34535","line":1461,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin","total_occurrences":"12"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34535","line":1460,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin","total_occurrences":"12"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ca60272c84e70ca6
   kind: prior_review
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[968,2007]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"def2647ee221c1256dbdd1cc95b2cfc5f05fb13f4fdd4250d471dfe94edc4ec2","finding_id":"SEM:9375061634834d76114b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"def2647ee221c1256dbdd1cc95b2cfc5f05fb13f4fdd4250d471dfe94edc4ec2","finding_id":"SEM:6586f0fa5465c2ab1ea6","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-ampicillin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1458],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34535","line":1460,"mapping_status":"MAPPED","ontology_id":"CHEBI:34535","preferred_term":"Na-ampicillin"}],"identifier":"CHEBI:34535","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34535","ontology_label":"ampicillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Na-ampicillin","sssom_rows":[{"data_row":1963,"object_id":"CHEBI:34535","object_label":"ampicillin
+    sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-ampicillin","synonym_count":10}'
   snapshot_sha256: def2647ee221c1256dbdd1cc95b2cfc5f05fb13f4fdd4250d471dfe94edc4ec2
 - evidence_id: ev-7545499aecafa9da
   kind: prior_review

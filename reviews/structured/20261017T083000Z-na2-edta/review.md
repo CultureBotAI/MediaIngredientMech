@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na2-EDTA
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-f85ae908d01e70c8 | data/ingredients/mapped/Na2-edta.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1478],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64734","line":1480,"mapping_status":"MAPPED","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA"}],"identifier":"CHEBI:64734","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":612,"edge_count":612,"occurrences":614},"occurrence_statistics":{"media_count":612,"total_occurrences":614},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64734","ontology_label":"EDTA disodium salt (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA","sssom_rows":[{"data_row":1981,"object_id":"CHEBI:64734","object_label":"EDTA disodium salt (anhydrous)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-edta","synonym_count":25} |
-| ev-02ce4606307148e9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1478] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-b658e5a678731731 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2-edta; data-row positions=[1981] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1981,"object_id":"CHEBI:64734","object_label":"EDTA disodium salt (anhydrous)","other":"EDTA-2Na&#124;EDTA\u00b72Na&#124;EDTA\u30fb2Na&#124;EDTA 2Na&#124;2Na-EDTA&#124;EDTA (disodium salt)&#124;EDTA disodium&#124;EDTA disodium (anh.)&#124;EDTA disodium salt (anh.)&#124;EDTA.Na .2H O&#124;EDTANa&#124;N,N'-1,2-ethanediylbis[N-(carboxymethyl)glycine], disodium salt&#124;NA EDTA&#124;NA2 EDTA&#124;Na-EDTA&#124;Na2H2EDTA&#124;Na2EDTA&#124;disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate&#124;EDTA(Disodium salt)&#124;EDTA\u20222Na&#124;NaEDTA&#124;CAS:139-33-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2-edta","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-6411b0ae21a83620 | docs/data/mapped_ingredients.csv; CSV lines=[1480] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:64734","line":1480,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"612","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA","total_occurrences":"614"}] |
+| ev-f85ae908d01e70c8 | data/ingredients/mapped/Na2-edta.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1477],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64734","line":1479,"mapping_status":"MAPPED","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA"}],"identifier":"CHEBI:64734","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":612,"edge_count":612,"occurrences":614},"occurrence_statistics":{"media_count":612,"total_occurrences":614},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64734","ontology_label":"EDTA disodium salt (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA","sssom_rows":[{"data_row":1983,"object_id":"CHEBI:64734","object_label":"EDTA disodium salt (anhydrous)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-edta","synonym_count":25} |
+| ev-02ce4606307148e9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1477] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b658e5a678731731 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2-edta; data-row positions=[1983] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1983,"object_id":"CHEBI:64734","object_label":"EDTA disodium salt (anhydrous)","other":"EDTA-2Na&#124;EDTA\u00b72Na&#124;EDTA\u30fb2Na&#124;EDTA 2Na&#124;2Na-EDTA&#124;EDTA (disodium salt)&#124;EDTA disodium&#124;EDTA disodium (anh.)&#124;EDTA disodium salt (anh.)&#124;EDTA.Na .2H O&#124;EDTANa&#124;N,N'-1,2-ethanediylbis[N-(carboxymethyl)glycine], disodium salt&#124;NA EDTA&#124;NA2 EDTA&#124;Na-EDTA&#124;Na2H2EDTA&#124;Na2EDTA&#124;disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate&#124;EDTA(Disodium salt)&#124;EDTA\u20222Na&#124;NaEDTA&#124;CAS:139-33-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2-edta","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-6411b0ae21a83620 | docs/data/mapped_ingredients.csv; CSV lines=[1479] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:64734","line":1479,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"612","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA","total_occurrences":"614"}] |
 | ev-b008c9979cb6b407 | reports/yaml_record_review/Na2-edta.md; &#96;data/ingredients/mapped/Na2-edta.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:28; Completeness:44; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fc7772316fd353e5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[985,1875] | context_only | [{"current_record_sha256":"7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4","finding_id":"SEM:33a8277f0a7d440dca7d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4","finding_id":"SEM:edaf63868af7f226ad0f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-07d6a169c1ac1d43 | data/ingredients/mapped/Na2-edta.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}] |
+| ev-07d6a169c1ac1d43 | data/ingredients/mapped/Na2-edta.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1477],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64734","line":1479,"mapping_status":"MAPPED","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA"}],"identifier":"CHEBI:64734","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":612,"edge_count":612,"occurrences":614},"occurrence_statistics":{"media_count":612,"total_occurrences":614},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64734","ontology_label":"EDTA disodium salt (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA","sssom_rows":[{"data_row":1983,"object_id":"CHEBI:64734","object_label":"EDTA disodium salt (anhydrous)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-edta","synonym_count":25} |
 | ev-4110534942fb2ac8 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-f64f43c62a99ab39] | context_only | Predecessor structured review finding f-f64f43c62a99ab39 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8df9c38904b5495c
+  evidence_ids:
+  - ev-f85ae908d01e70c8
+  - ev-02ce4606307148e9
+  - ev-b658e5a678731731
+  - ev-6411b0ae21a83620
+  - ev-07d6a169c1ac1d43
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8df9c38904b5495c
+  evidence_ids:
+  - ev-f85ae908d01e70c8
+  - ev-fc7772316fd353e5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8df9c38904b5495c
+  evidence_ids:
+  - ev-b008c9979cb6b407
+  - ev-fc7772316fd353e5
+  - ev-4110534942fb2ac8
 evidence:
 - evidence_id: ev-f85ae908d01e70c8
   kind: record_content
   reference: data/ingredients/mapped/Na2-edta.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1478],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64734","line":1480,"mapping_status":"MAPPED","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA"}],"identifier":"CHEBI:64734","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":612,"edge_count":612,"occurrences":614},"occurrence_statistics":{"media_count":612,"total_occurrences":614},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64734","ontology_label":"EDTA
-    disodium salt (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA","sssom_rows":[{"data_row":1981,"object_id":"CHEBI:64734","object_label":"EDTA
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1477],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64734","line":1479,"mapping_status":"MAPPED","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA"}],"identifier":"CHEBI:64734","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":612,"edge_count":612,"occurrences":614},"occurrence_statistics":{"media_count":612,"total_occurrences":614},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64734","ontology_label":"EDTA
+    disodium salt (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA","sssom_rows":[{"data_row":1983,"object_id":"CHEBI:64734","object_label":"EDTA
     disodium salt (anhydrous)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-edta","synonym_count":25}'
   snapshot_sha256: 7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4
 - evidence_id: ev-02ce4606307148e9
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1478]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1477]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,10 +232,10 @@ evidence:
 - evidence_id: ev-b658e5a678731731
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na2-edta; data-row positions=[1981]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na2-edta; data-row positions=[1983]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1981,"object_id":"CHEBI:64734","object_label":"EDTA
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1983,"object_id":"CHEBI:64734","object_label":"EDTA
     disodium salt (anhydrous)","other":"EDTA-2Na|EDTA\u00b72Na|EDTA\u30fb2Na|EDTA
     2Na|2Na-EDTA|EDTA (disodium salt)|EDTA disodium|EDTA disodium (anh.)|EDTA disodium
     salt (anh.)|EDTA.Na .2H O|EDTANa|N,N''-1,2-ethanediylbis[N-(carboxymethyl)glycine],
@@ -232,10 +245,10 @@ evidence:
 - evidence_id: ev-6411b0ae21a83620
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1480]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1479]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:64734","line":1480,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"612","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA","total_occurrences":"614"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:64734","line":1479,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"612","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA","total_occurrences":"614"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-b008c9979cb6b407
   kind: prior_review
@@ -259,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[985,1875]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4","finding_id":"SEM:33a8277f0a7d440dca7d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4","finding_id":"SEM:edaf63868af7f226ad0f","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +282,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na2-edta.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1477],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64734","line":1479,"mapping_status":"MAPPED","ontology_id":"CHEBI:64734","preferred_term":"Na2-EDTA"}],"identifier":"CHEBI:64734","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":612,"edge_count":612,"occurrences":614},"occurrence_statistics":{"media_count":612,"total_occurrences":614},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64734","ontology_label":"EDTA
+    disodium salt (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA","sssom_rows":[{"data_row":1983,"object_id":"CHEBI:64734","object_label":"EDTA
+    disodium salt (anhydrous)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-edta","synonym_count":25}'
   snapshot_sha256: 7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4
 - evidence_id: ev-4110534942fb2ac8
   kind: prior_review

@@ -77,12 +77,12 @@ Disposition: The current local observation is recorded, but the named source/con
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-40956357311a0fcc | data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1874],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1876,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2} |
-| ev-213ad69ca5576781 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1874] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-40956357311a0fcc | data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1873],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1875,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2} |
+| ev-213ad69ca5576781 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1873] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-375f96e250acc08e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Thiosulfate_Pentahydrate; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
-| ev-aea7eec342798573 | docs/data/mapped_ingredients.csv; CSV lines=[1876] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32150","line":1876,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:32150","preferred_term":"Sodium Thiosulfate Pentahydrate","total_occurrences":"0"}] |
+| ev-aea7eec342798573 | docs/data/mapped_ingredients.csv; CSV lines=[1875] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32150","line":1875,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:32150","preferred_term":"Sodium Thiosulfate Pentahydrate","total_occurrences":"0"}] |
 | ev-ee23fd8f49644a58 | reports/yaml_record_review/Sodium_Thiosulfate_Pentahydrate.md; &#96;data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:32; Completeness:43; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
-| ev-f2b8d4362653311c | data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml; cellular_metabolic_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"cellular_metabolic_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ELECTRON_DONOR"}}] |
+| ev-f2b8d4362653311c | data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml; cellular_metabolic_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1873],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1875,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2} |
 | ev-1367082e08e3b388 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-a37dffd307516e3b] | context_only | Predecessor structured review finding f-a37dffd307516e3b in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -169,6 +169,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-40956357311a0fcc
+  - ev-213ad69ca5576781
+  - ev-375f96e250acc08e
+  - ev-aea7eec342798573
+  - ev-f2b8d4362653311c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -177,6 +183,8 @@ checks:
     or empty evidence.
   target_ids:
   - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-40956357311a0fcc
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -185,15 +193,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ed2dffbb5138e9a0
+  evidence_ids:
+  - ev-ee23fd8f49644a58
+  - ev-1367082e08e3b388
 evidence:
 - evidence_id: ev-40956357311a0fcc
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1874],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1876,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1873],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1875,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium
     Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium
     thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium
     Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2}'
@@ -201,8 +212,8 @@ evidence:
 - evidence_id: ev-213ad69ca5576781
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1874]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1873]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -211,17 +222,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Sodium_Thiosulfate_Pentahydrate; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-aea7eec342798573
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1876]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1875]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32150","line":1876,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:32150","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32150","line":1875,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:32150","preferred_term":"Sodium
     Thiosulfate Pentahydrate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ee23fd8f49644a58
@@ -242,12 +253,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml
   locator: cellular_metabolic_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"cellular_metabolic_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ELECTRON_DONOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1873],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32150","line":1875,"mapping_status":"REJECTED","ontology_id":"CHEBI:32150","preferred_term":"Sodium
+    Thiosulfate Pentahydrate"}],"identifier":"CHEBI:32150","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":716,"edge_count":716,"occurrences":716},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32150","ontology_label":"sodium
+    thiosulfate pentahydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium
+    Thiosulfate Pentahydrate","sssom_rows":[],"sssom_subject":"MIM:Sodium_Thiosulfate_Pentahydrate","synonym_count":2}'
   snapshot_sha256: 72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b
 - evidence_id: ev-1367082e08e3b388
   kind: prior_review

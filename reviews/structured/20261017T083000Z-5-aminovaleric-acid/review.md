@@ -89,7 +89,7 @@ Reassess prediction-only role support: 5-Aminovaleric acid
 | ev-96b312acd8abf763 | docs/data/mapped_ingredients.csv; CSV lines=[412] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15887","line":412,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:15887","preferred_term":"5-Aminovaleric acid","total_occurrences":"5"}] |
 | ev-577736780a96c1f5 | reports/yaml_record_review/5-aminovaleric_Acid.md; &#96;data/ingredients/mapped/5-aminovaleric_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:35; Completeness:62; Recommended Edits:69 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b97fa1499bb99d06 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[164,2093] | context_only | [{"current_record_sha256":"c619f43c8d0bab3cf84ebb74359aa9d005b56e118ba3ef4639d3702b340d8df7","finding_id":"SEM:c030410361ae21786909","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c619f43c8d0bab3cf84ebb74359aa9d005b56e118ba3ef4639d3702b340d8df7","finding_id":"SEM:6597e839062c8826f85b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-3fbd82cbe1a4b3b9 | data/ingredients/mapped/5-aminovaleric_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-3fbd82cbe1a4b3b9 | data/ingredients/mapped/5-aminovaleric_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[410],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15887","line":412,"mapping_status":"MAPPED","ontology_id":"CHEBI:15887","preferred_term":"5-Aminovaleric acid"}],"identifier":"CHEBI:15887","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15887","ontology_label":"5-aminopentanoic acid","ontology_source":"CHEBI"},"preferred_term":"5-Aminovaleric acid","sssom_rows":[{"data_row":231,"object_id":"CHEBI:15887","object_label":"5-aminopentanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:5-aminovaleric_Acid","synonym_count":8} |
 | ev-9abc48a8bf03aab5 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-69171a0d99b66f6d] | context_only | Predecessor structured review finding f-69171a0d99b66f6d in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cc478da880ac5316
+  evidence_ids:
+  - ev-9227fd7df2326fa1
+  - ev-bb4f871a1adea2bf
+  - ev-b2d7bc380b31fd8b
+  - ev-96b312acd8abf763
+  - ev-3fbd82cbe1a4b3b9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-cc478da880ac5316
+  evidence_ids:
+  - ev-9227fd7df2326fa1
+  - ev-b97fa1499bb99d06
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cc478da880ac5316
+  evidence_ids:
+  - ev-577736780a96c1f5
+  - ev-b97fa1499bb99d06
+  - ev-9abc48a8bf03aab5
 evidence:
 - evidence_id: ev-9227fd7df2326fa1
   kind: record_content
   reference: data/ingredients/mapped/5-aminovaleric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[410],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15887","line":412,"mapping_status":"MAPPED","ontology_id":"CHEBI:15887","preferred_term":"5-Aminovaleric
     acid"}],"identifier":"CHEBI:15887","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15887","ontology_label":"5-aminopentanoic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [410]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:5-aminovaleric_Acid; data-row positions=[231]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":231,"object_id":"CHEBI:15887","object_label":"5-aminopentanoic
     acid","other":"4-aminovalerate|4-aminovaleric acid|5-amino-n-valeric acid|DANVA|delta-Amino-n-valeric
@@ -231,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[412]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15887","line":412,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:15887","preferred_term":"5-Aminovaleric
     acid","total_occurrences":"5"}]'
@@ -260,7 +273,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[164,2093]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c619f43c8d0bab3cf84ebb74359aa9d005b56e118ba3ef4639d3702b340d8df7","finding_id":"SEM:c030410361ae21786909","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c619f43c8d0bab3cf84ebb74359aa9d005b56e118ba3ef4639d3702b340d8df7","finding_id":"SEM:6597e839062c8826f85b","kind":"role_evidence","resolution_reason":"Historical
@@ -270,12 +283,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/5-aminovaleric_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[410],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15887","line":412,"mapping_status":"MAPPED","ontology_id":"CHEBI:15887","preferred_term":"5-Aminovaleric
+    acid"}],"identifier":"CHEBI:15887","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15887","ontology_label":"5-aminopentanoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"5-Aminovaleric acid","sssom_rows":[{"data_row":231,"object_id":"CHEBI:15887","object_label":"5-aminopentanoic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:5-aminovaleric_Acid","synonym_count":8}'
   snapshot_sha256: c619f43c8d0bab3cf84ebb74359aa9d005b56e118ba3ef4639d3702b340d8df7
 - evidence_id: ev-9abc48a8bf03aab5
   kind: prior_review

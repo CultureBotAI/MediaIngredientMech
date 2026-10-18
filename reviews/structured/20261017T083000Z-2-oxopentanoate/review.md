@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-a35d756d710e28ee | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-a35d756d710e28ee | Explain curation-history timestamp order: 2-oxopentanoate |
 | Role evidence and plausibility check | passed | True | record-a35d756d710e28ee | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-a35d756d710e28ee | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 2-oxopentanoate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-b2cdd389225fee83 | data/ingredients/mapped/2-oxopentanoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2107],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28644","line":2109,"mapping_status":"MAPPED","ontology_id":"CHEBI:28644","preferred_term":"2-oxopentanoate"}],"identifier":"CHEBI:28644","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":164,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28644","ontology_label":"2-oxopentanoate","ontology_source":"CHEBI"},"preferred_term":"2-oxopentanoate","sssom_rows":[{"data_row":99,"object_id":"CHEBI:28644","object_label":"2-oxopentanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-oxopentanoate","synonym_count":0} |
-| ev-72e14ab563087492 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2107] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b2cdd389225fee83 | data/ingredients/mapped/2-oxopentanoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2106],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28644","line":2108,"mapping_status":"MAPPED","ontology_id":"CHEBI:28644","preferred_term":"2-oxopentanoate"}],"identifier":"CHEBI:28644","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28644","ontology_label":"2-oxopentanoate","ontology_source":"CHEBI"},"preferred_term":"2-oxopentanoate","sssom_rows":[{"data_row":99,"object_id":"CHEBI:28644","object_label":"2-oxopentanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-oxopentanoate","synonym_count":0} |
+| ev-72e14ab563087492 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2106] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-fad5eddd4a317344 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-oxopentanoate; data-row positions=[99] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":99,"object_id":"CHEBI:28644","object_label":"2-oxopentanoate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-oxopentanoate","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-6b15dbd63d2afcb7 | docs/data/mapped_ingredients.csv; CSV lines=[2109] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28644","line":2109,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28644","preferred_term":"2-oxopentanoate","total_occurrences":"0"}] |
+| ev-6b15dbd63d2afcb7 | docs/data/mapped_ingredients.csv; CSV lines=[2108] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28644","line":2108,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28644","preferred_term":"2-oxopentanoate","total_occurrences":"0"}] |
 | ev-333c7ab018291191 | reports/yaml_record_review/2-oxopentanoate.md; &#96;data/ingredients/mapped/2-oxopentanoate.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:34; Completeness:52; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6317ab860b79d7ce | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[80] | context_only | [{"current_record_sha256":"f89b0fe8d5d869d3b8ce53ce5ec875dea8267688431b44bc39e11f7058c73d6b","finding_id":"SEM:b80bf0a84466123b3e38","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-b2892f2fe5912d59 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-3ef56bb048245b59] | context_only | Predecessor structured review finding f-3ef56bb048245b59 in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 2-oxopentanoate'
   target_ids:
   - record-a35d756d710e28ee
+  evidence_ids:
+  - ev-b2cdd389225fee83
+  - ev-72e14ab563087492
+  - ev-fad5eddd4a317344
+  - ev-6b15dbd63d2afcb7
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-a35d756d710e28ee
+  evidence_ids:
+  - ev-b2cdd389225fee83
+  - ev-6317ab860b79d7ce
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a35d756d710e28ee
+  evidence_ids:
+  - ev-333c7ab018291191
+  - ev-6317ab860b79d7ce
+  - ev-b2892f2fe5912d59
 evidence:
 - evidence_id: ev-b2cdd389225fee83
   kind: record_content
   reference: data/ingredients/mapped/2-oxopentanoate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2107],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28644","line":2109,"mapping_status":"MAPPED","ontology_id":"CHEBI:28644","preferred_term":"2-oxopentanoate"}],"identifier":"CHEBI:28644","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":164,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28644","ontology_label":"2-oxopentanoate","ontology_source":"CHEBI"},"preferred_term":"2-oxopentanoate","sssom_rows":[{"data_row":99,"object_id":"CHEBI:28644","object_label":"2-oxopentanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-oxopentanoate","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2106],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28644","line":2108,"mapping_status":"MAPPED","ontology_id":"CHEBI:28644","preferred_term":"2-oxopentanoate"}],"identifier":"CHEBI:28644","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28644","ontology_label":"2-oxopentanoate","ontology_source":"CHEBI"},"preferred_term":"2-oxopentanoate","sssom_rows":[{"data_row":99,"object_id":"CHEBI:28644","object_label":"2-oxopentanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-oxopentanoate","synonym_count":0}'
   snapshot_sha256: f89b0fe8d5d869d3b8ce53ce5ec875dea8267688431b44bc39e11f7058c73d6b
 - evidence_id: ev-72e14ab563087492
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2107]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2106]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,17 +228,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-oxopentanoate; data-row positions=[99]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":99,"object_id":"CHEBI:28644","object_label":"2-oxopentanoate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-oxopentanoate","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-6b15dbd63d2afcb7
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2109]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2108]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28644","line":2109,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28644","preferred_term":"2-oxopentanoate","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28644","line":2108,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28644","preferred_term":"2-oxopentanoate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-333c7ab018291191
   kind: prior_review
@@ -247,7 +258,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[80]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f89b0fe8d5d869d3b8ce53ce5ec875dea8267688431b44bc39e11f7058c73d6b","finding_id":"SEM:b80bf0a84466123b3e38","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

@@ -90,8 +90,8 @@ Disposition: The current local observation is recorded, but the named source/con
 | ev-ccb73004ba17130c | reports/yaml_record_review/20261001T050212Z-Edta_Chelating_Agent.md; YAML Record Review: EDTA (chelating agent):2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1d6b1f3ca5e20f64 | reports/yaml_record_review/Edta_Chelating_Agent.md; &#96;data/ingredients/mapped/Edta_Chelating_Agent.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:29; Completeness:53; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-257c9ccf0fbcf212 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[566,1605] | context_only | [{"current_record_sha256":"8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c","finding_id":"SEM:22c6c53bc502552aed6a","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"},{"current_record_sha256":"8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c","finding_id":"SEM:582204b4bd6dffb6e882","kind":"role_evidence","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-5b1c4b3ce76d038e | data/ingredients/mapped/Edta_Chelating_Agent.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}] |
-| ev-2fea0ca12c76ecd5 | data/ingredients/mapped/Edta_Chelating_Agent.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | Current loser points to CHEBI:4735; old pointer NCIT:C360 survives only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Edta.yaml"]; explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:4735 (EDTA). The source explicitly names EDTA; the parenthetical function does not turn the substance into the generic class of chelators. Original fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:4735","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier NCIT:C360 -&gt; CHEBI:4735 (#799). This record was merged into 'EDTA' but kept its own old identifier, so a downstream lookup on this label resolved to nothing live. The target is the one named in this record's own MERGED_INTO entry; the chain was followed to the first live record. A tombstone exists to keep the loser resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id NCIT:C360 -&gt; CHEBI:4735 (#799). The merge set identifier and status but left ontology_mapping untouched, so this tombstone kept advertising a term it no longer asserts \u2014 anything indexing by ontology_id routed through it. Now agrees with the merge target 'EDTA'. Provenance is unaffected: what the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}] |
+| ev-5b1c4b3ce76d038e | data/ingredients/mapped/Edta_Chelating_Agent.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[933],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":935,"mapping_status":"REJECTED","ontology_id":"CHEBI:4735","preferred_term":"EDTA (chelating agent)"}],"identifier":"CHEBI:4735","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic acid","ontology_source":"CHEBI"},"preferred_term":"EDTA (chelating agent)","sssom_rows":[],"sssom_subject":"MIM:Edta_Chelating_Agent","synonym_count":1} |
+| ev-2fea0ca12c76ecd5 | data/ingredients/mapped/Edta_Chelating_Agent.yaml; identifier; ontology_mapping.ontology_id; mapping_status; curation_history | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[933],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":935,"mapping_status":"REJECTED","ontology_id":"CHEBI:4735","preferred_term":"EDTA (chelating agent)"}],"identifier":"CHEBI:4735","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic acid","ontology_source":"CHEBI"},"preferred_term":"EDTA (chelating agent)","sssom_rows":[],"sssom_subject":"MIM:Edta_Chelating_Agent","synonym_count":1} |
 | ev-bf4fe264a1fa19cf | reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml; findings[finding_id=f-0a3fe0fd2ddc2251] | context_only | Predecessor structured review finding f-0a3fe0fd2ddc2251 in 20261011T024629Z-mim-reconcile-all-batch-01 |
 
 ## Limits And Additional Notes
@@ -184,6 +184,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-02b5116af3e070ea
+  evidence_ids:
+  - ev-d8b7463cace0005c
+  - ev-44a5c78d0518be20
+  - ev-6ee4d9e56424706c
+  - ev-132825111efec404
+  - ev-5b1c4b3ce76d038e
+  - ev-2fea0ca12c76ecd5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -192,6 +199,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-02b5116af3e070ea
+  evidence_ids:
+  - ev-d8b7463cace0005c
+  - ev-257c9ccf0fbcf212
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -200,13 +210,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-02b5116af3e070ea
+  evidence_ids:
+  - ev-ccb73004ba17130c
+  - ev-1d6b1f3ca5e20f64
+  - ev-257c9ccf0fbcf212
+  - ev-bf4fe264a1fa19cf
 evidence:
 - evidence_id: ev-d8b7463cace0005c
   kind: record_content
   reference: data/ingredients/mapped/Edta_Chelating_Agent.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[933],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":935,"mapping_status":"REJECTED","ontology_id":"CHEBI:4735","preferred_term":"EDTA
     (chelating agent)"}],"identifier":"CHEBI:4735","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic
@@ -216,7 +231,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [933]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,7 +240,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Edta_Chelating_Agent; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -233,7 +248,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[935]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:4735","line":935,"mapping_quality":"LEXICAL_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:4735","preferred_term":"EDTA
     (chelating agent)","total_occurrences":"0"}]'
@@ -289,7 +304,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[566,1605]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c","finding_id":"SEM:22c6c53bc502552aed6a","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"},{"current_record_sha256":"8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c","finding_id":"SEM:582204b4bd6dffb6e882","kind":"role_evidence","resolution_reason":"Source
@@ -299,35 +314,21 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Edta_Chelating_Agent.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[933],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":935,"mapping_status":"REJECTED","ontology_id":"CHEBI:4735","preferred_term":"EDTA
+    (chelating agent)"}],"identifier":"CHEBI:4735","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic
+    acid","ontology_source":"CHEBI"},"preferred_term":"EDTA (chelating agent)","sssom_rows":[],"sssom_subject":"MIM:Edta_Chelating_Agent","synonym_count":1}'
   snapshot_sha256: 8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c
 - evidence_id: ev-2fea0ca12c76ecd5
   kind: record_content
   reference: data/ingredients/mapped/Edta_Chelating_Agent.yaml
   locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Current loser points to CHEBI:4735; old pointer NCIT:C360 survives only
-    as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/Edta.yaml"];
-    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:4735 (EDTA).
-    The source explicitly names EDTA; the parenthetical function does not turn the
-    substance into the generic class of chelators. Original fields remain only on
-    this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:4735","curator":"mim_semantic_review_20260921","llm_assisted":true,"llm_model":"gpt-6","new_status":"REJECTED","previous_status":"MAPPED","timestamp":"2026-09-21T21:33:25.379198+00:00"},{"action":"REPOINTED_TOMBSTONE_IDENTIFIER","changes":"identifier
-    NCIT:C360 -> CHEBI:4735 (#799). This record was merged into ''EDTA'' but kept
-    its own old identifier, so a downstream lookup on this label resolved to nothing
-    live. The target is the one named in this record''s own MERGED_INTO entry; the
-    chain was followed to the first live record. A tombstone exists to keep the loser
-    resolvable.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
-    NCIT:C360 -> CHEBI:4735 (#799). The merge set identifier and status but left ontology_mapping
-    untouched, so this tombstone kept advertising a term it no longer asserts \u2014
-    anything indexing by ontology_id routed through it. Now agrees with the merge
-    target ''EDTA''. Provenance is unaffected: what the record used to assert is in
-    this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[933],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4735","line":935,"mapping_status":"REJECTED","ontology_id":"CHEBI:4735","preferred_term":"EDTA
+    (chelating agent)"}],"identifier":"CHEBI:4735","ingredient_type":null,"mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":568,"edge_count":568,"occurrences":569},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic
+    acid","ontology_source":"CHEBI"},"preferred_term":"EDTA (chelating agent)","sssom_rows":[],"sssom_subject":"MIM:Edta_Chelating_Agent","synonym_count":1}'
   snapshot_sha256: 8b17c831323de52c442e5af106f7b765486791f5275b8716eefde43d6a32b63c
 - evidence_id: ev-bf4fe264a1fa19cf
   kind: prior_review

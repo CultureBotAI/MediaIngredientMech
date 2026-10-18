@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-5e20fb30fffeab8d | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-5e20fb30fffeab8d | Explain curation-history timestamp order: 2-oxobutanoate |
 | Role evidence and plausibility check | passed | True | record-5e20fb30fffeab8d | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-5e20fb30fffeab8d | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 2-oxobutanoate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-34c27c9ae62d6079 | data/ingredients/mapped/2-oxobutanoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2106],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16763","line":2108,"mapping_status":"MAPPED","ontology_id":"CHEBI:16763","preferred_term":"2-oxobutanoate"}],"identifier":"CHEBI:16763","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":146,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16763","ontology_label":"2-oxobutanoate","ontology_source":"CHEBI"},"preferred_term":"2-oxobutanoate","sssom_rows":[{"data_row":95,"object_id":"CHEBI:16763","object_label":"2-oxobutanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-oxobutanoate","synonym_count":0} |
-| ev-65ada5aabc2e9b41 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2106] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-34c27c9ae62d6079 | data/ingredients/mapped/2-oxobutanoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2105],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16763","line":2107,"mapping_status":"MAPPED","ontology_id":"CHEBI:16763","preferred_term":"2-oxobutanoate"}],"identifier":"CHEBI:16763","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16763","ontology_label":"2-oxobutanoate","ontology_source":"CHEBI"},"preferred_term":"2-oxobutanoate","sssom_rows":[{"data_row":95,"object_id":"CHEBI:16763","object_label":"2-oxobutanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-oxobutanoate","synonym_count":0} |
+| ev-65ada5aabc2e9b41 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2105] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-90cf0b5f1297ccd8 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-oxobutanoate; data-row positions=[95] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":95,"object_id":"CHEBI:16763","object_label":"2-oxobutanoate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-oxobutanoate","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-dd15552c26c09fbc | docs/data/mapped_ingredients.csv; CSV lines=[2108] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16763","line":2108,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16763","preferred_term":"2-oxobutanoate","total_occurrences":"0"}] |
+| ev-dd15552c26c09fbc | docs/data/mapped_ingredients.csv; CSV lines=[2107] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16763","line":2107,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16763","preferred_term":"2-oxobutanoate","total_occurrences":"0"}] |
 | ev-0e0c09772a92a9f1 | reports/yaml_record_review/2-oxobutanoate.md; &#96;data/ingredients/mapped/2-oxobutanoate.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:34; Completeness:52; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-0164b3b4dfc602ef | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[78] | context_only | [{"current_record_sha256":"d650202503056a38aa8f9534fa0accb62192b0f1326d18d223669721ec5778f9","finding_id":"SEM:6b0979edb9b1538a3680","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-4d8dc033178c3616 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-53d647fe2cab0af6] | context_only | Predecessor structured review finding f-53d647fe2cab0af6 in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 2-oxobutanoate'
   target_ids:
   - record-5e20fb30fffeab8d
+  evidence_ids:
+  - ev-34c27c9ae62d6079
+  - ev-65ada5aabc2e9b41
+  - ev-90cf0b5f1297ccd8
+  - ev-dd15552c26c09fbc
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-5e20fb30fffeab8d
+  evidence_ids:
+  - ev-34c27c9ae62d6079
+  - ev-0164b3b4dfc602ef
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5e20fb30fffeab8d
+  evidence_ids:
+  - ev-0e0c09772a92a9f1
+  - ev-0164b3b4dfc602ef
+  - ev-4d8dc033178c3616
 evidence:
 - evidence_id: ev-34c27c9ae62d6079
   kind: record_content
   reference: data/ingredients/mapped/2-oxobutanoate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2106],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16763","line":2108,"mapping_status":"MAPPED","ontology_id":"CHEBI:16763","preferred_term":"2-oxobutanoate"}],"identifier":"CHEBI:16763","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":146,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16763","ontology_label":"2-oxobutanoate","ontology_source":"CHEBI"},"preferred_term":"2-oxobutanoate","sssom_rows":[{"data_row":95,"object_id":"CHEBI:16763","object_label":"2-oxobutanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-oxobutanoate","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2105],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16763","line":2107,"mapping_status":"MAPPED","ontology_id":"CHEBI:16763","preferred_term":"2-oxobutanoate"}],"identifier":"CHEBI:16763","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16763","ontology_label":"2-oxobutanoate","ontology_source":"CHEBI"},"preferred_term":"2-oxobutanoate","sssom_rows":[{"data_row":95,"object_id":"CHEBI:16763","object_label":"2-oxobutanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-oxobutanoate","synonym_count":0}'
   snapshot_sha256: d650202503056a38aa8f9534fa0accb62192b0f1326d18d223669721ec5778f9
 - evidence_id: ev-65ada5aabc2e9b41
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2106]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2105]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,17 +228,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-oxobutanoate; data-row positions=[95]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":95,"object_id":"CHEBI:16763","object_label":"2-oxobutanoate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-oxobutanoate","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-dd15552c26c09fbc
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2108]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2107]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16763","line":2108,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16763","preferred_term":"2-oxobutanoate","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16763","line":2107,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16763","preferred_term":"2-oxobutanoate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-0e0c09772a92a9f1
   kind: prior_review
@@ -249,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[78]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d650202503056a38aa8f9534fa0accb62192b0f1326d18d223669721ec5778f9","finding_id":"SEM:6b0979edb9b1538a3680","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

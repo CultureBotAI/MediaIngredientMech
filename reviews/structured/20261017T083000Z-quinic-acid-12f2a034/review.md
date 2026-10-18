@@ -83,13 +83,13 @@ Reassess prediction-only role support: Quinic acid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-b42463445042f8cd | data/ingredients/mapped/Quinic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1739],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26493","line":1741,"mapping_status":"MAPPED","ontology_id":"CHEBI:26493","preferred_term":"Quinic acid"}],"identifier":"CHEBI:26493","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26493","ontology_label":"quinic acid","ontology_source":"CHEBI"},"preferred_term":"Quinic acid","sssom_rows":[{"data_row":2400,"object_id":"CHEBI:26493","object_label":"quinic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Quinic_Acid","synonym_count":3} |
-| ev-dc60f4c28a28466f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1739] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-60a3572795248aad | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Quinic_Acid; data-row positions=[2400] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2400,"object_id":"CHEBI:26493","object_label":"quinic acid","other":"CAS:7729-33-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Quinic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-d9d668cb587efc56 | docs/data/mapped_ingredients.csv; CSV lines=[1741] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:26493","line":1741,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:26493","preferred_term":"Quinic acid","total_occurrences":"11"}] |
+| ev-b42463445042f8cd | data/ingredients/mapped/Quinic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1738],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26493","line":1740,"mapping_status":"MAPPED","ontology_id":"CHEBI:26493","preferred_term":"Quinic acid"}],"identifier":"CHEBI:26493","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26493","ontology_label":"quinic acid","ontology_source":"CHEBI"},"preferred_term":"Quinic acid","sssom_rows":[{"data_row":2402,"object_id":"CHEBI:26493","object_label":"quinic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Quinic_Acid","synonym_count":3} |
+| ev-dc60f4c28a28466f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1738] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-60a3572795248aad | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Quinic_Acid; data-row positions=[2402] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2402,"object_id":"CHEBI:26493","object_label":"quinic acid","other":"CAS:7729-33-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Quinic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-d9d668cb587efc56 | docs/data/mapped_ingredients.csv; CSV lines=[1740] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:26493","line":1740,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:26493","preferred_term":"Quinic acid","total_occurrences":"11"}] |
 | ev-96c434d396aa1256 | reports/yaml_record_review/Quinic_Acid.md; &#96;data/ingredients/mapped/Quinic_Acid.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3bb267c72df0c342 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1160,2021] | context_only | [{"current_record_sha256":"c1c2fc353bbf1ef458988b3aad173cde353b976ef805dfdd2bead0878960559a","finding_id":"SEM:5fad7a4574c94d3620a9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c1c2fc353bbf1ef458988b3aad173cde353b976ef805dfdd2bead0878960559a","finding_id":"SEM:4ab5d190cb80b00c4dad","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-7730243072927d43 | data/ingredients/mapped/Quinic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-7730243072927d43 | data/ingredients/mapped/Quinic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1738],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26493","line":1740,"mapping_status":"MAPPED","ontology_id":"CHEBI:26493","preferred_term":"Quinic acid"}],"identifier":"CHEBI:26493","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26493","ontology_label":"quinic acid","ontology_source":"CHEBI"},"preferred_term":"Quinic acid","sssom_rows":[{"data_row":2402,"object_id":"CHEBI:26493","object_label":"quinic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Quinic_Acid","synonym_count":3} |
 | ev-0d30d03f7672b3ac | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-3a9088310ef509cc] | context_only | Predecessor structured review finding f-3a9088310ef509cc in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-12f2a034a9cad9bc
+  evidence_ids:
+  - ev-b42463445042f8cd
+  - ev-dc60f4c28a28466f
+  - ev-60a3572795248aad
+  - ev-d9d668cb587efc56
+  - ev-7730243072927d43
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-12f2a034a9cad9bc
+  evidence_ids:
+  - ev-b42463445042f8cd
+  - ev-3bb267c72df0c342
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-12f2a034a9cad9bc
+  evidence_ids:
+  - ev-96c434d396aa1256
+  - ev-3bb267c72df0c342
+  - ev-0d30d03f7672b3ac
 evidence:
 - evidence_id: ev-b42463445042f8cd
   kind: record_content
   reference: data/ingredients/mapped/Quinic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1739],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26493","line":1741,"mapping_status":"MAPPED","ontology_id":"CHEBI:26493","preferred_term":"Quinic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1738],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26493","line":1740,"mapping_status":"MAPPED","ontology_id":"CHEBI:26493","preferred_term":"Quinic
     acid"}],"identifier":"CHEBI:26493","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26493","ontology_label":"quinic
-    acid","ontology_source":"CHEBI"},"preferred_term":"Quinic acid","sssom_rows":[{"data_row":2400,"object_id":"CHEBI:26493","object_label":"quinic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Quinic acid","sssom_rows":[{"data_row":2402,"object_id":"CHEBI:26493","object_label":"quinic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Quinic_Acid","synonym_count":3}'
   snapshot_sha256: c1c2fc353bbf1ef458988b3aad173cde353b976ef805dfdd2bead0878960559a
 - evidence_id: ev-dc60f4c28a28466f
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1739]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1738]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-60a3572795248aad
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Quinic_Acid; data-row positions=[2400]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Quinic_Acid; data-row positions=[2402]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2400,"object_id":"CHEBI:26493","object_label":"quinic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2402,"object_id":"CHEBI:26493","object_label":"quinic
     acid","other":"CAS:7729-33-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Quinic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-d9d668cb587efc56
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1741]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1740]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:26493","line":1741,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:26493","preferred_term":"Quinic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:26493","line":1740,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:26493","preferred_term":"Quinic
     acid","total_occurrences":"11"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-96c434d396aa1256
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1160,2021]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c1c2fc353bbf1ef458988b3aad173cde353b976ef805dfdd2bead0878960559a","finding_id":"SEM:5fad7a4574c94d3620a9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c1c2fc353bbf1ef458988b3aad173cde353b976ef805dfdd2bead0878960559a","finding_id":"SEM:4ab5d190cb80b00c4dad","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Quinic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1738],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26493","line":1740,"mapping_status":"MAPPED","ontology_id":"CHEBI:26493","preferred_term":"Quinic
+    acid"}],"identifier":"CHEBI:26493","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26493","ontology_label":"quinic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Quinic acid","sssom_rows":[{"data_row":2402,"object_id":"CHEBI:26493","object_label":"quinic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Quinic_Acid","synonym_count":3}'
   snapshot_sha256: c1c2fc353bbf1ef458988b3aad173cde353b976ef805dfdd2bead0878960559a
 - evidence_id: ev-0d30d03f7672b3ac
   kind: prior_review

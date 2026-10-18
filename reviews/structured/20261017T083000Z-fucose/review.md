@@ -89,7 +89,7 @@ Reassess prediction-only role support: Fucose
 | ev-4c0f675394d339c5 | docs/data/mapped_ingredients.csv; CSV lines=[1029] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:33984","line":1029,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:33984","preferred_term":"Fucose","total_occurrences":"2"}] |
 | ev-25145a8a4e6e7240 | reports/yaml_record_review/Fucose.md; &#96;data/ingredients/mapped/Fucose.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:34; Completeness:51; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8e3763f0d305bbdd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[637,1558] | context_only | [{"current_record_sha256":"e9f2c1661ed11a6bc80f2dc0ba4714218a9f071643d82f3abfd5d6d85f469601","finding_id":"SEM:7909db893a8cd70876c6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e9f2c1661ed11a6bc80f2dc0ba4714218a9f071643d82f3abfd5d6d85f469601","finding_id":"SEM:162b821de8052014ba2a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-660df23b70616b54 | data/ingredients/mapped/Fucose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-660df23b70616b54 | data/ingredients/mapped/Fucose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1027],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33984","line":1029,"mapping_status":"MAPPED","ontology_id":"CHEBI:33984","preferred_term":"Fucose"}],"identifier":"CHEBI:33984","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33984","ontology_label":"fucose","ontology_source":"CHEBI"},"preferred_term":"Fucose","sssom_rows":[{"data_row":1251,"object_id":"CHEBI:33984","object_label":"fucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fucose","synonym_count":2} |
 | ev-d0fa53b60f3996a5 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-95a39e75608ce2ae] | context_only | Predecessor structured review finding f-95a39e75608ce2ae in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ff36aee01dde27dd
+  evidence_ids:
+  - ev-f2277a1802ff3fa5
+  - ev-3f0c6179d96c1c0f
+  - ev-225bf371e308303c
+  - ev-4c0f675394d339c5
+  - ev-660df23b70616b54
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ff36aee01dde27dd
+  evidence_ids:
+  - ev-f2277a1802ff3fa5
+  - ev-8e3763f0d305bbdd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ff36aee01dde27dd
+  evidence_ids:
+  - ev-25145a8a4e6e7240
+  - ev-8e3763f0d305bbdd
+  - ev-d0fa53b60f3996a5
 evidence:
 - evidence_id: ev-f2277a1802ff3fa5
   kind: record_content
   reference: data/ingredients/mapped/Fucose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1027],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33984","line":1029,"mapping_status":"MAPPED","ontology_id":"CHEBI:33984","preferred_term":"Fucose"}],"identifier":"CHEBI:33984","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33984","ontology_label":"fucose","ontology_source":"CHEBI"},"preferred_term":"Fucose","sssom_rows":[{"data_row":1251,"object_id":"CHEBI:33984","object_label":"fucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fucose","synonym_count":2}'
   snapshot_sha256: e9f2c1661ed11a6bc80f2dc0ba4714218a9f071643d82f3abfd5d6d85f469601
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1027]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fucose; data-row positions=[1251]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1251,"object_id":"CHEBI:33984","object_label":"fucose","other":"6-Deoxygalactose|Fuc|CAS:7724-73-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Fucose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1029]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:33984","line":1029,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:33984","preferred_term":"Fucose","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[637,1558]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e9f2c1661ed11a6bc80f2dc0ba4714218a9f071643d82f3abfd5d6d85f469601","finding_id":"SEM:7909db893a8cd70876c6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e9f2c1661ed11a6bc80f2dc0ba4714218a9f071643d82f3abfd5d6d85f469601","finding_id":"SEM:162b821de8052014ba2a","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fucose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1027],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:33984","line":1029,"mapping_status":"MAPPED","ontology_id":"CHEBI:33984","preferred_term":"Fucose"}],"identifier":"CHEBI:33984","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:33984","ontology_label":"fucose","ontology_source":"CHEBI"},"preferred_term":"Fucose","sssom_rows":[{"data_row":1251,"object_id":"CHEBI:33984","object_label":"fucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fucose","synonym_count":2}'
   snapshot_sha256: e9f2c1661ed11a6bc80f2dc0ba4714218a9f071643d82f3abfd5d6d85f469601
 - evidence_id: ev-d0fa53b60f3996a5
   kind: prior_review

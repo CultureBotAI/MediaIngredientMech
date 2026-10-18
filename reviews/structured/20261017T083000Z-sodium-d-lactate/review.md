@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sodium D-Lactate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-7bb86e3f9c7cfe9a | data/ingredients/mapped/Sodium_D-Lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1829],"raw_equal":true},"docs_rows":[{"identifier":"cas:920-49-0","line":1831,"mapping_status":"MAPPED","ontology_id":"cas:920-49-0","preferred_term":"Sodium D-Lactate"}],"identifier":"cas:920-49-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:920-49-0","ontology_label":"Sodium D-Lactate","ontology_source":"CAS"},"preferred_term":"Sodium D-Lactate","sssom_rows":[{"data_row":2551,"object_id":"cas:920-49-0","object_label":"Sodium D-Lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_D-Lactate","synonym_count":0} |
-| ev-111686ccae6bd7a7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1829] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-b43a86f141072f61 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_D-Lactate; data-row positions=[2551] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2551,"object_id":"cas:920-49-0","object_label":"Sodium D-Lactate","other":"CAS:920-49-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_D-Lactate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-6bc10070421d9f9a | docs/data/mapped_ingredients.csv; CSV lines=[1831] | supports | Published identity and count rows inspected: [{"identifier":"cas:920-49-0","line":1831,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"1","ontology_id":"cas:920-49-0","preferred_term":"Sodium D-Lactate","total_occurrences":"1"}] |
+| ev-7bb86e3f9c7cfe9a | data/ingredients/mapped/Sodium_D-Lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1828],"raw_equal":true},"docs_rows":[{"identifier":"cas:920-49-0","line":1830,"mapping_status":"MAPPED","ontology_id":"cas:920-49-0","preferred_term":"Sodium D-Lactate"}],"identifier":"cas:920-49-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:920-49-0","ontology_label":"Sodium D-Lactate","ontology_source":"CAS"},"preferred_term":"Sodium D-Lactate","sssom_rows":[{"data_row":2553,"object_id":"cas:920-49-0","object_label":"Sodium D-Lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_D-Lactate","synonym_count":0} |
+| ev-111686ccae6bd7a7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1828] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b43a86f141072f61 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_D-Lactate; data-row positions=[2553] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2553,"object_id":"cas:920-49-0","object_label":"Sodium D-Lactate","other":"CAS:920-49-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_D-Lactate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-6bc10070421d9f9a | docs/data/mapped_ingredients.csv; CSV lines=[1830] | supports | Published identity and count rows inspected: [{"identifier":"cas:920-49-0","line":1830,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"1","ontology_id":"cas:920-49-0","preferred_term":"Sodium D-Lactate","total_occurrences":"1"}] |
 | ev-f8240deda5fa6fca | reports/yaml_record_review/Sodium_D-Lactate.md; &#96;data/ingredients/mapped/Sodium_D-Lactate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d85da2d5f6273794 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1211,2028,2051] | context_only | [{"current_record_sha256":"5b9a8ec9f0371556ec5e88ab9e10ad5a6ad91407a7f608f16b33e3afd58bcbdb","finding_id":"SEM:a5c04cd0e6e76c2b91e5","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5b9a8ec9f0371556ec5e88ab9e10ad5a6ad91407a7f608f16b33e3afd58bcbdb","finding_id":"SEM:7e5f297de8c35b63f4b1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5b9a8ec9f0371556ec5e88ab9e10ad5a6ad91407a7f608f16b33e3afd58bcbdb","finding_id":"SEM:1438c3a06a2e550a9f08","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-03bd415e2196b7d3 | data/ingredients/mapped/Sodium_D-Lactate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-03bd415e2196b7d3 | data/ingredients/mapped/Sodium_D-Lactate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1828],"raw_equal":true},"docs_rows":[{"identifier":"cas:920-49-0","line":1830,"mapping_status":"MAPPED","ontology_id":"cas:920-49-0","preferred_term":"Sodium D-Lactate"}],"identifier":"cas:920-49-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:920-49-0","ontology_label":"Sodium D-Lactate","ontology_source":"CAS"},"preferred_term":"Sodium D-Lactate","sssom_rows":[{"data_row":2553,"object_id":"cas:920-49-0","object_label":"Sodium D-Lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_D-Lactate","synonym_count":0} |
 | ev-b5c0cdbcac1203cf | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-2591100f88c79c49] | context_only | Predecessor structured review finding f-2591100f88c79c49 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1dd74b059cec6ce3
+  evidence_ids:
+  - ev-7bb86e3f9c7cfe9a
+  - ev-111686ccae6bd7a7
+  - ev-b43a86f141072f61
+  - ev-6bc10070421d9f9a
+  - ev-03bd415e2196b7d3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-1dd74b059cec6ce3
+  evidence_ids:
+  - ev-7bb86e3f9c7cfe9a
+  - ev-d85da2d5f6273794
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1dd74b059cec6ce3
+  evidence_ids:
+  - ev-f8240deda5fa6fca
+  - ev-d85da2d5f6273794
+  - ev-b5c0cdbcac1203cf
 evidence:
 - evidence_id: ev-7bb86e3f9c7cfe9a
   kind: record_content
   reference: data/ingredients/mapped/Sodium_D-Lactate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1829],"raw_equal":true},"docs_rows":[{"identifier":"cas:920-49-0","line":1831,"mapping_status":"MAPPED","ontology_id":"cas:920-49-0","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1828],"raw_equal":true},"docs_rows":[{"identifier":"cas:920-49-0","line":1830,"mapping_status":"MAPPED","ontology_id":"cas:920-49-0","preferred_term":"Sodium
     D-Lactate"}],"identifier":"cas:920-49-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:920-49-0","ontology_label":"Sodium
-    D-Lactate","ontology_source":"CAS"},"preferred_term":"Sodium D-Lactate","sssom_rows":[{"data_row":2551,"object_id":"cas:920-49-0","object_label":"Sodium
+    D-Lactate","ontology_source":"CAS"},"preferred_term":"Sodium D-Lactate","sssom_rows":[{"data_row":2553,"object_id":"cas:920-49-0","object_label":"Sodium
     D-Lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_D-Lactate","synonym_count":0}'
   snapshot_sha256: 5b9a8ec9f0371556ec5e88ab9e10ad5a6ad91407a7f608f16b33e3afd58bcbdb
 - evidence_id: ev-111686ccae6bd7a7
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1829]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1828]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-b43a86f141072f61
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_D-Lactate; data-row positions=[2551]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_D-Lactate; data-row positions=[2553]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2551,"object_id":"cas:920-49-0","object_label":"Sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2553,"object_id":"cas:920-49-0","object_label":"Sodium
     D-Lactate","other":"CAS:920-49-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_D-Lactate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-6bc10070421d9f9a
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1831]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1830]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:920-49-0","line":1831,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"1","ontology_id":"cas:920-49-0","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:920-49-0","line":1830,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"1","ontology_id":"cas:920-49-0","preferred_term":"Sodium
     D-Lactate","total_occurrences":"1"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-f8240deda5fa6fca
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1211,2028,2051]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5b9a8ec9f0371556ec5e88ab9e10ad5a6ad91407a7f608f16b33e3afd58bcbdb","finding_id":"SEM:a5c04cd0e6e76c2b91e5","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5b9a8ec9f0371556ec5e88ab9e10ad5a6ad91407a7f608f16b33e3afd58bcbdb","finding_id":"SEM:7e5f297de8c35b63f4b1","kind":"role_evidence","resolution_reason":"Historical
@@ -260,14 +273,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_D-Lactate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1828],"raw_equal":true},"docs_rows":[{"identifier":"cas:920-49-0","line":1830,"mapping_status":"MAPPED","ontology_id":"cas:920-49-0","preferred_term":"Sodium
+    D-Lactate"}],"identifier":"cas:920-49-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:920-49-0","ontology_label":"Sodium
+    D-Lactate","ontology_source":"CAS"},"preferred_term":"Sodium D-Lactate","sssom_rows":[{"data_row":2553,"object_id":"cas:920-49-0","object_label":"Sodium
+    D-Lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_D-Lactate","synonym_count":0}'
   snapshot_sha256: 5b9a8ec9f0371556ec5e88ab9e10ad5a6ad91407a7f608f16b33e3afd58bcbdb
 - evidence_id: ev-b5c0cdbcac1203cf
   kind: prior_review

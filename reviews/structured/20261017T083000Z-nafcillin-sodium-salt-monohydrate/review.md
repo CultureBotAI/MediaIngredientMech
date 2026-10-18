@@ -83,13 +83,13 @@ Reassess prediction-only role support: Nafcillin sodium salt monohydrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-a3d6b1a6038f9c00 | data/ingredients/mapped/Nafcillin_Sodium_Salt_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1522],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51919","line":1524,"mapping_status":"MAPPED","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin sodium salt monohydrate"}],"identifier":"CHEBI:51919","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51919","ontology_label":"nafcillin sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Nafcillin sodium salt monohydrate","sssom_rows":[{"data_row":2031,"object_id":"CHEBI:51919","object_label":"nafcillin sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nafcillin_Sodium_Salt_Monohydrate","synonym_count":1} |
-| ev-85a31ab0a3531ca8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1522] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-71074c5e4266d8ef | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nafcillin_Sodium_Salt_Monohydrate; data-row positions=[2031] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2031,"object_id":"CHEBI:51919","object_label":"nafcillin sodium monohydrate","other":"sodium 6beta-[(2-ethoxy-1-naphthoyl)amino]-2,2-dimethylpenam-3alpha-carboxylate hydrate&#124;CAS:7177-50-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nafcillin_Sodium_Salt_Monohydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-87946b2b89649417 | docs/data/mapped_ingredients.csv; CSV lines=[1524] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:51919","line":1524,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin sodium salt monohydrate","total_occurrences":"0"}] |
+| ev-a3d6b1a6038f9c00 | data/ingredients/mapped/Nafcillin_Sodium_Salt_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1521],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51919","line":1523,"mapping_status":"MAPPED","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin sodium salt monohydrate"}],"identifier":"CHEBI:51919","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51919","ontology_label":"nafcillin sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Nafcillin sodium salt monohydrate","sssom_rows":[{"data_row":2033,"object_id":"CHEBI:51919","object_label":"nafcillin sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nafcillin_Sodium_Salt_Monohydrate","synonym_count":1} |
+| ev-85a31ab0a3531ca8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1521] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-71074c5e4266d8ef | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nafcillin_Sodium_Salt_Monohydrate; data-row positions=[2033] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2033,"object_id":"CHEBI:51919","object_label":"nafcillin sodium monohydrate","other":"sodium 6beta-[(2-ethoxy-1-naphthoyl)amino]-2,2-dimethylpenam-3alpha-carboxylate hydrate&#124;CAS:7177-50-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nafcillin_Sodium_Salt_Monohydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-87946b2b89649417 | docs/data/mapped_ingredients.csv; CSV lines=[1523] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:51919","line":1523,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin sodium salt monohydrate","total_occurrences":"0"}] |
 | ev-aac0bb644fe6ed87 | reports/yaml_record_review/Nafcillin_Sodium_Salt_Monohydrate.md; &#96;data/ingredients/mapped/Nafcillin_Sodium_Salt_Monohydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:30; Completeness:48; Recommended Edits:55 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9c312667fe98f832 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1024,1582] | context_only | [{"current_record_sha256":"178567c5522304be923df860644a4d3d5db6d07be86831025144fcd0b18b9bb4","finding_id":"SEM:b62030eb7da327dcc977","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"178567c5522304be923df860644a4d3d5db6d07be86831025144fcd0b18b9bb4","finding_id":"SEM:4e3deaa666171e354133","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-17854c21ad1814d7 | data/ingredients/mapped/Nafcillin_Sodium_Salt_Monohydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-17854c21ad1814d7 | data/ingredients/mapped/Nafcillin_Sodium_Salt_Monohydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1521],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51919","line":1523,"mapping_status":"MAPPED","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin sodium salt monohydrate"}],"identifier":"CHEBI:51919","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51919","ontology_label":"nafcillin sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Nafcillin sodium salt monohydrate","sssom_rows":[{"data_row":2033,"object_id":"CHEBI:51919","object_label":"nafcillin sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nafcillin_Sodium_Salt_Monohydrate","synonym_count":1} |
 | ev-d9508aba6fbd0ab7 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-56694ef0f576f5c0] | context_only | Predecessor structured review finding f-56694ef0f576f5c0 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a50e9f19fe61dabf
+  evidence_ids:
+  - ev-a3d6b1a6038f9c00
+  - ev-85a31ab0a3531ca8
+  - ev-71074c5e4266d8ef
+  - ev-87946b2b89649417
+  - ev-17854c21ad1814d7
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a50e9f19fe61dabf
+  evidence_ids:
+  - ev-a3d6b1a6038f9c00
+  - ev-9c312667fe98f832
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a50e9f19fe61dabf
+  evidence_ids:
+  - ev-aac0bb644fe6ed87
+  - ev-9c312667fe98f832
+  - ev-d9508aba6fbd0ab7
 evidence:
 - evidence_id: ev-a3d6b1a6038f9c00
   kind: record_content
   reference: data/ingredients/mapped/Nafcillin_Sodium_Salt_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1522],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51919","line":1524,"mapping_status":"MAPPED","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1521],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51919","line":1523,"mapping_status":"MAPPED","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin
     sodium salt monohydrate"}],"identifier":"CHEBI:51919","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51919","ontology_label":"nafcillin
     sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Nafcillin sodium
-    salt monohydrate","sssom_rows":[{"data_row":2031,"object_id":"CHEBI:51919","object_label":"nafcillin
+    salt monohydrate","sssom_rows":[{"data_row":2033,"object_id":"CHEBI:51919","object_label":"nafcillin
     sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nafcillin_Sodium_Salt_Monohydrate","synonym_count":1}'
   snapshot_sha256: 178567c5522304be923df860644a4d3d5db6d07be86831025144fcd0b18b9bb4
 - evidence_id: ev-85a31ab0a3531ca8
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1522]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1521]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,20 +234,20 @@ evidence:
 - evidence_id: ev-71074c5e4266d8ef
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Nafcillin_Sodium_Salt_Monohydrate; data-row positions=[2031]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Nafcillin_Sodium_Salt_Monohydrate; data-row positions=[2033]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2031,"object_id":"CHEBI:51919","object_label":"nafcillin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2033,"object_id":"CHEBI:51919","object_label":"nafcillin
     sodium monohydrate","other":"sodium 6beta-[(2-ethoxy-1-naphthoyl)amino]-2,2-dimethylpenam-3alpha-carboxylate
     hydrate|CAS:7177-50-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Nafcillin_Sodium_Salt_Monohydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-87946b2b89649417
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1524]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1523]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:51919","line":1524,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:51919","line":1523,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin
     sodium salt monohydrate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-aac0bb644fe6ed87
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1024,1582]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"178567c5522304be923df860644a4d3d5db6d07be86831025144fcd0b18b9bb4","finding_id":"SEM:b62030eb7da327dcc977","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"178567c5522304be923df860644a4d3d5db6d07be86831025144fcd0b18b9bb4","finding_id":"SEM:4e3deaa666171e354133","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Nafcillin_Sodium_Salt_Monohydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1521],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51919","line":1523,"mapping_status":"MAPPED","ontology_id":"CHEBI:51919","preferred_term":"Nafcillin
+    sodium salt monohydrate"}],"identifier":"CHEBI:51919","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51919","ontology_label":"nafcillin
+    sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Nafcillin sodium
+    salt monohydrate","sssom_rows":[{"data_row":2033,"object_id":"CHEBI:51919","object_label":"nafcillin
+    sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nafcillin_Sodium_Salt_Monohydrate","synonym_count":1}'
   snapshot_sha256: 178567c5522304be923df860644a4d3d5db6d07be86831025144fcd0b18b9bb4
 - evidence_id: ev-d9508aba6fbd0ab7
   kind: prior_review

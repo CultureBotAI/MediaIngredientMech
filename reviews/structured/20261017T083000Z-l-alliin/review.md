@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-alliin
 | ev-cdea50f2bbe0bf3d | docs/data/mapped_ingredients.csv; CSV lines=[1237] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:2596","line":1237,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:2596","preferred_term":"L-alliin","total_occurrences":"0"}] |
 | ev-191a5e16ec80f985 | reports/yaml_record_review/L-alliin.md; &#96;data/ingredients/mapped/L-alliin.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:26; Completeness:46; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9ef5e5d711da2102 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[805,1597] | context_only | [{"current_record_sha256":"1c45f7c84dfccac9f86a098d9e8a67e95b34b04a0fbe963248fba926b5efe1f5","finding_id":"SEM:2da78d9747944393858f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1c45f7c84dfccac9f86a098d9e8a67e95b34b04a0fbe963248fba926b5efe1f5","finding_id":"SEM:859716abc29e06ce88ce","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-6ff0e8ecc85506b8 | data/ingredients/mapped/L-alliin.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-6ff0e8ecc85506b8 | data/ingredients/mapped/L-alliin.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1235],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2596","line":1237,"mapping_status":"MAPPED","ontology_id":"CHEBI:2596","preferred_term":"L-alliin"}],"identifier":"CHEBI:2596","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:2596","ontology_label":"alliin","ontology_source":"CHEBI"},"preferred_term":"L-alliin","sssom_rows":[{"data_row":1597,"object_id":"CHEBI:2596","object_label":"alliin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-alliin","synonym_count":1} |
 | ev-b30f53e2790d63c3 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-38f3f0409a78ebf1] | context_only | Predecessor structured review finding f-38f3f0409a78ebf1 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-16f96a932a89cbfe
+  evidence_ids:
+  - ev-18be090997e77e21
+  - ev-0665cec7ebcdca5d
+  - ev-53a6e3af5ba03ad9
+  - ev-cdea50f2bbe0bf3d
+  - ev-6ff0e8ecc85506b8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-16f96a932a89cbfe
+  evidence_ids:
+  - ev-18be090997e77e21
+  - ev-9ef5e5d711da2102
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-16f96a932a89cbfe
+  evidence_ids:
+  - ev-191a5e16ec80f985
+  - ev-9ef5e5d711da2102
+  - ev-b30f53e2790d63c3
 evidence:
 - evidence_id: ev-18be090997e77e21
   kind: record_content
   reference: data/ingredients/mapped/L-alliin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1235],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2596","line":1237,"mapping_status":"MAPPED","ontology_id":"CHEBI:2596","preferred_term":"L-alliin"}],"identifier":"CHEBI:2596","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:2596","ontology_label":"alliin","ontology_source":"CHEBI"},"preferred_term":"L-alliin","sssom_rows":[{"data_row":1597,"object_id":"CHEBI:2596","object_label":"alliin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-alliin","synonym_count":1}'
   snapshot_sha256: 1c45f7c84dfccac9f86a098d9e8a67e95b34b04a0fbe963248fba926b5efe1f5
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1235]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-alliin; data-row positions=[1597]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1597,"object_id":"CHEBI:2596","object_label":"alliin","other":"3-[(S)-prop-2-ene-1-sulfinyl]-L-alanine|CAS:556-27-4","predicate_id":"skos:exactMatch","subject_id":"MIM:L-alliin","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1237]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:2596","line":1237,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:2596","preferred_term":"L-alliin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[805,1597]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1c45f7c84dfccac9f86a098d9e8a67e95b34b04a0fbe963248fba926b5efe1f5","finding_id":"SEM:2da78d9747944393858f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1c45f7c84dfccac9f86a098d9e8a67e95b34b04a0fbe963248fba926b5efe1f5","finding_id":"SEM:859716abc29e06ce88ce","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-alliin.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1235],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2596","line":1237,"mapping_status":"MAPPED","ontology_id":"CHEBI:2596","preferred_term":"L-alliin"}],"identifier":"CHEBI:2596","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:2596","ontology_label":"alliin","ontology_source":"CHEBI"},"preferred_term":"L-alliin","sssom_rows":[{"data_row":1597,"object_id":"CHEBI:2596","object_label":"alliin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-alliin","synonym_count":1}'
   snapshot_sha256: 1c45f7c84dfccac9f86a098d9e8a67e95b34b04a0fbe963248fba926b5efe1f5
 - evidence_id: ev-b30f53e2790d63c3
   kind: prior_review

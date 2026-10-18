@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1d429288b9ad3d36
+  evidence_ids:
+  - ev-5f24fa500540e410
+  - ev-97d63f48d285c45e
+  - ev-3278f547a3ea57c2
+  - ev-19bed23640d48e5e
+  - ev-ef0badd2e7cb7a83
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1d429288b9ad3d36
+  evidence_ids:
+  - ev-5f24fa500540e410
+  - ev-a311506529a82751
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1d429288b9ad3d36
+  evidence_ids:
+  - ev-c86353b398f0a87c
+  - ev-a311506529a82751
+  - ev-3c169bd25243e81b
 evidence:
 - evidence_id: ev-5f24fa500540e410
   kind: record_content
   reference: data/ingredients/mapped/Lacto-N-fucopentaose_II.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1277],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:89932","line":1279,"mapping_status":"MAPPED","ontology_id":"CHEBI:89932","preferred_term":"Lacto-N-fucopentaose
     II"}],"identifier":"CHEBI:89932","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:89932","ontology_label":"Lacto-N-fucopentaose-2","ontology_source":"CHEBI"},"preferred_term":"Lacto-N-fucopentaose
@@ -106,7 +119,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1277]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,7 +128,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Lacto-N-fucopentaose_II; data-row positions=[1658]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1658,"object_id":"CHEBI:89932","object_label":"Lacto-N-fucopentaose-2","other":"CAS:21973-23-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-fucopentaose_II","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -123,7 +136,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1279]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:89932","line":1279,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:89932","preferred_term":"Lacto-N-fucopentaose
     II","total_occurrences":"0"}]'
@@ -148,7 +161,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[846,1842]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1e843b77edc22d91f52f1fe57fb48327fb7714ea5ae471c465c40dafd7433b09","finding_id":"SEM:1f284be8a174bf0040a7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1e843b77edc22d91f52f1fe57fb48327fb7714ea5ae471c465c40dafd7433b09","finding_id":"SEM:3ae66b8012d5b3e065cf","kind":"role_evidence","resolution_reason":"Historical
@@ -158,12 +171,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lacto-N-fucopentaose_II.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1277],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:89932","line":1279,"mapping_status":"MAPPED","ontology_id":"CHEBI:89932","preferred_term":"Lacto-N-fucopentaose
+    II"}],"identifier":"CHEBI:89932","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:89932","ontology_label":"Lacto-N-fucopentaose-2","ontology_source":"CHEBI"},"preferred_term":"Lacto-N-fucopentaose
+    II","sssom_rows":[{"data_row":1658,"object_id":"CHEBI:89932","object_label":"Lacto-N-fucopentaose-2","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lacto-N-fucopentaose_II","synonym_count":0}'
   snapshot_sha256: 1e843b77edc22d91f52f1fe57fb48327fb7714ea5ae471c465c40dafd7433b09
 - evidence_id: ev-3c169bd25243e81b
   kind: prior_review

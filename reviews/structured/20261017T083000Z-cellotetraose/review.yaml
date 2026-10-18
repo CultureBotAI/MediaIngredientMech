@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6b497733fd0e0372
+  evidence_ids:
+  - ev-906c5277344cbcdc
+  - ev-eecd1baffa2732ad
+  - ev-6f905192680cb981
+  - ev-47a52d6b887bb9dd
+  - ev-1f89cae3d5b835c1
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6b497733fd0e0372
+  evidence_ids:
+  - ev-906c5277344cbcdc
+  - ev-325eac95346580e3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6b497733fd0e0372
+  evidence_ids:
+  - ev-171c1aca4a36f02e
+  - ev-325eac95346580e3
+  - ev-252375aa14f1f6c3
 evidence:
 - evidence_id: ev-906c5277344cbcdc
   kind: record_content
   reference: data/ingredients/mapped/Cellotetraose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[688],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62974","line":690,"mapping_status":"MAPPED","ontology_id":"CHEBI:62974","preferred_term":"Cellotetraose"}],"identifier":"CHEBI:62974","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62974","ontology_label":"cellotetraose","ontology_source":"CHEBI"},"preferred_term":"Cellotetraose","sssom_rows":[{"data_row":711,"object_id":"CHEBI:62974","object_label":"cellotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cellotetraose","synonym_count":1}'
   snapshot_sha256: fcc75737b8a2ef59b23520cc623bdcb7da4bdf6a0c7e2c5f1933facc251aaa4a
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [688]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cellotetraose; data-row positions=[711]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":711,"object_id":"CHEBI:62974","object_label":"cellotetraose","other":"beta-D-glucopyranosyl-(1->4)-beta-D-glucoopyranosyl-(1->4)-beta-D-glucoopyranosyl-(1->4)-D-glucoopyranose|CAS:38819-01-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Cellotetraose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[690]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62974","line":690,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62974","preferred_term":"Cellotetraose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -144,7 +157,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[389,2031]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"fcc75737b8a2ef59b23520cc623bdcb7da4bdf6a0c7e2c5f1933facc251aaa4a","finding_id":"SEM:5514ae697e3ef1231122","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fcc75737b8a2ef59b23520cc623bdcb7da4bdf6a0c7e2c5f1933facc251aaa4a","finding_id":"SEM:5185a89ce4a5b796f22a","kind":"role_evidence","resolution_reason":"Historical
@@ -154,12 +167,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cellotetraose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[688],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62974","line":690,"mapping_status":"MAPPED","ontology_id":"CHEBI:62974","preferred_term":"Cellotetraose"}],"identifier":"CHEBI:62974","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62974","ontology_label":"cellotetraose","ontology_source":"CHEBI"},"preferred_term":"Cellotetraose","sssom_rows":[{"data_row":711,"object_id":"CHEBI:62974","object_label":"cellotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cellotetraose","synonym_count":1}'
   snapshot_sha256: fcc75737b8a2ef59b23520cc623bdcb7da4bdf6a0c7e2c5f1933facc251aaa4a
 - evidence_id: ev-252375aa14f1f6c3
   kind: prior_review

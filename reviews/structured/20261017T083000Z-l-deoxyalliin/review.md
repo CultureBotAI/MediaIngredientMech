@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-Deoxyalliin
 | ev-fd9404b35ba05ccb | docs/data/mapped_ingredients.csv; CSV lines=[1223] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:74077","line":1223,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:74077","preferred_term":"L-Deoxyalliin","total_occurrences":"0"}] |
 | ev-f6ea031130ac8c55 | reports/yaml_record_review/L-Deoxyalliin.md; &#96;data/ingredients/mapped/L-Deoxyalliin.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:32; Completeness:49; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9a86e72ef1f6d661 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[788,1391] | context_only | [{"current_record_sha256":"d9fca4409c19af4e70eeded6e54bc2acb7f4c5ede1eb0a15081c06aac4225542","finding_id":"SEM:6125f36690be28f0cfff","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d9fca4409c19af4e70eeded6e54bc2acb7f4c5ede1eb0a15081c06aac4225542","finding_id":"SEM:8a3df13085e98f357a4b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ab52091489cf9da8 | data/ingredients/mapped/L-Deoxyalliin.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-ab52091489cf9da8 | data/ingredients/mapped/L-Deoxyalliin.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1221],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:74077","line":1223,"mapping_status":"MAPPED","ontology_id":"CHEBI:74077","preferred_term":"L-Deoxyalliin"}],"identifier":"CHEBI:74077","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:74077","ontology_label":"S-allylcysteine","ontology_source":"CHEBI"},"preferred_term":"L-Deoxyalliin","sssom_rows":[{"data_row":1571,"object_id":"CHEBI:74077","object_label":"S-allylcysteine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Deoxyalliin","synonym_count":1} |
 | ev-af513de87a70c653 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-01d6e55693d76eb4] | context_only | Predecessor structured review finding f-01d6e55693d76eb4 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2defc30f39f2c14c
+  evidence_ids:
+  - ev-6a0b64c713bb3879
+  - ev-2f194b3ba98ccc1b
+  - ev-cd0231dabfb3ee69
+  - ev-fd9404b35ba05ccb
+  - ev-ab52091489cf9da8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-2defc30f39f2c14c
+  evidence_ids:
+  - ev-6a0b64c713bb3879
+  - ev-9a86e72ef1f6d661
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2defc30f39f2c14c
+  evidence_ids:
+  - ev-f6ea031130ac8c55
+  - ev-9a86e72ef1f6d661
+  - ev-af513de87a70c653
 evidence:
 - evidence_id: ev-6a0b64c713bb3879
   kind: record_content
   reference: data/ingredients/mapped/L-Deoxyalliin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1221],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:74077","line":1223,"mapping_status":"MAPPED","ontology_id":"CHEBI:74077","preferred_term":"L-Deoxyalliin"}],"identifier":"CHEBI:74077","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:74077","ontology_label":"S-allylcysteine","ontology_source":"CHEBI"},"preferred_term":"L-Deoxyalliin","sssom_rows":[{"data_row":1571,"object_id":"CHEBI:74077","object_label":"S-allylcysteine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Deoxyalliin","synonym_count":1}'
   snapshot_sha256: d9fca4409c19af4e70eeded6e54bc2acb7f4c5ede1eb0a15081c06aac4225542
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1221]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-Deoxyalliin; data-row positions=[1571]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1571,"object_id":"CHEBI:74077","object_label":"S-allylcysteine","other":"S-prop-2-en-1-yl-L-cysteine|CAS:21593-77-1","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Deoxyalliin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1223]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:74077","line":1223,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:74077","preferred_term":"L-Deoxyalliin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[788,1391]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d9fca4409c19af4e70eeded6e54bc2acb7f4c5ede1eb0a15081c06aac4225542","finding_id":"SEM:6125f36690be28f0cfff","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d9fca4409c19af4e70eeded6e54bc2acb7f4c5ede1eb0a15081c06aac4225542","finding_id":"SEM:8a3df13085e98f357a4b","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Deoxyalliin.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1221],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:74077","line":1223,"mapping_status":"MAPPED","ontology_id":"CHEBI:74077","preferred_term":"L-Deoxyalliin"}],"identifier":"CHEBI:74077","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:74077","ontology_label":"S-allylcysteine","ontology_source":"CHEBI"},"preferred_term":"L-Deoxyalliin","sssom_rows":[{"data_row":1571,"object_id":"CHEBI:74077","object_label":"S-allylcysteine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Deoxyalliin","synonym_count":1}'
   snapshot_sha256: d9fca4409c19af4e70eeded6e54bc2acb7f4c5ede1eb0a15081c06aac4225542
 - evidence_id: ev-af513de87a70c653
   kind: prior_review

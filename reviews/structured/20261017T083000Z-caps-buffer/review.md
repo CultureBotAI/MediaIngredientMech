@@ -89,7 +89,7 @@ Reassess prediction-only role support: CAPS buffer
 | ev-784c8fd0fd475328 | docs/data/mapped_ingredients.csv; CSV lines=[650] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:191088","line":650,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:191088","preferred_term":"CAPS buffer","total_occurrences":"5"}] |
 | ev-2afc07deae432f62 | reports/yaml_record_review/Caps_Buffer.md; &#96;data/ingredients/mapped/Caps_Buffer.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:39; Completeness:51; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d5afaaf3d2bd9745 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[356,1761] | context_only | [{"current_record_sha256":"c0623c468173bed9711c2fffa07622cdfd34cc94f7a77f9f59e6e45a3ebf00b7","finding_id":"SEM:08dcbfe60d1808932111","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c0623c468173bed9711c2fffa07622cdfd34cc94f7a77f9f59e6e45a3ebf00b7","finding_id":"SEM:19459c6cb4ff78965523","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f5a2329f1d496845 | data/ingredients/mapped/Caps_Buffer.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-f5a2329f1d496845 | data/ingredients/mapped/Caps_Buffer.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[648],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:191088","line":650,"mapping_status":"MAPPED","ontology_id":"CHEBI:191088","preferred_term":"CAPS buffer"}],"identifier":"CHEBI:191088","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:191088","ontology_label":"Cyclohexylaminopropanesulfonic acid","ontology_source":"CHEBI"},"preferred_term":"CAPS buffer","sssom_rows":[{"data_row":632,"object_id":"CHEBI:191088","object_label":"Cyclohexylaminopropanesulfonic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Caps_Buffer","synonym_count":3} |
 | ev-71515426918f3718 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-a0237322510afa9f] | context_only | Predecessor structured review finding f-a0237322510afa9f in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b05b0049f51a7235
+  evidence_ids:
+  - ev-4d2879941aadeb13
+  - ev-1491a730c9cda53b
+  - ev-50a4c5c6785e1ba0
+  - ev-784c8fd0fd475328
+  - ev-f5a2329f1d496845
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b05b0049f51a7235
+  evidence_ids:
+  - ev-4d2879941aadeb13
+  - ev-d5afaaf3d2bd9745
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b05b0049f51a7235
+  evidence_ids:
+  - ev-2afc07deae432f62
+  - ev-d5afaaf3d2bd9745
+  - ev-71515426918f3718
 evidence:
 - evidence_id: ev-4d2879941aadeb13
   kind: record_content
   reference: data/ingredients/mapped/Caps_Buffer.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[648],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:191088","line":650,"mapping_status":"MAPPED","ontology_id":"CHEBI:191088","preferred_term":"CAPS
     buffer"}],"identifier":"CHEBI:191088","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:191088","ontology_label":"Cyclohexylaminopropanesulfonic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [648]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Caps_Buffer; data-row positions=[632]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":632,"object_id":"CHEBI:191088","object_label":"Cyclohexylaminopropanesulfonic
     acid","other":"3-(cyclohexylamino)propane-1-sulonic acid|CAPS|CAS:1135-40-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Caps_Buffer","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[650]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:191088","line":650,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:191088","preferred_term":"CAPS
     buffer","total_occurrences":"5"}]'
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[356,1761]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c0623c468173bed9711c2fffa07622cdfd34cc94f7a77f9f59e6e45a3ebf00b7","finding_id":"SEM:08dcbfe60d1808932111","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c0623c468173bed9711c2fffa07622cdfd34cc94f7a77f9f59e6e45a3ebf00b7","finding_id":"SEM:19459c6cb4ff78965523","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Caps_Buffer.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[648],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:191088","line":650,"mapping_status":"MAPPED","ontology_id":"CHEBI:191088","preferred_term":"CAPS
+    buffer"}],"identifier":"CHEBI:191088","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:191088","ontology_label":"Cyclohexylaminopropanesulfonic
+    acid","ontology_source":"CHEBI"},"preferred_term":"CAPS buffer","sssom_rows":[{"data_row":632,"object_id":"CHEBI:191088","object_label":"Cyclohexylaminopropanesulfonic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Caps_Buffer","synonym_count":3}'
   snapshot_sha256: c0623c468173bed9711c2fffa07622cdfd34cc94f7a77f9f59e6e45a3ebf00b7
 - evidence_id: ev-71515426918f3718
   kind: prior_review

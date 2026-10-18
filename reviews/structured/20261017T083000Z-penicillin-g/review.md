@@ -83,13 +83,13 @@ Reassess prediction-only role support: Penicillin g
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-947498c2e647590c | data/ingredients/mapped/Penicillin_G.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1628],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51765","line":1630,"mapping_status":"MAPPED","ontology_id":"CHEBI:51765","preferred_term":"Penicillin g"}],"identifier":"CHEBI:51765","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51765","ontology_label":"benzylpenicillin sodium","ontology_source":"CHEBI"},"preferred_term":"Penicillin g","sssom_rows":[{"data_row":2214,"object_id":"CHEBI:51765","object_label":"benzylpenicillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Penicillin_G","synonym_count":2} |
-| ev-06f98a233316cbf9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1628] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-522e3689429737d4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Penicillin_G; data-row positions=[2214] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2214,"object_id":"CHEBI:51765","object_label":"benzylpenicillin sodium","other":"sodium 2,2-dimethyl-6beta-(phenylacetamido)penam-3alpha-carboxylate&#124;Penicillin G (Parke)&#124;CAS:69-57-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Penicillin_G","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-996e58cf1f9d993b | docs/data/mapped_ingredients.csv; CSV lines=[1630] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:51765","line":1630,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:51765","preferred_term":"Penicillin g","total_occurrences":"3"}] |
+| ev-947498c2e647590c | data/ingredients/mapped/Penicillin_G.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1627],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51765","line":1629,"mapping_status":"MAPPED","ontology_id":"CHEBI:51765","preferred_term":"Penicillin g"}],"identifier":"CHEBI:51765","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51765","ontology_label":"benzylpenicillin sodium","ontology_source":"CHEBI"},"preferred_term":"Penicillin g","sssom_rows":[{"data_row":2216,"object_id":"CHEBI:51765","object_label":"benzylpenicillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Penicillin_G","synonym_count":2} |
+| ev-06f98a233316cbf9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1627] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-522e3689429737d4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Penicillin_G; data-row positions=[2216] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2216,"object_id":"CHEBI:51765","object_label":"benzylpenicillin sodium","other":"sodium 2,2-dimethyl-6beta-(phenylacetamido)penam-3alpha-carboxylate&#124;Penicillin G (Parke)&#124;CAS:69-57-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Penicillin_G","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-996e58cf1f9d993b | docs/data/mapped_ingredients.csv; CSV lines=[1629] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:51765","line":1629,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:51765","preferred_term":"Penicillin g","total_occurrences":"3"}] |
 | ev-b7add3ddfc3b26c3 | reports/yaml_record_review/Penicillin_G.md; &#96;data/ingredients/mapped/Penicillin_G.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:30; Completeness:43; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-7c45540adebfebe5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1099,1919] | context_only | [{"current_record_sha256":"2d483390c8bfee6dfc15ecab8d04eff3068aa518fecd2ee3d9eeaa8a0459a63a","finding_id":"SEM:e14269cbe2105041321b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2d483390c8bfee6dfc15ecab8d04eff3068aa518fecd2ee3d9eeaa8a0459a63a","finding_id":"SEM:30dbdcc4364268d880d7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2ca4e946a5a719d8 | data/ingredients/mapped/Penicillin_G.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-2ca4e946a5a719d8 | data/ingredients/mapped/Penicillin_G.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1627],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51765","line":1629,"mapping_status":"MAPPED","ontology_id":"CHEBI:51765","preferred_term":"Penicillin g"}],"identifier":"CHEBI:51765","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51765","ontology_label":"benzylpenicillin sodium","ontology_source":"CHEBI"},"preferred_term":"Penicillin g","sssom_rows":[{"data_row":2216,"object_id":"CHEBI:51765","object_label":"benzylpenicillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Penicillin_G","synonym_count":2} |
 | ev-b8fc6ef8ce6c3506 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-787679a02d088754] | context_only | Predecessor structured review finding f-787679a02d088754 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2493a9aa1bd59403
+  evidence_ids:
+  - ev-947498c2e647590c
+  - ev-06f98a233316cbf9
+  - ev-522e3689429737d4
+  - ev-996e58cf1f9d993b
+  - ev-2ca4e946a5a719d8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-2493a9aa1bd59403
+  evidence_ids:
+  - ev-947498c2e647590c
+  - ev-7c45540adebfebe5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2493a9aa1bd59403
+  evidence_ids:
+  - ev-b7add3ddfc3b26c3
+  - ev-7c45540adebfebe5
+  - ev-b8fc6ef8ce6c3506
 evidence:
 - evidence_id: ev-947498c2e647590c
   kind: record_content
   reference: data/ingredients/mapped/Penicillin_G.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1628],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51765","line":1630,"mapping_status":"MAPPED","ontology_id":"CHEBI:51765","preferred_term":"Penicillin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1627],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51765","line":1629,"mapping_status":"MAPPED","ontology_id":"CHEBI:51765","preferred_term":"Penicillin
     g"}],"identifier":"CHEBI:51765","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51765","ontology_label":"benzylpenicillin
-    sodium","ontology_source":"CHEBI"},"preferred_term":"Penicillin g","sssom_rows":[{"data_row":2214,"object_id":"CHEBI:51765","object_label":"benzylpenicillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Penicillin g","sssom_rows":[{"data_row":2216,"object_id":"CHEBI:51765","object_label":"benzylpenicillin
     sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Penicillin_G","synonym_count":2}'
   snapshot_sha256: 2d483390c8bfee6dfc15ecab8d04eff3068aa518fecd2ee3d9eeaa8a0459a63a
 - evidence_id: ev-06f98a233316cbf9
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1628]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1627]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,20 +233,20 @@ evidence:
 - evidence_id: ev-522e3689429737d4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Penicillin_G; data-row positions=[2214]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Penicillin_G; data-row positions=[2216]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2214,"object_id":"CHEBI:51765","object_label":"benzylpenicillin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2216,"object_id":"CHEBI:51765","object_label":"benzylpenicillin
     sodium","other":"sodium 2,2-dimethyl-6beta-(phenylacetamido)penam-3alpha-carboxylate|Penicillin
     G (Parke)|CAS:69-57-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Penicillin_G","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-996e58cf1f9d993b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1630]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1629]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:51765","line":1630,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:51765","preferred_term":"Penicillin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:51765","line":1629,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:51765","preferred_term":"Penicillin
     g","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-b7add3ddfc3b26c3
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1099,1919]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2d483390c8bfee6dfc15ecab8d04eff3068aa518fecd2ee3d9eeaa8a0459a63a","finding_id":"SEM:e14269cbe2105041321b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2d483390c8bfee6dfc15ecab8d04eff3068aa518fecd2ee3d9eeaa8a0459a63a","finding_id":"SEM:30dbdcc4364268d880d7","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Penicillin_G.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1627],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:51765","line":1629,"mapping_status":"MAPPED","ontology_id":"CHEBI:51765","preferred_term":"Penicillin
+    g"}],"identifier":"CHEBI:51765","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:51765","ontology_label":"benzylpenicillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Penicillin g","sssom_rows":[{"data_row":2216,"object_id":"CHEBI:51765","object_label":"benzylpenicillin
+    sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Penicillin_G","synonym_count":2}'
   snapshot_sha256: 2d483390c8bfee6dfc15ecab8d04eff3068aa518fecd2ee3d9eeaa8a0459a63a
 - evidence_id: ev-b8fc6ef8ce6c3506
   kind: prior_review

@@ -85,12 +85,12 @@ Reassess prediction-only role support: L-Aspartic acid sodium salt monohydrate
 | --- | --- | --- | --- |
 | ev-c90feb771030e101 | data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1217],"raw_equal":true},"docs_rows":[{"identifier":"cas:323194-76-9","line":1219,"mapping_status":"MAPPED","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic acid sodium salt monohydrate"}],"identifier":"cas:323194-76-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17053","ontology_label":"L-aspartic acid","ontology_source":"CHEBI"},"preferred_term":"L-Aspartic acid sodium salt monohydrate","sssom_rows":[{"data_row":1563,"object_id":"CHEBI:17053","object_label":"L-aspartic acid","predicate_id":"skos:closeMatch"},{"data_row":1564,"object_id":"cas:323194-76-9","object_label":"L-Aspartic acid sodium salt monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate","synonym_count":2} |
 | ev-a947ba29cfc855f8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1217] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-2017ad3ad12d0170 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate; data-row positions=[1563,1564] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1563,"object_id":"CHEBI:17053","object_label":"L-aspartic acid","other":"CAS:323194-76-9","predicate_id":"skos:closeMatch","subject_id":"MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":1564,"object_id":"cas:323194-76-9","object_label":"L-Aspartic acid sodium salt monohydrate","other":"CAS:323194-76-9","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-2017ad3ad12d0170 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate; data-row positions=[1563, 1564] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1563,"object_id":"CHEBI:17053","object_label":"L-aspartic acid","other":"CAS:323194-76-9","predicate_id":"skos:closeMatch","subject_id":"MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":1564,"object_id":"cas:323194-76-9","object_label":"L-Aspartic acid sodium salt monohydrate","other":"CAS:323194-76-9","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-6fdc733a830a5b85 | docs/data/mapped_ingredients.csv; CSV lines=[1219] | supports | Published identity and count rows inspected: [{"identifier":"cas:323194-76-9","line":1219,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic acid sodium salt monohydrate","total_occurrences":"2"}] |
 | ev-7fda4658e83bf9be | reports/yaml_record_review/20261001T050234Z-L-Aspartic_Acid_Sodium_Salt_Monohydrate.md; YAML Record Review: L-Aspartic acid sodium salt monohydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-0397e19e10b1c884 | reports/yaml_record_review/L-Aspartic_Acid_Sodium_Salt_Monohydrate.md; &#96;data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:34; Completeness:62; Recommended Edits:71 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-86e9bbabaae7761b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[784,1765] | context_only | [{"current_record_sha256":"b08b501b65a3b83edd2af58a9c3818b3f998c3c2e382458d6af07dae5a6cb0aa","finding_id":"SEM:42ca6dc8a4b2bfa841ac","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b08b501b65a3b83edd2af58a9c3818b3f998c3c2e382458d6af07dae5a6cb0aa","finding_id":"SEM:4a110550f7042475f889","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f41c2a4ef6a1cee5 | data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-f41c2a4ef6a1cee5 | data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1217],"raw_equal":true},"docs_rows":[{"identifier":"cas:323194-76-9","line":1219,"mapping_status":"MAPPED","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic acid sodium salt monohydrate"}],"identifier":"cas:323194-76-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17053","ontology_label":"L-aspartic acid","ontology_source":"CHEBI"},"preferred_term":"L-Aspartic acid sodium salt monohydrate","sssom_rows":[{"data_row":1563,"object_id":"CHEBI:17053","object_label":"L-aspartic acid","predicate_id":"skos:closeMatch"},{"data_row":1564,"object_id":"cas:323194-76-9","object_label":"L-Aspartic acid sodium salt monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate","synonym_count":2} |
 | ev-ddd2e281c5e64753 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-da43714a60aa3bba] | context_only | Predecessor structured review finding f-da43714a60aa3bba in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -184,6 +184,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a03ccf06803d79d1
+  evidence_ids:
+  - ev-c90feb771030e101
+  - ev-a947ba29cfc855f8
+  - ev-2017ad3ad12d0170
+  - ev-6fdc733a830a5b85
+  - ev-f41c2a4ef6a1cee5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -192,6 +198,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a03ccf06803d79d1
+  evidence_ids:
+  - ev-c90feb771030e101
+  - ev-86e9bbabaae7761b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -200,13 +209,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a03ccf06803d79d1
+  evidence_ids:
+  - ev-7fda4658e83bf9be
+  - ev-0397e19e10b1c884
+  - ev-86e9bbabaae7761b
+  - ev-ddd2e281c5e64753
 evidence:
 - evidence_id: ev-c90feb771030e101
   kind: record_content
   reference: data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1217],"raw_equal":true},"docs_rows":[{"identifier":"cas:323194-76-9","line":1219,"mapping_status":"MAPPED","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic
     acid sodium salt monohydrate"}],"identifier":"cas:323194-76-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17053","ontology_label":"L-aspartic
@@ -219,7 +233,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1217]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -227,8 +241,9 @@ evidence:
 - evidence_id: ev-2017ad3ad12d0170
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate; data-row positions=[1563,1564]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate; data-row positions=[1563,
+    1564]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1563,"object_id":"CHEBI:17053","object_label":"L-aspartic
     acid","other":"CAS:323194-76-9","predicate_id":"skos:closeMatch","subject_id":"MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":1564,"object_id":"cas:323194-76-9","object_label":"L-Aspartic
@@ -238,7 +253,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1219]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:323194-76-9","line":1219,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic
     acid sodium salt monohydrate","total_occurrences":"2"}]'
@@ -298,7 +313,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[784,1765]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b08b501b65a3b83edd2af58a9c3818b3f998c3c2e382458d6af07dae5a6cb0aa","finding_id":"SEM:42ca6dc8a4b2bfa841ac","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b08b501b65a3b83edd2af58a9c3818b3f998c3c2e382458d6af07dae5a6cb0aa","finding_id":"SEM:4a110550f7042475f889","kind":"role_evidence","resolution_reason":"Historical
@@ -308,12 +323,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1217],"raw_equal":true},"docs_rows":[{"identifier":"cas:323194-76-9","line":1219,"mapping_status":"MAPPED","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic
+    acid sodium salt monohydrate"}],"identifier":"cas:323194-76-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17053","ontology_label":"L-aspartic
+    acid","ontology_source":"CHEBI"},"preferred_term":"L-Aspartic acid sodium salt
+    monohydrate","sssom_rows":[{"data_row":1563,"object_id":"CHEBI:17053","object_label":"L-aspartic
+    acid","predicate_id":"skos:closeMatch"},{"data_row":1564,"object_id":"cas:323194-76-9","object_label":"L-Aspartic
+    acid sodium salt monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Aspartic_Acid_Sodium_Salt_Monohydrate","synonym_count":2}'
   snapshot_sha256: b08b501b65a3b83edd2af58a9c3818b3f998c3c2e382458d6af07dae5a6cb0aa
 - evidence_id: ev-ddd2e281c5e64753
   kind: prior_review

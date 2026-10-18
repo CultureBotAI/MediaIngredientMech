@@ -89,7 +89,7 @@ Reassess prediction-only role support: Gentamicin sulfate salt
 | ev-102fac135aa53ccc | docs/data/mapped_ingredients.csv; CSV lines=[1048] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:5312","line":1048,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:5312","preferred_term":"Gentamicin sulfate salt","total_occurrences":"0"}] |
 | ev-4f07204674b1b526 | reports/yaml_record_review/Gentamicin_Sulfate_Salt.md; &#96;data/ingredients/mapped/Gentamicin_Sulfate_Salt.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:33; Completeness:52; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f69a6bfcb65c8c00 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[657,1382] | context_only | [{"current_record_sha256":"095dc20b951143d620772198335e036c6a2ac340b3a7051729f0bed637ae1d92","finding_id":"SEM:9b7f20dccb83b37fa250","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"095dc20b951143d620772198335e036c6a2ac340b3a7051729f0bed637ae1d92","finding_id":"SEM:e85707f75879612601a6","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-69489e06ae323298 | data/ingredients/mapped/Gentamicin_Sulfate_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-69489e06ae323298 | data/ingredients/mapped/Gentamicin_Sulfate_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1046],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:5312","line":1048,"mapping_status":"MAPPED","ontology_id":"CHEBI:5312","preferred_term":"Gentamicin sulfate salt"}],"identifier":"CHEBI:5312","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:5312","ontology_label":"gentamicin sulfate","ontology_source":"CHEBI"},"preferred_term":"Gentamicin sulfate salt","sssom_rows":[{"data_row":1291,"object_id":"CHEBI:5312","object_label":"gentamicin sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gentamicin_Sulfate_Salt","synonym_count":0} |
 | ev-912a244529d0433d | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-7ded89efc53968c5] | context_only | Predecessor structured review finding f-7ded89efc53968c5 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3e38024d317317a7
+  evidence_ids:
+  - ev-4b3b9c8df5035503
+  - ev-24179767cd469cd7
+  - ev-737c5763b66cea29
+  - ev-102fac135aa53ccc
+  - ev-69489e06ae323298
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3e38024d317317a7
+  evidence_ids:
+  - ev-4b3b9c8df5035503
+  - ev-f69a6bfcb65c8c00
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3e38024d317317a7
+  evidence_ids:
+  - ev-4f07204674b1b526
+  - ev-f69a6bfcb65c8c00
+  - ev-912a244529d0433d
 evidence:
 - evidence_id: ev-4b3b9c8df5035503
   kind: record_content
   reference: data/ingredients/mapped/Gentamicin_Sulfate_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1046],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:5312","line":1048,"mapping_status":"MAPPED","ontology_id":"CHEBI:5312","preferred_term":"Gentamicin
     sulfate salt"}],"identifier":"CHEBI:5312","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:5312","ontology_label":"gentamicin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1046]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Gentamicin_Sulfate_Salt; data-row positions=[1291]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1291,"object_id":"CHEBI:5312","object_label":"gentamicin
     sulfate","other":"CAS:1405-41-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Gentamicin_Sulfate_Salt","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1048]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:5312","line":1048,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:5312","preferred_term":"Gentamicin
     sulfate salt","total_occurrences":"0"}]'
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[657,1382]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"095dc20b951143d620772198335e036c6a2ac340b3a7051729f0bed637ae1d92","finding_id":"SEM:9b7f20dccb83b37fa250","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"095dc20b951143d620772198335e036c6a2ac340b3a7051729f0bed637ae1d92","finding_id":"SEM:e85707f75879612601a6","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Gentamicin_Sulfate_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1046],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:5312","line":1048,"mapping_status":"MAPPED","ontology_id":"CHEBI:5312","preferred_term":"Gentamicin
+    sulfate salt"}],"identifier":"CHEBI:5312","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:5312","ontology_label":"gentamicin
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Gentamicin sulfate salt","sssom_rows":[{"data_row":1291,"object_id":"CHEBI:5312","object_label":"gentamicin
+    sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gentamicin_Sulfate_Salt","synonym_count":0}'
   snapshot_sha256: 095dc20b951143d620772198335e036c6a2ac340b3a7051729f0bed637ae1d92
 - evidence_id: ev-912a244529d0433d
   kind: prior_review

@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8f740b7b030f73a3
+  evidence_ids:
+  - ev-435c091e105f4580
+  - ev-cee1d682a8057b66
+  - ev-db65d1bf0247016f
+  - ev-2b65e91afc16c137
+  - ev-aa87c54bb8532bc8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8f740b7b030f73a3
+  evidence_ids:
+  - ev-435c091e105f4580
+  - ev-0d5293edc04de552
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8f740b7b030f73a3
+  evidence_ids:
+  - ev-970cc7b364450eab
+  - ev-0d5293edc04de552
+  - ev-9dd78167175d53d1
 evidence:
 - evidence_id: ev-435c091e105f4580
   kind: record_content
   reference: data/ingredients/mapped/D-Glutamic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[816],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15966","line":818,"mapping_status":"MAPPED","ontology_id":"CHEBI:15966","preferred_term":"D-Glutamic
     Acid"}],"identifier":"CHEBI:15966","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15966","ontology_label":"D-glutamic
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [816]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-Glutamic_Acid; data-row positions=[895]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":895,"object_id":"CHEBI:15966","object_label":"D-glutamic
     acid","other":"(2R)-2-aminopentanedioic acid|CAS:6893-26-1","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Glutamic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -125,7 +138,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[818]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15966","line":818,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15966","preferred_term":"D-Glutamic
     Acid","total_occurrences":"0"}]'
@@ -149,7 +162,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[468,2077]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"cda896e8d5e530ec719d30737893fa426a6e454dcc53548e12af8471a8ad5526","finding_id":"SEM:77c8154a5a5753d59037","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"cda896e8d5e530ec719d30737893fa426a6e454dcc53548e12af8471a8ad5526","finding_id":"SEM:e9ee917021779968446e","kind":"role_evidence","resolution_reason":"Historical
@@ -159,12 +172,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Glutamic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[816],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15966","line":818,"mapping_status":"MAPPED","ontology_id":"CHEBI:15966","preferred_term":"D-Glutamic
+    Acid"}],"identifier":"CHEBI:15966","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15966","ontology_label":"D-glutamic
+    acid","ontology_source":"CHEBI"},"preferred_term":"D-Glutamic Acid","sssom_rows":[{"data_row":895,"object_id":"CHEBI:15966","object_label":"D-glutamic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Glutamic_Acid","synonym_count":1}'
   snapshot_sha256: cda896e8d5e530ec719d30737893fa426a6e454dcc53548e12af8471a8ad5526
 - evidence_id: ev-9dd78167175d53d1
   kind: prior_review

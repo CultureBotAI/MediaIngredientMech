@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3d05e9e6e9d6c92d
+  evidence_ids:
+  - ev-6e4d3c90a210e0ac
+  - ev-7377f0f9d7682173
+  - ev-d460c75ddf6bd283
+  - ev-3ea4777915dfc0c4
+  - ev-6541337432ab63ee
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3d05e9e6e9d6c92d
+  evidence_ids:
+  - ev-6e4d3c90a210e0ac
+  - ev-9db2f11603d5c20a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3d05e9e6e9d6c92d
+  evidence_ids:
+  - ev-637fa02a6ce582f9
+  - ev-9db2f11603d5c20a
+  - ev-2c5f4df0c5ac4b41
 evidence:
 - evidence_id: ev-6e4d3c90a210e0ac
   kind: record_content
   reference: data/ingredients/mapped/Dl-histidine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[914],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27570","line":916,"mapping_status":"MAPPED","ontology_id":"CHEBI:27570","preferred_term":"DL-Histidine"}],"identifier":"CHEBI:27570","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:27570","ontology_label":"histidine","ontology_source":"CHEBI"},"preferred_term":"DL-Histidine","sssom_rows":[{"data_row":1077,"object_id":"CHEBI:27570","object_label":"histidine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dl-histidine","synonym_count":4}'
   snapshot_sha256: f4985eeac71fefeaa0313bc090be28c0b47fa522fd11f390eeed48a83adf2ffe
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [914]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Dl-histidine; data-row positions=[1077]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1077,"object_id":"CHEBI:27570","object_label":"histidine","other":"2-amino-3-(1H-imidazol-4-yl)propanoic
     acid|Histidin|alpha-Amino-1H-imidazole-4-propionic acid|histidina|CAS:4998-57-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Dl-histidine","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -122,7 +135,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[916]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:27570","line":916,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:27570","preferred_term":"DL-Histidine","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -145,7 +158,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[550,1826]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f4985eeac71fefeaa0313bc090be28c0b47fa522fd11f390eeed48a83adf2ffe","finding_id":"SEM:2231de5bb64dcc7879e2","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f4985eeac71fefeaa0313bc090be28c0b47fa522fd11f390eeed48a83adf2ffe","finding_id":"SEM:a6399cb2c4037eccfe20","kind":"role_evidence","resolution_reason":"Historical
@@ -155,12 +168,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Dl-histidine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[914],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27570","line":916,"mapping_status":"MAPPED","ontology_id":"CHEBI:27570","preferred_term":"DL-Histidine"}],"identifier":"CHEBI:27570","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:27570","ontology_label":"histidine","ontology_source":"CHEBI"},"preferred_term":"DL-Histidine","sssom_rows":[{"data_row":1077,"object_id":"CHEBI:27570","object_label":"histidine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dl-histidine","synonym_count":4}'
   snapshot_sha256: f4985eeac71fefeaa0313bc090be28c0b47fa522fd11f390eeed48a83adf2ffe
 - evidence_id: ev-2c5f4df0c5ac4b41
   kind: prior_review

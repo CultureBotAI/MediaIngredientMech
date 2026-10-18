@@ -85,11 +85,11 @@ Reassess prediction-only role support: L-Histidine monohydrochloride monohydrate
 | --- | --- | --- | --- |
 | ev-d1f82649ad96459c | data/ingredients/mapped/L-Histidine_Monohydrochloride_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1225],"raw_equal":true},"docs_rows":[{"identifier":"cas:5934-29-2","line":1227,"mapping_status":"MAPPED","ontology_id":"NCIT:C87334","preferred_term":"L-Histidine monohydrochloride monohydrate"}],"identifier":"cas:5934-29-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C87334","ontology_label":"Histidine Monohydrochloride Monohydrate","ontology_source":"NCIT"},"preferred_term":"L-Histidine monohydrochloride monohydrate","sssom_rows":[{"data_row":1575,"object_id":"NCIT:C87334","object_label":"Histidine Monohydrochloride Monohydrate","predicate_id":"skos:broadMatch"},{"data_row":1576,"object_id":"cas:5934-29-2","object_label":"L-Histidine monohydrochloride monohydrate","predicate_id":"skos:exactMatch"},{"data_row":1577,"object_id":"kgmicrobe.compound:l-histidine_monohydrochloride_monohydrate","object_label":"L-Histidine monohydrochloride monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Histidine_Monohydrochloride_Monohydrate","synonym_count":0} |
 | ev-1f2c781061a09c4c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1225] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-b5fd22f760852387 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Histidine_Monohydrochloride_Monohydrate; data-row positions=[1575,1576,1577] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1575,"object_id":"NCIT:C87334","object_label":"Histidine Monohydrochloride Monohydrate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Histidine_Monohydrochloride_Monohydrate","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1576,"object_id":"cas:5934-29-2","object_label":"L-Histidine monohydrochloride monohydrate","other":"CAS:5934-29-2","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Histidine_Monohydrochloride_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1577,"object_id":"kgmicrobe.compound:l-histidine_monohydrochloride_monohydrate","object_label":"L-Histidine monohydrochloride monohydrate","other":"CAS:5934-29-2","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Histidine_Monohydrochloride_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-b5fd22f760852387 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Histidine_Monohydrochloride_Monohydrate; data-row positions=[1575, 1576, 1577] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1575,"object_id":"NCIT:C87334","object_label":"Histidine Monohydrochloride Monohydrate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Histidine_Monohydrochloride_Monohydrate","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1576,"object_id":"cas:5934-29-2","object_label":"L-Histidine monohydrochloride monohydrate","other":"CAS:5934-29-2","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Histidine_Monohydrochloride_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1577,"object_id":"kgmicrobe.compound:l-histidine_monohydrochloride_monohydrate","object_label":"L-Histidine monohydrochloride monohydrate","other":"CAS:5934-29-2","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Histidine_Monohydrochloride_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-7c840ce542fb47fe | docs/data/mapped_ingredients.csv; CSV lines=[1227] | supports | Published identity and count rows inspected: [{"identifier":"cas:5934-29-2","line":1227,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C87334","preferred_term":"L-Histidine monohydrochloride monohydrate","total_occurrences":"0"}] |
 | ev-a91f98be97dfd59c | reports/yaml_record_review/L-Histidine_Monohydrochloride_Monohydrate.md; &#96;data/ingredients/mapped/L-Histidine_Monohydrochloride_Monohydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:34; Completeness:55; Recommended Edits:63 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-86beffb1cc4b8064 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[792,1998] | context_only | [{"current_record_sha256":"891472a9ec7dde2e5a04151148d390c5a224606ddd1647c9b50ffa1750b09b20","finding_id":"SEM:b71a9fa01e7645092dee","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"891472a9ec7dde2e5a04151148d390c5a224606ddd1647c9b50ffa1750b09b20","finding_id":"SEM:f32304cc2536eead7f0f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-5a424b10867f5018 | data/ingredients/mapped/L-Histidine_Monohydrochloride_Monohydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-5a424b10867f5018 | data/ingredients/mapped/L-Histidine_Monohydrochloride_Monohydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1225],"raw_equal":true},"docs_rows":[{"identifier":"cas:5934-29-2","line":1227,"mapping_status":"MAPPED","ontology_id":"NCIT:C87334","preferred_term":"L-Histidine monohydrochloride monohydrate"}],"identifier":"cas:5934-29-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C87334","ontology_label":"Histidine Monohydrochloride Monohydrate","ontology_source":"NCIT"},"preferred_term":"L-Histidine monohydrochloride monohydrate","sssom_rows":[{"data_row":1575,"object_id":"NCIT:C87334","object_label":"Histidine Monohydrochloride Monohydrate","predicate_id":"skos:broadMatch"},{"data_row":1576,"object_id":"cas:5934-29-2","object_label":"L-Histidine monohydrochloride monohydrate","predicate_id":"skos:exactMatch"},{"data_row":1577,"object_id":"kgmicrobe.compound:l-histidine_monohydrochloride_monohydrate","object_label":"L-Histidine monohydrochloride monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Histidine_Monohydrochloride_Monohydrate","synonym_count":0} |
 | ev-e9f25aa5ad50650b | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-f50a9665d1a75db2] | context_only | Predecessor structured review finding f-f50a9665d1a75db2 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -180,6 +180,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f09685575d201bb9
+  evidence_ids:
+  - ev-d1f82649ad96459c
+  - ev-1f2c781061a09c4c
+  - ev-b5fd22f760852387
+  - ev-7c840ce542fb47fe
+  - ev-5a424b10867f5018
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -188,6 +194,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f09685575d201bb9
+  evidence_ids:
+  - ev-d1f82649ad96459c
+  - ev-86beffb1cc4b8064
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,13 +205,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f09685575d201bb9
+  evidence_ids:
+  - ev-a91f98be97dfd59c
+  - ev-86beffb1cc4b8064
+  - ev-e9f25aa5ad50650b
 evidence:
 - evidence_id: ev-d1f82649ad96459c
   kind: record_content
   reference: data/ingredients/mapped/L-Histidine_Monohydrochloride_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1225],"raw_equal":true},"docs_rows":[{"identifier":"cas:5934-29-2","line":1227,"mapping_status":"MAPPED","ontology_id":"NCIT:C87334","preferred_term":"L-Histidine
     monohydrochloride monohydrate"}],"identifier":"cas:5934-29-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C87334","ontology_label":"Histidine
@@ -216,7 +229,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1225]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -224,8 +237,9 @@ evidence:
 - evidence_id: ev-b5fd22f760852387
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:L-Histidine_Monohydrochloride_Monohydrate; data-row positions=[1575,1576,1577]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:L-Histidine_Monohydrochloride_Monohydrate; data-row positions=[1575,
+    1576, 1577]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1575,"object_id":"NCIT:C87334","object_label":"Histidine
     Monohydrochloride Monohydrate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Histidine_Monohydrochloride_Monohydrate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1576,"object_id":"cas:5934-29-2","object_label":"L-Histidine
@@ -236,7 +250,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1227]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:5934-29-2","line":1227,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C87334","preferred_term":"L-Histidine
     monohydrochloride monohydrate","total_occurrences":"0"}]'
@@ -262,7 +276,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[792,1998]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"891472a9ec7dde2e5a04151148d390c5a224606ddd1647c9b50ffa1750b09b20","finding_id":"SEM:b71a9fa01e7645092dee","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"891472a9ec7dde2e5a04151148d390c5a224606ddd1647c9b50ffa1750b09b20","finding_id":"SEM:f32304cc2536eead7f0f","kind":"role_evidence","resolution_reason":"Historical
@@ -272,12 +286,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Histidine_Monohydrochloride_Monohydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1225],"raw_equal":true},"docs_rows":[{"identifier":"cas:5934-29-2","line":1227,"mapping_status":"MAPPED","ontology_id":"NCIT:C87334","preferred_term":"L-Histidine
+    monohydrochloride monohydrate"}],"identifier":"cas:5934-29-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C87334","ontology_label":"Histidine
+    Monohydrochloride Monohydrate","ontology_source":"NCIT"},"preferred_term":"L-Histidine
+    monohydrochloride monohydrate","sssom_rows":[{"data_row":1575,"object_id":"NCIT:C87334","object_label":"Histidine
+    Monohydrochloride Monohydrate","predicate_id":"skos:broadMatch"},{"data_row":1576,"object_id":"cas:5934-29-2","object_label":"L-Histidine
+    monohydrochloride monohydrate","predicate_id":"skos:exactMatch"},{"data_row":1577,"object_id":"kgmicrobe.compound:l-histidine_monohydrochloride_monohydrate","object_label":"L-Histidine
+    monohydrochloride monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Histidine_Monohydrochloride_Monohydrate","synonym_count":0}'
   snapshot_sha256: 891472a9ec7dde2e5a04151148d390c5a224606ddd1647c9b50ffa1750b09b20
 - evidence_id: ev-e9f25aa5ad50650b
   kind: prior_review

@@ -111,10 +111,9 @@ Reassess prediction-only or empty role support: Desulfovibrio_Trace_Elements
 | ev-09f3b1749685f149 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[528,2008] | context_only | [{"current_record_sha256":"93db08d82a87268e9c970192268b222cd7f518ef64f468aeceea672e329a20ea","finding_id":"SEM:c747ee61b82b3c551f4e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"93db08d82a87268e9c970192268b222cd7f518ef64f468aeceea672e329a20ea","finding_id":"SEM:ff674849573fd6612bad","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-9477d91976d0a888 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-320ccfb6bddc74ee] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-4d30788725c98994 | data/ingredients/mapped/Desulfovibrio_Trace_Elements.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace elements (see below)", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from CultureBotHT (consolidated_media.json (media-only)). Used in 3 CultureBot media; samples: MoLS4, Dv_base_medium, MoLS4_no_vitamins. No CAS-RN or CHEBI mapping available; curator review needed.", "curator": "audit_add_remaining_culturebotht", "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-29T06:51:33.117170+00:00"}, {"action": "AUTO_UPGRADE_TO_MESH", "changes": "primary UNMAPPED_0294 \u2192 mesh:D014131 (strategy=stem-match)", "curator": "resolve_unmapped_v2", "llm_assisted": false, "timestamp": "2026-05-02T03:18:21.917940+00:00"}, {"action": "ANNOTATED", "changes": "Added media role: TRACE_ELEMENT (confidence: 0.60)", "curator": "claude_in_session_curation", "timestamp": "2026-06-09T04:56:30.247868+00:00"}, {"action": "ANNOTATED", "changes": "Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -&gt; nutritional_roles.TRACE_ELEMENT", "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Trace elements (see below)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier": "mesh:D014131", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-upgraded from UNMAPPED_0294; matched via 'Desulfovibrio trace elements'; stem-substring", "source": "MESH via OLS (resolve_unmapped_v2 strategy=stem-match)"}], "mapping_quality": "LEXICAL_MATCH", "ontology_id": "mesh:D014131", "ontology_label": "Trace Elements", "ontology_source": "MESH"}} |
-| ev-a255c9d3059064fe | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Desulfovibrio_Trace_Elements | supports | [{"comment": "", "confidence": "0.9", "data_row": 1021, "mapping_date": "2026-08-30", "mapping_justification": "semapv:LexicalMatching", "object_id": "mesh:D014131", "object_label": "Trace Elements", "object_source": "registry:mesh", "other": "Trace elements (see below)", "predicate_id": "skos:exactMatch", "source": "MIM:MESH via OLS (resolve_unmapped_v2 strategy=stem-match)&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Desulfovibrio_Trace_Elements", "subject_label": "Desulfovibrio trace elements", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-4d30788725c98994 | data/ingredients/mapped/Desulfovibrio_Trace_Elements.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[876],"raw_equal":true},"docs_rows":[{"identifier":"mesh:D014131","line":878,"mapping_status":"MAPPED","ontology_id":"mesh:D014131","preferred_term":"Desulfovibrio trace elements"}],"identifier":"mesh:D014131","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"mesh:D014131","ontology_label":"Trace Elements","ontology_source":"MESH"},"preferred_term":"Desulfovibrio trace elements","sssom_rows":[{"data_row":1021,"object_id":"mesh:D014131","object_label":"Trace Elements","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Desulfovibrio_Trace_Elements","synonym_count":2} |
+| ev-a255c9d3059064fe | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Desulfovibrio_Trace_Elements; data-row positions=[1021] | supports | Current exact-subject rows, including complete other payload: [{"data_row":1021,"object_id":"mesh:D014131","object_label":"Trace Elements","other":"Trace elements (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Desulfovibrio_Trace_Elements","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-e7674a969ec8d8cb | reports/yaml_record_review/Desulfovibrio_Trace_Elements.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
-| ev-f700de79d37b3937 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Desulfovibrio_Trace_Elements.yaml | context_only | Semantic review finding dispositions ledger |
 | ev-f9a3b6f8e2a4ef2f | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-320ccfb6bddc74ee] | context_only | Predecessor structured review finding scope-f-320ccfb6bddc74ee in 20261011T030852Z-mim-token-scope-reassessment |
 
 ## Limits And Additional Notes
@@ -210,6 +209,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-797da68010f27377
+  evidence_ids:
+  - ev-d6439cb28de651aa
+  - ev-749bd53b36a6d5db
+  - ev-42f981730201a7f4
+  - ev-107b07b9167d8e86
+  - ev-4d30788725c98994
+  - ev-a255c9d3059064fe
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -218,6 +224,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-797da68010f27377
+  evidence_ids:
+  - ev-d6439cb28de651aa
+  - ev-09f3b1749685f149
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -226,13 +235,19 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-797da68010f27377
+  evidence_ids:
+  - ev-ee7e48ee832f8a11
+  - ev-09f3b1749685f149
+  - ev-9477d91976d0a888
+  - ev-e7674a969ec8d8cb
+  - ev-f9a3b6f8e2a4ef2f
 evidence:
 - evidence_id: ev-d6439cb28de651aa
   kind: record_content
   reference: data/ingredients/mapped/Desulfovibrio_Trace_Elements.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[876],"raw_equal":true},"docs_rows":[{"identifier":"mesh:D014131","line":878,"mapping_status":"MAPPED","ontology_id":"mesh:D014131","preferred_term":"Desulfovibrio
     trace elements"}],"identifier":"mesh:D014131","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"mesh:D014131","ontology_label":"Trace
@@ -243,7 +258,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [876]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -252,7 +267,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Desulfovibrio_Trace_Elements; data-row positions=[1021]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1021,"object_id":"mesh:D014131","object_label":"Trace
     Elements","other":"Trace elements (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Desulfovibrio_Trace_Elements","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -261,7 +276,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[878]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"mesh:D014131","line":878,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"mesh:D014131","preferred_term":"Desulfovibrio
     trace elements","total_occurrences":"3"}]'
@@ -292,7 +307,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[528,2008]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"93db08d82a87268e9c970192268b222cd7f518ef64f468aeceea672e329a20ea","finding_id":"SEM:c747ee61b82b3c551f4e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"93db08d82a87268e9c970192268b222cd7f518ef64f468aeceea672e329a20ea","finding_id":"SEM:ff674849573fd6612bad","kind":"role_evidence","resolution_reason":"Historical
@@ -335,46 +350,21 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Desulfovibrio_Trace_Elements.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Trace elements (see below)", "synonym_type": "RAW_TEXT"}], "history":
-    [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from CultureBotHT (consolidated_media.json
-    (media-only)). Used in 3 CultureBot media; samples: MoLS4, Dv_base_medium, MoLS4_no_vitamins.
-    No CAS-RN or CHEBI mapping available; curator review needed.", "curator": "audit_add_remaining_culturebotht",
-    "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-29T06:51:33.117170+00:00"},
-    {"action": "AUTO_UPGRADE_TO_MESH", "changes": "primary UNMAPPED_0294 \u2192 mesh:D014131
-    (strategy=stem-match)", "curator": "resolve_unmapped_v2", "llm_assisted": false,
-    "timestamp": "2026-05-02T03:18:21.917940+00:00"}, {"action": "ANNOTATED", "changes":
-    "Added media role: TRACE_ELEMENT (confidence: 0.60)", "curator": "claude_in_session_curation",
-    "timestamp": "2026-06-09T04:56:30.247868+00:00"}, {"action": "ANNOTATED", "changes":
-    "Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT",
-    "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"},
-    {"action": "ADDED_SYNONYMS", "changes": "Added 1 CultureMech recipe surface form(s)
-    that folded onto this record''s published label but were absent from MIM''s label
-    index, so CultureMech could not resolve them: ''Trace elements (see below)'' (x1
-    CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp":
-    "2026-08-30T04:48:06.233536+00:00"}], "identifier": "mesh:D014131", "mapping":
-    {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-upgraded from
-    UNMAPPED_0294; matched via ''Desulfovibrio trace elements''; stem-substring",
-    "source": "MESH via OLS (resolve_unmapped_v2 strategy=stem-match)"}], "mapping_quality":
-    "LEXICAL_MATCH", "ontology_id": "mesh:D014131", "ontology_label": "Trace Elements",
-    "ontology_source": "MESH"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[876],"raw_equal":true},"docs_rows":[{"identifier":"mesh:D014131","line":878,"mapping_status":"MAPPED","ontology_id":"mesh:D014131","preferred_term":"Desulfovibrio
+    trace elements"}],"identifier":"mesh:D014131","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"mesh:D014131","ontology_label":"Trace
+    Elements","ontology_source":"MESH"},"preferred_term":"Desulfovibrio trace elements","sssom_rows":[{"data_row":1021,"object_id":"mesh:D014131","object_label":"Trace
+    Elements","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Desulfovibrio_Trace_Elements","synonym_count":2}'
   snapshot_sha256: 93db08d82a87268e9c970192268b222cd7f518ef64f468aeceea672e329a20ea
 - evidence_id: ev-a255c9d3059064fe
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Desulfovibrio_Trace_Elements
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Desulfovibrio_Trace_Elements; data-row positions=[1021]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.9", "data_row": 1021, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:LexicalMatching", "object_id":
-    "mesh:D014131", "object_label": "Trace Elements", "object_source": "registry:mesh",
-    "other": "Trace elements (see below)", "predicate_id": "skos:exactMatch", "source":
-    "MIM:MESH via OLS (resolve_unmapped_v2 strategy=stem-match)|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Desulfovibrio_Trace_Elements", "subject_label": "Desulfovibrio
-    trace elements", "validation_method": "none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1021,"object_id":"mesh:D014131","object_label":"Trace
+    Elements","other":"Trace elements (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Desulfovibrio_Trace_Elements","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-e7674a969ec8d8cb
   kind: prior_review
@@ -442,14 +432,6 @@ evidence:
     \ from final SSSOM `other` by\n  demoting it out of active synonym export or by\
     \ proving it is a true alias for\n  this exact stock.\n- Major: source or remove\
     \ `nutritional_roles.TRACE_ELEMENT`.\n"
-- evidence_id: ev-f700de79d37b3937
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Desulfovibrio_Trace_Elements.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 - evidence_id: ev-f9a3b6f8e2a4ef2f
   kind: prior_review
   reference: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
@@ -573,7 +555,7 @@ assessments:
   - record-797da68010f27377
   evidence_ids:
   - ev-d6439cb28de651aa
-  - ev-f700de79d37b3937
+  - ev-09f3b1749685f149
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -581,7 +563,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-d6439cb28de651aa
-    - ev-f700de79d37b3937
+    - ev-09f3b1749685f149
 findings:
 - finding_id: rec-scope-f-320ccfb6bddc74ee
   issue_key: mim-reconciliation-exported-context-tokens-797da68010f27377
@@ -643,7 +625,7 @@ findings:
   - record-797da68010f27377
   evidence_ids:
   - ev-d6439cb28de651aa
-  - ev-f700de79d37b3937
+  - ev-09f3b1749685f149
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Desulfovibrio_Trace_Elements.yaml

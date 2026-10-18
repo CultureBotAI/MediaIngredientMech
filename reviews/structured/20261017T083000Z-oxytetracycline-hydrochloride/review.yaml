@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5ca2da8788f78c39
+  evidence_ids:
+  - ev-0694352f1153d43b
+  - ev-ac758f32f3d4acdb
+  - ev-08471b24ba844eca
+  - ev-efa55a1b43b6ed48
+  - ev-4df2cdd2618d8e47
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5ca2da8788f78c39
+  evidence_ids:
+  - ev-0694352f1153d43b
+  - ev-8de274fd4b27a878
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,24 +99,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5ca2da8788f78c39
+  evidence_ids:
+  - ev-0d4d9a57a7d45069
+  - ev-8de274fd4b27a878
+  - ev-33dd64116d87f579
 evidence:
 - evidence_id: ev-0694352f1153d43b
   kind: record_content
   reference: data/ingredients/mapped/Oxytetracycline_Hydrochloride.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1600],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31953","line":1602,"mapping_status":"MAPPED","ontology_id":"CHEBI:31953","preferred_term":"Oxytetracycline
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1599],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31953","line":1601,"mapping_status":"MAPPED","ontology_id":"CHEBI:31953","preferred_term":"Oxytetracycline
     hydrochloride"}],"identifier":"CHEBI:31953","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31953","ontology_label":"Oxytetracycline
-    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Oxytetracycline hydrochloride","sssom_rows":[{"data_row":2161,"object_id":"CHEBI:31953","object_label":"Oxytetracycline
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Oxytetracycline hydrochloride","sssom_rows":[{"data_row":2163,"object_id":"CHEBI:31953","object_label":"Oxytetracycline
     hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Oxytetracycline_Hydrochloride","synonym_count":0}'
   snapshot_sha256: 75d4ab0025ee010f7c687a4ecfeea14c12afc583a51a9b7919e3b7d6c58b20ef
 - evidence_id: ev-ac758f32f3d4acdb
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1600]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1599]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,19 +128,19 @@ evidence:
 - evidence_id: ev-08471b24ba844eca
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Oxytetracycline_Hydrochloride; data-row positions=[2161]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Oxytetracycline_Hydrochloride; data-row positions=[2163]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2161,"object_id":"CHEBI:31953","object_label":"Oxytetracycline
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2163,"object_id":"CHEBI:31953","object_label":"Oxytetracycline
     hydrochloride","other":"CAS:2058-46-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Oxytetracycline_Hydrochloride","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-efa55a1b43b6ed48
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1602]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1601]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31953","line":1602,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:31953","preferred_term":"Oxytetracycline
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31953","line":1601,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:31953","preferred_term":"Oxytetracycline
     hydrochloride","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-0d4d9a57a7d45069
@@ -149,7 +162,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1083,1588]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"75d4ab0025ee010f7c687a4ecfeea14c12afc583a51a9b7919e3b7d6c58b20ef","finding_id":"SEM:dce69818b1965b0bf15d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"75d4ab0025ee010f7c687a4ecfeea14c12afc583a51a9b7919e3b7d6c58b20ef","finding_id":"SEM:c33ce76b679b083cd97a","kind":"role_evidence","resolution_reason":"Historical
@@ -159,12 +172,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Oxytetracycline_Hydrochloride.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1599],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31953","line":1601,"mapping_status":"MAPPED","ontology_id":"CHEBI:31953","preferred_term":"Oxytetracycline
+    hydrochloride"}],"identifier":"CHEBI:31953","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31953","ontology_label":"Oxytetracycline
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Oxytetracycline hydrochloride","sssom_rows":[{"data_row":2163,"object_id":"CHEBI:31953","object_label":"Oxytetracycline
+    hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Oxytetracycline_Hydrochloride","synonym_count":0}'
   snapshot_sha256: 75d4ab0025ee010f7c687a4ecfeea14c12afc583a51a9b7919e3b7d6c58b20ef
 - evidence_id: ev-33dd64116d87f579
   kind: prior_review

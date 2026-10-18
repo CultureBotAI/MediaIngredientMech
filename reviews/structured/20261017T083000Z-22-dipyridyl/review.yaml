@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ad72751abd6b8945
+  evidence_ids:
+  - ev-61c432e0beca795f
+  - ev-0f40cc9a0318cbd7
+  - ev-0b591380a4d47b79
+  - ev-233ce4e18a48eae2
+  - ev-6fe9954443890520
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ad72751abd6b8945
+  evidence_ids:
+  - ev-61c432e0beca795f
+  - ev-5f178df544347b4d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ad72751abd6b8945
+  evidence_ids:
+  - ev-72b8296c14e3c85e
+  - ev-5f178df544347b4d
+  - ev-d7c33cf991168168
 evidence:
 - evidence_id: ev-61c432e0beca795f
   kind: record_content
   reference: data/ingredients/mapped/22-Dipyridyl.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[335],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30351","line":337,"mapping_status":"MAPPED","ontology_id":"CHEBI:30351","preferred_term":"2,2''-Dipyridyl"}],"identifier":"CHEBI:30351","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:30351","ontology_label":"2,2''-bipyridine","ontology_source":"CHEBI"},"preferred_term":"2,2''-Dipyridyl","sssom_rows":[{"data_row":104,"object_id":"CHEBI:30351","object_label":"2,2''-bipyridine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:22-Dipyridyl","synonym_count":0}'
   snapshot_sha256: af2ba12ce31a657f021bf003b3e8ca61851e2f458b38885b084b0df4b7af3fed
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [335]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:22-Dipyridyl; data-row positions=[104]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":104,"object_id":"CHEBI:30351","object_label":"2,2''-bipyridine","other":"CAS:366-18-7","predicate_id":"skos:exactMatch","subject_id":"MIM:22-Dipyridyl","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[337]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30351","line":337,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:30351","preferred_term":"2,2''-Dipyridyl","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -146,7 +159,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[85,1481]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"af2ba12ce31a657f021bf003b3e8ca61851e2f458b38885b084b0df4b7af3fed","finding_id":"SEM:435615262638d8ab6686","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"af2ba12ce31a657f021bf003b3e8ca61851e2f458b38885b084b0df4b7af3fed","finding_id":"SEM:7281ee7cc7fde6696260","kind":"role_evidence","resolution_reason":"Historical
@@ -156,12 +169,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/22-Dipyridyl.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:38161 (chelator (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[335],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30351","line":337,"mapping_status":"MAPPED","ontology_id":"CHEBI:30351","preferred_term":"2,2''-Dipyridyl"}],"identifier":"CHEBI:30351","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:30351","ontology_label":"2,2''-bipyridine","ontology_source":"CHEBI"},"preferred_term":"2,2''-Dipyridyl","sssom_rows":[{"data_row":104,"object_id":"CHEBI:30351","object_label":"2,2''-bipyridine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:22-Dipyridyl","synonym_count":0}'
   snapshot_sha256: af2ba12ce31a657f021bf003b3e8ca61851e2f458b38885b084b0df4b7af3fed
 - evidence_id: ev-d7c33cf991168168
   kind: prior_review

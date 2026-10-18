@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8857026c9d1b0744
+  evidence_ids:
+  - ev-6b0543a0e180fa96
+  - ev-c05c3e5ac7b0335b
+  - ev-a22b6adf346cb820
+  - ev-77a754017eecc533
+  - ev-43f532a44ba9ae15
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8857026c9d1b0744
+  evidence_ids:
+  - ev-6b0543a0e180fa96
+  - ev-8a093ff4c780e4e7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,23 +99,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8857026c9d1b0744
+  evidence_ids:
+  - ev-c308b369ad7e1580
+  - ev-8a093ff4c780e4e7
+  - ev-01b615c53ea6f06d
 evidence:
 - evidence_id: ev-6b0543a0e180fa96
   kind: record_content
   reference: data/ingredients/mapped/Xylan_From_Beechwood.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2066],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15447","line":2068,"mapping_status":"MAPPED","ontology_id":"CHEBI:15447","preferred_term":"Xylan
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2065],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15447","line":2067,"mapping_status":"MAPPED","ontology_id":"CHEBI:15447","preferred_term":"Xylan
     from Beechwood"}],"identifier":"CHEBI:15447","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15447","ontology_label":"(1->4)-beta-D-xylan","ontology_source":"CHEBI"},"preferred_term":"Xylan
-    from Beechwood","sssom_rows":[{"data_row":2939,"object_id":"CHEBI:15447","object_label":"(1->4)-beta-D-xylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylan_From_Beechwood","synonym_count":1}'
+    from Beechwood","sssom_rows":[{"data_row":2941,"object_id":"CHEBI:15447","object_label":"(1->4)-beta-D-xylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylan_From_Beechwood","synonym_count":1}'
   snapshot_sha256: 8743b1a3eb5e0364d14550adf7f1a3251b5e369d417749d7d4e0e4993b521a71
 - evidence_id: ev-c05c3e5ac7b0335b
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2066]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2065]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -114,18 +127,18 @@ evidence:
 - evidence_id: ev-a22b6adf346cb820
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Xylan_From_Beechwood; data-row positions=[2939]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Xylan_From_Beechwood; data-row positions=[2941]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2939,"object_id":"CHEBI:15447","object_label":"(1->4)-beta-D-xylan","other":"(1->4)-beta-D-xylopyranan|CAS:9014-63-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylan_From_Beechwood","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2941,"object_id":"CHEBI:15447","object_label":"(1->4)-beta-D-xylan","other":"(1->4)-beta-D-xylopyranan|CAS:9014-63-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylan_From_Beechwood","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-77a754017eecc533
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2068]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2067]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15447","line":2068,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:15447","preferred_term":"Xylan
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15447","line":2067,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:15447","preferred_term":"Xylan
     from Beechwood","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-c308b369ad7e1580
@@ -149,7 +162,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1351,1517]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"8743b1a3eb5e0364d14550adf7f1a3251b5e369d417749d7d4e0e4993b521a71","finding_id":"SEM:fc3587a8ff2c8a7e2ccb","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8743b1a3eb5e0364d14550adf7f1a3251b5e369d417749d7d4e0e4993b521a71","finding_id":"SEM:3b03f22c178560762ff4","kind":"role_evidence","resolution_reason":"Historical
@@ -159,12 +172,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Xylan_From_Beechwood.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2065],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15447","line":2067,"mapping_status":"MAPPED","ontology_id":"CHEBI:15447","preferred_term":"Xylan
+    from Beechwood"}],"identifier":"CHEBI:15447","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15447","ontology_label":"(1->4)-beta-D-xylan","ontology_source":"CHEBI"},"preferred_term":"Xylan
+    from Beechwood","sssom_rows":[{"data_row":2941,"object_id":"CHEBI:15447","object_label":"(1->4)-beta-D-xylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylan_From_Beechwood","synonym_count":1}'
   snapshot_sha256: 8743b1a3eb5e0364d14550adf7f1a3251b5e369d417749d7d4e0e4993b521a71
 - evidence_id: ev-01b615c53ea6f06d
   kind: prior_review

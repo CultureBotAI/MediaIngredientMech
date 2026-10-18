@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-Galactose
 | ev-f1ee5c78a1d4f3a1 | docs/data/mapped_ingredients.csv; CSV lines=[1224] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:37618","line":1224,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:37618","preferred_term":"L-Galactose","total_occurrences":"0"}] |
 | ev-bf20b2eaa4fb8b2d | reports/yaml_record_review/L-Galactose.md; &#96;data/ingredients/mapped/L-Galactose.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:31; Completeness:50; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-26289eeecfccd9aa | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[789,1827,1928] | context_only | [{"current_record_sha256":"cc736209403f41a4737eadc4bbe530f129fbe57c148505c9413746a61cf83b6a","finding_id":"SEM:efea5cb86dd9ae186189","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"cc736209403f41a4737eadc4bbe530f129fbe57c148505c9413746a61cf83b6a","finding_id":"SEM:4ee1c0e67e44ccb98697","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"cc736209403f41a4737eadc4bbe530f129fbe57c148505c9413746a61cf83b6a","finding_id":"SEM:4716929324ed84558a24","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8a78428d6cf7fea5 | data/ingredients/mapped/L-Galactose.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-8a78428d6cf7fea5 | data/ingredients/mapped/L-Galactose.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1222],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:37618","line":1224,"mapping_status":"MAPPED","ontology_id":"CHEBI:37618","preferred_term":"L-Galactose"}],"identifier":"CHEBI:37618","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:37618","ontology_label":"L-galactose","ontology_source":"CHEBI"},"preferred_term":"L-Galactose","sssom_rows":[{"data_row":1572,"object_id":"CHEBI:37618","object_label":"L-galactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Galactose","synonym_count":1} |
 | ev-c6c0245cff778869 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-f9e6c1cc26ce540a] | context_only | Predecessor structured review finding f-f9e6c1cc26ce540a in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3ab76711f22a16ac
+  evidence_ids:
+  - ev-9367b4b09f013b4c
+  - ev-8be2e34fa5bacbf8
+  - ev-a555d17557b25fd9
+  - ev-f1ee5c78a1d4f3a1
+  - ev-8a78428d6cf7fea5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-3ab76711f22a16ac
+  evidence_ids:
+  - ev-9367b4b09f013b4c
+  - ev-26289eeecfccd9aa
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3ab76711f22a16ac
+  evidence_ids:
+  - ev-bf20b2eaa4fb8b2d
+  - ev-26289eeecfccd9aa
+  - ev-c6c0245cff778869
 evidence:
 - evidence_id: ev-9367b4b09f013b4c
   kind: record_content
   reference: data/ingredients/mapped/L-Galactose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1222],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:37618","line":1224,"mapping_status":"MAPPED","ontology_id":"CHEBI:37618","preferred_term":"L-Galactose"}],"identifier":"CHEBI:37618","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:37618","ontology_label":"L-galactose","ontology_source":"CHEBI"},"preferred_term":"L-Galactose","sssom_rows":[{"data_row":1572,"object_id":"CHEBI:37618","object_label":"L-galactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Galactose","synonym_count":1}'
   snapshot_sha256: cc736209403f41a4737eadc4bbe530f129fbe57c148505c9413746a61cf83b6a
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1222]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-Galactose; data-row positions=[1572]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1572,"object_id":"CHEBI:37618","object_label":"L-galactose","other":"L-galacto-hexose|CAS:15572-79-9","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Galactose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1224]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:37618","line":1224,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:37618","preferred_term":"L-Galactose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[789,1827,1928]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"cc736209403f41a4737eadc4bbe530f129fbe57c148505c9413746a61cf83b6a","finding_id":"SEM:efea5cb86dd9ae186189","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"cc736209403f41a4737eadc4bbe530f129fbe57c148505c9413746a61cf83b6a","finding_id":"SEM:4ee1c0e67e44ccb98697","kind":"role_evidence","resolution_reason":"Historical
@@ -261,14 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Galactose.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1222],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:37618","line":1224,"mapping_status":"MAPPED","ontology_id":"CHEBI:37618","preferred_term":"L-Galactose"}],"identifier":"CHEBI:37618","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:37618","ontology_label":"L-galactose","ontology_source":"CHEBI"},"preferred_term":"L-Galactose","sssom_rows":[{"data_row":1572,"object_id":"CHEBI:37618","object_label":"L-galactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Galactose","synonym_count":1}'
   snapshot_sha256: cc736209403f41a4737eadc4bbe530f129fbe57c148505c9413746a61cf83b6a
 - evidence_id: ev-c6c0245cff778869
   kind: prior_review

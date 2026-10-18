@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: Butyric_Acid
 | ev-6ddcf2bb0d69e41c | docs/data/mapped_ingredients.csv; CSV lines=[613] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:30772","line":613,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"48","ontology_id":"CHEBI:30772","preferred_term":"Butyric acid","total_occurrences":"48"}] |
 | ev-ac08f11bc8b24f44 | reports/yaml_record_review/Butyric_Acid.md; &#96;data/ingredients/mapped/Butyric_Acid.yaml&#96;:2; Verdict:4; Identity:9; Validation:23; Evidence:33; Completeness:51; Recommended Edits:60 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9568793ce8a1ce16 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1782] | context_only | [{"current_record_sha256":"421a741e65598a494cbb8c693e06befa025c59bd49fecc32a0d37869192c7c86","finding_id":"SEM:a6e57c23901d00fcf17e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-1c56c066a206b71f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Butyric_Acid.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ba3ccf9cc32e64fb
+  evidence_ids:
+  - ev-7c2913ecffd02ca9
+  - ev-aee8ef17c287032e
+  - ev-0c95dbefcd9b4edb
+  - ev-6ddcf2bb0d69e41c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ba3ccf9cc32e64fb
+  evidence_ids:
+  - ev-7c2913ecffd02ca9
+  - ev-9568793ce8a1ce16
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ba3ccf9cc32e64fb
+  evidence_ids:
+  - ev-ac08f11bc8b24f44
+  - ev-9568793ce8a1ce16
 evidence:
 - evidence_id: ev-7c2913ecffd02ca9
   kind: record_content
   reference: data/ingredients/mapped/Butyric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[611],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30772","line":613,"mapping_status":"MAPPED","ontology_id":"CHEBI:30772","preferred_term":"Butyric
     acid"}],"identifier":"CHEBI:30772","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":48,"edge_count":48,"occurrences":48},"occurrence_statistics":{"media_count":48,"total_occurrences":48},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30772","ontology_label":"butyric
@@ -211,7 +221,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [611]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +230,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Butyric_Acid; data-row positions=[593]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":593,"object_id":"CHEBI:30772","object_label":"butyric
     acid","other":"1-butanoic acid|1-butyric acid|1-propanecarboxylic acid|4:0|BUTANOIC
@@ -232,7 +242,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[613]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30772","line":613,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"48","ontology_id":"CHEBI:30772","preferred_term":"Butyric
     acid","total_occurrences":"48"}]'
@@ -255,18 +265,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1782]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"421a741e65598a494cbb8c693e06befa025c59bd49fecc32a0d37869192c7c86","finding_id":"SEM:a6e57c23901d00fcf17e","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-1c56c066a206b71f
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Butyric_Acid.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-d7263fb0e9e626f4
@@ -326,7 +328,7 @@ assessments:
   - record-ba3ccf9cc32e64fb
   evidence_ids:
   - ev-7c2913ecffd02ca9
-  - ev-1c56c066a206b71f
+  - ev-9568793ce8a1ce16
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -334,7 +336,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-7c2913ecffd02ca9
-    - ev-1c56c066a206b71f
+    - ev-9568793ce8a1ce16
 findings:
 - finding_id: rec-f-role-ba3ccf9cc32e64fb
   issue_key: mim-reconciliation-role-support-ba3ccf9cc32e64fb
@@ -350,7 +352,7 @@ findings:
   - record-ba3ccf9cc32e64fb
   evidence_ids:
   - ev-7c2913ecffd02ca9
-  - ev-1c56c066a206b71f
+  - ev-9568793ce8a1ce16
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Butyric_Acid.yaml

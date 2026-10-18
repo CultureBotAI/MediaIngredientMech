@@ -89,7 +89,7 @@ Reassess prediction-only role support: Abyssomicin H
 | ev-4568f0319abf9f21 | docs/data/mapped_ingredients.csv; CSV lines=[436] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:abyssomicin_h","line":436,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:abyssomicin_h","preferred_term":"Abyssomicin H","total_occurrences":"0"}] |
 | ev-382857f1bc834099 | reports/yaml_record_review/Abyssomicin_H.md; &#96;data/ingredients/mapped/Abyssomicin_H.yaml&#96;:2; Verdict:4; Identity:11; Validation:27; Evidence:40; Completeness:58; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-bfbec2f55af14289 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[192,1431] | context_only | [{"current_record_sha256":"06abd4f73cfcd093312622a2d40c84e6f7f5121381559b57f7682de478726c8d","finding_id":"SEM:10f9d72353b33e78bf7e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"06abd4f73cfcd093312622a2d40c84e6f7f5121381559b57f7682de478726c8d","finding_id":"SEM:2723e9cae2241a16bab0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-de56f594687a1cd8 | data/ingredients/mapped/Abyssomicin_H.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-de56f594687a1cd8 | data/ingredients/mapped/Abyssomicin_H.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[434],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:abyssomicin_h","line":436,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:abyssomicin_h","preferred_term":"Abyssomicin H"}],"identifier":"kgmicrobe.compound:abyssomicin_h","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:abyssomicin_h","ontology_label":"Abyssomicin H","ontology_source":"kgmicrobe.compound"},"preferred_term":"Abyssomicin H","sssom_rows":[{"data_row":275,"object_id":"kgmicrobe.compound:abyssomicin_h","object_label":"Abyssomicin H","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Abyssomicin_H","synonym_count":0} |
 | ev-982496d0b66bf22a | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-4d5433329f7afa93] | context_only | Predecessor structured review finding f-4d5433329f7afa93 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-bfa0fd3f8e644ade
+  evidence_ids:
+  - ev-dd543473682e90e0
+  - ev-27e63e3ab2cdc2ac
+  - ev-38c565967318deef
+  - ev-4568f0319abf9f21
+  - ev-de56f594687a1cd8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-bfa0fd3f8e644ade
+  evidence_ids:
+  - ev-dd543473682e90e0
+  - ev-bfbec2f55af14289
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-bfa0fd3f8e644ade
+  evidence_ids:
+  - ev-382857f1bc834099
+  - ev-bfbec2f55af14289
+  - ev-982496d0b66bf22a
 evidence:
 - evidence_id: ev-dd543473682e90e0
   kind: record_content
   reference: data/ingredients/mapped/Abyssomicin_H.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[434],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:abyssomicin_h","line":436,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:abyssomicin_h","preferred_term":"Abyssomicin
     H"}],"identifier":"kgmicrobe.compound:abyssomicin_h","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:abyssomicin_h","ontology_label":"Abyssomicin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [434]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Abyssomicin_H; data-row positions=[275]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":275,"object_id":"kgmicrobe.compound:abyssomicin_h","object_label":"Abyssomicin
     H","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Abyssomicin_H","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[436]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:abyssomicin_h","line":436,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:abyssomicin_h","preferred_term":"Abyssomicin
     H","total_occurrences":"0"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[192,1431]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"06abd4f73cfcd093312622a2d40c84e6f7f5121381559b57f7682de478726c8d","finding_id":"SEM:10f9d72353b33e78bf7e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"06abd4f73cfcd093312622a2d40c84e6f7f5121381559b57f7682de478726c8d","finding_id":"SEM:2723e9cae2241a16bab0","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Abyssomicin_H.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[434],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:abyssomicin_h","line":436,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:abyssomicin_h","preferred_term":"Abyssomicin
+    H"}],"identifier":"kgmicrobe.compound:abyssomicin_h","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:abyssomicin_h","ontology_label":"Abyssomicin
+    H","ontology_source":"kgmicrobe.compound"},"preferred_term":"Abyssomicin H","sssom_rows":[{"data_row":275,"object_id":"kgmicrobe.compound:abyssomicin_h","object_label":"Abyssomicin
+    H","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Abyssomicin_H","synonym_count":0}'
   snapshot_sha256: 06abd4f73cfcd093312622a2d40c84e6f7f5121381559b57f7682de478726c8d
 - evidence_id: ev-982496d0b66bf22a
   kind: prior_review

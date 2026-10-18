@@ -77,6 +77,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4f86e647500357d8
+  evidence_ids:
+  - ev-952c50503824443e
+  - ev-c4f6b112960660cd
+  - ev-59a60d44737e6985
+  - ev-c099bcfaffd2996e
+  - ev-a6e25047c6f02294
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -85,6 +91,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4f86e647500357d8
+  evidence_ids:
+  - ev-952c50503824443e
+  - ev-b6a7c834ed2bcf2d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -93,13 +102,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4f86e647500357d8
+  evidence_ids:
+  - ev-e3745f3cbed80f43
+  - ev-373977c5a2fadcab
+  - ev-b6a7c834ed2bcf2d
+  - ev-55cea40206bb9315
 evidence:
 - evidence_id: ev-952c50503824443e
   kind: record_content
   reference: data/ingredients/mapped/Glucose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1058],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17234","line":1060,"mapping_status":"MAPPED","ontology_id":"CHEBI:17234","preferred_term":"Glucose"}],"identifier":"CHEBI:17234","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2675,"edge_count":2675,"occurrences":2752},"occurrence_statistics":{"media_count":2675,"total_occurrences":2752},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17234","ontology_label":"glucose","ontology_source":"CHEBI"},"preferred_term":"Glucose","sssom_rows":[{"data_row":1307,"object_id":"CHEBI:17234","object_label":"glucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glucose","synonym_count":16}'
   snapshot_sha256: 5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb
@@ -107,7 +121,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1058]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +130,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Glucose; data-row positions=[1307]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1307,"object_id":"CHEBI:17234","object_label":"glucose","other":"(2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal|D-GLUCOSE
     IN LINEAR FORM|DL-glucose|D\u00adglucose|Glc|Glukose|aldehydo-D-gluco-hexose|gluco-hexose|CAS:50-99-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Glucose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -125,7 +139,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1060]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17234","line":1060,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2675","ontology_id":"CHEBI:17234","preferred_term":"Glucose","total_occurrences":"2752"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -179,7 +193,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[666,1448]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb","finding_id":"SEM:1e0998c208c8629e7ea1","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb","finding_id":"SEM:0870710d7ebc2f2d5351","kind":"role_evidence","resolution_reason":"Historical
@@ -189,12 +203,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Glucose.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1058],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17234","line":1060,"mapping_status":"MAPPED","ontology_id":"CHEBI:17234","preferred_term":"Glucose"}],"identifier":"CHEBI:17234","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2675,"edge_count":2675,"occurrences":2752},"occurrence_statistics":{"media_count":2675,"total_occurrences":2752},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17234","ontology_label":"glucose","ontology_source":"CHEBI"},"preferred_term":"Glucose","sssom_rows":[{"data_row":1307,"object_id":"CHEBI:17234","object_label":"glucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glucose","synonym_count":16}'
   snapshot_sha256: 5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb
 - evidence_id: ev-55cea40206bb9315
   kind: prior_review

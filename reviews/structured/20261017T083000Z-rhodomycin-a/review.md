@@ -83,13 +83,13 @@ Reassess prediction-only role support: Rhodomycin A
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-bacaf58f197ea997 | data/ingredients/mapped/Rhodomycin_A.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1754],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1756,"mapping_status":"MAPPED","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin A"}],"identifier":"kgmicrobe.compound:rhodomycin_a","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C004977","ontology_label":"rhodomycin","ontology_source":"MESH"},"preferred_term":"Rhodomycin A","sssom_rows":[{"data_row":2425,"object_id":"mesh:C004977","object_label":"rhodomycin","predicate_id":"skos:broadMatch"},{"data_row":2426,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhodomycin_A","synonym_count":0} |
-| ev-0d2b2f1ba40c385c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1754] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d3ae35d5504a02c7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Rhodomycin_A; data-row positions=[2425,2426] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2425,"object_id":"mesh:C004977","object_label":"rhodomycin","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Rhodomycin_A","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2426,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin A","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Rhodomycin_A","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-7a4216a00a78cb47 | docs/data/mapped_ingredients.csv; CSV lines=[1756] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1756,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin A","total_occurrences":"0"}] |
+| ev-bacaf58f197ea997 | data/ingredients/mapped/Rhodomycin_A.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1753],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1755,"mapping_status":"MAPPED","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin A"}],"identifier":"kgmicrobe.compound:rhodomycin_a","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C004977","ontology_label":"rhodomycin","ontology_source":"MESH"},"preferred_term":"Rhodomycin A","sssom_rows":[{"data_row":2427,"object_id":"mesh:C004977","object_label":"rhodomycin","predicate_id":"skos:broadMatch"},{"data_row":2428,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhodomycin_A","synonym_count":0} |
+| ev-0d2b2f1ba40c385c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1753] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d3ae35d5504a02c7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Rhodomycin_A; data-row positions=[2427, 2428] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2427,"object_id":"mesh:C004977","object_label":"rhodomycin","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Rhodomycin_A","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2428,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin A","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Rhodomycin_A","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-7a4216a00a78cb47 | docs/data/mapped_ingredients.csv; CSV lines=[1755] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1755,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin A","total_occurrences":"0"}] |
 | ev-62a30264335c9fda | reports/yaml_record_review/Rhodomycin_A.md; &#96;data/ingredients/mapped/Rhodomycin_A.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-244a6cfd2c53c3e3 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1172,1762] | context_only | [{"current_record_sha256":"0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80","finding_id":"SEM:e261dfc095dd9f486642","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80","finding_id":"SEM:4363c443fe7de16f773a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-cf3abf9adb5e2254 | data/ingredients/mapped/Rhodomycin_A.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-cf3abf9adb5e2254 | data/ingredients/mapped/Rhodomycin_A.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1753],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1755,"mapping_status":"MAPPED","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin A"}],"identifier":"kgmicrobe.compound:rhodomycin_a","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C004977","ontology_label":"rhodomycin","ontology_source":"MESH"},"preferred_term":"Rhodomycin A","sssom_rows":[{"data_row":2427,"object_id":"mesh:C004977","object_label":"rhodomycin","predicate_id":"skos:broadMatch"},{"data_row":2428,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhodomycin_A","synonym_count":0} |
 | ev-c66335064d59b555 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-0ae241ab8036e5ee] | context_only | Predecessor structured review finding f-0ae241ab8036e5ee in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-da37fcf15839dc6c
+  evidence_ids:
+  - ev-bacaf58f197ea997
+  - ev-0d2b2f1ba40c385c
+  - ev-d3ae35d5504a02c7
+  - ev-7a4216a00a78cb47
+  - ev-cf3abf9adb5e2254
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-da37fcf15839dc6c
+  evidence_ids:
+  - ev-bacaf58f197ea997
+  - ev-244a6cfd2c53c3e3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-da37fcf15839dc6c
+  evidence_ids:
+  - ev-62a30264335c9fda
+  - ev-244a6cfd2c53c3e3
+  - ev-c66335064d59b555
 evidence:
 - evidence_id: ev-bacaf58f197ea997
   kind: record_content
   reference: data/ingredients/mapped/Rhodomycin_A.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1754],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1756,"mapping_status":"MAPPED","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1753],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1755,"mapping_status":"MAPPED","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin
     A"}],"identifier":"kgmicrobe.compound:rhodomycin_a","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C004977","ontology_label":"rhodomycin","ontology_source":"MESH"},"preferred_term":"Rhodomycin
-    A","sssom_rows":[{"data_row":2425,"object_id":"mesh:C004977","object_label":"rhodomycin","predicate_id":"skos:broadMatch"},{"data_row":2426,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin
+    A","sssom_rows":[{"data_row":2427,"object_id":"mesh:C004977","object_label":"rhodomycin","predicate_id":"skos:broadMatch"},{"data_row":2428,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin
     A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhodomycin_A","synonym_count":0}'
   snapshot_sha256: 0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80
 - evidence_id: ev-0d2b2f1ba40c385c
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1754]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1753]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-d3ae35d5504a02c7
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Rhodomycin_A; data-row positions=[2425,2426]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Rhodomycin_A; data-row positions=[2427, 2428]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2425,"object_id":"mesh:C004977","object_label":"rhodomycin","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Rhodomycin_A","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2426,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2427,"object_id":"mesh:C004977","object_label":"rhodomycin","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Rhodomycin_A","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2428,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin
     A","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Rhodomycin_A","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-7a4216a00a78cb47
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1756]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1755]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1756,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1755,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin
     A","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-62a30264335c9fda
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1172,1762]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80","finding_id":"SEM:e261dfc095dd9f486642","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80","finding_id":"SEM:4363c443fe7de16f773a","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Rhodomycin_A.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1753],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:rhodomycin_a","line":1755,"mapping_status":"MAPPED","ontology_id":"mesh:C004977","preferred_term":"Rhodomycin
+    A"}],"identifier":"kgmicrobe.compound:rhodomycin_a","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C004977","ontology_label":"rhodomycin","ontology_source":"MESH"},"preferred_term":"Rhodomycin
+    A","sssom_rows":[{"data_row":2427,"object_id":"mesh:C004977","object_label":"rhodomycin","predicate_id":"skos:broadMatch"},{"data_row":2428,"object_id":"kgmicrobe.compound:rhodomycin_a","object_label":"Rhodomycin
+    A","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhodomycin_A","synonym_count":0}'
   snapshot_sha256: 0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80
 - evidence_id: ev-c66335064d59b555
   kind: prior_review

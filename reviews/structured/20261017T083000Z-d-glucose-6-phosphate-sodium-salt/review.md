@@ -85,11 +85,11 @@ Reassess prediction-only role support: D-Glucose-6-Phosphate sodium salt
 | --- | --- | --- | --- |
 | ev-bbb24c2462f1762b | data/ingredients/mapped/D-Glucose-6-Phosphate_Sodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[813],"raw_equal":true},"docs_rows":[{"identifier":"cas:54010-71-8","line":815,"mapping_status":"MAPPED","ontology_id":"CHEBI:14314","preferred_term":"D-Glucose-6-Phosphate sodium salt"}],"identifier":"cas:54010-71-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:14314","ontology_label":"D-glucose 6-phosphate","ontology_source":"CHEBI"},"preferred_term":"D-Glucose-6-Phosphate sodium salt","sssom_rows":[{"data_row":889,"object_id":"CHEBI:14314","object_label":"D-glucose 6-phosphate","predicate_id":"skos:broadMatch"},{"data_row":890,"object_id":"cas:54010-71-8","object_label":"D-Glucose-6-Phosphate sodium salt","predicate_id":"skos:exactMatch"},{"data_row":891,"object_id":"kgmicrobe.compound:d-glucose-6-phosphate_sodium_salt","object_label":"D-Glucose-6-Phosphate sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","synonym_count":0} |
 | ev-fb2b75b118a65f5a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [813] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-525aee9175f24afc | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-Glucose-6-Phosphate_Sodium_Salt; data-row positions=[889,890,891] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":889,"object_id":"CHEBI:14314","object_label":"D-glucose 6-phosphate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":890,"object_id":"cas:54010-71-8","object_label":"D-Glucose-6-Phosphate sodium salt","other":"CAS:54010-71-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":891,"object_id":"kgmicrobe.compound:d-glucose-6-phosphate_sodium_salt","object_label":"D-Glucose-6-Phosphate sodium salt","other":"CAS:54010-71-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-525aee9175f24afc | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-Glucose-6-Phosphate_Sodium_Salt; data-row positions=[889, 890, 891] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":889,"object_id":"CHEBI:14314","object_label":"D-glucose 6-phosphate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":890,"object_id":"cas:54010-71-8","object_label":"D-Glucose-6-Phosphate sodium salt","other":"CAS:54010-71-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":891,"object_id":"kgmicrobe.compound:d-glucose-6-phosphate_sodium_salt","object_label":"D-Glucose-6-Phosphate sodium salt","other":"CAS:54010-71-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-d0c312c3273a7580 | docs/data/mapped_ingredients.csv; CSV lines=[815] | supports | Published identity and count rows inspected: [{"identifier":"cas:54010-71-8","line":815,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:14314","preferred_term":"D-Glucose-6-Phosphate sodium salt","total_occurrences":"1"}] |
 | ev-0db23a903fbc2d7f | reports/yaml_record_review/D-Glucose-6-Phosphate_Sodium_Salt.md; &#96;data/ingredients/mapped/D-Glucose-6-Phosphate_Sodium_Salt.yaml&#96;:2; Verdict:4; Identity:11; Validation:27; Evidence:47; Completeness:60; Recommended Edits:69 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a8ce0b2119c75039 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[467,1763] | context_only | [{"current_record_sha256":"92e0e4a5be91c1d5be30056ba6e68de884b3f59aecc8281b4ccdf5cf26935feb","finding_id":"SEM:55d9db6fe54b13ae16ea","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"92e0e4a5be91c1d5be30056ba6e68de884b3f59aecc8281b4ccdf5cf26935feb","finding_id":"SEM:bb58bd8e676316c6d1e0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c8a482092c0aa459 | data/ingredients/mapped/D-Glucose-6-Phosphate_Sodium_Salt.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-c8a482092c0aa459 | data/ingredients/mapped/D-Glucose-6-Phosphate_Sodium_Salt.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[813],"raw_equal":true},"docs_rows":[{"identifier":"cas:54010-71-8","line":815,"mapping_status":"MAPPED","ontology_id":"CHEBI:14314","preferred_term":"D-Glucose-6-Phosphate sodium salt"}],"identifier":"cas:54010-71-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:14314","ontology_label":"D-glucose 6-phosphate","ontology_source":"CHEBI"},"preferred_term":"D-Glucose-6-Phosphate sodium salt","sssom_rows":[{"data_row":889,"object_id":"CHEBI:14314","object_label":"D-glucose 6-phosphate","predicate_id":"skos:broadMatch"},{"data_row":890,"object_id":"cas:54010-71-8","object_label":"D-Glucose-6-Phosphate sodium salt","predicate_id":"skos:exactMatch"},{"data_row":891,"object_id":"kgmicrobe.compound:d-glucose-6-phosphate_sodium_salt","object_label":"D-Glucose-6-Phosphate sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","synonym_count":0} |
 | ev-bb16474ea0c5f168 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-44650a010f98b824] | context_only | Predecessor structured review finding f-44650a010f98b824 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-81f5cb7f2e8a65c8
+  evidence_ids:
+  - ev-bbb24c2462f1762b
+  - ev-fb2b75b118a65f5a
+  - ev-525aee9175f24afc
+  - ev-d0c312c3273a7580
+  - ev-c8a482092c0aa459
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-81f5cb7f2e8a65c8
+  evidence_ids:
+  - ev-bbb24c2462f1762b
+  - ev-a8ce0b2119c75039
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-81f5cb7f2e8a65c8
+  evidence_ids:
+  - ev-0db23a903fbc2d7f
+  - ev-a8ce0b2119c75039
+  - ev-bb16474ea0c5f168
 evidence:
 - evidence_id: ev-bbb24c2462f1762b
   kind: record_content
   reference: data/ingredients/mapped/D-Glucose-6-Phosphate_Sodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[813],"raw_equal":true},"docs_rows":[{"identifier":"cas:54010-71-8","line":815,"mapping_status":"MAPPED","ontology_id":"CHEBI:14314","preferred_term":"D-Glucose-6-Phosphate
     sodium salt"}],"identifier":"cas:54010-71-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:14314","ontology_label":"D-glucose
@@ -215,7 +228,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [813]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -223,8 +236,9 @@ evidence:
 - evidence_id: ev-525aee9175f24afc
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:D-Glucose-6-Phosphate_Sodium_Salt; data-row positions=[889,890,891]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:D-Glucose-6-Phosphate_Sodium_Salt; data-row positions=[889,
+    890, 891]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":889,"object_id":"CHEBI:14314","object_label":"D-glucose
     6-phosphate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":890,"object_id":"cas:54010-71-8","object_label":"D-Glucose-6-Phosphate
@@ -235,7 +249,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[815]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:54010-71-8","line":815,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:14314","preferred_term":"D-Glucose-6-Phosphate
     sodium salt","total_occurrences":"1"}]'
@@ -259,7 +273,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[467,1763]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"92e0e4a5be91c1d5be30056ba6e68de884b3f59aecc8281b4ccdf5cf26935feb","finding_id":"SEM:55d9db6fe54b13ae16ea","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"92e0e4a5be91c1d5be30056ba6e68de884b3f59aecc8281b4ccdf5cf26935feb","finding_id":"SEM:bb58bd8e676316c6d1e0","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +283,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Glucose-6-Phosphate_Sodium_Salt.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[813],"raw_equal":true},"docs_rows":[{"identifier":"cas:54010-71-8","line":815,"mapping_status":"MAPPED","ontology_id":"CHEBI:14314","preferred_term":"D-Glucose-6-Phosphate
+    sodium salt"}],"identifier":"cas:54010-71-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:14314","ontology_label":"D-glucose
+    6-phosphate","ontology_source":"CHEBI"},"preferred_term":"D-Glucose-6-Phosphate
+    sodium salt","sssom_rows":[{"data_row":889,"object_id":"CHEBI:14314","object_label":"D-glucose
+    6-phosphate","predicate_id":"skos:broadMatch"},{"data_row":890,"object_id":"cas:54010-71-8","object_label":"D-Glucose-6-Phosphate
+    sodium salt","predicate_id":"skos:exactMatch"},{"data_row":891,"object_id":"kgmicrobe.compound:d-glucose-6-phosphate_sodium_salt","object_label":"D-Glucose-6-Phosphate
+    sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Glucose-6-Phosphate_Sodium_Salt","synonym_count":0}'
   snapshot_sha256: 92e0e4a5be91c1d5be30056ba6e68de884b3f59aecc8281b4ccdf5cf26935feb
 - evidence_id: ev-bb16474ea0c5f168
   kind: prior_review

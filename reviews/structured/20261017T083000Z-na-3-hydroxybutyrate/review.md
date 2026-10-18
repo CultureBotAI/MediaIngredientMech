@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-3-hydroxybutyrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-d5b899777f4df41e | data/ingredients/mapped/Na-3-hydroxybutyrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1457],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113373","line":1459,"mapping_status":"MAPPED","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate"}],"identifier":"CHEBI:113373","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113373","ontology_label":"sodium 3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"Na-3-hydroxybutyrate","sssom_rows":[{"data_row":1959,"object_id":"CHEBI:113373","object_label":"sodium 3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-3-hydroxybutyrate","synonym_count":4} |
-| ev-6db8a0741b431e74 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1457] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-19854fe101f96184 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-3-hydroxybutyrate; data-row positions=[1959] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1959,"object_id":"CHEBI:113373","object_label":"sodium 3-hydroxybutyrate","other":"sodium 3-hydroxybutanoate&#124;sodium beta-Hydroxybutyrate&#124;sodium beta-hydroxybutanoate&#124;CAS:150-83-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-3-hydroxybutyrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-b7ff9b20292a049e | docs/data/mapped_ingredients.csv; CSV lines=[1459] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:113373","line":1459,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate","total_occurrences":"3"}] |
+| ev-d5b899777f4df41e | data/ingredients/mapped/Na-3-hydroxybutyrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1456],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113373","line":1458,"mapping_status":"MAPPED","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate"}],"identifier":"CHEBI:113373","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113373","ontology_label":"sodium 3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"Na-3-hydroxybutyrate","sssom_rows":[{"data_row":1961,"object_id":"CHEBI:113373","object_label":"sodium 3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-3-hydroxybutyrate","synonym_count":4} |
+| ev-6db8a0741b431e74 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1456] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-19854fe101f96184 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-3-hydroxybutyrate; data-row positions=[1961] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1961,"object_id":"CHEBI:113373","object_label":"sodium 3-hydroxybutyrate","other":"sodium 3-hydroxybutanoate&#124;sodium beta-Hydroxybutyrate&#124;sodium beta-hydroxybutanoate&#124;CAS:150-83-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-3-hydroxybutyrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-b7ff9b20292a049e | docs/data/mapped_ingredients.csv; CSV lines=[1458] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:113373","line":1458,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate","total_occurrences":"3"}] |
 | ev-1ed95b5ffae00f0f | reports/yaml_record_review/Na-3-hydroxybutyrate.md; &#96;data/ingredients/mapped/Na-3-hydroxybutyrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:42; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-650c88325c9d4da2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[966,1999] | context_only | [{"current_record_sha256":"70728a9b622ea0fa1025f6f69862e7e9f83bd2cfe25613666ad8f3d05331bfdb","finding_id":"SEM:28b883ceb881891dacb7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"70728a9b622ea0fa1025f6f69862e7e9f83bd2cfe25613666ad8f3d05331bfdb","finding_id":"SEM:271ad3b37ccf59c7fd3e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-4d04f369bc0f7a9a | data/ingredients/mapped/Na-3-hydroxybutyrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-4d04f369bc0f7a9a | data/ingredients/mapped/Na-3-hydroxybutyrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1456],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113373","line":1458,"mapping_status":"MAPPED","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate"}],"identifier":"CHEBI:113373","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113373","ontology_label":"sodium 3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"Na-3-hydroxybutyrate","sssom_rows":[{"data_row":1961,"object_id":"CHEBI:113373","object_label":"sodium 3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-3-hydroxybutyrate","synonym_count":4} |
 | ev-b8c6ca2d2169de08 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-69f046b27ec36ab5] | context_only | Predecessor structured review finding f-69f046b27ec36ab5 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4aa9cc7ec9daad70
+  evidence_ids:
+  - ev-d5b899777f4df41e
+  - ev-6db8a0741b431e74
+  - ev-19854fe101f96184
+  - ev-b7ff9b20292a049e
+  - ev-4d04f369bc0f7a9a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4aa9cc7ec9daad70
+  evidence_ids:
+  - ev-d5b899777f4df41e
+  - ev-650c88325c9d4da2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4aa9cc7ec9daad70
+  evidence_ids:
+  - ev-1ed95b5ffae00f0f
+  - ev-650c88325c9d4da2
+  - ev-b8c6ca2d2169de08
 evidence:
 - evidence_id: ev-d5b899777f4df41e
   kind: record_content
   reference: data/ingredients/mapped/Na-3-hydroxybutyrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1457],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113373","line":1459,"mapping_status":"MAPPED","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate"}],"identifier":"CHEBI:113373","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113373","ontology_label":"sodium
-    3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"Na-3-hydroxybutyrate","sssom_rows":[{"data_row":1959,"object_id":"CHEBI:113373","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1456],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113373","line":1458,"mapping_status":"MAPPED","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate"}],"identifier":"CHEBI:113373","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113373","ontology_label":"sodium
+    3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"Na-3-hydroxybutyrate","sssom_rows":[{"data_row":1961,"object_id":"CHEBI:113373","object_label":"sodium
     3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-3-hydroxybutyrate","synonym_count":4}'
   snapshot_sha256: 70728a9b622ea0fa1025f6f69862e7e9f83bd2cfe25613666ad8f3d05331bfdb
 - evidence_id: ev-6db8a0741b431e74
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1457]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1456]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-19854fe101f96184
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-3-hydroxybutyrate; data-row positions=[1959]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-3-hydroxybutyrate; data-row positions=[1961]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1959,"object_id":"CHEBI:113373","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1961,"object_id":"CHEBI:113373","object_label":"sodium
     3-hydroxybutyrate","other":"sodium 3-hydroxybutanoate|sodium beta-Hydroxybutyrate|sodium
     beta-hydroxybutanoate|CAS:150-83-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-3-hydroxybutyrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-b7ff9b20292a049e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1459]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1458]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:113373","line":1459,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate","total_occurrences":"3"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:113373","line":1458,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-1ed95b5ffae00f0f
   kind: prior_review
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[966,1999]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"70728a9b622ea0fa1025f6f69862e7e9f83bd2cfe25613666ad8f3d05331bfdb","finding_id":"SEM:28b883ceb881891dacb7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"70728a9b622ea0fa1025f6f69862e7e9f83bd2cfe25613666ad8f3d05331bfdb","finding_id":"SEM:271ad3b37ccf59c7fd3e","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-3-hydroxybutyrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1456],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113373","line":1458,"mapping_status":"MAPPED","ontology_id":"CHEBI:113373","preferred_term":"Na-3-hydroxybutyrate"}],"identifier":"CHEBI:113373","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113373","ontology_label":"sodium
+    3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"Na-3-hydroxybutyrate","sssom_rows":[{"data_row":1961,"object_id":"CHEBI:113373","object_label":"sodium
+    3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-3-hydroxybutyrate","synonym_count":4}'
   snapshot_sha256: 70728a9b622ea0fa1025f6f69862e7e9f83bd2cfe25613666ad8f3d05331bfdb
 - evidence_id: ev-b8c6ca2d2169de08
   kind: prior_review

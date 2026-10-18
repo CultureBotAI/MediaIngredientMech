@@ -83,16 +83,16 @@ Disposition: Token presence remains reproducible, but the earlier pattern-based 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-d3d0489bafd99d25 | data/ingredients/mapped/Riboflavin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1755],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17015","line":1757,"mapping_status":"MAPPED","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin"}],"identifier":"CHEBI:17015","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2122,"edge_count":2122,"occurrences":2123},"occurrence_statistics":{"media_count":2122,"total_occurrences":2123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17015","ontology_label":"riboflavin","ontology_source":"CHEBI"},"preferred_term":"Riboflavin","sssom_rows":[{"data_row":2429,"object_id":"CHEBI:17015","object_label":"riboflavin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Riboflavin","synonym_count":30} |
-| ev-b27fdb501afeac8d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1755] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-659fa61b579bfe7b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Riboflavin; data-row positions=[2429] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2429,"object_id":"CHEBI:17015","object_label":"riboflavin","other":"1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol&#124;1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol&#124;5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol&#124;6,7-dimethyl-9-D-ribitylisoalloxazine&#124;7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione&#124;7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine&#124;7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione&#124;7,8-dimethyl-10-ribitylisoalloxazine&#124;Aqua-Flave&#124;Beflavin&#124;Beflavine&#124;Bisulase&#124;Dermadram&#124;E101&#124;Fiboflavin&#124;Flavaxin&#124;Flavin Bb&#124;Flaxain&#124;Hyflavin&#124;Riboflavine&#124;Riboflavine (B2)&#124;Riboflavin (Vitamine B2)&#124;Riboflavin (Vitamin B2)&#124;Riboflavin (0.2 mg/ml)&#124;Riboflavin (see below)&#124;Riboflavin (0.05 \u03bcg/mL)&#124;CAS:83-88-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Riboflavin","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-d1039d9220e809dc | docs/data/mapped_ingredients.csv; CSV lines=[1757] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17015","line":1757,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2122","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin","total_occurrences":"2123"}] |
+| ev-d3d0489bafd99d25 | data/ingredients/mapped/Riboflavin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1754],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17015","line":1756,"mapping_status":"MAPPED","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin"}],"identifier":"CHEBI:17015","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2122,"edge_count":2122,"occurrences":2123},"occurrence_statistics":{"media_count":2122,"total_occurrences":2123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17015","ontology_label":"riboflavin","ontology_source":"CHEBI"},"preferred_term":"Riboflavin","sssom_rows":[{"data_row":2431,"object_id":"CHEBI:17015","object_label":"riboflavin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Riboflavin","synonym_count":30} |
+| ev-b27fdb501afeac8d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1754] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-659fa61b579bfe7b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Riboflavin; data-row positions=[2431] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2431,"object_id":"CHEBI:17015","object_label":"riboflavin","other":"1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol&#124;1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol&#124;5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol&#124;6,7-dimethyl-9-D-ribitylisoalloxazine&#124;7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione&#124;7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine&#124;7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione&#124;7,8-dimethyl-10-ribitylisoalloxazine&#124;Aqua-Flave&#124;Beflavin&#124;Beflavine&#124;Bisulase&#124;Dermadram&#124;E101&#124;Fiboflavin&#124;Flavaxin&#124;Flavin Bb&#124;Flaxain&#124;Hyflavin&#124;Riboflavine&#124;Riboflavine (B2)&#124;Riboflavin (Vitamine B2)&#124;Riboflavin (Vitamin B2)&#124;Riboflavin (0.2 mg/ml)&#124;Riboflavin (see below)&#124;Riboflavin (0.05 \u03bcg/mL)&#124;CAS:83-88-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Riboflavin","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-d1039d9220e809dc | docs/data/mapped_ingredients.csv; CSV lines=[1756] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17015","line":1756,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2122","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin","total_occurrences":"2123"}] |
 | ev-b92552c1f537a179 | reports/yaml_record_review/Riboflavin.md; &#96;data/ingredients/mapped/Riboflavin.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5ea4dcc66c61e646 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1174] | context_only | [{"current_record_sha256":"b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644","finding_id":"SEM:dd7810d3410ad8889d59","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-032b61a7a21ed47b | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-b7808e84d7886285] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-d59510b4ad4c4456 | data/ingredients/mapped/Riboflavin.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Riboflavin (see below)", "synonym_type": "RAW_TEXT"}], "history": [{"action": "IMPORTED", "changes": "Initial import from CultureMech pipeline", "curator": "import_from_culturemech", "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-03-09T06:54:18.022301+00:00"}, {"action": "ADDED_CAS_RN", "changes": "Added CAS-RN:83-88-5 from PubChem API via name lookup (Riboflavin)", "curator": "fetch_cas_rn_from_pubchem", "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-04-05T19:53:48.746601+00:00"}, {"action": "ADDED_CAS_RN", "changes": "Added CAS-RN:83-88-5 from CultureBotHT compounds_to_cas.csv (matched: riboflavin)", "curator": "fetch_cas_rn_from_culturebot_csv", "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-04-05T21:48:45.703391+00:00"}, {"action": "CAS_RN_ADDED", "changes": "Added CAS-RN 83-88-5 from PubChem (via CHEBI:17015)", "curator": "enrich_mim_cas_rn_batch", "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-04-09T00:32:50.689620+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 20 synonyms from kg-microbe P4.4 enrichment: 1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol, 1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol, 5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol, 6,7-dimethyl-9-D-ribitylisoalloxazine, 7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione, ... (15 more)", "curator": "cbclaw_kg_microbe_sweep", "llm_assisted": true, "new_status": "MAPPED", "timestamp": "2026-04-18T00:00:00+00:00"}, {"action": "MERGED_FROM_DUPLICATES", "changes": "Absorbed 2 duplicate MIM record(s) into this one: Riboflavine.yaml, Riboflavin_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.", "curator": "audit_mim_merge", "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-04-19T07:39:23.955331+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-01T07:35:36.069178+00:00"}, {"action": "AUTO_BACKFILL_CHEBI_CHEMISTRY", "changes": "molecular_formula=C17H20N4O6; inchi=InChI=1S/C17H20N4O6/c1-7-3-9-10(4-8(7)2)21(5-11(23; smiles=Cc1cc2nc3c(=O)nc(=O)nc-3n(C[C@H](O)[C@H](O)[C@H](O", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-01T08:08:32.160107+00:00"}, {"action": "APPLY_EVIDENCE_PROPOSAL", "changes": "added pmid=40609532 from propose-evidence batch", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-01T08:09:48.123437+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:18.114359+00:00"}, {"action": "ANNOTATED", "changes": "Added media role: VITAMIN_SOURCE (confidence: 1.00)", "curator": "extract_roles_from_synonyms", "timestamp": "2026-05-29T23:35:36.112742+00:00"}, {"action": "CORRECTED", "changes": "ontology_label 'Riboflavin' -&gt; 'riboflavin': synced to canonical CHEBI label (preferred_term 'Riboflavin' unchanged).", "curator": "correct_stale_ontology_labels.py", "timestamp": "2026-06-09T05:23:46.827070+00:00"}, {"action": "ANNOTATED", "changes": "Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -&gt; nutritional_roles.VITAMIN_SOURCE", "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"}, {"action": "CORRECTED", "changes": "occurrence_statistics 85/1837 -&gt; 2122/2123 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics", "timestamp": "2026-08-27T03:16:39.519802+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 4 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Riboflavin (Vitamine B2)' (x4 CultureMech mentions); 'Riboflavin (Vitamin B2)' (x2 CultureMech mentions); 'Riboflavin (0.2 mg/ml)' (x1 CultureMech mentions); 'Riboflavin (see below)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Riboflavin (0.05 \u03bcg/mL)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-31T23:56:54.854807+00:00"}], "identifier": "CHEBI:17015", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH", "source": "CultureMech"}, {"evidence_type": "LITERATURE", "explanation": "Auto-proposed; curator should rephrase or remove.", "pmid": "40609532", "snippet": "We found that the abundance of Bacteroides cellulosilyticus affects tumor heterogeneity by producing riboflavin that inhibits CERS3 activity, thus delaying CRC progression.", "source": "PubMed search ('Riboflavin')", "supports": "SUPPORT"}], "mapping_quality": "EXACT_MATCH", "ontology_id": "CHEBI:17015", "ontology_label": "riboflavin", "ontology_source": "CHEBI"}} |
-| ev-1dfdb8319038a4fb | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Riboflavin | supports | [{"comment": "ENRICH_SYNONYM: kg-microbe is 'riboflavin' plus qualifier ('(1-)')", "confidence": "0.95", "data_row": 2429, "mapping_date": "2026-08-31", "mapping_justification": "semapv:LexicalMatching", "object_id": "CHEBI:17015", "object_label": "riboflavin", "object_source": "obo:chebi.owl", "other": "1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol&#124;1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol&#124;5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol&#124;6,7-dimethyl-9-D-ribitylisoalloxazine&#124;7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione&#124;7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine&#124;7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione&#124;7,8-dimethyl-10-ribitylisoalloxazine&#124;Aqua-Flave&#124;Beflavin&#124;Beflavine&#124;Bisulase&#124;Dermadram&#124;E101&#124;Fiboflavin&#124;Flavaxin&#124;Flavin Bb&#124;Flaxain&#124;Hyflavin&#124;Riboflavine&#124;Riboflavine (B2)&#124;Riboflavin (Vitamine B2)&#124;Riboflavin (Vitamin B2)&#124;Riboflavin (0.2 mg/ml)&#124;Riboflavin (see below)&#124;Riboflavin (0.05 \u03bcg/mL)&#124;CAS:83-88-5", "predicate_id": "skos:exactMatch", "source": "MIM:CultureMech&#124;MIM:PubMed search ('Riboflavin')&#124;MIM:curator=claude_culturemech_alias_backfill&#124;kgm:chebi_xrefs&#124;kgm:culturebotai_reviewed&#124;kgm:mediadive_compounds&#124;kgm:mediaingredientmech_reviewed&#124;kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]&#124;kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]&#124;kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]&#124;kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]&#124;kgm:primary_mappings[kegg_compound]", "subject_id": "MIM:Riboflavin", "subject_label": "Riboflavin", "validation_method": "OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-d59510b4ad4c4456 | data/ingredients/mapped/Riboflavin.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1754],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17015","line":1756,"mapping_status":"MAPPED","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin"}],"identifier":"CHEBI:17015","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2122,"edge_count":2122,"occurrences":2123},"occurrence_statistics":{"media_count":2122,"total_occurrences":2123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17015","ontology_label":"riboflavin","ontology_source":"CHEBI"},"preferred_term":"Riboflavin","sssom_rows":[{"data_row":2431,"object_id":"CHEBI:17015","object_label":"riboflavin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Riboflavin","synonym_count":30} |
+| ev-1dfdb8319038a4fb | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Riboflavin; data-row positions=[2431] | supports | Current exact-subject rows, including complete other payload: [{"data_row":2431,"object_id":"CHEBI:17015","object_label":"riboflavin","other":"1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol&#124;1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol&#124;5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol&#124;6,7-dimethyl-9-D-ribitylisoalloxazine&#124;7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione&#124;7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine&#124;7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione&#124;7,8-dimethyl-10-ribitylisoalloxazine&#124;Aqua-Flave&#124;Beflavin&#124;Beflavine&#124;Bisulase&#124;Dermadram&#124;E101&#124;Fiboflavin&#124;Flavaxin&#124;Flavin Bb&#124;Flaxain&#124;Hyflavin&#124;Riboflavine&#124;Riboflavine (B2)&#124;Riboflavin (Vitamine B2)&#124;Riboflavin (Vitamin B2)&#124;Riboflavin (0.2 mg/ml)&#124;Riboflavin (see below)&#124;Riboflavin (0.05 \u03bcg/mL)&#124;CAS:83-88-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Riboflavin","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
 | ev-a809b48a4c5a84c5 | reports/yaml_record_review/Riboflavin.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-df08850b91d69e41 | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-b7808e84d7886285] | context_only | Predecessor structured review finding scope-f-b7808e84d7886285 in 20261011T030852Z-mim-token-scope-reassessment |
 
@@ -189,6 +189,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-59776f859c41300d
+  evidence_ids:
+  - ev-d3d0489bafd99d25
+  - ev-b27fdb501afeac8d
+  - ev-659fa61b579bfe7b
+  - ev-d1039d9220e809dc
+  - ev-d59510b4ad4c4456
+  - ev-1dfdb8319038a4fb
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -197,6 +204,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-59776f859c41300d
+  evidence_ids:
+  - ev-d3d0489bafd99d25
+  - ev-5ea4dcc66c61e646
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -205,21 +215,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-59776f859c41300d
+  evidence_ids:
+  - ev-b92552c1f537a179
+  - ev-5ea4dcc66c61e646
+  - ev-032b61a7a21ed47b
+  - ev-a809b48a4c5a84c5
+  - ev-df08850b91d69e41
 evidence:
 - evidence_id: ev-d3d0489bafd99d25
   kind: record_content
   reference: data/ingredients/mapped/Riboflavin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1755],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17015","line":1757,"mapping_status":"MAPPED","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin"}],"identifier":"CHEBI:17015","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2122,"edge_count":2122,"occurrences":2123},"occurrence_statistics":{"media_count":2122,"total_occurrences":2123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17015","ontology_label":"riboflavin","ontology_source":"CHEBI"},"preferred_term":"Riboflavin","sssom_rows":[{"data_row":2429,"object_id":"CHEBI:17015","object_label":"riboflavin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Riboflavin","synonym_count":30}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1754],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17015","line":1756,"mapping_status":"MAPPED","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin"}],"identifier":"CHEBI:17015","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2122,"edge_count":2122,"occurrences":2123},"occurrence_statistics":{"media_count":2122,"total_occurrences":2123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17015","ontology_label":"riboflavin","ontology_source":"CHEBI"},"preferred_term":"Riboflavin","sssom_rows":[{"data_row":2431,"object_id":"CHEBI:17015","object_label":"riboflavin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Riboflavin","synonym_count":30}'
   snapshot_sha256: b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644
 - evidence_id: ev-b27fdb501afeac8d
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1755]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1754]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -227,20 +243,20 @@ evidence:
 - evidence_id: ev-659fa61b579bfe7b
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Riboflavin; data-row positions=[2429]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Riboflavin; data-row positions=[2431]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2429,"object_id":"CHEBI:17015","object_label":"riboflavin","other":"1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol|1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol|5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol|6,7-dimethyl-9-D-ribitylisoalloxazine|7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione|7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine|7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione|7,8-dimethyl-10-ribitylisoalloxazine|Aqua-Flave|Beflavin|Beflavine|Bisulase|Dermadram|E101|Fiboflavin|Flavaxin|Flavin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2431,"object_id":"CHEBI:17015","object_label":"riboflavin","other":"1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol|1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol|5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol|6,7-dimethyl-9-D-ribitylisoalloxazine|7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione|7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine|7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione|7,8-dimethyl-10-ribitylisoalloxazine|Aqua-Flave|Beflavin|Beflavine|Bisulase|Dermadram|E101|Fiboflavin|Flavaxin|Flavin
     Bb|Flaxain|Hyflavin|Riboflavine|Riboflavine (B2)|Riboflavin (Vitamine B2)|Riboflavin
     (Vitamin B2)|Riboflavin (0.2 mg/ml)|Riboflavin (see below)|Riboflavin (0.05 \u03bcg/mL)|CAS:83-88-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Riboflavin","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-d1039d9220e809dc
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1757]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1756]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17015","line":1757,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2122","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin","total_occurrences":"2123"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17015","line":1756,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2122","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin","total_occurrences":"2123"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-b92552c1f537a179
   kind: prior_review
@@ -256,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1174]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644","finding_id":"SEM:dd7810d3410ad8889d59","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -296,95 +312,19 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Riboflavin.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Riboflavin (see below)", "synonym_type": "RAW_TEXT"}], "history":
-    [{"action": "IMPORTED", "changes": "Initial import from CultureMech pipeline",
-    "curator": "import_from_culturemech", "llm_assisted": false, "new_status": "MAPPED",
-    "timestamp": "2026-03-09T06:54:18.022301+00:00"}, {"action": "ADDED_CAS_RN", "changes":
-    "Added CAS-RN:83-88-5 from PubChem API via name lookup (Riboflavin)", "curator":
-    "fetch_cas_rn_from_pubchem", "llm_assisted": false, "new_status": "MAPPED", "timestamp":
-    "2026-04-05T19:53:48.746601+00:00"}, {"action": "ADDED_CAS_RN", "changes": "Added
-    CAS-RN:83-88-5 from CultureBotHT compounds_to_cas.csv (matched: riboflavin)",
-    "curator": "fetch_cas_rn_from_culturebot_csv", "llm_assisted": false, "new_status":
-    "MAPPED", "timestamp": "2026-04-05T21:48:45.703391+00:00"}, {"action": "CAS_RN_ADDED",
-    "changes": "Added CAS-RN 83-88-5 from PubChem (via CHEBI:17015)", "curator": "enrich_mim_cas_rn_batch",
-    "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-04-09T00:32:50.689620+00:00"},
-    {"action": "ADDED_SYNONYMS", "changes": "Added 20 synonyms from kg-microbe P4.4
-    enrichment: 1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol,
-    1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol,
-    5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol,
-    6,7-dimethyl-9-D-ribitylisoalloxazine, 7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione,
-    ... (15 more)", "curator": "cbclaw_kg_microbe_sweep", "llm_assisted": true, "new_status":
-    "MAPPED", "timestamp": "2026-04-18T00:00:00+00:00"}, {"action": "MERGED_FROM_DUPLICATES",
-    "changes": "Absorbed 2 duplicate MIM record(s) into this one: Riboflavine.yaml,
-    Riboflavin_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
-    winner selected by highest occurrence count with preferred_term readability tie-break.",
-    "curator": "audit_mim_merge", "llm_assisted": false, "new_status": "MAPPED", "timestamp":
-    "2026-04-19T07:39:23.955331+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)", "curator":
-    "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-01T07:35:36.069178+00:00"},
-    {"action": "AUTO_BACKFILL_CHEBI_CHEMISTRY", "changes": "molecular_formula=C17H20N4O6;
-    inchi=InChI=1S/C17H20N4O6/c1-7-3-9-10(4-8(7)2)21(5-11(23; smiles=Cc1cc2nc3c(=O)nc(=O)nc-3n(C[C@H](O)[C@H](O)[C@H](O",
-    "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp":
-    "2026-05-01T08:08:32.160107+00:00"}, {"action": "APPLY_EVIDENCE_PROPOSAL", "changes":
-    "added pmid=40609532 from propose-evidence batch", "curator": "auto_classify_ingredient_type",
-    "llm_assisted": false, "timestamp": "2026-05-01T08:09:48.123437+00:00"}, {"action":
-    "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=SINGLE_INGREDIENT
-    (chemical structure populated (molecular_formula))", "curator": "auto_classify_ingredient_type",
-    "llm_assisted": false, "timestamp": "2026-05-02T03:12:18.114359+00:00"}, {"action":
-    "ANNOTATED", "changes": "Added media role: VITAMIN_SOURCE (confidence: 1.00)",
-    "curator": "extract_roles_from_synonyms", "timestamp": "2026-05-29T23:35:36.112742+00:00"},
-    {"action": "CORRECTED", "changes": "ontology_label ''Riboflavin'' -> ''riboflavin'':
-    synced to canonical CHEBI label (preferred_term ''Riboflavin'' unchanged).", "curator":
-    "correct_stale_ontology_labels.py", "timestamp": "2026-06-09T05:23:46.827070+00:00"},
-    {"action": "ANNOTATED", "changes": "Migrated legacy media_roles to role facets
-    (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE", "curator": "migrate_media_roles_to_facets",
-    "timestamp": "2026-07-20T00:00:00+00:00"}, {"action": "CORRECTED", "changes":
-    "occurrence_statistics 85/1837 -> 2122/2123 (media_count/total_occurrences), derived
-    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
-    came from the importer retired in #453, whose media_count counted a list truncated
-    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.519802+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 4 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Riboflavin (Vitamine B2)'' (x4 CultureMech mentions); ''Riboflavin
-    (Vitamin B2)'' (x2 CultureMech mentions); ''Riboflavin (0.2 mg/ml)'' (x1 CultureMech
-    mentions); ''Riboflavin (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp":
-    "2026-08-30T04:48:06.233536+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added
-    1 CultureMech recipe surface form(s) that folded onto this record''s published
-    label but were absent from MIM''s label index, so CultureMech could not resolve
-    them: ''Riboflavin (0.05 \u03bcg/mL)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp":
-    "2026-08-31T23:56:54.854807+00:00"}], "identifier": "CHEBI:17015", "mapping":
-    {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Imported from CultureMech
-    pipeline, quality=DIRECT_MATCH", "source": "CultureMech"}, {"evidence_type": "LITERATURE",
-    "explanation": "Auto-proposed; curator should rephrase or remove.", "pmid": "40609532",
-    "snippet": "We found that the abundance of Bacteroides cellulosilyticus affects
-    tumor heterogeneity by producing riboflavin that inhibits CERS3 activity, thus
-    delaying CRC progression.", "source": "PubMed search (''Riboflavin'')", "supports":
-    "SUPPORT"}], "mapping_quality": "EXACT_MATCH", "ontology_id": "CHEBI:17015", "ontology_label":
-    "riboflavin", "ontology_source": "CHEBI"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1754],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17015","line":1756,"mapping_status":"MAPPED","ontology_id":"CHEBI:17015","preferred_term":"Riboflavin"}],"identifier":"CHEBI:17015","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2122,"edge_count":2122,"occurrences":2123},"occurrence_statistics":{"media_count":2122,"total_occurrences":2123},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17015","ontology_label":"riboflavin","ontology_source":"CHEBI"},"preferred_term":"Riboflavin","sssom_rows":[{"data_row":2431,"object_id":"CHEBI:17015","object_label":"riboflavin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Riboflavin","synonym_count":30}'
   snapshot_sha256: b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644
 - evidence_id: ev-1dfdb8319038a4fb
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Riboflavin
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Riboflavin; data-row positions=[2431]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "ENRICH_SYNONYM: kg-microbe is ''riboflavin'' plus qualifier
-    (''(1-)'')", "confidence": "0.95", "data_row": 2429, "mapping_date": "2026-08-31",
-    "mapping_justification": "semapv:LexicalMatching", "object_id": "CHEBI:17015",
-    "object_label": "riboflavin", "object_source": "obo:chebi.owl", "other": "1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol|1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol|5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol|6,7-dimethyl-9-D-ribitylisoalloxazine|7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione|7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine|7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione|7,8-dimethyl-10-ribitylisoalloxazine|Aqua-Flave|Beflavin|Beflavine|Bisulase|Dermadram|E101|Fiboflavin|Flavaxin|Flavin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2431,"object_id":"CHEBI:17015","object_label":"riboflavin","other":"1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol|1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol|5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol|6,7-dimethyl-9-D-ribitylisoalloxazine|7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione|7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine|7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione|7,8-dimethyl-10-ribitylisoalloxazine|Aqua-Flave|Beflavin|Beflavine|Bisulase|Dermadram|E101|Fiboflavin|Flavaxin|Flavin
     Bb|Flaxain|Hyflavin|Riboflavine|Riboflavine (B2)|Riboflavin (Vitamine B2)|Riboflavin
-    (Vitamin B2)|Riboflavin (0.2 mg/ml)|Riboflavin (see below)|Riboflavin (0.05 \u03bcg/mL)|CAS:83-88-5",
-    "predicate_id": "skos:exactMatch", "source": "MIM:CultureMech|MIM:PubMed search
-    (''Riboflavin'')|MIM:curator=claude_culturemech_alias_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
-    "subject_id": "MIM:Riboflavin", "subject_label": "Riboflavin", "validation_method":
-    "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+    (Vitamin B2)|Riboflavin (0.2 mg/ml)|Riboflavin (see below)|Riboflavin (0.05 \u03bcg/mL)|CAS:83-88-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Riboflavin","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-a809b48a4c5a84c5
   kind: prior_review

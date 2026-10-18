@@ -89,7 +89,7 @@ Reassess prediction-only role support: Dihydroxyacetone
 | ev-820adb8cee2507c5 | docs/data/mapped_ingredients.csv; CSV lines=[897] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16016","line":897,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16016","preferred_term":"Dihydroxyacetone","total_occurrences":"0"}] |
 | ev-fadfacb76d0e0deb | reports/yaml_record_review/Dihydroxyacetone.md; &#96;data/ingredients/mapped/Dihydroxyacetone.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:39; Completeness:61; Recommended Edits:69 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-516fc22c544e9641 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[542,1900] | context_only | [{"current_record_sha256":"ad512d73f33938b4dae6de352ea054be42cddde7b61ee3e71b557f2f76dfd677","finding_id":"SEM:b322be372ef637287b7d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ad512d73f33938b4dae6de352ea054be42cddde7b61ee3e71b557f2f76dfd677","finding_id":"SEM:febc38d11d1b26146dbf","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f235ebecdc7019b4 | data/ingredients/mapped/Dihydroxyacetone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-f235ebecdc7019b4 | data/ingredients/mapped/Dihydroxyacetone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[895],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16016","line":897,"mapping_status":"MAPPED","ontology_id":"CHEBI:16016","preferred_term":"Dihydroxyacetone"}],"identifier":"CHEBI:16016","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16016","ontology_label":"dihydroxyacetone","ontology_source":"CHEBI"},"preferred_term":"Dihydroxyacetone","sssom_rows":[{"data_row":1047,"object_id":"CHEBI:16016","object_label":"dihydroxyacetone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dihydroxyacetone","synonym_count":1} |
 | ev-b94442644ef099c9 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-06174fccd6f11930] | context_only | Predecessor structured review finding f-06174fccd6f11930 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2328a7f6d98a2eca
+  evidence_ids:
+  - ev-de39f72e1aa1b9b7
+  - ev-e73efa384e10c518
+  - ev-7358af9e68085671
+  - ev-820adb8cee2507c5
+  - ev-f235ebecdc7019b4
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-2328a7f6d98a2eca
+  evidence_ids:
+  - ev-de39f72e1aa1b9b7
+  - ev-516fc22c544e9641
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2328a7f6d98a2eca
+  evidence_ids:
+  - ev-fadfacb76d0e0deb
+  - ev-516fc22c544e9641
+  - ev-b94442644ef099c9
 evidence:
 - evidence_id: ev-de39f72e1aa1b9b7
   kind: record_content
   reference: data/ingredients/mapped/Dihydroxyacetone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[895],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16016","line":897,"mapping_status":"MAPPED","ontology_id":"CHEBI:16016","preferred_term":"Dihydroxyacetone"}],"identifier":"CHEBI:16016","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16016","ontology_label":"dihydroxyacetone","ontology_source":"CHEBI"},"preferred_term":"Dihydroxyacetone","sssom_rows":[{"data_row":1047,"object_id":"CHEBI:16016","object_label":"dihydroxyacetone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dihydroxyacetone","synonym_count":1}'
   snapshot_sha256: ad512d73f33938b4dae6de352ea054be42cddde7b61ee3e71b557f2f76dfd677
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [895]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Dihydroxyacetone; data-row positions=[1047]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1047,"object_id":"CHEBI:16016","object_label":"dihydroxyacetone","other":"1,3-Dihydroxypropan-2-one|CAS:96-26-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Dihydroxyacetone","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[897]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16016","line":897,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16016","preferred_term":"Dihydroxyacetone","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[542,1900]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ad512d73f33938b4dae6de352ea054be42cddde7b61ee3e71b557f2f76dfd677","finding_id":"SEM:b322be372ef637287b7d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ad512d73f33938b4dae6de352ea054be42cddde7b61ee3e71b557f2f76dfd677","finding_id":"SEM:febc38d11d1b26146dbf","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Dihydroxyacetone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[895],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16016","line":897,"mapping_status":"MAPPED","ontology_id":"CHEBI:16016","preferred_term":"Dihydroxyacetone"}],"identifier":"CHEBI:16016","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16016","ontology_label":"dihydroxyacetone","ontology_source":"CHEBI"},"preferred_term":"Dihydroxyacetone","sssom_rows":[{"data_row":1047,"object_id":"CHEBI:16016","object_label":"dihydroxyacetone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dihydroxyacetone","synonym_count":1}'
   snapshot_sha256: ad512d73f33938b4dae6de352ea054be42cddde7b61ee3e71b557f2f76dfd677
 - evidence_id: ev-b94442644ef099c9
   kind: prior_review

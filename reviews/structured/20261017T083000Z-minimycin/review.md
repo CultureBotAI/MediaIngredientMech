@@ -83,13 +83,13 @@ Reassess prediction-only role support: Minimycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-58522f54161c4d0e | data/ingredients/mapped/Minimycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1408],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C002363","line":1410,"mapping_status":"MAPPED","ontology_id":"mesh:C002363","preferred_term":"Minimycin"}],"identifier":"mesh:C002363","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C002363","ontology_label":"minimycin","ontology_source":"MESH"},"preferred_term":"Minimycin","sssom_rows":[{"data_row":1884,"object_id":"mesh:C002363","object_label":"minimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Minimycin","synonym_count":0} |
-| ev-23e360caedb94470 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1408] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-c8eb325d8ae4dcaa | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Minimycin; data-row positions=[1884] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1884,"object_id":"mesh:C002363","object_label":"minimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Minimycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-d0a3e5eafea73689 | docs/data/mapped_ingredients.csv; CSV lines=[1410] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C002363","line":1410,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C002363","preferred_term":"Minimycin","total_occurrences":"0"}] |
+| ev-58522f54161c4d0e | data/ingredients/mapped/Minimycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1407],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C002363","line":1409,"mapping_status":"MAPPED","ontology_id":"mesh:C002363","preferred_term":"Minimycin"}],"identifier":"mesh:C002363","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C002363","ontology_label":"minimycin","ontology_source":"MESH"},"preferred_term":"Minimycin","sssom_rows":[{"data_row":1886,"object_id":"mesh:C002363","object_label":"minimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Minimycin","synonym_count":0} |
+| ev-23e360caedb94470 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1407] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c8eb325d8ae4dcaa | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Minimycin; data-row positions=[1886] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1886,"object_id":"mesh:C002363","object_label":"minimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Minimycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-d0a3e5eafea73689 | docs/data/mapped_ingredients.csv; CSV lines=[1409] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C002363","line":1409,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C002363","preferred_term":"Minimycin","total_occurrences":"0"}] |
 | ev-df26c1df82070f36 | reports/yaml_record_review/Minimycin.md; &#96;data/ingredients/mapped/Minimycin.yaml&#96;:2; Verdict:4; Identity:12; Validation:21; Evidence:28; Completeness:38; Recommended Edits:45 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e14c5afa54645f36 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[944,1739] | context_only | [{"current_record_sha256":"857ec90fed87899c378003c3165e9fedc423b7a4872d01c725a11510012b64db","finding_id":"SEM:79dbf28da8e2fb900a4c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"857ec90fed87899c378003c3165e9fedc423b7a4872d01c725a11510012b64db","finding_id":"SEM:32b6d120bb3f0a852b2f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-314b8408102c1aab | data/ingredients/mapped/Minimycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-314b8408102c1aab | data/ingredients/mapped/Minimycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1407],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C002363","line":1409,"mapping_status":"MAPPED","ontology_id":"mesh:C002363","preferred_term":"Minimycin"}],"identifier":"mesh:C002363","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C002363","ontology_label":"minimycin","ontology_source":"MESH"},"preferred_term":"Minimycin","sssom_rows":[{"data_row":1886,"object_id":"mesh:C002363","object_label":"minimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Minimycin","synonym_count":0} |
 | ev-492a359bee1c3d64 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-05e79c7d9aceee41] | context_only | Predecessor structured review finding f-05e79c7d9aceee41 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1c80294b7c6217e1
+  evidence_ids:
+  - ev-58522f54161c4d0e
+  - ev-23e360caedb94470
+  - ev-c8eb325d8ae4dcaa
+  - ev-d0a3e5eafea73689
+  - ev-314b8408102c1aab
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1c80294b7c6217e1
+  evidence_ids:
+  - ev-58522f54161c4d0e
+  - ev-e14c5afa54645f36
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1c80294b7c6217e1
+  evidence_ids:
+  - ev-df26c1df82070f36
+  - ev-e14c5afa54645f36
+  - ev-492a359bee1c3d64
 evidence:
 - evidence_id: ev-58522f54161c4d0e
   kind: record_content
   reference: data/ingredients/mapped/Minimycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1408],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C002363","line":1410,"mapping_status":"MAPPED","ontology_id":"mesh:C002363","preferred_term":"Minimycin"}],"identifier":"mesh:C002363","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C002363","ontology_label":"minimycin","ontology_source":"MESH"},"preferred_term":"Minimycin","sssom_rows":[{"data_row":1884,"object_id":"mesh:C002363","object_label":"minimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Minimycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1407],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C002363","line":1409,"mapping_status":"MAPPED","ontology_id":"mesh:C002363","preferred_term":"Minimycin"}],"identifier":"mesh:C002363","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C002363","ontology_label":"minimycin","ontology_source":"MESH"},"preferred_term":"Minimycin","sssom_rows":[{"data_row":1886,"object_id":"mesh:C002363","object_label":"minimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Minimycin","synonym_count":0}'
   snapshot_sha256: 857ec90fed87899c378003c3165e9fedc423b7a4872d01c725a11510012b64db
 - evidence_id: ev-23e360caedb94470
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1408]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1407]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-c8eb325d8ae4dcaa
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Minimycin; data-row positions=[1884]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Minimycin; data-row positions=[1886]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1884,"object_id":"mesh:C002363","object_label":"minimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Minimycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1886,"object_id":"mesh:C002363","object_label":"minimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Minimycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-d0a3e5eafea73689
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1410]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1409]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C002363","line":1410,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C002363","preferred_term":"Minimycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C002363","line":1409,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C002363","preferred_term":"Minimycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-df26c1df82070f36
   kind: prior_review
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[944,1739]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"857ec90fed87899c378003c3165e9fedc423b7a4872d01c725a11510012b64db","finding_id":"SEM:79dbf28da8e2fb900a4c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"857ec90fed87899c378003c3165e9fedc423b7a4872d01c725a11510012b64db","finding_id":"SEM:32b6d120bb3f0a852b2f","kind":"role_evidence","resolution_reason":"Historical
@@ -258,12 +271,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Minimycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1407],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C002363","line":1409,"mapping_status":"MAPPED","ontology_id":"mesh:C002363","preferred_term":"Minimycin"}],"identifier":"mesh:C002363","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C002363","ontology_label":"minimycin","ontology_source":"MESH"},"preferred_term":"Minimycin","sssom_rows":[{"data_row":1886,"object_id":"mesh:C002363","object_label":"minimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Minimycin","synonym_count":0}'
   snapshot_sha256: 857ec90fed87899c378003c3165e9fedc423b7a4872d01c725a11510012b64db
 - evidence_id: ev-492a359bee1c3d64
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sodium gluconate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c964cdc55b7481f1 | data/ingredients/mapped/Sodium_Gluconate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1839],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:84997","line":1841,"mapping_status":"MAPPED","ontology_id":"CHEBI:84997","preferred_term":"Sodium gluconate"}],"identifier":"CHEBI:84997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:84997","ontology_label":"sodium gluconate","ontology_source":"CHEBI"},"preferred_term":"Sodium gluconate","sssom_rows":[{"data_row":2562,"object_id":"CHEBI:84997","object_label":"sodium gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Gluconate","synonym_count":9} |
-| ev-f5616110eef9b3b3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1839] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-2b766aa398f5475f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Gluconate; data-row positions=[2562] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2562,"object_id":"CHEBI:84997","object_label":"sodium gluconate","other":"D-Gluconic acid, monosodium salt&#124;Gluconic acid sodium salt&#124;Monosodium D-gluconate&#124;Monosodium gluconate&#124;sodium (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanoate&#124;Na-gluconate&#124;Na gluconate&#124;CAS:527-07-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Gluconate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-8b0952f132fdec23 | docs/data/mapped_ingredients.csv; CSV lines=[1841] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:84997","line":1841,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:84997","preferred_term":"Sodium gluconate","total_occurrences":"20"}] |
+| ev-c964cdc55b7481f1 | data/ingredients/mapped/Sodium_Gluconate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1838],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:84997","line":1840,"mapping_status":"MAPPED","ontology_id":"CHEBI:84997","preferred_term":"Sodium gluconate"}],"identifier":"CHEBI:84997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:84997","ontology_label":"sodium gluconate","ontology_source":"CHEBI"},"preferred_term":"Sodium gluconate","sssom_rows":[{"data_row":2564,"object_id":"CHEBI:84997","object_label":"sodium gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Gluconate","synonym_count":9} |
+| ev-f5616110eef9b3b3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1838] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-2b766aa398f5475f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Gluconate; data-row positions=[2564] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2564,"object_id":"CHEBI:84997","object_label":"sodium gluconate","other":"D-Gluconic acid, monosodium salt&#124;Gluconic acid sodium salt&#124;Monosodium D-gluconate&#124;Monosodium gluconate&#124;sodium (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanoate&#124;Na-gluconate&#124;Na gluconate&#124;CAS:527-07-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Gluconate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-8b0952f132fdec23 | docs/data/mapped_ingredients.csv; CSV lines=[1840] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:84997","line":1840,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:84997","preferred_term":"Sodium gluconate","total_occurrences":"20"}] |
 | ev-6c0cc2b2ac9e4fe9 | reports/yaml_record_review/Sodium_Gluconate.md; &#96;data/ingredients/mapped/Sodium_Gluconate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-89b416593e03e582 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1216,1471,1909] | context_only | [{"current_record_sha256":"a39a644eb65c55b6f99c47e098938a736bea805c4236f89e7e9dd1e6f3cdabc4","finding_id":"SEM:c9a6d88b2006de59bd36","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a39a644eb65c55b6f99c47e098938a736bea805c4236f89e7e9dd1e6f3cdabc4","finding_id":"SEM:1fa708aca9f5bef33726","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a39a644eb65c55b6f99c47e098938a736bea805c4236f89e7e9dd1e6f3cdabc4","finding_id":"SEM:3d8d35a027c8a0211add","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-631313c6a5d058ad | data/ingredients/mapped/Sodium_Gluconate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-631313c6a5d058ad | data/ingredients/mapped/Sodium_Gluconate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1838],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:84997","line":1840,"mapping_status":"MAPPED","ontology_id":"CHEBI:84997","preferred_term":"Sodium gluconate"}],"identifier":"CHEBI:84997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:84997","ontology_label":"sodium gluconate","ontology_source":"CHEBI"},"preferred_term":"Sodium gluconate","sssom_rows":[{"data_row":2564,"object_id":"CHEBI:84997","object_label":"sodium gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Gluconate","synonym_count":9} |
 | ev-f5bf0ad02fb565ad | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-2c768cd626a28e6a] | context_only | Predecessor structured review finding f-2c768cd626a28e6a in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-27697a5fd0848436
+  evidence_ids:
+  - ev-c964cdc55b7481f1
+  - ev-f5616110eef9b3b3
+  - ev-2b766aa398f5475f
+  - ev-8b0952f132fdec23
+  - ev-631313c6a5d058ad
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-27697a5fd0848436
+  evidence_ids:
+  - ev-c964cdc55b7481f1
+  - ev-89b416593e03e582
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-27697a5fd0848436
+  evidence_ids:
+  - ev-6c0cc2b2ac9e4fe9
+  - ev-89b416593e03e582
+  - ev-f5bf0ad02fb565ad
 evidence:
 - evidence_id: ev-c964cdc55b7481f1
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Gluconate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1839],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:84997","line":1841,"mapping_status":"MAPPED","ontology_id":"CHEBI:84997","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1838],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:84997","line":1840,"mapping_status":"MAPPED","ontology_id":"CHEBI:84997","preferred_term":"Sodium
     gluconate"}],"identifier":"CHEBI:84997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:84997","ontology_label":"sodium
-    gluconate","ontology_source":"CHEBI"},"preferred_term":"Sodium gluconate","sssom_rows":[{"data_row":2562,"object_id":"CHEBI:84997","object_label":"sodium
+    gluconate","ontology_source":"CHEBI"},"preferred_term":"Sodium gluconate","sssom_rows":[{"data_row":2564,"object_id":"CHEBI:84997","object_label":"sodium
     gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Gluconate","synonym_count":9}'
   snapshot_sha256: a39a644eb65c55b6f99c47e098938a736bea805c4236f89e7e9dd1e6f3cdabc4
 - evidence_id: ev-f5616110eef9b3b3
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1839]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1838]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,10 +233,10 @@ evidence:
 - evidence_id: ev-2b766aa398f5475f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_Gluconate; data-row positions=[2562]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_Gluconate; data-row positions=[2564]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2562,"object_id":"CHEBI:84997","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2564,"object_id":"CHEBI:84997","object_label":"sodium
     gluconate","other":"D-Gluconic acid, monosodium salt|Gluconic acid sodium salt|Monosodium
     D-gluconate|Monosodium gluconate|sodium (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanoate|Na-gluconate|Na
     gluconate|CAS:527-07-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Gluconate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -231,10 +244,10 @@ evidence:
 - evidence_id: ev-8b0952f132fdec23
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1841]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1840]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:84997","line":1841,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:84997","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:84997","line":1840,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"20","ontology_id":"CHEBI:84997","preferred_term":"Sodium
     gluconate","total_occurrences":"20"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-6c0cc2b2ac9e4fe9
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1216,1471,1909]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a39a644eb65c55b6f99c47e098938a736bea805c4236f89e7e9dd1e6f3cdabc4","finding_id":"SEM:c9a6d88b2006de59bd36","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a39a644eb65c55b6f99c47e098938a736bea805c4236f89e7e9dd1e6f3cdabc4","finding_id":"SEM:1fa708aca9f5bef33726","kind":"role_evidence","resolution_reason":"Historical
@@ -262,14 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Gluconate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1838],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:84997","line":1840,"mapping_status":"MAPPED","ontology_id":"CHEBI:84997","preferred_term":"Sodium
+    gluconate"}],"identifier":"CHEBI:84997","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":20,"edge_count":20,"occurrences":20},"occurrence_statistics":{"media_count":20,"total_occurrences":20},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:84997","ontology_label":"sodium
+    gluconate","ontology_source":"CHEBI"},"preferred_term":"Sodium gluconate","sssom_rows":[{"data_row":2564,"object_id":"CHEBI:84997","object_label":"sodium
+    gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Gluconate","synonym_count":9}'
   snapshot_sha256: a39a644eb65c55b6f99c47e098938a736bea805c4236f89e7e9dd1e6f3cdabc4
 - evidence_id: ev-f5bf0ad02fb565ad
   kind: prior_review

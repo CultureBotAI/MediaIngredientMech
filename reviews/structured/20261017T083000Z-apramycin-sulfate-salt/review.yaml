@@ -77,6 +77,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8270c77371d0c1e4
+  evidence_ids:
+  - ev-175264640f5c23aa
+  - ev-2941e502b0d733a2
+  - ev-d7552c397162f1d2
+  - ev-9dce046c525f8f24
+  - ev-8bf85eba4678a289
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -85,6 +91,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8270c77371d0c1e4
+  evidence_ids:
+  - ev-175264640f5c23aa
+  - ev-f530daa4ea99b9df
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -93,15 +102,20 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8270c77371d0c1e4
+  evidence_ids:
+  - ev-c923b47588f69864
+  - ev-43759572095371b5
+  - ev-f530daa4ea99b9df
+  - ev-b8a975853534dcfa
 evidence:
 - evidence_id: ev-175264640f5c23aa
   kind: record_content
   reference: data/ingredients/mapped/Apramycin_Sulfate_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2647],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:190734","line":2649,"mapping_status":"MAPPED","ontology_id":"CHEBI:190734","preferred_term":"Apramycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2646],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:190734","line":2648,"mapping_status":"MAPPED","ontology_id":"CHEBI:190734","preferred_term":"Apramycin
     sulfate salt"}],"identifier":"CHEBI:190734","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:190734","ontology_label":"Apramycin
     sulfate","ontology_source":"CHEBI"},"preferred_term":"Apramycin sulfate salt","sssom_rows":[{"data_row":404,"object_id":"CHEBI:190734","object_label":"Apramycin
     sulfate","predicate_id":"skos:exactMatch"},{"data_row":405,"object_id":"cas:65710-07-8","object_label":"Apramycin
@@ -111,8 +125,8 @@ evidence:
 - evidence_id: ev-2941e502b0d733a2
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2647]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2646]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -120,8 +134,8 @@ evidence:
 - evidence_id: ev-d7552c397162f1d2
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Apramycin_Sulfate_Salt; data-row positions=[404,405,406]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Apramycin_Sulfate_Salt; data-row positions=[404, 405, 406]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":404,"object_id":"CHEBI:190734","object_label":"Apramycin
     sulfate","other":"(2R,3R,4S,5S,6S)-2-[[(2R,3S,4R,4aR,6S,7R,8aS)-7-amino-6-[(1R,2R,3S,4R,6S)-4,6-diamino-2,3-dihydroxycyclohexyl]oxy-4-hydroxy-3-(methylamino)-2,3,4,4a,6,7,8,8a-octahydropyrano[3,2-b]pyran-2-yl]oxy]-5-amino-6-(hydroxymethyl)oxane-3,4-diol;suluric
@@ -132,10 +146,10 @@ evidence:
 - evidence_id: ev-9dce046c525f8f24
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2649]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2648]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:190734","line":2649,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:190734","preferred_term":"Apramycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:190734","line":2648,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:190734","preferred_term":"Apramycin
     sulfate salt","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-c923b47588f69864
@@ -192,7 +206,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[268,1527]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"acc3fbd3cd049b34e685ac0f6539e33c2afc116e803ae4ad9a84e6e6ed6c7f5e","finding_id":"SEM:ed40b43fb7115484cc01","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"acc3fbd3cd049b34e685ac0f6539e33c2afc116e803ae4ad9a84e6e6ed6c7f5e","finding_id":"SEM:d8001dc72b049c7772f0","kind":"role_evidence","resolution_reason":"Historical
@@ -202,12 +216,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Apramycin_Sulfate_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2646],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:190734","line":2648,"mapping_status":"MAPPED","ontology_id":"CHEBI:190734","preferred_term":"Apramycin
+    sulfate salt"}],"identifier":"CHEBI:190734","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:190734","ontology_label":"Apramycin
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Apramycin sulfate salt","sssom_rows":[{"data_row":404,"object_id":"CHEBI:190734","object_label":"Apramycin
+    sulfate","predicate_id":"skos:exactMatch"},{"data_row":405,"object_id":"cas:65710-07-8","object_label":"Apramycin
+    sulfate salt","predicate_id":"skos:exactMatch"},{"data_row":406,"object_id":"kgmicrobe.compound:apramycin_sulfate_salt","object_label":"Apramycin
+    sulfate salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Apramycin_Sulfate_Salt","synonym_count":1}'
   snapshot_sha256: acc3fbd3cd049b34e685ac0f6539e33c2afc116e803ae4ad9a84e6e6ed6c7f5e
 - evidence_id: ev-b8a975853534dcfa
   kind: prior_review

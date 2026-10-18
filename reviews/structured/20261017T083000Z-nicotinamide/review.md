@@ -83,13 +83,13 @@ Reassess prediction-only role support: Nicotinamide
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-04c39e0158145d3e | data/ingredients/mapped/Nicotinamide.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1560],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17154","line":1562,"mapping_status":"MAPPED","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide"}],"identifier":"CHEBI:17154","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":254,"edge_count":254,"occurrences":254},"occurrence_statistics":{"media_count":254,"total_occurrences":254},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17154","ontology_label":"nicotinamide","ontology_source":"CHEBI"},"preferred_term":"Nicotinamide","sssom_rows":[{"data_row":2085,"object_id":"CHEBI:17154","object_label":"nicotinamide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicotinamide","synonym_count":24} |
-| ev-82a3c26257d1dfc9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1560] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-30b0af5d8786ee37 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nicotinamide; data-row positions=[2085] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2085,"object_id":"CHEBI:17154","object_label":"nicotinamide","other":"Nicotine amide&#124;Niacinamide&#124;3-carbamoylpyridine&#124;3-pyridinecarboxamide&#124;Nicotinamid&#124;Nicotinic acid amide&#124;Nicotinsaeureamid&#124;Nikotinamid&#124;Nikotinsaeureamid&#124;Vitamin PP&#124;beta-pyridinecarboxamide&#124;m-(aminocarbonyl)pyridine&#124;niamide&#124;nicotinamida&#124;nicotinamidum&#124;nicotine acid amide&#124;nicotinic amide&#124;nicotylamide&#124;pyridine-3-carboxamide&#124;pyridine-3-carboxylic acid amide&#124;Nicotinamide (Niacinamide)&#124;CAS:98-92-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Nicotinamide","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-a9bddcfdcbfc7edc | docs/data/mapped_ingredients.csv; CSV lines=[1562] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17154","line":1562,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"254","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide","total_occurrences":"254"}] |
+| ev-04c39e0158145d3e | data/ingredients/mapped/Nicotinamide.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1559],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17154","line":1561,"mapping_status":"MAPPED","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide"}],"identifier":"CHEBI:17154","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":254,"edge_count":254,"occurrences":254},"occurrence_statistics":{"media_count":254,"total_occurrences":254},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17154","ontology_label":"nicotinamide","ontology_source":"CHEBI"},"preferred_term":"Nicotinamide","sssom_rows":[{"data_row":2087,"object_id":"CHEBI:17154","object_label":"nicotinamide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicotinamide","synonym_count":24} |
+| ev-82a3c26257d1dfc9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1559] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-30b0af5d8786ee37 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nicotinamide; data-row positions=[2087] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2087,"object_id":"CHEBI:17154","object_label":"nicotinamide","other":"Nicotine amide&#124;Niacinamide&#124;3-carbamoylpyridine&#124;3-pyridinecarboxamide&#124;Nicotinamid&#124;Nicotinic acid amide&#124;Nicotinsaeureamid&#124;Nikotinamid&#124;Nikotinsaeureamid&#124;Vitamin PP&#124;beta-pyridinecarboxamide&#124;m-(aminocarbonyl)pyridine&#124;niamide&#124;nicotinamida&#124;nicotinamidum&#124;nicotine acid amide&#124;nicotinic amide&#124;nicotylamide&#124;pyridine-3-carboxamide&#124;pyridine-3-carboxylic acid amide&#124;Nicotinamide (Niacinamide)&#124;CAS:98-92-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Nicotinamide","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-a9bddcfdcbfc7edc | docs/data/mapped_ingredients.csv; CSV lines=[1561] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17154","line":1561,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"254","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide","total_occurrences":"254"}] |
 | ev-3daad60e95a4e0b9 | reports/yaml_record_review/Nicotinamide.md; &#96;data/ingredients/mapped/Nicotinamide.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:28; Completeness:41; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d72d12448c605159 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1057,1442] | context_only | [{"current_record_sha256":"724181418c9efc54cff5930bb942c07ed23e1417144bbc0c785caa58b5683325","finding_id":"SEM:2044cf49d2bdf6cdee0c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"724181418c9efc54cff5930bb942c07ed23e1417144bbc0c785caa58b5683325","finding_id":"SEM:3e4f56c1a64a20404ebd","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-982d0e7f4b046e43 | data/ingredients/mapped/Nicotinamide.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-982d0e7f4b046e43 | data/ingredients/mapped/Nicotinamide.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1559],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17154","line":1561,"mapping_status":"MAPPED","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide"}],"identifier":"CHEBI:17154","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":254,"edge_count":254,"occurrences":254},"occurrence_statistics":{"media_count":254,"total_occurrences":254},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17154","ontology_label":"nicotinamide","ontology_source":"CHEBI"},"preferred_term":"Nicotinamide","sssom_rows":[{"data_row":2087,"object_id":"CHEBI:17154","object_label":"nicotinamide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicotinamide","synonym_count":24} |
 | ev-04d8f54f2cf05af2 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-f58e0d872508812e] | context_only | Predecessor structured review finding f-f58e0d872508812e in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c648fe682ab04504
+  evidence_ids:
+  - ev-04c39e0158145d3e
+  - ev-82a3c26257d1dfc9
+  - ev-30b0af5d8786ee37
+  - ev-a9bddcfdcbfc7edc
+  - ev-982d0e7f4b046e43
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c648fe682ab04504
+  evidence_ids:
+  - ev-04c39e0158145d3e
+  - ev-d72d12448c605159
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c648fe682ab04504
+  evidence_ids:
+  - ev-3daad60e95a4e0b9
+  - ev-d72d12448c605159
+  - ev-04d8f54f2cf05af2
 evidence:
 - evidence_id: ev-04c39e0158145d3e
   kind: record_content
   reference: data/ingredients/mapped/Nicotinamide.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1560],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17154","line":1562,"mapping_status":"MAPPED","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide"}],"identifier":"CHEBI:17154","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":254,"edge_count":254,"occurrences":254},"occurrence_statistics":{"media_count":254,"total_occurrences":254},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17154","ontology_label":"nicotinamide","ontology_source":"CHEBI"},"preferred_term":"Nicotinamide","sssom_rows":[{"data_row":2085,"object_id":"CHEBI:17154","object_label":"nicotinamide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicotinamide","synonym_count":24}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1559],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17154","line":1561,"mapping_status":"MAPPED","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide"}],"identifier":"CHEBI:17154","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":254,"edge_count":254,"occurrences":254},"occurrence_statistics":{"media_count":254,"total_occurrences":254},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17154","ontology_label":"nicotinamide","ontology_source":"CHEBI"},"preferred_term":"Nicotinamide","sssom_rows":[{"data_row":2087,"object_id":"CHEBI:17154","object_label":"nicotinamide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicotinamide","synonym_count":24}'
   snapshot_sha256: 724181418c9efc54cff5930bb942c07ed23e1417144bbc0c785caa58b5683325
 - evidence_id: ev-82a3c26257d1dfc9
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1560]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1559]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,10 +230,10 @@ evidence:
 - evidence_id: ev-30b0af5d8786ee37
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Nicotinamide; data-row positions=[2085]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Nicotinamide; data-row positions=[2087]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2085,"object_id":"CHEBI:17154","object_label":"nicotinamide","other":"Nicotine
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2087,"object_id":"CHEBI:17154","object_label":"nicotinamide","other":"Nicotine
     amide|Niacinamide|3-carbamoylpyridine|3-pyridinecarboxamide|Nicotinamid|Nicotinic
     acid amide|Nicotinsaeureamid|Nikotinamid|Nikotinsaeureamid|Vitamin PP|beta-pyridinecarboxamide|m-(aminocarbonyl)pyridine|niamide|nicotinamida|nicotinamidum|nicotine
     acid amide|nicotinic amide|nicotylamide|pyridine-3-carboxamide|pyridine-3-carboxylic
@@ -229,10 +242,10 @@ evidence:
 - evidence_id: ev-a9bddcfdcbfc7edc
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1562]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1561]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17154","line":1562,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"254","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide","total_occurrences":"254"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17154","line":1561,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"254","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide","total_occurrences":"254"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-3daad60e95a4e0b9
   kind: prior_review
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1057,1442]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"724181418c9efc54cff5930bb942c07ed23e1417144bbc0c785caa58b5683325","finding_id":"SEM:2044cf49d2bdf6cdee0c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"724181418c9efc54cff5930bb942c07ed23e1417144bbc0c785caa58b5683325","finding_id":"SEM:3e4f56c1a64a20404ebd","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Nicotinamide.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1559],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17154","line":1561,"mapping_status":"MAPPED","ontology_id":"CHEBI:17154","preferred_term":"Nicotinamide"}],"identifier":"CHEBI:17154","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":254,"edge_count":254,"occurrences":254},"occurrence_statistics":{"media_count":254,"total_occurrences":254},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17154","ontology_label":"nicotinamide","ontology_source":"CHEBI"},"preferred_term":"Nicotinamide","sssom_rows":[{"data_row":2087,"object_id":"CHEBI:17154","object_label":"nicotinamide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicotinamide","synonym_count":24}'
   snapshot_sha256: 724181418c9efc54cff5930bb942c07ed23e1417144bbc0c785caa58b5683325
 - evidence_id: ev-04d8f54f2cf05af2
   kind: prior_review

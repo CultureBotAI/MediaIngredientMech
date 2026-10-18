@@ -83,13 +83,13 @@ Reassess prediction-only role support: Proteose Peptone
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-913fc448ef8f8815 | data/ingredients/mapped/Proteose_Peptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1709],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000180","line":1711,"mapping_status":"MAPPED","ontology_id":"MICRO:0000180","preferred_term":"Proteose Peptone"}],"identifier":"MICRO:0000180","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":563,"edge_count":563,"occurrences":571},"occurrence_statistics":{"media_count":563,"total_occurrences":571},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000180","ontology_label":"proteose peptone","ontology_source":"MICRO"},"preferred_term":"Proteose Peptone","sssom_rows":[{"data_row":2355,"object_id":"MICRO:0000180","object_label":"proteose peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Proteose_Peptone","synonym_count":18} |
-| ev-3d7d19477c615093 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1709] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-7b251b8102df7c12 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Proteose_Peptone; data-row positions=[2355] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2355,"object_id":"MICRO:0000180","object_label":"proteose peptone","other":"Proteose Peptone(BD 211684)&#124;Proteose peptone no. 3&#124;Proteose peptone No. 3 (BD-Difco)&#124;Bacto Proteose Peptone No. 3 (Difco)&#124;Proteose peptone (BD-Difco)&#124;Proteose Peptone (Difco no. 3)&#124;Proteose peptone (Difco)&#124;Proteose peptone (BD Difco)&#124;Bacto Proteose Peptone No.3 (Difco)&#124;Proteose peptone no.3 (Difco)&#124;Proteose peptone No. 3 (BD--Difco)&#124;Proteose peptone (BD--Difco)&#124;Peptic digest of animal tissue&#124;Proteose peptone (BD Difico)&#124;CAS:91079-38-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Proteose_Peptone","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-7d190656356ccc6a | docs/data/mapped_ingredients.csv; CSV lines=[1711] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000180","line":1711,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"563","ontology_id":"MICRO:0000180","preferred_term":"Proteose Peptone","total_occurrences":"571"}] |
+| ev-913fc448ef8f8815 | data/ingredients/mapped/Proteose_Peptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1708],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000180","line":1710,"mapping_status":"MAPPED","ontology_id":"MICRO:0000180","preferred_term":"Proteose Peptone"}],"identifier":"MICRO:0000180","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":563,"edge_count":563,"occurrences":571},"occurrence_statistics":{"media_count":563,"total_occurrences":571},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000180","ontology_label":"proteose peptone","ontology_source":"MICRO"},"preferred_term":"Proteose Peptone","sssom_rows":[{"data_row":2357,"object_id":"MICRO:0000180","object_label":"proteose peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Proteose_Peptone","synonym_count":18} |
+| ev-3d7d19477c615093 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1708] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-7b251b8102df7c12 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Proteose_Peptone; data-row positions=[2357] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2357,"object_id":"MICRO:0000180","object_label":"proteose peptone","other":"Proteose Peptone(BD 211684)&#124;Proteose peptone no. 3&#124;Proteose peptone No. 3 (BD-Difco)&#124;Bacto Proteose Peptone No. 3 (Difco)&#124;Proteose peptone (BD-Difco)&#124;Proteose Peptone (Difco no. 3)&#124;Proteose peptone (Difco)&#124;Proteose peptone (BD Difco)&#124;Bacto Proteose Peptone No.3 (Difco)&#124;Proteose peptone no.3 (Difco)&#124;Proteose peptone No. 3 (BD--Difco)&#124;Proteose peptone (BD--Difco)&#124;Peptic digest of animal tissue&#124;Proteose peptone (BD Difico)&#124;CAS:91079-38-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Proteose_Peptone","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-7d190656356ccc6a | docs/data/mapped_ingredients.csv; CSV lines=[1710] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000180","line":1710,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"563","ontology_id":"MICRO:0000180","preferred_term":"Proteose Peptone","total_occurrences":"571"}] |
 | ev-dcd1398156c5661f | reports/yaml_record_review/Proteose_Peptone.md; &#96;data/ingredients/mapped/Proteose_Peptone.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b4ead25b68a4d8c1 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1144,1437] | context_only | [{"current_record_sha256":"c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e","finding_id":"SEM:9023f8783016407b83d9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e","finding_id":"SEM:8850e6476dbdc8aa080f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-70d63bc9e8058af4 | data/ingredients/mapped/Proteose_Peptone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-70d63bc9e8058af4 | data/ingredients/mapped/Proteose_Peptone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1708],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000180","line":1710,"mapping_status":"MAPPED","ontology_id":"MICRO:0000180","preferred_term":"Proteose Peptone"}],"identifier":"MICRO:0000180","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":563,"edge_count":563,"occurrences":571},"occurrence_statistics":{"media_count":563,"total_occurrences":571},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000180","ontology_label":"proteose peptone","ontology_source":"MICRO"},"preferred_term":"Proteose Peptone","sssom_rows":[{"data_row":2357,"object_id":"MICRO:0000180","object_label":"proteose peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Proteose_Peptone","synonym_count":18} |
 | ev-1c84e53a4b083505 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-4bcce20a7fef6e6f] | context_only | Predecessor structured review finding f-4bcce20a7fef6e6f in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cd3c1fcd33dd4ec6
+  evidence_ids:
+  - ev-913fc448ef8f8815
+  - ev-3d7d19477c615093
+  - ev-7b251b8102df7c12
+  - ev-7d190656356ccc6a
+  - ev-70d63bc9e8058af4
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-cd3c1fcd33dd4ec6
+  evidence_ids:
+  - ev-913fc448ef8f8815
+  - ev-b4ead25b68a4d8c1
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cd3c1fcd33dd4ec6
+  evidence_ids:
+  - ev-dcd1398156c5661f
+  - ev-b4ead25b68a4d8c1
+  - ev-1c84e53a4b083505
 evidence:
 - evidence_id: ev-913fc448ef8f8815
   kind: record_content
   reference: data/ingredients/mapped/Proteose_Peptone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1709],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000180","line":1711,"mapping_status":"MAPPED","ontology_id":"MICRO:0000180","preferred_term":"Proteose
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1708],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000180","line":1710,"mapping_status":"MAPPED","ontology_id":"MICRO:0000180","preferred_term":"Proteose
     Peptone"}],"identifier":"MICRO:0000180","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":563,"edge_count":563,"occurrences":571},"occurrence_statistics":{"media_count":563,"total_occurrences":571},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000180","ontology_label":"proteose
-    peptone","ontology_source":"MICRO"},"preferred_term":"Proteose Peptone","sssom_rows":[{"data_row":2355,"object_id":"MICRO:0000180","object_label":"proteose
+    peptone","ontology_source":"MICRO"},"preferred_term":"Proteose Peptone","sssom_rows":[{"data_row":2357,"object_id":"MICRO:0000180","object_label":"proteose
     peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Proteose_Peptone","synonym_count":18}'
   snapshot_sha256: c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e
 - evidence_id: ev-3d7d19477c615093
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1709]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1708]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,10 +233,10 @@ evidence:
 - evidence_id: ev-7b251b8102df7c12
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Proteose_Peptone; data-row positions=[2355]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Proteose_Peptone; data-row positions=[2357]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2355,"object_id":"MICRO:0000180","object_label":"proteose
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2357,"object_id":"MICRO:0000180","object_label":"proteose
     peptone","other":"Proteose Peptone(BD 211684)|Proteose peptone no. 3|Proteose
     peptone No. 3 (BD-Difco)|Bacto Proteose Peptone No. 3 (Difco)|Proteose peptone
     (BD-Difco)|Proteose Peptone (Difco no. 3)|Proteose peptone (Difco)|Proteose peptone
@@ -234,10 +247,10 @@ evidence:
 - evidence_id: ev-7d190656356ccc6a
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1711]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1710]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000180","line":1711,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"563","ontology_id":"MICRO:0000180","preferred_term":"Proteose
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000180","line":1710,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"563","ontology_id":"MICRO:0000180","preferred_term":"Proteose
     Peptone","total_occurrences":"571"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-dcd1398156c5661f
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1144,1437]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e","finding_id":"SEM:9023f8783016407b83d9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e","finding_id":"SEM:8850e6476dbdc8aa080f","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Proteose_Peptone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1708],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000180","line":1710,"mapping_status":"MAPPED","ontology_id":"MICRO:0000180","preferred_term":"Proteose
+    Peptone"}],"identifier":"MICRO:0000180","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":563,"edge_count":563,"occurrences":571},"occurrence_statistics":{"media_count":563,"total_occurrences":571},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000180","ontology_label":"proteose
+    peptone","ontology_source":"MICRO"},"preferred_term":"Proteose Peptone","sssom_rows":[{"data_row":2357,"object_id":"MICRO:0000180","object_label":"proteose
+    peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Proteose_Peptone","synonym_count":18}'
   snapshot_sha256: c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e
 - evidence_id: ev-1c84e53a4b083505
   kind: prior_review

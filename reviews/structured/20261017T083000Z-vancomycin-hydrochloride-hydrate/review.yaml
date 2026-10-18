@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-d28828f3e011663d
+  - ev-b102dded7b9b5f1c
+  - ev-bde7bb9e44aaf15d
+  - ev-71f1b0aaf916bf47
+  - ev-2a0849398014421d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-d28828f3e011663d
+  - ev-d037bef0f320052e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,26 +99,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3bcf03b479e88258
+  evidence_ids:
+  - ev-15e42c7472b3560e
+  - ev-d037bef0f320052e
+  - ev-ac3df770da05fc36
 evidence:
 - evidence_id: ev-d28828f3e011663d
   kind: record_content
   reference: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2035],"raw_equal":true},"docs_rows":[{"identifier":"cas:123409-00-7","line":2037,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2034],"raw_equal":true},"docs_rows":[{"identifier":"cas:123409-00-7","line":2036,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
     Hydrochloride Hydrate"}],"identifier":"cas:123409-00-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin
     hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride
-    Hydrate","sssom_rows":[{"data_row":2886,"object_id":"CHEBI:9932","object_label":"Vancomycin
-    hydrochloride","predicate_id":"skos:closeMatch"},{"data_row":2887,"object_id":"cas:123409-00-7","object_label":"Vancomycin
+    Hydrate","sssom_rows":[{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin
+    hydrochloride","predicate_id":"skos:closeMatch"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin
     Hydrochloride Hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_Hydrate","synonym_count":0}'
   snapshot_sha256: 7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5
 - evidence_id: ev-b102dded7b9b5f1c
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2035]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2034]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -117,20 +130,21 @@ evidence:
 - evidence_id: ev-bde7bb9e44aaf15d
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Vancomycin_Hydrochloride_Hydrate; data-row positions=[2886,2887]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Vancomycin_Hydrochloride_Hydrate; data-row positions=[2888,
+    2889]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2886,"object_id":"CHEBI:9932","object_label":"Vancomycin
-    hydrochloride","other":"CAS:123409-00-7","predicate_id":"skos:closeMatch","subject_id":"MIM:Vancomycin_Hydrochloride_Hydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":2887,"object_id":"cas:123409-00-7","object_label":"Vancomycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin
+    hydrochloride","other":"CAS:123409-00-7","predicate_id":"skos:closeMatch","subject_id":"MIM:Vancomycin_Hydrochloride_Hydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin
     Hydrochloride Hydrate","other":"CAS:123409-00-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Vancomycin_Hydrochloride_Hydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-71f1b0aaf916bf47
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2037]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2036]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:123409-00-7","line":2037,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:123409-00-7","line":2036,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
     Hydrochloride Hydrate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-15e42c7472b3560e
@@ -161,7 +175,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1335,2095]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5","finding_id":"SEM:f0cc05c9c2b4f3f6c37b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5","finding_id":"SEM:736fb5f7d84fb0218957","kind":"role_evidence","resolution_reason":"Historical
@@ -171,12 +185,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2034],"raw_equal":true},"docs_rows":[{"identifier":"cas:123409-00-7","line":2036,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+    Hydrochloride Hydrate"}],"identifier":"cas:123409-00-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride
+    Hydrate","sssom_rows":[{"data_row":2888,"object_id":"CHEBI:9932","object_label":"Vancomycin
+    hydrochloride","predicate_id":"skos:closeMatch"},{"data_row":2889,"object_id":"cas:123409-00-7","object_label":"Vancomycin
+    Hydrochloride Hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_Hydrate","synonym_count":0}'
   snapshot_sha256: 7b2a0d9439f1922307397b1470b9bf6d1052129aa298e3fac572188935e240f5
 - evidence_id: ev-ac3df770da05fc36
   kind: prior_review

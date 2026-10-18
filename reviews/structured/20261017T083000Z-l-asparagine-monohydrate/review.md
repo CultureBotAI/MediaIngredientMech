@@ -85,11 +85,11 @@ Reassess prediction-only role support: L-Asparagine monohydrate
 | --- | --- | --- | --- |
 | ev-15619c929c40b814 | data/ingredients/mapped/L-Asparagine_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1215],"raw_equal":true},"docs_rows":[{"identifier":"cas:5794-13-8","line":1217,"mapping_status":"MAPPED","ontology_id":"NCIT:C87433","preferred_term":"L-Asparagine monohydrate"}],"identifier":"cas:5794-13-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C87433","ontology_label":"Asparagine Monohydrate","ontology_source":"NCIT"},"preferred_term":"L-Asparagine monohydrate","sssom_rows":[{"data_row":1557,"object_id":"NCIT:C87433","object_label":"Asparagine Monohydrate","predicate_id":"skos:broadMatch"},{"data_row":1558,"object_id":"cas:5794-13-8","object_label":"L-Asparagine monohydrate","predicate_id":"skos:exactMatch"},{"data_row":1559,"object_id":"kgmicrobe.compound:l-asparagine_monohydrate","object_label":"L-Asparagine monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Asparagine_Monohydrate","synonym_count":0} |
 | ev-0dea1e2949996e25 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1215] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6e4be19be390d634 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Asparagine_Monohydrate; data-row positions=[1557,1558,1559] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1557,"object_id":"NCIT:C87433","object_label":"Asparagine Monohydrate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Asparagine_Monohydrate","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1558,"object_id":"cas:5794-13-8","object_label":"L-Asparagine monohydrate","other":"CAS:5794-13-8","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Asparagine_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1559,"object_id":"kgmicrobe.compound:l-asparagine_monohydrate","object_label":"L-Asparagine monohydrate","other":"CAS:5794-13-8","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Asparagine_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-6e4be19be390d634 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Asparagine_Monohydrate; data-row positions=[1557, 1558, 1559] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1557,"object_id":"NCIT:C87433","object_label":"Asparagine Monohydrate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Asparagine_Monohydrate","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1558,"object_id":"cas:5794-13-8","object_label":"L-Asparagine monohydrate","other":"CAS:5794-13-8","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Asparagine_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1559,"object_id":"kgmicrobe.compound:l-asparagine_monohydrate","object_label":"L-Asparagine monohydrate","other":"CAS:5794-13-8","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Asparagine_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-1d031265424c8188 | docs/data/mapped_ingredients.csv; CSV lines=[1217] | supports | Published identity and count rows inspected: [{"identifier":"cas:5794-13-8","line":1217,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C87433","preferred_term":"L-Asparagine monohydrate","total_occurrences":"0"}] |
 | ev-218366f9451ca5cb | reports/yaml_record_review/L-Asparagine_Monohydrate.md; &#96;data/ingredients/mapped/L-Asparagine_Monohydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:31; Completeness:57; Recommended Edits:65 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a86287571134c5db | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[782,1781] | context_only | [{"current_record_sha256":"0f3972bdde44bc5bf922cef4cfa8748d3cd18b5dd7bd9ebea77ae8e6659ed11a","finding_id":"SEM:8cc40ab2caedd264d5c6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0f3972bdde44bc5bf922cef4cfa8748d3cd18b5dd7bd9ebea77ae8e6659ed11a","finding_id":"SEM:eb8d5775f500d35ba87e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b839f807e1db131b | data/ingredients/mapped/L-Asparagine_Monohydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-b839f807e1db131b | data/ingredients/mapped/L-Asparagine_Monohydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1215],"raw_equal":true},"docs_rows":[{"identifier":"cas:5794-13-8","line":1217,"mapping_status":"MAPPED","ontology_id":"NCIT:C87433","preferred_term":"L-Asparagine monohydrate"}],"identifier":"cas:5794-13-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C87433","ontology_label":"Asparagine Monohydrate","ontology_source":"NCIT"},"preferred_term":"L-Asparagine monohydrate","sssom_rows":[{"data_row":1557,"object_id":"NCIT:C87433","object_label":"Asparagine Monohydrate","predicate_id":"skos:broadMatch"},{"data_row":1558,"object_id":"cas:5794-13-8","object_label":"L-Asparagine monohydrate","predicate_id":"skos:exactMatch"},{"data_row":1559,"object_id":"kgmicrobe.compound:l-asparagine_monohydrate","object_label":"L-Asparagine monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Asparagine_Monohydrate","synonym_count":0} |
 | ev-136d938db0504c0a | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-5ddff4c316c75a01] | context_only | Predecessor structured review finding f-5ddff4c316c75a01 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-fa315281a3bf9ea3
+  evidence_ids:
+  - ev-15619c929c40b814
+  - ev-0dea1e2949996e25
+  - ev-6e4be19be390d634
+  - ev-1d031265424c8188
+  - ev-b839f807e1db131b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-fa315281a3bf9ea3
+  evidence_ids:
+  - ev-15619c929c40b814
+  - ev-a86287571134c5db
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-fa315281a3bf9ea3
+  evidence_ids:
+  - ev-218366f9451ca5cb
+  - ev-a86287571134c5db
+  - ev-136d938db0504c0a
 evidence:
 - evidence_id: ev-15619c929c40b814
   kind: record_content
   reference: data/ingredients/mapped/L-Asparagine_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1215],"raw_equal":true},"docs_rows":[{"identifier":"cas:5794-13-8","line":1217,"mapping_status":"MAPPED","ontology_id":"NCIT:C87433","preferred_term":"L-Asparagine
     monohydrate"}],"identifier":"cas:5794-13-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C87433","ontology_label":"Asparagine
@@ -214,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1215]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,8 +235,9 @@ evidence:
 - evidence_id: ev-6e4be19be390d634
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:L-Asparagine_Monohydrate; data-row positions=[1557,1558,1559]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:L-Asparagine_Monohydrate; data-row positions=[1557, 1558,
+    1559]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1557,"object_id":"NCIT:C87433","object_label":"Asparagine
     Monohydrate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Asparagine_Monohydrate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1558,"object_id":"cas:5794-13-8","object_label":"L-Asparagine
@@ -234,7 +248,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1217]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:5794-13-8","line":1217,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C87433","preferred_term":"L-Asparagine
     monohydrate","total_occurrences":"0"}]'
@@ -258,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[782,1781]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0f3972bdde44bc5bf922cef4cfa8748d3cd18b5dd7bd9ebea77ae8e6659ed11a","finding_id":"SEM:8cc40ab2caedd264d5c6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0f3972bdde44bc5bf922cef4cfa8748d3cd18b5dd7bd9ebea77ae8e6659ed11a","finding_id":"SEM:eb8d5775f500d35ba87e","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +282,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Asparagine_Monohydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1215],"raw_equal":true},"docs_rows":[{"identifier":"cas:5794-13-8","line":1217,"mapping_status":"MAPPED","ontology_id":"NCIT:C87433","preferred_term":"L-Asparagine
+    monohydrate"}],"identifier":"cas:5794-13-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C87433","ontology_label":"Asparagine
+    Monohydrate","ontology_source":"NCIT"},"preferred_term":"L-Asparagine monohydrate","sssom_rows":[{"data_row":1557,"object_id":"NCIT:C87433","object_label":"Asparagine
+    Monohydrate","predicate_id":"skos:broadMatch"},{"data_row":1558,"object_id":"cas:5794-13-8","object_label":"L-Asparagine
+    monohydrate","predicate_id":"skos:exactMatch"},{"data_row":1559,"object_id":"kgmicrobe.compound:l-asparagine_monohydrate","object_label":"L-Asparagine
+    monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Asparagine_Monohydrate","synonym_count":0}'
   snapshot_sha256: 0f3972bdde44bc5bf922cef4cfa8748d3cd18b5dd7bd9ebea77ae8e6659ed11a
 - evidence_id: ev-136d938db0504c0a
   kind: prior_review

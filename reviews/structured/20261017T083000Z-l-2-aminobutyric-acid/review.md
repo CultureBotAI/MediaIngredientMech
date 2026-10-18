@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-2-Aminobutyric acid
 | ev-84f216693fe6176e | docs/data/mapped_ingredients.csv; CSV lines=[1215] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35619","line":1215,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:35619","preferred_term":"L-2-Aminobutyric acid","total_occurrences":"0"}] |
 | ev-f5cb3d336ced681e | reports/yaml_record_review/L-2-Aminobutyric_Acid.md; &#96;data/ingredients/mapped/L-2-Aminobutyric_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:32; Completeness:52; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-61a22fc92ae7a3f0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[780,1881] | context_only | [{"current_record_sha256":"aecc32a591c1f3a5cb913166982d8e3864ce636a09137f4210aa54c94529ed04","finding_id":"SEM:b3cf679a1a9c2f81d7aa","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aecc32a591c1f3a5cb913166982d8e3864ce636a09137f4210aa54c94529ed04","finding_id":"SEM:640fc93edf588f98e6e9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c380880794b5e50e | data/ingredients/mapped/L-2-Aminobutyric_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-c380880794b5e50e | data/ingredients/mapped/L-2-Aminobutyric_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1213],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35619","line":1215,"mapping_status":"MAPPED","ontology_id":"CHEBI:35619","preferred_term":"L-2-Aminobutyric acid"}],"identifier":"CHEBI:35619","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:35619","ontology_label":"L-alpha-aminobutyric acid","ontology_source":"CHEBI"},"preferred_term":"L-2-Aminobutyric acid","sssom_rows":[{"data_row":1555,"object_id":"CHEBI:35619","object_label":"L-alpha-aminobutyric acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-2-Aminobutyric_Acid","synonym_count":1} |
 | ev-a408b911f77b35b1 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-9b267a680bddbf98] | context_only | Predecessor structured review finding f-9b267a680bddbf98 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8be391e67013d2c3
+  evidence_ids:
+  - ev-7473eaea18fe93b1
+  - ev-d1a93a8cfaf3a2ee
+  - ev-742827be9e62fc3c
+  - ev-84f216693fe6176e
+  - ev-c380880794b5e50e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8be391e67013d2c3
+  evidence_ids:
+  - ev-7473eaea18fe93b1
+  - ev-61a22fc92ae7a3f0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8be391e67013d2c3
+  evidence_ids:
+  - ev-f5cb3d336ced681e
+  - ev-61a22fc92ae7a3f0
+  - ev-a408b911f77b35b1
 evidence:
 - evidence_id: ev-7473eaea18fe93b1
   kind: record_content
   reference: data/ingredients/mapped/L-2-Aminobutyric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1213],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35619","line":1215,"mapping_status":"MAPPED","ontology_id":"CHEBI:35619","preferred_term":"L-2-Aminobutyric
     acid"}],"identifier":"CHEBI:35619","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:35619","ontology_label":"L-alpha-aminobutyric
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1213]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-2-Aminobutyric_Acid; data-row positions=[1555]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1555,"object_id":"CHEBI:35619","object_label":"L-alpha-aminobutyric
     acid","other":"(2S)-2-aminobutanoic acid|CAS:1492-24-6","predicate_id":"skos:exactMatch","subject_id":"MIM:L-2-Aminobutyric_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1215]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35619","line":1215,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:35619","preferred_term":"L-2-Aminobutyric
     acid","total_occurrences":"0"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[780,1881]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"aecc32a591c1f3a5cb913166982d8e3864ce636a09137f4210aa54c94529ed04","finding_id":"SEM:b3cf679a1a9c2f81d7aa","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aecc32a591c1f3a5cb913166982d8e3864ce636a09137f4210aa54c94529ed04","finding_id":"SEM:640fc93edf588f98e6e9","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-2-Aminobutyric_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1213],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35619","line":1215,"mapping_status":"MAPPED","ontology_id":"CHEBI:35619","preferred_term":"L-2-Aminobutyric
+    acid"}],"identifier":"CHEBI:35619","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:35619","ontology_label":"L-alpha-aminobutyric
+    acid","ontology_source":"CHEBI"},"preferred_term":"L-2-Aminobutyric acid","sssom_rows":[{"data_row":1555,"object_id":"CHEBI:35619","object_label":"L-alpha-aminobutyric
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-2-Aminobutyric_Acid","synonym_count":1}'
   snapshot_sha256: aecc32a591c1f3a5cb913166982d8e3864ce636a09137f4210aa54c94529ed04
 - evidence_id: ev-a408b911f77b35b1
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: Danomycin
 | ev-ada38167f9f863d7 | docs/data/mapped_ingredients.csv; CSV lines=[863] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:danomycin","line":863,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:danomycin","preferred_term":"Danomycin","total_occurrences":"0"}] |
 | ev-e2e8b7d3ff6ddb6d | reports/yaml_record_review/Danomycin.md; &#96;data/ingredients/mapped/Danomycin.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:41; Completeness:56; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9a97163acd482e9f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[520,1893] | context_only | [{"current_record_sha256":"20ba29d7326f2cd0f7657db3cdd8124ca35dc1a15e3858723bd27101e2663cfd","finding_id":"SEM:a9a7fa9a952d092c0c35","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"20ba29d7326f2cd0f7657db3cdd8124ca35dc1a15e3858723bd27101e2663cfd","finding_id":"SEM:eb02fcf377d3e48fff52","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-33a298b6ce446aaf | data/ingredients/mapped/Danomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-33a298b6ce446aaf | data/ingredients/mapped/Danomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[861],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:danomycin","line":863,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:danomycin","preferred_term":"Danomycin"}],"identifier":"kgmicrobe.compound:danomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:danomycin","ontology_label":"Danomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Danomycin","sssom_rows":[{"data_row":998,"object_id":"kgmicrobe.compound:danomycin","object_label":"Danomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Danomycin","synonym_count":0} |
 | ev-a4ff27542d8ad145 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-b55bb02f42076b78] | context_only | Predecessor structured review finding f-b55bb02f42076b78 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-16aa9411b4121305
+  evidence_ids:
+  - ev-1fc7a13f94817991
+  - ev-6a3763788aa0de21
+  - ev-1b5a885b5ee14f4c
+  - ev-ada38167f9f863d7
+  - ev-33a298b6ce446aaf
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-16aa9411b4121305
+  evidence_ids:
+  - ev-1fc7a13f94817991
+  - ev-9a97163acd482e9f
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-16aa9411b4121305
+  evidence_ids:
+  - ev-e2e8b7d3ff6ddb6d
+  - ev-9a97163acd482e9f
+  - ev-a4ff27542d8ad145
 evidence:
 - evidence_id: ev-1fc7a13f94817991
   kind: record_content
   reference: data/ingredients/mapped/Danomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[861],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:danomycin","line":863,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:danomycin","preferred_term":"Danomycin"}],"identifier":"kgmicrobe.compound:danomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:danomycin","ontology_label":"Danomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Danomycin","sssom_rows":[{"data_row":998,"object_id":"kgmicrobe.compound:danomycin","object_label":"Danomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Danomycin","synonym_count":0}'
   snapshot_sha256: 20ba29d7326f2cd0f7657db3cdd8124ca35dc1a15e3858723bd27101e2663cfd
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [861]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Danomycin; data-row positions=[998]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":998,"object_id":"kgmicrobe.compound:danomycin","object_label":"Danomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Danomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[863]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:danomycin","line":863,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:danomycin","preferred_term":"Danomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[520,1893]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"20ba29d7326f2cd0f7657db3cdd8124ca35dc1a15e3858723bd27101e2663cfd","finding_id":"SEM:a9a7fa9a952d092c0c35","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"20ba29d7326f2cd0f7657db3cdd8124ca35dc1a15e3858723bd27101e2663cfd","finding_id":"SEM:eb02fcf377d3e48fff52","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Danomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[861],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:danomycin","line":863,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:danomycin","preferred_term":"Danomycin"}],"identifier":"kgmicrobe.compound:danomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:danomycin","ontology_label":"Danomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Danomycin","sssom_rows":[{"data_row":998,"object_id":"kgmicrobe.compound:danomycin","object_label":"Danomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Danomycin","synonym_count":0}'
   snapshot_sha256: 20ba29d7326f2cd0f7657db3cdd8124ca35dc1a15e3858723bd27101e2663cfd
 - evidence_id: ev-a4ff27542d8ad145
   kind: prior_review

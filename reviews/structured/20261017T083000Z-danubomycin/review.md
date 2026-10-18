@@ -89,7 +89,7 @@ Reassess prediction-only role support: Danubomycin
 | ev-f8152049f1148da1 | docs/data/mapped_ingredients.csv; CSV lines=[864] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:danubomycin","line":864,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:danubomycin","preferred_term":"Danubomycin","total_occurrences":"0"}] |
 | ev-d539b00e5b6690e2 | reports/yaml_record_review/Danubomycin.md; &#96;data/ingredients/mapped/Danubomycin.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:41; Completeness:57; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c0366eb936b1aa01 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[521,1438] | context_only | [{"current_record_sha256":"0d90522f7559d33a8c25a8701006ac82bb817e50f2965bf91c584882c8bb8c1c","finding_id":"SEM:a1a7feed779894aafb2c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0d90522f7559d33a8c25a8701006ac82bb817e50f2965bf91c584882c8bb8c1c","finding_id":"SEM:215f2857ba29fa4bc054","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-5329d229db7b77f3 | data/ingredients/mapped/Danubomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-5329d229db7b77f3 | data/ingredients/mapped/Danubomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[862],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:danubomycin","line":864,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:danubomycin","preferred_term":"Danubomycin"}],"identifier":"kgmicrobe.compound:danubomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:danubomycin","ontology_label":"Danubomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Danubomycin","sssom_rows":[{"data_row":999,"object_id":"kgmicrobe.compound:danubomycin","object_label":"Danubomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Danubomycin","synonym_count":0} |
 | ev-6297608436738443 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-dba58fe26c7d5bdd] | context_only | Predecessor structured review finding f-dba58fe26c7d5bdd in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-61f523d1b9024d6a
+  evidence_ids:
+  - ev-87810972cf9a7d22
+  - ev-ffa082a7f4727ef1
+  - ev-db79f829c22ca69e
+  - ev-f8152049f1148da1
+  - ev-5329d229db7b77f3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-61f523d1b9024d6a
+  evidence_ids:
+  - ev-87810972cf9a7d22
+  - ev-c0366eb936b1aa01
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-61f523d1b9024d6a
+  evidence_ids:
+  - ev-d539b00e5b6690e2
+  - ev-c0366eb936b1aa01
+  - ev-6297608436738443
 evidence:
 - evidence_id: ev-87810972cf9a7d22
   kind: record_content
   reference: data/ingredients/mapped/Danubomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[862],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:danubomycin","line":864,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:danubomycin","preferred_term":"Danubomycin"}],"identifier":"kgmicrobe.compound:danubomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:danubomycin","ontology_label":"Danubomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Danubomycin","sssom_rows":[{"data_row":999,"object_id":"kgmicrobe.compound:danubomycin","object_label":"Danubomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Danubomycin","synonym_count":0}'
   snapshot_sha256: 0d90522f7559d33a8c25a8701006ac82bb817e50f2965bf91c584882c8bb8c1c
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [862]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Danubomycin; data-row positions=[999]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":999,"object_id":"kgmicrobe.compound:danubomycin","object_label":"Danubomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Danubomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[864]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:danubomycin","line":864,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:danubomycin","preferred_term":"Danubomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[521,1438]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0d90522f7559d33a8c25a8701006ac82bb817e50f2965bf91c584882c8bb8c1c","finding_id":"SEM:a1a7feed779894aafb2c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0d90522f7559d33a8c25a8701006ac82bb817e50f2965bf91c584882c8bb8c1c","finding_id":"SEM:215f2857ba29fa4bc054","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Danubomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[862],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:danubomycin","line":864,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:danubomycin","preferred_term":"Danubomycin"}],"identifier":"kgmicrobe.compound:danubomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:danubomycin","ontology_label":"Danubomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Danubomycin","sssom_rows":[{"data_row":999,"object_id":"kgmicrobe.compound:danubomycin","object_label":"Danubomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Danubomycin","synonym_count":0}'
   snapshot_sha256: 0d90522f7559d33a8c25a8701006ac82bb817e50f2965bf91c584882c8bb8c1c
 - evidence_id: ev-6297608436738443
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: Casitone
 | ev-929ad5f45f07567b | docs/data/mapped_ingredients.csv; CSV lines=[667] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000606","line":667,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"282","ontology_id":"MICRO:0000606","preferred_term":"Casitone","total_occurrences":"282"}] |
 | ev-06038693b0b75963 | reports/yaml_record_review/Casitone.md; &#96;data/ingredients/mapped/Casitone.yaml&#96;:2; Verdict:4; Identity:10; Validation:25; Evidence:46; Completeness:59; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8414a355eaea63ff | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[369,2047] | context_only | [{"current_record_sha256":"0c76b299992b5211f0094e255079b072bec6202f0412174077c4686e4da531a8","finding_id":"SEM:086a02c2c9f45fd5c2b8","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0c76b299992b5211f0094e255079b072bec6202f0412174077c4686e4da531a8","finding_id":"SEM:80c46a06bd9834356eee","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-50e20317895388ac | data/ingredients/mapped/Casitone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-50e20317895388ac | data/ingredients/mapped/Casitone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[665],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000606","line":667,"mapping_status":"MAPPED","ontology_id":"MICRO:0000606","preferred_term":"Casitone"}],"identifier":"MICRO:0000606","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":282,"edge_count":282,"occurrences":282},"occurrence_statistics":{"media_count":282,"total_occurrences":282},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000606","ontology_label":"casitone","ontology_source":"MICRO"},"preferred_term":"Casitone","sssom_rows":[{"data_row":661,"object_id":"MICRO:0000606","object_label":"casitone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casitone","synonym_count":5} |
 | ev-d73e98d365b84b23 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-46d86e7fc2ad43fe] | context_only | Predecessor structured review finding f-46d86e7fc2ad43fe in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ae5259c60f15a4de
+  evidence_ids:
+  - ev-c392873085d5d5c9
+  - ev-7e533c0994de4b81
+  - ev-fafbc4fda19c68c7
+  - ev-929ad5f45f07567b
+  - ev-50e20317895388ac
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ae5259c60f15a4de
+  evidence_ids:
+  - ev-c392873085d5d5c9
+  - ev-8414a355eaea63ff
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ae5259c60f15a4de
+  evidence_ids:
+  - ev-06038693b0b75963
+  - ev-8414a355eaea63ff
+  - ev-d73e98d365b84b23
 evidence:
 - evidence_id: ev-c392873085d5d5c9
   kind: record_content
   reference: data/ingredients/mapped/Casitone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[665],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000606","line":667,"mapping_status":"MAPPED","ontology_id":"MICRO:0000606","preferred_term":"Casitone"}],"identifier":"MICRO:0000606","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":282,"edge_count":282,"occurrences":282},"occurrence_statistics":{"media_count":282,"total_occurrences":282},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000606","ontology_label":"casitone","ontology_source":"MICRO"},"preferred_term":"Casitone","sssom_rows":[{"data_row":661,"object_id":"MICRO:0000606","object_label":"casitone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casitone","synonym_count":5}'
   snapshot_sha256: 0c76b299992b5211f0094e255079b072bec6202f0412174077c4686e4da531a8
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [665]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Casitone; data-row positions=[661]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":661,"object_id":"MICRO:0000606","object_label":"casitone","other":"Casitone
     (BD-Difco)|Bacto Casitone (Difco)|Casitone (BD-BBL)|Casitone (BD--Difco)","predicate_id":"skos:exactMatch","subject_id":"MIM:Casitone","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[667]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000606","line":667,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"282","ontology_id":"MICRO:0000606","preferred_term":"Casitone","total_occurrences":"282"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[369,2047]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0c76b299992b5211f0094e255079b072bec6202f0412174077c4686e4da531a8","finding_id":"SEM:086a02c2c9f45fd5c2b8","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0c76b299992b5211f0094e255079b072bec6202f0412174077c4686e4da531a8","finding_id":"SEM:80c46a06bd9834356eee","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Casitone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[665],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000606","line":667,"mapping_status":"MAPPED","ontology_id":"MICRO:0000606","preferred_term":"Casitone"}],"identifier":"MICRO:0000606","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":282,"edge_count":282,"occurrences":282},"occurrence_statistics":{"media_count":282,"total_occurrences":282},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000606","ontology_label":"casitone","ontology_source":"MICRO"},"preferred_term":"Casitone","sssom_rows":[{"data_row":661,"object_id":"MICRO:0000606","object_label":"casitone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casitone","synonym_count":5}'
   snapshot_sha256: 0c76b299992b5211f0094e255079b072bec6202f0412174077c4686e4da531a8
 - evidence_id: ev-d73e98d365b84b23
   kind: prior_review

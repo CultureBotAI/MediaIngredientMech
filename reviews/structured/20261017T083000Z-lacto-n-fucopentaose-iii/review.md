@@ -85,11 +85,11 @@ Reassess prediction-only role support: Lacto-N-fucopentaose III
 | --- | --- | --- | --- |
 | ev-2dd075967dba890f | data/ingredients/mapped/Lacto-N-fucopentaose_III.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1278],"raw_equal":true},"docs_rows":[{"identifier":"cas:25541-09-7","line":1280,"mapping_status":"MAPPED","ontology_id":"mesh:C434666","preferred_term":"Lacto-N-fucopentaose III"}],"identifier":"cas:25541-09-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C434666","ontology_label":"lacto-N-fucopentaose III","ontology_source":"MESH"},"preferred_term":"Lacto-N-fucopentaose III","sssom_rows":[{"data_row":1659,"object_id":"mesh:C434666","object_label":"lacto-N-fucopentaose III","predicate_id":"skos:broadMatch"},{"data_row":1660,"object_id":"cas:25541-09-7","object_label":"Lacto-N-fucopentaose III","predicate_id":"skos:exactMatch"},{"data_row":1661,"object_id":"kgmicrobe.compound:lacto-n-fucopentaose_iii","object_label":"Lacto-N-fucopentaose III","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lacto-N-fucopentaose_III","synonym_count":0} |
 | ev-ab5d9942abd80bba | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1278] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-8a14a240d84a1f6d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Lacto-N-fucopentaose_III; data-row positions=[1659,1660,1661] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1659,"object_id":"mesh:C434666","object_label":"lacto-N-fucopentaose III","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Lacto-N-fucopentaose_III","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1660,"object_id":"cas:25541-09-7","object_label":"Lacto-N-fucopentaose III","other":"CAS:25541-09-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-fucopentaose_III","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1661,"object_id":"kgmicrobe.compound:lacto-n-fucopentaose_iii","object_label":"Lacto-N-fucopentaose III","other":"CAS:25541-09-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-fucopentaose_III","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-8a14a240d84a1f6d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Lacto-N-fucopentaose_III; data-row positions=[1659, 1660, 1661] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1659,"object_id":"mesh:C434666","object_label":"lacto-N-fucopentaose III","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Lacto-N-fucopentaose_III","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1660,"object_id":"cas:25541-09-7","object_label":"Lacto-N-fucopentaose III","other":"CAS:25541-09-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-fucopentaose_III","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1661,"object_id":"kgmicrobe.compound:lacto-n-fucopentaose_iii","object_label":"Lacto-N-fucopentaose III","other":"CAS:25541-09-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-fucopentaose_III","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-b8ebc8810c1ca45d | docs/data/mapped_ingredients.csv; CSV lines=[1280] | supports | Published identity and count rows inspected: [{"identifier":"cas:25541-09-7","line":1280,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C434666","preferred_term":"Lacto-N-fucopentaose III","total_occurrences":"0"}] |
 | ev-70f887fa707948c6 | reports/yaml_record_review/Lacto-N-fucopentaose_III.md; &#96;data/ingredients/mapped/Lacto-N-fucopentaose_III.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:30; Completeness:53; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-4240ed79e0d5c223 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[847,2039] | context_only | [{"current_record_sha256":"c3a89f74a8dde4dc6e0d507051dce6a79a03ed2a4b8483fe6f7ff9aa576dcba9","finding_id":"SEM:18066d90cff6cfdbe79f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c3a89f74a8dde4dc6e0d507051dce6a79a03ed2a4b8483fe6f7ff9aa576dcba9","finding_id":"SEM:21987eb602252bc4dee4","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-32d1bb53c68f95d1 | data/ingredients/mapped/Lacto-N-fucopentaose_III.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-32d1bb53c68f95d1 | data/ingredients/mapped/Lacto-N-fucopentaose_III.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1278],"raw_equal":true},"docs_rows":[{"identifier":"cas:25541-09-7","line":1280,"mapping_status":"MAPPED","ontology_id":"mesh:C434666","preferred_term":"Lacto-N-fucopentaose III"}],"identifier":"cas:25541-09-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C434666","ontology_label":"lacto-N-fucopentaose III","ontology_source":"MESH"},"preferred_term":"Lacto-N-fucopentaose III","sssom_rows":[{"data_row":1659,"object_id":"mesh:C434666","object_label":"lacto-N-fucopentaose III","predicate_id":"skos:broadMatch"},{"data_row":1660,"object_id":"cas:25541-09-7","object_label":"Lacto-N-fucopentaose III","predicate_id":"skos:exactMatch"},{"data_row":1661,"object_id":"kgmicrobe.compound:lacto-n-fucopentaose_iii","object_label":"Lacto-N-fucopentaose III","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lacto-N-fucopentaose_III","synonym_count":0} |
 | ev-d81582cf994aae30 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-b75eaf4c7a756cd0] | context_only | Predecessor structured review finding f-b75eaf4c7a756cd0 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3ab142a3643758fc
+  evidence_ids:
+  - ev-2dd075967dba890f
+  - ev-ab5d9942abd80bba
+  - ev-8a14a240d84a1f6d
+  - ev-b8ebc8810c1ca45d
+  - ev-32d1bb53c68f95d1
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3ab142a3643758fc
+  evidence_ids:
+  - ev-2dd075967dba890f
+  - ev-4240ed79e0d5c223
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3ab142a3643758fc
+  evidence_ids:
+  - ev-70f887fa707948c6
+  - ev-4240ed79e0d5c223
+  - ev-d81582cf994aae30
 evidence:
 - evidence_id: ev-2dd075967dba890f
   kind: record_content
   reference: data/ingredients/mapped/Lacto-N-fucopentaose_III.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1278],"raw_equal":true},"docs_rows":[{"identifier":"cas:25541-09-7","line":1280,"mapping_status":"MAPPED","ontology_id":"mesh:C434666","preferred_term":"Lacto-N-fucopentaose
     III"}],"identifier":"cas:25541-09-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C434666","ontology_label":"lacto-N-fucopentaose
@@ -214,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1278]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,8 +235,9 @@ evidence:
 - evidence_id: ev-8a14a240d84a1f6d
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Lacto-N-fucopentaose_III; data-row positions=[1659,1660,1661]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Lacto-N-fucopentaose_III; data-row positions=[1659, 1660,
+    1661]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1659,"object_id":"mesh:C434666","object_label":"lacto-N-fucopentaose
     III","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Lacto-N-fucopentaose_III","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1660,"object_id":"cas:25541-09-7","object_label":"Lacto-N-fucopentaose
@@ -234,7 +248,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1280]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:25541-09-7","line":1280,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C434666","preferred_term":"Lacto-N-fucopentaose
     III","total_occurrences":"0"}]'
@@ -262,7 +276,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[847,2039]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c3a89f74a8dde4dc6e0d507051dce6a79a03ed2a4b8483fe6f7ff9aa576dcba9","finding_id":"SEM:18066d90cff6cfdbe79f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c3a89f74a8dde4dc6e0d507051dce6a79a03ed2a4b8483fe6f7ff9aa576dcba9","finding_id":"SEM:21987eb602252bc4dee4","kind":"role_evidence","resolution_reason":"Historical
@@ -272,12 +286,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lacto-N-fucopentaose_III.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1278],"raw_equal":true},"docs_rows":[{"identifier":"cas:25541-09-7","line":1280,"mapping_status":"MAPPED","ontology_id":"mesh:C434666","preferred_term":"Lacto-N-fucopentaose
+    III"}],"identifier":"cas:25541-09-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C434666","ontology_label":"lacto-N-fucopentaose
+    III","ontology_source":"MESH"},"preferred_term":"Lacto-N-fucopentaose III","sssom_rows":[{"data_row":1659,"object_id":"mesh:C434666","object_label":"lacto-N-fucopentaose
+    III","predicate_id":"skos:broadMatch"},{"data_row":1660,"object_id":"cas:25541-09-7","object_label":"Lacto-N-fucopentaose
+    III","predicate_id":"skos:exactMatch"},{"data_row":1661,"object_id":"kgmicrobe.compound:lacto-n-fucopentaose_iii","object_label":"Lacto-N-fucopentaose
+    III","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lacto-N-fucopentaose_III","synonym_count":0}'
   snapshot_sha256: c3a89f74a8dde4dc6e0d507051dce6a79a03ed2a4b8483fe6f7ff9aa576dcba9
 - evidence_id: ev-d81582cf994aae30
   kind: prior_review

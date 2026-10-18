@@ -89,7 +89,7 @@ Reassess prediction-only role support: Haemin
 | ev-d64eb093f5e569b4 | docs/data/mapped_ingredients.csv; CSV lines=[1109] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:50385","line":1109,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"256","ontology_id":"CHEBI:50385","preferred_term":"Haemin","total_occurrences":"257"}] |
 | ev-7ced1757f4d31583 | reports/yaml_record_review/Haemin.md; &#96;data/ingredients/mapped/Haemin.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:34; Completeness:51; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-42b7ae3e220d567d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[722,1520] | context_only | [{"current_record_sha256":"f383f7f9be865a12a13e6d369a568b663eaddeefc5edbfd06bc5633006c99355","finding_id":"SEM:8c26425b4d56f2f40b0e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f383f7f9be865a12a13e6d369a568b663eaddeefc5edbfd06bc5633006c99355","finding_id":"SEM:b3a0f5ed12691862c898","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bc6a351b1374ef90 | data/ingredients/mapped/Haemin.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"COFACTOR_PROVIDER"}}] |
+| ev-bc6a351b1374ef90 | data/ingredients/mapped/Haemin.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1107],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:50385","line":1109,"mapping_status":"MAPPED","ontology_id":"CHEBI:50385","preferred_term":"Haemin"}],"identifier":"CHEBI:50385","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":256,"edge_count":256,"occurrences":257},"occurrence_statistics":{"media_count":256,"total_occurrences":257},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:50385","ontology_label":"hemin","ontology_source":"CHEBI"},"preferred_term":"Haemin","sssom_rows":[{"data_row":1400,"object_id":"CHEBI:50385","object_label":"hemin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Haemin","synonym_count":21} |
 | ev-ea40e2785dbcd3df | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-3b6b863b7e84a935] | context_only | Predecessor structured review finding f-3b6b863b7e84a935 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f3a8229a11e444a8
+  evidence_ids:
+  - ev-369e473bcd509785
+  - ev-6a20a572e28636b2
+  - ev-9fa842545dbbed92
+  - ev-d64eb093f5e569b4
+  - ev-bc6a351b1374ef90
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f3a8229a11e444a8
+  evidence_ids:
+  - ev-369e473bcd509785
+  - ev-42b7ae3e220d567d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f3a8229a11e444a8
+  evidence_ids:
+  - ev-7ced1757f4d31583
+  - ev-42b7ae3e220d567d
+  - ev-ea40e2785dbcd3df
 evidence:
 - evidence_id: ev-369e473bcd509785
   kind: record_content
   reference: data/ingredients/mapped/Haemin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1107],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:50385","line":1109,"mapping_status":"MAPPED","ontology_id":"CHEBI:50385","preferred_term":"Haemin"}],"identifier":"CHEBI:50385","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":256,"edge_count":256,"occurrences":257},"occurrence_statistics":{"media_count":256,"total_occurrences":257},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:50385","ontology_label":"hemin","ontology_source":"CHEBI"},"preferred_term":"Haemin","sssom_rows":[{"data_row":1400,"object_id":"CHEBI:50385","object_label":"hemin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Haemin","synonym_count":21}'
   snapshot_sha256: f383f7f9be865a12a13e6d369a568b663eaddeefc5edbfd06bc5633006c99355
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1107]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Haemin; data-row positions=[1400]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1400,"object_id":"CHEBI:50385","object_label":"hemin","other":"Hemin
     chloride|Hemine|Panhematin|chlorido(protoporphyrinato)iron(III)|chloro(protoporphyrinato)iron(III)|chloro[3,7,12,17-tetramethyl-8,13-divinylporphyrin-2,18-dipropanoato(2-)]iron(III)|chlorohemin|chloroprotoferrihem|ferriprotoporphyrin
@@ -229,7 +242,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1109]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:50385","line":1109,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"256","ontology_id":"CHEBI:50385","preferred_term":"Haemin","total_occurrences":"257"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[722,1520]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f383f7f9be865a12a13e6d369a568b663eaddeefc5edbfd06bc5633006c99355","finding_id":"SEM:8c26425b4d56f2f40b0e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f383f7f9be865a12a13e6d369a568b663eaddeefc5edbfd06bc5633006c99355","finding_id":"SEM:b3a0f5ed12691862c898","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Haemin.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"COFACTOR_PROVIDER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1107],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:50385","line":1109,"mapping_status":"MAPPED","ontology_id":"CHEBI:50385","preferred_term":"Haemin"}],"identifier":"CHEBI:50385","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":256,"edge_count":256,"occurrences":257},"occurrence_statistics":{"media_count":256,"total_occurrences":257},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:50385","ontology_label":"hemin","ontology_source":"CHEBI"},"preferred_term":"Haemin","sssom_rows":[{"data_row":1400,"object_id":"CHEBI:50385","object_label":"hemin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Haemin","synonym_count":21}'
   snapshot_sha256: f383f7f9be865a12a13e6d369a568b663eaddeefc5edbfd06bc5633006c99355
 - evidence_id: ev-ea40e2785dbcd3df
   kind: prior_review

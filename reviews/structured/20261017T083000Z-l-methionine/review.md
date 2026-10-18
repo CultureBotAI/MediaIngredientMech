@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-Methionine
 | ev-25ed8621df996a8e | docs/data/mapped_ingredients.csv; CSV lines=[1257] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16643","line":1257,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"127","ontology_id":"CHEBI:16643","preferred_term":"L-Methionine","total_occurrences":"127"}] |
 | ev-ff9b513021a776d9 | reports/yaml_record_review/L-methionine.md; &#96;data/ingredients/mapped/L-methionine.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:28; Completeness:47; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fdb22e7bafff5070 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[827,1787] | context_only | [{"current_record_sha256":"7f587d8d03e262d97a0bd022ba51ea02dd9c24e0ba960e26142f97f5e196e4bd","finding_id":"SEM:6191d89fa6a5526a3550","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7f587d8d03e262d97a0bd022ba51ea02dd9c24e0ba960e26142f97f5e196e4bd","finding_id":"SEM:93181ee35dec977af954","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-1c7807ddd16445c9 | data/ingredients/mapped/L-methionine.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-1c7807ddd16445c9 | data/ingredients/mapped/L-methionine.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1255],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16643","line":1257,"mapping_status":"MAPPED","ontology_id":"CHEBI:16643","preferred_term":"L-Methionine"}],"identifier":"CHEBI:16643","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":127,"edge_count":127,"occurrences":127},"occurrence_statistics":{"media_count":127,"total_occurrences":127},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16643","ontology_label":"L-methionine","ontology_source":"CHEBI"},"preferred_term":"L-Methionine","sssom_rows":[{"data_row":1628,"object_id":"CHEBI:16643","object_label":"L-methionine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-methionine","synonym_count":10} |
 | ev-89e2f22b658d5ded | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-c68da9f43fbd9d23] | context_only | Predecessor structured review finding f-c68da9f43fbd9d23 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-97af6e3fcb0372ec
+  evidence_ids:
+  - ev-f994850b7c0a9e27
+  - ev-c3ca25a38147b65e
+  - ev-eee840118c7c220d
+  - ev-25ed8621df996a8e
+  - ev-1c7807ddd16445c9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-97af6e3fcb0372ec
+  evidence_ids:
+  - ev-f994850b7c0a9e27
+  - ev-fdb22e7bafff5070
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-97af6e3fcb0372ec
+  evidence_ids:
+  - ev-ff9b513021a776d9
+  - ev-fdb22e7bafff5070
+  - ev-89e2f22b658d5ded
 evidence:
 - evidence_id: ev-f994850b7c0a9e27
   kind: record_content
   reference: data/ingredients/mapped/L-methionine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1255],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16643","line":1257,"mapping_status":"MAPPED","ontology_id":"CHEBI:16643","preferred_term":"L-Methionine"}],"identifier":"CHEBI:16643","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":127,"edge_count":127,"occurrences":127},"occurrence_statistics":{"media_count":127,"total_occurrences":127},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16643","ontology_label":"L-methionine","ontology_source":"CHEBI"},"preferred_term":"L-Methionine","sssom_rows":[{"data_row":1628,"object_id":"CHEBI:16643","object_label":"L-methionine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-methionine","synonym_count":10}'
   snapshot_sha256: 7f587d8d03e262d97a0bd022ba51ea02dd9c24e0ba960e26142f97f5e196e4bd
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1255]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-methionine; data-row positions=[1628]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1628,"object_id":"CHEBI:16643","object_label":"L-methionine","other":"(2S)-2-amino-4-(methylsulfanyl)butanoic
     acid|(S)-2-amino-4-(methylthio)butanoic acid|(S)-2-amino-4-(methylthio)butyric
@@ -229,7 +242,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1257]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16643","line":1257,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"127","ontology_id":"CHEBI:16643","preferred_term":"L-Methionine","total_occurrences":"127"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[827,1787]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7f587d8d03e262d97a0bd022ba51ea02dd9c24e0ba960e26142f97f5e196e4bd","finding_id":"SEM:6191d89fa6a5526a3550","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7f587d8d03e262d97a0bd022ba51ea02dd9c24e0ba960e26142f97f5e196e4bd","finding_id":"SEM:93181ee35dec977af954","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-methionine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1255],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16643","line":1257,"mapping_status":"MAPPED","ontology_id":"CHEBI:16643","preferred_term":"L-Methionine"}],"identifier":"CHEBI:16643","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":127,"edge_count":127,"occurrences":127},"occurrence_statistics":{"media_count":127,"total_occurrences":127},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16643","ontology_label":"L-methionine","ontology_source":"CHEBI"},"preferred_term":"L-Methionine","sssom_rows":[{"data_row":1628,"object_id":"CHEBI:16643","object_label":"L-methionine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-methionine","synonym_count":10}'
   snapshot_sha256: 7f587d8d03e262d97a0bd022ba51ea02dd9c24e0ba960e26142f97f5e196e4bd
 - evidence_id: ev-89e2f22b658d5ded
   kind: prior_review

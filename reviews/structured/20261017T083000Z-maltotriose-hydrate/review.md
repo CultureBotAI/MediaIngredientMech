@@ -85,11 +85,11 @@ Reassess prediction-only role support: Maltotriose hydrate
 | --- | --- | --- | --- |
 | ev-16ecaf7d59c71c32 | data/ingredients/mapped/Maltotriose_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1344],"raw_equal":true},"docs_rows":[{"identifier":"cas:312693-63-3","line":1346,"mapping_status":"MAPPED","ontology_id":"CHEBI:61993","preferred_term":"Maltotriose hydrate"}],"identifier":"cas:312693-63-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:61993","ontology_label":"maltotriose","ontology_source":"CHEBI"},"preferred_term":"Maltotriose hydrate","sssom_rows":[{"data_row":1773,"object_id":"CHEBI:61993","object_label":"maltotriose","predicate_id":"skos:closeMatch"},{"data_row":1774,"object_id":"cas:312693-63-3","object_label":"Maltotriose hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltotriose_Hydrate","synonym_count":0} |
 | ev-04510e5c6a6bbec5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1344] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-28d1864c0d30a646 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Maltotriose_Hydrate; data-row positions=[1773,1774] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1773,"object_id":"CHEBI:61993","object_label":"maltotriose","other":"CAS:312693-63-3","predicate_id":"skos:closeMatch","subject_id":"MIM:Maltotriose_Hydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":1774,"object_id":"cas:312693-63-3","object_label":"Maltotriose hydrate","other":"CAS:312693-63-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Maltotriose_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-28d1864c0d30a646 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Maltotriose_Hydrate; data-row positions=[1773, 1774] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1773,"object_id":"CHEBI:61993","object_label":"maltotriose","other":"CAS:312693-63-3","predicate_id":"skos:closeMatch","subject_id":"MIM:Maltotriose_Hydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":1774,"object_id":"cas:312693-63-3","object_label":"Maltotriose hydrate","other":"CAS:312693-63-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Maltotriose_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-5bc9402f8c1fe212 | docs/data/mapped_ingredients.csv; CSV lines=[1346] | supports | Published identity and count rows inspected: [{"identifier":"cas:312693-63-3","line":1346,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:61993","preferred_term":"Maltotriose hydrate","total_occurrences":"0"}] |
 | ev-e219e18b50db326b | reports/yaml_record_review/Maltotriose_Hydrate.md; &#96;data/ingredients/mapped/Maltotriose_Hydrate.yaml&#96;:2; Verdict:4; Identity:13; Validation:24; Evidence:32; Completeness:45; Recommended Edits:55 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-259443b9adab2fa7 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[899,1971] | context_only | [{"current_record_sha256":"797f7b0dc1115a79841809fa353ed0ef1a3ff8390560d0f28ca989fac20f76f2","finding_id":"SEM:8e2ada38d0cd979cd561","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"797f7b0dc1115a79841809fa353ed0ef1a3ff8390560d0f28ca989fac20f76f2","finding_id":"SEM:6f620ad423bd871ef180","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-053441b562c0d4df | data/ingredients/mapped/Maltotriose_Hydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-053441b562c0d4df | data/ingredients/mapped/Maltotriose_Hydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1344],"raw_equal":true},"docs_rows":[{"identifier":"cas:312693-63-3","line":1346,"mapping_status":"MAPPED","ontology_id":"CHEBI:61993","preferred_term":"Maltotriose hydrate"}],"identifier":"cas:312693-63-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:61993","ontology_label":"maltotriose","ontology_source":"CHEBI"},"preferred_term":"Maltotriose hydrate","sssom_rows":[{"data_row":1773,"object_id":"CHEBI:61993","object_label":"maltotriose","predicate_id":"skos:closeMatch"},{"data_row":1774,"object_id":"cas:312693-63-3","object_label":"Maltotriose hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltotriose_Hydrate","synonym_count":0} |
 | ev-4ca9b53912fa580e | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-4498c9cb989021ce] | context_only | Predecessor structured review finding f-4498c9cb989021ce in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b7d97ca2184908bd
+  evidence_ids:
+  - ev-16ecaf7d59c71c32
+  - ev-04510e5c6a6bbec5
+  - ev-28d1864c0d30a646
+  - ev-5bc9402f8c1fe212
+  - ev-053441b562c0d4df
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b7d97ca2184908bd
+  evidence_ids:
+  - ev-16ecaf7d59c71c32
+  - ev-259443b9adab2fa7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b7d97ca2184908bd
+  evidence_ids:
+  - ev-e219e18b50db326b
+  - ev-259443b9adab2fa7
+  - ev-4ca9b53912fa580e
 evidence:
 - evidence_id: ev-16ecaf7d59c71c32
   kind: record_content
   reference: data/ingredients/mapped/Maltotriose_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1344],"raw_equal":true},"docs_rows":[{"identifier":"cas:312693-63-3","line":1346,"mapping_status":"MAPPED","ontology_id":"CHEBI:61993","preferred_term":"Maltotriose
     hydrate"}],"identifier":"cas:312693-63-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:61993","ontology_label":"maltotriose","ontology_source":"CHEBI"},"preferred_term":"Maltotriose
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1344]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,8 +233,8 @@ evidence:
 - evidence_id: ev-28d1864c0d30a646
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Maltotriose_Hydrate; data-row positions=[1773,1774]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Maltotriose_Hydrate; data-row positions=[1773, 1774]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1773,"object_id":"CHEBI:61993","object_label":"maltotriose","other":"CAS:312693-63-3","predicate_id":"skos:closeMatch","subject_id":"MIM:Maltotriose_Hydrate","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"},{"data_row":1774,"object_id":"cas:312693-63-3","object_label":"Maltotriose
     hydrate","other":"CAS:312693-63-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Maltotriose_Hydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1346]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:312693-63-3","line":1346,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:61993","preferred_term":"Maltotriose
     hydrate","total_occurrences":"0"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[899,1971]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"797f7b0dc1115a79841809fa353ed0ef1a3ff8390560d0f28ca989fac20f76f2","finding_id":"SEM:8e2ada38d0cd979cd561","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"797f7b0dc1115a79841809fa353ed0ef1a3ff8390560d0f28ca989fac20f76f2","finding_id":"SEM:6f620ad423bd871ef180","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Maltotriose_Hydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1344],"raw_equal":true},"docs_rows":[{"identifier":"cas:312693-63-3","line":1346,"mapping_status":"MAPPED","ontology_id":"CHEBI:61993","preferred_term":"Maltotriose
+    hydrate"}],"identifier":"cas:312693-63-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:61993","ontology_label":"maltotriose","ontology_source":"CHEBI"},"preferred_term":"Maltotriose
+    hydrate","sssom_rows":[{"data_row":1773,"object_id":"CHEBI:61993","object_label":"maltotriose","predicate_id":"skos:closeMatch"},{"data_row":1774,"object_id":"cas:312693-63-3","object_label":"Maltotriose
+    hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltotriose_Hydrate","synonym_count":0}'
   snapshot_sha256: 797f7b0dc1115a79841809fa353ed0ef1a3ff8390560d0f28ca989fac20f76f2
 - evidence_id: ev-4ca9b53912fa580e
   kind: prior_review

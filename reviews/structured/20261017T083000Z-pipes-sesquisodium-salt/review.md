@@ -83,13 +83,13 @@ Reassess prediction-only role support: PIPES sesquisodium salt
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-41d5b92ae047ac0f | data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1605],"raw_equal":true},"docs_rows":[{"identifier":"cas:100037-69-2","line":1607,"mapping_status":"MAPPED","ontology_id":"cas:100037-69-2","preferred_term":"PIPES sesquisodium salt"}],"identifier":"cas:100037-69-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100037-69-2","ontology_label":"PIPES sesquisodium salt","ontology_source":"CAS"},"preferred_term":"PIPES sesquisodium salt","sssom_rows":[{"data_row":2173,"object_id":"cas:100037-69-2","object_label":"PIPES sesquisodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PIPES_Sesquisodium_Salt","synonym_count":0} |
-| ev-fb0730f573b4e3e5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1605] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-8e08d65e28e3b0ae | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PIPES_Sesquisodium_Salt; data-row positions=[2173] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2173,"object_id":"cas:100037-69-2","object_label":"PIPES sesquisodium salt","other":"CAS:100037-69-2","predicate_id":"skos:exactMatch","subject_id":"MIM:PIPES_Sesquisodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-101762e1486274ae | docs/data/mapped_ingredients.csv; CSV lines=[1607] | supports | Published identity and count rows inspected: [{"identifier":"cas:100037-69-2","line":1607,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"36","ontology_id":"cas:100037-69-2","preferred_term":"PIPES sesquisodium salt","total_occurrences":"36"}] |
+| ev-41d5b92ae047ac0f | data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1604],"raw_equal":true},"docs_rows":[{"identifier":"cas:100037-69-2","line":1606,"mapping_status":"MAPPED","ontology_id":"cas:100037-69-2","preferred_term":"PIPES sesquisodium salt"}],"identifier":"cas:100037-69-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100037-69-2","ontology_label":"PIPES sesquisodium salt","ontology_source":"CAS"},"preferred_term":"PIPES sesquisodium salt","sssom_rows":[{"data_row":2175,"object_id":"cas:100037-69-2","object_label":"PIPES sesquisodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PIPES_Sesquisodium_Salt","synonym_count":0} |
+| ev-fb0730f573b4e3e5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1604] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-8e08d65e28e3b0ae | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PIPES_Sesquisodium_Salt; data-row positions=[2175] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2175,"object_id":"cas:100037-69-2","object_label":"PIPES sesquisodium salt","other":"CAS:100037-69-2","predicate_id":"skos:exactMatch","subject_id":"MIM:PIPES_Sesquisodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-101762e1486274ae | docs/data/mapped_ingredients.csv; CSV lines=[1606] | supports | Published identity and count rows inspected: [{"identifier":"cas:100037-69-2","line":1606,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"36","ontology_id":"cas:100037-69-2","preferred_term":"PIPES sesquisodium salt","total_occurrences":"36"}] |
 | ev-6457e3a7fccb40c9 | reports/yaml_record_review/PIPES_Sesquisodium_Salt.md; &#96;data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml&#96;:2; Verdict:4; Identity:9; Validation:19; Evidence:29; Completeness:43; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ec99f2af985751c3 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1089,1418] | context_only | [{"current_record_sha256":"ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615","finding_id":"SEM:994424393294e3a0b001","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615","finding_id":"SEM:ff7363e84e838959dc5d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-70499991ef1b1ba7 | data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-70499991ef1b1ba7 | data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1604],"raw_equal":true},"docs_rows":[{"identifier":"cas:100037-69-2","line":1606,"mapping_status":"MAPPED","ontology_id":"cas:100037-69-2","preferred_term":"PIPES sesquisodium salt"}],"identifier":"cas:100037-69-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100037-69-2","ontology_label":"PIPES sesquisodium salt","ontology_source":"CAS"},"preferred_term":"PIPES sesquisodium salt","sssom_rows":[{"data_row":2175,"object_id":"cas:100037-69-2","object_label":"PIPES sesquisodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PIPES_Sesquisodium_Salt","synonym_count":0} |
 | ev-db45d6b6b23ef492 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-f3308e78f3510c59] | context_only | Predecessor structured review finding f-f3308e78f3510c59 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-df14ec16d304c455
+  evidence_ids:
+  - ev-41d5b92ae047ac0f
+  - ev-fb0730f573b4e3e5
+  - ev-8e08d65e28e3b0ae
+  - ev-101762e1486274ae
+  - ev-70499991ef1b1ba7
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-df14ec16d304c455
+  evidence_ids:
+  - ev-41d5b92ae047ac0f
+  - ev-ec99f2af985751c3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-df14ec16d304c455
+  evidence_ids:
+  - ev-6457e3a7fccb40c9
+  - ev-ec99f2af985751c3
+  - ev-db45d6b6b23ef492
 evidence:
 - evidence_id: ev-41d5b92ae047ac0f
   kind: record_content
   reference: data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1605],"raw_equal":true},"docs_rows":[{"identifier":"cas:100037-69-2","line":1607,"mapping_status":"MAPPED","ontology_id":"cas:100037-69-2","preferred_term":"PIPES
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1604],"raw_equal":true},"docs_rows":[{"identifier":"cas:100037-69-2","line":1606,"mapping_status":"MAPPED","ontology_id":"cas:100037-69-2","preferred_term":"PIPES
     sesquisodium salt"}],"identifier":"cas:100037-69-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100037-69-2","ontology_label":"PIPES
     sesquisodium salt","ontology_source":"CAS"},"preferred_term":"PIPES sesquisodium
-    salt","sssom_rows":[{"data_row":2173,"object_id":"cas:100037-69-2","object_label":"PIPES
+    salt","sssom_rows":[{"data_row":2175,"object_id":"cas:100037-69-2","object_label":"PIPES
     sesquisodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PIPES_Sesquisodium_Salt","synonym_count":0}'
   snapshot_sha256: ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615
 - evidence_id: ev-fb0730f573b4e3e5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1605]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1604]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,19 +234,19 @@ evidence:
 - evidence_id: ev-8e08d65e28e3b0ae
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PIPES_Sesquisodium_Salt; data-row positions=[2173]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PIPES_Sesquisodium_Salt; data-row positions=[2175]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2173,"object_id":"cas:100037-69-2","object_label":"PIPES
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2175,"object_id":"cas:100037-69-2","object_label":"PIPES
     sesquisodium salt","other":"CAS:100037-69-2","predicate_id":"skos:exactMatch","subject_id":"MIM:PIPES_Sesquisodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-101762e1486274ae
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1607]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1606]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:100037-69-2","line":1607,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"36","ontology_id":"cas:100037-69-2","preferred_term":"PIPES
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:100037-69-2","line":1606,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"36","ontology_id":"cas:100037-69-2","preferred_term":"PIPES
     sesquisodium salt","total_occurrences":"36"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-6457e3a7fccb40c9
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1089,1418]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615","finding_id":"SEM:994424393294e3a0b001","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615","finding_id":"SEM:ff7363e84e838959dc5d","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1604],"raw_equal":true},"docs_rows":[{"identifier":"cas:100037-69-2","line":1606,"mapping_status":"MAPPED","ontology_id":"cas:100037-69-2","preferred_term":"PIPES
+    sesquisodium salt"}],"identifier":"cas:100037-69-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100037-69-2","ontology_label":"PIPES
+    sesquisodium salt","ontology_source":"CAS"},"preferred_term":"PIPES sesquisodium
+    salt","sssom_rows":[{"data_row":2175,"object_id":"cas:100037-69-2","object_label":"PIPES
+    sesquisodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PIPES_Sesquisodium_Salt","synonym_count":0}'
   snapshot_sha256: ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615
 - evidence_id: ev-db45d6b6b23ef492
   kind: prior_review

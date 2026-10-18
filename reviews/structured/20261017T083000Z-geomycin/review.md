@@ -89,7 +89,7 @@ Reassess prediction-only role support: Geomycin
 | ev-0dbb6a0865c87790 | docs/data/mapped_ingredients.csv; CSV lines=[1051] | supports | Published identity and count rows inspected: [{"identifier":"mesh:D010118","line":1051,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:D010118","preferred_term":"Geomycin","total_occurrences":"0"}] |
 | ev-ef4f4ff5e6f66949 | reports/yaml_record_review/Geomycin.md; &#96;data/ingredients/mapped/Geomycin.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:38; Completeness:58; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-23932eee9463388f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[660,1854] | context_only | [{"current_record_sha256":"fa269060e6ebc77f8c8bdf474dbae2432967d180e859387780789a8268d19bda","finding_id":"SEM:fb3a6cf37e8dbcdd7633","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fa269060e6ebc77f8c8bdf474dbae2432967d180e859387780789a8268d19bda","finding_id":"SEM:480f6a8774fa47a7328e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-cb0535c1f7ada3b0 | data/ingredients/mapped/Geomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-cb0535c1f7ada3b0 | data/ingredients/mapped/Geomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1049],"raw_equal":true},"docs_rows":[{"identifier":"mesh:D010118","line":1051,"mapping_status":"MAPPED","ontology_id":"mesh:D010118","preferred_term":"Geomycin"}],"identifier":"mesh:D010118","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:D010118","ontology_label":"Oxytetracycline","ontology_source":"MESH"},"preferred_term":"Geomycin","sssom_rows":[{"data_row":1294,"object_id":"mesh:D010118","object_label":"Oxytetracycline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Geomycin","synonym_count":0} |
 | ev-c48c63c2860846f7 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-0d87a92810020171] | context_only | Predecessor structured review finding f-0d87a92810020171 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7792bc0c82f05e91
+  evidence_ids:
+  - ev-1b470d2f08205155
+  - ev-0496cea978282ccb
+  - ev-e838aca40bd9fc3f
+  - ev-0dbb6a0865c87790
+  - ev-cb0535c1f7ada3b0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7792bc0c82f05e91
+  evidence_ids:
+  - ev-1b470d2f08205155
+  - ev-23932eee9463388f
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7792bc0c82f05e91
+  evidence_ids:
+  - ev-ef4f4ff5e6f66949
+  - ev-23932eee9463388f
+  - ev-c48c63c2860846f7
 evidence:
 - evidence_id: ev-1b470d2f08205155
   kind: record_content
   reference: data/ingredients/mapped/Geomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1049],"raw_equal":true},"docs_rows":[{"identifier":"mesh:D010118","line":1051,"mapping_status":"MAPPED","ontology_id":"mesh:D010118","preferred_term":"Geomycin"}],"identifier":"mesh:D010118","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:D010118","ontology_label":"Oxytetracycline","ontology_source":"MESH"},"preferred_term":"Geomycin","sssom_rows":[{"data_row":1294,"object_id":"mesh:D010118","object_label":"Oxytetracycline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Geomycin","synonym_count":0}'
   snapshot_sha256: fa269060e6ebc77f8c8bdf474dbae2432967d180e859387780789a8268d19bda
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1049]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Geomycin; data-row positions=[1294]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1294,"object_id":"mesh:D010118","object_label":"Oxytetracycline","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Geomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1051]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"mesh:D010118","line":1051,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:D010118","preferred_term":"Geomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -247,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[660,1854]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"fa269060e6ebc77f8c8bdf474dbae2432967d180e859387780789a8268d19bda","finding_id":"SEM:fb3a6cf37e8dbcdd7633","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fa269060e6ebc77f8c8bdf474dbae2432967d180e859387780789a8268d19bda","finding_id":"SEM:480f6a8774fa47a7328e","kind":"role_evidence","resolution_reason":"Historical
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Geomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1049],"raw_equal":true},"docs_rows":[{"identifier":"mesh:D010118","line":1051,"mapping_status":"MAPPED","ontology_id":"mesh:D010118","preferred_term":"Geomycin"}],"identifier":"mesh:D010118","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:D010118","ontology_label":"Oxytetracycline","ontology_source":"MESH"},"preferred_term":"Geomycin","sssom_rows":[{"data_row":1294,"object_id":"mesh:D010118","object_label":"Oxytetracycline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Geomycin","synonym_count":0}'
   snapshot_sha256: fa269060e6ebc77f8c8bdf474dbae2432967d180e859387780789a8268d19bda
 - evidence_id: ev-c48c63c2860846f7
   kind: prior_review

@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0e24494543860cc1
+  evidence_ids:
+  - ev-3b0349ec81d23bdb
+  - ev-d0a2762440774713
+  - ev-8402b70bd70a3599
+  - ev-62f5a547c59b6137
+  - ev-2d651bf018ee25c6
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0e24494543860cc1
+  evidence_ids:
+  - ev-3b0349ec81d23bdb
+  - ev-dc309723e582a185
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0e24494543860cc1
+  evidence_ids:
+  - ev-44681882b3a16e3a
+  - ev-dc309723e582a185
+  - ev-b71e65821aa1fd80
 evidence:
 - evidence_id: ev-3b0349ec81d23bdb
   kind: record_content
   reference: data/ingredients/mapped/Ethylene_Glycol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[962],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30742","line":964,"mapping_status":"MAPPED","ontology_id":"CHEBI:30742","preferred_term":"Ethylene
     glycol"}],"identifier":"CHEBI:30742","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30742","ontology_label":"ethylene
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [962]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Ethylene_Glycol; data-row positions=[1147]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1147,"object_id":"CHEBI:30742","object_label":"ethylene
     glycol","other":"1,2-Dihydroxyethane|1,2-ETHANEDIOL|2-Hydroxyethanol|Ethanediol|Glycol|HO-CH2-CH2-OH|Monoethylene
@@ -126,7 +139,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[964]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30742","line":964,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"26","ontology_id":"CHEBI:30742","preferred_term":"Ethylene
     glycol","total_occurrences":"26"}]'
@@ -151,7 +164,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[575,1789]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2e1c94c7f1e6a9ef224792c511022984b047ba386d02d2fa9924d721fd6a48ff","finding_id":"SEM:9829be278cf5c9ed300a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2e1c94c7f1e6a9ef224792c511022984b047ba386d02d2fa9924d721fd6a48ff","finding_id":"SEM:6cf28e609fe182e3c2a9","kind":"role_evidence","resolution_reason":"Historical
@@ -161,12 +174,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Ethylene_Glycol.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[962],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30742","line":964,"mapping_status":"MAPPED","ontology_id":"CHEBI:30742","preferred_term":"Ethylene
+    glycol"}],"identifier":"CHEBI:30742","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":26,"edge_count":26,"occurrences":26},"occurrence_statistics":{"media_count":26,"total_occurrences":26},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30742","ontology_label":"ethylene
+    glycol","ontology_source":"CHEBI"},"preferred_term":"Ethylene glycol","sssom_rows":[{"data_row":1147,"object_id":"CHEBI:30742","object_label":"ethylene
+    glycol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ethylene_Glycol","synonym_count":8}'
   snapshot_sha256: 2e1c94c7f1e6a9ef224792c511022984b047ba386d02d2fa9924d721fd6a48ff
 - evidence_id: ev-b71e65821aa1fd80
   kind: prior_review

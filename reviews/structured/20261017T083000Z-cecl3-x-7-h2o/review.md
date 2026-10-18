@@ -85,12 +85,12 @@ Reassess prediction-only role support: CeCl3 x 7 H2O
 | --- | --- | --- | --- |
 | ev-8ff93c51b1c7fb9e | data/ingredients/mapped/Cecl3_X_7_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[671],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","line":673,"mapping_status":"MAPPED","ontology_id":"CHEBI:35458","preferred_term":"CeCl3 x 7 H2O"}],"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:35458","ontology_label":"cerium trichloride","ontology_source":"CHEBI"},"preferred_term":"CeCl3 x 7 H2O","sssom_rows":[{"data_row":671,"object_id":"CHEBI:35458","object_label":"cerium trichloride","predicate_id":"skos:closeMatch"},{"data_row":672,"object_id":"kgmicrobe.compound:cecl3_x_7_h2o","object_label":"CeCl3 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cecl3_X_7_H2o","synonym_count":3} |
 | ev-4ea9c22ed0bbb6de | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [671] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-0750e0116333ffb1 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cecl3_X_7_H2o; data-row positions=[671,672] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":671,"object_id":"CHEBI:35458","object_label":"cerium trichloride","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Cecl3_X_7_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":672,"object_id":"kgmicrobe.compound:cecl3_x_7_h2o","object_label":"CeCl3 x 7 H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cecl3_X_7_H2o","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-0750e0116333ffb1 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cecl3_X_7_H2o; data-row positions=[671, 672] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":671,"object_id":"CHEBI:35458","object_label":"cerium trichloride","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Cecl3_X_7_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":672,"object_id":"kgmicrobe.compound:cecl3_x_7_h2o","object_label":"CeCl3 x 7 H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cecl3_X_7_H2o","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
 | ev-ad6be6922558f75a | docs/data/mapped_ingredients.csv; CSV lines=[673] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","line":673,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:35458","preferred_term":"CeCl3 x 7 H2O","total_occurrences":"4"}] |
 | ev-f0a5acdc8cfa341c | reports/yaml_record_review/20261001T050147Z-Cecl3_X_7_H2o.md; YAML Record Review: CeCl3 x 7 H2O:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8f0ea61e967cd24e | reports/yaml_record_review/Cecl3_X_7_H2o.md; &#96;data/ingredients/mapped/Cecl3_X_7_H2o.yaml&#96;:2; Verdict:4; Identity:12; Validation:29; Evidence:44; Completeness:66; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d46a40c5e62c75e1 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[376,1647] | context_only | [{"current_record_sha256":"333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241","finding_id":"SEM:2f3987a4be6b773942d6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241","finding_id":"SEM:83529910b65f4d94305d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b4125fd291fa0e49 | data/ingredients/mapped/Cecl3_X_7_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-b4125fd291fa0e49 | data/ingredients/mapped/Cecl3_X_7_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[671],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","line":673,"mapping_status":"MAPPED","ontology_id":"CHEBI:35458","preferred_term":"CeCl3 x 7 H2O"}],"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:35458","ontology_label":"cerium trichloride","ontology_source":"CHEBI"},"preferred_term":"CeCl3 x 7 H2O","sssom_rows":[{"data_row":671,"object_id":"CHEBI:35458","object_label":"cerium trichloride","predicate_id":"skos:closeMatch"},{"data_row":672,"object_id":"kgmicrobe.compound:cecl3_x_7_h2o","object_label":"CeCl3 x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cecl3_X_7_H2o","synonym_count":3} |
 | ev-bf01590d4a3953bb | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-6e0434fd82129807] | context_only | Predecessor structured review finding f-6e0434fd82129807 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e06c987d8ce4121b
+  evidence_ids:
+  - ev-8ff93c51b1c7fb9e
+  - ev-4ea9c22ed0bbb6de
+  - ev-0750e0116333ffb1
+  - ev-ad6be6922558f75a
+  - ev-b4125fd291fa0e49
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e06c987d8ce4121b
+  evidence_ids:
+  - ev-8ff93c51b1c7fb9e
+  - ev-d46a40c5e62c75e1
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e06c987d8ce4121b
+  evidence_ids:
+  - ev-f0a5acdc8cfa341c
+  - ev-8f0ea61e967cd24e
+  - ev-d46a40c5e62c75e1
+  - ev-bf01590d4a3953bb
 evidence:
 - evidence_id: ev-8ff93c51b1c7fb9e
   kind: record_content
   reference: data/ingredients/mapped/Cecl3_X_7_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[671],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","line":673,"mapping_status":"MAPPED","ontology_id":"CHEBI:35458","preferred_term":"CeCl3
     x 7 H2O"}],"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:35458","ontology_label":"cerium
@@ -217,7 +231,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [671]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,8 +239,8 @@ evidence:
 - evidence_id: ev-0750e0116333ffb1
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Cecl3_X_7_H2o; data-row positions=[671,672]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Cecl3_X_7_H2o; data-row positions=[671, 672]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":671,"object_id":"CHEBI:35458","object_label":"cerium
     trichloride","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Cecl3_X_7_H2o","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":672,"object_id":"kgmicrobe.compound:cecl3_x_7_h2o","object_label":"CeCl3
@@ -236,7 +250,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[673]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","line":673,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:35458","preferred_term":"CeCl3
     x 7 H2O","total_occurrences":"4"}]'
@@ -292,7 +306,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[376,1647]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241","finding_id":"SEM:2f3987a4be6b773942d6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241","finding_id":"SEM:83529910b65f4d94305d","kind":"role_evidence","resolution_reason":"Historical
@@ -302,12 +316,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cecl3_X_7_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[671],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","line":673,"mapping_status":"MAPPED","ontology_id":"CHEBI:35458","preferred_term":"CeCl3
+    x 7 H2O"}],"identifier":"kgmicrobe.compound:cecl3_x_7_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:35458","ontology_label":"cerium
+    trichloride","ontology_source":"CHEBI"},"preferred_term":"CeCl3 x 7 H2O","sssom_rows":[{"data_row":671,"object_id":"CHEBI:35458","object_label":"cerium
+    trichloride","predicate_id":"skos:closeMatch"},{"data_row":672,"object_id":"kgmicrobe.compound:cecl3_x_7_h2o","object_label":"CeCl3
+    x 7 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cecl3_X_7_H2o","synonym_count":3}'
   snapshot_sha256: 333ceb06fb21584f6a070220f10ba58595942564b0935143e412c60a4ec45241
 - evidence_id: ev-bf01590d4a3953bb
   kind: prior_review

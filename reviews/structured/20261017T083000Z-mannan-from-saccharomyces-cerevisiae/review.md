@@ -85,11 +85,11 @@ Reassess prediction-only role support: Mannan from Saccharomyces cerevisiae
 | --- | --- | --- | --- |
 | ev-4bb82dec6dae3786 | data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1347],"raw_equal":true},"docs_rows":[{"identifier":"cas:9036-88-8","line":1349,"mapping_status":"MAPPED","ontology_id":"NCIT:C14271","preferred_term":"Mannan from Saccharomyces cerevisiae"}],"identifier":"cas:9036-88-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C14271","ontology_label":"Saccharomyces cerevisiae","ontology_source":"NCIT"},"preferred_term":"Mannan from Saccharomyces cerevisiae","sssom_rows":[{"data_row":1778,"object_id":"NCIT:C14271","object_label":"Saccharomyces cerevisiae","predicate_id":"skos:broadMatch"},{"data_row":1779,"object_id":"cas:9036-88-8","object_label":"Mannan from Saccharomyces cerevisiae","predicate_id":"skos:exactMatch"},{"data_row":1780,"object_id":"kgmicrobe.compound:mannan_from_saccharomyces_cerevisiae","object_label":"Mannan from Saccharomyces cerevisiae","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mannan_From_Saccharomyces_Cerevisiae","synonym_count":1} |
 | ev-396a20808d2d70f3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1347] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-196370d79bff926f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mannan_From_Saccharomyces_Cerevisiae; data-row positions=[1778,1779,1780] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1778,"object_id":"NCIT:C14271","object_label":"Saccharomyces cerevisiae","other":"filtered, Mannan from Saccharomyces cerevisiae","predicate_id":"skos:broadMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1779,"object_id":"cas:9036-88-8","object_label":"Mannan from Saccharomyces cerevisiae","other":"CAS:9036-88-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1780,"object_id":"kgmicrobe.compound:mannan_from_saccharomyces_cerevisiae","object_label":"Mannan from Saccharomyces cerevisiae","other":"CAS:9036-88-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-196370d79bff926f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mannan_From_Saccharomyces_Cerevisiae; data-row positions=[1778, 1779, 1780] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1778,"object_id":"NCIT:C14271","object_label":"Saccharomyces cerevisiae","other":"filtered, Mannan from Saccharomyces cerevisiae","predicate_id":"skos:broadMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1779,"object_id":"cas:9036-88-8","object_label":"Mannan from Saccharomyces cerevisiae","other":"CAS:9036-88-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1780,"object_id":"kgmicrobe.compound:mannan_from_saccharomyces_cerevisiae","object_label":"Mannan from Saccharomyces cerevisiae","other":"CAS:9036-88-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-d87892b7f9c3e429 | docs/data/mapped_ingredients.csv; CSV lines=[1349] | supports | Published identity and count rows inspected: [{"identifier":"cas:9036-88-8","line":1349,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C14271","preferred_term":"Mannan from Saccharomyces cerevisiae","total_occurrences":"0"}] |
 | ev-0b76f574aad4e79a | reports/yaml_record_review/Mannan_From_Saccharomyces_Cerevisiae.md; &#96;data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml&#96;:2; Verdict:4; Identity:14; Validation:26; Evidence:33; Completeness:50; Recommended Edits:63 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9f3c6246d3ead19c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[900,1777] | context_only | [{"current_record_sha256":"d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f","finding_id":"SEM:8540d8cdc89bb1398494","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f","finding_id":"SEM:7e6d87702cf71494a1c3","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-243931d51505f659 | data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-243931d51505f659 | data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1347],"raw_equal":true},"docs_rows":[{"identifier":"cas:9036-88-8","line":1349,"mapping_status":"MAPPED","ontology_id":"NCIT:C14271","preferred_term":"Mannan from Saccharomyces cerevisiae"}],"identifier":"cas:9036-88-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C14271","ontology_label":"Saccharomyces cerevisiae","ontology_source":"NCIT"},"preferred_term":"Mannan from Saccharomyces cerevisiae","sssom_rows":[{"data_row":1778,"object_id":"NCIT:C14271","object_label":"Saccharomyces cerevisiae","predicate_id":"skos:broadMatch"},{"data_row":1779,"object_id":"cas:9036-88-8","object_label":"Mannan from Saccharomyces cerevisiae","predicate_id":"skos:exactMatch"},{"data_row":1780,"object_id":"kgmicrobe.compound:mannan_from_saccharomyces_cerevisiae","object_label":"Mannan from Saccharomyces cerevisiae","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mannan_From_Saccharomyces_Cerevisiae","synonym_count":1} |
 | ev-1ec7f5147daa0185 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-81f8be7e39a05b8c] | context_only | Predecessor structured review finding f-81f8be7e39a05b8c in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7fdf10bfa8b9a5ce
+  evidence_ids:
+  - ev-4bb82dec6dae3786
+  - ev-396a20808d2d70f3
+  - ev-196370d79bff926f
+  - ev-d87892b7f9c3e429
+  - ev-243931d51505f659
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7fdf10bfa8b9a5ce
+  evidence_ids:
+  - ev-4bb82dec6dae3786
+  - ev-9f3c6246d3ead19c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7fdf10bfa8b9a5ce
+  evidence_ids:
+  - ev-0b76f574aad4e79a
+  - ev-9f3c6246d3ead19c
+  - ev-1ec7f5147daa0185
 evidence:
 - evidence_id: ev-4bb82dec6dae3786
   kind: record_content
   reference: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1347],"raw_equal":true},"docs_rows":[{"identifier":"cas:9036-88-8","line":1349,"mapping_status":"MAPPED","ontology_id":"NCIT:C14271","preferred_term":"Mannan
     from Saccharomyces cerevisiae"}],"identifier":"cas:9036-88-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C14271","ontology_label":"Saccharomyces
@@ -215,7 +228,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1347]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -223,8 +236,9 @@ evidence:
 - evidence_id: ev-196370d79bff926f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Mannan_From_Saccharomyces_Cerevisiae; data-row positions=[1778,1779,1780]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Mannan_From_Saccharomyces_Cerevisiae; data-row positions=[1778,
+    1779, 1780]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1778,"object_id":"NCIT:C14271","object_label":"Saccharomyces
     cerevisiae","other":"filtered, Mannan from Saccharomyces cerevisiae","predicate_id":"skos:broadMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1779,"object_id":"cas:9036-88-8","object_label":"Mannan
@@ -235,7 +249,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1349]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:9036-88-8","line":1349,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C14271","preferred_term":"Mannan
     from Saccharomyces cerevisiae","total_occurrences":"0"}]'
@@ -261,7 +275,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[900,1777]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f","finding_id":"SEM:8540d8cdc89bb1398494","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f","finding_id":"SEM:7e6d87702cf71494a1c3","kind":"role_evidence","resolution_reason":"Historical
@@ -271,12 +285,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1347],"raw_equal":true},"docs_rows":[{"identifier":"cas:9036-88-8","line":1349,"mapping_status":"MAPPED","ontology_id":"NCIT:C14271","preferred_term":"Mannan
+    from Saccharomyces cerevisiae"}],"identifier":"cas:9036-88-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C14271","ontology_label":"Saccharomyces
+    cerevisiae","ontology_source":"NCIT"},"preferred_term":"Mannan from Saccharomyces
+    cerevisiae","sssom_rows":[{"data_row":1778,"object_id":"NCIT:C14271","object_label":"Saccharomyces
+    cerevisiae","predicate_id":"skos:broadMatch"},{"data_row":1779,"object_id":"cas:9036-88-8","object_label":"Mannan
+    from Saccharomyces cerevisiae","predicate_id":"skos:exactMatch"},{"data_row":1780,"object_id":"kgmicrobe.compound:mannan_from_saccharomyces_cerevisiae","object_label":"Mannan
+    from Saccharomyces cerevisiae","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mannan_From_Saccharomyces_Cerevisiae","synonym_count":1}'
   snapshot_sha256: d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f
 - evidence_id: ev-1ec7f5147daa0185
   kind: prior_review

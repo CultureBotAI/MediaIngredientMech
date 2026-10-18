@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5a9e2f914dd48794
+  evidence_ids:
+  - ev-f84ada90e220996b
+  - ev-2c4daf15eb519e6b
+  - ev-2f0ee09ac70d5c25
+  - ev-7edf0f9bca2f81c1
+  - ev-563de87708d37e7e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5a9e2f914dd48794
+  evidence_ids:
+  - ev-f84ada90e220996b
+  - ev-808f423be8ec83f4
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,21 +99,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5a9e2f914dd48794
+  evidence_ids:
+  - ev-9bd92129e6426f0d
+  - ev-808f423be8ec83f4
+  - ev-3f004a9b8f76dbc6
 evidence:
 - evidence_id: ev-f84ada90e220996b
   kind: record_content
   reference: data/ingredients/mapped/Myo-inositol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1435],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17268","line":1437,"mapping_status":"MAPPED","ontology_id":"CHEBI:17268","preferred_term":"myo-Inositol"}],"identifier":"CHEBI:17268","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":59,"edge_count":59,"occurrences":59},"occurrence_statistics":{"media_count":59,"total_occurrences":59},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17268","ontology_label":"myo-inositol","ontology_source":"CHEBI"},"preferred_term":"myo-Inositol","sssom_rows":[{"data_row":1924,"object_id":"CHEBI:17268","object_label":"myo-inositol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Myo-inositol","synonym_count":21}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1434],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17268","line":1436,"mapping_status":"MAPPED","ontology_id":"CHEBI:17268","preferred_term":"myo-Inositol"}],"identifier":"CHEBI:17268","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":59,"edge_count":59,"occurrences":59},"occurrence_statistics":{"media_count":59,"total_occurrences":59},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17268","ontology_label":"myo-inositol","ontology_source":"CHEBI"},"preferred_term":"myo-Inositol","sssom_rows":[{"data_row":1926,"object_id":"CHEBI:17268","object_label":"myo-inositol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Myo-inositol","synonym_count":21}'
   snapshot_sha256: 4a6051984c639318d27bcee942175994e2f3f40beff5483130a4c17a9f5e3d53
 - evidence_id: ev-2c4daf15eb519e6b
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1435]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1434]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -112,20 +125,20 @@ evidence:
 - evidence_id: ev-2f0ee09ac70d5c25
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Myo-inositol; data-row positions=[1924]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Myo-inositol; data-row positions=[1926]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1924,"object_id":"CHEBI:17268","object_label":"myo-inositol","other":"(1r,2R,3S,4s,5R,6S)-cyclohexane-1,2,3,4,5,6-hexol|1,2,3,4,5,6-HEXAHYDROXY-CYCLOHEXANE|1,2,3,4,5,6-cyclohexanehexol|1,2,3,5/4,6-cyclohexanehexol|1D-myo-Inositol|1L-myo-Inositol|Bios
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1926,"object_id":"CHEBI:17268","object_label":"myo-inositol","other":"(1r,2R,3S,4s,5R,6S)-cyclohexane-1,2,3,4,5,6-hexol|1,2,3,4,5,6-HEXAHYDROXY-CYCLOHEXANE|1,2,3,4,5,6-cyclohexanehexol|1,2,3,5/4,6-cyclohexanehexol|1D-myo-Inositol|1L-myo-Inositol|Bios
     I|Cyclohexitol|D-myo-Inositol|Dambose|Inositol (myo-inositol)|Ins|L-myo-Inositol|Meat
     sugar|Myoinositol|cis-1,2,3,5-trans-4,6-cyclohexanehexol|i-inositol|inosite|m-Inositol|CAS:87-89-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Myo-inositol","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-7edf0f9bca2f81c1
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1437]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1436]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17268","line":1437,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"59","ontology_id":"CHEBI:17268","preferred_term":"myo-Inositol","total_occurrences":"59"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17268","line":1436,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"59","ontology_id":"CHEBI:17268","preferred_term":"myo-Inositol","total_occurrences":"59"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-9bd92129e6426f0d
   kind: prior_review
@@ -145,7 +158,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[961,1977]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4a6051984c639318d27bcee942175994e2f3f40beff5483130a4c17a9f5e3d53","finding_id":"SEM:e6f66ed42296e2b1f226","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4a6051984c639318d27bcee942175994e2f3f40beff5483130a4c17a9f5e3d53","finding_id":"SEM:e91fb602a1082bc3acca","kind":"role_evidence","resolution_reason":"Historical
@@ -155,12 +168,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Myo-inositol.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1434],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17268","line":1436,"mapping_status":"MAPPED","ontology_id":"CHEBI:17268","preferred_term":"myo-Inositol"}],"identifier":"CHEBI:17268","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":59,"edge_count":59,"occurrences":59},"occurrence_statistics":{"media_count":59,"total_occurrences":59},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17268","ontology_label":"myo-inositol","ontology_source":"CHEBI"},"preferred_term":"myo-Inositol","sssom_rows":[{"data_row":1926,"object_id":"CHEBI:17268","object_label":"myo-inositol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Myo-inositol","synonym_count":21}'
   snapshot_sha256: 4a6051984c639318d27bcee942175994e2f3f40beff5483130a4c17a9f5e3d53
 - evidence_id: ev-3f004a9b8f76dbc6
   kind: prior_review

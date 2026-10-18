@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4ca81146caf15a17
+  evidence_ids:
+  - ev-80d5af41ca949ffb
+  - ev-80a93dbfa382b7b4
+  - ev-c0e77d4602e9584e
+  - ev-2f1bc62a857c19bd
+  - ev-574c5997a1e38f61
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4ca81146caf15a17
+  evidence_ids:
+  - ev-80d5af41ca949ffb
+  - ev-5a7d98ded542c5f9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4ca81146caf15a17
+  evidence_ids:
+  - ev-1754df56911ad503
+  - ev-5a7d98ded542c5f9
+  - ev-9887ccddef6807f0
 evidence:
 - evidence_id: ev-80d5af41ca949ffb
   kind: record_content
   reference: data/ingredients/mapped/Angolamycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[496],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C002547","line":498,"mapping_status":"MAPPED","ontology_id":"mesh:C002547","preferred_term":"Angolamycin"}],"identifier":"mesh:C002547","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C002547","ontology_label":"angolamycin","ontology_source":"MESH"},"preferred_term":"Angolamycin","sssom_rows":[{"data_row":383,"object_id":"mesh:C002547","object_label":"angolamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Angolamycin","synonym_count":0}'
   snapshot_sha256: f6e9c5f989543b3e94db17124b1c4d30f742346e5258b6a5bbe1dd46ab7cca46
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [496]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Angolamycin; data-row positions=[383]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":383,"object_id":"mesh:C002547","object_label":"angolamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Angolamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[498]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C002547","line":498,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C002547","preferred_term":"Angolamycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -146,7 +159,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[260,1406]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f6e9c5f989543b3e94db17124b1c4d30f742346e5258b6a5bbe1dd46ab7cca46","finding_id":"SEM:5de5adf89b6d073e0b16","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f6e9c5f989543b3e94db17124b1c4d30f742346e5258b6a5bbe1dd46ab7cca46","finding_id":"SEM:38cfe88b3aef57329599","kind":"role_evidence","resolution_reason":"Historical
@@ -156,12 +169,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Angolamycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[496],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C002547","line":498,"mapping_status":"MAPPED","ontology_id":"mesh:C002547","preferred_term":"Angolamycin"}],"identifier":"mesh:C002547","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C002547","ontology_label":"angolamycin","ontology_source":"MESH"},"preferred_term":"Angolamycin","sssom_rows":[{"data_row":383,"object_id":"mesh:C002547","object_label":"angolamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Angolamycin","synonym_count":0}'
   snapshot_sha256: f6e9c5f989543b3e94db17124b1c4d30f742346e5258b6a5bbe1dd46ab7cca46
 - evidence_id: ev-9887ccddef6807f0
   kind: prior_review

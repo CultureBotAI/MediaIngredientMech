@@ -89,7 +89,7 @@ Reassess prediction-only role support: Laminarin from Laminaria digitata
 | ev-e76d96c8d7695e2a | docs/data/mapped_ingredients.csv; CSV lines=[1286] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:6364","line":1286,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6364","preferred_term":"Laminarin from Laminaria digitata","total_occurrences":"0"}] |
 | ev-ad5ff89b7a706c18 | reports/yaml_record_review/Laminarin_From_Laminaria_Digitata.md; &#96;data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:29; Completeness:45; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c940efb137583480 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[853,1489] | context_only | [{"current_record_sha256":"d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7","finding_id":"SEM:8b7337ac2a677680ab04","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7","finding_id":"SEM:2104d5d5de2046405356","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d3807fddecd562e3 | data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-d3807fddecd562e3 | data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1284],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6364","line":1286,"mapping_status":"MAPPED","ontology_id":"CHEBI:6364","preferred_term":"Laminarin from Laminaria digitata"}],"identifier":"CHEBI:6364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:6364","ontology_label":"laminarin","ontology_source":"CHEBI"},"preferred_term":"Laminarin from Laminaria digitata","sssom_rows":[{"data_row":1669,"object_id":"CHEBI:6364","object_label":"laminarin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Laminarin_From_Laminaria_Digitata","synonym_count":0} |
 | ev-e2f67a2472439999 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-48659142957dd03d] | context_only | Predecessor structured review finding f-48659142957dd03d in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d4f52b918f2d89d8
+  evidence_ids:
+  - ev-52f1d8b2135aa6d3
+  - ev-7faa27944a2607aa
+  - ev-07a7e4a7853a2f8e
+  - ev-e76d96c8d7695e2a
+  - ev-d3807fddecd562e3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d4f52b918f2d89d8
+  evidence_ids:
+  - ev-52f1d8b2135aa6d3
+  - ev-c940efb137583480
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d4f52b918f2d89d8
+  evidence_ids:
+  - ev-ad5ff89b7a706c18
+  - ev-c940efb137583480
+  - ev-e2f67a2472439999
 evidence:
 - evidence_id: ev-52f1d8b2135aa6d3
   kind: record_content
   reference: data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1284],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6364","line":1286,"mapping_status":"MAPPED","ontology_id":"CHEBI:6364","preferred_term":"Laminarin
     from Laminaria digitata"}],"identifier":"CHEBI:6364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:6364","ontology_label":"laminarin","ontology_source":"CHEBI"},"preferred_term":"Laminarin
@@ -211,7 +224,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1284]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +233,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Laminarin_From_Laminaria_Digitata; data-row positions=[1669]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1669,"object_id":"CHEBI:6364","object_label":"laminarin","other":"CAS:9008-22-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Laminarin_From_Laminaria_Digitata","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -228,7 +241,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1286]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:6364","line":1286,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6364","preferred_term":"Laminarin
     from Laminaria digitata","total_occurrences":"0"}]'
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[853,1489]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7","finding_id":"SEM:8b7337ac2a677680ab04","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7","finding_id":"SEM:2104d5d5de2046405356","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1284],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6364","line":1286,"mapping_status":"MAPPED","ontology_id":"CHEBI:6364","preferred_term":"Laminarin
+    from Laminaria digitata"}],"identifier":"CHEBI:6364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:6364","ontology_label":"laminarin","ontology_source":"CHEBI"},"preferred_term":"Laminarin
+    from Laminaria digitata","sssom_rows":[{"data_row":1669,"object_id":"CHEBI:6364","object_label":"laminarin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Laminarin_From_Laminaria_Digitata","synonym_count":0}'
   snapshot_sha256: d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7
 - evidence_id: ev-e2f67a2472439999
   kind: prior_review

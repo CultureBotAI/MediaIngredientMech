@@ -71,13 +71,12 @@ Disposition: Expansion/interpretation is retained as an assertion, but the exact
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c091ee50f7a0805c | data/ingredients/mapped/PY-pectin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[52],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_pectin","line":54,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_pectin","preferred_term":"PY-pectin"}],"identifier":"kgmicrobe.ingredient:py_pectin","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_pectin","ontology_label":"PY-pectin","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-pectin","sssom_rows":[{"data_row":2179,"object_id":"kgmicrobe.ingredient:py_pectin","object_label":"PY-pectin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-pectin","synonym_count":1} |
+| ev-c091ee50f7a0805c | data/ingredients/mapped/PY-pectin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[52],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_pectin","line":54,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_pectin","preferred_term":"PY-pectin"}],"identifier":"kgmicrobe.ingredient:py_pectin","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_pectin","ontology_label":"PY-pectin","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-pectin","sssom_rows":[{"data_row":2181,"object_id":"kgmicrobe.ingredient:py_pectin","object_label":"PY-pectin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-pectin","synonym_count":1} |
 | ev-5de387d96bce7cea | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [52] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-af6ad1c3a8ec78c4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PY-pectin; data-row positions=[2179] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2179,"object_id":"kgmicrobe.ingredient:py_pectin","object_label":"PY-pectin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-pectin","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
+| ev-af6ad1c3a8ec78c4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PY-pectin; data-row positions=[2181] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2181,"object_id":"kgmicrobe.ingredient:py_pectin","object_label":"PY-pectin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-pectin","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
 | ev-bf5b61d2ebb9ea38 | docs/data/mapped_ingredients.csv; CSV lines=[54] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:py_pectin","line":54,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:py_pectin","preferred_term":"PY-pectin","total_occurrences":"0"}] |
 | ev-050fcce4f54f4403 | reports/yaml_record_review/PY-pectin.md; &#96;data/ingredients/mapped/PY-pectin.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:31; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-cf32130170d9b06b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1454,1843,1879] | context_only | [{"current_record_sha256":"fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6","finding_id":"SEM:4427baace6f735481bbf","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6","finding_id":"SEM:73b0c34738f1e76ee9ad","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6","finding_id":"SEM:e9e2e166770525730b0c","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0cc2fbe6706e5df8 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/PY-pectin.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -166,6 +165,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a2bb85f3e73aefb6
+  evidence_ids:
+  - ev-c091ee50f7a0805c
+  - ev-5de387d96bce7cea
+  - ev-af6ad1c3a8ec78c4
+  - ev-bf5b61d2ebb9ea38
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -174,6 +178,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-a2bb85f3e73aefb6
+  evidence_ids:
+  - ev-c091ee50f7a0805c
+  - ev-cf32130170d9b06b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -182,21 +189,24 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a2bb85f3e73aefb6
+  evidence_ids:
+  - ev-050fcce4f54f4403
+  - ev-cf32130170d9b06b
 evidence:
 - evidence_id: ev-c091ee50f7a0805c
   kind: record_content
   reference: data/ingredients/mapped/PY-pectin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[52],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_pectin","line":54,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_pectin","preferred_term":"PY-pectin"}],"identifier":"kgmicrobe.ingredient:py_pectin","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_pectin","ontology_label":"PY-pectin","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-pectin","sssom_rows":[{"data_row":2179,"object_id":"kgmicrobe.ingredient:py_pectin","object_label":"PY-pectin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-pectin","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[52],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_pectin","line":54,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_pectin","preferred_term":"PY-pectin"}],"identifier":"kgmicrobe.ingredient:py_pectin","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_pectin","ontology_label":"PY-pectin","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-pectin","sssom_rows":[{"data_row":2181,"object_id":"kgmicrobe.ingredient:py_pectin","object_label":"PY-pectin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-pectin","synonym_count":1}'
   snapshot_sha256: fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6
 - evidence_id: ev-5de387d96bce7cea
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [52]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -204,16 +214,16 @@ evidence:
 - evidence_id: ev-af6ad1c3a8ec78c4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PY-pectin; data-row positions=[2179]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PY-pectin; data-row positions=[2181]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2179,"object_id":"kgmicrobe.ingredient:py_pectin","object_label":"PY-pectin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-pectin","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2181,"object_id":"kgmicrobe.ingredient:py_pectin","object_label":"PY-pectin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-pectin","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-bf5b61d2ebb9ea38
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[54]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:py_pectin","line":54,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:py_pectin","preferred_term":"PY-pectin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -235,20 +245,12 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1454,1843,1879]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6","finding_id":"SEM:4427baace6f735481bbf","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6","finding_id":"SEM:73b0c34738f1e76ee9ad","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6","finding_id":"SEM:e9e2e166770525730b0c","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-0cc2fbe6706e5df8
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/PY-pectin.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-9905c45ba9cdf308
@@ -321,7 +323,7 @@ findings:
   - record-a2bb85f3e73aefb6
   evidence_ids:
   - ev-c091ee50f7a0805c
-  - ev-0cc2fbe6706e5df8
+  - ev-cf32130170d9b06b
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PY-pectin.yaml

@@ -89,7 +89,7 @@ Reassess prediction-only role support: Hitachimycin
 | ev-919541e53f79e233 | docs/data/mapped_ingredients.csv; CSV lines=[1132] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C031780","line":1132,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C031780","preferred_term":"Hitachimycin","total_occurrences":"0"}] |
 | ev-01f29692008778e0 | reports/yaml_record_review/Hitachimycin.md; &#96;data/ingredients/mapped/Hitachimycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:33; Completeness:48; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3d78970eca34a67e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[732,2066] | context_only | [{"current_record_sha256":"c633b53098facd609b997e0364445391dba4029223f0ceac1e34453b53dc6903","finding_id":"SEM:202ed9c25365620122b4","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c633b53098facd609b997e0364445391dba4029223f0ceac1e34453b53dc6903","finding_id":"SEM:1b434d8f448e8fa7b060","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8c40b1d99db3998b | data/ingredients/mapped/Hitachimycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-8c40b1d99db3998b | data/ingredients/mapped/Hitachimycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1130],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C031780","line":1132,"mapping_status":"MAPPED","ontology_id":"mesh:C031780","preferred_term":"Hitachimycin"}],"identifier":"mesh:C031780","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C031780","ontology_label":"stubomycin","ontology_source":"MESH"},"preferred_term":"Hitachimycin","sssom_rows":[{"data_row":1433,"object_id":"mesh:C031780","object_label":"stubomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hitachimycin","synonym_count":0} |
 | ev-faf2de8d6cba05f5 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-2da019aecaea57fd] | context_only | Predecessor structured review finding f-2da019aecaea57fd in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7344a9ff55bd52c8
+  evidence_ids:
+  - ev-9059df2083b6d5a0
+  - ev-8455743e2f778966
+  - ev-c5dd7342a5eba7a6
+  - ev-919541e53f79e233
+  - ev-8c40b1d99db3998b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7344a9ff55bd52c8
+  evidence_ids:
+  - ev-9059df2083b6d5a0
+  - ev-3d78970eca34a67e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7344a9ff55bd52c8
+  evidence_ids:
+  - ev-01f29692008778e0
+  - ev-3d78970eca34a67e
+  - ev-faf2de8d6cba05f5
 evidence:
 - evidence_id: ev-9059df2083b6d5a0
   kind: record_content
   reference: data/ingredients/mapped/Hitachimycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1130],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C031780","line":1132,"mapping_status":"MAPPED","ontology_id":"mesh:C031780","preferred_term":"Hitachimycin"}],"identifier":"mesh:C031780","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C031780","ontology_label":"stubomycin","ontology_source":"MESH"},"preferred_term":"Hitachimycin","sssom_rows":[{"data_row":1433,"object_id":"mesh:C031780","object_label":"stubomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hitachimycin","synonym_count":0}'
   snapshot_sha256: c633b53098facd609b997e0364445391dba4029223f0ceac1e34453b53dc6903
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1130]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Hitachimycin; data-row positions=[1433]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1433,"object_id":"mesh:C031780","object_label":"stubomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Hitachimycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1132]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C031780","line":1132,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C031780","preferred_term":"Hitachimycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[732,2066]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c633b53098facd609b997e0364445391dba4029223f0ceac1e34453b53dc6903","finding_id":"SEM:202ed9c25365620122b4","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c633b53098facd609b997e0364445391dba4029223f0ceac1e34453b53dc6903","finding_id":"SEM:1b434d8f448e8fa7b060","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Hitachimycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1130],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C031780","line":1132,"mapping_status":"MAPPED","ontology_id":"mesh:C031780","preferred_term":"Hitachimycin"}],"identifier":"mesh:C031780","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C031780","ontology_label":"stubomycin","ontology_source":"MESH"},"preferred_term":"Hitachimycin","sssom_rows":[{"data_row":1433,"object_id":"mesh:C031780","object_label":"stubomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hitachimycin","synonym_count":0}'
   snapshot_sha256: c633b53098facd609b997e0364445391dba4029223f0ceac1e34453b53dc6903
 - evidence_id: ev-faf2de8d6cba05f5
   kind: prior_review

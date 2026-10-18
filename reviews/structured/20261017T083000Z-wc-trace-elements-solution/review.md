@@ -83,13 +83,13 @@ Reassess prediction-only role support: WC Trace Elements Solution
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-ac88dbe570e2f62e | data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2057],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000455","line":2059,"mapping_status":"MAPPED","ontology_id":"MICRO:0000455","preferred_term":"WC Trace Elements Solution"}],"identifier":"MICRO:0000455","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"MICRO:0000455","ontology_label":"trace elements solution","ontology_source":"MICRO"},"preferred_term":"WC Trace Elements Solution","sssom_rows":[{"data_row":2923,"object_id":"MICRO:0000455","object_label":"trace elements solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wc_Trace_Elements_Solution","synonym_count":1} |
-| ev-b404841a729b6ea2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2057] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-b02e155bc694af7a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Wc_Trace_Elements_Solution; data-row positions=[2923] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2923,"object_id":"MICRO:0000455","object_label":"trace elements solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Wc_Trace_Elements_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-c4d9be2abd8fcd94 | docs/data/mapped_ingredients.csv; CSV lines=[2059] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000455","line":2059,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0000455","preferred_term":"WC Trace Elements Solution","total_occurrences":"2"}] |
+| ev-ac88dbe570e2f62e | data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2056],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000455","line":2058,"mapping_status":"MAPPED","ontology_id":"MICRO:0000455","preferred_term":"WC Trace Elements Solution"}],"identifier":"MICRO:0000455","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"MICRO:0000455","ontology_label":"trace elements solution","ontology_source":"MICRO"},"preferred_term":"WC Trace Elements Solution","sssom_rows":[{"data_row":2925,"object_id":"MICRO:0000455","object_label":"trace elements solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wc_Trace_Elements_Solution","synonym_count":1} |
+| ev-b404841a729b6ea2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2056] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b02e155bc694af7a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Wc_Trace_Elements_Solution; data-row positions=[2925] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2925,"object_id":"MICRO:0000455","object_label":"trace elements solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Wc_Trace_Elements_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-c4d9be2abd8fcd94 | docs/data/mapped_ingredients.csv; CSV lines=[2058] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000455","line":2058,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0000455","preferred_term":"WC Trace Elements Solution","total_occurrences":"2"}] |
 | ev-e010475621a6d3d8 | reports/yaml_record_review/Wc_Trace_Elements_Solution.md; &#96;data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:33; Issues:44; Completeness:54; Recommended Edits:60 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-84b0fcbf01fcbaef | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1345,2001] | context_only | [{"current_record_sha256":"692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee","finding_id":"SEM:f2679c98abb2072b2bd7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee","finding_id":"SEM:84aafbc6d72c66a9660f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-fd024e221d60d920 | data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-fd024e221d60d920 | data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2056],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000455","line":2058,"mapping_status":"MAPPED","ontology_id":"MICRO:0000455","preferred_term":"WC Trace Elements Solution"}],"identifier":"MICRO:0000455","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"MICRO:0000455","ontology_label":"trace elements solution","ontology_source":"MICRO"},"preferred_term":"WC Trace Elements Solution","sssom_rows":[{"data_row":2925,"object_id":"MICRO:0000455","object_label":"trace elements solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wc_Trace_Elements_Solution","synonym_count":1} |
 | ev-56fcf843f8e5ae41 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-5677cebe60c360cf] | context_only | Predecessor structured review finding f-5677cebe60c360cf in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4a445e71fe30bfaa
+  evidence_ids:
+  - ev-ac88dbe570e2f62e
+  - ev-b404841a729b6ea2
+  - ev-b02e155bc694af7a
+  - ev-c4d9be2abd8fcd94
+  - ev-fd024e221d60d920
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4a445e71fe30bfaa
+  evidence_ids:
+  - ev-ac88dbe570e2f62e
+  - ev-84b0fcbf01fcbaef
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4a445e71fe30bfaa
+  evidence_ids:
+  - ev-e010475621a6d3d8
+  - ev-84b0fcbf01fcbaef
+  - ev-56fcf843f8e5ae41
 evidence:
 - evidence_id: ev-ac88dbe570e2f62e
   kind: record_content
   reference: data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2057],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000455","line":2059,"mapping_status":"MAPPED","ontology_id":"MICRO:0000455","preferred_term":"WC
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2056],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000455","line":2058,"mapping_status":"MAPPED","ontology_id":"MICRO:0000455","preferred_term":"WC
     Trace Elements Solution"}],"identifier":"MICRO:0000455","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"MICRO:0000455","ontology_label":"trace
     elements solution","ontology_source":"MICRO"},"preferred_term":"WC Trace Elements
-    Solution","sssom_rows":[{"data_row":2923,"object_id":"MICRO:0000455","object_label":"trace
+    Solution","sssom_rows":[{"data_row":2925,"object_id":"MICRO:0000455","object_label":"trace
     elements solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wc_Trace_Elements_Solution","synonym_count":1}'
   snapshot_sha256: 692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee
 - evidence_id: ev-b404841a729b6ea2
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2057]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2056]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,19 +234,19 @@ evidence:
 - evidence_id: ev-b02e155bc694af7a
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Wc_Trace_Elements_Solution; data-row positions=[2923]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Wc_Trace_Elements_Solution; data-row positions=[2925]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2923,"object_id":"MICRO:0000455","object_label":"trace
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2925,"object_id":"MICRO:0000455","object_label":"trace
     elements solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Wc_Trace_Elements_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-c4d9be2abd8fcd94
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2059]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2058]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000455","line":2059,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0000455","preferred_term":"WC
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000455","line":2058,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0000455","preferred_term":"WC
     Trace Elements Solution","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-e010475621a6d3d8
@@ -264,7 +277,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1345,2001]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee","finding_id":"SEM:f2679c98abb2072b2bd7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee","finding_id":"SEM:84aafbc6d72c66a9660f","kind":"role_evidence","resolution_reason":"Historical
@@ -274,12 +287,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Wc_Trace_Elements_Solution.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2056],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000455","line":2058,"mapping_status":"MAPPED","ontology_id":"MICRO:0000455","preferred_term":"WC
+    Trace Elements Solution"}],"identifier":"MICRO:0000455","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"MICRO:0000455","ontology_label":"trace
+    elements solution","ontology_source":"MICRO"},"preferred_term":"WC Trace Elements
+    Solution","sssom_rows":[{"data_row":2925,"object_id":"MICRO:0000455","object_label":"trace
+    elements solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wc_Trace_Elements_Solution","synonym_count":1}'
   snapshot_sha256: 692af797eb0d2e1a83938dbdd111e8ddcadcc9d881f03696358cede40a126aee
 - evidence_id: ev-56fcf843f8e5ae41
   kind: prior_review

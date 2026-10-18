@@ -89,7 +89,7 @@ Reassess prediction-only role support: D-Serine
 | ev-7772a9bb43803c1c | docs/data/mapped_ingredients.csv; CSV lines=[829] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16523","line":829,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16523","preferred_term":"D-Serine","total_occurrences":"0"}] |
 | ev-d785fa942e317a55 | reports/yaml_record_review/D-Serine.md; &#96;data/ingredients/mapped/D-Serine.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:41; Completeness:56; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b7b79596ba6c0fd5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[478,1902] | context_only | [{"current_record_sha256":"d6aba07f5a08cca5568562a8683e9c4ae2d771dffcbcf6b1fbe71ea735d1adb6","finding_id":"SEM:39ebe9a919505904b278","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d6aba07f5a08cca5568562a8683e9c4ae2d771dffcbcf6b1fbe71ea735d1adb6","finding_id":"SEM:e6cb2156cdad73005992","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e2d1156106d6d7d8 | data/ingredients/mapped/D-Serine.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-e2d1156106d6d7d8 | data/ingredients/mapped/D-Serine.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[827],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16523","line":829,"mapping_status":"MAPPED","ontology_id":"CHEBI:16523","preferred_term":"D-Serine"}],"identifier":"CHEBI:16523","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16523","ontology_label":"D-serine","ontology_source":"CHEBI"},"preferred_term":"D-Serine","sssom_rows":[{"data_row":913,"object_id":"CHEBI:16523","object_label":"D-serine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Serine","synonym_count":0} |
 | ev-9c92f5bc84b43f3f | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-ac9053842bfc8af6] | context_only | Predecessor structured review finding f-ac9053842bfc8af6 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f0428d311dc46b1c
+  evidence_ids:
+  - ev-15eb695fd1d45b18
+  - ev-2efc0fd48b64c502
+  - ev-b6010f94c692a45d
+  - ev-7772a9bb43803c1c
+  - ev-e2d1156106d6d7d8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f0428d311dc46b1c
+  evidence_ids:
+  - ev-15eb695fd1d45b18
+  - ev-b7b79596ba6c0fd5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f0428d311dc46b1c
+  evidence_ids:
+  - ev-d785fa942e317a55
+  - ev-b7b79596ba6c0fd5
+  - ev-9c92f5bc84b43f3f
 evidence:
 - evidence_id: ev-15eb695fd1d45b18
   kind: record_content
   reference: data/ingredients/mapped/D-Serine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[827],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16523","line":829,"mapping_status":"MAPPED","ontology_id":"CHEBI:16523","preferred_term":"D-Serine"}],"identifier":"CHEBI:16523","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16523","ontology_label":"D-serine","ontology_source":"CHEBI"},"preferred_term":"D-Serine","sssom_rows":[{"data_row":913,"object_id":"CHEBI:16523","object_label":"D-serine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Serine","synonym_count":0}'
   snapshot_sha256: d6aba07f5a08cca5568562a8683e9c4ae2d771dffcbcf6b1fbe71ea735d1adb6
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [827]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-Serine; data-row positions=[913]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":913,"object_id":"CHEBI:16523","object_label":"D-serine","other":"CAS:312-84-5","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Serine","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[829]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16523","line":829,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16523","preferred_term":"D-Serine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[478,1902]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d6aba07f5a08cca5568562a8683e9c4ae2d771dffcbcf6b1fbe71ea735d1adb6","finding_id":"SEM:39ebe9a919505904b278","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d6aba07f5a08cca5568562a8683e9c4ae2d771dffcbcf6b1fbe71ea735d1adb6","finding_id":"SEM:e6cb2156cdad73005992","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Serine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[827],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16523","line":829,"mapping_status":"MAPPED","ontology_id":"CHEBI:16523","preferred_term":"D-Serine"}],"identifier":"CHEBI:16523","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16523","ontology_label":"D-serine","ontology_source":"CHEBI"},"preferred_term":"D-Serine","sssom_rows":[{"data_row":913,"object_id":"CHEBI:16523","object_label":"D-serine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Serine","synonym_count":0}'
   snapshot_sha256: d6aba07f5a08cca5568562a8683e9c4ae2d771dffcbcf6b1fbe71ea735d1adb6
 - evidence_id: ev-9c92f5bc84b43f3f
   kind: prior_review

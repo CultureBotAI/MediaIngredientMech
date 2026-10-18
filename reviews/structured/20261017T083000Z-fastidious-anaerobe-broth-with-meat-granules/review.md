@@ -71,13 +71,12 @@ Disposition: Expansion/interpretation is retained as an assertion, but the exact
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-b3dba4cef8416eef | data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[23],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","line":25,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","preferred_term":"Fastidious Anaerobe Broth With Meat Granules"}],"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","ontology_label":"Fastidious Anaerobe Broth With Meat Granules","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Fastidious Anaerobe Broth With Meat Granules","sssom_rows":[{"data_row":1164,"object_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","object_label":"Fastidious Anaerobe Broth With Meat Granules","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fastidious_Anaerobe_Broth_With_Meat_Granules","synonym_count":1} |
+| ev-b3dba4cef8416eef | data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[23],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","line":25,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","preferred_term":"Fastidious Anaerobe Broth With Meat Granules"}],"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","ontology_label":"Fastidious Anaerobe Broth With Meat Granules","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Fastidious Anaerobe Broth With Meat Granules","sssom_rows":[{"data_row":1164,"object_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","object_label":"Fastidious Anaerobe Broth With Meat Granules","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fastidious_Anaerobe_Broth_With_Meat_Granules","synonym_count":1} |
 | ev-90d5b6aa7d759195 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [23] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-0fdc50527b64a505 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fastidious_Anaerobe_Broth_With_Meat_Granules; data-row positions=[1164] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1164,"object_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","object_label":"Fastidious Anaerobe Broth With Meat Granules","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Fastidious_Anaerobe_Broth_With_Meat_Granules","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
 | ev-0d4f48af6a3cb912 | docs/data/mapped_ingredients.csv; CSV lines=[25] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","line":25,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","preferred_term":"Fastidious Anaerobe Broth With Meat Granules","total_occurrences":"0"}] |
 | ev-90f1da7c9539e651 | reports/yaml_record_review/Fastidious_Anaerobe_Broth_With_Meat_Granules.md; &#96;data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:31; Completeness:52; Recommended Edits:60 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-4bc99e1e823b7bd3 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[582,1633,1654,1896,2038] | context_only | [{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:49fe5e62eafa1abfcaa8","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:6028aad55b495239163c","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:b9893bf06ac5d340ca5c","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:72f96bdc00b301481c5f","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:8b7b98ec6530aaa557d4","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2f8202fcf11eb22f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -168,6 +167,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5a3e872fae413cb3
+  evidence_ids:
+  - ev-b3dba4cef8416eef
+  - ev-90d5b6aa7d759195
+  - ev-0fdc50527b64a505
+  - ev-0d4f48af6a3cb912
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -176,6 +180,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-5a3e872fae413cb3
+  evidence_ids:
+  - ev-b3dba4cef8416eef
+  - ev-4bc99e1e823b7bd3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -184,16 +191,19 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5a3e872fae413cb3
+  evidence_ids:
+  - ev-90f1da7c9539e651
+  - ev-4bc99e1e823b7bd3
 evidence:
 - evidence_id: ev-b3dba4cef8416eef
   kind: record_content
   reference: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[23],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","line":25,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","preferred_term":"Fastidious
-    Anaerobe Broth With Meat Granules"}],"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","ontology_label":"Fastidious
+    Anaerobe Broth With Meat Granules"}],"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","ontology_label":"Fastidious
     Anaerobe Broth With Meat Granules","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Fastidious
     Anaerobe Broth With Meat Granules","sssom_rows":[{"data_row":1164,"object_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","object_label":"Fastidious
     Anaerobe Broth With Meat Granules","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fastidious_Anaerobe_Broth_With_Meat_Granules","synonym_count":1}'
@@ -202,7 +212,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [23]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -211,7 +221,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fastidious_Anaerobe_Broth_With_Meat_Granules; data-row positions=[1164]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1164,"object_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","object_label":"Fastidious
     Anaerobe Broth With Meat Granules","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Fastidious_Anaerobe_Broth_With_Meat_Granules","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
@@ -220,7 +230,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[25]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","line":25,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules","preferred_term":"Fastidious
     Anaerobe Broth With Meat Granules","total_occurrences":"0"}]'
@@ -244,7 +254,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[582,1633,1654,1896,2038]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:49fe5e62eafa1abfcaa8","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:6028aad55b495239163c","kind":"component_source_scope","resolution_reason":"Historical
@@ -252,14 +262,6 @@ evidence:
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:72f96bdc00b301481c5f","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5","finding_id":"SEM:8b7b98ec6530aaa557d4","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-2f8202fcf11eb22f
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-f855c442a7173918
@@ -342,7 +344,7 @@ findings:
   - record-5a3e872fae413cb3
   evidence_ids:
   - ev-b3dba4cef8416eef
-  - ev-2f8202fcf11eb22f
+  - ev-4bc99e1e823b7bd3
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml

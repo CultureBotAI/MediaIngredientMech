@@ -83,13 +83,13 @@ Reassess prediction-only role support: Octanoic acid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-f054be8fbea4d111 | data/ingredients/mapped/Octanoic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1589],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28837","line":1591,"mapping_status":"MAPPED","ontology_id":"CHEBI:28837","preferred_term":"Octanoic acid"}],"identifier":"CHEBI:28837","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28837","ontology_label":"octanoic acid","ontology_source":"CHEBI"},"preferred_term":"Octanoic acid","sssom_rows":[{"data_row":2137,"object_id":"CHEBI:28837","object_label":"octanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Octanoic_Acid","synonym_count":1} |
-| ev-f553bc8ff03dca1e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1589] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-ced747e2961337d9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Octanoic_Acid; data-row positions=[2137] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2137,"object_id":"CHEBI:28837","object_label":"octanoic acid","other":"Caprylic acid&#124;CAS:124-07-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Octanoic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-3a112a9fae5abc42 | docs/data/mapped_ingredients.csv; CSV lines=[1591] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28837","line":1591,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28837","preferred_term":"Octanoic acid","total_occurrences":"0"}] |
+| ev-f054be8fbea4d111 | data/ingredients/mapped/Octanoic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1588],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28837","line":1590,"mapping_status":"MAPPED","ontology_id":"CHEBI:28837","preferred_term":"Octanoic acid"}],"identifier":"CHEBI:28837","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28837","ontology_label":"octanoic acid","ontology_source":"CHEBI"},"preferred_term":"Octanoic acid","sssom_rows":[{"data_row":2139,"object_id":"CHEBI:28837","object_label":"octanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Octanoic_Acid","synonym_count":1} |
+| ev-f553bc8ff03dca1e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1588] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-ced747e2961337d9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Octanoic_Acid; data-row positions=[2139] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2139,"object_id":"CHEBI:28837","object_label":"octanoic acid","other":"Caprylic acid&#124;CAS:124-07-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Octanoic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-3a112a9fae5abc42 | docs/data/mapped_ingredients.csv; CSV lines=[1590] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28837","line":1590,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28837","preferred_term":"Octanoic acid","total_occurrences":"0"}] |
 | ev-dc9c51f1525f3db3 | reports/yaml_record_review/Octanoic_Acid.md; &#96;data/ingredients/mapped/Octanoic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:28; Completeness:42; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1c912ee41389e32c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1077,1662] | context_only | [{"current_record_sha256":"6278084d85c280552fa618cea2b495c926f0ed7d93250a8b0586bcbc1f44860c","finding_id":"SEM:8c07efeca2f064fb24eb","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6278084d85c280552fa618cea2b495c926f0ed7d93250a8b0586bcbc1f44860c","finding_id":"SEM:03829b838cb402b25aeb","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c1aff30d6177298c | data/ingredients/mapped/Octanoic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-c1aff30d6177298c | data/ingredients/mapped/Octanoic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1588],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28837","line":1590,"mapping_status":"MAPPED","ontology_id":"CHEBI:28837","preferred_term":"Octanoic acid"}],"identifier":"CHEBI:28837","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28837","ontology_label":"octanoic acid","ontology_source":"CHEBI"},"preferred_term":"Octanoic acid","sssom_rows":[{"data_row":2139,"object_id":"CHEBI:28837","object_label":"octanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Octanoic_Acid","synonym_count":1} |
 | ev-e132c35cae5afcf3 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-97bea9e854fdeded] | context_only | Predecessor structured review finding f-97bea9e854fdeded in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1d83eb1e99eb4756
+  evidence_ids:
+  - ev-f054be8fbea4d111
+  - ev-f553bc8ff03dca1e
+  - ev-ced747e2961337d9
+  - ev-3a112a9fae5abc42
+  - ev-c1aff30d6177298c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1d83eb1e99eb4756
+  evidence_ids:
+  - ev-f054be8fbea4d111
+  - ev-1c912ee41389e32c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1d83eb1e99eb4756
+  evidence_ids:
+  - ev-dc9c51f1525f3db3
+  - ev-1c912ee41389e32c
+  - ev-e132c35cae5afcf3
 evidence:
 - evidence_id: ev-f054be8fbea4d111
   kind: record_content
   reference: data/ingredients/mapped/Octanoic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1589],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28837","line":1591,"mapping_status":"MAPPED","ontology_id":"CHEBI:28837","preferred_term":"Octanoic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1588],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28837","line":1590,"mapping_status":"MAPPED","ontology_id":"CHEBI:28837","preferred_term":"Octanoic
     acid"}],"identifier":"CHEBI:28837","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28837","ontology_label":"octanoic
-    acid","ontology_source":"CHEBI"},"preferred_term":"Octanoic acid","sssom_rows":[{"data_row":2137,"object_id":"CHEBI:28837","object_label":"octanoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Octanoic acid","sssom_rows":[{"data_row":2139,"object_id":"CHEBI:28837","object_label":"octanoic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Octanoic_Acid","synonym_count":1}'
   snapshot_sha256: 6278084d85c280552fa618cea2b495c926f0ed7d93250a8b0586bcbc1f44860c
 - evidence_id: ev-f553bc8ff03dca1e
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1589]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1588]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-ced747e2961337d9
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Octanoic_Acid; data-row positions=[2137]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Octanoic_Acid; data-row positions=[2139]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2137,"object_id":"CHEBI:28837","object_label":"octanoic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2139,"object_id":"CHEBI:28837","object_label":"octanoic
     acid","other":"Caprylic acid|CAS:124-07-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Octanoic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-3a112a9fae5abc42
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1591]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1590]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28837","line":1591,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28837","preferred_term":"Octanoic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28837","line":1590,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28837","preferred_term":"Octanoic
     acid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-dc9c51f1525f3db3
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1077,1662]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6278084d85c280552fa618cea2b495c926f0ed7d93250a8b0586bcbc1f44860c","finding_id":"SEM:8c07efeca2f064fb24eb","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6278084d85c280552fa618cea2b495c926f0ed7d93250a8b0586bcbc1f44860c","finding_id":"SEM:03829b838cb402b25aeb","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Octanoic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1588],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28837","line":1590,"mapping_status":"MAPPED","ontology_id":"CHEBI:28837","preferred_term":"Octanoic
+    acid"}],"identifier":"CHEBI:28837","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28837","ontology_label":"octanoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Octanoic acid","sssom_rows":[{"data_row":2139,"object_id":"CHEBI:28837","object_label":"octanoic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Octanoic_Acid","synonym_count":1}'
   snapshot_sha256: 6278084d85c280552fa618cea2b495c926f0ed7d93250a8b0586bcbc1f44860c
 - evidence_id: ev-e132c35cae5afcf3
   kind: prior_review

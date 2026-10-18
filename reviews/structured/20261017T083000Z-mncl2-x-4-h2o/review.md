@@ -83,13 +83,13 @@ Reassess prediction-only role support: MnCl2 x 4 H2O
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-6a19e5fcfc51c27c | data/ingredients/mapped/Mncl2_X_4_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1412],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86368","line":1414,"mapping_status":"MAPPED","ontology_id":"CHEBI:86368","preferred_term":"MnCl2 x 4 H2O"}],"identifier":"CHEBI:86368","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2990,"edge_count":2990,"occurrences":2990},"occurrence_statistics":{"media_count":2990,"total_occurrences":2990},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86368","ontology_label":"manganese(II) chloride tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"MnCl2 x 4 H2O","sssom_rows":[{"data_row":1891,"object_id":"CHEBI:86368","object_label":"manganese(II) chloride tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mncl2_X_4_H2o","synonym_count":21} |
-| ev-a479c46f5fcae4a2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1412] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-85389463d5f28773 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mncl2_X_4_H2o; data-row positions=[1891] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1891,"object_id":"CHEBI:86368","object_label":"manganese(II) chloride tetrahydrate","other":"Manganese (II) chloride tetrahydrate&#124;Manganese chloride tetrahydrate&#124;Manganese dichloride tetrahydrate&#124;Manganous chloride tetrahydrate&#124;MnCl2 . 4H2O&#124;MnCl2 \u00b7 4H2O&#124;MnCl2.4H2O&#124;MnCl2\u22c54H2O&#124;MnCl2\u30fb4H2O&#124;manganese(2+) chloride tetrahydrate&#124;MnCl2 \u00d7 4H2O&#124;MnCl2 \u2219 4 H2O&#124;MnCl2\u22194H2O&#124;MnCl2\uff654H2O&#124;dichloromanganese--water (1/4)&#124;manganese(2+) chloride--water (1/4)&#124;MnCl4 x 4 H2O&#124;MnCl2\u00b74H2O&#124;MnCl2 x 4H2O&#124;MnCl4\u30fb4H2O&#124;CAS:13446-34-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Mncl2_X_4_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-c8932eebb81b16c2 | docs/data/mapped_ingredients.csv; CSV lines=[1414] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86368","line":1414,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2990","ontology_id":"CHEBI:86368","preferred_term":"MnCl2 x 4 H2O","total_occurrences":"2990"}] |
+| ev-6a19e5fcfc51c27c | data/ingredients/mapped/Mncl2_X_4_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1411],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86368","line":1413,"mapping_status":"MAPPED","ontology_id":"CHEBI:86368","preferred_term":"MnCl2 x 4 H2O"}],"identifier":"CHEBI:86368","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2990,"edge_count":2990,"occurrences":2990},"occurrence_statistics":{"media_count":2990,"total_occurrences":2990},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86368","ontology_label":"manganese(II) chloride tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"MnCl2 x 4 H2O","sssom_rows":[{"data_row":1893,"object_id":"CHEBI:86368","object_label":"manganese(II) chloride tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mncl2_X_4_H2o","synonym_count":21} |
+| ev-a479c46f5fcae4a2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1411] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-85389463d5f28773 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mncl2_X_4_H2o; data-row positions=[1893] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1893,"object_id":"CHEBI:86368","object_label":"manganese(II) chloride tetrahydrate","other":"Manganese (II) chloride tetrahydrate&#124;Manganese chloride tetrahydrate&#124;Manganese dichloride tetrahydrate&#124;Manganous chloride tetrahydrate&#124;MnCl2 . 4H2O&#124;MnCl2 \u00b7 4H2O&#124;MnCl2.4H2O&#124;MnCl2\u22c54H2O&#124;MnCl2\u30fb4H2O&#124;manganese(2+) chloride tetrahydrate&#124;MnCl2 \u00d7 4H2O&#124;MnCl2 \u2219 4 H2O&#124;MnCl2\u22194H2O&#124;MnCl2\uff654H2O&#124;dichloromanganese--water (1/4)&#124;manganese(2+) chloride--water (1/4)&#124;MnCl4 x 4 H2O&#124;MnCl2\u00b74H2O&#124;MnCl2 x 4H2O&#124;MnCl4\u30fb4H2O&#124;CAS:13446-34-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Mncl2_X_4_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-c8932eebb81b16c2 | docs/data/mapped_ingredients.csv; CSV lines=[1413] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86368","line":1413,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2990","ontology_id":"CHEBI:86368","preferred_term":"MnCl2 x 4 H2O","total_occurrences":"2990"}] |
 | ev-f0c9ceadb9a40aff | reports/yaml_record_review/Mncl2_X_4_H2o.md; &#96;data/ingredients/mapped/Mncl2_X_4_H2o.yaml&#96;:2; Verdict:4; Identity:13; Validation:25; Evidence:32; Completeness:40; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ba2014bfb39b1c5d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[949,1898] | context_only | [{"current_record_sha256":"ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a","finding_id":"SEM:ee69752a8b43c05fe8db","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a","finding_id":"SEM:c84c8168aa81c1ac903b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-4ddd7433e6bee979 | data/ingredients/mapped/Mncl2_X_4_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-4ddd7433e6bee979 | data/ingredients/mapped/Mncl2_X_4_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1411],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86368","line":1413,"mapping_status":"MAPPED","ontology_id":"CHEBI:86368","preferred_term":"MnCl2 x 4 H2O"}],"identifier":"CHEBI:86368","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2990,"edge_count":2990,"occurrences":2990},"occurrence_statistics":{"media_count":2990,"total_occurrences":2990},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86368","ontology_label":"manganese(II) chloride tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"MnCl2 x 4 H2O","sssom_rows":[{"data_row":1893,"object_id":"CHEBI:86368","object_label":"manganese(II) chloride tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mncl2_X_4_H2o","synonym_count":21} |
 | ev-1e1bd1158669879d | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-2fadff1499b43891] | context_only | Predecessor structured review finding f-2fadff1499b43891 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f57a467dbfb714a2
+  evidence_ids:
+  - ev-6a19e5fcfc51c27c
+  - ev-a479c46f5fcae4a2
+  - ev-85389463d5f28773
+  - ev-c8932eebb81b16c2
+  - ev-4ddd7433e6bee979
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f57a467dbfb714a2
+  evidence_ids:
+  - ev-6a19e5fcfc51c27c
+  - ev-ba2014bfb39b1c5d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f57a467dbfb714a2
+  evidence_ids:
+  - ev-f0c9ceadb9a40aff
+  - ev-ba2014bfb39b1c5d
+  - ev-1e1bd1158669879d
 evidence:
 - evidence_id: ev-6a19e5fcfc51c27c
   kind: record_content
   reference: data/ingredients/mapped/Mncl2_X_4_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1412],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86368","line":1414,"mapping_status":"MAPPED","ontology_id":"CHEBI:86368","preferred_term":"MnCl2
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1411],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86368","line":1413,"mapping_status":"MAPPED","ontology_id":"CHEBI:86368","preferred_term":"MnCl2
     x 4 H2O"}],"identifier":"CHEBI:86368","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2990,"edge_count":2990,"occurrences":2990},"occurrence_statistics":{"media_count":2990,"total_occurrences":2990},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86368","ontology_label":"manganese(II)
     chloride tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"MnCl2 x 4
-    H2O","sssom_rows":[{"data_row":1891,"object_id":"CHEBI:86368","object_label":"manganese(II)
+    H2O","sssom_rows":[{"data_row":1893,"object_id":"CHEBI:86368","object_label":"manganese(II)
     chloride tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mncl2_X_4_H2o","synonym_count":21}'
   snapshot_sha256: ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a
 - evidence_id: ev-a479c46f5fcae4a2
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1412]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1411]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,10 +234,10 @@ evidence:
 - evidence_id: ev-85389463d5f28773
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Mncl2_X_4_H2o; data-row positions=[1891]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Mncl2_X_4_H2o; data-row positions=[1893]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1891,"object_id":"CHEBI:86368","object_label":"manganese(II)
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1893,"object_id":"CHEBI:86368","object_label":"manganese(II)
     chloride tetrahydrate","other":"Manganese (II) chloride tetrahydrate|Manganese
     chloride tetrahydrate|Manganese dichloride tetrahydrate|Manganous chloride tetrahydrate|MnCl2
     . 4H2O|MnCl2 \u00b7 4H2O|MnCl2.4H2O|MnCl2\u22c54H2O|MnCl2\u30fb4H2O|manganese(2+)
@@ -235,10 +248,10 @@ evidence:
 - evidence_id: ev-c8932eebb81b16c2
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1414]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1413]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86368","line":1414,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2990","ontology_id":"CHEBI:86368","preferred_term":"MnCl2
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86368","line":1413,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2990","ontology_id":"CHEBI:86368","preferred_term":"MnCl2
     x 4 H2O","total_occurrences":"2990"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-f0c9ceadb9a40aff
@@ -260,7 +273,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[949,1898]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a","finding_id":"SEM:ee69752a8b43c05fe8db","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a","finding_id":"SEM:c84c8168aa81c1ac903b","kind":"role_evidence","resolution_reason":"Historical
@@ -270,12 +283,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Mncl2_X_4_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1411],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86368","line":1413,"mapping_status":"MAPPED","ontology_id":"CHEBI:86368","preferred_term":"MnCl2
+    x 4 H2O"}],"identifier":"CHEBI:86368","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2990,"edge_count":2990,"occurrences":2990},"occurrence_statistics":{"media_count":2990,"total_occurrences":2990},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86368","ontology_label":"manganese(II)
+    chloride tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"MnCl2 x 4
+    H2O","sssom_rows":[{"data_row":1893,"object_id":"CHEBI:86368","object_label":"manganese(II)
+    chloride tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mncl2_X_4_H2o","synonym_count":21}'
   snapshot_sha256: ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a
 - evidence_id: ev-1e1bd1158669879d
   kind: prior_review

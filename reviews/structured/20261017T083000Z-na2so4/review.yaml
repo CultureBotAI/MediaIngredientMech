@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6104bbc27f337e69
+  evidence_ids:
+  - ev-ac703afd7d614fb5
+  - ev-7651504603029116
+  - ev-a0504131285b89c2
+  - ev-fd5caf717d2b9333
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +87,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6104bbc27f337e69
+  evidence_ids:
+  - ev-ac703afd7d614fb5
+  - ev-e94a4c2474262c3f
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,23 +98,26 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6104bbc27f337e69
+  evidence_ids:
+  - ev-493f2427695e9a0e
+  - ev-e94a4c2474262c3f
 evidence:
 - evidence_id: ev-ac703afd7d614fb5
   kind: record_content
   reference: data/ingredients/mapped/Na2so4.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32149","line":1512,"mapping_status":"MAPPED","ontology_id":"CHEBI:32149","preferred_term":"Na2SO4"}],"identifier":"CHEBI:32149","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1304,"edge_count":1304,"occurrences":1305},"occurrence_statistics":{"media_count":1304,"total_occurrences":1305},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32149","ontology_label":"sodium
-    sulfate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4","sssom_rows":[{"data_row":2019,"object_id":"CHEBI:32149","object_label":"sodium
-    sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4","synonym_count":16}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1509],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32149","line":1511,"mapping_status":"MAPPED","ontology_id":"CHEBI:32149","preferred_term":"Na2SO4"}],"identifier":"CHEBI:32149","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1304,"edge_count":1304,"occurrences":1305},"occurrence_statistics":{"media_count":1304,"total_occurrences":1305},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32149","ontology_label":"sodium
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Na2SO4","sssom_rows":[{"data_row":2021,"object_id":"CHEBI:32149","object_label":"sodium
+    sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2so4","synonym_count":17}'
   snapshot_sha256: a58a2bf0cb953270beb578b442267e856098cc72abb3470742c6f6a50b5e2e81
 - evidence_id: ev-7651504603029116
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1510]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1509]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -114,20 +125,20 @@ evidence:
 - evidence_id: ev-a0504131285b89c2
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na2so4; data-row positions=[2019]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na2so4; data-row positions=[2021]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2019,"object_id":"CHEBI:32149","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2021,"object_id":"CHEBI:32149","object_label":"sodium
     sulfate","other":"NaSO4|Natriumsulfat|disodium sulfate|disodium sulphate|salt
-    cake|sodium sulphate|Glauber''s salt|Glaubersalz|CAS:7757-82-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2so4","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+    cake|sodium sulphate|sodium sulfate, anhydrous|CAS:7757-82-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2so4","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-fd5caf717d2b9333
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1512]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1511]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32149","line":1512,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1304","ontology_id":"CHEBI:32149","preferred_term":"Na2SO4","total_occurrences":"1305"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32149","line":1511,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1304","ontology_id":"CHEBI:32149","preferred_term":"Na2SO4","total_occurrences":"1305"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-493f2427695e9a0e
   kind: prior_review
@@ -153,19 +164,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1016,2091]
-  accessed_at: '2026-10-11T02:46:28Z'
-  support: context_only
-  summary: '[{"current_record_sha256":"3186b66fee27399b950c491077056ea58c6352d12cecfd8358455abeb5137c07","finding_id":"SEM:c50648a2a849c50227b6","kind":"existing_record_review","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"3186b66fee27399b950c491077056ea58c6352d12cecfd8358455abeb5137c07","finding_id":"SEM:048f9df7457ef8ee76ad","kind":"role_evidence","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-243849f200142ebf
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Na2so4.yaml
   accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: Semantic review finding dispositions ledger
+  summary: '[{"current_record_sha256":"a58a2bf0cb953270beb578b442267e856098cc72abb3470742c6f6a50b5e2e81","finding_id":"SEM:c50648a2a849c50227b6","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a58a2bf0cb953270beb578b442267e856098cc72abb3470742c6f6a50b5e2e81","finding_id":"SEM:048f9df7457ef8ee76ad","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-08cb14d47c695f25
@@ -233,7 +236,7 @@ assessments:
   - record-6104bbc27f337e69
   evidence_ids:
   - ev-ac703afd7d614fb5
-  - ev-243849f200142ebf
+  - ev-e94a4c2474262c3f
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -241,7 +244,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-ac703afd7d614fb5
-    - ev-243849f200142ebf
+    - ev-e94a4c2474262c3f
 findings:
 - finding_id: rec-f-role-6104bbc27f337e69
   issue_key: mim-reconciliation-role-support-6104bbc27f337e69
@@ -257,7 +260,7 @@ findings:
   - record-6104bbc27f337e69
   evidence_ids:
   - ev-ac703afd7d614fb5
-  - ev-243849f200142ebf
+  - ev-e94a4c2474262c3f
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Na2so4.yaml

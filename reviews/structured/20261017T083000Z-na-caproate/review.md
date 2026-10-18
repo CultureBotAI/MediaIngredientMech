@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-caproate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-8ce5b20b2f65ead7 | data/ingredients/mapped/Na-caproate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1463],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114126","line":1465,"mapping_status":"MAPPED","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate"}],"identifier":"CHEBI:114126","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:114126","ontology_label":"sodium hexanoate","ontology_source":"CHEBI"},"preferred_term":"Na-caproate","sssom_rows":[{"data_row":1965,"object_id":"CHEBI:114126","object_label":"sodium hexanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-caproate","synonym_count":6} |
-| ev-65820e32b6ce2ec3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1463] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-59722249efb0e262 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-caproate; data-row positions=[1965] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1965,"object_id":"CHEBI:114126","object_label":"sodium hexanoate","other":"Hexanoic acid, sodium salt&#124;Sodium caproate&#124;Sodium capronate&#124;Sodium n-caproate&#124;CAS:10051-44-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-caproate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-85974aaf9d4b78e6 | docs/data/mapped_ingredients.csv; CSV lines=[1465] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:114126","line":1465,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate","total_occurrences":"10"}] |
+| ev-8ce5b20b2f65ead7 | data/ingredients/mapped/Na-caproate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1462],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114126","line":1464,"mapping_status":"MAPPED","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate"}],"identifier":"CHEBI:114126","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:114126","ontology_label":"sodium hexanoate","ontology_source":"CHEBI"},"preferred_term":"Na-caproate","sssom_rows":[{"data_row":1967,"object_id":"CHEBI:114126","object_label":"sodium hexanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-caproate","synonym_count":6} |
+| ev-65820e32b6ce2ec3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1462] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-59722249efb0e262 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-caproate; data-row positions=[1967] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1967,"object_id":"CHEBI:114126","object_label":"sodium hexanoate","other":"Hexanoic acid, sodium salt&#124;Sodium caproate&#124;Sodium capronate&#124;Sodium n-caproate&#124;CAS:10051-44-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-caproate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-85974aaf9d4b78e6 | docs/data/mapped_ingredients.csv; CSV lines=[1464] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:114126","line":1464,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate","total_occurrences":"10"}] |
 | ev-3747170e3a4ce387 | reports/yaml_record_review/Na-caproate.md; &#96;data/ingredients/mapped/Na-caproate.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:27; Completeness:42; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1cd403416717a7fd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[972,1958] | context_only | [{"current_record_sha256":"870041a253a626e5a82110191012c81539c524557e6f879321a3fe4acad3d586","finding_id":"SEM:e88d529a4c8d64bc10ef","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"870041a253a626e5a82110191012c81539c524557e6f879321a3fe4acad3d586","finding_id":"SEM:b1c4cff64800f68393a8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d26630187bb1dc0c | data/ingredients/mapped/Na-caproate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-d26630187bb1dc0c | data/ingredients/mapped/Na-caproate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1462],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114126","line":1464,"mapping_status":"MAPPED","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate"}],"identifier":"CHEBI:114126","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:114126","ontology_label":"sodium hexanoate","ontology_source":"CHEBI"},"preferred_term":"Na-caproate","sssom_rows":[{"data_row":1967,"object_id":"CHEBI:114126","object_label":"sodium hexanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-caproate","synonym_count":6} |
 | ev-274077046cce9ffe | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-c44415f5e26fbd58] | context_only | Predecessor structured review finding f-c44415f5e26fbd58 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cd441cb8f0ddec4c
+  evidence_ids:
+  - ev-8ce5b20b2f65ead7
+  - ev-65820e32b6ce2ec3
+  - ev-59722249efb0e262
+  - ev-85974aaf9d4b78e6
+  - ev-d26630187bb1dc0c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-cd441cb8f0ddec4c
+  evidence_ids:
+  - ev-8ce5b20b2f65ead7
+  - ev-1cd403416717a7fd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cd441cb8f0ddec4c
+  evidence_ids:
+  - ev-3747170e3a4ce387
+  - ev-1cd403416717a7fd
+  - ev-274077046cce9ffe
 evidence:
 - evidence_id: ev-8ce5b20b2f65ead7
   kind: record_content
   reference: data/ingredients/mapped/Na-caproate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1463],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114126","line":1465,"mapping_status":"MAPPED","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate"}],"identifier":"CHEBI:114126","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:114126","ontology_label":"sodium
-    hexanoate","ontology_source":"CHEBI"},"preferred_term":"Na-caproate","sssom_rows":[{"data_row":1965,"object_id":"CHEBI:114126","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1462],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114126","line":1464,"mapping_status":"MAPPED","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate"}],"identifier":"CHEBI:114126","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:114126","ontology_label":"sodium
+    hexanoate","ontology_source":"CHEBI"},"preferred_term":"Na-caproate","sssom_rows":[{"data_row":1967,"object_id":"CHEBI:114126","object_label":"sodium
     hexanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-caproate","synonym_count":6}'
   snapshot_sha256: 870041a253a626e5a82110191012c81539c524557e6f879321a3fe4acad3d586
 - evidence_id: ev-65820e32b6ce2ec3
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1463]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1462]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-59722249efb0e262
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-caproate; data-row positions=[1965]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-caproate; data-row positions=[1967]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1965,"object_id":"CHEBI:114126","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1967,"object_id":"CHEBI:114126","object_label":"sodium
     hexanoate","other":"Hexanoic acid, sodium salt|Sodium caproate|Sodium capronate|Sodium
     n-caproate|CAS:10051-44-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-caproate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-85974aaf9d4b78e6
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1465]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1464]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:114126","line":1465,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate","total_occurrences":"10"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:114126","line":1464,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate","total_occurrences":"10"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-3747170e3a4ce387
   kind: prior_review
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[972,1958]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"870041a253a626e5a82110191012c81539c524557e6f879321a3fe4acad3d586","finding_id":"SEM:e88d529a4c8d64bc10ef","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"870041a253a626e5a82110191012c81539c524557e6f879321a3fe4acad3d586","finding_id":"SEM:b1c4cff64800f68393a8","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-caproate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1462],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114126","line":1464,"mapping_status":"MAPPED","ontology_id":"CHEBI:114126","preferred_term":"Na-caproate"}],"identifier":"CHEBI:114126","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:114126","ontology_label":"sodium
+    hexanoate","ontology_source":"CHEBI"},"preferred_term":"Na-caproate","sssom_rows":[{"data_row":1967,"object_id":"CHEBI:114126","object_label":"sodium
+    hexanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-caproate","synonym_count":6}'
   snapshot_sha256: 870041a253a626e5a82110191012c81539c524557e6f879321a3fe4acad3d586
 - evidence_id: ev-274077046cce9ffe
   kind: prior_review

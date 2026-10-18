@@ -89,7 +89,7 @@ Reassess prediction-only role support: Beef
 | ev-9dbec95fd65e62be | docs/data/mapped_ingredients.csv; CSV lines=[563] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C71932","line":563,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"NCIT:C71932","preferred_term":"Beef","total_occurrences":"2"}] |
 | ev-23beee005f95d739 | reports/yaml_record_review/Beef.md; &#96;data/ingredients/mapped/Beef.yaml&#96;:2; Verdict:4; Identity:9; Validation:20; Evidence:30; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-305a87bf5f71ff70 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1592] | context_only | [{"current_record_sha256":"5a06d79cb88d7f859bddc27600500b9f15c558218ea394eea32b20e9ee7f87e7","finding_id":"SEM:c7313abcf338e6179c11","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0d81d3ebf0ade858 | data/ingredients/mapped/Beef.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-0d81d3ebf0ade858 | data/ingredients/mapped/Beef.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[561],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C71932","line":563,"mapping_status":"MAPPED","ontology_id":"NCIT:C71932","preferred_term":"Beef"}],"identifier":"NCIT:C71932","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C71932","ontology_label":"Beef","ontology_source":"NCIT"},"preferred_term":"Beef","sssom_rows":[{"data_row":495,"object_id":"NCIT:C71932","object_label":"Beef","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beef","synonym_count":0} |
 | ev-f9b5cfd8e7a3f59a | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-9c3351ffb10e3690] | context_only | Predecessor structured review finding f-9c3351ffb10e3690 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6c217a7bca869fd6
+  evidence_ids:
+  - ev-06ec7183ed3f04ae
+  - ev-1aab4094bbd4536f
+  - ev-cc95f21045e525d7
+  - ev-9dbec95fd65e62be
+  - ev-0d81d3ebf0ade858
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6c217a7bca869fd6
+  evidence_ids:
+  - ev-06ec7183ed3f04ae
+  - ev-305a87bf5f71ff70
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6c217a7bca869fd6
+  evidence_ids:
+  - ev-23beee005f95d739
+  - ev-305a87bf5f71ff70
+  - ev-f9b5cfd8e7a3f59a
 evidence:
 - evidence_id: ev-06ec7183ed3f04ae
   kind: record_content
   reference: data/ingredients/mapped/Beef.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[561],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C71932","line":563,"mapping_status":"MAPPED","ontology_id":"NCIT:C71932","preferred_term":"Beef"}],"identifier":"NCIT:C71932","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C71932","ontology_label":"Beef","ontology_source":"NCIT"},"preferred_term":"Beef","sssom_rows":[{"data_row":495,"object_id":"NCIT:C71932","object_label":"Beef","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beef","synonym_count":0}'
   snapshot_sha256: 5a06d79cb88d7f859bddc27600500b9f15c558218ea394eea32b20e9ee7f87e7
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [561]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Beef; data-row positions=[495]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":495,"object_id":"NCIT:C71932","object_label":"Beef","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Beef","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[563]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C71932","line":563,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"NCIT:C71932","preferred_term":"Beef","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1592]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5a06d79cb88d7f859bddc27600500b9f15c558218ea394eea32b20e9ee7f87e7","finding_id":"SEM:c7313abcf338e6179c11","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Beef.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[561],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C71932","line":563,"mapping_status":"MAPPED","ontology_id":"NCIT:C71932","preferred_term":"Beef"}],"identifier":"NCIT:C71932","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C71932","ontology_label":"Beef","ontology_source":"NCIT"},"preferred_term":"Beef","sssom_rows":[{"data_row":495,"object_id":"NCIT:C71932","object_label":"Beef","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beef","synonym_count":0}'
   snapshot_sha256: 5a06d79cb88d7f859bddc27600500b9f15c558218ea394eea32b20e9ee7f87e7
 - evidence_id: ev-f9b5cfd8e7a3f59a
   kind: prior_review

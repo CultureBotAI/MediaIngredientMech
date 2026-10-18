@@ -83,13 +83,13 @@ Reassess prediction-only role support: Tungstate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-976c1f658cd2212a | data/ingredients/mapped/Tungstate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2013],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2015,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2853,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5} |
-| ev-ac354f7552f4f2a7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2013] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6a35cfaaacf2659d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tungstate; data-row positions=[2853] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2853,"object_id":"CHEBI:46502","object_label":"tungstate","other":"TUNGSTATE(VI)ION&#124;Wolframat&#124;tetraoxidotungstate(VI)&#124;wolframate&#124;tetraoxidotungstate(2-)&#124;CAS:14311-52-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Tungstate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-c0994498bd556e76 | docs/data/mapped_ingredients.csv; CSV lines=[2015] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:46502","line":2015,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:46502","preferred_term":"Tungstate","total_occurrences":"3"}] |
+| ev-976c1f658cd2212a | data/ingredients/mapped/Tungstate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2014,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5} |
+| ev-ac354f7552f4f2a7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2012] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6a35cfaaacf2659d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tungstate; data-row positions=[2855] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","other":"TUNGSTATE(VI)ION&#124;Wolframat&#124;tetraoxidotungstate(VI)&#124;wolframate&#124;tetraoxidotungstate(2-)&#124;CAS:14311-52-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Tungstate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-c0994498bd556e76 | docs/data/mapped_ingredients.csv; CSV lines=[2014] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:46502","line":2014,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:46502","preferred_term":"Tungstate","total_occurrences":"3"}] |
 | ev-ab5bed2b8735c084 | reports/yaml_record_review/Tungstate.md; &#96;data/ingredients/mapped/Tungstate.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:31; Issues:40; Major: &#96;TRACE_ELEMENT&#96; is provisional in-session LLM evidence:42; Completeness:58; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fbcb545bd399423b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1325,2100] | context_only | [{"current_record_sha256":"6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443","finding_id":"SEM:4de718c686f4c603592b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443","finding_id":"SEM:e39174158e42ac556803","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-1903f09736399d69 | data/ingredients/mapped/Tungstate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-1903f09736399d69 | data/ingredients/mapped/Tungstate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2014,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5} |
 | ev-31e498a0c09f018c | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-b7b6a0a1b9130c5e] | context_only | Predecessor structured review finding f-b7b6a0a1b9130c5e in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-02608edf7d339331
+  evidence_ids:
+  - ev-976c1f658cd2212a
+  - ev-ac354f7552f4f2a7
+  - ev-6a35cfaaacf2659d
+  - ev-c0994498bd556e76
+  - ev-1903f09736399d69
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-02608edf7d339331
+  evidence_ids:
+  - ev-976c1f658cd2212a
+  - ev-fbcb545bd399423b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-02608edf7d339331
+  evidence_ids:
+  - ev-ab5bed2b8735c084
+  - ev-fbcb545bd399423b
+  - ev-31e498a0c09f018c
 evidence:
 - evidence_id: ev-976c1f658cd2212a
   kind: record_content
   reference: data/ingredients/mapped/Tungstate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2013],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2015,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2853,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2014,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5}'
   snapshot_sha256: 6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443
 - evidence_id: ev-ac354f7552f4f2a7
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2013]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2012]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-6a35cfaaacf2659d
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tungstate; data-row positions=[2853]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tungstate; data-row positions=[2855]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2853,"object_id":"CHEBI:46502","object_label":"tungstate","other":"TUNGSTATE(VI)ION|Wolframat|tetraoxidotungstate(VI)|wolframate|tetraoxidotungstate(2-)|CAS:14311-52-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Tungstate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","other":"TUNGSTATE(VI)ION|Wolframat|tetraoxidotungstate(VI)|wolframate|tetraoxidotungstate(2-)|CAS:14311-52-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Tungstate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-c0994498bd556e76
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2015]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2014]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:46502","line":2015,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:46502","preferred_term":"Tungstate","total_occurrences":"3"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:46502","line":2014,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:46502","preferred_term":"Tungstate","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ab5bed2b8735c084
   kind: prior_review
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1325,2100]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443","finding_id":"SEM:4de718c686f4c603592b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443","finding_id":"SEM:e39174158e42ac556803","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tungstate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:46502","line":2014,"mapping_status":"MAPPED","ontology_id":"CHEBI:46502","preferred_term":"Tungstate"}],"identifier":"CHEBI:46502","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:46502","ontology_label":"tungstate","ontology_source":"CHEBI"},"preferred_term":"Tungstate","sssom_rows":[{"data_row":2855,"object_id":"CHEBI:46502","object_label":"tungstate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tungstate","synonym_count":5}'
   snapshot_sha256: 6e8a3fd17004e527f23f3e2f86ad2d9feefb28ef1d8b122377db7b9d31363443
 - evidence_id: ev-31e498a0c09f018c
   kind: prior_review

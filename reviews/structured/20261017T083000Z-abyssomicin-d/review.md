@@ -89,7 +89,7 @@ Reassess prediction-only role support: Abyssomicin D
 | ev-831d6737bc32c8d0 | docs/data/mapped_ingredients.csv; CSV lines=[434] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C512805","line":434,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C512805","preferred_term":"Abyssomicin D","total_occurrences":"0"}] |
 | ev-ba1fff82c918e563 | reports/yaml_record_review/Abyssomicin_D.md; &#96;data/ingredients/mapped/Abyssomicin_D.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:35; Completeness:53; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-03aa6bbbbf356269 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[190,1743] | context_only | [{"current_record_sha256":"a690df5475b0fbbad01dca95f3afd96dff58d64980d36af56420faa102180994","finding_id":"SEM:87d2f4d4e356c0b2a779","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a690df5475b0fbbad01dca95f3afd96dff58d64980d36af56420faa102180994","finding_id":"SEM:d16f21eacc51580fe533","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a14ad4ae48afd302 | data/ingredients/mapped/Abyssomicin_D.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-a14ad4ae48afd302 | data/ingredients/mapped/Abyssomicin_D.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[432],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C512805","line":434,"mapping_status":"MAPPED","ontology_id":"mesh:C512805","preferred_term":"Abyssomicin D"}],"identifier":"mesh:C512805","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C512805","ontology_label":"abyssomicin D","ontology_source":"MESH"},"preferred_term":"Abyssomicin D","sssom_rows":[{"data_row":273,"object_id":"mesh:C512805","object_label":"abyssomicin D","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Abyssomicin_D","synonym_count":0} |
 | ev-af745a7808139a10 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-1dff7991ce0398ba] | context_only | Predecessor structured review finding f-1dff7991ce0398ba in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e612f83b13572087
+  evidence_ids:
+  - ev-07e33eda149a4506
+  - ev-e5b0e4d2686a6b71
+  - ev-9777b78c1cf8898b
+  - ev-831d6737bc32c8d0
+  - ev-a14ad4ae48afd302
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e612f83b13572087
+  evidence_ids:
+  - ev-07e33eda149a4506
+  - ev-03aa6bbbbf356269
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e612f83b13572087
+  evidence_ids:
+  - ev-ba1fff82c918e563
+  - ev-03aa6bbbbf356269
+  - ev-af745a7808139a10
 evidence:
 - evidence_id: ev-07e33eda149a4506
   kind: record_content
   reference: data/ingredients/mapped/Abyssomicin_D.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[432],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C512805","line":434,"mapping_status":"MAPPED","ontology_id":"mesh:C512805","preferred_term":"Abyssomicin
     D"}],"identifier":"mesh:C512805","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C512805","ontology_label":"abyssomicin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [432]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Abyssomicin_D; data-row positions=[273]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":273,"object_id":"mesh:C512805","object_label":"abyssomicin
     D","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Abyssomicin_D","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[434]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C512805","line":434,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C512805","preferred_term":"Abyssomicin
     D","total_occurrences":"0"}]'
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[190,1743]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a690df5475b0fbbad01dca95f3afd96dff58d64980d36af56420faa102180994","finding_id":"SEM:87d2f4d4e356c0b2a779","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a690df5475b0fbbad01dca95f3afd96dff58d64980d36af56420faa102180994","finding_id":"SEM:d16f21eacc51580fe533","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Abyssomicin_D.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[432],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C512805","line":434,"mapping_status":"MAPPED","ontology_id":"mesh:C512805","preferred_term":"Abyssomicin
+    D"}],"identifier":"mesh:C512805","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C512805","ontology_label":"abyssomicin
+    D","ontology_source":"MESH"},"preferred_term":"Abyssomicin D","sssom_rows":[{"data_row":273,"object_id":"mesh:C512805","object_label":"abyssomicin
+    D","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Abyssomicin_D","synonym_count":0}'
   snapshot_sha256: a690df5475b0fbbad01dca95f3afd96dff58d64980d36af56420faa102180994
 - evidence_id: ev-af745a7808139a10
   kind: prior_review

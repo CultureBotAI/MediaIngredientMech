@@ -85,11 +85,11 @@ Reassess prediction-only role support: Cr2(SO4)3 x n H2O
 | --- | --- | --- | --- |
 | ev-637407deee126d43 | data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[763],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","line":765,"mapping_status":"MAPPED","ontology_id":"CHEBI:53471","preferred_term":"Cr2(SO4)3 x n H2O"}],"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:53471","ontology_label":"chromium(III) sulfate","ontology_source":"CHEBI"},"preferred_term":"Cr2(SO4)3 x n H2O","sssom_rows":[{"data_row":823,"object_id":"CHEBI:53471","object_label":"chromium(III) sulfate","predicate_id":"skos:broadMatch"},{"data_row":824,"object_id":"kgmicrobe.compound:cr2_so43_x_n_h2o","object_label":"Cr2(SO4)3 x n H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cr2_So43_X_N_H2o","synonym_count":0} |
 | ev-17056796790c72da | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [763] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-a8099c3f5b1d0ede | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cr2_So43_X_N_H2o; data-row positions=[823,824] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":823,"object_id":"CHEBI:53471","object_label":"chromium(III) sulfate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Cr2_So43_X_N_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":824,"object_id":"kgmicrobe.compound:cr2_so43_x_n_h2o","object_label":"Cr2(SO4)3 x n H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cr2_So43_X_N_H2o","validation_method":""}] |
+| ev-a8099c3f5b1d0ede | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cr2_So43_X_N_H2o; data-row positions=[823, 824] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":823,"object_id":"CHEBI:53471","object_label":"chromium(III) sulfate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Cr2_So43_X_N_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":824,"object_id":"kgmicrobe.compound:cr2_so43_x_n_h2o","object_label":"Cr2(SO4)3 x n H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cr2_So43_X_N_H2o","validation_method":""}] |
 | ev-f3d169eb4345e803 | docs/data/mapped_ingredients.csv; CSV lines=[765] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","line":765,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:53471","preferred_term":"Cr2(SO4)3 x n H2O","total_occurrences":"3"}] |
 | ev-e8ccf517ed5a09e8 | reports/yaml_record_review/Cr2_So43_X_N_H2o.md; &#96;data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml&#96;:2; Verdict:4; Identity:13; Validation:28; Evidence:49; Completeness:67; Recommended Edits:74 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-4043779687f114ad | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[444,1832] | context_only | [{"current_record_sha256":"0b7e77f7f4f3d09677a869564b459ba02dc82699ff142dfe20b7fc873c0a3504","finding_id":"SEM:c0c5cead9cc97c75f5ad","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0b7e77f7f4f3d09677a869564b459ba02dc82699ff142dfe20b7fc873c0a3504","finding_id":"SEM:ab6bbaddf9d46a07815f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-266fe5371479edc3 | data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-266fe5371479edc3 | data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[763],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","line":765,"mapping_status":"MAPPED","ontology_id":"CHEBI:53471","preferred_term":"Cr2(SO4)3 x n H2O"}],"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:53471","ontology_label":"chromium(III) sulfate","ontology_source":"CHEBI"},"preferred_term":"Cr2(SO4)3 x n H2O","sssom_rows":[{"data_row":823,"object_id":"CHEBI:53471","object_label":"chromium(III) sulfate","predicate_id":"skos:broadMatch"},{"data_row":824,"object_id":"kgmicrobe.compound:cr2_so43_x_n_h2o","object_label":"Cr2(SO4)3 x n H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cr2_So43_X_N_H2o","synonym_count":0} |
 | ev-790ac0cd522220e4 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-994fe54e17a908f0] | context_only | Predecessor structured review finding f-994fe54e17a908f0 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4e80df1ec775dd84
+  evidence_ids:
+  - ev-637407deee126d43
+  - ev-17056796790c72da
+  - ev-a8099c3f5b1d0ede
+  - ev-f3d169eb4345e803
+  - ev-266fe5371479edc3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4e80df1ec775dd84
+  evidence_ids:
+  - ev-637407deee126d43
+  - ev-4043779687f114ad
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4e80df1ec775dd84
+  evidence_ids:
+  - ev-e8ccf517ed5a09e8
+  - ev-4043779687f114ad
+  - ev-790ac0cd522220e4
 evidence:
 - evidence_id: ev-637407deee126d43
   kind: record_content
   reference: data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[763],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","line":765,"mapping_status":"MAPPED","ontology_id":"CHEBI:53471","preferred_term":"Cr2(SO4)3
     x n H2O"}],"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:53471","ontology_label":"chromium(III)
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [763]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,8 +234,8 @@ evidence:
 - evidence_id: ev-a8099c3f5b1d0ede
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Cr2_So43_X_N_H2o; data-row positions=[823,824]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Cr2_So43_X_N_H2o; data-row positions=[823, 824]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":823,"object_id":"CHEBI:53471","object_label":"chromium(III)
     sulfate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Cr2_So43_X_N_H2o","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":824,"object_id":"kgmicrobe.compound:cr2_so43_x_n_h2o","object_label":"Cr2(SO4)3
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[765]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","line":765,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:53471","preferred_term":"Cr2(SO4)3
     x n H2O","total_occurrences":"3"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[444,1832]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0b7e77f7f4f3d09677a869564b459ba02dc82699ff142dfe20b7fc873c0a3504","finding_id":"SEM:c0c5cead9cc97c75f5ad","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0b7e77f7f4f3d09677a869564b459ba02dc82699ff142dfe20b7fc873c0a3504","finding_id":"SEM:ab6bbaddf9d46a07815f","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cr2_So43_X_N_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[763],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","line":765,"mapping_status":"MAPPED","ontology_id":"CHEBI:53471","preferred_term":"Cr2(SO4)3
+    x n H2O"}],"identifier":"kgmicrobe.compound:cr2_so43_x_n_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:53471","ontology_label":"chromium(III)
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Cr2(SO4)3 x n H2O","sssom_rows":[{"data_row":823,"object_id":"CHEBI:53471","object_label":"chromium(III)
+    sulfate","predicate_id":"skos:broadMatch"},{"data_row":824,"object_id":"kgmicrobe.compound:cr2_so43_x_n_h2o","object_label":"Cr2(SO4)3
+    x n H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cr2_So43_X_N_H2o","synonym_count":0}'
   snapshot_sha256: 0b7e77f7f4f3d09677a869564b459ba02dc82699ff142dfe20b7fc873c0a3504
 - evidence_id: ev-790ac0cd522220e4
   kind: prior_review

@@ -85,12 +85,12 @@ Reassess prediction-only role support: L-Aspartic acid potassium salt
 | --- | --- | --- | --- |
 | ev-030f10a2c4bb82a9 | data/ingredients/mapped/L-Aspartic_Acid_Potassium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1216],"raw_equal":true},"docs_rows":[{"identifier":"cas:1115-63-5","line":1218,"mapping_status":"MAPPED","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic acid potassium salt"}],"identifier":"cas:1115-63-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:17053","ontology_label":"L-aspartic acid","ontology_source":"CHEBI"},"preferred_term":"L-Aspartic acid potassium salt","sssom_rows":[{"data_row":1560,"object_id":"CHEBI:17053","object_label":"L-aspartic acid","predicate_id":"skos:broadMatch"},{"data_row":1561,"object_id":"cas:1115-63-5","object_label":"L-Aspartic acid potassium salt","predicate_id":"skos:exactMatch"},{"data_row":1562,"object_id":"kgmicrobe.compound:l-aspartic_acid_potassium_salt","object_label":"L-Aspartic acid potassium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Aspartic_Acid_Potassium_Salt","synonym_count":2} |
 | ev-294666258d54a6d2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1216] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-55902fe167ec03f1 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Aspartic_Acid_Potassium_Salt; data-row positions=[1560,1561,1562] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1560,"object_id":"CHEBI:17053","object_label":"L-aspartic acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Aspartic_Acid_Potassium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1561,"object_id":"cas:1115-63-5","object_label":"L-Aspartic acid potassium salt","other":"CAS:1115-63-5","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Aspartic_Acid_Potassium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1562,"object_id":"kgmicrobe.compound:l-aspartic_acid_potassium_salt","object_label":"L-Aspartic acid potassium salt","other":"CAS:1115-63-5","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Aspartic_Acid_Potassium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-55902fe167ec03f1 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Aspartic_Acid_Potassium_Salt; data-row positions=[1560, 1561, 1562] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1560,"object_id":"CHEBI:17053","object_label":"L-aspartic acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Aspartic_Acid_Potassium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1561,"object_id":"cas:1115-63-5","object_label":"L-Aspartic acid potassium salt","other":"CAS:1115-63-5","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Aspartic_Acid_Potassium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1562,"object_id":"kgmicrobe.compound:l-aspartic_acid_potassium_salt","object_label":"L-Aspartic acid potassium salt","other":"CAS:1115-63-5","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Aspartic_Acid_Potassium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-75c8ff000a9f7754 | docs/data/mapped_ingredients.csv; CSV lines=[1218] | supports | Published identity and count rows inspected: [{"identifier":"cas:1115-63-5","line":1218,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic acid potassium salt","total_occurrences":"1"}] |
 | ev-7e4e43f7655af90d | reports/yaml_record_review/20261001T050233Z-L-Aspartic_Acid_Potassium_Salt.md; YAML Record Review: L-Aspartic acid potassium salt:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f13b26cc73a4e6ba | reports/yaml_record_review/L-Aspartic_Acid_Potassium_Salt.md; &#96;data/ingredients/mapped/L-Aspartic_Acid_Potassium_Salt.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:32; Completeness:57; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-21b33ab905007953 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[783,1872] | context_only | [{"current_record_sha256":"1799f0371433518f3a4add09e07a602ffbc153545880ce15666f6b0399f51a3e","finding_id":"SEM:582b2d6764f7068cf922","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1799f0371433518f3a4add09e07a602ffbc153545880ce15666f6b0399f51a3e","finding_id":"SEM:4bd73f77dc3937c682d0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-beefba3df6b94613 | data/ingredients/mapped/L-Aspartic_Acid_Potassium_Salt.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-beefba3df6b94613 | data/ingredients/mapped/L-Aspartic_Acid_Potassium_Salt.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1216],"raw_equal":true},"docs_rows":[{"identifier":"cas:1115-63-5","line":1218,"mapping_status":"MAPPED","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic acid potassium salt"}],"identifier":"cas:1115-63-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:17053","ontology_label":"L-aspartic acid","ontology_source":"CHEBI"},"preferred_term":"L-Aspartic acid potassium salt","sssom_rows":[{"data_row":1560,"object_id":"CHEBI:17053","object_label":"L-aspartic acid","predicate_id":"skos:broadMatch"},{"data_row":1561,"object_id":"cas:1115-63-5","object_label":"L-Aspartic acid potassium salt","predicate_id":"skos:exactMatch"},{"data_row":1562,"object_id":"kgmicrobe.compound:l-aspartic_acid_potassium_salt","object_label":"L-Aspartic acid potassium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Aspartic_Acid_Potassium_Salt","synonym_count":2} |
 | ev-263b84a4ed941cde | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-215bf391c3ec606a] | context_only | Predecessor structured review finding f-215bf391c3ec606a in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5a26b130defc6088
+  evidence_ids:
+  - ev-030f10a2c4bb82a9
+  - ev-294666258d54a6d2
+  - ev-55902fe167ec03f1
+  - ev-75c8ff000a9f7754
+  - ev-beefba3df6b94613
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5a26b130defc6088
+  evidence_ids:
+  - ev-030f10a2c4bb82a9
+  - ev-21b33ab905007953
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5a26b130defc6088
+  evidence_ids:
+  - ev-7e4e43f7655af90d
+  - ev-f13b26cc73a4e6ba
+  - ev-21b33ab905007953
+  - ev-263b84a4ed941cde
 evidence:
 - evidence_id: ev-030f10a2c4bb82a9
   kind: record_content
   reference: data/ingredients/mapped/L-Aspartic_Acid_Potassium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1216],"raw_equal":true},"docs_rows":[{"identifier":"cas:1115-63-5","line":1218,"mapping_status":"MAPPED","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic
     acid potassium salt"}],"identifier":"cas:1115-63-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:17053","ontology_label":"L-aspartic
@@ -218,7 +232,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1216]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -226,8 +240,9 @@ evidence:
 - evidence_id: ev-55902fe167ec03f1
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:L-Aspartic_Acid_Potassium_Salt; data-row positions=[1560,1561,1562]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:L-Aspartic_Acid_Potassium_Salt; data-row positions=[1560,
+    1561, 1562]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1560,"object_id":"CHEBI:17053","object_label":"L-aspartic
     acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Aspartic_Acid_Potassium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1561,"object_id":"cas:1115-63-5","object_label":"L-Aspartic
@@ -238,7 +253,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1218]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:1115-63-5","line":1218,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic
     acid potassium salt","total_occurrences":"1"}]'
@@ -294,7 +309,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[783,1872]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1799f0371433518f3a4add09e07a602ffbc153545880ce15666f6b0399f51a3e","finding_id":"SEM:582b2d6764f7068cf922","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1799f0371433518f3a4add09e07a602ffbc153545880ce15666f6b0399f51a3e","finding_id":"SEM:4bd73f77dc3937c682d0","kind":"role_evidence","resolution_reason":"Historical
@@ -304,12 +319,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Aspartic_Acid_Potassium_Salt.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1216],"raw_equal":true},"docs_rows":[{"identifier":"cas:1115-63-5","line":1218,"mapping_status":"MAPPED","ontology_id":"CHEBI:17053","preferred_term":"L-Aspartic
+    acid potassium salt"}],"identifier":"cas:1115-63-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:17053","ontology_label":"L-aspartic
+    acid","ontology_source":"CHEBI"},"preferred_term":"L-Aspartic acid potassium salt","sssom_rows":[{"data_row":1560,"object_id":"CHEBI:17053","object_label":"L-aspartic
+    acid","predicate_id":"skos:broadMatch"},{"data_row":1561,"object_id":"cas:1115-63-5","object_label":"L-Aspartic
+    acid potassium salt","predicate_id":"skos:exactMatch"},{"data_row":1562,"object_id":"kgmicrobe.compound:l-aspartic_acid_potassium_salt","object_label":"L-Aspartic
+    acid potassium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Aspartic_Acid_Potassium_Salt","synonym_count":2}'
   snapshot_sha256: 1799f0371433518f3a4add09e07a602ffbc153545880ce15666f6b0399f51a3e
 - evidence_id: ev-263b84a4ed941cde
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Potassium phosphate dibasic trihydrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-b2d6a730993c859a | data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1695],"raw_equal":true},"docs_rows":[{"identifier":"cas:16788-57-1","line":1697,"mapping_status":"MAPPED","ontology_id":"mesh:C013216","preferred_term":"Potassium phosphate dibasic trihydrate"}],"identifier":"cas:16788-57-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C013216","ontology_label":"potassium phosphate","ontology_source":"MESH"},"preferred_term":"Potassium phosphate dibasic trihydrate","sssom_rows":[{"data_row":2329,"object_id":"mesh:C013216","object_label":"potassium phosphate","predicate_id":"skos:broadMatch"},{"data_row":2330,"object_id":"cas:16788-57-1","object_label":"Potassium phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"},{"data_row":2331,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","synonym_count":0} |
-| ev-91a282b2254061e1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1695] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-28fcac26ca1febf4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Potassium_Phosphate_Dibasic_Trihydrate; data-row positions=[2329,2330,2331] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2329,"object_id":"mesh:C013216","object_label":"potassium phosphate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2330,"object_id":"cas:16788-57-1","object_label":"Potassium phosphate dibasic trihydrate","other":"CAS:16788-57-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2331,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium phosphate dibasic trihydrate","other":"CAS:16788-57-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-00ccbaf7d62df0a5 | docs/data/mapped_ingredients.csv; CSV lines=[1697] | supports | Published identity and count rows inspected: [{"identifier":"cas:16788-57-1","line":1697,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"mesh:C013216","preferred_term":"Potassium phosphate dibasic trihydrate","total_occurrences":"3"}] |
+| ev-b2d6a730993c859a | data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1694],"raw_equal":true},"docs_rows":[{"identifier":"cas:16788-57-1","line":1696,"mapping_status":"MAPPED","ontology_id":"mesh:C013216","preferred_term":"Potassium phosphate dibasic trihydrate"}],"identifier":"cas:16788-57-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C013216","ontology_label":"potassium phosphate","ontology_source":"MESH"},"preferred_term":"Potassium phosphate dibasic trihydrate","sssom_rows":[{"data_row":2331,"object_id":"mesh:C013216","object_label":"potassium phosphate","predicate_id":"skos:broadMatch"},{"data_row":2332,"object_id":"cas:16788-57-1","object_label":"Potassium phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"},{"data_row":2333,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","synonym_count":0} |
+| ev-91a282b2254061e1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1694] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-28fcac26ca1febf4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Potassium_Phosphate_Dibasic_Trihydrate; data-row positions=[2331, 2332, 2333] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2331,"object_id":"mesh:C013216","object_label":"potassium phosphate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2332,"object_id":"cas:16788-57-1","object_label":"Potassium phosphate dibasic trihydrate","other":"CAS:16788-57-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2333,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium phosphate dibasic trihydrate","other":"CAS:16788-57-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-00ccbaf7d62df0a5 | docs/data/mapped_ingredients.csv; CSV lines=[1696] | supports | Published identity and count rows inspected: [{"identifier":"cas:16788-57-1","line":1696,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"mesh:C013216","preferred_term":"Potassium phosphate dibasic trihydrate","total_occurrences":"3"}] |
 | ev-b952c6f9de7b200f | reports/yaml_record_review/Potassium_Phosphate_Dibasic_Trihydrate.md; &#96;data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3c660e8c61753617 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1139,1649] | context_only | [{"current_record_sha256":"c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14","finding_id":"SEM:2593fb1d358b9120e634","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14","finding_id":"SEM:cfe6e0ceefc44b4dc23c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b1121f1e42f5e198 | data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-b1121f1e42f5e198 | data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1694],"raw_equal":true},"docs_rows":[{"identifier":"cas:16788-57-1","line":1696,"mapping_status":"MAPPED","ontology_id":"mesh:C013216","preferred_term":"Potassium phosphate dibasic trihydrate"}],"identifier":"cas:16788-57-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C013216","ontology_label":"potassium phosphate","ontology_source":"MESH"},"preferred_term":"Potassium phosphate dibasic trihydrate","sssom_rows":[{"data_row":2331,"object_id":"mesh:C013216","object_label":"potassium phosphate","predicate_id":"skos:broadMatch"},{"data_row":2332,"object_id":"cas:16788-57-1","object_label":"Potassium phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"},{"data_row":2333,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","synonym_count":0} |
 | ev-a0950c368f3a2a4e | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-07d147555d10a4a6] | context_only | Predecessor structured review finding f-07d147555d10a4a6 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-150204e8aee0de9c
+  evidence_ids:
+  - ev-b2d6a730993c859a
+  - ev-91a282b2254061e1
+  - ev-28fcac26ca1febf4
+  - ev-00ccbaf7d62df0a5
+  - ev-b1121f1e42f5e198
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-150204e8aee0de9c
+  evidence_ids:
+  - ev-b2d6a730993c859a
+  - ev-3c660e8c61753617
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,27 +204,31 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-150204e8aee0de9c
+  evidence_ids:
+  - ev-b952c6f9de7b200f
+  - ev-3c660e8c61753617
+  - ev-a0950c368f3a2a4e
 evidence:
 - evidence_id: ev-b2d6a730993c859a
   kind: record_content
   reference: data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1695],"raw_equal":true},"docs_rows":[{"identifier":"cas:16788-57-1","line":1697,"mapping_status":"MAPPED","ontology_id":"mesh:C013216","preferred_term":"Potassium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1694],"raw_equal":true},"docs_rows":[{"identifier":"cas:16788-57-1","line":1696,"mapping_status":"MAPPED","ontology_id":"mesh:C013216","preferred_term":"Potassium
     phosphate dibasic trihydrate"}],"identifier":"cas:16788-57-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C013216","ontology_label":"potassium
     phosphate","ontology_source":"MESH"},"preferred_term":"Potassium phosphate dibasic
-    trihydrate","sssom_rows":[{"data_row":2329,"object_id":"mesh:C013216","object_label":"potassium
-    phosphate","predicate_id":"skos:broadMatch"},{"data_row":2330,"object_id":"cas:16788-57-1","object_label":"Potassium
-    phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"},{"data_row":2331,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium
+    trihydrate","sssom_rows":[{"data_row":2331,"object_id":"mesh:C013216","object_label":"potassium
+    phosphate","predicate_id":"skos:broadMatch"},{"data_row":2332,"object_id":"cas:16788-57-1","object_label":"Potassium
+    phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"},{"data_row":2333,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium
     phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","synonym_count":0}'
   snapshot_sha256: c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14
 - evidence_id: ev-91a282b2254061e1
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1695]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1694]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -223,21 +236,22 @@ evidence:
 - evidence_id: ev-28fcac26ca1febf4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Potassium_Phosphate_Dibasic_Trihydrate; data-row positions=[2329,2330,2331]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Potassium_Phosphate_Dibasic_Trihydrate; data-row positions=[2331,
+    2332, 2333]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2329,"object_id":"mesh:C013216","object_label":"potassium
-    phosphate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2330,"object_id":"cas:16788-57-1","object_label":"Potassium
-    phosphate dibasic trihydrate","other":"CAS:16788-57-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2331,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2331,"object_id":"mesh:C013216","object_label":"potassium
+    phosphate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2332,"object_id":"cas:16788-57-1","object_label":"Potassium
+    phosphate dibasic trihydrate","other":"CAS:16788-57-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2333,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium
     phosphate dibasic trihydrate","other":"CAS:16788-57-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-00ccbaf7d62df0a5
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1697]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1696]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:16788-57-1","line":1697,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"mesh:C013216","preferred_term":"Potassium
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:16788-57-1","line":1696,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"mesh:C013216","preferred_term":"Potassium
     phosphate dibasic trihydrate","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-b952c6f9de7b200f
@@ -254,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1139,1649]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14","finding_id":"SEM:2593fb1d358b9120e634","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14","finding_id":"SEM:cfe6e0ceefc44b4dc23c","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +278,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1694],"raw_equal":true},"docs_rows":[{"identifier":"cas:16788-57-1","line":1696,"mapping_status":"MAPPED","ontology_id":"mesh:C013216","preferred_term":"Potassium
+    phosphate dibasic trihydrate"}],"identifier":"cas:16788-57-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C013216","ontology_label":"potassium
+    phosphate","ontology_source":"MESH"},"preferred_term":"Potassium phosphate dibasic
+    trihydrate","sssom_rows":[{"data_row":2331,"object_id":"mesh:C013216","object_label":"potassium
+    phosphate","predicate_id":"skos:broadMatch"},{"data_row":2332,"object_id":"cas:16788-57-1","object_label":"Potassium
+    phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"},{"data_row":2333,"object_id":"kgmicrobe.compound:potassium_phosphate_dibasic_trihydrate","object_label":"Potassium
+    phosphate dibasic trihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Potassium_Phosphate_Dibasic_Trihydrate","synonym_count":0}'
   snapshot_sha256: c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14
 - evidence_id: ev-a0950c368f3a2a4e
   kind: prior_review

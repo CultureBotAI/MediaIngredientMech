@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8c101bde81f709af
+  evidence_ids:
+  - ev-49225d8e69f88e2c
+  - ev-633565df91a1971d
+  - ev-db9cc6a361f81484
+  - ev-85475f280d1c2aae
+  - ev-dcdc23a21c831b5e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8c101bde81f709af
+  evidence_ids:
+  - ev-49225d8e69f88e2c
+  - ev-d703bd486b46940b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,21 +99,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8c101bde81f709af
+  evidence_ids:
+  - ev-f71db8ff4cf77e2c
+  - ev-d703bd486b46940b
+  - ev-e2291827c6d5f30f
 evidence:
 - evidence_id: ev-49225d8e69f88e2c
   kind: record_content
   reference: data/ingredients/mapped/Verbascose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2043],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28586","line":2045,"mapping_status":"MAPPED","ontology_id":"CHEBI:28586","preferred_term":"Verbascose"}],"identifier":"CHEBI:28586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28586","ontology_label":"verbascose","ontology_source":"CHEBI"},"preferred_term":"Verbascose","sssom_rows":[{"data_row":2897,"object_id":"CHEBI:28586","object_label":"verbascose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Verbascose","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2042],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28586","line":2044,"mapping_status":"MAPPED","ontology_id":"CHEBI:28586","preferred_term":"Verbascose"}],"identifier":"CHEBI:28586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28586","ontology_label":"verbascose","ontology_source":"CHEBI"},"preferred_term":"Verbascose","sssom_rows":[{"data_row":2899,"object_id":"CHEBI:28586","object_label":"verbascose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Verbascose","synonym_count":1}'
   snapshot_sha256: 74418126fd006d67a5df15cbdde780f2394bc8f3115fa04f082668c30a11451b
 - evidence_id: ev-633565df91a1971d
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2043]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2042]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -112,19 +125,19 @@ evidence:
 - evidence_id: ev-db9cc6a361f81484
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Verbascose; data-row positions=[2897]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Verbascose; data-row positions=[2899]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2897,"object_id":"CHEBI:28586","object_label":"verbascose","other":"beta-D-fructofuranosyl
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2899,"object_id":"CHEBI:28586","object_label":"verbascose","other":"beta-D-fructofuranosyl
     alpha-D-galactopyranosyl-(1->6)-alpha-D-galactopyranosyl-(1->6)-alpha-D-galactopyranosyl-(1->6)-alpha-D-glucopyranoside|CAS:546-62-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Verbascose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-85475f280d1c2aae
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2045]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2044]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28586","line":2045,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28586","preferred_term":"Verbascose","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28586","line":2044,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28586","preferred_term":"Verbascose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-f71db8ff4cf77e2c
   kind: prior_review
@@ -148,7 +161,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1336,1531]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"74418126fd006d67a5df15cbdde780f2394bc8f3115fa04f082668c30a11451b","finding_id":"SEM:574f0e0162889e93d674","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"74418126fd006d67a5df15cbdde780f2394bc8f3115fa04f082668c30a11451b","finding_id":"SEM:cc5c231021bbaf6ad149","kind":"role_evidence","resolution_reason":"Historical
@@ -158,12 +171,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Verbascose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2042],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28586","line":2044,"mapping_status":"MAPPED","ontology_id":"CHEBI:28586","preferred_term":"Verbascose"}],"identifier":"CHEBI:28586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28586","ontology_label":"verbascose","ontology_source":"CHEBI"},"preferred_term":"Verbascose","sssom_rows":[{"data_row":2899,"object_id":"CHEBI:28586","object_label":"verbascose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Verbascose","synonym_count":1}'
   snapshot_sha256: 74418126fd006d67a5df15cbdde780f2394bc8f3115fa04f082668c30a11451b
 - evidence_id: ev-e2291827c6d5f30f
   kind: prior_review

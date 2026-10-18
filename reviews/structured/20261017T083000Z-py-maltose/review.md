@@ -71,13 +71,12 @@ Disposition: Expansion/interpretation is retained as an assertion, but the exact
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-3ffbc6c4ed3e7752 | data/ingredients/mapped/PY-maltose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[51],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_maltose","line":53,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_maltose","preferred_term":"PY-maltose"}],"identifier":"kgmicrobe.ingredient:py_maltose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_maltose","ontology_label":"PY-maltose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-maltose","sssom_rows":[{"data_row":2178,"object_id":"kgmicrobe.ingredient:py_maltose","object_label":"PY-maltose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-maltose","synonym_count":1} |
+| ev-3ffbc6c4ed3e7752 | data/ingredients/mapped/PY-maltose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[51],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_maltose","line":53,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_maltose","preferred_term":"PY-maltose"}],"identifier":"kgmicrobe.ingredient:py_maltose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_maltose","ontology_label":"PY-maltose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-maltose","sssom_rows":[{"data_row":2180,"object_id":"kgmicrobe.ingredient:py_maltose","object_label":"PY-maltose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-maltose","synonym_count":1} |
 | ev-b878b52263afb1ad | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [51] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-420bc491ac3fd69e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PY-maltose; data-row positions=[2178] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2178,"object_id":"kgmicrobe.ingredient:py_maltose","object_label":"PY-maltose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-maltose","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
+| ev-420bc491ac3fd69e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PY-maltose; data-row positions=[2180] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2180,"object_id":"kgmicrobe.ingredient:py_maltose","object_label":"PY-maltose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-maltose","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
 | ev-d5c66d021860c54e | docs/data/mapped_ingredients.csv; CSV lines=[53] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:py_maltose","line":53,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:py_maltose","preferred_term":"PY-maltose","total_occurrences":"0"}] |
 | ev-b034dba7010509d7 | reports/yaml_record_review/PY-maltose.md; &#96;data/ingredients/mapped/PY-maltose.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:31; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-4affa4a79e21a9b7 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1409,1519,1961] | context_only | [{"current_record_sha256":"2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0","finding_id":"SEM:f95f7e998985eb28aef9","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0","finding_id":"SEM:936d5169b571bf3c8956","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0","finding_id":"SEM:2e254ee4bffbc351d610","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-857a264a61fd6d3b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/PY-maltose.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -166,6 +165,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1dab9bcc2d214ce8
+  evidence_ids:
+  - ev-3ffbc6c4ed3e7752
+  - ev-b878b52263afb1ad
+  - ev-420bc491ac3fd69e
+  - ev-d5c66d021860c54e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -174,6 +178,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-1dab9bcc2d214ce8
+  evidence_ids:
+  - ev-3ffbc6c4ed3e7752
+  - ev-4affa4a79e21a9b7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -182,21 +189,24 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1dab9bcc2d214ce8
+  evidence_ids:
+  - ev-b034dba7010509d7
+  - ev-4affa4a79e21a9b7
 evidence:
 - evidence_id: ev-3ffbc6c4ed3e7752
   kind: record_content
   reference: data/ingredients/mapped/PY-maltose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[51],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_maltose","line":53,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_maltose","preferred_term":"PY-maltose"}],"identifier":"kgmicrobe.ingredient:py_maltose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_maltose","ontology_label":"PY-maltose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-maltose","sssom_rows":[{"data_row":2178,"object_id":"kgmicrobe.ingredient:py_maltose","object_label":"PY-maltose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-maltose","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[51],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_maltose","line":53,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_maltose","preferred_term":"PY-maltose"}],"identifier":"kgmicrobe.ingredient:py_maltose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_maltose","ontology_label":"PY-maltose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-maltose","sssom_rows":[{"data_row":2180,"object_id":"kgmicrobe.ingredient:py_maltose","object_label":"PY-maltose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-maltose","synonym_count":1}'
   snapshot_sha256: 2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0
 - evidence_id: ev-b878b52263afb1ad
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [51]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -204,16 +214,16 @@ evidence:
 - evidence_id: ev-420bc491ac3fd69e
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PY-maltose; data-row positions=[2178]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PY-maltose; data-row positions=[2180]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2178,"object_id":"kgmicrobe.ingredient:py_maltose","object_label":"PY-maltose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-maltose","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2180,"object_id":"kgmicrobe.ingredient:py_maltose","object_label":"PY-maltose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-maltose","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-d5c66d021860c54e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[53]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:py_maltose","line":53,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:py_maltose","preferred_term":"PY-maltose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -235,20 +245,12 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1409,1519,1961]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0","finding_id":"SEM:f95f7e998985eb28aef9","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0","finding_id":"SEM:936d5169b571bf3c8956","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0","finding_id":"SEM:2e254ee4bffbc351d610","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-857a264a61fd6d3b
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/PY-maltose.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-90d2414217045725
@@ -321,7 +323,7 @@ findings:
   - record-1dab9bcc2d214ce8
   evidence_ids:
   - ev-3ffbc6c4ed3e7752
-  - ev-857a264a61fd6d3b
+  - ev-4affa4a79e21a9b7
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PY-maltose.yaml

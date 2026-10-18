@@ -80,6 +80,14 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4190c0ee5976447a
+  evidence_ids:
+  - ev-6bdceef7ba6aa436
+  - ev-84c339f9b2e6b5d1
+  - ev-8ff94a6ea1085255
+  - ev-5a185a31636016cb
+  - ev-fa016998b137038b
+  - ev-745bc0e8e18adc16
+  - ev-7d01fe3478491965
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -88,6 +96,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4190c0ee5976447a
+  evidence_ids:
+  - ev-6bdceef7ba6aa436
+  - ev-f71c711fe7c99148
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -96,25 +107,32 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4190c0ee5976447a
+  evidence_ids:
+  - ev-afd6d431ee989359
+  - ev-f71c711fe7c99148
+  - ev-8bb59eaf8b6e66f4
+  - ev-a692d3e165ce1613
+  - ev-cfeb1b367b6f9c64
+  - ev-2915a0c7cc5ef760
 evidence:
 - evidence_id: ev-6bdceef7ba6aa436
   kind: record_content
   reference: data/ingredients/mapped/Potassium_Phosphate_Buffer.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1694],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","line":1696,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Potassium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1693],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","line":1695,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Potassium
     phosphate buffer"}],"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":44,"edge_count":44,"occurrences":44},"occurrence_statistics":{"media_count":44,"total_occurrences":44},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
-    Buffer","ontology_source":"NCIT"},"preferred_term":"Potassium phosphate buffer","sssom_rows":[{"data_row":2327,"object_id":"NCIT:C29321","object_label":"Phosphate
-    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2328,"object_id":"kgmicrobe.ingredient:potassium_phosphate_buffer","object_label":"Potassium
+    Buffer","ontology_source":"NCIT"},"preferred_term":"Potassium phosphate buffer","sssom_rows":[{"data_row":2329,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2330,"object_id":"kgmicrobe.ingredient:potassium_phosphate_buffer","object_label":"Potassium
     phosphate buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Potassium_Phosphate_Buffer","synonym_count":5}'
   snapshot_sha256: 9a33ce5d93f8928878ab1309f834d49f505d27abf4d5ee41e23b79a40a2ac40e
 - evidence_id: ev-84c339f9b2e6b5d1
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1694]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1693]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -122,22 +140,22 @@ evidence:
 - evidence_id: ev-8ff94a6ea1085255
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Potassium_Phosphate_Buffer; data-row positions=[2327,2328]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Potassium_Phosphate_Buffer; data-row positions=[2329, 2330]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2327,"object_id":"NCIT:C29321","object_label":"Phosphate
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2329,"object_id":"NCIT:C29321","object_label":"Phosphate
     Buffer","other":"Potassium phosphate buffer (0.01 M, pH 7.2)|Potassium phosphate
     buffer (0.02 M, pH 7.0)|Potassium phosphate buffer (1 M, pH 7.1)|Potassium phosphate
-    buffer* (see below)","predicate_id":"skos:closeMatch","subject_id":"MIM:Potassium_Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2328,"object_id":"kgmicrobe.ingredient:potassium_phosphate_buffer","object_label":"Potassium
+    buffer* (see below)","predicate_id":"skos:closeMatch","subject_id":"MIM:Potassium_Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2330,"object_id":"kgmicrobe.ingredient:potassium_phosphate_buffer","object_label":"Potassium
     phosphate buffer","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-5a185a31636016cb
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1696]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1695]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","line":1696,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"44","ontology_id":"NCIT:C29321","preferred_term":"Potassium
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","line":1695,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"44","ontology_id":"NCIT:C29321","preferred_term":"Potassium
     phosphate buffer","total_occurrences":"44"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-afd6d431ee989359
@@ -154,7 +172,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1138,1780]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9a33ce5d93f8928878ab1309f834d49f505d27abf4d5ee41e23b79a40a2ac40e","finding_id":"SEM:60203fb718c81304bf6b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9a33ce5d93f8928878ab1309f834d49f505d27abf4d5ee41e23b79a40a2ac40e","finding_id":"SEM:985f37eab0ffab7d93e8","kind":"role_evidence","resolution_reason":"Historical
@@ -164,12 +182,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Potassium_Phosphate_Buffer.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1693],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","line":1695,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Potassium
+    phosphate buffer"}],"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":44,"edge_count":44,"occurrences":44},"occurrence_statistics":{"media_count":44,"total_occurrences":44},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
+    Buffer","ontology_source":"NCIT"},"preferred_term":"Potassium phosphate buffer","sssom_rows":[{"data_row":2329,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2330,"object_id":"kgmicrobe.ingredient:potassium_phosphate_buffer","object_label":"Potassium
+    phosphate buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Potassium_Phosphate_Buffer","synonym_count":5}'
   snapshot_sha256: 9a33ce5d93f8928878ab1309f834d49f505d27abf4d5ee41e23b79a40a2ac40e
 - evidence_id: ev-823412d1eacb6795
   kind: record_content
@@ -208,71 +227,25 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Potassium_Phosphate_Buffer.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Potassium phosphate buffer* (see below)", "synonym_type": "RAW_TEXT"}],
-    "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from CultureBotHT
-    (consolidated_media.json (media-only)). Used in 2 CultureBot media; samples: Mega,
-    TYG. No CAS-RN or CHEBI mapping available; curator review needed.", "curator":
-    "audit_add_remaining_culturebotht", "llm_assisted": false, "new_status": "UNMAPPED",
-    "timestamp": "2026-04-29T06:51:33.117170+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=STOCK_SOLUTION (name matches solution pattern
-    ''phosphate buffer'')", "curator": "auto_classify_ingredient_type", "llm_assisted":
-    false, "timestamp": "2026-05-02T03:12:19.854401+00:00"}, {"action": "AUTO_UPGRADE_TO_NCIT",
-    "changes": "primary UNMAPPED_0274 \u2192 NCIT:C29321 (strategy=stem-match)", "curator":
-    "resolve_unmapped_v2", "llm_assisted": false, "timestamp": "2026-05-02T03:18:21.960132+00:00"},
-    {"action": "CORRECTED", "changes": "Changed identifier from NCIT:C29321 to kgmicrobe.ingredient:potassium_phosphate_buffer
-    and retained NCIT:C29321 only as CLOSE_MATCH. Potassium phosphate buffer is a
-    formulation variant, not identical to the generic phosphate buffer class.", "curator":
-    "ingredient_mapping_review_2026_05_05", "llm_assisted": false, "new_status": "MAPPED",
-    "previous_status": "MAPPED", "timestamp": "2026-05-05T00:00:00+00:00"}, {"action":
-    "ANNOTATED", "changes": "Added media role: BUFFER (confidence: 0.80)", "curator":
-    "infer_roles_from_name_lists", "timestamp": "2026-06-03T02:06:01.748066+00:00"},
-    {"action": "ANNOTATED", "changes": "Migrated legacy media_roles to role facets
-    (#128): BUFFER -> physicochemical_roles.BUFFER", "curator": "migrate_media_roles_to_facets",
-    "timestamp": "2026-07-20T00:00:00+00:00"}, {"action": "CORRECTED", "changes":
-    "occurrence_statistics 2/2 -> 44/44 (media_count/total_occurrences), derived from
-    distinct CultureMech recipe ids in the #337 occurrence table. The prior values
-    came from the importer retired in #453, whose media_count counted a list truncated
-    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.519736+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 4 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Potassium phosphate buffer (0.01 M, pH 7.2)'' (x1 CultureMech
-    mentions); ''Potassium phosphate buffer (0.02 M, pH 7.0)'' (x1 CultureMech mentions);
-    ''Potassium phosphate buffer (1 M, pH 7.1)'' (x1 CultureMech mentions); ''Potassium
-    phosphate buffer* (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp":
-    "2026-08-30T04:48:06.233536+00:00"}], "identifier": "kgmicrobe.ingredient:potassium_phosphate_buffer",
-    "mapping": {"evidence": [{"evidence_type": "CURATOR_JUDGMENT", "notes": "Potassium
-    phosphate buffer is a formulation variant, not identical to the generic phosphate
-    buffer class.", "source": "ingredient_mapping_review_2026-05-05"}], "mapping_quality":
-    "CLOSE_MATCH", "ontology_id": "NCIT:C29321", "ontology_label": "Phosphate Buffer",
-    "ontology_source": "NCIT"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1693],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","line":1695,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Potassium
+    phosphate buffer"}],"identifier":"kgmicrobe.ingredient:potassium_phosphate_buffer","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":44,"edge_count":44,"occurrences":44},"occurrence_statistics":{"media_count":44,"total_occurrences":44},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
+    Buffer","ontology_source":"NCIT"},"preferred_term":"Potassium phosphate buffer","sssom_rows":[{"data_row":2329,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2330,"object_id":"kgmicrobe.ingredient:potassium_phosphate_buffer","object_label":"Potassium
+    phosphate buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Potassium_Phosphate_Buffer","synonym_count":5}'
   snapshot_sha256: 9a33ce5d93f8928878ab1309f834d49f505d27abf4d5ee41e23b79a40a2ac40e
 - evidence_id: ev-7d01fe3478491965
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Potassium_Phosphate_Buffer
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Potassium_Phosphate_Buffer; data-row positions=[2329, 2330]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.9", "data_row": 2327, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
-    "NCIT:C29321", "object_label": "Phosphate Buffer", "object_source": "obo:ncit.owl",
-    "other": "Potassium phosphate buffer (0.01 M, pH 7.2)|Potassium phosphate buffer
-    (0.02 M, pH 7.0)|Potassium phosphate buffer (1 M, pH 7.1)|Potassium phosphate
-    buffer* (see below)", "predicate_id": "skos:closeMatch", "source": "MIM:ingredient_mapping_review_2026-05-05|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Potassium_Phosphate_Buffer", "subject_label": "Potassium phosphate
-    buffer", "validation_method": "none|UNKNOWN_TERM|2026-07-07"}, {"comment": "Registry/identity
-    row preserving kgmicrobe.ingredient:potassium_phosphate_buffer alongside parent
-    NCIT:C29321.", "confidence": "0.99", "data_row": 2328, "mapping_date": "2026-08-30",
-    "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:potassium_phosphate_buffer",
-    "object_label": "Potassium phosphate buffer", "object_source": "kgm:ingredient",
-    "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:ingredient_mapping_review_2026-05-05|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Potassium_Phosphate_Buffer", "subject_label": "Potassium phosphate
-    buffer", "validation_method": "none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2329,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","other":"Potassium phosphate buffer (0.01 M, pH 7.2)|Potassium phosphate
+    buffer (0.02 M, pH 7.0)|Potassium phosphate buffer (1 M, pH 7.1)|Potassium phosphate
+    buffer* (see below)","predicate_id":"skos:closeMatch","subject_id":"MIM:Potassium_Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2330,"object_id":"kgmicrobe.ingredient:potassium_phosphate_buffer","object_label":"Potassium
+    phosphate buffer","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Potassium_Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-a692d3e165ce1613
   kind: prior_review

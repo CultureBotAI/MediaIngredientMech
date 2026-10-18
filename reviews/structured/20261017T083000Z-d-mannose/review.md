@@ -89,7 +89,7 @@ Reassess prediction-only role support: D-Mannose
 | ev-a8780f97038bd869 | docs/data/mapped_ingredients.csv; CSV lines=[842] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16024","line":842,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:16024","preferred_term":"D-Mannose","total_occurrences":"12"}] |
 | ev-dd55fb9adb32feea | reports/yaml_record_review/D-mannose.md; &#96;data/ingredients/mapped/D-mannose.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:42; Completeness:60; Recommended Edits:69 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2f0ad2a6ed1361b7 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[504,1972] | context_only | [{"current_record_sha256":"7f5c5fb56cf889813b006e3465aabe62c41a5752f0c2297e4b63cb0f75c0f937","finding_id":"SEM:adaf596bd15ca1f129d3","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7f5c5fb56cf889813b006e3465aabe62c41a5752f0c2297e4b63cb0f75c0f937","finding_id":"SEM:40b5ff31d88fd33546e3","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-25d95333892871cd | data/ingredients/mapped/D-mannose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-25d95333892871cd | data/ingredients/mapped/D-mannose.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[840],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16024","line":842,"mapping_status":"MAPPED","ontology_id":"CHEBI:16024","preferred_term":"D-Mannose"}],"identifier":"CHEBI:16024","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16024","ontology_label":"D-mannose","ontology_source":"CHEBI"},"preferred_term":"D-Mannose","sssom_rows":[{"data_row":948,"object_id":"CHEBI:16024","object_label":"D-mannose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-mannose","synonym_count":3} |
 | ev-d291b9b950a36b4a | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-e57bb85767f1ca62] | context_only | Predecessor structured review finding f-e57bb85767f1ca62 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-044cb1610442ce97
+  evidence_ids:
+  - ev-aed133cc6f86cc5b
+  - ev-0e6c3e337e7da83f
+  - ev-9eba5ecbe40a405b
+  - ev-a8780f97038bd869
+  - ev-25d95333892871cd
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-044cb1610442ce97
+  evidence_ids:
+  - ev-aed133cc6f86cc5b
+  - ev-2f0ad2a6ed1361b7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-044cb1610442ce97
+  evidence_ids:
+  - ev-dd55fb9adb32feea
+  - ev-2f0ad2a6ed1361b7
+  - ev-d291b9b950a36b4a
 evidence:
 - evidence_id: ev-aed133cc6f86cc5b
   kind: record_content
   reference: data/ingredients/mapped/D-mannose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[840],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16024","line":842,"mapping_status":"MAPPED","ontology_id":"CHEBI:16024","preferred_term":"D-Mannose"}],"identifier":"CHEBI:16024","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16024","ontology_label":"D-mannose","ontology_source":"CHEBI"},"preferred_term":"D-Mannose","sssom_rows":[{"data_row":948,"object_id":"CHEBI:16024","object_label":"D-mannose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-mannose","synonym_count":3}'
   snapshot_sha256: 7f5c5fb56cf889813b006e3465aabe62c41a5752f0c2297e4b63cb0f75c0f937
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [840]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-mannose; data-row positions=[948]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":948,"object_id":"CHEBI:16024","object_label":"D-mannose","other":"D-manno-hexose|CAS:530-26-7","predicate_id":"skos:exactMatch","subject_id":"MIM:D-mannose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[842]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16024","line":842,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:16024","preferred_term":"D-Mannose","total_occurrences":"12"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[504,1972]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7f5c5fb56cf889813b006e3465aabe62c41a5752f0c2297e4b63cb0f75c0f937","finding_id":"SEM:adaf596bd15ca1f129d3","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7f5c5fb56cf889813b006e3465aabe62c41a5752f0c2297e4b63cb0f75c0f937","finding_id":"SEM:40b5ff31d88fd33546e3","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-mannose.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[840],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16024","line":842,"mapping_status":"MAPPED","ontology_id":"CHEBI:16024","preferred_term":"D-Mannose"}],"identifier":"CHEBI:16024","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16024","ontology_label":"D-mannose","ontology_source":"CHEBI"},"preferred_term":"D-Mannose","sssom_rows":[{"data_row":948,"object_id":"CHEBI:16024","object_label":"D-mannose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-mannose","synonym_count":3}'
   snapshot_sha256: 7f5c5fb56cf889813b006e3465aabe62c41a5752f0c2297e4b63cb0f75c0f937
 - evidence_id: ev-d291b9b950a36b4a
   kind: prior_review

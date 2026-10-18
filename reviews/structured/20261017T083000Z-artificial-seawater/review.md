@@ -83,15 +83,15 @@ Disposition: Token presence remains reproducible, but the earlier pattern-based 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-ff32a7302db1eb17 | data/ingredients/mapped/Artificial_seawater.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2538],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001715","line":2540,"mapping_status":"MAPPED","ontology_id":"MICRO:0001715","preferred_term":"Artificial seawater"}],"identifier":"MICRO:0001715","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","match_level":"EXACT","ontology_id":"MICRO:0001715","ontology_label":"artificial seawater","ontology_source":"MICRO"},"preferred_term":"Artificial seawater","sssom_rows":[{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial seawater","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artificial_seawater","synonym_count":2} |
-| ev-6518654aed992338 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2538] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-ff32a7302db1eb17 | data/ingredients/mapped/Artificial_seawater.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2537],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001715","line":2539,"mapping_status":"MAPPED","ontology_id":"MICRO:0001715","preferred_term":"Artificial seawater"}],"identifier":"MICRO:0001715","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001715","ontology_label":"artificial seawater","ontology_source":"MICRO"},"preferred_term":"Artificial seawater","sssom_rows":[{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial seawater","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artificial_seawater","synonym_count":2} |
+| ev-6518654aed992338 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2537] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-91c2182d00c37a4a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Artificial_seawater; data-row positions=[435] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial seawater","other":"Artificial seawater (see below)&#124;Artificial seawater (see Medium No. 736 )","predicate_id":"skos:exactMatch","subject_id":"MIM:Artificial_seawater","validation_method":"manual:claude_culturemech_residual_grounding&#124;CREATED&#124;2026-08-30"}] |
-| ev-6a7f27c85a59a50e | docs/data/mapped_ingredients.csv; CSV lines=[2540] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001715","line":2540,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"19","ontology_id":"MICRO:0001715","preferred_term":"Artificial seawater","total_occurrences":"19"}] |
+| ev-6a7f27c85a59a50e | docs/data/mapped_ingredients.csv; CSV lines=[2539] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001715","line":2539,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"19","ontology_id":"MICRO:0001715","preferred_term":"Artificial seawater","total_occurrences":"19"}] |
 | ev-a3370b8d14b4ebe5 | reports/yaml_record_review/Artificial_seawater.md; &#96;data/ingredients/mapped/Artificial_seawater.yaml&#96;:2; Verdict:4; Identity:9; Validation:22; Evidence:43; Completeness:57; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-8fab9fb02ee4454f | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-e1004757f90e8c13] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-f5500c887f4dc734 | data/ingredients/mapped/Artificial_seawater.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Artificial seawater (see below)", "synonym_type": "RAW_TEXT"}, {"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Artificial seawater (see Medium No. 736 )", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_FROM_CULTUREMECH_RESIDUAL", "changes": "Created from a CultureMech recipe ingredient MIM held no record for (19 mentions across 19 recipes). Grounded to MICRO:0001715 ('artificial seawater') on an exact match of the canonical label to the query 'Artificial seawater'. Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_residual_grounding", "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-08-30T10:35:03.361102+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 2 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Artificial seawater (see below)' (x7 CultureMech mentions); 'Artificial seawater (see Medium No. 736 )' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T10:41:26.546472+00:00"}, {"action": "CORRECTED", "changes": "Added ontology_mapping.evidence recording the CultureMech occurrence table as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from the structured field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published row (#541).", "curator": "claude_restore_culturemech_evidence", "llm_assisted": false, "timestamp": "2026-09-06T07:34:56.956907+00:00"}], "identifier": "MICRO:0001715", "mapping": {"evidence": [{"evidence_type": "LEXICAL_MATCH", "notes": "Surface form appears in CultureMech's occurrence table and was grounded to MICRO:0001715 on an exact match against the ontology label. Restored from the record's own creation history (#541); the residual importer wrote this provenance only into the published SSSOM.", "source": "culturemech:output/ingredient_occurrences.tsv"}], "mapping_quality": "EXACT_MATCH", "match_level": "EXACT", "ontology_id": "MICRO:0001715", "ontology_label": "artificial seawater", "ontology_source": "MICRO"}} |
-| ev-16c562c2dbdbab95 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Artificial_seawater | supports | [{"comment": "", "confidence": "0.99", "data_row": 435, "mapping_date": "2026-09-06", "mapping_justification": "semapv:LexicalMatching", "object_id": "MICRO:0001715", "object_label": "artificial seawater", "object_source": "obo:micro.owl", "other": "Artificial seawater (see below)&#124;Artificial seawater (see Medium No. 736 )", "predicate_id": "skos:exactMatch", "source": "MIM:culturemech:output/ingredient_occurrences.tsv&#124;MIM:curator=claude_restore_culturemech_evidence", "subject_id": "MIM:Artificial_seawater", "subject_label": "Artificial seawater", "validation_method": "manual:claude_culturemech_residual_grounding&#124;CREATED&#124;2026-08-30"}] |
+| ev-f5500c887f4dc734 | data/ingredients/mapped/Artificial_seawater.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2537],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001715","line":2539,"mapping_status":"MAPPED","ontology_id":"MICRO:0001715","preferred_term":"Artificial seawater"}],"identifier":"MICRO:0001715","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001715","ontology_label":"artificial seawater","ontology_source":"MICRO"},"preferred_term":"Artificial seawater","sssom_rows":[{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial seawater","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artificial_seawater","synonym_count":2} |
+| ev-16c562c2dbdbab95 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Artificial_seawater; data-row positions=[435] | supports | Current exact-subject rows, including complete other payload: [{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial seawater","other":"Artificial seawater (see below)&#124;Artificial seawater (see Medium No. 736 )","predicate_id":"skos:exactMatch","subject_id":"MIM:Artificial_seawater","validation_method":"manual:claude_culturemech_residual_grounding&#124;CREATED&#124;2026-08-30"}] |
 | ev-8ca93b32516cbb52 | reports/yaml_record_review/Artificial_seawater.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-c0ba3a9bc4c527b7 | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-e1004757f90e8c13] | context_only | Predecessor structured review finding scope-f-e1004757f90e8c13 in 20261011T030852Z-mim-token-scope-reassessment |
 
@@ -185,6 +185,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-205c79d137874075
+  evidence_ids:
+  - ev-ff32a7302db1eb17
+  - ev-6518654aed992338
+  - ev-91c2182d00c37a4a
+  - ev-6a7f27c85a59a50e
+  - ev-f5500c887f4dc734
+  - ev-16c562c2dbdbab95
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -193,6 +200,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-205c79d137874075
+  evidence_ids:
+  - ev-ff32a7302db1eb17
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -201,24 +210,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-205c79d137874075
+  evidence_ids:
+  - ev-a3370b8d14b4ebe5
+  - ev-8fab9fb02ee4454f
+  - ev-8ca93b32516cbb52
+  - ev-c0ba3a9bc4c527b7
 evidence:
 - evidence_id: ev-ff32a7302db1eb17
   kind: record_content
   reference: data/ingredients/mapped/Artificial_seawater.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2538],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001715","line":2540,"mapping_status":"MAPPED","ontology_id":"MICRO:0001715","preferred_term":"Artificial
-    seawater"}],"identifier":"MICRO:0001715","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","match_level":"EXACT","ontology_id":"MICRO:0001715","ontology_label":"artificial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2537],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001715","line":2539,"mapping_status":"MAPPED","ontology_id":"MICRO:0001715","preferred_term":"Artificial
+    seawater"}],"identifier":"MICRO:0001715","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001715","ontology_label":"artificial
     seawater","ontology_source":"MICRO"},"preferred_term":"Artificial seawater","sssom_rows":[{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial
     seawater","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artificial_seawater","synonym_count":2}'
   snapshot_sha256: 9efeac859a634d9d5daf17c7da4e058b51ce7538b0b802fa6ac2b7f6f602e708
 - evidence_id: ev-6518654aed992338
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2538]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2537]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -227,7 +241,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Artificial_seawater; data-row positions=[435]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial
     seawater","other":"Artificial seawater (see below)|Artificial seawater (see Medium
@@ -236,10 +250,10 @@ evidence:
 - evidence_id: ev-6a7f27c85a59a50e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2540]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2539]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001715","line":2540,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"19","ontology_id":"MICRO:0001715","preferred_term":"Artificial
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001715","line":2539,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"19","ontology_id":"MICRO:0001715","preferred_term":"Artificial
     seawater","total_occurrences":"19"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-a3370b8d14b4ebe5
@@ -294,51 +308,22 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Artificial_seawater.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Artificial seawater (see below)", "synonym_type": "RAW_TEXT"},
-    {"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Artificial
-    seawater (see Medium No. 736 )", "synonym_type": "RAW_TEXT"}], "history": [{"action":
-    "CREATED_FROM_CULTUREMECH_RESIDUAL", "changes": "Created from a CultureMech recipe
-    ingredient MIM held no record for (19 mentions across 19 recipes). Grounded to
-    MICRO:0001715 (''artificial seawater'') on an exact match of the canonical label
-    to the query ''Artificial seawater''. Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_residual_grounding", "llm_assisted": false, "new_status":
-    "MAPPED", "timestamp": "2026-08-30T10:35:03.361102+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 2 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Artificial seawater (see below)'' (x7 CultureMech mentions);
-    ''Artificial seawater (see Medium No. 736 )'' (x1 CultureMech mentions). Source:
-    culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill",
-    "llm_assisted": false, "timestamp": "2026-08-30T10:41:26.546472+00:00"}, {"action":
-    "CORRECTED", "changes": "Added ontology_mapping.evidence recording the CultureMech
-    occurrence table as the source of this grounding. The provenance was already in
-    this record''s CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from
-    the structured field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
-    from the published row (#541).", "curator": "claude_restore_culturemech_evidence",
-    "llm_assisted": false, "timestamp": "2026-09-06T07:34:56.956907+00:00"}], "identifier":
-    "MICRO:0001715", "mapping": {"evidence": [{"evidence_type": "LEXICAL_MATCH", "notes":
-    "Surface form appears in CultureMech''s occurrence table and was grounded to MICRO:0001715
-    on an exact match against the ontology label. Restored from the record''s own
-    creation history (#541); the residual importer wrote this provenance only into
-    the published SSSOM.", "source": "culturemech:output/ingredient_occurrences.tsv"}],
-    "mapping_quality": "EXACT_MATCH", "match_level": "EXACT", "ontology_id": "MICRO:0001715",
-    "ontology_label": "artificial seawater", "ontology_source": "MICRO"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2537],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001715","line":2539,"mapping_status":"MAPPED","ontology_id":"MICRO:0001715","preferred_term":"Artificial
+    seawater"}],"identifier":"MICRO:0001715","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":19,"total_occurrences":19},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001715","ontology_label":"artificial
+    seawater","ontology_source":"MICRO"},"preferred_term":"Artificial seawater","sssom_rows":[{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial
+    seawater","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Artificial_seawater","synonym_count":2}'
   snapshot_sha256: 9efeac859a634d9d5daf17c7da4e058b51ce7538b0b802fa6ac2b7f6f602e708
 - evidence_id: ev-16c562c2dbdbab95
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Artificial_seawater
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Artificial_seawater; data-row positions=[435]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.99", "data_row": 435, "mapping_date":
-    "2026-09-06", "mapping_justification": "semapv:LexicalMatching", "object_id":
-    "MICRO:0001715", "object_label": "artificial seawater", "object_source": "obo:micro.owl",
-    "other": "Artificial seawater (see below)|Artificial seawater (see Medium No.
-    736 )", "predicate_id": "skos:exactMatch", "source": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence",
-    "subject_id": "MIM:Artificial_seawater", "subject_label": "Artificial seawater",
-    "validation_method": "manual:claude_culturemech_residual_grounding|CREATED|2026-08-30"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":435,"object_id":"MICRO:0001715","object_label":"artificial
+    seawater","other":"Artificial seawater (see below)|Artificial seawater (see Medium
+    No. 736 )","predicate_id":"skos:exactMatch","subject_id":"MIM:Artificial_seawater","validation_method":"manual:claude_culturemech_residual_grounding|CREATED|2026-08-30"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-8ca93b32516cbb52
   kind: prior_review

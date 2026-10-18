@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-37c89b14d9a70d91
+  evidence_ids:
+  - ev-24aea816164916b1
+  - ev-918e0fda3cf96165
+  - ev-53b01bef8d890b80
+  - ev-c98f2fd9e725b171
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -82,6 +87,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-37c89b14d9a70d91
+  evidence_ids:
+  - ev-24aea816164916b1
+  - ev-4b84f49adf3e518c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,25 +98,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-37c89b14d9a70d91
+  evidence_ids:
+  - ev-e19dfc75391137fe
+  - ev-4b84f49adf3e518c
 evidence:
 - evidence_id: ev-24aea816164916b1
   kind: record_content
   reference: data/ingredients/mapped/PYG-002_Tween_80.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[54],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pyg_0_02_tween_80","line":56,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pyg_0_02_tween_80","preferred_term":"PYG-0.02%
-    Tween 80"}],"identifier":"kgmicrobe.ingredient:pyg_0_02_tween_80","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg_0_02_tween_80","ontology_label":"PYG-0.02%
+    Tween 80"}],"identifier":"kgmicrobe.ingredient:pyg_0_02_tween_80","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg_0_02_tween_80","ontology_label":"PYG-0.02%
     Tween 80","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYG-0.02%
-    Tween 80","sssom_rows":[{"data_row":2181,"object_id":"kgmicrobe.ingredient:pyg_0_02_tween_80","object_label":"PYG-0.02%
+    Tween 80","sssom_rows":[{"data_row":2183,"object_id":"kgmicrobe.ingredient:pyg_0_02_tween_80","object_label":"PYG-0.02%
     Tween 80","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYG-002_Tween_80","synonym_count":1}'
   snapshot_sha256: 39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f
 - evidence_id: ev-918e0fda3cf96165
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [54]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,17 +127,17 @@ evidence:
 - evidence_id: ev-53b01bef8d890b80
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PYG-002_Tween_80; data-row positions=[2181]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PYG-002_Tween_80; data-row positions=[2183]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2181,"object_id":"kgmicrobe.ingredient:pyg_0_02_tween_80","object_label":"PYG-0.02%
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2183,"object_id":"kgmicrobe.ingredient:pyg_0_02_tween_80","object_label":"PYG-0.02%
     Tween 80","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYG-002_Tween_80","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-c98f2fd9e725b171
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[56]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:pyg_0_02_tween_80","line":56,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:pyg_0_02_tween_80","preferred_term":"PYG-0.02%
     Tween 80","total_occurrences":"0"}]'
@@ -149,21 +160,13 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1492,1563,1729,1735]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f","finding_id":"SEM:9b00dba6999733399b0f","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f","finding_id":"SEM:7ad88e71c702b5583572","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f","finding_id":"SEM:ee7eb036e32825ada78e","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f","finding_id":"SEM:2727a56eabc39e4c1fa4","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-efeae8cb2978776a
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/PYG-002_Tween_80.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-2e6cae436d7d3761
@@ -239,7 +242,7 @@ findings:
   - record-37c89b14d9a70d91
   evidence_ids:
   - ev-24aea816164916b1
-  - ev-efeae8cb2978776a
+  - ev-4b84f49adf3e518c
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PYG-002_Tween_80.yaml

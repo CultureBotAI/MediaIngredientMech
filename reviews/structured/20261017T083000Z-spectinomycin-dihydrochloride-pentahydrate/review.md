@@ -83,13 +83,13 @@ Reassess prediction-only role support: Spectinomycin dihydrochloride pentahydrat
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-5b0d011ea23dbea0 | data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1887],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9217","line":1889,"mapping_status":"MAPPED","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin dihydrochloride pentahydrate"}],"identifier":"CHEBI:9217","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9217","ontology_label":"spectinomycin hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"Spectinomycin dihydrochloride pentahydrate","sssom_rows":[{"data_row":2628,"object_id":"CHEBI:9217","object_label":"spectinomycin hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Spectinomycin_Dihydrochloride_Pentahydrate","synonym_count":3} |
-| ev-13b3b988bf005441 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1887] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d56db0666e5f9e1e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Spectinomycin_Dihydrochloride_Pentahydrate; data-row positions=[2628] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2628,"object_id":"CHEBI:9217","object_label":"spectinomycin hydrochloride hydrate","other":"(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride pentahydrate&#124;(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride--water (1/5)&#124;(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-N,N',2-trimethyl-4-oxodecahydro-2H-pyrano[2,3-b][1,4]benzodioxine-6,8-diaminium dichloride--water (1/5)&#124;CAS:22189-32-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Spectinomycin_Dihydrochloride_Pentahydrate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-2d26321a3fc07543 | docs/data/mapped_ingredients.csv; CSV lines=[1889] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:9217","line":1889,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin dihydrochloride pentahydrate","total_occurrences":"0"}] |
+| ev-5b0d011ea23dbea0 | data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1886],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9217","line":1888,"mapping_status":"MAPPED","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin dihydrochloride pentahydrate"}],"identifier":"CHEBI:9217","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9217","ontology_label":"spectinomycin hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"Spectinomycin dihydrochloride pentahydrate","sssom_rows":[{"data_row":2630,"object_id":"CHEBI:9217","object_label":"spectinomycin hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Spectinomycin_Dihydrochloride_Pentahydrate","synonym_count":3} |
+| ev-13b3b988bf005441 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1886] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d56db0666e5f9e1e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Spectinomycin_Dihydrochloride_Pentahydrate; data-row positions=[2630] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2630,"object_id":"CHEBI:9217","object_label":"spectinomycin hydrochloride hydrate","other":"(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride pentahydrate&#124;(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride--water (1/5)&#124;(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-N,N',2-trimethyl-4-oxodecahydro-2H-pyrano[2,3-b][1,4]benzodioxine-6,8-diaminium dichloride--water (1/5)&#124;CAS:22189-32-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Spectinomycin_Dihydrochloride_Pentahydrate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-2d26321a3fc07543 | docs/data/mapped_ingredients.csv; CSV lines=[1888] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:9217","line":1888,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin dihydrochloride pentahydrate","total_occurrences":"0"}] |
 | ev-925ea0a0b3ee5107 | reports/yaml_record_review/Spectinomycin_Dihydrochloride_Pentahydrate.md; &#96;data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:32; Completeness:51; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9744293f508350da | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1241,1493] | context_only | [{"current_record_sha256":"1b05f89b24790d65f1318b4499e5aa93ad57d2acc52facdaa1e70cd2cfb012da","finding_id":"SEM:35ba4e16a3091036a41a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1b05f89b24790d65f1318b4499e5aa93ad57d2acc52facdaa1e70cd2cfb012da","finding_id":"SEM:677173384d7ce4d3ce55","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-00d3e922fb76f84b | data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-00d3e922fb76f84b | data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1886],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9217","line":1888,"mapping_status":"MAPPED","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin dihydrochloride pentahydrate"}],"identifier":"CHEBI:9217","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9217","ontology_label":"spectinomycin hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"Spectinomycin dihydrochloride pentahydrate","sssom_rows":[{"data_row":2630,"object_id":"CHEBI:9217","object_label":"spectinomycin hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Spectinomycin_Dihydrochloride_Pentahydrate","synonym_count":3} |
 | ev-43000cd36a2ed26d | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-d72f0fd923559b78] | context_only | Predecessor structured review finding f-d72f0fd923559b78 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -180,6 +180,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0c32f5978a02bf70
+  evidence_ids:
+  - ev-5b0d011ea23dbea0
+  - ev-13b3b988bf005441
+  - ev-d56db0666e5f9e1e
+  - ev-2d26321a3fc07543
+  - ev-00d3e922fb76f84b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -188,6 +194,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0c32f5978a02bf70
+  evidence_ids:
+  - ev-5b0d011ea23dbea0
+  - ev-9744293f508350da
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,25 +205,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0c32f5978a02bf70
+  evidence_ids:
+  - ev-925ea0a0b3ee5107
+  - ev-9744293f508350da
+  - ev-43000cd36a2ed26d
 evidence:
 - evidence_id: ev-5b0d011ea23dbea0
   kind: record_content
   reference: data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1887],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9217","line":1889,"mapping_status":"MAPPED","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1886],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9217","line":1888,"mapping_status":"MAPPED","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin
     dihydrochloride pentahydrate"}],"identifier":"CHEBI:9217","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9217","ontology_label":"spectinomycin
     hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"Spectinomycin
-    dihydrochloride pentahydrate","sssom_rows":[{"data_row":2628,"object_id":"CHEBI:9217","object_label":"spectinomycin
+    dihydrochloride pentahydrate","sssom_rows":[{"data_row":2630,"object_id":"CHEBI:9217","object_label":"spectinomycin
     hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Spectinomycin_Dihydrochloride_Pentahydrate","synonym_count":3}'
   snapshot_sha256: 1b05f89b24790d65f1318b4499e5aa93ad57d2acc52facdaa1e70cd2cfb012da
 - evidence_id: ev-13b3b988bf005441
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1887]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1886]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,10 +235,10 @@ evidence:
 - evidence_id: ev-d56db0666e5f9e1e
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Spectinomycin_Dihydrochloride_Pentahydrate; data-row positions=[2628]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Spectinomycin_Dihydrochloride_Pentahydrate; data-row positions=[2630]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2628,"object_id":"CHEBI:9217","object_label":"spectinomycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2630,"object_id":"CHEBI:9217","object_label":"spectinomycin
     hydrochloride hydrate","other":"(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one
     dihydrochloride pentahydrate|(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one
     dihydrochloride--water (1/5)|(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-N,N'',2-trimethyl-4-oxodecahydro-2H-pyrano[2,3-b][1,4]benzodioxine-6,8-diaminium
@@ -234,10 +247,10 @@ evidence:
 - evidence_id: ev-2d26321a3fc07543
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1889]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1888]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:9217","line":1889,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:9217","line":1888,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin
     dihydrochloride pentahydrate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-925ea0a0b3ee5107
@@ -261,7 +274,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1241,1493]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1b05f89b24790d65f1318b4499e5aa93ad57d2acc52facdaa1e70cd2cfb012da","finding_id":"SEM:35ba4e16a3091036a41a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1b05f89b24790d65f1318b4499e5aa93ad57d2acc52facdaa1e70cd2cfb012da","finding_id":"SEM:677173384d7ce4d3ce55","kind":"role_evidence","resolution_reason":"Historical
@@ -271,12 +284,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1886],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9217","line":1888,"mapping_status":"MAPPED","ontology_id":"CHEBI:9217","preferred_term":"Spectinomycin
+    dihydrochloride pentahydrate"}],"identifier":"CHEBI:9217","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9217","ontology_label":"spectinomycin
+    hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"Spectinomycin
+    dihydrochloride pentahydrate","sssom_rows":[{"data_row":2630,"object_id":"CHEBI:9217","object_label":"spectinomycin
+    hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Spectinomycin_Dihydrochloride_Pentahydrate","synonym_count":3}'
   snapshot_sha256: 1b05f89b24790d65f1318b4499e5aa93ad57d2acc52facdaa1e70cd2cfb012da
 - evidence_id: ev-43000cd36a2ed26d
   kind: prior_review

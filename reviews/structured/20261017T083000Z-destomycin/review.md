@@ -89,7 +89,7 @@ Reassess prediction-only role support: Destomycin
 | ev-0dc4f2f3d3a02ea5 | docs/data/mapped_ingredients.csv; CSV lines=[877] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:destomycin","line":877,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:destomycin","preferred_term":"Destomycin","total_occurrences":"0"}] |
 | ev-8cb8bc29e34e86f7 | reports/yaml_record_review/Destomycin.md; &#96;data/ingredients/mapped/Destomycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:39; Completeness:61; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-514ffaf721c1f14d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[527,1695] | context_only | [{"current_record_sha256":"c6484b024f378fdc151435546b3b948874d58afba3f904eae16fa22fc5d1fd09","finding_id":"SEM:5d52382c214938f97d05","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c6484b024f378fdc151435546b3b948874d58afba3f904eae16fa22fc5d1fd09","finding_id":"SEM:1873d222dbc7941835a9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bd060e96c6404177 | data/ingredients/mapped/Destomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-bd060e96c6404177 | data/ingredients/mapped/Destomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[875],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:destomycin","line":877,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:destomycin","preferred_term":"Destomycin"}],"identifier":"kgmicrobe.compound:destomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:destomycin","ontology_label":"Destomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Destomycin","sssom_rows":[{"data_row":1020,"object_id":"kgmicrobe.compound:destomycin","object_label":"Destomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Destomycin","synonym_count":0} |
 | ev-5c1573c951202ed1 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-492133eb67984566] | context_only | Predecessor structured review finding f-492133eb67984566 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-df48357dc3bb634a
+  evidence_ids:
+  - ev-3b082874417f2f4a
+  - ev-a36b9795f407e34c
+  - ev-9cfa0557b72a937f
+  - ev-0dc4f2f3d3a02ea5
+  - ev-bd060e96c6404177
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-df48357dc3bb634a
+  evidence_ids:
+  - ev-3b082874417f2f4a
+  - ev-514ffaf721c1f14d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-df48357dc3bb634a
+  evidence_ids:
+  - ev-8cb8bc29e34e86f7
+  - ev-514ffaf721c1f14d
+  - ev-5c1573c951202ed1
 evidence:
 - evidence_id: ev-3b082874417f2f4a
   kind: record_content
   reference: data/ingredients/mapped/Destomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[875],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:destomycin","line":877,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:destomycin","preferred_term":"Destomycin"}],"identifier":"kgmicrobe.compound:destomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:destomycin","ontology_label":"Destomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Destomycin","sssom_rows":[{"data_row":1020,"object_id":"kgmicrobe.compound:destomycin","object_label":"Destomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Destomycin","synonym_count":0}'
   snapshot_sha256: c6484b024f378fdc151435546b3b948874d58afba3f904eae16fa22fc5d1fd09
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [875]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Destomycin; data-row positions=[1020]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1020,"object_id":"kgmicrobe.compound:destomycin","object_label":"Destomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Destomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[877]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:destomycin","line":877,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:destomycin","preferred_term":"Destomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[527,1695]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c6484b024f378fdc151435546b3b948874d58afba3f904eae16fa22fc5d1fd09","finding_id":"SEM:5d52382c214938f97d05","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c6484b024f378fdc151435546b3b948874d58afba3f904eae16fa22fc5d1fd09","finding_id":"SEM:1873d222dbc7941835a9","kind":"role_evidence","resolution_reason":"Historical
@@ -258,12 +271,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Destomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[875],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:destomycin","line":877,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:destomycin","preferred_term":"Destomycin"}],"identifier":"kgmicrobe.compound:destomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:destomycin","ontology_label":"Destomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Destomycin","sssom_rows":[{"data_row":1020,"object_id":"kgmicrobe.compound:destomycin","object_label":"Destomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Destomycin","synonym_count":0}'
   snapshot_sha256: c6484b024f378fdc151435546b3b948874d58afba3f904eae16fa22fc5d1fd09
 - evidence_id: ev-5c1573c951202ed1
   kind: prior_review

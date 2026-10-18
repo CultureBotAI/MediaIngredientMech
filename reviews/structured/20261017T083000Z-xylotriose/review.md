@@ -83,13 +83,13 @@ Reassess prediction-only role support: Xylotriose
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-1383a19e07e24615 | data/ingredients/mapped/Xylotriose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2072],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:149429","line":2074,"mapping_status":"MAPPED","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose"}],"identifier":"CHEBI:149429","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:149429","ontology_label":"xylotriose","ontology_source":"CHEBI"},"preferred_term":"Xylotriose","sssom_rows":[{"data_row":2945,"object_id":"CHEBI:149429","object_label":"xylotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotriose","synonym_count":0} |
-| ev-096ed26df2ec448a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2072] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d9628d337dcf566e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Xylotriose; data-row positions=[2945] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2945,"object_id":"CHEBI:149429","object_label":"xylotriose","other":"CAS:47592-59-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylotriose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-b0955eb8031dcb29 | docs/data/mapped_ingredients.csv; CSV lines=[2074] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:149429","line":2074,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose","total_occurrences":"0"}] |
+| ev-1383a19e07e24615 | data/ingredients/mapped/Xylotriose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2071],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:149429","line":2073,"mapping_status":"MAPPED","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose"}],"identifier":"CHEBI:149429","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:149429","ontology_label":"xylotriose","ontology_source":"CHEBI"},"preferred_term":"Xylotriose","sssom_rows":[{"data_row":2947,"object_id":"CHEBI:149429","object_label":"xylotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotriose","synonym_count":0} |
+| ev-096ed26df2ec448a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2071] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d9628d337dcf566e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Xylotriose; data-row positions=[2947] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2947,"object_id":"CHEBI:149429","object_label":"xylotriose","other":"CAS:47592-59-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylotriose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-b0955eb8031dcb29 | docs/data/mapped_ingredients.csv; CSV lines=[2073] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:149429","line":2073,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose","total_occurrences":"0"}] |
 | ev-80f5caefbde817f8 | reports/yaml_record_review/Xylotriose.md; &#96;data/ingredients/mapped/Xylotriose.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:32; Issues:39; Completeness:45; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6f6db618478062c0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1357,2050] | context_only | [{"current_record_sha256":"a1caaf842fb5fe5245ce724cd23f9b68b00026599641cc94dba47ecadd5b5ae0","finding_id":"SEM:9e0953c4d9e5e75c9d51","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a1caaf842fb5fe5245ce724cd23f9b68b00026599641cc94dba47ecadd5b5ae0","finding_id":"SEM:ecc43e2bfa5f2bf8a1d4","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-edd6ebb53a13d535 | data/ingredients/mapped/Xylotriose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-edd6ebb53a13d535 | data/ingredients/mapped/Xylotriose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2071],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:149429","line":2073,"mapping_status":"MAPPED","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose"}],"identifier":"CHEBI:149429","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:149429","ontology_label":"xylotriose","ontology_source":"CHEBI"},"preferred_term":"Xylotriose","sssom_rows":[{"data_row":2947,"object_id":"CHEBI:149429","object_label":"xylotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotriose","synonym_count":0} |
 | ev-2448457b9522540c | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-1394f1464f8d90cf] | context_only | Predecessor structured review finding f-1394f1464f8d90cf in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6ccbac03c3cba1f4
+  evidence_ids:
+  - ev-1383a19e07e24615
+  - ev-096ed26df2ec448a
+  - ev-d9628d337dcf566e
+  - ev-b0955eb8031dcb29
+  - ev-edd6ebb53a13d535
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6ccbac03c3cba1f4
+  evidence_ids:
+  - ev-1383a19e07e24615
+  - ev-6f6db618478062c0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6ccbac03c3cba1f4
+  evidence_ids:
+  - ev-80f5caefbde817f8
+  - ev-6f6db618478062c0
+  - ev-2448457b9522540c
 evidence:
 - evidence_id: ev-1383a19e07e24615
   kind: record_content
   reference: data/ingredients/mapped/Xylotriose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2072],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:149429","line":2074,"mapping_status":"MAPPED","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose"}],"identifier":"CHEBI:149429","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:149429","ontology_label":"xylotriose","ontology_source":"CHEBI"},"preferred_term":"Xylotriose","sssom_rows":[{"data_row":2945,"object_id":"CHEBI:149429","object_label":"xylotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotriose","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2071],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:149429","line":2073,"mapping_status":"MAPPED","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose"}],"identifier":"CHEBI:149429","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:149429","ontology_label":"xylotriose","ontology_source":"CHEBI"},"preferred_term":"Xylotriose","sssom_rows":[{"data_row":2947,"object_id":"CHEBI:149429","object_label":"xylotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotriose","synonym_count":0}'
   snapshot_sha256: a1caaf842fb5fe5245ce724cd23f9b68b00026599641cc94dba47ecadd5b5ae0
 - evidence_id: ev-096ed26df2ec448a
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2072]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2071]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-d9628d337dcf566e
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Xylotriose; data-row positions=[2945]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Xylotriose; data-row positions=[2947]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2945,"object_id":"CHEBI:149429","object_label":"xylotriose","other":"CAS:47592-59-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylotriose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2947,"object_id":"CHEBI:149429","object_label":"xylotriose","other":"CAS:47592-59-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylotriose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-b0955eb8031dcb29
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2074]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2073]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:149429","line":2074,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:149429","line":2073,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-80f5caefbde817f8
   kind: prior_review
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1357,2050]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a1caaf842fb5fe5245ce724cd23f9b68b00026599641cc94dba47ecadd5b5ae0","finding_id":"SEM:9e0953c4d9e5e75c9d51","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a1caaf842fb5fe5245ce724cd23f9b68b00026599641cc94dba47ecadd5b5ae0","finding_id":"SEM:ecc43e2bfa5f2bf8a1d4","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Xylotriose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2071],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:149429","line":2073,"mapping_status":"MAPPED","ontology_id":"CHEBI:149429","preferred_term":"Xylotriose"}],"identifier":"CHEBI:149429","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:149429","ontology_label":"xylotriose","ontology_source":"CHEBI"},"preferred_term":"Xylotriose","sssom_rows":[{"data_row":2947,"object_id":"CHEBI:149429","object_label":"xylotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotriose","synonym_count":0}'
   snapshot_sha256: a1caaf842fb5fe5245ce724cd23f9b68b00026599641cc94dba47ecadd5b5ae0
 - evidence_id: ev-2448457b9522540c
   kind: prior_review

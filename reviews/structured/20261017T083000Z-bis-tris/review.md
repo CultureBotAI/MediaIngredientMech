@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: Bis-tris
 | ev-9dd287f0e1be8659 | docs/data/mapped_ingredients.csv; CSV lines=[596] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:41250","line":596,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:41250","preferred_term":"Bis-Tris","total_occurrences":"4"}] |
 | ev-0083b8e92d76b452 | reports/yaml_record_review/Bis-tris.md; &#96;data/ingredients/mapped/Bis-tris.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:34; Completeness:49; Recommended Edits:55 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-faef97df8551296e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1629] | context_only | [{"current_record_sha256":"f879fd427c37bddb167a8c410d59b06bebb08b531a0b86617e75b516bf274d0a","finding_id":"SEM:655a76e4e9d88b6b7db5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c3a9f1fb8ad81b15 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Bis-tris.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-50574e55a5258db4
+  evidence_ids:
+  - ev-c17ddd3e31758c66
+  - ev-68caf0aa16f1855d
+  - ev-9376822b1a3df033
+  - ev-9dd287f0e1be8659
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-50574e55a5258db4
+  evidence_ids:
+  - ev-c17ddd3e31758c66
+  - ev-faef97df8551296e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-50574e55a5258db4
+  evidence_ids:
+  - ev-0083b8e92d76b452
+  - ev-faef97df8551296e
 evidence:
 - evidence_id: ev-c17ddd3e31758c66
   kind: record_content
   reference: data/ingredients/mapped/Bis-tris.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[594],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41250","line":596,"mapping_status":"MAPPED","ontology_id":"CHEBI:41250","preferred_term":"Bis-Tris"}],"identifier":"CHEBI:41250","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41250","ontology_label":"bis-tris","ontology_source":"CHEBI"},"preferred_term":"Bis-Tris","sssom_rows":[{"data_row":557,"object_id":"CHEBI:41250","object_label":"bis-tris","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bis-tris","synonym_count":7}'
   snapshot_sha256: f879fd427c37bddb167a8c410d59b06bebb08b531a0b86617e75b516bf274d0a
@@ -208,7 +218,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [594]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,7 +227,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Bis-tris; data-row positions=[557]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":557,"object_id":"CHEBI:41250","object_label":"bis-tris","other":"2,2-bis(hydroxymethyl)-2,2'',2''''-nitrilotriethanol|2-(bis(2-hydroxyethyl)amino)-2-(hydroxymethyl)-1,3-propanediol|2-[BIS-(2-HYDROXY-ETHYL)-AMINO]-2-HYDROXYMETHYL-PROPANE-1,3-DIOL|2-[bis(2-hydroxyethyl)amino]-2-(hydroxymethyl)propane-1,3-diol|BIS-2-HYDROXY-IMINO-TRIS-HYDROXYMETHYL-METHANE|bistris|CAS:6976-37-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Bis-tris","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -225,7 +235,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[596]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:41250","line":596,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:41250","preferred_term":"Bis-Tris","total_occurrences":"4"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -247,18 +257,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1629]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f879fd427c37bddb167a8c410d59b06bebb08b531a0b86617e75b516bf274d0a","finding_id":"SEM:655a76e4e9d88b6b7db5","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-c3a9f1fb8ad81b15
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Bis-tris.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-1fa94cc05817a501
@@ -318,7 +320,7 @@ assessments:
   - record-50574e55a5258db4
   evidence_ids:
   - ev-c17ddd3e31758c66
-  - ev-c3a9f1fb8ad81b15
+  - ev-faef97df8551296e
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -326,7 +328,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-c17ddd3e31758c66
-    - ev-c3a9f1fb8ad81b15
+    - ev-faef97df8551296e
 findings:
 - finding_id: rec-f-role-50574e55a5258db4
   issue_key: mim-reconciliation-role-support-50574e55a5258db4
@@ -342,7 +344,7 @@ findings:
   - record-50574e55a5258db4
   evidence_ids:
   - ev-c17ddd3e31758c66
-  - ev-c3a9f1fb8ad81b15
+  - ev-faef97df8551296e
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Bis-tris.yaml

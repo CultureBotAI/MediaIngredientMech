@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b9e47fdd6cf3a713
+  evidence_ids:
+  - ev-457cad6afdbf0292
+  - ev-e8a373a1fef710fd
+  - ev-e4f339d36a6b8de4
+  - ev-33d602525554d3cd
+  - ev-619046cc5ebfb316
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b9e47fdd6cf3a713
+  evidence_ids:
+  - ev-457cad6afdbf0292
+  - ev-f6419f956818f063
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b9e47fdd6cf3a713
+  evidence_ids:
+  - ev-d91e2a19f1f7a511
+  - ev-f6419f956818f063
+  - ev-88683affae894248
 evidence:
 - evidence_id: ev-457cad6afdbf0292
   kind: record_content
   reference: data/ingredients/mapped/Dl-dithiothreitol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[913],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18320","line":915,"mapping_status":"MAPPED","ontology_id":"CHEBI:18320","preferred_term":"DL-Dithiothreitol"}],"identifier":"CHEBI:18320","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":121,"edge_count":121,"occurrences":121},"occurrence_statistics":{"media_count":121,"total_occurrences":121},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:18320","ontology_label":"1,4-dithiothreitol","ontology_source":"CHEBI"},"preferred_term":"DL-Dithiothreitol","sssom_rows":[{"data_row":1076,"object_id":"CHEBI:18320","object_label":"1,4-dithiothreitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dl-dithiothreitol","synonym_count":22}'
   snapshot_sha256: ae26a9801b8dbb495ff4e03952847516a9724042c0cfdcab273e159de0e77f14
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [913]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Dl-dithiothreitol; data-row positions=[1076]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1076,"object_id":"CHEBI:18320","object_label":"1,4-dithiothreitol","other":"(R*,R*)-1,4-dimercapto-2,3-butanediol|Cleland''s
     reagent|DTL|DTT|Dithiotreitol|rac-Dithiothreitol|rel-(2R,3R)-1,4-disulfanylbutane-2,3-diol|Dithiothreitol|DL-Dithiothreitol
@@ -124,7 +137,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[915]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18320","line":915,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"121","ontology_id":"CHEBI:18320","preferred_term":"DL-Dithiothreitol","total_occurrences":"121"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -152,7 +165,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[549,1439]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ae26a9801b8dbb495ff4e03952847516a9724042c0cfdcab273e159de0e77f14","finding_id":"SEM:e5d26724ca3365cf06a9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ae26a9801b8dbb495ff4e03952847516a9724042c0cfdcab273e159de0e77f14","finding_id":"SEM:2918c3788f2912e77adb","kind":"role_evidence","resolution_reason":"Historical
@@ -162,12 +175,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Dl-dithiothreitol.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[913],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18320","line":915,"mapping_status":"MAPPED","ontology_id":"CHEBI:18320","preferred_term":"DL-Dithiothreitol"}],"identifier":"CHEBI:18320","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":121,"edge_count":121,"occurrences":121},"occurrence_statistics":{"media_count":121,"total_occurrences":121},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:18320","ontology_label":"1,4-dithiothreitol","ontology_source":"CHEBI"},"preferred_term":"DL-Dithiothreitol","sssom_rows":[{"data_row":1076,"object_id":"CHEBI:18320","object_label":"1,4-dithiothreitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dl-dithiothreitol","synonym_count":22}'
   snapshot_sha256: ae26a9801b8dbb495ff4e03952847516a9724042c0cfdcab273e159de0e77f14
 - evidence_id: ev-88683affae894248
   kind: prior_review

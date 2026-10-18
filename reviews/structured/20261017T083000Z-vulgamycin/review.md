@@ -83,13 +83,13 @@ Reassess prediction-only role support: Vulgamycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-fb9a245806e7cc40 | data/ingredients/mapped/Vulgamycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2054],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012306","line":2056,"mapping_status":"MAPPED","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin"}],"identifier":"mesh:C012306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012306","ontology_label":"enterocin","ontology_source":"MESH"},"preferred_term":"Vulgamycin","sssom_rows":[{"data_row":2919,"object_id":"mesh:C012306","object_label":"enterocin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vulgamycin","synonym_count":0} |
-| ev-829c13b5122a59c7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2054] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-88df70b9460dbf71 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vulgamycin; data-row positions=[2919] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2919,"object_id":"mesh:C012306","object_label":"enterocin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vulgamycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-226165023b0faa04 | docs/data/mapped_ingredients.csv; CSV lines=[2056] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C012306","line":2056,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin","total_occurrences":"0"}] |
+| ev-fb9a245806e7cc40 | data/ingredients/mapped/Vulgamycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2053],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012306","line":2055,"mapping_status":"MAPPED","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin"}],"identifier":"mesh:C012306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012306","ontology_label":"enterocin","ontology_source":"MESH"},"preferred_term":"Vulgamycin","sssom_rows":[{"data_row":2921,"object_id":"mesh:C012306","object_label":"enterocin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vulgamycin","synonym_count":0} |
+| ev-829c13b5122a59c7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2053] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-88df70b9460dbf71 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vulgamycin; data-row positions=[2921] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2921,"object_id":"mesh:C012306","object_label":"enterocin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vulgamycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-226165023b0faa04 | docs/data/mapped_ingredients.csv; CSV lines=[2055] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C012306","line":2055,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin","total_occurrences":"0"}] |
 | ev-ac90dac65b7e6a18 | reports/yaml_record_review/Vulgamycin.md; &#96;data/ingredients/mapped/Vulgamycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:30; Issues:38; Completeness:44; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b03a7ebadd8eb22c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1344,1443] | context_only | [{"current_record_sha256":"a602884e4b0ada6c719c9fb22b0e8163ead1943ff7c5abbd9ebdb4cfe2b50dbe","finding_id":"SEM:c8ec0784669fd69f4c78","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a602884e4b0ada6c719c9fb22b0e8163ead1943ff7c5abbd9ebdb4cfe2b50dbe","finding_id":"SEM:976c14b8ff4ae35efae1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-fe7a77fe757e49c4 | data/ingredients/mapped/Vulgamycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-fe7a77fe757e49c4 | data/ingredients/mapped/Vulgamycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2053],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012306","line":2055,"mapping_status":"MAPPED","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin"}],"identifier":"mesh:C012306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012306","ontology_label":"enterocin","ontology_source":"MESH"},"preferred_term":"Vulgamycin","sssom_rows":[{"data_row":2921,"object_id":"mesh:C012306","object_label":"enterocin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vulgamycin","synonym_count":0} |
 | ev-bbd3e57c2413b7b3 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-11ce4e4b85c2397a] | context_only | Predecessor structured review finding f-11ce4e4b85c2397a in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-98948e989daadbb5
+  evidence_ids:
+  - ev-fb9a245806e7cc40
+  - ev-829c13b5122a59c7
+  - ev-88df70b9460dbf71
+  - ev-226165023b0faa04
+  - ev-fe7a77fe757e49c4
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-98948e989daadbb5
+  evidence_ids:
+  - ev-fb9a245806e7cc40
+  - ev-b03a7ebadd8eb22c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-98948e989daadbb5
+  evidence_ids:
+  - ev-ac90dac65b7e6a18
+  - ev-b03a7ebadd8eb22c
+  - ev-bbd3e57c2413b7b3
 evidence:
 - evidence_id: ev-fb9a245806e7cc40
   kind: record_content
   reference: data/ingredients/mapped/Vulgamycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2054],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012306","line":2056,"mapping_status":"MAPPED","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin"}],"identifier":"mesh:C012306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012306","ontology_label":"enterocin","ontology_source":"MESH"},"preferred_term":"Vulgamycin","sssom_rows":[{"data_row":2919,"object_id":"mesh:C012306","object_label":"enterocin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vulgamycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2053],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012306","line":2055,"mapping_status":"MAPPED","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin"}],"identifier":"mesh:C012306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012306","ontology_label":"enterocin","ontology_source":"MESH"},"preferred_term":"Vulgamycin","sssom_rows":[{"data_row":2921,"object_id":"mesh:C012306","object_label":"enterocin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vulgamycin","synonym_count":0}'
   snapshot_sha256: a602884e4b0ada6c719c9fb22b0e8163ead1943ff7c5abbd9ebdb4cfe2b50dbe
 - evidence_id: ev-829c13b5122a59c7
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2054]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2053]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-88df70b9460dbf71
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Vulgamycin; data-row positions=[2919]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Vulgamycin; data-row positions=[2921]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2919,"object_id":"mesh:C012306","object_label":"enterocin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vulgamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2921,"object_id":"mesh:C012306","object_label":"enterocin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vulgamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-226165023b0faa04
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2056]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2055]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C012306","line":2056,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C012306","line":2055,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ac90dac65b7e6a18
   kind: prior_review
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1344,1443]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a602884e4b0ada6c719c9fb22b0e8163ead1943ff7c5abbd9ebdb4cfe2b50dbe","finding_id":"SEM:c8ec0784669fd69f4c78","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a602884e4b0ada6c719c9fb22b0e8163ead1943ff7c5abbd9ebdb4cfe2b50dbe","finding_id":"SEM:976c14b8ff4ae35efae1","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Vulgamycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2053],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C012306","line":2055,"mapping_status":"MAPPED","ontology_id":"mesh:C012306","preferred_term":"Vulgamycin"}],"identifier":"mesh:C012306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C012306","ontology_label":"enterocin","ontology_source":"MESH"},"preferred_term":"Vulgamycin","sssom_rows":[{"data_row":2921,"object_id":"mesh:C012306","object_label":"enterocin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vulgamycin","synonym_count":0}'
   snapshot_sha256: a602884e4b0ada6c719c9fb22b0e8163ead1943ff7c5abbd9ebdb4cfe2b50dbe
 - evidence_id: ev-bbd3e57c2413b7b3
   kind: prior_review

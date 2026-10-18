@@ -89,7 +89,7 @@ Reassess prediction-only role support: D-Mannitol
 | ev-1bcd83ac685bb904 | docs/data/mapped_ingredients.csv; CSV lines=[841] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16899","line":841,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"35","ontology_id":"CHEBI:16899","preferred_term":"D-Mannitol","total_occurrences":"35"}] |
 | ev-36942a00e5751d01 | reports/yaml_record_review/D-mannitol.md; &#96;data/ingredients/mapped/D-mannitol.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:41; Completeness:57; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-24fc25659d374f9c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[503,2024] | context_only | [{"current_record_sha256":"0a04714750dac2e0bec56ab4ee0ba62d29cb4e41cd90fa3f1cacecdcc31c48d9","finding_id":"SEM:64c8a451ffcf4152110d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0a04714750dac2e0bec56ab4ee0ba62d29cb4e41cd90fa3f1cacecdcc31c48d9","finding_id":"SEM:404e4390062ee8bb6905","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-1afd9e277bebe002 | data/ingredients/mapped/D-mannitol.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-1afd9e277bebe002 | data/ingredients/mapped/D-mannitol.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[839],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16899","line":841,"mapping_status":"MAPPED","ontology_id":"CHEBI:16899","preferred_term":"D-Mannitol"}],"identifier":"CHEBI:16899","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":35,"edge_count":35,"occurrences":35},"occurrence_statistics":{"media_count":35,"total_occurrences":35},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16899","ontology_label":"D-mannitol","ontology_source":"CHEBI"},"preferred_term":"D-Mannitol","sssom_rows":[{"data_row":947,"object_id":"CHEBI:16899","object_label":"D-mannitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-mannitol","synonym_count":11} |
 | ev-0cd663d1f60cf720 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-6adff089a15d18d0] | context_only | Predecessor structured review finding f-6adff089a15d18d0 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c94d146492f8fc91
+  evidence_ids:
+  - ev-04529ef01f4ed84b
+  - ev-05a39bd14434184d
+  - ev-1edecff34e26ccb2
+  - ev-1bcd83ac685bb904
+  - ev-1afd9e277bebe002
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c94d146492f8fc91
+  evidence_ids:
+  - ev-04529ef01f4ed84b
+  - ev-24fc25659d374f9c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c94d146492f8fc91
+  evidence_ids:
+  - ev-36942a00e5751d01
+  - ev-24fc25659d374f9c
+  - ev-0cd663d1f60cf720
 evidence:
 - evidence_id: ev-04529ef01f4ed84b
   kind: record_content
   reference: data/ingredients/mapped/D-mannitol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[839],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16899","line":841,"mapping_status":"MAPPED","ontology_id":"CHEBI:16899","preferred_term":"D-Mannitol"}],"identifier":"CHEBI:16899","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":35,"edge_count":35,"occurrences":35},"occurrence_statistics":{"media_count":35,"total_occurrences":35},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16899","ontology_label":"D-mannitol","ontology_source":"CHEBI"},"preferred_term":"D-Mannitol","sssom_rows":[{"data_row":947,"object_id":"CHEBI:16899","object_label":"D-mannitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-mannitol","synonym_count":11}'
   snapshot_sha256: 0a04714750dac2e0bec56ab4ee0ba62d29cb4e41cd90fa3f1cacecdcc31c48d9
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [839]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-mannitol; data-row positions=[947]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":947,"object_id":"CHEBI:16899","object_label":"D-mannitol","other":"(2R,3R,4R,5R)-Hexane-1,2,3,4,5,6-hexaol|(2R,3R,4R,5R)-hexane-1,2,3,4,5,6-hexol|D-(-)-Mannitol|E
     421|E-421|E421|Osmitrol|dulcite|manna sugar|mannite|Mannitol|CAS:69-65-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-mannitol","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[841]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16899","line":841,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"35","ontology_id":"CHEBI:16899","preferred_term":"D-Mannitol","total_occurrences":"35"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[503,2024]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0a04714750dac2e0bec56ab4ee0ba62d29cb4e41cd90fa3f1cacecdcc31c48d9","finding_id":"SEM:64c8a451ffcf4152110d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0a04714750dac2e0bec56ab4ee0ba62d29cb4e41cd90fa3f1cacecdcc31c48d9","finding_id":"SEM:404e4390062ee8bb6905","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-mannitol.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[839],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16899","line":841,"mapping_status":"MAPPED","ontology_id":"CHEBI:16899","preferred_term":"D-Mannitol"}],"identifier":"CHEBI:16899","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":35,"edge_count":35,"occurrences":35},"occurrence_statistics":{"media_count":35,"total_occurrences":35},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16899","ontology_label":"D-mannitol","ontology_source":"CHEBI"},"preferred_term":"D-Mannitol","sssom_rows":[{"data_row":947,"object_id":"CHEBI:16899","object_label":"D-mannitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-mannitol","synonym_count":11}'
   snapshot_sha256: 0a04714750dac2e0bec56ab4ee0ba62d29cb4e41cd90fa3f1cacecdcc31c48d9
 - evidence_id: ev-0cd663d1f60cf720
   kind: prior_review

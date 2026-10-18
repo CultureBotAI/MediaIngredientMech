@@ -83,13 +83,13 @@ Reassess prediction-only role support: Polymyxin B sulfate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-1c0a839f92c33d20 | data/ingredients/mapped/Polymyxin_B_Sulfate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1682],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8310","line":1684,"mapping_status":"MAPPED","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin B sulfate"}],"identifier":"CHEBI:8310","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8310","ontology_label":"Polymyxin B sulfate","ontology_source":"CHEBI"},"preferred_term":"Polymyxin B sulfate","sssom_rows":[{"data_row":2296,"object_id":"CHEBI:8310","object_label":"Polymyxin B sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polymyxin_B_Sulfate","synonym_count":0} |
-| ev-310b3508ec4d83fa | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1682] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-db5c6b79a35a102e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Polymyxin_B_Sulfate; data-row positions=[2296] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2296,"object_id":"CHEBI:8310","object_label":"Polymyxin B sulfate","other":"CAS:1405-20-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Polymyxin_B_Sulfate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-7fcc93d0927ecc73 | docs/data/mapped_ingredients.csv; CSV lines=[1684] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:8310","line":1684,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin B sulfate","total_occurrences":"1"}] |
+| ev-1c0a839f92c33d20 | data/ingredients/mapped/Polymyxin_B_Sulfate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1681],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8310","line":1683,"mapping_status":"MAPPED","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin B sulfate"}],"identifier":"CHEBI:8310","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8310","ontology_label":"Polymyxin B sulfate","ontology_source":"CHEBI"},"preferred_term":"Polymyxin B sulfate","sssom_rows":[{"data_row":2298,"object_id":"CHEBI:8310","object_label":"Polymyxin B sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polymyxin_B_Sulfate","synonym_count":0} |
+| ev-310b3508ec4d83fa | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1681] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-db5c6b79a35a102e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Polymyxin_B_Sulfate; data-row positions=[2298] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2298,"object_id":"CHEBI:8310","object_label":"Polymyxin B sulfate","other":"CAS:1405-20-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Polymyxin_B_Sulfate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-7fcc93d0927ecc73 | docs/data/mapped_ingredients.csv; CSV lines=[1683] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:8310","line":1683,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin B sulfate","total_occurrences":"1"}] |
 | ev-9dc442bb40458774 | reports/yaml_record_review/Polymyxin_B_Sulfate.md; &#96;data/ingredients/mapped/Polymyxin_B_Sulfate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-77c1000e93bbdb9e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1129,2088] | context_only | [{"current_record_sha256":"4bd186e59643cdb4ce53535a0b84f14714eefdaa42e6336c3ee316fa4e9ec3a2","finding_id":"SEM:a855517dce58535d466e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4bd186e59643cdb4ce53535a0b84f14714eefdaa42e6336c3ee316fa4e9ec3a2","finding_id":"SEM:5bede96b6894325bbd98","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b74dd79ed4194a45 | data/ingredients/mapped/Polymyxin_B_Sulfate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-b74dd79ed4194a45 | data/ingredients/mapped/Polymyxin_B_Sulfate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1681],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8310","line":1683,"mapping_status":"MAPPED","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin B sulfate"}],"identifier":"CHEBI:8310","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8310","ontology_label":"Polymyxin B sulfate","ontology_source":"CHEBI"},"preferred_term":"Polymyxin B sulfate","sssom_rows":[{"data_row":2298,"object_id":"CHEBI:8310","object_label":"Polymyxin B sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polymyxin_B_Sulfate","synonym_count":0} |
 | ev-2fa1a4f22e7b3602 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-a3070cd3cab319f3] | context_only | Predecessor structured review finding f-a3070cd3cab319f3 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f2311b09ab4ea41c
+  evidence_ids:
+  - ev-1c0a839f92c33d20
+  - ev-310b3508ec4d83fa
+  - ev-db5c6b79a35a102e
+  - ev-7fcc93d0927ecc73
+  - ev-b74dd79ed4194a45
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f2311b09ab4ea41c
+  evidence_ids:
+  - ev-1c0a839f92c33d20
+  - ev-77c1000e93bbdb9e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f2311b09ab4ea41c
+  evidence_ids:
+  - ev-9dc442bb40458774
+  - ev-77c1000e93bbdb9e
+  - ev-2fa1a4f22e7b3602
 evidence:
 - evidence_id: ev-1c0a839f92c33d20
   kind: record_content
   reference: data/ingredients/mapped/Polymyxin_B_Sulfate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1682],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8310","line":1684,"mapping_status":"MAPPED","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1681],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8310","line":1683,"mapping_status":"MAPPED","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin
     B sulfate"}],"identifier":"CHEBI:8310","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8310","ontology_label":"Polymyxin
-    B sulfate","ontology_source":"CHEBI"},"preferred_term":"Polymyxin B sulfate","sssom_rows":[{"data_row":2296,"object_id":"CHEBI:8310","object_label":"Polymyxin
+    B sulfate","ontology_source":"CHEBI"},"preferred_term":"Polymyxin B sulfate","sssom_rows":[{"data_row":2298,"object_id":"CHEBI:8310","object_label":"Polymyxin
     B sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polymyxin_B_Sulfate","synonym_count":0}'
   snapshot_sha256: 4bd186e59643cdb4ce53535a0b84f14714eefdaa42e6336c3ee316fa4e9ec3a2
 - evidence_id: ev-310b3508ec4d83fa
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1682]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1681]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-db5c6b79a35a102e
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Polymyxin_B_Sulfate; data-row positions=[2296]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Polymyxin_B_Sulfate; data-row positions=[2298]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2296,"object_id":"CHEBI:8310","object_label":"Polymyxin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2298,"object_id":"CHEBI:8310","object_label":"Polymyxin
     B sulfate","other":"CAS:1405-20-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Polymyxin_B_Sulfate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-7fcc93d0927ecc73
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1684]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1683]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:8310","line":1684,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:8310","line":1683,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin
     B sulfate","total_occurrences":"1"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-9dc442bb40458774
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1129,2088]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4bd186e59643cdb4ce53535a0b84f14714eefdaa42e6336c3ee316fa4e9ec3a2","finding_id":"SEM:a855517dce58535d466e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4bd186e59643cdb4ce53535a0b84f14714eefdaa42e6336c3ee316fa4e9ec3a2","finding_id":"SEM:5bede96b6894325bbd98","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Polymyxin_B_Sulfate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1681],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8310","line":1683,"mapping_status":"MAPPED","ontology_id":"CHEBI:8310","preferred_term":"Polymyxin
+    B sulfate"}],"identifier":"CHEBI:8310","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8310","ontology_label":"Polymyxin
+    B sulfate","ontology_source":"CHEBI"},"preferred_term":"Polymyxin B sulfate","sssom_rows":[{"data_row":2298,"object_id":"CHEBI:8310","object_label":"Polymyxin
+    B sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polymyxin_B_Sulfate","synonym_count":0}'
   snapshot_sha256: 4bd186e59643cdb4ce53535a0b84f14714eefdaa42e6336c3ee316fa4e9ec3a2
 - evidence_id: ev-2fa1a4f22e7b3602
   kind: prior_review

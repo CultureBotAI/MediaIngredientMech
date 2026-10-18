@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: Beta-nad
 | ev-5a7b951a57ac60f8 | docs/data/mapped_ingredients.csv; CSV lines=[582] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15846","line":582,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"17","ontology_id":"CHEBI:15846","preferred_term":"beta-NAD","total_occurrences":"17"}] |
 | ev-938e5c0260ad2d60 | reports/yaml_record_review/Beta-nad.md; &#96;data/ingredients/mapped/Beta-nad.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:35; Completeness:56; Recommended Edits:65 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a619175a50be1b4d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[310,1630] | context_only | [{"current_record_sha256":"0bd44bae290a7c70cac9a511ccd66088d2322ced90006f0dd02656e725c8652e","finding_id":"SEM:8671013fbe09ccdfeb11","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0bd44bae290a7c70cac9a511ccd66088d2322ced90006f0dd02656e725c8652e","finding_id":"SEM:0b640ed902372ffa43ff","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8017eeb531bc00ab | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Beta-nad.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9b2dcfd7a3735c04
+  evidence_ids:
+  - ev-607cdd7e546c791a
+  - ev-f6a2bb29c66fc88d
+  - ev-a22df8ae46d59a41
+  - ev-5a7b951a57ac60f8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9b2dcfd7a3735c04
+  evidence_ids:
+  - ev-607cdd7e546c791a
+  - ev-a619175a50be1b4d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9b2dcfd7a3735c04
+  evidence_ids:
+  - ev-938e5c0260ad2d60
+  - ev-a619175a50be1b4d
 evidence:
 - evidence_id: ev-607cdd7e546c791a
   kind: record_content
   reference: data/ingredients/mapped/Beta-nad.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[580],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15846","line":582,"mapping_status":"MAPPED","ontology_id":"CHEBI:15846","preferred_term":"beta-NAD"}],"identifier":"CHEBI:15846","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15846","ontology_label":"NAD(+)","ontology_source":"CHEBI"},"preferred_term":"beta-NAD","sssom_rows":[{"data_row":534,"object_id":"CHEBI:15846","object_label":"NAD(+)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beta-nad","synonym_count":11}'
   snapshot_sha256: 0bd44bae290a7c70cac9a511ccd66088d2322ced90006f0dd02656e725c8652e
@@ -208,7 +218,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [580]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,7 +227,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Beta-nad; data-row positions=[534]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":534,"object_id":"CHEBI:15846","object_label":"NAD(+)","other":"\u00df-NAD|\u00df-nicotinamide
     adenine dinucleotide|NAD+|Nicotinamide adenine dinucleotide|adenosine 5''-{3-[1-(3-carbamoylpyridinio)-1,4-anhydro-D-ribitol-5-yl]
@@ -227,7 +237,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[582]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15846","line":582,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"17","ontology_id":"CHEBI:15846","preferred_term":"beta-NAD","total_occurrences":"17"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,19 +260,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[310,1630]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0bd44bae290a7c70cac9a511ccd66088d2322ced90006f0dd02656e725c8652e","finding_id":"SEM:8671013fbe09ccdfeb11","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0bd44bae290a7c70cac9a511ccd66088d2322ced90006f0dd02656e725c8652e","finding_id":"SEM:0b640ed902372ffa43ff","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-8017eeb531bc00ab
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Beta-nad.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-cb6c2ebceebb87bc
@@ -330,7 +332,7 @@ assessments:
   - record-9b2dcfd7a3735c04
   evidence_ids:
   - ev-607cdd7e546c791a
-  - ev-8017eeb531bc00ab
+  - ev-a619175a50be1b4d
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -338,7 +340,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-607cdd7e546c791a
-    - ev-8017eeb531bc00ab
+    - ev-a619175a50be1b4d
 findings:
 - finding_id: rec-f-role-9b2dcfd7a3735c04
   issue_key: mim-reconciliation-role-support-9b2dcfd7a3735c04
@@ -354,7 +356,7 @@ findings:
   - record-9b2dcfd7a3735c04
   evidence_ids:
   - ev-607cdd7e546c791a
-  - ev-8017eeb531bc00ab
+  - ev-a619175a50be1b4d
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Beta-nad.yaml

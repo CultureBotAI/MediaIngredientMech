@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sodium dithionite
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-8ce30abb0111e4db | data/ingredients/mapped/Sodium_Dithionite.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:66870","line":1834,"mapping_status":"MAPPED","ontology_id":"CHEBI:66870","preferred_term":"Sodium dithionite"}],"identifier":"CHEBI:66870","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":47,"edge_count":47,"occurrences":47},"occurrence_statistics":{"media_count":47,"total_occurrences":47},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:66870","ontology_label":"sodium dithionite","ontology_source":"CHEBI"},"preferred_term":"Sodium dithionite","sssom_rows":[{"data_row":2555,"object_id":"CHEBI:66870","object_label":"sodium dithionite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dithionite","synonym_count":12} |
-| ev-d22d1a7042a2ab2a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1832] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-f238d0502cd52248 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Dithionite; data-row positions=[2555] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2555,"object_id":"CHEBI:66870","object_label":"sodium dithionite","other":"disodium dithionite&#124;sodium hydrosulfite&#124;sodium sulfoxylate&#124;Na2S2O4&#124;5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl beta-D-glucopyranosiduronic acid&#124;Scutellarein 7-O-beta-D-glucuronide&#124;Scutellarein-7-O-beta-D-glucuronide&#124;Scutellarein-7-glucuronide&#124;Scutellarein-7beta-D-glucuronide&#124;Scutellarein-7beta-D-glucuronoside&#124;CAS:7775-14-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Dithionite","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-2035417718b98ccd | docs/data/mapped_ingredients.csv; CSV lines=[1834] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:66870","line":1834,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"47","ontology_id":"CHEBI:66870","preferred_term":"Sodium dithionite","total_occurrences":"47"}] |
+| ev-8ce30abb0111e4db | data/ingredients/mapped/Sodium_Dithionite.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1831],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:66870","line":1833,"mapping_status":"MAPPED","ontology_id":"CHEBI:66870","preferred_term":"Sodium dithionite"}],"identifier":"CHEBI:66870","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":47,"edge_count":47,"occurrences":47},"occurrence_statistics":{"media_count":47,"total_occurrences":47},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:66870","ontology_label":"sodium dithionite","ontology_source":"CHEBI"},"preferred_term":"Sodium dithionite","sssom_rows":[{"data_row":2557,"object_id":"CHEBI:66870","object_label":"sodium dithionite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dithionite","synonym_count":12} |
+| ev-d22d1a7042a2ab2a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1831] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-f238d0502cd52248 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Dithionite; data-row positions=[2557] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2557,"object_id":"CHEBI:66870","object_label":"sodium dithionite","other":"disodium dithionite&#124;sodium hydrosulfite&#124;sodium sulfoxylate&#124;Na2S2O4&#124;5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl beta-D-glucopyranosiduronic acid&#124;Scutellarein 7-O-beta-D-glucuronide&#124;Scutellarein-7-O-beta-D-glucuronide&#124;Scutellarein-7-glucuronide&#124;Scutellarein-7beta-D-glucuronide&#124;Scutellarein-7beta-D-glucuronoside&#124;CAS:7775-14-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Dithionite","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-2035417718b98ccd | docs/data/mapped_ingredients.csv; CSV lines=[1833] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:66870","line":1833,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"47","ontology_id":"CHEBI:66870","preferred_term":"Sodium dithionite","total_occurrences":"47"}] |
 | ev-578826ff3af0441f | reports/yaml_record_review/Sodium_Dithionite.md; &#96;data/ingredients/mapped/Sodium_Dithionite.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-43587df54f6519cf | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1214,1440] | context_only | [{"current_record_sha256":"5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1","finding_id":"SEM:1a47f43bf3667f7f8ad6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1","finding_id":"SEM:0fbfc83e7940fe2a3c31","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f28f7839db11de6b | data/ingredients/mapped/Sodium_Dithionite.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}] |
+| ev-f28f7839db11de6b | data/ingredients/mapped/Sodium_Dithionite.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1831],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:66870","line":1833,"mapping_status":"MAPPED","ontology_id":"CHEBI:66870","preferred_term":"Sodium dithionite"}],"identifier":"CHEBI:66870","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":47,"edge_count":47,"occurrences":47},"occurrence_statistics":{"media_count":47,"total_occurrences":47},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:66870","ontology_label":"sodium dithionite","ontology_source":"CHEBI"},"preferred_term":"Sodium dithionite","sssom_rows":[{"data_row":2557,"object_id":"CHEBI:66870","object_label":"sodium dithionite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dithionite","synonym_count":12} |
 | ev-d0e57b9d41635972 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-ee1d5c0369639ff7] | context_only | Predecessor structured review finding f-ee1d5c0369639ff7 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c6f148b69631c028
+  evidence_ids:
+  - ev-8ce30abb0111e4db
+  - ev-d22d1a7042a2ab2a
+  - ev-f238d0502cd52248
+  - ev-2035417718b98ccd
+  - ev-f28f7839db11de6b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c6f148b69631c028
+  evidence_ids:
+  - ev-8ce30abb0111e4db
+  - ev-43587df54f6519cf
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c6f148b69631c028
+  evidence_ids:
+  - ev-578826ff3af0441f
+  - ev-43587df54f6519cf
+  - ev-d0e57b9d41635972
 evidence:
 - evidence_id: ev-8ce30abb0111e4db
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Dithionite.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:66870","line":1834,"mapping_status":"MAPPED","ontology_id":"CHEBI:66870","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1831],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:66870","line":1833,"mapping_status":"MAPPED","ontology_id":"CHEBI:66870","preferred_term":"Sodium
     dithionite"}],"identifier":"CHEBI:66870","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":47,"edge_count":47,"occurrences":47},"occurrence_statistics":{"media_count":47,"total_occurrences":47},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:66870","ontology_label":"sodium
-    dithionite","ontology_source":"CHEBI"},"preferred_term":"Sodium dithionite","sssom_rows":[{"data_row":2555,"object_id":"CHEBI:66870","object_label":"sodium
+    dithionite","ontology_source":"CHEBI"},"preferred_term":"Sodium dithionite","sssom_rows":[{"data_row":2557,"object_id":"CHEBI:66870","object_label":"sodium
     dithionite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dithionite","synonym_count":12}'
   snapshot_sha256: 5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1
 - evidence_id: ev-d22d1a7042a2ab2a
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1832]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1831]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,20 +233,20 @@ evidence:
 - evidence_id: ev-f238d0502cd52248
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_Dithionite; data-row positions=[2555]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_Dithionite; data-row positions=[2557]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2555,"object_id":"CHEBI:66870","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2557,"object_id":"CHEBI:66870","object_label":"sodium
     dithionite","other":"disodium dithionite|sodium hydrosulfite|sodium sulfoxylate|Na2S2O4|5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl
     beta-D-glucopyranosiduronic acid|Scutellarein 7-O-beta-D-glucuronide|Scutellarein-7-O-beta-D-glucuronide|Scutellarein-7-glucuronide|Scutellarein-7beta-D-glucuronide|Scutellarein-7beta-D-glucuronoside|CAS:7775-14-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Dithionite","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-2035417718b98ccd
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1834]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1833]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:66870","line":1834,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"47","ontology_id":"CHEBI:66870","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:66870","line":1833,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"47","ontology_id":"CHEBI:66870","preferred_term":"Sodium
     dithionite","total_occurrences":"47"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-578826ff3af0441f
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1214,1440]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1","finding_id":"SEM:1a47f43bf3667f7f8ad6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1","finding_id":"SEM:0fbfc83e7940fe2a3c31","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Dithionite.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1831],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:66870","line":1833,"mapping_status":"MAPPED","ontology_id":"CHEBI:66870","preferred_term":"Sodium
+    dithionite"}],"identifier":"CHEBI:66870","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":47,"edge_count":47,"occurrences":47},"occurrence_statistics":{"media_count":47,"total_occurrences":47},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:66870","ontology_label":"sodium
+    dithionite","ontology_source":"CHEBI"},"preferred_term":"Sodium dithionite","sssom_rows":[{"data_row":2557,"object_id":"CHEBI:66870","object_label":"sodium
+    dithionite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dithionite","synonym_count":12}'
   snapshot_sha256: 5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1
 - evidence_id: ev-d0e57b9d41635972
   kind: prior_review

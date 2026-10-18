@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: Bicyclomycin
 | ev-edc4b9d9be3c58cf | docs/data/mapped_ingredients.csv; CSV lines=[589] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:60584","line":589,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:60584","preferred_term":"Bicyclomycin","total_occurrences":"0"}] |
 | ev-2486e0f779d7c982 | reports/yaml_record_review/Bicyclomycin.md; &#96;data/ingredients/mapped/Bicyclomycin.yaml&#96;:2; Verdict:4; Identity:9; Validation:21; Evidence:31; Completeness:46; Recommended Edits:52 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-32ce5cad866e4a81 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1721] | context_only | [{"current_record_sha256":"e9a5899185c8df392ff48fdd7c6c3ceac38cef82cb0d3b57fb2256b854835041","finding_id":"SEM:5bf204570b6a20267544","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-821d847cae2379d3 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Bicyclomycin.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7ffee7a6904dffb5
+  evidence_ids:
+  - ev-6dd8abde6170c91c
+  - ev-dd204405afa5a770
+  - ev-e9c6f7170b091dd5
+  - ev-edc4b9d9be3c58cf
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7ffee7a6904dffb5
+  evidence_ids:
+  - ev-6dd8abde6170c91c
+  - ev-32ce5cad866e4a81
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7ffee7a6904dffb5
+  evidence_ids:
+  - ev-2486e0f779d7c982
+  - ev-32ce5cad866e4a81
 evidence:
 - evidence_id: ev-6dd8abde6170c91c
   kind: record_content
   reference: data/ingredients/mapped/Bicyclomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[587],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:60584","line":589,"mapping_status":"MAPPED","ontology_id":"CHEBI:60584","preferred_term":"Bicyclomycin"}],"identifier":"CHEBI:60584","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:60584","ontology_label":"bicozamycin","ontology_source":"CHEBI"},"preferred_term":"Bicyclomycin","sssom_rows":[{"data_row":544,"object_id":"CHEBI:60584","object_label":"bicozamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bicyclomycin","synonym_count":0}'
   snapshot_sha256: e9a5899185c8df392ff48fdd7c6c3ceac38cef82cb0d3b57fb2256b854835041
@@ -208,7 +218,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [587]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,7 +227,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Bicyclomycin; data-row positions=[544]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":544,"object_id":"CHEBI:60584","object_label":"bicozamycin","other":"CAS:38129-37-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Bicyclomycin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -225,7 +235,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[589]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:60584","line":589,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:60584","preferred_term":"Bicyclomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -247,18 +257,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1721]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e9a5899185c8df392ff48fdd7c6c3ceac38cef82cb0d3b57fb2256b854835041","finding_id":"SEM:5bf204570b6a20267544","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-821d847cae2379d3
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Bicyclomycin.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-11576896426b5a0c
@@ -318,7 +320,7 @@ assessments:
   - record-7ffee7a6904dffb5
   evidence_ids:
   - ev-6dd8abde6170c91c
-  - ev-821d847cae2379d3
+  - ev-32ce5cad866e4a81
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -326,7 +328,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-6dd8abde6170c91c
-    - ev-821d847cae2379d3
+    - ev-32ce5cad866e4a81
 findings:
 - finding_id: rec-f-role-7ffee7a6904dffb5
   issue_key: mim-reconciliation-role-support-7ffee7a6904dffb5
@@ -342,7 +344,7 @@ findings:
   - record-7ffee7a6904dffb5
   evidence_ids:
   - ev-6dd8abde6170c91c
-  - ev-821d847cae2379d3
+  - ev-32ce5cad866e4a81
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Bicyclomycin.yaml

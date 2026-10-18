@@ -89,7 +89,7 @@ Reassess prediction-only role support: 1-Kestose
 | ev-700cdee52554a6f1 | docs/data/mapped_ingredients.csv; CSV lines=[285] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16885","line":285,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16885","preferred_term":"1-Kestose","total_occurrences":"0"}] |
 | ev-90d64f718c3e330b | reports/yaml_record_review/1-Kestose.md; &#96;data/ingredients/mapped/1-Kestose.yaml&#96;:2; Verdict:4; Identity:12; Validation:32; Evidence:55; Completeness:85; Recommended Edits:97 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e3c0912d3962cebb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[12,1432] | context_only | [{"current_record_sha256":"c3cd932ad6e3dd6b446c499cb8c69bca008dd05bf21dc30acc80368fe1b318e8","finding_id":"SEM:1758aba761e0ac98d450","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c3cd932ad6e3dd6b446c499cb8c69bca008dd05bf21dc30acc80368fe1b318e8","finding_id":"SEM:ad313d4eabb6a03b4ba5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e5fb7db00b278bda | data/ingredients/mapped/1-Kestose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-e5fb7db00b278bda | data/ingredients/mapped/1-Kestose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[283],"raw_equal":false},"docs_rows":[{"identifier":"CHEBI:16885","line":285,"mapping_status":"MAPPED","ontology_id":"CHEBI:16885","preferred_term":"1-Kestose"}],"identifier":"CHEBI:16885","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16885","ontology_label":"1-kestose","ontology_source":"CHEBI"},"preferred_term":"1-Kestose","sssom_rows":[{"data_row":11,"object_id":"CHEBI:16885","object_label":"1-kestose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1-Kestose","synonym_count":1} |
 | ev-a549918f8ba6c443 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-9445b49fdf863d47] | context_only | Predecessor structured review finding f-9445b49fdf863d47 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-452ec4d4dc2579ca
+  evidence_ids:
+  - ev-212bf32626671339
+  - ev-7fe430029259d4b0
+  - ev-3318271f6f1a8f4a
+  - ev-700cdee52554a6f1
+  - ev-e5fb7db00b278bda
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-452ec4d4dc2579ca
+  evidence_ids:
+  - ev-212bf32626671339
+  - ev-e3c0912d3962cebb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-452ec4d4dc2579ca
+  evidence_ids:
+  - ev-90d64f718c3e330b
+  - ev-e3c0912d3962cebb
+  - ev-a549918f8ba6c443
 evidence:
 - evidence_id: ev-212bf32626671339
   kind: record_content
   reference: data/ingredients/mapped/1-Kestose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[283],"raw_equal":false},"docs_rows":[{"identifier":"CHEBI:16885","line":285,"mapping_status":"MAPPED","ontology_id":"CHEBI:16885","preferred_term":"1-Kestose"}],"identifier":"CHEBI:16885","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16885","ontology_label":"1-kestose","ontology_source":"CHEBI"},"preferred_term":"1-Kestose","sssom_rows":[{"data_row":11,"object_id":"CHEBI:16885","object_label":"1-kestose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1-Kestose","synonym_count":1}'
   snapshot_sha256: c3cd932ad6e3dd6b446c499cb8c69bca008dd05bf21dc30acc80368fe1b318e8
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [283]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=False.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:1-Kestose; data-row positions=[11]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":11,"object_id":"CHEBI:16885","object_label":"1-kestose","other":"beta-D-fructofuranosyl-(2->1)-beta-D-fructofuranosyl
     alpha-D-glucopyranoside|CAS:470-69-9","predicate_id":"skos:exactMatch","subject_id":"MIM:1-Kestose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[285]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16885","line":285,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16885","preferred_term":"1-Kestose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[12,1432]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c3cd932ad6e3dd6b446c499cb8c69bca008dd05bf21dc30acc80368fe1b318e8","finding_id":"SEM:1758aba761e0ac98d450","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c3cd932ad6e3dd6b446c499cb8c69bca008dd05bf21dc30acc80368fe1b318e8","finding_id":"SEM:ad313d4eabb6a03b4ba5","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/1-Kestose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[283],"raw_equal":false},"docs_rows":[{"identifier":"CHEBI:16885","line":285,"mapping_status":"MAPPED","ontology_id":"CHEBI:16885","preferred_term":"1-Kestose"}],"identifier":"CHEBI:16885","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16885","ontology_label":"1-kestose","ontology_source":"CHEBI"},"preferred_term":"1-Kestose","sssom_rows":[{"data_row":11,"object_id":"CHEBI:16885","object_label":"1-kestose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1-Kestose","synonym_count":1}'
   snapshot_sha256: c3cd932ad6e3dd6b446c499cb8c69bca008dd05bf21dc30acc80368fe1b318e8
 - evidence_id: ev-a549918f8ba6c443
   kind: prior_review

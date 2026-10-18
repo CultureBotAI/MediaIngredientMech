@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-59f931b0b274af90
+  evidence_ids:
+  - ev-46c0c62e4409d82b
+  - ev-f73bc5f1d6a54a79
+  - ev-2440ca65f89ea173
+  - ev-63308c61bcd9cf29
+  - ev-4fee369e25779ebf
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-59f931b0b274af90
+  evidence_ids:
+  - ev-46c0c62e4409d82b
+  - ev-43ca0ab18ca4f906
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-59f931b0b274af90
+  evidence_ids:
+  - ev-205538e2bd2a1230
+  - ev-43ca0ab18ca4f906
+  - ev-72302d7e0a283b1c
 evidence:
 - evidence_id: ev-46c0c62e4409d82b
   kind: record_content
   reference: data/ingredients/mapped/Durhamycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[929],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:durhamycin","line":931,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:durhamycin","preferred_term":"Durhamycin"}],"identifier":"kgmicrobe.compound:durhamycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:durhamycin","ontology_label":"Durhamycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Durhamycin","sssom_rows":[{"data_row":1102,"object_id":"kgmicrobe.compound:durhamycin","object_label":"Durhamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Durhamycin","synonym_count":0}'
   snapshot_sha256: 0f1ab3359b879b2a9917cd713f8683634c6c22395f616fc44030eed83e42ae9e
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [929]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Durhamycin; data-row positions=[1102]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1102,"object_id":"kgmicrobe.compound:durhamycin","object_label":"Durhamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Durhamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[931]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:durhamycin","line":931,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:durhamycin","preferred_term":"Durhamycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -144,7 +157,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[560,1912]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0f1ab3359b879b2a9917cd713f8683634c6c22395f616fc44030eed83e42ae9e","finding_id":"SEM:99c297a041d2eee054bf","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0f1ab3359b879b2a9917cd713f8683634c6c22395f616fc44030eed83e42ae9e","finding_id":"SEM:e4bef249694262f820b7","kind":"role_evidence","resolution_reason":"Historical
@@ -154,12 +167,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Durhamycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[929],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:durhamycin","line":931,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:durhamycin","preferred_term":"Durhamycin"}],"identifier":"kgmicrobe.compound:durhamycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:durhamycin","ontology_label":"Durhamycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Durhamycin","sssom_rows":[{"data_row":1102,"object_id":"kgmicrobe.compound:durhamycin","object_label":"Durhamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Durhamycin","synonym_count":0}'
   snapshot_sha256: 0f1ab3359b879b2a9917cd713f8683634c6c22395f616fc44030eed83e42ae9e
 - evidence_id: ev-72302d7e0a283b1c
   kind: prior_review

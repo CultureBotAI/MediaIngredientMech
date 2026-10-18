@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-laurate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-452618cac9395402 | data/ingredients/mapped/Na-laurate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1469],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131839","line":1471,"mapping_status":"MAPPED","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate"}],"identifier":"CHEBI:131839","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131839","ontology_label":"sodium dodecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-laurate","sssom_rows":[{"data_row":1972,"object_id":"CHEBI:131839","object_label":"sodium dodecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-laurate","synonym_count":4} |
-| ev-e40dee95b3ad29a3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1469] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-2d95152b4c286e2e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-laurate; data-row positions=[1972] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1972,"object_id":"CHEBI:131839","object_label":"sodium dodecanoate","other":"Dodecanoic acid, sodium salt&#124;Lauric acid, sodium salt&#124;sodium laurate&#124;CAS:629-25-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-laurate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-cfb3727c939e7199 | docs/data/mapped_ingredients.csv; CSV lines=[1471] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:131839","line":1471,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate","total_occurrences":"6"}] |
+| ev-452618cac9395402 | data/ingredients/mapped/Na-laurate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1468],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131839","line":1470,"mapping_status":"MAPPED","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate"}],"identifier":"CHEBI:131839","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131839","ontology_label":"sodium dodecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-laurate","sssom_rows":[{"data_row":1974,"object_id":"CHEBI:131839","object_label":"sodium dodecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-laurate","synonym_count":4} |
+| ev-e40dee95b3ad29a3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1468] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-2d95152b4c286e2e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-laurate; data-row positions=[1974] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1974,"object_id":"CHEBI:131839","object_label":"sodium dodecanoate","other":"Dodecanoic acid, sodium salt&#124;Lauric acid, sodium salt&#124;sodium laurate&#124;CAS:629-25-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-laurate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-cfb3727c939e7199 | docs/data/mapped_ingredients.csv; CSV lines=[1470] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:131839","line":1470,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate","total_occurrences":"6"}] |
 | ev-52747508fd46ce81 | reports/yaml_record_review/Na-laurate.md; &#96;data/ingredients/mapped/Na-laurate.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:27; Completeness:38; Recommended Edits:44 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a9dccc13e7807fcc | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[977,1790] | context_only | [{"current_record_sha256":"abf19eab00ae7f4cbfc87e9584f177ff4c63b7ae0992b4c037ec12928edffd22","finding_id":"SEM:cc73dcede2a3ead5ce03","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"abf19eab00ae7f4cbfc87e9584f177ff4c63b7ae0992b4c037ec12928edffd22","finding_id":"SEM:7176b414b5c996c51220","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-fc953201632c0a6a | data/ingredients/mapped/Na-laurate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}] |
+| ev-fc953201632c0a6a | data/ingredients/mapped/Na-laurate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1468],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131839","line":1470,"mapping_status":"MAPPED","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate"}],"identifier":"CHEBI:131839","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131839","ontology_label":"sodium dodecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-laurate","sssom_rows":[{"data_row":1974,"object_id":"CHEBI:131839","object_label":"sodium dodecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-laurate","synonym_count":4} |
 | ev-5fb7ad00d3d917fc | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-a7f2c1f0daa71f0b] | context_only | Predecessor structured review finding f-a7f2c1f0daa71f0b in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b23500b91429f8e8
+  evidence_ids:
+  - ev-452618cac9395402
+  - ev-e40dee95b3ad29a3
+  - ev-2d95152b4c286e2e
+  - ev-cfb3727c939e7199
+  - ev-fc953201632c0a6a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b23500b91429f8e8
+  evidence_ids:
+  - ev-452618cac9395402
+  - ev-a9dccc13e7807fcc
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b23500b91429f8e8
+  evidence_ids:
+  - ev-52747508fd46ce81
+  - ev-a9dccc13e7807fcc
+  - ev-5fb7ad00d3d917fc
 evidence:
 - evidence_id: ev-452618cac9395402
   kind: record_content
   reference: data/ingredients/mapped/Na-laurate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1469],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131839","line":1471,"mapping_status":"MAPPED","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate"}],"identifier":"CHEBI:131839","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131839","ontology_label":"sodium
-    dodecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-laurate","sssom_rows":[{"data_row":1972,"object_id":"CHEBI:131839","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1468],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131839","line":1470,"mapping_status":"MAPPED","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate"}],"identifier":"CHEBI:131839","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131839","ontology_label":"sodium
+    dodecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-laurate","sssom_rows":[{"data_row":1974,"object_id":"CHEBI:131839","object_label":"sodium
     dodecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-laurate","synonym_count":4}'
   snapshot_sha256: abf19eab00ae7f4cbfc87e9584f177ff4c63b7ae0992b4c037ec12928edffd22
 - evidence_id: ev-e40dee95b3ad29a3
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1469]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1468]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-2d95152b4c286e2e
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-laurate; data-row positions=[1972]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-laurate; data-row positions=[1974]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1972,"object_id":"CHEBI:131839","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1974,"object_id":"CHEBI:131839","object_label":"sodium
     dodecanoate","other":"Dodecanoic acid, sodium salt|Lauric acid, sodium salt|sodium
     laurate|CAS:629-25-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-laurate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-cfb3727c939e7199
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1471]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1470]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:131839","line":1471,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate","total_occurrences":"6"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:131839","line":1470,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate","total_occurrences":"6"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-52747508fd46ce81
   kind: prior_review
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[977,1790]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"abf19eab00ae7f4cbfc87e9584f177ff4c63b7ae0992b4c037ec12928edffd22","finding_id":"SEM:cc73dcede2a3ead5ce03","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"abf19eab00ae7f4cbfc87e9584f177ff4c63b7ae0992b4c037ec12928edffd22","finding_id":"SEM:7176b414b5c996c51220","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-laurate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1468],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131839","line":1470,"mapping_status":"MAPPED","ontology_id":"CHEBI:131839","preferred_term":"Na-laurate"}],"identifier":"CHEBI:131839","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131839","ontology_label":"sodium
+    dodecanoate","ontology_source":"CHEBI"},"preferred_term":"Na-laurate","sssom_rows":[{"data_row":1974,"object_id":"CHEBI:131839","object_label":"sodium
+    dodecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-laurate","synonym_count":4}'
   snapshot_sha256: abf19eab00ae7f4cbfc87e9584f177ff4c63b7ae0992b4c037ec12928edffd22
 - evidence_id: ev-5fb7ad00d3d917fc
   kind: prior_review

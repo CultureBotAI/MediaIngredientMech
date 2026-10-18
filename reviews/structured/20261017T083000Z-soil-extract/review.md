@@ -83,16 +83,16 @@ Disposition: Token presence remains reproducible, but the earlier pattern-based 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-49cf9b379ce12ab2 | data/ingredients/mapped/Soil_Extract.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1878],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1880,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2615,"object_id":"MICRO:0000457","object_label":"soil extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3} |
-| ev-b3721d11c5de6ab8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1878] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6c7c43be0fc3aa35 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Soil_Extract; data-row positions=[2615] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2615,"object_id":"MICRO:0000457","object_label":"soil extract","other":"Soil extract (see below)&#124;Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-0062988cfc6ec71b | docs/data/mapped_ingredients.csv; CSV lines=[1880] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000457","line":1880,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"17","ontology_id":"MICRO:0000457","preferred_term":"Soil extract","total_occurrences":"17"}] |
+| ev-49cf9b379ce12ab2 | data/ingredients/mapped/Soil_Extract.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1877],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1879,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3} |
+| ev-b3721d11c5de6ab8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1877] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6c7c43be0fc3aa35 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Soil_Extract; data-row positions=[2617] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil extract","other":"Soil extract (see below)&#124;Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-0062988cfc6ec71b | docs/data/mapped_ingredients.csv; CSV lines=[1879] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000457","line":1879,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"17","ontology_id":"MICRO:0000457","preferred_term":"Soil extract","total_occurrences":"17"}] |
 | ev-bab4ffe1afd610f2 | reports/yaml_record_review/Soil_Extract.md; &#96;data/ingredients/mapped/Soil_Extract.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:29; Completeness:40; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b58a3241c168189c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1237] | context_only | [{"current_record_sha256":"6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848","finding_id":"SEM:aa8ec5af60ef5832161f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-4f670ddc934d5e74 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-ef4889c5708c1269] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-927f64381fa816f2 | data/ingredients/mapped/Soil_Extract.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Soil extract (see below)", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue (source_id=mediadive.ingredient:180); no CAS-RN or CHEBI/NCIT match. Curator review needed.", "curator": "audit_import_ingredients[mim-queue]", "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"}, {"action": "AUTO_UPGRADE_TO_MICRO", "changes": "primary UNMAPPED_0529 \u2192 MICRO:0000457 (label-exact)", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-01T19:50:45.145149+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Soil')", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:18.544149+00:00"}, {"action": "ANNOTATED", "changes": "Added 1 environmental_context entries (issue #1, Phase 3 initial pass).", "curator": "env_context_phase3_initial", "timestamp": "2026-05-24T04:03:54.899342+00:00"}, {"action": "CORRECTED", "changes": "occurrence_statistics 0/0 -&gt; 17/17 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics", "timestamp": "2026-08-27T03:16:39.519889+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 2 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Soil extract (see below)' (x3 CultureMech mentions); 'Soil extract (SE1)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier": "MICRO:0000457", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-upgraded from 'UNMAPPED_0529'; match=label-exact", "source": "MICRO via OLS search"}], "mapping_quality": "EXACT_MATCH", "ontology_id": "MICRO:0000457", "ontology_label": "soil extract", "ontology_source": "MICRO"}} |
-| ev-1edf0a1870e81e81 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Soil_Extract | supports | [{"comment": "", "confidence": "0.99", "data_row": 2615, "mapping_date": "2026-08-30", "mapping_justification": "semapv:LexicalMatching", "object_id": "MICRO:0000457", "object_label": "soil extract", "object_source": "obo:micro.owl", "other": "Soil extract (see below)&#124;Soil extract (SE1)", "predicate_id": "skos:exactMatch", "source": "MIM:MICRO via OLS search&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Soil_Extract", "subject_label": "Soil extract", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-927f64381fa816f2 | data/ingredients/mapped/Soil_Extract.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1877],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1879,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3} |
+| ev-1edf0a1870e81e81 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Soil_Extract; data-row positions=[2617] | supports | Current exact-subject rows, including complete other payload: [{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil extract","other":"Soil extract (see below)&#124;Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-cefe2423553074dc | reports/yaml_record_review/Soil_Extract.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-5d153ad8a9c430e3 | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-ef4889c5708c1269] | context_only | Predecessor structured review finding scope-f-ef4889c5708c1269 in 20261011T030852Z-mim-token-scope-reassessment |
 
@@ -189,6 +189,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3245d67aff586e82
+  evidence_ids:
+  - ev-49cf9b379ce12ab2
+  - ev-b3721d11c5de6ab8
+  - ev-6c7c43be0fc3aa35
+  - ev-0062988cfc6ec71b
+  - ev-927f64381fa816f2
+  - ev-1edf0a1870e81e81
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -197,6 +204,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-3245d67aff586e82
+  evidence_ids:
+  - ev-49cf9b379ce12ab2
+  - ev-b58a3241c168189c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -205,24 +215,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3245d67aff586e82
+  evidence_ids:
+  - ev-bab4ffe1afd610f2
+  - ev-b58a3241c168189c
+  - ev-4f670ddc934d5e74
+  - ev-cefe2423553074dc
+  - ev-5d153ad8a9c430e3
 evidence:
 - evidence_id: ev-49cf9b379ce12ab2
   kind: record_content
   reference: data/ingredients/mapped/Soil_Extract.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1878],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1880,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1877],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1879,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil
     extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil
-    extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2615,"object_id":"MICRO:0000457","object_label":"soil
+    extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil
     extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3}'
   snapshot_sha256: 6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848
 - evidence_id: ev-b3721d11c5de6ab8
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1878]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1877]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -230,19 +246,19 @@ evidence:
 - evidence_id: ev-6c7c43be0fc3aa35
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Soil_Extract; data-row positions=[2615]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Soil_Extract; data-row positions=[2617]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2615,"object_id":"MICRO:0000457","object_label":"soil
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil
     extract","other":"Soil extract (see below)|Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-0062988cfc6ec71b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1880]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1879]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000457","line":1880,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"17","ontology_id":"MICRO:0000457","preferred_term":"Soil
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000457","line":1879,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"17","ontology_id":"MICRO:0000457","preferred_term":"Soil
     extract","total_occurrences":"17"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-bab4ffe1afd610f2
@@ -263,7 +279,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1237]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848","finding_id":"SEM:aa8ec5af60ef5832161f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -305,51 +321,21 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Soil_Extract.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Soil extract (see below)", "synonym_type": "RAW_TEXT"}], "history":
-    [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue (source_id=mediadive.ingredient:180);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.", "curator": "audit_import_ingredients[mim-queue]",
-    "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"},
-    {"action": "AUTO_UPGRADE_TO_MICRO", "changes": "primary UNMAPPED_0529 \u2192 MICRO:0000457
-    (label-exact)", "curator": "auto_classify_ingredient_type", "llm_assisted": false,
-    "timestamp": "2026-05-01T19:50:45.145149+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern
-    ''Soil'')", "curator": "auto_classify_ingredient_type", "llm_assisted": false,
-    "timestamp": "2026-05-02T03:12:18.544149+00:00"}, {"action": "ANNOTATED", "changes":
-    "Added 1 environmental_context entries (issue #1, Phase 3 initial pass).", "curator":
-    "env_context_phase3_initial", "timestamp": "2026-05-24T04:03:54.899342+00:00"},
-    {"action": "CORRECTED", "changes": "occurrence_statistics 0/0 -> 17/17 (media_count/total_occurrences),
-    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-    prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.519889+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 2 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Soil extract (see below)'' (x3 CultureMech mentions); ''Soil
-    extract (SE1)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp":
-    "2026-08-30T04:48:06.233536+00:00"}], "identifier": "MICRO:0000457", "mapping":
-    {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-upgraded from
-    ''UNMAPPED_0529''; match=label-exact", "source": "MICRO via OLS search"}], "mapping_quality":
-    "EXACT_MATCH", "ontology_id": "MICRO:0000457", "ontology_label": "soil extract",
-    "ontology_source": "MICRO"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1877],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000457","line":1879,"mapping_status":"MAPPED","ontology_id":"MICRO:0000457","preferred_term":"Soil
+    extract"}],"identifier":"MICRO:0000457","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":17,"edge_count":17,"occurrences":17},"occurrence_statistics":{"media_count":17,"total_occurrences":17},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000457","ontology_label":"soil
+    extract","ontology_source":"MICRO"},"preferred_term":"Soil extract","sssom_rows":[{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil
+    extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Soil_Extract","synonym_count":3}'
   snapshot_sha256: 6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848
 - evidence_id: ev-1edf0a1870e81e81
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Soil_Extract
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Soil_Extract; data-row positions=[2617]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.99", "data_row": 2615, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:LexicalMatching", "object_id":
-    "MICRO:0000457", "object_label": "soil extract", "object_source": "obo:micro.owl",
-    "other": "Soil extract (see below)|Soil extract (SE1)", "predicate_id": "skos:exactMatch",
-    "source": "MIM:MICRO via OLS search|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Soil_Extract", "subject_label": "Soil extract", "validation_method":
-    "none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2617,"object_id":"MICRO:0000457","object_label":"soil
+    extract","other":"Soil extract (see below)|Soil extract (SE1)","predicate_id":"skos:exactMatch","subject_id":"MIM:Soil_Extract","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-cefe2423553074dc
   kind: prior_review

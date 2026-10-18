@@ -89,7 +89,7 @@ Reassess prediction-only role support: Maltotetraose
 | ev-3545b9059a5284d7 | docs/data/mapped_ingredients.csv; CSV lines=[1345] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28460","line":1345,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28460","preferred_term":"Maltotetraose","total_occurrences":"0"}] |
 | ev-30da7634d352ae56 | reports/yaml_record_review/Maltotetraose.md; &#96;data/ingredients/mapped/Maltotetraose.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:31; Completeness:41; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-48820546be54bf4a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[897,1965] | context_only | [{"current_record_sha256":"12efc29a4e7f4c8c71b097142f46ee3a26cf206abbd386d102f1865d6a8964b6","finding_id":"SEM:c22b2d9c8d3964e41cde","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"12efc29a4e7f4c8c71b097142f46ee3a26cf206abbd386d102f1865d6a8964b6","finding_id":"SEM:c8cc33d5adb1289821b4","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e13cd4e149046f7c | data/ingredients/mapped/Maltotetraose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-e13cd4e149046f7c | data/ingredients/mapped/Maltotetraose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1343],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28460","line":1345,"mapping_status":"MAPPED","ontology_id":"CHEBI:28460","preferred_term":"Maltotetraose"}],"identifier":"CHEBI:28460","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28460","ontology_label":"maltotetraose","ontology_source":"CHEBI"},"preferred_term":"Maltotetraose","sssom_rows":[{"data_row":1771,"object_id":"CHEBI:28460","object_label":"maltotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltotetraose","synonym_count":1} |
 | ev-5d8f549ad90bd09e | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-433c3718e349d338] | context_only | Predecessor structured review finding f-433c3718e349d338 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-78b69a1387b0bd1b
+  evidence_ids:
+  - ev-765767a69660f898
+  - ev-3b68aa0556aeabe2
+  - ev-02db70cacacf2734
+  - ev-3545b9059a5284d7
+  - ev-e13cd4e149046f7c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-78b69a1387b0bd1b
+  evidence_ids:
+  - ev-765767a69660f898
+  - ev-48820546be54bf4a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-78b69a1387b0bd1b
+  evidence_ids:
+  - ev-30da7634d352ae56
+  - ev-48820546be54bf4a
+  - ev-5d8f549ad90bd09e
 evidence:
 - evidence_id: ev-765767a69660f898
   kind: record_content
   reference: data/ingredients/mapped/Maltotetraose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1343],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28460","line":1345,"mapping_status":"MAPPED","ontology_id":"CHEBI:28460","preferred_term":"Maltotetraose"}],"identifier":"CHEBI:28460","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28460","ontology_label":"maltotetraose","ontology_source":"CHEBI"},"preferred_term":"Maltotetraose","sssom_rows":[{"data_row":1771,"object_id":"CHEBI:28460","object_label":"maltotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltotetraose","synonym_count":1}'
   snapshot_sha256: 12efc29a4e7f4c8c71b097142f46ee3a26cf206abbd386d102f1865d6a8964b6
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1343]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Maltotetraose; data-row positions=[1771]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1771,"object_id":"CHEBI:28460","object_label":"maltotetraose","other":"alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranosyl-(1->4)-D-glucose|CAS:34612-38-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Maltotetraose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1345]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28460","line":1345,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28460","preferred_term":"Maltotetraose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -247,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[897,1965]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"12efc29a4e7f4c8c71b097142f46ee3a26cf206abbd386d102f1865d6a8964b6","finding_id":"SEM:c22b2d9c8d3964e41cde","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"12efc29a4e7f4c8c71b097142f46ee3a26cf206abbd386d102f1865d6a8964b6","finding_id":"SEM:c8cc33d5adb1289821b4","kind":"role_evidence","resolution_reason":"Historical
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Maltotetraose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1343],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28460","line":1345,"mapping_status":"MAPPED","ontology_id":"CHEBI:28460","preferred_term":"Maltotetraose"}],"identifier":"CHEBI:28460","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28460","ontology_label":"maltotetraose","ontology_source":"CHEBI"},"preferred_term":"Maltotetraose","sssom_rows":[{"data_row":1771,"object_id":"CHEBI:28460","object_label":"maltotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Maltotetraose","synonym_count":1}'
   snapshot_sha256: 12efc29a4e7f4c8c71b097142f46ee3a26cf206abbd386d102f1865d6a8964b6
 - evidence_id: ev-5d8f549ad90bd09e
   kind: prior_review

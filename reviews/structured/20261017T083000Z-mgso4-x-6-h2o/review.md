@@ -85,11 +85,10 @@ Reassess prediction-only or empty role support: Mgso4_X_6_H2o
 | --- | --- | --- | --- |
 | ev-733585fa901ff20e | data/ingredients/mapped/Mgso4_X_6_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1401],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mgso4_x_6_h2o","line":1403,"mapping_status":"MAPPED","ontology_id":"CHEBI:32599","preferred_term":"MgSO4 x 6 H2O"}],"identifier":"kgmicrobe.compound:mgso4_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":35,"edge_count":35,"occurrences":35},"occurrence_statistics":{"media_count":35,"total_occurrences":35},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:32599","ontology_label":"magnesium sulfate","ontology_source":"CHEBI"},"preferred_term":"MgSO4 x 6 H2O","sssom_rows":[{"data_row":1867,"object_id":"CHEBI:32599","object_label":"magnesium sulfate","predicate_id":"skos:broadMatch"},{"data_row":1868,"object_id":"kgmicrobe.compound:mgso4_x_6_h2o","object_label":"MgSO4 x 6 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgso4_X_6_H2o","synonym_count":18} |
 | ev-facae08316256891 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1401] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-8768f27724cdc9ef | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mgso4_X_6_H2o; data-row positions=[1867,1868] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1867,"object_id":"CHEBI:32599","object_label":"magnesium sulfate","other":"MgSO4 x 6H2O&#124;MgSO4\u00b76H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Mgso4_X_6_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1868,"object_id":"kgmicrobe.compound:mgso4_x_6_h2o","object_label":"MgSO4 x 6 H2O","other":"MgSO4 x 6H2O&#124;MgSO4\u00b76H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Mgso4_X_6_H2o","validation_method":""}] |
+| ev-8768f27724cdc9ef | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mgso4_X_6_H2o; data-row positions=[1867, 1868] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1867,"object_id":"CHEBI:32599","object_label":"magnesium sulfate","other":"MgSO4 x 6H2O&#124;MgSO4\u00b76H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Mgso4_X_6_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1868,"object_id":"kgmicrobe.compound:mgso4_x_6_h2o","object_label":"MgSO4 x 6 H2O","other":"MgSO4 x 6H2O&#124;MgSO4\u00b76H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Mgso4_X_6_H2o","validation_method":""}] |
 | ev-39620338400969d7 | docs/data/mapped_ingredients.csv; CSV lines=[1403] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:mgso4_x_6_h2o","line":1403,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"35","ontology_id":"CHEBI:32599","preferred_term":"MgSO4 x 6 H2O","total_occurrences":"35"}] |
 | ev-6eaf0e56bd5622c8 | reports/yaml_record_review/Mgso4_X_6_H2o.md; &#96;data/ingredients/mapped/Mgso4_X_6_H2o.yaml&#96;:2; Verdict:4; Identity:13; Validation:25; Evidence:33; Completeness:48; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c9e8f6e14666f248 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[938,1866] | context_only | [{"current_record_sha256":"347eb18793402da271f86c5698703d613d343a34f43b23d443f0d0c3b5224134","finding_id":"SEM:1a6c0fdc048de914b50a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"347eb18793402da271f86c5698703d613d343a34f43b23d443f0d0c3b5224134","finding_id":"SEM:7fdd95091bccb6fbd0aa","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-4304e354c0b45ad9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Mgso4_X_6_H2o.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-35c5451cf4538fc4
+  evidence_ids:
+  - ev-733585fa901ff20e
+  - ev-facae08316256891
+  - ev-8768f27724cdc9ef
+  - ev-39620338400969d7
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-35c5451cf4538fc4
+  evidence_ids:
+  - ev-733585fa901ff20e
+  - ev-c9e8f6e14666f248
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-35c5451cf4538fc4
+  evidence_ids:
+  - ev-6eaf0e56bd5622c8
+  - ev-c9e8f6e14666f248
 evidence:
 - evidence_id: ev-733585fa901ff20e
   kind: record_content
   reference: data/ingredients/mapped/Mgso4_X_6_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1401],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:mgso4_x_6_h2o","line":1403,"mapping_status":"MAPPED","ontology_id":"CHEBI:32599","preferred_term":"MgSO4
     x 6 H2O"}],"identifier":"kgmicrobe.compound:mgso4_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":35,"edge_count":35,"occurrences":35},"occurrence_statistics":{"media_count":35,"total_occurrences":35},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:32599","ontology_label":"magnesium
@@ -212,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1401]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,8 +230,8 @@ evidence:
 - evidence_id: ev-8768f27724cdc9ef
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Mgso4_X_6_H2o; data-row positions=[1867,1868]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Mgso4_X_6_H2o; data-row positions=[1867, 1868]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1867,"object_id":"CHEBI:32599","object_label":"magnesium
     sulfate","other":"MgSO4 x 6H2O|MgSO4\u00b76H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Mgso4_X_6_H2o","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1868,"object_id":"kgmicrobe.compound:mgso4_x_6_h2o","object_label":"MgSO4
@@ -231,7 +241,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1403]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:mgso4_x_6_h2o","line":1403,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"35","ontology_id":"CHEBI:32599","preferred_term":"MgSO4
     x 6 H2O","total_occurrences":"35"}]'
@@ -254,19 +264,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[938,1866]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"347eb18793402da271f86c5698703d613d343a34f43b23d443f0d0c3b5224134","finding_id":"SEM:1a6c0fdc048de914b50a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"347eb18793402da271f86c5698703d613d343a34f43b23d443f0d0c3b5224134","finding_id":"SEM:7fdd95091bccb6fbd0aa","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-4304e354c0b45ad9
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Mgso4_X_6_H2o.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-77d26743e5a07715
@@ -334,7 +336,7 @@ assessments:
   - record-35c5451cf4538fc4
   evidence_ids:
   - ev-733585fa901ff20e
-  - ev-4304e354c0b45ad9
+  - ev-c9e8f6e14666f248
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -342,7 +344,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-733585fa901ff20e
-    - ev-4304e354c0b45ad9
+    - ev-c9e8f6e14666f248
 findings:
 - finding_id: rec-f-role-35c5451cf4538fc4
   issue_key: mim-reconciliation-role-support-35c5451cf4538fc4
@@ -358,7 +360,7 @@ findings:
   - record-35c5451cf4538fc4
   evidence_ids:
   - ev-733585fa901ff20e
-  - ev-4304e354c0b45ad9
+  - ev-c9e8f6e14666f248
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Mgso4_X_6_H2o.yaml

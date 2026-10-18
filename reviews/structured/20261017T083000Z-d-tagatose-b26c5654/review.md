@@ -89,7 +89,7 @@ Reassess prediction-only role support: D-(-)-tagatose
 | ev-0773ae69996bb0d9 | docs/data/mapped_ingredients.csv; CSV lines=[805] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:4249","line":805,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:4249","preferred_term":"D-(-)-tagatose","total_occurrences":"0"}] |
 | ev-690f1016bef27f20 | reports/yaml_record_review/D-_-tagatose.md; &#96;data/ingredients/mapped/D-_-tagatose.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:42; Completeness:56; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3428a345304ae58e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[485,1823] | context_only | [{"current_record_sha256":"80df3f31b68b9a204f213badc49d094e386baa3ddc74dc8cb7e7e97ddb097590","finding_id":"SEM:ee9687bb25ce38ff071e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"80df3f31b68b9a204f213badc49d094e386baa3ddc74dc8cb7e7e97ddb097590","finding_id":"SEM:6a9d9a2fcb6a41d4e70f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-789137d1d93b3eec | data/ingredients/mapped/D-_-tagatose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-789137d1d93b3eec | data/ingredients/mapped/D-_-tagatose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[803],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4249","line":805,"mapping_status":"MAPPED","ontology_id":"CHEBI:4249","preferred_term":"D-(-)-tagatose"}],"identifier":"CHEBI:4249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:4249","ontology_label":"D-tagatopyranose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-tagatose","sssom_rows":[{"data_row":921,"object_id":"CHEBI:4249","object_label":"D-tagatopyranose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-_-tagatose","synonym_count":0} |
 | ev-c276147a01cb9c07 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-5084983a67daa283] | context_only | Predecessor structured review finding f-5084983a67daa283 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b26c5654b5b1faf6
+  evidence_ids:
+  - ev-0734352e2578a7c1
+  - ev-367e7043bac7f691
+  - ev-0134ef3e77024e9d
+  - ev-0773ae69996bb0d9
+  - ev-789137d1d93b3eec
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b26c5654b5b1faf6
+  evidence_ids:
+  - ev-0734352e2578a7c1
+  - ev-3428a345304ae58e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b26c5654b5b1faf6
+  evidence_ids:
+  - ev-690f1016bef27f20
+  - ev-3428a345304ae58e
+  - ev-c276147a01cb9c07
 evidence:
 - evidence_id: ev-0734352e2578a7c1
   kind: record_content
   reference: data/ingredients/mapped/D-_-tagatose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[803],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4249","line":805,"mapping_status":"MAPPED","ontology_id":"CHEBI:4249","preferred_term":"D-(-)-tagatose"}],"identifier":"CHEBI:4249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:4249","ontology_label":"D-tagatopyranose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-tagatose","sssom_rows":[{"data_row":921,"object_id":"CHEBI:4249","object_label":"D-tagatopyranose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-_-tagatose","synonym_count":0}'
   snapshot_sha256: 80df3f31b68b9a204f213badc49d094e386baa3ddc74dc8cb7e7e97ddb097590
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [803]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-_-tagatose; data-row positions=[921]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":921,"object_id":"CHEBI:4249","object_label":"D-tagatopyranose","other":"CAS:87-81-0","predicate_id":"skos:exactMatch","subject_id":"MIM:D-_-tagatose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[805]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:4249","line":805,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:4249","preferred_term":"D-(-)-tagatose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[485,1823]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"80df3f31b68b9a204f213badc49d094e386baa3ddc74dc8cb7e7e97ddb097590","finding_id":"SEM:ee9687bb25ce38ff071e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"80df3f31b68b9a204f213badc49d094e386baa3ddc74dc8cb7e7e97ddb097590","finding_id":"SEM:6a9d9a2fcb6a41d4e70f","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-_-tagatose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[803],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:4249","line":805,"mapping_status":"MAPPED","ontology_id":"CHEBI:4249","preferred_term":"D-(-)-tagatose"}],"identifier":"CHEBI:4249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:4249","ontology_label":"D-tagatopyranose","ontology_source":"CHEBI"},"preferred_term":"D-(-)-tagatose","sssom_rows":[{"data_row":921,"object_id":"CHEBI:4249","object_label":"D-tagatopyranose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-_-tagatose","synonym_count":0}'
   snapshot_sha256: 80df3f31b68b9a204f213badc49d094e386baa3ddc74dc8cb7e7e97ddb097590
 - evidence_id: ev-c276147a01cb9c07
   kind: prior_review

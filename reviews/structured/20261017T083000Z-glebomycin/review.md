@@ -89,7 +89,7 @@ Reassess prediction-only role support: Glebomycin
 | ev-1d0fe5e27cc9ee6b | docs/data/mapped_ingredients.csv; CSV lines=[1057] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C90636","line":1057,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C90636","preferred_term":"Glebomycin","total_occurrences":"0"}] |
 | ev-e81ae55417378a34 | reports/yaml_record_review/Glebomycin.md; &#96;data/ingredients/mapped/Glebomycin.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:35; Completeness:55; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-69ce5a509bede991 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[662,1464] | context_only | [{"current_record_sha256":"f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed","finding_id":"SEM:b37ae62735ee91b40c2c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed","finding_id":"SEM:7c1d85dae5be254b089c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-fb6f0ccf46d50f13 | data/ingredients/mapped/Glebomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-fb6f0ccf46d50f13 | data/ingredients/mapped/Glebomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1055],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C90636","line":1057,"mapping_status":"MAPPED","ontology_id":"NCIT:C90636","preferred_term":"Glebomycin"}],"identifier":"NCIT:C90636","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C90636","ontology_label":"Bluensomycin","ontology_source":"NCIT"},"preferred_term":"Glebomycin","sssom_rows":[{"data_row":1300,"object_id":"NCIT:C90636","object_label":"Bluensomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glebomycin","synonym_count":0} |
 | ev-6bb2f4e7302ce77d | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-c7719392ccc6798c] | context_only | Predecessor structured review finding f-c7719392ccc6798c in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ce7e7d8d3a8fcae8
+  evidence_ids:
+  - ev-1c6c06874dab2c90
+  - ev-5964033693afdfae
+  - ev-606a029efc3bfe3f
+  - ev-1d0fe5e27cc9ee6b
+  - ev-fb6f0ccf46d50f13
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ce7e7d8d3a8fcae8
+  evidence_ids:
+  - ev-1c6c06874dab2c90
+  - ev-69ce5a509bede991
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ce7e7d8d3a8fcae8
+  evidence_ids:
+  - ev-e81ae55417378a34
+  - ev-69ce5a509bede991
+  - ev-6bb2f4e7302ce77d
 evidence:
 - evidence_id: ev-1c6c06874dab2c90
   kind: record_content
   reference: data/ingredients/mapped/Glebomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1055],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C90636","line":1057,"mapping_status":"MAPPED","ontology_id":"NCIT:C90636","preferred_term":"Glebomycin"}],"identifier":"NCIT:C90636","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C90636","ontology_label":"Bluensomycin","ontology_source":"NCIT"},"preferred_term":"Glebomycin","sssom_rows":[{"data_row":1300,"object_id":"NCIT:C90636","object_label":"Bluensomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glebomycin","synonym_count":0}'
   snapshot_sha256: f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1055]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Glebomycin; data-row positions=[1300]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1300,"object_id":"NCIT:C90636","object_label":"Bluensomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Glebomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1057]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C90636","line":1057,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C90636","preferred_term":"Glebomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -247,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[662,1464]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed","finding_id":"SEM:b37ae62735ee91b40c2c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed","finding_id":"SEM:7c1d85dae5be254b089c","kind":"role_evidence","resolution_reason":"Historical
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Glebomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1055],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C90636","line":1057,"mapping_status":"MAPPED","ontology_id":"NCIT:C90636","preferred_term":"Glebomycin"}],"identifier":"NCIT:C90636","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C90636","ontology_label":"Bluensomycin","ontology_source":"NCIT"},"preferred_term":"Glebomycin","sssom_rows":[{"data_row":1300,"object_id":"NCIT:C90636","object_label":"Bluensomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glebomycin","synonym_count":0}'
   snapshot_sha256: f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed
 - evidence_id: ev-6bb2f4e7302ce77d
   kind: prior_review

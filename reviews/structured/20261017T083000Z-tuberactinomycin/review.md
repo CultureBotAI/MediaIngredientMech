@@ -83,13 +83,13 @@ Reassess prediction-only role support: Tuberactinomycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-bfec3dc8721214a7 | data/ingredients/mapped/Tuberactinomycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C015563","line":2014,"mapping_status":"MAPPED","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin"}],"identifier":"mesh:C015563","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C015563","ontology_label":"tuberactinomycin","ontology_source":"MESH"},"preferred_term":"Tuberactinomycin","sssom_rows":[{"data_row":2851,"object_id":"mesh:C015563","object_label":"tuberactinomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tuberactinomycin","synonym_count":0} |
-| ev-34d88265dbb5a1ed | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2012] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-2be72c2820019207 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tuberactinomycin; data-row positions=[2851] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2851,"object_id":"mesh:C015563","object_label":"tuberactinomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Tuberactinomycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-4cc0936b5d4375f4 | docs/data/mapped_ingredients.csv; CSV lines=[2014] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C015563","line":2014,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin","total_occurrences":"0"}] |
+| ev-bfec3dc8721214a7 | data/ingredients/mapped/Tuberactinomycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2011],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C015563","line":2013,"mapping_status":"MAPPED","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin"}],"identifier":"mesh:C015563","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C015563","ontology_label":"tuberactinomycin","ontology_source":"MESH"},"preferred_term":"Tuberactinomycin","sssom_rows":[{"data_row":2853,"object_id":"mesh:C015563","object_label":"tuberactinomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tuberactinomycin","synonym_count":0} |
+| ev-34d88265dbb5a1ed | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2011] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-2be72c2820019207 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tuberactinomycin; data-row positions=[2853] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2853,"object_id":"mesh:C015563","object_label":"tuberactinomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Tuberactinomycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-4cc0936b5d4375f4 | docs/data/mapped_ingredients.csv; CSV lines=[2013] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C015563","line":2013,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin","total_occurrences":"0"}] |
 | ev-530b617263972d93 | reports/yaml_record_review/Tuberactinomycin.md; &#96;data/ingredients/mapped/Tuberactinomycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:33; Issues:42; Major: &#96;SELECTIVE_AGENT&#96; is provisional name-pattern evidence:44; Completeness:61; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b2a9ebba58632cbd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1324,1773] | context_only | [{"current_record_sha256":"1c818cbf1c39960029853fadc7f742eaf392c0d8529f711510cd2ad4e20724ee","finding_id":"SEM:8a44abb5cffd7fd46158","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1c818cbf1c39960029853fadc7f742eaf392c0d8529f711510cd2ad4e20724ee","finding_id":"SEM:504e0d0d5f7fafe96df5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-6bc014ac72b91abc | data/ingredients/mapped/Tuberactinomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-6bc014ac72b91abc | data/ingredients/mapped/Tuberactinomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2011],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C015563","line":2013,"mapping_status":"MAPPED","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin"}],"identifier":"mesh:C015563","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C015563","ontology_label":"tuberactinomycin","ontology_source":"MESH"},"preferred_term":"Tuberactinomycin","sssom_rows":[{"data_row":2853,"object_id":"mesh:C015563","object_label":"tuberactinomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tuberactinomycin","synonym_count":0} |
 | ev-f634ee75d93a30ff | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-91186c5544f7e8da] | context_only | Predecessor structured review finding f-91186c5544f7e8da in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e89b902374249843
+  evidence_ids:
+  - ev-bfec3dc8721214a7
+  - ev-34d88265dbb5a1ed
+  - ev-2be72c2820019207
+  - ev-4cc0936b5d4375f4
+  - ev-6bc014ac72b91abc
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e89b902374249843
+  evidence_ids:
+  - ev-bfec3dc8721214a7
+  - ev-b2a9ebba58632cbd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e89b902374249843
+  evidence_ids:
+  - ev-530b617263972d93
+  - ev-b2a9ebba58632cbd
+  - ev-f634ee75d93a30ff
 evidence:
 - evidence_id: ev-bfec3dc8721214a7
   kind: record_content
   reference: data/ingredients/mapped/Tuberactinomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2012],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C015563","line":2014,"mapping_status":"MAPPED","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin"}],"identifier":"mesh:C015563","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C015563","ontology_label":"tuberactinomycin","ontology_source":"MESH"},"preferred_term":"Tuberactinomycin","sssom_rows":[{"data_row":2851,"object_id":"mesh:C015563","object_label":"tuberactinomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tuberactinomycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2011],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C015563","line":2013,"mapping_status":"MAPPED","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin"}],"identifier":"mesh:C015563","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C015563","ontology_label":"tuberactinomycin","ontology_source":"MESH"},"preferred_term":"Tuberactinomycin","sssom_rows":[{"data_row":2853,"object_id":"mesh:C015563","object_label":"tuberactinomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tuberactinomycin","synonym_count":0}'
   snapshot_sha256: 1c818cbf1c39960029853fadc7f742eaf392c0d8529f711510cd2ad4e20724ee
 - evidence_id: ev-34d88265dbb5a1ed
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2012]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2011]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-2be72c2820019207
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tuberactinomycin; data-row positions=[2851]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tuberactinomycin; data-row positions=[2853]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2851,"object_id":"mesh:C015563","object_label":"tuberactinomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Tuberactinomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2853,"object_id":"mesh:C015563","object_label":"tuberactinomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Tuberactinomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-4cc0936b5d4375f4
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2014]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2013]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C015563","line":2014,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C015563","line":2013,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-530b617263972d93
   kind: prior_review
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1324,1773]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1c818cbf1c39960029853fadc7f742eaf392c0d8529f711510cd2ad4e20724ee","finding_id":"SEM:8a44abb5cffd7fd46158","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1c818cbf1c39960029853fadc7f742eaf392c0d8529f711510cd2ad4e20724ee","finding_id":"SEM:504e0d0d5f7fafe96df5","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tuberactinomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2011],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C015563","line":2013,"mapping_status":"MAPPED","ontology_id":"mesh:C015563","preferred_term":"Tuberactinomycin"}],"identifier":"mesh:C015563","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C015563","ontology_label":"tuberactinomycin","ontology_source":"MESH"},"preferred_term":"Tuberactinomycin","sssom_rows":[{"data_row":2853,"object_id":"mesh:C015563","object_label":"tuberactinomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tuberactinomycin","synonym_count":0}'
   snapshot_sha256: 1c818cbf1c39960029853fadc7f742eaf392c0d8529f711510cd2ad4e20724ee
 - evidence_id: ev-f634ee75d93a30ff
   kind: prior_review

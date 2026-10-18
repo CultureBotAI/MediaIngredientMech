@@ -71,6 +71,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-74d25a3c6c581f95
+  evidence_ids:
+  - ev-e485c89b6de50351
+  - ev-4a023f49d00a6e0d
+  - ev-34dbc6edfc7e23ee
+  - ev-5305f84da55afa34
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -79,6 +84,8 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-74d25a3c6c581f95
+  evidence_ids:
+  - ev-e485c89b6de50351
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -87,13 +94,15 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-74d25a3c6c581f95
+  evidence_ids:
+  - ev-c665cef4ad00cec0
 evidence:
 - evidence_id: ev-e485c89b6de50351
   kind: record_content
   reference: data/ingredients/unmapped/Promitor.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[193],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0212","line":195,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"Promitor"}],"identifier":"UNMAPPED_0212","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Promitor","sssom_rows":[],"sssom_subject":"MIM:Promitor","synonym_count":1}'
   snapshot_sha256: 2d4b95cd090a55bcfaaa9c349a64db9d6a5c32e5715dc96f9e5d2e399fee081e
@@ -101,7 +110,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [193]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -110,7 +119,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Promitor; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -118,7 +127,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[195]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0212","line":195,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"Promitor","total_occurrences":"0"}]'
   snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7

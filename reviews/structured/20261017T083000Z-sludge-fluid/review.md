@@ -83,16 +83,16 @@ Disposition: Token presence remains reproducible, but the earlier pattern-based 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-84f8ba08b58c7020 | data/ingredients/mapped/Sludge_fluid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2607],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000521","line":2609,"mapping_status":"MAPPED","ontology_id":"MICRO:0000521","preferred_term":"Sludge fluid"}],"identifier":"MICRO:0000521","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","match_level":"EXACT","ontology_id":"MICRO:0000521","ontology_label":"sludge fluid","ontology_source":"MICRO"},"preferred_term":"Sludge fluid","sssom_rows":[{"data_row":2521,"object_id":"MICRO:0000521","object_label":"sludge fluid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sludge_fluid","synonym_count":1} |
-| ev-a6c444218b3887d5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2607] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-585a6ebb79a21665 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sludge_fluid; data-row positions=[2521] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2521,"object_id":"MICRO:0000521","object_label":"sludge fluid","other":"Sludge fluid (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Sludge_fluid","validation_method":"manual:claude_culturemech_residual_grounding&#124;CREATED&#124;2026-08-30"}] |
-| ev-5e731b3d5778f5fd | docs/data/mapped_ingredients.csv; CSV lines=[2609] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000521","line":2609,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0000521","preferred_term":"Sludge fluid","total_occurrences":"2"}] |
+| ev-84f8ba08b58c7020 | data/ingredients/mapped/Sludge_fluid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2606],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000521","line":2608,"mapping_status":"MAPPED","ontology_id":"MICRO:0000521","preferred_term":"Sludge fluid"}],"identifier":"MICRO:0000521","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000521","ontology_label":"sludge fluid","ontology_source":"MICRO"},"preferred_term":"Sludge fluid","sssom_rows":[{"data_row":2523,"object_id":"MICRO:0000521","object_label":"sludge fluid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sludge_fluid","synonym_count":1} |
+| ev-a6c444218b3887d5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2606] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-585a6ebb79a21665 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sludge_fluid; data-row positions=[2523] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2523,"object_id":"MICRO:0000521","object_label":"sludge fluid","other":"Sludge fluid (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Sludge_fluid","validation_method":"manual:claude_culturemech_residual_grounding&#124;CREATED&#124;2026-08-30"}] |
+| ev-5e731b3d5778f5fd | docs/data/mapped_ingredients.csv; CSV lines=[2608] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000521","line":2608,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0000521","preferred_term":"Sludge fluid","total_occurrences":"2"}] |
 | ev-1cd51dd628156c5b | reports/yaml_record_review/Sludge_fluid.md; &#96;data/ingredients/mapped/Sludge_fluid.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-678f8529742012f0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1199] | context_only | [{"current_record_sha256":"45eed06b9f478903bfb4849c19b5656aca154018619b1db3d08152b5212e489c","finding_id":"SEM:0311f76d2f4eca059114","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-6c06e714e86355c6 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-2680803ffb7b7f40] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-b62c98e3d0a1e1d5 | data/ingredients/mapped/Sludge_fluid.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Sludge fluid (see below)", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_FROM_CULTUREMECH_RESIDUAL", "changes": "Created from a CultureMech recipe ingredient MIM held no record for (2 mentions across 2 recipes). Grounded to MICRO:0000521 ('sludge fluid') on an exact match of the canonical label to the query 'Sludge fluid'. Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_residual_grounding", "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-08-30T10:35:03.361102+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Sludge fluid (see below)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T10:41:26.546472+00:00"}, {"action": "CORRECTED", "changes": "Added ontology_mapping.evidence recording the CultureMech occurrence table as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from the structured field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published row (#541).", "curator": "claude_restore_culturemech_evidence", "llm_assisted": false, "timestamp": "2026-09-06T07:34:56.956907+00:00"}], "identifier": "MICRO:0000521", "mapping": {"evidence": [{"evidence_type": "LEXICAL_MATCH", "notes": "Surface form appears in CultureMech's occurrence table and was grounded to MICRO:0000521 on an exact match against the ontology label. Restored from the record's own creation history (#541); the residual importer wrote this provenance only into the published SSSOM.", "source": "culturemech:output/ingredient_occurrences.tsv"}], "mapping_quality": "EXACT_MATCH", "match_level": "EXACT", "ontology_id": "MICRO:0000521", "ontology_label": "sludge fluid", "ontology_source": "MICRO"}} |
-| ev-d4f1e238a85e0e57 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sludge_fluid | supports | [{"comment": "", "confidence": "0.99", "data_row": 2521, "mapping_date": "2026-09-06", "mapping_justification": "semapv:LexicalMatching", "object_id": "MICRO:0000521", "object_label": "sludge fluid", "object_source": "obo:micro.owl", "other": "Sludge fluid (see below)", "predicate_id": "skos:exactMatch", "source": "MIM:culturemech:output/ingredient_occurrences.tsv&#124;MIM:curator=claude_restore_culturemech_evidence", "subject_id": "MIM:Sludge_fluid", "subject_label": "Sludge fluid", "validation_method": "manual:claude_culturemech_residual_grounding&#124;CREATED&#124;2026-08-30"}] |
+| ev-b62c98e3d0a1e1d5 | data/ingredients/mapped/Sludge_fluid.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2606],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000521","line":2608,"mapping_status":"MAPPED","ontology_id":"MICRO:0000521","preferred_term":"Sludge fluid"}],"identifier":"MICRO:0000521","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000521","ontology_label":"sludge fluid","ontology_source":"MICRO"},"preferred_term":"Sludge fluid","sssom_rows":[{"data_row":2523,"object_id":"MICRO:0000521","object_label":"sludge fluid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sludge_fluid","synonym_count":1} |
+| ev-d4f1e238a85e0e57 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sludge_fluid; data-row positions=[2523] | supports | Current exact-subject rows, including complete other payload: [{"data_row":2523,"object_id":"MICRO:0000521","object_label":"sludge fluid","other":"Sludge fluid (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Sludge_fluid","validation_method":"manual:claude_culturemech_residual_grounding&#124;CREATED&#124;2026-08-30"}] |
 | ev-de40a4caf98a1085 | reports/yaml_record_review/Sludge_fluid.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-74089b3c7f3529bb | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-2680803ffb7b7f40] | context_only | Predecessor structured review finding scope-f-2680803ffb7b7f40 in 20261011T030852Z-mim-token-scope-reassessment |
 
@@ -189,6 +189,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c6cdd023283a1f0a
+  evidence_ids:
+  - ev-84f8ba08b58c7020
+  - ev-a6c444218b3887d5
+  - ev-585a6ebb79a21665
+  - ev-5e731b3d5778f5fd
+  - ev-b62c98e3d0a1e1d5
+  - ev-d4f1e238a85e0e57
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -197,6 +204,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-c6cdd023283a1f0a
+  evidence_ids:
+  - ev-84f8ba08b58c7020
+  - ev-678f8529742012f0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -205,24 +215,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c6cdd023283a1f0a
+  evidence_ids:
+  - ev-1cd51dd628156c5b
+  - ev-678f8529742012f0
+  - ev-6c06e714e86355c6
+  - ev-de40a4caf98a1085
+  - ev-74089b3c7f3529bb
 evidence:
 - evidence_id: ev-84f8ba08b58c7020
   kind: record_content
   reference: data/ingredients/mapped/Sludge_fluid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2607],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000521","line":2609,"mapping_status":"MAPPED","ontology_id":"MICRO:0000521","preferred_term":"Sludge
-    fluid"}],"identifier":"MICRO:0000521","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","match_level":"EXACT","ontology_id":"MICRO:0000521","ontology_label":"sludge
-    fluid","ontology_source":"MICRO"},"preferred_term":"Sludge fluid","sssom_rows":[{"data_row":2521,"object_id":"MICRO:0000521","object_label":"sludge
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2606],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000521","line":2608,"mapping_status":"MAPPED","ontology_id":"MICRO:0000521","preferred_term":"Sludge
+    fluid"}],"identifier":"MICRO:0000521","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000521","ontology_label":"sludge
+    fluid","ontology_source":"MICRO"},"preferred_term":"Sludge fluid","sssom_rows":[{"data_row":2523,"object_id":"MICRO:0000521","object_label":"sludge
     fluid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sludge_fluid","synonym_count":1}'
   snapshot_sha256: 45eed06b9f478903bfb4849c19b5656aca154018619b1db3d08152b5212e489c
 - evidence_id: ev-a6c444218b3887d5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2607]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2606]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -230,19 +246,19 @@ evidence:
 - evidence_id: ev-585a6ebb79a21665
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sludge_fluid; data-row positions=[2521]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sludge_fluid; data-row positions=[2523]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2521,"object_id":"MICRO:0000521","object_label":"sludge
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2523,"object_id":"MICRO:0000521","object_label":"sludge
     fluid","other":"Sludge fluid (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Sludge_fluid","validation_method":"manual:claude_culturemech_residual_grounding|CREATED|2026-08-30"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-5e731b3d5778f5fd
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2609]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2608]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000521","line":2609,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0000521","preferred_term":"Sludge
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000521","line":2608,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0000521","preferred_term":"Sludge
     fluid","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-1cd51dd628156c5b
@@ -259,7 +275,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1199]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"45eed06b9f478903bfb4849c19b5656aca154018619b1db3d08152b5212e489c","finding_id":"SEM:0311f76d2f4eca059114","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -301,48 +317,21 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sludge_fluid.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Sludge fluid (see below)", "synonym_type": "RAW_TEXT"}], "history":
-    [{"action": "CREATED_FROM_CULTUREMECH_RESIDUAL", "changes": "Created from a CultureMech
-    recipe ingredient MIM held no record for (2 mentions across 2 recipes). Grounded
-    to MICRO:0000521 (''sludge fluid'') on an exact match of the canonical label to
-    the query ''Sludge fluid''. Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_residual_grounding", "llm_assisted": false, "new_status":
-    "MAPPED", "timestamp": "2026-08-30T10:35:03.361102+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Sludge fluid (see below)'' (x1 CultureMech mentions). Source:
-    culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill",
-    "llm_assisted": false, "timestamp": "2026-08-30T10:41:26.546472+00:00"}, {"action":
-    "CORRECTED", "changes": "Added ontology_mapping.evidence recording the CultureMech
-    occurrence table as the source of this grounding. The provenance was already in
-    this record''s CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from
-    the structured field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
-    from the published row (#541).", "curator": "claude_restore_culturemech_evidence",
-    "llm_assisted": false, "timestamp": "2026-09-06T07:34:56.956907+00:00"}], "identifier":
-    "MICRO:0000521", "mapping": {"evidence": [{"evidence_type": "LEXICAL_MATCH", "notes":
-    "Surface form appears in CultureMech''s occurrence table and was grounded to MICRO:0000521
-    on an exact match against the ontology label. Restored from the record''s own
-    creation history (#541); the residual importer wrote this provenance only into
-    the published SSSOM.", "source": "culturemech:output/ingredient_occurrences.tsv"}],
-    "mapping_quality": "EXACT_MATCH", "match_level": "EXACT", "ontology_id": "MICRO:0000521",
-    "ontology_label": "sludge fluid", "ontology_source": "MICRO"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2606],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000521","line":2608,"mapping_status":"MAPPED","ontology_id":"MICRO:0000521","preferred_term":"Sludge
+    fluid"}],"identifier":"MICRO:0000521","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000521","ontology_label":"sludge
+    fluid","ontology_source":"MICRO"},"preferred_term":"Sludge fluid","sssom_rows":[{"data_row":2523,"object_id":"MICRO:0000521","object_label":"sludge
+    fluid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sludge_fluid","synonym_count":1}'
   snapshot_sha256: 45eed06b9f478903bfb4849c19b5656aca154018619b1db3d08152b5212e489c
 - evidence_id: ev-d4f1e238a85e0e57
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sludge_fluid
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Sludge_fluid; data-row positions=[2523]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.99", "data_row": 2521, "mapping_date":
-    "2026-09-06", "mapping_justification": "semapv:LexicalMatching", "object_id":
-    "MICRO:0000521", "object_label": "sludge fluid", "object_source": "obo:micro.owl",
-    "other": "Sludge fluid (see below)", "predicate_id": "skos:exactMatch", "source":
-    "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence",
-    "subject_id": "MIM:Sludge_fluid", "subject_label": "Sludge fluid", "validation_method":
-    "manual:claude_culturemech_residual_grounding|CREATED|2026-08-30"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2523,"object_id":"MICRO:0000521","object_label":"sludge
+    fluid","other":"Sludge fluid (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Sludge_fluid","validation_method":"manual:claude_culturemech_residual_grounding|CREATED|2026-08-30"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-de40a4caf98a1085
   kind: prior_review

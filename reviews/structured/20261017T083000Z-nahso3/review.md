@@ -83,13 +83,13 @@ Reassess prediction-only role support: NaHSO3
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-2961e63029618cbe | data/ingredients/mapped/Nahso3.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1526],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26709","line":1528,"mapping_status":"MAPPED","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3"}],"identifier":"CHEBI:26709","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26709","ontology_label":"sodium hydrogensulfite","ontology_source":"CHEBI"},"preferred_term":"NaHSO3","sssom_rows":[{"data_row":2036,"object_id":"CHEBI:26709","object_label":"sodium hydrogensulfite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nahso3","synonym_count":16} |
-| ev-b63b2ea970e1df2d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1526] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-87c7514aea605712 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nahso3; data-row positions=[2036] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2036,"object_id":"CHEBI:26709","object_label":"sodium hydrogensulfite","other":"E 222&#124;E222&#124;Natriumbisulfit&#124;Natriumhydrogensulfit&#124;Sodium Bisulfite&#124;hydrogen sulfite sodium&#124;primaeres Natriumsulfit&#124;saures Natriumsulfit&#124;sodium bisulphite&#124;sodium hydrogen sulfite&#124;sulfurous acid monosodium salt&#124;sulfurous acid sodium salt&#124;sulfurous acid, monosodium salt&#124;sulfurous acid, sodium salt (1:1)&#124;CAS:7631-90-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Nahso3","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-edc0534f9dfe4bae | docs/data/mapped_ingredients.csv; CSV lines=[1528] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:26709","line":1528,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3","total_occurrences":"5"}] |
+| ev-2961e63029618cbe | data/ingredients/mapped/Nahso3.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1525],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26709","line":1527,"mapping_status":"MAPPED","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3"}],"identifier":"CHEBI:26709","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26709","ontology_label":"sodium hydrogensulfite","ontology_source":"CHEBI"},"preferred_term":"NaHSO3","sssom_rows":[{"data_row":2038,"object_id":"CHEBI:26709","object_label":"sodium hydrogensulfite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nahso3","synonym_count":16} |
+| ev-b63b2ea970e1df2d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1525] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-87c7514aea605712 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nahso3; data-row positions=[2038] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2038,"object_id":"CHEBI:26709","object_label":"sodium hydrogensulfite","other":"E 222&#124;E222&#124;Natriumbisulfit&#124;Natriumhydrogensulfit&#124;Sodium Bisulfite&#124;hydrogen sulfite sodium&#124;primaeres Natriumsulfit&#124;saures Natriumsulfit&#124;sodium bisulphite&#124;sodium hydrogen sulfite&#124;sulfurous acid monosodium salt&#124;sulfurous acid sodium salt&#124;sulfurous acid, monosodium salt&#124;sulfurous acid, sodium salt (1:1)&#124;CAS:7631-90-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Nahso3","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-edc0534f9dfe4bae | docs/data/mapped_ingredients.csv; CSV lines=[1527] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:26709","line":1527,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3","total_occurrences":"5"}] |
 | ev-768e888be61023de | reports/yaml_record_review/Nahso3.md; &#96;data/ingredients/mapped/Nahso3.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:43; Recommended Edits:50 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-80eb18589b95b37e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1029,1940] | context_only | [{"current_record_sha256":"6ba7bec792543bd48b08a5f1f132d0ffda156b637b2662e659a7805552eafb7c","finding_id":"SEM:0072f46add50ee09ce78","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6ba7bec792543bd48b08a5f1f132d0ffda156b637b2662e659a7805552eafb7c","finding_id":"SEM:59a4ff4481faee4c6b4e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9e7ce58d39008a0c | data/ingredients/mapped/Nahso3.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}] |
+| ev-9e7ce58d39008a0c | data/ingredients/mapped/Nahso3.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1525],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26709","line":1527,"mapping_status":"MAPPED","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3"}],"identifier":"CHEBI:26709","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26709","ontology_label":"sodium hydrogensulfite","ontology_source":"CHEBI"},"preferred_term":"NaHSO3","sssom_rows":[{"data_row":2038,"object_id":"CHEBI:26709","object_label":"sodium hydrogensulfite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nahso3","synonym_count":16} |
 | ev-51b67f5fab2c942a | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-ba047b4cc2010549] | context_only | Predecessor structured review finding f-ba047b4cc2010549 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7d9e96652f6156c7
+  evidence_ids:
+  - ev-2961e63029618cbe
+  - ev-b63b2ea970e1df2d
+  - ev-87c7514aea605712
+  - ev-edc0534f9dfe4bae
+  - ev-9e7ce58d39008a0c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7d9e96652f6156c7
+  evidence_ids:
+  - ev-2961e63029618cbe
+  - ev-80eb18589b95b37e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7d9e96652f6156c7
+  evidence_ids:
+  - ev-768e888be61023de
+  - ev-80eb18589b95b37e
+  - ev-51b67f5fab2c942a
 evidence:
 - evidence_id: ev-2961e63029618cbe
   kind: record_content
   reference: data/ingredients/mapped/Nahso3.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1526],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26709","line":1528,"mapping_status":"MAPPED","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3"}],"identifier":"CHEBI:26709","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26709","ontology_label":"sodium
-    hydrogensulfite","ontology_source":"CHEBI"},"preferred_term":"NaHSO3","sssom_rows":[{"data_row":2036,"object_id":"CHEBI:26709","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1525],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26709","line":1527,"mapping_status":"MAPPED","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3"}],"identifier":"CHEBI:26709","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26709","ontology_label":"sodium
+    hydrogensulfite","ontology_source":"CHEBI"},"preferred_term":"NaHSO3","sssom_rows":[{"data_row":2038,"object_id":"CHEBI:26709","object_label":"sodium
     hydrogensulfite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nahso3","synonym_count":16}'
   snapshot_sha256: 6ba7bec792543bd48b08a5f1f132d0ffda156b637b2662e659a7805552eafb7c
 - evidence_id: ev-b63b2ea970e1df2d
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1526]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1525]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,10 +232,10 @@ evidence:
 - evidence_id: ev-87c7514aea605712
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Nahso3; data-row positions=[2036]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Nahso3; data-row positions=[2038]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2036,"object_id":"CHEBI:26709","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2038,"object_id":"CHEBI:26709","object_label":"sodium
     hydrogensulfite","other":"E 222|E222|Natriumbisulfit|Natriumhydrogensulfit|Sodium
     Bisulfite|hydrogen sulfite sodium|primaeres Natriumsulfit|saures Natriumsulfit|sodium
     bisulphite|sodium hydrogen sulfite|sulfurous acid monosodium salt|sulfurous acid
@@ -231,10 +244,10 @@ evidence:
 - evidence_id: ev-edc0534f9dfe4bae
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1528]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1527]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:26709","line":1528,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3","total_occurrences":"5"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:26709","line":1527,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3","total_occurrences":"5"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-768e888be61023de
   kind: prior_review
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1029,1940]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6ba7bec792543bd48b08a5f1f132d0ffda156b637b2662e659a7805552eafb7c","finding_id":"SEM:0072f46add50ee09ce78","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6ba7bec792543bd48b08a5f1f132d0ffda156b637b2662e659a7805552eafb7c","finding_id":"SEM:59a4ff4481faee4c6b4e","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Nahso3.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1525],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:26709","line":1527,"mapping_status":"MAPPED","ontology_id":"CHEBI:26709","preferred_term":"NaHSO3"}],"identifier":"CHEBI:26709","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:26709","ontology_label":"sodium
+    hydrogensulfite","ontology_source":"CHEBI"},"preferred_term":"NaHSO3","sssom_rows":[{"data_row":2038,"object_id":"CHEBI:26709","object_label":"sodium
+    hydrogensulfite","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nahso3","synonym_count":16}'
   snapshot_sha256: 6ba7bec792543bd48b08a5f1f132d0ffda156b637b2662e659a7805552eafb7c
 - evidence_id: ev-51b67f5fab2c942a
   kind: prior_review

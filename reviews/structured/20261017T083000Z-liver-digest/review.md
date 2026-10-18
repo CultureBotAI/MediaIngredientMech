@@ -89,7 +89,7 @@ Reassess prediction-only role support: Liver digest
 | ev-44faa10935c24a7c | docs/data/mapped_ingredients.csv; CSV lines=[1313] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001668","line":1313,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"MICRO:0001668","preferred_term":"Liver digest","total_occurrences":"7"}] |
 | ev-41c315c2aee21cb9 | reports/yaml_record_review/Liver_Digest.md; &#96;data/ingredients/mapped/Liver_Digest.yaml&#96;:2; Verdict:4; Identity:11; Validation:19; Evidence:27; Completeness:41; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ad04db53b5282b6a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[868,1776] | context_only | [{"current_record_sha256":"1bc5fa7ff48d85da3d138e5ecf6fa3496dc3beefbe43d581f634a16967568565","finding_id":"SEM:9d49cc3ba999a0fd0244","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1bc5fa7ff48d85da3d138e5ecf6fa3496dc3beefbe43d581f634a16967568565","finding_id":"SEM:0b62b2e85842598fcf74","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8a57bf123cbb6017 | data/ingredients/mapped/Liver_Digest.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-8a57bf123cbb6017 | data/ingredients/mapped/Liver_Digest.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1311],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001668","line":1313,"mapping_status":"MAPPED","ontology_id":"MICRO:0001668","preferred_term":"Liver digest"}],"identifier":"MICRO:0001668","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001668","ontology_label":"liver digest","ontology_source":"MICRO"},"preferred_term":"Liver digest","sssom_rows":[{"data_row":1705,"object_id":"MICRO:0001668","object_label":"liver digest","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Liver_Digest","synonym_count":1} |
 | ev-ee68c6d7cf19e6b8 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-55d5eb0057f36d1b] | context_only | Predecessor structured review finding f-55d5eb0057f36d1b in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a67f5fbbd8d02297
+  evidence_ids:
+  - ev-8d08cd14c5f3457a
+  - ev-70a5c0c32fa91d66
+  - ev-6307a430b1959a4d
+  - ev-44faa10935c24a7c
+  - ev-8a57bf123cbb6017
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a67f5fbbd8d02297
+  evidence_ids:
+  - ev-8d08cd14c5f3457a
+  - ev-ad04db53b5282b6a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a67f5fbbd8d02297
+  evidence_ids:
+  - ev-41c315c2aee21cb9
+  - ev-ad04db53b5282b6a
+  - ev-ee68c6d7cf19e6b8
 evidence:
 - evidence_id: ev-8d08cd14c5f3457a
   kind: record_content
   reference: data/ingredients/mapped/Liver_Digest.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1311],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001668","line":1313,"mapping_status":"MAPPED","ontology_id":"MICRO:0001668","preferred_term":"Liver
     digest"}],"identifier":"MICRO:0001668","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001668","ontology_label":"liver
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1311]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Liver_Digest; data-row positions=[1705]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1705,"object_id":"MICRO:0001668","object_label":"liver
     digest","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Liver_Digest","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1313]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001668","line":1313,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"MICRO:0001668","preferred_term":"Liver
     digest","total_occurrences":"7"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[868,1776]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1bc5fa7ff48d85da3d138e5ecf6fa3496dc3beefbe43d581f634a16967568565","finding_id":"SEM:9d49cc3ba999a0fd0244","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1bc5fa7ff48d85da3d138e5ecf6fa3496dc3beefbe43d581f634a16967568565","finding_id":"SEM:0b62b2e85842598fcf74","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Liver_Digest.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1311],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001668","line":1313,"mapping_status":"MAPPED","ontology_id":"MICRO:0001668","preferred_term":"Liver
+    digest"}],"identifier":"MICRO:0001668","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001668","ontology_label":"liver
+    digest","ontology_source":"MICRO"},"preferred_term":"Liver digest","sssom_rows":[{"data_row":1705,"object_id":"MICRO:0001668","object_label":"liver
+    digest","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Liver_Digest","synonym_count":1}'
   snapshot_sha256: 1bc5fa7ff48d85da3d138e5ecf6fa3496dc3beefbe43d581f634a16967568565
 - evidence_id: ev-ee68c6d7cf19e6b8
   kind: prior_review

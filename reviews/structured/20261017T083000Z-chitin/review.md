@@ -90,7 +90,7 @@ Reassess prediction-only role support: Chitin
 | ev-7cfac59b94fa535d | reports/yaml_record_review/20261001T050150Z-Chitin.md; YAML Record Review: Chitin:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8f115a877535e437 | reports/yaml_record_review/Chitin.md; &#96;data/ingredients/mapped/Chitin.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:39; Completeness:56; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-63487389c2dfed31 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[403,1400] | context_only | [{"current_record_sha256":"e44f5916dd8c17179b37da69d6ddd22906a1f4e80c5542b7c5aa9141d2e53612","finding_id":"SEM:eed0121d17b026085e6a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e44f5916dd8c17179b37da69d6ddd22906a1f4e80c5542b7c5aa9141d2e53612","finding_id":"SEM:b0fe32a0b55c50e2aff6","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-4b972c1d3352fae2 | data/ingredients/mapped/Chitin.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-4b972c1d3352fae2 | data/ingredients/mapped/Chitin.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[706],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17029","line":708,"mapping_status":"MAPPED","ontology_id":"CHEBI:17029","preferred_term":"Chitin"}],"identifier":"CHEBI:17029","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17029","ontology_label":"chitin","ontology_source":"CHEBI"},"preferred_term":"Chitin","sssom_rows":[{"data_row":737,"object_id":"CHEBI:17029","object_label":"chitin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Chitin","synonym_count":2} |
 | ev-e4af2f3abaecb2d5 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-08e183f665b1509a] | context_only | Predecessor structured review finding f-08e183f665b1509a in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ad80bdbfa81b52e6
+  evidence_ids:
+  - ev-3f7b67425af143bc
+  - ev-5cb82b6050e216a9
+  - ev-fb017338084fea3a
+  - ev-e52a672e944ef83a
+  - ev-4b972c1d3352fae2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ad80bdbfa81b52e6
+  evidence_ids:
+  - ev-3f7b67425af143bc
+  - ev-63487389c2dfed31
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ad80bdbfa81b52e6
+  evidence_ids:
+  - ev-7cfac59b94fa535d
+  - ev-8f115a877535e437
+  - ev-63487389c2dfed31
+  - ev-e4af2f3abaecb2d5
 evidence:
 - evidence_id: ev-3f7b67425af143bc
   kind: record_content
   reference: data/ingredients/mapped/Chitin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[706],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17029","line":708,"mapping_status":"MAPPED","ontology_id":"CHEBI:17029","preferred_term":"Chitin"}],"identifier":"CHEBI:17029","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17029","ontology_label":"chitin","ontology_source":"CHEBI"},"preferred_term":"Chitin","sssom_rows":[{"data_row":737,"object_id":"CHEBI:17029","object_label":"chitin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Chitin","synonym_count":2}'
   snapshot_sha256: e44f5916dd8c17179b37da69d6ddd22906a1f4e80c5542b7c5aa9141d2e53612
@@ -213,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [706]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +236,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Chitin; data-row positions=[737]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":737,"object_id":"CHEBI:17029","object_label":"chitin","other":"(1->4)-2-acetamido-2-deoxy-beta-D-glucan","predicate_id":"skos:exactMatch","subject_id":"MIM:Chitin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -230,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[708]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17029","line":708,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:17029","preferred_term":"Chitin","total_occurrences":"12"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -286,7 +300,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[403,1400]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e44f5916dd8c17179b37da69d6ddd22906a1f4e80c5542b7c5aa9141d2e53612","finding_id":"SEM:eed0121d17b026085e6a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e44f5916dd8c17179b37da69d6ddd22906a1f4e80c5542b7c5aa9141d2e53612","finding_id":"SEM:b0fe32a0b55c50e2aff6","kind":"role_evidence","resolution_reason":"Historical
@@ -296,12 +310,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Chitin.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[706],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17029","line":708,"mapping_status":"MAPPED","ontology_id":"CHEBI:17029","preferred_term":"Chitin"}],"identifier":"CHEBI:17029","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17029","ontology_label":"chitin","ontology_source":"CHEBI"},"preferred_term":"Chitin","sssom_rows":[{"data_row":737,"object_id":"CHEBI:17029","object_label":"chitin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Chitin","synonym_count":2}'
   snapshot_sha256: e44f5916dd8c17179b37da69d6ddd22906a1f4e80c5542b7c5aa9141d2e53612
 - evidence_id: ev-e4af2f3abaecb2d5
   kind: prior_review

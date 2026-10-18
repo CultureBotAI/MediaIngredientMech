@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sialyllacto-N-tetraose d
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-1f70e03370f0e956 | data/ingredients/mapped/Sialyllacto-N-tetraose_D.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1794],"raw_equal":true},"docs_rows":[{"identifier":"cas:100789-83-1","line":1796,"mapping_status":"MAPPED","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose d"}],"identifier":"cas:100789-83-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100789-83-1","ontology_label":"Sialyllacto-N-tetraose d","ontology_source":"CAS"},"preferred_term":"Sialyllacto-N-tetraose d","sssom_rows":[{"data_row":2501,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose d","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sialyllacto-N-tetraose_D","synonym_count":0} |
-| ev-e249d4b983ff3991 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1794] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-bb5988ac1181252f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sialyllacto-N-tetraose_D; data-row positions=[2501] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2501,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose d","other":"CAS:100789-83-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sialyllacto-N-tetraose_D","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-2810100765fde752 | docs/data/mapped_ingredients.csv; CSV lines=[1796] | supports | Published identity and count rows inspected: [{"identifier":"cas:100789-83-1","line":1796,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose d","total_occurrences":"0"}] |
+| ev-1f70e03370f0e956 | data/ingredients/mapped/Sialyllacto-N-tetraose_D.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1793],"raw_equal":true},"docs_rows":[{"identifier":"cas:100789-83-1","line":1795,"mapping_status":"MAPPED","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose d"}],"identifier":"cas:100789-83-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100789-83-1","ontology_label":"Sialyllacto-N-tetraose d","ontology_source":"CAS"},"preferred_term":"Sialyllacto-N-tetraose d","sssom_rows":[{"data_row":2503,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose d","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sialyllacto-N-tetraose_D","synonym_count":0} |
+| ev-e249d4b983ff3991 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1793] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-bb5988ac1181252f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sialyllacto-N-tetraose_D; data-row positions=[2503] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2503,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose d","other":"CAS:100789-83-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sialyllacto-N-tetraose_D","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-2810100765fde752 | docs/data/mapped_ingredients.csv; CSV lines=[1795] | supports | Published identity and count rows inspected: [{"identifier":"cas:100789-83-1","line":1795,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose d","total_occurrences":"0"}] |
 | ev-926ed9a85c736b29 | reports/yaml_record_review/Sialyllacto-N-tetraose_D.md; &#96;data/ingredients/mapped/Sialyllacto-N-tetraose_D.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-012fb96537b07a82 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1193,2048] | context_only | [{"current_record_sha256":"e69b97faa37600d48b65806a9eee8d965f85ecb9d33189651babc8e7068e102a","finding_id":"SEM:a4bfda0d80d6e7579f9e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e69b97faa37600d48b65806a9eee8d965f85ecb9d33189651babc8e7068e102a","finding_id":"SEM:f0c3d3a41c1fde77ddf1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-3aa1200e276e179e | data/ingredients/mapped/Sialyllacto-N-tetraose_D.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-3aa1200e276e179e | data/ingredients/mapped/Sialyllacto-N-tetraose_D.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1793],"raw_equal":true},"docs_rows":[{"identifier":"cas:100789-83-1","line":1795,"mapping_status":"MAPPED","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose d"}],"identifier":"cas:100789-83-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100789-83-1","ontology_label":"Sialyllacto-N-tetraose d","ontology_source":"CAS"},"preferred_term":"Sialyllacto-N-tetraose d","sssom_rows":[{"data_row":2503,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose d","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sialyllacto-N-tetraose_D","synonym_count":0} |
 | ev-cf5bf3a0a7a88aee | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-42b990d41a5cea09] | context_only | Predecessor structured review finding f-42b990d41a5cea09 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-26bcbd3cfaf22637
+  evidence_ids:
+  - ev-1f70e03370f0e956
+  - ev-e249d4b983ff3991
+  - ev-bb5988ac1181252f
+  - ev-2810100765fde752
+  - ev-3aa1200e276e179e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-26bcbd3cfaf22637
+  evidence_ids:
+  - ev-1f70e03370f0e956
+  - ev-012fb96537b07a82
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-26bcbd3cfaf22637
+  evidence_ids:
+  - ev-926ed9a85c736b29
+  - ev-012fb96537b07a82
+  - ev-cf5bf3a0a7a88aee
 evidence:
 - evidence_id: ev-1f70e03370f0e956
   kind: record_content
   reference: data/ingredients/mapped/Sialyllacto-N-tetraose_D.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1794],"raw_equal":true},"docs_rows":[{"identifier":"cas:100789-83-1","line":1796,"mapping_status":"MAPPED","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1793],"raw_equal":true},"docs_rows":[{"identifier":"cas:100789-83-1","line":1795,"mapping_status":"MAPPED","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose
     d"}],"identifier":"cas:100789-83-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100789-83-1","ontology_label":"Sialyllacto-N-tetraose
-    d","ontology_source":"CAS"},"preferred_term":"Sialyllacto-N-tetraose d","sssom_rows":[{"data_row":2501,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose
+    d","ontology_source":"CAS"},"preferred_term":"Sialyllacto-N-tetraose d","sssom_rows":[{"data_row":2503,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose
     d","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sialyllacto-N-tetraose_D","synonym_count":0}'
   snapshot_sha256: e69b97faa37600d48b65806a9eee8d965f85ecb9d33189651babc8e7068e102a
 - evidence_id: ev-e249d4b983ff3991
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1794]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1793]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-bb5988ac1181252f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sialyllacto-N-tetraose_D; data-row positions=[2501]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sialyllacto-N-tetraose_D; data-row positions=[2503]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2501,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2503,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose
     d","other":"CAS:100789-83-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sialyllacto-N-tetraose_D","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-2810100765fde752
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1796]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1795]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:100789-83-1","line":1796,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:100789-83-1","line":1795,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose
     d","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-926ed9a85c736b29
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1193,2048]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e69b97faa37600d48b65806a9eee8d965f85ecb9d33189651babc8e7068e102a","finding_id":"SEM:a4bfda0d80d6e7579f9e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e69b97faa37600d48b65806a9eee8d965f85ecb9d33189651babc8e7068e102a","finding_id":"SEM:f0c3d3a41c1fde77ddf1","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sialyllacto-N-tetraose_D.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1793],"raw_equal":true},"docs_rows":[{"identifier":"cas:100789-83-1","line":1795,"mapping_status":"MAPPED","ontology_id":"cas:100789-83-1","preferred_term":"Sialyllacto-N-tetraose
+    d"}],"identifier":"cas:100789-83-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:100789-83-1","ontology_label":"Sialyllacto-N-tetraose
+    d","ontology_source":"CAS"},"preferred_term":"Sialyllacto-N-tetraose d","sssom_rows":[{"data_row":2503,"object_id":"cas:100789-83-1","object_label":"Sialyllacto-N-tetraose
+    d","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sialyllacto-N-tetraose_D","synonym_count":0}'
   snapshot_sha256: e69b97faa37600d48b65806a9eee8d965f85ecb9d33189651babc8e7068e102a
 - evidence_id: ev-cf5bf3a0a7a88aee
   kind: prior_review

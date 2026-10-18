@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na2-fumarate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-058526927d81e74b | data/ingredients/mapped/Na2-fumarate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1480],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:115156","line":1482,"mapping_status":"MAPPED","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate"}],"identifier":"CHEBI:115156","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:115156","ontology_label":"disodium fumarate","ontology_source":"CHEBI"},"preferred_term":"Na2-fumarate","sssom_rows":[{"data_row":1982,"object_id":"CHEBI:115156","object_label":"disodium fumarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-fumarate","synonym_count":11} |
-| ev-9bf7280436d4778c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1480] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-05d1d8a00ed16a86 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2-fumarate; data-row positions=[1982] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1982,"object_id":"CHEBI:115156","object_label":"disodium fumarate","other":"E365&#124;Fumaric acid, disodium salt&#124;Na-fumarate&#124;Sodium fumarate&#124;disodium (2E)-but-2-enedioate&#124;CAS:17013-01-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2-fumarate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-494e1bc7f098753b | docs/data/mapped_ingredients.csv; CSV lines=[1482] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:115156","line":1482,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"135","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate","total_occurrences":"135"}] |
+| ev-058526927d81e74b | data/ingredients/mapped/Na2-fumarate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1479],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:115156","line":1481,"mapping_status":"MAPPED","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate"}],"identifier":"CHEBI:115156","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:115156","ontology_label":"disodium fumarate","ontology_source":"CHEBI"},"preferred_term":"Na2-fumarate","sssom_rows":[{"data_row":1984,"object_id":"CHEBI:115156","object_label":"disodium fumarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-fumarate","synonym_count":11} |
+| ev-9bf7280436d4778c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1479] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-05d1d8a00ed16a86 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2-fumarate; data-row positions=[1984] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1984,"object_id":"CHEBI:115156","object_label":"disodium fumarate","other":"E365&#124;Fumaric acid, disodium salt&#124;Na-fumarate&#124;Sodium fumarate&#124;disodium (2E)-but-2-enedioate&#124;CAS:17013-01-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2-fumarate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-494e1bc7f098753b | docs/data/mapped_ingredients.csv; CSV lines=[1481] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:115156","line":1481,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"135","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate","total_occurrences":"135"}] |
 | ev-3d06500b93a528da | reports/yaml_record_review/Na2-fumarate.md; &#96;data/ingredients/mapped/Na2-fumarate.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:27; Completeness:40; Recommended Edits:46 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ee76b7f95a0e0a2e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[987,1775,1845] | context_only | [{"current_record_sha256":"db8152e7187f6a76224afea1dfa8ebc58aae54e8ea902d1e2d636507a4995ab5","finding_id":"SEM:870e8387ae5d28c93781","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"db8152e7187f6a76224afea1dfa8ebc58aae54e8ea902d1e2d636507a4995ab5","finding_id":"SEM:8313cd7eae5693b329df","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"db8152e7187f6a76224afea1dfa8ebc58aae54e8ea902d1e2d636507a4995ab5","finding_id":"SEM:04c91cac20dbb155a41b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-06ee6b8e357a8d4a | data/ingredients/mapped/Na2-fumarate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-06ee6b8e357a8d4a | data/ingredients/mapped/Na2-fumarate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1479],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:115156","line":1481,"mapping_status":"MAPPED","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate"}],"identifier":"CHEBI:115156","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:115156","ontology_label":"disodium fumarate","ontology_source":"CHEBI"},"preferred_term":"Na2-fumarate","sssom_rows":[{"data_row":1984,"object_id":"CHEBI:115156","object_label":"disodium fumarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-fumarate","synonym_count":11} |
 | ev-c696cfcc9a7045f0 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-f74aceb72fda8484] | context_only | Predecessor structured review finding f-f74aceb72fda8484 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-89303345195087b6
+  evidence_ids:
+  - ev-058526927d81e74b
+  - ev-9bf7280436d4778c
+  - ev-05d1d8a00ed16a86
+  - ev-494e1bc7f098753b
+  - ev-06ee6b8e357a8d4a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-89303345195087b6
+  evidence_ids:
+  - ev-058526927d81e74b
+  - ev-ee76b7f95a0e0a2e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-89303345195087b6
+  evidence_ids:
+  - ev-3d06500b93a528da
+  - ev-ee76b7f95a0e0a2e
+  - ev-c696cfcc9a7045f0
 evidence:
 - evidence_id: ev-058526927d81e74b
   kind: record_content
   reference: data/ingredients/mapped/Na2-fumarate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1480],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:115156","line":1482,"mapping_status":"MAPPED","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate"}],"identifier":"CHEBI:115156","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:115156","ontology_label":"disodium
-    fumarate","ontology_source":"CHEBI"},"preferred_term":"Na2-fumarate","sssom_rows":[{"data_row":1982,"object_id":"CHEBI:115156","object_label":"disodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1479],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:115156","line":1481,"mapping_status":"MAPPED","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate"}],"identifier":"CHEBI:115156","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:115156","ontology_label":"disodium
+    fumarate","ontology_source":"CHEBI"},"preferred_term":"Na2-fumarate","sssom_rows":[{"data_row":1984,"object_id":"CHEBI:115156","object_label":"disodium
     fumarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-fumarate","synonym_count":11}'
   snapshot_sha256: db8152e7187f6a76224afea1dfa8ebc58aae54e8ea902d1e2d636507a4995ab5
 - evidence_id: ev-9bf7280436d4778c
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1480]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1479]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-05d1d8a00ed16a86
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na2-fumarate; data-row positions=[1982]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na2-fumarate; data-row positions=[1984]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1982,"object_id":"CHEBI:115156","object_label":"disodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1984,"object_id":"CHEBI:115156","object_label":"disodium
     fumarate","other":"E365|Fumaric acid, disodium salt|Na-fumarate|Sodium fumarate|disodium
     (2E)-but-2-enedioate|CAS:17013-01-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2-fumarate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-494e1bc7f098753b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1482]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1481]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:115156","line":1482,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"135","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate","total_occurrences":"135"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:115156","line":1481,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"135","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate","total_occurrences":"135"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-3d06500b93a528da
   kind: prior_review
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[987,1775,1845]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"db8152e7187f6a76224afea1dfa8ebc58aae54e8ea902d1e2d636507a4995ab5","finding_id":"SEM:870e8387ae5d28c93781","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"db8152e7187f6a76224afea1dfa8ebc58aae54e8ea902d1e2d636507a4995ab5","finding_id":"SEM:8313cd7eae5693b329df","kind":"role_evidence","resolution_reason":"Historical
@@ -265,14 +278,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na2-fumarate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1479],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:115156","line":1481,"mapping_status":"MAPPED","ontology_id":"CHEBI:115156","preferred_term":"Na2-fumarate"}],"identifier":"CHEBI:115156","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:115156","ontology_label":"disodium
+    fumarate","ontology_source":"CHEBI"},"preferred_term":"Na2-fumarate","sssom_rows":[{"data_row":1984,"object_id":"CHEBI:115156","object_label":"disodium
+    fumarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2-fumarate","synonym_count":11}'
   snapshot_sha256: db8152e7187f6a76224afea1dfa8ebc58aae54e8ea902d1e2d636507a4995ab5
 - evidence_id: ev-c696cfcc9a7045f0
   kind: prior_review

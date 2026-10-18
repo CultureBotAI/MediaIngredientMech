@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-52040395a5249238
+  evidence_ids:
+  - ev-add47e9203aab693
+  - ev-c7014b8292c45b32
+  - ev-562438965ab27fb1
+  - ev-f7587394a058a4e9
+  - ev-7536e735a5cc8c44
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-52040395a5249238
+  evidence_ids:
+  - ev-add47e9203aab693
+  - ev-290aed72ae0ceee9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-52040395a5249238
+  evidence_ids:
+  - ev-ec9c80327321c4c9
+  - ev-290aed72ae0ceee9
+  - ev-4894aa4c99e2eb62
 evidence:
 - evidence_id: ev-add47e9203aab693
   kind: record_content
   reference: data/ingredients/mapped/Gentisic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1048],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17189","line":1050,"mapping_status":"MAPPED","ontology_id":"CHEBI:17189","preferred_term":"Gentisic
     acid"}],"identifier":"CHEBI:17189","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17189","ontology_label":"2,5-dihydroxybenzoic
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1048]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Gentisic_Acid; data-row positions=[1293]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1293,"object_id":"CHEBI:17189","object_label":"2,5-dihydroxybenzoic
     acid","other":"5-hydroxysalicylic acid|Hydroquinonecarboxylic acid|2,5-Dihydroxybenzoate|Gentisate|CAS:490-79-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Gentisic_Acid","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -125,7 +138,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1050]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17189","line":1050,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:17189","preferred_term":"Gentisic
     acid","total_occurrences":"3"}]'
@@ -147,7 +160,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[659,1417]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b386900a900406d71834f500debf08bf47b03be0e7d3ef69e5e131fec714ccad","finding_id":"SEM:8a5e9fc017835ad694cf","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b386900a900406d71834f500debf08bf47b03be0e7d3ef69e5e131fec714ccad","finding_id":"SEM:0dcbac9f4e6f84ef6b69","kind":"role_evidence","resolution_reason":"Historical
@@ -157,12 +170,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Gentisic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1048],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17189","line":1050,"mapping_status":"MAPPED","ontology_id":"CHEBI:17189","preferred_term":"Gentisic
+    acid"}],"identifier":"CHEBI:17189","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17189","ontology_label":"2,5-dihydroxybenzoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Gentisic acid","sssom_rows":[{"data_row":1293,"object_id":"CHEBI:17189","object_label":"2,5-dihydroxybenzoic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gentisic_Acid","synonym_count":6}'
   snapshot_sha256: b386900a900406d71834f500debf08bf47b03be0e7d3ef69e5e131fec714ccad
 - evidence_id: ev-4894aa4c99e2eb62
   kind: prior_review

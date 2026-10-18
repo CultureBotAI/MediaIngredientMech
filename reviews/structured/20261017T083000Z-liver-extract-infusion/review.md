@@ -89,7 +89,7 @@ Reassess prediction-only role support: Liver extract infusion
 | ev-0de48fd268bcfa8f | docs/data/mapped_ingredients.csv; CSV lines=[1316] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001363","line":1316,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"MICRO:0001363","preferred_term":"Liver extract infusion","total_occurrences":"10"}] |
 | ev-adde515746c2abc1 | reports/yaml_record_review/Liver_Extract_Infusion.md; &#96;data/ingredients/mapped/Liver_Extract_Infusion.yaml&#96;:2; Verdict:4; Identity:10; Validation:18; Evidence:26; Completeness:43; Recommended Edits:50 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b1136b000c20a4b6 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[871,1401] | context_only | [{"current_record_sha256":"b9282556e77cf35f541d0da1d2099a62ee35cbaf115bddec21a1e2c7d7ddefac","finding_id":"SEM:5e93a87e20232b84d11e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b9282556e77cf35f541d0da1d2099a62ee35cbaf115bddec21a1e2c7d7ddefac","finding_id":"SEM:93a4fb84b65122bb255f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c7c77b5ceffb3480 | data/ingredients/mapped/Liver_Extract_Infusion.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-c7c77b5ceffb3480 | data/ingredients/mapped/Liver_Extract_Infusion.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1314],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001363","line":1316,"mapping_status":"MAPPED","ontology_id":"MICRO:0001363","preferred_term":"Liver extract infusion"}],"identifier":"MICRO:0001363","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"MICRO:0001363","ontology_label":"liver extract","ontology_source":"MICRO"},"preferred_term":"Liver extract infusion","sssom_rows":[{"data_row":1708,"object_id":"MICRO:0001363","object_label":"liver extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Liver_Extract_Infusion","synonym_count":1} |
 | ev-fe657a59eda89a89 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-6d92eae4f585ff9b] | context_only | Predecessor structured review finding f-6d92eae4f585ff9b in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c3449648d612a182
+  evidence_ids:
+  - ev-d8d45b71b1ede951
+  - ev-a95a1200b32ad79a
+  - ev-1c0d93b8f9d9d75d
+  - ev-0de48fd268bcfa8f
+  - ev-c7c77b5ceffb3480
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c3449648d612a182
+  evidence_ids:
+  - ev-d8d45b71b1ede951
+  - ev-b1136b000c20a4b6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c3449648d612a182
+  evidence_ids:
+  - ev-adde515746c2abc1
+  - ev-b1136b000c20a4b6
+  - ev-fe657a59eda89a89
 evidence:
 - evidence_id: ev-d8d45b71b1ede951
   kind: record_content
   reference: data/ingredients/mapped/Liver_Extract_Infusion.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1314],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001363","line":1316,"mapping_status":"MAPPED","ontology_id":"MICRO:0001363","preferred_term":"Liver
     extract infusion"}],"identifier":"MICRO:0001363","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"MICRO:0001363","ontology_label":"liver
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1314]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Liver_Extract_Infusion; data-row positions=[1708]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1708,"object_id":"MICRO:0001363","object_label":"liver
     extract","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Liver_Extract_Infusion","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1316]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001363","line":1316,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"MICRO:0001363","preferred_term":"Liver
     extract infusion","total_occurrences":"10"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[871,1401]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b9282556e77cf35f541d0da1d2099a62ee35cbaf115bddec21a1e2c7d7ddefac","finding_id":"SEM:5e93a87e20232b84d11e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b9282556e77cf35f541d0da1d2099a62ee35cbaf115bddec21a1e2c7d7ddefac","finding_id":"SEM:93a4fb84b65122bb255f","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Liver_Extract_Infusion.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1314],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001363","line":1316,"mapping_status":"MAPPED","ontology_id":"MICRO:0001363","preferred_term":"Liver
+    extract infusion"}],"identifier":"MICRO:0001363","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"MICRO:0001363","ontology_label":"liver
+    extract","ontology_source":"MICRO"},"preferred_term":"Liver extract infusion","sssom_rows":[{"data_row":1708,"object_id":"MICRO:0001363","object_label":"liver
+    extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Liver_Extract_Infusion","synonym_count":1}'
   snapshot_sha256: b9282556e77cf35f541d0da1d2099a62ee35cbaf115bddec21a1e2c7d7ddefac
 - evidence_id: ev-fe657a59eda89a89
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: beta-Lipomycin
 | ev-d1f44652feb1413d | docs/data/mapped_ingredients.csv; CSV lines=[580] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C000601869","line":580,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C000601869","preferred_term":"beta-Lipomycin","total_occurrences":"0"}] |
 | ev-97566912021e5e67 | reports/yaml_record_review/Beta-Lipomycin.md; &#96;data/ingredients/mapped/Beta-Lipomycin.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:32; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-7b8f330e5bd93460 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[308,1839] | context_only | [{"current_record_sha256":"a7193b382eb78c71fcf00c5950e2f41194ba3757218f5fd812dc8492821d8524","finding_id":"SEM:1f09ce528f7216c4a73a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a7193b382eb78c71fcf00c5950e2f41194ba3757218f5fd812dc8492821d8524","finding_id":"SEM:5d0510bb0894a56b1e7f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9b3f326ec7364b15 | data/ingredients/mapped/Beta-Lipomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-9b3f326ec7364b15 | data/ingredients/mapped/Beta-Lipomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[578],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C000601869","line":580,"mapping_status":"MAPPED","ontology_id":"mesh:C000601869","preferred_term":"beta-Lipomycin"}],"identifier":"mesh:C000601869","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C000601869","ontology_label":"beta-lipomycin","ontology_source":"MESH"},"preferred_term":"beta-Lipomycin","sssom_rows":[{"data_row":529,"object_id":"mesh:C000601869","object_label":"beta-lipomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beta-Lipomycin","synonym_count":2} |
 | ev-a3a0e4583f984161 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-bdde01a208b996b8] | context_only | Predecessor structured review finding f-bdde01a208b996b8 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9ab4be44d3984f0a
+  evidence_ids:
+  - ev-c5725c1025ecae6f
+  - ev-ea6864702ba07ebe
+  - ev-a21a0937c8bb60fa
+  - ev-d1f44652feb1413d
+  - ev-9b3f326ec7364b15
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9ab4be44d3984f0a
+  evidence_ids:
+  - ev-c5725c1025ecae6f
+  - ev-7b8f330e5bd93460
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9ab4be44d3984f0a
+  evidence_ids:
+  - ev-97566912021e5e67
+  - ev-7b8f330e5bd93460
+  - ev-a3a0e4583f984161
 evidence:
 - evidence_id: ev-c5725c1025ecae6f
   kind: record_content
   reference: data/ingredients/mapped/Beta-Lipomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[578],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C000601869","line":580,"mapping_status":"MAPPED","ontology_id":"mesh:C000601869","preferred_term":"beta-Lipomycin"}],"identifier":"mesh:C000601869","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C000601869","ontology_label":"beta-lipomycin","ontology_source":"MESH"},"preferred_term":"beta-Lipomycin","sssom_rows":[{"data_row":529,"object_id":"mesh:C000601869","object_label":"beta-lipomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beta-Lipomycin","synonym_count":2}'
   snapshot_sha256: a7193b382eb78c71fcf00c5950e2f41194ba3757218f5fd812dc8492821d8524
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [578]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Beta-Lipomycin; data-row positions=[529]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":529,"object_id":"mesh:C000601869","object_label":"beta-lipomycin","other":"Beta
     Lipomycin","predicate_id":"skos:exactMatch","subject_id":"MIM:Beta-Lipomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[580]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C000601869","line":580,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C000601869","preferred_term":"beta-Lipomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[308,1839]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a7193b382eb78c71fcf00c5950e2f41194ba3757218f5fd812dc8492821d8524","finding_id":"SEM:1f09ce528f7216c4a73a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a7193b382eb78c71fcf00c5950e2f41194ba3757218f5fd812dc8492821d8524","finding_id":"SEM:5d0510bb0894a56b1e7f","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Beta-Lipomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[578],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C000601869","line":580,"mapping_status":"MAPPED","ontology_id":"mesh:C000601869","preferred_term":"beta-Lipomycin"}],"identifier":"mesh:C000601869","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C000601869","ontology_label":"beta-lipomycin","ontology_source":"MESH"},"preferred_term":"beta-Lipomycin","sssom_rows":[{"data_row":529,"object_id":"mesh:C000601869","object_label":"beta-lipomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beta-Lipomycin","synonym_count":2}'
   snapshot_sha256: a7193b382eb78c71fcf00c5950e2f41194ba3757218f5fd812dc8492821d8524
 - evidence_id: ev-a3a0e4583f984161
   kind: prior_review

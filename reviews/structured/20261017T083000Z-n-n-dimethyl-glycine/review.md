@@ -83,13 +83,13 @@ Reassess prediction-only role support: N-N Dimethyl glycine
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-3ff546d1a95f9f10 | data/ingredients/mapped/N-N_Dimethyl_Glycine.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17724","line":1446,"mapping_status":"MAPPED","ontology_id":"CHEBI:17724","preferred_term":"N-N Dimethyl glycine"}],"identifier":"CHEBI:17724","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:17724","ontology_label":"N,N-dimethylglycine","ontology_source":"CHEBI"},"preferred_term":"N-N Dimethyl glycine","sssom_rows":[{"data_row":1932,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-N_Dimethyl_Glycine","synonym_count":0} |
-| ev-dec863cf5f7e4ed5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1444] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-4b4c4b5e4e40200c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:N-N_Dimethyl_Glycine; data-row positions=[1932] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1932,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","other":"CAS:1118-68-9","predicate_id":"skos:exactMatch","subject_id":"MIM:N-N_Dimethyl_Glycine","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-88124cbae2077437 | docs/data/mapped_ingredients.csv; CSV lines=[1446] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17724","line":1446,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17724","preferred_term":"N-N Dimethyl glycine","total_occurrences":"0"}] |
+| ev-3ff546d1a95f9f10 | data/ingredients/mapped/N-N_Dimethyl_Glycine.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1443],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17724","line":1445,"mapping_status":"MAPPED","ontology_id":"CHEBI:17724","preferred_term":"N-N Dimethyl glycine"}],"identifier":"CHEBI:17724","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:17724","ontology_label":"N,N-dimethylglycine","ontology_source":"CHEBI"},"preferred_term":"N-N Dimethyl glycine","sssom_rows":[{"data_row":1934,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-N_Dimethyl_Glycine","synonym_count":0} |
+| ev-dec863cf5f7e4ed5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1443] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-4b4c4b5e4e40200c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:N-N_Dimethyl_Glycine; data-row positions=[1934] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1934,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","other":"CAS:1118-68-9","predicate_id":"skos:exactMatch","subject_id":"MIM:N-N_Dimethyl_Glycine","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-88124cbae2077437 | docs/data/mapped_ingredients.csv; CSV lines=[1445] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17724","line":1445,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17724","preferred_term":"N-N Dimethyl glycine","total_occurrences":"0"}] |
 | ev-fd2e34277d5083f6 | reports/yaml_record_review/N-N_Dimethyl_Glycine.md; &#96;data/ingredients/mapped/N-N_Dimethyl_Glycine.yaml&#96;:2; Verdict:4; Identity:12; Validation:21; Evidence:30; Completeness:37; Recommended Edits:43 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-41f0254ae8e30b4c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[963,2090] | context_only | [{"current_record_sha256":"655c98f17fd6ca7a227d3cb46ae70f80b4b74d84e8bce470f9bb6533b034f5b1","finding_id":"SEM:4ca2851566dd853c6f3a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"655c98f17fd6ca7a227d3cb46ae70f80b4b74d84e8bce470f9bb6533b034f5b1","finding_id":"SEM:e5c26a929ddef3c16fda","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-cd6ea04177182d29 | data/ingredients/mapped/N-N_Dimethyl_Glycine.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-cd6ea04177182d29 | data/ingredients/mapped/N-N_Dimethyl_Glycine.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1443],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17724","line":1445,"mapping_status":"MAPPED","ontology_id":"CHEBI:17724","preferred_term":"N-N Dimethyl glycine"}],"identifier":"CHEBI:17724","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:17724","ontology_label":"N,N-dimethylglycine","ontology_source":"CHEBI"},"preferred_term":"N-N Dimethyl glycine","sssom_rows":[{"data_row":1934,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-N_Dimethyl_Glycine","synonym_count":0} |
 | ev-c5467eae9b880843 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-096cdaee912d34b3] | context_only | Predecessor structured review finding f-096cdaee912d34b3 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-901d7f828b869f0f
+  evidence_ids:
+  - ev-3ff546d1a95f9f10
+  - ev-dec863cf5f7e4ed5
+  - ev-4b4c4b5e4e40200c
+  - ev-88124cbae2077437
+  - ev-cd6ea04177182d29
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-901d7f828b869f0f
+  evidence_ids:
+  - ev-3ff546d1a95f9f10
+  - ev-41f0254ae8e30b4c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-901d7f828b869f0f
+  evidence_ids:
+  - ev-fd2e34277d5083f6
+  - ev-41f0254ae8e30b4c
+  - ev-c5467eae9b880843
 evidence:
 - evidence_id: ev-3ff546d1a95f9f10
   kind: record_content
   reference: data/ingredients/mapped/N-N_Dimethyl_Glycine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1444],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17724","line":1446,"mapping_status":"MAPPED","ontology_id":"CHEBI:17724","preferred_term":"N-N
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1443],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17724","line":1445,"mapping_status":"MAPPED","ontology_id":"CHEBI:17724","preferred_term":"N-N
     Dimethyl glycine"}],"identifier":"CHEBI:17724","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:17724","ontology_label":"N,N-dimethylglycine","ontology_source":"CHEBI"},"preferred_term":"N-N
-    Dimethyl glycine","sssom_rows":[{"data_row":1932,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-N_Dimethyl_Glycine","synonym_count":0}'
+    Dimethyl glycine","sssom_rows":[{"data_row":1934,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-N_Dimethyl_Glycine","synonym_count":0}'
   snapshot_sha256: 655c98f17fd6ca7a227d3cb46ae70f80b4b74d84e8bce470f9bb6533b034f5b1
 - evidence_id: ev-dec863cf5f7e4ed5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1444]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1443]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,18 +232,18 @@ evidence:
 - evidence_id: ev-4b4c4b5e4e40200c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:N-N_Dimethyl_Glycine; data-row positions=[1932]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:N-N_Dimethyl_Glycine; data-row positions=[1934]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1932,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","other":"CAS:1118-68-9","predicate_id":"skos:exactMatch","subject_id":"MIM:N-N_Dimethyl_Glycine","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1934,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","other":"CAS:1118-68-9","predicate_id":"skos:exactMatch","subject_id":"MIM:N-N_Dimethyl_Glycine","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-88124cbae2077437
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1446]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1445]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17724","line":1446,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17724","preferred_term":"N-N
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17724","line":1445,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17724","preferred_term":"N-N
     Dimethyl glycine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-fd2e34277d5083f6
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[963,2090]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"655c98f17fd6ca7a227d3cb46ae70f80b4b74d84e8bce470f9bb6533b034f5b1","finding_id":"SEM:4ca2851566dd853c6f3a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"655c98f17fd6ca7a227d3cb46ae70f80b4b74d84e8bce470f9bb6533b034f5b1","finding_id":"SEM:e5c26a929ddef3c16fda","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/N-N_Dimethyl_Glycine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1443],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17724","line":1445,"mapping_status":"MAPPED","ontology_id":"CHEBI:17724","preferred_term":"N-N
+    Dimethyl glycine"}],"identifier":"CHEBI:17724","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:17724","ontology_label":"N,N-dimethylglycine","ontology_source":"CHEBI"},"preferred_term":"N-N
+    Dimethyl glycine","sssom_rows":[{"data_row":1934,"object_id":"CHEBI:17724","object_label":"N,N-dimethylglycine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:N-N_Dimethyl_Glycine","synonym_count":0}'
   snapshot_sha256: 655c98f17fd6ca7a227d3cb46ae70f80b4b74d84e8bce470f9bb6533b034f5b1
 - evidence_id: ev-c5467eae9b880843
   kind: prior_review

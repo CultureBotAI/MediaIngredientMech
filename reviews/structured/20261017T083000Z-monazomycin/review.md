@@ -83,14 +83,14 @@ Reassess prediction-only role support: monazomycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-534faaeef4d1d529 | data/ingredients/mapped/Monazomycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1423],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201539","line":1425,"mapping_status":"MAPPED","ontology_id":"CHEBI:201539","preferred_term":"monazomycin"}],"identifier":"CHEBI:201539","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201539","ontology_label":"Monazomycin","ontology_source":"CHEBI"},"preferred_term":"monazomycin","sssom_rows":[{"data_row":1906,"object_id":"CHEBI:201539","object_label":"Monazomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Monazomycin","synonym_count":2} |
-| ev-304e7e3630f24256 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1423] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d5acd7f81d753c6d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Monazomycin; data-row positions=[1906] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1906,"object_id":"CHEBI:201539","object_label":"Monazomycin","other":"(13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one","predicate_id":"skos:exactMatch","subject_id":"MIM:Monazomycin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-80e20db64f88e7d0 | docs/data/mapped_ingredients.csv; CSV lines=[1425] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:201539","line":1425,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:201539","preferred_term":"monazomycin","total_occurrences":"0"}] |
+| ev-534faaeef4d1d529 | data/ingredients/mapped/Monazomycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1422],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201539","line":1424,"mapping_status":"MAPPED","ontology_id":"CHEBI:201539","preferred_term":"monazomycin"}],"identifier":"CHEBI:201539","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201539","ontology_label":"Monazomycin","ontology_source":"CHEBI"},"preferred_term":"monazomycin","sssom_rows":[{"data_row":1908,"object_id":"CHEBI:201539","object_label":"Monazomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Monazomycin","synonym_count":2} |
+| ev-304e7e3630f24256 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1422] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d5acd7f81d753c6d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Monazomycin; data-row positions=[1908] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1908,"object_id":"CHEBI:201539","object_label":"Monazomycin","other":"(13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one","predicate_id":"skos:exactMatch","subject_id":"MIM:Monazomycin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-80e20db64f88e7d0 | docs/data/mapped_ingredients.csv; CSV lines=[1424] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:201539","line":1424,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:201539","preferred_term":"monazomycin","total_occurrences":"0"}] |
 | ev-b08811402b1d5a9e | reports/yaml_record_review/20261001T050247Z-Monazomycin.md; YAML Record Review: monazomycin:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1cbdc88c7aedb0ca | reports/yaml_record_review/Monazomycin.md; &#96;data/ingredients/mapped/Monazomycin.yaml&#96;:2; Verdict:4; Identity:13; Validation:22; Evidence:30; Completeness:39; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-672a9b921e8c576b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[955,1395] | context_only | [{"current_record_sha256":"e593d4d7e3380e6a8ce589b3aef7d1158de2cf5fb4d22d35ec8413ba7d35539c","finding_id":"SEM:898215b16383dbda5e7e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e593d4d7e3380e6a8ce589b3aef7d1158de2cf5fb4d22d35ec8413ba7d35539c","finding_id":"SEM:2e0532ae048804c5e280","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-7aa35138ee8bb721 | data/ingredients/mapped/Monazomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-7aa35138ee8bb721 | data/ingredients/mapped/Monazomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1422],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201539","line":1424,"mapping_status":"MAPPED","ontology_id":"CHEBI:201539","preferred_term":"monazomycin"}],"identifier":"CHEBI:201539","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201539","ontology_label":"Monazomycin","ontology_source":"CHEBI"},"preferred_term":"monazomycin","sssom_rows":[{"data_row":1908,"object_id":"CHEBI:201539","object_label":"Monazomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Monazomycin","synonym_count":2} |
 | ev-d26fecad13107d5c | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-0e438c9564ea1780] | context_only | Predecessor structured review finding f-0e438c9564ea1780 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b6682c32b158e3fa
+  evidence_ids:
+  - ev-534faaeef4d1d529
+  - ev-304e7e3630f24256
+  - ev-d5acd7f81d753c6d
+  - ev-80e20db64f88e7d0
+  - ev-7aa35138ee8bb721
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b6682c32b158e3fa
+  evidence_ids:
+  - ev-534faaeef4d1d529
+  - ev-672a9b921e8c576b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,21 +208,26 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b6682c32b158e3fa
+  evidence_ids:
+  - ev-b08811402b1d5a9e
+  - ev-1cbdc88c7aedb0ca
+  - ev-672a9b921e8c576b
+  - ev-d26fecad13107d5c
 evidence:
 - evidence_id: ev-534faaeef4d1d529
   kind: record_content
   reference: data/ingredients/mapped/Monazomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1423],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201539","line":1425,"mapping_status":"MAPPED","ontology_id":"CHEBI:201539","preferred_term":"monazomycin"}],"identifier":"CHEBI:201539","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201539","ontology_label":"Monazomycin","ontology_source":"CHEBI"},"preferred_term":"monazomycin","sssom_rows":[{"data_row":1906,"object_id":"CHEBI:201539","object_label":"Monazomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Monazomycin","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1422],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201539","line":1424,"mapping_status":"MAPPED","ontology_id":"CHEBI:201539","preferred_term":"monazomycin"}],"identifier":"CHEBI:201539","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201539","ontology_label":"Monazomycin","ontology_source":"CHEBI"},"preferred_term":"monazomycin","sssom_rows":[{"data_row":1908,"object_id":"CHEBI:201539","object_label":"Monazomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Monazomycin","synonym_count":2}'
   snapshot_sha256: e593d4d7e3380e6a8ce589b3aef7d1158de2cf5fb4d22d35ec8413ba7d35539c
 - evidence_id: ev-304e7e3630f24256
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1423]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1422]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,18 +235,18 @@ evidence:
 - evidence_id: ev-d5acd7f81d753c6d
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Monazomycin; data-row positions=[1906]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Monazomycin; data-row positions=[1908]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1906,"object_id":"CHEBI:201539","object_label":"Monazomycin","other":"(13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one","predicate_id":"skos:exactMatch","subject_id":"MIM:Monazomycin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1908,"object_id":"CHEBI:201539","object_label":"Monazomycin","other":"(13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one","predicate_id":"skos:exactMatch","subject_id":"MIM:Monazomycin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-80e20db64f88e7d0
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1425]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1424]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:201539","line":1425,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:201539","preferred_term":"monazomycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:201539","line":1424,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:201539","preferred_term":"monazomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-b08811402b1d5a9e
   kind: prior_review
@@ -282,7 +296,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[955,1395]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e593d4d7e3380e6a8ce589b3aef7d1158de2cf5fb4d22d35ec8413ba7d35539c","finding_id":"SEM:898215b16383dbda5e7e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e593d4d7e3380e6a8ce589b3aef7d1158de2cf5fb4d22d35ec8413ba7d35539c","finding_id":"SEM:2e0532ae048804c5e280","kind":"role_evidence","resolution_reason":"Historical
@@ -292,12 +306,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Monazomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1422],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201539","line":1424,"mapping_status":"MAPPED","ontology_id":"CHEBI:201539","preferred_term":"monazomycin"}],"identifier":"CHEBI:201539","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201539","ontology_label":"Monazomycin","ontology_source":"CHEBI"},"preferred_term":"monazomycin","sssom_rows":[{"data_row":1908,"object_id":"CHEBI:201539","object_label":"Monazomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Monazomycin","synonym_count":2}'
   snapshot_sha256: e593d4d7e3380e6a8ce589b3aef7d1158de2cf5fb4d22d35ec8413ba7d35539c
 - evidence_id: ev-d26fecad13107d5c
   kind: prior_review

@@ -83,13 +83,12 @@ Reassess prediction-only or empty role support: Mgso4_X_7_H2o
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-e34f20094c7ac060 | data/ingredients/mapped/Mgso4_X_7_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1402],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31795","line":1404,"mapping_status":"MAPPED","ontology_id":"CHEBI:31795","preferred_term":"MgSO4 x 7 H2O"}],"identifier":"CHEBI:31795","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5619,"edge_count":5619,"occurrences":5673},"occurrence_statistics":{"media_count":5619,"total_occurrences":5673},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31795","ontology_label":"magnesium sulfate heptahydrate","ontology_source":"CHEBI"},"preferred_term":"MgSO4 x 7 H2O","sssom_rows":[{"data_row":1869,"object_id":"CHEBI:31795","object_label":"magnesium sulfate heptahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgso4_X_7_H2o","synonym_count":37} |
+| ev-e34f20094c7ac060 | data/ingredients/mapped/Mgso4_X_7_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1402],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31795","line":1404,"mapping_status":"MAPPED","ontology_id":"CHEBI:31795","preferred_term":"MgSO4 x 7 H2O"}],"identifier":"CHEBI:31795","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5634,"edge_count":5634,"occurrences":5688},"occurrence_statistics":{"media_count":5634,"total_occurrences":5688},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31795","ontology_label":"magnesium sulfate heptahydrate","ontology_source":"CHEBI"},"preferred_term":"MgSO4 x 7 H2O","sssom_rows":[{"data_row":1869,"object_id":"CHEBI:31795","object_label":"magnesium sulfate heptahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgso4_X_7_H2o","synonym_count":38} |
 | ev-91e69f560cf59363 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1402] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-f2bc0d7f0a6fce53 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mgso4_X_7_H2o; data-row positions=[1869] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1869,"object_id":"CHEBI:31795","object_label":"magnesium sulfate heptahydrate","other":"MgSO4\u00b7H2O&#124;.MgSO4 x 7 H2O&#124;MgSO 4 x 7 H2O&#124;MgSO x 7 H2O&#124;MgSO2 x 7 H2O&#124;MgSO4.7H2O&#124;MgSO4x7H2O&#124;magnesium sulfate (1:1) heptahydrate&#124;magnesium sulphate heptahydrate&#124;sulfuric acid magnesium salt heptahydrate&#124;MgSO4\u20227H2O&#124;MgSO4\u20227H2O (Sigma 230391)&#124;MgSO4\u20227H2O(CAS: 10034-99-8)&#124;MgSO4\u20227H2O(Sigma 230391)&#124;magnesium sulfate--water (1/7)&#124;MgSO4\u00b77H2O&#124;MgSO47H2O&#124;.MgSO4&#124;MgSO&#124;MgSO .7H2O&#124;MgSO 4&#124;MgSO2&#124;MgSO2\u00b77H2O&#124;MgSO4 x 7 H20&#124;magnesium sulfate anhydrous&#124;magnesium sulphate&#124;magnesium(II) sulfate&#124;sulfuric acid magnesium salt&#124;sulphate of magnesia&#124;CAS:10034-99-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mgso4_X_7_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-3b6f64c1d19c0b4e | docs/data/mapped_ingredients.csv; CSV lines=[1404] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:31795","line":1404,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5619","ontology_id":"CHEBI:31795","preferred_term":"MgSO4 x 7 H2O","total_occurrences":"5673"}] |
+| ev-f2bc0d7f0a6fce53 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mgso4_X_7_H2o; data-row positions=[1869] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1869,"object_id":"CHEBI:31795","object_label":"magnesium sulfate heptahydrate","other":".MgSO4 x 7 H2O&#124;MgSO 4 x 7 H2O&#124;MgSO x 7 H2O&#124;MgSO2 x 7 H2O&#124;MgSO4.7H2O&#124;MgSO4x7H2O&#124;magnesium sulfate (1:1) heptahydrate&#124;magnesium sulphate heptahydrate&#124;sulfuric acid magnesium salt heptahydrate&#124;MgSO4\u20227H2O&#124;MgSO4\u20227H2O (Sigma 230391)&#124;MgSO4\u20227H2O(CAS: 10034-99-8)&#124;MgSO4\u20227H2O(Sigma 230391)&#124;magnesium sulfate--water (1/7)&#124;MgSO4\u00b77H2O&#124;MgSO47H2O&#124;.MgSO4&#124;MgSO&#124;MgSO .7H2O&#124;MgSO 4&#124;MgSO2&#124;MgSO2\u00b77H2O&#124;MgSO4 x 7 H20&#124;magnesium sulphate&#124;magnesium(II) sulfate&#124;sulfuric acid magnesium salt&#124;sulphate of magnesia&#124;MgSO .7H O&#124;CAS:10034-99-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mgso4_X_7_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-3b6f64c1d19c0b4e | docs/data/mapped_ingredients.csv; CSV lines=[1404] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:31795","line":1404,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5634","ontology_id":"CHEBI:31795","preferred_term":"MgSO4 x 7 H2O","total_occurrences":"5688"}] |
 | ev-8d503125396152c6 | reports/yaml_record_review/Mgso4_X_7_H2o.md; &#96;data/ingredients/mapped/Mgso4_X_7_H2o.yaml&#96;:2; Verdict:4; Identity:14; Validation:26; Evidence:34; Completeness:45; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
-| ev-12613eb109ed55ad | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[939,1465] | context_only | [{"current_record_sha256":"46c1e03a01433eac55c7a4198265a42675f84d7530b3a21f5e6d631de371a33e","finding_id":"SEM:f345b845583ac48792ef","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"46c1e03a01433eac55c7a4198265a42675f84d7530b3a21f5e6d631de371a33e","finding_id":"SEM:6bbcb150b6a6753cba77","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b11b72af8d7a6558 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Mgso4_X_7_H2o.yaml | context_only | Semantic review finding dispositions ledger |
+| ev-12613eb109ed55ad | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[939,1465] | context_only | [{"current_record_sha256":"1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2","finding_id":"SEM:f345b845583ac48792ef","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2","finding_id":"SEM:6bbcb150b6a6753cba77","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-93db3b16772e96e9
+  evidence_ids:
+  - ev-e34f20094c7ac060
+  - ev-91e69f560cf59363
+  - ev-f2bc0d7f0a6fce53
+  - ev-3b6f64c1d19c0b4e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-93db3b16772e96e9
+  evidence_ids:
+  - ev-e34f20094c7ac060
+  - ev-12613eb109ed55ad
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,24 +201,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-93db3b16772e96e9
+  evidence_ids:
+  - ev-8d503125396152c6
+  - ev-12613eb109ed55ad
 evidence:
 - evidence_id: ev-e34f20094c7ac060
   kind: record_content
   reference: data/ingredients/mapped/Mgso4_X_7_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1402],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31795","line":1404,"mapping_status":"MAPPED","ontology_id":"CHEBI:31795","preferred_term":"MgSO4
-    x 7 H2O"}],"identifier":"CHEBI:31795","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5619,"edge_count":5619,"occurrences":5673},"occurrence_statistics":{"media_count":5619,"total_occurrences":5673},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31795","ontology_label":"magnesium
+    x 7 H2O"}],"identifier":"CHEBI:31795","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5634,"edge_count":5634,"occurrences":5688},"occurrence_statistics":{"media_count":5634,"total_occurrences":5688},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31795","ontology_label":"magnesium
     sulfate heptahydrate","ontology_source":"CHEBI"},"preferred_term":"MgSO4 x 7 H2O","sssom_rows":[{"data_row":1869,"object_id":"CHEBI:31795","object_label":"magnesium
-    sulfate heptahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgso4_X_7_H2o","synonym_count":37}'
+    sulfate heptahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mgso4_X_7_H2o","synonym_count":38}'
   snapshot_sha256: 1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2
 - evidence_id: ev-91e69f560cf59363
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1402]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,25 +230,25 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Mgso4_X_7_H2o; data-row positions=[1869]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1869,"object_id":"CHEBI:31795","object_label":"magnesium
-    sulfate heptahydrate","other":"MgSO4\u00b7H2O|.MgSO4 x 7 H2O|MgSO 4 x 7 H2O|MgSO
-    x 7 H2O|MgSO2 x 7 H2O|MgSO4.7H2O|MgSO4x7H2O|magnesium sulfate (1:1) heptahydrate|magnesium
-    sulphate heptahydrate|sulfuric acid magnesium salt heptahydrate|MgSO4\u20227H2O|MgSO4\u20227H2O
+    sulfate heptahydrate","other":".MgSO4 x 7 H2O|MgSO 4 x 7 H2O|MgSO x 7 H2O|MgSO2
+    x 7 H2O|MgSO4.7H2O|MgSO4x7H2O|magnesium sulfate (1:1) heptahydrate|magnesium sulphate
+    heptahydrate|sulfuric acid magnesium salt heptahydrate|MgSO4\u20227H2O|MgSO4\u20227H2O
     (Sigma 230391)|MgSO4\u20227H2O(CAS: 10034-99-8)|MgSO4\u20227H2O(Sigma 230391)|magnesium
     sulfate--water (1/7)|MgSO4\u00b77H2O|MgSO47H2O|.MgSO4|MgSO|MgSO .7H2O|MgSO 4|MgSO2|MgSO2\u00b77H2O|MgSO4
-    x 7 H20|magnesium sulfate anhydrous|magnesium sulphate|magnesium(II) sulfate|sulfuric
-    acid magnesium salt|sulphate of magnesia|CAS:10034-99-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mgso4_X_7_H2o","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+    x 7 H20|magnesium sulphate|magnesium(II) sulfate|sulfuric acid magnesium salt|sulphate
+    of magnesia|MgSO .7H O|CAS:10034-99-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mgso4_X_7_H2o","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-3b6f64c1d19c0b4e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1404]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31795","line":1404,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5619","ontology_id":"CHEBI:31795","preferred_term":"MgSO4
-    x 7 H2O","total_occurrences":"5673"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31795","line":1404,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5634","ontology_id":"CHEBI:31795","preferred_term":"MgSO4
+    x 7 H2O","total_occurrences":"5688"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-8d503125396152c6
   kind: prior_review
@@ -261,19 +271,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[939,1465]
-  accessed_at: '2026-10-11T02:46:28Z'
-  support: context_only
-  summary: '[{"current_record_sha256":"46c1e03a01433eac55c7a4198265a42675f84d7530b3a21f5e6d631de371a33e","finding_id":"SEM:f345b845583ac48792ef","kind":"existing_record_review","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"46c1e03a01433eac55c7a4198265a42675f84d7530b3a21f5e6d631de371a33e","finding_id":"SEM:6bbcb150b6a6753cba77","kind":"role_evidence","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-b11b72af8d7a6558
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Mgso4_X_7_H2o.yaml
   accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: Semantic review finding dispositions ledger
+  summary: '[{"current_record_sha256":"1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2","finding_id":"SEM:f345b845583ac48792ef","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2","finding_id":"SEM:6bbcb150b6a6753cba77","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-e13a420385d0bc3a
@@ -341,7 +343,7 @@ assessments:
   - record-93db3b16772e96e9
   evidence_ids:
   - ev-e34f20094c7ac060
-  - ev-b11b72af8d7a6558
+  - ev-12613eb109ed55ad
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -349,7 +351,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-e34f20094c7ac060
-    - ev-b11b72af8d7a6558
+    - ev-12613eb109ed55ad
 findings:
 - finding_id: rec-f-role-93db3b16772e96e9
   issue_key: mim-reconciliation-role-support-93db3b16772e96e9
@@ -365,7 +367,7 @@ findings:
   - record-93db3b16772e96e9
   evidence_ids:
   - ev-e34f20094c7ac060
-  - ev-b11b72af8d7a6558
+  - ev-12613eb109ed55ad
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Mgso4_X_7_H2o.yaml

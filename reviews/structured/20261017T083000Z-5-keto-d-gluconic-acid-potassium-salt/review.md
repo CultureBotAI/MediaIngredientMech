@@ -85,11 +85,11 @@ Reassess prediction-only role support: 5-Keto-D-Gluconic Acid potassium salt
 | --- | --- | --- | --- |
 | ev-a182d82b72394995 | data/ingredients/mapped/5-Keto-D-Gluconic_Acid_Potassium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[409],"raw_equal":true},"docs_rows":[{"identifier":"cas:91446-96-7","line":411,"mapping_status":"MAPPED","ontology_id":"CHEBI:17426","preferred_term":"5-Keto-D-Gluconic Acid potassium salt"}],"identifier":"cas:91446-96-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:17426","ontology_label":"5-dehydro-D-gluconic acid","ontology_source":"CHEBI"},"preferred_term":"5-Keto-D-Gluconic Acid potassium salt","sssom_rows":[{"data_row":227,"object_id":"CHEBI:17426","object_label":"5-dehydro-D-gluconic acid","predicate_id":"skos:broadMatch"},{"data_row":228,"object_id":"cas:91446-96-7","object_label":"5-Keto-D-Gluconic Acid potassium salt","predicate_id":"skos:exactMatch"},{"data_row":229,"object_id":"kgmicrobe.compound:5-keto-d-gluconic_acid_potassium_salt","object_label":"5-Keto-D-Gluconic Acid potassium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","synonym_count":1} |
 | ev-e0bdf9c633abef73 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [409] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-dd04ec2125a2de9b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt; data-row positions=[227,228,229] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":227,"object_id":"CHEBI:17426","object_label":"5-dehydro-D-gluconic acid","other":"5-Ketogluconate (5-dehydro-D-gluconate)","predicate_id":"skos:broadMatch","subject_id":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":228,"object_id":"cas:91446-96-7","object_label":"5-Keto-D-Gluconic Acid potassium salt","other":"CAS:91446-96-7","predicate_id":"skos:exactMatch","subject_id":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":229,"object_id":"kgmicrobe.compound:5-keto-d-gluconic_acid_potassium_salt","object_label":"5-Keto-D-Gluconic Acid potassium salt","other":"CAS:91446-96-7","predicate_id":"skos:exactMatch","subject_id":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-dd04ec2125a2de9b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt; data-row positions=[227, 228, 229] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":227,"object_id":"CHEBI:17426","object_label":"5-dehydro-D-gluconic acid","other":"5-Ketogluconate (5-dehydro-D-gluconate)","predicate_id":"skos:broadMatch","subject_id":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":228,"object_id":"cas:91446-96-7","object_label":"5-Keto-D-Gluconic Acid potassium salt","other":"CAS:91446-96-7","predicate_id":"skos:exactMatch","subject_id":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":229,"object_id":"kgmicrobe.compound:5-keto-d-gluconic_acid_potassium_salt","object_label":"5-Keto-D-Gluconic Acid potassium salt","other":"CAS:91446-96-7","predicate_id":"skos:exactMatch","subject_id":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-d11714b8a9bac0bc | docs/data/mapped_ingredients.csv; CSV lines=[411] | supports | Published identity and count rows inspected: [{"identifier":"cas:91446-96-7","line":411,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17426","preferred_term":"5-Keto-D-Gluconic Acid potassium salt","total_occurrences":"0"}] |
 | ev-3536e1b151e0c9df | reports/yaml_record_review/5-Keto-D-Gluconic_Acid_Potassium_Salt.md; &#96;data/ingredients/mapped/5-Keto-D-Gluconic_Acid_Potassium_Salt.yaml&#96;:2; Verdict:4; Identity:12; Validation:26; Evidence:37; Completeness:61; Recommended Edits:69 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8277952e8620e402 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[163,1809,1840] | context_only | [{"current_record_sha256":"4715d7c9d7bb965f7f3db53cf64b2cfb1ac1a748dc0af3b38ca38ca5c888e42f","finding_id":"SEM:ec19357b7b34e86beb7f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4715d7c9d7bb965f7f3db53cf64b2cfb1ac1a748dc0af3b38ca38ca5c888e42f","finding_id":"SEM:8c65a9c78c4e6daabb19","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4715d7c9d7bb965f7f3db53cf64b2cfb1ac1a748dc0af3b38ca38ca5c888e42f","finding_id":"SEM:750f44f3f7ecec4f91ef","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-7874ef7264333217 | data/ingredients/mapped/5-Keto-D-Gluconic_Acid_Potassium_Salt.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-7874ef7264333217 | data/ingredients/mapped/5-Keto-D-Gluconic_Acid_Potassium_Salt.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[409],"raw_equal":true},"docs_rows":[{"identifier":"cas:91446-96-7","line":411,"mapping_status":"MAPPED","ontology_id":"CHEBI:17426","preferred_term":"5-Keto-D-Gluconic Acid potassium salt"}],"identifier":"cas:91446-96-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:17426","ontology_label":"5-dehydro-D-gluconic acid","ontology_source":"CHEBI"},"preferred_term":"5-Keto-D-Gluconic Acid potassium salt","sssom_rows":[{"data_row":227,"object_id":"CHEBI:17426","object_label":"5-dehydro-D-gluconic acid","predicate_id":"skos:broadMatch"},{"data_row":228,"object_id":"cas:91446-96-7","object_label":"5-Keto-D-Gluconic Acid potassium salt","predicate_id":"skos:exactMatch"},{"data_row":229,"object_id":"kgmicrobe.compound:5-keto-d-gluconic_acid_potassium_salt","object_label":"5-Keto-D-Gluconic Acid potassium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","synonym_count":1} |
 | ev-de93821cdac90ee8 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-b6ed0146bdc2a474] | context_only | Predecessor structured review finding f-b6ed0146bdc2a474 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c28c83652c95a2cb
+  evidence_ids:
+  - ev-a182d82b72394995
+  - ev-e0bdf9c633abef73
+  - ev-dd04ec2125a2de9b
+  - ev-d11714b8a9bac0bc
+  - ev-7874ef7264333217
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-c28c83652c95a2cb
+  evidence_ids:
+  - ev-a182d82b72394995
+  - ev-8277952e8620e402
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c28c83652c95a2cb
+  evidence_ids:
+  - ev-3536e1b151e0c9df
+  - ev-8277952e8620e402
+  - ev-de93821cdac90ee8
 evidence:
 - evidence_id: ev-a182d82b72394995
   kind: record_content
   reference: data/ingredients/mapped/5-Keto-D-Gluconic_Acid_Potassium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[409],"raw_equal":true},"docs_rows":[{"identifier":"cas:91446-96-7","line":411,"mapping_status":"MAPPED","ontology_id":"CHEBI:17426","preferred_term":"5-Keto-D-Gluconic
     Acid potassium salt"}],"identifier":"cas:91446-96-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:17426","ontology_label":"5-dehydro-D-gluconic
@@ -215,7 +228,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [409]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -223,8 +236,9 @@ evidence:
 - evidence_id: ev-dd04ec2125a2de9b
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt; data-row positions=[227,228,229]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt; data-row positions=[227,
+    228, 229]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":227,"object_id":"CHEBI:17426","object_label":"5-dehydro-D-gluconic
     acid","other":"5-Ketogluconate (5-dehydro-D-gluconate)","predicate_id":"skos:broadMatch","subject_id":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":228,"object_id":"cas:91446-96-7","object_label":"5-Keto-D-Gluconic
@@ -235,7 +249,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[411]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:91446-96-7","line":411,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17426","preferred_term":"5-Keto-D-Gluconic
     Acid potassium salt","total_occurrences":"0"}]'
@@ -266,7 +280,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[163,1809,1840]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4715d7c9d7bb965f7f3db53cf64b2cfb1ac1a748dc0af3b38ca38ca5c888e42f","finding_id":"SEM:ec19357b7b34e86beb7f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4715d7c9d7bb965f7f3db53cf64b2cfb1ac1a748dc0af3b38ca38ca5c888e42f","finding_id":"SEM:8c65a9c78c4e6daabb19","kind":"role_evidence","resolution_reason":"Historical
@@ -277,14 +291,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/5-Keto-D-Gluconic_Acid_Potassium_Salt.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[409],"raw_equal":true},"docs_rows":[{"identifier":"cas:91446-96-7","line":411,"mapping_status":"MAPPED","ontology_id":"CHEBI:17426","preferred_term":"5-Keto-D-Gluconic
+    Acid potassium salt"}],"identifier":"cas:91446-96-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:17426","ontology_label":"5-dehydro-D-gluconic
+    acid","ontology_source":"CHEBI"},"preferred_term":"5-Keto-D-Gluconic Acid potassium
+    salt","sssom_rows":[{"data_row":227,"object_id":"CHEBI:17426","object_label":"5-dehydro-D-gluconic
+    acid","predicate_id":"skos:broadMatch"},{"data_row":228,"object_id":"cas:91446-96-7","object_label":"5-Keto-D-Gluconic
+    Acid potassium salt","predicate_id":"skos:exactMatch"},{"data_row":229,"object_id":"kgmicrobe.compound:5-keto-d-gluconic_acid_potassium_salt","object_label":"5-Keto-D-Gluconic
+    Acid potassium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:5-Keto-D-Gluconic_Acid_Potassium_Salt","synonym_count":1}'
   snapshot_sha256: 4715d7c9d7bb965f7f3db53cf64b2cfb1ac1a748dc0af3b38ca38ca5c888e42f
 - evidence_id: ev-de93821cdac90ee8
   kind: prior_review

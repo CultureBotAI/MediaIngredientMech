@@ -85,11 +85,11 @@ Reassess prediction-only role support: 2-Keto-D-gluconic acid hemicalcium salt h
 | --- | --- | --- | --- |
 | ev-23a71eb202d37d4f | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[319],"raw_equal":true},"docs_rows":[{"identifier":"cas:1040352-40-6","line":321,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic acid hemicalcium salt hydrate"}],"identifier":"cas:1040352-40-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium salt hydrate","sssom_rows":[{"data_row":65,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","predicate_id":"skos:closeMatch"},{"data_row":66,"object_id":"cas:1040352-40-6","object_label":"2-Keto-D-gluconic acid hemicalcium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate","synonym_count":0} |
 | ev-24901b1d1a0aeda0 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [319] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d3760072a1c49ad3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate; data-row positions=[65,66] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":65,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","other":"2-Keto-D-gluconic acid hemicalcium salt monohydrate&#124;CAS:1040352-40-6","predicate_id":"skos:closeMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":66,"object_id":"cas:1040352-40-6","object_label":"2-Keto-D-gluconic acid hemicalcium salt hydrate","other":"CAS:1040352-40-6","predicate_id":"skos:exactMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-d3760072a1c49ad3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate; data-row positions=[65, 66] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":65,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","other":"2-Keto-D-gluconic acid hemicalcium salt monohydrate&#124;CAS:1040352-40-6","predicate_id":"skos:closeMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":66,"object_id":"cas:1040352-40-6","object_label":"2-Keto-D-gluconic acid hemicalcium salt hydrate","other":"CAS:1040352-40-6","predicate_id":"skos:exactMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-3e9402949db2186b | docs/data/mapped_ingredients.csv; CSV lines=[321] | supports | Published identity and count rows inspected: [{"identifier":"cas:1040352-40-6","line":321,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic acid hemicalcium salt hydrate","total_occurrences":"0"}] |
 | ev-ab33c133920a2084 | reports/yaml_record_review/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.md; &#96;data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:28; Evidence:46; Completeness:64; Recommended Edits:71 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-bd6a6289f8efe053 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[49,1455,1985] | context_only | [{"current_record_sha256":"5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1","finding_id":"SEM:3d200b71e49d5b93d308","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1","finding_id":"SEM:c853fe49e0fbf877a6f5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1","finding_id":"SEM:96719ef531fcbbca919d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ff95babb8ebb29a0 | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-ff95babb8ebb29a0 | data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[319],"raw_equal":true},"docs_rows":[{"identifier":"cas:1040352-40-6","line":321,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic acid hemicalcium salt hydrate"}],"identifier":"cas:1040352-40-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium salt hydrate","sssom_rows":[{"data_row":65,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic acid","predicate_id":"skos:closeMatch"},{"data_row":66,"object_id":"cas:1040352-40-6","object_label":"2-Keto-D-gluconic acid hemicalcium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate","synonym_count":0} |
 | ev-fe1acd0406e8f624 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-ac0b127f0ccb4b70] | context_only | Predecessor structured review finding f-ac0b127f0ccb4b70 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -181,6 +181,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3ad52ef88b948716
+  evidence_ids:
+  - ev-23a71eb202d37d4f
+  - ev-24901b1d1a0aeda0
+  - ev-d3760072a1c49ad3
+  - ev-3e9402949db2186b
+  - ev-ff95babb8ebb29a0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -189,6 +195,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-3ad52ef88b948716
+  evidence_ids:
+  - ev-23a71eb202d37d4f
+  - ev-bd6a6289f8efe053
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -197,13 +206,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3ad52ef88b948716
+  evidence_ids:
+  - ev-ab33c133920a2084
+  - ev-bd6a6289f8efe053
+  - ev-fe1acd0406e8f624
 evidence:
 - evidence_id: ev-23a71eb202d37d4f
   kind: record_content
   reference: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[319],"raw_equal":true},"docs_rows":[{"identifier":"cas:1040352-40-6","line":321,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic
     acid hemicalcium salt hydrate"}],"identifier":"cas:1040352-40-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic
@@ -216,7 +229,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [319]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,8 +238,8 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate; data-row
-    positions=[65,66]
-  accessed_at: '2026-10-11T02:46:28Z'
+    positions=[65, 66]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":65,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic
     acid","other":"2-Keto-D-gluconic acid hemicalcium salt monohydrate|CAS:1040352-40-6","predicate_id":"skos:closeMatch","subject_id":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"},{"data_row":66,"object_id":"cas:1040352-40-6","object_label":"2-Keto-D-gluconic
@@ -236,7 +249,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[321]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:1040352-40-6","line":321,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic
     acid hemicalcium salt hydrate","total_occurrences":"0"}]'
@@ -265,7 +278,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[49,1455,1985]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1","finding_id":"SEM:3d200b71e49d5b93d308","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1","finding_id":"SEM:c853fe49e0fbf877a6f5","kind":"role_evidence","resolution_reason":"Historical
@@ -276,14 +289,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[319],"raw_equal":true},"docs_rows":[{"identifier":"cas:1040352-40-6","line":321,"mapping_status":"MAPPED","ontology_id":"CHEBI:27469","preferred_term":"2-Keto-D-gluconic
+    acid hemicalcium salt hydrate"}],"identifier":"cas:1040352-40-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:27469","ontology_label":"2-dehydro-D-gluconic
+    acid","ontology_source":"CHEBI"},"preferred_term":"2-Keto-D-gluconic acid hemicalcium
+    salt hydrate","sssom_rows":[{"data_row":65,"object_id":"CHEBI:27469","object_label":"2-dehydro-D-gluconic
+    acid","predicate_id":"skos:closeMatch"},{"data_row":66,"object_id":"cas:1040352-40-6","object_label":"2-Keto-D-gluconic
+    acid hemicalcium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate","synonym_count":0}'
   snapshot_sha256: 5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1
 - evidence_id: ev-fe1acd0406e8f624
   kind: prior_review

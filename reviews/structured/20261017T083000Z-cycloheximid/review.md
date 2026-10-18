@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cycloheximid
 | ev-f11dd9932eef22fa | docs/data/mapped_ingredients.csv; CSV lines=[787] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:27641","line":787,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:27641","preferred_term":"Cycloheximid","total_occurrences":"10"}] |
 | ev-d27f08096dbc85e8 | reports/yaml_record_review/Cycloheximid.md; &#96;data/ingredients/mapped/Cycloheximid.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:45; Completeness:61; Recommended Edits:69 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-305ea110c7963a32 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[458,1504] | context_only | [{"current_record_sha256":"252ac8771048780efc743b3a921ccadaa35e08396d1a807216c3a2763a940f2c","finding_id":"SEM:f39b8af2a53c13823f2d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"252ac8771048780efc743b3a921ccadaa35e08396d1a807216c3a2763a940f2c","finding_id":"SEM:9085d4de04109ab43180","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-416744d1ef3788e1 | data/ingredients/mapped/Cycloheximid.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-416744d1ef3788e1 | data/ingredients/mapped/Cycloheximid.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[785],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27641","line":787,"mapping_status":"MAPPED","ontology_id":"CHEBI:27641","preferred_term":"Cycloheximid"}],"identifier":"CHEBI:27641","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27641","ontology_label":"cycloheximide","ontology_source":"CHEBI"},"preferred_term":"Cycloheximid","sssom_rows":[{"data_row":860,"object_id":"CHEBI:27641","object_label":"cycloheximide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cycloheximid","synonym_count":10} |
 | ev-1d13ecef04bba705 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-69f67efe3bb08d32] | context_only | Predecessor structured review finding f-69f67efe3bb08d32 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0f7a96a94e6b8dbf
+  evidence_ids:
+  - ev-17f1775a004958ba
+  - ev-9c19c8e8c5c02b56
+  - ev-d28d470cb64b64a4
+  - ev-f11dd9932eef22fa
+  - ev-416744d1ef3788e1
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0f7a96a94e6b8dbf
+  evidence_ids:
+  - ev-17f1775a004958ba
+  - ev-305ea110c7963a32
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0f7a96a94e6b8dbf
+  evidence_ids:
+  - ev-d27f08096dbc85e8
+  - ev-305ea110c7963a32
+  - ev-1d13ecef04bba705
 evidence:
 - evidence_id: ev-17f1775a004958ba
   kind: record_content
   reference: data/ingredients/mapped/Cycloheximid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[785],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27641","line":787,"mapping_status":"MAPPED","ontology_id":"CHEBI:27641","preferred_term":"Cycloheximid"}],"identifier":"CHEBI:27641","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27641","ontology_label":"cycloheximide","ontology_source":"CHEBI"},"preferred_term":"Cycloheximid","sssom_rows":[{"data_row":860,"object_id":"CHEBI:27641","object_label":"cycloheximide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cycloheximid","synonym_count":10}'
   snapshot_sha256: 252ac8771048780efc743b3a921ccadaa35e08396d1a807216c3a2763a940f2c
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [785]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cycloheximid; data-row positions=[860]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":860,"object_id":"CHEBI:27641","object_label":"cycloheximide","other":"3-((R)-2-((1S,3S,5S)-3,5-dimethyl-2-oxocyclohexyl)-2-hydroxyethyl)glutarimide|4-{(2R)-2-[(1S,3S,5S)-3,5-dimethyl-2-oxocyclohexyl]-2-hydroxyethyl}piperidine-2,6-dione|Cyclohexemid|Zykloheximid|cicloheximida|cicloheximide|cicloheximidum|naramycin|naramycin
     A|CAS:66-81-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Cycloheximid","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[787]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:27641","line":787,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"10","ontology_id":"CHEBI:27641","preferred_term":"Cycloheximid","total_occurrences":"10"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[458,1504]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"252ac8771048780efc743b3a921ccadaa35e08396d1a807216c3a2763a940f2c","finding_id":"SEM:f39b8af2a53c13823f2d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"252ac8771048780efc743b3a921ccadaa35e08396d1a807216c3a2763a940f2c","finding_id":"SEM:9085d4de04109ab43180","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cycloheximid.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[785],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27641","line":787,"mapping_status":"MAPPED","ontology_id":"CHEBI:27641","preferred_term":"Cycloheximid"}],"identifier":"CHEBI:27641","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":10,"edge_count":10,"occurrences":10},"occurrence_statistics":{"media_count":10,"total_occurrences":10},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27641","ontology_label":"cycloheximide","ontology_source":"CHEBI"},"preferred_term":"Cycloheximid","sssom_rows":[{"data_row":860,"object_id":"CHEBI:27641","object_label":"cycloheximide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cycloheximid","synonym_count":10}'
   snapshot_sha256: 252ac8771048780efc743b3a921ccadaa35e08396d1a807216c3a2763a940f2c
 - evidence_id: ev-1d13ecef04bba705
   kind: prior_review

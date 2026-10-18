@@ -89,7 +89,7 @@ Reassess prediction-only role support: Bandamycin
 | ev-7adb1e6a29372b56 | docs/data/mapped_ingredients.csv; CSV lines=[559] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:bandamycin","line":559,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:bandamycin","preferred_term":"Bandamycin","total_occurrences":"0"}] |
 | ev-a28d9f93e53fb18a | reports/yaml_record_review/Bandamycin.md; &#96;data/ingredients/mapped/Bandamycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:25; Evidence:36; Completeness:54; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ebe953ff35fd7b0a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1873] | context_only | [{"current_record_sha256":"66c03a35e873d35bc17029c8e348e60ac778cee2ac143f69dbc2b844a0580bed","finding_id":"SEM:1d6c662e7c259e39dbb1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-82cab19c53bec0d2 | data/ingredients/mapped/Bandamycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-82cab19c53bec0d2 | data/ingredients/mapped/Bandamycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[557],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:bandamycin","line":559,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:bandamycin","preferred_term":"Bandamycin"}],"identifier":"kgmicrobe.compound:bandamycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:bandamycin","ontology_label":"Bandamycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Bandamycin","sssom_rows":[{"data_row":488,"object_id":"kgmicrobe.compound:bandamycin","object_label":"Bandamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bandamycin","synonym_count":0} |
 | ev-471f1547930a1fed | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-07c3fb6d6db5bc1f] | context_only | Predecessor structured review finding f-07c3fb6d6db5bc1f in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-03a892472d0e1ebc
+  evidence_ids:
+  - ev-6131946c0c9b16ab
+  - ev-447bf9ac1bc15c14
+  - ev-32295d788b4a81b1
+  - ev-7adb1e6a29372b56
+  - ev-82cab19c53bec0d2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-03a892472d0e1ebc
+  evidence_ids:
+  - ev-6131946c0c9b16ab
+  - ev-ebe953ff35fd7b0a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-03a892472d0e1ebc
+  evidence_ids:
+  - ev-a28d9f93e53fb18a
+  - ev-ebe953ff35fd7b0a
+  - ev-471f1547930a1fed
 evidence:
 - evidence_id: ev-6131946c0c9b16ab
   kind: record_content
   reference: data/ingredients/mapped/Bandamycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[557],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:bandamycin","line":559,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:bandamycin","preferred_term":"Bandamycin"}],"identifier":"kgmicrobe.compound:bandamycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:bandamycin","ontology_label":"Bandamycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Bandamycin","sssom_rows":[{"data_row":488,"object_id":"kgmicrobe.compound:bandamycin","object_label":"Bandamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bandamycin","synonym_count":0}'
   snapshot_sha256: 66c03a35e873d35bc17029c8e348e60ac778cee2ac143f69dbc2b844a0580bed
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [557]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Bandamycin; data-row positions=[488]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":488,"object_id":"kgmicrobe.compound:bandamycin","object_label":"Bandamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Bandamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[559]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:bandamycin","line":559,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:bandamycin","preferred_term":"Bandamycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1873]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"66c03a35e873d35bc17029c8e348e60ac778cee2ac143f69dbc2b844a0580bed","finding_id":"SEM:1d6c662e7c259e39dbb1","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Bandamycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[557],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:bandamycin","line":559,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:bandamycin","preferred_term":"Bandamycin"}],"identifier":"kgmicrobe.compound:bandamycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:bandamycin","ontology_label":"Bandamycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Bandamycin","sssom_rows":[{"data_row":488,"object_id":"kgmicrobe.compound:bandamycin","object_label":"Bandamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bandamycin","synonym_count":0}'
   snapshot_sha256: 66c03a35e873d35bc17029c8e348e60ac778cee2ac143f69dbc2b844a0580bed
 - evidence_id: ev-471f1547930a1fed
   kind: prior_review

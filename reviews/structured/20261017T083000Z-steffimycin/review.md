@@ -83,13 +83,13 @@ Reassess prediction-only role support: Steffimycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-5a653ba14d9d92a4 | data/ingredients/mapped/Steffimycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1900],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C152426","line":1902,"mapping_status":"MAPPED","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin"}],"identifier":"NCIT:C152426","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C152426","ontology_label":"Steffimycin","ontology_source":"NCIT"},"preferred_term":"Steffimycin","sssom_rows":[{"data_row":2648,"object_id":"NCIT:C152426","object_label":"Steffimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Steffimycin","synonym_count":0} |
-| ev-4e43e77d4b6f8304 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1900] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-b49abab119b872d3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Steffimycin; data-row positions=[2648] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2648,"object_id":"NCIT:C152426","object_label":"Steffimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Steffimycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-e7ec18f480b4e356 | docs/data/mapped_ingredients.csv; CSV lines=[1902] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C152426","line":1902,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin","total_occurrences":"0"}] |
+| ev-5a653ba14d9d92a4 | data/ingredients/mapped/Steffimycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1899],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C152426","line":1901,"mapping_status":"MAPPED","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin"}],"identifier":"NCIT:C152426","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C152426","ontology_label":"Steffimycin","ontology_source":"NCIT"},"preferred_term":"Steffimycin","sssom_rows":[{"data_row":2650,"object_id":"NCIT:C152426","object_label":"Steffimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Steffimycin","synonym_count":0} |
+| ev-4e43e77d4b6f8304 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1899] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b49abab119b872d3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Steffimycin; data-row positions=[2650] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2650,"object_id":"NCIT:C152426","object_label":"Steffimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Steffimycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-e7ec18f480b4e356 | docs/data/mapped_ingredients.csv; CSV lines=[1901] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C152426","line":1901,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin","total_occurrences":"0"}] |
 | ev-3afddcfed7400ce9 | reports/yaml_record_review/Steffimycin.md; &#96;data/ingredients/mapped/Steffimycin.yaml&#96;:2; Verdict:4; Identity:9; Validation:18; Evidence:26; Completeness:38; Recommended Edits:44 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2a26a0d0498b9c89 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1251,1478] | context_only | [{"current_record_sha256":"ab55f3bada1b86513f24c4ab3ce55fb8f400785709509fdba0acaed781196601","finding_id":"SEM:d60f97b9a17da058cd68","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ab55f3bada1b86513f24c4ab3ce55fb8f400785709509fdba0acaed781196601","finding_id":"SEM:3a48588278a761f04a9a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f756aa86ad081d65 | data/ingredients/mapped/Steffimycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-f756aa86ad081d65 | data/ingredients/mapped/Steffimycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1899],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C152426","line":1901,"mapping_status":"MAPPED","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin"}],"identifier":"NCIT:C152426","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C152426","ontology_label":"Steffimycin","ontology_source":"NCIT"},"preferred_term":"Steffimycin","sssom_rows":[{"data_row":2650,"object_id":"NCIT:C152426","object_label":"Steffimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Steffimycin","synonym_count":0} |
 | ev-81fcac726a7f969d | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-1ea578dd55d9c502] | context_only | Predecessor structured review finding f-1ea578dd55d9c502 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b9d3bc7bfc9856ed
+  evidence_ids:
+  - ev-5a653ba14d9d92a4
+  - ev-4e43e77d4b6f8304
+  - ev-b49abab119b872d3
+  - ev-e7ec18f480b4e356
+  - ev-f756aa86ad081d65
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b9d3bc7bfc9856ed
+  evidence_ids:
+  - ev-5a653ba14d9d92a4
+  - ev-2a26a0d0498b9c89
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b9d3bc7bfc9856ed
+  evidence_ids:
+  - ev-3afddcfed7400ce9
+  - ev-2a26a0d0498b9c89
+  - ev-81fcac726a7f969d
 evidence:
 - evidence_id: ev-5a653ba14d9d92a4
   kind: record_content
   reference: data/ingredients/mapped/Steffimycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1900],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C152426","line":1902,"mapping_status":"MAPPED","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin"}],"identifier":"NCIT:C152426","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C152426","ontology_label":"Steffimycin","ontology_source":"NCIT"},"preferred_term":"Steffimycin","sssom_rows":[{"data_row":2648,"object_id":"NCIT:C152426","object_label":"Steffimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Steffimycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1899],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C152426","line":1901,"mapping_status":"MAPPED","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin"}],"identifier":"NCIT:C152426","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C152426","ontology_label":"Steffimycin","ontology_source":"NCIT"},"preferred_term":"Steffimycin","sssom_rows":[{"data_row":2650,"object_id":"NCIT:C152426","object_label":"Steffimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Steffimycin","synonym_count":0}'
   snapshot_sha256: ab55f3bada1b86513f24c4ab3ce55fb8f400785709509fdba0acaed781196601
 - evidence_id: ev-4e43e77d4b6f8304
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1900]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1899]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-b49abab119b872d3
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Steffimycin; data-row positions=[2648]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Steffimycin; data-row positions=[2650]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2648,"object_id":"NCIT:C152426","object_label":"Steffimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Steffimycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2650,"object_id":"NCIT:C152426","object_label":"Steffimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Steffimycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-e7ec18f480b4e356
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1902]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1901]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C152426","line":1902,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C152426","line":1901,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-3afddcfed7400ce9
   kind: prior_review
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1251,1478]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ab55f3bada1b86513f24c4ab3ce55fb8f400785709509fdba0acaed781196601","finding_id":"SEM:d60f97b9a17da058cd68","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ab55f3bada1b86513f24c4ab3ce55fb8f400785709509fdba0acaed781196601","finding_id":"SEM:3a48588278a761f04a9a","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Steffimycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1899],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C152426","line":1901,"mapping_status":"MAPPED","ontology_id":"NCIT:C152426","preferred_term":"Steffimycin"}],"identifier":"NCIT:C152426","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C152426","ontology_label":"Steffimycin","ontology_source":"NCIT"},"preferred_term":"Steffimycin","sssom_rows":[{"data_row":2650,"object_id":"NCIT:C152426","object_label":"Steffimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Steffimycin","synonym_count":0}'
   snapshot_sha256: ab55f3bada1b86513f24c4ab3ce55fb8f400785709509fdba0acaed781196601
 - evidence_id: ev-81fcac726a7f969d
   kind: prior_review

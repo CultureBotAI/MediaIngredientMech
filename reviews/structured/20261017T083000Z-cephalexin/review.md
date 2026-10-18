@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cephalexin
 | ev-d42cf0b327951743 | docs/data/mapped_ingredients.csv; CSV lines=[693] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:3534","line":693,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3534","preferred_term":"Cephalexin","total_occurrences":"0"}] |
 | ev-6c33c22636544ac1 | reports/yaml_record_review/Cephalexin.md; &#96;data/ingredients/mapped/Cephalexin.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:39; Completeness:54; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ddffd04b0e07d6cd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[392,1584] | context_only | [{"current_record_sha256":"4dc424cb9b0db80ad99ec40766aedc81361bec4860f87bb87faf29ee4da378b7","finding_id":"SEM:9afa6d5122465546893b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4dc424cb9b0db80ad99ec40766aedc81361bec4860f87bb87faf29ee4da378b7","finding_id":"SEM:c9bb5cde6bf9dd43a200","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b87bb9bd38b48ad9 | data/ingredients/mapped/Cephalexin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-b87bb9bd38b48ad9 | data/ingredients/mapped/Cephalexin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[691],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3534","line":693,"mapping_status":"MAPPED","ontology_id":"CHEBI:3534","preferred_term":"Cephalexin"}],"identifier":"CHEBI:3534","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3534","ontology_label":"cephalexin","ontology_source":"CHEBI"},"preferred_term":"Cephalexin","sssom_rows":[{"data_row":715,"object_id":"CHEBI:3534","object_label":"cephalexin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cephalexin","synonym_count":1} |
 | ev-32b6aa5026cd7cd2 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-7dc641e69e24a8be] | context_only | Predecessor structured review finding f-7dc641e69e24a8be in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-635e7bc08e6388df
+  evidence_ids:
+  - ev-f6fba6f5aa4c35aa
+  - ev-befd77c8f02c905a
+  - ev-62b4f6a52e0790ab
+  - ev-d42cf0b327951743
+  - ev-b87bb9bd38b48ad9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-635e7bc08e6388df
+  evidence_ids:
+  - ev-f6fba6f5aa4c35aa
+  - ev-ddffd04b0e07d6cd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-635e7bc08e6388df
+  evidence_ids:
+  - ev-6c33c22636544ac1
+  - ev-ddffd04b0e07d6cd
+  - ev-32b6aa5026cd7cd2
 evidence:
 - evidence_id: ev-f6fba6f5aa4c35aa
   kind: record_content
   reference: data/ingredients/mapped/Cephalexin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[691],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3534","line":693,"mapping_status":"MAPPED","ontology_id":"CHEBI:3534","preferred_term":"Cephalexin"}],"identifier":"CHEBI:3534","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3534","ontology_label":"cephalexin","ontology_source":"CHEBI"},"preferred_term":"Cephalexin","sssom_rows":[{"data_row":715,"object_id":"CHEBI:3534","object_label":"cephalexin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cephalexin","synonym_count":1}'
   snapshot_sha256: 4dc424cb9b0db80ad99ec40766aedc81361bec4860f87bb87faf29ee4da378b7
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [691]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cephalexin; data-row positions=[715]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":715,"object_id":"CHEBI:3534","object_label":"cephalexin","other":"7beta-[(2R)-2-amino-2-phenylacetamido]-3-methyl-3,4-didehydrocepham-4-carboxylic
     acid|CAS:15686-71-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Cephalexin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[693]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:3534","line":693,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3534","preferred_term":"Cephalexin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[392,1584]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4dc424cb9b0db80ad99ec40766aedc81361bec4860f87bb87faf29ee4da378b7","finding_id":"SEM:9afa6d5122465546893b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4dc424cb9b0db80ad99ec40766aedc81361bec4860f87bb87faf29ee4da378b7","finding_id":"SEM:c9bb5cde6bf9dd43a200","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cephalexin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[691],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3534","line":693,"mapping_status":"MAPPED","ontology_id":"CHEBI:3534","preferred_term":"Cephalexin"}],"identifier":"CHEBI:3534","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3534","ontology_label":"cephalexin","ontology_source":"CHEBI"},"preferred_term":"Cephalexin","sssom_rows":[{"data_row":715,"object_id":"CHEBI:3534","object_label":"cephalexin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cephalexin","synonym_count":1}'
   snapshot_sha256: 4dc424cb9b0db80ad99ec40766aedc81361bec4860f87bb87faf29ee4da378b7
 - evidence_id: ev-32b6aa5026cd7cd2
   kind: prior_review

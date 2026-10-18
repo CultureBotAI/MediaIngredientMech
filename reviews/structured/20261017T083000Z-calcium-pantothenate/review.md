@@ -89,7 +89,7 @@ Reassess prediction-only role support: Calcium pantothenate
 | ev-e17b3bee6daeeb30 | docs/data/mapped_ingredients.csv; CSV lines=[638] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:31345","line":638,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2348","ontology_id":"CHEBI:31345","preferred_term":"Calcium pantothenate","total_occurrences":"2375"}] |
 | ev-3e8696b83799797c | reports/yaml_record_review/Calcium_Pantothenate.md; &#96;data/ingredients/mapped/Calcium_Pantothenate.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:41; Completeness:58; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e2f6aa5493c75c4f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[349,1801] | context_only | [{"current_record_sha256":"b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121","finding_id":"SEM:829062594b65f0a11861","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121","finding_id":"SEM:6db6f9f9537ce057d55b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2fe3f5e45c843392 | data/ingredients/mapped/Calcium_Pantothenate.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-2fe3f5e45c843392 | data/ingredients/mapped/Calcium_Pantothenate.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[636],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31345","line":638,"mapping_status":"MAPPED","ontology_id":"CHEBI:31345","preferred_term":"Calcium pantothenate"}],"identifier":"CHEBI:31345","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2348,"edge_count":2348,"occurrences":2375},"occurrence_statistics":{"media_count":2348,"total_occurrences":2375},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31345","ontology_label":"Calcium pantothenate","ontology_source":"CHEBI"},"preferred_term":"Calcium pantothenate","sssom_rows":[{"data_row":617,"object_id":"CHEBI:31345","object_label":"Calcium pantothenate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Calcium_Pantothenate","synonym_count":19} |
 | ev-dfd776d67622aca9 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-738d3bc5b68a247c] | context_only | Predecessor structured review finding f-738d3bc5b68a247c in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3a3d3166b2faac3e
+  evidence_ids:
+  - ev-2031934e6103ac89
+  - ev-3e857d7d5b90de58
+  - ev-d294c577ddb09e03
+  - ev-e17b3bee6daeeb30
+  - ev-2fe3f5e45c843392
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3a3d3166b2faac3e
+  evidence_ids:
+  - ev-2031934e6103ac89
+  - ev-e2f6aa5493c75c4f
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3a3d3166b2faac3e
+  evidence_ids:
+  - ev-3e8696b83799797c
+  - ev-e2f6aa5493c75c4f
+  - ev-dfd776d67622aca9
 evidence:
 - evidence_id: ev-2031934e6103ac89
   kind: record_content
   reference: data/ingredients/mapped/Calcium_Pantothenate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[636],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31345","line":638,"mapping_status":"MAPPED","ontology_id":"CHEBI:31345","preferred_term":"Calcium
     pantothenate"}],"identifier":"CHEBI:31345","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2348,"edge_count":2348,"occurrences":2375},"occurrence_statistics":{"media_count":2348,"total_occurrences":2375},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31345","ontology_label":"Calcium
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [636]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Calcium_Pantothenate; data-row positions=[617]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":617,"object_id":"CHEBI:31345","object_label":"Calcium
     pantothenate","other":"Calcium D-(+)-pantothenate|D-Ca-pantothenate|D Calcium
@@ -234,7 +247,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[638]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31345","line":638,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2348","ontology_id":"CHEBI:31345","preferred_term":"Calcium
     pantothenate","total_occurrences":"2375"}]'
@@ -262,7 +275,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[349,1801]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121","finding_id":"SEM:829062594b65f0a11861","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121","finding_id":"SEM:6db6f9f9537ce057d55b","kind":"role_evidence","resolution_reason":"Historical
@@ -272,12 +285,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Calcium_Pantothenate.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[636],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31345","line":638,"mapping_status":"MAPPED","ontology_id":"CHEBI:31345","preferred_term":"Calcium
+    pantothenate"}],"identifier":"CHEBI:31345","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2348,"edge_count":2348,"occurrences":2375},"occurrence_statistics":{"media_count":2348,"total_occurrences":2375},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31345","ontology_label":"Calcium
+    pantothenate","ontology_source":"CHEBI"},"preferred_term":"Calcium pantothenate","sssom_rows":[{"data_row":617,"object_id":"CHEBI:31345","object_label":"Calcium
+    pantothenate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Calcium_Pantothenate","synonym_count":19}'
   snapshot_sha256: b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121
 - evidence_id: ev-dfd776d67622aca9
   kind: prior_review

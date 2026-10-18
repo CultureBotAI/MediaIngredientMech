@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cefazolin sodium salt
 | ev-b2f603c2c5a787e2 | docs/data/mapped_ingredients.csv; CSV lines=[678] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:3483","line":678,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3483","preferred_term":"Cefazolin sodium salt","total_occurrences":"0"}] |
 | ev-f820feda1ef633f0 | reports/yaml_record_review/Cefazolin_Sodium_Salt.md; &#96;data/ingredients/mapped/Cefazolin_Sodium_Salt.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:39; Completeness:53; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-73eadc05d037fc04 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[378,1957] | context_only | [{"current_record_sha256":"874541143cddda937edade10e0f74f444a0dc2a41d8b49d6d108fc786e5fc7ee","finding_id":"SEM:229bc7997a3a66df58d8","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"874541143cddda937edade10e0f74f444a0dc2a41d8b49d6d108fc786e5fc7ee","finding_id":"SEM:ab4245638512fbe14cad","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b22f5ad4994717f6 | data/ingredients/mapped/Cefazolin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-b22f5ad4994717f6 | data/ingredients/mapped/Cefazolin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[676],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3483","line":678,"mapping_status":"MAPPED","ontology_id":"CHEBI:3483","preferred_term":"Cefazolin sodium salt"}],"identifier":"CHEBI:3483","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:3483","ontology_label":"cefazolin sodium","ontology_source":"CHEBI"},"preferred_term":"Cefazolin sodium salt","sssom_rows":[{"data_row":682,"object_id":"CHEBI:3483","object_label":"cefazolin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cefazolin_Sodium_Salt","synonym_count":1} |
 | ev-3f904a6fb4ddb90b | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-b35f0e67b33c511f] | context_only | Predecessor structured review finding f-b35f0e67b33c511f in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7ab2dbde0f38c19b
+  evidence_ids:
+  - ev-cb3eef66afe164cd
+  - ev-8d037f2eff0e5bbd
+  - ev-fb8db9c211ab64a3
+  - ev-b2f603c2c5a787e2
+  - ev-b22f5ad4994717f6
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7ab2dbde0f38c19b
+  evidence_ids:
+  - ev-cb3eef66afe164cd
+  - ev-73eadc05d037fc04
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7ab2dbde0f38c19b
+  evidence_ids:
+  - ev-f820feda1ef633f0
+  - ev-73eadc05d037fc04
+  - ev-3f904a6fb4ddb90b
 evidence:
 - evidence_id: ev-cb3eef66afe164cd
   kind: record_content
   reference: data/ingredients/mapped/Cefazolin_Sodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[676],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3483","line":678,"mapping_status":"MAPPED","ontology_id":"CHEBI:3483","preferred_term":"Cefazolin
     sodium salt"}],"identifier":"CHEBI:3483","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:3483","ontology_label":"cefazolin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [676]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cefazolin_Sodium_Salt; data-row positions=[682]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":682,"object_id":"CHEBI:3483","object_label":"cefazolin
     sodium","other":"sodium 3-{[(5-methyl-1,3,4-thiadiazol-2-yl)sulfanyl]methyl}-7beta-[(1H-tetrazol-1-ylacetyl)amino]-3,4-didehydrocepham-4-carboxylate|CAS:27164-46-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Cefazolin_Sodium_Salt","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[678]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:3483","line":678,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3483","preferred_term":"Cefazolin
     sodium salt","total_occurrences":"0"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[378,1957]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"874541143cddda937edade10e0f74f444a0dc2a41d8b49d6d108fc786e5fc7ee","finding_id":"SEM:229bc7997a3a66df58d8","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"874541143cddda937edade10e0f74f444a0dc2a41d8b49d6d108fc786e5fc7ee","finding_id":"SEM:ab4245638512fbe14cad","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cefazolin_Sodium_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[676],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3483","line":678,"mapping_status":"MAPPED","ontology_id":"CHEBI:3483","preferred_term":"Cefazolin
+    sodium salt"}],"identifier":"CHEBI:3483","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:3483","ontology_label":"cefazolin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Cefazolin sodium salt","sssom_rows":[{"data_row":682,"object_id":"CHEBI:3483","object_label":"cefazolin
+    sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cefazolin_Sodium_Salt","synonym_count":1}'
   snapshot_sha256: 874541143cddda937edade10e0f74f444a0dc2a41d8b49d6d108fc786e5fc7ee
 - evidence_id: ev-3f904a6fb4ddb90b
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: D-Aspartic Acid
 | ev-bce7a34180bd7519 | docs/data/mapped_ingredients.csv; CSV lines=[808] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17364","line":808,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17364","preferred_term":"D-Aspartic Acid","total_occurrences":"0"}] |
 | ev-7c2ff20a3151557d | reports/yaml_record_review/D-Aspartic_Acid.md; &#96;data/ingredients/mapped/D-Aspartic_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:43; Completeness:59; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-38391b7cc4a95ad9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[463,2023] | context_only | [{"current_record_sha256":"270dac8e5c03a2e131d5f4635cc1715cb9216723cc7370785ce38ece87eca887","finding_id":"SEM:59e88191f9fc130de1dc","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"270dac8e5c03a2e131d5f4635cc1715cb9216723cc7370785ce38ece87eca887","finding_id":"SEM:7bceb402baed92e3d43b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bbb756cbf0374baf | data/ingredients/mapped/D-Aspartic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-bbb756cbf0374baf | data/ingredients/mapped/D-Aspartic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[806],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17364","line":808,"mapping_status":"MAPPED","ontology_id":"CHEBI:17364","preferred_term":"D-Aspartic Acid"}],"identifier":"CHEBI:17364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17364","ontology_label":"D-aspartic acid","ontology_source":"CHEBI"},"preferred_term":"D-Aspartic Acid","sssom_rows":[{"data_row":877,"object_id":"CHEBI:17364","object_label":"D-aspartic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Aspartic_Acid","synonym_count":1} |
 | ev-da4600e1f6760043 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-72e888b172f7fd2f] | context_only | Predecessor structured review finding f-72e888b172f7fd2f in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1389e3680977c753
+  evidence_ids:
+  - ev-ca6a484c91065a43
+  - ev-1a10f60c7cab748d
+  - ev-b7786f7a0a09dab2
+  - ev-bce7a34180bd7519
+  - ev-bbb756cbf0374baf
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1389e3680977c753
+  evidence_ids:
+  - ev-ca6a484c91065a43
+  - ev-38391b7cc4a95ad9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1389e3680977c753
+  evidence_ids:
+  - ev-7c2ff20a3151557d
+  - ev-38391b7cc4a95ad9
+  - ev-da4600e1f6760043
 evidence:
 - evidence_id: ev-ca6a484c91065a43
   kind: record_content
   reference: data/ingredients/mapped/D-Aspartic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[806],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17364","line":808,"mapping_status":"MAPPED","ontology_id":"CHEBI:17364","preferred_term":"D-Aspartic
     Acid"}],"identifier":"CHEBI:17364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17364","ontology_label":"D-aspartic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [806]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-Aspartic_Acid; data-row positions=[877]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":877,"object_id":"CHEBI:17364","object_label":"D-aspartic
     acid","other":"(2R)-2-aminobutanedioic acid|CAS:1783-96-6","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Aspartic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[808]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17364","line":808,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17364","preferred_term":"D-Aspartic
     Acid","total_occurrences":"0"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[463,2023]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"270dac8e5c03a2e131d5f4635cc1715cb9216723cc7370785ce38ece87eca887","finding_id":"SEM:59e88191f9fc130de1dc","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"270dac8e5c03a2e131d5f4635cc1715cb9216723cc7370785ce38ece87eca887","finding_id":"SEM:7bceb402baed92e3d43b","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Aspartic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[806],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17364","line":808,"mapping_status":"MAPPED","ontology_id":"CHEBI:17364","preferred_term":"D-Aspartic
+    Acid"}],"identifier":"CHEBI:17364","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17364","ontology_label":"D-aspartic
+    acid","ontology_source":"CHEBI"},"preferred_term":"D-Aspartic Acid","sssom_rows":[{"data_row":877,"object_id":"CHEBI:17364","object_label":"D-aspartic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Aspartic_Acid","synonym_count":1}'
   snapshot_sha256: 270dac8e5c03a2e131d5f4635cc1715cb9216723cc7370785ce38ece87eca887
 - evidence_id: ev-da4600e1f6760043
   kind: prior_review

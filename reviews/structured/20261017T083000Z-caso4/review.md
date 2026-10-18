@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: Caso4
 | ev-cef53b9f174a9d13 | docs/data/mapped_ingredients.csv; CSV lines=[668] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:31346","line":668,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:31346","preferred_term":"CaSO4","total_occurrences":"15"}] |
 | ev-a45afaa9539b1d17 | reports/yaml_record_review/Caso4.md; &#96;data/ingredients/mapped/Caso4.yaml&#96;:2; Verdict:4; Identity:10; Validation:25; Evidence:46; Completeness:60; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8a5bec75f7b2bb23 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[370,2033] | context_only | [{"current_record_sha256":"6da3aa885099c64ec01b21c9034309f9775620d7c21a6cc9c2c25c950eb29992","finding_id":"SEM:cd33e3b22c3a62dca80f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6da3aa885099c64ec01b21c9034309f9775620d7c21a6cc9c2c25c950eb29992","finding_id":"SEM:df303b4d5f6b3e0e10ff","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e334f003e4f667a0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Caso4.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-800a127510e8ba13
+  evidence_ids:
+  - ev-2f827fbdec425020
+  - ev-a6ea2ae0b8f33e39
+  - ev-a3d917338e20c808
+  - ev-cef53b9f174a9d13
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-800a127510e8ba13
+  evidence_ids:
+  - ev-2f827fbdec425020
+  - ev-8a5bec75f7b2bb23
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-800a127510e8ba13
+  evidence_ids:
+  - ev-a45afaa9539b1d17
+  - ev-8a5bec75f7b2bb23
 evidence:
 - evidence_id: ev-2f827fbdec425020
   kind: record_content
   reference: data/ingredients/mapped/Caso4.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[666],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31346","line":668,"mapping_status":"MAPPED","ontology_id":"CHEBI:31346","preferred_term":"CaSO4"}],"identifier":"CHEBI:31346","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31346","ontology_label":"calcium
     sulfate","ontology_source":"CHEBI"},"preferred_term":"CaSO4","sssom_rows":[{"data_row":663,"object_id":"CHEBI:31346","object_label":"calcium
@@ -210,7 +220,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [666]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,7 +229,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Caso4; data-row positions=[663]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":663,"object_id":"CHEBI:31346","object_label":"calcium
     sulfate","other":"Kalziumsulfat|calcium sulphate|CAS:7778-18-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Caso4","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -228,7 +238,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[668]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31346","line":668,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:31346","preferred_term":"CaSO4","total_occurrences":"15"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,19 +261,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[370,2033]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6da3aa885099c64ec01b21c9034309f9775620d7c21a6cc9c2c25c950eb29992","finding_id":"SEM:cd33e3b22c3a62dca80f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6da3aa885099c64ec01b21c9034309f9775620d7c21a6cc9c2c25c950eb29992","finding_id":"SEM:df303b4d5f6b3e0e10ff","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-e334f003e4f667a0
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Caso4.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-8cba292b9842a038
@@ -331,7 +333,7 @@ assessments:
   - record-800a127510e8ba13
   evidence_ids:
   - ev-2f827fbdec425020
-  - ev-e334f003e4f667a0
+  - ev-8a5bec75f7b2bb23
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -339,7 +341,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-2f827fbdec425020
-    - ev-e334f003e4f667a0
+    - ev-8a5bec75f7b2bb23
 findings:
 - finding_id: rec-f-role-800a127510e8ba13
   issue_key: mim-reconciliation-role-support-800a127510e8ba13
@@ -355,7 +357,7 @@ findings:
   - record-800a127510e8ba13
   evidence_ids:
   - ev-2f827fbdec425020
-  - ev-e334f003e4f667a0
+  - ev-8a5bec75f7b2bb23
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Caso4.yaml

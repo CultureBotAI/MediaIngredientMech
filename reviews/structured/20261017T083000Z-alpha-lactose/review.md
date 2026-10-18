@@ -89,7 +89,7 @@ Reassess prediction-only role support: alpha-Lactose
 | ev-f544da71f7ab72a7 | docs/data/mapped_ingredients.csv; CSV lines=[476] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:189432","line":476,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:189432","preferred_term":"alpha-Lactose","total_occurrences":"0"}] |
 | ev-17a62c2ffe25a8c4 | reports/yaml_record_review/Alpha-Lactose.md; &#96;data/ingredients/mapped/Alpha-Lactose.yaml&#96;:2; Verdict:4; Identity:13; Validation:31; Evidence:50; Completeness:79; Recommended Edits:93 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b07633fa40880489 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[238,1415,1553] | context_only | [{"current_record_sha256":"5e0b82a8cbd247cf1ac58acb16a1997fc0f738efc1485666558bbb8e22814b89","finding_id":"SEM:479e5de92d621e39df87","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5e0b82a8cbd247cf1ac58acb16a1997fc0f738efc1485666558bbb8e22814b89","finding_id":"SEM:a45559cca2e47078a69c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5e0b82a8cbd247cf1ac58acb16a1997fc0f738efc1485666558bbb8e22814b89","finding_id":"SEM:dcfc88b14ef8b965942d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8cf7480cf3640756 | data/ingredients/mapped/Alpha-Lactose.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-8cf7480cf3640756 | data/ingredients/mapped/Alpha-Lactose.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[474],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:189432","line":476,"mapping_status":"MAPPED","ontology_id":"CHEBI:189432","preferred_term":"alpha-Lactose"}],"identifier":"CHEBI:189432","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:189432","ontology_label":"Alpha-lactose monohydrate","ontology_source":"CHEBI"},"preferred_term":"alpha-Lactose","sssom_rows":[{"data_row":334,"object_id":"CHEBI:189432","object_label":"Alpha-lactose monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Alpha-Lactose","synonym_count":6} |
 | ev-a05549ac932faab2 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-490018131c1aaa08] | context_only | Predecessor structured review finding f-490018131c1aaa08 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6f949dd46083488b
+  evidence_ids:
+  - ev-d259878d0228dffe
+  - ev-4c2ee37275ef4493
+  - ev-51f0cf96215ed738
+  - ev-f544da71f7ab72a7
+  - ev-8cf7480cf3640756
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-6f949dd46083488b
+  evidence_ids:
+  - ev-d259878d0228dffe
+  - ev-b07633fa40880489
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6f949dd46083488b
+  evidence_ids:
+  - ev-17a62c2ffe25a8c4
+  - ev-b07633fa40880489
+  - ev-a05549ac932faab2
 evidence:
 - evidence_id: ev-d259878d0228dffe
   kind: record_content
   reference: data/ingredients/mapped/Alpha-Lactose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[474],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:189432","line":476,"mapping_status":"MAPPED","ontology_id":"CHEBI:189432","preferred_term":"alpha-Lactose"}],"identifier":"CHEBI:189432","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:189432","ontology_label":"Alpha-lactose
     monohydrate","ontology_source":"CHEBI"},"preferred_term":"alpha-Lactose","sssom_rows":[{"data_row":334,"object_id":"CHEBI:189432","object_label":"Alpha-lactose
@@ -211,7 +224,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [474]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +233,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Alpha-Lactose; data-row positions=[334]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":334,"object_id":"CHEBI:189432","object_label":"Alpha-lactose
     monohydrate","other":"beta-D-galactopyranosyl-(1->4)-alpha-D-glucopyranose|1-beta-D-Galactopyranosyl-4-alpha-D-glucopyranose|4-O-beta-D-galactopyranosyl-alpha-D-glucopyranose|Anhydrous
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[476]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:189432","line":476,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:189432","preferred_term":"alpha-Lactose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -264,7 +277,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[238,1415,1553]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5e0b82a8cbd247cf1ac58acb16a1997fc0f738efc1485666558bbb8e22814b89","finding_id":"SEM:479e5de92d621e39df87","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5e0b82a8cbd247cf1ac58acb16a1997fc0f738efc1485666558bbb8e22814b89","finding_id":"SEM:a45559cca2e47078a69c","kind":"role_evidence","resolution_reason":"Historical
@@ -275,14 +288,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Alpha-Lactose.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[474],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:189432","line":476,"mapping_status":"MAPPED","ontology_id":"CHEBI:189432","preferred_term":"alpha-Lactose"}],"identifier":"CHEBI:189432","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:189432","ontology_label":"Alpha-lactose
+    monohydrate","ontology_source":"CHEBI"},"preferred_term":"alpha-Lactose","sssom_rows":[{"data_row":334,"object_id":"CHEBI:189432","object_label":"Alpha-lactose
+    monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Alpha-Lactose","synonym_count":6}'
   snapshot_sha256: 5e0b82a8cbd247cf1ac58acb16a1997fc0f738efc1485666558bbb8e22814b89
 - evidence_id: ev-a05549ac932faab2
   kind: prior_review

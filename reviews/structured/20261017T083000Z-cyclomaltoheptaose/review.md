@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cyclomaltoheptaose
 | ev-d44fe1150ca2ceb7 | docs/data/mapped_ingredients.csv; CSV lines=[788] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:495055","line":788,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:495055","preferred_term":"Cyclomaltoheptaose","total_occurrences":"3"}] |
 | ev-29f5dd6712feb744 | reports/yaml_record_review/Cyclomaltoheptaose.md; &#96;data/ingredients/mapped/Cyclomaltoheptaose.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:45; Completeness:62; Recommended Edits:71 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-11efe6a5e55593b4 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[459,1981] | context_only | [{"current_record_sha256":"366dae45d77efc8d2fdde2e35c3a914b6b726aadd655fcf75ed3ef0459d0445a","finding_id":"SEM:e05a0394c3e24bb13a1e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"366dae45d77efc8d2fdde2e35c3a914b6b726aadd655fcf75ed3ef0459d0445a","finding_id":"SEM:2a78fb66c9813dbbcf00","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ff131e42b6cb8a0c | data/ingredients/mapped/Cyclomaltoheptaose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-ff131e42b6cb8a0c | data/ingredients/mapped/Cyclomaltoheptaose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[786],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:495055","line":788,"mapping_status":"MAPPED","ontology_id":"CHEBI:495055","preferred_term":"Cyclomaltoheptaose"}],"identifier":"CHEBI:495055","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:495055","ontology_label":"beta-cyclodextrin","ontology_source":"CHEBI"},"preferred_term":"Cyclomaltoheptaose","sssom_rows":[{"data_row":861,"object_id":"CHEBI:495055","object_label":"beta-cyclodextrin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cyclomaltoheptaose","synonym_count":8} |
 | ev-b18acbd46f2f3128 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-1da29180740b3140] | context_only | Predecessor structured review finding f-1da29180740b3140 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-96ee1ae23e1fdb66
+  evidence_ids:
+  - ev-4f40bce527ec452a
+  - ev-353b73580e2d680a
+  - ev-8f99d2810fdf7ef6
+  - ev-d44fe1150ca2ceb7
+  - ev-ff131e42b6cb8a0c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-96ee1ae23e1fdb66
+  evidence_ids:
+  - ev-4f40bce527ec452a
+  - ev-11efe6a5e55593b4
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-96ee1ae23e1fdb66
+  evidence_ids:
+  - ev-29f5dd6712feb744
+  - ev-11efe6a5e55593b4
+  - ev-b18acbd46f2f3128
 evidence:
 - evidence_id: ev-4f40bce527ec452a
   kind: record_content
   reference: data/ingredients/mapped/Cyclomaltoheptaose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[786],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:495055","line":788,"mapping_status":"MAPPED","ontology_id":"CHEBI:495055","preferred_term":"Cyclomaltoheptaose"}],"identifier":"CHEBI:495055","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:495055","ontology_label":"beta-cyclodextrin","ontology_source":"CHEBI"},"preferred_term":"Cyclomaltoheptaose","sssom_rows":[{"data_row":861,"object_id":"CHEBI:495055","object_label":"beta-cyclodextrin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cyclomaltoheptaose","synonym_count":8}'
   snapshot_sha256: 366dae45d77efc8d2fdde2e35c3a914b6b726aadd655fcf75ed3ef0459d0445a
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [786]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cyclomaltoheptaose; data-row positions=[861]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":861,"object_id":"CHEBI:495055","object_label":"beta-cyclodextrin","other":"beta-CD|beta-cycloamylose|betadex|cycloheptaamylose|cycloheptaglucan|cycloheptaglucosan|CAS:7585-39-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Cyclomaltoheptaose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[788]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:495055","line":788,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:495055","preferred_term":"Cyclomaltoheptaose","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[459,1981]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"366dae45d77efc8d2fdde2e35c3a914b6b726aadd655fcf75ed3ef0459d0445a","finding_id":"SEM:e05a0394c3e24bb13a1e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"366dae45d77efc8d2fdde2e35c3a914b6b726aadd655fcf75ed3ef0459d0445a","finding_id":"SEM:2a78fb66c9813dbbcf00","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cyclomaltoheptaose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[786],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:495055","line":788,"mapping_status":"MAPPED","ontology_id":"CHEBI:495055","preferred_term":"Cyclomaltoheptaose"}],"identifier":"CHEBI:495055","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:495055","ontology_label":"beta-cyclodextrin","ontology_source":"CHEBI"},"preferred_term":"Cyclomaltoheptaose","sssom_rows":[{"data_row":861,"object_id":"CHEBI:495055","object_label":"beta-cyclodextrin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cyclomaltoheptaose","synonym_count":8}'
   snapshot_sha256: 366dae45d77efc8d2fdde2e35c3a914b6b726aadd655fcf75ed3ef0459d0445a
 - evidence_id: ev-b18acbd46f2f3128
   kind: prior_review

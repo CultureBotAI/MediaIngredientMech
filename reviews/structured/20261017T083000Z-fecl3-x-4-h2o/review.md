@@ -85,11 +85,11 @@ Reassess prediction-only role support: FeCl3 x 4 H2O
 | --- | --- | --- | --- |
 | ev-18995c7722c91624 | data/ingredients/mapped/Fecl3_X_4_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[988],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","line":990,"mapping_status":"MAPPED","ontology_id":"CHEBI:30808","preferred_term":"FeCl3 x 4 H2O"}],"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30808","ontology_label":"iron trichloride","ontology_source":"CHEBI"},"preferred_term":"FeCl3 x 4 H2O","sssom_rows":[{"data_row":1181,"object_id":"CHEBI:30808","object_label":"iron trichloride","predicate_id":"skos:closeMatch"},{"data_row":1182,"object_id":"kgmicrobe.compound:fecl3_x_4_h2o","object_label":"FeCl3 x 4 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fecl3_X_4_H2o","synonym_count":3} |
 | ev-a8be7fc9424338cf | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [988] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-777ddd255d1e1615 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fecl3_X_4_H2o; data-row positions=[1181,1182] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1181,"object_id":"CHEBI:30808","object_label":"iron trichloride","other":"FeCl3\u00b74H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Fecl3_X_4_H2o","validation_method":""},{"data_row":1182,"object_id":"kgmicrobe.compound:fecl3_x_4_h2o","object_label":"FeCl3 x 4 H2O","other":"FeCl3\u00b74H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Fecl3_X_4_H2o","validation_method":""}] |
+| ev-777ddd255d1e1615 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fecl3_X_4_H2o; data-row positions=[1181, 1182] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1181,"object_id":"CHEBI:30808","object_label":"iron trichloride","other":"FeCl3\u00b74H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Fecl3_X_4_H2o","validation_method":""},{"data_row":1182,"object_id":"kgmicrobe.compound:fecl3_x_4_h2o","object_label":"FeCl3 x 4 H2O","other":"FeCl3\u00b74H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Fecl3_X_4_H2o","validation_method":""}] |
 | ev-1c03927e72ef6310 | docs/data/mapped_ingredients.csv; CSV lines=[990] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","line":990,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:30808","preferred_term":"FeCl3 x 4 H2O","total_occurrences":"7"}] |
 | ev-0e44b8e1b14185a4 | reports/yaml_record_review/Fecl3_X_4_H2o.md; &#96;data/ingredients/mapped/Fecl3_X_4_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:30; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-19606f217adfc0ec | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[594,1959] | context_only | [{"current_record_sha256":"35539ce2262b60cf377be78d8709ecb1b5cbee07d090e6cff2bc577abfc880b7","finding_id":"SEM:e31d8c1f7ada1f7ce2f6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"35539ce2262b60cf377be78d8709ecb1b5cbee07d090e6cff2bc577abfc880b7","finding_id":"SEM:94c795e689daa9ee87cf","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-61e7e0ca3f328271 | data/ingredients/mapped/Fecl3_X_4_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"IRON_SOURCE"}}] |
+| ev-61e7e0ca3f328271 | data/ingredients/mapped/Fecl3_X_4_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[988],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","line":990,"mapping_status":"MAPPED","ontology_id":"CHEBI:30808","preferred_term":"FeCl3 x 4 H2O"}],"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30808","ontology_label":"iron trichloride","ontology_source":"CHEBI"},"preferred_term":"FeCl3 x 4 H2O","sssom_rows":[{"data_row":1181,"object_id":"CHEBI:30808","object_label":"iron trichloride","predicate_id":"skos:closeMatch"},{"data_row":1182,"object_id":"kgmicrobe.compound:fecl3_x_4_h2o","object_label":"FeCl3 x 4 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fecl3_X_4_H2o","synonym_count":3} |
 | ev-732c0bfe45d92c6d | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-c506049c69a16602] | context_only | Predecessor structured review finding f-c506049c69a16602 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1cd0990bc987fd7b
+  evidence_ids:
+  - ev-18995c7722c91624
+  - ev-a8be7fc9424338cf
+  - ev-777ddd255d1e1615
+  - ev-1c03927e72ef6310
+  - ev-61e7e0ca3f328271
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1cd0990bc987fd7b
+  evidence_ids:
+  - ev-18995c7722c91624
+  - ev-19606f217adfc0ec
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1cd0990bc987fd7b
+  evidence_ids:
+  - ev-0e44b8e1b14185a4
+  - ev-19606f217adfc0ec
+  - ev-732c0bfe45d92c6d
 evidence:
 - evidence_id: ev-18995c7722c91624
   kind: record_content
   reference: data/ingredients/mapped/Fecl3_X_4_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[988],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","line":990,"mapping_status":"MAPPED","ontology_id":"CHEBI:30808","preferred_term":"FeCl3
     x 4 H2O"}],"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30808","ontology_label":"iron
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [988]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,8 +234,8 @@ evidence:
 - evidence_id: ev-777ddd255d1e1615
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Fecl3_X_4_H2o; data-row positions=[1181,1182]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Fecl3_X_4_H2o; data-row positions=[1181, 1182]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1181,"object_id":"CHEBI:30808","object_label":"iron
     trichloride","other":"FeCl3\u00b74H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Fecl3_X_4_H2o","validation_method":""},{"data_row":1182,"object_id":"kgmicrobe.compound:fecl3_x_4_h2o","object_label":"FeCl3
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[990]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","line":990,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:30808","preferred_term":"FeCl3
     x 4 H2O","total_occurrences":"7"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[594,1959]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"35539ce2262b60cf377be78d8709ecb1b5cbee07d090e6cff2bc577abfc880b7","finding_id":"SEM:e31d8c1f7ada1f7ce2f6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"35539ce2262b60cf377be78d8709ecb1b5cbee07d090e6cff2bc577abfc880b7","finding_id":"SEM:94c795e689daa9ee87cf","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fecl3_X_4_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"IRON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[988],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","line":990,"mapping_status":"MAPPED","ontology_id":"CHEBI:30808","preferred_term":"FeCl3
+    x 4 H2O"}],"identifier":"kgmicrobe.compound:fecl3_x_4_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30808","ontology_label":"iron
+    trichloride","ontology_source":"CHEBI"},"preferred_term":"FeCl3 x 4 H2O","sssom_rows":[{"data_row":1181,"object_id":"CHEBI:30808","object_label":"iron
+    trichloride","predicate_id":"skos:closeMatch"},{"data_row":1182,"object_id":"kgmicrobe.compound:fecl3_x_4_h2o","object_label":"FeCl3
+    x 4 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fecl3_X_4_H2o","synonym_count":3}'
   snapshot_sha256: 35539ce2262b60cf377be78d8709ecb1b5cbee07d090e6cff2bc577abfc880b7
 - evidence_id: ev-732c0bfe45d92c6d
   kind: prior_review

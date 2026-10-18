@@ -89,7 +89,7 @@ Reassess prediction-only role support: 3-Chloro-L-tyrosine
 | ev-fc78034fc73e281e | docs/data/mapped_ingredients.csv; CSV lines=[348] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:53678","line":348,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:53678","preferred_term":"3-Chloro-L-tyrosine","total_occurrences":"0"}] |
 | ev-b42b0d1cde7e8a46 | reports/yaml_record_review/3-Chloro-L-tyrosine.md; &#96;data/ingredients/mapped/3-Chloro-L-tyrosine.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:36; Completeness:53; Recommended Edits:60 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8589a8b53bc52dfb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[99,1750] | context_only | [{"current_record_sha256":"9068e77f796c9714234627754561ef54188cdbd0d80fe3ef5d964093e1da6dc3","finding_id":"SEM:6791ff1dd5ae2d15d3d9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9068e77f796c9714234627754561ef54188cdbd0d80fe3ef5d964093e1da6dc3","finding_id":"SEM:b8186b5162596631c55c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-837290dfda77875c | data/ingredients/mapped/3-Chloro-L-tyrosine.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-837290dfda77875c | data/ingredients/mapped/3-Chloro-L-tyrosine.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[346],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53678","line":348,"mapping_status":"MAPPED","ontology_id":"CHEBI:53678","preferred_term":"3-Chloro-L-tyrosine"}],"identifier":"CHEBI:53678","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:53678","ontology_label":"3-chloro-L-tyrosine","ontology_source":"CHEBI"},"preferred_term":"3-Chloro-L-tyrosine","sssom_rows":[{"data_row":119,"object_id":"CHEBI:53678","object_label":"3-chloro-L-tyrosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-Chloro-L-tyrosine","synonym_count":0} |
 | ev-4bbb651b73548be3 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-58e436ef5a00b156] | context_only | Predecessor structured review finding f-58e436ef5a00b156 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cef0796ec2c74845
+  evidence_ids:
+  - ev-0e19def7d19bc20a
+  - ev-3c37a4b89ec3ef6c
+  - ev-598ed8a95702d3bd
+  - ev-fc78034fc73e281e
+  - ev-837290dfda77875c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-cef0796ec2c74845
+  evidence_ids:
+  - ev-0e19def7d19bc20a
+  - ev-8589a8b53bc52dfb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cef0796ec2c74845
+  evidence_ids:
+  - ev-b42b0d1cde7e8a46
+  - ev-8589a8b53bc52dfb
+  - ev-4bbb651b73548be3
 evidence:
 - evidence_id: ev-0e19def7d19bc20a
   kind: record_content
   reference: data/ingredients/mapped/3-Chloro-L-tyrosine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[346],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53678","line":348,"mapping_status":"MAPPED","ontology_id":"CHEBI:53678","preferred_term":"3-Chloro-L-tyrosine"}],"identifier":"CHEBI:53678","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:53678","ontology_label":"3-chloro-L-tyrosine","ontology_source":"CHEBI"},"preferred_term":"3-Chloro-L-tyrosine","sssom_rows":[{"data_row":119,"object_id":"CHEBI:53678","object_label":"3-chloro-L-tyrosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-Chloro-L-tyrosine","synonym_count":0}'
   snapshot_sha256: 9068e77f796c9714234627754561ef54188cdbd0d80fe3ef5d964093e1da6dc3
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [346]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:3-Chloro-L-tyrosine; data-row positions=[119]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":119,"object_id":"CHEBI:53678","object_label":"3-chloro-L-tyrosine","other":"CAS:7423-93-0","predicate_id":"skos:exactMatch","subject_id":"MIM:3-Chloro-L-tyrosine","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[348]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:53678","line":348,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:53678","preferred_term":"3-Chloro-L-tyrosine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[99,1750]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9068e77f796c9714234627754561ef54188cdbd0d80fe3ef5d964093e1da6dc3","finding_id":"SEM:6791ff1dd5ae2d15d3d9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9068e77f796c9714234627754561ef54188cdbd0d80fe3ef5d964093e1da6dc3","finding_id":"SEM:b8186b5162596631c55c","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/3-Chloro-L-tyrosine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[346],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53678","line":348,"mapping_status":"MAPPED","ontology_id":"CHEBI:53678","preferred_term":"3-Chloro-L-tyrosine"}],"identifier":"CHEBI:53678","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:53678","ontology_label":"3-chloro-L-tyrosine","ontology_source":"CHEBI"},"preferred_term":"3-Chloro-L-tyrosine","sssom_rows":[{"data_row":119,"object_id":"CHEBI:53678","object_label":"3-chloro-L-tyrosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-Chloro-L-tyrosine","synonym_count":0}'
   snapshot_sha256: 9068e77f796c9714234627754561ef54188cdbd0d80fe3ef5d964093e1da6dc3
 - evidence_id: ev-4bbb651b73548be3
   kind: prior_review

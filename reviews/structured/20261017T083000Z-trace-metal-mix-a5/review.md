@@ -103,17 +103,17 @@ Reassess prediction-only role support: Trace metal mix A5
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-1417aa945298d84c | data/ingredients/mapped/Trace_Metal_Mix_A5.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1978],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001349","line":1980,"mapping_status":"MAPPED","ontology_id":"MICRO:0001349","preferred_term":"Trace metal mix A5"}],"identifier":"MICRO:0001349","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001349","ontology_label":"trace metal mix A5","ontology_source":"MICRO"},"preferred_term":"Trace metal mix A5","sssom_rows":[{"data_row":2804,"object_id":"MICRO:0001349","object_label":"trace metal mix A5","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Metal_Mix_A5","synonym_count":2} |
-| ev-a3b10bf539d20308 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1978] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-23742d2f5e375858 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Metal_Mix_A5; data-row positions=[2804] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2804,"object_id":"MICRO:0001349","object_label":"trace metal mix A5","other":"Trace Metal Mix A5 (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Metal_Mix_A5","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-747a9d9758c8ae7b | docs/data/mapped_ingredients.csv; CSV lines=[1980] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001349","line":1980,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0001349","preferred_term":"Trace metal mix A5","total_occurrences":"2"}] |
+| ev-1417aa945298d84c | data/ingredients/mapped/Trace_Metal_Mix_A5.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001349","line":1979,"mapping_status":"MAPPED","ontology_id":"MICRO:0001349","preferred_term":"Trace metal mix A5"}],"identifier":"MICRO:0001349","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001349","ontology_label":"trace metal mix A5","ontology_source":"MICRO"},"preferred_term":"Trace metal mix A5","sssom_rows":[{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace metal mix A5","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Metal_Mix_A5","synonym_count":2} |
+| ev-a3b10bf539d20308 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1977] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-23742d2f5e375858 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Metal_Mix_A5; data-row positions=[2806] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace metal mix A5","other":"Trace Metal Mix A5 (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Metal_Mix_A5","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-747a9d9758c8ae7b | docs/data/mapped_ingredients.csv; CSV lines=[1979] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001349","line":1979,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0001349","preferred_term":"Trace metal mix A5","total_occurrences":"2"}] |
 | ev-8a6a1ce8b70c223e | reports/yaml_record_review/Trace_Metal_Mix_A5.md; &#96;data/ingredients/mapped/Trace_Metal_Mix_A5.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:32; Issues:40; Major: &#96;see below&#96; is not a true synonym:42; Major: &#96;TRACE_ELEMENT&#96; is provisional LLM evidence:47; Completeness:54; Recommended Edits:60 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2d24a67f6ac25674 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1298,1525] | context_only | [{"current_record_sha256":"5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2","finding_id":"SEM:52d89e526ec296e08a34","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2","finding_id":"SEM:1ae32b1fcc01a6786612","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b0bef49e2ca23441 | data/ingredients/mapped/Trace_Metal_Mix_A5.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-b0bef49e2ca23441 | data/ingredients/mapped/Trace_Metal_Mix_A5.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001349","line":1979,"mapping_status":"MAPPED","ontology_id":"MICRO:0001349","preferred_term":"Trace metal mix A5"}],"identifier":"MICRO:0001349","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001349","ontology_label":"trace metal mix A5","ontology_source":"MICRO"},"preferred_term":"Trace metal mix A5","sssom_rows":[{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace metal mix A5","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Metal_Mix_A5","synonym_count":2} |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-666a0e05df6eee3c | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-612aa67bad26d26a] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-995ddb5e1dd7c309 | data/ingredients/mapped/Trace_Metal_Mix_A5.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace Metal Mix A5 (see below)", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from CultureBotHT (consolidated_media.json (media-only)). Used in 7 CultureBot media; samples: BG11C, BG11, BG11R\u2026. No CAS-RN or CHEBI mapping available; curator review needed.", "curator": "audit_add_remaining_culturebotht", "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-29T06:51:33.117170+00:00"}, {"action": "AUTO_UPGRADE_TO_MICRO", "changes": "primary UNMAPPED_0258 \u2192 MICRO:0001349 via name normalization to 'Trace metal mix A5'", "curator": "resolve_unmapped", "llm_assisted": false, "timestamp": "2026-05-02T00:41:18.463553+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Trace metal')", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:18.924925+00:00"}, {"action": "ANNOTATED", "changes": "Added media role: TRACE_ELEMENT (confidence: 0.60)", "curator": "claude_in_session_curation", "timestamp": "2026-06-09T04:56:30.248262+00:00"}, {"action": "ANNOTATED", "changes": "Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -&gt; nutritional_roles.TRACE_ELEMENT", "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"}, {"action": "CORRECTED", "changes": "occurrence_statistics 7/7 -&gt; 2/2 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics", "timestamp": "2026-08-27T03:16:39.519991+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Trace Metal Mix A5 (see below)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier": "MICRO:0001349", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-upgraded from UNMAPPED_0258; matched via 'Trace metal mix A5' (name normalization); label-exact", "source": "MICRO via OLS search (resolve_unmapped)"}], "mapping_quality": "EXACT_MATCH", "ontology_id": "MICRO:0001349", "ontology_label": "trace metal mix A5", "ontology_source": "MICRO"}} |
-| ev-3e284f13241fa94e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Metal_Mix_A5 | supports | [{"comment": "", "confidence": "0.99", "data_row": 2804, "mapping_date": "2026-08-30", "mapping_justification": "semapv:LexicalMatching", "object_id": "MICRO:0001349", "object_label": "trace metal mix A5", "object_source": "obo:micro.owl", "other": "Trace Metal Mix A5 (see below)", "predicate_id": "skos:exactMatch", "source": "MIM:MICRO via OLS search (resolve_unmapped)&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Trace_Metal_Mix_A5", "subject_label": "Trace metal mix A5", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-995ddb5e1dd7c309 | data/ingredients/mapped/Trace_Metal_Mix_A5.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001349","line":1979,"mapping_status":"MAPPED","ontology_id":"MICRO:0001349","preferred_term":"Trace metal mix A5"}],"identifier":"MICRO:0001349","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001349","ontology_label":"trace metal mix A5","ontology_source":"MICRO"},"preferred_term":"Trace metal mix A5","sssom_rows":[{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace metal mix A5","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Metal_Mix_A5","synonym_count":2} |
+| ev-3e284f13241fa94e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Metal_Mix_A5; data-row positions=[2806] | supports | Current exact-subject rows, including complete other payload: [{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace metal mix A5","other":"Trace Metal Mix A5 (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Metal_Mix_A5","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-a6e7432b5d0fbcfb | reports/yaml_record_review/Trace_Metal_Mix_A5.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-0502b137369a5f75 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-f651e0b3023ee4ef] | context_only | Predecessor structured review finding f-f651e0b3023ee4ef in 20261011T024638Z-mim-reconcile-all-batch-11 |
 | ev-78319506630627fa | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-612aa67bad26d26a] | context_only | Predecessor structured review finding scope-f-612aa67bad26d26a in 20261011T030852Z-mim-token-scope-reassessment |
@@ -211,6 +211,14 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-78ea6a14a080dbf0
+  evidence_ids:
+  - ev-1417aa945298d84c
+  - ev-a3b10bf539d20308
+  - ev-23742d2f5e375858
+  - ev-747a9d9758c8ae7b
+  - ev-b0bef49e2ca23441
+  - ev-995ddb5e1dd7c309
+  - ev-3e284f13241fa94e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -219,6 +227,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-78ea6a14a080dbf0
+  evidence_ids:
+  - ev-1417aa945298d84c
+  - ev-2d24a67f6ac25674
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -227,24 +238,31 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-78ea6a14a080dbf0
+  evidence_ids:
+  - ev-8a6a1ce8b70c223e
+  - ev-2d24a67f6ac25674
+  - ev-666a0e05df6eee3c
+  - ev-a6e7432b5d0fbcfb
+  - ev-0502b137369a5f75
+  - ev-78319506630627fa
 evidence:
 - evidence_id: ev-1417aa945298d84c
   kind: record_content
   reference: data/ingredients/mapped/Trace_Metal_Mix_A5.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1978],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001349","line":1980,"mapping_status":"MAPPED","ontology_id":"MICRO:0001349","preferred_term":"Trace
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001349","line":1979,"mapping_status":"MAPPED","ontology_id":"MICRO:0001349","preferred_term":"Trace
     metal mix A5"}],"identifier":"MICRO:0001349","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001349","ontology_label":"trace
-    metal mix A5","ontology_source":"MICRO"},"preferred_term":"Trace metal mix A5","sssom_rows":[{"data_row":2804,"object_id":"MICRO:0001349","object_label":"trace
+    metal mix A5","ontology_source":"MICRO"},"preferred_term":"Trace metal mix A5","sssom_rows":[{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace
     metal mix A5","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Metal_Mix_A5","synonym_count":2}'
   snapshot_sha256: 5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2
 - evidence_id: ev-a3b10bf539d20308
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1978]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1977]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -252,19 +270,19 @@ evidence:
 - evidence_id: ev-23742d2f5e375858
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trace_Metal_Mix_A5; data-row positions=[2804]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Trace_Metal_Mix_A5; data-row positions=[2806]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2804,"object_id":"MICRO:0001349","object_label":"trace
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace
     metal mix A5","other":"Trace Metal Mix A5 (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Metal_Mix_A5","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-747a9d9758c8ae7b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1980]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1979]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001349","line":1980,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0001349","preferred_term":"Trace
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001349","line":1979,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0001349","preferred_term":"Trace
     metal mix A5","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-8a6a1ce8b70c223e
@@ -294,7 +312,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1298,1525]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2","finding_id":"SEM:52d89e526ec296e08a34","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2","finding_id":"SEM:1ae32b1fcc01a6786612","kind":"role_evidence","resolution_reason":"Historical
@@ -304,12 +322,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trace_Metal_Mix_A5.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001349","line":1979,"mapping_status":"MAPPED","ontology_id":"MICRO:0001349","preferred_term":"Trace
+    metal mix A5"}],"identifier":"MICRO:0001349","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001349","ontology_label":"trace
+    metal mix A5","ontology_source":"MICRO"},"preferred_term":"Trace metal mix A5","sssom_rows":[{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace
+    metal mix A5","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Metal_Mix_A5","synonym_count":2}'
   snapshot_sha256: 5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2
 - evidence_id: ev-823412d1eacb6795
   kind: record_content
@@ -348,55 +366,21 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trace_Metal_Mix_A5.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Trace Metal Mix A5 (see below)", "synonym_type": "RAW_TEXT"}],
-    "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from CultureBotHT
-    (consolidated_media.json (media-only)). Used in 7 CultureBot media; samples: BG11C,
-    BG11, BG11R\u2026. No CAS-RN or CHEBI mapping available; curator review needed.",
-    "curator": "audit_add_remaining_culturebotht", "llm_assisted": false, "new_status":
-    "UNMAPPED", "timestamp": "2026-04-29T06:51:33.117170+00:00"}, {"action": "AUTO_UPGRADE_TO_MICRO",
-    "changes": "primary UNMAPPED_0258 \u2192 MICRO:0001349 via name normalization
-    to ''Trace metal mix A5''", "curator": "resolve_unmapped", "llm_assisted": false,
-    "timestamp": "2026-05-02T00:41:18.463553+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=STOCK_SOLUTION (name matches solution pattern
-    ''Trace metal'')", "curator": "auto_classify_ingredient_type", "llm_assisted":
-    false, "timestamp": "2026-05-02T03:12:18.924925+00:00"}, {"action": "ANNOTATED",
-    "changes": "Added media role: TRACE_ELEMENT (confidence: 0.60)", "curator": "claude_in_session_curation",
-    "timestamp": "2026-06-09T04:56:30.248262+00:00"}, {"action": "ANNOTATED", "changes":
-    "Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT",
-    "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"},
-    {"action": "CORRECTED", "changes": "occurrence_statistics 7/7 -> 2/2 (media_count/total_occurrences),
-    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-    prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.519991+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Trace Metal Mix A5 (see below)'' (x1 CultureMech mentions).
-    Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill",
-    "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier":
-    "MICRO:0001349", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH",
-    "notes": "Auto-upgraded from UNMAPPED_0258; matched via ''Trace metal mix A5''
-    (name normalization); label-exact", "source": "MICRO via OLS search (resolve_unmapped)"}],
-    "mapping_quality": "EXACT_MATCH", "ontology_id": "MICRO:0001349", "ontology_label":
-    "trace metal mix A5", "ontology_source": "MICRO"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001349","line":1979,"mapping_status":"MAPPED","ontology_id":"MICRO:0001349","preferred_term":"Trace
+    metal mix A5"}],"identifier":"MICRO:0001349","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001349","ontology_label":"trace
+    metal mix A5","ontology_source":"MICRO"},"preferred_term":"Trace metal mix A5","sssom_rows":[{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace
+    metal mix A5","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Metal_Mix_A5","synonym_count":2}'
   snapshot_sha256: 5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2
 - evidence_id: ev-3e284f13241fa94e
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trace_Metal_Mix_A5
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Trace_Metal_Mix_A5; data-row positions=[2806]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.99", "data_row": 2804, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:LexicalMatching", "object_id":
-    "MICRO:0001349", "object_label": "trace metal mix A5", "object_source": "obo:micro.owl",
-    "other": "Trace Metal Mix A5 (see below)", "predicate_id": "skos:exactMatch",
-    "source": "MIM:MICRO via OLS search (resolve_unmapped)|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Trace_Metal_Mix_A5", "subject_label": "Trace metal mix A5",
-    "validation_method": "none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2806,"object_id":"MICRO:0001349","object_label":"trace
+    metal mix A5","other":"Trace Metal Mix A5 (see below)","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Metal_Mix_A5","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-a6e7432b5d0fbcfb
   kind: prior_review

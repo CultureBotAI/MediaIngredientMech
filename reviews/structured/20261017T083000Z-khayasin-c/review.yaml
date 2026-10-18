@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-260a69afa412716e
+  evidence_ids:
+  - ev-1de2d21299cc9413
+  - ev-191d6bcab79899c9
+  - ev-3531fa660651e049
+  - ev-061e57c69542f36f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -82,6 +87,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-260a69afa412716e
+  evidence_ids:
+  - ev-1de2d21299cc9413
+  - ev-94b6f1926ddbc9b0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +98,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-260a69afa412716e
+  evidence_ids:
+  - ev-f0cdbd31a42f3691
+  - ev-94b6f1926ddbc9b0
 evidence:
 - evidence_id: ev-1de2d21299cc9413
   kind: record_content
   reference: data/ingredients/unmapped/Khayasin_C.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[133],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0191","line":135,"mapping_status":"UNMAPPED","ontology_id":"CHEBI:185858","preferred_term":"Khayasin
     C"}],"identifier":"UNMAPPED_0191","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:185858","ontology_label":"KHAYASIN","ontology_source":"CHEBI"},"preferred_term":"Khayasin
@@ -106,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [133]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Khayasin_C; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -123,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[135]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0191","line":135,"mapping_quality":"NARROW_MATCH","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"CHEBI:185858","preferred_term":"Khayasin
     C","total_occurrences":"0"}]'
@@ -160,18 +171,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1370]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4f0afabbd0da3ac05f695bfeb8261eeeb5d748e2617d9dceecead7a7b45b3f05","finding_id":"SEM:2e20991670f6813045f0","kind":"unmapped_parent_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-c729f96c9610b00f
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/unmapped/Khayasin_C.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-597cdab327de1267
@@ -269,7 +272,7 @@ findings:
   - record-260a69afa412716e
   evidence_ids:
   - ev-1de2d21299cc9413
-  - ev-c729f96c9610b00f
+  - ev-94b6f1926ddbc9b0
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/unmapped/Khayasin_C.yaml

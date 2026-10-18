@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-445ad2adce29e3d8
+  evidence_ids:
+  - ev-c8b1889a8fe42a66
+  - ev-49614111064698f4
+  - ev-6bb094867cc7871f
+  - ev-be39f84bcb6e4d54
+  - ev-609de1e528cc2773
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-445ad2adce29e3d8
+  evidence_ids:
+  - ev-c8b1889a8fe42a66
+  - ev-33ace67dd5e203fd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,21 +99,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-445ad2adce29e3d8
+  evidence_ids:
+  - ev-ad90705ed9e72314
+  - ev-33ace67dd5e203fd
+  - ev-484640c10b4de8a3
 evidence:
 - evidence_id: ev-c8b1889a8fe42a66
   kind: record_content
   reference: data/ingredients/mapped/Phenol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1640],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15882","line":1642,"mapping_status":"MAPPED","ontology_id":"CHEBI:15882","preferred_term":"Phenol"}],"identifier":"CHEBI:15882","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15882","ontology_label":"phenol","ontology_source":"CHEBI"},"preferred_term":"Phenol","sssom_rows":[{"data_row":2232,"object_id":"CHEBI:15882","object_label":"phenol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phenol","synonym_count":12}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1639],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15882","line":1641,"mapping_status":"MAPPED","ontology_id":"CHEBI:15882","preferred_term":"Phenol"}],"identifier":"CHEBI:15882","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15882","ontology_label":"phenol","ontology_source":"CHEBI"},"preferred_term":"Phenol","sssom_rows":[{"data_row":2234,"object_id":"CHEBI:15882","object_label":"phenol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phenol","synonym_count":12}'
   snapshot_sha256: 88331db9c69efce76716baa57f6a5a3952232fad09df9ea31d914f3fbf86e1ef
 - evidence_id: ev-49614111064698f4
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1640]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1639]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -112,19 +125,19 @@ evidence:
 - evidence_id: ev-6bb094867cc7871f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Phenol; data-row positions=[2232]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Phenol; data-row positions=[2234]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2232,"object_id":"CHEBI:15882","object_label":"phenol","other":"Benzenol|Carbolsaeure|Hydroxybenzene|Karbolsaeure|Oxybenzene|PhOH|Phenic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2234,"object_id":"CHEBI:15882","object_label":"phenol","other":"Benzenol|Carbolsaeure|Hydroxybenzene|Karbolsaeure|Oxybenzene|PhOH|Phenic
     acid|Phenylic acid|Phenylic alcohol|acide carbolique|acide phenique|carbolic acid|CAS:108-95-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Phenol","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-be39f84bcb6e4d54
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1642]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1641]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15882","line":1642,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:15882","preferred_term":"Phenol","total_occurrences":"7"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15882","line":1641,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"7","ontology_id":"CHEBI:15882","preferred_term":"Phenol","total_occurrences":"7"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ad90705ed9e72314
   kind: prior_review
@@ -145,7 +158,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1102,2018]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"88331db9c69efce76716baa57f6a5a3952232fad09df9ea31d914f3fbf86e1ef","finding_id":"SEM:6891a3cfccac1b8d5b7d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"88331db9c69efce76716baa57f6a5a3952232fad09df9ea31d914f3fbf86e1ef","finding_id":"SEM:9e426d4d649b9305cd8f","kind":"role_evidence","resolution_reason":"Historical
@@ -155,12 +168,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Phenol.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1639],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15882","line":1641,"mapping_status":"MAPPED","ontology_id":"CHEBI:15882","preferred_term":"Phenol"}],"identifier":"CHEBI:15882","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7,"edge_count":7,"occurrences":7},"occurrence_statistics":{"media_count":7,"total_occurrences":7},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15882","ontology_label":"phenol","ontology_source":"CHEBI"},"preferred_term":"Phenol","sssom_rows":[{"data_row":2234,"object_id":"CHEBI:15882","object_label":"phenol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phenol","synonym_count":12}'
   snapshot_sha256: 88331db9c69efce76716baa57f6a5a3952232fad09df9ea31d914f3fbf86e1ef
 - evidence_id: ev-484640c10b4de8a3
   kind: prior_review

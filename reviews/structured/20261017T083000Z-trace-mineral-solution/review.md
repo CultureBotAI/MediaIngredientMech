@@ -83,16 +83,16 @@ Disposition: Token presence remains reproducible, but the earlier pattern-based 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-ceefc84dd27464ad | data/ingredients/mapped/Trace_Mineral_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2511],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2513,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace mineral solution"}],"identifier":"kgmicrobe.ingredient:trace_mineral_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","ontology_label":"Trace mineral solution","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Trace mineral solution","sssom_rows":[{"data_row":2807,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace mineral solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Mineral_Solution","synonym_count":6} |
-| ev-40852c4b8e4f817b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2511] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-702e1b26f74fa1cf | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Mineral_Solution; data-row positions=[2807] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2807,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace mineral solution","other":"Trace mineral solution (see Medium No. 151 )&#124;Trace mineral solution (see Medium No. 852 )&#124;Trace mineral solution (see Medium No.852)&#124;Trace mineral solution (see below)&#124;Trace mineral solution**","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Mineral_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
-| ev-4b28b132ec221ca3 | docs/data/mapped_ingredients.csv; CSV lines=[2513] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2513,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"2","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace mineral solution","total_occurrences":"2"}] |
+| ev-ceefc84dd27464ad | data/ingredients/mapped/Trace_Mineral_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2510],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2512,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace mineral solution"}],"identifier":"kgmicrobe.ingredient:trace_mineral_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","ontology_label":"Trace mineral solution","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Trace mineral solution","sssom_rows":[{"data_row":2809,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace mineral solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Mineral_Solution","synonym_count":6} |
+| ev-40852c4b8e4f817b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2510] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-702e1b26f74fa1cf | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Mineral_Solution; data-row positions=[2809] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2809,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace mineral solution","other":"Trace mineral solution (see Medium No. 151 )&#124;Trace mineral solution (see Medium No. 852 )&#124;Trace mineral solution (see Medium No.852)&#124;Trace mineral solution (see below)&#124;Trace mineral solution**","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Mineral_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-4b28b132ec221ca3 | docs/data/mapped_ingredients.csv; CSV lines=[2512] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2512,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"2","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace mineral solution","total_occurrences":"2"}] |
 | ev-0eefc9d77ca437e5 | reports/yaml_record_review/Trace_Mineral_Solution.md; &#96;data/ingredients/mapped/Trace_Mineral_Solution.yaml&#96;:2; Verdict:4; Identity:9; Validation:21; Evidence:31; Issues:43; Major: recipe cross-references and footnotes reach final &#96;other&#96;:45; Completeness:53; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9bd72ce41e674e19 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1300] | context_only | [{"current_record_sha256":"03837875ebc88c1ab82387c244b383de83a01bc77f4fd60cd75fbbecdcd31f81","finding_id":"SEM:7c1609d63523c7517ff0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-28bce6da08c8c14e | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-54e5335934e0ba03] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-41b7b72cded4e05c | data/ingredients/mapped/Trace_Mineral_Solution.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace mineral solution (see Medium No. 151 )", "synonym_type": "RAW_TEXT"}, {"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace mineral solution (see Medium No. 852 )", "synonym_type": "RAW_TEXT"}, {"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace mineral solution (see Medium No.852)", "synonym_type": "RAW_TEXT"}, {"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace mineral solution (see below)", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN or CHEBI/NCIT match. Curator review needed.", "curator": "audit_import_ingredients[mim-queue]", "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'mineral solution')", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:19.966568+00:00"}, {"action": "PROMOTED_TO_MAPPED", "changes": "Promoted UNMAPPED_0551 -&gt; kgmicrobe.ingredient:trace_mineral_solution (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288).", "curator": "issue_288_stock_solutions", "llm_assisted": true, "new_status": "MAPPED", "previous_status": "UNMAPPED", "timestamp": "2026-08-06T00:00:00+00:00"}, {"action": "CORRECTED", "changes": "occurrence_statistics 0/0 -&gt; 2/2 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics", "timestamp": "2026-08-27T03:16:39.520310+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 5 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Trace mineral solution (see Medium No. 151 )' (x2 CultureMech mentions); 'Trace mineral solution (see Medium No. 852 )' (x1 CultureMech mentions); 'Trace mineral solution (see Medium No.852)' (x1 CultureMech mentions); 'Trace mineral solution (see below)' (x1 CultureMech mentions); 'Trace mineral solution**' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier": "kgmicrobe.ingredient:trace_mineral_solution", "mapping": {"evidence": [{"evidence_type": "MANUAL_CURATION", "notes": "A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288).", "source": "MIM curation (#288)"}], "mapping_quality": "FALLBACK_REGISTRY", "ontology_id": "kgmicrobe.ingredient:trace_mineral_solution", "ontology_label": "Trace mineral solution", "ontology_source": "kgmicrobe.ingredient"}} |
-| ev-3f611fd20092d7d4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Mineral_Solution | supports | [{"comment": "", "confidence": "0.9", "data_row": 2807, "mapping_date": "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:trace_mineral_solution", "object_label": "Trace mineral solution", "object_source": "kgm:ingredient", "other": "Trace mineral solution (see Medium No. 151 )&#124;Trace mineral solution (see Medium No. 852 )&#124;Trace mineral solution (see Medium No.852)&#124;Trace mineral solution (see below)&#124;Trace mineral solution**", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#288)&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Trace_Mineral_Solution", "subject_label": "Trace mineral solution", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-41b7b72cded4e05c | data/ingredients/mapped/Trace_Mineral_Solution.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2510],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2512,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace mineral solution"}],"identifier":"kgmicrobe.ingredient:trace_mineral_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","ontology_label":"Trace mineral solution","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Trace mineral solution","sssom_rows":[{"data_row":2809,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace mineral solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Mineral_Solution","synonym_count":6} |
+| ev-3f611fd20092d7d4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Mineral_Solution; data-row positions=[2809] | supports | Current exact-subject rows, including complete other payload: [{"data_row":2809,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace mineral solution","other":"Trace mineral solution (see Medium No. 151 )&#124;Trace mineral solution (see Medium No. 852 )&#124;Trace mineral solution (see Medium No.852)&#124;Trace mineral solution (see below)&#124;Trace mineral solution**","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Mineral_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
 | ev-ff886fb7448948d4 | reports/yaml_record_review/Trace_Mineral_Solution.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-50f45c15b17c740a | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-54e5335934e0ba03] | context_only | Predecessor structured review finding scope-f-54e5335934e0ba03 in 20261011T030852Z-mim-token-scope-reassessment |
 
@@ -189,6 +189,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4b03942a3427132e
+  evidence_ids:
+  - ev-ceefc84dd27464ad
+  - ev-40852c4b8e4f817b
+  - ev-702e1b26f74fa1cf
+  - ev-4b28b132ec221ca3
+  - ev-41b7b72cded4e05c
+  - ev-3f611fd20092d7d4
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -197,6 +204,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-4b03942a3427132e
+  evidence_ids:
+  - ev-ceefc84dd27464ad
+  - ev-9bd72ce41e674e19
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -205,25 +215,31 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4b03942a3427132e
+  evidence_ids:
+  - ev-0eefc9d77ca437e5
+  - ev-9bd72ce41e674e19
+  - ev-28bce6da08c8c14e
+  - ev-ff886fb7448948d4
+  - ev-50f45c15b17c740a
 evidence:
 - evidence_id: ev-ceefc84dd27464ad
   kind: record_content
   reference: data/ingredients/mapped/Trace_Mineral_Solution.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2511],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2513,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2510],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2512,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace
     mineral solution"}],"identifier":"kgmicrobe.ingredient:trace_mineral_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","ontology_label":"Trace
     mineral solution","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Trace
-    mineral solution","sssom_rows":[{"data_row":2807,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace
+    mineral solution","sssom_rows":[{"data_row":2809,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace
     mineral solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Mineral_Solution","synonym_count":6}'
   snapshot_sha256: 03837875ebc88c1ab82387c244b383de83a01bc77f4fd60cd75fbbecdcd31f81
 - evidence_id: ev-40852c4b8e4f817b
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2511]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2510]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -231,10 +247,10 @@ evidence:
 - evidence_id: ev-702e1b26f74fa1cf
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trace_Mineral_Solution; data-row positions=[2807]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Trace_Mineral_Solution; data-row positions=[2809]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2807,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2809,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace
     mineral solution","other":"Trace mineral solution (see Medium No. 151 )|Trace
     mineral solution (see Medium No. 852 )|Trace mineral solution (see Medium No.852)|Trace
     mineral solution (see below)|Trace mineral solution**","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Mineral_Solution","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
@@ -242,10 +258,10 @@ evidence:
 - evidence_id: ev-4b28b132ec221ca3
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2513]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2512]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2513,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"2","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2512,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"2","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace
     mineral solution","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-0eefc9d77ca437e5
@@ -272,7 +288,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1300]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"03837875ebc88c1ab82387c244b383de83a01bc77f4fd60cd75fbbecdcd31f81","finding_id":"SEM:7c1609d63523c7517ff0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -315,68 +331,24 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trace_Mineral_Solution.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Trace mineral solution (see Medium No. 151 )", "synonym_type":
-    "RAW_TEXT"}, {"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text":
-    "Trace mineral solution (see Medium No. 852 )", "synonym_type": "RAW_TEXT"}, {"source":
-    "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace mineral
-    solution (see Medium No.852)", "synonym_type": "RAW_TEXT"}, {"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Trace mineral solution (see below)", "synonym_type": "RAW_TEXT"}],
-    "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue
-    (source_id=mediadive.ingredient:897); no CAS-RN or CHEBI/NCIT match. Curator review
-    needed.", "curator": "audit_import_ingredients[mim-queue]", "llm_assisted": false,
-    "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"}, {"action":
-    "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=STOCK_SOLUTION
-    (name matches solution pattern ''mineral solution'')", "curator": "auto_classify_ingredient_type",
-    "llm_assisted": false, "timestamp": "2026-05-02T03:12:19.966568+00:00"}, {"action":
-    "PROMOTED_TO_MAPPED", "changes": "Promoted UNMAPPED_0551 -> kgmicrobe.ingredient:trace_mineral_solution
-    (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
-    MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
-    -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
-    mint with no parent, because a multi-component mix does not narrow to any single
-    compound (#288).", "curator": "issue_288_stock_solutions", "llm_assisted": true,
-    "new_status": "MAPPED", "previous_status": "UNMAPPED", "timestamp": "2026-08-06T00:00:00+00:00"},
-    {"action": "CORRECTED", "changes": "occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences),
-    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-    prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.520310+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 5 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Trace mineral solution (see Medium No. 151 )'' (x2 CultureMech
-    mentions); ''Trace mineral solution (see Medium No. 852 )'' (x1 CultureMech mentions);
-    ''Trace mineral solution (see Medium No.852)'' (x1 CultureMech mentions); ''Trace
-    mineral solution (see below)'' (x1 CultureMech mentions); ''Trace mineral solution**''
-    (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
-    "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp":
-    "2026-08-30T04:48:06.233536+00:00"}], "identifier": "kgmicrobe.ingredient:trace_mineral_solution",
-    "mapping": {"evidence": [{"evidence_type": "MANUAL_CURATION", "notes": "A named
-    multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label
-    and synonym: no term denotes it, and none could -- a preparation is not a substance.
-    Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent,
-    because a multi-component mix does not narrow to any single compound (#288).",
-    "source": "MIM curation (#288)"}], "mapping_quality": "FALLBACK_REGISTRY", "ontology_id":
-    "kgmicrobe.ingredient:trace_mineral_solution", "ontology_label": "Trace mineral
-    solution", "ontology_source": "kgmicrobe.ingredient"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2510],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_mineral_solution","line":2512,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","preferred_term":"Trace
+    mineral solution"}],"identifier":"kgmicrobe.ingredient:trace_mineral_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:trace_mineral_solution","ontology_label":"Trace
+    mineral solution","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Trace
+    mineral solution","sssom_rows":[{"data_row":2809,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace
+    mineral solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Mineral_Solution","synonym_count":6}'
   snapshot_sha256: 03837875ebc88c1ab82387c244b383de83a01bc77f4fd60cd75fbbecdcd31f81
 - evidence_id: ev-3f611fd20092d7d4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trace_Mineral_Solution
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Trace_Mineral_Solution; data-row positions=[2809]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.9", "data_row": 2807, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
-    "kgmicrobe.ingredient:trace_mineral_solution", "object_label": "Trace mineral
-    solution", "object_source": "kgm:ingredient", "other": "Trace mineral solution
-    (see Medium No. 151 )|Trace mineral solution (see Medium No. 852 )|Trace mineral
-    solution (see Medium No.852)|Trace mineral solution (see below)|Trace mineral
-    solution**", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#288)|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Trace_Mineral_Solution", "subject_label": "Trace mineral solution",
-    "validation_method": "none|UNKNOWN_TERM|2026-09-02"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2809,"object_id":"kgmicrobe.ingredient:trace_mineral_solution","object_label":"Trace
+    mineral solution","other":"Trace mineral solution (see Medium No. 151 )|Trace
+    mineral solution (see Medium No. 852 )|Trace mineral solution (see Medium No.852)|Trace
+    mineral solution (see below)|Trace mineral solution**","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Mineral_Solution","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-ff886fb7448948d4
   kind: prior_review

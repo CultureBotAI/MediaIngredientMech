@@ -85,12 +85,12 @@ Reassess prediction-only role support: L-Glutamic acid monopotassium salt monohy
 | --- | --- | --- | --- |
 | ev-d053240a3df37a39 | data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1223],"raw_equal":true},"docs_rows":[{"identifier":"cas:6382-01-0","line":1225,"mapping_status":"MAPPED","ontology_id":"CHEBI:16015","preferred_term":"L-Glutamic acid monopotassium salt monohydrate"}],"identifier":"cas:6382-01-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:16015","ontology_label":"L-glutamic acid","ontology_source":"CHEBI"},"preferred_term":"L-Glutamic acid monopotassium salt monohydrate","sssom_rows":[{"data_row":1573,"object_id":"CHEBI:16015","object_label":"L-glutamic acid","predicate_id":"skos:closeMatch"},{"data_row":1574,"object_id":"cas:6382-01-0","object_label":"L-Glutamic acid monopotassium salt monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate","synonym_count":3} |
 | ev-69568114dc23d52a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1223] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-3a3b9f2f6a49f55b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate; data-row positions=[1573,1574] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1573,"object_id":"CHEBI:16015","object_label":"L-glutamic acid","other":"L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium salt&#124;CAS:6382-01-0","predicate_id":"skos:closeMatch","subject_id":"MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":1574,"object_id":"cas:6382-01-0","object_label":"L-Glutamic acid monopotassium salt monohydrate","other":"CAS:6382-01-0","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-3a3b9f2f6a49f55b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate; data-row positions=[1573, 1574] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1573,"object_id":"CHEBI:16015","object_label":"L-glutamic acid","other":"L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium salt&#124;CAS:6382-01-0","predicate_id":"skos:closeMatch","subject_id":"MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":1574,"object_id":"cas:6382-01-0","object_label":"L-Glutamic acid monopotassium salt monohydrate","other":"CAS:6382-01-0","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-40093ae55be88afb | docs/data/mapped_ingredients.csv; CSV lines=[1225] | supports | Published identity and count rows inspected: [{"identifier":"cas:6382-01-0","line":1225,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"16","ontology_id":"CHEBI:16015","preferred_term":"L-Glutamic acid monopotassium salt monohydrate","total_occurrences":"16"}] |
 | ev-c76156df1c57a404 | reports/yaml_record_review/20261001T050235Z-L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.md; YAML Record Review: L-Glutamic acid monopotassium salt monohydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e0890a44575c5ab6 | reports/yaml_record_review/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.md; &#96;data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:34; Completeness:67; Recommended Edits:77 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f0b3b22c8d35b7eb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[790,1820] | context_only | [{"current_record_sha256":"0026680a282b367ec2a228dcc4f04e70aec4ed812ca8629652e0137838b9636e","finding_id":"SEM:2278e3d9e996777632c3","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0026680a282b367ec2a228dcc4f04e70aec4ed812ca8629652e0137838b9636e","finding_id":"SEM:003bcfa57643badb2a69","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-46dfb072057ddcf5 | data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-46dfb072057ddcf5 | data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1223],"raw_equal":true},"docs_rows":[{"identifier":"cas:6382-01-0","line":1225,"mapping_status":"MAPPED","ontology_id":"CHEBI:16015","preferred_term":"L-Glutamic acid monopotassium salt monohydrate"}],"identifier":"cas:6382-01-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:16015","ontology_label":"L-glutamic acid","ontology_source":"CHEBI"},"preferred_term":"L-Glutamic acid monopotassium salt monohydrate","sssom_rows":[{"data_row":1573,"object_id":"CHEBI:16015","object_label":"L-glutamic acid","predicate_id":"skos:closeMatch"},{"data_row":1574,"object_id":"cas:6382-01-0","object_label":"L-Glutamic acid monopotassium salt monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate","synonym_count":3} |
 | ev-d3081a7e9ae0f84f | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-d4446fbf321814e9] | context_only | Predecessor structured review finding f-d4446fbf321814e9 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -185,6 +185,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-56516b17e8993494
+  evidence_ids:
+  - ev-d053240a3df37a39
+  - ev-69568114dc23d52a
+  - ev-3a3b9f2f6a49f55b
+  - ev-40093ae55be88afb
+  - ev-46dfb072057ddcf5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -193,6 +199,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-56516b17e8993494
+  evidence_ids:
+  - ev-d053240a3df37a39
+  - ev-f0b3b22c8d35b7eb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -201,13 +210,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-56516b17e8993494
+  evidence_ids:
+  - ev-c76156df1c57a404
+  - ev-e0890a44575c5ab6
+  - ev-f0b3b22c8d35b7eb
+  - ev-d3081a7e9ae0f84f
 evidence:
 - evidence_id: ev-d053240a3df37a39
   kind: record_content
   reference: data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1223],"raw_equal":true},"docs_rows":[{"identifier":"cas:6382-01-0","line":1225,"mapping_status":"MAPPED","ontology_id":"CHEBI:16015","preferred_term":"L-Glutamic
     acid monopotassium salt monohydrate"}],"identifier":"cas:6382-01-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:16015","ontology_label":"L-glutamic
@@ -220,7 +234,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1223]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -229,8 +243,8 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate; data-row
-    positions=[1573,1574]
-  accessed_at: '2026-10-11T02:46:28Z'
+    positions=[1573, 1574]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1573,"object_id":"CHEBI:16015","object_label":"L-glutamic
     acid","other":"L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium
@@ -241,7 +255,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1225]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:6382-01-0","line":1225,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"16","ontology_id":"CHEBI:16015","preferred_term":"L-Glutamic
     acid monopotassium salt monohydrate","total_occurrences":"16"}]'
@@ -304,7 +318,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[790,1820]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0026680a282b367ec2a228dcc4f04e70aec4ed812ca8629652e0137838b9636e","finding_id":"SEM:2278e3d9e996777632c3","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0026680a282b367ec2a228dcc4f04e70aec4ed812ca8629652e0137838b9636e","finding_id":"SEM:003bcfa57643badb2a69","kind":"role_evidence","resolution_reason":"Historical
@@ -314,12 +328,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1223],"raw_equal":true},"docs_rows":[{"identifier":"cas:6382-01-0","line":1225,"mapping_status":"MAPPED","ontology_id":"CHEBI:16015","preferred_term":"L-Glutamic
+    acid monopotassium salt monohydrate"}],"identifier":"cas:6382-01-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:16015","ontology_label":"L-glutamic
+    acid","ontology_source":"CHEBI"},"preferred_term":"L-Glutamic acid monopotassium
+    salt monohydrate","sssom_rows":[{"data_row":1573,"object_id":"CHEBI:16015","object_label":"L-glutamic
+    acid","predicate_id":"skos:closeMatch"},{"data_row":1574,"object_id":"cas:6382-01-0","object_label":"L-Glutamic
+    acid monopotassium salt monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Glutamic_Acid_Monopotassium_Salt_Monohydrate","synonym_count":3}'
   snapshot_sha256: 0026680a282b367ec2a228dcc4f04e70aec4ed812ca8629652e0137838b9636e
 - evidence_id: ev-d3081a7e9ae0f84f
   kind: prior_review

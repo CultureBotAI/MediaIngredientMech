@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-08a5656509adb992
+  evidence_ids:
+  - ev-b9a701460f6c157b
+  - ev-dca7321f6c439b9c
+  - ev-7b85d039d5d8daa6
+  - ev-14d77579bea526e1
+  - ev-6705c491b76291f9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-08a5656509adb992
+  evidence_ids:
+  - ev-b9a701460f6c157b
+  - ev-b6d883c87f2103a1
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-08a5656509adb992
+  evidence_ids:
+  - ev-a7ef598b781b3f73
+  - ev-b6d883c87f2103a1
+  - ev-951e9147f15ee3cc
 evidence:
 - evidence_id: ev-b9a701460f6c157b
   kind: record_content
   reference: data/ingredients/mapped/Glycogen_From_Bovine_Liver.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1078],"raw_equal":true},"docs_rows":[{"identifier":"cas:9005-79-2","line":1080,"mapping_status":"MAPPED","ontology_id":"CHEBI:28087","preferred_term":"Glycogen
     from bovine liver"}],"identifier":"cas:9005-79-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:28087","ontology_label":"glycogen","ontology_source":"CHEBI"},"preferred_term":"Glycogen
@@ -108,7 +121,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1078]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,8 +129,9 @@ evidence:
 - evidence_id: ev-7b85d039d5d8daa6
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Glycogen_From_Bovine_Liver; data-row positions=[1345,1346,1347]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Glycogen_From_Bovine_Liver; data-row positions=[1345, 1346,
+    1347]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1345,"object_id":"CHEBI:28087","object_label":"glycogen","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Glycogen_From_Bovine_Liver","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1346,"object_id":"cas:9005-79-2","object_label":"Glycogen
     from bovine liver","other":"CAS:9005-79-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Glycogen_From_Bovine_Liver","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":1347,"object_id":"kgmicrobe.compound:glycogen_from_bovine_liver","object_label":"Glycogen
@@ -127,7 +141,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1080]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:9005-79-2","line":1080,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28087","preferred_term":"Glycogen
     from bovine liver","total_occurrences":"0"}]'
@@ -154,7 +168,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[696,1529]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f128118de1d8e776a928c8579b3689c24ca535aec9a41f00913550211c883d37","finding_id":"SEM:b90730c5d701910ba350","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f128118de1d8e776a928c8579b3689c24ca535aec9a41f00913550211c883d37","finding_id":"SEM:2830348ca2b53fb99300","kind":"role_evidence","resolution_reason":"Historical
@@ -164,12 +178,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Glycogen_From_Bovine_Liver.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1078],"raw_equal":true},"docs_rows":[{"identifier":"cas:9005-79-2","line":1080,"mapping_status":"MAPPED","ontology_id":"CHEBI:28087","preferred_term":"Glycogen
+    from bovine liver"}],"identifier":"cas:9005-79-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:28087","ontology_label":"glycogen","ontology_source":"CHEBI"},"preferred_term":"Glycogen
+    from bovine liver","sssom_rows":[{"data_row":1345,"object_id":"CHEBI:28087","object_label":"glycogen","predicate_id":"skos:broadMatch"},{"data_row":1346,"object_id":"cas:9005-79-2","object_label":"Glycogen
+    from bovine liver","predicate_id":"skos:exactMatch"},{"data_row":1347,"object_id":"kgmicrobe.compound:glycogen_from_bovine_liver","object_label":"Glycogen
+    from bovine liver","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycogen_From_Bovine_Liver","synonym_count":0}'
   snapshot_sha256: f128118de1d8e776a928c8579b3689c24ca535aec9a41f00913550211c883d37
 - evidence_id: ev-951e9147f15ee3cc
   kind: prior_review

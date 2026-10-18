@@ -89,7 +89,7 @@ Reassess prediction-only role support: Hydroxy-L-Proline
 | ev-87e503c752d68535 | docs/data/mapped_ingredients.csv; CSV lines=[1148] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:18095","line":1148,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:18095","preferred_term":"Hydroxy-L-Proline","total_occurrences":"3"}] |
 | ev-c7dfd27d7246519b | reports/yaml_record_review/Hydroxy-l-proline.md; &#96;data/ingredients/mapped/Hydroxy-l-proline.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:35; Completeness:52; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-7c1a00314a1af58a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[742,1376] | context_only | [{"current_record_sha256":"ececbb9977c65c454e64dc0e42104f15911e9ca87b170f847d4a4066c0e02ba8","finding_id":"SEM:81fef60bd6553526a5fb","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ececbb9977c65c454e64dc0e42104f15911e9ca87b170f847d4a4066c0e02ba8","finding_id":"SEM:dc3edf9d1ba5214268a6","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-967f4799cc43088d | data/ingredients/mapped/Hydroxy-l-proline.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-967f4799cc43088d | data/ingredients/mapped/Hydroxy-l-proline.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1146],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18095","line":1148,"mapping_status":"MAPPED","ontology_id":"CHEBI:18095","preferred_term":"Hydroxy-L-Proline"}],"identifier":"CHEBI:18095","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18095","ontology_label":"trans-4-hydroxy-L-proline","ontology_source":"CHEBI"},"preferred_term":"Hydroxy-L-Proline","sssom_rows":[{"data_row":1456,"object_id":"CHEBI:18095","object_label":"trans-4-hydroxy-L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hydroxy-l-proline","synonym_count":11} |
 | ev-833af64d30dcb143 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-48631dadd41d1b5b] | context_only | Predecessor structured review finding f-48631dadd41d1b5b in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-40a9ee2780df21e0
+  evidence_ids:
+  - ev-127753b01f054738
+  - ev-8ca2b8aaf0058c05
+  - ev-1d842c570c2ae666
+  - ev-87e503c752d68535
+  - ev-967f4799cc43088d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-40a9ee2780df21e0
+  evidence_ids:
+  - ev-127753b01f054738
+  - ev-7c1a00314a1af58a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-40a9ee2780df21e0
+  evidence_ids:
+  - ev-c7dfd27d7246519b
+  - ev-7c1a00314a1af58a
+  - ev-833af64d30dcb143
 evidence:
 - evidence_id: ev-127753b01f054738
   kind: record_content
   reference: data/ingredients/mapped/Hydroxy-l-proline.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1146],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18095","line":1148,"mapping_status":"MAPPED","ontology_id":"CHEBI:18095","preferred_term":"Hydroxy-L-Proline"}],"identifier":"CHEBI:18095","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18095","ontology_label":"trans-4-hydroxy-L-proline","ontology_source":"CHEBI"},"preferred_term":"Hydroxy-L-Proline","sssom_rows":[{"data_row":1456,"object_id":"CHEBI:18095","object_label":"trans-4-hydroxy-L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hydroxy-l-proline","synonym_count":11}'
   snapshot_sha256: ececbb9977c65c454e64dc0e42104f15911e9ca87b170f847d4a4066c0e02ba8
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1146]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Hydroxy-l-proline; data-row positions=[1456]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1456,"object_id":"CHEBI:18095","object_label":"trans-4-hydroxy-L-proline","other":"(2S,4R)-4-hydroxy-2-pyrrolidinecarboxylic
     acid|(2S,4R)-trans-4-hydroxyproline|(4R)-4-hydroxy-L-proline|Hydroxyproline|Hypro|L-4-Hydroxyproline|L-threo-4-hydroxyproline|delta-hydroxyproline|trans-Hydroxyproline|trans-L-Hydroxyproline|CAS:51-35-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Hydroxy-l-proline","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1148]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18095","line":1148,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:18095","preferred_term":"Hydroxy-L-Proline","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[742,1376]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ececbb9977c65c454e64dc0e42104f15911e9ca87b170f847d4a4066c0e02ba8","finding_id":"SEM:81fef60bd6553526a5fb","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ececbb9977c65c454e64dc0e42104f15911e9ca87b170f847d4a4066c0e02ba8","finding_id":"SEM:dc3edf9d1ba5214268a6","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Hydroxy-l-proline.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1146],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18095","line":1148,"mapping_status":"MAPPED","ontology_id":"CHEBI:18095","preferred_term":"Hydroxy-L-Proline"}],"identifier":"CHEBI:18095","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18095","ontology_label":"trans-4-hydroxy-L-proline","ontology_source":"CHEBI"},"preferred_term":"Hydroxy-L-Proline","sssom_rows":[{"data_row":1456,"object_id":"CHEBI:18095","object_label":"trans-4-hydroxy-L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hydroxy-l-proline","synonym_count":11}'
   snapshot_sha256: ececbb9977c65c454e64dc0e42104f15911e9ca87b170f847d4a4066c0e02ba8
 - evidence_id: ev-833af64d30dcb143
   kind: prior_review

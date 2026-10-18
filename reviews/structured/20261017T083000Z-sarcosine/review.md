@@ -83,13 +83,13 @@ Reassess prediction-only role support: sarcosine
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-9b4b6e996905bed7 | data/ingredients/mapped/Sarcosine.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1781],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15611","line":1783,"mapping_status":"MAPPED","ontology_id":"CHEBI:15611","preferred_term":"sarcosine"}],"identifier":"CHEBI:15611","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15611","ontology_label":"sarcosine","ontology_source":"CHEBI"},"preferred_term":"sarcosine","sssom_rows":[{"data_row":2481,"object_id":"CHEBI:15611","object_label":"sarcosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sarcosine","synonym_count":0} |
-| ev-dd39f5b9a533ccf2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1781] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d9bfe6f924515bd1 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sarcosine; data-row positions=[2481] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2481,"object_id":"CHEBI:15611","object_label":"sarcosine","other":"CAS:107-97-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sarcosine","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-ddfa18c8c9061b72 | docs/data/mapped_ingredients.csv; CSV lines=[1783] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15611","line":1783,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15611","preferred_term":"sarcosine","total_occurrences":"0"}] |
+| ev-9b4b6e996905bed7 | data/ingredients/mapped/Sarcosine.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1780],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15611","line":1782,"mapping_status":"MAPPED","ontology_id":"CHEBI:15611","preferred_term":"sarcosine"}],"identifier":"CHEBI:15611","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15611","ontology_label":"sarcosine","ontology_source":"CHEBI"},"preferred_term":"sarcosine","sssom_rows":[{"data_row":2483,"object_id":"CHEBI:15611","object_label":"sarcosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sarcosine","synonym_count":0} |
+| ev-dd39f5b9a533ccf2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1780] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d9bfe6f924515bd1 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sarcosine; data-row positions=[2483] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2483,"object_id":"CHEBI:15611","object_label":"sarcosine","other":"CAS:107-97-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sarcosine","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-ddfa18c8c9061b72 | docs/data/mapped_ingredients.csv; CSV lines=[1782] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15611","line":1782,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15611","preferred_term":"sarcosine","total_occurrences":"0"}] |
 | ev-ad40a538b670997f | reports/yaml_record_review/Sarcosine.md; &#96;data/ingredients/mapped/Sarcosine.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-024e4039aeb554ff | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1185,2078] | context_only | [{"current_record_sha256":"1039cd8624ebbce704d2524c09230043ecc9aac1ed02e757b1451f88d08aa72f","finding_id":"SEM:7982fda79c40e6055abc","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1039cd8624ebbce704d2524c09230043ecc9aac1ed02e757b1451f88d08aa72f","finding_id":"SEM:044e54b64764882ad768","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f6876d4314324e02 | data/ingredients/mapped/Sarcosine.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-f6876d4314324e02 | data/ingredients/mapped/Sarcosine.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1780],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15611","line":1782,"mapping_status":"MAPPED","ontology_id":"CHEBI:15611","preferred_term":"sarcosine"}],"identifier":"CHEBI:15611","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15611","ontology_label":"sarcosine","ontology_source":"CHEBI"},"preferred_term":"sarcosine","sssom_rows":[{"data_row":2483,"object_id":"CHEBI:15611","object_label":"sarcosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sarcosine","synonym_count":0} |
 | ev-c56775d71fc12b36 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-d8405687a3ed4fc1] | context_only | Predecessor structured review finding f-d8405687a3ed4fc1 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-be4455dad7eee11c
+  evidence_ids:
+  - ev-9b4b6e996905bed7
+  - ev-dd39f5b9a533ccf2
+  - ev-d9bfe6f924515bd1
+  - ev-ddfa18c8c9061b72
+  - ev-f6876d4314324e02
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-be4455dad7eee11c
+  evidence_ids:
+  - ev-9b4b6e996905bed7
+  - ev-024e4039aeb554ff
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-be4455dad7eee11c
+  evidence_ids:
+  - ev-ad40a538b670997f
+  - ev-024e4039aeb554ff
+  - ev-c56775d71fc12b36
 evidence:
 - evidence_id: ev-9b4b6e996905bed7
   kind: record_content
   reference: data/ingredients/mapped/Sarcosine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1781],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15611","line":1783,"mapping_status":"MAPPED","ontology_id":"CHEBI:15611","preferred_term":"sarcosine"}],"identifier":"CHEBI:15611","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15611","ontology_label":"sarcosine","ontology_source":"CHEBI"},"preferred_term":"sarcosine","sssom_rows":[{"data_row":2481,"object_id":"CHEBI:15611","object_label":"sarcosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sarcosine","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1780],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15611","line":1782,"mapping_status":"MAPPED","ontology_id":"CHEBI:15611","preferred_term":"sarcosine"}],"identifier":"CHEBI:15611","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15611","ontology_label":"sarcosine","ontology_source":"CHEBI"},"preferred_term":"sarcosine","sssom_rows":[{"data_row":2483,"object_id":"CHEBI:15611","object_label":"sarcosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sarcosine","synonym_count":0}'
   snapshot_sha256: 1039cd8624ebbce704d2524c09230043ecc9aac1ed02e757b1451f88d08aa72f
 - evidence_id: ev-dd39f5b9a533ccf2
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1781]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1780]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-d9bfe6f924515bd1
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sarcosine; data-row positions=[2481]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sarcosine; data-row positions=[2483]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2481,"object_id":"CHEBI:15611","object_label":"sarcosine","other":"CAS:107-97-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sarcosine","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2483,"object_id":"CHEBI:15611","object_label":"sarcosine","other":"CAS:107-97-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Sarcosine","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-ddfa18c8c9061b72
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1783]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1782]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15611","line":1783,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15611","preferred_term":"sarcosine","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15611","line":1782,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15611","preferred_term":"sarcosine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ad40a538b670997f
   kind: prior_review
@@ -244,7 +257,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1185,2078]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1039cd8624ebbce704d2524c09230043ecc9aac1ed02e757b1451f88d08aa72f","finding_id":"SEM:7982fda79c40e6055abc","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1039cd8624ebbce704d2524c09230043ecc9aac1ed02e757b1451f88d08aa72f","finding_id":"SEM:044e54b64764882ad768","kind":"role_evidence","resolution_reason":"Historical
@@ -254,12 +267,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sarcosine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1780],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15611","line":1782,"mapping_status":"MAPPED","ontology_id":"CHEBI:15611","preferred_term":"sarcosine"}],"identifier":"CHEBI:15611","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15611","ontology_label":"sarcosine","ontology_source":"CHEBI"},"preferred_term":"sarcosine","sssom_rows":[{"data_row":2483,"object_id":"CHEBI:15611","object_label":"sarcosine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sarcosine","synonym_count":0}'
   snapshot_sha256: 1039cd8624ebbce704d2524c09230043ecc9aac1ed02e757b1451f88d08aa72f
 - evidence_id: ev-c56775d71fc12b36
   kind: prior_review

@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-430cc0ffdec74778
+  evidence_ids:
+  - ev-d9256711d0b3833e
+  - ev-29268814a7bbab69
+  - ev-b62d03c75f7056f3
+  - ev-21738c9e33a4964a
+  - ev-30e2ca0926a45af7
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-430cc0ffdec74778
+  evidence_ids:
+  - ev-d9256711d0b3833e
+  - ev-387b4ea0b7bc4315
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-430cc0ffdec74778
+  evidence_ids:
+  - ev-6dd98d5d63fb2b61
+  - ev-387b4ea0b7bc4315
+  - ev-6a7512cd1d6048ff
 evidence:
 - evidence_id: ev-d9256711d0b3833e
   kind: record_content
   reference: data/ingredients/mapped/Abyssomicin_B.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[431],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:abyssomicin_b","line":433,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:abyssomicin_b","preferred_term":"Abyssomicin
     B"}],"identifier":"kgmicrobe.compound:abyssomicin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:abyssomicin_b","ontology_label":"Abyssomicin
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [431]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Abyssomicin_B; data-row positions=[272]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":272,"object_id":"kgmicrobe.compound:abyssomicin_b","object_label":"Abyssomicin
     B","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Abyssomicin_B","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -125,7 +138,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[433]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:abyssomicin_b","line":433,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:abyssomicin_b","preferred_term":"Abyssomicin
     B","total_occurrences":"0"}]'
@@ -150,7 +163,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[189,1430]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"efe32f4e766299de8dfb6b2ded78214ca6c97186a7bead132e1fdf37400cf46f","finding_id":"SEM:e58770e64b789675eb5e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"efe32f4e766299de8dfb6b2ded78214ca6c97186a7bead132e1fdf37400cf46f","finding_id":"SEM:16b027cd2d18ec05045c","kind":"role_evidence","resolution_reason":"Historical
@@ -160,12 +173,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Abyssomicin_B.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[431],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:abyssomicin_b","line":433,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:abyssomicin_b","preferred_term":"Abyssomicin
+    B"}],"identifier":"kgmicrobe.compound:abyssomicin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:abyssomicin_b","ontology_label":"Abyssomicin
+    B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Abyssomicin B","sssom_rows":[{"data_row":272,"object_id":"kgmicrobe.compound:abyssomicin_b","object_label":"Abyssomicin
+    B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Abyssomicin_B","synonym_count":0}'
   snapshot_sha256: efe32f4e766299de8dfb6b2ded78214ca6c97186a7bead132e1fdf37400cf46f
 - evidence_id: ev-6a7512cd1d6048ff
   kind: prior_review

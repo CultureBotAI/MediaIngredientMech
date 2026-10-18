@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-2ddc049ad0fdc68b | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-2ddc049ad0fdc68b | Explain curation-history timestamp order: 2-naphthyl Tetradecanoate |
 | Role evidence and plausibility check | passed | True | record-2ddc049ad0fdc68b | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-2ddc049ad0fdc68b | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 2-naphthyl Tetradecanoate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-0ec72028973be9d6 | data/ingredients/mapped/2-naphthyl_Tetradecanoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2105],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:90249","line":2107,"mapping_status":"MAPPED","ontology_id":"CHEBI:90249","preferred_term":"2-naphthyl Tetradecanoate"}],"identifier":"CHEBI:90249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:90249","ontology_label":"2-naphthyl tetradecanoate","ontology_source":"CHEBI"},"preferred_term":"2-naphthyl Tetradecanoate","sssom_rows":[{"data_row":94,"object_id":"CHEBI:90249","object_label":"2-naphthyl tetradecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-naphthyl_Tetradecanoate","synonym_count":0} |
-| ev-32ad20e2ab601356 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2105] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-0ec72028973be9d6 | data/ingredients/mapped/2-naphthyl_Tetradecanoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2104],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:90249","line":2106,"mapping_status":"MAPPED","ontology_id":"CHEBI:90249","preferred_term":"2-naphthyl Tetradecanoate"}],"identifier":"CHEBI:90249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:90249","ontology_label":"2-naphthyl tetradecanoate","ontology_source":"CHEBI"},"preferred_term":"2-naphthyl Tetradecanoate","sssom_rows":[{"data_row":94,"object_id":"CHEBI:90249","object_label":"2-naphthyl tetradecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-naphthyl_Tetradecanoate","synonym_count":0} |
+| ev-32ad20e2ab601356 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2104] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-9315c18622388c28 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-naphthyl_Tetradecanoate; data-row positions=[94] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":94,"object_id":"CHEBI:90249","object_label":"2-naphthyl tetradecanoate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-naphthyl_Tetradecanoate","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-1299083bb7f6efd0 | docs/data/mapped_ingredients.csv; CSV lines=[2107] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:90249","line":2107,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:90249","preferred_term":"2-naphthyl Tetradecanoate","total_occurrences":"0"}] |
+| ev-1299083bb7f6efd0 | docs/data/mapped_ingredients.csv; CSV lines=[2106] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:90249","line":2106,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:90249","preferred_term":"2-naphthyl Tetradecanoate","total_occurrences":"0"}] |
 | ev-51a9a26c5d637171 | reports/yaml_record_review/2-naphthyl_Tetradecanoate.md; &#96;data/ingredients/mapped/2-naphthyl_Tetradecanoate.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:36; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e8d10986a65d88be | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[77] | context_only | [{"current_record_sha256":"137875d4d9dfaf1551a4d0587097d1f0c14677e535900830ffe62ca8ba456946","finding_id":"SEM:2e99b066a2982dd553ae","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-fe9ff27f155f880f | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-470e7c790a4e8b31] | context_only | Predecessor structured review finding f-470e7c790a4e8b31 in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 2-naphthyl Tetradecanoate'
   target_ids:
   - record-2ddc049ad0fdc68b
+  evidence_ids:
+  - ev-0ec72028973be9d6
+  - ev-32ad20e2ab601356
+  - ev-9315c18622388c28
+  - ev-1299083bb7f6efd0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-2ddc049ad0fdc68b
+  evidence_ids:
+  - ev-0ec72028973be9d6
+  - ev-e8d10986a65d88be
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,24 +201,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2ddc049ad0fdc68b
+  evidence_ids:
+  - ev-51a9a26c5d637171
+  - ev-e8d10986a65d88be
+  - ev-fe9ff27f155f880f
 evidence:
 - evidence_id: ev-0ec72028973be9d6
   kind: record_content
   reference: data/ingredients/mapped/2-naphthyl_Tetradecanoate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2105],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:90249","line":2107,"mapping_status":"MAPPED","ontology_id":"CHEBI:90249","preferred_term":"2-naphthyl
-    Tetradecanoate"}],"identifier":"CHEBI:90249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:90249","ontology_label":"2-naphthyl
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2104],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:90249","line":2106,"mapping_status":"MAPPED","ontology_id":"CHEBI:90249","preferred_term":"2-naphthyl
+    Tetradecanoate"}],"identifier":"CHEBI:90249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:90249","ontology_label":"2-naphthyl
     tetradecanoate","ontology_source":"CHEBI"},"preferred_term":"2-naphthyl Tetradecanoate","sssom_rows":[{"data_row":94,"object_id":"CHEBI:90249","object_label":"2-naphthyl
     tetradecanoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-naphthyl_Tetradecanoate","synonym_count":0}'
   snapshot_sha256: 137875d4d9dfaf1551a4d0587097d1f0c14677e535900830ffe62ca8ba456946
 - evidence_id: ev-32ad20e2ab601356
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2105]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2104]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-naphthyl_Tetradecanoate; data-row positions=[94]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":94,"object_id":"CHEBI:90249","object_label":"2-naphthyl
     tetradecanoate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-naphthyl_Tetradecanoate","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
@@ -228,10 +239,10 @@ evidence:
 - evidence_id: ev-1299083bb7f6efd0
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2107]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2106]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:90249","line":2107,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:90249","preferred_term":"2-naphthyl
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:90249","line":2106,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:90249","preferred_term":"2-naphthyl
     Tetradecanoate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-51a9a26c5d637171
@@ -255,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[77]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"137875d4d9dfaf1551a4d0587097d1f0c14677e535900830ffe62ca8ba456946","finding_id":"SEM:2e99b066a2982dd553ae","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

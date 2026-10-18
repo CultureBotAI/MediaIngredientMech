@@ -83,14 +83,14 @@ Reassess prediction-only role support: sn-Glycerol 3-phosphate bis(cyclohexylamm
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-dfe8bf7fca3c7294 | data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1808],"raw_equal":true},"docs_rows":[{"identifier":"cas:29849-82-9","line":1810,"mapping_status":"MAPPED","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt"}],"identifier":"cas:29849-82-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:15978","ontology_label":"sn-glycerol 3-phosphate","ontology_source":"CHEBI"},"preferred_term":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","sssom_rows":[{"data_row":2526,"object_id":"CHEBI:15978","object_label":"sn-glycerol 3-phosphate","predicate_id":"skos:broadMatch"},{"data_row":2527,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"},{"data_row":2528,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","synonym_count":2} |
-| ev-388c4b3077b59518 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1808] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-fd86d987804b6e57 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt; data-row positions=[2526,2527,2528] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2526,"object_id":"CHEBI:15978","object_label":"sn-glycerol 3-phosphate","other":"Glycerol 3-phosphate","predicate_id":"skos:broadMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2527,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","other":"CAS:29849-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2528,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","other":"CAS:29849-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-9812ce5359c6c204 | docs/data/mapped_ingredients.csv; CSV lines=[1810] | supports | Published identity and count rows inspected: [{"identifier":"cas:29849-82-9","line":1810,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","total_occurrences":"0"}] |
+| ev-dfe8bf7fca3c7294 | data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1807],"raw_equal":true},"docs_rows":[{"identifier":"cas:29849-82-9","line":1809,"mapping_status":"MAPPED","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt"}],"identifier":"cas:29849-82-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:15978","ontology_label":"sn-glycerol 3-phosphate","ontology_source":"CHEBI"},"preferred_term":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","sssom_rows":[{"data_row":2528,"object_id":"CHEBI:15978","object_label":"sn-glycerol 3-phosphate","predicate_id":"skos:broadMatch"},{"data_row":2529,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"},{"data_row":2530,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","synonym_count":2} |
+| ev-388c4b3077b59518 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1807] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-fd86d987804b6e57 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt; data-row positions=[2528, 2529, 2530] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2528,"object_id":"CHEBI:15978","object_label":"sn-glycerol 3-phosphate","other":"Glycerol 3-phosphate","predicate_id":"skos:broadMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2529,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","other":"CAS:29849-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2530,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","other":"CAS:29849-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-9812ce5359c6c204 | docs/data/mapped_ingredients.csv; CSV lines=[1809] | supports | Published identity and count rows inspected: [{"identifier":"cas:29849-82-9","line":1809,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","total_occurrences":"0"}] |
 | ev-ce5ba1354d9e9b16 | reports/yaml_record_review/20261001T050323Z-Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.md; YAML Record Review: sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6d7c3dddc9ca03ec | reports/yaml_record_review/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.md; &#96;data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-288282c0693c0051 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1202,1516] | context_only | [{"current_record_sha256":"185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1","finding_id":"SEM:80e45dd84c9fe127c39e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1","finding_id":"SEM:952fe85102bf7425c383","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-44b2bac3bec34023 | data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-44b2bac3bec34023 | data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1807],"raw_equal":true},"docs_rows":[{"identifier":"cas:29849-82-9","line":1809,"mapping_status":"MAPPED","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt"}],"identifier":"cas:29849-82-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:15978","ontology_label":"sn-glycerol 3-phosphate","ontology_source":"CHEBI"},"preferred_term":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","sssom_rows":[{"data_row":2528,"object_id":"CHEBI:15978","object_label":"sn-glycerol 3-phosphate","predicate_id":"skos:broadMatch"},{"data_row":2529,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"},{"data_row":2530,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","synonym_count":2} |
 | ev-cfb110d82ac967bb | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-3bb9f27c6ec4dbe0] | context_only | Predecessor structured review finding f-3bb9f27c6ec4dbe0 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -185,6 +185,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7afb30cd1873c042
+  evidence_ids:
+  - ev-dfe8bf7fca3c7294
+  - ev-388c4b3077b59518
+  - ev-fd86d987804b6e57
+  - ev-9812ce5359c6c204
+  - ev-44b2bac3bec34023
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -193,6 +199,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7afb30cd1873c042
+  evidence_ids:
+  - ev-dfe8bf7fca3c7294
+  - ev-288282c0693c0051
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -201,27 +210,32 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7afb30cd1873c042
+  evidence_ids:
+  - ev-ce5ba1354d9e9b16
+  - ev-6d7c3dddc9ca03ec
+  - ev-288282c0693c0051
+  - ev-cfb110d82ac967bb
 evidence:
 - evidence_id: ev-dfe8bf7fca3c7294
   kind: record_content
   reference: data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1808],"raw_equal":true},"docs_rows":[{"identifier":"cas:29849-82-9","line":1810,"mapping_status":"MAPPED","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1807],"raw_equal":true},"docs_rows":[{"identifier":"cas:29849-82-9","line":1809,"mapping_status":"MAPPED","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol
     3-phosphate bis(cyclohexylammonium) salt"}],"identifier":"cas:29849-82-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:15978","ontology_label":"sn-glycerol
     3-phosphate","ontology_source":"CHEBI"},"preferred_term":"sn-Glycerol 3-phosphate
-    bis(cyclohexylammonium) salt","sssom_rows":[{"data_row":2526,"object_id":"CHEBI:15978","object_label":"sn-glycerol
-    3-phosphate","predicate_id":"skos:broadMatch"},{"data_row":2527,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol
-    3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"},{"data_row":2528,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol
+    bis(cyclohexylammonium) salt","sssom_rows":[{"data_row":2528,"object_id":"CHEBI:15978","object_label":"sn-glycerol
+    3-phosphate","predicate_id":"skos:broadMatch"},{"data_row":2529,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol
+    3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"},{"data_row":2530,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol
     3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","synonym_count":2}'
   snapshot_sha256: 185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1
 - evidence_id: ev-388c4b3077b59518
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1808]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1807]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -230,21 +244,21 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt; data-row
-    positions=[2526,2527,2528]
-  accessed_at: '2026-10-11T02:46:28Z'
+    positions=[2528, 2529, 2530]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2526,"object_id":"CHEBI:15978","object_label":"sn-glycerol
-    3-phosphate","other":"Glycerol 3-phosphate","predicate_id":"skos:broadMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2527,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol
-    3-phosphate bis(cyclohexylammonium) salt","other":"CAS:29849-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2528,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2528,"object_id":"CHEBI:15978","object_label":"sn-glycerol
+    3-phosphate","other":"Glycerol 3-phosphate","predicate_id":"skos:broadMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2529,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol
+    3-phosphate bis(cyclohexylammonium) salt","other":"CAS:29849-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2530,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol
     3-phosphate bis(cyclohexylammonium) salt","other":"CAS:29849-82-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-9812ce5359c6c204
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1810]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1809]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:29849-82-9","line":1810,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:29849-82-9","line":1809,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol
     3-phosphate bis(cyclohexylammonium) salt","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-ce5ba1354d9e9b16
@@ -290,7 +304,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1202,1516]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1","finding_id":"SEM:80e45dd84c9fe127c39e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1","finding_id":"SEM:952fe85102bf7425c383","kind":"role_evidence","resolution_reason":"Historical
@@ -300,12 +314,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1807],"raw_equal":true},"docs_rows":[{"identifier":"cas:29849-82-9","line":1809,"mapping_status":"MAPPED","ontology_id":"CHEBI:15978","preferred_term":"sn-Glycerol
+    3-phosphate bis(cyclohexylammonium) salt"}],"identifier":"cas:29849-82-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:15978","ontology_label":"sn-glycerol
+    3-phosphate","ontology_source":"CHEBI"},"preferred_term":"sn-Glycerol 3-phosphate
+    bis(cyclohexylammonium) salt","sssom_rows":[{"data_row":2528,"object_id":"CHEBI:15978","object_label":"sn-glycerol
+    3-phosphate","predicate_id":"skos:broadMatch"},{"data_row":2529,"object_id":"cas:29849-82-9","object_label":"sn-Glycerol
+    3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"},{"data_row":2530,"object_id":"kgmicrobe.compound:sn-glycerol_3-phosphate_bis_cyclohexylammonium_salt","object_label":"sn-Glycerol
+    3-phosphate bis(cyclohexylammonium) salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt","synonym_count":2}'
   snapshot_sha256: 185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1
 - evidence_id: ev-cfb110d82ac967bb
   kind: prior_review

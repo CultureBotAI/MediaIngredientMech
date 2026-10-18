@@ -83,14 +83,14 @@ Reassess prediction-only role support: CuSO4 x 2 H2O
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-49a9c9e78eded96d | data/ingredients/mapped/Cuso4_X_2_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2656],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2658,"mapping_status":"MAPPED","ontology_id":"CHEBI:23414","preferred_term":"CuSO4 x 2 H2O"}],"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:23414","ontology_label":"copper(II) sulfate","ontology_source":"CHEBI"},"preferred_term":"CuSO4 x 2 H2O","sssom_rows":[{"data_row":853,"object_id":"CHEBI:23414","object_label":"copper(II) sulfate","predicate_id":"skos:closeMatch"},{"data_row":2982,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4 x 2 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cuso4_X_2_H2o","synonym_count":5} |
-| ev-e2e13cf56e8118c1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2656] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-a022c49f7e3e37e0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cuso4_X_2_H2o; data-row positions=[853,2982] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":853,"object_id":"CHEBI:23414","object_label":"copper(II) sulfate","other":"CuSO4 . 2H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Cuso4_X_2_H2o","validation_method":"manual:apply_312_batch3&#124;OTHER&#124;2026-09-22"},{"data_row":2982,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4 x 2 H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cuso4_X_2_H2o","validation_method":"manual:apply_312_batch3&#124;REGISTRY&#124;2026-09-22"}] |
-| ev-79cc8625933eaabe | docs/data/mapped_ingredients.csv; CSV lines=[2658] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2658,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:23414","preferred_term":"CuSO4 x 2 H2O","total_occurrences":"8"}] |
+| ev-49a9c9e78eded96d | data/ingredients/mapped/Cuso4_X_2_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2655],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2657,"mapping_status":"MAPPED","ontology_id":"CHEBI:23414","preferred_term":"CuSO4 x 2 H2O"}],"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:23414","ontology_label":"copper(II) sulfate","ontology_source":"CHEBI"},"preferred_term":"CuSO4 x 2 H2O","sssom_rows":[{"data_row":853,"object_id":"CHEBI:23414","object_label":"copper(II) sulfate","predicate_id":"skos:closeMatch"},{"data_row":2984,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4 x 2 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cuso4_X_2_H2o","synonym_count":5} |
+| ev-e2e13cf56e8118c1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2655] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a022c49f7e3e37e0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cuso4_X_2_H2o; data-row positions=[853, 2984] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":853,"object_id":"CHEBI:23414","object_label":"copper(II) sulfate","other":"CuSO4 . 2H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Cuso4_X_2_H2o","validation_method":"manual:apply_312_batch3&#124;OTHER&#124;2026-09-22"},{"data_row":2984,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4 x 2 H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cuso4_X_2_H2o","validation_method":"manual:apply_312_batch3&#124;REGISTRY&#124;2026-09-22"}] |
+| ev-79cc8625933eaabe | docs/data/mapped_ingredients.csv; CSV lines=[2657] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2657,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:23414","preferred_term":"CuSO4 x 2 H2O","total_occurrences":"8"}] |
 | ev-103acbedf75b86d2 | reports/yaml_record_review/20261001T050200Z-Cuso4_X_2_H2o.md; YAML Record Review: CuSO4 x 2 H2O:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d2eeae10567d792e | reports/yaml_record_review/Cuso4_X_2_H2o.md; &#96;data/ingredients/mapped/Cuso4_X_2_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:27; Evidence:46; Completeness:66; Recommended Edits:73 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ace8fc562582dcc2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[453,1994] | context_only | [{"current_record_sha256":"40311900c245923649fbe0262a15586a91cbff9fabd62085be73b16090a66002","finding_id":"SEM:1e399a46f9a27becc7ff","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"40311900c245923649fbe0262a15586a91cbff9fabd62085be73b16090a66002","finding_id":"SEM:cd0942a755d5df913caa","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e52dd7587ad39c76 | data/ingredients/mapped/Cuso4_X_2_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-e52dd7587ad39c76 | data/ingredients/mapped/Cuso4_X_2_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2655],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2657,"mapping_status":"MAPPED","ontology_id":"CHEBI:23414","preferred_term":"CuSO4 x 2 H2O"}],"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:23414","ontology_label":"copper(II) sulfate","ontology_source":"CHEBI"},"preferred_term":"CuSO4 x 2 H2O","sssom_rows":[{"data_row":853,"object_id":"CHEBI:23414","object_label":"copper(II) sulfate","predicate_id":"skos:closeMatch"},{"data_row":2984,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4 x 2 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cuso4_X_2_H2o","synonym_count":5} |
 | ev-83fd0c3f2ad0ddd7 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-f73682eac0725701] | context_only | Predecessor structured review finding f-f73682eac0725701 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b73d8ea700a6b07d
+  evidence_ids:
+  - ev-49a9c9e78eded96d
+  - ev-e2e13cf56e8118c1
+  - ev-a022c49f7e3e37e0
+  - ev-79cc8625933eaabe
+  - ev-e52dd7587ad39c76
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b73d8ea700a6b07d
+  evidence_ids:
+  - ev-49a9c9e78eded96d
+  - ev-ace8fc562582dcc2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,25 +208,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b73d8ea700a6b07d
+  evidence_ids:
+  - ev-103acbedf75b86d2
+  - ev-d2eeae10567d792e
+  - ev-ace8fc562582dcc2
+  - ev-83fd0c3f2ad0ddd7
 evidence:
 - evidence_id: ev-49a9c9e78eded96d
   kind: record_content
   reference: data/ingredients/mapped/Cuso4_X_2_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2656],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2658,"mapping_status":"MAPPED","ontology_id":"CHEBI:23414","preferred_term":"CuSO4
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2655],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2657,"mapping_status":"MAPPED","ontology_id":"CHEBI:23414","preferred_term":"CuSO4
     x 2 H2O"}],"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:23414","ontology_label":"copper(II)
     sulfate","ontology_source":"CHEBI"},"preferred_term":"CuSO4 x 2 H2O","sssom_rows":[{"data_row":853,"object_id":"CHEBI:23414","object_label":"copper(II)
-    sulfate","predicate_id":"skos:closeMatch"},{"data_row":2982,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4
+    sulfate","predicate_id":"skos:closeMatch"},{"data_row":2984,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4
     x 2 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cuso4_X_2_H2o","synonym_count":5}'
   snapshot_sha256: 40311900c245923649fbe0262a15586a91cbff9fabd62085be73b16090a66002
 - evidence_id: ev-e2e13cf56e8118c1
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2656]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2655]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,20 +239,20 @@ evidence:
 - evidence_id: ev-a022c49f7e3e37e0
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Cuso4_X_2_H2o; data-row positions=[853,2982]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Cuso4_X_2_H2o; data-row positions=[853, 2984]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":853,"object_id":"CHEBI:23414","object_label":"copper(II)
-    sulfate","other":"CuSO4 . 2H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Cuso4_X_2_H2o","validation_method":"manual:apply_312_batch3|OTHER|2026-09-22"},{"data_row":2982,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4
+    sulfate","other":"CuSO4 . 2H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Cuso4_X_2_H2o","validation_method":"manual:apply_312_batch3|OTHER|2026-09-22"},{"data_row":2984,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4
     x 2 H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cuso4_X_2_H2o","validation_method":"manual:apply_312_batch3|REGISTRY|2026-09-22"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-79cc8625933eaabe
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2658]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2657]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2658,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:23414","preferred_term":"CuSO4
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2657,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:23414","preferred_term":"CuSO4
     x 2 H2O","total_occurrences":"8"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-103acbedf75b86d2
@@ -296,7 +310,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[453,1994]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"40311900c245923649fbe0262a15586a91cbff9fabd62085be73b16090a66002","finding_id":"SEM:1e399a46f9a27becc7ff","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"40311900c245923649fbe0262a15586a91cbff9fabd62085be73b16090a66002","finding_id":"SEM:cd0942a755d5df913caa","kind":"role_evidence","resolution_reason":"Historical
@@ -306,12 +320,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cuso4_X_2_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2655],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","line":2657,"mapping_status":"MAPPED","ontology_id":"CHEBI:23414","preferred_term":"CuSO4
+    x 2 H2O"}],"identifier":"kgmicrobe.compound:cuso4_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:23414","ontology_label":"copper(II)
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"CuSO4 x 2 H2O","sssom_rows":[{"data_row":853,"object_id":"CHEBI:23414","object_label":"copper(II)
+    sulfate","predicate_id":"skos:closeMatch"},{"data_row":2984,"object_id":"kgmicrobe.compound:cuso4_x_2_h2o","object_label":"CuSO4
+    x 2 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cuso4_X_2_H2o","synonym_count":5}'
   snapshot_sha256: 40311900c245923649fbe0262a15586a91cbff9fabd62085be73b16090a66002
 - evidence_id: ev-83fd0c3f2ad0ddd7
   kind: prior_review

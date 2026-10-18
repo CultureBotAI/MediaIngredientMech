@@ -85,11 +85,10 @@ Reassess prediction-only or empty role support: Biotin_Vitamin_Solution
 | --- | --- | --- | --- |
 | ev-ef9de23d2bcebf8a | data/ingredients/mapped/Biotin_Vitamin_Solution.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[592],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:biotin_vitamin_solution","line":594,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Biotin Vitamin Solution"}],"identifier":"kgmicrobe.ingredient:biotin_vitamin_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":18,"total_occurrences":18},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Biotin Vitamin Solution","sssom_rows":[{"data_row":550,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:closeMatch"},{"data_row":551,"object_id":"kgmicrobe.ingredient:biotin_vitamin_solution","object_label":"Biotin Vitamin Solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Biotin_Vitamin_Solution","synonym_count":1} |
 | ev-358d158642ff4011 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [592] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-523fcbe24fec4636 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Biotin_Vitamin_Solution; data-row positions=[550,551] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":550,"object_id":"MICRO:0000460","object_label":"vitamin solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Biotin_Vitamin_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":551,"object_id":"kgmicrobe.ingredient:biotin_vitamin_solution","object_label":"Biotin Vitamin Solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Biotin_Vitamin_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-523fcbe24fec4636 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Biotin_Vitamin_Solution; data-row positions=[550, 551] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":550,"object_id":"MICRO:0000460","object_label":"vitamin solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Biotin_Vitamin_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":551,"object_id":"kgmicrobe.ingredient:biotin_vitamin_solution","object_label":"Biotin Vitamin Solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Biotin_Vitamin_Solution","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-237999d92d949297 | docs/data/mapped_ingredients.csv; CSV lines=[594] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:biotin_vitamin_solution","line":594,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"18","ontology_id":"MICRO:0000460","preferred_term":"Biotin Vitamin Solution","total_occurrences":"18"}] |
 | ev-ae5ab3f436ba2419 | reports/yaml_record_review/Biotin_Vitamin_Solution.md; &#96;data/ingredients/mapped/Biotin_Vitamin_Solution.yaml&#96;:2; Verdict:4; Identity:10; Validation:25; Evidence:35; Completeness:48; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5c239d2dd9a0faff | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[2040] | context_only | [{"current_record_sha256":"013bef115224a5848c7ff17e210c181a2a4f9313f49a59839df55000a40635e6","finding_id":"SEM:d84e368e7ec2dffd481d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d4198f78e8779dda | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Biotin_Vitamin_Solution.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ed8e2e0c812cde8e
+  evidence_ids:
+  - ev-ef9de23d2bcebf8a
+  - ev-358d158642ff4011
+  - ev-523fcbe24fec4636
+  - ev-237999d92d949297
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ed8e2e0c812cde8e
+  evidence_ids:
+  - ev-ef9de23d2bcebf8a
+  - ev-5c239d2dd9a0faff
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ed8e2e0c812cde8e
+  evidence_ids:
+  - ev-ae5ab3f436ba2419
+  - ev-5c239d2dd9a0faff
 evidence:
 - evidence_id: ev-ef9de23d2bcebf8a
   kind: record_content
   reference: data/ingredients/mapped/Biotin_Vitamin_Solution.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[592],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:biotin_vitamin_solution","line":594,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Biotin
     Vitamin Solution"}],"identifier":"kgmicrobe.ingredient:biotin_vitamin_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":18,"total_occurrences":18},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
@@ -212,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [592]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,8 +230,8 @@ evidence:
 - evidence_id: ev-523fcbe24fec4636
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Biotin_Vitamin_Solution; data-row positions=[550,551]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Biotin_Vitamin_Solution; data-row positions=[550, 551]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":550,"object_id":"MICRO:0000460","object_label":"vitamin
     solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Biotin_Vitamin_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":551,"object_id":"kgmicrobe.ingredient:biotin_vitamin_solution","object_label":"Biotin
@@ -231,7 +241,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[594]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:biotin_vitamin_solution","line":594,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"18","ontology_id":"MICRO:0000460","preferred_term":"Biotin
     Vitamin Solution","total_occurrences":"18"}]'
@@ -254,18 +264,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[2040]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"013bef115224a5848c7ff17e210c181a2a4f9313f49a59839df55000a40635e6","finding_id":"SEM:d84e368e7ec2dffd481d","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-d4198f78e8779dda
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Biotin_Vitamin_Solution.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-740631b75aac7e28
@@ -325,7 +327,7 @@ assessments:
   - record-ed8e2e0c812cde8e
   evidence_ids:
   - ev-ef9de23d2bcebf8a
-  - ev-d4198f78e8779dda
+  - ev-5c239d2dd9a0faff
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -333,7 +335,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-ef9de23d2bcebf8a
-    - ev-d4198f78e8779dda
+    - ev-5c239d2dd9a0faff
 findings:
 - finding_id: rec-f-role-ed8e2e0c812cde8e
   issue_key: mim-reconciliation-role-support-ed8e2e0c812cde8e
@@ -349,7 +351,7 @@ findings:
   - record-ed8e2e0c812cde8e
   evidence_ids:
   - ev-ef9de23d2bcebf8a
-  - ev-d4198f78e8779dda
+  - ev-5c239d2dd9a0faff
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Biotin_Vitamin_Solution.yaml

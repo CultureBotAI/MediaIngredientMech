@@ -71,13 +71,12 @@ Disposition: Expansion/interpretation is retained as an assertion, but the exact
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c1ac67a89ae3450a | data/ingredients/mapped/PYG_Rumen_Fluid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[57],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","line":59,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","preferred_term":"PYG + Rumen Fluid"}],"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","ontology_label":"PYG + Rumen Fluid","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYG + Rumen Fluid","sssom_rows":[{"data_row":2184,"object_id":"kgmicrobe.ingredient:pyg_rumen_fluid","object_label":"PYG + Rumen Fluid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYG_Rumen_Fluid","synonym_count":1} |
+| ev-c1ac67a89ae3450a | data/ingredients/mapped/PYG_Rumen_Fluid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[57],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","line":59,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","preferred_term":"PYG + Rumen Fluid"}],"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","ontology_label":"PYG + Rumen Fluid","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYG + Rumen Fluid","sssom_rows":[{"data_row":2186,"object_id":"kgmicrobe.ingredient:pyg_rumen_fluid","object_label":"PYG + Rumen Fluid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYG_Rumen_Fluid","synonym_count":1} |
 | ev-226d457a2ba09a27 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [57] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-57e706baa6baaf74 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PYG_Rumen_Fluid; data-row positions=[2184] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2184,"object_id":"kgmicrobe.ingredient:pyg_rumen_fluid","object_label":"PYG + Rumen Fluid","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYG_Rumen_Fluid","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
+| ev-57e706baa6baaf74 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PYG_Rumen_Fluid; data-row positions=[2186] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2186,"object_id":"kgmicrobe.ingredient:pyg_rumen_fluid","object_label":"PYG + Rumen Fluid","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYG_Rumen_Fluid","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
 | ev-bf4ebcd7d21936b5 | docs/data/mapped_ingredients.csv; CSV lines=[59] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","line":59,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","preferred_term":"PYG + Rumen Fluid","total_occurrences":"0"}] |
 | ev-5697d539107eb694 | reports/yaml_record_review/PYG_Rumen_Fluid.md; &#96;data/ingredients/mapped/PYG_Rumen_Fluid.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:34; Completeness:49; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9ef228b826d762ac | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1404,1614,1892,1939] | context_only | [{"current_record_sha256":"833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01","finding_id":"SEM:edafdd3e7e62162992cd","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01","finding_id":"SEM:822e6f9214192679b159","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01","finding_id":"SEM:ad9fd4c1ccd576bfe991","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01","finding_id":"SEM:1bdf40abc89d8724a79e","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-827558932bab4e20 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/PYG_Rumen_Fluid.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -166,6 +165,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-84a25f8ea3406283
+  evidence_ids:
+  - ev-c1ac67a89ae3450a
+  - ev-226d457a2ba09a27
+  - ev-57e706baa6baaf74
+  - ev-bf4ebcd7d21936b5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -174,6 +178,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-84a25f8ea3406283
+  evidence_ids:
+  - ev-c1ac67a89ae3450a
+  - ev-9ef228b826d762ac
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -182,25 +189,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-84a25f8ea3406283
+  evidence_ids:
+  - ev-5697d539107eb694
+  - ev-9ef228b826d762ac
 evidence:
 - evidence_id: ev-c1ac67a89ae3450a
   kind: record_content
   reference: data/ingredients/mapped/PYG_Rumen_Fluid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[57],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","line":59,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","preferred_term":"PYG
-    + Rumen Fluid"}],"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","ontology_label":"PYG
+    + Rumen Fluid"}],"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","ontology_label":"PYG
     + Rumen Fluid","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PYG
-    + Rumen Fluid","sssom_rows":[{"data_row":2184,"object_id":"kgmicrobe.ingredient:pyg_rumen_fluid","object_label":"PYG
+    + Rumen Fluid","sssom_rows":[{"data_row":2186,"object_id":"kgmicrobe.ingredient:pyg_rumen_fluid","object_label":"PYG
     + Rumen Fluid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PYG_Rumen_Fluid","synonym_count":1}'
   snapshot_sha256: 833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01
 - evidence_id: ev-226d457a2ba09a27
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [57]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -208,17 +218,17 @@ evidence:
 - evidence_id: ev-57e706baa6baaf74
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PYG_Rumen_Fluid; data-row positions=[2184]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PYG_Rumen_Fluid; data-row positions=[2186]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2184,"object_id":"kgmicrobe.ingredient:pyg_rumen_fluid","object_label":"PYG
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2186,"object_id":"kgmicrobe.ingredient:pyg_rumen_fluid","object_label":"PYG
     + Rumen Fluid","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PYG_Rumen_Fluid","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-bf4ebcd7d21936b5
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[59]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:pyg_rumen_fluid","line":59,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:pyg_rumen_fluid","preferred_term":"PYG
     + Rumen Fluid","total_occurrences":"0"}]'
@@ -241,21 +251,13 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1404,1614,1892,1939]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01","finding_id":"SEM:edafdd3e7e62162992cd","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01","finding_id":"SEM:822e6f9214192679b159","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01","finding_id":"SEM:ad9fd4c1ccd576bfe991","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01","finding_id":"SEM:1bdf40abc89d8724a79e","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-827558932bab4e20
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/PYG_Rumen_Fluid.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-6358e76fd4b84ce5
@@ -331,7 +333,7 @@ findings:
   - record-84a25f8ea3406283
   evidence_ids:
   - ev-c1ac67a89ae3450a
-  - ev-827558932bab4e20
+  - ev-9ef228b826d762ac
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PYG_Rumen_Fluid.yaml

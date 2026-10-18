@@ -89,7 +89,7 @@ Reassess prediction-only role support: Gluconic acid
 | ev-8e47d45415aa3ef8 | docs/data/mapped_ingredients.csv; CSV lines=[1059] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:24266","line":1059,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:24266","preferred_term":"Gluconic acid","total_occurrences":"2"}] |
 | ev-df75ef97142602bf | reports/yaml_record_review/Gluconic_Acid.md; &#96;data/ingredients/mapped/Gluconic_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:33; Completeness:54; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ef201303e766aa81 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[664,1833,2085] | context_only | [{"current_record_sha256":"c5d8f1517e07217d02cbc5f9d0b49f3b5ab518a0850a273f865a2ee8e88a7412","finding_id":"SEM:c4ec9897718c43728121","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c5d8f1517e07217d02cbc5f9d0b49f3b5ab518a0850a273f865a2ee8e88a7412","finding_id":"SEM:68cbebb3dbe4ef2db62b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c5d8f1517e07217d02cbc5f9d0b49f3b5ab518a0850a273f865a2ee8e88a7412","finding_id":"SEM:2d069f2ac443a535ed6d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d173a50c63ea831d | data/ingredients/mapped/Gluconic_Acid.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-d173a50c63ea831d | data/ingredients/mapped/Gluconic_Acid.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1057],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:24266","line":1059,"mapping_status":"MAPPED","ontology_id":"CHEBI:24266","preferred_term":"Gluconic acid"}],"identifier":"CHEBI:24266","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:24266","ontology_label":"gluconic acid","ontology_source":"CHEBI"},"preferred_term":"Gluconic acid","sssom_rows":[{"data_row":1305,"object_id":"CHEBI:24266","object_label":"gluconic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gluconic_Acid","synonym_count":0} |
 | ev-47e0425c400a1d40 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-c9bceebc039693fd] | context_only | Predecessor structured review finding f-c9bceebc039693fd in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-49566380546892e1
+  evidence_ids:
+  - ev-85654d675303bc38
+  - ev-6b8bbc0f7718887a
+  - ev-cacb7554feaf8e26
+  - ev-8e47d45415aa3ef8
+  - ev-d173a50c63ea831d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-49566380546892e1
+  evidence_ids:
+  - ev-85654d675303bc38
+  - ev-ef201303e766aa81
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-49566380546892e1
+  evidence_ids:
+  - ev-df75ef97142602bf
+  - ev-ef201303e766aa81
+  - ev-47e0425c400a1d40
 evidence:
 - evidence_id: ev-85654d675303bc38
   kind: record_content
   reference: data/ingredients/mapped/Gluconic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1057],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:24266","line":1059,"mapping_status":"MAPPED","ontology_id":"CHEBI:24266","preferred_term":"Gluconic
     acid"}],"identifier":"CHEBI:24266","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:24266","ontology_label":"gluconic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1057]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Gluconic_Acid; data-row positions=[1305]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1305,"object_id":"CHEBI:24266","object_label":"gluconic
     acid","other":"CAS:526-95-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Gluconic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1059]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:24266","line":1059,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:24266","preferred_term":"Gluconic
     acid","total_occurrences":"2"}]'
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[664,1833,2085]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c5d8f1517e07217d02cbc5f9d0b49f3b5ab518a0850a273f865a2ee8e88a7412","finding_id":"SEM:c4ec9897718c43728121","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c5d8f1517e07217d02cbc5f9d0b49f3b5ab518a0850a273f865a2ee8e88a7412","finding_id":"SEM:68cbebb3dbe4ef2db62b","kind":"role_evidence","resolution_reason":"Historical
@@ -263,14 +276,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Gluconic_Acid.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1057],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:24266","line":1059,"mapping_status":"MAPPED","ontology_id":"CHEBI:24266","preferred_term":"Gluconic
+    acid"}],"identifier":"CHEBI:24266","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:24266","ontology_label":"gluconic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Gluconic acid","sssom_rows":[{"data_row":1305,"object_id":"CHEBI:24266","object_label":"gluconic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Gluconic_Acid","synonym_count":0}'
   snapshot_sha256: c5d8f1517e07217d02cbc5f9d0b49f3b5ab518a0850a273f865a2ee8e88a7412
 - evidence_id: ev-47e0425c400a1d40
   kind: prior_review

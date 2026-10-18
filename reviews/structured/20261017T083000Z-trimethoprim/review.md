@@ -83,13 +83,13 @@ Reassess prediction-only role support: Trimethoprim
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-182b1334970a147f | data/ingredients/mapped/Trimethoprim.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1993],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45924","line":1995,"mapping_status":"MAPPED","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim"}],"identifier":"CHEBI:45924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:45924","ontology_label":"trimethoprim","ontology_source":"CHEBI"},"preferred_term":"Trimethoprim","sssom_rows":[{"data_row":2825,"object_id":"CHEBI:45924","object_label":"trimethoprim","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trimethoprim","synonym_count":2} |
-| ev-84504901d14e26fb | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1993] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-b96711c6dfa04b2e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trimethoprim; data-row positions=[2825] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2825,"object_id":"CHEBI:45924","object_label":"trimethoprim","other":"5-(3,4,5-trimethoxybenzyl)pyrimidine-2,4-diamine&#124;trimethoprim (GlaxoSmithKline)&#124;CAS:738-70-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Trimethoprim","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-6253d77b2d212092 | docs/data/mapped_ingredients.csv; CSV lines=[1995] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:45924","line":1995,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim","total_occurrences":"1"}] |
+| ev-182b1334970a147f | data/ingredients/mapped/Trimethoprim.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1992],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45924","line":1994,"mapping_status":"MAPPED","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim"}],"identifier":"CHEBI:45924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:45924","ontology_label":"trimethoprim","ontology_source":"CHEBI"},"preferred_term":"Trimethoprim","sssom_rows":[{"data_row":2827,"object_id":"CHEBI:45924","object_label":"trimethoprim","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trimethoprim","synonym_count":2} |
+| ev-84504901d14e26fb | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1992] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b96711c6dfa04b2e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trimethoprim; data-row positions=[2827] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2827,"object_id":"CHEBI:45924","object_label":"trimethoprim","other":"5-(3,4,5-trimethoxybenzyl)pyrimidine-2,4-diamine&#124;trimethoprim (GlaxoSmithKline)&#124;CAS:738-70-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Trimethoprim","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-6253d77b2d212092 | docs/data/mapped_ingredients.csv; CSV lines=[1994] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:45924","line":1994,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim","total_occurrences":"1"}] |
 | ev-27e3f7de3b49e68a | reports/yaml_record_review/Trimethoprim.md; &#96;data/ingredients/mapped/Trimethoprim.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:33; Issues:42; Major: final &#96;other&#96; exports a vendor-qualified label:44; Major: &#96;SELECTIVE_AGENT&#96; is provisional name-pattern evidence:51; Completeness:68; Recommended Edits:75 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8d8ddeb4ef5061be | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1308,1950] | context_only | [{"current_record_sha256":"400b9a0abbf55d4ef09f1ab881a5eee26f37dbecd722a972b6fde0b10e1f8fc2","finding_id":"SEM:a51b17e26a2d90121de7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"400b9a0abbf55d4ef09f1ab881a5eee26f37dbecd722a972b6fde0b10e1f8fc2","finding_id":"SEM:a5e2a0e231730cfb7b67","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e076d38e82a6a8e7 | data/ingredients/mapped/Trimethoprim.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-e076d38e82a6a8e7 | data/ingredients/mapped/Trimethoprim.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1992],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45924","line":1994,"mapping_status":"MAPPED","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim"}],"identifier":"CHEBI:45924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:45924","ontology_label":"trimethoprim","ontology_source":"CHEBI"},"preferred_term":"Trimethoprim","sssom_rows":[{"data_row":2827,"object_id":"CHEBI:45924","object_label":"trimethoprim","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trimethoprim","synonym_count":2} |
 | ev-1163cebc93e71b50 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-1eb885752f245f6a] | context_only | Predecessor structured review finding f-1eb885752f245f6a in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f415684afb0a4d46
+  evidence_ids:
+  - ev-182b1334970a147f
+  - ev-84504901d14e26fb
+  - ev-b96711c6dfa04b2e
+  - ev-6253d77b2d212092
+  - ev-e076d38e82a6a8e7
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f415684afb0a4d46
+  evidence_ids:
+  - ev-182b1334970a147f
+  - ev-8d8ddeb4ef5061be
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f415684afb0a4d46
+  evidence_ids:
+  - ev-27e3f7de3b49e68a
+  - ev-8d8ddeb4ef5061be
+  - ev-1163cebc93e71b50
 evidence:
 - evidence_id: ev-182b1334970a147f
   kind: record_content
   reference: data/ingredients/mapped/Trimethoprim.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1993],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45924","line":1995,"mapping_status":"MAPPED","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim"}],"identifier":"CHEBI:45924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:45924","ontology_label":"trimethoprim","ontology_source":"CHEBI"},"preferred_term":"Trimethoprim","sssom_rows":[{"data_row":2825,"object_id":"CHEBI:45924","object_label":"trimethoprim","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trimethoprim","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1992],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45924","line":1994,"mapping_status":"MAPPED","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim"}],"identifier":"CHEBI:45924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:45924","ontology_label":"trimethoprim","ontology_source":"CHEBI"},"preferred_term":"Trimethoprim","sssom_rows":[{"data_row":2827,"object_id":"CHEBI:45924","object_label":"trimethoprim","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trimethoprim","synonym_count":2}'
   snapshot_sha256: 400b9a0abbf55d4ef09f1ab881a5eee26f37dbecd722a972b6fde0b10e1f8fc2
 - evidence_id: ev-84504901d14e26fb
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1993]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1992]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,19 +230,19 @@ evidence:
 - evidence_id: ev-b96711c6dfa04b2e
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trimethoprim; data-row positions=[2825]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Trimethoprim; data-row positions=[2827]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2825,"object_id":"CHEBI:45924","object_label":"trimethoprim","other":"5-(3,4,5-trimethoxybenzyl)pyrimidine-2,4-diamine|trimethoprim
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2827,"object_id":"CHEBI:45924","object_label":"trimethoprim","other":"5-(3,4,5-trimethoxybenzyl)pyrimidine-2,4-diamine|trimethoprim
     (GlaxoSmithKline)|CAS:738-70-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Trimethoprim","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-6253d77b2d212092
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1995]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1994]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:45924","line":1995,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim","total_occurrences":"1"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:45924","line":1994,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim","total_occurrences":"1"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-27e3f7de3b49e68a
   kind: prior_review
@@ -262,7 +275,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1308,1950]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"400b9a0abbf55d4ef09f1ab881a5eee26f37dbecd722a972b6fde0b10e1f8fc2","finding_id":"SEM:a51b17e26a2d90121de7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"400b9a0abbf55d4ef09f1ab881a5eee26f37dbecd722a972b6fde0b10e1f8fc2","finding_id":"SEM:a5e2a0e231730cfb7b67","kind":"role_evidence","resolution_reason":"Historical
@@ -272,12 +285,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trimethoprim.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1992],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45924","line":1994,"mapping_status":"MAPPED","ontology_id":"CHEBI:45924","preferred_term":"Trimethoprim"}],"identifier":"CHEBI:45924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:45924","ontology_label":"trimethoprim","ontology_source":"CHEBI"},"preferred_term":"Trimethoprim","sssom_rows":[{"data_row":2827,"object_id":"CHEBI:45924","object_label":"trimethoprim","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trimethoprim","synonym_count":2}'
   snapshot_sha256: 400b9a0abbf55d4ef09f1ab881a5eee26f37dbecd722a972b6fde0b10e1f8fc2
 - evidence_id: ev-1163cebc93e71b50
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: Lentilan from mushroom
 | ev-d363fece25b4511a | docs/data/mapped_ingredients.csv; CSV lines=[1294] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:31770","line":1294,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:31770","preferred_term":"Lentilan from mushroom","total_occurrences":"0"}] |
 | ev-060bd1519519fa1c | reports/yaml_record_review/Lentilan_From_Mushroom.md; &#96;data/ingredients/mapped/Lentilan_From_Mushroom.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:28; Completeness:49; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1f7bb1a85dc822e9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[855,1681] | context_only | [{"current_record_sha256":"5181041e1d83681083c8a35b43fd63f98ea706ea59af0831930ab3377fc3d70f","finding_id":"SEM:884759bbb8da33dee5ff","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5181041e1d83681083c8a35b43fd63f98ea706ea59af0831930ab3377fc3d70f","finding_id":"SEM:ba7cf11bfa80f7444d53","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-72a74d9366dbb42d | data/ingredients/mapped/Lentilan_From_Mushroom.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-72a74d9366dbb42d | data/ingredients/mapped/Lentilan_From_Mushroom.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1292],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31770","line":1294,"mapping_status":"MAPPED","ontology_id":"CHEBI:31770","preferred_term":"Lentilan from mushroom"}],"identifier":"CHEBI:31770","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:31770","ontology_label":"lentinan","ontology_source":"CHEBI"},"preferred_term":"Lentilan from mushroom","sssom_rows":[{"data_row":1681,"object_id":"CHEBI:31770","object_label":"lentinan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lentilan_From_Mushroom","synonym_count":0} |
 | ev-7cd4050fe20561c5 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-4eb33299b2b7b4b0] | context_only | Predecessor structured review finding f-4eb33299b2b7b4b0 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-dace868c7685f5c0
+  evidence_ids:
+  - ev-b73ad4be420da107
+  - ev-61700bd8505cf622
+  - ev-144882f0d4a61def
+  - ev-d363fece25b4511a
+  - ev-72a74d9366dbb42d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-dace868c7685f5c0
+  evidence_ids:
+  - ev-b73ad4be420da107
+  - ev-1f7bb1a85dc822e9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-dace868c7685f5c0
+  evidence_ids:
+  - ev-060bd1519519fa1c
+  - ev-1f7bb1a85dc822e9
+  - ev-7cd4050fe20561c5
 evidence:
 - evidence_id: ev-b73ad4be420da107
   kind: record_content
   reference: data/ingredients/mapped/Lentilan_From_Mushroom.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1292],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31770","line":1294,"mapping_status":"MAPPED","ontology_id":"CHEBI:31770","preferred_term":"Lentilan
     from mushroom"}],"identifier":"CHEBI:31770","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:31770","ontology_label":"lentinan","ontology_source":"CHEBI"},"preferred_term":"Lentilan
@@ -211,7 +224,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1292]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +233,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Lentilan_From_Mushroom; data-row positions=[1681]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1681,"object_id":"CHEBI:31770","object_label":"lentinan","other":"CAS:37339-90-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Lentilan_From_Mushroom","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -228,7 +241,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1294]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31770","line":1294,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:31770","preferred_term":"Lentilan
     from mushroom","total_occurrences":"0"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[855,1681]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5181041e1d83681083c8a35b43fd63f98ea706ea59af0831930ab3377fc3d70f","finding_id":"SEM:884759bbb8da33dee5ff","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5181041e1d83681083c8a35b43fd63f98ea706ea59af0831930ab3377fc3d70f","finding_id":"SEM:ba7cf11bfa80f7444d53","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lentilan_From_Mushroom.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1292],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31770","line":1294,"mapping_status":"MAPPED","ontology_id":"CHEBI:31770","preferred_term":"Lentilan
+    from mushroom"}],"identifier":"CHEBI:31770","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:31770","ontology_label":"lentinan","ontology_source":"CHEBI"},"preferred_term":"Lentilan
+    from mushroom","sssom_rows":[{"data_row":1681,"object_id":"CHEBI:31770","object_label":"lentinan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lentilan_From_Mushroom","synonym_count":0}'
   snapshot_sha256: 5181041e1d83681083c8a35b43fd63f98ea706ea59af0831930ab3377fc3d70f
 - evidence_id: ev-7cd4050fe20561c5
   kind: prior_review

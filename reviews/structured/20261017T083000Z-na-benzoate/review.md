@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-benzoate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-bd5ac1642330f6b3 | data/ingredients/mapped/Na-benzoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1461],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113455","line":1463,"mapping_status":"MAPPED","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate"}],"identifier":"CHEBI:113455","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113455","ontology_label":"sodium benzoate","ontology_source":"CHEBI"},"preferred_term":"Na-benzoate","sssom_rows":[{"data_row":1963,"object_id":"CHEBI:113455","object_label":"sodium benzoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-benzoate","synonym_count":7} |
-| ev-7477e3556b36a4de | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1461] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6fa0c0c6020f932b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-benzoate; data-row positions=[1963] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1963,"object_id":"CHEBI:113455","object_label":"sodium benzoate","other":"Benzoic acid, sodium salt&#124;E211&#124;Sodiumbenzoate&#124;CAS:532-32-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-benzoate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-9e26101ae1328cc8 | docs/data/mapped_ingredients.csv; CSV lines=[1463] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:113455","line":1463,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate","total_occurrences":"50"}] |
+| ev-bd5ac1642330f6b3 | data/ingredients/mapped/Na-benzoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1460],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113455","line":1462,"mapping_status":"MAPPED","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate"}],"identifier":"CHEBI:113455","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113455","ontology_label":"sodium benzoate","ontology_source":"CHEBI"},"preferred_term":"Na-benzoate","sssom_rows":[{"data_row":1965,"object_id":"CHEBI:113455","object_label":"sodium benzoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-benzoate","synonym_count":7} |
+| ev-7477e3556b36a4de | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1460] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6fa0c0c6020f932b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-benzoate; data-row positions=[1965] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1965,"object_id":"CHEBI:113455","object_label":"sodium benzoate","other":"Benzoic acid, sodium salt&#124;E211&#124;Sodiumbenzoate&#124;CAS:532-32-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-benzoate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-9e26101ae1328cc8 | docs/data/mapped_ingredients.csv; CSV lines=[1462] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:113455","line":1462,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate","total_occurrences":"50"}] |
 | ev-d703b9322750baa1 | reports/yaml_record_review/Na-benzoate.md; &#96;data/ingredients/mapped/Na-benzoate.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:26; Completeness:39; Recommended Edits:46 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-27034661bc4cc319 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[970,1923] | context_only | [{"current_record_sha256":"efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464","finding_id":"SEM:65bdfc7402f778ffc8c0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464","finding_id":"SEM:68398a7e85f2f7212029","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9ae6ce943f593235 | data/ingredients/mapped/Na-benzoate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-9ae6ce943f593235 | data/ingredients/mapped/Na-benzoate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1460],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113455","line":1462,"mapping_status":"MAPPED","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate"}],"identifier":"CHEBI:113455","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113455","ontology_label":"sodium benzoate","ontology_source":"CHEBI"},"preferred_term":"Na-benzoate","sssom_rows":[{"data_row":1965,"object_id":"CHEBI:113455","object_label":"sodium benzoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-benzoate","synonym_count":7} |
 | ev-afc33a0932b42aea | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-cbceae0847877627] | context_only | Predecessor structured review finding f-cbceae0847877627 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d1d515c33fd06c57
+  evidence_ids:
+  - ev-bd5ac1642330f6b3
+  - ev-7477e3556b36a4de
+  - ev-6fa0c0c6020f932b
+  - ev-9e26101ae1328cc8
+  - ev-9ae6ce943f593235
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d1d515c33fd06c57
+  evidence_ids:
+  - ev-bd5ac1642330f6b3
+  - ev-27034661bc4cc319
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d1d515c33fd06c57
+  evidence_ids:
+  - ev-d703b9322750baa1
+  - ev-27034661bc4cc319
+  - ev-afc33a0932b42aea
 evidence:
 - evidence_id: ev-bd5ac1642330f6b3
   kind: record_content
   reference: data/ingredients/mapped/Na-benzoate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1461],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113455","line":1463,"mapping_status":"MAPPED","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate"}],"identifier":"CHEBI:113455","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113455","ontology_label":"sodium
-    benzoate","ontology_source":"CHEBI"},"preferred_term":"Na-benzoate","sssom_rows":[{"data_row":1963,"object_id":"CHEBI:113455","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1460],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113455","line":1462,"mapping_status":"MAPPED","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate"}],"identifier":"CHEBI:113455","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113455","ontology_label":"sodium
+    benzoate","ontology_source":"CHEBI"},"preferred_term":"Na-benzoate","sssom_rows":[{"data_row":1965,"object_id":"CHEBI:113455","object_label":"sodium
     benzoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-benzoate","synonym_count":7}'
   snapshot_sha256: efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464
 - evidence_id: ev-7477e3556b36a4de
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1461]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1460]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,19 +232,19 @@ evidence:
 - evidence_id: ev-6fa0c0c6020f932b
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-benzoate; data-row positions=[1963]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-benzoate; data-row positions=[1965]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1963,"object_id":"CHEBI:113455","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1965,"object_id":"CHEBI:113455","object_label":"sodium
     benzoate","other":"Benzoic acid, sodium salt|E211|Sodiumbenzoate|CAS:532-32-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-benzoate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-9e26101ae1328cc8
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1463]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1462]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:113455","line":1463,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate","total_occurrences":"50"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:113455","line":1462,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate","total_occurrences":"50"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-d703b9322750baa1
   kind: prior_review
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[970,1923]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464","finding_id":"SEM:65bdfc7402f778ffc8c0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464","finding_id":"SEM:68398a7e85f2f7212029","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-benzoate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1460],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113455","line":1462,"mapping_status":"MAPPED","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate"}],"identifier":"CHEBI:113455","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113455","ontology_label":"sodium
+    benzoate","ontology_source":"CHEBI"},"preferred_term":"Na-benzoate","sssom_rows":[{"data_row":1965,"object_id":"CHEBI:113455","object_label":"sodium
+    benzoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-benzoate","synonym_count":7}'
   snapshot_sha256: efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464
 - evidence_id: ev-afc33a0932b42aea
   kind: prior_review

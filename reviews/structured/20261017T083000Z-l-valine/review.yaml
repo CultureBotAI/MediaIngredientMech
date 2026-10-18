@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-779dcfbc27cce7c8
+  evidence_ids:
+  - ev-8eece2b139f4dc1f
+  - ev-0b51acae1907978b
+  - ev-bb0859e31250d4b3
+  - ev-9c124d9836dc5ce2
+  - ev-92f582ab02a34bbe
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-779dcfbc27cce7c8
+  evidence_ids:
+  - ev-8eece2b139f4dc1f
+  - ev-e8023730b3630f2e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-779dcfbc27cce7c8
+  evidence_ids:
+  - ev-01cb5cd4f6f0dd75
+  - ev-e8023730b3630f2e
+  - ev-b9cc39540ba249ce
 evidence:
 - evidence_id: ev-8eece2b139f4dc1f
   kind: record_content
   reference: data/ingredients/mapped/L-valine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1263],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16414","line":1265,"mapping_status":"MAPPED","ontology_id":"CHEBI:16414","preferred_term":"L-Valine"}],"identifier":"CHEBI:16414","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":115,"edge_count":115,"occurrences":115},"occurrence_statistics":{"media_count":115,"total_occurrences":115},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16414","ontology_label":"L-valine","ontology_source":"CHEBI"},"preferred_term":"L-Valine","sssom_rows":[{"data_row":1645,"object_id":"CHEBI:16414","object_label":"L-valine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-valine","synonym_count":8}'
   snapshot_sha256: b7fabf7ba910e65e3c42978c3c31467a48999256e8622f8531d3eacfb8d232d2
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1263]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-valine; data-row positions=[1645]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1645,"object_id":"CHEBI:16414","object_label":"L-valine","other":"Valine|(2S)-2-amino-3-methylbutanoic
     acid|(S)-valine|2-Amino-3-methylbutyric acid|L-(+)-alpha-Aminoisovaleric acid|L-Valin|L-alpha-Amino-beta-methylbutyric
@@ -123,7 +136,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1265]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16414","line":1265,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"115","ontology_id":"CHEBI:16414","preferred_term":"L-Valine","total_occurrences":"115"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -147,7 +160,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[839,1536]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b7fabf7ba910e65e3c42978c3c31467a48999256e8622f8531d3eacfb8d232d2","finding_id":"SEM:d0d32f73bb3fa1fa1495","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b7fabf7ba910e65e3c42978c3c31467a48999256e8622f8531d3eacfb8d232d2","finding_id":"SEM:37055f51dd21e00b62e6","kind":"role_evidence","resolution_reason":"Historical
@@ -157,12 +170,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-valine.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1263],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16414","line":1265,"mapping_status":"MAPPED","ontology_id":"CHEBI:16414","preferred_term":"L-Valine"}],"identifier":"CHEBI:16414","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":115,"edge_count":115,"occurrences":115},"occurrence_statistics":{"media_count":115,"total_occurrences":115},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16414","ontology_label":"L-valine","ontology_source":"CHEBI"},"preferred_term":"L-Valine","sssom_rows":[{"data_row":1645,"object_id":"CHEBI:16414","object_label":"L-valine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-valine","synonym_count":8}'
   snapshot_sha256: b7fabf7ba910e65e3c42978c3c31467a48999256e8622f8531d3eacfb8d232d2
 - evidence_id: ev-b9cc39540ba249ce
   kind: prior_review

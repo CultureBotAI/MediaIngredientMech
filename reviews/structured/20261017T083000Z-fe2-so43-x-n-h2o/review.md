@@ -85,11 +85,11 @@ Reassess prediction-only role support: Fe2(SO4)3 x n H2O
 | --- | --- | --- | --- |
 | ev-b68f71699f11b322 | data/ingredients/mapped/Fe2_So43_X_N_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[976],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","line":978,"mapping_status":"MAPPED","ontology_id":"CHEBI:53438","preferred_term":"Fe2(SO4)3 x n H2O"}],"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":43,"edge_count":43,"occurrences":43},"occurrence_statistics":{"media_count":43,"total_occurrences":43},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:53438","ontology_label":"iron(3+) sulfate","ontology_source":"CHEBI"},"preferred_term":"Fe2(SO4)3 x n H2O","sssom_rows":[{"data_row":1166,"object_id":"CHEBI:53438","object_label":"iron(3+) sulfate","predicate_id":"skos:broadMatch"},{"data_row":1167,"object_id":"kgmicrobe.compound:fe2_so43_x_n_h2o","object_label":"Fe2(SO4)3 x n H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe2_So43_X_N_H2o","synonym_count":1} |
 | ev-f01c40cee56843f9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [976] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-70d7bffa5e352c69 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fe2_So43_X_N_H2o; data-row positions=[1166,1167] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1166,"object_id":"CHEBI:53438","object_label":"iron(3+) sulfate","other":"Fe(SO4)3 x n H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Fe2_So43_X_N_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1167,"object_id":"kgmicrobe.compound:fe2_so43_x_n_h2o","object_label":"Fe2(SO4)3 x n H2O","other":"Fe(SO4)3 x n H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Fe2_So43_X_N_H2o","validation_method":""}] |
+| ev-70d7bffa5e352c69 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fe2_So43_X_N_H2o; data-row positions=[1166, 1167] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1166,"object_id":"CHEBI:53438","object_label":"iron(3+) sulfate","other":"Fe(SO4)3 x n H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Fe2_So43_X_N_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1167,"object_id":"kgmicrobe.compound:fe2_so43_x_n_h2o","object_label":"Fe2(SO4)3 x n H2O","other":"Fe(SO4)3 x n H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Fe2_So43_X_N_H2o","validation_method":""}] |
 | ev-41e5d79b968d6e1f | docs/data/mapped_ingredients.csv; CSV lines=[978] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","line":978,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"43","ontology_id":"CHEBI:53438","preferred_term":"Fe2(SO4)3 x n H2O","total_occurrences":"43"}] |
 | ev-b510d193b46de9a4 | reports/yaml_record_review/Fe2_So43_X_N_H2o.md; &#96;data/ingredients/mapped/Fe2_So43_X_N_H2o.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:31; Completeness:54; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-7faac96d48532f73 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[584,1876] | context_only | [{"current_record_sha256":"5b98fed8eddbde07bfd8e8e4dd9263cd56d7ecb494691d4d5f55fedd3a405447","finding_id":"SEM:fc4b5653e0833949616a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5b98fed8eddbde07bfd8e8e4dd9263cd56d7ecb494691d4d5f55fedd3a405447","finding_id":"SEM:b219be966290c01a9537","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a9792434ee2ca76a | data/ingredients/mapped/Fe2_So43_X_N_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-a9792434ee2ca76a | data/ingredients/mapped/Fe2_So43_X_N_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[976],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","line":978,"mapping_status":"MAPPED","ontology_id":"CHEBI:53438","preferred_term":"Fe2(SO4)3 x n H2O"}],"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":43,"edge_count":43,"occurrences":43},"occurrence_statistics":{"media_count":43,"total_occurrences":43},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:53438","ontology_label":"iron(3+) sulfate","ontology_source":"CHEBI"},"preferred_term":"Fe2(SO4)3 x n H2O","sssom_rows":[{"data_row":1166,"object_id":"CHEBI:53438","object_label":"iron(3+) sulfate","predicate_id":"skos:broadMatch"},{"data_row":1167,"object_id":"kgmicrobe.compound:fe2_so43_x_n_h2o","object_label":"Fe2(SO4)3 x n H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe2_So43_X_N_H2o","synonym_count":1} |
 | ev-81cf1cabc8171d72 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-3c6f9ac33d890e2e] | context_only | Predecessor structured review finding f-3c6f9ac33d890e2e in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0342a970229031a5
+  evidence_ids:
+  - ev-b68f71699f11b322
+  - ev-f01c40cee56843f9
+  - ev-70d7bffa5e352c69
+  - ev-41e5d79b968d6e1f
+  - ev-a9792434ee2ca76a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0342a970229031a5
+  evidence_ids:
+  - ev-b68f71699f11b322
+  - ev-7faac96d48532f73
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0342a970229031a5
+  evidence_ids:
+  - ev-b510d193b46de9a4
+  - ev-7faac96d48532f73
+  - ev-81cf1cabc8171d72
 evidence:
 - evidence_id: ev-b68f71699f11b322
   kind: record_content
   reference: data/ingredients/mapped/Fe2_So43_X_N_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[976],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","line":978,"mapping_status":"MAPPED","ontology_id":"CHEBI:53438","preferred_term":"Fe2(SO4)3
     x n H2O"}],"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":43,"edge_count":43,"occurrences":43},"occurrence_statistics":{"media_count":43,"total_occurrences":43},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:53438","ontology_label":"iron(3+)
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [976]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,8 +234,8 @@ evidence:
 - evidence_id: ev-70d7bffa5e352c69
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Fe2_So43_X_N_H2o; data-row positions=[1166,1167]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Fe2_So43_X_N_H2o; data-row positions=[1166, 1167]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1166,"object_id":"CHEBI:53438","object_label":"iron(3+)
     sulfate","other":"Fe(SO4)3 x n H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Fe2_So43_X_N_H2o","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1167,"object_id":"kgmicrobe.compound:fe2_so43_x_n_h2o","object_label":"Fe2(SO4)3
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[978]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","line":978,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"43","ontology_id":"CHEBI:53438","preferred_term":"Fe2(SO4)3
     x n H2O","total_occurrences":"43"}]'
@@ -259,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[584,1876]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5b98fed8eddbde07bfd8e8e4dd9263cd56d7ecb494691d4d5f55fedd3a405447","finding_id":"SEM:fc4b5653e0833949616a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5b98fed8eddbde07bfd8e8e4dd9263cd56d7ecb494691d4d5f55fedd3a405447","finding_id":"SEM:b219be966290c01a9537","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +282,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fe2_So43_X_N_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[976],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","line":978,"mapping_status":"MAPPED","ontology_id":"CHEBI:53438","preferred_term":"Fe2(SO4)3
+    x n H2O"}],"identifier":"kgmicrobe.compound:fe2_so43_x_n_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":43,"edge_count":43,"occurrences":43},"occurrence_statistics":{"media_count":43,"total_occurrences":43},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:53438","ontology_label":"iron(3+)
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Fe2(SO4)3 x n H2O","sssom_rows":[{"data_row":1166,"object_id":"CHEBI:53438","object_label":"iron(3+)
+    sulfate","predicate_id":"skos:broadMatch"},{"data_row":1167,"object_id":"kgmicrobe.compound:fe2_so43_x_n_h2o","object_label":"Fe2(SO4)3
+    x n H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe2_So43_X_N_H2o","synonym_count":1}'
   snapshot_sha256: 5b98fed8eddbde07bfd8e8e4dd9263cd56d7ecb494691d4d5f55fedd3a405447
 - evidence_id: ev-81cf1cabc8171d72
   kind: prior_review

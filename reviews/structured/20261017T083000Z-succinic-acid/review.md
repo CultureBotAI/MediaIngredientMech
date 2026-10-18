@@ -83,13 +83,13 @@ Reassess prediction-only role support: Succinic acid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-903f67deeb9bced5 | data/ingredients/mapped/Succinic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1907],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15741","line":1909,"mapping_status":"MAPPED","ontology_id":"CHEBI:15741","preferred_term":"Succinic acid"}],"identifier":"CHEBI:15741","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15741","ontology_label":"succinic acid","ontology_source":"CHEBI"},"preferred_term":"Succinic acid","sssom_rows":[{"data_row":2661,"object_id":"CHEBI:15741","object_label":"succinic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinic_Acid","synonym_count":17} |
-| ev-691486e7b588d7df | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1907] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-5bd577e5dbb2c741 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Succinic_Acid; data-row positions=[2661] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2661,"object_id":"CHEBI:15741","object_label":"succinic acid","other":"1,2-ethanedicarboxylic acid&#124;Bernsteinsaeure&#124;Butandisaeure&#124;Butanedionic acid&#124;Dihydrofumaric acid&#124;E363&#124;Ethylenesuccinic acid&#124;HOOC-CH2-CH2-COOH&#124;acide butanedioique&#124;acide succinique&#124;acidum succinicum&#124;amber acid&#124;asuccin&#124;butanedioic acid&#124;spirit of amber&#124;CAS:110-15-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Succinic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-1081714bbae30038 | docs/data/mapped_ingredients.csv; CSV lines=[1909] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15741","line":1909,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"36","ontology_id":"CHEBI:15741","preferred_term":"Succinic acid","total_occurrences":"36"}] |
+| ev-903f67deeb9bced5 | data/ingredients/mapped/Succinic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1906],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15741","line":1908,"mapping_status":"MAPPED","ontology_id":"CHEBI:15741","preferred_term":"Succinic acid"}],"identifier":"CHEBI:15741","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15741","ontology_label":"succinic acid","ontology_source":"CHEBI"},"preferred_term":"Succinic acid","sssom_rows":[{"data_row":2663,"object_id":"CHEBI:15741","object_label":"succinic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinic_Acid","synonym_count":17} |
+| ev-691486e7b588d7df | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1906] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-5bd577e5dbb2c741 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Succinic_Acid; data-row positions=[2663] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2663,"object_id":"CHEBI:15741","object_label":"succinic acid","other":"1,2-ethanedicarboxylic acid&#124;Bernsteinsaeure&#124;Butandisaeure&#124;Butanedionic acid&#124;Dihydrofumaric acid&#124;E363&#124;Ethylenesuccinic acid&#124;HOOC-CH2-CH2-COOH&#124;acide butanedioique&#124;acide succinique&#124;acidum succinicum&#124;amber acid&#124;asuccin&#124;butanedioic acid&#124;spirit of amber&#124;CAS:110-15-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Succinic_Acid","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-1081714bbae30038 | docs/data/mapped_ingredients.csv; CSV lines=[1908] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15741","line":1908,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"36","ontology_id":"CHEBI:15741","preferred_term":"Succinic acid","total_occurrences":"36"}] |
 | ev-9aa6f03206e67cf5 | reports/yaml_record_review/Succinic_Acid.md; &#96;data/ingredients/mapped/Succinic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:30; Completeness:46; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fbb36f3847eba870 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1255,1562,2064] | context_only | [{"current_record_sha256":"eb67f0d82fa4c400905625bc6638673db27639ace55ffc06440b1429dfc2d158","finding_id":"SEM:f2cc4cd510bb4b70f415","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"eb67f0d82fa4c400905625bc6638673db27639ace55ffc06440b1429dfc2d158","finding_id":"SEM:10f95710b1e7902dbe9d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"eb67f0d82fa4c400905625bc6638673db27639ace55ffc06440b1429dfc2d158","finding_id":"SEM:1c0f062bfdaf62200c57","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-eb7089747da32f97 | data/ingredients/mapped/Succinic_Acid.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-eb7089747da32f97 | data/ingredients/mapped/Succinic_Acid.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1906],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15741","line":1908,"mapping_status":"MAPPED","ontology_id":"CHEBI:15741","preferred_term":"Succinic acid"}],"identifier":"CHEBI:15741","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15741","ontology_label":"succinic acid","ontology_source":"CHEBI"},"preferred_term":"Succinic acid","sssom_rows":[{"data_row":2663,"object_id":"CHEBI:15741","object_label":"succinic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinic_Acid","synonym_count":17} |
 | ev-64a302985c653e96 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-aeb09198ba32f71b] | context_only | Predecessor structured review finding f-aeb09198ba32f71b in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-222db89547a201c2
+  evidence_ids:
+  - ev-903f67deeb9bced5
+  - ev-691486e7b588d7df
+  - ev-5bd577e5dbb2c741
+  - ev-1081714bbae30038
+  - ev-eb7089747da32f97
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-222db89547a201c2
+  evidence_ids:
+  - ev-903f67deeb9bced5
+  - ev-fbb36f3847eba870
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-222db89547a201c2
+  evidence_ids:
+  - ev-9aa6f03206e67cf5
+  - ev-fbb36f3847eba870
+  - ev-64a302985c653e96
 evidence:
 - evidence_id: ev-903f67deeb9bced5
   kind: record_content
   reference: data/ingredients/mapped/Succinic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1907],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15741","line":1909,"mapping_status":"MAPPED","ontology_id":"CHEBI:15741","preferred_term":"Succinic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1906],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15741","line":1908,"mapping_status":"MAPPED","ontology_id":"CHEBI:15741","preferred_term":"Succinic
     acid"}],"identifier":"CHEBI:15741","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15741","ontology_label":"succinic
-    acid","ontology_source":"CHEBI"},"preferred_term":"Succinic acid","sssom_rows":[{"data_row":2661,"object_id":"CHEBI:15741","object_label":"succinic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Succinic acid","sssom_rows":[{"data_row":2663,"object_id":"CHEBI:15741","object_label":"succinic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinic_Acid","synonym_count":17}'
   snapshot_sha256: eb67f0d82fa4c400905625bc6638673db27639ace55ffc06440b1429dfc2d158
 - evidence_id: ev-691486e7b588d7df
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1907]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1906]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,10 +233,10 @@ evidence:
 - evidence_id: ev-5bd577e5dbb2c741
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Succinic_Acid; data-row positions=[2661]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Succinic_Acid; data-row positions=[2663]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2661,"object_id":"CHEBI:15741","object_label":"succinic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2663,"object_id":"CHEBI:15741","object_label":"succinic
     acid","other":"1,2-ethanedicarboxylic acid|Bernsteinsaeure|Butandisaeure|Butanedionic
     acid|Dihydrofumaric acid|E363|Ethylenesuccinic acid|HOOC-CH2-CH2-COOH|acide butanedioique|acide
     succinique|acidum succinicum|amber acid|asuccin|butanedioic acid|spirit of amber|CAS:110-15-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Succinic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -231,10 +244,10 @@ evidence:
 - evidence_id: ev-1081714bbae30038
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1909]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1908]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15741","line":1909,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"36","ontology_id":"CHEBI:15741","preferred_term":"Succinic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15741","line":1908,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"36","ontology_id":"CHEBI:15741","preferred_term":"Succinic
     acid","total_occurrences":"36"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-9aa6f03206e67cf5
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1255,1562,2064]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"eb67f0d82fa4c400905625bc6638673db27639ace55ffc06440b1429dfc2d158","finding_id":"SEM:f2cc4cd510bb4b70f415","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"eb67f0d82fa4c400905625bc6638673db27639ace55ffc06440b1429dfc2d158","finding_id":"SEM:10f95710b1e7902dbe9d","kind":"role_evidence","resolution_reason":"Historical
@@ -266,14 +279,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Succinic_Acid.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1906],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15741","line":1908,"mapping_status":"MAPPED","ontology_id":"CHEBI:15741","preferred_term":"Succinic
+    acid"}],"identifier":"CHEBI:15741","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":36,"edge_count":36,"occurrences":36},"occurrence_statistics":{"media_count":36,"total_occurrences":36},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15741","ontology_label":"succinic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Succinic acid","sssom_rows":[{"data_row":2663,"object_id":"CHEBI:15741","object_label":"succinic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Succinic_Acid","synonym_count":17}'
   snapshot_sha256: eb67f0d82fa4c400905625bc6638673db27639ace55ffc06440b1429dfc2d158
 - evidence_id: ev-64a302985c653e96
   kind: prior_review

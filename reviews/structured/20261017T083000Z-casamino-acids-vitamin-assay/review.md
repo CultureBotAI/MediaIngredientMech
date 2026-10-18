@@ -83,14 +83,14 @@ Reassess prediction-only role support: Casamino acids (vitamin assay)
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-a756cdcfacae4611 | data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2655],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2657,"mapping_status":"MAPPED","ontology_id":"mesh:C017721","preferred_term":"Casamino acids (vitamin assay)"}],"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C017721","ontology_label":"casamino acids","ontology_source":"MESH"},"preferred_term":"Casamino acids (vitamin assay)","sssom_rows":[{"data_row":657,"object_id":"mesh:C017721","object_label":"casamino acids","predicate_id":"skos:broadMatch"},{"data_row":2980,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino acids (vitamin assay)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids_Vitamin_Assay","synonym_count":3} |
-| ev-08ed08452dbdbb78 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2655] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-7a51d15184e90486 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Casamino_Acids_Vitamin_Assay; data-row positions=[657,2980] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":657,"object_id":"mesh:C017721","object_label":"casamino acids","other":"Casamino acids (vit. assay)&#124;Casamino acids, vitamin assay (BD-Difco)&#124;Casamino acids, vitamin assay (Difco)","predicate_id":"skos:broadMatch","subject_id":"MIM:Casamino_Acids_Vitamin_Assay","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-22"},{"data_row":2980,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino acids (vitamin assay)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Casamino_Acids_Vitamin_Assay","validation_method":"manual:apply_312_batch3&#124;REGISTRY&#124;2026-09-22"}] |
-| ev-4a77a994d5c05a71 | docs/data/mapped_ingredients.csv; CSV lines=[2657] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2657,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C017721","preferred_term":"Casamino acids (vitamin assay)","total_occurrences":"0"}] |
+| ev-a756cdcfacae4611 | data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2654],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2656,"mapping_status":"MAPPED","ontology_id":"mesh:C017721","preferred_term":"Casamino acids (vitamin assay)"}],"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C017721","ontology_label":"casamino acids","ontology_source":"MESH"},"preferred_term":"Casamino acids (vitamin assay)","sssom_rows":[{"data_row":657,"object_id":"mesh:C017721","object_label":"casamino acids","predicate_id":"skos:broadMatch"},{"data_row":2982,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino acids (vitamin assay)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids_Vitamin_Assay","synonym_count":3} |
+| ev-08ed08452dbdbb78 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2654] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-7a51d15184e90486 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Casamino_Acids_Vitamin_Assay; data-row positions=[657, 2982] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":657,"object_id":"mesh:C017721","object_label":"casamino acids","other":"Casamino acids (vit. assay)&#124;Casamino acids, vitamin assay (BD-Difco)&#124;Casamino acids, vitamin assay (Difco)","predicate_id":"skos:broadMatch","subject_id":"MIM:Casamino_Acids_Vitamin_Assay","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-22"},{"data_row":2982,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino acids (vitamin assay)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Casamino_Acids_Vitamin_Assay","validation_method":"manual:apply_312_batch3&#124;REGISTRY&#124;2026-09-22"}] |
+| ev-4a77a994d5c05a71 | docs/data/mapped_ingredients.csv; CSV lines=[2656] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2656,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C017721","preferred_term":"Casamino acids (vitamin assay)","total_occurrences":"0"}] |
 | ev-20edb918ea257ff3 | reports/yaml_record_review/20261001T050144Z-Casamino_Acids_Vitamin_Assay.md; YAML Record Review: Casamino acids (vitamin assay):2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-7299c97c5c7cf630 | reports/yaml_record_review/Casamino_Acids_Vitamin_Assay.md; &#96;data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:44; Completeness:58; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5bd4639ae7e3f2d7 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[365,1837] | context_only | [{"current_record_sha256":"4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da","finding_id":"SEM:9cbd8924b1269ba496be","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da","finding_id":"SEM:81e58cf8b0d06f145f20","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b155201338df05ee | data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-b155201338df05ee | data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2654],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2656,"mapping_status":"MAPPED","ontology_id":"mesh:C017721","preferred_term":"Casamino acids (vitamin assay)"}],"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C017721","ontology_label":"casamino acids","ontology_source":"MESH"},"preferred_term":"Casamino acids (vitamin assay)","sssom_rows":[{"data_row":657,"object_id":"mesh:C017721","object_label":"casamino acids","predicate_id":"skos:broadMatch"},{"data_row":2982,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino acids (vitamin assay)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids_Vitamin_Assay","synonym_count":3} |
 | ev-efc019ebb7371f1a | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-d56b076ff1e96a20] | context_only | Predecessor structured review finding f-d56b076ff1e96a20 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a97b57b2f7bac174
+  evidence_ids:
+  - ev-a756cdcfacae4611
+  - ev-08ed08452dbdbb78
+  - ev-7a51d15184e90486
+  - ev-4a77a994d5c05a71
+  - ev-b155201338df05ee
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a97b57b2f7bac174
+  evidence_ids:
+  - ev-a756cdcfacae4611
+  - ev-5bd4639ae7e3f2d7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,25 +208,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a97b57b2f7bac174
+  evidence_ids:
+  - ev-20edb918ea257ff3
+  - ev-7299c97c5c7cf630
+  - ev-5bd4639ae7e3f2d7
+  - ev-efc019ebb7371f1a
 evidence:
 - evidence_id: ev-a756cdcfacae4611
   kind: record_content
   reference: data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2655],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2657,"mapping_status":"MAPPED","ontology_id":"mesh:C017721","preferred_term":"Casamino
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2654],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2656,"mapping_status":"MAPPED","ontology_id":"mesh:C017721","preferred_term":"Casamino
     acids (vitamin assay)"}],"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C017721","ontology_label":"casamino
     acids","ontology_source":"MESH"},"preferred_term":"Casamino acids (vitamin assay)","sssom_rows":[{"data_row":657,"object_id":"mesh:C017721","object_label":"casamino
-    acids","predicate_id":"skos:broadMatch"},{"data_row":2980,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino
+    acids","predicate_id":"skos:broadMatch"},{"data_row":2982,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino
     acids (vitamin assay)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids_Vitamin_Assay","synonym_count":3}'
   snapshot_sha256: 4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da
 - evidence_id: ev-08ed08452dbdbb78
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2655]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2654]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,21 +239,21 @@ evidence:
 - evidence_id: ev-7a51d15184e90486
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Casamino_Acids_Vitamin_Assay; data-row positions=[657,2980]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Casamino_Acids_Vitamin_Assay; data-row positions=[657, 2982]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":657,"object_id":"mesh:C017721","object_label":"casamino
     acids","other":"Casamino acids (vit. assay)|Casamino acids, vitamin assay (BD-Difco)|Casamino
-    acids, vitamin assay (Difco)","predicate_id":"skos:broadMatch","subject_id":"MIM:Casamino_Acids_Vitamin_Assay","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-22"},{"data_row":2980,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino
+    acids, vitamin assay (Difco)","predicate_id":"skos:broadMatch","subject_id":"MIM:Casamino_Acids_Vitamin_Assay","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-22"},{"data_row":2982,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino
     acids (vitamin assay)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Casamino_Acids_Vitamin_Assay","validation_method":"manual:apply_312_batch3|REGISTRY|2026-09-22"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-4a77a994d5c05a71
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2657]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2656]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2657,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C017721","preferred_term":"Casamino
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2656,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C017721","preferred_term":"Casamino
     acids (vitamin assay)","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-20edb918ea257ff3
@@ -291,7 +305,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[365,1837]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da","finding_id":"SEM:9cbd8924b1269ba496be","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da","finding_id":"SEM:81e58cf8b0d06f145f20","kind":"role_evidence","resolution_reason":"Historical
@@ -301,12 +315,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2654],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","line":2656,"mapping_status":"MAPPED","ontology_id":"mesh:C017721","preferred_term":"Casamino
+    acids (vitamin assay)"}],"identifier":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C017721","ontology_label":"casamino
+    acids","ontology_source":"MESH"},"preferred_term":"Casamino acids (vitamin assay)","sssom_rows":[{"data_row":657,"object_id":"mesh:C017721","object_label":"casamino
+    acids","predicate_id":"skos:broadMatch"},{"data_row":2982,"object_id":"kgmicrobe.ingredient:casamino_acids_vitamin_assay","object_label":"Casamino
+    acids (vitamin assay)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids_Vitamin_Assay","synonym_count":3}'
   snapshot_sha256: 4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da
 - evidence_id: ev-efc019ebb7371f1a
   kind: prior_review

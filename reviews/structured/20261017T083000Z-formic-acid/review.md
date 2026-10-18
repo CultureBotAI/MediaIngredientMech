@@ -89,7 +89,7 @@ Reassess prediction-only role support: Formic acid
 | ev-d1d884d8eaef61bc | docs/data/mapped_ingredients.csv; CSV lines=[1021] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:30751","line":1021,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:30751","preferred_term":"Formic acid","total_occurrences":"2"}] |
 | ev-ec008b1ebd0a7680 | reports/yaml_record_review/Formic_Acid.md; &#96;data/ingredients/mapped/Formic_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:32; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-356603b8d73fb9b7 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[631,1917,2063] | context_only | [{"current_record_sha256":"ea6627fe59fe2f7eeb82d02610dcf7f2acf7468edd72efa015b27dbfca1db965","finding_id":"SEM:3b3e951b301be60f17b4","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ea6627fe59fe2f7eeb82d02610dcf7f2acf7468edd72efa015b27dbfca1db965","finding_id":"SEM:0cd628df05b9c18ba3af","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ea6627fe59fe2f7eeb82d02610dcf7f2acf7468edd72efa015b27dbfca1db965","finding_id":"SEM:c2230312472f246d7667","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b32385cfa71627ad | data/ingredients/mapped/Formic_Acid.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-b32385cfa71627ad | data/ingredients/mapped/Formic_Acid.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1019],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30751","line":1021,"mapping_status":"MAPPED","ontology_id":"CHEBI:30751","preferred_term":"Formic acid"}],"identifier":"CHEBI:30751","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30751","ontology_label":"formic acid","ontology_source":"CHEBI"},"preferred_term":"Formic acid","sssom_rows":[{"data_row":1236,"object_id":"CHEBI:30751","object_label":"formic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Formic_Acid","synonym_count":12} |
 | ev-9483463c0d9c7b7e | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-5c2b5d257e2fab44] | context_only | Predecessor structured review finding f-5c2b5d257e2fab44 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c30117e116c15463
+  evidence_ids:
+  - ev-320f6eba3cbcdcad
+  - ev-e944f67ea84b280e
+  - ev-efd4820e114bd11b
+  - ev-d1d884d8eaef61bc
+  - ev-b32385cfa71627ad
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-c30117e116c15463
+  evidence_ids:
+  - ev-320f6eba3cbcdcad
+  - ev-356603b8d73fb9b7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c30117e116c15463
+  evidence_ids:
+  - ev-ec008b1ebd0a7680
+  - ev-356603b8d73fb9b7
+  - ev-9483463c0d9c7b7e
 evidence:
 - evidence_id: ev-320f6eba3cbcdcad
   kind: record_content
   reference: data/ingredients/mapped/Formic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1019],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30751","line":1021,"mapping_status":"MAPPED","ontology_id":"CHEBI:30751","preferred_term":"Formic
     acid"}],"identifier":"CHEBI:30751","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30751","ontology_label":"formic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1019]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Formic_Acid; data-row positions=[1236]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1236,"object_id":"CHEBI:30751","object_label":"formic
     acid","other":"Acide formique|Ameisensaeure|H-COOH|HCO2H|HCOOH|Methanoic acid|aminic
@@ -231,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1021]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30751","line":1021,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:30751","preferred_term":"Formic
     acid","total_occurrences":"2"}]'
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[631,1917,2063]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ea6627fe59fe2f7eeb82d02610dcf7f2acf7468edd72efa015b27dbfca1db965","finding_id":"SEM:3b3e951b301be60f17b4","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ea6627fe59fe2f7eeb82d02610dcf7f2acf7468edd72efa015b27dbfca1db965","finding_id":"SEM:0cd628df05b9c18ba3af","kind":"role_evidence","resolution_reason":"Historical
@@ -267,14 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Formic_Acid.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1019],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30751","line":1021,"mapping_status":"MAPPED","ontology_id":"CHEBI:30751","preferred_term":"Formic
+    acid"}],"identifier":"CHEBI:30751","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30751","ontology_label":"formic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Formic acid","sssom_rows":[{"data_row":1236,"object_id":"CHEBI:30751","object_label":"formic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Formic_Acid","synonym_count":12}'
   snapshot_sha256: ea6627fe59fe2f7eeb82d02610dcf7f2acf7468edd72efa015b27dbfca1db965
 - evidence_id: ev-9483463c0d9c7b7e
   kind: prior_review

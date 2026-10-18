@@ -83,7 +83,6 @@ Disposition: The current local observation is recorded on a REJECTED tombstone, 
 | ev-7beeb9f26c220216 | docs/data/mapped_ingredients.csv; CSV lines=[1344] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17306","line":1344,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:17306","preferred_term":"maltose","total_occurrences":"0"}] |
 | ev-5de0da356006e144 | reports/yaml_record_review/Maltose_2.md; &#96;data/ingredients/mapped/Maltose_2.yaml&#96;:2; Verdict:4; Identity:13; Validation:22; Evidence:30; Completeness:39; Recommended Edits:46 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a4cf4241323d74b5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[896] | context_only | [{"current_record_sha256":"7468b0da0c187899aeac524097e0f79ff0e9669d2b7b74004ba7b3809d19e352","finding_id":"SEM:8e1a1648fa8da60a04bd","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-6f37640c080678eb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Maltose_2.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -172,6 +171,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6d6af34e09d680f9
+  evidence_ids:
+  - ev-398b09b27cc5a317
+  - ev-f364ec958ac6e55a
+  - ev-7fd69d0df4cfafd4
+  - ev-7beeb9f26c220216
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -180,6 +184,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6d6af34e09d680f9
+  evidence_ids:
+  - ev-398b09b27cc5a317
+  - ev-a4cf4241323d74b5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -188,13 +195,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6d6af34e09d680f9
+  evidence_ids:
+  - ev-5de0da356006e144
+  - ev-a4cf4241323d74b5
 evidence:
 - evidence_id: ev-398b09b27cc5a317
   kind: record_content
   reference: data/ingredients/mapped/Maltose_2.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1342],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17306","line":1344,"mapping_status":"REJECTED","ontology_id":"CHEBI:17306","preferred_term":"maltose"}],"identifier":"CHEBI:17306","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":188,"edge_count":188,"occurrences":189},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17306","ontology_label":"maltose","ontology_source":"CHEBI"},"preferred_term":"maltose","sssom_rows":[],"sssom_subject":"MIM:Maltose_2","synonym_count":3}'
   snapshot_sha256: 7468b0da0c187899aeac524097e0f79ff0e9669d2b7b74004ba7b3809d19e352
@@ -202,7 +212,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1342]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -211,7 +221,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Maltose_2; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -219,7 +229,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1344]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17306","line":1344,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:17306","preferred_term":"maltose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -240,18 +250,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[896]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7468b0da0c187899aeac524097e0f79ff0e9669d2b7b74004ba7b3809d19e352","finding_id":"SEM:8e1a1648fa8da60a04bd","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-6f37640c080678eb
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Maltose_2.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-239e1156a8fafbba
@@ -319,7 +321,7 @@ assessments:
   - record-6d6af34e09d680f9
   evidence_ids:
   - ev-398b09b27cc5a317
-  - ev-6f37640c080678eb
+  - ev-a4cf4241323d74b5
   dimensions:
   - name: legacy-disposition
     value: needs_reassessment
@@ -327,7 +329,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-398b09b27cc5a317
-    - ev-6f37640c080678eb
+    - ev-a4cf4241323d74b5
 findings:
 - finding_id: rec-f-role-6d6af34e09d680f9
   issue_key: mim-reconciliation-role-support-6d6af34e09d680f9
@@ -343,7 +345,7 @@ findings:
   - record-6d6af34e09d680f9
   evidence_ids:
   - ev-398b09b27cc5a317
-  - ev-6f37640c080678eb
+  - ev-a4cf4241323d74b5
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Maltose_2.yaml

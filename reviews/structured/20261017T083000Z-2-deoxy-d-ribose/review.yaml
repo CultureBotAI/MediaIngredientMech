@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4ff9cb1e3f70a6d2
+  evidence_ids:
+  - ev-f7bcb2c1f53ba960
+  - ev-686fea14936407c4
+  - ev-110a3aee047f6e54
+  - ev-f5fcced63bbd1365
+  - ev-3c587a4c58910df3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4ff9cb1e3f70a6d2
+  evidence_ids:
+  - ev-f7bcb2c1f53ba960
+  - ev-4000d72fba55dc99
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4ff9cb1e3f70a6d2
+  evidence_ids:
+  - ev-dfae80dbc8d47cc8
+  - ev-4000d72fba55dc99
+  - ev-40de1e9d545ef4e5
 evidence:
 - evidence_id: ev-f7bcb2c1f53ba960
   kind: record_content
   reference: data/ingredients/mapped/2-Deoxy-D-Ribose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[307],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28816","line":309,"mapping_status":"MAPPED","ontology_id":"CHEBI:28816","preferred_term":"2-Deoxy-D-Ribose"}],"identifier":"CHEBI:28816","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28816","ontology_label":"2-deoxy-D-ribose","ontology_source":"CHEBI"},"preferred_term":"2-Deoxy-D-Ribose","sssom_rows":[{"data_row":48,"object_id":"CHEBI:28816","object_label":"2-deoxy-D-ribose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-Deoxy-D-Ribose","synonym_count":2}'
   snapshot_sha256: b6128f7ddd369ed67041c0958845fecee40c48cc5c5612a956a84141888509a3
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [307]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-Deoxy-D-Ribose; data-row positions=[48]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":48,"object_id":"CHEBI:28816","object_label":"2-deoxy-D-ribose","other":"2-deoxy-D-erythro-pentose|Deoxyribose|CAS:533-67-5","predicate_id":"skos:exactMatch","subject_id":"MIM:2-Deoxy-D-Ribose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[309]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28816","line":309,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28816","preferred_term":"2-Deoxy-D-Ribose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -149,7 +162,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[43,1897]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b6128f7ddd369ed67041c0958845fecee40c48cc5c5612a956a84141888509a3","finding_id":"SEM:6595cd6c606e1ecec127","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b6128f7ddd369ed67041c0958845fecee40c48cc5c5612a956a84141888509a3","finding_id":"SEM:af8d93ac4cd54d09c73a","kind":"role_evidence","resolution_reason":"Historical
@@ -159,12 +172,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/2-Deoxy-D-Ribose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[307],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28816","line":309,"mapping_status":"MAPPED","ontology_id":"CHEBI:28816","preferred_term":"2-Deoxy-D-Ribose"}],"identifier":"CHEBI:28816","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28816","ontology_label":"2-deoxy-D-ribose","ontology_source":"CHEBI"},"preferred_term":"2-Deoxy-D-Ribose","sssom_rows":[{"data_row":48,"object_id":"CHEBI:28816","object_label":"2-deoxy-D-ribose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-Deoxy-D-Ribose","synonym_count":2}'
   snapshot_sha256: b6128f7ddd369ed67041c0958845fecee40c48cc5c5612a956a84141888509a3
 - evidence_id: ev-40de1e9d545ef4e5
   kind: prior_review

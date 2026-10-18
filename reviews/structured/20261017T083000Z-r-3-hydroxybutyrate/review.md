@@ -83,13 +83,13 @@ Reassess prediction-only role support: (R)-3-hydroxybutyrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-a53229f4bf6b6f3f | data/ingredients/mapped/R-3-hydroxybutyrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[280],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:10983","line":282,"mapping_status":"MAPPED","ontology_id":"CHEBI:10983","preferred_term":"(R)-3-hydroxybutyrate"}],"identifier":"CHEBI:10983","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:10983","ontology_label":"(R)-3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"(R)-3-hydroxybutyrate","sssom_rows":[{"data_row":2403,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:R-3-hydroxybutyrate","synonym_count":2} |
+| ev-a53229f4bf6b6f3f | data/ingredients/mapped/R-3-hydroxybutyrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[280],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:10983","line":282,"mapping_status":"MAPPED","ontology_id":"CHEBI:10983","preferred_term":"(R)-3-hydroxybutyrate"}],"identifier":"CHEBI:10983","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:10983","ontology_label":"(R)-3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"(R)-3-hydroxybutyrate","sssom_rows":[{"data_row":2405,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:R-3-hydroxybutyrate","synonym_count":2} |
 | ev-a51658492c71076d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [280] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-3a73dd21e516c6d4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:R-3-hydroxybutyrate; data-row positions=[2403] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2403,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","other":"(3R)-3-hydroxybutanoate","predicate_id":"skos:exactMatch","subject_id":"MIM:R-3-hydroxybutyrate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-3a73dd21e516c6d4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:R-3-hydroxybutyrate; data-row positions=[2405] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2405,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","other":"(3R)-3-hydroxybutanoate","predicate_id":"skos:exactMatch","subject_id":"MIM:R-3-hydroxybutyrate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
 | ev-d40b89bbe6a5dfe7 | docs/data/mapped_ingredients.csv; CSV lines=[282] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:10983","line":282,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:10983","preferred_term":"(R)-3-hydroxybutyrate","total_occurrences":"0"}] |
 | ev-2cadfe33216f1478 | reports/yaml_record_review/R-3-hydroxybutyrate.md; &#96;data/ingredients/mapped/R-3-hydroxybutyrate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5dea47eeba300292 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1162,1806] | context_only | [{"current_record_sha256":"d07cb840038e310a1120add6ef1695e612c57257710f45a6338205483741b893","finding_id":"SEM:e1c983c209f60833cb5a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d07cb840038e310a1120add6ef1695e612c57257710f45a6338205483741b893","finding_id":"SEM:6d8beef727aafd13e33e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-de0fe239d76e3316 | data/ingredients/mapped/R-3-hydroxybutyrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-de0fe239d76e3316 | data/ingredients/mapped/R-3-hydroxybutyrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[280],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:10983","line":282,"mapping_status":"MAPPED","ontology_id":"CHEBI:10983","preferred_term":"(R)-3-hydroxybutyrate"}],"identifier":"CHEBI:10983","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:10983","ontology_label":"(R)-3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"(R)-3-hydroxybutyrate","sssom_rows":[{"data_row":2405,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:R-3-hydroxybutyrate","synonym_count":2} |
 | ev-bc50358cded64dbc | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-16505b671e442e57] | context_only | Predecessor structured review finding f-16505b671e442e57 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7917e43945e19d2b
+  evidence_ids:
+  - ev-a53229f4bf6b6f3f
+  - ev-a51658492c71076d
+  - ev-3a73dd21e516c6d4
+  - ev-d40b89bbe6a5dfe7
+  - ev-de0fe239d76e3316
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7917e43945e19d2b
+  evidence_ids:
+  - ev-a53229f4bf6b6f3f
+  - ev-5dea47eeba300292
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7917e43945e19d2b
+  evidence_ids:
+  - ev-2cadfe33216f1478
+  - ev-5dea47eeba300292
+  - ev-bc50358cded64dbc
 evidence:
 - evidence_id: ev-a53229f4bf6b6f3f
   kind: record_content
   reference: data/ingredients/mapped/R-3-hydroxybutyrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[280],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:10983","line":282,"mapping_status":"MAPPED","ontology_id":"CHEBI:10983","preferred_term":"(R)-3-hydroxybutyrate"}],"identifier":"CHEBI:10983","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:10983","ontology_label":"(R)-3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"(R)-3-hydroxybutyrate","sssom_rows":[{"data_row":2403,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:R-3-hydroxybutyrate","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[280],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:10983","line":282,"mapping_status":"MAPPED","ontology_id":"CHEBI:10983","preferred_term":"(R)-3-hydroxybutyrate"}],"identifier":"CHEBI:10983","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:10983","ontology_label":"(R)-3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"(R)-3-hydroxybutyrate","sssom_rows":[{"data_row":2405,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:R-3-hydroxybutyrate","synonym_count":2}'
   snapshot_sha256: d07cb840038e310a1120add6ef1695e612c57257710f45a6338205483741b893
 - evidence_id: ev-a51658492c71076d
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [280]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,16 +230,16 @@ evidence:
 - evidence_id: ev-3a73dd21e516c6d4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:R-3-hydroxybutyrate; data-row positions=[2403]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:R-3-hydroxybutyrate; data-row positions=[2405]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2403,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","other":"(3R)-3-hydroxybutanoate","predicate_id":"skos:exactMatch","subject_id":"MIM:R-3-hydroxybutyrate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2405,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","other":"(3R)-3-hydroxybutanoate","predicate_id":"skos:exactMatch","subject_id":"MIM:R-3-hydroxybutyrate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-d40b89bbe6a5dfe7
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[282]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:10983","line":282,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:10983","preferred_term":"(R)-3-hydroxybutyrate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -244,7 +257,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1162,1806]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d07cb840038e310a1120add6ef1695e612c57257710f45a6338205483741b893","finding_id":"SEM:e1c983c209f60833cb5a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d07cb840038e310a1120add6ef1695e612c57257710f45a6338205483741b893","finding_id":"SEM:6d8beef727aafd13e33e","kind":"role_evidence","resolution_reason":"Historical
@@ -254,12 +267,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/R-3-hydroxybutyrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[280],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:10983","line":282,"mapping_status":"MAPPED","ontology_id":"CHEBI:10983","preferred_term":"(R)-3-hydroxybutyrate"}],"identifier":"CHEBI:10983","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:10983","ontology_label":"(R)-3-hydroxybutyrate","ontology_source":"CHEBI"},"preferred_term":"(R)-3-hydroxybutyrate","sssom_rows":[{"data_row":2405,"object_id":"CHEBI:10983","object_label":"(R)-3-hydroxybutyrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:R-3-hydroxybutyrate","synonym_count":2}'
   snapshot_sha256: d07cb840038e310a1120add6ef1695e612c57257710f45a6338205483741b893
 - evidence_id: ev-bc50358cded64dbc
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Polypeptone
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-a6359eecfef22a99 | data/ingredients/mapped/Polypeptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1683],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315306","line":1685,"mapping_status":"MAPPED","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone"}],"identifier":"FOODON:03315306","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315306","ontology_label":"protein hydrolyzates","ontology_source":"FOODON"},"preferred_term":"Polypeptone","sssom_rows":[{"data_row":2297,"object_id":"FOODON:03315306","object_label":"protein hydrolyzates","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polypeptone","synonym_count":11} |
-| ev-764fef883b937ab5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1683] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-14056b9e50c4ad0b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Polypeptone; data-row positions=[2297] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2297,"object_id":"FOODON:03315306","object_label":"protein hydrolyzates","other":"Polypepton&#124;Polypepton (Nihon Pharm. Co.)&#124;Polypeptone peptone (BD-BBL)&#124;Polypeptone Peptone (BD 211910)&#124;Hipolypepton&#124;Hipolypepton (Nihon seiyaku)&#124;Hipolypepton*&#124;Polypepton (Nihon Seiyaku)&#124;Polypeptone (BBL)","predicate_id":"skos:exactMatch","subject_id":"MIM:Polypeptone","validation_method":"OLS:foodon&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-ce39e7e5339a77d0 | docs/data/mapped_ingredients.csv; CSV lines=[1685] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:03315306","line":1685,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"135","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone","total_occurrences":"135"}] |
+| ev-a6359eecfef22a99 | data/ingredients/mapped/Polypeptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1682],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315306","line":1684,"mapping_status":"MAPPED","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone"}],"identifier":"FOODON:03315306","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315306","ontology_label":"protein hydrolyzates","ontology_source":"FOODON"},"preferred_term":"Polypeptone","sssom_rows":[{"data_row":2299,"object_id":"FOODON:03315306","object_label":"protein hydrolyzates","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polypeptone","synonym_count":11} |
+| ev-764fef883b937ab5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1682] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-14056b9e50c4ad0b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Polypeptone; data-row positions=[2299] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2299,"object_id":"FOODON:03315306","object_label":"protein hydrolyzates","other":"Polypepton&#124;Polypepton (Nihon Pharm. Co.)&#124;Polypeptone peptone (BD-BBL)&#124;Polypeptone Peptone (BD 211910)&#124;Hipolypepton&#124;Hipolypepton (Nihon seiyaku)&#124;Hipolypepton*&#124;Polypepton (Nihon Seiyaku)&#124;Polypeptone (BBL)","predicate_id":"skos:exactMatch","subject_id":"MIM:Polypeptone","validation_method":"OLS:foodon&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-ce39e7e5339a77d0 | docs/data/mapped_ingredients.csv; CSV lines=[1684] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:03315306","line":1684,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"135","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone","total_occurrences":"135"}] |
 | ev-108aa7c88aa7ca0e | reports/yaml_record_review/Polypeptone.md; &#96;data/ingredients/mapped/Polypeptone.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-af70cf1b67991ab0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1130,2046] | context_only | [{"current_record_sha256":"5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa","finding_id":"SEM:256c5b7f1b2c16ad3a94","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa","finding_id":"SEM:6b4a0c66f792764beb52","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-4f83401e57b84559 | data/ingredients/mapped/Polypeptone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-4f83401e57b84559 | data/ingredients/mapped/Polypeptone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1682],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315306","line":1684,"mapping_status":"MAPPED","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone"}],"identifier":"FOODON:03315306","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315306","ontology_label":"protein hydrolyzates","ontology_source":"FOODON"},"preferred_term":"Polypeptone","sssom_rows":[{"data_row":2299,"object_id":"FOODON:03315306","object_label":"protein hydrolyzates","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polypeptone","synonym_count":11} |
 | ev-719bea6c9f069088 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-e8ce7320237ada8c] | context_only | Predecessor structured review finding f-e8ce7320237ada8c in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-58c1512d939af3b2
+  evidence_ids:
+  - ev-a6359eecfef22a99
+  - ev-764fef883b937ab5
+  - ev-14056b9e50c4ad0b
+  - ev-ce39e7e5339a77d0
+  - ev-4f83401e57b84559
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-58c1512d939af3b2
+  evidence_ids:
+  - ev-a6359eecfef22a99
+  - ev-af70cf1b67991ab0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-58c1512d939af3b2
+  evidence_ids:
+  - ev-108aa7c88aa7ca0e
+  - ev-af70cf1b67991ab0
+  - ev-719bea6c9f069088
 evidence:
 - evidence_id: ev-a6359eecfef22a99
   kind: record_content
   reference: data/ingredients/mapped/Polypeptone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1683],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315306","line":1685,"mapping_status":"MAPPED","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone"}],"identifier":"FOODON:03315306","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315306","ontology_label":"protein
-    hydrolyzates","ontology_source":"FOODON"},"preferred_term":"Polypeptone","sssom_rows":[{"data_row":2297,"object_id":"FOODON:03315306","object_label":"protein
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1682],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315306","line":1684,"mapping_status":"MAPPED","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone"}],"identifier":"FOODON:03315306","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315306","ontology_label":"protein
+    hydrolyzates","ontology_source":"FOODON"},"preferred_term":"Polypeptone","sssom_rows":[{"data_row":2299,"object_id":"FOODON:03315306","object_label":"protein
     hydrolyzates","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polypeptone","synonym_count":11}'
   snapshot_sha256: 5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa
 - evidence_id: ev-764fef883b937ab5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1683]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1682]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,10 +232,10 @@ evidence:
 - evidence_id: ev-14056b9e50c4ad0b
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Polypeptone; data-row positions=[2297]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Polypeptone; data-row positions=[2299]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2297,"object_id":"FOODON:03315306","object_label":"protein
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2299,"object_id":"FOODON:03315306","object_label":"protein
     hydrolyzates","other":"Polypepton|Polypepton (Nihon Pharm. Co.)|Polypeptone peptone
     (BD-BBL)|Polypeptone Peptone (BD 211910)|Hipolypepton|Hipolypepton (Nihon seiyaku)|Hipolypepton*|Polypepton
     (Nihon Seiyaku)|Polypeptone (BBL)","predicate_id":"skos:exactMatch","subject_id":"MIM:Polypeptone","validation_method":"OLS:foodon|SYNONYM_ENRICH|2026-07-07"}]'
@@ -230,10 +243,10 @@ evidence:
 - evidence_id: ev-ce39e7e5339a77d0
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1685]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1684]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315306","line":1685,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"135","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone","total_occurrences":"135"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315306","line":1684,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"135","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone","total_occurrences":"135"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-108aa7c88aa7ca0e
   kind: prior_review
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1130,2046]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa","finding_id":"SEM:256c5b7f1b2c16ad3a94","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa","finding_id":"SEM:6b4a0c66f792764beb52","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Polypeptone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1682],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315306","line":1684,"mapping_status":"MAPPED","ontology_id":"FOODON:03315306","preferred_term":"Polypeptone"}],"identifier":"FOODON:03315306","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":135,"edge_count":135,"occurrences":135},"occurrence_statistics":{"media_count":135,"total_occurrences":135},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315306","ontology_label":"protein
+    hydrolyzates","ontology_source":"FOODON"},"preferred_term":"Polypeptone","sssom_rows":[{"data_row":2299,"object_id":"FOODON:03315306","object_label":"protein
+    hydrolyzates","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Polypeptone","synonym_count":11}'
   snapshot_sha256: 5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa
 - evidence_id: ev-719bea6c9f069088
   kind: prior_review

@@ -85,12 +85,12 @@ Reassess prediction-only role support: CoCl2 x 2 H2O
 | --- | --- | --- | --- |
 | ev-78096087a68d920c | data/ingredients/mapped/Cocl2_X_2_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[744],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","line":746,"mapping_status":"MAPPED","ontology_id":"CHEBI:35696","preferred_term":"CoCl2 x 2 H2O"}],"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:35696","ontology_label":"cobalt dichloride","ontology_source":"CHEBI"},"preferred_term":"CoCl2 x 2 H2O","sssom_rows":[{"data_row":797,"object_id":"CHEBI:35696","object_label":"cobalt dichloride","predicate_id":"skos:closeMatch"},{"data_row":798,"object_id":"kgmicrobe.compound:cocl2_x_2_h2o","object_label":"CoCl2 x 2 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cocl2_X_2_H2o","synonym_count":10} |
 | ev-b43c6d7fadfb672c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [744] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-54d836426573e9b4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cocl2_X_2_H2o; data-row positions=[797,798] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":797,"object_id":"CHEBI:35696","object_label":"cobalt dichloride","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Cocl2_X_2_H2o","validation_method":"manual:retire_wrong_form_names&#124;OTHER&#124;2026-09-23"},{"data_row":798,"object_id":"kgmicrobe.compound:cocl2_x_2_h2o","object_label":"CoCl2 x 2 H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cocl2_X_2_H2o","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-54d836426573e9b4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cocl2_X_2_H2o; data-row positions=[797, 798] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":797,"object_id":"CHEBI:35696","object_label":"cobalt dichloride","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Cocl2_X_2_H2o","validation_method":"manual:retire_wrong_form_names&#124;OTHER&#124;2026-09-23"},{"data_row":798,"object_id":"kgmicrobe.compound:cocl2_x_2_h2o","object_label":"CoCl2 x 2 H2O","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cocl2_X_2_H2o","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
 | ev-5aafe38288d69829 | docs/data/mapped_ingredients.csv; CSV lines=[746] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","line":746,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:35696","preferred_term":"CoCl2 x 2 H2O","total_occurrences":"5"}] |
 | ev-527fa867b57fc618 | reports/yaml_record_review/20261001T050155Z-Cocl2_X_2_H2o.md; YAML Record Review: CoCl2 x 2 H2O:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c5f7d88ce196388f | reports/yaml_record_review/Cocl2_X_2_H2o.md; &#96;data/ingredients/mapped/Cocl2_X_2_H2o.yaml&#96;:2; Verdict:4; Identity:12; Validation:30; Evidence:50; Completeness:70; Recommended Edits:78 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
-| ev-e12aa4528ba436ad | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[432,1697] | context_only | [{"current_record_sha256":"2ceb41745b08d8db408350eb5e0ad38a933df6224ebac60a81ce2a2085f647e3","finding_id":"SEM:058def08fac3452ea333","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2ceb41745b08d8db408350eb5e0ad38a933df6224ebac60a81ce2a2085f647e3","finding_id":"SEM:580e6cd11e334eed70c7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bcba250dc15ca4ca | data/ingredients/mapped/Cocl2_X_2_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-e12aa4528ba436ad | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[432,1697] | context_only | [{"current_record_sha256":"f73cf9c10032f8eba85a5b14a067c541a44ff1722fbb727e0a8223a5f4a1424d","finding_id":"SEM:058def08fac3452ea333","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f73cf9c10032f8eba85a5b14a067c541a44ff1722fbb727e0a8223a5f4a1424d","finding_id":"SEM:580e6cd11e334eed70c7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-bcba250dc15ca4ca | data/ingredients/mapped/Cocl2_X_2_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[744],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","line":746,"mapping_status":"MAPPED","ontology_id":"CHEBI:35696","preferred_term":"CoCl2 x 2 H2O"}],"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:35696","ontology_label":"cobalt dichloride","ontology_source":"CHEBI"},"preferred_term":"CoCl2 x 2 H2O","sssom_rows":[{"data_row":797,"object_id":"CHEBI:35696","object_label":"cobalt dichloride","predicate_id":"skos:closeMatch"},{"data_row":798,"object_id":"kgmicrobe.compound:cocl2_x_2_h2o","object_label":"CoCl2 x 2 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cocl2_X_2_H2o","synonym_count":10} |
 | ev-009e3f3cfdfdb16c | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-17673d435c44a42f] | context_only | Predecessor structured review finding f-17673d435c44a42f in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e6bce3f910a889a5
+  evidence_ids:
+  - ev-78096087a68d920c
+  - ev-b43c6d7fadfb672c
+  - ev-54d836426573e9b4
+  - ev-5aafe38288d69829
+  - ev-bcba250dc15ca4ca
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e6bce3f910a889a5
+  evidence_ids:
+  - ev-78096087a68d920c
+  - ev-e12aa4528ba436ad
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e6bce3f910a889a5
+  evidence_ids:
+  - ev-527fa867b57fc618
+  - ev-c5f7d88ce196388f
+  - ev-e12aa4528ba436ad
+  - ev-009e3f3cfdfdb16c
 evidence:
 - evidence_id: ev-78096087a68d920c
   kind: record_content
   reference: data/ingredients/mapped/Cocl2_X_2_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[744],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","line":746,"mapping_status":"MAPPED","ontology_id":"CHEBI:35696","preferred_term":"CoCl2
     x 2 H2O"}],"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:35696","ontology_label":"cobalt
@@ -217,7 +231,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [744]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,8 +239,8 @@ evidence:
 - evidence_id: ev-54d836426573e9b4
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Cocl2_X_2_H2o; data-row positions=[797,798]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Cocl2_X_2_H2o; data-row positions=[797, 798]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":797,"object_id":"CHEBI:35696","object_label":"cobalt
     dichloride","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Cocl2_X_2_H2o","validation_method":"manual:retire_wrong_form_names|OTHER|2026-09-23"},{"data_row":798,"object_id":"kgmicrobe.compound:cocl2_x_2_h2o","object_label":"CoCl2
@@ -236,7 +250,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[746]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","line":746,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:35696","preferred_term":"CoCl2
     x 2 H2O","total_occurrences":"5"}]'
@@ -291,22 +305,23 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[432,1697]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: '[{"current_record_sha256":"2ceb41745b08d8db408350eb5e0ad38a933df6224ebac60a81ce2a2085f647e3","finding_id":"SEM:058def08fac3452ea333","kind":"existing_record_review","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2ceb41745b08d8db408350eb5e0ad38a933df6224ebac60a81ce2a2085f647e3","finding_id":"SEM:580e6cd11e334eed70c7","kind":"role_evidence","resolution_reason":"Historical
+  summary: '[{"current_record_sha256":"f73cf9c10032f8eba85a5b14a067c541a44ff1722fbb727e0a8223a5f4a1424d","finding_id":"SEM:058def08fac3452ea333","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f73cf9c10032f8eba85a5b14a067c541a44ff1722fbb727e0a8223a5f4a1424d","finding_id":"SEM:580e6cd11e334eed70c7","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 - evidence_id: ev-bcba250dc15ca4ca
   kind: record_content
   reference: data/ingredients/mapped/Cocl2_X_2_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[744],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","line":746,"mapping_status":"MAPPED","ontology_id":"CHEBI:35696","preferred_term":"CoCl2
+    x 2 H2O"}],"identifier":"kgmicrobe.compound:cocl2_x_2_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:35696","ontology_label":"cobalt
+    dichloride","ontology_source":"CHEBI"},"preferred_term":"CoCl2 x 2 H2O","sssom_rows":[{"data_row":797,"object_id":"CHEBI:35696","object_label":"cobalt
+    dichloride","predicate_id":"skos:closeMatch"},{"data_row":798,"object_id":"kgmicrobe.compound:cocl2_x_2_h2o","object_label":"CoCl2
+    x 2 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cocl2_X_2_H2o","synonym_count":10}'
   snapshot_sha256: f73cf9c10032f8eba85a5b14a067c541a44ff1722fbb727e0a8223a5f4a1424d
 - evidence_id: ev-009e3f3cfdfdb16c
   kind: prior_review

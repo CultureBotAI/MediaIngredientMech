@@ -89,7 +89,7 @@ Reassess prediction-only role support: Dithionite
 | ev-9df1dd08049d305a | docs/data/mapped_ingredients.csv; CSV lines=[910] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:42160","line":910,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:42160","preferred_term":"Dithionite","total_occurrences":"2"}] |
 | ev-98e6a7f8b035ec98 | reports/yaml_record_review/Dithionite.md; &#96;data/ingredients/mapped/Dithionite.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:38; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-0b0deca360983b4e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[547,1593] | context_only | [{"current_record_sha256":"223989fc29bf0ff1986c59a2d0abc929cd5751c8a9c43a50307b813e2a554ba5","finding_id":"SEM:a59560c272178568a085","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"223989fc29bf0ff1986c59a2d0abc929cd5751c8a9c43a50307b813e2a554ba5","finding_id":"SEM:aa0a0d4b641e42005edf","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a28d2993b84ed8b4 | data/ingredients/mapped/Dithionite.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}] |
+| ev-a28d2993b84ed8b4 | data/ingredients/mapped/Dithionite.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[908],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:42160","line":910,"mapping_status":"MAPPED","ontology_id":"CHEBI:42160","preferred_term":"Dithionite"}],"identifier":"CHEBI:42160","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:42160","ontology_label":"dithionite(2-)","ontology_source":"CHEBI"},"preferred_term":"Dithionite","sssom_rows":[{"data_row":1070,"object_id":"CHEBI:42160","object_label":"dithionite(2-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dithionite","synonym_count":4} |
 | ev-f42242f6da190885 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-d6c3db291eeeb06e] | context_only | Predecessor structured review finding f-d6c3db291eeeb06e in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-694992ca37b2f0da
+  evidence_ids:
+  - ev-5dd82ce950054d1a
+  - ev-2af72a6b7a3f4090
+  - ev-7e51904654942cbe
+  - ev-9df1dd08049d305a
+  - ev-a28d2993b84ed8b4
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-694992ca37b2f0da
+  evidence_ids:
+  - ev-5dd82ce950054d1a
+  - ev-0b0deca360983b4e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-694992ca37b2f0da
+  evidence_ids:
+  - ev-98e6a7f8b035ec98
+  - ev-0b0deca360983b4e
+  - ev-f42242f6da190885
 evidence:
 - evidence_id: ev-5dd82ce950054d1a
   kind: record_content
   reference: data/ingredients/mapped/Dithionite.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[908],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:42160","line":910,"mapping_status":"MAPPED","ontology_id":"CHEBI:42160","preferred_term":"Dithionite"}],"identifier":"CHEBI:42160","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:42160","ontology_label":"dithionite(2-)","ontology_source":"CHEBI"},"preferred_term":"Dithionite","sssom_rows":[{"data_row":1070,"object_id":"CHEBI:42160","object_label":"dithionite(2-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dithionite","synonym_count":4}'
   snapshot_sha256: 223989fc29bf0ff1986c59a2d0abc929cd5751c8a9c43a50307b813e2a554ba5
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [908]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Dithionite; data-row positions=[1070]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1070,"object_id":"CHEBI:42160","object_label":"dithionite(2-)","other":"Dithionit|2,3-dioxido-1,4-dioxy-2,3-disulfy-[4]catenate(2-)|bis(dioxidosulfate)(S--S)(2-)|CAS:14844-07-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Dithionite","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[910]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:42160","line":910,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:42160","preferred_term":"Dithionite","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[547,1593]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"223989fc29bf0ff1986c59a2d0abc929cd5751c8a9c43a50307b813e2a554ba5","finding_id":"SEM:a59560c272178568a085","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"223989fc29bf0ff1986c59a2d0abc929cd5751c8a9c43a50307b813e2a554ba5","finding_id":"SEM:aa0a0d4b641e42005edf","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Dithionite.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[908],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:42160","line":910,"mapping_status":"MAPPED","ontology_id":"CHEBI:42160","preferred_term":"Dithionite"}],"identifier":"CHEBI:42160","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:42160","ontology_label":"dithionite(2-)","ontology_source":"CHEBI"},"preferred_term":"Dithionite","sssom_rows":[{"data_row":1070,"object_id":"CHEBI:42160","object_label":"dithionite(2-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dithionite","synonym_count":4}'
   snapshot_sha256: 223989fc29bf0ff1986c59a2d0abc929cd5751c8a9c43a50307b813e2a554ba5
 - evidence_id: ev-f42242f6da190885
   kind: prior_review

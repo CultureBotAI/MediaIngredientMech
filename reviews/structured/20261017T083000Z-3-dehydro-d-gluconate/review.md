@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-0c8acaa2eabc9a23 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-0c8acaa2eabc9a23 | Explain curation-history timestamp order: 3-dehydro-D-gluconate |
 | Role evidence and plausibility check | passed | True | record-0c8acaa2eabc9a23 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-0c8acaa2eabc9a23 | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 3-dehydro-D-gluconate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c5e9b9d0f4453ac3 | data/ingredients/mapped/3-dehydro-D-gluconate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2109],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:85256","line":2111,"mapping_status":"MAPPED","ontology_id":"CHEBI:85256","preferred_term":"3-dehydro-D-gluconate"}],"identifier":"CHEBI:85256","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:85256","ontology_label":"3-dehydro-D-gluconate","ontology_source":"CHEBI"},"preferred_term":"3-dehydro-D-gluconate","sssom_rows":[{"data_row":140,"object_id":"CHEBI:85256","object_label":"3-dehydro-D-gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-dehydro-D-gluconate","synonym_count":0} |
-| ev-458de29d99f4443e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2109] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c5e9b9d0f4453ac3 | data/ingredients/mapped/3-dehydro-D-gluconate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2108],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:85256","line":2110,"mapping_status":"MAPPED","ontology_id":"CHEBI:85256","preferred_term":"3-dehydro-D-gluconate"}],"identifier":"CHEBI:85256","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:85256","ontology_label":"3-dehydro-D-gluconate","ontology_source":"CHEBI"},"preferred_term":"3-dehydro-D-gluconate","sssom_rows":[{"data_row":140,"object_id":"CHEBI:85256","object_label":"3-dehydro-D-gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-dehydro-D-gluconate","synonym_count":0} |
+| ev-458de29d99f4443e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2108] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-f4c6ebbc822109ca | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:3-dehydro-D-gluconate; data-row positions=[140] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":140,"object_id":"CHEBI:85256","object_label":"3-dehydro-D-gluconate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:3-dehydro-D-gluconate","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-39d388eabc18c504 | docs/data/mapped_ingredients.csv; CSV lines=[2111] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:85256","line":2111,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:85256","preferred_term":"3-dehydro-D-gluconate","total_occurrences":"0"}] |
+| ev-39d388eabc18c504 | docs/data/mapped_ingredients.csv; CSV lines=[2110] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:85256","line":2110,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:85256","preferred_term":"3-dehydro-D-gluconate","total_occurrences":"0"}] |
 | ev-97190ec55eea46a8 | reports/yaml_record_review/3-dehydro-D-gluconate.md; &#96;data/ingredients/mapped/3-dehydro-D-gluconate.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:38; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6ad1312583f4d1cb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[117] | context_only | [{"current_record_sha256":"7edbac69e901344c5ce0708c59a5bc7316167840a8361cbe4ca9ff396f177a87","finding_id":"SEM:691be8d5258610a3e8d4","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-8b587681a12667de | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-2bcff34b33539abc] | context_only | Predecessor structured review finding f-2bcff34b33539abc in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 3-dehydro-D-gluconate'
   target_ids:
   - record-0c8acaa2eabc9a23
+  evidence_ids:
+  - ev-c5e9b9d0f4453ac3
+  - ev-458de29d99f4443e
+  - ev-f4c6ebbc822109ca
+  - ev-39d388eabc18c504
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-0c8acaa2eabc9a23
+  evidence_ids:
+  - ev-c5e9b9d0f4453ac3
+  - ev-6ad1312583f4d1cb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0c8acaa2eabc9a23
+  evidence_ids:
+  - ev-97190ec55eea46a8
+  - ev-6ad1312583f4d1cb
+  - ev-8b587681a12667de
 evidence:
 - evidence_id: ev-c5e9b9d0f4453ac3
   kind: record_content
   reference: data/ingredients/mapped/3-dehydro-D-gluconate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2109],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:85256","line":2111,"mapping_status":"MAPPED","ontology_id":"CHEBI:85256","preferred_term":"3-dehydro-D-gluconate"}],"identifier":"CHEBI:85256","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:85256","ontology_label":"3-dehydro-D-gluconate","ontology_source":"CHEBI"},"preferred_term":"3-dehydro-D-gluconate","sssom_rows":[{"data_row":140,"object_id":"CHEBI:85256","object_label":"3-dehydro-D-gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-dehydro-D-gluconate","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2108],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:85256","line":2110,"mapping_status":"MAPPED","ontology_id":"CHEBI:85256","preferred_term":"3-dehydro-D-gluconate"}],"identifier":"CHEBI:85256","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:85256","ontology_label":"3-dehydro-D-gluconate","ontology_source":"CHEBI"},"preferred_term":"3-dehydro-D-gluconate","sssom_rows":[{"data_row":140,"object_id":"CHEBI:85256","object_label":"3-dehydro-D-gluconate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-dehydro-D-gluconate","synonym_count":0}'
   snapshot_sha256: 7edbac69e901344c5ce0708c59a5bc7316167840a8361cbe4ca9ff396f177a87
 - evidence_id: ev-458de29d99f4443e
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2109]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2108]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,17 +228,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:3-dehydro-D-gluconate; data-row positions=[140]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":140,"object_id":"CHEBI:85256","object_label":"3-dehydro-D-gluconate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:3-dehydro-D-gluconate","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-39d388eabc18c504
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2111]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2110]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:85256","line":2111,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:85256","preferred_term":"3-dehydro-D-gluconate","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:85256","line":2110,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:85256","preferred_term":"3-dehydro-D-gluconate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-97190ec55eea46a8
   kind: prior_review
@@ -253,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[117]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7edbac69e901344c5ce0708c59a5bc7316167840a8361cbe4ca9ff396f177a87","finding_id":"SEM:691be8d5258610a3e8d4","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

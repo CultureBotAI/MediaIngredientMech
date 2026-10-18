@@ -89,7 +89,7 @@ Reassess prediction-only role support: 2-Mercaptoethanol
 | ev-432ea41bd3c64e15 | docs/data/mapped_ingredients.csv; CSV lines=[330] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:41218","line":330,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:41218","preferred_term":"2-Mercaptoethanol","total_occurrences":"5"}] |
 | ev-7a416c6294b4a7a0 | reports/yaml_record_review/2-mercaptoethanol.md; &#96;data/ingredients/mapped/2-mercaptoethanol.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:34; Completeness:50; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d403753aef3db10e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[72,1544] | context_only | [{"current_record_sha256":"b32f24ce80193042971850fb87c4b1c8836eb8a72b09e9e1bd48ad0cfcfe84bd","finding_id":"SEM:d2340dfac420a7370e4e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b32f24ce80193042971850fb87c4b1c8836eb8a72b09e9e1bd48ad0cfcfe84bd","finding_id":"SEM:19946c982a6b8fb64237","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8f3c7c3ee337f5ab | data/ingredients/mapped/2-mercaptoethanol.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}] |
+| ev-8f3c7c3ee337f5ab | data/ingredients/mapped/2-mercaptoethanol.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[328],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41218","line":330,"mapping_status":"MAPPED","ontology_id":"CHEBI:41218","preferred_term":"2-Mercaptoethanol"}],"identifier":"CHEBI:41218","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41218","ontology_label":"mercaptoethanol","ontology_source":"CHEBI"},"preferred_term":"2-Mercaptoethanol","sssom_rows":[{"data_row":89,"object_id":"CHEBI:41218","object_label":"mercaptoethanol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-mercaptoethanol","synonym_count":4} |
 | ev-c819395dfc359393 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-dc8cbafc6e55e96b] | context_only | Predecessor structured review finding f-dc8cbafc6e55e96b in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cf50a8b07720525d
+  evidence_ids:
+  - ev-3670bb7327cfea9c
+  - ev-483577334e06a5c2
+  - ev-09f85d68a012c0f8
+  - ev-432ea41bd3c64e15
+  - ev-8f3c7c3ee337f5ab
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-cf50a8b07720525d
+  evidence_ids:
+  - ev-3670bb7327cfea9c
+  - ev-d403753aef3db10e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cf50a8b07720525d
+  evidence_ids:
+  - ev-7a416c6294b4a7a0
+  - ev-d403753aef3db10e
+  - ev-c819395dfc359393
 evidence:
 - evidence_id: ev-3670bb7327cfea9c
   kind: record_content
   reference: data/ingredients/mapped/2-mercaptoethanol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[328],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41218","line":330,"mapping_status":"MAPPED","ontology_id":"CHEBI:41218","preferred_term":"2-Mercaptoethanol"}],"identifier":"CHEBI:41218","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41218","ontology_label":"mercaptoethanol","ontology_source":"CHEBI"},"preferred_term":"2-Mercaptoethanol","sssom_rows":[{"data_row":89,"object_id":"CHEBI:41218","object_label":"mercaptoethanol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-mercaptoethanol","synonym_count":4}'
   snapshot_sha256: b32f24ce80193042971850fb87c4b1c8836eb8a72b09e9e1bd48ad0cfcfe84bd
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [328]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-mercaptoethanol; data-row positions=[89]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":89,"object_id":"CHEBI:41218","object_label":"mercaptoethanol","other":"2-sulfanylethanol|BETA-MERCAPTOETHANOL|Thioglycol|CAS:60-24-2","predicate_id":"skos:exactMatch","subject_id":"MIM:2-mercaptoethanol","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[330]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:41218","line":330,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:41218","preferred_term":"2-Mercaptoethanol","total_occurrences":"5"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[72,1544]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b32f24ce80193042971850fb87c4b1c8836eb8a72b09e9e1bd48ad0cfcfe84bd","finding_id":"SEM:d2340dfac420a7370e4e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b32f24ce80193042971850fb87c4b1c8836eb8a72b09e9e1bd48ad0cfcfe84bd","finding_id":"SEM:19946c982a6b8fb64237","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/2-mercaptoethanol.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDUCING_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[328],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41218","line":330,"mapping_status":"MAPPED","ontology_id":"CHEBI:41218","preferred_term":"2-Mercaptoethanol"}],"identifier":"CHEBI:41218","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41218","ontology_label":"mercaptoethanol","ontology_source":"CHEBI"},"preferred_term":"2-Mercaptoethanol","sssom_rows":[{"data_row":89,"object_id":"CHEBI:41218","object_label":"mercaptoethanol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-mercaptoethanol","synonym_count":4}'
   snapshot_sha256: b32f24ce80193042971850fb87c4b1c8836eb8a72b09e9e1bd48ad0cfcfe84bd
 - evidence_id: ev-c819395dfc359393
   kind: prior_review

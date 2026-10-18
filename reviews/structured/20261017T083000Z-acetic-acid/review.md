@@ -89,7 +89,7 @@ Reassess prediction-only role support: Acetic acid
 | ev-52bb223c9369bac9 | docs/data/mapped_ingredients.csv; CSV lines=[442] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15366","line":442,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"56","ontology_id":"CHEBI:15366","preferred_term":"Acetic acid","total_occurrences":"56"}] |
 | ev-584f796d342ab412 | reports/yaml_record_review/Acetic_Acid.md; &#96;data/ingredients/mapped/Acetic_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:43; Completeness:60; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-54aa9e74b9d1dee2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[197,1786] | context_only | [{"current_record_sha256":"1abbee46f4daba495b5996ebff330179a6bd048e4ce5bb805f6a3f5647e1c8d9","finding_id":"SEM:387a7a9783da053124a0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1abbee46f4daba495b5996ebff330179a6bd048e4ce5bb805f6a3f5647e1c8d9","finding_id":"SEM:f6c670a990cd7309117a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2a3e95000a873463 | data/ingredients/mapped/Acetic_Acid.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-2a3e95000a873463 | data/ingredients/mapped/Acetic_Acid.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[440],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15366","line":442,"mapping_status":"MAPPED","ontology_id":"CHEBI:15366","preferred_term":"Acetic acid"}],"identifier":"CHEBI:15366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":56,"edge_count":56,"occurrences":56},"occurrence_statistics":{"media_count":56,"total_occurrences":56},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15366","ontology_label":"acetic acid","ontology_source":"CHEBI"},"preferred_term":"Acetic acid","sssom_rows":[{"data_row":280,"object_id":"CHEBI:15366","object_label":"acetic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Acetic_Acid","synonym_count":18} |
 | ev-332934ca95ac584c | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-686fcdac8a2fc45a] | context_only | Predecessor structured review finding f-686fcdac8a2fc45a in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-30469c685512326a
+  evidence_ids:
+  - ev-3bdcccb6e6053c34
+  - ev-15ab5abd411e323f
+  - ev-bab766fdd5a8b289
+  - ev-52bb223c9369bac9
+  - ev-2a3e95000a873463
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-30469c685512326a
+  evidence_ids:
+  - ev-3bdcccb6e6053c34
+  - ev-54aa9e74b9d1dee2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-30469c685512326a
+  evidence_ids:
+  - ev-584f796d342ab412
+  - ev-54aa9e74b9d1dee2
+  - ev-332934ca95ac584c
 evidence:
 - evidence_id: ev-3bdcccb6e6053c34
   kind: record_content
   reference: data/ingredients/mapped/Acetic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[440],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15366","line":442,"mapping_status":"MAPPED","ontology_id":"CHEBI:15366","preferred_term":"Acetic
     acid"}],"identifier":"CHEBI:15366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":56,"edge_count":56,"occurrences":56},"occurrence_statistics":{"media_count":56,"total_occurrences":56},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15366","ontology_label":"acetic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [440]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Acetic_Acid; data-row positions=[280]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":280,"object_id":"CHEBI:15366","object_label":"acetic
     acid","other":"AcOH|CH3-COOH|CH3CO2H|E 260|E-260|E260|Essigsaeure|Ethanoic acid|Ethylic
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[442]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15366","line":442,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"56","ontology_id":"CHEBI:15366","preferred_term":"Acetic
     acid","total_occurrences":"56"}]'
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[197,1786]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1abbee46f4daba495b5996ebff330179a6bd048e4ce5bb805f6a3f5647e1c8d9","finding_id":"SEM:387a7a9783da053124a0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1abbee46f4daba495b5996ebff330179a6bd048e4ce5bb805f6a3f5647e1c8d9","finding_id":"SEM:f6c670a990cd7309117a","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Acetic_Acid.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[440],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15366","line":442,"mapping_status":"MAPPED","ontology_id":"CHEBI:15366","preferred_term":"Acetic
+    acid"}],"identifier":"CHEBI:15366","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":56,"edge_count":56,"occurrences":56},"occurrence_statistics":{"media_count":56,"total_occurrences":56},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15366","ontology_label":"acetic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Acetic acid","sssom_rows":[{"data_row":280,"object_id":"CHEBI:15366","object_label":"acetic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Acetic_Acid","synonym_count":18}'
   snapshot_sha256: 1abbee46f4daba495b5996ebff330179a6bd048e4ce5bb805f6a3f5647e1c8d9
 - evidence_id: ev-332934ca95ac584c
   kind: prior_review

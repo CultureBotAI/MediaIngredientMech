@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-(-)-sorbose
 | ev-32fd401d4f01adff | docs/data/mapped_ingredients.csv; CSV lines=[1214] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17266","line":1214,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:17266","preferred_term":"L-(-)-sorbose","total_occurrences":"1"}] |
 | ev-63482c52addd2929 | reports/yaml_record_review/L-_-sorbose.md; &#96;data/ingredients/mapped/L-_-sorbose.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:31; Completeness:48; Recommended Edits:55 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a8bfe616945df541 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[802,1706] | context_only | [{"current_record_sha256":"6c8d96558f5a743d2f583ce0c3b7f916f807520c627777a032da90bc3c9ac801","finding_id":"SEM:72e99bc2d874473301f7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6c8d96558f5a743d2f583ce0c3b7f916f807520c627777a032da90bc3c9ac801","finding_id":"SEM:0db69d35f3ea9dff459d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-533f3d4cf07676f6 | data/ingredients/mapped/L-_-sorbose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-533f3d4cf07676f6 | data/ingredients/mapped/L-_-sorbose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1212],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17266","line":1214,"mapping_status":"MAPPED","ontology_id":"CHEBI:17266","preferred_term":"L-(-)-sorbose"}],"identifier":"CHEBI:17266","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:17266","ontology_label":"L-sorbose","ontology_source":"CHEBI"},"preferred_term":"L-(-)-sorbose","sssom_rows":[{"data_row":1592,"object_id":"CHEBI:17266","object_label":"L-sorbose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-_-sorbose","synonym_count":2} |
 | ev-d4e63c511b35d4f9 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-0fa88446526890f5] | context_only | Predecessor structured review finding f-0fa88446526890f5 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5c82fd440e0bfc66
+  evidence_ids:
+  - ev-529626fc88ea1f48
+  - ev-11ac83bd31fbd8ab
+  - ev-c8cb47266244e6d6
+  - ev-32fd401d4f01adff
+  - ev-533f3d4cf07676f6
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5c82fd440e0bfc66
+  evidence_ids:
+  - ev-529626fc88ea1f48
+  - ev-a8bfe616945df541
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5c82fd440e0bfc66
+  evidence_ids:
+  - ev-63482c52addd2929
+  - ev-a8bfe616945df541
+  - ev-d4e63c511b35d4f9
 evidence:
 - evidence_id: ev-529626fc88ea1f48
   kind: record_content
   reference: data/ingredients/mapped/L-_-sorbose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1212],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17266","line":1214,"mapping_status":"MAPPED","ontology_id":"CHEBI:17266","preferred_term":"L-(-)-sorbose"}],"identifier":"CHEBI:17266","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:17266","ontology_label":"L-sorbose","ontology_source":"CHEBI"},"preferred_term":"L-(-)-sorbose","sssom_rows":[{"data_row":1592,"object_id":"CHEBI:17266","object_label":"L-sorbose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-_-sorbose","synonym_count":2}'
   snapshot_sha256: 6c8d96558f5a743d2f583ce0c3b7f916f807520c627777a032da90bc3c9ac801
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1212]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-_-sorbose; data-row positions=[1592]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1592,"object_id":"CHEBI:17266","object_label":"L-sorbose","other":"(3S,4R,5S)-1,3,4,5,6-pentahydroxyhexan-2-one|L-xylo-hex-2-ulose|CAS:87-79-6","predicate_id":"skos:exactMatch","subject_id":"MIM:L-_-sorbose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1214]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17266","line":1214,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:17266","preferred_term":"L-(-)-sorbose","total_occurrences":"1"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[802,1706]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6c8d96558f5a743d2f583ce0c3b7f916f807520c627777a032da90bc3c9ac801","finding_id":"SEM:72e99bc2d874473301f7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6c8d96558f5a743d2f583ce0c3b7f916f807520c627777a032da90bc3c9ac801","finding_id":"SEM:0db69d35f3ea9dff459d","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-_-sorbose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1212],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17266","line":1214,"mapping_status":"MAPPED","ontology_id":"CHEBI:17266","preferred_term":"L-(-)-sorbose"}],"identifier":"CHEBI:17266","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:17266","ontology_label":"L-sorbose","ontology_source":"CHEBI"},"preferred_term":"L-(-)-sorbose","sssom_rows":[{"data_row":1592,"object_id":"CHEBI:17266","object_label":"L-sorbose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-_-sorbose","synonym_count":2}'
   snapshot_sha256: 6c8d96558f5a743d2f583ce0c3b7f916f807520c627777a032da90bc3c9ac801
 - evidence_id: ev-d4e63c511b35d4f9
   kind: prior_review

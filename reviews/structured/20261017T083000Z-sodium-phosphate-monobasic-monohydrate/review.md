@@ -83,14 +83,14 @@ Reassess prediction-only role support: Sodium phosphate monobasic monohydrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-474fdd38bd362fa1 | data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1875],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114249","line":1877,"mapping_status":"MAPPED","ontology_id":"CHEBI:114249","preferred_term":"Sodium phosphate monobasic monohydrate"}],"identifier":"CHEBI:114249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:114249","ontology_label":"sodium dihydrogenphosphate monohydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate monobasic monohydrate","sssom_rows":[{"data_row":2612,"object_id":"CHEBI:114249","object_label":"sodium dihydrogenphosphate monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_phosphate_monobasic_monohydrate","synonym_count":7} |
-| ev-8c98d03f4cd25e15 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1875] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6b04bf3fec3603a5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_phosphate_monobasic_monohydrate; data-row positions=[2612] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2612,"object_id":"CHEBI:114249","object_label":"sodium dihydrogenphosphate monohydrate","other":"Monosodium phosphate monohydrate&#124;Sodium dihydrogen phosphate monohydrate&#124;Sodium phosphate monohydrate&#124;sodium dihydrogen phosphate--water (1/1)&#124;NaH2PO4\u2022H2O&#124;NaH2PO4\u2022H2O(MCIB 742)&#124;CAS:10049-21-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_phosphate_monobasic_monohydrate","validation_method":"manual:apply_312_batch4&#124;OTHER&#124;2026-09-22"}] |
-| ev-62484cec154ce4bc | docs/data/mapped_ingredients.csv; CSV lines=[1877] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:114249","line":1877,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:114249","preferred_term":"Sodium phosphate monobasic monohydrate","total_occurrences":"50"}] |
+| ev-474fdd38bd362fa1 | data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1874],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114249","line":1876,"mapping_status":"MAPPED","ontology_id":"CHEBI:114249","preferred_term":"Sodium phosphate monobasic monohydrate"}],"identifier":"CHEBI:114249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:114249","ontology_label":"sodium dihydrogenphosphate monohydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate monobasic monohydrate","sssom_rows":[{"data_row":2614,"object_id":"CHEBI:114249","object_label":"sodium dihydrogenphosphate monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_phosphate_monobasic_monohydrate","synonym_count":7} |
+| ev-8c98d03f4cd25e15 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1874] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6b04bf3fec3603a5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_phosphate_monobasic_monohydrate; data-row positions=[2614] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2614,"object_id":"CHEBI:114249","object_label":"sodium dihydrogenphosphate monohydrate","other":"Monosodium phosphate monohydrate&#124;Sodium dihydrogen phosphate monohydrate&#124;Sodium phosphate monohydrate&#124;sodium dihydrogen phosphate--water (1/1)&#124;NaH2PO4\u2022H2O&#124;NaH2PO4\u2022H2O(MCIB 742)&#124;CAS:10049-21-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_phosphate_monobasic_monohydrate","validation_method":"manual:apply_312_batch4&#124;OTHER&#124;2026-09-22"}] |
+| ev-62484cec154ce4bc | docs/data/mapped_ingredients.csv; CSV lines=[1876] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:114249","line":1876,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:114249","preferred_term":"Sodium phosphate monobasic monohydrate","total_occurrences":"50"}] |
 | ev-8545d399cbac2c56 | reports/yaml_record_review/20261001T050332Z-Sodium_phosphate_monobasic_monohydrate.md; YAML Record Review: Sodium phosphate monobasic monohydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-70a6f86511008d4f | reports/yaml_record_review/Sodium_phosphate_monobasic_monohydrate.md; &#96;data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:31; Completeness:45; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1c26fcbf4f3934f9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1235,2083] | context_only | [{"current_record_sha256":"e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022","finding_id":"SEM:ff7c0ed2d7826968b3f1","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022","finding_id":"SEM:53ac9abb0c4b1086b5fc","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d723f979cddd89fc | data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-d723f979cddd89fc | data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1874],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114249","line":1876,"mapping_status":"MAPPED","ontology_id":"CHEBI:114249","preferred_term":"Sodium phosphate monobasic monohydrate"}],"identifier":"CHEBI:114249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:114249","ontology_label":"sodium dihydrogenphosphate monohydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium phosphate monobasic monohydrate","sssom_rows":[{"data_row":2614,"object_id":"CHEBI:114249","object_label":"sodium dihydrogenphosphate monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_phosphate_monobasic_monohydrate","synonym_count":7} |
 | ev-8a9856b0a27db3e6 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-33a017a90e349a52] | context_only | Predecessor structured review finding f-33a017a90e349a52 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-cc9c3eea10eed242
+  evidence_ids:
+  - ev-474fdd38bd362fa1
+  - ev-8c98d03f4cd25e15
+  - ev-6b04bf3fec3603a5
+  - ev-62484cec154ce4bc
+  - ev-d723f979cddd89fc
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-cc9c3eea10eed242
+  evidence_ids:
+  - ev-474fdd38bd362fa1
+  - ev-1c26fcbf4f3934f9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,25 +208,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-cc9c3eea10eed242
+  evidence_ids:
+  - ev-8545d399cbac2c56
+  - ev-70a6f86511008d4f
+  - ev-1c26fcbf4f3934f9
+  - ev-8a9856b0a27db3e6
 evidence:
 - evidence_id: ev-474fdd38bd362fa1
   kind: record_content
   reference: data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1875],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114249","line":1877,"mapping_status":"MAPPED","ontology_id":"CHEBI:114249","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1874],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114249","line":1876,"mapping_status":"MAPPED","ontology_id":"CHEBI:114249","preferred_term":"Sodium
     phosphate monobasic monohydrate"}],"identifier":"CHEBI:114249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:114249","ontology_label":"sodium
     dihydrogenphosphate monohydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium
-    phosphate monobasic monohydrate","sssom_rows":[{"data_row":2612,"object_id":"CHEBI:114249","object_label":"sodium
+    phosphate monobasic monohydrate","sssom_rows":[{"data_row":2614,"object_id":"CHEBI:114249","object_label":"sodium
     dihydrogenphosphate monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_phosphate_monobasic_monohydrate","synonym_count":7}'
   snapshot_sha256: e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022
 - evidence_id: ev-8c98d03f4cd25e15
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1875]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1874]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,10 +239,10 @@ evidence:
 - evidence_id: ev-6b04bf3fec3603a5
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_phosphate_monobasic_monohydrate; data-row positions=[2612]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_phosphate_monobasic_monohydrate; data-row positions=[2614]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2612,"object_id":"CHEBI:114249","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2614,"object_id":"CHEBI:114249","object_label":"sodium
     dihydrogenphosphate monohydrate","other":"Monosodium phosphate monohydrate|Sodium
     dihydrogen phosphate monohydrate|Sodium phosphate monohydrate|sodium dihydrogen
     phosphate--water (1/1)|NaH2PO4\u2022H2O|NaH2PO4\u2022H2O(MCIB 742)|CAS:10049-21-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_phosphate_monobasic_monohydrate","validation_method":"manual:apply_312_batch4|OTHER|2026-09-22"}]'
@@ -236,10 +250,10 @@ evidence:
 - evidence_id: ev-62484cec154ce4bc
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1877]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1876]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:114249","line":1877,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:114249","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:114249","line":1876,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:114249","preferred_term":"Sodium
     phosphate monobasic monohydrate","total_occurrences":"50"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-8545d399cbac2c56
@@ -290,7 +304,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1235,2083]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022","finding_id":"SEM:ff7c0ed2d7826968b3f1","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022","finding_id":"SEM:53ac9abb0c4b1086b5fc","kind":"role_evidence","resolution_reason":"Historical
@@ -300,12 +314,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1874],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:114249","line":1876,"mapping_status":"MAPPED","ontology_id":"CHEBI:114249","preferred_term":"Sodium
+    phosphate monobasic monohydrate"}],"identifier":"CHEBI:114249","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:114249","ontology_label":"sodium
+    dihydrogenphosphate monohydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium
+    phosphate monobasic monohydrate","sssom_rows":[{"data_row":2614,"object_id":"CHEBI:114249","object_label":"sodium
+    dihydrogenphosphate monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_phosphate_monobasic_monohydrate","synonym_count":7}'
   snapshot_sha256: e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022
 - evidence_id: ev-8a9856b0a27db3e6
   kind: prior_review

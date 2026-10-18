@@ -90,7 +90,7 @@ Reassess prediction-only role support: Lactate
 | ev-5db3cf590d8514c0 | reports/yaml_record_review/20261001T050238Z-Lactate.md; YAML Record Review: Lactate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-35ae159cbc725197 | reports/yaml_record_review/Lactate.md; &#96;data/ingredients/mapped/Lactate.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d2b5b81d27a89615 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[843,1386,1541] | context_only | [{"current_record_sha256":"31c51bf1fe574408d0283a89af8923db94f20cdd5405817ad2b35fea8a5f5891","finding_id":"SEM:00b1ac0c24fef647364c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"31c51bf1fe574408d0283a89af8923db94f20cdd5405817ad2b35fea8a5f5891","finding_id":"SEM:6a709519a173ad04c3cd","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"31c51bf1fe574408d0283a89af8923db94f20cdd5405817ad2b35fea8a5f5891","finding_id":"SEM:c3a17a4e7f66270505a1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-58f9d42d3330180f | data/ingredients/mapped/Lactate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-58f9d42d3330180f | data/ingredients/mapped/Lactate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1274],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:24996","line":1276,"mapping_status":"MAPPED","ontology_id":"CHEBI:24996","preferred_term":"Lactate"}],"identifier":"CHEBI:24996","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:24996","ontology_label":"lactate","ontology_source":"CHEBI"},"preferred_term":"Lactate","sssom_rows":[{"data_row":1653,"object_id":"CHEBI:24996","object_label":"lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactate","synonym_count":13} |
 | ev-54e9d0f70c54c217 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-fcf00281c538a1c1] | context_only | Predecessor structured review finding f-fcf00281c538a1c1 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-09c27e9da38f0c74
+  evidence_ids:
+  - ev-2376cc2eeed5c087
+  - ev-1115f68d6256301a
+  - ev-7c23a5725d4e25eb
+  - ev-bc5c532fec415cf7
+  - ev-58f9d42d3330180f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-09c27e9da38f0c74
+  evidence_ids:
+  - ev-2376cc2eeed5c087
+  - ev-d2b5b81d27a89615
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-09c27e9da38f0c74
+  evidence_ids:
+  - ev-5db3cf590d8514c0
+  - ev-35ae159cbc725197
+  - ev-d2b5b81d27a89615
+  - ev-54e9d0f70c54c217
 evidence:
 - evidence_id: ev-2376cc2eeed5c087
   kind: record_content
   reference: data/ingredients/mapped/Lactate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1274],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:24996","line":1276,"mapping_status":"MAPPED","ontology_id":"CHEBI:24996","preferred_term":"Lactate"}],"identifier":"CHEBI:24996","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:24996","ontology_label":"lactate","ontology_source":"CHEBI"},"preferred_term":"Lactate","sssom_rows":[{"data_row":1653,"object_id":"CHEBI:24996","object_label":"lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactate","synonym_count":13}'
   snapshot_sha256: 31c51bf1fe574408d0283a89af8923db94f20cdd5405817ad2b35fea8a5f5891
@@ -213,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1274]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +236,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Lactate; data-row positions=[1653]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1653,"object_id":"CHEBI:24996","object_label":"lactate","other":"(+)-lactate|(2S)-2-hydroxypropanoate|(S)-lactate|2-hydroxypropanoate|2-hydroxypropionate|L(+)-lactate|L-(+)-lactate|L-lactate|MeCH(OH)CO2
     anion|b-lactate|beta-lactate|DL-lactate|CAS:113-21-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Lactate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -231,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1276]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:24996","line":1276,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"9","ontology_id":"CHEBI:24996","preferred_term":"Lactate","total_occurrences":"9"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -289,7 +303,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[843,1386,1541]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"31c51bf1fe574408d0283a89af8923db94f20cdd5405817ad2b35fea8a5f5891","finding_id":"SEM:00b1ac0c24fef647364c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"31c51bf1fe574408d0283a89af8923db94f20cdd5405817ad2b35fea8a5f5891","finding_id":"SEM:6a709519a173ad04c3cd","kind":"role_evidence","resolution_reason":"Historical
@@ -300,14 +314,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lactate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1274],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:24996","line":1276,"mapping_status":"MAPPED","ontology_id":"CHEBI:24996","preferred_term":"Lactate"}],"identifier":"CHEBI:24996","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":9,"edge_count":9,"occurrences":9},"occurrence_statistics":{"media_count":9,"total_occurrences":9},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:24996","ontology_label":"lactate","ontology_source":"CHEBI"},"preferred_term":"Lactate","sssom_rows":[{"data_row":1653,"object_id":"CHEBI:24996","object_label":"lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactate","synonym_count":13}'
   snapshot_sha256: 31c51bf1fe574408d0283a89af8923db94f20cdd5405817ad2b35fea8a5f5891
 - evidence_id: ev-54e9d0f70c54c217
   kind: prior_review

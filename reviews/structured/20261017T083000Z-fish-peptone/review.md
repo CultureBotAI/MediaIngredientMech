@@ -89,7 +89,7 @@ Reassess prediction-only role support: Fish peptone
 | ev-f26273d6d3ce7105 | docs/data/mapped_ingredients.csv; CSV lines=[1010] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000462","line":1010,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"MICRO:0000462","preferred_term":"Fish peptone","total_occurrences":"6"}] |
 | ev-a9b1c467a0d065c4 | reports/yaml_record_review/Fish_peptone.md; &#96;data/ingredients/mapped/Fish_peptone.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:33; Completeness:55; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-351364257f521c8b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[619,1635] | context_only | [{"current_record_sha256":"b825b310961dfdecfba281c6b7b78bdaedfd1c4cc171583ef918a27a71ff1db4","finding_id":"SEM:659c614ed6fd0a2f620c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b825b310961dfdecfba281c6b7b78bdaedfd1c4cc171583ef918a27a71ff1db4","finding_id":"SEM:c13e4f4ea69b18b83bee","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-7bfba86f468bca73 | data/ingredients/mapped/Fish_peptone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-7bfba86f468bca73 | data/ingredients/mapped/Fish_peptone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1008],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000462","line":1010,"mapping_status":"MAPPED","ontology_id":"MICRO:0000462","preferred_term":"Fish peptone"}],"identifier":"MICRO:0000462","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000462","ontology_label":"fish peptone","ontology_source":"MICRO"},"preferred_term":"Fish peptone","sssom_rows":[{"data_row":1214,"object_id":"MICRO:0000462","object_label":"fish peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fish_peptone","synonym_count":0} |
 | ev-de59f1f0aafb91e5 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-a23ac704b1e8cd6e] | context_only | Predecessor structured review finding f-a23ac704b1e8cd6e in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0a28bb5012dbda60
+  evidence_ids:
+  - ev-806c480fc229144b
+  - ev-0b58f64f39667cc5
+  - ev-054e8cfdcf65bee9
+  - ev-f26273d6d3ce7105
+  - ev-7bfba86f468bca73
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0a28bb5012dbda60
+  evidence_ids:
+  - ev-806c480fc229144b
+  - ev-351364257f521c8b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0a28bb5012dbda60
+  evidence_ids:
+  - ev-a9b1c467a0d065c4
+  - ev-351364257f521c8b
+  - ev-de59f1f0aafb91e5
 evidence:
 - evidence_id: ev-806c480fc229144b
   kind: record_content
   reference: data/ingredients/mapped/Fish_peptone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1008],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000462","line":1010,"mapping_status":"MAPPED","ontology_id":"MICRO:0000462","preferred_term":"Fish
     peptone"}],"identifier":"MICRO:0000462","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000462","ontology_label":"fish
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1008]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fish_peptone; data-row positions=[1214]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1214,"object_id":"MICRO:0000462","object_label":"fish
     peptone","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Fish_peptone","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1010]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000462","line":1010,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"MICRO:0000462","preferred_term":"Fish
     peptone","total_occurrences":"6"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[619,1635]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b825b310961dfdecfba281c6b7b78bdaedfd1c4cc171583ef918a27a71ff1db4","finding_id":"SEM:659c614ed6fd0a2f620c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b825b310961dfdecfba281c6b7b78bdaedfd1c4cc171583ef918a27a71ff1db4","finding_id":"SEM:c13e4f4ea69b18b83bee","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fish_peptone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1008],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000462","line":1010,"mapping_status":"MAPPED","ontology_id":"MICRO:0000462","preferred_term":"Fish
+    peptone"}],"identifier":"MICRO:0000462","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000462","ontology_label":"fish
+    peptone","ontology_source":"MICRO"},"preferred_term":"Fish peptone","sssom_rows":[{"data_row":1214,"object_id":"MICRO:0000462","object_label":"fish
+    peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fish_peptone","synonym_count":0}'
   snapshot_sha256: b825b310961dfdecfba281c6b7b78bdaedfd1c4cc171583ef918a27a71ff1db4
 - evidence_id: ev-de59f1f0aafb91e5
   kind: prior_review

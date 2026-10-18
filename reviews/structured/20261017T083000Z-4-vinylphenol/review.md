@@ -91,8 +91,8 @@ Disposition: Token presence remains reproducible, but the earlier pattern-based 
 | ev-44de6ad13aadec37 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[160] | context_only | [{"current_record_sha256":"8d4c406e24cbb343fb17cd6345b6628caf2e27ca07510c73c8ff2376a815c0f9","finding_id":"SEM:902a8fd6eafd76c8cdf5","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-f983f8801d1e4699 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-be91e29ea6694d28] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-d8b130cb30e86aec | data/ingredients/mapped/4-vinylphenol.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "sssom_other_backfill", "synonym_text": "Trace minerals (see Medium No.151", "synonym_type": "RAW_TEXT"}, {"source": "sssom_other_backfill", "synonym_text": "Trace minerals(see Medium No.151)", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_FROM_CAS_LOOKUP", "changes": "Created from CultureBotHT CAS-RN=2628-17-3; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). ", "curator": "audit_cas_chebi_followup", "llm_assisted": false, "new_status": "MAPPED", "timestamp": "2026-04-29T06:34:31.158938+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-01T07:35:31.933265+00:00"}, {"action": "AUTO_BACKFILL_CHEBI_CHEMISTRY", "changes": "molecular_formula=C8H8O; inchi=InChI=1S/C8H8O/c1-2-7-3-5-8(9)6-4-7/h2-6,9H,1H2; smiles=C=Cc1ccc(O)cc1", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-01T08:08:27.759520+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:12.131604+00:00"}, {"action": "REGRADED_EXACT_TO_SYNONYM", "changes": "mapping_quality EXACT_MATCH -&gt; SYNONYM_MATCH (#317). The record's label does not equal the term's primary label '4-hydroxystyrene'; it matches the ChEBI synonym '4-vinylphenol' on CHEBI:1883. The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade overstated. ontology_id is unchanged \u2014 the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).", "curator": "regrade_synonym_matches", "llm_assisted": false, "timestamp": "2026-08-10T00:00:00+00:00"}, {"action": "REGRADED_TO_CAS_RN_LOOKUP", "changes": "mapping_quality SYNONYM_MATCH -&gt; CAS_RN_LOOKUP (#317). The record was created by an explicit CAS-to-ChEBI lookup and its current CAS RN 2628-17-3 uniquely resolves by ChEBI xref to CHEBI:1883 '4-hydroxystyrene'. CAS_RN_LOOKUP records the method that established this mapping; a lexical grade would discard that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under Rule D (#438), independently of mapping quality.", "curator": "regrade_synonym_matches", "llm_assisted": false, "timestamp": "2026-08-24T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Recovered 1 surface form(s) that the published SSSOM &#96;other&#96; carried but no curated record did, so a rebuild would have dropped them from KGX: 'Trace minerals (see Medium No.151'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).", "curator": "claude_sssom_surface_form_backfill", "llm_assisted": false, "timestamp": "2026-09-02T17:40:44.716277+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Recovered 1 surface form(s) that the published SSSOM &#96;other&#96; carried but no curated record did, so a rebuild would have dropped them from KGX: 'Trace minerals(see Medium No.151)'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).", "curator": "claude_sssom_surface_form_backfill", "llm_assisted": false, "timestamp": "2026-09-02T22:41:49.137449+00:00"}], "identifier": "CHEBI:1883", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). ", "source": "CultureBotHT"}], "mapping_quality": "CAS_RN_LOOKUP", "ontology_id": "CHEBI:1883", "ontology_label": "4-hydroxystyrene", "ontology_source": "CHEBI"}} |
-| ev-0de8553689e72bef | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:4-vinylphenol | supports | [{"comment": "", "confidence": "0.9", "data_row": 215, "mapping_date": "2026-09-02", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "CHEBI:1883", "object_label": "4-hydroxystyrene", "object_source": "obo:chebi.owl", "other": "4-ethenylphenol&#124;Trace minerals (see Medium No.151&#124;Trace minerals(see Medium No.151)&#124;CAS:2628-17-3", "predicate_id": "skos:exactMatch", "source": "MIM:CultureBotHT&#124;MIM:curator=claude_sssom_surface_form_backfill&#124;kgm:chebi_xrefs&#124;kgm:mediadive_compounds&#124;kgm:mediaingredientmech_reviewed&#124;kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]&#124;kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]&#124;kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]&#124;kgm:primary_mappings[kegg_compound]", "subject_id": "MIM:4-vinylphenol", "subject_label": "4-vinylphenol", "validation_method": "OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-d8b130cb30e86aec | data/ingredients/mapped/4-vinylphenol.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[397],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:1883","line":399,"mapping_status":"MAPPED","ontology_id":"CHEBI:1883","preferred_term":"4-vinylphenol"}],"identifier":"CHEBI:1883","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:1883","ontology_label":"4-hydroxystyrene","ontology_source":"CHEBI"},"preferred_term":"4-vinylphenol","sssom_rows":[{"data_row":215,"object_id":"CHEBI:1883","object_label":"4-hydroxystyrene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:4-vinylphenol","synonym_count":3} |
+| ev-0de8553689e72bef | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:4-vinylphenol; data-row positions=[215] | supports | Current exact-subject rows, including complete other payload: [{"data_row":215,"object_id":"CHEBI:1883","object_label":"4-hydroxystyrene","other":"4-ethenylphenol&#124;Trace minerals (see Medium No.151&#124;Trace minerals(see Medium No.151)&#124;CAS:2628-17-3","predicate_id":"skos:exactMatch","subject_id":"MIM:4-vinylphenol","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
 | ev-93f74be01346ddd4 | reports/yaml_record_review/4-vinylphenol.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-2d38e4eca6353261 | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-be91e29ea6694d28] | context_only | Predecessor structured review finding scope-f-be91e29ea6694d28 in 20261011T030852Z-mim-token-scope-reassessment |
 
@@ -189,6 +189,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-88ed3645c26c14b6
+  evidence_ids:
+  - ev-a30c5b4d27c54326
+  - ev-ae558191b7650ff8
+  - ev-5411f74c8ccead5d
+  - ev-738dce96d98f0b27
+  - ev-d8b130cb30e86aec
+  - ev-0de8553689e72bef
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -197,6 +204,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-88ed3645c26c14b6
+  evidence_ids:
+  - ev-a30c5b4d27c54326
+  - ev-44de6ad13aadec37
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -205,13 +215,19 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-88ed3645c26c14b6
+  evidence_ids:
+  - ev-bd1a1d6f224cb9f2
+  - ev-44de6ad13aadec37
+  - ev-f983f8801d1e4699
+  - ev-93f74be01346ddd4
+  - ev-2d38e4eca6353261
 evidence:
 - evidence_id: ev-a30c5b4d27c54326
   kind: record_content
   reference: data/ingredients/mapped/4-vinylphenol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[397],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:1883","line":399,"mapping_status":"MAPPED","ontology_id":"CHEBI:1883","preferred_term":"4-vinylphenol"}],"identifier":"CHEBI:1883","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:1883","ontology_label":"4-hydroxystyrene","ontology_source":"CHEBI"},"preferred_term":"4-vinylphenol","sssom_rows":[{"data_row":215,"object_id":"CHEBI:1883","object_label":"4-hydroxystyrene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:4-vinylphenol","synonym_count":3}'
   snapshot_sha256: 8d4c406e24cbb343fb17cd6345b6628caf2e27ca07510c73c8ff2376a815c0f9
@@ -219,7 +235,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [397]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -228,7 +244,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:4-vinylphenol; data-row positions=[215]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":215,"object_id":"CHEBI:1883","object_label":"4-hydroxystyrene","other":"4-ethenylphenol|Trace
     minerals (see Medium No.151|Trace minerals(see Medium No.151)|CAS:2628-17-3","predicate_id":"skos:exactMatch","subject_id":"MIM:4-vinylphenol","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -237,7 +253,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[399]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:1883","line":399,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:1883","preferred_term":"4-vinylphenol","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -260,7 +276,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[160]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"8d4c406e24cbb343fb17cd6345b6628caf2e27ca07510c73c8ff2376a815c0f9","finding_id":"SEM:902a8fd6eafd76c8cdf5","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -302,69 +318,18 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/4-vinylphenol.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "sssom_other_backfill", "synonym_text":
-    "Trace minerals (see Medium No.151", "synonym_type": "RAW_TEXT"}, {"source": "sssom_other_backfill",
-    "synonym_text": "Trace minerals(see Medium No.151)", "synonym_type": "RAW_TEXT"}],
-    "history": [{"action": "CREATED_FROM_CAS_LOOKUP", "changes": "Created from CultureBotHT
-    CAS-RN=2628-17-3; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from
-    CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref).
-    ", "curator": "audit_cas_chebi_followup", "llm_assisted": false, "new_status":
-    "MAPPED", "timestamp": "2026-04-29T06:34:31.158938+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)", "curator":
-    "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-01T07:35:31.933265+00:00"},
-    {"action": "AUTO_BACKFILL_CHEBI_CHEMISTRY", "changes": "molecular_formula=C8H8O;
-    inchi=InChI=1S/C8H8O/c1-2-7-3-5-8(9)6-4-7/h2-6,9H,1H2; smiles=C=Cc1ccc(O)cc1",
-    "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp":
-    "2026-05-01T08:08:27.759520+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated
-    (molecular_formula))", "curator": "auto_classify_ingredient_type", "llm_assisted":
-    false, "timestamp": "2026-05-02T03:12:12.131604+00:00"}, {"action": "REGRADED_EXACT_TO_SYNONYM",
-    "changes": "mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record''s
-    label does not equal the term''s primary label ''4-hydroxystyrene''; it matches
-    the ChEBI synonym ''4-vinylphenol'' on CHEBI:1883. The schema defines EXACT_MATCH
-    as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
-    so the recorded grade overstated. ontology_id is unchanged \u2014 the term is
-    correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).",
-    "curator": "regrade_synonym_matches", "llm_assisted": false, "timestamp": "2026-08-10T00:00:00+00:00"},
-    {"action": "REGRADED_TO_CAS_RN_LOOKUP", "changes": "mapping_quality SYNONYM_MATCH
-    -> CAS_RN_LOOKUP (#317). The record was created by an explicit CAS-to-ChEBI lookup
-    and its current CAS RN 2628-17-3 uniquely resolves by ChEBI xref to CHEBI:1883
-    ''4-hydroxystyrene''. CAS_RN_LOOKUP records the method that established this mapping;
-    a lexical grade would discard that provenance. ontology_id is unchanged. The own-identifier
-    SSSOM predicate remains skos:exactMatch under Rule D (#438), independently of
-    mapping quality.", "curator": "regrade_synonym_matches", "llm_assisted": false,
-    "timestamp": "2026-08-24T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS", "changes":
-    "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated
-    record did, so a rebuild would have dropped them from KGX: ''Trace minerals (see
-    Medium No.151''. Tokens already present on the kg-microbe ontology node were left
-    out as redundant (#520).", "curator": "claude_sssom_surface_form_backfill", "llm_assisted":
-    false, "timestamp": "2026-09-02T17:40:44.716277+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried
-    but no curated record did, so a rebuild would have dropped them from KGX: ''Trace
-    minerals(see Medium No.151)''. Tokens already present on the kg-microbe ontology
-    node were left out as redundant (#520).", "curator": "claude_sssom_surface_form_backfill",
-    "llm_assisted": false, "timestamp": "2026-09-02T22:41:49.137449+00:00"}], "identifier":
-    "CHEBI:1883", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes":
-    "Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI
-    sqlite (cas xref). ", "source": "CultureBotHT"}], "mapping_quality": "CAS_RN_LOOKUP",
-    "ontology_id": "CHEBI:1883", "ontology_label": "4-hydroxystyrene", "ontology_source":
-    "CHEBI"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[397],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:1883","line":399,"mapping_status":"MAPPED","ontology_id":"CHEBI:1883","preferred_term":"4-vinylphenol"}],"identifier":"CHEBI:1883","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:1883","ontology_label":"4-hydroxystyrene","ontology_source":"CHEBI"},"preferred_term":"4-vinylphenol","sssom_rows":[{"data_row":215,"object_id":"CHEBI:1883","object_label":"4-hydroxystyrene","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:4-vinylphenol","synonym_count":3}'
   snapshot_sha256: 8d4c406e24cbb343fb17cd6345b6628caf2e27ca07510c73c8ff2376a815c0f9
 - evidence_id: ev-0de8553689e72bef
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:4-vinylphenol
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:4-vinylphenol; data-row positions=[215]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.9", "data_row": 215, "mapping_date":
-    "2026-09-02", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
-    "CHEBI:1883", "object_label": "4-hydroxystyrene", "object_source": "obo:chebi.owl",
-    "other": "4-ethenylphenol|Trace minerals (see Medium No.151|Trace minerals(see
-    Medium No.151)|CAS:2628-17-3", "predicate_id": "skos:exactMatch", "source": "MIM:CultureBotHT|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:primary_mappings[kegg_compound]",
-    "subject_id": "MIM:4-vinylphenol", "subject_label": "4-vinylphenol", "validation_method":
-    "OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":215,"object_id":"CHEBI:1883","object_label":"4-hydroxystyrene","other":"4-ethenylphenol|Trace
+    minerals (see Medium No.151|Trace minerals(see Medium No.151)|CAS:2628-17-3","predicate_id":"skos:exactMatch","subject_id":"MIM:4-vinylphenol","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-93f74be01346ddd4
   kind: prior_review

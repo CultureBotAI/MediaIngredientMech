@@ -89,7 +89,7 @@ Reassess prediction-only role support: D-Sorbitol
 | ev-bb02726fd6cf0f1d | docs/data/mapped_ingredients.csv; CSV lines=[843] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17924","line":843,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:17924","preferred_term":"D-Sorbitol","total_occurrences":"3"}] |
 | ev-cc55dd12f99f39a7 | reports/yaml_record_review/D-sorbitol.md; &#96;data/ingredients/mapped/D-sorbitol.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:37; Completeness:50; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b0be1271e0cbfd47 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[506,1903] | context_only | [{"current_record_sha256":"b03dc5b410aa70e2fe4e274031b77b502c05db3c05bf44dd225f91d81f287744","finding_id":"SEM:8ef04bf3709ff91a79a1","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b03dc5b410aa70e2fe4e274031b77b502c05db3c05bf44dd225f91d81f287744","finding_id":"SEM:dd4abb6f811151957c9b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-82217f39a8fb2a0f | data/ingredients/mapped/D-sorbitol.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-82217f39a8fb2a0f | data/ingredients/mapped/D-sorbitol.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[841],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17924","line":843,"mapping_status":"MAPPED","ontology_id":"CHEBI:17924","preferred_term":"D-Sorbitol"}],"identifier":"CHEBI:17924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17924","ontology_label":"D-glucitol","ontology_source":"CHEBI"},"preferred_term":"D-Sorbitol","sssom_rows":[{"data_row":952,"object_id":"CHEBI:17924","object_label":"D-glucitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-sorbitol","synonym_count":13} |
 | ev-219f8e76150cbce0 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-30a0305e4438e852] | context_only | Predecessor structured review finding f-30a0305e4438e852 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3cabee2baf590734
+  evidence_ids:
+  - ev-3c9977819d06b451
+  - ev-443f323953d363e2
+  - ev-945edb587e5b98bb
+  - ev-bb02726fd6cf0f1d
+  - ev-82217f39a8fb2a0f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3cabee2baf590734
+  evidence_ids:
+  - ev-3c9977819d06b451
+  - ev-b0be1271e0cbfd47
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3cabee2baf590734
+  evidence_ids:
+  - ev-cc55dd12f99f39a7
+  - ev-b0be1271e0cbfd47
+  - ev-219f8e76150cbce0
 evidence:
 - evidence_id: ev-3c9977819d06b451
   kind: record_content
   reference: data/ingredients/mapped/D-sorbitol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[841],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17924","line":843,"mapping_status":"MAPPED","ontology_id":"CHEBI:17924","preferred_term":"D-Sorbitol"}],"identifier":"CHEBI:17924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17924","ontology_label":"D-glucitol","ontology_source":"CHEBI"},"preferred_term":"D-Sorbitol","sssom_rows":[{"data_row":952,"object_id":"CHEBI:17924","object_label":"D-glucitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-sorbitol","synonym_count":13}'
   snapshot_sha256: b03dc5b410aa70e2fe4e274031b77b502c05db3c05bf44dd225f91d81f287744
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [841]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-sorbitol; data-row positions=[952]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":952,"object_id":"CHEBI:17924","object_label":"D-glucitol","other":"(-)-D-sorbitol|(-)-sorbitol|(2R,3R,4R,5S)-hexane-1,2,3,4,5,6-hexol|D-(-)-sorbitol|D-Sorbit|D-sorbitol
     (D-glucitol)|E 420|E-420|E420|G-ol|Glc-ol|L-Gulitol|CAS:50-70-4","predicate_id":"skos:exactMatch","subject_id":"MIM:D-sorbitol","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[843]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17924","line":843,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:17924","preferred_term":"D-Sorbitol","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[506,1903]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b03dc5b410aa70e2fe4e274031b77b502c05db3c05bf44dd225f91d81f287744","finding_id":"SEM:8ef04bf3709ff91a79a1","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b03dc5b410aa70e2fe4e274031b77b502c05db3c05bf44dd225f91d81f287744","finding_id":"SEM:dd4abb6f811151957c9b","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-sorbitol.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[841],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17924","line":843,"mapping_status":"MAPPED","ontology_id":"CHEBI:17924","preferred_term":"D-Sorbitol"}],"identifier":"CHEBI:17924","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17924","ontology_label":"D-glucitol","ontology_source":"CHEBI"},"preferred_term":"D-Sorbitol","sssom_rows":[{"data_row":952,"object_id":"CHEBI:17924","object_label":"D-glucitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-sorbitol","synonym_count":13}'
   snapshot_sha256: b03dc5b410aa70e2fe4e274031b77b502c05db3c05bf44dd225f91d81f287744
 - evidence_id: ev-219f8e76150cbce0
   kind: prior_review

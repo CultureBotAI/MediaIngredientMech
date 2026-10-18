@@ -83,13 +83,13 @@ Reassess prediction-only role support: Paromomycin sulfate salt
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-622e0450d5bbf9ad | data/ingredients/mapped/Paromomycin_Sulfate_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1621],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7935","line":1623,"mapping_status":"MAPPED","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin sulfate salt"}],"identifier":"CHEBI:7935","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:7935","ontology_label":"paromomycin sulfate","ontology_source":"CHEBI"},"preferred_term":"Paromomycin sulfate salt","sssom_rows":[{"data_row":2205,"object_id":"CHEBI:7935","object_label":"paromomycin sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Paromomycin_Sulfate_Salt","synonym_count":1} |
-| ev-7eb7302e4caf24a6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1621] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-398952f6e8792b87 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Paromomycin_Sulfate_Salt; data-row positions=[2205] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2205,"object_id":"CHEBI:7935","object_label":"paromomycin sulfate","other":"(1R,2R,3S,4R,6S)-4,6-diamino-2-{[3-O-(2,6-diamino-2,6-dideoxy-beta-L-idopyranosyl)-beta-D-ribofuranosyl]oxy}-3-hydroxycyclohexyl 2-amino-2-deoxy-alpha-D-glucopyranoside sulfate&#124;CAS:1263-89-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Paromomycin_Sulfate_Salt","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-53cdae5c098b9595 | docs/data/mapped_ingredients.csv; CSV lines=[1623] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:7935","line":1623,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin sulfate salt","total_occurrences":"0"}] |
+| ev-622e0450d5bbf9ad | data/ingredients/mapped/Paromomycin_Sulfate_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1620],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7935","line":1622,"mapping_status":"MAPPED","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin sulfate salt"}],"identifier":"CHEBI:7935","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:7935","ontology_label":"paromomycin sulfate","ontology_source":"CHEBI"},"preferred_term":"Paromomycin sulfate salt","sssom_rows":[{"data_row":2207,"object_id":"CHEBI:7935","object_label":"paromomycin sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Paromomycin_Sulfate_Salt","synonym_count":1} |
+| ev-7eb7302e4caf24a6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1620] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-398952f6e8792b87 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Paromomycin_Sulfate_Salt; data-row positions=[2207] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2207,"object_id":"CHEBI:7935","object_label":"paromomycin sulfate","other":"(1R,2R,3S,4R,6S)-4,6-diamino-2-{[3-O-(2,6-diamino-2,6-dideoxy-beta-L-idopyranosyl)-beta-D-ribofuranosyl]oxy}-3-hydroxycyclohexyl 2-amino-2-deoxy-alpha-D-glucopyranoside sulfate&#124;CAS:1263-89-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Paromomycin_Sulfate_Salt","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-53cdae5c098b9595 | docs/data/mapped_ingredients.csv; CSV lines=[1622] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:7935","line":1622,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin sulfate salt","total_occurrences":"0"}] |
 | ev-49b5a0d9e964758e | reports/yaml_record_review/Paromomycin_Sulfate_Salt.md; &#96;data/ingredients/mapped/Paromomycin_Sulfate_Salt.yaml&#96;:2; Verdict:4; Identity:9; Validation:18; Evidence:29; Completeness:40; Recommended Edits:46 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-94ebeeb2912ee229 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1097,1944] | context_only | [{"current_record_sha256":"aef109d09c857f66543bd72b0d96aa4c89c6e30b5502c03377bf6ace94d14ab5","finding_id":"SEM:7803dc4eeb162b5b5f2d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aef109d09c857f66543bd72b0d96aa4c89c6e30b5502c03377bf6ace94d14ab5","finding_id":"SEM:2091815294b85405d79b","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-41f795b45f47d019 | data/ingredients/mapped/Paromomycin_Sulfate_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-41f795b45f47d019 | data/ingredients/mapped/Paromomycin_Sulfate_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1620],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7935","line":1622,"mapping_status":"MAPPED","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin sulfate salt"}],"identifier":"CHEBI:7935","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:7935","ontology_label":"paromomycin sulfate","ontology_source":"CHEBI"},"preferred_term":"Paromomycin sulfate salt","sssom_rows":[{"data_row":2207,"object_id":"CHEBI:7935","object_label":"paromomycin sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Paromomycin_Sulfate_Salt","synonym_count":1} |
 | ev-91f417cd6cde1e5c | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-879d70ac99408a3e] | context_only | Predecessor structured review finding f-879d70ac99408a3e in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c4a1845e3ea71940
+  evidence_ids:
+  - ev-622e0450d5bbf9ad
+  - ev-7eb7302e4caf24a6
+  - ev-398952f6e8792b87
+  - ev-53cdae5c098b9595
+  - ev-41f795b45f47d019
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c4a1845e3ea71940
+  evidence_ids:
+  - ev-622e0450d5bbf9ad
+  - ev-94ebeeb2912ee229
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c4a1845e3ea71940
+  evidence_ids:
+  - ev-49b5a0d9e964758e
+  - ev-94ebeeb2912ee229
+  - ev-91f417cd6cde1e5c
 evidence:
 - evidence_id: ev-622e0450d5bbf9ad
   kind: record_content
   reference: data/ingredients/mapped/Paromomycin_Sulfate_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1621],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7935","line":1623,"mapping_status":"MAPPED","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1620],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7935","line":1622,"mapping_status":"MAPPED","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin
     sulfate salt"}],"identifier":"CHEBI:7935","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:7935","ontology_label":"paromomycin
-    sulfate","ontology_source":"CHEBI"},"preferred_term":"Paromomycin sulfate salt","sssom_rows":[{"data_row":2205,"object_id":"CHEBI:7935","object_label":"paromomycin
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Paromomycin sulfate salt","sssom_rows":[{"data_row":2207,"object_id":"CHEBI:7935","object_label":"paromomycin
     sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Paromomycin_Sulfate_Salt","synonym_count":1}'
   snapshot_sha256: aef109d09c857f66543bd72b0d96aa4c89c6e30b5502c03377bf6ace94d14ab5
 - evidence_id: ev-7eb7302e4caf24a6
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1621]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1620]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,20 +233,20 @@ evidence:
 - evidence_id: ev-398952f6e8792b87
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Paromomycin_Sulfate_Salt; data-row positions=[2205]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Paromomycin_Sulfate_Salt; data-row positions=[2207]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2205,"object_id":"CHEBI:7935","object_label":"paromomycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2207,"object_id":"CHEBI:7935","object_label":"paromomycin
     sulfate","other":"(1R,2R,3S,4R,6S)-4,6-diamino-2-{[3-O-(2,6-diamino-2,6-dideoxy-beta-L-idopyranosyl)-beta-D-ribofuranosyl]oxy}-3-hydroxycyclohexyl
     2-amino-2-deoxy-alpha-D-glucopyranoside sulfate|CAS:1263-89-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Paromomycin_Sulfate_Salt","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-53cdae5c098b9595
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1623]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1622]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:7935","line":1623,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:7935","line":1622,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin
     sulfate salt","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-49b5a0d9e964758e
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1097,1944]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"aef109d09c857f66543bd72b0d96aa4c89c6e30b5502c03377bf6ace94d14ab5","finding_id":"SEM:7803dc4eeb162b5b5f2d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aef109d09c857f66543bd72b0d96aa4c89c6e30b5502c03377bf6ace94d14ab5","finding_id":"SEM:2091815294b85405d79b","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Paromomycin_Sulfate_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1620],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:7935","line":1622,"mapping_status":"MAPPED","ontology_id":"CHEBI:7935","preferred_term":"Paromomycin
+    sulfate salt"}],"identifier":"CHEBI:7935","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:7935","ontology_label":"paromomycin
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Paromomycin sulfate salt","sssom_rows":[{"data_row":2207,"object_id":"CHEBI:7935","object_label":"paromomycin
+    sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Paromomycin_Sulfate_Salt","synonym_count":1}'
   snapshot_sha256: aef109d09c857f66543bd72b0d96aa4c89c6e30b5502c03377bf6ace94d14ab5
 - evidence_id: ev-91f417cd6cde1e5c
   kind: prior_review

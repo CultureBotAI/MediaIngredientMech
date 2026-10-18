@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-34d9cb7116f4f61a
+  evidence_ids:
+  - ev-aafc74be954855dc
+  - ev-df1506af88112c92
+  - ev-2a90b61c10a65267
+  - ev-9e164d19725b67b7
+  - ev-e6da62898e3b1c43
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-34d9cb7116f4f61a
+  evidence_ids:
+  - ev-aafc74be954855dc
+  - ev-d42bd8cf9804ede6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-34d9cb7116f4f61a
+  evidence_ids:
+  - ev-ba962b5e6cece14e
+  - ev-d42bd8cf9804ede6
+  - ev-bdad0d97f303ee7c
 evidence:
 - evidence_id: ev-aafc74be954855dc
   kind: record_content
   reference: data/ingredients/mapped/E-Amino-N-Caproic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[931],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16586","line":933,"mapping_status":"MAPPED","ontology_id":"CHEBI:16586","preferred_term":"e-Amino-N-Caproic
     Acid"}],"identifier":"CHEBI:16586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16586","ontology_label":"6-aminohexanoic
@@ -107,7 +120,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [931]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,7 +129,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:E-Amino-N-Caproic_Acid; data-row positions=[1105]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1105,"object_id":"CHEBI:16586","object_label":"6-aminohexanoic
     acid","other":"CAS:60-32-2","predicate_id":"skos:exactMatch","subject_id":"MIM:E-Amino-N-Caproic_Acid","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -125,7 +138,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[933]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16586","line":933,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16586","preferred_term":"e-Amino-N-Caproic
     Acid","total_occurrences":"0"}]'
@@ -151,7 +164,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[562,1715]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f2a76d5f402e91b0d3b92260d2c6467489a680512f0b33c232a5f69cb2de2ff2","finding_id":"SEM:cdb9e40642441de02774","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f2a76d5f402e91b0d3b92260d2c6467489a680512f0b33c232a5f69cb2de2ff2","finding_id":"SEM:27a9b7414e0896f6fa35","kind":"role_evidence","resolution_reason":"Historical
@@ -161,12 +174,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/E-Amino-N-Caproic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[931],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16586","line":933,"mapping_status":"MAPPED","ontology_id":"CHEBI:16586","preferred_term":"e-Amino-N-Caproic
+    Acid"}],"identifier":"CHEBI:16586","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16586","ontology_label":"6-aminohexanoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"e-Amino-N-Caproic Acid","sssom_rows":[{"data_row":1105,"object_id":"CHEBI:16586","object_label":"6-aminohexanoic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:E-Amino-N-Caproic_Acid","synonym_count":0}'
   snapshot_sha256: f2a76d5f402e91b0d3b92260d2c6467489a680512f0b33c232a5f69cb2de2ff2
 - evidence_id: ev-bdad0d97f303ee7c
   kind: prior_review

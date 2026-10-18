@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-11711f7955dada5d
+  evidence_ids:
+  - ev-171fcc7ebf0ae17c
+  - ev-a1595ee724117a5c
+  - ev-079eb393375dcae1
+  - ev-063dfd3da2b906b6
+  - ev-d5f7c6c3fcd7f97a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-11711f7955dada5d
+  evidence_ids:
+  - ev-171fcc7ebf0ae17c
+  - ev-bfee9f8dc2038236
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-11711f7955dada5d
+  evidence_ids:
+  - ev-b87b0427b0126bee
+  - ev-bfee9f8dc2038236
+  - ev-a69d85a0bbc74791
 evidence:
 - evidence_id: ev-171fcc7ebf0ae17c
   kind: record_content
   reference: data/ingredients/mapped/D-xylose_5-phosphate_Lithium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[844],"raw_equal":true},"docs_rows":[{"identifier":"cas:66768-39-6","line":846,"mapping_status":"MAPPED","ontology_id":"CHEBI:37492","preferred_term":"D-xylose
     5-phosphate lithium salt"}],"identifier":"cas:66768-39-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:37492","ontology_label":"D-xylose
@@ -110,7 +123,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [844]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -118,8 +131,9 @@ evidence:
 - evidence_id: ev-079eb393375dcae1
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:D-xylose_5-phosphate_Lithium_Salt; data-row positions=[960,961,962]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:D-xylose_5-phosphate_Lithium_Salt; data-row positions=[960,
+    961, 962]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":960,"object_id":"CHEBI:37492","object_label":"D-xylose
     5-phosphate","other":"D-xylose 5-(dihydrogen phosphate)","predicate_id":"skos:broadMatch","subject_id":"MIM:D-xylose_5-phosphate_Lithium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":961,"object_id":"cas:66768-39-6","object_label":"D-xylose
@@ -130,7 +144,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[846]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:66768-39-6","line":846,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:37492","preferred_term":"D-xylose
     5-phosphate lithium salt","total_occurrences":"0"}]'
@@ -161,7 +175,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[510,1450]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"08e0044475727f527d9ad53e37b4d88cae70995731dfa0ed275c9c31cd2c8bc6","finding_id":"SEM:dc355ade98283d306c5a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"08e0044475727f527d9ad53e37b4d88cae70995731dfa0ed275c9c31cd2c8bc6","finding_id":"SEM:36dad858da24b1beac12","kind":"role_evidence","resolution_reason":"Historical
@@ -171,12 +185,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-xylose_5-phosphate_Lithium_Salt.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[844],"raw_equal":true},"docs_rows":[{"identifier":"cas:66768-39-6","line":846,"mapping_status":"MAPPED","ontology_id":"CHEBI:37492","preferred_term":"D-xylose
+    5-phosphate lithium salt"}],"identifier":"cas:66768-39-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:37492","ontology_label":"D-xylose
+    5-phosphate","ontology_source":"CHEBI"},"preferred_term":"D-xylose 5-phosphate
+    lithium salt","sssom_rows":[{"data_row":960,"object_id":"CHEBI:37492","object_label":"D-xylose
+    5-phosphate","predicate_id":"skos:broadMatch"},{"data_row":961,"object_id":"cas:66768-39-6","object_label":"D-xylose
+    5-phosphate lithium salt","predicate_id":"skos:exactMatch"},{"data_row":962,"object_id":"kgmicrobe.compound:d-xylose_5-phosphate_lithium_salt","object_label":"D-xylose
+    5-phosphate lithium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-xylose_5-phosphate_Lithium_Salt","synonym_count":1}'
   snapshot_sha256: 08e0044475727f527d9ad53e37b4d88cae70995731dfa0ed275c9c31cd2c8bc6
 - evidence_id: ev-a69d85a0bbc74791
   kind: prior_review

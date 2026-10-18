@@ -77,14 +77,13 @@ Disposition: The current local observation is recorded on a REJECTED tombstone, 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-1f468af073068102 | data/ingredients/mapped/Mgso47h2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1399],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31795","line":1401,"mapping_status":"REJECTED","ontology_id":"CHEBI:31795","preferred_term":"MgSO4\u00b77H2O"}],"identifier":"CHEBI:31795","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":5619,"edge_count":5619,"occurrences":5673},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31795","ontology_label":"magnesium sulfate heptahydrate","ontology_source":"CHEBI"},"preferred_term":"MgSO4\u00b77H2O","sssom_rows":[],"sssom_subject":"MIM:Mgso47h2o","synonym_count":19} |
+| ev-1f468af073068102 | data/ingredients/mapped/Mgso47h2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1399],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31795","line":1401,"mapping_status":"REJECTED","ontology_id":"CHEBI:31795","preferred_term":"MgSO4\u00b77H2O"}],"identifier":"CHEBI:31795","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":5634,"edge_count":5634,"occurrences":5688},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31795","ontology_label":"magnesium sulfate heptahydrate","ontology_source":"CHEBI"},"preferred_term":"MgSO4\u00b77H2O","sssom_rows":[],"sssom_subject":"MIM:Mgso47h2o","synonym_count":19} |
 | ev-86b8f4f2e3b9917a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1399] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-b295c3dcb369d3f1 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Mgso47h2o; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
 | ev-00427c13d53762ee | docs/data/mapped_ingredients.csv; CSV lines=[1401] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:31795","line":1401,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:31795","preferred_term":"MgSO4\u00b77H2O","total_occurrences":"0"}] |
 | ev-b33d32a5d710067a | reports/yaml_record_review/20261001T050244Z-Mgso47h2o.md; YAML Record Review: MgSO4·7H2O:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fcf0215fefc26750 | reports/yaml_record_review/Mgso47h2o.md; &#96;data/ingredients/mapped/Mgso47h2o.yaml&#96;:2; Verdict:4; Identity:13; Validation:28; Evidence:36; Completeness:48; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
-| ev-1924a811f48b89d2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[936] | context_only | [{"current_record_sha256":"52006cce38471e41905900ecb13eae07428bf656d3103512529b1abdc1b9ed5d","finding_id":"SEM:47461016b2d0614b71d0","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-9b66a2e064103664 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Mgso47h2o.yaml | context_only | Semantic review finding dispositions ledger |
+| ev-1924a811f48b89d2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[936] | context_only | [{"current_record_sha256":"0e81b74df788165509de6fe4b288db7179bc7eac3323051e9afcd5f303cfadd1","finding_id":"SEM:47461016b2d0614b71d0","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
 
 ## Limits And Additional Notes
 
@@ -176,6 +175,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f0b4a525cc98be11
+  evidence_ids:
+  - ev-1f468af073068102
+  - ev-86b8f4f2e3b9917a
+  - ev-b295c3dcb369d3f1
+  - ev-00427c13d53762ee
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -184,6 +188,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f0b4a525cc98be11
+  evidence_ids:
+  - ev-1f468af073068102
+  - ev-1924a811f48b89d2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -192,22 +199,26 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f0b4a525cc98be11
+  evidence_ids:
+  - ev-b33d32a5d710067a
+  - ev-fcf0215fefc26750
+  - ev-1924a811f48b89d2
 evidence:
 - evidence_id: ev-1f468af073068102
   kind: record_content
   reference: data/ingredients/mapped/Mgso47h2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1399],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31795","line":1401,"mapping_status":"REJECTED","ontology_id":"CHEBI:31795","preferred_term":"MgSO4\u00b77H2O"}],"identifier":"CHEBI:31795","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":5619,"edge_count":5619,"occurrences":5673},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31795","ontology_label":"magnesium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1399],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:31795","line":1401,"mapping_status":"REJECTED","ontology_id":"CHEBI:31795","preferred_term":"MgSO4\u00b77H2O"}],"identifier":"CHEBI:31795","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":5634,"edge_count":5634,"occurrences":5688},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:31795","ontology_label":"magnesium
     sulfate heptahydrate","ontology_source":"CHEBI"},"preferred_term":"MgSO4\u00b77H2O","sssom_rows":[],"sssom_subject":"MIM:Mgso47h2o","synonym_count":19}'
   snapshot_sha256: 0e81b74df788165509de6fe4b288db7179bc7eac3323051e9afcd5f303cfadd1
 - evidence_id: ev-86b8f4f2e3b9917a
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1399]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -216,7 +227,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Mgso47h2o; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -224,7 +235,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1401]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:31795","line":1401,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:31795","preferred_term":"MgSO4\u00b77H2O","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -275,18 +286,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[936]
-  accessed_at: '2026-10-11T02:46:28Z'
-  support: context_only
-  summary: '[{"current_record_sha256":"52006cce38471e41905900ecb13eae07428bf656d3103512529b1abdc1b9ed5d","finding_id":"SEM:47461016b2d0614b71d0","kind":"existing_record_review","resolution_reason":"Source
-    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-9b66a2e064103664
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Mgso47h2o.yaml
   accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: Semantic review finding dispositions ledger
+  summary: '[{"current_record_sha256":"0e81b74df788165509de6fe4b288db7179bc7eac3323051e9afcd5f303cfadd1","finding_id":"SEM:47461016b2d0614b71d0","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-62ae29fa520ae394
@@ -358,7 +361,7 @@ assessments:
   - record-f0b4a525cc98be11
   evidence_ids:
   - ev-1f468af073068102
-  - ev-9b66a2e064103664
+  - ev-1924a811f48b89d2
   dimensions:
   - name: legacy-disposition
     value: needs_reassessment
@@ -366,7 +369,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-1f468af073068102
-    - ev-9b66a2e064103664
+    - ev-1924a811f48b89d2
 findings:
 - finding_id: rec-f-role-f0b4a525cc98be11
   issue_key: mim-reconciliation-role-support-f0b4a525cc98be11
@@ -382,7 +385,7 @@ findings:
   - record-f0b4a525cc98be11
   evidence_ids:
   - ev-1f468af073068102
-  - ev-9b66a2e064103664
+  - ev-1924a811f48b89d2
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Mgso47h2o.yaml

@@ -89,7 +89,7 @@ Reassess prediction-only role support: Amphotericin B
 | ev-56c44853b1a6e204 | docs/data/mapped_ingredients.csv; CSV lines=[490] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:2682","line":490,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:2682","preferred_term":"Amphotericin B","total_occurrences":"4"}] |
 | ev-a9b621064014f2a0 | reports/yaml_record_review/Amphotericin_B.md; &#96;data/ingredients/mapped/Amphotericin_B.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:40; Completeness:64; Recommended Edits:74 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-7093a4c5dfc5d0f1 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[254,2068] | context_only | [{"current_record_sha256":"fc5f6bc5528bc5d761e4aa1a6e53fca4619b9967833aa41fd19fbf01c2ff40f1","finding_id":"SEM:df754481e882060092ed","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fc5f6bc5528bc5d761e4aa1a6e53fca4619b9967833aa41fd19fbf01c2ff40f1","finding_id":"SEM:f7eb031bf9d2a9fca728","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9ca457381986bb42 | data/ingredients/mapped/Amphotericin_B.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-9ca457381986bb42 | data/ingredients/mapped/Amphotericin_B.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[488],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2682","line":490,"mapping_status":"MAPPED","ontology_id":"CHEBI:2682","preferred_term":"Amphotericin B"}],"identifier":"CHEBI:2682","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2682","ontology_label":"amphotericin B","ontology_source":"CHEBI"},"preferred_term":"Amphotericin B","sssom_rows":[{"data_row":372,"object_id":"CHEBI:2682","object_label":"amphotericin B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Amphotericin_B","synonym_count":8} |
 | ev-2e000a3717394d76 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-b5597493c3b6490a] | context_only | Predecessor structured review finding f-b5597493c3b6490a in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-393c64df47c2a3c4
+  evidence_ids:
+  - ev-815730128b28d358
+  - ev-c6039f8b379d5564
+  - ev-d0c68e47eff06092
+  - ev-56c44853b1a6e204
+  - ev-9ca457381986bb42
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-393c64df47c2a3c4
+  evidence_ids:
+  - ev-815730128b28d358
+  - ev-7093a4c5dfc5d0f1
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-393c64df47c2a3c4
+  evidence_ids:
+  - ev-a9b621064014f2a0
+  - ev-7093a4c5dfc5d0f1
+  - ev-2e000a3717394d76
 evidence:
 - evidence_id: ev-815730128b28d358
   kind: record_content
   reference: data/ingredients/mapped/Amphotericin_B.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[488],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2682","line":490,"mapping_status":"MAPPED","ontology_id":"CHEBI:2682","preferred_term":"Amphotericin
     B"}],"identifier":"CHEBI:2682","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2682","ontology_label":"amphotericin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [488]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Amphotericin_B; data-row positions=[372]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":372,"object_id":"CHEBI:2682","object_label":"amphotericin
     B","other":"(1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-33-[(3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy]-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-14,39-dioxabicyclo[33.3.1]nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[490]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:2682","line":490,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:2682","preferred_term":"Amphotericin
     B","total_occurrences":"4"}]'
@@ -261,7 +274,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[254,2068]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"fc5f6bc5528bc5d761e4aa1a6e53fca4619b9967833aa41fd19fbf01c2ff40f1","finding_id":"SEM:df754481e882060092ed","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fc5f6bc5528bc5d761e4aa1a6e53fca4619b9967833aa41fd19fbf01c2ff40f1","finding_id":"SEM:f7eb031bf9d2a9fca728","kind":"role_evidence","resolution_reason":"Historical
@@ -271,12 +284,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Amphotericin_B.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[488],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2682","line":490,"mapping_status":"MAPPED","ontology_id":"CHEBI:2682","preferred_term":"Amphotericin
+    B"}],"identifier":"CHEBI:2682","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2682","ontology_label":"amphotericin
+    B","ontology_source":"CHEBI"},"preferred_term":"Amphotericin B","sssom_rows":[{"data_row":372,"object_id":"CHEBI:2682","object_label":"amphotericin
+    B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Amphotericin_B","synonym_count":8}'
   snapshot_sha256: fc5f6bc5528bc5d761e4aa1a6e53fca4619b9967833aa41fd19fbf01c2ff40f1
 - evidence_id: ev-2e000a3717394d76
   kind: prior_review

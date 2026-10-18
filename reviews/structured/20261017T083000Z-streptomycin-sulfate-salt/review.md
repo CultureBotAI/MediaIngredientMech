@@ -83,13 +83,13 @@ Reassess prediction-only role support: Streptomycin sulfate salt
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-4e30a38d7e27d3aa | data/ingredients/mapped/Streptomycin_Sulfate_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1901],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32158","line":1903,"mapping_status":"MAPPED","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin sulfate salt"}],"identifier":"CHEBI:32158","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:32158","ontology_label":"streptomycin sulfate","ontology_source":"CHEBI"},"preferred_term":"Streptomycin sulfate salt","sssom_rows":[{"data_row":2653,"object_id":"CHEBI:32158","object_label":"streptomycin sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Streptomycin_Sulfate_Salt","synonym_count":0} |
-| ev-89508bd417e96f5b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1901] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-b34062c22e4034a5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Streptomycin_Sulfate_Salt; data-row positions=[2653] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2653,"object_id":"CHEBI:32158","object_label":"streptomycin sulfate","other":"CAS:3810-74-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Streptomycin_Sulfate_Salt","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-9943d5ea42f3079c | docs/data/mapped_ingredients.csv; CSV lines=[1903] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32158","line":1903,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin sulfate salt","total_occurrences":"3"}] |
+| ev-4e30a38d7e27d3aa | data/ingredients/mapped/Streptomycin_Sulfate_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1900],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32158","line":1902,"mapping_status":"MAPPED","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin sulfate salt"}],"identifier":"CHEBI:32158","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:32158","ontology_label":"streptomycin sulfate","ontology_source":"CHEBI"},"preferred_term":"Streptomycin sulfate salt","sssom_rows":[{"data_row":2655,"object_id":"CHEBI:32158","object_label":"streptomycin sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Streptomycin_Sulfate_Salt","synonym_count":0} |
+| ev-89508bd417e96f5b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1900] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-b34062c22e4034a5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Streptomycin_Sulfate_Salt; data-row positions=[2655] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2655,"object_id":"CHEBI:32158","object_label":"streptomycin sulfate","other":"CAS:3810-74-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Streptomycin_Sulfate_Salt","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-9943d5ea42f3079c | docs/data/mapped_ingredients.csv; CSV lines=[1902] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32158","line":1902,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin sulfate salt","total_occurrences":"3"}] |
 | ev-b7dea8eae9cf84de | reports/yaml_record_review/Streptomycin_Sulfate_Salt.md; &#96;data/ingredients/mapped/Streptomycin_Sulfate_Salt.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:30; Completeness:46; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-dab31a6e7022a40d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1252,1709] | context_only | [{"current_record_sha256":"d2a1728eed516fdd0280e1005896d8952497be0e7fdb41af3c50cd8bb78681bb","finding_id":"SEM:c3b6d3737e3ca4ff2aad","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d2a1728eed516fdd0280e1005896d8952497be0e7fdb41af3c50cd8bb78681bb","finding_id":"SEM:324a2089f66992bb411a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-5e8b6398df7df9e7 | data/ingredients/mapped/Streptomycin_Sulfate_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-5e8b6398df7df9e7 | data/ingredients/mapped/Streptomycin_Sulfate_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1900],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32158","line":1902,"mapping_status":"MAPPED","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin sulfate salt"}],"identifier":"CHEBI:32158","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:32158","ontology_label":"streptomycin sulfate","ontology_source":"CHEBI"},"preferred_term":"Streptomycin sulfate salt","sssom_rows":[{"data_row":2655,"object_id":"CHEBI:32158","object_label":"streptomycin sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Streptomycin_Sulfate_Salt","synonym_count":0} |
 | ev-e9e6c78372ecae10 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-87049e5b18e6f97d] | context_only | Predecessor structured review finding f-87049e5b18e6f97d in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5acbfbaed5e812df
+  evidence_ids:
+  - ev-4e30a38d7e27d3aa
+  - ev-89508bd417e96f5b
+  - ev-b34062c22e4034a5
+  - ev-9943d5ea42f3079c
+  - ev-5e8b6398df7df9e7
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5acbfbaed5e812df
+  evidence_ids:
+  - ev-4e30a38d7e27d3aa
+  - ev-dab31a6e7022a40d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5acbfbaed5e812df
+  evidence_ids:
+  - ev-b7dea8eae9cf84de
+  - ev-dab31a6e7022a40d
+  - ev-e9e6c78372ecae10
 evidence:
 - evidence_id: ev-4e30a38d7e27d3aa
   kind: record_content
   reference: data/ingredients/mapped/Streptomycin_Sulfate_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1901],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32158","line":1903,"mapping_status":"MAPPED","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1900],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32158","line":1902,"mapping_status":"MAPPED","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin
     sulfate salt"}],"identifier":"CHEBI:32158","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:32158","ontology_label":"streptomycin
-    sulfate","ontology_source":"CHEBI"},"preferred_term":"Streptomycin sulfate salt","sssom_rows":[{"data_row":2653,"object_id":"CHEBI:32158","object_label":"streptomycin
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Streptomycin sulfate salt","sssom_rows":[{"data_row":2655,"object_id":"CHEBI:32158","object_label":"streptomycin
     sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Streptomycin_Sulfate_Salt","synonym_count":0}'
   snapshot_sha256: d2a1728eed516fdd0280e1005896d8952497be0e7fdb41af3c50cd8bb78681bb
 - evidence_id: ev-89508bd417e96f5b
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1901]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1900]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-b34062c22e4034a5
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Streptomycin_Sulfate_Salt; data-row positions=[2653]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Streptomycin_Sulfate_Salt; data-row positions=[2655]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2653,"object_id":"CHEBI:32158","object_label":"streptomycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2655,"object_id":"CHEBI:32158","object_label":"streptomycin
     sulfate","other":"CAS:3810-74-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Streptomycin_Sulfate_Salt","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-9943d5ea42f3079c
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1903]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1902]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32158","line":1903,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32158","line":1902,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin
     sulfate salt","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-b7dea8eae9cf84de
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1252,1709]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d2a1728eed516fdd0280e1005896d8952497be0e7fdb41af3c50cd8bb78681bb","finding_id":"SEM:c3b6d3737e3ca4ff2aad","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d2a1728eed516fdd0280e1005896d8952497be0e7fdb41af3c50cd8bb78681bb","finding_id":"SEM:324a2089f66992bb411a","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Streptomycin_Sulfate_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1900],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32158","line":1902,"mapping_status":"MAPPED","ontology_id":"CHEBI:32158","preferred_term":"Streptomycin
+    sulfate salt"}],"identifier":"CHEBI:32158","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:32158","ontology_label":"streptomycin
+    sulfate","ontology_source":"CHEBI"},"preferred_term":"Streptomycin sulfate salt","sssom_rows":[{"data_row":2655,"object_id":"CHEBI:32158","object_label":"streptomycin
+    sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Streptomycin_Sulfate_Salt","synonym_count":0}'
   snapshot_sha256: d2a1728eed516fdd0280e1005896d8952497be0e7fdb41af3c50cd8bb78681bb
 - evidence_id: ev-e9e6c78372ecae10
   kind: prior_review

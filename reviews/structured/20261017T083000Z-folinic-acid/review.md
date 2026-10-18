@@ -89,7 +89,7 @@ Reassess prediction-only role support: Folinic acid
 | ev-75c65d344939b8ea | docs/data/mapped_ingredients.csv; CSV lines=[1018] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15640","line":1018,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:15640","preferred_term":"Folinic acid","total_occurrences":"2"}] |
 | ev-915951d628b8b478 | reports/yaml_record_review/Folinic_Acid.md; &#96;data/ingredients/mapped/Folinic_Acid.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:33; Completeness:54; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-0290adc279d6e5db | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[625,1399] | context_only | [{"current_record_sha256":"73594fdf9ee220f89cbd97bdabab20b84dac0ac34ee30286818e38b88832153b","finding_id":"SEM:f2dd2f17e8d0c028b108","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"73594fdf9ee220f89cbd97bdabab20b84dac0ac34ee30286818e38b88832153b","finding_id":"SEM:37391f5a8d8067ac043f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c580e9b6fb4086b3 | data/ingredients/mapped/Folinic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-c580e9b6fb4086b3 | data/ingredients/mapped/Folinic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1016],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15640","line":1018,"mapping_status":"MAPPED","ontology_id":"CHEBI:15640","preferred_term":"Folinic acid"}],"identifier":"CHEBI:15640","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:15640","ontology_label":"5-formyltetrahydrofolic acid","ontology_source":"CHEBI"},"preferred_term":"Folinic acid","sssom_rows":[{"data_row":1226,"object_id":"CHEBI:15640","object_label":"5-formyltetrahydrofolic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Folinic_Acid","synonym_count":2} |
 | ev-6aa9cf54473290bd | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-88d3821217abf7aa] | context_only | Predecessor structured review finding f-88d3821217abf7aa in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-df97a65c35115640
+  evidence_ids:
+  - ev-4e9d73762b1b383f
+  - ev-b5a1e8a0140ae810
+  - ev-d2999e57494e60e2
+  - ev-75c65d344939b8ea
+  - ev-c580e9b6fb4086b3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-df97a65c35115640
+  evidence_ids:
+  - ev-4e9d73762b1b383f
+  - ev-0290adc279d6e5db
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-df97a65c35115640
+  evidence_ids:
+  - ev-915951d628b8b478
+  - ev-0290adc279d6e5db
+  - ev-6aa9cf54473290bd
 evidence:
 - evidence_id: ev-4e9d73762b1b383f
   kind: record_content
   reference: data/ingredients/mapped/Folinic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1016],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15640","line":1018,"mapping_status":"MAPPED","ontology_id":"CHEBI:15640","preferred_term":"Folinic
     acid"}],"identifier":"CHEBI:15640","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:15640","ontology_label":"5-formyltetrahydrofolic
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1016]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Folinic_Acid; data-row positions=[1226]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1226,"object_id":"CHEBI:15640","object_label":"5-formyltetrahydrofolic
     acid","other":"N-[4-({[2-amino-5-formyl-4-oxo-3,4,5,6,7,8-hexahydropteridin-6-yl]methyl}amino)benzoyl]-L-glutamic
@@ -231,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1018]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15640","line":1018,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:15640","preferred_term":"Folinic
     acid","total_occurrences":"2"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[625,1399]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"73594fdf9ee220f89cbd97bdabab20b84dac0ac34ee30286818e38b88832153b","finding_id":"SEM:f2dd2f17e8d0c028b108","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"73594fdf9ee220f89cbd97bdabab20b84dac0ac34ee30286818e38b88832153b","finding_id":"SEM:37391f5a8d8067ac043f","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Folinic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1016],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15640","line":1018,"mapping_status":"MAPPED","ontology_id":"CHEBI:15640","preferred_term":"Folinic
+    acid"}],"identifier":"CHEBI:15640","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:15640","ontology_label":"5-formyltetrahydrofolic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Folinic acid","sssom_rows":[{"data_row":1226,"object_id":"CHEBI:15640","object_label":"5-formyltetrahydrofolic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Folinic_Acid","synonym_count":2}'
   snapshot_sha256: 73594fdf9ee220f89cbd97bdabab20b84dac0ac34ee30286818e38b88832153b
 - evidence_id: ev-6aa9cf54473290bd
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Wheat Arabinoxylan
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-caf83d6882bf35cb | data/ingredients/mapped/Wheat_Arabinoxylan.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2058],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28427","line":2060,"mapping_status":"MAPPED","ontology_id":"CHEBI:28427","preferred_term":"Wheat Arabinoxylan"}],"identifier":"CHEBI:28427","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:28427","ontology_label":"arabinoxylan","ontology_source":"CHEBI"},"preferred_term":"Wheat Arabinoxylan","sssom_rows":[{"data_row":2924,"object_id":"CHEBI:28427","object_label":"arabinoxylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wheat_Arabinoxylan","synonym_count":0} |
-| ev-25a36ba70cbedcfb | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2058] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-794ada9d4708c5a3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Wheat_Arabinoxylan; data-row positions=[2924] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2924,"object_id":"CHEBI:28427","object_label":"arabinoxylan","other":"CAS:9040-27-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Wheat_Arabinoxylan","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-344cfd644e1335b8 | docs/data/mapped_ingredients.csv; CSV lines=[2060] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28427","line":2060,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28427","preferred_term":"Wheat Arabinoxylan","total_occurrences":"0"}] |
+| ev-caf83d6882bf35cb | data/ingredients/mapped/Wheat_Arabinoxylan.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2057],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28427","line":2059,"mapping_status":"MAPPED","ontology_id":"CHEBI:28427","preferred_term":"Wheat Arabinoxylan"}],"identifier":"CHEBI:28427","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:28427","ontology_label":"arabinoxylan","ontology_source":"CHEBI"},"preferred_term":"Wheat Arabinoxylan","sssom_rows":[{"data_row":2926,"object_id":"CHEBI:28427","object_label":"arabinoxylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wheat_Arabinoxylan","synonym_count":0} |
+| ev-25a36ba70cbedcfb | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2057] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-794ada9d4708c5a3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Wheat_Arabinoxylan; data-row positions=[2926] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2926,"object_id":"CHEBI:28427","object_label":"arabinoxylan","other":"CAS:9040-27-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Wheat_Arabinoxylan","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-344cfd644e1335b8 | docs/data/mapped_ingredients.csv; CSV lines=[2059] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28427","line":2059,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28427","preferred_term":"Wheat Arabinoxylan","total_occurrences":"0"}] |
 | ev-97a7cdea9ec810ea | reports/yaml_record_review/Wheat_Arabinoxylan.md; &#96;data/ingredients/mapped/Wheat_Arabinoxylan.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:35; Issues:43; Completeness:49; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-50d9faddebd812c2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1346,2104] | context_only | [{"current_record_sha256":"a0b9c5f85a746d5fd48f030e181dacb8455c0373e00a9b8f1616bd61ed5cc35a","finding_id":"SEM:2e96b3832ce6ac6962b7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a0b9c5f85a746d5fd48f030e181dacb8455c0373e00a9b8f1616bd61ed5cc35a","finding_id":"SEM:4bb6a79e0602072fb248","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0821e0c34abf42a0 | data/ingredients/mapped/Wheat_Arabinoxylan.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-0821e0c34abf42a0 | data/ingredients/mapped/Wheat_Arabinoxylan.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2057],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28427","line":2059,"mapping_status":"MAPPED","ontology_id":"CHEBI:28427","preferred_term":"Wheat Arabinoxylan"}],"identifier":"CHEBI:28427","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:28427","ontology_label":"arabinoxylan","ontology_source":"CHEBI"},"preferred_term":"Wheat Arabinoxylan","sssom_rows":[{"data_row":2926,"object_id":"CHEBI:28427","object_label":"arabinoxylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wheat_Arabinoxylan","synonym_count":0} |
 | ev-3343212c667c510b | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-3ccdd2ce505ce65c] | context_only | Predecessor structured review finding f-3ccdd2ce505ce65c in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-40e2fe5f342b0b0b
+  evidence_ids:
+  - ev-caf83d6882bf35cb
+  - ev-25a36ba70cbedcfb
+  - ev-794ada9d4708c5a3
+  - ev-344cfd644e1335b8
+  - ev-0821e0c34abf42a0
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-40e2fe5f342b0b0b
+  evidence_ids:
+  - ev-caf83d6882bf35cb
+  - ev-50d9faddebd812c2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-40e2fe5f342b0b0b
+  evidence_ids:
+  - ev-97a7cdea9ec810ea
+  - ev-50d9faddebd812c2
+  - ev-3343212c667c510b
 evidence:
 - evidence_id: ev-caf83d6882bf35cb
   kind: record_content
   reference: data/ingredients/mapped/Wheat_Arabinoxylan.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2058],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28427","line":2060,"mapping_status":"MAPPED","ontology_id":"CHEBI:28427","preferred_term":"Wheat
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2057],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28427","line":2059,"mapping_status":"MAPPED","ontology_id":"CHEBI:28427","preferred_term":"Wheat
     Arabinoxylan"}],"identifier":"CHEBI:28427","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:28427","ontology_label":"arabinoxylan","ontology_source":"CHEBI"},"preferred_term":"Wheat
-    Arabinoxylan","sssom_rows":[{"data_row":2924,"object_id":"CHEBI:28427","object_label":"arabinoxylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wheat_Arabinoxylan","synonym_count":0}'
+    Arabinoxylan","sssom_rows":[{"data_row":2926,"object_id":"CHEBI:28427","object_label":"arabinoxylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wheat_Arabinoxylan","synonym_count":0}'
   snapshot_sha256: a0b9c5f85a746d5fd48f030e181dacb8455c0373e00a9b8f1616bd61ed5cc35a
 - evidence_id: ev-25a36ba70cbedcfb
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2058]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2057]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,18 +232,18 @@ evidence:
 - evidence_id: ev-794ada9d4708c5a3
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Wheat_Arabinoxylan; data-row positions=[2924]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Wheat_Arabinoxylan; data-row positions=[2926]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2924,"object_id":"CHEBI:28427","object_label":"arabinoxylan","other":"CAS:9040-27-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Wheat_Arabinoxylan","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2926,"object_id":"CHEBI:28427","object_label":"arabinoxylan","other":"CAS:9040-27-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Wheat_Arabinoxylan","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-344cfd644e1335b8
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2060]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2059]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28427","line":2060,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28427","preferred_term":"Wheat
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28427","line":2059,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28427","preferred_term":"Wheat
     Arabinoxylan","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-97a7cdea9ec810ea
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1346,2104]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a0b9c5f85a746d5fd48f030e181dacb8455c0373e00a9b8f1616bd61ed5cc35a","finding_id":"SEM:2e96b3832ce6ac6962b7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a0b9c5f85a746d5fd48f030e181dacb8455c0373e00a9b8f1616bd61ed5cc35a","finding_id":"SEM:4bb6a79e0602072fb248","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Wheat_Arabinoxylan.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2057],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28427","line":2059,"mapping_status":"MAPPED","ontology_id":"CHEBI:28427","preferred_term":"Wheat
+    Arabinoxylan"}],"identifier":"CHEBI:28427","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:28427","ontology_label":"arabinoxylan","ontology_source":"CHEBI"},"preferred_term":"Wheat
+    Arabinoxylan","sssom_rows":[{"data_row":2926,"object_id":"CHEBI:28427","object_label":"arabinoxylan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Wheat_Arabinoxylan","synonym_count":0}'
   snapshot_sha256: a0b9c5f85a746d5fd48f030e181dacb8455c0373e00a9b8f1616bd61ed5cc35a
 - evidence_id: ev-3343212c667c510b
   kind: prior_review

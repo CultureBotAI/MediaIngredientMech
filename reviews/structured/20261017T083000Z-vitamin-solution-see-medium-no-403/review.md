@@ -83,13 +83,13 @@ Reassess prediction-only role support: Vitamin solution see Medium No. 403
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-f47d21d81763e2cf | data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2050],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2052,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution see Medium No. 403"}],"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution see Medium No. 403","sssom_rows":[{"data_row":2909,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:closeMatch"},{"data_row":2910,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin solution see Medium No. 403","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution_See_Medium_No_403","synonym_count":1} |
-| ev-d0f5fc22181f348c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2050] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-a1446adf8af984af | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vitamin_Solution_See_Medium_No_403; data-row positions=[2909,2910] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2909,"object_id":"MICRO:0000460","object_label":"vitamin solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Vitamin_Solution_See_Medium_No_403","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2910,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin solution see Medium No. 403","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vitamin_Solution_See_Medium_No_403","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-60834574f2ec8e5d | docs/data/mapped_ingredients.csv; CSV lines=[2052] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2052,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution see Medium No. 403","total_occurrences":"0"}] |
+| ev-f47d21d81763e2cf | data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2049],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2051,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution see Medium No. 403"}],"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution see Medium No. 403","sssom_rows":[{"data_row":2911,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:closeMatch"},{"data_row":2912,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin solution see Medium No. 403","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution_See_Medium_No_403","synonym_count":1} |
+| ev-d0f5fc22181f348c | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2049] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a1446adf8af984af | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vitamin_Solution_See_Medium_No_403; data-row positions=[2911, 2912] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2911,"object_id":"MICRO:0000460","object_label":"vitamin solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Vitamin_Solution_See_Medium_No_403","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2912,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin solution see Medium No. 403","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vitamin_Solution_See_Medium_No_403","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-60834574f2ec8e5d | docs/data/mapped_ingredients.csv; CSV lines=[2051] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2051,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution see Medium No. 403","total_occurrences":"0"}] |
 | ev-cd839cc4abd4b0e5 | reports/yaml_record_review/Vitamin_Solution_See_Medium_No_403.md; &#96;data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:34; Issues:46; Completeness:52; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d81a7e72b383f48c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1340,1503] | context_only | [{"current_record_sha256":"32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48","finding_id":"SEM:bb0902d2126141cb8bd9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48","finding_id":"SEM:a6b71a33a43373e657f5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0c4fb8409a5a2d1b | data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-0c4fb8409a5a2d1b | data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2049],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2051,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin solution see Medium No. 403"}],"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution see Medium No. 403","sssom_rows":[{"data_row":2911,"object_id":"MICRO:0000460","object_label":"vitamin solution","predicate_id":"skos:closeMatch"},{"data_row":2912,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin solution see Medium No. 403","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution_See_Medium_No_403","synonym_count":1} |
 | ev-550ca8ee2634403d | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-9814344e6096225d] | context_only | Predecessor structured review finding f-9814344e6096225d in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b3239724e22c2717
+  evidence_ids:
+  - ev-f47d21d81763e2cf
+  - ev-d0f5fc22181f348c
+  - ev-a1446adf8af984af
+  - ev-60834574f2ec8e5d
+  - ev-0c4fb8409a5a2d1b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b3239724e22c2717
+  evidence_ids:
+  - ev-f47d21d81763e2cf
+  - ev-d81a7e72b383f48c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,26 +204,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b3239724e22c2717
+  evidence_ids:
+  - ev-cd839cc4abd4b0e5
+  - ev-d81a7e72b383f48c
+  - ev-550ca8ee2634403d
 evidence:
 - evidence_id: ev-f47d21d81763e2cf
   kind: record_content
   reference: data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2050],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2052,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2049],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2051,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
     solution see Medium No. 403"}],"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
     solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution see Medium
-    No. 403","sssom_rows":[{"data_row":2909,"object_id":"MICRO:0000460","object_label":"vitamin
-    solution","predicate_id":"skos:closeMatch"},{"data_row":2910,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin
+    No. 403","sssom_rows":[{"data_row":2911,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","predicate_id":"skos:closeMatch"},{"data_row":2912,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin
     solution see Medium No. 403","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution_See_Medium_No_403","synonym_count":1}'
   snapshot_sha256: 32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48
 - evidence_id: ev-d0f5fc22181f348c
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2050]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2049]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,20 +235,21 @@ evidence:
 - evidence_id: ev-a1446adf8af984af
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Vitamin_Solution_See_Medium_No_403; data-row positions=[2909,2910]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Vitamin_Solution_See_Medium_No_403; data-row positions=[2911,
+    2912]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2909,"object_id":"MICRO:0000460","object_label":"vitamin
-    solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Vitamin_Solution_See_Medium_No_403","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2910,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2911,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Vitamin_Solution_See_Medium_No_403","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2912,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin
     solution see Medium No. 403","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Vitamin_Solution_See_Medium_No_403","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-60834574f2ec8e5d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2052]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2051]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2052,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2051,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
     solution see Medium No. 403","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-cd839cc4abd4b0e5
@@ -260,7 +274,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1340,1503]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48","finding_id":"SEM:bb0902d2126141cb8bd9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48","finding_id":"SEM:a6b71a33a43373e657f5","kind":"role_evidence","resolution_reason":"Historical
@@ -270,12 +284,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2049],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","line":2051,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Vitamin
+    solution see Medium No. 403"}],"identifier":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
+    solution","ontology_source":"MICRO"},"preferred_term":"Vitamin solution see Medium
+    No. 403","sssom_rows":[{"data_row":2911,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","predicate_id":"skos:closeMatch"},{"data_row":2912,"object_id":"kgmicrobe.ingredient:vitamin_solution_see_medium_no_403","object_label":"Vitamin
+    solution see Medium No. 403","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vitamin_Solution_See_Medium_No_403","synonym_count":1}'
   snapshot_sha256: 32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48
 - evidence_id: ev-550ca8ee2634403d
   kind: prior_review

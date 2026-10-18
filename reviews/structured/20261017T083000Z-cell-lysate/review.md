@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cell lysate
 | ev-fb8d65be3b173c5e | docs/data/mapped_ingredients.csv; CSV lines=[685] | supports | Published identity and count rows inspected: [{"identifier":"BTO:0004304","line":685,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"BTO:0004304","preferred_term":"Cell lysate","total_occurrences":"2"}] |
 | ev-214b458433206981 | reports/yaml_record_review/Cell_Lysate.md; &#96;data/ingredients/mapped/Cell_Lysate.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:36; Completeness:56; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6e09cd732124fa04 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[385,2087] | context_only | [{"current_record_sha256":"4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420","finding_id":"SEM:fc537bb1cdb4dc1ab3d9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420","finding_id":"SEM:681ad71e61f15f6cc1e4","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-5172bd305a0dd76b | data/ingredients/mapped/Cell_Lysate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-5172bd305a0dd76b | data/ingredients/mapped/Cell_Lysate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[683],"raw_equal":true},"docs_rows":[{"identifier":"BTO:0004304","line":685,"mapping_status":"MAPPED","ontology_id":"BTO:0004304","preferred_term":"Cell lysate"}],"identifier":"BTO:0004304","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"BTO:0004304","ontology_label":"cell lysate","ontology_source":"BTO"},"preferred_term":"Cell lysate","sssom_rows":[{"data_row":706,"object_id":"BTO:0004304","object_label":"cell lysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cell_Lysate","synonym_count":1} |
 | ev-647d89b03b7a0c8f | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-80f3aeed027e3b9d] | context_only | Predecessor structured review finding f-80f3aeed027e3b9d in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-38249329245699bf
+  - ev-e98305e64c7d2282
+  - ev-8b0dcfb4011c58a4
+  - ev-fb8d65be3b173c5e
+  - ev-5172bd305a0dd76b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-38249329245699bf
+  - ev-6e09cd732124fa04
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ddc481ee9cb75f02
+  evidence_ids:
+  - ev-214b458433206981
+  - ev-6e09cd732124fa04
+  - ev-647d89b03b7a0c8f
 evidence:
 - evidence_id: ev-38249329245699bf
   kind: record_content
   reference: data/ingredients/mapped/Cell_Lysate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[683],"raw_equal":true},"docs_rows":[{"identifier":"BTO:0004304","line":685,"mapping_status":"MAPPED","ontology_id":"BTO:0004304","preferred_term":"Cell
     lysate"}],"identifier":"BTO:0004304","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"BTO:0004304","ontology_label":"cell
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [683]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cell_Lysate; data-row positions=[706]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":706,"object_id":"BTO:0004304","object_label":"cell
     lysate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cell_Lysate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[685]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"BTO:0004304","line":685,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"BTO:0004304","preferred_term":"Cell
     lysate","total_occurrences":"2"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[385,2087]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420","finding_id":"SEM:fc537bb1cdb4dc1ab3d9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420","finding_id":"SEM:681ad71e61f15f6cc1e4","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cell_Lysate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[683],"raw_equal":true},"docs_rows":[{"identifier":"BTO:0004304","line":685,"mapping_status":"MAPPED","ontology_id":"BTO:0004304","preferred_term":"Cell
+    lysate"}],"identifier":"BTO:0004304","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"BTO:0004304","ontology_label":"cell
+    lysate","ontology_source":"BTO"},"preferred_term":"Cell lysate","sssom_rows":[{"data_row":706,"object_id":"BTO:0004304","object_label":"cell
+    lysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cell_Lysate","synonym_count":1}'
   snapshot_sha256: 4b3c2430938d79054452fb88828f9f855d747be3ddffcafaa79ea916cc1f4420
 - evidence_id: ev-647d89b03b7a0c8f
   kind: prior_review

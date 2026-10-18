@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f790d2e32ec35d95
+  evidence_ids:
+  - ev-c37dbb2afd12453d
+  - ev-e28d5f27c3bb52a5
+  - ev-05dd0611d99af1b5
+  - ev-375524556dbf7624
+  - ev-c9209afd00539792
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f790d2e32ec35d95
+  evidence_ids:
+  - ev-c37dbb2afd12453d
+  - ev-718abfd1f2d696b3
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,25 +99,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f790d2e32ec35d95
+  evidence_ids:
+  - ev-4f4f5a468f84d07d
+  - ev-718abfd1f2d696b3
+  - ev-243ae6ffb6fcd651
 evidence:
 - evidence_id: ev-c37dbb2afd12453d
   kind: record_content
   reference: data/ingredients/mapped/Thiamine_Vitamin_Solution.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:thiamine_vitamin_solution","line":1960,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Thiamine
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1957],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:thiamine_vitamin_solution","line":1959,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Thiamine
     Vitamin Solution"}],"identifier":"kgmicrobe.ingredient:thiamine_vitamin_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":14,"total_occurrences":14},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
-    solution","ontology_source":"MICRO"},"preferred_term":"Thiamine Vitamin Solution","sssom_rows":[{"data_row":2763,"object_id":"MICRO:0000460","object_label":"vitamin
-    solution","predicate_id":"skos:closeMatch"},{"data_row":2764,"object_id":"kgmicrobe.ingredient:thiamine_vitamin_solution","object_label":"Thiamine
+    solution","ontology_source":"MICRO"},"preferred_term":"Thiamine Vitamin Solution","sssom_rows":[{"data_row":2765,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","predicate_id":"skos:closeMatch"},{"data_row":2766,"object_id":"kgmicrobe.ingredient:thiamine_vitamin_solution","object_label":"Thiamine
     Vitamin Solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Thiamine_Vitamin_Solution","synonym_count":1}'
   snapshot_sha256: 4c48be23fcd0f01a354028889258574c342481c16d92fa546d3d10eb9bab6d8c
 - evidence_id: ev-e28d5f27c3bb52a5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1958]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1957]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -116,20 +129,20 @@ evidence:
 - evidence_id: ev-05dd0611d99af1b5
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Thiamine_Vitamin_Solution; data-row positions=[2763,2764]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Thiamine_Vitamin_Solution; data-row positions=[2765, 2766]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2763,"object_id":"MICRO:0000460","object_label":"vitamin
-    solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Thiamine_Vitamin_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2764,"object_id":"kgmicrobe.ingredient:thiamine_vitamin_solution","object_label":"Thiamine
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2765,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Thiamine_Vitamin_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2766,"object_id":"kgmicrobe.ingredient:thiamine_vitamin_solution","object_label":"Thiamine
     Vitamin Solution","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Thiamine_Vitamin_Solution","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-375524556dbf7624
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1960]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1959]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:thiamine_vitamin_solution","line":1960,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"14","ontology_id":"MICRO:0000460","preferred_term":"Thiamine
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:thiamine_vitamin_solution","line":1959,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"14","ontology_id":"MICRO:0000460","preferred_term":"Thiamine
     Vitamin Solution","total_occurrences":"14"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-4f4f5a468f84d07d
@@ -154,7 +167,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1284,2084]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4c48be23fcd0f01a354028889258574c342481c16d92fa546d3d10eb9bab6d8c","finding_id":"SEM:9e9066a5b501b490c4ab","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4c48be23fcd0f01a354028889258574c342481c16d92fa546d3d10eb9bab6d8c","finding_id":"SEM:59ffb6c0d2eaa6c94d02","kind":"role_evidence","resolution_reason":"Historical
@@ -164,12 +177,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Thiamine_Vitamin_Solution.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1957],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:thiamine_vitamin_solution","line":1959,"mapping_status":"MAPPED","ontology_id":"MICRO:0000460","preferred_term":"Thiamine
+    Vitamin Solution"}],"identifier":"kgmicrobe.ingredient:thiamine_vitamin_solution","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":14,"total_occurrences":14},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"MICRO:0000460","ontology_label":"vitamin
+    solution","ontology_source":"MICRO"},"preferred_term":"Thiamine Vitamin Solution","sssom_rows":[{"data_row":2765,"object_id":"MICRO:0000460","object_label":"vitamin
+    solution","predicate_id":"skos:closeMatch"},{"data_row":2766,"object_id":"kgmicrobe.ingredient:thiamine_vitamin_solution","object_label":"Thiamine
+    Vitamin Solution","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Thiamine_Vitamin_Solution","synonym_count":1}'
   snapshot_sha256: 4c48be23fcd0f01a354028889258574c342481c16d92fa546d3d10eb9bab6d8c
 - evidence_id: ev-243ae6ffb6fcd651
   kind: prior_review

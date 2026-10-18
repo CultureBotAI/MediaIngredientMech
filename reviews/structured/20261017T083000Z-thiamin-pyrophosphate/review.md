@@ -83,13 +83,13 @@ Reassess prediction-only role support: Thiamin pyrophosphate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-168708c633faf5b1 | data/ingredients/mapped/Thiamin_Pyrophosphate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1953],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45931","line":1955,"mapping_status":"MAPPED","ontology_id":"CHEBI:45931","preferred_term":"Thiamin pyrophosphate"}],"identifier":"CHEBI:45931","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:45931","ontology_label":"thiamine(1+) diphosphate(1-)","ontology_source":"CHEBI"},"preferred_term":"Thiamin pyrophosphate","sssom_rows":[{"data_row":2759,"object_id":"CHEBI:45931","object_label":"thiamine(1+) diphosphate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Thiamin_Pyrophosphate","synonym_count":1} |
-| ev-02c37d5ca95a62cd | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1953] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-f71f78c3fb347a5a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Thiamin_Pyrophosphate; data-row positions=[2759] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2759,"object_id":"CHEBI:45931","object_label":"thiamine(1+) diphosphate(1-)","other":"2-{3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-4-methyl-1,3-thiazol-3-ium-5-yl}ethyl dihydrogen diphosphate&#124;CAS:136-09-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Thiamin_Pyrophosphate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-747bc7904213e78b | docs/data/mapped_ingredients.csv; CSV lines=[1955] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:45931","line":1955,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:45931","preferred_term":"Thiamin pyrophosphate","total_occurrences":"2"}] |
+| ev-168708c633faf5b1 | data/ingredients/mapped/Thiamin_Pyrophosphate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1952],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45931","line":1954,"mapping_status":"MAPPED","ontology_id":"CHEBI:45931","preferred_term":"Thiamin pyrophosphate"}],"identifier":"CHEBI:45931","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:45931","ontology_label":"thiamine(1+) diphosphate(1-)","ontology_source":"CHEBI"},"preferred_term":"Thiamin pyrophosphate","sssom_rows":[{"data_row":2761,"object_id":"CHEBI:45931","object_label":"thiamine(1+) diphosphate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Thiamin_Pyrophosphate","synonym_count":1} |
+| ev-02c37d5ca95a62cd | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1952] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-f71f78c3fb347a5a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Thiamin_Pyrophosphate; data-row positions=[2761] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2761,"object_id":"CHEBI:45931","object_label":"thiamine(1+) diphosphate(1-)","other":"2-{3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-4-methyl-1,3-thiazol-3-ium-5-yl}ethyl dihydrogen diphosphate&#124;CAS:136-09-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Thiamin_Pyrophosphate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-747bc7904213e78b | docs/data/mapped_ingredients.csv; CSV lines=[1954] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:45931","line":1954,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:45931","preferred_term":"Thiamin pyrophosphate","total_occurrences":"2"}] |
 | ev-bf700e968266d8b1 | reports/yaml_record_review/Thiamin_Pyrophosphate.md; &#96;data/ingredients/mapped/Thiamin_Pyrophosphate.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:36; Completeness:51; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3c143d3a986966db | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1280,1650] | context_only | [{"current_record_sha256":"db23730b8e0c69f8f3711697b971f39a2203f5105ba91610992f925df8bc07bf","finding_id":"SEM:33f76305788497ff7ce0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"db23730b8e0c69f8f3711697b971f39a2203f5105ba91610992f925df8bc07bf","finding_id":"SEM:abca2d130dfc5bb9e1cf","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-1ee8f8829d7f50b5 | data/ingredients/mapped/Thiamin_Pyrophosphate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-1ee8f8829d7f50b5 | data/ingredients/mapped/Thiamin_Pyrophosphate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1952],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45931","line":1954,"mapping_status":"MAPPED","ontology_id":"CHEBI:45931","preferred_term":"Thiamin pyrophosphate"}],"identifier":"CHEBI:45931","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:45931","ontology_label":"thiamine(1+) diphosphate(1-)","ontology_source":"CHEBI"},"preferred_term":"Thiamin pyrophosphate","sssom_rows":[{"data_row":2761,"object_id":"CHEBI:45931","object_label":"thiamine(1+) diphosphate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Thiamin_Pyrophosphate","synonym_count":1} |
 | ev-9b53ba2403d554d4 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-7aa96d9cdc46e89b] | context_only | Predecessor structured review finding f-7aa96d9cdc46e89b in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-dff17523de241273
+  evidence_ids:
+  - ev-168708c633faf5b1
+  - ev-02c37d5ca95a62cd
+  - ev-f71f78c3fb347a5a
+  - ev-747bc7904213e78b
+  - ev-1ee8f8829d7f50b5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-dff17523de241273
+  evidence_ids:
+  - ev-168708c633faf5b1
+  - ev-3c143d3a986966db
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-dff17523de241273
+  evidence_ids:
+  - ev-bf700e968266d8b1
+  - ev-3c143d3a986966db
+  - ev-9b53ba2403d554d4
 evidence:
 - evidence_id: ev-168708c633faf5b1
   kind: record_content
   reference: data/ingredients/mapped/Thiamin_Pyrophosphate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1953],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45931","line":1955,"mapping_status":"MAPPED","ontology_id":"CHEBI:45931","preferred_term":"Thiamin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1952],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45931","line":1954,"mapping_status":"MAPPED","ontology_id":"CHEBI:45931","preferred_term":"Thiamin
     pyrophosphate"}],"identifier":"CHEBI:45931","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:45931","ontology_label":"thiamine(1+)
-    diphosphate(1-)","ontology_source":"CHEBI"},"preferred_term":"Thiamin pyrophosphate","sssom_rows":[{"data_row":2759,"object_id":"CHEBI:45931","object_label":"thiamine(1+)
+    diphosphate(1-)","ontology_source":"CHEBI"},"preferred_term":"Thiamin pyrophosphate","sssom_rows":[{"data_row":2761,"object_id":"CHEBI:45931","object_label":"thiamine(1+)
     diphosphate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Thiamin_Pyrophosphate","synonym_count":1}'
   snapshot_sha256: db23730b8e0c69f8f3711697b971f39a2203f5105ba91610992f925df8bc07bf
 - evidence_id: ev-02c37d5ca95a62cd
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1953]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1952]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,20 +233,20 @@ evidence:
 - evidence_id: ev-f71f78c3fb347a5a
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Thiamin_Pyrophosphate; data-row positions=[2759]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Thiamin_Pyrophosphate; data-row positions=[2761]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2759,"object_id":"CHEBI:45931","object_label":"thiamine(1+)
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2761,"object_id":"CHEBI:45931","object_label":"thiamine(1+)
     diphosphate(1-)","other":"2-{3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-4-methyl-1,3-thiazol-3-ium-5-yl}ethyl
     dihydrogen diphosphate|CAS:136-09-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Thiamin_Pyrophosphate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-747bc7904213e78b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1955]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1954]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:45931","line":1955,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:45931","preferred_term":"Thiamin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:45931","line":1954,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:45931","preferred_term":"Thiamin
     pyrophosphate","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-bf700e968266d8b1
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1280,1650]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"db23730b8e0c69f8f3711697b971f39a2203f5105ba91610992f925df8bc07bf","finding_id":"SEM:33f76305788497ff7ce0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"db23730b8e0c69f8f3711697b971f39a2203f5105ba91610992f925df8bc07bf","finding_id":"SEM:abca2d130dfc5bb9e1cf","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Thiamin_Pyrophosphate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33229 (vitamin (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1952],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:45931","line":1954,"mapping_status":"MAPPED","ontology_id":"CHEBI:45931","preferred_term":"Thiamin
+    pyrophosphate"}],"identifier":"CHEBI:45931","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:45931","ontology_label":"thiamine(1+)
+    diphosphate(1-)","ontology_source":"CHEBI"},"preferred_term":"Thiamin pyrophosphate","sssom_rows":[{"data_row":2761,"object_id":"CHEBI:45931","object_label":"thiamine(1+)
+    diphosphate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Thiamin_Pyrophosphate","synonym_count":1}'
   snapshot_sha256: db23730b8e0c69f8f3711697b971f39a2203f5105ba91610992f925df8bc07bf
 - evidence_id: ev-9b53ba2403d554d4
   kind: prior_review

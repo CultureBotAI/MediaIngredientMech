@@ -89,7 +89,7 @@ Reassess prediction-only role support: Levan - from Erwinia herbicola
 | ev-11c9dae34acb53de | docs/data/mapped_ingredients.csv; CSV lines=[1296] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16703","line":1296,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16703","preferred_term":"Levan - from Erwinia herbicola","total_occurrences":"0"}] |
 | ev-2a1e99137acb960c | reports/yaml_record_review/Levan_-_From_Erwinia_Herbicola.md; &#96;data/ingredients/mapped/Levan_-_From_Erwinia_Herbicola.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:28; Completeness:45; Recommended Edits:52 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-4006022f4af8a67e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[856,1642] | context_only | [{"current_record_sha256":"48aa7ada162e077803097135c2fc860eff42c2b5fc352b606681116895d14834","finding_id":"SEM:5bf4ef17a48689354564","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"48aa7ada162e077803097135c2fc860eff42c2b5fc352b606681116895d14834","finding_id":"SEM:afbd574992aba87c94cf","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c976a27c385567e8 | data/ingredients/mapped/Levan_-_From_Erwinia_Herbicola.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-c976a27c385567e8 | data/ingredients/mapped/Levan_-_From_Erwinia_Herbicola.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1294],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16703","line":1296,"mapping_status":"MAPPED","ontology_id":"CHEBI:16703","preferred_term":"Levan - from Erwinia herbicola"}],"identifier":"CHEBI:16703","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16703","ontology_label":"(2-&gt;6)-beta-D-fructan","ontology_source":"CHEBI"},"preferred_term":"Levan - from Erwinia herbicola","sssom_rows":[{"data_row":1684,"object_id":"CHEBI:16703","object_label":"(2-&gt;6)-beta-D-fructan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Levan_-_From_Erwinia_Herbicola","synonym_count":1} |
 | ev-8790f40353cdaf26 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-7e67e957672252e5] | context_only | Predecessor structured review finding f-7e67e957672252e5 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8e3f9389e5d58253
+  evidence_ids:
+  - ev-04bf06981a1fd8c7
+  - ev-54677815b762199a
+  - ev-51d2e7074c945fd8
+  - ev-11c9dae34acb53de
+  - ev-c976a27c385567e8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8e3f9389e5d58253
+  evidence_ids:
+  - ev-04bf06981a1fd8c7
+  - ev-4006022f4af8a67e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8e3f9389e5d58253
+  evidence_ids:
+  - ev-2a1e99137acb960c
+  - ev-4006022f4af8a67e
+  - ev-8790f40353cdaf26
 evidence:
 - evidence_id: ev-04bf06981a1fd8c7
   kind: record_content
   reference: data/ingredients/mapped/Levan_-_From_Erwinia_Herbicola.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1294],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16703","line":1296,"mapping_status":"MAPPED","ontology_id":"CHEBI:16703","preferred_term":"Levan
     - from Erwinia herbicola"}],"identifier":"CHEBI:16703","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16703","ontology_label":"(2->6)-beta-D-fructan","ontology_source":"CHEBI"},"preferred_term":"Levan
@@ -211,7 +224,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1294]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +233,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Levan_-_From_Erwinia_Herbicola; data-row positions=[1684]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1684,"object_id":"CHEBI:16703","object_label":"(2->6)-beta-D-fructan","other":"(2->6)-beta-D-fructofuranan|CAS:9013-95-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Levan_-_From_Erwinia_Herbicola","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -228,7 +241,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1296]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16703","line":1296,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16703","preferred_term":"Levan
     - from Erwinia herbicola","total_occurrences":"0"}]'
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[856,1642]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"48aa7ada162e077803097135c2fc860eff42c2b5fc352b606681116895d14834","finding_id":"SEM:5bf4ef17a48689354564","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"48aa7ada162e077803097135c2fc860eff42c2b5fc352b606681116895d14834","finding_id":"SEM:afbd574992aba87c94cf","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Levan_-_From_Erwinia_Herbicola.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1294],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16703","line":1296,"mapping_status":"MAPPED","ontology_id":"CHEBI:16703","preferred_term":"Levan
+    - from Erwinia herbicola"}],"identifier":"CHEBI:16703","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16703","ontology_label":"(2->6)-beta-D-fructan","ontology_source":"CHEBI"},"preferred_term":"Levan
+    - from Erwinia herbicola","sssom_rows":[{"data_row":1684,"object_id":"CHEBI:16703","object_label":"(2->6)-beta-D-fructan","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Levan_-_From_Erwinia_Herbicola","synonym_count":1}'
   snapshot_sha256: 48aa7ada162e077803097135c2fc860eff42c2b5fc352b606681116895d14834
 - evidence_id: ev-8790f40353cdaf26
   kind: prior_review

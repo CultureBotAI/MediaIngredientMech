@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cloxacillin sodium salt monohydrate
 | ev-3fa065bbe38ccd3b | docs/data/mapped_ingredients.csv; CSV lines=[740] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34978","line":740,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:34978","preferred_term":"Cloxacillin sodium salt monohydrate","total_occurrences":"0"}] |
 | ev-f480b0c553a68d72 | reports/yaml_record_review/Cloxacillin_Sodium_Salt_Monohydrate.md; &#96;data/ingredients/mapped/Cloxacillin_Sodium_Salt_Monohydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:31; Evidence:48; Completeness:65; Recommended Edits:72 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-743d50f16741dc73 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[427,1666] | context_only | [{"current_record_sha256":"607668d0334efda6e6b8683cac45e5a1c80e250ddba9d02e89d542031b4ab56d","finding_id":"SEM:0c5102f014d9268ba779","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"607668d0334efda6e6b8683cac45e5a1c80e250ddba9d02e89d542031b4ab56d","finding_id":"SEM:82d223b6a737b2305d15","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-7a2672bbd2d63c2c | data/ingredients/mapped/Cloxacillin_Sodium_Salt_Monohydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-7a2672bbd2d63c2c | data/ingredients/mapped/Cloxacillin_Sodium_Salt_Monohydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[738],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34978","line":740,"mapping_status":"MAPPED","ontology_id":"CHEBI:34978","preferred_term":"Cloxacillin sodium salt monohydrate"}],"identifier":"CHEBI:34978","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:34978","ontology_label":"cloxacillin sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Cloxacillin sodium salt monohydrate","sssom_rows":[{"data_row":790,"object_id":"CHEBI:34978","object_label":"cloxacillin sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cloxacillin_Sodium_Salt_Monohydrate","synonym_count":1} |
 | ev-419646d434c6b061 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-94191e13724a55a8] | context_only | Predecessor structured review finding f-94191e13724a55a8 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-fc8896005db80712
+  evidence_ids:
+  - ev-4cb39f93e2e6e478
+  - ev-9a7e0a41cf59b495
+  - ev-340a14019392d45e
+  - ev-3fa065bbe38ccd3b
+  - ev-7a2672bbd2d63c2c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-fc8896005db80712
+  evidence_ids:
+  - ev-4cb39f93e2e6e478
+  - ev-743d50f16741dc73
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-fc8896005db80712
+  evidence_ids:
+  - ev-f480b0c553a68d72
+  - ev-743d50f16741dc73
+  - ev-419646d434c6b061
 evidence:
 - evidence_id: ev-4cb39f93e2e6e478
   kind: record_content
   reference: data/ingredients/mapped/Cloxacillin_Sodium_Salt_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[738],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34978","line":740,"mapping_status":"MAPPED","ontology_id":"CHEBI:34978","preferred_term":"Cloxacillin
     sodium salt monohydrate"}],"identifier":"CHEBI:34978","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:34978","ontology_label":"cloxacillin
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [738]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +235,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cloxacillin_Sodium_Salt_Monohydrate; data-row positions=[790]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":790,"object_id":"CHEBI:34978","object_label":"cloxacillin
     sodium monohydrate","other":"sodium 2,2-dimethyl-6beta-({[5-methyl-3-(2-chlorophenyl)isoxazol-4-yl]carbonyl}amino)penam-3alpha-carboxylate
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[740]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34978","line":740,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:34978","preferred_term":"Cloxacillin
     sodium salt monohydrate","total_occurrences":"0"}]'
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[427,1666]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"607668d0334efda6e6b8683cac45e5a1c80e250ddba9d02e89d542031b4ab56d","finding_id":"SEM:0c5102f014d9268ba779","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"607668d0334efda6e6b8683cac45e5a1c80e250ddba9d02e89d542031b4ab56d","finding_id":"SEM:82d223b6a737b2305d15","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cloxacillin_Sodium_Salt_Monohydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[738],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34978","line":740,"mapping_status":"MAPPED","ontology_id":"CHEBI:34978","preferred_term":"Cloxacillin
+    sodium salt monohydrate"}],"identifier":"CHEBI:34978","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:34978","ontology_label":"cloxacillin
+    sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Cloxacillin sodium
+    salt monohydrate","sssom_rows":[{"data_row":790,"object_id":"CHEBI:34978","object_label":"cloxacillin
+    sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cloxacillin_Sodium_Salt_Monohydrate","synonym_count":1}'
   snapshot_sha256: 607668d0334efda6e6b8683cac45e5a1c80e250ddba9d02e89d542031b4ab56d
 - evidence_id: ev-419646d434c6b061
   kind: prior_review

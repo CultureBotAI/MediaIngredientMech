@@ -85,11 +85,11 @@ Reassess prediction-only role support: DL-3-Aminoisobutyric acid
 | --- | --- | --- | --- |
 | ev-b25e5109ead8cef5 | data/ingredients/mapped/DL-3-Aminoisobutyric_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[851],"raw_equal":true},"docs_rows":[{"identifier":"cas:144-90-1","line":853,"mapping_status":"MAPPED","ontology_id":"CHEBI:27389","preferred_term":"DL-3-Aminoisobutyric acid"}],"identifier":"cas:144-90-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:27389","ontology_label":"3-aminoisobutyric acid","ontology_source":"CHEBI"},"preferred_term":"DL-3-Aminoisobutyric acid","sssom_rows":[{"data_row":973,"object_id":"CHEBI:27389","object_label":"3-aminoisobutyric acid","predicate_id":"skos:broadMatch"},{"data_row":974,"object_id":"cas:144-90-1","object_label":"DL-3-Aminoisobutyric acid","predicate_id":"skos:exactMatch"},{"data_row":975,"object_id":"kgmicrobe.compound:dl-3-aminoisobutyric_acid","object_label":"DL-3-Aminoisobutyric acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-3-Aminoisobutyric_Acid","synonym_count":1} |
 | ev-d7d6de1d2ba1a292 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [851] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-2930b9b7700d133d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL-3-Aminoisobutyric_Acid; data-row positions=[973,974,975] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":973,"object_id":"CHEBI:27389","object_label":"3-aminoisobutyric acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:DL-3-Aminoisobutyric_Acid","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":974,"object_id":"cas:144-90-1","object_label":"DL-3-Aminoisobutyric acid","other":"CAS:144-90-1","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-3-Aminoisobutyric_Acid","validation_method":""},{"data_row":975,"object_id":"kgmicrobe.compound:dl-3-aminoisobutyric_acid","object_label":"DL-3-Aminoisobutyric acid","other":"CAS:144-90-1","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-3-Aminoisobutyric_Acid","validation_method":""}] |
+| ev-2930b9b7700d133d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL-3-Aminoisobutyric_Acid; data-row positions=[973, 974, 975] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":973,"object_id":"CHEBI:27389","object_label":"3-aminoisobutyric acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:DL-3-Aminoisobutyric_Acid","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":974,"object_id":"cas:144-90-1","object_label":"DL-3-Aminoisobutyric acid","other":"CAS:144-90-1","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-3-Aminoisobutyric_Acid","validation_method":""},{"data_row":975,"object_id":"kgmicrobe.compound:dl-3-aminoisobutyric_acid","object_label":"DL-3-Aminoisobutyric acid","other":"CAS:144-90-1","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-3-Aminoisobutyric_Acid","validation_method":""}] |
 | ev-72bad2a0ec7ef17a | docs/data/mapped_ingredients.csv; CSV lines=[853] | supports | Published identity and count rows inspected: [{"identifier":"cas:144-90-1","line":853,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27389","preferred_term":"DL-3-Aminoisobutyric acid","total_occurrences":"0"}] |
 | ev-edcbe9f3e465eda0 | reports/yaml_record_review/DL-3-Aminoisobutyric_Acid.md; &#96;data/ingredients/mapped/DL-3-Aminoisobutyric_Acid.yaml&#96;:2; Verdict:4; Identity:13; Validation:28; Evidence:48; Completeness:64; Recommended Edits:74 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-aa416be35d098ad6 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[514,1427] | context_only | [{"current_record_sha256":"d9e353eee73a2be99cff88daa9789b7ba2f2053ccfbe6553e9c1582a3a774555","finding_id":"SEM:fc2d7b98ee57f7623bef","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d9e353eee73a2be99cff88daa9789b7ba2f2053ccfbe6553e9c1582a3a774555","finding_id":"SEM:f69d3ddecf0abf11eaf3","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-36b3d0b54b9b3bf4 | data/ingredients/mapped/DL-3-Aminoisobutyric_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-36b3d0b54b9b3bf4 | data/ingredients/mapped/DL-3-Aminoisobutyric_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[851],"raw_equal":true},"docs_rows":[{"identifier":"cas:144-90-1","line":853,"mapping_status":"MAPPED","ontology_id":"CHEBI:27389","preferred_term":"DL-3-Aminoisobutyric acid"}],"identifier":"cas:144-90-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:27389","ontology_label":"3-aminoisobutyric acid","ontology_source":"CHEBI"},"preferred_term":"DL-3-Aminoisobutyric acid","sssom_rows":[{"data_row":973,"object_id":"CHEBI:27389","object_label":"3-aminoisobutyric acid","predicate_id":"skos:broadMatch"},{"data_row":974,"object_id":"cas:144-90-1","object_label":"DL-3-Aminoisobutyric acid","predicate_id":"skos:exactMatch"},{"data_row":975,"object_id":"kgmicrobe.compound:dl-3-aminoisobutyric_acid","object_label":"DL-3-Aminoisobutyric acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-3-Aminoisobutyric_Acid","synonym_count":1} |
 | ev-774176f262e6647b | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-5633a6463cccdcb0] | context_only | Predecessor structured review finding f-5633a6463cccdcb0 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-504981d26fa512f2
+  evidence_ids:
+  - ev-b25e5109ead8cef5
+  - ev-d7d6de1d2ba1a292
+  - ev-2930b9b7700d133d
+  - ev-72bad2a0ec7ef17a
+  - ev-36b3d0b54b9b3bf4
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-504981d26fa512f2
+  evidence_ids:
+  - ev-b25e5109ead8cef5
+  - ev-aa416be35d098ad6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-504981d26fa512f2
+  evidence_ids:
+  - ev-edcbe9f3e465eda0
+  - ev-aa416be35d098ad6
+  - ev-774176f262e6647b
 evidence:
 - evidence_id: ev-b25e5109ead8cef5
   kind: record_content
   reference: data/ingredients/mapped/DL-3-Aminoisobutyric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[851],"raw_equal":true},"docs_rows":[{"identifier":"cas:144-90-1","line":853,"mapping_status":"MAPPED","ontology_id":"CHEBI:27389","preferred_term":"DL-3-Aminoisobutyric
     acid"}],"identifier":"cas:144-90-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:27389","ontology_label":"3-aminoisobutyric
@@ -214,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [851]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,8 +235,9 @@ evidence:
 - evidence_id: ev-2930b9b7700d133d
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:DL-3-Aminoisobutyric_Acid; data-row positions=[973,974,975]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:DL-3-Aminoisobutyric_Acid; data-row positions=[973, 974,
+    975]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":973,"object_id":"CHEBI:27389","object_label":"3-aminoisobutyric
     acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:DL-3-Aminoisobutyric_Acid","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":974,"object_id":"cas:144-90-1","object_label":"DL-3-Aminoisobutyric
@@ -234,7 +248,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[853]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:144-90-1","line":853,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:27389","preferred_term":"DL-3-Aminoisobutyric
     acid","total_occurrences":"0"}]'
@@ -262,7 +276,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[514,1427]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d9e353eee73a2be99cff88daa9789b7ba2f2053ccfbe6553e9c1582a3a774555","finding_id":"SEM:fc2d7b98ee57f7623bef","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d9e353eee73a2be99cff88daa9789b7ba2f2053ccfbe6553e9c1582a3a774555","finding_id":"SEM:f69d3ddecf0abf11eaf3","kind":"role_evidence","resolution_reason":"Historical
@@ -272,12 +286,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/DL-3-Aminoisobutyric_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[851],"raw_equal":true},"docs_rows":[{"identifier":"cas:144-90-1","line":853,"mapping_status":"MAPPED","ontology_id":"CHEBI:27389","preferred_term":"DL-3-Aminoisobutyric
+    acid"}],"identifier":"cas:144-90-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:27389","ontology_label":"3-aminoisobutyric
+    acid","ontology_source":"CHEBI"},"preferred_term":"DL-3-Aminoisobutyric acid","sssom_rows":[{"data_row":973,"object_id":"CHEBI:27389","object_label":"3-aminoisobutyric
+    acid","predicate_id":"skos:broadMatch"},{"data_row":974,"object_id":"cas:144-90-1","object_label":"DL-3-Aminoisobutyric
+    acid","predicate_id":"skos:exactMatch"},{"data_row":975,"object_id":"kgmicrobe.compound:dl-3-aminoisobutyric_acid","object_label":"DL-3-Aminoisobutyric
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-3-Aminoisobutyric_Acid","synonym_count":1}'
   snapshot_sha256: d9e353eee73a2be99cff88daa9789b7ba2f2053ccfbe6553e9c1582a3a774555
 - evidence_id: ev-774176f262e6647b
   kind: prior_review

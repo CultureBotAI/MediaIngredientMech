@@ -83,13 +83,13 @@ Reassess prediction-only role support: Stachyose hydrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-9170f89dc4cdf0da | data/ingredients/mapped/Stachyose_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1895],"raw_equal":true},"docs_rows":[{"identifier":"cas:54261-98-2","line":1897,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose hydrate"}],"identifier":"cas:54261-98-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose hydrate","sssom_rows":[{"data_row":2641,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:closeMatch"},{"data_row":2642,"object_id":"cas:54261-98-2","object_label":"Stachyose hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_Hydrate","synonym_count":0} |
-| ev-b37c43d45eba1cca | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1895] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-78bd190d319f3102 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Stachyose_Hydrate; data-row positions=[2641,2642] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2641,"object_id":"CHEBI:17164","object_label":"stachyose","other":"CAS:54261-98-2","predicate_id":"skos:closeMatch","subject_id":"MIM:Stachyose_Hydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":2642,"object_id":"cas:54261-98-2","object_label":"Stachyose hydrate","other":"CAS:54261-98-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Stachyose_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-e1996954b30aa66e | docs/data/mapped_ingredients.csv; CSV lines=[1897] | supports | Published identity and count rows inspected: [{"identifier":"cas:54261-98-2","line":1897,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17164","preferred_term":"Stachyose hydrate","total_occurrences":"0"}] |
+| ev-9170f89dc4cdf0da | data/ingredients/mapped/Stachyose_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1894],"raw_equal":true},"docs_rows":[{"identifier":"cas:54261-98-2","line":1896,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose hydrate"}],"identifier":"cas:54261-98-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose hydrate","sssom_rows":[{"data_row":2643,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:closeMatch"},{"data_row":2644,"object_id":"cas:54261-98-2","object_label":"Stachyose hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_Hydrate","synonym_count":0} |
+| ev-b37c43d45eba1cca | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1894] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-78bd190d319f3102 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Stachyose_Hydrate; data-row positions=[2643, 2644] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2643,"object_id":"CHEBI:17164","object_label":"stachyose","other":"CAS:54261-98-2","predicate_id":"skos:closeMatch","subject_id":"MIM:Stachyose_Hydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":2644,"object_id":"cas:54261-98-2","object_label":"Stachyose hydrate","other":"CAS:54261-98-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Stachyose_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-e1996954b30aa66e | docs/data/mapped_ingredients.csv; CSV lines=[1896] | supports | Published identity and count rows inspected: [{"identifier":"cas:54261-98-2","line":1896,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17164","preferred_term":"Stachyose hydrate","total_occurrences":"0"}] |
 | ev-095a6fa7c8e7040c | reports/yaml_record_review/Stachyose_Hydrate.md; &#96;data/ingredients/mapped/Stachyose_Hydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:32; Completeness:52; Recommended Edits:60 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3b3cc4908c685cbb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1247,2102] | context_only | [{"current_record_sha256":"c8bd702022c2f571b9bbcb446d2abe1cda6b69568d2b0bea257be86540305682","finding_id":"SEM:c1a3ca7f81aed3d5c33d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c8bd702022c2f571b9bbcb446d2abe1cda6b69568d2b0bea257be86540305682","finding_id":"SEM:3342da359901c5a7d5e8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-50631c9455ac1266 | data/ingredients/mapped/Stachyose_Hydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-50631c9455ac1266 | data/ingredients/mapped/Stachyose_Hydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1894],"raw_equal":true},"docs_rows":[{"identifier":"cas:54261-98-2","line":1896,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose hydrate"}],"identifier":"cas:54261-98-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose hydrate","sssom_rows":[{"data_row":2643,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:closeMatch"},{"data_row":2644,"object_id":"cas:54261-98-2","object_label":"Stachyose hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_Hydrate","synonym_count":0} |
 | ev-88fad6150ae03398 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-512714805e6476c5] | context_only | Predecessor structured review finding f-512714805e6476c5 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0ff453440710770a
+  evidence_ids:
+  - ev-9170f89dc4cdf0da
+  - ev-b37c43d45eba1cca
+  - ev-78bd190d319f3102
+  - ev-e1996954b30aa66e
+  - ev-50631c9455ac1266
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0ff453440710770a
+  evidence_ids:
+  - ev-9170f89dc4cdf0da
+  - ev-3b3cc4908c685cbb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0ff453440710770a
+  evidence_ids:
+  - ev-095a6fa7c8e7040c
+  - ev-3b3cc4908c685cbb
+  - ev-88fad6150ae03398
 evidence:
 - evidence_id: ev-9170f89dc4cdf0da
   kind: record_content
   reference: data/ingredients/mapped/Stachyose_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1895],"raw_equal":true},"docs_rows":[{"identifier":"cas:54261-98-2","line":1897,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1894],"raw_equal":true},"docs_rows":[{"identifier":"cas:54261-98-2","line":1896,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
     hydrate"}],"identifier":"cas:54261-98-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose
-    hydrate","sssom_rows":[{"data_row":2641,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:closeMatch"},{"data_row":2642,"object_id":"cas:54261-98-2","object_label":"Stachyose
+    hydrate","sssom_rows":[{"data_row":2643,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:closeMatch"},{"data_row":2644,"object_id":"cas:54261-98-2","object_label":"Stachyose
     hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_Hydrate","synonym_count":0}'
   snapshot_sha256: c8bd702022c2f571b9bbcb446d2abe1cda6b69568d2b0bea257be86540305682
 - evidence_id: ev-b37c43d45eba1cca
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1895]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1894]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-78bd190d319f3102
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Stachyose_Hydrate; data-row positions=[2641,2642]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Stachyose_Hydrate; data-row positions=[2643, 2644]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2641,"object_id":"CHEBI:17164","object_label":"stachyose","other":"CAS:54261-98-2","predicate_id":"skos:closeMatch","subject_id":"MIM:Stachyose_Hydrate","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"},{"data_row":2642,"object_id":"cas:54261-98-2","object_label":"Stachyose
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2643,"object_id":"CHEBI:17164","object_label":"stachyose","other":"CAS:54261-98-2","predicate_id":"skos:closeMatch","subject_id":"MIM:Stachyose_Hydrate","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"},{"data_row":2644,"object_id":"cas:54261-98-2","object_label":"Stachyose
     hydrate","other":"CAS:54261-98-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Stachyose_Hydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-e1996954b30aa66e
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1897]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1896]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:54261-98-2","line":1897,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:54261-98-2","line":1896,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
     hydrate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-095a6fa7c8e7040c
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1247,2102]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c8bd702022c2f571b9bbcb446d2abe1cda6b69568d2b0bea257be86540305682","finding_id":"SEM:c1a3ca7f81aed3d5c33d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c8bd702022c2f571b9bbcb446d2abe1cda6b69568d2b0bea257be86540305682","finding_id":"SEM:3342da359901c5a7d5e8","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Stachyose_Hydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1894],"raw_equal":true},"docs_rows":[{"identifier":"cas:54261-98-2","line":1896,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
+    hydrate"}],"identifier":"cas:54261-98-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose
+    hydrate","sssom_rows":[{"data_row":2643,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:closeMatch"},{"data_row":2644,"object_id":"cas:54261-98-2","object_label":"Stachyose
+    hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_Hydrate","synonym_count":0}'
   snapshot_sha256: c8bd702022c2f571b9bbcb446d2abe1cda6b69568d2b0bea257be86540305682
 - evidence_id: ev-88fad6150ae03398
   kind: prior_review

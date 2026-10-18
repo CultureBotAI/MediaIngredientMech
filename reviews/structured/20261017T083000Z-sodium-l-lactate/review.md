@@ -77,13 +77,12 @@ Disposition: The current local observation is recorded on a REJECTED tombstone, 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c241a7c50640b1f3 | data/ingredients/mapped/Sodium_L-lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1847],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1849,"mapping_status":"REJECTED","ontology_id":"CHEBI:232798","preferred_term":"Sodium L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium L-lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium L-lactate","sssom_rows":[],"sssom_subject":"MIM:Sodium_L-lactate","synonym_count":1} |
-| ev-9d861a394797dbcc | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1847] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c241a7c50640b1f3 | data/ingredients/mapped/Sodium_L-lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1846],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1848,"mapping_status":"REJECTED","ontology_id":"CHEBI:232798","preferred_term":"Sodium L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium L-lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium L-lactate","sssom_rows":[],"sssom_subject":"MIM:Sodium_L-lactate","synonym_count":1} |
+| ev-9d861a394797dbcc | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1846] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-d2f0e7fe47ff04fa | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_L-lactate; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
-| ev-70ddac9b16d87d0c | docs/data/mapped_ingredients.csv; CSV lines=[1849] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:232798","line":1849,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:232798","preferred_term":"Sodium L-lactate","total_occurrences":"0"}] |
+| ev-70ddac9b16d87d0c | docs/data/mapped_ingredients.csv; CSV lines=[1848] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:232798","line":1848,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:232798","preferred_term":"Sodium L-lactate","total_occurrences":"0"}] |
 | ev-bf2d791ba7229391 | reports/yaml_record_review/Sodium_L-lactate.md; &#96;data/ingredients/mapped/Sodium_L-lactate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-b26222588fecb744 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1219] | context_only | [{"current_record_sha256":"c9b2157390a5a84dfd18e5d8d869edd2114b62b3b92b82e064c0b3a29cb3ccce","finding_id":"SEM:62dd5d8f80ed06927808","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-f4b90a1963e609c7 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Sodium_L-lactate.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -172,6 +171,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0d86662afef1df4c
+  evidence_ids:
+  - ev-c241a7c50640b1f3
+  - ev-9d861a394797dbcc
+  - ev-d2f0e7fe47ff04fa
+  - ev-70ddac9b16d87d0c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -180,6 +184,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-0d86662afef1df4c
+  evidence_ids:
+  - ev-c241a7c50640b1f3
+  - ev-b26222588fecb744
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -188,23 +195,26 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0d86662afef1df4c
+  evidence_ids:
+  - ev-bf2d791ba7229391
+  - ev-b26222588fecb744
 evidence:
 - evidence_id: ev-c241a7c50640b1f3
   kind: record_content
   reference: data/ingredients/mapped/Sodium_L-lactate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1847],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1849,"mapping_status":"REJECTED","ontology_id":"CHEBI:232798","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1846],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1848,"mapping_status":"REJECTED","ontology_id":"CHEBI:232798","preferred_term":"Sodium
     L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium
     L-lactate","ontology_source":"CHEBI"},"preferred_term":"Sodium L-lactate","sssom_rows":[],"sssom_subject":"MIM:Sodium_L-lactate","synonym_count":1}'
   snapshot_sha256: c9b2157390a5a84dfd18e5d8d869edd2114b62b3b92b82e064c0b3a29cb3ccce
 - evidence_id: ev-9d861a394797dbcc
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1847]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1846]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -213,17 +223,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Sodium_L-lactate; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-70ddac9b16d87d0c
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1849]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1848]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:232798","line":1849,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:232798","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:232798","line":1848,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:232798","preferred_term":"Sodium
     L-lactate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-bf2d791ba7229391
@@ -240,18 +250,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1219]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c9b2157390a5a84dfd18e5d8d869edd2114b62b3b92b82e064c0b3a29cb3ccce","finding_id":"SEM:62dd5d8f80ed06927808","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-f4b90a1963e609c7
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Sodium_L-lactate.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-6a48a816f4039274
@@ -320,7 +322,7 @@ assessments:
   - record-0d86662afef1df4c
   evidence_ids:
   - ev-c241a7c50640b1f3
-  - ev-f4b90a1963e609c7
+  - ev-b26222588fecb744
   dimensions:
   - name: legacy-disposition
     value: needs_reassessment
@@ -328,7 +330,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-c241a7c50640b1f3
-    - ev-f4b90a1963e609c7
+    - ev-b26222588fecb744
 findings:
 - finding_id: rec-f-role-0d86662afef1df4c
   issue_key: mim-reconciliation-role-support-0d86662afef1df4c
@@ -344,7 +346,7 @@ findings:
   - record-0d86662afef1df4c
   evidence_ids:
   - ev-c241a7c50640b1f3
-  - ev-f4b90a1963e609c7
+  - ev-b26222588fecb744
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Sodium_L-lactate.yaml

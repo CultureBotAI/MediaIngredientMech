@@ -80,6 +80,14 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-4efe2f6907f0d4fc
+  evidence_ids:
+  - ev-b7c4416499778ebf
+  - ev-03b76ec7595397b0
+  - ev-b4b66e47d09fff06
+  - ev-ffa5f7d8c39bbea1
+  - ev-f1dd03e810d4997b
+  - ev-5175fd560468ba85
+  - ev-c84617d1a202e069
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -88,6 +96,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-4efe2f6907f0d4fc
+  evidence_ids:
+  - ev-b7c4416499778ebf
+  - ev-1fc7a06886a752cf
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -96,24 +107,31 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4efe2f6907f0d4fc
+  evidence_ids:
+  - ev-d8b50ecf394b7a07
+  - ev-1fc7a06886a752cf
+  - ev-0701e78e991c4118
+  - ev-ef345ac5a6dc1108
+  - ev-dfd2449f4d0c27f9
+  - ev-c63305e818302650
 evidence:
 - evidence_id: ev-b7c4416499778ebf
   kind: record_content
   reference: data/ingredients/mapped/Yeast_Extract.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2074],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315426","line":2076,"mapping_status":"MAPPED","ontology_id":"FOODON:03315426","preferred_term":"Yeast
-    extract"}],"identifier":"FOODON:03315426","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7617,"edge_count":7617,"occurrences":7697},"occurrence_statistics":{"media_count":7617,"source_occurrences":[{"count":46,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":7697},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"FOODON:03315426","ontology_label":"yeast
-    extract","ontology_source":"FOODON"},"preferred_term":"Yeast extract","sssom_rows":[{"data_row":2949,"object_id":"FOODON:03315426","object_label":"yeast
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2073],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315426","line":2075,"mapping_status":"MAPPED","ontology_id":"FOODON:03315426","preferred_term":"Yeast
+    extract"}],"identifier":"FOODON:03315426","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7617,"edge_count":7617,"occurrences":7697},"occurrence_statistics":{"media_count":7617,"total_occurrences":7697},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"FOODON:03315426","ontology_label":"yeast
+    extract","ontology_source":"FOODON"},"preferred_term":"Yeast extract","sssom_rows":[{"data_row":2951,"object_id":"FOODON:03315426","object_label":"yeast
     extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Yeast_Extract","synonym_count":36}'
   snapshot_sha256: e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28
 - evidence_id: ev-03b76ec7595397b0
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2074]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2073]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -121,10 +139,10 @@ evidence:
 - evidence_id: ev-b4b66e47d09fff06
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Yeast_Extract; data-row positions=[2949]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Yeast_Extract; data-row positions=[2951]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2949,"object_id":"FOODON:03315426","object_label":"yeast
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2951,"object_id":"FOODON:03315426","object_label":"yeast
     extract","other":"Yeast extract(Bacto, Difco)|Yeast extract(CAS: 8013-01-2)|Yeast
     extract (BD-Difco)|Bacto Yeast Extract (Difco)|Yeast extract (OXOID)|Bacto yeast
     extract|Yeast extract (Difco)|Yeast extract (BD--Difco)|Yeast Extract (BD 212750)|Yeast
@@ -139,10 +157,10 @@ evidence:
 - evidence_id: ev-ffa5f7d8c39bbea1
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2076]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2075]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315426","line":2076,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"7617","ontology_id":"FOODON:03315426","preferred_term":"Yeast
+  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315426","line":2075,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"7617","ontology_id":"FOODON:03315426","preferred_term":"Yeast
     extract","total_occurrences":"7697"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-d8b50ecf394b7a07
@@ -175,7 +193,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1358,1924]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28","finding_id":"SEM:05e832d9297c26f5a017","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28","finding_id":"SEM:38572e0ff78bd4e180d6","kind":"role_evidence","resolution_reason":"Historical
@@ -185,12 +203,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Yeast_Extract.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2073],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315426","line":2075,"mapping_status":"MAPPED","ontology_id":"FOODON:03315426","preferred_term":"Yeast
+    extract"}],"identifier":"FOODON:03315426","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7617,"edge_count":7617,"occurrences":7697},"occurrence_statistics":{"media_count":7617,"total_occurrences":7697},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"FOODON:03315426","ontology_label":"yeast
+    extract","ontology_source":"FOODON"},"preferred_term":"Yeast extract","sssom_rows":[{"data_row":2951,"object_id":"FOODON:03315426","object_label":"yeast
+    extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Yeast_Extract","synonym_count":36}'
   snapshot_sha256: e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28
 - evidence_id: ev-823412d1eacb6795
   kind: record_content
@@ -229,73 +247,30 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Yeast_Extract.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "microbedecoder", "synonym_text": "Yeast
-    Extract (0.01 %", "synonym_type": "RAW_TEXT"}], "history": [{"action": "IMPORTED",
-    "changes": "Initial import from CultureMech pipeline", "curator": "import_from_culturemech",
-    "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-03-09T06:54:18.022301+00:00"},
-    {"action": "ADDED_CAS_RN", "changes": "Added CAS-RN:8013-01-2 from CultureBotHT
-    compound mappings", "curator": "integrate_cas_rn_from_culturebot_ht", "llm_assisted":
-    false, "new_status": "UNMAPPED", "timestamp": "2026-04-05T17:53:47.291847+00:00"},
-    {"action": "MAPPED", "changes": "Promoted commercial food-mixture surface forms
-    with FOODON:03315426 (yeast extract). Added brand/catalog variants as synonyms.",
-    "curator": "foodon_promotion_cbclaw", "llm_assisted": true, "new_status": "MAPPED",
-    "timestamp": "2026-04-18T04:19:36+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern
-    ''Yeast'')", "curator": "auto_classify_ingredient_type", "llm_assisted": false,
-    "timestamp": "2026-05-01T07:35:36.939492+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern
-    ''Yeast'')", "curator": "auto_classify_ingredient_type", "llm_assisted": false,
-    "timestamp": "2026-05-02T03:12:19.307519+00:00"}, {"action": "ANNOTATED", "changes":
-    "Added media role: PROTEIN_SOURCE (confidence: 0.80)", "curator": "infer_roles_from_name_lists",
-    "timestamp": "2026-06-03T02:06:01.753916+00:00"}, {"action": "ANNOTATED", "changes":
-    "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE",
-    "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"},
-    {"action": "MERGED_FROM_UNMAPPED_DUPLICATE", "changes": "Absorbed UNMAPPED_0700
-    ''Yeast Extract (0.01 %'' as a RAW_TEXT synonym -- concentration-truncated duplicate
-    of yeast extract. No new SSSOM row; FOODON:03315426 is already mapped. Source:
-    kgmicrobe.trait:yeast_extract_0_01.", "curator": "microbedecoder-residual-dispositions",
-    "llm_assisted": true, "timestamp": "2026-08-05T00:01:30.894952+00:00"}, {"action":
-    "CORRECTED", "changes": "occurrence_statistics 5/5 -> 7617/7697 (media_count/total_occurrences),
-    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-    prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.520171+00:00"}, {"action": "ADDED_SYNONYMS",
-    "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record''s
-    published label but were absent from MIM''s label index, so CultureMech could
-    not resolve them: ''Fresh Baker\u2019s Yeast Extract'' (x1 CultureMech mentions).
-    Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill",
-    "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier":
-    "FOODON:03315426", "mapping": {"evidence": [{"evidence_type": "CURATOR_JUDGMENT",
-    "notes": "Commercial food mixture - FOODON is correct parent ontology (not CHEBI,
-    since yeast extract is a multi-component food extract, not a single chemical).",
-    "source": "cbclaw_foodon_promotion"}], "mapping_quality": "EXACT_MATCH", "ontology_id":
-    "FOODON:03315426", "ontology_label": "yeast extract", "ontology_source": "FOODON"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2073],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315426","line":2075,"mapping_status":"MAPPED","ontology_id":"FOODON:03315426","preferred_term":"Yeast
+    extract"}],"identifier":"FOODON:03315426","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":7617,"edge_count":7617,"occurrences":7697},"occurrence_statistics":{"media_count":7617,"total_occurrences":7697},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"FOODON:03315426","ontology_label":"yeast
+    extract","ontology_source":"FOODON"},"preferred_term":"Yeast extract","sssom_rows":[{"data_row":2951,"object_id":"FOODON:03315426","object_label":"yeast
+    extract","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Yeast_Extract","synonym_count":36}'
   snapshot_sha256: e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28
 - evidence_id: ev-c84617d1a202e069
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Yeast_Extract
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Yeast_Extract; data-row positions=[2951]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.99", "data_row": 2949, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:LexicalMatching", "object_id":
-    "FOODON:03315426", "object_label": "yeast extract", "object_source": "obo:foodon.owl",
-    "other": "Yeast extract(Bacto, Difco)|Yeast extract(CAS: 8013-01-2)|Yeast extract
-    (BD-Difco)|Bacto Yeast Extract (Difco)|Yeast extract (OXOID)|Bacto yeast extract|Yeast
-    extract (Difco)|Yeast extract (BD--Difco)|Yeast Extract (BD 212750)|Yeast extract
-    (Difco or Oxoid)|Yeast extract (BD Bacto)|Bacto Yeast  Extract (Difco)|Yeast extract
-    (BD-BBL)|Yeast extract (Oxoid LP0021, BD 212750)|Yeast Extract (BD 211928)|Difco
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2951,"object_id":"FOODON:03315426","object_label":"yeast
+    extract","other":"Yeast extract(Bacto, Difco)|Yeast extract(CAS: 8013-01-2)|Yeast
+    extract (BD-Difco)|Bacto Yeast Extract (Difco)|Yeast extract (OXOID)|Bacto yeast
+    extract|Yeast extract (Difco)|Yeast extract (BD--Difco)|Yeast Extract (BD 212750)|Yeast
+    extract (Difco or Oxoid)|Yeast extract (BD Bacto)|Bacto Yeast  Extract (Difco)|Yeast
+    extract (BD-BBL)|Yeast extract (Oxoid LP0021, BD 212750)|Yeast Extract (BD 211928)|Difco
     Bacto-yeast extract|Dried yeast extract S (Wako)|Yeast Extract (BD, 212750)|Yeast
     extract(Oxoid)|Yeast extract (BBL)|Bacto-yeast extract|Yeast Extract(Difco)|yeast
     extract (BD Difco)|yeast extract (Nacalai Tesque, Kyoto, Japan)|Yeast Extract
     (Hardy C7340)|Liquid yeast extract (Flow)|Fresh Baker''s Yeast Extract|Yeast Extract
-    (0.01 %|Fresh Baker\u2019s Yeast Extract|CAS:8013-01-2", "predicate_id": "skos:exactMatch",
-    "source": "MIM:cbclaw_foodon_promotion|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Yeast_Extract", "subject_label": "Yeast extract", "validation_method":
-    "OLS:foodon|SYNONYM_ENRICH|2026-07-07"}]'
+    (0.01 %|Fresh Baker\u2019s Yeast Extract|CAS:8013-01-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Yeast_Extract","validation_method":"OLS:foodon|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-ef345ac5a6dc1108
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Casamino acids
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-85b0bddb74e215d6 | data/ingredients/mapped/Casamino_Acids.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2490],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315719","line":2492,"mapping_status":"MAPPED","ontology_id":"FOODON:03315719","preferred_term":"Casamino acids"}],"identifier":"FOODON:03315719","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1247,"edge_count":1247,"occurrences":1313},"occurrence_statistics":{"media_count":1247,"total_occurrences":1313},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315719","ontology_label":"mammalian milk protein (hydrolyzed)","ontology_source":"FOODON"},"preferred_term":"Casamino acids","sssom_rows":[{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian milk protein (hydrolyzed)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids","synonym_count":8} |
-| ev-96725b3a2e18c3f7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2490] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-85b0bddb74e215d6 | data/ingredients/mapped/Casamino_Acids.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2489],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315719","line":2491,"mapping_status":"MAPPED","ontology_id":"FOODON:03315719","preferred_term":"Casamino acids"}],"identifier":"FOODON:03315719","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1247,"edge_count":1247,"occurrences":1313},"occurrence_statistics":{"media_count":1247,"total_occurrences":1313},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315719","ontology_label":"mammalian milk protein (hydrolyzed)","ontology_source":"FOODON"},"preferred_term":"Casamino acids","sssom_rows":[{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian milk protein (hydrolyzed)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids","synonym_count":8} |
+| ev-96725b3a2e18c3f7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2489] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-38deabfebb14e96c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Casamino_Acids; data-row positions=[656] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian milk protein (hydrolyzed)","other":"Casamino Acid&#124;Casaminoacids&#124;Casmino Acid&#124;Casmino acids&#124;carbocerate&#124;Casamino Acids (0.01 %&#124;CAS:65072-00-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Casamino_Acids","validation_method":"manual:reconcile_sssom&#124;REMAPPED&#124;2026-08-06"}] |
-| ev-65386795fe7e0687 | docs/data/mapped_ingredients.csv; CSV lines=[2492] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:03315719","line":2492,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1247","ontology_id":"FOODON:03315719","preferred_term":"Casamino acids","total_occurrences":"1313"}] |
+| ev-65386795fe7e0687 | docs/data/mapped_ingredients.csv; CSV lines=[2491] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:03315719","line":2491,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1247","ontology_id":"FOODON:03315719","preferred_term":"Casamino acids","total_occurrences":"1313"}] |
 | ev-be1a1bee4ba367fd | reports/yaml_record_review/Casamino_Acids.md; &#96;data/ingredients/mapped/Casamino_Acids.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:44; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f7a83574d0fdeeb8 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[364,1453] | context_only | [{"current_record_sha256":"d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068","finding_id":"SEM:6649b014ab754949c239","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068","finding_id":"SEM:1413f69397751bf50743","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e7fbaa0f244ce00e | data/ingredients/mapped/Casamino_Acids.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-e7fbaa0f244ce00e | data/ingredients/mapped/Casamino_Acids.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2489],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315719","line":2491,"mapping_status":"MAPPED","ontology_id":"FOODON:03315719","preferred_term":"Casamino acids"}],"identifier":"FOODON:03315719","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1247,"edge_count":1247,"occurrences":1313},"occurrence_statistics":{"media_count":1247,"total_occurrences":1313},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315719","ontology_label":"mammalian milk protein (hydrolyzed)","ontology_source":"FOODON"},"preferred_term":"Casamino acids","sssom_rows":[{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian milk protein (hydrolyzed)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids","synonym_count":8} |
 | ev-fe1cf07d6be8d8b2 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-b2e7a70fe1b9a3c8] | context_only | Predecessor structured review finding f-b2e7a70fe1b9a3c8 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b11acdd5f7b4d43a
+  evidence_ids:
+  - ev-85b0bddb74e215d6
+  - ev-96725b3a2e18c3f7
+  - ev-38deabfebb14e96c
+  - ev-65386795fe7e0687
+  - ev-e7fbaa0f244ce00e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b11acdd5f7b4d43a
+  evidence_ids:
+  - ev-85b0bddb74e215d6
+  - ev-f7a83574d0fdeeb8
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,15 +204,19 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b11acdd5f7b4d43a
+  evidence_ids:
+  - ev-be1a1bee4ba367fd
+  - ev-f7a83574d0fdeeb8
+  - ev-fe1cf07d6be8d8b2
 evidence:
 - evidence_id: ev-85b0bddb74e215d6
   kind: record_content
   reference: data/ingredients/mapped/Casamino_Acids.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2490],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315719","line":2492,"mapping_status":"MAPPED","ontology_id":"FOODON:03315719","preferred_term":"Casamino
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2489],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315719","line":2491,"mapping_status":"MAPPED","ontology_id":"FOODON:03315719","preferred_term":"Casamino
     acids"}],"identifier":"FOODON:03315719","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1247,"edge_count":1247,"occurrences":1313},"occurrence_statistics":{"media_count":1247,"total_occurrences":1313},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315719","ontology_label":"mammalian
     milk protein (hydrolyzed)","ontology_source":"FOODON"},"preferred_term":"Casamino
     acids","sssom_rows":[{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian
@@ -212,8 +225,8 @@ evidence:
 - evidence_id: ev-96725b3a2e18c3f7
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2490]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2489]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +235,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Casamino_Acids; data-row positions=[656]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian
     milk protein (hydrolyzed)","other":"Casamino Acid|Casaminoacids|Casmino Acid|Casmino
@@ -231,10 +244,10 @@ evidence:
 - evidence_id: ev-65386795fe7e0687
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2492]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2491]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315719","line":2492,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1247","ontology_id":"FOODON:03315719","preferred_term":"Casamino
+  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315719","line":2491,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1247","ontology_id":"FOODON:03315719","preferred_term":"Casamino
     acids","total_occurrences":"1313"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-be1a1bee4ba367fd
@@ -259,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[364,1453]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068","finding_id":"SEM:6649b014ab754949c239","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068","finding_id":"SEM:1413f69397751bf50743","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +282,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Casamino_Acids.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2489],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315719","line":2491,"mapping_status":"MAPPED","ontology_id":"FOODON:03315719","preferred_term":"Casamino
+    acids"}],"identifier":"FOODON:03315719","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1247,"edge_count":1247,"occurrences":1313},"occurrence_statistics":{"media_count":1247,"total_occurrences":1313},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315719","ontology_label":"mammalian
+    milk protein (hydrolyzed)","ontology_source":"FOODON"},"preferred_term":"Casamino
+    acids","sssom_rows":[{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian
+    milk protein (hydrolyzed)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids","synonym_count":8}'
   snapshot_sha256: d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068
 - evidence_id: ev-fe1cf07d6be8d8b2
   kind: prior_review

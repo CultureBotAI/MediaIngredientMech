@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: Bleomycin_Sulfate
 | ev-941059af2d6e08a3 | docs/data/mapped_ingredients.csv; CSV lines=[598] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34582","line":598,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:34582","preferred_term":"Bleomycin sulfate","total_occurrences":"0"}] |
 | ev-9fc9cb18e88392fa | reports/yaml_record_review/Bleomycin_Sulfate.md; &#96;data/ingredients/mapped/Bleomycin_Sulfate.yaml&#96;:2; Verdict:4; Identity:9; Validation:23; Evidence:33; Completeness:48; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-353bd38937d508e2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1613] | context_only | [{"current_record_sha256":"bb308066ebebc6f0c09d03fc58f85afb37cd793f8af88982c3be851bcfb25c4d","finding_id":"SEM:5f963ac4802eb58ab10e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-3719c41f260d4bd4 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Bleomycin_Sulfate.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-379a688644aba7ab
+  evidence_ids:
+  - ev-baef5967a0172754
+  - ev-bbf29b55ccef9533
+  - ev-afde0500b8f13216
+  - ev-941059af2d6e08a3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-379a688644aba7ab
+  evidence_ids:
+  - ev-baef5967a0172754
+  - ev-353bd38937d508e2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-379a688644aba7ab
+  evidence_ids:
+  - ev-9fc9cb18e88392fa
+  - ev-353bd38937d508e2
 evidence:
 - evidence_id: ev-baef5967a0172754
   kind: record_content
   reference: data/ingredients/mapped/Bleomycin_Sulfate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[596],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34582","line":598,"mapping_status":"MAPPED","ontology_id":"CHEBI:34582","preferred_term":"Bleomycin
     sulfate"}],"identifier":"CHEBI:34582","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34582","ontology_label":"bleomycin
@@ -211,7 +221,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [596]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +230,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Bleomycin_Sulfate; data-row positions=[564]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":564,"object_id":"CHEBI:34582","object_label":"bleomycin
     sulfate","other":"CAS:9041-93-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Bleomycin_Sulfate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -229,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[598]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34582","line":598,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:34582","preferred_term":"Bleomycin
     sulfate","total_occurrences":"0"}]'
@@ -252,18 +262,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1613]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"bb308066ebebc6f0c09d03fc58f85afb37cd793f8af88982c3be851bcfb25c4d","finding_id":"SEM:5f963ac4802eb58ab10e","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-3719c41f260d4bd4
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Bleomycin_Sulfate.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-56252fbdd1f4fc21
@@ -323,7 +325,7 @@ assessments:
   - record-379a688644aba7ab
   evidence_ids:
   - ev-baef5967a0172754
-  - ev-3719c41f260d4bd4
+  - ev-353bd38937d508e2
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -331,7 +333,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-baef5967a0172754
-    - ev-3719c41f260d4bd4
+    - ev-353bd38937d508e2
 findings:
 - finding_id: rec-f-role-379a688644aba7ab
   issue_key: mim-reconciliation-role-support-379a688644aba7ab
@@ -347,7 +349,7 @@ findings:
   - record-379a688644aba7ab
   evidence_ids:
   - ev-baef5967a0172754
-  - ev-3719c41f260d4bd4
+  - ev-353bd38937d508e2
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Bleomycin_Sulfate.yaml

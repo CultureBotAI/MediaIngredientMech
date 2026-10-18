@@ -89,7 +89,7 @@ Reassess prediction-only role support: Ground beef
 | ev-3d4e8806ee6be303 | docs/data/mapped_ingredients.csv; CSV lines=[1096] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:00001282","line":1096,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"92","ontology_id":"FOODON:00001282","preferred_term":"Ground beef","total_occurrences":"92"}] |
 | ev-2619d64ca3d791f8 | reports/yaml_record_review/Ground_Beef.md; &#96;data/ingredients/mapped/Ground_Beef.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:27; Completeness:51; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-aab36f77dd8eb226 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[706,1838] | context_only | [{"current_record_sha256":"bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e","finding_id":"SEM:ca5638c9b187c6c0ea0f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e","finding_id":"SEM:2b8ad22a3903b77ccb64","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-357e7bf13f0384ad | data/ingredients/mapped/Ground_Beef.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-357e7bf13f0384ad | data/ingredients/mapped/Ground_Beef.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1094],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:00001282","line":1096,"mapping_status":"MAPPED","ontology_id":"FOODON:00001282","preferred_term":"Ground beef"}],"identifier":"FOODON:00001282","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":92,"edge_count":92,"occurrences":92},"occurrence_statistics":{"media_count":92,"total_occurrences":92},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"FOODON:00001282","ontology_label":"beef (ground)","ontology_source":"FOODON"},"preferred_term":"Ground beef","sssom_rows":[{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef (ground)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ground_Beef","synonym_count":1} |
 | ev-783465e31437fe41 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-6bc9fd3da3c0fb7f] | context_only | Predecessor structured review finding f-6bc9fd3da3c0fb7f in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-237702560ddd02c6
+  - ev-c372e7e6517325c3
+  - ev-28e59a335ac21d2e
+  - ev-3d4e8806ee6be303
+  - ev-357e7bf13f0384ad
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-237702560ddd02c6
+  - ev-aab36f77dd8eb226
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3fa76490fe2088d4
+  evidence_ids:
+  - ev-2619d64ca3d791f8
+  - ev-aab36f77dd8eb226
+  - ev-783465e31437fe41
 evidence:
 - evidence_id: ev-237702560ddd02c6
   kind: record_content
   reference: data/ingredients/mapped/Ground_Beef.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1094],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:00001282","line":1096,"mapping_status":"MAPPED","ontology_id":"FOODON:00001282","preferred_term":"Ground
     beef"}],"identifier":"FOODON:00001282","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":92,"edge_count":92,"occurrences":92},"occurrence_statistics":{"media_count":92,"total_occurrences":92},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"FOODON:00001282","ontology_label":"beef
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1094]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Ground_Beef; data-row positions=[1375]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef
     (ground)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Ground_Beef","validation_method":"OLS:foodon|CONFIRMED|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1096]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:00001282","line":1096,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"92","ontology_id":"FOODON:00001282","preferred_term":"Ground
     beef","total_occurrences":"92"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[706,1838]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e","finding_id":"SEM:ca5638c9b187c6c0ea0f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e","finding_id":"SEM:2b8ad22a3903b77ccb64","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Ground_Beef.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1094],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:00001282","line":1096,"mapping_status":"MAPPED","ontology_id":"FOODON:00001282","preferred_term":"Ground
+    beef"}],"identifier":"FOODON:00001282","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":92,"edge_count":92,"occurrences":92},"occurrence_statistics":{"media_count":92,"total_occurrences":92},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"FOODON:00001282","ontology_label":"beef
+    (ground)","ontology_source":"FOODON"},"preferred_term":"Ground beef","sssom_rows":[{"data_row":1375,"object_id":"FOODON:00001282","object_label":"beef
+    (ground)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ground_Beef","synonym_count":1}'
   snapshot_sha256: bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e
 - evidence_id: ev-783465e31437fe41
   kind: prior_review

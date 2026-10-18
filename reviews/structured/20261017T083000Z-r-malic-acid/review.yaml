@@ -68,12 +68,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: (R)-malic Acid'
   target_ids:
   - record-718b7da3eb0e55c7
+  evidence_ids:
+  - ev-b1c9315932de6e81
+  - ev-280bbf21e939d250
+  - ev-4c1321370baa969b
+  - ev-8da61b41983e6e05
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -82,6 +86,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-718b7da3eb0e55c7
+  evidence_ids:
+  - ev-b1c9315932de6e81
+  - ev-ea5b2a580b191f85
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,24 +97,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-718b7da3eb0e55c7
+  evidence_ids:
+  - ev-6a7d97954b5928d8
+  - ev-ea5b2a580b191f85
+  - ev-adbd05f7bfa29f79
 evidence:
 - evidence_id: ev-b1c9315932de6e81
   kind: record_content
   reference: data/ingredients/mapped/(R)-malic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2097],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30796","line":2099,"mapping_status":"MAPPED","ontology_id":"CHEBI:30796","preferred_term":"(R)-malic
-    Acid"}],"identifier":"CHEBI:30796","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":18,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30796","ontology_label":"(R)-malic
-    acid","ontology_source":"CHEBI"},"preferred_term":"(R)-malic Acid","sssom_rows":[{"data_row":6,"object_id":"CHEBI:30796","object_label":"(R)-malic
-    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~28R~29-malic_Acid","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2096],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30796","line":2098,"mapping_status":"MAPPED","ontology_id":"CHEBI:30796","preferred_term":"(R)-malic
+    Acid"}],"identifier":"CHEBI:30796","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30796","ontology_label":"(R)-malic
+    acid","ontology_source":"CHEBI"},"preferred_term":"(R)-malic Acid","sssom_rows":[],"sssom_subject":"MIM:(R)-malic_Acid","synonym_count":0}'
   snapshot_sha256: 0a7229be6c0bd446df2b2130a644881be47e2a021194b732e1855e5703270f89
 - evidence_id: ev-280bbf21e939d250
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2097]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2096]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,19 +125,18 @@ evidence:
 - evidence_id: ev-4c1321370baa969b
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:~28R~29-malic_Acid; data-row positions=[6]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:(R)-malic_Acid; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":6,"object_id":"CHEBI:30796","object_label":"(R)-malic
-    acid","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:~28R~29-malic_Acid","validation_method":"OLS:chebi|CONFIRMED|2026-09-02"}]'
+  summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-8da61b41983e6e05
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2099]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2098]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30796","line":2099,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:30796","preferred_term":"(R)-malic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30796","line":2098,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:30796","preferred_term":"(R)-malic
     Acid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-6a7d97954b5928d8
@@ -155,7 +164,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[7]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0a7229be6c0bd446df2b2130a644881be47e2a021194b732e1855e5703270f89","finding_id":"SEM:b1740e477e1ac6c163b4","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

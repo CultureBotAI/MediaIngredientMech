@@ -89,7 +89,7 @@ Reassess prediction-only role support: Lydimycin
 | ev-894df329090dac3a | docs/data/mapped_ingredients.csv; CSV lines=[1323] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C90684","line":1323,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C90684","preferred_term":"Lydimycin","total_occurrences":"0"}] |
 | ev-ea943536ebb7d89f | reports/yaml_record_review/Lydimycin.md; &#96;data/ingredients/mapped/Lydimycin.yaml&#96;:2; Verdict:4; Identity:12; Validation:21; Evidence:28; Completeness:35; Recommended Edits:45 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-75efe91569257679 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[873,1513] | context_only | [{"current_record_sha256":"c832763a0a6edefe6d2ece38b33177bb7404761476b6506af5a85b463cec39d1","finding_id":"SEM:1672b0155f31409f440f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c832763a0a6edefe6d2ece38b33177bb7404761476b6506af5a85b463cec39d1","finding_id":"SEM:75387a25c1077c54bc66","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bb294b978fdba701 | data/ingredients/mapped/Lydimycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-bb294b978fdba701 | data/ingredients/mapped/Lydimycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1321],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C90684","line":1323,"mapping_status":"MAPPED","ontology_id":"NCIT:C90684","preferred_term":"Lydimycin"}],"identifier":"NCIT:C90684","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C90684","ontology_label":"Lydimycin","ontology_source":"NCIT"},"preferred_term":"Lydimycin","sssom_rows":[{"data_row":1720,"object_id":"NCIT:C90684","object_label":"Lydimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lydimycin","synonym_count":0} |
 | ev-b95db2cced8e39f2 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-ebb30a4fd513de9b] | context_only | Predecessor structured review finding f-ebb30a4fd513de9b in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5955a83596798b04
+  evidence_ids:
+  - ev-69d3ceed5a92be4e
+  - ev-3bf25a8b2c4bf556
+  - ev-5b2262a076cdf0c6
+  - ev-894df329090dac3a
+  - ev-bb294b978fdba701
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5955a83596798b04
+  evidence_ids:
+  - ev-69d3ceed5a92be4e
+  - ev-75efe91569257679
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5955a83596798b04
+  evidence_ids:
+  - ev-ea943536ebb7d89f
+  - ev-75efe91569257679
+  - ev-b95db2cced8e39f2
 evidence:
 - evidence_id: ev-69d3ceed5a92be4e
   kind: record_content
   reference: data/ingredients/mapped/Lydimycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1321],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C90684","line":1323,"mapping_status":"MAPPED","ontology_id":"NCIT:C90684","preferred_term":"Lydimycin"}],"identifier":"NCIT:C90684","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C90684","ontology_label":"Lydimycin","ontology_source":"NCIT"},"preferred_term":"Lydimycin","sssom_rows":[{"data_row":1720,"object_id":"NCIT:C90684","object_label":"Lydimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lydimycin","synonym_count":0}'
   snapshot_sha256: c832763a0a6edefe6d2ece38b33177bb7404761476b6506af5a85b463cec39d1
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1321]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Lydimycin; data-row positions=[1720]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1720,"object_id":"NCIT:C90684","object_label":"Lydimycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Lydimycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1323]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C90684","line":1323,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C90684","preferred_term":"Lydimycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -247,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[873,1513]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c832763a0a6edefe6d2ece38b33177bb7404761476b6506af5a85b463cec39d1","finding_id":"SEM:1672b0155f31409f440f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c832763a0a6edefe6d2ece38b33177bb7404761476b6506af5a85b463cec39d1","finding_id":"SEM:75387a25c1077c54bc66","kind":"role_evidence","resolution_reason":"Historical
@@ -257,12 +270,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lydimycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1321],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C90684","line":1323,"mapping_status":"MAPPED","ontology_id":"NCIT:C90684","preferred_term":"Lydimycin"}],"identifier":"NCIT:C90684","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C90684","ontology_label":"Lydimycin","ontology_source":"NCIT"},"preferred_term":"Lydimycin","sssom_rows":[{"data_row":1720,"object_id":"NCIT:C90684","object_label":"Lydimycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lydimycin","synonym_count":0}'
   snapshot_sha256: c832763a0a6edefe6d2ece38b33177bb7404761476b6506af5a85b463cec39d1
 - evidence_id: ev-b95db2cced8e39f2
   kind: prior_review

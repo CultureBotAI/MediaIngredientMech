@@ -85,11 +85,11 @@ Reassess prediction-only role support: Arabinotriose
 | --- | --- | --- | --- |
 | ev-6e21c28290b0fa6c | data/ingredients/mapped/Arabinotriose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[509],"raw_equal":true},"docs_rows":[{"identifier":"cas:89315-59-3","line":511,"mapping_status":"MAPPED","ontology_id":"CHEBI:62799","preferred_term":"Arabinotriose"}],"identifier":"cas:89315-59-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62799","ontology_label":"alpha-L-Araf-(1-&gt;5)-alpha-L-Araf-(1-&gt;5)-alpha-L-Araf","ontology_source":"CHEBI"},"preferred_term":"Arabinotriose","sssom_rows":[{"data_row":416,"object_id":"CHEBI:62799","object_label":"alpha-L-Araf-(1-&gt;5)-alpha-L-Araf-(1-&gt;5)-alpha-L-Araf","predicate_id":"skos:exactMatch"},{"data_row":417,"object_id":"cas:89315-59-3","object_label":"Arabinotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinotriose","synonym_count":1} |
 | ev-6a701b0065eac64e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [509] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-86583464ba0eed4b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Arabinotriose; data-row positions=[416,417] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":416,"object_id":"CHEBI:62799","object_label":"alpha-L-Araf-(1-&gt;5)-alpha-L-Araf-(1-&gt;5)-alpha-L-Araf","other":"alpha-L-arabinofuranosyl-(1-&gt;5)-alpha-L-arabinofuranosyl-(1-&gt;5)-alpha-L-arabinofuranose&#124;CAS:89315-59-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinotriose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":417,"object_id":"cas:89315-59-3","object_label":"Arabinotriose","other":"CAS:89315-59-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinotriose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-86583464ba0eed4b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Arabinotriose; data-row positions=[416, 417] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":416,"object_id":"CHEBI:62799","object_label":"alpha-L-Araf-(1-&gt;5)-alpha-L-Araf-(1-&gt;5)-alpha-L-Araf","other":"alpha-L-arabinofuranosyl-(1-&gt;5)-alpha-L-arabinofuranosyl-(1-&gt;5)-alpha-L-arabinofuranose&#124;CAS:89315-59-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinotriose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":417,"object_id":"cas:89315-59-3","object_label":"Arabinotriose","other":"CAS:89315-59-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinotriose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-5fe11bd70e734c85 | docs/data/mapped_ingredients.csv; CSV lines=[511] | supports | Published identity and count rows inspected: [{"identifier":"cas:89315-59-3","line":511,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62799","preferred_term":"Arabinotriose","total_occurrences":"0"}] |
 | ev-cc1387f97dd0e620 | reports/yaml_record_review/Arabinotriose.md; &#96;data/ingredients/mapped/Arabinotriose.yaml&#96;:2; Verdict:4; Identity:11; Validation:27; Evidence:48; Completeness:66; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3a97738107c65791 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[273,1436] | context_only | [{"current_record_sha256":"4ad2b26f9d870ae612268c0f11ef6a36bb58d366ec2a0a0aee32a54b7f888b5f","finding_id":"SEM:89c3fc52b1e377e0fb9d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4ad2b26f9d870ae612268c0f11ef6a36bb58d366ec2a0a0aee32a54b7f888b5f","finding_id":"SEM:ce70ba17bb8fe58faa3a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-2bf36e9def8beb98 | data/ingredients/mapped/Arabinotriose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-2bf36e9def8beb98 | data/ingredients/mapped/Arabinotriose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[509],"raw_equal":true},"docs_rows":[{"identifier":"cas:89315-59-3","line":511,"mapping_status":"MAPPED","ontology_id":"CHEBI:62799","preferred_term":"Arabinotriose"}],"identifier":"cas:89315-59-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62799","ontology_label":"alpha-L-Araf-(1-&gt;5)-alpha-L-Araf-(1-&gt;5)-alpha-L-Araf","ontology_source":"CHEBI"},"preferred_term":"Arabinotriose","sssom_rows":[{"data_row":416,"object_id":"CHEBI:62799","object_label":"alpha-L-Araf-(1-&gt;5)-alpha-L-Araf-(1-&gt;5)-alpha-L-Araf","predicate_id":"skos:exactMatch"},{"data_row":417,"object_id":"cas:89315-59-3","object_label":"Arabinotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinotriose","synonym_count":1} |
 | ev-779c7cb5977580ca | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-ca40e851b01fc5b5] | context_only | Predecessor structured review finding f-ca40e851b01fc5b5 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-fa4a2369c05a1d76
+  evidence_ids:
+  - ev-6e21c28290b0fa6c
+  - ev-6a701b0065eac64e
+  - ev-86583464ba0eed4b
+  - ev-5fe11bd70e734c85
+  - ev-2bf36e9def8beb98
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-fa4a2369c05a1d76
+  evidence_ids:
+  - ev-6e21c28290b0fa6c
+  - ev-3a97738107c65791
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-fa4a2369c05a1d76
+  evidence_ids:
+  - ev-cc1387f97dd0e620
+  - ev-3a97738107c65791
+  - ev-779c7cb5977580ca
 evidence:
 - evidence_id: ev-6e21c28290b0fa6c
   kind: record_content
   reference: data/ingredients/mapped/Arabinotriose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[509],"raw_equal":true},"docs_rows":[{"identifier":"cas:89315-59-3","line":511,"mapping_status":"MAPPED","ontology_id":"CHEBI:62799","preferred_term":"Arabinotriose"}],"identifier":"cas:89315-59-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62799","ontology_label":"alpha-L-Araf-(1->5)-alpha-L-Araf-(1->5)-alpha-L-Araf","ontology_source":"CHEBI"},"preferred_term":"Arabinotriose","sssom_rows":[{"data_row":416,"object_id":"CHEBI:62799","object_label":"alpha-L-Araf-(1->5)-alpha-L-Araf-(1->5)-alpha-L-Araf","predicate_id":"skos:exactMatch"},{"data_row":417,"object_id":"cas:89315-59-3","object_label":"Arabinotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinotriose","synonym_count":1}'
   snapshot_sha256: 4ad2b26f9d870ae612268c0f11ef6a36bb58d366ec2a0a0aee32a54b7f888b5f
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [509]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,8 +230,8 @@ evidence:
 - evidence_id: ev-86583464ba0eed4b
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Arabinotriose; data-row positions=[416,417]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Arabinotriose; data-row positions=[416, 417]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":416,"object_id":"CHEBI:62799","object_label":"alpha-L-Araf-(1->5)-alpha-L-Araf-(1->5)-alpha-L-Araf","other":"alpha-L-arabinofuranosyl-(1->5)-alpha-L-arabinofuranosyl-(1->5)-alpha-L-arabinofuranose|CAS:89315-59-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinotriose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":417,"object_id":"cas:89315-59-3","object_label":"Arabinotriose","other":"CAS:89315-59-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinotriose","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[511]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:89315-59-3","line":511,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62799","preferred_term":"Arabinotriose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[273,1436]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4ad2b26f9d870ae612268c0f11ef6a36bb58d366ec2a0a0aee32a54b7f888b5f","finding_id":"SEM:89c3fc52b1e377e0fb9d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4ad2b26f9d870ae612268c0f11ef6a36bb58d366ec2a0a0aee32a54b7f888b5f","finding_id":"SEM:ce70ba17bb8fe58faa3a","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Arabinotriose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[509],"raw_equal":true},"docs_rows":[{"identifier":"cas:89315-59-3","line":511,"mapping_status":"MAPPED","ontology_id":"CHEBI:62799","preferred_term":"Arabinotriose"}],"identifier":"cas:89315-59-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:62799","ontology_label":"alpha-L-Araf-(1->5)-alpha-L-Araf-(1->5)-alpha-L-Araf","ontology_source":"CHEBI"},"preferred_term":"Arabinotriose","sssom_rows":[{"data_row":416,"object_id":"CHEBI:62799","object_label":"alpha-L-Araf-(1->5)-alpha-L-Araf-(1->5)-alpha-L-Araf","predicate_id":"skos:exactMatch"},{"data_row":417,"object_id":"cas:89315-59-3","object_label":"Arabinotriose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinotriose","synonym_count":1}'
   snapshot_sha256: 4ad2b26f9d870ae612268c0f11ef6a36bb58d366ec2a0a0aee32a54b7f888b5f
 - evidence_id: ev-779c7cb5977580ca
   kind: prior_review

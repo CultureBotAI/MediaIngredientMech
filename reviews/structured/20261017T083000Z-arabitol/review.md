@@ -89,7 +89,7 @@ Reassess prediction-only role support: Arabitol
 | ev-bc5f6cd041aec013 | docs/data/mapped_ingredients.csv; CSV lines=[512] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:18403","line":512,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:18403","preferred_term":"Arabitol","total_occurrences":"4"}] |
 | ev-c1cb392047f596f8 | reports/yaml_record_review/Arabitol.md; &#96;data/ingredients/mapped/Arabitol.yaml&#96;:2; Verdict:4; Identity:11; Validation:28; Evidence:46; Completeness:68; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-da0fa44e846c8a9d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[275,1408] | context_only | [{"current_record_sha256":"046401fe5681668f663a4e09ff4676c4f3b1f1758e1f2057be28bde3e4d32370","finding_id":"SEM:e8934c3b8b16be6cfee5","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"046401fe5681668f663a4e09ff4676c4f3b1f1758e1f2057be28bde3e4d32370","finding_id":"SEM:77b2ae729b28225eadc8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-64251d1d30ff26eb | data/ingredients/mapped/Arabitol.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-64251d1d30ff26eb | data/ingredients/mapped/Arabitol.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18403","line":512,"mapping_status":"MAPPED","ontology_id":"CHEBI:18403","preferred_term":"Arabitol"}],"identifier":"CHEBI:18403","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18403","ontology_label":"L-arabinitol","ontology_source":"CHEBI"},"preferred_term":"Arabitol","sssom_rows":[{"data_row":419,"object_id":"CHEBI:18403","object_label":"L-arabinitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabitol","synonym_count":6} |
 | ev-223882e9854469ae | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-5d4ecdd3361b6dd2] | context_only | Predecessor structured review finding f-5d4ecdd3361b6dd2 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ce478baac929216f
+  evidence_ids:
+  - ev-24749b39f8fc3a3e
+  - ev-37d5f3c2a2a76af6
+  - ev-fcd31e8650ed952d
+  - ev-bc5f6cd041aec013
+  - ev-64251d1d30ff26eb
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ce478baac929216f
+  evidence_ids:
+  - ev-24749b39f8fc3a3e
+  - ev-da0fa44e846c8a9d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ce478baac929216f
+  evidence_ids:
+  - ev-c1cb392047f596f8
+  - ev-da0fa44e846c8a9d
+  - ev-223882e9854469ae
 evidence:
 - evidence_id: ev-24749b39f8fc3a3e
   kind: record_content
   reference: data/ingredients/mapped/Arabitol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18403","line":512,"mapping_status":"MAPPED","ontology_id":"CHEBI:18403","preferred_term":"Arabitol"}],"identifier":"CHEBI:18403","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18403","ontology_label":"L-arabinitol","ontology_source":"CHEBI"},"preferred_term":"Arabitol","sssom_rows":[{"data_row":419,"object_id":"CHEBI:18403","object_label":"L-arabinitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabitol","synonym_count":6}'
   snapshot_sha256: 046401fe5681668f663a4e09ff4676c4f3b1f1758e1f2057be28bde3e4d32370
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [510]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Arabitol; data-row positions=[419]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":419,"object_id":"CHEBI:18403","object_label":"L-arabinitol","other":"L-Arabinol|L-Arabitol|L-Lyxitol|L-arabitol
     (L-arabinitol)|(+)-L-lyxitol|CAS:7643-75-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabitol","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[512]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18403","line":512,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:18403","preferred_term":"Arabitol","total_occurrences":"4"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[275,1408]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"046401fe5681668f663a4e09ff4676c4f3b1f1758e1f2057be28bde3e4d32370","finding_id":"SEM:e8934c3b8b16be6cfee5","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"046401fe5681668f663a4e09ff4676c4f3b1f1758e1f2057be28bde3e4d32370","finding_id":"SEM:77b2ae729b28225eadc8","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Arabitol.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[510],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18403","line":512,"mapping_status":"MAPPED","ontology_id":"CHEBI:18403","preferred_term":"Arabitol"}],"identifier":"CHEBI:18403","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18403","ontology_label":"L-arabinitol","ontology_source":"CHEBI"},"preferred_term":"Arabitol","sssom_rows":[{"data_row":419,"object_id":"CHEBI:18403","object_label":"L-arabinitol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabitol","synonym_count":6}'
   snapshot_sha256: 046401fe5681668f663a4e09ff4676c4f3b1f1758e1f2057be28bde3e4d32370
 - evidence_id: ev-223882e9854469ae
   kind: prior_review

@@ -85,11 +85,11 @@ Reassess prediction-only role support: Lichenan (icelandic moss)
 | --- | --- | --- | --- |
 | ev-f66905bc10c1093b | data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1300],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","line":1302,"mapping_status":"MAPPED","ontology_id":"CHEBI:6452","preferred_term":"Lichenan (icelandic moss)"}],"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:6452","ontology_label":"lichenin","ontology_source":"CHEBI"},"preferred_term":"Lichenan (icelandic moss)","sssom_rows":[{"data_row":1690,"object_id":"CHEBI:6452","object_label":"lichenin","predicate_id":"skos:broadMatch"},{"data_row":1691,"object_id":"kgmicrobe.ingredient:lichenan_icelandic_moss","object_label":"Lichenan (icelandic moss)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lichenan_Icelandic_Moss","synonym_count":0} |
 | ev-ed9cfc5327a09ad0 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1300] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-0300501341c3703b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Lichenan_Icelandic_Moss; data-row positions=[1690,1691] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1690,"object_id":"CHEBI:6452","object_label":"lichenin","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Lichenan_Icelandic_Moss","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1691,"object_id":"kgmicrobe.ingredient:lichenan_icelandic_moss","object_label":"Lichenan (icelandic moss)","other":"CAS:1402-10-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Lichenan_Icelandic_Moss","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-0300501341c3703b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Lichenan_Icelandic_Moss; data-row positions=[1690, 1691] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1690,"object_id":"CHEBI:6452","object_label":"lichenin","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Lichenan_Icelandic_Moss","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1691,"object_id":"kgmicrobe.ingredient:lichenan_icelandic_moss","object_label":"Lichenan (icelandic moss)","other":"CAS:1402-10-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Lichenan_Icelandic_Moss","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
 | ev-c7c8be8bcc24ed3b | docs/data/mapped_ingredients.csv; CSV lines=[1302] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","line":1302,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6452","preferred_term":"Lichenan (icelandic moss)","total_occurrences":"0"}] |
 | ev-87b283718a35c330 | reports/yaml_record_review/Lichenan_Icelandic_Moss.md; &#96;data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:28; Completeness:49; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-81d4e64211bfa3a0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[861,1717] | context_only | [{"current_record_sha256":"9721a556a6f24eee87da35d9a855d057362cb5c6e867502739939570dca56365","finding_id":"SEM:fa94d23d0cf1f1c393c3","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9721a556a6f24eee87da35d9a855d057362cb5c6e867502739939570dca56365","finding_id":"SEM:bef629fe13f78ada8b84","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0b9b4e31049c3131 | data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-0b9b4e31049c3131 | data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1300],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","line":1302,"mapping_status":"MAPPED","ontology_id":"CHEBI:6452","preferred_term":"Lichenan (icelandic moss)"}],"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:6452","ontology_label":"lichenin","ontology_source":"CHEBI"},"preferred_term":"Lichenan (icelandic moss)","sssom_rows":[{"data_row":1690,"object_id":"CHEBI:6452","object_label":"lichenin","predicate_id":"skos:broadMatch"},{"data_row":1691,"object_id":"kgmicrobe.ingredient:lichenan_icelandic_moss","object_label":"Lichenan (icelandic moss)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lichenan_Icelandic_Moss","synonym_count":0} |
 | ev-f2416a41cf77f29a | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-55118ec7b2e2ed90] | context_only | Predecessor structured review finding f-55118ec7b2e2ed90 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-950c80201ebea6c0
+  evidence_ids:
+  - ev-f66905bc10c1093b
+  - ev-ed9cfc5327a09ad0
+  - ev-0300501341c3703b
+  - ev-c7c8be8bcc24ed3b
+  - ev-0b9b4e31049c3131
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-950c80201ebea6c0
+  evidence_ids:
+  - ev-f66905bc10c1093b
+  - ev-81d4e64211bfa3a0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-950c80201ebea6c0
+  evidence_ids:
+  - ev-87b283718a35c330
+  - ev-81d4e64211bfa3a0
+  - ev-f2416a41cf77f29a
 evidence:
 - evidence_id: ev-f66905bc10c1093b
   kind: record_content
   reference: data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1300],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","line":1302,"mapping_status":"MAPPED","ontology_id":"CHEBI:6452","preferred_term":"Lichenan
     (icelandic moss)"}],"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:6452","ontology_label":"lichenin","ontology_source":"CHEBI"},"preferred_term":"Lichenan
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1300]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,8 +233,8 @@ evidence:
 - evidence_id: ev-0300501341c3703b
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Lichenan_Icelandic_Moss; data-row positions=[1690,1691]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Lichenan_Icelandic_Moss; data-row positions=[1690, 1691]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1690,"object_id":"CHEBI:6452","object_label":"lichenin","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Lichenan_Icelandic_Moss","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1691,"object_id":"kgmicrobe.ingredient:lichenan_icelandic_moss","object_label":"Lichenan
     (icelandic moss)","other":"CAS:1402-10-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Lichenan_Icelandic_Moss","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1302]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","line":1302,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:6452","preferred_term":"Lichenan
     (icelandic moss)","total_occurrences":"0"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[861,1717]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9721a556a6f24eee87da35d9a855d057362cb5c6e867502739939570dca56365","finding_id":"SEM:fa94d23d0cf1f1c393c3","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9721a556a6f24eee87da35d9a855d057362cb5c6e867502739939570dca56365","finding_id":"SEM:bef629fe13f78ada8b84","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1300],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","line":1302,"mapping_status":"MAPPED","ontology_id":"CHEBI:6452","preferred_term":"Lichenan
+    (icelandic moss)"}],"identifier":"kgmicrobe.ingredient:lichenan_icelandic_moss","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:6452","ontology_label":"lichenin","ontology_source":"CHEBI"},"preferred_term":"Lichenan
+    (icelandic moss)","sssom_rows":[{"data_row":1690,"object_id":"CHEBI:6452","object_label":"lichenin","predicate_id":"skos:broadMatch"},{"data_row":1691,"object_id":"kgmicrobe.ingredient:lichenan_icelandic_moss","object_label":"Lichenan
+    (icelandic moss)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lichenan_Icelandic_Moss","synonym_count":0}'
   snapshot_sha256: 9721a556a6f24eee87da35d9a855d057362cb5c6e867502739939570dca56365
 - evidence_id: ev-f2416a41cf77f29a
   kind: prior_review

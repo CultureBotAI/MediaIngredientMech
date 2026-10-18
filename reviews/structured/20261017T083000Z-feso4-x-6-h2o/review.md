@@ -85,11 +85,11 @@ Reassess prediction-only role support: FeSO4 x 6 H2O
 | --- | --- | --- | --- |
 | ev-3a576bdf921c16d7 | data/ingredients/mapped/Feso4_X_6_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[999],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:feso4_x_6_h2o","line":1001,"mapping_status":"MAPPED","ontology_id":"CHEBI:75832","preferred_term":"FeSO4 x 6 H2O"}],"identifier":"kgmicrobe.compound:feso4_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:75832","ontology_label":"iron(2+) sulfate (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"FeSO4 x 6 H2O","sssom_rows":[{"data_row":1201,"object_id":"CHEBI:75832","object_label":"iron(2+) sulfate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":1202,"object_id":"kgmicrobe.compound:feso4_x_6_h2o","object_label":"FeSO4 x 6 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Feso4_X_6_H2o","synonym_count":11} |
 | ev-1d3c20f251934424 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [999] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-9adef00932aed469 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Feso4_X_6_H2o; data-row positions=[1201,1202] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1201,"object_id":"CHEBI:75832","object_label":"iron(2+) sulfate (anhydrous)","other":"FeSO4 x 6H2O&#124;FeSO4\u00b76H2O&#124;FeSO4\u30fb6H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Feso4_X_6_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1202,"object_id":"kgmicrobe.compound:feso4_x_6_h2o","object_label":"FeSO4 x 6 H2O","other":"FeSO4 x 6H2O&#124;FeSO4\u00b76H2O&#124;FeSO4\u30fb6H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Feso4_X_6_H2o","validation_method":""}] |
+| ev-9adef00932aed469 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Feso4_X_6_H2o; data-row positions=[1201, 1202] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1201,"object_id":"CHEBI:75832","object_label":"iron(2+) sulfate (anhydrous)","other":"FeSO4 x 6H2O&#124;FeSO4\u00b76H2O&#124;FeSO4\u30fb6H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Feso4_X_6_H2o","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1202,"object_id":"kgmicrobe.compound:feso4_x_6_h2o","object_label":"FeSO4 x 6 H2O","other":"FeSO4 x 6H2O&#124;FeSO4\u00b76H2O&#124;FeSO4\u30fb6H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Feso4_X_6_H2o","validation_method":""}] |
 | ev-d5be27567332f1d9 | docs/data/mapped_ingredients.csv; CSV lines=[1001] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:feso4_x_6_h2o","line":1001,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"23","ontology_id":"CHEBI:75832","preferred_term":"FeSO4 x 6 H2O","total_occurrences":"23"}] |
 | ev-0e7529f618506fe6 | reports/yaml_record_review/Feso4_X_6_H2o.md; &#96;data/ingredients/mapped/Feso4_X_6_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:36; Completeness:58; Recommended Edits:65 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e808ef87e2eaf00b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[609,1397] | context_only | [{"current_record_sha256":"f599d25e3b8ab6e6ca8e1c0be651fc721661ddc64d80f4da9c5f2390d1b3c8d0","finding_id":"SEM:b9fd28ddcb2993f7ce8c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f599d25e3b8ab6e6ca8e1c0be651fc721661ddc64d80f4da9c5f2390d1b3c8d0","finding_id":"SEM:af9b57a3d570ef3997f0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ee4bf2be7d80acf8 | data/ingredients/mapped/Feso4_X_6_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"IRON_SOURCE"}}] |
+| ev-ee4bf2be7d80acf8 | data/ingredients/mapped/Feso4_X_6_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[999],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:feso4_x_6_h2o","line":1001,"mapping_status":"MAPPED","ontology_id":"CHEBI:75832","preferred_term":"FeSO4 x 6 H2O"}],"identifier":"kgmicrobe.compound:feso4_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:75832","ontology_label":"iron(2+) sulfate (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"FeSO4 x 6 H2O","sssom_rows":[{"data_row":1201,"object_id":"CHEBI:75832","object_label":"iron(2+) sulfate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":1202,"object_id":"kgmicrobe.compound:feso4_x_6_h2o","object_label":"FeSO4 x 6 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Feso4_X_6_H2o","synonym_count":11} |
 | ev-37a52c0673392b58 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-264342b9ff3ecc23] | context_only | Predecessor structured review finding f-264342b9ff3ecc23 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-11ec585c7fd56410
+  evidence_ids:
+  - ev-3a576bdf921c16d7
+  - ev-1d3c20f251934424
+  - ev-9adef00932aed469
+  - ev-d5be27567332f1d9
+  - ev-ee4bf2be7d80acf8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-11ec585c7fd56410
+  evidence_ids:
+  - ev-3a576bdf921c16d7
+  - ev-e808ef87e2eaf00b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-11ec585c7fd56410
+  evidence_ids:
+  - ev-0e7529f618506fe6
+  - ev-e808ef87e2eaf00b
+  - ev-37a52c0673392b58
 evidence:
 - evidence_id: ev-3a576bdf921c16d7
   kind: record_content
   reference: data/ingredients/mapped/Feso4_X_6_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[999],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:feso4_x_6_h2o","line":1001,"mapping_status":"MAPPED","ontology_id":"CHEBI:75832","preferred_term":"FeSO4
     x 6 H2O"}],"identifier":"kgmicrobe.compound:feso4_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:75832","ontology_label":"iron(2+)
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [999]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,8 +234,8 @@ evidence:
 - evidence_id: ev-9adef00932aed469
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Feso4_X_6_H2o; data-row positions=[1201,1202]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Feso4_X_6_H2o; data-row positions=[1201, 1202]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1201,"object_id":"CHEBI:75832","object_label":"iron(2+)
     sulfate (anhydrous)","other":"FeSO4 x 6H2O|FeSO4\u00b76H2O|FeSO4\u30fb6H2O","predicate_id":"skos:broadMatch","subject_id":"MIM:Feso4_X_6_H2o","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1202,"object_id":"kgmicrobe.compound:feso4_x_6_h2o","object_label":"FeSO4
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1001]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:feso4_x_6_h2o","line":1001,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"23","ontology_id":"CHEBI:75832","preferred_term":"FeSO4
     x 6 H2O","total_occurrences":"23"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[609,1397]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f599d25e3b8ab6e6ca8e1c0be651fc721661ddc64d80f4da9c5f2390d1b3c8d0","finding_id":"SEM:b9fd28ddcb2993f7ce8c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f599d25e3b8ab6e6ca8e1c0be651fc721661ddc64d80f4da9c5f2390d1b3c8d0","finding_id":"SEM:af9b57a3d570ef3997f0","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Feso4_X_6_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"IRON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[999],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:feso4_x_6_h2o","line":1001,"mapping_status":"MAPPED","ontology_id":"CHEBI:75832","preferred_term":"FeSO4
+    x 6 H2O"}],"identifier":"kgmicrobe.compound:feso4_x_6_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":23,"edge_count":23,"occurrences":23},"occurrence_statistics":{"media_count":23,"total_occurrences":23},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:75832","ontology_label":"iron(2+)
+    sulfate (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"FeSO4 x 6 H2O","sssom_rows":[{"data_row":1201,"object_id":"CHEBI:75832","object_label":"iron(2+)
+    sulfate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":1202,"object_id":"kgmicrobe.compound:feso4_x_6_h2o","object_label":"FeSO4
+    x 6 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Feso4_X_6_H2o","synonym_count":11}'
   snapshot_sha256: f599d25e3b8ab6e6ca8e1c0be651fc721661ddc64d80f4da9c5f2390d1b3c8d0
 - evidence_id: ev-37a52c0673392b58
   kind: prior_review

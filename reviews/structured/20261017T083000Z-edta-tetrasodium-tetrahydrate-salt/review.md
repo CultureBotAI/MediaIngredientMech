@@ -85,11 +85,11 @@ Reassess prediction-only role support: EDTA tetrasodium tetrahydrate salt
 | --- | --- | --- | --- |
 | ev-88f232fd516de81a | data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[934],"raw_equal":true},"docs_rows":[{"identifier":"cas:13235-36-4","line":936,"mapping_status":"MAPPED","ontology_id":"CHEBI:4735","preferred_term":"EDTA tetrasodium tetrahydrate salt"}],"identifier":"cas:13235-36-4","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic acid","ontology_source":"CHEBI"},"preferred_term":"EDTA tetrasodium tetrahydrate salt","sssom_rows":[{"data_row":1106,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic acid","predicate_id":"skos:closeMatch"},{"data_row":1107,"object_id":"cas:13235-36-4","object_label":"EDTA tetrasodium tetrahydrate salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:EDTA_Tetrasodium_Tetrahydrate_Salt","synonym_count":1} |
 | ev-444c5e223b486f46 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [934] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-cbf559cc2b061fdc | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:EDTA_Tetrasodium_Tetrahydrate_Salt; data-row positions=[1106,1107] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1106,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic acid","other":"EDTA&#124;Ethylenediamintetraacetic acid (EDTA)&#124;CAS:13235-36-4","predicate_id":"skos:closeMatch","subject_id":"MIM:EDTA_Tetrasodium_Tetrahydrate_Salt","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":1107,"object_id":"cas:13235-36-4","object_label":"EDTA tetrasodium tetrahydrate salt","other":"CAS:13235-36-4","predicate_id":"skos:exactMatch","subject_id":"MIM:EDTA_Tetrasodium_Tetrahydrate_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-cbf559cc2b061fdc | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:EDTA_Tetrasodium_Tetrahydrate_Salt; data-row positions=[1106, 1107] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1106,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic acid","other":"EDTA&#124;Ethylenediamintetraacetic acid (EDTA)&#124;CAS:13235-36-4","predicate_id":"skos:closeMatch","subject_id":"MIM:EDTA_Tetrasodium_Tetrahydrate_Salt","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":1107,"object_id":"cas:13235-36-4","object_label":"EDTA tetrasodium tetrahydrate salt","other":"CAS:13235-36-4","predicate_id":"skos:exactMatch","subject_id":"MIM:EDTA_Tetrasodium_Tetrahydrate_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-52a0512964c4b46e | docs/data/mapped_ingredients.csv; CSV lines=[936] | supports | Published identity and count rows inspected: [{"identifier":"cas:13235-36-4","line":936,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:4735","preferred_term":"EDTA tetrasodium tetrahydrate salt","total_occurrences":"3"}] |
 | ev-aebb5fa2d7d63669 | reports/yaml_record_review/EDTA_Tetrasodium_Tetrahydrate_Salt.md; &#96;data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:33; Completeness:56; Recommended Edits:63 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-40d61c6b193b30fe | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[563,1641] | context_only | [{"current_record_sha256":"ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d","finding_id":"SEM:c7feb978074df8e15c14","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d","finding_id":"SEM:45487521c8a999ef0b09","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-92e9094197a763e9 | data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}] |
+| ev-92e9094197a763e9 | data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[934],"raw_equal":true},"docs_rows":[{"identifier":"cas:13235-36-4","line":936,"mapping_status":"MAPPED","ontology_id":"CHEBI:4735","preferred_term":"EDTA tetrasodium tetrahydrate salt"}],"identifier":"cas:13235-36-4","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic acid","ontology_source":"CHEBI"},"preferred_term":"EDTA tetrasodium tetrahydrate salt","sssom_rows":[{"data_row":1106,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic acid","predicate_id":"skos:closeMatch"},{"data_row":1107,"object_id":"cas:13235-36-4","object_label":"EDTA tetrasodium tetrahydrate salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:EDTA_Tetrasodium_Tetrahydrate_Salt","synonym_count":1} |
 | ev-12a63d4c652bc23d | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-4af9ad16f02aa8fa] | context_only | Predecessor structured review finding f-4af9ad16f02aa8fa in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-96b251b676c9fd27
+  evidence_ids:
+  - ev-88f232fd516de81a
+  - ev-444c5e223b486f46
+  - ev-cbf559cc2b061fdc
+  - ev-52a0512964c4b46e
+  - ev-92e9094197a763e9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-96b251b676c9fd27
+  evidence_ids:
+  - ev-88f232fd516de81a
+  - ev-40d61c6b193b30fe
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-96b251b676c9fd27
+  evidence_ids:
+  - ev-aebb5fa2d7d63669
+  - ev-40d61c6b193b30fe
+  - ev-12a63d4c652bc23d
 evidence:
 - evidence_id: ev-88f232fd516de81a
   kind: record_content
   reference: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[934],"raw_equal":true},"docs_rows":[{"identifier":"cas:13235-36-4","line":936,"mapping_status":"MAPPED","ontology_id":"CHEBI:4735","preferred_term":"EDTA
     tetrasodium tetrahydrate salt"}],"identifier":"cas:13235-36-4","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic
@@ -214,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [934]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,8 +235,9 @@ evidence:
 - evidence_id: ev-cbf559cc2b061fdc
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:EDTA_Tetrasodium_Tetrahydrate_Salt; data-row positions=[1106,1107]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:EDTA_Tetrasodium_Tetrahydrate_Salt; data-row positions=[1106,
+    1107]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1106,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic
     acid","other":"EDTA|Ethylenediamintetraacetic acid (EDTA)|CAS:13235-36-4","predicate_id":"skos:closeMatch","subject_id":"MIM:EDTA_Tetrasodium_Tetrahydrate_Salt","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"},{"data_row":1107,"object_id":"cas:13235-36-4","object_label":"EDTA
@@ -233,7 +247,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[936]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:13235-36-4","line":936,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:4735","preferred_term":"EDTA
     tetrasodium tetrahydrate salt","total_occurrences":"3"}]'
@@ -262,7 +276,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[563,1641]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d","finding_id":"SEM:c7feb978074df8e15c14","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d","finding_id":"SEM:45487521c8a999ef0b09","kind":"role_evidence","resolution_reason":"Historical
@@ -272,12 +286,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[934],"raw_equal":true},"docs_rows":[{"identifier":"cas:13235-36-4","line":936,"mapping_status":"MAPPED","ontology_id":"CHEBI:4735","preferred_term":"EDTA
+    tetrasodium tetrahydrate salt"}],"identifier":"cas:13235-36-4","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:4735","ontology_label":"ethylenediaminetetraacetic
+    acid","ontology_source":"CHEBI"},"preferred_term":"EDTA tetrasodium tetrahydrate
+    salt","sssom_rows":[{"data_row":1106,"object_id":"CHEBI:4735","object_label":"ethylenediaminetetraacetic
+    acid","predicate_id":"skos:closeMatch"},{"data_row":1107,"object_id":"cas:13235-36-4","object_label":"EDTA
+    tetrasodium tetrahydrate salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:EDTA_Tetrasodium_Tetrahydrate_Salt","synonym_count":1}'
   snapshot_sha256: ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d
 - evidence_id: ev-12a63d4c652bc23d
   kind: prior_review

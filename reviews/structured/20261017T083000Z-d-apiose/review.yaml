@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-21d663b87707d55a
+  evidence_ids:
+  - ev-e179ef2d678b37a2
+  - ev-9f0b8a04c961ec67
+  - ev-8c612e8dd5ba6e91
+  - ev-aa2a1b994b94c289
+  - ev-6728459bb92660c8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-21d663b87707d55a
+  evidence_ids:
+  - ev-e179ef2d678b37a2
+  - ev-c1c1d3ccf69522c8
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-21d663b87707d55a
+  evidence_ids:
+  - ev-47068dcb9673180f
+  - ev-c1c1d3ccf69522c8
+  - ev-a3e2c796e5aa9dae
 evidence:
 - evidence_id: ev-e179ef2d678b37a2
   kind: record_content
   reference: data/ingredients/mapped/D-apiose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[829],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16689","line":831,"mapping_status":"MAPPED","ontology_id":"CHEBI:16689","preferred_term":"D-apiose"}],"identifier":"CHEBI:16689","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16689","ontology_label":"D-apiose","ontology_source":"CHEBI"},"preferred_term":"D-apiose","sssom_rows":[{"data_row":923,"object_id":"CHEBI:16689","object_label":"D-apiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-apiose","synonym_count":1}'
   snapshot_sha256: 9d7fa43e4284fda47f36c31b302cb466abcee6750058edcf9b0bcf14050a8367
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [829]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-apiose; data-row positions=[923]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":923,"object_id":"CHEBI:16689","object_label":"D-apiose","other":"3-C-(hydroxymethyl)-D-glycero-tetrose|CAS:639-97-4","predicate_id":"skos:exactMatch","subject_id":"MIM:D-apiose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[831]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16689","line":831,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16689","preferred_term":"D-apiose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -144,7 +157,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[487,2020]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9d7fa43e4284fda47f36c31b302cb466abcee6750058edcf9b0bcf14050a8367","finding_id":"SEM:784fa3b4070033300cc9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9d7fa43e4284fda47f36c31b302cb466abcee6750058edcf9b0bcf14050a8367","finding_id":"SEM:d8805b0adabec1e2a979","kind":"role_evidence","resolution_reason":"Historical
@@ -154,12 +167,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-apiose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[829],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16689","line":831,"mapping_status":"MAPPED","ontology_id":"CHEBI:16689","preferred_term":"D-apiose"}],"identifier":"CHEBI:16689","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16689","ontology_label":"D-apiose","ontology_source":"CHEBI"},"preferred_term":"D-apiose","sssom_rows":[{"data_row":923,"object_id":"CHEBI:16689","object_label":"D-apiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-apiose","synonym_count":1}'
   snapshot_sha256: 9d7fa43e4284fda47f36c31b302cb466abcee6750058edcf9b0bcf14050a8367
 - evidence_id: ev-a3e2c796e5aa9dae
   kind: prior_review

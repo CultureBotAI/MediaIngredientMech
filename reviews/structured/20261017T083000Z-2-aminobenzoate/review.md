@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-8cad912d75cbb8c8 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-8cad912d75cbb8c8 | Explain curation-history timestamp order: 2-aminobenzoate |
 | Role evidence and plausibility check | passed | True | record-8cad912d75cbb8c8 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-8cad912d75cbb8c8 | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,7 +83,7 @@ Explain curation-history timestamp order: 2-aminobenzoate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-8dcb88443b9624b8 | data/ingredients/mapped/2-aminobenzoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[260],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16567","line":262,"mapping_status":"MAPPED","ontology_id":"CHEBI:16567","preferred_term":"2-aminobenzoate"}],"identifier":"CHEBI:16567","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:16567","ontology_label":"anthranilate","ontology_source":"CHEBI"},"preferred_term":"2-aminobenzoate","sssom_rows":[{"data_row":74,"object_id":"CHEBI:16567","object_label":"anthranilate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-aminobenzoate","synonym_count":1} |
+| ev-8dcb88443b9624b8 | data/ingredients/mapped/2-aminobenzoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[260],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16567","line":262,"mapping_status":"MAPPED","ontology_id":"CHEBI:16567","preferred_term":"2-aminobenzoate"}],"identifier":"CHEBI:16567","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:16567","ontology_label":"anthranilate","ontology_source":"CHEBI"},"preferred_term":"2-aminobenzoate","sssom_rows":[{"data_row":74,"object_id":"CHEBI:16567","object_label":"anthranilate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-aminobenzoate","synonym_count":1} |
 | ev-ece0e3c75c16ce65 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [260] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-66b53dbe58820af0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:2-aminobenzoate; data-row positions=[74] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":74,"object_id":"CHEBI:16567","object_label":"anthranilate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-aminobenzoate","validation_method":"manual:promote_resolved_unmapped&#124;PROMOTED&#124;2026-08-04"}] |
 | ev-3136cebb3805999a | docs/data/mapped_ingredients.csv; CSV lines=[262] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16567","line":262,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16567","preferred_term":"2-aminobenzoate","total_occurrences":"0"}] |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 2-aminobenzoate'
   target_ids:
   - record-8cad912d75cbb8c8
+  evidence_ids:
+  - ev-8dcb88443b9624b8
+  - ev-ece0e3c75c16ce65
+  - ev-66b53dbe58820af0
+  - ev-3136cebb3805999a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-8cad912d75cbb8c8
+  evidence_ids:
+  - ev-8dcb88443b9624b8
+  - ev-f6b27a31fca2404c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8cad912d75cbb8c8
+  evidence_ids:
+  - ev-6c25c7a8948bb914
+  - ev-f6b27a31fca2404c
+  - ev-b294ddca2bc966d5
 evidence:
 - evidence_id: ev-8dcb88443b9624b8
   kind: record_content
   reference: data/ingredients/mapped/2-aminobenzoate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[260],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16567","line":262,"mapping_status":"MAPPED","ontology_id":"CHEBI:16567","preferred_term":"2-aminobenzoate"}],"identifier":"CHEBI:16567","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:16567","ontology_label":"anthranilate","ontology_source":"CHEBI"},"preferred_term":"2-aminobenzoate","sssom_rows":[{"data_row":74,"object_id":"CHEBI:16567","object_label":"anthranilate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-aminobenzoate","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[260],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16567","line":262,"mapping_status":"MAPPED","ontology_id":"CHEBI:16567","preferred_term":"2-aminobenzoate"}],"identifier":"CHEBI:16567","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:16567","ontology_label":"anthranilate","ontology_source":"CHEBI"},"preferred_term":"2-aminobenzoate","sssom_rows":[{"data_row":74,"object_id":"CHEBI:16567","object_label":"anthranilate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:2-aminobenzoate","synonym_count":1}'
   snapshot_sha256: 2391740001d3ee531a7320e817c6207d4f06091d4fcec9dd2ff7874100c77607
 - evidence_id: ev-ece0e3c75c16ce65
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [260]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,7 +228,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:2-aminobenzoate; data-row positions=[74]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":74,"object_id":"CHEBI:16567","object_label":"anthranilate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:2-aminobenzoate","validation_method":"manual:promote_resolved_unmapped|PROMOTED|2026-08-04"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -225,7 +236,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[262]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16567","line":262,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16567","preferred_term":"2-aminobenzoate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[56]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2391740001d3ee531a7320e817c6207d4f06091d4fcec9dd2ff7874100c77607","finding_id":"SEM:4f6297d454fabe6dba6e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

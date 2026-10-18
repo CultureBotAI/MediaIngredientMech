@@ -85,11 +85,11 @@ Reassess prediction-only role support: Disodium Glutarate
 | --- | --- | --- | --- |
 | ev-5a7a781a5ca05f62 | data/ingredients/mapped/Disodium_Glutarate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[904],"raw_equal":true},"docs_rows":[{"identifier":"cas:13521-83-0","line":906,"mapping_status":"MAPPED","ontology_id":"mesh:C000730144","preferred_term":"Disodium Glutarate"}],"identifier":"cas:13521-83-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C000730144","ontology_label":"sodium glutarate","ontology_source":"MESH"},"preferred_term":"Disodium Glutarate","sssom_rows":[{"data_row":1062,"object_id":"mesh:C000730144","object_label":"sodium glutarate","predicate_id":"skos:broadMatch"},{"data_row":1063,"object_id":"cas:13521-83-0","object_label":"Disodium Glutarate","predicate_id":"skos:exactMatch"},{"data_row":1064,"object_id":"kgmicrobe.compound:disodium_glutarate","object_label":"Disodium Glutarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Disodium_Glutarate","synonym_count":0} |
 | ev-69d4d2da2f2a0e1b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [904] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d84452ad5616464c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Disodium_Glutarate; data-row positions=[1062,1063,1064] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1062,"object_id":"mesh:C000730144","object_label":"sodium glutarate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Disodium_Glutarate","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1063,"object_id":"cas:13521-83-0","object_label":"Disodium Glutarate","other":"CAS:13521-83-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Disodium_Glutarate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1064,"object_id":"kgmicrobe.compound:disodium_glutarate","object_label":"Disodium Glutarate","other":"CAS:13521-83-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Disodium_Glutarate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-d84452ad5616464c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Disodium_Glutarate; data-row positions=[1062, 1063, 1064] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1062,"object_id":"mesh:C000730144","object_label":"sodium glutarate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Disodium_Glutarate","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":1063,"object_id":"cas:13521-83-0","object_label":"Disodium Glutarate","other":"CAS:13521-83-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Disodium_Glutarate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":1064,"object_id":"kgmicrobe.compound:disodium_glutarate","object_label":"Disodium Glutarate","other":"CAS:13521-83-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Disodium_Glutarate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-61073360fc872947 | docs/data/mapped_ingredients.csv; CSV lines=[906] | supports | Published identity and count rows inspected: [{"identifier":"cas:13521-83-0","line":906,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C000730144","preferred_term":"Disodium Glutarate","total_occurrences":"0"}] |
 | ev-e76725cc76db2e5b | reports/yaml_record_review/Disodium_Glutarate.md; &#96;data/ingredients/mapped/Disodium_Glutarate.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:43; Completeness:72; Recommended Edits:82 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-835151a15936c34c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[544,1389] | context_only | [{"current_record_sha256":"e669d06340e36f5ec14af33944ccd04b8d5e97b6ba5ce27c25387fb2442ca912","finding_id":"SEM:8679c296babb96cec91b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e669d06340e36f5ec14af33944ccd04b8d5e97b6ba5ce27c25387fb2442ca912","finding_id":"SEM:ef927e327de99ec099ac","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-db3508b4c03ceec3 | data/ingredients/mapped/Disodium_Glutarate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-db3508b4c03ceec3 | data/ingredients/mapped/Disodium_Glutarate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[904],"raw_equal":true},"docs_rows":[{"identifier":"cas:13521-83-0","line":906,"mapping_status":"MAPPED","ontology_id":"mesh:C000730144","preferred_term":"Disodium Glutarate"}],"identifier":"cas:13521-83-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C000730144","ontology_label":"sodium glutarate","ontology_source":"MESH"},"preferred_term":"Disodium Glutarate","sssom_rows":[{"data_row":1062,"object_id":"mesh:C000730144","object_label":"sodium glutarate","predicate_id":"skos:broadMatch"},{"data_row":1063,"object_id":"cas:13521-83-0","object_label":"Disodium Glutarate","predicate_id":"skos:exactMatch"},{"data_row":1064,"object_id":"kgmicrobe.compound:disodium_glutarate","object_label":"Disodium Glutarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Disodium_Glutarate","synonym_count":0} |
 | ev-dcecc3488d1ca368 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-2b353a479b90d808] | context_only | Predecessor structured review finding f-2b353a479b90d808 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5f067810724889a6
+  evidence_ids:
+  - ev-5a7a781a5ca05f62
+  - ev-69d4d2da2f2a0e1b
+  - ev-d84452ad5616464c
+  - ev-61073360fc872947
+  - ev-db3508b4c03ceec3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5f067810724889a6
+  evidence_ids:
+  - ev-5a7a781a5ca05f62
+  - ev-835151a15936c34c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5f067810724889a6
+  evidence_ids:
+  - ev-e76725cc76db2e5b
+  - ev-835151a15936c34c
+  - ev-dcecc3488d1ca368
 evidence:
 - evidence_id: ev-5a7a781a5ca05f62
   kind: record_content
   reference: data/ingredients/mapped/Disodium_Glutarate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[904],"raw_equal":true},"docs_rows":[{"identifier":"cas:13521-83-0","line":906,"mapping_status":"MAPPED","ontology_id":"mesh:C000730144","preferred_term":"Disodium
     Glutarate"}],"identifier":"cas:13521-83-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C000730144","ontology_label":"sodium
@@ -214,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [904]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,8 +235,8 @@ evidence:
 - evidence_id: ev-d84452ad5616464c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Disodium_Glutarate; data-row positions=[1062,1063,1064]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Disodium_Glutarate; data-row positions=[1062, 1063, 1064]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1062,"object_id":"mesh:C000730144","object_label":"sodium
     glutarate","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Disodium_Glutarate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1063,"object_id":"cas:13521-83-0","object_label":"Disodium
@@ -234,7 +247,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[906]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:13521-83-0","line":906,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C000730144","preferred_term":"Disodium
     Glutarate","total_occurrences":"0"}]'
@@ -259,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[544,1389]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e669d06340e36f5ec14af33944ccd04b8d5e97b6ba5ce27c25387fb2442ca912","finding_id":"SEM:8679c296babb96cec91b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e669d06340e36f5ec14af33944ccd04b8d5e97b6ba5ce27c25387fb2442ca912","finding_id":"SEM:ef927e327de99ec099ac","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +282,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Disodium_Glutarate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[904],"raw_equal":true},"docs_rows":[{"identifier":"cas:13521-83-0","line":906,"mapping_status":"MAPPED","ontology_id":"mesh:C000730144","preferred_term":"Disodium
+    Glutarate"}],"identifier":"cas:13521-83-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:C000730144","ontology_label":"sodium
+    glutarate","ontology_source":"MESH"},"preferred_term":"Disodium Glutarate","sssom_rows":[{"data_row":1062,"object_id":"mesh:C000730144","object_label":"sodium
+    glutarate","predicate_id":"skos:broadMatch"},{"data_row":1063,"object_id":"cas:13521-83-0","object_label":"Disodium
+    Glutarate","predicate_id":"skos:exactMatch"},{"data_row":1064,"object_id":"kgmicrobe.compound:disodium_glutarate","object_label":"Disodium
+    Glutarate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Disodium_Glutarate","synonym_count":0}'
   snapshot_sha256: e669d06340e36f5ec14af33944ccd04b8d5e97b6ba5ce27c25387fb2442ca912
 - evidence_id: ev-dcecc3488d1ca368
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: (NH4)2 citrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-da4c377d2beac07a | data/ingredients/mapped/Nh42_Citrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1544],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63076","line":1546,"mapping_status":"MAPPED","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2 citrate"}],"identifier":"CHEBI:63076","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":63,"edge_count":63,"occurrences":63},"occurrence_statistics":{"media_count":63,"total_occurrences":63},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63076","ontology_label":"diammonium citrate","ontology_source":"CHEBI"},"preferred_term":"(NH4)2 citrate","sssom_rows":[{"data_row":2064,"object_id":"CHEBI:63076","object_label":"diammonium citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh42_Citrate","synonym_count":17} |
-| ev-b8460b57c87dedca | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1544] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-29274f555ea1f8b8 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nh42_Citrate; data-row positions=[2064] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2064,"object_id":"CHEBI:63076","object_label":"diammonium citrate","other":"2-Hydroxy-1,2,3-propanetricarboxylic acid, diammonium salt&#124;Ammonium citrate, dibasic&#124;Ammonium monohydrogen citrate&#124;Ammonium monohydrogencitrate&#124;Diammonium hydrogen citrate&#124;Dibasic ammonium citrate&#124;Microstop&#124;ammonium citrate dibasic&#124;ammonium hydrogen citrate&#124;citric acid diammonium salt&#124;diammonium 3-carboxy-3-hydroxypentanedioate&#124;CAS:3012-65-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Nh42_Citrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-589da02366c89251 | docs/data/mapped_ingredients.csv; CSV lines=[1546] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:63076","line":1546,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"63","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2 citrate","total_occurrences":"63"}] |
+| ev-da4c377d2beac07a | data/ingredients/mapped/Nh42_Citrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1543],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63076","line":1545,"mapping_status":"MAPPED","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2 citrate"}],"identifier":"CHEBI:63076","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":63,"edge_count":63,"occurrences":63},"occurrence_statistics":{"media_count":63,"total_occurrences":63},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63076","ontology_label":"diammonium citrate","ontology_source":"CHEBI"},"preferred_term":"(NH4)2 citrate","sssom_rows":[{"data_row":2066,"object_id":"CHEBI:63076","object_label":"diammonium citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh42_Citrate","synonym_count":17} |
+| ev-b8460b57c87dedca | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1543] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-29274f555ea1f8b8 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nh42_Citrate; data-row positions=[2066] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2066,"object_id":"CHEBI:63076","object_label":"diammonium citrate","other":"2-Hydroxy-1,2,3-propanetricarboxylic acid, diammonium salt&#124;Ammonium citrate, dibasic&#124;Ammonium monohydrogen citrate&#124;Ammonium monohydrogencitrate&#124;Diammonium hydrogen citrate&#124;Dibasic ammonium citrate&#124;Microstop&#124;ammonium citrate dibasic&#124;ammonium hydrogen citrate&#124;citric acid diammonium salt&#124;diammonium 3-carboxy-3-hydroxypentanedioate&#124;CAS:3012-65-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Nh42_Citrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-589da02366c89251 | docs/data/mapped_ingredients.csv; CSV lines=[1545] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:63076","line":1545,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"63","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2 citrate","total_occurrences":"63"}] |
 | ev-4295ecf6d03f28f1 | reports/yaml_record_review/Nh42_Citrate.md; &#96;data/ingredients/mapped/Nh42_Citrate.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:26; Completeness:40; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-457bf18a435f1591 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1042,1791] | context_only | [{"current_record_sha256":"d2bbc9a5b4f1ecdcd22d4cd2bdba3de75492c1fad9ebc9bdc179c7327bb295cc","finding_id":"SEM:8c5ae3ac2cf8115959e9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d2bbc9a5b4f1ecdcd22d4cd2bdba3de75492c1fad9ebc9bdc179c7327bb295cc","finding_id":"SEM:b469230685bcd19dffdd","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-7cd06f763412cf61 | data/ingredients/mapped/Nh42_Citrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"NITROGEN_SOURCE"}}] |
+| ev-7cd06f763412cf61 | data/ingredients/mapped/Nh42_Citrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1543],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63076","line":1545,"mapping_status":"MAPPED","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2 citrate"}],"identifier":"CHEBI:63076","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":63,"edge_count":63,"occurrences":63},"occurrence_statistics":{"media_count":63,"total_occurrences":63},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63076","ontology_label":"diammonium citrate","ontology_source":"CHEBI"},"preferred_term":"(NH4)2 citrate","sssom_rows":[{"data_row":2066,"object_id":"CHEBI:63076","object_label":"diammonium citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh42_Citrate","synonym_count":17} |
 | ev-51fe41e4c9b607d4 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-9604ee096aa71def] | context_only | Predecessor structured review finding f-9604ee096aa71def in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1febeb1f79bfead5
+  evidence_ids:
+  - ev-da4c377d2beac07a
+  - ev-b8460b57c87dedca
+  - ev-29274f555ea1f8b8
+  - ev-589da02366c89251
+  - ev-7cd06f763412cf61
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1febeb1f79bfead5
+  evidence_ids:
+  - ev-da4c377d2beac07a
+  - ev-457bf18a435f1591
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1febeb1f79bfead5
+  evidence_ids:
+  - ev-4295ecf6d03f28f1
+  - ev-457bf18a435f1591
+  - ev-51fe41e4c9b607d4
 evidence:
 - evidence_id: ev-da4c377d2beac07a
   kind: record_content
   reference: data/ingredients/mapped/Nh42_Citrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1544],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63076","line":1546,"mapping_status":"MAPPED","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1543],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63076","line":1545,"mapping_status":"MAPPED","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2
     citrate"}],"identifier":"CHEBI:63076","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":63,"edge_count":63,"occurrences":63},"occurrence_statistics":{"media_count":63,"total_occurrences":63},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63076","ontology_label":"diammonium
-    citrate","ontology_source":"CHEBI"},"preferred_term":"(NH4)2 citrate","sssom_rows":[{"data_row":2064,"object_id":"CHEBI:63076","object_label":"diammonium
+    citrate","ontology_source":"CHEBI"},"preferred_term":"(NH4)2 citrate","sssom_rows":[{"data_row":2066,"object_id":"CHEBI:63076","object_label":"diammonium
     citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh42_Citrate","synonym_count":17}'
   snapshot_sha256: d2bbc9a5b4f1ecdcd22d4cd2bdba3de75492c1fad9ebc9bdc179c7327bb295cc
 - evidence_id: ev-b8460b57c87dedca
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1544]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1543]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,10 +233,10 @@ evidence:
 - evidence_id: ev-29274f555ea1f8b8
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Nh42_Citrate; data-row positions=[2064]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Nh42_Citrate; data-row positions=[2066]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2064,"object_id":"CHEBI:63076","object_label":"diammonium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2066,"object_id":"CHEBI:63076","object_label":"diammonium
     citrate","other":"2-Hydroxy-1,2,3-propanetricarboxylic acid, diammonium salt|Ammonium
     citrate, dibasic|Ammonium monohydrogen citrate|Ammonium monohydrogencitrate|Diammonium
     hydrogen citrate|Dibasic ammonium citrate|Microstop|ammonium citrate dibasic|ammonium
@@ -232,10 +245,10 @@ evidence:
 - evidence_id: ev-589da02366c89251
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1546]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1545]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:63076","line":1546,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"63","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:63076","line":1545,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"63","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2
     citrate","total_occurrences":"63"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-4295ecf6d03f28f1
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1042,1791]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d2bbc9a5b4f1ecdcd22d4cd2bdba3de75492c1fad9ebc9bdc179c7327bb295cc","finding_id":"SEM:8c5ae3ac2cf8115959e9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d2bbc9a5b4f1ecdcd22d4cd2bdba3de75492c1fad9ebc9bdc179c7327bb295cc","finding_id":"SEM:b469230685bcd19dffdd","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Nh42_Citrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"NITROGEN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1543],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63076","line":1545,"mapping_status":"MAPPED","ontology_id":"CHEBI:63076","preferred_term":"(NH4)2
+    citrate"}],"identifier":"CHEBI:63076","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":63,"edge_count":63,"occurrences":63},"occurrence_statistics":{"media_count":63,"total_occurrences":63},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63076","ontology_label":"diammonium
+    citrate","ontology_source":"CHEBI"},"preferred_term":"(NH4)2 citrate","sssom_rows":[{"data_row":2066,"object_id":"CHEBI:63076","object_label":"diammonium
+    citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh42_Citrate","synonym_count":17}'
   snapshot_sha256: d2bbc9a5b4f1ecdcd22d4cd2bdba3de75492c1fad9ebc9bdc179c7327bb295cc
 - evidence_id: ev-51fe41e4c9b607d4
   kind: prior_review

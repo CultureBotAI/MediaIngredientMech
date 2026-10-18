@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-405458fa4de81278
+  evidence_ids:
+  - ev-b09dcd58be19aab9
+  - ev-72ac8a2c127f2554
+  - ev-e0f1d4488fa5b878
+  - ev-e9da53f43aaa4ede
+  - ev-d67477a1d5bd1e42
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-405458fa4de81278
+  evidence_ids:
+  - ev-b09dcd58be19aab9
+  - ev-bdc908f9eb3eb8a7
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-405458fa4de81278
+  evidence_ids:
+  - ev-5eca2d5b1b7dd992
+  - ev-bdc908f9eb3eb8a7
+  - ev-7ae4a3950b5f799a
 evidence:
 - evidence_id: ev-b09dcd58be19aab9
   kind: record_content
   reference: data/ingredients/mapped/L-Malic_Acid_Disodium_Salt_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1228],"raw_equal":true},"docs_rows":[{"identifier":"cas:207511-06-6","line":1230,"mapping_status":"MAPPED","ontology_id":"NCIT:C80654","preferred_term":"L-Malic
     acid disodium salt monohydrate"}],"identifier":"cas:207511-06-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C80654","ontology_label":"Malic
@@ -109,7 +122,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1228]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -117,8 +130,9 @@ evidence:
 - evidence_id: ev-e0f1d4488fa5b878
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:L-Malic_Acid_Disodium_Salt_Monohydrate; data-row positions=[1580,1581,1582]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:L-Malic_Acid_Disodium_Salt_Monohydrate; data-row positions=[1580,
+    1581, 1582]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1580,"object_id":"NCIT:C80654","object_label":"Malic
     Acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:L-Malic_Acid_Disodium_Salt_Monohydrate","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1581,"object_id":"cas:207511-06-6","object_label":"L-Malic
@@ -129,7 +143,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1230]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:207511-06-6","line":1230,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C80654","preferred_term":"L-Malic
     acid disodium salt monohydrate","total_occurrences":"0"}]'
@@ -158,7 +172,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[795,1784,1920]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4896efa3f3c06d572e3bf8dffffb131ab36f1e1a31fac75394acca8db7c43080","finding_id":"SEM:5c494bf191db4bfed0df","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4896efa3f3c06d572e3bf8dffffb131ab36f1e1a31fac75394acca8db7c43080","finding_id":"SEM:0ad3b56193b3bb37d78e","kind":"role_evidence","resolution_reason":"Historical
@@ -169,14 +183,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Malic_Acid_Disodium_Salt_Monohydrate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1228],"raw_equal":true},"docs_rows":[{"identifier":"cas:207511-06-6","line":1230,"mapping_status":"MAPPED","ontology_id":"NCIT:C80654","preferred_term":"L-Malic
+    acid disodium salt monohydrate"}],"identifier":"cas:207511-06-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C80654","ontology_label":"Malic
+    Acid","ontology_source":"NCIT"},"preferred_term":"L-Malic acid disodium salt monohydrate","sssom_rows":[{"data_row":1580,"object_id":"NCIT:C80654","object_label":"Malic
+    Acid","predicate_id":"skos:broadMatch"},{"data_row":1581,"object_id":"cas:207511-06-6","object_label":"L-Malic
+    acid disodium salt monohydrate","predicate_id":"skos:exactMatch"},{"data_row":1582,"object_id":"kgmicrobe.compound:l-malic_acid_disodium_salt_monohydrate","object_label":"L-Malic
+    acid disodium salt monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Malic_Acid_Disodium_Salt_Monohydrate","synonym_count":0}'
   snapshot_sha256: 4896efa3f3c06d572e3bf8dffffb131ab36f1e1a31fac75394acca8db7c43080
 - evidence_id: ev-7ae4a3950b5f799a
   kind: prior_review

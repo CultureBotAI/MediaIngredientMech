@@ -83,13 +83,13 @@ Reassess prediction-only role support: Tertiomycin B
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-52dd0e80c3c2836e | data/ingredients/mapped/Tertiomycin_B.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1938],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1940,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin B"}],"identifier":"kgmicrobe.compound:tertiomycin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:tertiomycin_b","ontology_label":"Tertiomycin B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Tertiomycin B","sssom_rows":[{"data_row":2731,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tertiomycin_B","synonym_count":0} |
-| ev-038791eb71fa7848 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1938] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-8110b1edeb063da6 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tertiomycin_B; data-row positions=[2731] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2731,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin B","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Tertiomycin_B","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-0edf5a1d60824e50 | docs/data/mapped_ingredients.csv; CSV lines=[1940] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1940,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin B","total_occurrences":"0"}] |
+| ev-52dd0e80c3c2836e | data/ingredients/mapped/Tertiomycin_B.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1937],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1939,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin B"}],"identifier":"kgmicrobe.compound:tertiomycin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:tertiomycin_b","ontology_label":"Tertiomycin B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Tertiomycin B","sssom_rows":[{"data_row":2733,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tertiomycin_B","synonym_count":0} |
+| ev-038791eb71fa7848 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1937] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-8110b1edeb063da6 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tertiomycin_B; data-row positions=[2733] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2733,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin B","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Tertiomycin_B","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-0edf5a1d60824e50 | docs/data/mapped_ingredients.csv; CSV lines=[1939] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1939,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin B","total_occurrences":"0"}] |
 | ev-db0cd968760bba55 | reports/yaml_record_review/Tertiomycin_B.md; &#96;data/ingredients/mapped/Tertiomycin_B.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:31; Completeness:45; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-9ccedc6c80b24c38 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1272,1572] | context_only | [{"current_record_sha256":"6cbbacf9154ff6e15904bf5699216815b3a652f35b0e6f62f8f46b0b71eeb1f4","finding_id":"SEM:59d1e9e2b25036e35bd6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6cbbacf9154ff6e15904bf5699216815b3a652f35b0e6f62f8f46b0b71eeb1f4","finding_id":"SEM:c67ad7c75920e797b3b2","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ea221d64c4483823 | data/ingredients/mapped/Tertiomycin_B.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-ea221d64c4483823 | data/ingredients/mapped/Tertiomycin_B.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1937],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1939,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin B"}],"identifier":"kgmicrobe.compound:tertiomycin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:tertiomycin_b","ontology_label":"Tertiomycin B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Tertiomycin B","sssom_rows":[{"data_row":2733,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tertiomycin_B","synonym_count":0} |
 | ev-811d7f263f45cbf4 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-ccca10c3de3d7f4b] | context_only | Predecessor structured review finding f-ccca10c3de3d7f4b in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-042e7022fe1fdec7
+  evidence_ids:
+  - ev-52dd0e80c3c2836e
+  - ev-038791eb71fa7848
+  - ev-8110b1edeb063da6
+  - ev-0edf5a1d60824e50
+  - ev-ea221d64c4483823
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-042e7022fe1fdec7
+  evidence_ids:
+  - ev-52dd0e80c3c2836e
+  - ev-9ccedc6c80b24c38
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-042e7022fe1fdec7
+  evidence_ids:
+  - ev-db0cd968760bba55
+  - ev-9ccedc6c80b24c38
+  - ev-811d7f263f45cbf4
 evidence:
 - evidence_id: ev-52dd0e80c3c2836e
   kind: record_content
   reference: data/ingredients/mapped/Tertiomycin_B.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1938],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1940,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1937],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1939,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin
     B"}],"identifier":"kgmicrobe.compound:tertiomycin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:tertiomycin_b","ontology_label":"Tertiomycin
-    B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Tertiomycin B","sssom_rows":[{"data_row":2731,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin
+    B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Tertiomycin B","sssom_rows":[{"data_row":2733,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin
     B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tertiomycin_B","synonym_count":0}'
   snapshot_sha256: 6cbbacf9154ff6e15904bf5699216815b3a652f35b0e6f62f8f46b0b71eeb1f4
 - evidence_id: ev-038791eb71fa7848
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1938]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1937]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-8110b1edeb063da6
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tertiomycin_B; data-row positions=[2731]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tertiomycin_B; data-row positions=[2733]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2731,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2733,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin
     B","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Tertiomycin_B","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-0edf5a1d60824e50
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1940]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1939]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1940,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1939,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin
     B","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-db0cd968760bba55
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1272,1572]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6cbbacf9154ff6e15904bf5699216815b3a652f35b0e6f62f8f46b0b71eeb1f4","finding_id":"SEM:59d1e9e2b25036e35bd6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6cbbacf9154ff6e15904bf5699216815b3a652f35b0e6f62f8f46b0b71eeb1f4","finding_id":"SEM:c67ad7c75920e797b3b2","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tertiomycin_B.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1937],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:tertiomycin_b","line":1939,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:tertiomycin_b","preferred_term":"Tertiomycin
+    B"}],"identifier":"kgmicrobe.compound:tertiomycin_b","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:tertiomycin_b","ontology_label":"Tertiomycin
+    B","ontology_source":"kgmicrobe.compound"},"preferred_term":"Tertiomycin B","sssom_rows":[{"data_row":2733,"object_id":"kgmicrobe.compound:tertiomycin_b","object_label":"Tertiomycin
+    B","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tertiomycin_B","synonym_count":0}'
   snapshot_sha256: 6cbbacf9154ff6e15904bf5699216815b3a652f35b0e6f62f8f46b0b71eeb1f4
 - evidence_id: ev-811d7f263f45cbf4
   kind: prior_review

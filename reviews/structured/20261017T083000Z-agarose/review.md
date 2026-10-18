@@ -89,7 +89,7 @@ Reassess prediction-only role support: Agarose
 | ev-d9ef2ac9136d5aea | docs/data/mapped_ingredients.csv; CSV lines=[463] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:2511","line":463,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"29","ontology_id":"CHEBI:2511","preferred_term":"Agarose","total_occurrences":"29"}] |
 | ev-b0fbc24589657656 | reports/yaml_record_review/Agarose.md; &#96;data/ingredients/mapped/Agarose.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:41; Completeness:60; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-192a347affb5866a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[220,1969] | context_only | [{"current_record_sha256":"f5c974c40d6d5f05f49d051ba5852e4fbfd41b23d3bbc5a29e62aa31ced36c3d","finding_id":"SEM:79d0702bbd571ed6d679","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f5c974c40d6d5f05f49d051ba5852e4fbfd41b23d3bbc5a29e62aa31ced36c3d","finding_id":"SEM:db6089e87caac2e87197","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-dd026fe877735167 | data/ingredients/mapped/Agarose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-dd026fe877735167 | data/ingredients/mapped/Agarose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[461],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2511","line":463,"mapping_status":"MAPPED","ontology_id":"CHEBI:2511","preferred_term":"Agarose"}],"identifier":"CHEBI:2511","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":29,"edge_count":29,"occurrences":29},"occurrence_statistics":{"media_count":29,"total_occurrences":29},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2511","ontology_label":"agarose","ontology_source":"CHEBI"},"preferred_term":"Agarose","sssom_rows":[{"data_row":313,"object_id":"CHEBI:2511","object_label":"agarose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Agarose","synonym_count":5} |
 | ev-aa916b5f40ba37aa | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-59bb3ca8774a4b00] | context_only | Predecessor structured review finding f-59bb3ca8774a4b00 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-894f5d4d34fb0c73
+  evidence_ids:
+  - ev-49e88d7815c704c8
+  - ev-67d134bb9462ee7c
+  - ev-e5dfc593ae2d174d
+  - ev-d9ef2ac9136d5aea
+  - ev-dd026fe877735167
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-894f5d4d34fb0c73
+  evidence_ids:
+  - ev-49e88d7815c704c8
+  - ev-192a347affb5866a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-894f5d4d34fb0c73
+  evidence_ids:
+  - ev-b0fbc24589657656
+  - ev-192a347affb5866a
+  - ev-aa916b5f40ba37aa
 evidence:
 - evidence_id: ev-49e88d7815c704c8
   kind: record_content
   reference: data/ingredients/mapped/Agarose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[461],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2511","line":463,"mapping_status":"MAPPED","ontology_id":"CHEBI:2511","preferred_term":"Agarose"}],"identifier":"CHEBI:2511","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":29,"edge_count":29,"occurrences":29},"occurrence_statistics":{"media_count":29,"total_occurrences":29},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2511","ontology_label":"agarose","ontology_source":"CHEBI"},"preferred_term":"Agarose","sssom_rows":[{"data_row":313,"object_id":"CHEBI:2511","object_label":"agarose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Agarose","synonym_count":5}'
   snapshot_sha256: f5c974c40d6d5f05f49d051ba5852e4fbfd41b23d3bbc5a29e62aa31ced36c3d
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [461]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Agarose; data-row positions=[313]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":313,"object_id":"CHEBI:2511","object_label":"agarose","other":"(1->4)-3,6-anhydro-alpha-L-galactopyranosyl-(1->3)-beta-D-galactopyranan|Sepharose|[4)-3,6-An-alpha-L-Galp-(1->3)-beta-D-Galp-(1->]n|CAS:9012-36-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Agarose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[463]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:2511","line":463,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"29","ontology_id":"CHEBI:2511","preferred_term":"Agarose","total_occurrences":"29"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[220,1969]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f5c974c40d6d5f05f49d051ba5852e4fbfd41b23d3bbc5a29e62aa31ced36c3d","finding_id":"SEM:79d0702bbd571ed6d679","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f5c974c40d6d5f05f49d051ba5852e4fbfd41b23d3bbc5a29e62aa31ced36c3d","finding_id":"SEM:db6089e87caac2e87197","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Agarose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[461],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:2511","line":463,"mapping_status":"MAPPED","ontology_id":"CHEBI:2511","preferred_term":"Agarose"}],"identifier":"CHEBI:2511","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":29,"edge_count":29,"occurrences":29},"occurrence_statistics":{"media_count":29,"total_occurrences":29},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:2511","ontology_label":"agarose","ontology_source":"CHEBI"},"preferred_term":"Agarose","sssom_rows":[{"data_row":313,"object_id":"CHEBI:2511","object_label":"agarose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Agarose","synonym_count":5}'
   snapshot_sha256: f5c974c40d6d5f05f49d051ba5852e4fbfd41b23d3bbc5a29e62aa31ced36c3d
 - evidence_id: ev-aa916b5f40ba37aa
   kind: prior_review

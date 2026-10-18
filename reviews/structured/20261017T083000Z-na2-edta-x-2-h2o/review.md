@@ -77,14 +77,14 @@ Disposition: The current local observation is recorded, but the named source/con
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-4073bb1838002263 | data/ingredients/mapped/Na2-edta_X_2_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1479],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1481,"mapping_status":"REJECTED","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA x 2 H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA x 2 H2O","sssom_rows":[],"sssom_subject":"MIM:Na2-edta_X_2_H2o","synonym_count":9} |
-| ev-02ec9af1bcfc9813 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1479] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-4073bb1838002263 | data/ingredients/mapped/Na2-edta_X_2_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1478],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1480,"mapping_status":"REJECTED","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA x 2 H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA x 2 H2O","sssom_rows":[],"sssom_subject":"MIM:Na2-edta_X_2_H2o","synonym_count":9} |
+| ev-02ec9af1bcfc9813 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1478] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-b8162ce3cb322201 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2-edta_X_2_H2o; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
-| ev-41fa9675a7893c1f | docs/data/mapped_ingredients.csv; CSV lines=[1481] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:64758","line":1481,"mapping_quality":"NARROW_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA x 2 H2O","total_occurrences":"0"}] |
+| ev-41fa9675a7893c1f | docs/data/mapped_ingredients.csv; CSV lines=[1480] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:64758","line":1480,"mapping_quality":"NARROW_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA x 2 H2O","total_occurrences":"0"}] |
 | ev-85f9b8933372b9e0 | reports/yaml_record_review/20261001T050250Z-Na2-edta_X_2_H2o.md; YAML Record Review: Na2-EDTA x 2 H2O:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-068af2cfb7d21511 | reports/yaml_record_review/Na2-edta_X_2_H2o.md; &#96;data/ingredients/mapped/Na2-edta_X_2_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:45; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c295452482ffc128 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[986] | context_only | [{"current_record_sha256":"9f02a335a6dfebf13a162ed0d697ec16f4d584a5a4af55dfdba7aa7f26d24670","finding_id":"SEM:3bfdd2771d2bd1571f51","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-4f79f0e35977e3c2 | data/ingredients/mapped/Na2-edta_X_2_H2o.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}] |
+| ev-4f79f0e35977e3c2 | data/ingredients/mapped/Na2-edta_X_2_H2o.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1478],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1480,"mapping_status":"REJECTED","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA x 2 H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA x 2 H2O","sssom_rows":[],"sssom_subject":"MIM:Na2-edta_X_2_H2o","synonym_count":9} |
 | ev-a82e93bade2bed4d | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-299959d93cd9bbd6] | context_only | Predecessor structured review finding f-299959d93cd9bbd6 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -177,6 +177,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9b40e28e8fe3ad48
+  evidence_ids:
+  - ev-4073bb1838002263
+  - ev-02ec9af1bcfc9813
+  - ev-b8162ce3cb322201
+  - ev-41fa9675a7893c1f
+  - ev-4f79f0e35977e3c2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -185,6 +191,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9b40e28e8fe3ad48
+  evidence_ids:
+  - ev-4073bb1838002263
+  - ev-c295452482ffc128
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -193,15 +202,20 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9b40e28e8fe3ad48
+  evidence_ids:
+  - ev-85f9b8933372b9e0
+  - ev-068af2cfb7d21511
+  - ev-c295452482ffc128
+  - ev-a82e93bade2bed4d
 evidence:
 - evidence_id: ev-4073bb1838002263
   kind: record_content
   reference: data/ingredients/mapped/Na2-edta_X_2_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1479],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1481,"mapping_status":"REJECTED","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1478],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1480,"mapping_status":"REJECTED","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA
     x 2 H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA
     disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA
     x 2 H2O","sssom_rows":[],"sssom_subject":"MIM:Na2-edta_X_2_H2o","synonym_count":9}'
@@ -209,8 +223,8 @@ evidence:
 - evidence_id: ev-02ec9af1bcfc9813
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1479]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1478]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,17 +233,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Na2-edta_X_2_H2o; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-41fa9675a7893c1f
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1481]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1480]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:64758","line":1481,"mapping_quality":"NARROW_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:64758","line":1480,"mapping_quality":"NARROW_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA
     x 2 H2O","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-85f9b8933372b9e0
@@ -281,7 +295,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[986]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9f02a335a6dfebf13a162ed0d697ec16f4d584a5a4af55dfdba7aa7f26d24670","finding_id":"SEM:3bfdd2771d2bd1571f51","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
@@ -290,12 +304,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na2-edta_X_2_H2o.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1478],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1480,"mapping_status":"REJECTED","ontology_id":"CHEBI:64758","preferred_term":"Na2-EDTA
+    x 2 H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA
+    disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2-EDTA
+    x 2 H2O","sssom_rows":[],"sssom_subject":"MIM:Na2-edta_X_2_H2o","synonym_count":9}'
   snapshot_sha256: 9f02a335a6dfebf13a162ed0d697ec16f4d584a5a4af55dfdba7aa7f26d24670
 - evidence_id: ev-a82e93bade2bed4d
   kind: prior_review

@@ -77,13 +77,13 @@ Disposition: The current local observation is recorded, but the named source/con
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-0fa946e25f30b28c | data/ingredients/mapped/Thioctic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1959],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1961,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12} |
-| ev-15835c7d38a35b5b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1959] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-0fa946e25f30b28c | data/ingredients/mapped/Thioctic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1960,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12} |
+| ev-15835c7d38a35b5b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1958] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-4ca8b7dd1a5a7a33 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Thioctic_Acid; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
-| ev-87285206625e3d29 | docs/data/mapped_ingredients.csv; CSV lines=[1961] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":1961,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"Thioctic acid","total_occurrences":"0"}] |
+| ev-87285206625e3d29 | docs/data/mapped_ingredients.csv; CSV lines=[1960] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":1960,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"Thioctic acid","total_occurrences":"0"}] |
 | ev-5cc39453d282735f | reports/yaml_record_review/Thioctic_Acid.md; &#96;data/ingredients/mapped/Thioctic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:31; Completeness:42; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-15ba6f7db72bd385 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1286] | context_only | [{"current_record_sha256":"1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca","finding_id":"SEM:d88be211a55dd96db73c","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-808c5f1fddaf6102 | data/ingredients/mapped/Thioctic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-808c5f1fddaf6102 | data/ingredients/mapped/Thioctic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1960,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12} |
 | ev-1d5d810b8b25732a | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-e434a5cf4d645b45] | context_only | Predecessor structured review finding f-e434a5cf4d645b45 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -173,6 +173,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-0fa946e25f30b28c
+  - ev-15835c7d38a35b5b
+  - ev-4ca8b7dd1a5a7a33
+  - ev-87285206625e3d29
+  - ev-808c5f1fddaf6102
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -181,6 +187,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-0fa946e25f30b28c
+  - ev-15ba6f7db72bd385
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -189,23 +198,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b75b34c4ba40b278
+  evidence_ids:
+  - ev-5cc39453d282735f
+  - ev-15ba6f7db72bd385
+  - ev-1d5d810b8b25732a
 evidence:
 - evidence_id: ev-0fa946e25f30b28c
   kind: record_content
   reference: data/ingredients/mapped/Thioctic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1959],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1961,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1960,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic
     acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic
     acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12}'
   snapshot_sha256: 1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca
 - evidence_id: ev-15835c7d38a35b5b
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1959]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1958]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -214,17 +227,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Thioctic_Acid; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-87285206625e3d29
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1961]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1960]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":1961,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"Thioctic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":1960,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"Thioctic
     acid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-5cc39453d282735f
@@ -245,7 +258,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1286]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca","finding_id":"SEM:d88be211a55dd96db73c","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
@@ -254,12 +267,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Thioctic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1958],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":1960,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"Thioctic
+    acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Thioctic acid","sssom_rows":[],"sssom_subject":"MIM:Thioctic_Acid","synonym_count":12}'
   snapshot_sha256: 1e895ea0095d831e1c9d89b7ead8f658a800f5d7eec639af6388e535c57dbbca
 - evidence_id: ev-1d5d810b8b25732a
   kind: prior_review

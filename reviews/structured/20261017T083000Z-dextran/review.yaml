@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8861166f795a5e66
+  evidence_ids:
+  - ev-b136f4175881c760
+  - ev-078a1bfff23aa9bd
+  - ev-2efbbe4a82eed504
+  - ev-cce3124d0f2c253e
+  - ev-044bc22ae3aa10da
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8861166f795a5e66
+  evidence_ids:
+  - ev-b136f4175881c760
+  - ev-cef50c62cb14e771
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8861166f795a5e66
+  evidence_ids:
+  - ev-315b86fc09244482
+  - ev-cef50c62cb14e771
+  - ev-914aaabedec7ed55
 evidence:
 - evidence_id: ev-b136f4175881c760
   kind: record_content
   reference: data/ingredients/mapped/Dextran.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[878],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:52071","line":880,"mapping_status":"MAPPED","ontology_id":"CHEBI:52071","preferred_term":"Dextran"}],"identifier":"CHEBI:52071","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:52071","ontology_label":"dextran","ontology_source":"CHEBI"},"preferred_term":"Dextran","sssom_rows":[{"data_row":1025,"object_id":"CHEBI:52071","object_label":"dextran","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dextran","synonym_count":10}'
   snapshot_sha256: a10d55ac8cd9aab6d34debdd8cc884a2747fb9af42f748c9b388350998ca39da
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [878]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Dextran; data-row positions=[1025]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1025,"object_id":"CHEBI:52071","object_label":"dextran","other":"(1,6-alpha-D-Glucosyl)m|(1,6-alpha-D-Glucosyl)m+1|(1,6-alpha-D-Glucosyl)n+1|Dextran
     40|Dextran 70|Dextran 75|dextrane|dextrano|dextrans|dextranum|CAS:9004-54-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Dextran","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -122,7 +135,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[880]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:52071","line":880,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:52071","preferred_term":"Dextran","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -143,7 +156,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[530,1636]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a10d55ac8cd9aab6d34debdd8cc884a2747fb9af42f748c9b388350998ca39da","finding_id":"SEM:cb8e2845250ba390de48","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a10d55ac8cd9aab6d34debdd8cc884a2747fb9af42f748c9b388350998ca39da","finding_id":"SEM:79f5f14a24a2c0fc43bd","kind":"role_evidence","resolution_reason":"Historical
@@ -153,12 +166,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Dextran.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[878],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:52071","line":880,"mapping_status":"MAPPED","ontology_id":"CHEBI:52071","preferred_term":"Dextran"}],"identifier":"CHEBI:52071","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:52071","ontology_label":"dextran","ontology_source":"CHEBI"},"preferred_term":"Dextran","sssom_rows":[{"data_row":1025,"object_id":"CHEBI:52071","object_label":"dextran","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dextran","synonym_count":10}'
   snapshot_sha256: a10d55ac8cd9aab6d34debdd8cc884a2747fb9af42f748c9b388350998ca39da
 - evidence_id: ev-914aaabedec7ed55
   kind: prior_review

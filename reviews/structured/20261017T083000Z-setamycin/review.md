@@ -83,13 +83,13 @@ Reassess prediction-only role support: Setamycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-73051ffc94239db2 | data/ingredients/mapped/Setamycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1790],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C032953","line":1792,"mapping_status":"MAPPED","ontology_id":"mesh:C032953","preferred_term":"Setamycin"}],"identifier":"mesh:C032953","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C032953","ontology_label":"setamycin","ontology_source":"MESH"},"preferred_term":"Setamycin","sssom_rows":[{"data_row":2495,"object_id":"mesh:C032953","object_label":"setamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Setamycin","synonym_count":0} |
-| ev-a288b196aed5cc2e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1790] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-2f541e1f87ed0f61 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Setamycin; data-row positions=[2495] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2495,"object_id":"mesh:C032953","object_label":"setamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Setamycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-378971414cc11a66 | docs/data/mapped_ingredients.csv; CSV lines=[1792] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C032953","line":1792,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C032953","preferred_term":"Setamycin","total_occurrences":"0"}] |
+| ev-73051ffc94239db2 | data/ingredients/mapped/Setamycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1789],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C032953","line":1791,"mapping_status":"MAPPED","ontology_id":"mesh:C032953","preferred_term":"Setamycin"}],"identifier":"mesh:C032953","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C032953","ontology_label":"setamycin","ontology_source":"MESH"},"preferred_term":"Setamycin","sssom_rows":[{"data_row":2497,"object_id":"mesh:C032953","object_label":"setamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Setamycin","synonym_count":0} |
+| ev-a288b196aed5cc2e | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1789] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-2f541e1f87ed0f61 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Setamycin; data-row positions=[2497] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2497,"object_id":"mesh:C032953","object_label":"setamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Setamycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-378971414cc11a66 | docs/data/mapped_ingredients.csv; CSV lines=[1791] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C032953","line":1791,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C032953","preferred_term":"Setamycin","total_occurrences":"0"}] |
 | ev-a9e9967cbf8d398e | reports/yaml_record_review/Setamycin.md; &#96;data/ingredients/mapped/Setamycin.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fb3d3b3a132de9dd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1189,1488] | context_only | [{"current_record_sha256":"242e8b33ab85ae73a82ed81fd58e039c1608dd07915f04eaf593f225a2531176","finding_id":"SEM:1993845b52e8b136d52e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"242e8b33ab85ae73a82ed81fd58e039c1608dd07915f04eaf593f225a2531176","finding_id":"SEM:ccf046272ddd7536bfc5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9f2cb14af2cc4474 | data/ingredients/mapped/Setamycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-9f2cb14af2cc4474 | data/ingredients/mapped/Setamycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1789],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C032953","line":1791,"mapping_status":"MAPPED","ontology_id":"mesh:C032953","preferred_term":"Setamycin"}],"identifier":"mesh:C032953","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C032953","ontology_label":"setamycin","ontology_source":"MESH"},"preferred_term":"Setamycin","sssom_rows":[{"data_row":2497,"object_id":"mesh:C032953","object_label":"setamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Setamycin","synonym_count":0} |
 | ev-cea5412b94c234cf | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-84ff7e58dcb7aa9c] | context_only | Predecessor structured review finding f-84ff7e58dcb7aa9c in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-417fc0dd3984cd3a
+  evidence_ids:
+  - ev-73051ffc94239db2
+  - ev-a288b196aed5cc2e
+  - ev-2f541e1f87ed0f61
+  - ev-378971414cc11a66
+  - ev-9f2cb14af2cc4474
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-417fc0dd3984cd3a
+  evidence_ids:
+  - ev-73051ffc94239db2
+  - ev-fb3d3b3a132de9dd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-417fc0dd3984cd3a
+  evidence_ids:
+  - ev-a9e9967cbf8d398e
+  - ev-fb3d3b3a132de9dd
+  - ev-cea5412b94c234cf
 evidence:
 - evidence_id: ev-73051ffc94239db2
   kind: record_content
   reference: data/ingredients/mapped/Setamycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1790],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C032953","line":1792,"mapping_status":"MAPPED","ontology_id":"mesh:C032953","preferred_term":"Setamycin"}],"identifier":"mesh:C032953","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C032953","ontology_label":"setamycin","ontology_source":"MESH"},"preferred_term":"Setamycin","sssom_rows":[{"data_row":2495,"object_id":"mesh:C032953","object_label":"setamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Setamycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1789],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C032953","line":1791,"mapping_status":"MAPPED","ontology_id":"mesh:C032953","preferred_term":"Setamycin"}],"identifier":"mesh:C032953","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C032953","ontology_label":"setamycin","ontology_source":"MESH"},"preferred_term":"Setamycin","sssom_rows":[{"data_row":2497,"object_id":"mesh:C032953","object_label":"setamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Setamycin","synonym_count":0}'
   snapshot_sha256: 242e8b33ab85ae73a82ed81fd58e039c1608dd07915f04eaf593f225a2531176
 - evidence_id: ev-a288b196aed5cc2e
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1790]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1789]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-2f541e1f87ed0f61
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Setamycin; data-row positions=[2495]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Setamycin; data-row positions=[2497]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2495,"object_id":"mesh:C032953","object_label":"setamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Setamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2497,"object_id":"mesh:C032953","object_label":"setamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Setamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-378971414cc11a66
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1792]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1791]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C032953","line":1792,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C032953","preferred_term":"Setamycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C032953","line":1791,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C032953","preferred_term":"Setamycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-a9e9967cbf8d398e
   kind: prior_review
@@ -244,7 +257,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1189,1488]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"242e8b33ab85ae73a82ed81fd58e039c1608dd07915f04eaf593f225a2531176","finding_id":"SEM:1993845b52e8b136d52e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"242e8b33ab85ae73a82ed81fd58e039c1608dd07915f04eaf593f225a2531176","finding_id":"SEM:ccf046272ddd7536bfc5","kind":"role_evidence","resolution_reason":"Historical
@@ -254,12 +267,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Setamycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1789],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C032953","line":1791,"mapping_status":"MAPPED","ontology_id":"mesh:C032953","preferred_term":"Setamycin"}],"identifier":"mesh:C032953","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C032953","ontology_label":"setamycin","ontology_source":"MESH"},"preferred_term":"Setamycin","sssom_rows":[{"data_row":2497,"object_id":"mesh:C032953","object_label":"setamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Setamycin","synonym_count":0}'
   snapshot_sha256: 242e8b33ab85ae73a82ed81fd58e039c1608dd07915f04eaf593f225a2531176
 - evidence_id: ev-cea5412b94c234cf
   kind: prior_review

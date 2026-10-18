@@ -85,11 +85,11 @@ Reassess prediction-only role support: L-Cysteine HCl x H2O
 | --- | --- | --- | --- |
 | ev-6e973572b90b9940 | data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1244],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91248","line":1246,"mapping_status":"MAPPED","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine HCl x H2O"}],"identifier":"CHEBI:91248","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1767,"edge_count":1767,"occurrences":1768},"occurrence_statistics":{"media_count":1767,"total_occurrences":1768},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91248","ontology_label":"L-cysteine hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"L-Cysteine HCl x H2O","sssom_rows":[{"data_row":1608,"object_id":"CHEBI:91248","object_label":"L-cysteine hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-cysteine_Hcl_X_H2o","synonym_count":27} |
 | ev-4730c340dae4b226 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1244] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-189209ee5e19cce5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-cysteine_Hcl_X_H2o; data-row positions=[1608] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1608,"object_id":"CHEBI:91248","object_label":"L-cysteine hydrochloride hydrate","other":"L--Cysteine\u30fbHCl\u30fbH2O&#124;L-Cysteine\u30fbHCl\u30fbH2O&#124;L--Cysteine HCl H2O&#124;L-Cysteine HCl monohydrate&#124;(2R)-2-Amino-3-sulfanyl-propanoic acid hydrochloride monohydrate&#124;Cystein-HCl x 2 H2O (5% (w/v))&#124;L-Cysteine hydrochloride monohydrate&#124;L-Cysteine monohydrate monochloride&#124;L-cysteine HCl.H2O&#124;L-Cysteine-HCl x H2O&#124;Cysteine hydrochloride&#124;Cysteine-HCl x H2O&#124;Cysteine-HCl\u00b7H2O&#124;Cysteine-HCl\u2219H2O&#124;Cysteine-HCl\u22c5H2O&#124;L-Cysteine-HCl\u00b7H2O&#124;(1R)-1-carboxy-2-sulfanylethan-1-aminium chloride--water (1/1)&#124;L-cysteine hydrochloride--water (1/1)&#124;Cystein-HCl&#124;CAS:7048-04-6","predicate_id":"skos:exactMatch","subject_id":"MIM:L-cysteine_Hcl_X_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-189209ee5e19cce5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-cysteine_Hcl_X_H2o; data-row positions=[1608] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1608,"object_id":"CHEBI:91248","object_label":"L-cysteine hydrochloride hydrate","other":"L--Cysteine\u30fbHCl\u30fbH2O&#124;L-Cysteine\u30fbHCl\u30fbH2O&#124;L--Cysteine HCl H2O&#124;L-Cysteine HCl monohydrate&#124;(2R)-2-Amino-3-sulfanyl-propanoic acid hydrochloride monohydrate&#124;L-Cysteine hydrochloride monohydrate&#124;L-Cysteine monohydrate monochloride&#124;L-cysteine HCl.H2O&#124;L-Cysteine-HCl x H2O&#124;Cysteine hydrochloride&#124;Cysteine-HCl x H2O&#124;Cysteine-HCl\u00b7H2O&#124;Cysteine-HCl\u2219H2O&#124;Cysteine-HCl\u22c5H2O&#124;L-Cysteine-HCl\u00b7H2O&#124;(1R)-1-carboxy-2-sulfanylethan-1-aminium chloride--water (1/1)&#124;L-cysteine hydrochloride--water (1/1)&#124;Cystein-HCl&#124;CAS:7048-04-6","predicate_id":"skos:exactMatch","subject_id":"MIM:L-cysteine_Hcl_X_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
 | ev-ccfc0de4a0778832 | docs/data/mapped_ingredients.csv; CSV lines=[1246] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91248","line":1246,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1767","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine HCl x H2O","total_occurrences":"1768"}] |
 | ev-0644f174fb2a2dec | reports/yaml_record_review/L-cysteine_Hcl_X_H2o.md; &#96;data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:28; Completeness:55; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
-| ev-4a81c501b28a0103 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[812,1396] | context_only | [{"current_record_sha256":"1b13fecbe7cba7143af066aebb2322f97fc880d1a3668abcc7bbdd3df6c581a9","finding_id":"SEM:2ad96181d4300621b85a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1b13fecbe7cba7143af066aebb2322f97fc880d1a3668abcc7bbdd3df6c581a9","finding_id":"SEM:4d83bd1c63412ae89bb9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-1a73f18554b42d87 | data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-4a81c501b28a0103 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[812,1396] | context_only | [{"current_record_sha256":"62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8","finding_id":"SEM:2ad96181d4300621b85a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8","finding_id":"SEM:4d83bd1c63412ae89bb9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-1a73f18554b42d87 | data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1244],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91248","line":1246,"mapping_status":"MAPPED","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine HCl x H2O"}],"identifier":"CHEBI:91248","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1767,"edge_count":1767,"occurrences":1768},"occurrence_statistics":{"media_count":1767,"total_occurrences":1768},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91248","ontology_label":"L-cysteine hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"L-Cysteine HCl x H2O","sssom_rows":[{"data_row":1608,"object_id":"CHEBI:91248","object_label":"L-cysteine hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-cysteine_Hcl_X_H2o","synonym_count":27} |
 | ev-f74f36989b928308 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-2a0aea956c784821] | context_only | Predecessor structured review finding f-2a0aea956c784821 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2b5203a714a51b55
+  evidence_ids:
+  - ev-6e973572b90b9940
+  - ev-4730c340dae4b226
+  - ev-189209ee5e19cce5
+  - ev-ccfc0de4a0778832
+  - ev-1a73f18554b42d87
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-2b5203a714a51b55
+  evidence_ids:
+  - ev-6e973572b90b9940
+  - ev-4a81c501b28a0103
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2b5203a714a51b55
+  evidence_ids:
+  - ev-0644f174fb2a2dec
+  - ev-4a81c501b28a0103
+  - ev-f74f36989b928308
 evidence:
 - evidence_id: ev-6e973572b90b9940
   kind: record_content
   reference: data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1244],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91248","line":1246,"mapping_status":"MAPPED","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine
     HCl x H2O"}],"identifier":"CHEBI:91248","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1767,"edge_count":1767,"occurrences":1768},"occurrence_statistics":{"media_count":1767,"total_occurrences":1768},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91248","ontology_label":"L-cysteine
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1244]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,21 +235,20 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-cysteine_Hcl_X_H2o; data-row positions=[1608]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1608,"object_id":"CHEBI:91248","object_label":"L-cysteine
     hydrochloride hydrate","other":"L--Cysteine\u30fbHCl\u30fbH2O|L-Cysteine\u30fbHCl\u30fbH2O|L--Cysteine
     HCl H2O|L-Cysteine HCl monohydrate|(2R)-2-Amino-3-sulfanyl-propanoic acid hydrochloride
-    monohydrate|Cystein-HCl x 2 H2O (5% (w/v))|L-Cysteine hydrochloride monohydrate|L-Cysteine
-    monohydrate monochloride|L-cysteine HCl.H2O|L-Cysteine-HCl x H2O|Cysteine hydrochloride|Cysteine-HCl
-    x H2O|Cysteine-HCl\u00b7H2O|Cysteine-HCl\u2219H2O|Cysteine-HCl\u22c5H2O|L-Cysteine-HCl\u00b7H2O|(1R)-1-carboxy-2-sulfanylethan-1-aminium
+    monohydrate|L-Cysteine hydrochloride monohydrate|L-Cysteine monohydrate monochloride|L-cysteine
+    HCl.H2O|L-Cysteine-HCl x H2O|Cysteine hydrochloride|Cysteine-HCl x H2O|Cysteine-HCl\u00b7H2O|Cysteine-HCl\u2219H2O|Cysteine-HCl\u22c5H2O|L-Cysteine-HCl\u00b7H2O|(1R)-1-carboxy-2-sulfanylethan-1-aminium
     chloride--water (1/1)|L-cysteine hydrochloride--water (1/1)|Cystein-HCl|CAS:7048-04-6","predicate_id":"skos:exactMatch","subject_id":"MIM:L-cysteine_Hcl_X_H2o","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-ccfc0de4a0778832
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1246]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91248","line":1246,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1767","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine
     HCl x H2O","total_occurrences":"1768"}]'
@@ -262,22 +274,23 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[812,1396]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: '[{"current_record_sha256":"1b13fecbe7cba7143af066aebb2322f97fc880d1a3668abcc7bbdd3df6c581a9","finding_id":"SEM:2ad96181d4300621b85a","kind":"existing_record_review","resolution_reason":"Historical
-    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1b13fecbe7cba7143af066aebb2322f97fc880d1a3668abcc7bbdd3df6c581a9","finding_id":"SEM:4d83bd1c63412ae89bb9","kind":"role_evidence","resolution_reason":"Historical
+  summary: '[{"current_record_sha256":"62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8","finding_id":"SEM:2ad96181d4300621b85a","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8","finding_id":"SEM:4d83bd1c63412ae89bb9","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 - evidence_id: ev-1a73f18554b42d87
   kind: record_content
   reference: data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1244],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91248","line":1246,"mapping_status":"MAPPED","ontology_id":"CHEBI:91248","preferred_term":"L-Cysteine
+    HCl x H2O"}],"identifier":"CHEBI:91248","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1767,"edge_count":1767,"occurrences":1768},"occurrence_statistics":{"media_count":1767,"total_occurrences":1768},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91248","ontology_label":"L-cysteine
+    hydrochloride hydrate","ontology_source":"CHEBI"},"preferred_term":"L-Cysteine
+    HCl x H2O","sssom_rows":[{"data_row":1608,"object_id":"CHEBI:91248","object_label":"L-cysteine
+    hydrochloride hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-cysteine_Hcl_X_H2o","synonym_count":27}'
   snapshot_sha256: 62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8
 - evidence_id: ev-f74f36989b928308
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Stachyose - 70%
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-445c3705010cbf61 | data/ingredients/mapped/Stachyose_-_70.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1894],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17164","line":1896,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose - 70%"}],"identifier":"CHEBI:17164","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose - 70%","sssom_rows":[{"data_row":2640,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_-_70","synonym_count":1} |
-| ev-734604da326e89f9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1894] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-fa70562baa8c1154 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Stachyose_-_70; data-row positions=[2640] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2640,"object_id":"CHEBI:17164","object_label":"stachyose","other":"Stachyose hydrate&#124;beta-D-fructofuranosyl alpha-D-galactopyranosyl-(1-&gt;6)-alpha-D-galactopyranosyl-(1-&gt;6)-alpha-D-glucopyranoside&#124;CAS:470-55-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Stachyose_-_70","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-06fe3ebf74ce4e3a | docs/data/mapped_ingredients.csv; CSV lines=[1896] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17164","line":1896,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17164","preferred_term":"Stachyose - 70%","total_occurrences":"0"}] |
+| ev-445c3705010cbf61 | data/ingredients/mapped/Stachyose_-_70.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1893],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17164","line":1895,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose - 70%"}],"identifier":"CHEBI:17164","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose - 70%","sssom_rows":[{"data_row":2642,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_-_70","synonym_count":1} |
+| ev-734604da326e89f9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1893] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-fa70562baa8c1154 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Stachyose_-_70; data-row positions=[2642] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2642,"object_id":"CHEBI:17164","object_label":"stachyose","other":"Stachyose hydrate&#124;beta-D-fructofuranosyl alpha-D-galactopyranosyl-(1-&gt;6)-alpha-D-galactopyranosyl-(1-&gt;6)-alpha-D-glucopyranoside&#124;CAS:470-55-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Stachyose_-_70","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-06fe3ebf74ce4e3a | docs/data/mapped_ingredients.csv; CSV lines=[1895] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17164","line":1895,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17164","preferred_term":"Stachyose - 70%","total_occurrences":"0"}] |
 | ev-08c62b91430fe090 | reports/yaml_record_review/Stachyose_-_70.md; &#96;data/ingredients/mapped/Stachyose_-_70.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:29; Completeness:45; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-0319aa4188a3c54d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1246,1692] | context_only | [{"current_record_sha256":"1a8a006b5d391e6b72f240c7e38e59491976b19d65f91216620bb2935d4d5605","finding_id":"SEM:55c06ddf3067d41c7dd7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1a8a006b5d391e6b72f240c7e38e59491976b19d65f91216620bb2935d4d5605","finding_id":"SEM:5c40c4ae1e96d348918d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-1f0ac1c262dfb4fa | data/ingredients/mapped/Stachyose_-_70.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-1f0ac1c262dfb4fa | data/ingredients/mapped/Stachyose_-_70.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1893],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17164","line":1895,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose - 70%"}],"identifier":"CHEBI:17164","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose - 70%","sssom_rows":[{"data_row":2642,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_-_70","synonym_count":1} |
 | ev-d2664c436d2ab360 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-daed55dde87c7afd] | context_only | Predecessor structured review finding f-daed55dde87c7afd in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-bedfc824f9f602aa
+  evidence_ids:
+  - ev-445c3705010cbf61
+  - ev-734604da326e89f9
+  - ev-fa70562baa8c1154
+  - ev-06fe3ebf74ce4e3a
+  - ev-1f0ac1c262dfb4fa
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-bedfc824f9f602aa
+  evidence_ids:
+  - ev-445c3705010cbf61
+  - ev-0319aa4188a3c54d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-bedfc824f9f602aa
+  evidence_ids:
+  - ev-08c62b91430fe090
+  - ev-0319aa4188a3c54d
+  - ev-d2664c436d2ab360
 evidence:
 - evidence_id: ev-445c3705010cbf61
   kind: record_content
   reference: data/ingredients/mapped/Stachyose_-_70.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1894],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17164","line":1896,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1893],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17164","line":1895,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
     - 70%"}],"identifier":"CHEBI:17164","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose
-    - 70%","sssom_rows":[{"data_row":2640,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_-_70","synonym_count":1}'
+    - 70%","sssom_rows":[{"data_row":2642,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_-_70","synonym_count":1}'
   snapshot_sha256: 1a8a006b5d391e6b72f240c7e38e59491976b19d65f91216620bb2935d4d5605
 - evidence_id: ev-734604da326e89f9
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1894]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1893]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,19 +232,19 @@ evidence:
 - evidence_id: ev-fa70562baa8c1154
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Stachyose_-_70; data-row positions=[2640]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Stachyose_-_70; data-row positions=[2642]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2640,"object_id":"CHEBI:17164","object_label":"stachyose","other":"Stachyose
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2642,"object_id":"CHEBI:17164","object_label":"stachyose","other":"Stachyose
     hydrate|beta-D-fructofuranosyl alpha-D-galactopyranosyl-(1->6)-alpha-D-galactopyranosyl-(1->6)-alpha-D-glucopyranoside|CAS:470-55-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Stachyose_-_70","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-06fe3ebf74ce4e3a
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1896]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1895]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17164","line":1896,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17164","line":1895,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
     - 70%","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-08c62b91430fe090
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1246,1692]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1a8a006b5d391e6b72f240c7e38e59491976b19d65f91216620bb2935d4d5605","finding_id":"SEM:55c06ddf3067d41c7dd7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1a8a006b5d391e6b72f240c7e38e59491976b19d65f91216620bb2935d4d5605","finding_id":"SEM:5c40c4ae1e96d348918d","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Stachyose_-_70.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1893],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17164","line":1895,"mapping_status":"MAPPED","ontology_id":"CHEBI:17164","preferred_term":"Stachyose
+    - 70%"}],"identifier":"CHEBI:17164","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17164","ontology_label":"stachyose","ontology_source":"CHEBI"},"preferred_term":"Stachyose
+    - 70%","sssom_rows":[{"data_row":2642,"object_id":"CHEBI:17164","object_label":"stachyose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Stachyose_-_70","synonym_count":1}'
   snapshot_sha256: 1a8a006b5d391e6b72f240c7e38e59491976b19d65f91216620bb2935d4d5605
 - evidence_id: ev-d2664c436d2ab360
   kind: prior_review

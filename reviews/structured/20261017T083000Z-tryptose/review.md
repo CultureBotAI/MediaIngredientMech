@@ -83,13 +83,13 @@ Reassess prediction-only role support: Tryptose
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c93030bfa5bf0c3e | data/ingredients/mapped/Tryptose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2010],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000183","line":2012,"mapping_status":"MAPPED","ontology_id":"MICRO:0000183","preferred_term":"Tryptose"}],"identifier":"MICRO:0000183","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000183","ontology_label":"tryptose","ontology_source":"MICRO"},"preferred_term":"Tryptose","sssom_rows":[{"data_row":2848,"object_id":"MICRO:0000183","object_label":"tryptose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptose","synonym_count":2} |
-| ev-6a8fdeb5f789b2df | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2010] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-79c631fa92ed3007 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tryptose; data-row positions=[2848] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2848,"object_id":"MICRO:0000183","object_label":"tryptose","other":"Tryptose (BD-Difco)","predicate_id":"skos:exactMatch","subject_id":"MIM:Tryptose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-e2f8d533e8cac7ec | docs/data/mapped_ingredients.csv; CSV lines=[2012] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000183","line":2012,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"MICRO:0000183","preferred_term":"Tryptose","total_occurrences":"12"}] |
+| ev-c93030bfa5bf0c3e | data/ingredients/mapped/Tryptose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2009],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000183","line":2011,"mapping_status":"MAPPED","ontology_id":"MICRO:0000183","preferred_term":"Tryptose"}],"identifier":"MICRO:0000183","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000183","ontology_label":"tryptose","ontology_source":"MICRO"},"preferred_term":"Tryptose","sssom_rows":[{"data_row":2850,"object_id":"MICRO:0000183","object_label":"tryptose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptose","synonym_count":2} |
+| ev-6a8fdeb5f789b2df | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2009] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-79c631fa92ed3007 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Tryptose; data-row positions=[2850] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2850,"object_id":"MICRO:0000183","object_label":"tryptose","other":"Tryptose (BD-Difco)","predicate_id":"skos:exactMatch","subject_id":"MIM:Tryptose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-e2f8d533e8cac7ec | docs/data/mapped_ingredients.csv; CSV lines=[2011] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000183","line":2011,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"MICRO:0000183","preferred_term":"Tryptose","total_occurrences":"12"}] |
 | ev-52101eaa1f9c949c | reports/yaml_record_review/Tryptose.md; &#96;data/ingredients/mapped/Tryptose.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:33; Issues:47; Major: &#96;PROTEIN_SOURCE&#96; is provisional name-pattern evidence:49; Completeness:66; Recommended Edits:72 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-7e98759c71655e56 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1323,1512] | context_only | [{"current_record_sha256":"6f2175ad4c3a9a65128a17cf32375598b7ca2a16e9de686c298203d931108b6f","finding_id":"SEM:75dc6ac41eea87f5e1dc","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6f2175ad4c3a9a65128a17cf32375598b7ca2a16e9de686c298203d931108b6f","finding_id":"SEM:d4e86d7998d024ed6683","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e5151756f2891400 | data/ingredients/mapped/Tryptose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-e5151756f2891400 | data/ingredients/mapped/Tryptose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2009],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000183","line":2011,"mapping_status":"MAPPED","ontology_id":"MICRO:0000183","preferred_term":"Tryptose"}],"identifier":"MICRO:0000183","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000183","ontology_label":"tryptose","ontology_source":"MICRO"},"preferred_term":"Tryptose","sssom_rows":[{"data_row":2850,"object_id":"MICRO:0000183","object_label":"tryptose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptose","synonym_count":2} |
 | ev-d9b38f8dcb5f80a5 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-a07ff67506abd483] | context_only | Predecessor structured review finding f-a07ff67506abd483 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1513e4aa3ebc6004
+  evidence_ids:
+  - ev-c93030bfa5bf0c3e
+  - ev-6a8fdeb5f789b2df
+  - ev-79c631fa92ed3007
+  - ev-e2f8d533e8cac7ec
+  - ev-e5151756f2891400
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1513e4aa3ebc6004
+  evidence_ids:
+  - ev-c93030bfa5bf0c3e
+  - ev-7e98759c71655e56
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1513e4aa3ebc6004
+  evidence_ids:
+  - ev-52101eaa1f9c949c
+  - ev-7e98759c71655e56
+  - ev-d9b38f8dcb5f80a5
 evidence:
 - evidence_id: ev-c93030bfa5bf0c3e
   kind: record_content
   reference: data/ingredients/mapped/Tryptose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2010],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000183","line":2012,"mapping_status":"MAPPED","ontology_id":"MICRO:0000183","preferred_term":"Tryptose"}],"identifier":"MICRO:0000183","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000183","ontology_label":"tryptose","ontology_source":"MICRO"},"preferred_term":"Tryptose","sssom_rows":[{"data_row":2848,"object_id":"MICRO:0000183","object_label":"tryptose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptose","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2009],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000183","line":2011,"mapping_status":"MAPPED","ontology_id":"MICRO:0000183","preferred_term":"Tryptose"}],"identifier":"MICRO:0000183","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000183","ontology_label":"tryptose","ontology_source":"MICRO"},"preferred_term":"Tryptose","sssom_rows":[{"data_row":2850,"object_id":"MICRO:0000183","object_label":"tryptose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptose","synonym_count":2}'
   snapshot_sha256: 6f2175ad4c3a9a65128a17cf32375598b7ca2a16e9de686c298203d931108b6f
 - evidence_id: ev-6a8fdeb5f789b2df
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2010]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2009]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,19 +230,19 @@ evidence:
 - evidence_id: ev-79c631fa92ed3007
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tryptose; data-row positions=[2848]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tryptose; data-row positions=[2850]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2848,"object_id":"MICRO:0000183","object_label":"tryptose","other":"Tryptose
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2850,"object_id":"MICRO:0000183","object_label":"tryptose","other":"Tryptose
     (BD-Difco)","predicate_id":"skos:exactMatch","subject_id":"MIM:Tryptose","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-e2f8d533e8cac7ec
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2012]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2011]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000183","line":2012,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"MICRO:0000183","preferred_term":"Tryptose","total_occurrences":"12"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000183","line":2011,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"MICRO:0000183","preferred_term":"Tryptose","total_occurrences":"12"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-52101eaa1f9c949c
   kind: prior_review
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1323,1512]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6f2175ad4c3a9a65128a17cf32375598b7ca2a16e9de686c298203d931108b6f","finding_id":"SEM:75dc6ac41eea87f5e1dc","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6f2175ad4c3a9a65128a17cf32375598b7ca2a16e9de686c298203d931108b6f","finding_id":"SEM:d4e86d7998d024ed6683","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tryptose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2009],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000183","line":2011,"mapping_status":"MAPPED","ontology_id":"MICRO:0000183","preferred_term":"Tryptose"}],"identifier":"MICRO:0000183","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000183","ontology_label":"tryptose","ontology_source":"MICRO"},"preferred_term":"Tryptose","sssom_rows":[{"data_row":2850,"object_id":"MICRO:0000183","object_label":"tryptose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tryptose","synonym_count":2}'
   snapshot_sha256: 6f2175ad4c3a9a65128a17cf32375598b7ca2a16e9de686c298203d931108b6f
 - evidence_id: ev-d9b38f8dcb5f80a5
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-L-lactate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-eb41f4d7d4dfc103 | data/ingredients/mapped/Na-l-lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1468],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1470,"mapping_status":"MAPPED","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":162,"total_occurrences":162},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium L-lactate","ontology_source":"CHEBI"},"preferred_term":"Na-L-lactate","sssom_rows":[{"data_row":1971,"object_id":"CHEBI:232798","object_label":"sodium L-lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-l-lactate","synonym_count":8} |
-| ev-963394e509ae0899 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1468] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-4f6de1e8a551bb1e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-l-lactate; data-row positions=[1971] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1971,"object_id":"CHEBI:232798","object_label":"sodium L-lactate","other":"Na-(L)-lactate&#124;Sodium D,L-Lactate&#124;sodium;(2S)-2-hydroxypropanoate&#124;L-Sodium lactate&#124;CAS:867-56-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-l-lactate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-ea8372490c631654 | docs/data/mapped_ingredients.csv; CSV lines=[1470] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:232798","line":1470,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"162","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate","total_occurrences":"162"}] |
+| ev-eb41f4d7d4dfc103 | data/ingredients/mapped/Na-l-lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1467],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1469,"mapping_status":"MAPPED","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":162,"total_occurrences":162},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium L-lactate","ontology_source":"CHEBI"},"preferred_term":"Na-L-lactate","sssom_rows":[{"data_row":1973,"object_id":"CHEBI:232798","object_label":"sodium L-lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-l-lactate","synonym_count":8} |
+| ev-963394e509ae0899 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1467] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-4f6de1e8a551bb1e | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-l-lactate; data-row positions=[1973] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1973,"object_id":"CHEBI:232798","object_label":"sodium L-lactate","other":"Na-(L)-lactate&#124;Sodium D,L-Lactate&#124;sodium;(2S)-2-hydroxypropanoate&#124;L-Sodium lactate&#124;CAS:867-56-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-l-lactate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-ea8372490c631654 | docs/data/mapped_ingredients.csv; CSV lines=[1469] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:232798","line":1469,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"162","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate","total_occurrences":"162"}] |
 | ev-eb0ce95f306b0d3b | reports/yaml_record_review/Na-l-lactate.md; &#96;data/ingredients/mapped/Na-l-lactate.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:27; Completeness:43; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-924cbdb237438ae6 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[976,1494] | context_only | [{"current_record_sha256":"afab98b9150569dee9477d0b2820884c470c1e0865460d00630bdb20d3e68031","finding_id":"SEM:536bddccac3e62bb969e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"afab98b9150569dee9477d0b2820884c470c1e0865460d00630bdb20d3e68031","finding_id":"SEM:c3b644fd512536dc2117","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-af0265dfa5999ee3 | data/ingredients/mapped/Na-l-lactate.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-af0265dfa5999ee3 | data/ingredients/mapped/Na-l-lactate.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1467],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1469,"mapping_status":"MAPPED","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":162,"total_occurrences":162},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium L-lactate","ontology_source":"CHEBI"},"preferred_term":"Na-L-lactate","sssom_rows":[{"data_row":1973,"object_id":"CHEBI:232798","object_label":"sodium L-lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-l-lactate","synonym_count":8} |
 | ev-b6ba8fed68c5f79d | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-71ec016661ba44f8] | context_only | Predecessor structured review finding f-71ec016661ba44f8 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-202d5ed836e521a7
+  evidence_ids:
+  - ev-eb41f4d7d4dfc103
+  - ev-963394e509ae0899
+  - ev-4f6de1e8a551bb1e
+  - ev-ea8372490c631654
+  - ev-af0265dfa5999ee3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-202d5ed836e521a7
+  evidence_ids:
+  - ev-eb41f4d7d4dfc103
+  - ev-924cbdb237438ae6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-202d5ed836e521a7
+  evidence_ids:
+  - ev-eb0ce95f306b0d3b
+  - ev-924cbdb237438ae6
+  - ev-b6ba8fed68c5f79d
 evidence:
 - evidence_id: ev-eb41f4d7d4dfc103
   kind: record_content
   reference: data/ingredients/mapped/Na-l-lactate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1468],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1470,"mapping_status":"MAPPED","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":162,"total_occurrences":162},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium
-    L-lactate","ontology_source":"CHEBI"},"preferred_term":"Na-L-lactate","sssom_rows":[{"data_row":1971,"object_id":"CHEBI:232798","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1467],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1469,"mapping_status":"MAPPED","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":162,"total_occurrences":162},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium
+    L-lactate","ontology_source":"CHEBI"},"preferred_term":"Na-L-lactate","sssom_rows":[{"data_row":1973,"object_id":"CHEBI:232798","object_label":"sodium
     L-lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-l-lactate","synonym_count":8}'
   snapshot_sha256: afab98b9150569dee9477d0b2820884c470c1e0865460d00630bdb20d3e68031
 - evidence_id: ev-963394e509ae0899
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1468]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1467]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-4f6de1e8a551bb1e
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-l-lactate; data-row positions=[1971]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-l-lactate; data-row positions=[1973]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1971,"object_id":"CHEBI:232798","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1973,"object_id":"CHEBI:232798","object_label":"sodium
     L-lactate","other":"Na-(L)-lactate|Sodium D,L-Lactate|sodium;(2S)-2-hydroxypropanoate|L-Sodium
     lactate|CAS:867-56-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-l-lactate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-ea8372490c631654
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1470]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1469]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:232798","line":1470,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"162","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate","total_occurrences":"162"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:232798","line":1469,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"162","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate","total_occurrences":"162"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-eb0ce95f306b0d3b
   kind: prior_review
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[976,1494]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"afab98b9150569dee9477d0b2820884c470c1e0865460d00630bdb20d3e68031","finding_id":"SEM:536bddccac3e62bb969e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"afab98b9150569dee9477d0b2820884c470c1e0865460d00630bdb20d3e68031","finding_id":"SEM:c3b644fd512536dc2117","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-l-lactate.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1467],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232798","line":1469,"mapping_status":"MAPPED","ontology_id":"CHEBI:232798","preferred_term":"Na-L-lactate"}],"identifier":"CHEBI:232798","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":162,"edge_count":162,"occurrences":162},"occurrence_statistics":{"media_count":162,"total_occurrences":162},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232798","ontology_label":"sodium
+    L-lactate","ontology_source":"CHEBI"},"preferred_term":"Na-L-lactate","sssom_rows":[{"data_row":1973,"object_id":"CHEBI:232798","object_label":"sodium
+    L-lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-l-lactate","synonym_count":8}'
   snapshot_sha256: afab98b9150569dee9477d0b2820884c470c1e0865460d00630bdb20d3e68031
 - evidence_id: ev-b6ba8fed68c5f79d
   kind: prior_review

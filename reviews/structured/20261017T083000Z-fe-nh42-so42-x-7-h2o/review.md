@@ -89,7 +89,7 @@ Reassess prediction-only role support: Fe(NH4)2(SO4)2 x 7 H2O
 | ev-9f10b7b96bad56e3 | docs/data/mapped_ingredients.csv; CSV lines=[984] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:131378","line":984,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"34","ontology_id":"CHEBI:131378","preferred_term":"Fe(NH4)2(SO4)2 x 7 H2O","total_occurrences":"34"}] |
 | ev-4cb2fb1ee7a02d28 | reports/yaml_record_review/Fe_Nh42_So42_X_7_H2o.md; &#96;data/ingredients/mapped/Fe_Nh42_So42_X_7_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:22; Evidence:29; Completeness:50; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-afd54377fca0bb61 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[589,1518] | context_only | [{"current_record_sha256":"2b8903a5c84016c972e3aae7778a54f6226f46a03ebbcf54cb8ac0dfcdad7b47","finding_id":"SEM:5e5d1e0aa9a20652a72b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2b8903a5c84016c972e3aae7778a54f6226f46a03ebbcf54cb8ac0dfcdad7b47","finding_id":"SEM:a5ccd4b621cdf8846abf","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f6907f71ec66b4c1 | data/ingredients/mapped/Fe_Nh42_So42_X_7_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-f6907f71ec66b4c1 | data/ingredients/mapped/Fe_Nh42_So42_X_7_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[982],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131378","line":984,"mapping_status":"MAPPED","ontology_id":"CHEBI:131378","preferred_term":"Fe(NH4)2(SO4)2 x 7 H2O"}],"identifier":"CHEBI:131378","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":34,"edge_count":34,"occurrences":34},"occurrence_statistics":{"media_count":34,"total_occurrences":34},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131378","ontology_label":"ferrous ammonium sulfate heptahydrate","ontology_source":"CHEBI"},"preferred_term":"Fe(NH4)2(SO4)2 x 7 H2O","sssom_rows":[{"data_row":1173,"object_id":"CHEBI:131378","object_label":"ferrous ammonium sulfate heptahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe_Nh42_So42_X_7_H2o","synonym_count":6} |
 | ev-c6ffbd3d08623d97 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-0a507e686eb653f1] | context_only | Predecessor structured review finding f-0a507e686eb653f1 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-efa8f3ce848e6134
+  evidence_ids:
+  - ev-74f2da9e4b43fa45
+  - ev-7b0502ac265239c4
+  - ev-0cbc6992d35a550b
+  - ev-9f10b7b96bad56e3
+  - ev-f6907f71ec66b4c1
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-efa8f3ce848e6134
+  evidence_ids:
+  - ev-74f2da9e4b43fa45
+  - ev-afd54377fca0bb61
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-efa8f3ce848e6134
+  evidence_ids:
+  - ev-4cb2fb1ee7a02d28
+  - ev-afd54377fca0bb61
+  - ev-c6ffbd3d08623d97
 evidence:
 - evidence_id: ev-74f2da9e4b43fa45
   kind: record_content
   reference: data/ingredients/mapped/Fe_Nh42_So42_X_7_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[982],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131378","line":984,"mapping_status":"MAPPED","ontology_id":"CHEBI:131378","preferred_term":"Fe(NH4)2(SO4)2
     x 7 H2O"}],"identifier":"CHEBI:131378","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":34,"edge_count":34,"occurrences":34},"occurrence_statistics":{"media_count":34,"total_occurrences":34},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131378","ontology_label":"ferrous
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [982]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +235,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fe_Nh42_So42_X_7_H2o; data-row positions=[1173]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1173,"object_id":"CHEBI:131378","object_label":"ferrous
     ammonium sulfate heptahydrate","other":"Fe(NH4)2(SO4)2 . 7H2O|Fe(NH4)2(SO4)2 x
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[984]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:131378","line":984,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"34","ontology_id":"CHEBI:131378","preferred_term":"Fe(NH4)2(SO4)2
     x 7 H2O","total_occurrences":"34"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[589,1518]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2b8903a5c84016c972e3aae7778a54f6226f46a03ebbcf54cb8ac0dfcdad7b47","finding_id":"SEM:5e5d1e0aa9a20652a72b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2b8903a5c84016c972e3aae7778a54f6226f46a03ebbcf54cb8ac0dfcdad7b47","finding_id":"SEM:a5ccd4b621cdf8846abf","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fe_Nh42_So42_X_7_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[982],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:131378","line":984,"mapping_status":"MAPPED","ontology_id":"CHEBI:131378","preferred_term":"Fe(NH4)2(SO4)2
+    x 7 H2O"}],"identifier":"CHEBI:131378","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":34,"edge_count":34,"occurrences":34},"occurrence_statistics":{"media_count":34,"total_occurrences":34},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:131378","ontology_label":"ferrous
+    ammonium sulfate heptahydrate","ontology_source":"CHEBI"},"preferred_term":"Fe(NH4)2(SO4)2
+    x 7 H2O","sssom_rows":[{"data_row":1173,"object_id":"CHEBI:131378","object_label":"ferrous
+    ammonium sulfate heptahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe_Nh42_So42_X_7_H2o","synonym_count":6}'
   snapshot_sha256: 2b8903a5c84016c972e3aae7778a54f6226f46a03ebbcf54cb8ac0dfcdad7b47
 - evidence_id: ev-c6ffbd3d08623d97
   kind: prior_review

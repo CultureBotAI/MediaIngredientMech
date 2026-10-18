@@ -83,13 +83,13 @@ Reassess prediction-only role support: Rhamnolipid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-db103ea809fdf14b | data/ingredients/mapped/Rhamnolipid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1751],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62570","line":1753,"mapping_status":"MAPPED","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid"}],"identifier":"CHEBI:62570","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:62570","ontology_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic acid","ontology_source":"CHEBI"},"preferred_term":"Rhamnolipid","sssom_rows":[{"data_row":2421,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhamnolipid","synonym_count":1} |
-| ev-890c8476d4556eda | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1751] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d9f4edba04a8e97d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Rhamnolipid; data-row positions=[2421] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2421,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic acid","other":"3-[(3-{[6-deoxy-2-O-(6-deoxy-alpha-L-mannopyranosyl)-alpha-L-mannopyranosyl]oxy}decanoyl)oxy]decanoic acid&#124;CAS:4348-76-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Rhamnolipid","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-398a0e12f5f44c36 | docs/data/mapped_ingredients.csv; CSV lines=[1753] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62570","line":1753,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid","total_occurrences":"0"}] |
+| ev-db103ea809fdf14b | data/ingredients/mapped/Rhamnolipid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1750],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62570","line":1752,"mapping_status":"MAPPED","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid"}],"identifier":"CHEBI:62570","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:62570","ontology_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic acid","ontology_source":"CHEBI"},"preferred_term":"Rhamnolipid","sssom_rows":[{"data_row":2423,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhamnolipid","synonym_count":1} |
+| ev-890c8476d4556eda | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1750] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d9f4edba04a8e97d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Rhamnolipid; data-row positions=[2423] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2423,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic acid","other":"3-[(3-{[6-deoxy-2-O-(6-deoxy-alpha-L-mannopyranosyl)-alpha-L-mannopyranosyl]oxy}decanoyl)oxy]decanoic acid&#124;CAS:4348-76-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Rhamnolipid","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-398a0e12f5f44c36 | docs/data/mapped_ingredients.csv; CSV lines=[1752] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62570","line":1752,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid","total_occurrences":"0"}] |
 | ev-bf93f6b1c493f659 | reports/yaml_record_review/Rhamnolipid.md; &#96;data/ingredients/mapped/Rhamnolipid.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2338e41a286d7cdd | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1170,1921] | context_only | [{"current_record_sha256":"643665b863243dddf8e4ff215f6d6f3424d88c9378a9b00626c1aaa6aa496a79","finding_id":"SEM:05b30423f7c7e73ea914","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"643665b863243dddf8e4ff215f6d6f3424d88c9378a9b00626c1aaa6aa496a79","finding_id":"SEM:9145dc6b30dc4dc03d68","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0f6e953b1fe1081a | data/ingredients/mapped/Rhamnolipid.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}] |
+| ev-0f6e953b1fe1081a | data/ingredients/mapped/Rhamnolipid.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1750],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62570","line":1752,"mapping_status":"MAPPED","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid"}],"identifier":"CHEBI:62570","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:62570","ontology_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic acid","ontology_source":"CHEBI"},"preferred_term":"Rhamnolipid","sssom_rows":[{"data_row":2423,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhamnolipid","synonym_count":1} |
 | ev-4a7a793e2c43344d | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-1a398aa84c316892] | context_only | Predecessor structured review finding f-1a398aa84c316892 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e1780cd61b4a6d86
+  evidence_ids:
+  - ev-db103ea809fdf14b
+  - ev-890c8476d4556eda
+  - ev-d9f4edba04a8e97d
+  - ev-398a0e12f5f44c36
+  - ev-0f6e953b1fe1081a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e1780cd61b4a6d86
+  evidence_ids:
+  - ev-db103ea809fdf14b
+  - ev-2338e41a286d7cdd
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e1780cd61b4a6d86
+  evidence_ids:
+  - ev-bf93f6b1c493f659
+  - ev-2338e41a286d7cdd
+  - ev-4a7a793e2c43344d
 evidence:
 - evidence_id: ev-db103ea809fdf14b
   kind: record_content
   reference: data/ingredients/mapped/Rhamnolipid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1751],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62570","line":1753,"mapping_status":"MAPPED","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid"}],"identifier":"CHEBI:62570","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:62570","ontology_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic
-    acid","ontology_source":"CHEBI"},"preferred_term":"Rhamnolipid","sssom_rows":[{"data_row":2421,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1750],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62570","line":1752,"mapping_status":"MAPPED","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid"}],"identifier":"CHEBI:62570","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:62570","ontology_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Rhamnolipid","sssom_rows":[{"data_row":2423,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhamnolipid","synonym_count":1}'
   snapshot_sha256: 643665b863243dddf8e4ff215f6d6f3424d88c9378a9b00626c1aaa6aa496a79
 - evidence_id: ev-890c8476d4556eda
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1751]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1750]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-d9f4edba04a8e97d
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Rhamnolipid; data-row positions=[2421]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Rhamnolipid; data-row positions=[2423]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2421,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2423,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic
     acid","other":"3-[(3-{[6-deoxy-2-O-(6-deoxy-alpha-L-mannopyranosyl)-alpha-L-mannopyranosyl]oxy}decanoyl)oxy]decanoic
     acid|CAS:4348-76-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Rhamnolipid","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-398a0e12f5f44c36
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1753]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1752]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62570","line":1753,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62570","line":1752,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-bf93f6b1c493f659
   kind: prior_review
@@ -248,7 +261,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1170,1921]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"643665b863243dddf8e4ff215f6d6f3424d88c9378a9b00626c1aaa6aa496a79","finding_id":"SEM:05b30423f7c7e73ea914","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"643665b863243dddf8e4ff215f6d6f3424d88c9378a9b00626c1aaa6aa496a79","finding_id":"SEM:9145dc6b30dc4dc03d68","kind":"role_evidence","resolution_reason":"Historical
@@ -258,12 +271,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Rhamnolipid.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1750],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62570","line":1752,"mapping_status":"MAPPED","ontology_id":"CHEBI:62570","preferred_term":"Rhamnolipid"}],"identifier":"CHEBI:62570","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:62570","ontology_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"Rhamnolipid","sssom_rows":[{"data_row":2423,"object_id":"CHEBI:62570","object_label":"2-O-alpha-L-rhamnosyl-alpha-L-rhamnosyl-3-hydroxydecanoyl-3-hydroxydecanoic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Rhamnolipid","synonym_count":1}'
   snapshot_sha256: 643665b863243dddf8e4ff215f6d6f3424d88c9378a9b00626c1aaa6aa496a79
 - evidence_id: ev-4a7a793e2c43344d
   kind: prior_review

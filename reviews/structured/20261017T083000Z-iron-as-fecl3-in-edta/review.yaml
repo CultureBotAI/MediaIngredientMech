@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-98c71e771669bad7
+  evidence_ids:
+  - ev-fcb59576f18a3e70
+  - ev-d2868a9dbcb2a64e
+  - ev-a05feb40b8bd9fca
+  - ev-445d1a1198422174
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -82,6 +87,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-98c71e771669bad7
+  evidence_ids:
+  - ev-fcb59576f18a3e70
+  - ev-a7ffdf9122472c24
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +98,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-98c71e771669bad7
+  evidence_ids:
+  - ev-ae9949c8cba5cee4
+  - ev-a7ffdf9122472c24
 evidence:
 - evidence_id: ev-fcb59576f18a3e70
   kind: record_content
   reference: data/ingredients/unmapped/Iron_As_Fecl3_In_Edta.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[131],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0604","line":133,"mapping_status":"UNMAPPED","ontology_id":"NCIT:C598","preferred_term":"Iron
     (as FeCl3 in EDTA)"}],"identifier":"UNMAPPED_0604","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C598","ontology_label":"Iron","ontology_source":"NCIT"},"preferred_term":"Iron
@@ -106,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/unmapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [131]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Iron_As_Fecl3_In_Edta; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -123,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/unmapped_ingredients.csv
   locator: CSV lines=[133]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0604","line":133,"mapping_quality":"NARROW_MATCH","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"NCIT:C598","preferred_term":"Iron
     (as FeCl3 in EDTA)","total_occurrences":"0"}]'
@@ -160,18 +171,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1369]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ef281b8231d437e1edab7555aa1fa785388a67b748d0a6902483862b93075ac6","finding_id":"SEM:f423639345025a1a26d6","kind":"unmapped_parent_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-5aaf0da363a2554f
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/unmapped/Iron_As_Fecl3_In_Edta.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-0ba1166a56ae2cba
@@ -269,7 +272,7 @@ findings:
   - record-98c71e771669bad7
   evidence_ids:
   - ev-fcb59576f18a3e70
-  - ev-5aaf0da363a2554f
+  - ev-a7ffdf9122472c24
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/unmapped/Iron_As_Fecl3_In_Edta.yaml

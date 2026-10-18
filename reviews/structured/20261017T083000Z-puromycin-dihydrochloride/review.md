@@ -83,13 +83,13 @@ Reassess prediction-only role support: Puromycin dihydrochloride
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-f3ec0ff5251f2e6d | data/ingredients/mapped/Puromycin_Dihydrochloride.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1716],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8642","line":1718,"mapping_status":"MAPPED","ontology_id":"CHEBI:8642","preferred_term":"Puromycin dihydrochloride"}],"identifier":"CHEBI:8642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8642","ontology_label":"puromycin dihydrochloride","ontology_source":"CHEBI"},"preferred_term":"Puromycin dihydrochloride","sssom_rows":[{"data_row":2366,"object_id":"CHEBI:8642","object_label":"puromycin dihydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Puromycin_Dihydrochloride","synonym_count":1} |
-| ev-bf87f4eb088e5da5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1716] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d22fdc3cca40777c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Puromycin_Dihydrochloride; data-row positions=[2366] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2366,"object_id":"CHEBI:8642","object_label":"puromycin dihydrochloride","other":"3'-deoxy-N,N-dimethyl-3'-[(O-methyl-L-tyrosyl)amino]adenosine dihydrochloride&#124;CAS:58-58-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Puromycin_Dihydrochloride","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-72279669dc3f7366 | docs/data/mapped_ingredients.csv; CSV lines=[1718] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:8642","line":1718,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8642","preferred_term":"Puromycin dihydrochloride","total_occurrences":"0"}] |
+| ev-f3ec0ff5251f2e6d | data/ingredients/mapped/Puromycin_Dihydrochloride.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1715],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8642","line":1717,"mapping_status":"MAPPED","ontology_id":"CHEBI:8642","preferred_term":"Puromycin dihydrochloride"}],"identifier":"CHEBI:8642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8642","ontology_label":"puromycin dihydrochloride","ontology_source":"CHEBI"},"preferred_term":"Puromycin dihydrochloride","sssom_rows":[{"data_row":2368,"object_id":"CHEBI:8642","object_label":"puromycin dihydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Puromycin_Dihydrochloride","synonym_count":1} |
+| ev-bf87f4eb088e5da5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1715] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-d22fdc3cca40777c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Puromycin_Dihydrochloride; data-row positions=[2368] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2368,"object_id":"CHEBI:8642","object_label":"puromycin dihydrochloride","other":"3'-deoxy-N,N-dimethyl-3'-[(O-methyl-L-tyrosyl)amino]adenosine dihydrochloride&#124;CAS:58-58-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Puromycin_Dihydrochloride","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-72279669dc3f7366 | docs/data/mapped_ingredients.csv; CSV lines=[1717] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:8642","line":1717,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8642","preferred_term":"Puromycin dihydrochloride","total_occurrences":"0"}] |
 | ev-aa978690fe0ec134 | reports/yaml_record_review/Puromycin_Dihydrochloride.md; &#96;data/ingredients/mapped/Puromycin_Dihydrochloride.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-61414474c48a94ae | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1146,1905] | context_only | [{"current_record_sha256":"104d41ec9d80fd2213875e92c3c7136a804180289680e03b9d2a549fba8f1b57","finding_id":"SEM:724e47b94de37587b00f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"104d41ec9d80fd2213875e92c3c7136a804180289680e03b9d2a549fba8f1b57","finding_id":"SEM:8d05d354f43b4c81b7bf","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-897cce35d695e86c | data/ingredients/mapped/Puromycin_Dihydrochloride.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-897cce35d695e86c | data/ingredients/mapped/Puromycin_Dihydrochloride.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1715],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8642","line":1717,"mapping_status":"MAPPED","ontology_id":"CHEBI:8642","preferred_term":"Puromycin dihydrochloride"}],"identifier":"CHEBI:8642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8642","ontology_label":"puromycin dihydrochloride","ontology_source":"CHEBI"},"preferred_term":"Puromycin dihydrochloride","sssom_rows":[{"data_row":2368,"object_id":"CHEBI:8642","object_label":"puromycin dihydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Puromycin_Dihydrochloride","synonym_count":1} |
 | ev-738fee2933102001 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-f7bfc8825db4764b] | context_only | Predecessor structured review finding f-f7bfc8825db4764b in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-098adafbd6c7bac1
+  evidence_ids:
+  - ev-f3ec0ff5251f2e6d
+  - ev-bf87f4eb088e5da5
+  - ev-d22fdc3cca40777c
+  - ev-72279669dc3f7366
+  - ev-897cce35d695e86c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-098adafbd6c7bac1
+  evidence_ids:
+  - ev-f3ec0ff5251f2e6d
+  - ev-61414474c48a94ae
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-098adafbd6c7bac1
+  evidence_ids:
+  - ev-aa978690fe0ec134
+  - ev-61414474c48a94ae
+  - ev-738fee2933102001
 evidence:
 - evidence_id: ev-f3ec0ff5251f2e6d
   kind: record_content
   reference: data/ingredients/mapped/Puromycin_Dihydrochloride.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1716],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8642","line":1718,"mapping_status":"MAPPED","ontology_id":"CHEBI:8642","preferred_term":"Puromycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1715],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8642","line":1717,"mapping_status":"MAPPED","ontology_id":"CHEBI:8642","preferred_term":"Puromycin
     dihydrochloride"}],"identifier":"CHEBI:8642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8642","ontology_label":"puromycin
-    dihydrochloride","ontology_source":"CHEBI"},"preferred_term":"Puromycin dihydrochloride","sssom_rows":[{"data_row":2366,"object_id":"CHEBI:8642","object_label":"puromycin
+    dihydrochloride","ontology_source":"CHEBI"},"preferred_term":"Puromycin dihydrochloride","sssom_rows":[{"data_row":2368,"object_id":"CHEBI:8642","object_label":"puromycin
     dihydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Puromycin_Dihydrochloride","synonym_count":1}'
   snapshot_sha256: 104d41ec9d80fd2213875e92c3c7136a804180289680e03b9d2a549fba8f1b57
 - evidence_id: ev-bf87f4eb088e5da5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1716]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1715]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,20 +233,20 @@ evidence:
 - evidence_id: ev-d22fdc3cca40777c
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Puromycin_Dihydrochloride; data-row positions=[2366]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Puromycin_Dihydrochloride; data-row positions=[2368]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2366,"object_id":"CHEBI:8642","object_label":"puromycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2368,"object_id":"CHEBI:8642","object_label":"puromycin
     dihydrochloride","other":"3''-deoxy-N,N-dimethyl-3''-[(O-methyl-L-tyrosyl)amino]adenosine
     dihydrochloride|CAS:58-58-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Puromycin_Dihydrochloride","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-72279669dc3f7366
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1718]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1717]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:8642","line":1718,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8642","preferred_term":"Puromycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:8642","line":1717,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8642","preferred_term":"Puromycin
     dihydrochloride","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-aa978690fe0ec134
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1146,1905]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"104d41ec9d80fd2213875e92c3c7136a804180289680e03b9d2a549fba8f1b57","finding_id":"SEM:724e47b94de37587b00f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"104d41ec9d80fd2213875e92c3c7136a804180289680e03b9d2a549fba8f1b57","finding_id":"SEM:8d05d354f43b4c81b7bf","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Puromycin_Dihydrochloride.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1715],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8642","line":1717,"mapping_status":"MAPPED","ontology_id":"CHEBI:8642","preferred_term":"Puromycin
+    dihydrochloride"}],"identifier":"CHEBI:8642","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8642","ontology_label":"puromycin
+    dihydrochloride","ontology_source":"CHEBI"},"preferred_term":"Puromycin dihydrochloride","sssom_rows":[{"data_row":2368,"object_id":"CHEBI:8642","object_label":"puromycin
+    dihydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Puromycin_Dihydrochloride","synonym_count":1}'
   snapshot_sha256: 104d41ec9d80fd2213875e92c3c7136a804180289680e03b9d2a549fba8f1b57
 - evidence_id: ev-738fee2933102001
   kind: prior_review

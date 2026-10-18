@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-4e0f53343f10220b | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-4e0f53343f10220b | Explain curation-history timestamp order: 3-trehalosamine |
 | Role evidence and plausibility check | passed | True | record-4e0f53343f10220b | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-4e0f53343f10220b | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: 3-trehalosamine
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-314072af907ba103 | data/ingredients/mapped/3-trehalosamine.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2114],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:223561","line":2116,"mapping_status":"MAPPED","ontology_id":"CHEBI:223561","preferred_term":"3-trehalosamine"}],"identifier":"CHEBI:223561","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_production"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:223561","ontology_label":"3-trehalosamine","ontology_source":"CHEBI"},"preferred_term":"3-trehalosamine","sssom_rows":[{"data_row":158,"object_id":"CHEBI:223561","object_label":"3-trehalosamine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-trehalosamine","synonym_count":0} |
-| ev-bb4f721e128cadac | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2114] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-314072af907ba103 | data/ingredients/mapped/3-trehalosamine.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2113],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:223561","line":2115,"mapping_status":"MAPPED","ontology_id":"CHEBI:223561","preferred_term":"3-trehalosamine"}],"identifier":"CHEBI:223561","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:223561","ontology_label":"3-trehalosamine","ontology_source":"CHEBI"},"preferred_term":"3-trehalosamine","sssom_rows":[{"data_row":158,"object_id":"CHEBI:223561","object_label":"3-trehalosamine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-trehalosamine","synonym_count":0} |
+| ev-bb4f721e128cadac | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2113] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-b0706005af976d76 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:3-trehalosamine; data-row positions=[158] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":158,"object_id":"CHEBI:223561","object_label":"3-trehalosamine","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:3-trehalosamine","validation_method":"manual:review-ingredients&#124;APPROVED&#124;2026-08-04"}] |
-| ev-0281b344fe69fbfd | docs/data/mapped_ingredients.csv; CSV lines=[2116] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:223561","line":2116,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:223561","preferred_term":"3-trehalosamine","total_occurrences":"0"}] |
+| ev-0281b344fe69fbfd | docs/data/mapped_ingredients.csv; CSV lines=[2115] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:223561","line":2115,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:223561","preferred_term":"3-trehalosamine","total_occurrences":"0"}] |
 | ev-14a1a988e36788d7 | reports/yaml_record_review/3-trehalosamine.md; &#96;data/ingredients/mapped/3-trehalosamine.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:35; Completeness:50; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-0f3af43eb9bb8336 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[132] | context_only | [{"current_record_sha256":"f13022edaff606b4b0d62c2acc7b3ea5291c0313907f70ed1c88e6c72c2e4f6d","finding_id":"SEM:1c1c78cab33a5bf6bda9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-4b25d7e3591f11b0 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-eba9703c056213b5] | context_only | Predecessor structured review finding f-eba9703c056213b5 in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: 3-trehalosamine'
   target_ids:
   - record-4e0f53343f10220b
+  evidence_ids:
+  - ev-314072af907ba103
+  - ev-bb4f721e128cadac
+  - ev-b0706005af976d76
+  - ev-0281b344fe69fbfd
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-4e0f53343f10220b
+  evidence_ids:
+  - ev-314072af907ba103
+  - ev-0f3af43eb9bb8336
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-4e0f53343f10220b
+  evidence_ids:
+  - ev-14a1a988e36788d7
+  - ev-0f3af43eb9bb8336
+  - ev-4b25d7e3591f11b0
 evidence:
 - evidence_id: ev-314072af907ba103
   kind: record_content
   reference: data/ingredients/mapped/3-trehalosamine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2114],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:223561","line":2116,"mapping_status":"MAPPED","ontology_id":"CHEBI:223561","preferred_term":"3-trehalosamine"}],"identifier":"CHEBI:223561","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_production"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:223561","ontology_label":"3-trehalosamine","ontology_source":"CHEBI"},"preferred_term":"3-trehalosamine","sssom_rows":[{"data_row":158,"object_id":"CHEBI:223561","object_label":"3-trehalosamine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-trehalosamine","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2113],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:223561","line":2115,"mapping_status":"MAPPED","ontology_id":"CHEBI:223561","preferred_term":"3-trehalosamine"}],"identifier":"CHEBI:223561","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:223561","ontology_label":"3-trehalosamine","ontology_source":"CHEBI"},"preferred_term":"3-trehalosamine","sssom_rows":[{"data_row":158,"object_id":"CHEBI:223561","object_label":"3-trehalosamine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:3-trehalosamine","synonym_count":0}'
   snapshot_sha256: f13022edaff606b4b0d62c2acc7b3ea5291c0313907f70ed1c88e6c72c2e4f6d
 - evidence_id: ev-bb4f721e128cadac
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2114]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2113]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,17 +228,17 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:3-trehalosamine; data-row positions=[158]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":158,"object_id":"CHEBI:223561","object_label":"3-trehalosamine","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:3-trehalosamine","validation_method":"manual:review-ingredients|APPROVED|2026-08-04"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-0281b344fe69fbfd
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2116]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2115]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:223561","line":2116,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:223561","preferred_term":"3-trehalosamine","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:223561","line":2115,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:223561","preferred_term":"3-trehalosamine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-14a1a988e36788d7
   kind: prior_review
@@ -249,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[132]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f13022edaff606b4b0d62c2acc7b3ea5291c0313907f70ed1c88e6c72c2e4f6d","finding_id":"SEM:1c1c78cab33a5bf6bda9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

@@ -77,13 +77,13 @@ Disposition: The current local observation is recorded, but the named source/con
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-2ab3793d23ccd43f | data/ingredients/mapped/Α-lipoic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2089],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":2091,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic acid","ontology_source":"CHEBI"},"preferred_term":"\u03b1-lipoic acid","sssom_rows":[],"sssom_subject":"MIM:~391-lipoic_Acid","synonym_count":12} |
-| ev-6efd606d1e45196d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2089] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-76be0abda8fe0be7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:~391-lipoic_Acid; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
-| ev-97012c1bdc306d51 | docs/data/mapped_ingredients.csv; CSV lines=[2091] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":2091,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic acid","total_occurrences":"0"}] |
+| ev-2ab3793d23ccd43f | data/ingredients/mapped/Α-lipoic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2088],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":2090,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic acid","ontology_source":"CHEBI"},"preferred_term":"\u03b1-lipoic acid","sssom_rows":[],"sssom_subject":"MIM:\u0391-lipoic_Acid","synonym_count":12} |
+| ev-6efd606d1e45196d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2088] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-76be0abda8fe0be7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Α-lipoic_Acid; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-97012c1bdc306d51 | docs/data/mapped_ingredients.csv; CSV lines=[2090] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":2090,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic acid","total_occurrences":"0"}] |
 | ev-3161f554b0ca4473 | reports/yaml_record_review/Α-lipoic_Acid.md; &#96;data/ingredients/mapped/Α-lipoic_Acid.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:32; Issues:41; Completeness:47; Recommended Edits:52 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-4d78d317dbb260bb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1366] | context_only | [{"current_record_sha256":"f7326359f69a4022a6d6399f272109180611423bcd3debc2defccae8fc1ae7b6","finding_id":"SEM:7d4a2c88e6a95c3f22ca","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-31128c19b9759007 | data/ingredients/mapped/Α-lipoic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}] |
+| ev-31128c19b9759007 | data/ingredients/mapped/Α-lipoic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2088],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":2090,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic acid","ontology_source":"CHEBI"},"preferred_term":"\u03b1-lipoic acid","sssom_rows":[],"sssom_subject":"MIM:\u0391-lipoic_Acid","synonym_count":12} |
 | ev-ce8aa7f6234f55a6 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-eea7ae64ba6c1a34] | context_only | Predecessor structured review finding f-eea7ae64ba6c1a34 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -173,6 +173,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b21faf34879b78a3
+  evidence_ids:
+  - ev-2ab3793d23ccd43f
+  - ev-6efd606d1e45196d
+  - ev-76be0abda8fe0be7
+  - ev-97012c1bdc306d51
+  - ev-31128c19b9759007
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -181,6 +187,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b21faf34879b78a3
+  evidence_ids:
+  - ev-2ab3793d23ccd43f
+  - ev-4d78d317dbb260bb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -189,23 +198,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b21faf34879b78a3
+  evidence_ids:
+  - ev-3161f554b0ca4473
+  - ev-4d78d317dbb260bb
+  - ev-ce8aa7f6234f55a6
 evidence:
 - evidence_id: ev-2ab3793d23ccd43f
   kind: record_content
   reference: data/ingredients/mapped/Α-lipoic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2089],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":2091,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2088],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":2090,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic
     acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic
-    acid","ontology_source":"CHEBI"},"preferred_term":"\u03b1-lipoic acid","sssom_rows":[],"sssom_subject":"MIM:~391-lipoic_Acid","synonym_count":12}'
+    acid","ontology_source":"CHEBI"},"preferred_term":"\u03b1-lipoic acid","sssom_rows":[],"sssom_subject":"MIM:\u0391-lipoic_Acid","synonym_count":12}'
   snapshot_sha256: f7326359f69a4022a6d6399f272109180611423bcd3debc2defccae8fc1ae7b6
 - evidence_id: ev-6efd606d1e45196d
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2089]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2088]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -213,18 +226,18 @@ evidence:
 - evidence_id: ev-76be0abda8fe0be7
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:~391-lipoic_Acid; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Α-lipoic_Acid; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-97012c1bdc306d51
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2091]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2090]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":2091,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16494","line":2090,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic
     acid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-3161f554b0ca4473
@@ -247,7 +260,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1366]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f7326359f69a4022a6d6399f272109180611423bcd3debc2defccae8fc1ae7b6","finding_id":"SEM:7d4a2c88e6a95c3f22ca","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
@@ -256,12 +269,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Α-lipoic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"VITAMIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2088],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16494","line":2090,"mapping_status":"REJECTED","ontology_id":"CHEBI:16494","preferred_term":"\u03b1-lipoic
+    acid"}],"identifier":"CHEBI:16494","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":1747,"edge_count":1747,"occurrences":1748},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16494","ontology_label":"lipoic
+    acid","ontology_source":"CHEBI"},"preferred_term":"\u03b1-lipoic acid","sssom_rows":[],"sssom_subject":"MIM:\u0391-lipoic_Acid","synonym_count":12}'
   snapshot_sha256: f7326359f69a4022a6d6399f272109180611423bcd3debc2defccae8fc1ae7b6
 - evidence_id: ev-ce8aa7f6234f55a6
   kind: prior_review

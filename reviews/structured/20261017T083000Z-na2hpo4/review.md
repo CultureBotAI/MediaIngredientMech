@@ -83,14 +83,14 @@ Reassess prediction-only role support: Na2HPO4
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-e359446e57ccf9a1 | data/ingredients/mapped/Na2hpo4.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1488],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1490,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":1154,"total_occurrences":1157},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4","sssom_rows":[{"data_row":1996,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4","synonym_count":27} |
-| ev-e3f505f4a4ff0b8f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1488] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-18cc356b9a533c76 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2hpo4; data-row positions=[1996] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1996,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","other":"CAS:7558-79-4&#124;Dibasic sodium phosphate&#124;Disodium hydrogen phosphate&#124;Disodium Phosphate&#124;Na HPO&#124;Na HPO anydrous&#124;Na2H2PO4&#124;Sodium phosphate dibasic","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2hpo4","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
-| ev-cf72303c847d70ab | docs/data/mapped_ingredients.csv; CSV lines=[1490] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1490,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1154","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4","total_occurrences":"1157"}] |
+| ev-e359446e57ccf9a1 | data/ingredients/mapped/Na2hpo4.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1487],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1489,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":1154,"total_occurrences":1157},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4","sssom_rows":[{"data_row":1998,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4","synonym_count":27} |
+| ev-e3f505f4a4ff0b8f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1487] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-18cc356b9a533c76 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2hpo4; data-row positions=[1998] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1998,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","other":"CAS:7558-79-4&#124;Dibasic sodium phosphate&#124;Disodium hydrogen phosphate&#124;Disodium Phosphate&#124;Na HPO&#124;Na HPO anydrous&#124;Na2H2PO4&#124;Sodium phosphate dibasic","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2hpo4","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
+| ev-cf72303c847d70ab | docs/data/mapped_ingredients.csv; CSV lines=[1489] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1489,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1154","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4","total_occurrences":"1157"}] |
 | ev-1f0a36df479cc69e | reports/yaml_record_review/20261001T050251Z-Na2hpo4.md; YAML Record Review: Na2HPO4:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8b0cd7adf97b622b | reports/yaml_record_review/Na2hpo4.md; &#96;data/ingredients/mapped/Na2hpo4.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:51; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a8cdfa30ccd2df53 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[995] | context_only | [{"current_record_sha256":"ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4","finding_id":"SEM:45865662806389a797fd","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-e027fedfcccd6e6a | data/ingredients/mapped/Na2hpo4.yaml; physicochemical_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[1]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-e027fedfcccd6e6a | data/ingredients/mapped/Na2hpo4.yaml; physicochemical_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1487],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1489,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":1154,"total_occurrences":1157},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4","sssom_rows":[{"data_row":1998,"object_id":"CHEBI:34683","object_label":"disodium hydrogenphosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4","synonym_count":27} |
 | ev-a8715e01a9626a7c | reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml; findings[finding_id=f-582f6cb10c46fe80] | context_only | Predecessor structured review finding f-582f6cb10c46fe80 in 20261011T024629Z-mim-reconcile-all-batch-01 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b309242fe87da37a
+  evidence_ids:
+  - ev-e359446e57ccf9a1
+  - ev-e3f505f4a4ff0b8f
+  - ev-18cc356b9a533c76
+  - ev-cf72303c847d70ab
+  - ev-e027fedfcccd6e6a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b309242fe87da37a
+  evidence_ids:
+  - ev-e359446e57ccf9a1
+  - ev-a8cdfa30ccd2df53
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,23 +208,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b309242fe87da37a
+  evidence_ids:
+  - ev-1f0a36df479cc69e
+  - ev-8b0cd7adf97b622b
+  - ev-a8cdfa30ccd2df53
+  - ev-a8715e01a9626a7c
 evidence:
 - evidence_id: ev-e359446e57ccf9a1
   kind: record_content
   reference: data/ingredients/mapped/Na2hpo4.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1488],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1490,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":1154,"total_occurrences":1157},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
-    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4","sssom_rows":[{"data_row":1996,"object_id":"CHEBI:34683","object_label":"disodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1487],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1489,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":1154,"total_occurrences":1157},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
+    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4","sssom_rows":[{"data_row":1998,"object_id":"CHEBI:34683","object_label":"disodium
     hydrogenphosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4","synonym_count":27}'
   snapshot_sha256: ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4
 - evidence_id: ev-e3f505f4a4ff0b8f
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1488]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1487]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -223,10 +237,10 @@ evidence:
 - evidence_id: ev-18cc356b9a533c76
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na2hpo4; data-row positions=[1996]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na2hpo4; data-row positions=[1998]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1996,"object_id":"CHEBI:34683","object_label":"disodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1998,"object_id":"CHEBI:34683","object_label":"disodium
     hydrogenphosphate","other":"CAS:7558-79-4|Dibasic sodium phosphate|Disodium hydrogen
     phosphate|Disodium Phosphate|Na HPO|Na HPO anydrous|Na2H2PO4|Sodium phosphate
     dibasic","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2hpo4","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
@@ -234,10 +248,10 @@ evidence:
 - evidence_id: ev-cf72303c847d70ab
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1490]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1489]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1490,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1154","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4","total_occurrences":"1157"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:34683","line":1489,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1154","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4","total_occurrences":"1157"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-1f0a36df479cc69e
   kind: prior_review
@@ -289,7 +303,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[995]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4","finding_id":"SEM:45865662806389a797fd","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -298,12 +312,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na2hpo4.yaml
   locator: physicochemical_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[1]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1487],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:34683","line":1489,"mapping_status":"MAPPED","ontology_id":"CHEBI:34683","preferred_term":"Na2HPO4"}],"identifier":"CHEBI:34683","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1154,"edge_count":1154,"occurrences":1157},"occurrence_statistics":{"media_count":1154,"total_occurrences":1157},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:34683","ontology_label":"disodium
+    hydrogenphosphate","ontology_source":"CHEBI"},"preferred_term":"Na2HPO4","sssom_rows":[{"data_row":1998,"object_id":"CHEBI:34683","object_label":"disodium
+    hydrogenphosphate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2hpo4","synonym_count":27}'
   snapshot_sha256: ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4
 - evidence_id: ev-a8715e01a9626a7c
   kind: prior_review

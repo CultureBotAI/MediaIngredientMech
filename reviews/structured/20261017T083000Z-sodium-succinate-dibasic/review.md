@@ -83,14 +83,14 @@ Reassess prediction-only role support: Sodium succinate dibasic
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-baaa429274b11db0 | data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2491],"raw_equal":true},"docs_rows":[{"identifier":"cas:150-90-3","line":2493,"mapping_status":"MAPPED","ontology_id":"CHEBI:63675","preferred_term":"Sodium succinate dibasic"}],"identifier":"cas:150-90-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:63675","ontology_label":"sodium succinate (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate dibasic","sssom_rows":[{"data_row":2605,"object_id":"CHEBI:63675","object_label":"sodium succinate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":2606,"object_id":"cas:150-90-3","object_label":"Sodium succinate dibasic","predicate_id":"skos:exactMatch"},{"data_row":2607,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium succinate dibasic","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Succinate_Dibasic","synonym_count":3} |
-| ev-3ab14afaa2f32a73 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2491] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-0bdde13d5d09f2b3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Succinate_Dibasic; data-row positions=[2605,2606,2607] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2605,"object_id":"CHEBI:63675","object_label":"sodium succinate (anhydrous)","other":"Sodium succinate","predicate_id":"skos:broadMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2606,"object_id":"cas:150-90-3","object_label":"Sodium succinate dibasic","other":"CAS:150-90-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"},{"data_row":2607,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium succinate dibasic","other":"CAS:150-90-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
-| ev-c8efc4d353e75110 | docs/data/mapped_ingredients.csv; CSV lines=[2493] | supports | Published identity and count rows inspected: [{"identifier":"cas:150-90-3","line":2493,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:63675","preferred_term":"Sodium succinate dibasic","total_occurrences":"6"}] |
+| ev-baaa429274b11db0 | data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2490],"raw_equal":true},"docs_rows":[{"identifier":"cas:150-90-3","line":2492,"mapping_status":"MAPPED","ontology_id":"CHEBI:63675","preferred_term":"Sodium succinate dibasic"}],"identifier":"cas:150-90-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:63675","ontology_label":"sodium succinate (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate dibasic","sssom_rows":[{"data_row":2607,"object_id":"CHEBI:63675","object_label":"sodium succinate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":2608,"object_id":"cas:150-90-3","object_label":"Sodium succinate dibasic","predicate_id":"skos:exactMatch"},{"data_row":2609,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium succinate dibasic","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Succinate_Dibasic","synonym_count":3} |
+| ev-3ab14afaa2f32a73 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2490] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-0bdde13d5d09f2b3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Succinate_Dibasic; data-row positions=[2607, 2608, 2609] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2607,"object_id":"CHEBI:63675","object_label":"sodium succinate (anhydrous)","other":"Sodium succinate","predicate_id":"skos:broadMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2608,"object_id":"cas:150-90-3","object_label":"Sodium succinate dibasic","other":"CAS:150-90-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"},{"data_row":2609,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium succinate dibasic","other":"CAS:150-90-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-c8efc4d353e75110 | docs/data/mapped_ingredients.csv; CSV lines=[2492] | supports | Published identity and count rows inspected: [{"identifier":"cas:150-90-3","line":2492,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:63675","preferred_term":"Sodium succinate dibasic","total_occurrences":"6"}] |
 | ev-3e227704854a9635 | reports/yaml_record_review/20261001T050331Z-Sodium_Succinate_Dibasic.md; YAML Record Review: Sodium succinate dibasic:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-4ec2fc329effb8cf | reports/yaml_record_review/Sodium_Succinate_Dibasic.md; &#96;data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:31; Completeness:50; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-feb53fb9d3665030 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1233,1457,1680] | context_only | [{"current_record_sha256":"6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac","finding_id":"SEM:179b3e08b20c46f4cc11","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac","finding_id":"SEM:fa06132537b4575347ef","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac","finding_id":"SEM:00a9e43e8c505d51293c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a469d6809e945996 | data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-a469d6809e945996 | data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2490],"raw_equal":true},"docs_rows":[{"identifier":"cas:150-90-3","line":2492,"mapping_status":"MAPPED","ontology_id":"CHEBI:63675","preferred_term":"Sodium succinate dibasic"}],"identifier":"cas:150-90-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:63675","ontology_label":"sodium succinate (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate dibasic","sssom_rows":[{"data_row":2607,"object_id":"CHEBI:63675","object_label":"sodium succinate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":2608,"object_id":"cas:150-90-3","object_label":"Sodium succinate dibasic","predicate_id":"skos:exactMatch"},{"data_row":2609,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium succinate dibasic","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Succinate_Dibasic","synonym_count":3} |
 | ev-f49ca8882a3c593f | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-4ff49a370dbab067] | context_only | Predecessor structured review finding f-4ff49a370dbab067 in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d7190918230f5c16
+  evidence_ids:
+  - ev-baaa429274b11db0
+  - ev-3ab14afaa2f32a73
+  - ev-0bdde13d5d09f2b3
+  - ev-c8efc4d353e75110
+  - ev-a469d6809e945996
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-d7190918230f5c16
+  evidence_ids:
+  - ev-baaa429274b11db0
+  - ev-feb53fb9d3665030
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,27 +208,32 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d7190918230f5c16
+  evidence_ids:
+  - ev-3e227704854a9635
+  - ev-4ec2fc329effb8cf
+  - ev-feb53fb9d3665030
+  - ev-f49ca8882a3c593f
 evidence:
 - evidence_id: ev-baaa429274b11db0
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2491],"raw_equal":true},"docs_rows":[{"identifier":"cas:150-90-3","line":2493,"mapping_status":"MAPPED","ontology_id":"CHEBI:63675","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2490],"raw_equal":true},"docs_rows":[{"identifier":"cas:150-90-3","line":2492,"mapping_status":"MAPPED","ontology_id":"CHEBI:63675","preferred_term":"Sodium
     succinate dibasic"}],"identifier":"cas:150-90-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:63675","ontology_label":"sodium
     succinate (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate
-    dibasic","sssom_rows":[{"data_row":2605,"object_id":"CHEBI:63675","object_label":"sodium
-    succinate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":2606,"object_id":"cas:150-90-3","object_label":"Sodium
-    succinate dibasic","predicate_id":"skos:exactMatch"},{"data_row":2607,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium
+    dibasic","sssom_rows":[{"data_row":2607,"object_id":"CHEBI:63675","object_label":"sodium
+    succinate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":2608,"object_id":"cas:150-90-3","object_label":"Sodium
+    succinate dibasic","predicate_id":"skos:exactMatch"},{"data_row":2609,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium
     succinate dibasic","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Succinate_Dibasic","synonym_count":3}'
   snapshot_sha256: 6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac
 - evidence_id: ev-3ab14afaa2f32a73
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2491]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2490]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -227,21 +241,22 @@ evidence:
 - evidence_id: ev-0bdde13d5d09f2b3
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_Succinate_Dibasic; data-row positions=[2605,2606,2607]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_Succinate_Dibasic; data-row positions=[2607, 2608,
+    2609]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2605,"object_id":"CHEBI:63675","object_label":"sodium
-    succinate (anhydrous)","other":"Sodium succinate","predicate_id":"skos:broadMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2606,"object_id":"cas:150-90-3","object_label":"Sodium
-    succinate dibasic","other":"CAS:150-90-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"none|UNKNOWN_TERM|2026-09-02"},{"data_row":2607,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2607,"object_id":"CHEBI:63675","object_label":"sodium
+    succinate (anhydrous)","other":"Sodium succinate","predicate_id":"skos:broadMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2608,"object_id":"cas:150-90-3","object_label":"Sodium
+    succinate dibasic","other":"CAS:150-90-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"none|UNKNOWN_TERM|2026-09-02"},{"data_row":2609,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium
     succinate dibasic","other":"CAS:150-90-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Succinate_Dibasic","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-c8efc4d353e75110
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2493]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2492]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:150-90-3","line":2493,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:63675","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:150-90-3","line":2492,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:63675","preferred_term":"Sodium
     succinate dibasic","total_occurrences":"6"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-3e227704854a9635
@@ -294,7 +309,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1233,1457,1680]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac","finding_id":"SEM:179b3e08b20c46f4cc11","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac","finding_id":"SEM:fa06132537b4575347ef","kind":"role_evidence","resolution_reason":"Historical
@@ -305,14 +320,15 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2490],"raw_equal":true},"docs_rows":[{"identifier":"cas:150-90-3","line":2492,"mapping_status":"MAPPED","ontology_id":"CHEBI:63675","preferred_term":"Sodium
+    succinate dibasic"}],"identifier":"cas:150-90-3","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:63675","ontology_label":"sodium
+    succinate (anhydrous)","ontology_source":"CHEBI"},"preferred_term":"Sodium succinate
+    dibasic","sssom_rows":[{"data_row":2607,"object_id":"CHEBI:63675","object_label":"sodium
+    succinate (anhydrous)","predicate_id":"skos:broadMatch"},{"data_row":2608,"object_id":"cas:150-90-3","object_label":"Sodium
+    succinate dibasic","predicate_id":"skos:exactMatch"},{"data_row":2609,"object_id":"kgmicrobe.compound:sodium_succinate_dibasic","object_label":"Sodium
+    succinate dibasic","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Succinate_Dibasic","synonym_count":3}'
   snapshot_sha256: 6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac
 - evidence_id: ev-f49ca8882a3c593f
   kind: prior_review

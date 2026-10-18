@@ -83,13 +83,13 @@ Reassess prediction-only role support: Piperacillin sodium salt
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-86b9a243a82785cb | data/ingredients/mapped/Piperacillin_Sodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1663],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8233","line":1665,"mapping_status":"MAPPED","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin sodium salt"}],"identifier":"CHEBI:8233","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:8233","ontology_label":"piperacillin sodium","ontology_source":"CHEBI"},"preferred_term":"Piperacillin sodium salt","sssom_rows":[{"data_row":2263,"object_id":"CHEBI:8233","object_label":"piperacillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Piperacillin_Sodium_Salt","synonym_count":1} |
-| ev-6b512ed9caee32c6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1663] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-8d65f9a7d7acfb20 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Piperacillin_Sodium_Salt; data-row positions=[2263] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2263,"object_id":"CHEBI:8233","object_label":"piperacillin sodium","other":"sodium 6beta-{(2R)-2-[(4-ethyl-2,3-dioxopiperazin-1-yl)carboxamido]-2-phenylacetamido}-2,2-dimethylpenam-3alpha-carboxylate&#124;CAS:59703-84-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Piperacillin_Sodium_Salt","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-d11fc3674e796e6d | docs/data/mapped_ingredients.csv; CSV lines=[1665] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:8233","line":1665,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin sodium salt","total_occurrences":"0"}] |
+| ev-86b9a243a82785cb | data/ingredients/mapped/Piperacillin_Sodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1662],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8233","line":1664,"mapping_status":"MAPPED","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin sodium salt"}],"identifier":"CHEBI:8233","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:8233","ontology_label":"piperacillin sodium","ontology_source":"CHEBI"},"preferred_term":"Piperacillin sodium salt","sssom_rows":[{"data_row":2265,"object_id":"CHEBI:8233","object_label":"piperacillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Piperacillin_Sodium_Salt","synonym_count":1} |
+| ev-6b512ed9caee32c6 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1662] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-8d65f9a7d7acfb20 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Piperacillin_Sodium_Salt; data-row positions=[2265] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2265,"object_id":"CHEBI:8233","object_label":"piperacillin sodium","other":"sodium 6beta-{(2R)-2-[(4-ethyl-2,3-dioxopiperazin-1-yl)carboxamido]-2-phenylacetamido}-2,2-dimethylpenam-3alpha-carboxylate&#124;CAS:59703-84-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Piperacillin_Sodium_Salt","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-d11fc3674e796e6d | docs/data/mapped_ingredients.csv; CSV lines=[1664] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:8233","line":1664,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin sodium salt","total_occurrences":"0"}] |
 | ev-b0df0cb5ee2faadd | reports/yaml_record_review/Piperacillin_Sodium_Salt.md; &#96;data/ingredients/mapped/Piperacillin_Sodium_Salt.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:30; Completeness:44; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-22ae37931830e5f8 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1116,1684] | context_only | [{"current_record_sha256":"0e02c4ebf72eab46e6cb37a43cd7967aa396c5aad3ac732901a8382830d9c546","finding_id":"SEM:f81e491792fc4b064169","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0e02c4ebf72eab46e6cb37a43cd7967aa396c5aad3ac732901a8382830d9c546","finding_id":"SEM:5dfe60b46ddd0bbd1269","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9901b89c1bc03f01 | data/ingredients/mapped/Piperacillin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-9901b89c1bc03f01 | data/ingredients/mapped/Piperacillin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1662],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8233","line":1664,"mapping_status":"MAPPED","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin sodium salt"}],"identifier":"CHEBI:8233","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:8233","ontology_label":"piperacillin sodium","ontology_source":"CHEBI"},"preferred_term":"Piperacillin sodium salt","sssom_rows":[{"data_row":2265,"object_id":"CHEBI:8233","object_label":"piperacillin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Piperacillin_Sodium_Salt","synonym_count":1} |
 | ev-b833478c2960f242 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-44dada0e244eddf3] | context_only | Predecessor structured review finding f-44dada0e244eddf3 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-d0058c37294eaf87
+  evidence_ids:
+  - ev-86b9a243a82785cb
+  - ev-6b512ed9caee32c6
+  - ev-8d65f9a7d7acfb20
+  - ev-d11fc3674e796e6d
+  - ev-9901b89c1bc03f01
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-d0058c37294eaf87
+  evidence_ids:
+  - ev-86b9a243a82785cb
+  - ev-22ae37931830e5f8
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-d0058c37294eaf87
+  evidence_ids:
+  - ev-b0df0cb5ee2faadd
+  - ev-22ae37931830e5f8
+  - ev-b833478c2960f242
 evidence:
 - evidence_id: ev-86b9a243a82785cb
   kind: record_content
   reference: data/ingredients/mapped/Piperacillin_Sodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1663],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8233","line":1665,"mapping_status":"MAPPED","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1662],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8233","line":1664,"mapping_status":"MAPPED","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin
     sodium salt"}],"identifier":"CHEBI:8233","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:8233","ontology_label":"piperacillin
-    sodium","ontology_source":"CHEBI"},"preferred_term":"Piperacillin sodium salt","sssom_rows":[{"data_row":2263,"object_id":"CHEBI:8233","object_label":"piperacillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Piperacillin sodium salt","sssom_rows":[{"data_row":2265,"object_id":"CHEBI:8233","object_label":"piperacillin
     sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Piperacillin_Sodium_Salt","synonym_count":1}'
   snapshot_sha256: 0e02c4ebf72eab46e6cb37a43cd7967aa396c5aad3ac732901a8382830d9c546
 - evidence_id: ev-6b512ed9caee32c6
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1663]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1662]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-8d65f9a7d7acfb20
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Piperacillin_Sodium_Salt; data-row positions=[2263]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Piperacillin_Sodium_Salt; data-row positions=[2265]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2263,"object_id":"CHEBI:8233","object_label":"piperacillin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2265,"object_id":"CHEBI:8233","object_label":"piperacillin
     sodium","other":"sodium 6beta-{(2R)-2-[(4-ethyl-2,3-dioxopiperazin-1-yl)carboxamido]-2-phenylacetamido}-2,2-dimethylpenam-3alpha-carboxylate|CAS:59703-84-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Piperacillin_Sodium_Salt","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-d11fc3674e796e6d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1665]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1664]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:8233","line":1665,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:8233","line":1664,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin
     sodium salt","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-b0df0cb5ee2faadd
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1116,1684]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0e02c4ebf72eab46e6cb37a43cd7967aa396c5aad3ac732901a8382830d9c546","finding_id":"SEM:f81e491792fc4b064169","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0e02c4ebf72eab46e6cb37a43cd7967aa396c5aad3ac732901a8382830d9c546","finding_id":"SEM:5dfe60b46ddd0bbd1269","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Piperacillin_Sodium_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1662],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8233","line":1664,"mapping_status":"MAPPED","ontology_id":"CHEBI:8233","preferred_term":"Piperacillin
+    sodium salt"}],"identifier":"CHEBI:8233","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:8233","ontology_label":"piperacillin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Piperacillin sodium salt","sssom_rows":[{"data_row":2265,"object_id":"CHEBI:8233","object_label":"piperacillin
+    sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Piperacillin_Sodium_Salt","synonym_count":1}'
   snapshot_sha256: 0e02c4ebf72eab46e6cb37a43cd7967aa396c5aad3ac732901a8382830d9c546
 - evidence_id: ev-b833478c2960f242
   kind: prior_review

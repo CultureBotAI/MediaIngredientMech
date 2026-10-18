@@ -89,7 +89,7 @@ Reassess prediction-only role support: Lactose
 | ev-fd8e43b23f260cb3 | docs/data/mapped_ingredients.csv; CSV lines=[1283] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17716","line":1283,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"55","ontology_id":"CHEBI:17716","preferred_term":"Lactose","total_occurrences":"55"}] |
 | ev-46b040883d6a5522 | reports/yaml_record_review/Lactose.md; &#96;data/ingredients/mapped/Lactose.yaml&#96;:2; Verdict:4; Identity:12; Validation:22; Evidence:30; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c90134d64f467a12 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[850,1429] | context_only | [{"current_record_sha256":"03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec","finding_id":"SEM:8b7edc68bc7d21bb5b48","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec","finding_id":"SEM:af79c21780cd7dca0c94","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-685f2f02932aa2cb | data/ingredients/mapped/Lactose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-685f2f02932aa2cb | data/ingredients/mapped/Lactose.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1281],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17716","line":1283,"mapping_status":"MAPPED","ontology_id":"CHEBI:17716","preferred_term":"Lactose"}],"identifier":"CHEBI:17716","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":55,"edge_count":55,"occurrences":55},"occurrence_statistics":{"media_count":55,"total_occurrences":55},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17716","ontology_label":"lactose","ontology_source":"CHEBI"},"preferred_term":"Lactose","sssom_rows":[{"data_row":1666,"object_id":"CHEBI:17716","object_label":"lactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactose","synonym_count":29} |
 | ev-a4fb50e347dd9283 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-e3a6c9cc4da5bebc] | context_only | Predecessor structured review finding f-e3a6c9cc4da5bebc in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-8bc1ef9597d14954
+  evidence_ids:
+  - ev-556eae5da906702c
+  - ev-026a10b4407fca86
+  - ev-8243f3ffc7bbc007
+  - ev-fd8e43b23f260cb3
+  - ev-685f2f02932aa2cb
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-8bc1ef9597d14954
+  evidence_ids:
+  - ev-556eae5da906702c
+  - ev-c90134d64f467a12
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-8bc1ef9597d14954
+  evidence_ids:
+  - ev-46b040883d6a5522
+  - ev-c90134d64f467a12
+  - ev-a4fb50e347dd9283
 evidence:
 - evidence_id: ev-556eae5da906702c
   kind: record_content
   reference: data/ingredients/mapped/Lactose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1281],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17716","line":1283,"mapping_status":"MAPPED","ontology_id":"CHEBI:17716","preferred_term":"Lactose"}],"identifier":"CHEBI:17716","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":55,"edge_count":55,"occurrences":55},"occurrence_statistics":{"media_count":55,"total_occurrences":55},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17716","ontology_label":"lactose","ontology_source":"CHEBI"},"preferred_term":"Lactose","sssom_rows":[{"data_row":1666,"object_id":"CHEBI:17716","object_label":"lactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactose","synonym_count":29}'
   snapshot_sha256: 03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1281]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Lactose; data-row positions=[1666]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1666,"object_id":"CHEBI:17716","object_label":"lactose","other":"(+)-lactose|1-beta-D-Galactopyranosyl-4-D-glucopyranose|4-(beta-D-galactosido)-D-glucose|4-O-beta-D-galactopyranosyl-D-glucose|4-O-beta-D-galactopyranosyl-beta-D-glucopyranose|D-lactose|D-lactose
     (lactose)|Galb1-4Glcb|Galbeta1-4Glc|Galbeta1-4Glcbeta|Lac|Laktobiose|Laktose|Milchzucker|beta
@@ -229,7 +242,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1283]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17716","line":1283,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"55","ontology_id":"CHEBI:17716","preferred_term":"Lactose","total_occurrences":"55"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[850,1429]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec","finding_id":"SEM:8b7edc68bc7d21bb5b48","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec","finding_id":"SEM:af79c21780cd7dca0c94","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lactose.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1281],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17716","line":1283,"mapping_status":"MAPPED","ontology_id":"CHEBI:17716","preferred_term":"Lactose"}],"identifier":"CHEBI:17716","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":55,"edge_count":55,"occurrences":55},"occurrence_statistics":{"media_count":55,"total_occurrences":55},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17716","ontology_label":"lactose","ontology_source":"CHEBI"},"preferred_term":"Lactose","sssom_rows":[{"data_row":1666,"object_id":"CHEBI:17716","object_label":"lactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactose","synonym_count":29}'
   snapshot_sha256: 03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec
 - evidence_id: ev-a4fb50e347dd9283
   kind: prior_review

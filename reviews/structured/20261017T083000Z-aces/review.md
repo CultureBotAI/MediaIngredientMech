@@ -83,7 +83,6 @@ Disposition: The current local observation is recorded on a REJECTED tombstone, 
 | ev-44b2772cadafbb86 | docs/data/mapped_ingredients.csv; CSV lines=[438] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:39060","line":438,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:39060","preferred_term":"ACES","total_occurrences":"0"}] |
 | ev-6f68bca291ed02ce | reports/yaml_record_review/Aces.md; &#96;data/ingredients/mapped/Aces.yaml&#96;:2; Verdict:4; Identity:11; Validation:29; Evidence:48; Completeness:69; Recommended Edits:78 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ce324389a41d9391 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[194] | context_only | [{"current_record_sha256":"cdf17600bc17c307885375a346cf77430cb254699d5f69b8e7651181796c712c","finding_id":"SEM:72608733859c1bb8ef96","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-0d56d8312f39b673 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Aces.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -172,6 +171,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-69edc07e9bd5b824
+  evidence_ids:
+  - ev-f91b9b885cfec901
+  - ev-3be435a84fe87c44
+  - ev-8a6bb680664c652a
+  - ev-44b2772cadafbb86
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -180,6 +184,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-69edc07e9bd5b824
+  evidence_ids:
+  - ev-f91b9b885cfec901
+  - ev-ce324389a41d9391
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -188,13 +195,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-69edc07e9bd5b824
+  evidence_ids:
+  - ev-6f68bca291ed02ce
+  - ev-ce324389a41d9391
 evidence:
 - evidence_id: ev-f91b9b885cfec901
   kind: record_content
   reference: data/ingredients/mapped/Aces.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[436],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:39060","line":438,"mapping_status":"REJECTED","ontology_id":"CHEBI:39060","preferred_term":"ACES"}],"identifier":"CHEBI:39060","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:39060","ontology_label":"N-(2-acetamido)-2-aminoethanesulfonic
     acid","ontology_source":"CHEBI"},"preferred_term":"ACES","sssom_rows":[],"sssom_subject":"MIM:Aces","synonym_count":0}'
@@ -203,7 +213,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [436]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -212,7 +222,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Aces; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -220,7 +230,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[438]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:39060","line":438,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:39060","preferred_term":"ACES","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -244,18 +254,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[194]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"cdf17600bc17c307885375a346cf77430cb254699d5f69b8e7651181796c712c","finding_id":"SEM:72608733859c1bb8ef96","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-0d56d8312f39b673
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Aces.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-75b8ac97e9a61d2c
@@ -323,7 +325,7 @@ assessments:
   - record-69edc07e9bd5b824
   evidence_ids:
   - ev-f91b9b885cfec901
-  - ev-0d56d8312f39b673
+  - ev-ce324389a41d9391
   dimensions:
   - name: legacy-disposition
     value: needs_reassessment
@@ -331,7 +333,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-f91b9b885cfec901
-    - ev-0d56d8312f39b673
+    - ev-ce324389a41d9391
 findings:
 - finding_id: rec-f-role-69edc07e9bd5b824
   issue_key: mim-reconciliation-role-support-69edc07e9bd5b824
@@ -347,7 +349,7 @@ findings:
   - record-69edc07e9bd5b824
   evidence_ids:
   - ev-f91b9b885cfec901
-  - ev-0d56d8312f39b673
+  - ev-ce324389a41d9391
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Aces.yaml

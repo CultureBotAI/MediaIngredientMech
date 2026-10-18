@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e7e0774740634242
+  evidence_ids:
+  - ev-e01e3a41483886ef
+  - ev-d93edc8900ec4f7a
+  - ev-6b6964818d6313db
+  - ev-378c6804e4f04ade
+  - ev-f72b44c3a5e117ea
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e7e0774740634242
+  evidence_ids:
+  - ev-e01e3a41483886ef
+  - ev-5c04c1e24be67436
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,21 +99,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e7e0774740634242
+  evidence_ids:
+  - ev-c7f6f88448e202a7
+  - ev-5c04c1e24be67436
+  - ev-81b322a23b74b344
 evidence:
 - evidence_id: ev-e01e3a41483886ef
   kind: record_content
   reference: data/ingredients/mapped/Tetracycline.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1941],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27902","line":1943,"mapping_status":"MAPPED","ontology_id":"CHEBI:27902","preferred_term":"Tetracycline"}],"identifier":"CHEBI:27902","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27902","ontology_label":"tetracycline","ontology_source":"CHEBI"},"preferred_term":"Tetracycline","sssom_rows":[{"data_row":2736,"object_id":"CHEBI:27902","object_label":"tetracycline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tetracycline","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1940],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27902","line":1942,"mapping_status":"MAPPED","ontology_id":"CHEBI:27902","preferred_term":"Tetracycline"}],"identifier":"CHEBI:27902","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27902","ontology_label":"tetracycline","ontology_source":"CHEBI"},"preferred_term":"Tetracycline","sssom_rows":[{"data_row":2738,"object_id":"CHEBI:27902","object_label":"tetracycline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tetracycline","synonym_count":2}'
   snapshot_sha256: 48a0f106a49f0b33faa49697b5c79377b2e7f92ce63327594f903ee0ab316429
 - evidence_id: ev-d93edc8900ec4f7a
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1941]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1940]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -112,18 +125,18 @@ evidence:
 - evidence_id: ev-6b6964818d6313db
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Tetracycline; data-row positions=[2736]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Tetracycline; data-row positions=[2738]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2736,"object_id":"CHEBI:27902","object_label":"tetracycline","other":"(4S,4aS,5aS,6S,12aS)-4-(dimethylamino)-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-1,4,4a,5,5a,6,11,12a-octahydrotetracene-2-carboxamide|Achromycin","predicate_id":"skos:exactMatch","subject_id":"MIM:Tetracycline","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2738,"object_id":"CHEBI:27902","object_label":"tetracycline","other":"(4S,4aS,5aS,6S,12aS)-4-(dimethylamino)-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-1,4,4a,5,5a,6,11,12a-octahydrotetracene-2-carboxamide|Achromycin","predicate_id":"skos:exactMatch","subject_id":"MIM:Tetracycline","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-378c6804e4f04ade
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1943]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1942]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:27902","line":1943,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:27902","preferred_term":"Tetracycline","total_occurrences":"3"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:27902","line":1942,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:27902","preferred_term":"Tetracycline","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-c7f6f88448e202a7
   kind: prior_review
@@ -146,7 +159,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1276,1538]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"48a0f106a49f0b33faa49697b5c79377b2e7f92ce63327594f903ee0ab316429","finding_id":"SEM:8f9aecc24505f643a6b5","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"48a0f106a49f0b33faa49697b5c79377b2e7f92ce63327594f903ee0ab316429","finding_id":"SEM:cd1dc3a1414e2ced4bba","kind":"role_evidence","resolution_reason":"Historical
@@ -156,12 +169,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Tetracycline.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1940],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27902","line":1942,"mapping_status":"MAPPED","ontology_id":"CHEBI:27902","preferred_term":"Tetracycline"}],"identifier":"CHEBI:27902","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27902","ontology_label":"tetracycline","ontology_source":"CHEBI"},"preferred_term":"Tetracycline","sssom_rows":[{"data_row":2738,"object_id":"CHEBI:27902","object_label":"tetracycline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Tetracycline","synonym_count":2}'
   snapshot_sha256: 48a0f106a49f0b33faa49697b5c79377b2e7f92ce63327594f903ee0ab316429
 - evidence_id: ev-81b322a23b74b344
   kind: prior_review

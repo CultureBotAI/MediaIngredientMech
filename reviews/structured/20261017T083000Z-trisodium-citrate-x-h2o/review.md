@@ -83,13 +83,13 @@ Reassess prediction-only role support: Trisodium citrate x H2O
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-71ae10d1f23a332e | data/ingredients/mapped/Trisodium_Citrate_X_H2O.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2003],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C514290","line":2005,"mapping_status":"MAPPED","ontology_id":"mesh:C514290","preferred_term":"Trisodium citrate x H2O"}],"identifier":"mesh:C514290","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C514290","ontology_label":"trisodium citrate","ontology_source":"MESH"},"preferred_term":"Trisodium citrate x H2O","sssom_rows":[{"data_row":2834,"object_id":"mesh:C514290","object_label":"trisodium citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trisodium_Citrate_X_H2O","synonym_count":1} |
-| ev-6836b30af6fc88cd | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2003] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-2907867459f3a776 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trisodium_Citrate_X_H2O; data-row positions=[2834] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2834,"object_id":"mesh:C514290","object_label":"trisodium citrate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trisodium_Citrate_X_H2O","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-29b3cf99988c83e4 | docs/data/mapped_ingredients.csv; CSV lines=[2005] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C514290","line":2005,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"mesh:C514290","preferred_term":"Trisodium citrate x H2O","total_occurrences":"2"}] |
+| ev-71ae10d1f23a332e | data/ingredients/mapped/Trisodium_Citrate_X_H2O.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2002],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C514290","line":2004,"mapping_status":"MAPPED","ontology_id":"mesh:C514290","preferred_term":"Trisodium citrate x H2O"}],"identifier":"mesh:C514290","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C514290","ontology_label":"trisodium citrate","ontology_source":"MESH"},"preferred_term":"Trisodium citrate x H2O","sssom_rows":[{"data_row":2836,"object_id":"mesh:C514290","object_label":"trisodium citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trisodium_Citrate_X_H2O","synonym_count":1} |
+| ev-6836b30af6fc88cd | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2002] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-2907867459f3a776 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trisodium_Citrate_X_H2O; data-row positions=[2836] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2836,"object_id":"mesh:C514290","object_label":"trisodium citrate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trisodium_Citrate_X_H2O","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-29b3cf99988c83e4 | docs/data/mapped_ingredients.csv; CSV lines=[2004] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C514290","line":2004,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"mesh:C514290","preferred_term":"Trisodium citrate x H2O","total_occurrences":"2"}] |
 | ev-2abaf12f7add4bbe | reports/yaml_record_review/Trisodium_Citrate_X_H2O.md; &#96;data/ingredients/mapped/Trisodium_Citrate_X_H2O.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:30; Issues:43; Major: the hydrate label is exact-mapped to generic trisodium citrate:45; Major: both nutritional roles are provisional computational evidence:51; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e09d149053e99a8a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1316,1610,1864] | context_only | [{"current_record_sha256":"47480b3cdddc63a9b7685533ad4c5f20884a34655ec6b76d880ec2178bddbd8d","finding_id":"SEM:48cf9ab8b8bc468afcba","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"47480b3cdddc63a9b7685533ad4c5f20884a34655ec6b76d880ec2178bddbd8d","finding_id":"SEM:2816c2bdb9e6b1225ee2","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"47480b3cdddc63a9b7685533ad4c5f20884a34655ec6b76d880ec2178bddbd8d","finding_id":"SEM:66f5cd10c071cf5b6a47","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9d936b91a6f72609 | data/ingredients/mapped/Trisodium_Citrate_X_H2O.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-9d936b91a6f72609 | data/ingredients/mapped/Trisodium_Citrate_X_H2O.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2002],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C514290","line":2004,"mapping_status":"MAPPED","ontology_id":"mesh:C514290","preferred_term":"Trisodium citrate x H2O"}],"identifier":"mesh:C514290","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C514290","ontology_label":"trisodium citrate","ontology_source":"MESH"},"preferred_term":"Trisodium citrate x H2O","sssom_rows":[{"data_row":2836,"object_id":"mesh:C514290","object_label":"trisodium citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trisodium_Citrate_X_H2O","synonym_count":1} |
 | ev-78c9a94c61a30e90 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-5aaa2d456927f6e5] | context_only | Predecessor structured review finding f-5aaa2d456927f6e5 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5bedcbb8e926825a
+  evidence_ids:
+  - ev-71ae10d1f23a332e
+  - ev-6836b30af6fc88cd
+  - ev-2907867459f3a776
+  - ev-29b3cf99988c83e4
+  - ev-9d936b91a6f72609
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-5bedcbb8e926825a
+  evidence_ids:
+  - ev-71ae10d1f23a332e
+  - ev-e09d149053e99a8a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5bedcbb8e926825a
+  evidence_ids:
+  - ev-2abaf12f7add4bbe
+  - ev-e09d149053e99a8a
+  - ev-78c9a94c61a30e90
 evidence:
 - evidence_id: ev-71ae10d1f23a332e
   kind: record_content
   reference: data/ingredients/mapped/Trisodium_Citrate_X_H2O.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2003],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C514290","line":2005,"mapping_status":"MAPPED","ontology_id":"mesh:C514290","preferred_term":"Trisodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2002],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C514290","line":2004,"mapping_status":"MAPPED","ontology_id":"mesh:C514290","preferred_term":"Trisodium
     citrate x H2O"}],"identifier":"mesh:C514290","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C514290","ontology_label":"trisodium
-    citrate","ontology_source":"MESH"},"preferred_term":"Trisodium citrate x H2O","sssom_rows":[{"data_row":2834,"object_id":"mesh:C514290","object_label":"trisodium
+    citrate","ontology_source":"MESH"},"preferred_term":"Trisodium citrate x H2O","sssom_rows":[{"data_row":2836,"object_id":"mesh:C514290","object_label":"trisodium
     citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trisodium_Citrate_X_H2O","synonym_count":1}'
   snapshot_sha256: 47480b3cdddc63a9b7685533ad4c5f20884a34655ec6b76d880ec2178bddbd8d
 - evidence_id: ev-6836b30af6fc88cd
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2003]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2002]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-2907867459f3a776
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trisodium_Citrate_X_H2O; data-row positions=[2834]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Trisodium_Citrate_X_H2O; data-row positions=[2836]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2834,"object_id":"mesh:C514290","object_label":"trisodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2836,"object_id":"mesh:C514290","object_label":"trisodium
     citrate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trisodium_Citrate_X_H2O","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-29b3cf99988c83e4
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2005]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2004]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C514290","line":2005,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"mesh:C514290","preferred_term":"Trisodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C514290","line":2004,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"mesh:C514290","preferred_term":"Trisodium
     citrate x H2O","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-2abaf12f7add4bbe
@@ -265,7 +278,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1316,1610,1864]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"47480b3cdddc63a9b7685533ad4c5f20884a34655ec6b76d880ec2178bddbd8d","finding_id":"SEM:48cf9ab8b8bc468afcba","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"47480b3cdddc63a9b7685533ad4c5f20884a34655ec6b76d880ec2178bddbd8d","finding_id":"SEM:2816c2bdb9e6b1225ee2","kind":"role_evidence","resolution_reason":"Historical
@@ -276,14 +289,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trisodium_Citrate_X_H2O.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2002],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C514290","line":2004,"mapping_status":"MAPPED","ontology_id":"mesh:C514290","preferred_term":"Trisodium
+    citrate x H2O"}],"identifier":"mesh:C514290","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C514290","ontology_label":"trisodium
+    citrate","ontology_source":"MESH"},"preferred_term":"Trisodium citrate x H2O","sssom_rows":[{"data_row":2836,"object_id":"mesh:C514290","object_label":"trisodium
+    citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trisodium_Citrate_X_H2O","synonym_count":1}'
   snapshot_sha256: 47480b3cdddc63a9b7685533ad4c5f20884a34655ec6b76d880ec2178bddbd8d
 - evidence_id: ev-78c9a94c61a30e90
   kind: prior_review

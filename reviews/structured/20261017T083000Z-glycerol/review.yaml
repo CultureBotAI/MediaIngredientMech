@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-153e5251be4c577f
+  evidence_ids:
+  - ev-5b9d3f35a53105ea
+  - ev-a18ef90896b57b02
+  - ev-af6503e83bf5a758
+  - ev-d08d783e2626048e
+  - ev-0e20e5ea17fa7682
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-153e5251be4c577f
+  evidence_ids:
+  - ev-5b9d3f35a53105ea
+  - ev-fae41734b8948e0b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-153e5251be4c577f
+  evidence_ids:
+  - ev-0e7aafcdcc5efc22
+  - ev-fae41734b8948e0b
+  - ev-4254cc6fb7a2869d
 evidence:
 - evidence_id: ev-5b9d3f35a53105ea
   kind: record_content
   reference: data/ingredients/mapped/Glycerol.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1069],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17754","line":1071,"mapping_status":"MAPPED","ontology_id":"CHEBI:17754","preferred_term":"Glycerol"}],"identifier":"CHEBI:17754","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":292,"edge_count":292,"occurrences":292},"occurrence_statistics":{"media_count":292,"total_occurrences":292},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17754","ontology_label":"glycerol","ontology_source":"CHEBI"},"preferred_term":"Glycerol","sssom_rows":[{"data_row":1334,"object_id":"CHEBI:17754","object_label":"glycerol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycerol","synonym_count":19}'
   snapshot_sha256: c70babb47ba9f6da0b803dd52ae1ba9a094e7ed19c66f30b5568ff6a57e5809a
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1069]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Glycerol; data-row positions=[1334]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1334,"object_id":"CHEBI:17754","object_label":"glycerol","other":"glycerin|Glycerol
     anhydrous|propane-1,2,3-triol|1,2,3-Propanetriol|1,2,3-Trihydroxypropane|G Glycerol|Glyceritol|Glyzerin|Oelsuess|Propanetriol|Trihydroxypropane|glycerine|CAS:56-81-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Glycerol","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -122,7 +135,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1071]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17754","line":1071,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"292","ontology_id":"CHEBI:17754","preferred_term":"Glycerol","total_occurrences":"292"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -145,7 +158,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[686,1714]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c70babb47ba9f6da0b803dd52ae1ba9a094e7ed19c66f30b5568ff6a57e5809a","finding_id":"SEM:5ba4f19face3b1bb3c56","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c70babb47ba9f6da0b803dd52ae1ba9a094e7ed19c66f30b5568ff6a57e5809a","finding_id":"SEM:b9c0728e29bd4837e262","kind":"role_evidence","resolution_reason":"Historical
@@ -155,12 +168,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Glycerol.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1069],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17754","line":1071,"mapping_status":"MAPPED","ontology_id":"CHEBI:17754","preferred_term":"Glycerol"}],"identifier":"CHEBI:17754","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":292,"edge_count":292,"occurrences":292},"occurrence_statistics":{"media_count":292,"total_occurrences":292},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17754","ontology_label":"glycerol","ontology_source":"CHEBI"},"preferred_term":"Glycerol","sssom_rows":[{"data_row":1334,"object_id":"CHEBI:17754","object_label":"glycerol","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glycerol","synonym_count":19}'
   snapshot_sha256: c70babb47ba9f6da0b803dd52ae1ba9a094e7ed19c66f30b5568ff6a57e5809a
 - evidence_id: ev-4254cc6fb7a2869d
   kind: prior_review

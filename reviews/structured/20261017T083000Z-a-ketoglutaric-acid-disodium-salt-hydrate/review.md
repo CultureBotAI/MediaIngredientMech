@@ -85,12 +85,11 @@ Reassess prediction-only or empty role support: A-Ketoglutaric_Acid_Disodium_Sal
 | --- | --- | --- | --- |
 | ev-90d49bc40fac150b | data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[426],"raw_equal":true},"docs_rows":[{"identifier":"cas:305-72-6","line":428,"mapping_status":"MAPPED","ontology_id":"CHEBI:30915","preferred_term":"a-Ketoglutaric acid disodium salt hydrate"}],"identifier":"cas:305-72-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30915","ontology_label":"2-oxoglutaric acid","ontology_source":"CHEBI"},"preferred_term":"a-Ketoglutaric acid disodium salt hydrate","sssom_rows":[{"data_row":261,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric acid","predicate_id":"skos:closeMatch"},{"data_row":262,"object_id":"cas:305-72-6","object_label":"a-Ketoglutaric acid disodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","synonym_count":1} |
 | ev-420ae2da7e82699a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [426] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-7b30227940897007 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate; data-row positions=[261,262] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":261,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric acid","other":"alpha-ketoglutaric acid&#124;CAS:305-72-6","predicate_id":"skos:closeMatch","subject_id":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","validation_method":"manual:retire_wrong_form_names&#124;OTHER&#124;2026-09-23"},{"data_row":262,"object_id":"cas:305-72-6","object_label":"a-Ketoglutaric acid disodium salt hydrate","other":"CAS:305-72-6","predicate_id":"skos:exactMatch","subject_id":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-7b30227940897007 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate; data-row positions=[261, 262] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":261,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric acid","other":"alpha-ketoglutaric acid&#124;CAS:305-72-6","predicate_id":"skos:closeMatch","subject_id":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","validation_method":"manual:retire_wrong_form_names&#124;OTHER&#124;2026-09-23"},{"data_row":262,"object_id":"cas:305-72-6","object_label":"a-Ketoglutaric acid disodium salt hydrate","other":"CAS:305-72-6","predicate_id":"skos:exactMatch","subject_id":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-449e2a8d62921bdf | docs/data/mapped_ingredients.csv; CSV lines=[428] | supports | Published identity and count rows inspected: [{"identifier":"cas:305-72-6","line":428,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:30915","preferred_term":"a-Ketoglutaric acid disodium salt hydrate","total_occurrences":"11"}] |
 | ev-b3136020494835ab | reports/yaml_record_review/20261001T050111Z-A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md; YAML Record Review: a-Ketoglutaric acid disodium salt hydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fec8c7a95659559f | reports/yaml_record_review/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.md; &#96;data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:39; Completeness:60; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-73b64504e1014d7e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[182,1661,1868] | context_only | [{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:420704c247afac2ee6b0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:52686f86bdb498ef0ed0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:92988e22d8252691db92","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-27af0cc5418bbe04 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -183,6 +182,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-90d49bc40fac150b
+  - ev-420ae2da7e82699a
+  - ev-7b30227940897007
+  - ev-449e2a8d62921bdf
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +195,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-90d49bc40fac150b
+  - ev-73b64504e1014d7e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +206,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-97df33f7b4c5ae1c
+  evidence_ids:
+  - ev-b3136020494835ab
+  - ev-fec8c7a95659559f
+  - ev-73b64504e1014d7e
 evidence:
 - evidence_id: ev-90d49bc40fac150b
   kind: record_content
   reference: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[426],"raw_equal":true},"docs_rows":[{"identifier":"cas:305-72-6","line":428,"mapping_status":"MAPPED","ontology_id":"CHEBI:30915","preferred_term":"a-Ketoglutaric
     acid disodium salt hydrate"}],"identifier":"cas:305-72-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":11,"edge_count":11,"occurrences":11},"occurrence_statistics":{"media_count":11,"total_occurrences":11},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:30915","ontology_label":"2-oxoglutaric
@@ -218,7 +229,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [426]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -226,8 +237,9 @@ evidence:
 - evidence_id: ev-7b30227940897007
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate; data-row positions=[261,262]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate; data-row positions=[261,
+    262]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":261,"object_id":"CHEBI:30915","object_label":"2-oxoglutaric
     acid","other":"alpha-ketoglutaric acid|CAS:305-72-6","predicate_id":"skos:closeMatch","subject_id":"MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate","validation_method":"manual:retire_wrong_form_names|OTHER|2026-09-23"},{"data_row":262,"object_id":"cas:305-72-6","object_label":"a-Ketoglutaric
@@ -237,7 +249,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[428]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:305-72-6","line":428,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"11","ontology_id":"CHEBI:30915","preferred_term":"a-Ketoglutaric
     acid disodium salt hydrate","total_occurrences":"11"}]'
@@ -296,20 +308,12 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[182,1661,1868]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:420704c247afac2ee6b0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:52686f86bdb498ef0ed0","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c","finding_id":"SEM:92988e22d8252691db92","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-27af0cc5418bbe04
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-56ffddaf213d7108
@@ -383,7 +387,7 @@ assessments:
   - record-97df33f7b4c5ae1c
   evidence_ids:
   - ev-90d49bc40fac150b
-  - ev-27af0cc5418bbe04
+  - ev-73b64504e1014d7e
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -391,7 +395,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-90d49bc40fac150b
-    - ev-27af0cc5418bbe04
+    - ev-73b64504e1014d7e
 findings:
 - finding_id: rec-f-role-97df33f7b4c5ae1c
   issue_key: mim-reconciliation-role-support-97df33f7b4c5ae1c
@@ -407,7 +411,7 @@ findings:
   - record-97df33f7b4c5ae1c
   evidence_ids:
   - ev-90d49bc40fac150b
-  - ev-27af0cc5418bbe04
+  - ev-73b64504e1014d7e
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml

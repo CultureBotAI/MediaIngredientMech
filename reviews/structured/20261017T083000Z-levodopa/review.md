@@ -89,7 +89,7 @@ Reassess prediction-only role support: Levodopa
 | ev-6bc02379608ff67c | docs/data/mapped_ingredients.csv; CSV lines=[1297] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15765","line":1297,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15765","preferred_term":"Levodopa","total_occurrences":"0"}] |
 | ev-930e378a624018cb | reports/yaml_record_review/Levodopa.md; &#96;data/ingredients/mapped/Levodopa.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:27; Completeness:45; Recommended Edits:52 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-54a001bf9638f3c5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[857,2004] | context_only | [{"current_record_sha256":"aee2a4121b935ca1e59b964a653d4ec540709a60735864c457525aeb4d4ba289","finding_id":"SEM:e48324db0dce15ab2125","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aee2a4121b935ca1e59b964a653d4ec540709a60735864c457525aeb4d4ba289","finding_id":"SEM:c67940f86288824c0462","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9e7b49f9663a4b50 | data/ingredients/mapped/Levodopa.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-9e7b49f9663a4b50 | data/ingredients/mapped/Levodopa.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1295],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15765","line":1297,"mapping_status":"MAPPED","ontology_id":"CHEBI:15765","preferred_term":"Levodopa"}],"identifier":"CHEBI:15765","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:15765","ontology_label":"L-dopa","ontology_source":"CHEBI"},"preferred_term":"Levodopa","sssom_rows":[{"data_row":1685,"object_id":"CHEBI:15765","object_label":"L-dopa","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Levodopa","synonym_count":1} |
 | ev-1ae92f0aeac6b227 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-0eebfb7be9856ff1] | context_only | Predecessor structured review finding f-0eebfb7be9856ff1 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-da818097f6edd08a
+  evidence_ids:
+  - ev-bb08e4ccaa895e7e
+  - ev-514e1cf044e40612
+  - ev-a1634be0e0903868
+  - ev-6bc02379608ff67c
+  - ev-9e7b49f9663a4b50
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-da818097f6edd08a
+  evidence_ids:
+  - ev-bb08e4ccaa895e7e
+  - ev-54a001bf9638f3c5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-da818097f6edd08a
+  evidence_ids:
+  - ev-930e378a624018cb
+  - ev-54a001bf9638f3c5
+  - ev-1ae92f0aeac6b227
 evidence:
 - evidence_id: ev-bb08e4ccaa895e7e
   kind: record_content
   reference: data/ingredients/mapped/Levodopa.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1295],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15765","line":1297,"mapping_status":"MAPPED","ontology_id":"CHEBI:15765","preferred_term":"Levodopa"}],"identifier":"CHEBI:15765","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:15765","ontology_label":"L-dopa","ontology_source":"CHEBI"},"preferred_term":"Levodopa","sssom_rows":[{"data_row":1685,"object_id":"CHEBI:15765","object_label":"L-dopa","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Levodopa","synonym_count":1}'
   snapshot_sha256: aee2a4121b935ca1e59b964a653d4ec540709a60735864c457525aeb4d4ba289
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1295]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Levodopa; data-row positions=[1685]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1685,"object_id":"CHEBI:15765","object_label":"L-dopa","other":"(2S)-2-amino-3-(3,4-dihydroxyphenyl)propanoic
     acid|CAS:59-92-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Levodopa","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1297]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15765","line":1297,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:15765","preferred_term":"Levodopa","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[857,2004]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"aee2a4121b935ca1e59b964a653d4ec540709a60735864c457525aeb4d4ba289","finding_id":"SEM:e48324db0dce15ab2125","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aee2a4121b935ca1e59b964a653d4ec540709a60735864c457525aeb4d4ba289","finding_id":"SEM:c67940f86288824c0462","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Levodopa.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1295],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15765","line":1297,"mapping_status":"MAPPED","ontology_id":"CHEBI:15765","preferred_term":"Levodopa"}],"identifier":"CHEBI:15765","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:15765","ontology_label":"L-dopa","ontology_source":"CHEBI"},"preferred_term":"Levodopa","sssom_rows":[{"data_row":1685,"object_id":"CHEBI:15765","object_label":"L-dopa","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Levodopa","synonym_count":1}'
   snapshot_sha256: aee2a4121b935ca1e59b964a653d4ec540709a60735864c457525aeb4d4ba289
 - evidence_id: ev-1ae92f0aeac6b227
   kind: prior_review

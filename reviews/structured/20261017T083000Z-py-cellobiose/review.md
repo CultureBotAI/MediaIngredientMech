@@ -71,13 +71,12 @@ Disposition: Expansion/interpretation is retained as an assertion, but the exact
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-c7b6a2958228443b | data/ingredients/mapped/PY-cellobiose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[48],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_cellobiose","line":50,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_cellobiose","preferred_term":"PY-cellobiose"}],"identifier":"kgmicrobe.ingredient:py_cellobiose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_cellobiose","ontology_label":"PY-cellobiose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-cellobiose","sssom_rows":[{"data_row":2175,"object_id":"kgmicrobe.ingredient:py_cellobiose","object_label":"PY-cellobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-cellobiose","synonym_count":1} |
+| ev-c7b6a2958228443b | data/ingredients/mapped/PY-cellobiose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[48],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_cellobiose","line":50,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_cellobiose","preferred_term":"PY-cellobiose"}],"identifier":"kgmicrobe.ingredient:py_cellobiose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_cellobiose","ontology_label":"PY-cellobiose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-cellobiose","sssom_rows":[{"data_row":2177,"object_id":"kgmicrobe.ingredient:py_cellobiose","object_label":"PY-cellobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-cellobiose","synonym_count":1} |
 | ev-050976d168d5c907 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [48] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-759c3b6679b165ed | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PY-cellobiose; data-row positions=[2175] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2175,"object_id":"kgmicrobe.ingredient:py_cellobiose","object_label":"PY-cellobiose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-cellobiose","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
+| ev-759c3b6679b165ed | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:PY-cellobiose; data-row positions=[2177] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2177,"object_id":"kgmicrobe.ingredient:py_cellobiose","object_label":"PY-cellobiose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-cellobiose","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
 | ev-c042efd0c65caf90 | docs/data/mapped_ingredients.csv; CSV lines=[50] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:py_cellobiose","line":50,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:py_cellobiose","preferred_term":"PY-cellobiose","total_occurrences":"0"}] |
 | ev-34b7e1f074931d26 | reports/yaml_record_review/PY-cellobiose.md; &#96;data/ingredients/mapped/PY-cellobiose.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:32; Completeness:47; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-34432035eb9d8f2a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1891,1918,2055] | context_only | [{"current_record_sha256":"43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f","finding_id":"SEM:ef2f4b09031d5dcc6e85","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f","finding_id":"SEM:a37958ac62d0b582c545","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f","finding_id":"SEM:1a6a77befba289728a02","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-00ec4e4f6c1e5553 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/PY-cellobiose.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -166,6 +165,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-170106107e972596
+  evidence_ids:
+  - ev-c7b6a2958228443b
+  - ev-050976d168d5c907
+  - ev-759c3b6679b165ed
+  - ev-c042efd0c65caf90
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -174,6 +178,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-170106107e972596
+  evidence_ids:
+  - ev-c7b6a2958228443b
+  - ev-34432035eb9d8f2a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -182,21 +189,24 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-170106107e972596
+  evidence_ids:
+  - ev-34b7e1f074931d26
+  - ev-34432035eb9d8f2a
 evidence:
 - evidence_id: ev-c7b6a2958228443b
   kind: record_content
   reference: data/ingredients/mapped/PY-cellobiose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[48],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_cellobiose","line":50,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_cellobiose","preferred_term":"PY-cellobiose"}],"identifier":"kgmicrobe.ingredient:py_cellobiose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_cellobiose","ontology_label":"PY-cellobiose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-cellobiose","sssom_rows":[{"data_row":2175,"object_id":"kgmicrobe.ingredient:py_cellobiose","object_label":"PY-cellobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-cellobiose","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[48],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:py_cellobiose","line":50,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:py_cellobiose","preferred_term":"PY-cellobiose"}],"identifier":"kgmicrobe.ingredient:py_cellobiose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:py_cellobiose","ontology_label":"PY-cellobiose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"PY-cellobiose","sssom_rows":[{"data_row":2177,"object_id":"kgmicrobe.ingredient:py_cellobiose","object_label":"PY-cellobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:PY-cellobiose","synonym_count":1}'
   snapshot_sha256: 43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f
 - evidence_id: ev-050976d168d5c907
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [48]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -204,16 +214,16 @@ evidence:
 - evidence_id: ev-759c3b6679b165ed
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:PY-cellobiose; data-row positions=[2175]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:PY-cellobiose; data-row positions=[2177]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2175,"object_id":"kgmicrobe.ingredient:py_cellobiose","object_label":"PY-cellobiose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-cellobiose","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2177,"object_id":"kgmicrobe.ingredient:py_cellobiose","object_label":"PY-cellobiose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:PY-cellobiose","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-c042efd0c65caf90
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[50]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:py_cellobiose","line":50,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:py_cellobiose","preferred_term":"PY-cellobiose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -235,20 +245,12 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1891,1918,2055]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f","finding_id":"SEM:ef2f4b09031d5dcc6e85","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f","finding_id":"SEM:a37958ac62d0b582c545","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f","finding_id":"SEM:1a6a77befba289728a02","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-00ec4e4f6c1e5553
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/PY-cellobiose.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-d6baac15407697ec
@@ -321,7 +323,7 @@ findings:
   - record-170106107e972596
   evidence_ids:
   - ev-c7b6a2958228443b
-  - ev-00ec4e4f6c1e5553
+  - ev-34432035eb9d8f2a
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/PY-cellobiose.yaml

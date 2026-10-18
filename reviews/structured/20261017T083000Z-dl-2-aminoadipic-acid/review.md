@@ -83,14 +83,14 @@ Reassess prediction-only role support: DL-2-Aminoadipic acid
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-0d52ce66bb1acd92 | data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2636],"raw_equal":true},"docs_rows":[{"identifier":"cas:542-32-5","line":2638,"mapping_status":"MAPPED","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic acid"}],"identifier":"cas:542-32-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:542-32-5","ontology_label":"DL-2-Aminoadipic acid","ontology_source":"CAS"},"preferred_term":"DL-2-Aminoadipic acid","sssom_rows":[{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-2-Aminoadipic_Acid","synonym_count":1} |
-| ev-7015ceb7e8a7bb90 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2636] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-0d52ce66bb1acd92 | data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2635],"raw_equal":true},"docs_rows":[{"identifier":"cas:542-32-5","line":2637,"mapping_status":"MAPPED","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic acid"}],"identifier":"cas:542-32-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:542-32-5","ontology_label":"DL-2-Aminoadipic acid","ontology_source":"CAS"},"preferred_term":"DL-2-Aminoadipic acid","sssom_rows":[{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-2-Aminoadipic_Acid","synonym_count":1} |
+| ev-7015ceb7e8a7bb90 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2635] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-18c4a68dac0ff81a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL-2-Aminoadipic_Acid; data-row positions=[969] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic acid","other":"CAS:542-32-5","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-2-Aminoadipic_Acid","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
-| ev-58621783e546c3a8 | docs/data/mapped_ingredients.csv; CSV lines=[2638] | supports | Published identity and count rows inspected: [{"identifier":"cas:542-32-5","line":2638,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic acid","total_occurrences":"0"}] |
+| ev-58621783e546c3a8 | docs/data/mapped_ingredients.csv; CSV lines=[2637] | supports | Published identity and count rows inspected: [{"identifier":"cas:542-32-5","line":2637,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic acid","total_occurrences":"0"}] |
 | ev-952208d407f91746 | reports/yaml_record_review/20261001T050208Z-DL-2-Aminoadipic_Acid.md; YAML Record Review: DL-2-Aminoadipic acid:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e88a3c9355bc03d1 | reports/yaml_record_review/DL-2-Aminoadipic_Acid.md; &#96;data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml&#96;:2; Verdict:4; Identity:12; Validation:29; Evidence:53; Completeness:68; Recommended Edits:80 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a6621c60116a567c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[512,1606] | context_only | [{"current_record_sha256":"fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e","finding_id":"SEM:1d4b0b2e54c753cb4311","kind":"existing_record_review","resolution_reason":"Retain the explicitly DL source substance as CAS 542-32-5. Withdraw L-enantiomer CHEBI:37023 and its stereospecific synonym/structure; a racemate is not one enantiomer. CAS registry identity does not imply that a new exact ChEBI search was exhaustive.","resolution_status":"RESOLVED"},{"current_record_sha256":"fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e","finding_id":"SEM:f1e57873a6b7e0aa18ee","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d4db048d962e13a6 | data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-d4db048d962e13a6 | data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2635],"raw_equal":true},"docs_rows":[{"identifier":"cas:542-32-5","line":2637,"mapping_status":"MAPPED","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic acid"}],"identifier":"cas:542-32-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:542-32-5","ontology_label":"DL-2-Aminoadipic acid","ontology_source":"CAS"},"preferred_term":"DL-2-Aminoadipic acid","sssom_rows":[{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-2-Aminoadipic_Acid","synonym_count":1} |
 | ev-f590e179cf5c9096 | reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml; findings[finding_id=f-46759fd5ad29eca5] | context_only | Predecessor structured review finding f-46759fd5ad29eca5 in 20261011T024629Z-mim-reconcile-all-batch-01 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-3685075c8b5b5eb7
+  evidence_ids:
+  - ev-0d52ce66bb1acd92
+  - ev-7015ceb7e8a7bb90
+  - ev-18c4a68dac0ff81a
+  - ev-58621783e546c3a8
+  - ev-d4db048d962e13a6
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-3685075c8b5b5eb7
+  evidence_ids:
+  - ev-0d52ce66bb1acd92
+  - ev-a6621c60116a567c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,15 +208,20 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-3685075c8b5b5eb7
+  evidence_ids:
+  - ev-952208d407f91746
+  - ev-e88a3c9355bc03d1
+  - ev-a6621c60116a567c
+  - ev-f590e179cf5c9096
 evidence:
 - evidence_id: ev-0d52ce66bb1acd92
   kind: record_content
   reference: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2636],"raw_equal":true},"docs_rows":[{"identifier":"cas:542-32-5","line":2638,"mapping_status":"MAPPED","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2635],"raw_equal":true},"docs_rows":[{"identifier":"cas:542-32-5","line":2637,"mapping_status":"MAPPED","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic
     acid"}],"identifier":"cas:542-32-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:542-32-5","ontology_label":"DL-2-Aminoadipic
     acid","ontology_source":"CAS"},"preferred_term":"DL-2-Aminoadipic acid","sssom_rows":[{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic
     acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-2-Aminoadipic_Acid","synonym_count":1}'
@@ -215,8 +229,8 @@ evidence:
 - evidence_id: ev-7015ceb7e8a7bb90
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2636]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2635]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,7 +239,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:DL-2-Aminoadipic_Acid; data-row positions=[969]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic
     acid","other":"CAS:542-32-5","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-2-Aminoadipic_Acid","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
@@ -233,10 +247,10 @@ evidence:
 - evidence_id: ev-58621783e546c3a8
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2638]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2637]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:542-32-5","line":2638,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:542-32-5","line":2637,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic
     acid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-952208d407f91746
@@ -294,7 +308,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[512,1606]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e","finding_id":"SEM:1d4b0b2e54c753cb4311","kind":"existing_record_review","resolution_reason":"Retain
     the explicitly DL source substance as CAS 542-32-5. Withdraw L-enantiomer CHEBI:37023
@@ -306,12 +320,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/DL-2-Aminoadipic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2635],"raw_equal":true},"docs_rows":[{"identifier":"cas:542-32-5","line":2637,"mapping_status":"MAPPED","ontology_id":"cas:542-32-5","preferred_term":"DL-2-Aminoadipic
+    acid"}],"identifier":"cas:542-32-5","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:542-32-5","ontology_label":"DL-2-Aminoadipic
+    acid","ontology_source":"CAS"},"preferred_term":"DL-2-Aminoadipic acid","sssom_rows":[{"data_row":969,"object_id":"cas:542-32-5","object_label":"DL-2-Aminoadipic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-2-Aminoadipic_Acid","synonym_count":1}'
   snapshot_sha256: fa26e653b29c8d1aeeaea8a1feee468acaa737cb322b9b525eb454c8e5604d7e
 - evidence_id: ev-f590e179cf5c9096
   kind: prior_review

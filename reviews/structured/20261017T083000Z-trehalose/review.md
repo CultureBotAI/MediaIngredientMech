@@ -83,13 +83,13 @@ Reassess prediction-only role support: Trehalose
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-db47ac6e3db0f165 | data/ingredients/mapped/Trehalose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1986],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27082","line":1988,"mapping_status":"MAPPED","ontology_id":"CHEBI:27082","preferred_term":"Trehalose"}],"identifier":"CHEBI:27082","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27082","ontology_label":"trehalose","ontology_source":"CHEBI"},"preferred_term":"Trehalose","sssom_rows":[{"data_row":2816,"object_id":"CHEBI:27082","object_label":"trehalose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trehalose","synonym_count":4} |
-| ev-8530838dbf719a07 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1986] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-ff366a41ee2abfc0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trehalose; data-row positions=[2816] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2816,"object_id":"CHEBI:27082","object_label":"trehalose","other":"D-Trehalose&#124;D(+)-Trehalose&#124;CAS:52613-20-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Trehalose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-2bd303a790d81f7d | docs/data/mapped_ingredients.csv; CSV lines=[1988] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:27082","line":1988,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:27082","preferred_term":"Trehalose","total_occurrences":"15"}] |
+| ev-db47ac6e3db0f165 | data/ingredients/mapped/Trehalose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1985],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27082","line":1987,"mapping_status":"MAPPED","ontology_id":"CHEBI:27082","preferred_term":"Trehalose"}],"identifier":"CHEBI:27082","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27082","ontology_label":"trehalose","ontology_source":"CHEBI"},"preferred_term":"Trehalose","sssom_rows":[{"data_row":2818,"object_id":"CHEBI:27082","object_label":"trehalose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trehalose","synonym_count":4} |
+| ev-8530838dbf719a07 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1985] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-ff366a41ee2abfc0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trehalose; data-row positions=[2818] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2818,"object_id":"CHEBI:27082","object_label":"trehalose","other":"D-Trehalose&#124;D(+)-Trehalose&#124;CAS:52613-20-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Trehalose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-2bd303a790d81f7d | docs/data/mapped_ingredients.csv; CSV lines=[1987] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:27082","line":1987,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:27082","preferred_term":"Trehalose","total_occurrences":"15"}] |
 | ev-9c5e75cfe7aa91ec | reports/yaml_record_review/Trehalose.md; &#96;data/ingredients/mapped/Trehalose.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:32; Issues:42; Major: &#96;ENERGY_SOURCE&#96; is provisional computational evidence:44; Completeness:60; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-4108b82fa34391ee | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1304,1658] | context_only | [{"current_record_sha256":"fdcc28ac5e51833fee167b42f4cfa3ffd3bfdb34a1e53fb78c1718eaf2a5c015","finding_id":"SEM:80ef51b498ebf365436f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fdcc28ac5e51833fee167b42f4cfa3ffd3bfdb34a1e53fb78c1718eaf2a5c015","finding_id":"SEM:92591768cf2dad5176fa","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b1804f44836dc5ba | data/ingredients/mapped/Trehalose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-b1804f44836dc5ba | data/ingredients/mapped/Trehalose.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1985],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27082","line":1987,"mapping_status":"MAPPED","ontology_id":"CHEBI:27082","preferred_term":"Trehalose"}],"identifier":"CHEBI:27082","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27082","ontology_label":"trehalose","ontology_source":"CHEBI"},"preferred_term":"Trehalose","sssom_rows":[{"data_row":2818,"object_id":"CHEBI:27082","object_label":"trehalose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trehalose","synonym_count":4} |
 | ev-587dab96ff816d19 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-7a8afaeb7a9631db] | context_only | Predecessor structured review finding f-7a8afaeb7a9631db in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a04504ccaca23c59
+  evidence_ids:
+  - ev-db47ac6e3db0f165
+  - ev-8530838dbf719a07
+  - ev-ff366a41ee2abfc0
+  - ev-2bd303a790d81f7d
+  - ev-b1804f44836dc5ba
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a04504ccaca23c59
+  evidence_ids:
+  - ev-db47ac6e3db0f165
+  - ev-4108b82fa34391ee
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a04504ccaca23c59
+  evidence_ids:
+  - ev-9c5e75cfe7aa91ec
+  - ev-4108b82fa34391ee
+  - ev-587dab96ff816d19
 evidence:
 - evidence_id: ev-db47ac6e3db0f165
   kind: record_content
   reference: data/ingredients/mapped/Trehalose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1986],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27082","line":1988,"mapping_status":"MAPPED","ontology_id":"CHEBI:27082","preferred_term":"Trehalose"}],"identifier":"CHEBI:27082","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27082","ontology_label":"trehalose","ontology_source":"CHEBI"},"preferred_term":"Trehalose","sssom_rows":[{"data_row":2816,"object_id":"CHEBI:27082","object_label":"trehalose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trehalose","synonym_count":4}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1985],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27082","line":1987,"mapping_status":"MAPPED","ontology_id":"CHEBI:27082","preferred_term":"Trehalose"}],"identifier":"CHEBI:27082","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27082","ontology_label":"trehalose","ontology_source":"CHEBI"},"preferred_term":"Trehalose","sssom_rows":[{"data_row":2818,"object_id":"CHEBI:27082","object_label":"trehalose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trehalose","synonym_count":4}'
   snapshot_sha256: fdcc28ac5e51833fee167b42f4cfa3ffd3bfdb34a1e53fb78c1718eaf2a5c015
 - evidence_id: ev-8530838dbf719a07
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1986]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1985]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-ff366a41ee2abfc0
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trehalose; data-row positions=[2816]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Trehalose; data-row positions=[2818]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2816,"object_id":"CHEBI:27082","object_label":"trehalose","other":"D-Trehalose|D(+)-Trehalose|CAS:52613-20-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Trehalose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2818,"object_id":"CHEBI:27082","object_label":"trehalose","other":"D-Trehalose|D(+)-Trehalose|CAS:52613-20-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Trehalose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-2bd303a790d81f7d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1988]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1987]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:27082","line":1988,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:27082","preferred_term":"Trehalose","total_occurrences":"15"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:27082","line":1987,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"15","ontology_id":"CHEBI:27082","preferred_term":"Trehalose","total_occurrences":"15"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-9c5e75cfe7aa91ec
   kind: prior_review
@@ -256,7 +269,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1304,1658]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"fdcc28ac5e51833fee167b42f4cfa3ffd3bfdb34a1e53fb78c1718eaf2a5c015","finding_id":"SEM:80ef51b498ebf365436f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"fdcc28ac5e51833fee167b42f4cfa3ffd3bfdb34a1e53fb78c1718eaf2a5c015","finding_id":"SEM:92591768cf2dad5176fa","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +279,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trehalose.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1985],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:27082","line":1987,"mapping_status":"MAPPED","ontology_id":"CHEBI:27082","preferred_term":"Trehalose"}],"identifier":"CHEBI:27082","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":15,"edge_count":15,"occurrences":15},"occurrence_statistics":{"media_count":15,"total_occurrences":15},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:27082","ontology_label":"trehalose","ontology_source":"CHEBI"},"preferred_term":"Trehalose","sssom_rows":[{"data_row":2818,"object_id":"CHEBI:27082","object_label":"trehalose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trehalose","synonym_count":4}'
   snapshot_sha256: fdcc28ac5e51833fee167b42f4cfa3ffd3bfdb34a1e53fb78c1718eaf2a5c015
 - evidence_id: ev-587dab96ff816d19
   kind: prior_review

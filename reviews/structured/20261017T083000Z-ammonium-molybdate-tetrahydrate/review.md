@@ -83,14 +83,14 @@ Reassess prediction-only role support: ammonium molybdate tetrahydrate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-0a45233c4553a641 | data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2645],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86244","line":2647,"mapping_status":"MAPPED","ontology_id":"CHEBI:86244","preferred_term":"ammonium molybdate tetrahydrate"}],"identifier":"CHEBI:86244","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86244","ontology_label":"hexaammonium heptamolybdate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"ammonium molybdate tetrahydrate","sssom_rows":[{"data_row":359,"object_id":"CHEBI:86244","object_label":"hexaammonium heptamolybdate tetrahydrate","predicate_id":"skos:exactMatch"},{"data_row":360,"object_id":"cas:12054-85-2","object_label":"ammonium molybdate tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ammonium_Molybdate_Tetrahydrate","synonym_count":11} |
-| ev-9ea19c31dba5f157 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2645] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-85cedf4f3eb39bf9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ammonium_Molybdate_Tetrahydrate; data-row positions=[359,360] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":359,"object_id":"CHEBI:86244","object_label":"hexaammonium heptamolybdate tetrahydrate","other":"(NH4)6Mo7O4&#124;(NH4)6MoO24\u00b74H2O&#124;(NH4)6MoO7O24&#124;(NH4)6MoO7O24 x 4 H2O&#124;(NH4)Mo7O24\u00b74H2O&#124;(NH4)MoO7O24&#124;(NH4)MoO7O24 x 4 H2O&#124;CAS:12054-85-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Molybdate_Tetrahydrate","validation_method":"manual:apply_312_batch2&#124;OTHER&#124;2026-09-22"},{"data_row":360,"object_id":"cas:12054-85-2","object_label":"ammonium molybdate tetrahydrate","other":"CAS:12054-85-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Molybdate_Tetrahydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-5ad7bfcf56dde6c4 | docs/data/mapped_ingredients.csv; CSV lines=[2647] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86244","line":2647,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:86244","preferred_term":"ammonium molybdate tetrahydrate","total_occurrences":"12"}] |
+| ev-0a45233c4553a641 | data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2644],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86244","line":2646,"mapping_status":"MAPPED","ontology_id":"CHEBI:86244","preferred_term":"ammonium molybdate tetrahydrate"}],"identifier":"CHEBI:86244","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86244","ontology_label":"hexaammonium heptamolybdate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"ammonium molybdate tetrahydrate","sssom_rows":[{"data_row":359,"object_id":"CHEBI:86244","object_label":"hexaammonium heptamolybdate tetrahydrate","predicate_id":"skos:exactMatch"},{"data_row":360,"object_id":"cas:12054-85-2","object_label":"ammonium molybdate tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ammonium_Molybdate_Tetrahydrate","synonym_count":11} |
+| ev-9ea19c31dba5f157 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2644] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-85cedf4f3eb39bf9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ammonium_Molybdate_Tetrahydrate; data-row positions=[359, 360] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":359,"object_id":"CHEBI:86244","object_label":"hexaammonium heptamolybdate tetrahydrate","other":"(NH4)6Mo7O4&#124;(NH4)6MoO24\u00b74H2O&#124;(NH4)6MoO7O24&#124;(NH4)6MoO7O24 x 4 H2O&#124;(NH4)Mo7O24\u00b74H2O&#124;(NH4)MoO7O24&#124;(NH4)MoO7O24 x 4 H2O&#124;CAS:12054-85-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Molybdate_Tetrahydrate","validation_method":"manual:apply_312_batch2&#124;OTHER&#124;2026-09-22"},{"data_row":360,"object_id":"cas:12054-85-2","object_label":"ammonium molybdate tetrahydrate","other":"CAS:12054-85-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Molybdate_Tetrahydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-5ad7bfcf56dde6c4 | docs/data/mapped_ingredients.csv; CSV lines=[2646] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86244","line":2646,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:86244","preferred_term":"ammonium molybdate tetrahydrate","total_occurrences":"12"}] |
 | ev-098a64b120ef3258 | reports/yaml_record_review/20261001T050119Z-Ammonium_Molybdate_Tetrahydrate.md; YAML Record Review: ammonium molybdate tetrahydrate:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-107f6607757ac5fc | reports/yaml_record_review/Ammonium_Molybdate_Tetrahydrate.md; &#96;data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:42; Completeness:62; Recommended Edits:73 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6cea2f8a75e58c79 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[249,1634] | context_only | [{"current_record_sha256":"8aa0782e111cd434c6337345cfe51234abda0233d56857fd7a34c75a5636bf15","finding_id":"SEM:466803a7eeb39062d77e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8aa0782e111cd434c6337345cfe51234abda0233d56857fd7a34c75a5636bf15","finding_id":"SEM:1e216d389ce7d5978561","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-446b66f4c05a505a | data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-446b66f4c05a505a | data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2644],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86244","line":2646,"mapping_status":"MAPPED","ontology_id":"CHEBI:86244","preferred_term":"ammonium molybdate tetrahydrate"}],"identifier":"CHEBI:86244","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86244","ontology_label":"hexaammonium heptamolybdate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"ammonium molybdate tetrahydrate","sssom_rows":[{"data_row":359,"object_id":"CHEBI:86244","object_label":"hexaammonium heptamolybdate tetrahydrate","predicate_id":"skos:exactMatch"},{"data_row":360,"object_id":"cas:12054-85-2","object_label":"ammonium molybdate tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ammonium_Molybdate_Tetrahydrate","synonym_count":11} |
 | ev-853194edf0bf5561 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-773b00610dc402d2] | context_only | Predecessor structured review finding f-773b00610dc402d2 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6fc193ae5a854a22
+  evidence_ids:
+  - ev-0a45233c4553a641
+  - ev-9ea19c31dba5f157
+  - ev-85cedf4f3eb39bf9
+  - ev-5ad7bfcf56dde6c4
+  - ev-446b66f4c05a505a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6fc193ae5a854a22
+  evidence_ids:
+  - ev-0a45233c4553a641
+  - ev-6cea2f8a75e58c79
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,15 +208,20 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6fc193ae5a854a22
+  evidence_ids:
+  - ev-098a64b120ef3258
+  - ev-107f6607757ac5fc
+  - ev-6cea2f8a75e58c79
+  - ev-853194edf0bf5561
 evidence:
 - evidence_id: ev-0a45233c4553a641
   kind: record_content
   reference: data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2645],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86244","line":2647,"mapping_status":"MAPPED","ontology_id":"CHEBI:86244","preferred_term":"ammonium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2644],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86244","line":2646,"mapping_status":"MAPPED","ontology_id":"CHEBI:86244","preferred_term":"ammonium
     molybdate tetrahydrate"}],"identifier":"CHEBI:86244","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86244","ontology_label":"hexaammonium
     heptamolybdate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"ammonium
     molybdate tetrahydrate","sssom_rows":[{"data_row":359,"object_id":"CHEBI:86244","object_label":"hexaammonium
@@ -217,8 +231,8 @@ evidence:
 - evidence_id: ev-9ea19c31dba5f157
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2645]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2644]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -226,8 +240,9 @@ evidence:
 - evidence_id: ev-85cedf4f3eb39bf9
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Ammonium_Molybdate_Tetrahydrate; data-row positions=[359,360]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Ammonium_Molybdate_Tetrahydrate; data-row positions=[359,
+    360]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":359,"object_id":"CHEBI:86244","object_label":"hexaammonium
     heptamolybdate tetrahydrate","other":"(NH4)6Mo7O4|(NH4)6MoO24\u00b74H2O|(NH4)6MoO7O24|(NH4)6MoO7O24
@@ -237,10 +252,10 @@ evidence:
 - evidence_id: ev-5ad7bfcf56dde6c4
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2647]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2646]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86244","line":2647,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:86244","preferred_term":"ammonium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86244","line":2646,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"12","ontology_id":"CHEBI:86244","preferred_term":"ammonium
     molybdate tetrahydrate","total_occurrences":"12"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-098a64b120ef3258
@@ -296,7 +311,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[249,1634]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"8aa0782e111cd434c6337345cfe51234abda0233d56857fd7a34c75a5636bf15","finding_id":"SEM:466803a7eeb39062d77e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8aa0782e111cd434c6337345cfe51234abda0233d56857fd7a34c75a5636bf15","finding_id":"SEM:1e216d389ce7d5978561","kind":"role_evidence","resolution_reason":"Historical
@@ -306,12 +321,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2644],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86244","line":2646,"mapping_status":"MAPPED","ontology_id":"CHEBI:86244","preferred_term":"ammonium
+    molybdate tetrahydrate"}],"identifier":"CHEBI:86244","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":12,"total_occurrences":12},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86244","ontology_label":"hexaammonium
+    heptamolybdate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"ammonium
+    molybdate tetrahydrate","sssom_rows":[{"data_row":359,"object_id":"CHEBI:86244","object_label":"hexaammonium
+    heptamolybdate tetrahydrate","predicate_id":"skos:exactMatch"},{"data_row":360,"object_id":"cas:12054-85-2","object_label":"ammonium
+    molybdate tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ammonium_Molybdate_Tetrahydrate","synonym_count":11}'
   snapshot_sha256: 8aa0782e111cd434c6337345cfe51234abda0233d56857fd7a34c75a5636bf15
 - evidence_id: ev-853194edf0bf5561
   kind: prior_review

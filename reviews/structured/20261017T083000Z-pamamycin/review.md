@@ -83,13 +83,13 @@ Reassess prediction-only role support: Pamamycin
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-40ca2133c57c227c | data/ingredients/mapped/Pamamycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1614],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C024500","line":1616,"mapping_status":"MAPPED","ontology_id":"mesh:C024500","preferred_term":"Pamamycin"}],"identifier":"mesh:C024500","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C024500","ontology_label":"pamamycin","ontology_source":"MESH"},"preferred_term":"Pamamycin","sssom_rows":[{"data_row":2195,"object_id":"mesh:C024500","object_label":"pamamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pamamycin","synonym_count":0} |
-| ev-ef4fb6f72667ff6f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1614] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-dd8d54c2c7fcffce | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Pamamycin; data-row positions=[2195] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2195,"object_id":"mesh:C024500","object_label":"pamamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Pamamycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-78d247481d063a15 | docs/data/mapped_ingredients.csv; CSV lines=[1616] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C024500","line":1616,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C024500","preferred_term":"Pamamycin","total_occurrences":"0"}] |
+| ev-40ca2133c57c227c | data/ingredients/mapped/Pamamycin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1613],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C024500","line":1615,"mapping_status":"MAPPED","ontology_id":"mesh:C024500","preferred_term":"Pamamycin"}],"identifier":"mesh:C024500","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C024500","ontology_label":"pamamycin","ontology_source":"MESH"},"preferred_term":"Pamamycin","sssom_rows":[{"data_row":2197,"object_id":"mesh:C024500","object_label":"pamamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pamamycin","synonym_count":0} |
+| ev-ef4fb6f72667ff6f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1613] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-dd8d54c2c7fcffce | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Pamamycin; data-row positions=[2197] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2197,"object_id":"mesh:C024500","object_label":"pamamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Pamamycin","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-78d247481d063a15 | docs/data/mapped_ingredients.csv; CSV lines=[1615] | supports | Published identity and count rows inspected: [{"identifier":"mesh:C024500","line":1615,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C024500","preferred_term":"Pamamycin","total_occurrences":"0"}] |
 | ev-7c00f2b18978da73 | reports/yaml_record_review/Pamamycin.md; &#96;data/ingredients/mapped/Pamamycin.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:29; Completeness:43; Recommended Edits:50 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ff1427fe14f44339 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1095,1491] | context_only | [{"current_record_sha256":"475300bb7e677226a9b74e2b945bc34cf086d0a3bd0e72c465e27293c79a4afe","finding_id":"SEM:c1d0cf66f793e62c2aab","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"475300bb7e677226a9b74e2b945bc34cf086d0a3bd0e72c465e27293c79a4afe","finding_id":"SEM:326c0c6d6bfa914780c4","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-91005b3296d29741 | data/ingredients/mapped/Pamamycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-91005b3296d29741 | data/ingredients/mapped/Pamamycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1613],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C024500","line":1615,"mapping_status":"MAPPED","ontology_id":"mesh:C024500","preferred_term":"Pamamycin"}],"identifier":"mesh:C024500","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C024500","ontology_label":"pamamycin","ontology_source":"MESH"},"preferred_term":"Pamamycin","sssom_rows":[{"data_row":2197,"object_id":"mesh:C024500","object_label":"pamamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pamamycin","synonym_count":0} |
 | ev-8ffea020c36e3650 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-e95241fbe3c6ef28] | context_only | Predecessor structured review finding f-e95241fbe3c6ef28 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-7e54869d5ab14d94
+  evidence_ids:
+  - ev-40ca2133c57c227c
+  - ev-ef4fb6f72667ff6f
+  - ev-dd8d54c2c7fcffce
+  - ev-78d247481d063a15
+  - ev-91005b3296d29741
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-7e54869d5ab14d94
+  evidence_ids:
+  - ev-40ca2133c57c227c
+  - ev-ff1427fe14f44339
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-7e54869d5ab14d94
+  evidence_ids:
+  - ev-7c00f2b18978da73
+  - ev-ff1427fe14f44339
+  - ev-8ffea020c36e3650
 evidence:
 - evidence_id: ev-40ca2133c57c227c
   kind: record_content
   reference: data/ingredients/mapped/Pamamycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1614],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C024500","line":1616,"mapping_status":"MAPPED","ontology_id":"mesh:C024500","preferred_term":"Pamamycin"}],"identifier":"mesh:C024500","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C024500","ontology_label":"pamamycin","ontology_source":"MESH"},"preferred_term":"Pamamycin","sssom_rows":[{"data_row":2195,"object_id":"mesh:C024500","object_label":"pamamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pamamycin","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1613],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C024500","line":1615,"mapping_status":"MAPPED","ontology_id":"mesh:C024500","preferred_term":"Pamamycin"}],"identifier":"mesh:C024500","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C024500","ontology_label":"pamamycin","ontology_source":"MESH"},"preferred_term":"Pamamycin","sssom_rows":[{"data_row":2197,"object_id":"mesh:C024500","object_label":"pamamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pamamycin","synonym_count":0}'
   snapshot_sha256: 475300bb7e677226a9b74e2b945bc34cf086d0a3bd0e72c465e27293c79a4afe
 - evidence_id: ev-ef4fb6f72667ff6f
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1614]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1613]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-dd8d54c2c7fcffce
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Pamamycin; data-row positions=[2195]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Pamamycin; data-row positions=[2197]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2195,"object_id":"mesh:C024500","object_label":"pamamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Pamamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2197,"object_id":"mesh:C024500","object_label":"pamamycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Pamamycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-78d247481d063a15
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1616]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1615]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C024500","line":1616,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C024500","preferred_term":"Pamamycin","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C024500","line":1615,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:C024500","preferred_term":"Pamamycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-7c00f2b18978da73
   kind: prior_review
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1095,1491]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"475300bb7e677226a9b74e2b945bc34cf086d0a3bd0e72c465e27293c79a4afe","finding_id":"SEM:c1d0cf66f793e62c2aab","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"475300bb7e677226a9b74e2b945bc34cf086d0a3bd0e72c465e27293c79a4afe","finding_id":"SEM:326c0c6d6bfa914780c4","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Pamamycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1613],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C024500","line":1615,"mapping_status":"MAPPED","ontology_id":"mesh:C024500","preferred_term":"Pamamycin"}],"identifier":"mesh:C024500","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C024500","ontology_label":"pamamycin","ontology_source":"MESH"},"preferred_term":"Pamamycin","sssom_rows":[{"data_row":2197,"object_id":"mesh:C024500","object_label":"pamamycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pamamycin","synonym_count":0}'
   snapshot_sha256: 475300bb7e677226a9b74e2b945bc34cf086d0a3bd0e72c465e27293c79a4afe
 - evidence_id: ev-8ffea020c36e3650
   kind: prior_review

@@ -85,11 +85,11 @@ Reassess prediction-only role support: 1,4-B-D-Galactobiose
 | --- | --- | --- | --- |
 | ev-3b2b3ec57d72d2ac | data/ingredients/mapped/14-B-D-Galactobiose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[297],"raw_equal":true},"docs_rows":[{"identifier":"cas:2152-98-9","line":299,"mapping_status":"MAPPED","ontology_id":"CHEBI:36226","preferred_term":"1,4-B-D-Galactobiose"}],"identifier":"cas:2152-98-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:36226","ontology_label":"beta-D-galactopyranosyl-(1-&gt;4)-D-galactopyranose","ontology_source":"CHEBI"},"preferred_term":"1,4-B-D-Galactobiose","sssom_rows":[{"data_row":36,"object_id":"CHEBI:36226","object_label":"beta-D-galactopyranosyl-(1-&gt;4)-D-galactopyranose","predicate_id":"skos:exactMatch"},{"data_row":37,"object_id":"cas:2152-98-9","object_label":"1,4-B-D-Galactobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:14-B-D-Galactobiose","synonym_count":0} |
 | ev-20595d12d675952b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [297] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-80d8cf2c918d8ce9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:14-B-D-Galactobiose; data-row positions=[36,37] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":36,"object_id":"CHEBI:36226","object_label":"beta-D-galactopyranosyl-(1-&gt;4)-D-galactopyranose","other":"CAS:2152-98-9","predicate_id":"skos:exactMatch","subject_id":"MIM:14-B-D-Galactobiose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":37,"object_id":"cas:2152-98-9","object_label":"1,4-B-D-Galactobiose","other":"CAS:2152-98-9","predicate_id":"skos:exactMatch","subject_id":"MIM:14-B-D-Galactobiose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-80d8cf2c918d8ce9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:14-B-D-Galactobiose; data-row positions=[36, 37] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":36,"object_id":"CHEBI:36226","object_label":"beta-D-galactopyranosyl-(1-&gt;4)-D-galactopyranose","other":"CAS:2152-98-9","predicate_id":"skos:exactMatch","subject_id":"MIM:14-B-D-Galactobiose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":37,"object_id":"cas:2152-98-9","object_label":"1,4-B-D-Galactobiose","other":"CAS:2152-98-9","predicate_id":"skos:exactMatch","subject_id":"MIM:14-B-D-Galactobiose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-83da97b32527d91a | docs/data/mapped_ingredients.csv; CSV lines=[299] | supports | Published identity and count rows inspected: [{"identifier":"cas:2152-98-9","line":299,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:36226","preferred_term":"1,4-B-D-Galactobiose","total_occurrences":"0"}] |
 | ev-08962dbe2f78f3f2 | reports/yaml_record_review/14-B-D-Galactobiose.md; &#96;data/ingredients/mapped/14-B-D-Galactobiose.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:38; Completeness:52; Recommended Edits:60 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fdd45f84dd549eca | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[32,2069] | context_only | [{"current_record_sha256":"346c00c2a113dc722024aef411d261d3a1a09182303a49695e749f53fb575c22","finding_id":"SEM:7fa34fc3278f9ae91d35","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"346c00c2a113dc722024aef411d261d3a1a09182303a49695e749f53fb575c22","finding_id":"SEM:ea76cf5a2e2b2baab085","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-6f1629643f5f2004 | data/ingredients/mapped/14-B-D-Galactobiose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-6f1629643f5f2004 | data/ingredients/mapped/14-B-D-Galactobiose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[297],"raw_equal":true},"docs_rows":[{"identifier":"cas:2152-98-9","line":299,"mapping_status":"MAPPED","ontology_id":"CHEBI:36226","preferred_term":"1,4-B-D-Galactobiose"}],"identifier":"cas:2152-98-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:36226","ontology_label":"beta-D-galactopyranosyl-(1-&gt;4)-D-galactopyranose","ontology_source":"CHEBI"},"preferred_term":"1,4-B-D-Galactobiose","sssom_rows":[{"data_row":36,"object_id":"CHEBI:36226","object_label":"beta-D-galactopyranosyl-(1-&gt;4)-D-galactopyranose","predicate_id":"skos:exactMatch"},{"data_row":37,"object_id":"cas:2152-98-9","object_label":"1,4-B-D-Galactobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:14-B-D-Galactobiose","synonym_count":0} |
 | ev-2b4e3bd8be444438 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-457506125732ca52] | context_only | Predecessor structured review finding f-457506125732ca52 in 20261011T024630Z-mim-reconcile-all-batch-02 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-12aefde98c5a0225
+  evidence_ids:
+  - ev-3b2b3ec57d72d2ac
+  - ev-20595d12d675952b
+  - ev-80d8cf2c918d8ce9
+  - ev-83da97b32527d91a
+  - ev-6f1629643f5f2004
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-12aefde98c5a0225
+  evidence_ids:
+  - ev-3b2b3ec57d72d2ac
+  - ev-fdd45f84dd549eca
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-12aefde98c5a0225
+  evidence_ids:
+  - ev-08962dbe2f78f3f2
+  - ev-fdd45f84dd549eca
+  - ev-2b4e3bd8be444438
 evidence:
 - evidence_id: ev-3b2b3ec57d72d2ac
   kind: record_content
   reference: data/ingredients/mapped/14-B-D-Galactobiose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[297],"raw_equal":true},"docs_rows":[{"identifier":"cas:2152-98-9","line":299,"mapping_status":"MAPPED","ontology_id":"CHEBI:36226","preferred_term":"1,4-B-D-Galactobiose"}],"identifier":"cas:2152-98-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:36226","ontology_label":"beta-D-galactopyranosyl-(1->4)-D-galactopyranose","ontology_source":"CHEBI"},"preferred_term":"1,4-B-D-Galactobiose","sssom_rows":[{"data_row":36,"object_id":"CHEBI:36226","object_label":"beta-D-galactopyranosyl-(1->4)-D-galactopyranose","predicate_id":"skos:exactMatch"},{"data_row":37,"object_id":"cas:2152-98-9","object_label":"1,4-B-D-Galactobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:14-B-D-Galactobiose","synonym_count":0}'
   snapshot_sha256: 346c00c2a113dc722024aef411d261d3a1a09182303a49695e749f53fb575c22
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [297]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,8 +230,8 @@ evidence:
 - evidence_id: ev-80d8cf2c918d8ce9
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:14-B-D-Galactobiose; data-row positions=[36,37]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:14-B-D-Galactobiose; data-row positions=[36, 37]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":36,"object_id":"CHEBI:36226","object_label":"beta-D-galactopyranosyl-(1->4)-D-galactopyranose","other":"CAS:2152-98-9","predicate_id":"skos:exactMatch","subject_id":"MIM:14-B-D-Galactobiose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":37,"object_id":"cas:2152-98-9","object_label":"1,4-B-D-Galactobiose","other":"CAS:2152-98-9","predicate_id":"skos:exactMatch","subject_id":"MIM:14-B-D-Galactobiose","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[299]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:2152-98-9","line":299,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:36226","preferred_term":"1,4-B-D-Galactobiose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[32,2069]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"346c00c2a113dc722024aef411d261d3a1a09182303a49695e749f53fb575c22","finding_id":"SEM:7fa34fc3278f9ae91d35","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"346c00c2a113dc722024aef411d261d3a1a09182303a49695e749f53fb575c22","finding_id":"SEM:ea76cf5a2e2b2baab085","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/14-B-D-Galactobiose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[297],"raw_equal":true},"docs_rows":[{"identifier":"cas:2152-98-9","line":299,"mapping_status":"MAPPED","ontology_id":"CHEBI:36226","preferred_term":"1,4-B-D-Galactobiose"}],"identifier":"cas:2152-98-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:36226","ontology_label":"beta-D-galactopyranosyl-(1->4)-D-galactopyranose","ontology_source":"CHEBI"},"preferred_term":"1,4-B-D-Galactobiose","sssom_rows":[{"data_row":36,"object_id":"CHEBI:36226","object_label":"beta-D-galactopyranosyl-(1->4)-D-galactopyranose","predicate_id":"skos:exactMatch"},{"data_row":37,"object_id":"cas:2152-98-9","object_label":"1,4-B-D-Galactobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:14-B-D-Galactobiose","synonym_count":0}'
   snapshot_sha256: 346c00c2a113dc722024aef411d261d3a1a09182303a49695e749f53fb575c22
 - evidence_id: ev-2b4e3bd8be444438
   kind: prior_review

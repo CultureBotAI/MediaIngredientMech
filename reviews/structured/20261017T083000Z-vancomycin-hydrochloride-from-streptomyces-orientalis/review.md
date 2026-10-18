@@ -83,13 +83,13 @@ Reassess prediction-only role support: Vancomycin Hydrochloride from Streptomyce
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-ca0df222216ab0ae | data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2034],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9932","line":2036,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin Hydrochloride from Streptomyces orientalis"}],"identifier":"CHEBI:9932","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride from Streptomyces orientalis","sssom_rows":[{"data_row":2885,"object_id":"CHEBI:9932","object_label":"Vancomycin hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis","synonym_count":1} |
-| ev-02d1568d9ca43fed | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2034] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-c7ee1bff9f09963d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis; data-row positions=[2885] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2885,"object_id":"CHEBI:9932","object_label":"Vancomycin hydrochloride","other":"Vancomycin Hydrochloride Hydrate&#124;Vancomycin x HCl&#124;CAS:1404-93-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-c2dc6f580d971db0 | docs/data/mapped_ingredients.csv; CSV lines=[2036] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:9932","line":2036,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin Hydrochloride from Streptomyces orientalis","total_occurrences":"2"}] |
+| ev-ca0df222216ab0ae | data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2033],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9932","line":2035,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin Hydrochloride from Streptomyces orientalis"}],"identifier":"CHEBI:9932","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride from Streptomyces orientalis","sssom_rows":[{"data_row":2887,"object_id":"CHEBI:9932","object_label":"Vancomycin hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis","synonym_count":1} |
+| ev-02d1568d9ca43fed | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2033] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-c7ee1bff9f09963d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis; data-row positions=[2887] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2887,"object_id":"CHEBI:9932","object_label":"Vancomycin hydrochloride","other":"Vancomycin Hydrochloride Hydrate&#124;Vancomycin x HCl&#124;CAS:1404-93-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-c2dc6f580d971db0 | docs/data/mapped_ingredients.csv; CSV lines=[2035] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:9932","line":2035,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin Hydrochloride from Streptomyces orientalis","total_occurrences":"2"}] |
 | ev-bdd490671b736729 | reports/yaml_record_review/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.md; &#96;data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:36; Issues:44; Completeness:54; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-86b080433dfa6410 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1334,1910] | context_only | [{"current_record_sha256":"1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b","finding_id":"SEM:79ea0aa9729765e202bc","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b","finding_id":"SEM:d8b61f52d9d23a689323","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-79aa36e9f3ff6a40 | data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-79aa36e9f3ff6a40 | data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2033],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9932","line":2035,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin Hydrochloride from Streptomyces orientalis"}],"identifier":"CHEBI:9932","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride from Streptomyces orientalis","sssom_rows":[{"data_row":2887,"object_id":"CHEBI:9932","object_label":"Vancomycin hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis","synonym_count":1} |
 | ev-dbca56b9a4097d25 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-967295d06670c876] | context_only | Predecessor structured review finding f-967295d06670c876 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -181,6 +181,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ec3136d3e9fcab8a
+  evidence_ids:
+  - ev-ca0df222216ab0ae
+  - ev-02d1568d9ca43fed
+  - ev-c7ee1bff9f09963d
+  - ev-c2dc6f580d971db0
+  - ev-79aa36e9f3ff6a40
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -189,6 +195,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ec3136d3e9fcab8a
+  evidence_ids:
+  - ev-ca0df222216ab0ae
+  - ev-86b080433dfa6410
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -197,25 +206,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ec3136d3e9fcab8a
+  evidence_ids:
+  - ev-bdd490671b736729
+  - ev-86b080433dfa6410
+  - ev-dbca56b9a4097d25
 evidence:
 - evidence_id: ev-ca0df222216ab0ae
   kind: record_content
   reference: data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2034],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9932","line":2036,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2033],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9932","line":2035,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
     Hydrochloride from Streptomyces orientalis"}],"identifier":"CHEBI:9932","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin
     hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride
-    from Streptomyces orientalis","sssom_rows":[{"data_row":2885,"object_id":"CHEBI:9932","object_label":"Vancomycin
+    from Streptomyces orientalis","sssom_rows":[{"data_row":2887,"object_id":"CHEBI:9932","object_label":"Vancomycin
     hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis","synonym_count":1}'
   snapshot_sha256: 1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b
 - evidence_id: ev-02d1568d9ca43fed
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2034]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2033]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -224,19 +237,19 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis; data-row
-    positions=[2885]
-  accessed_at: '2026-10-11T02:46:28Z'
+    positions=[2887]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2885,"object_id":"CHEBI:9932","object_label":"Vancomycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2887,"object_id":"CHEBI:9932","object_label":"Vancomycin
     hydrochloride","other":"Vancomycin Hydrochloride Hydrate|Vancomycin x HCl|CAS:1404-93-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-c2dc6f580d971db0
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2036]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2035]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:9932","line":2036,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:9932","line":2035,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
     Hydrochloride from Streptomyces orientalis","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-bdd490671b736729
@@ -266,7 +279,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1334,1910]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b","finding_id":"SEM:79ea0aa9729765e202bc","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b","finding_id":"SEM:d8b61f52d9d23a689323","kind":"role_evidence","resolution_reason":"Historical
@@ -276,12 +289,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Vancomycin_Hydrochloride_From_Streptomyces_Orientalis.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2033],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:9932","line":2035,"mapping_status":"MAPPED","ontology_id":"CHEBI:9932","preferred_term":"Vancomycin
+    Hydrochloride from Streptomyces orientalis"}],"identifier":"CHEBI:9932","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:9932","ontology_label":"Vancomycin
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Vancomycin Hydrochloride
+    from Streptomyces orientalis","sssom_rows":[{"data_row":2887,"object_id":"CHEBI:9932","object_label":"Vancomycin
+    hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis","synonym_count":1}'
   snapshot_sha256: 1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b
 - evidence_id: ev-dbca56b9a4097d25
   kind: prior_review

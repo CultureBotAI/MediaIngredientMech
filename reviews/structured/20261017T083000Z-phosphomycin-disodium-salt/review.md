@@ -83,13 +83,13 @@ Reassess prediction-only role support: Phosphomycin disodium salt
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-fc767d5cf5b64c96 | data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1652],"raw_equal":true},"docs_rows":[{"identifier":"cas:26016-99-9","line":1654,"mapping_status":"MAPPED","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin disodium salt"}],"identifier":"cas:26016-99-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:26016-99-9","ontology_label":"Phosphomycin disodium salt","ontology_source":"CAS"},"preferred_term":"Phosphomycin disodium salt","sssom_rows":[{"data_row":2250,"object_id":"cas:26016-99-9","object_label":"Phosphomycin disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphomycin_Disodium_Salt","synonym_count":0} |
-| ev-4025e397ef148fa5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1652] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-090ca11382eae041 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Phosphomycin_Disodium_Salt; data-row positions=[2250] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2250,"object_id":"cas:26016-99-9","object_label":"Phosphomycin disodium salt","other":"CAS:26016-99-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphomycin_Disodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-ad52004722217e47 | docs/data/mapped_ingredients.csv; CSV lines=[1654] | supports | Published identity and count rows inspected: [{"identifier":"cas:26016-99-9","line":1654,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin disodium salt","total_occurrences":"0"}] |
+| ev-fc767d5cf5b64c96 | data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1651],"raw_equal":true},"docs_rows":[{"identifier":"cas:26016-99-9","line":1653,"mapping_status":"MAPPED","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin disodium salt"}],"identifier":"cas:26016-99-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:26016-99-9","ontology_label":"Phosphomycin disodium salt","ontology_source":"CAS"},"preferred_term":"Phosphomycin disodium salt","sssom_rows":[{"data_row":2252,"object_id":"cas:26016-99-9","object_label":"Phosphomycin disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphomycin_Disodium_Salt","synonym_count":0} |
+| ev-4025e397ef148fa5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1651] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-090ca11382eae041 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Phosphomycin_Disodium_Salt; data-row positions=[2252] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2252,"object_id":"cas:26016-99-9","object_label":"Phosphomycin disodium salt","other":"CAS:26016-99-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphomycin_Disodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-ad52004722217e47 | docs/data/mapped_ingredients.csv; CSV lines=[1653] | supports | Published identity and count rows inspected: [{"identifier":"cas:26016-99-9","line":1653,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin disodium salt","total_occurrences":"0"}] |
 | ev-92bed7e5eb367047 | reports/yaml_record_review/Phosphomycin_Disodium_Salt.md; &#96;data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:30; Completeness:42; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1d176e301aaf0442 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1111,1375] | context_only | [{"current_record_sha256":"708c721ef6206ab2e92e3d797a8e632bb593840dc9c915a183fa9a594e37c61c","finding_id":"SEM:6e0d1dd054403bc0322c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"708c721ef6206ab2e92e3d797a8e632bb593840dc9c915a183fa9a594e37c61c","finding_id":"SEM:b96091839c797e72b805","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-b764eb1575bd5f61 | data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-b764eb1575bd5f61 | data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1651],"raw_equal":true},"docs_rows":[{"identifier":"cas:26016-99-9","line":1653,"mapping_status":"MAPPED","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin disodium salt"}],"identifier":"cas:26016-99-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:26016-99-9","ontology_label":"Phosphomycin disodium salt","ontology_source":"CAS"},"preferred_term":"Phosphomycin disodium salt","sssom_rows":[{"data_row":2252,"object_id":"cas:26016-99-9","object_label":"Phosphomycin disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphomycin_Disodium_Salt","synonym_count":0} |
 | ev-7dd1245397d2c66d | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-2b3e6c85c9fd295a] | context_only | Predecessor structured review finding f-2b3e6c85c9fd295a in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9b5c335508dd6a03
+  evidence_ids:
+  - ev-fc767d5cf5b64c96
+  - ev-4025e397ef148fa5
+  - ev-090ca11382eae041
+  - ev-ad52004722217e47
+  - ev-b764eb1575bd5f61
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9b5c335508dd6a03
+  evidence_ids:
+  - ev-fc767d5cf5b64c96
+  - ev-1d176e301aaf0442
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9b5c335508dd6a03
+  evidence_ids:
+  - ev-92bed7e5eb367047
+  - ev-1d176e301aaf0442
+  - ev-7dd1245397d2c66d
 evidence:
 - evidence_id: ev-fc767d5cf5b64c96
   kind: record_content
   reference: data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1652],"raw_equal":true},"docs_rows":[{"identifier":"cas:26016-99-9","line":1654,"mapping_status":"MAPPED","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1651],"raw_equal":true},"docs_rows":[{"identifier":"cas:26016-99-9","line":1653,"mapping_status":"MAPPED","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin
     disodium salt"}],"identifier":"cas:26016-99-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:26016-99-9","ontology_label":"Phosphomycin
     disodium salt","ontology_source":"CAS"},"preferred_term":"Phosphomycin disodium
-    salt","sssom_rows":[{"data_row":2250,"object_id":"cas:26016-99-9","object_label":"Phosphomycin
+    salt","sssom_rows":[{"data_row":2252,"object_id":"cas:26016-99-9","object_label":"Phosphomycin
     disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphomycin_Disodium_Salt","synonym_count":0}'
   snapshot_sha256: 708c721ef6206ab2e92e3d797a8e632bb593840dc9c915a183fa9a594e37c61c
 - evidence_id: ev-4025e397ef148fa5
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1652]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1651]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,19 +234,19 @@ evidence:
 - evidence_id: ev-090ca11382eae041
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Phosphomycin_Disodium_Salt; data-row positions=[2250]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Phosphomycin_Disodium_Salt; data-row positions=[2252]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2250,"object_id":"cas:26016-99-9","object_label":"Phosphomycin
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2252,"object_id":"cas:26016-99-9","object_label":"Phosphomycin
     disodium salt","other":"CAS:26016-99-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Phosphomycin_Disodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-ad52004722217e47
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1654]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1653]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:26016-99-9","line":1654,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:26016-99-9","line":1653,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin
     disodium salt","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-92bed7e5eb367047
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1111,1375]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"708c721ef6206ab2e92e3d797a8e632bb593840dc9c915a183fa9a594e37c61c","finding_id":"SEM:6e0d1dd054403bc0322c","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"708c721ef6206ab2e92e3d797a8e632bb593840dc9c915a183fa9a594e37c61c","finding_id":"SEM:b96091839c797e72b805","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1651],"raw_equal":true},"docs_rows":[{"identifier":"cas:26016-99-9","line":1653,"mapping_status":"MAPPED","ontology_id":"cas:26016-99-9","preferred_term":"Phosphomycin
+    disodium salt"}],"identifier":"cas:26016-99-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:26016-99-9","ontology_label":"Phosphomycin
+    disodium salt","ontology_source":"CAS"},"preferred_term":"Phosphomycin disodium
+    salt","sssom_rows":[{"data_row":2252,"object_id":"cas:26016-99-9","object_label":"Phosphomycin
+    disodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Phosphomycin_Disodium_Salt","synonym_count":0}'
   snapshot_sha256: 708c721ef6206ab2e92e3d797a8e632bb593840dc9c915a183fa9a594e37c61c
 - evidence_id: ev-7dd1245397d2c66d
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-Pyroglutamic acid
 | ev-ec8af1b4c1c8b149 | docs/data/mapped_ingredients.csv; CSV lines=[1233] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:18183","line":1233,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:18183","preferred_term":"L-Pyroglutamic acid","total_occurrences":"0"}] |
 | ev-ad8c90114702249e | reports/yaml_record_review/L-Pyroglutamic_Acid.md; &#96;data/ingredients/mapped/L-Pyroglutamic_Acid.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:32; Completeness:49; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5a38fb6caa0a3638 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[797,1899] | context_only | [{"current_record_sha256":"878b6041b1b5cadc81ba842a47216d6d91cd64e7e7fbf48d5fed02ec4fc4e91c","finding_id":"SEM:73ad19113099419d817a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"878b6041b1b5cadc81ba842a47216d6d91cd64e7e7fbf48d5fed02ec4fc4e91c","finding_id":"SEM:390be6122d9a67784e95","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-0b86c99e377b7281 | data/ingredients/mapped/L-Pyroglutamic_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-0b86c99e377b7281 | data/ingredients/mapped/L-Pyroglutamic_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1231],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18183","line":1233,"mapping_status":"MAPPED","ontology_id":"CHEBI:18183","preferred_term":"L-Pyroglutamic acid"}],"identifier":"CHEBI:18183","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18183","ontology_label":"5-oxo-L-proline","ontology_source":"CHEBI"},"preferred_term":"L-Pyroglutamic acid","sssom_rows":[{"data_row":1586,"object_id":"CHEBI:18183","object_label":"5-oxo-L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Pyroglutamic_Acid","synonym_count":1} |
 | ev-f29a49cce05b10e4 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-adba885a738ecedd] | context_only | Predecessor structured review finding f-adba885a738ecedd in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-5850781e208b38bd
+  evidence_ids:
+  - ev-e9cbbbf32baa3d3f
+  - ev-c02fb7910c95f2e7
+  - ev-116dcd808a3caee5
+  - ev-ec8af1b4c1c8b149
+  - ev-0b86c99e377b7281
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-5850781e208b38bd
+  evidence_ids:
+  - ev-e9cbbbf32baa3d3f
+  - ev-5a38fb6caa0a3638
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-5850781e208b38bd
+  evidence_ids:
+  - ev-ad8c90114702249e
+  - ev-5a38fb6caa0a3638
+  - ev-f29a49cce05b10e4
 evidence:
 - evidence_id: ev-e9cbbbf32baa3d3f
   kind: record_content
   reference: data/ingredients/mapped/L-Pyroglutamic_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1231],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18183","line":1233,"mapping_status":"MAPPED","ontology_id":"CHEBI:18183","preferred_term":"L-Pyroglutamic
     acid"}],"identifier":"CHEBI:18183","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18183","ontology_label":"5-oxo-L-proline","ontology_source":"CHEBI"},"preferred_term":"L-Pyroglutamic
@@ -211,7 +224,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1231]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +233,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-Pyroglutamic_Acid; data-row positions=[1586]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1586,"object_id":"CHEBI:18183","object_label":"5-oxo-L-proline","other":"(2S)-5-oxopyrrolidine-2-carboxylic
     acid|CAS:98-79-3","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Pyroglutamic_Acid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -229,7 +242,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1233]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18183","line":1233,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:18183","preferred_term":"L-Pyroglutamic
     acid","total_occurrences":"0"}]'
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[797,1899]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"878b6041b1b5cadc81ba842a47216d6d91cd64e7e7fbf48d5fed02ec4fc4e91c","finding_id":"SEM:73ad19113099419d817a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"878b6041b1b5cadc81ba842a47216d6d91cd64e7e7fbf48d5fed02ec4fc4e91c","finding_id":"SEM:390be6122d9a67784e95","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Pyroglutamic_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1231],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:18183","line":1233,"mapping_status":"MAPPED","ontology_id":"CHEBI:18183","preferred_term":"L-Pyroglutamic
+    acid"}],"identifier":"CHEBI:18183","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18183","ontology_label":"5-oxo-L-proline","ontology_source":"CHEBI"},"preferred_term":"L-Pyroglutamic
+    acid","sssom_rows":[{"data_row":1586,"object_id":"CHEBI:18183","object_label":"5-oxo-L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Pyroglutamic_Acid","synonym_count":1}'
   snapshot_sha256: 878b6041b1b5cadc81ba842a47216d6d91cd64e7e7fbf48d5fed02ec4fc4e91c
 - evidence_id: ev-f29a49cce05b10e4
   kind: prior_review

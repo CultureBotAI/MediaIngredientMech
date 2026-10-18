@@ -83,13 +83,13 @@ Reassess prediction-only role support: NiCl2 x 5 H2O
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-68d7b906045a6ca8 | data/ingredients/mapped/Nicl2_X_5_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1558],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1560,"mapping_status":"MAPPED","ontology_id":"CHEBI:34887","preferred_term":"NiCl2 x 5 H2O"}],"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34887","ontology_label":"nickel dichloride","ontology_source":"CHEBI"},"preferred_term":"NiCl2 x 5 H2O","sssom_rows":[{"data_row":2083,"object_id":"CHEBI:34887","object_label":"nickel dichloride","predicate_id":"skos:closeMatch"},{"data_row":2084,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2 x 5 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicl2_X_5_H2o","synonym_count":18} |
-| ev-be7b8c38526969a1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1558] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-aed5e7edb198ce74 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nicl2_X_5_H2o; data-row positions=[2083,2084] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2083,"object_id":"CHEBI:34887","object_label":"nickel dichloride","other":"NiCl2\u30fb5H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Nicl2_X_5_H2o","validation_method":""},{"data_row":2084,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2 x 5 H2O","other":"NiCl2\u30fb5H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Nicl2_X_5_H2o","validation_method":""}] |
-| ev-8e54cc3fef9a93b8 | docs/data/mapped_ingredients.csv; CSV lines=[1560] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1560,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:34887","preferred_term":"NiCl2 x 5 H2O","total_occurrences":"2"}] |
+| ev-68d7b906045a6ca8 | data/ingredients/mapped/Nicl2_X_5_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1557],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1559,"mapping_status":"MAPPED","ontology_id":"CHEBI:34887","preferred_term":"NiCl2 x 5 H2O"}],"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34887","ontology_label":"nickel dichloride","ontology_source":"CHEBI"},"preferred_term":"NiCl2 x 5 H2O","sssom_rows":[{"data_row":2085,"object_id":"CHEBI:34887","object_label":"nickel dichloride","predicate_id":"skos:closeMatch"},{"data_row":2086,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2 x 5 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicl2_X_5_H2o","synonym_count":18} |
+| ev-be7b8c38526969a1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1557] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-aed5e7edb198ce74 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nicl2_X_5_H2o; data-row positions=[2085, 2086] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2085,"object_id":"CHEBI:34887","object_label":"nickel dichloride","other":"NiCl2\u30fb5H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Nicl2_X_5_H2o","validation_method":""},{"data_row":2086,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2 x 5 H2O","other":"NiCl2\u30fb5H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Nicl2_X_5_H2o","validation_method":""}] |
+| ev-8e54cc3fef9a93b8 | docs/data/mapped_ingredients.csv; CSV lines=[1559] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1559,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:34887","preferred_term":"NiCl2 x 5 H2O","total_occurrences":"2"}] |
 | ev-aa43c26d6c52fab5 | reports/yaml_record_review/Nicl2_X_5_H2o.md; &#96;data/ingredients/mapped/Nicl2_X_5_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:29; Completeness:43; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c69d5593b81858c0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1055,1628] | context_only | [{"current_record_sha256":"278355fc84d3a50ebf93e4e8409b6bb468551626157ca6806faf5cbef46f1b9c","finding_id":"SEM:a375f4dc71fe83d37eb7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"278355fc84d3a50ebf93e4e8409b6bb468551626157ca6806faf5cbef46f1b9c","finding_id":"SEM:b5bc7be234b3e744c51a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ce8b826f6b2bdf94 | data/ingredients/mapped/Nicl2_X_5_H2o.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-ce8b826f6b2bdf94 | data/ingredients/mapped/Nicl2_X_5_H2o.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1557],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1559,"mapping_status":"MAPPED","ontology_id":"CHEBI:34887","preferred_term":"NiCl2 x 5 H2O"}],"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34887","ontology_label":"nickel dichloride","ontology_source":"CHEBI"},"preferred_term":"NiCl2 x 5 H2O","sssom_rows":[{"data_row":2085,"object_id":"CHEBI:34887","object_label":"nickel dichloride","predicate_id":"skos:closeMatch"},{"data_row":2086,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2 x 5 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicl2_X_5_H2o","synonym_count":18} |
 | ev-93adba54a6dcab83 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-c13604c1316fb9fd] | context_only | Predecessor structured review finding f-c13604c1316fb9fd in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-9cfedbb214901aee
+  evidence_ids:
+  - ev-68d7b906045a6ca8
+  - ev-be7b8c38526969a1
+  - ev-aed5e7edb198ce74
+  - ev-8e54cc3fef9a93b8
+  - ev-ce8b826f6b2bdf94
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-9cfedbb214901aee
+  evidence_ids:
+  - ev-68d7b906045a6ca8
+  - ev-c69d5593b81858c0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,25 +204,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-9cfedbb214901aee
+  evidence_ids:
+  - ev-aa43c26d6c52fab5
+  - ev-c69d5593b81858c0
+  - ev-93adba54a6dcab83
 evidence:
 - evidence_id: ev-68d7b906045a6ca8
   kind: record_content
   reference: data/ingredients/mapped/Nicl2_X_5_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1558],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1560,"mapping_status":"MAPPED","ontology_id":"CHEBI:34887","preferred_term":"NiCl2
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1557],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1559,"mapping_status":"MAPPED","ontology_id":"CHEBI:34887","preferred_term":"NiCl2
     x 5 H2O"}],"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34887","ontology_label":"nickel
-    dichloride","ontology_source":"CHEBI"},"preferred_term":"NiCl2 x 5 H2O","sssom_rows":[{"data_row":2083,"object_id":"CHEBI:34887","object_label":"nickel
-    dichloride","predicate_id":"skos:closeMatch"},{"data_row":2084,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2
+    dichloride","ontology_source":"CHEBI"},"preferred_term":"NiCl2 x 5 H2O","sssom_rows":[{"data_row":2085,"object_id":"CHEBI:34887","object_label":"nickel
+    dichloride","predicate_id":"skos:closeMatch"},{"data_row":2086,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2
     x 5 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicl2_X_5_H2o","synonym_count":18}'
   snapshot_sha256: 278355fc84d3a50ebf93e4e8409b6bb468551626157ca6806faf5cbef46f1b9c
 - evidence_id: ev-be7b8c38526969a1
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1558]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1557]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,20 +234,20 @@ evidence:
 - evidence_id: ev-aed5e7edb198ce74
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Nicl2_X_5_H2o; data-row positions=[2083,2084]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Nicl2_X_5_H2o; data-row positions=[2085, 2086]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2083,"object_id":"CHEBI:34887","object_label":"nickel
-    dichloride","other":"NiCl2\u30fb5H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Nicl2_X_5_H2o","validation_method":""},{"data_row":2084,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2085,"object_id":"CHEBI:34887","object_label":"nickel
+    dichloride","other":"NiCl2\u30fb5H2O","predicate_id":"skos:closeMatch","subject_id":"MIM:Nicl2_X_5_H2o","validation_method":""},{"data_row":2086,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2
     x 5 H2O","other":"NiCl2\u30fb5H2O","predicate_id":"skos:exactMatch","subject_id":"MIM:Nicl2_X_5_H2o","validation_method":""}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-8e54cc3fef9a93b8
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1560]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1559]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1560,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:34887","preferred_term":"NiCl2
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1559,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"CHEBI:34887","preferred_term":"NiCl2
     x 5 H2O","total_occurrences":"2"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-aa43c26d6c52fab5
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1055,1628]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"278355fc84d3a50ebf93e4e8409b6bb468551626157ca6806faf5cbef46f1b9c","finding_id":"SEM:a375f4dc71fe83d37eb7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"278355fc84d3a50ebf93e4e8409b6bb468551626157ca6806faf5cbef46f1b9c","finding_id":"SEM:b5bc7be234b3e744c51a","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Nicl2_X_5_H2o.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1557],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","line":1559,"mapping_status":"MAPPED","ontology_id":"CHEBI:34887","preferred_term":"NiCl2
+    x 5 H2O"}],"identifier":"kgmicrobe.compound:nicl2_x_5_h2o","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:34887","ontology_label":"nickel
+    dichloride","ontology_source":"CHEBI"},"preferred_term":"NiCl2 x 5 H2O","sssom_rows":[{"data_row":2085,"object_id":"CHEBI:34887","object_label":"nickel
+    dichloride","predicate_id":"skos:closeMatch"},{"data_row":2086,"object_id":"kgmicrobe.compound:nicl2_x_5_h2o","object_label":"NiCl2
+    x 5 H2O","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nicl2_X_5_H2o","synonym_count":18}'
   snapshot_sha256: 278355fc84d3a50ebf93e4e8409b6bb468551626157ca6806faf5cbef46f1b9c
 - evidence_id: ev-93adba54a6dcab83
   kind: prior_review

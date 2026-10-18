@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: Beef_Extract
 | ev-66bf92785a5d0b18 | docs/data/mapped_ingredients.csv; CSV lines=[565] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:03302088","line":565,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"330","ontology_id":"FOODON:03302088","preferred_term":"Beef extract","total_occurrences":"331"}] |
 | ev-4117ca46b61d3e26 | reports/yaml_record_review/Beef_Extract.md; &#96;data/ingredients/mapped/Beef_Extract.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:31; Completeness:48; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e44635a252f6a387 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1815] | context_only | [{"current_record_sha256":"f5d1b31763be5ddf9da97c3bd18075298fee7c2f6dfda2c9ce9b93f128f89d23","finding_id":"SEM:c742dc0d0b18b46f9081","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-7f7c2dcd7228a939 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Beef_Extract.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-da942f09736a0b84
+  evidence_ids:
+  - ev-057caea81b39fac7
+  - ev-ae8e849caa968cca
+  - ev-cbee03f0fc41a972
+  - ev-66bf92785a5d0b18
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-da942f09736a0b84
+  evidence_ids:
+  - ev-057caea81b39fac7
+  - ev-e44635a252f6a387
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-da942f09736a0b84
+  evidence_ids:
+  - ev-4117ca46b61d3e26
+  - ev-e44635a252f6a387
 evidence:
 - evidence_id: ev-057caea81b39fac7
   kind: record_content
   reference: data/ingredients/mapped/Beef_Extract.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[563],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03302088","line":565,"mapping_status":"MAPPED","ontology_id":"FOODON:03302088","preferred_term":"Beef
     extract"}],"identifier":"FOODON:03302088","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":330,"edge_count":330,"occurrences":331},"occurrence_statistics":{"media_count":330,"total_occurrences":331},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"FOODON:03302088","ontology_label":"beef
@@ -211,7 +221,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [563]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +230,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Beef_Extract; data-row positions=[498]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":498,"object_id":"FOODON:03302088","object_label":"beef
     extract","other":"Beef extract(Sigma B-4888)|Beef extract (BD-Difco)|Lab-Lemco
@@ -230,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[565]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03302088","line":565,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"330","ontology_id":"FOODON:03302088","preferred_term":"Beef
     extract","total_occurrences":"331"}]'
@@ -253,18 +263,10 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1815]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f5d1b31763be5ddf9da97c3bd18075298fee7c2f6dfda2c9ce9b93f128f89d23","finding_id":"SEM:c742dc0d0b18b46f9081","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-7f7c2dcd7228a939
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Beef_Extract.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-19916ec393b132f7
@@ -324,7 +326,7 @@ assessments:
   - record-da942f09736a0b84
   evidence_ids:
   - ev-057caea81b39fac7
-  - ev-7f7c2dcd7228a939
+  - ev-e44635a252f6a387
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -332,7 +334,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-057caea81b39fac7
-    - ev-7f7c2dcd7228a939
+    - ev-e44635a252f6a387
 findings:
 - finding_id: rec-f-role-da942f09736a0b84
   issue_key: mim-reconciliation-role-support-da942f09736a0b84
@@ -348,7 +350,7 @@ findings:
   - record-da942f09736a0b84
   evidence_ids:
   - ev-057caea81b39fac7
-  - ev-7f7c2dcd7228a939
+  - ev-e44635a252f6a387
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Beef_Extract.yaml

@@ -83,7 +83,7 @@ Disposition: The current local observation is recorded, but the named source/con
 | ev-53cb569d289479c4 | docs/data/mapped_ingredients.csv; CSV lines=[830] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17992","line":830,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:17992","preferred_term":"D-Sucrose","total_occurrences":"0"}] |
 | ev-2c8603d0600fdd50 | reports/yaml_record_review/D-Sucrose.md; &#96;data/ingredients/mapped/D-Sucrose.yaml&#96;:2; Verdict:4; Identity:12; Validation:27; Evidence:46; Completeness:62; Recommended Edits:73 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6cc63072be2da3df | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[479] | context_only | [{"current_record_sha256":"7351265da7f87e1083a6be3d184c77f3930cafebb60a2cccb415e42655cfbd85","finding_id":"SEM:234d4752a83044eeedbc","kind":"existing_record_review","resolution_reason":"Source record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}] |
-| ev-6c1708b0df39dcf8 | data/ingredients/mapped/D-Sucrose.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-6c1708b0df39dcf8 | data/ingredients/mapped/D-Sucrose.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[828],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17992","line":830,"mapping_status":"REJECTED","ontology_id":"CHEBI:17992","preferred_term":"D-Sucrose"}],"identifier":"CHEBI:17992","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":233,"edge_count":233,"occurrences":233},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17992","ontology_label":"sucrose","ontology_source":"CHEBI"},"preferred_term":"D-Sucrose","sssom_rows":[],"sssom_subject":"MIM:D-Sucrose","synonym_count":2} |
 | ev-f2714c3ad7ca58b2 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-1dc2459c0610c9e0] | context_only | Predecessor structured review finding f-1dc2459c0610c9e0 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -173,6 +173,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-84b3baded6ff4b18
+  evidence_ids:
+  - ev-4ca490c8b382f23a
+  - ev-fa534db33dfd2912
+  - ev-829623caa4fb509a
+  - ev-53cb569d289479c4
+  - ev-6c1708b0df39dcf8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -181,6 +187,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-84b3baded6ff4b18
+  evidence_ids:
+  - ev-4ca490c8b382f23a
+  - ev-6cc63072be2da3df
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -189,13 +198,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-84b3baded6ff4b18
+  evidence_ids:
+  - ev-2c8603d0600fdd50
+  - ev-6cc63072be2da3df
+  - ev-f2714c3ad7ca58b2
 evidence:
 - evidence_id: ev-4ca490c8b382f23a
   kind: record_content
   reference: data/ingredients/mapped/D-Sucrose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[828],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17992","line":830,"mapping_status":"REJECTED","ontology_id":"CHEBI:17992","preferred_term":"D-Sucrose"}],"identifier":"CHEBI:17992","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":233,"edge_count":233,"occurrences":233},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17992","ontology_label":"sucrose","ontology_source":"CHEBI"},"preferred_term":"D-Sucrose","sssom_rows":[],"sssom_subject":"MIM:D-Sucrose","synonym_count":2}'
   snapshot_sha256: 7351265da7f87e1083a6be3d184c77f3930cafebb60a2cccb415e42655cfbd85
@@ -203,7 +216,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [828]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -212,7 +225,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:D-Sucrose; data-row positions=[]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -220,7 +233,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[830]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17992","line":830,"mapping_quality":"EXACT_MATCH","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:17992","preferred_term":"D-Sucrose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -244,7 +257,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[479]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7351265da7f87e1083a6be3d184c77f3930cafebb60a2cccb415e42655cfbd85","finding_id":"SEM:234d4752a83044eeedbc","kind":"existing_record_review","resolution_reason":"Source
     record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
@@ -253,14 +266,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Sucrose.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[828],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17992","line":830,"mapping_status":"REJECTED","ontology_id":"CHEBI:17992","preferred_term":"D-Sucrose"}],"identifier":"CHEBI:17992","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":233,"edge_count":233,"occurrences":233},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17992","ontology_label":"sucrose","ontology_source":"CHEBI"},"preferred_term":"D-Sucrose","sssom_rows":[],"sssom_subject":"MIM:D-Sucrose","synonym_count":2}'
   snapshot_sha256: 7351265da7f87e1083a6be3d184c77f3930cafebb60a2cccb415e42655cfbd85
 - evidence_id: ev-f2714c3ad7ca58b2
   kind: prior_review

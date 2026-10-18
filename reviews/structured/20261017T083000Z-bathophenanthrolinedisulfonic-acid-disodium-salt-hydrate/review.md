@@ -85,11 +85,10 @@ Reassess prediction-only or empty role support: Bathophenanthrolinedisulfonic_Ac
 | --- | --- | --- | --- |
 | ev-5e1695811399c0ee | data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[559],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","line":561,"mapping_status":"MAPPED","ontology_id":"CHEBI:78157","preferred_term":"Bathophenanthrolinedisulfonic acid disodium salt hydrate"}],"identifier":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:78157","ontology_label":"disodium 4,7-diphenyl-1,10-phenanthroline 4',4''-disulfonate","ontology_source":"CHEBI"},"preferred_term":"Bathophenanthrolinedisulfonic acid disodium salt hydrate","sssom_rows":[{"data_row":492,"object_id":"CHEBI:78157","object_label":"disodium 4,7-diphenyl-1,10-phenanthroline 4',4''-disulfonate","predicate_id":"skos:closeMatch"},{"data_row":493,"object_id":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","object_label":"Bathophenanthrolinedisulfonic acid disodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate","synonym_count":1} |
 | ev-815a2afd561e8a23 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [559] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-d3d84b061e4381c3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate; data-row positions=[492,493] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":492,"object_id":"CHEBI:78157","object_label":"disodium 4,7-diphenyl-1,10-phenanthroline 4',4''-disulfonate","other":"disodium 4,4'-(1,10-phenanthroline-4,7-diyl)dibenzenesulfonate&#124;CAS:52746-49-3","predicate_id":"skos:closeMatch","subject_id":"MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":493,"object_id":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","object_label":"Bathophenanthrolinedisulfonic acid disodium salt hydrate","other":"CAS:52746-49-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-d3d84b061e4381c3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate; data-row positions=[492, 493] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":492,"object_id":"CHEBI:78157","object_label":"disodium 4,7-diphenyl-1,10-phenanthroline 4',4''-disulfonate","other":"disodium 4,4'-(1,10-phenanthroline-4,7-diyl)dibenzenesulfonate&#124;CAS:52746-49-3","predicate_id":"skos:closeMatch","subject_id":"MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":493,"object_id":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","object_label":"Bathophenanthrolinedisulfonic acid disodium salt hydrate","other":"CAS:52746-49-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
 | ev-db40c4a48946f92b | docs/data/mapped_ingredients.csv; CSV lines=[561] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","line":561,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:78157","preferred_term":"Bathophenanthrolinedisulfonic acid disodium salt hydrate","total_occurrences":"0"}] |
 | ev-c2e1e8dd23c93c08 | reports/yaml_record_review/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.md; &#96;data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:34; Evidence:44; Completeness:65; Recommended Edits:73 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ef493fe9d1243eca | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[297,1831] | context_only | [{"current_record_sha256":"57db0603b08831afc41783ad23a4ed10773be4e25cd895f84d4e8f96219d8110","finding_id":"SEM:43ad54e64cda97291b28","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"57db0603b08831afc41783ad23a4ed10773be4e25cd895f84d4e8f96219d8110","finding_id":"SEM:ac7b8f422d7ed45f3dc6","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-503596ed1b7b5cc4 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -180,6 +179,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-fda26860bd101d73
+  evidence_ids:
+  - ev-5e1695811399c0ee
+  - ev-815a2afd561e8a23
+  - ev-d3d84b061e4381c3
+  - ev-db40c4a48946f92b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -188,6 +192,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-fda26860bd101d73
+  evidence_ids:
+  - ev-5e1695811399c0ee
+  - ev-ef493fe9d1243eca
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,13 +203,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-fda26860bd101d73
+  evidence_ids:
+  - ev-c2e1e8dd23c93c08
+  - ev-ef493fe9d1243eca
 evidence:
 - evidence_id: ev-5e1695811399c0ee
   kind: record_content
   reference: data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[559],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","line":561,"mapping_status":"MAPPED","ontology_id":"CHEBI:78157","preferred_term":"Bathophenanthrolinedisulfonic
     acid disodium salt hydrate"}],"identifier":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:78157","ontology_label":"disodium
@@ -215,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [559]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -224,8 +234,8 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate;
-    data-row positions=[492,493]
-  accessed_at: '2026-10-11T02:46:28Z'
+    data-row positions=[492, 493]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":492,"object_id":"CHEBI:78157","object_label":"disodium
     4,7-diphenyl-1,10-phenanthroline 4'',4''''-disulfonate","other":"disodium 4,4''-(1,10-phenanthroline-4,7-diyl)dibenzenesulfonate|CAS:52746-49-3","predicate_id":"skos:closeMatch","subject_id":"MIM:Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":493,"object_id":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","object_label":"Bathophenanthrolinedisulfonic
@@ -235,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[561]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate","line":561,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:78157","preferred_term":"Bathophenanthrolinedisulfonic
     acid disodium salt hydrate","total_occurrences":"0"}]'
@@ -263,19 +273,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[297,1831]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"57db0603b08831afc41783ad23a4ed10773be4e25cd895f84d4e8f96219d8110","finding_id":"SEM:43ad54e64cda97291b28","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"57db0603b08831afc41783ad23a4ed10773be4e25cd895f84d4e8f96219d8110","finding_id":"SEM:ac7b8f422d7ed45f3dc6","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-503596ed1b7b5cc4
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-c079bbb0adb0aabb
@@ -343,7 +345,7 @@ assessments:
   - record-fda26860bd101d73
   evidence_ids:
   - ev-5e1695811399c0ee
-  - ev-503596ed1b7b5cc4
+  - ev-ef493fe9d1243eca
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -351,7 +353,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-5e1695811399c0ee
-    - ev-503596ed1b7b5cc4
+    - ev-ef493fe9d1243eca
 findings:
 - finding_id: rec-f-role-fda26860bd101d73
   issue_key: mim-reconciliation-role-support-fda26860bd101d73
@@ -367,7 +369,7 @@ findings:
   - record-fda26860bd101d73
   evidence_ids:
   - ev-5e1695811399c0ee
-  - ev-503596ed1b7b5cc4
+  - ev-ef493fe9d1243eca
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml

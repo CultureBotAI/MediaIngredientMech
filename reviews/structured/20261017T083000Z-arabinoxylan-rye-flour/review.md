@@ -83,14 +83,14 @@ Reassess prediction-only role support: Arabinoxylan (Rye Flour)
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-bba4a171b8417627 | data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2633],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2635,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan (Rye Flour)"}],"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ontology_label":"Arabinoxylan (Rye Flour)","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Arabinoxylan (Rye Flour)","sssom_rows":[{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan (Rye Flour)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinoxylan_Rye_Flour","synonym_count":0} |
-| ev-b5e76ede4ab3bfdb | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2633] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-bba4a171b8417627 | data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2632],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2634,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan (Rye Flour)"}],"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ontology_label":"Arabinoxylan (Rye Flour)","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Arabinoxylan (Rye Flour)","sssom_rows":[{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan (Rye Flour)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinoxylan_Rye_Flour","synonym_count":0} |
+| ev-b5e76ede4ab3bfdb | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2632] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-90e4be4226cf21b4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Arabinoxylan_Rye_Flour; data-row positions=[418] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan (Rye Flour)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinoxylan_Rye_Flour","validation_method":"manual:semantic_identity_review&#124;IDENTITY_REVIEWED&#124;2026-09-21"}] |
-| ev-9e3443bdec402629 | docs/data/mapped_ingredients.csv; CSV lines=[2635] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2635,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan (Rye Flour)","total_occurrences":"0"}] |
+| ev-9e3443bdec402629 | docs/data/mapped_ingredients.csv; CSV lines=[2634] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2634,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan (Rye Flour)","total_occurrences":"0"}] |
 | ev-9a6abf8f4782c94f | reports/yaml_record_review/20261001T050126Z-Arabinoxylan_Rye_Flour.md; YAML Record Review: Arabinoxylan (Rye Flour):2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a07906a0cd0fb75f | reports/yaml_record_review/Arabinoxylan_Rye_Flour.md; &#96;data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml&#96;:2; Verdict:4; Identity:11; Validation:23; Evidence:37; Completeness:56; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-be40e627b1744f83 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[274,1420] | context_only | [{"current_record_sha256":"eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf","finding_id":"SEM:5efa69d40115ca620297","kind":"existing_record_review","resolution_reason":"The named rye-derived arabinoxylan material is not rye flour FOODON:03302492. A manufacturer uses exactly this name for an arabinoxylan preparation with residual protein/ash. Retain a local material identity, without asserting procurement from that supplier, exact purity, or whole-mixture equivalence to pure polymer.","resolution_status":"RESOLVED"},{"current_record_sha256":"eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf","finding_id":"SEM:125edfd9fc6563189bb1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-fc08bf645c7b3073 | data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-fc08bf645c7b3073 | data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2632],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2634,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan (Rye Flour)"}],"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ontology_label":"Arabinoxylan (Rye Flour)","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Arabinoxylan (Rye Flour)","sssom_rows":[{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan (Rye Flour)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinoxylan_Rye_Flour","synonym_count":0} |
 | ev-318d237af64078db | reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml; findings[finding_id=f-257349c4e9e602b1] | context_only | Predecessor structured review finding f-257349c4e9e602b1 in 20261011T024629Z-mim-reconcile-all-batch-01 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-bad75fc5238b3ba8
+  evidence_ids:
+  - ev-bba4a171b8417627
+  - ev-b5e76ede4ab3bfdb
+  - ev-90e4be4226cf21b4
+  - ev-9e3443bdec402629
+  - ev-fc08bf645c7b3073
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-bad75fc5238b3ba8
+  evidence_ids:
+  - ev-bba4a171b8417627
+  - ev-be40e627b1744f83
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,15 +208,20 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-bad75fc5238b3ba8
+  evidence_ids:
+  - ev-9a6abf8f4782c94f
+  - ev-a07906a0cd0fb75f
+  - ev-be40e627b1744f83
+  - ev-318d237af64078db
 evidence:
 - evidence_id: ev-bba4a171b8417627
   kind: record_content
   reference: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2633],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2635,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2632],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2634,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan
     (Rye Flour)"}],"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ontology_label":"Arabinoxylan
     (Rye Flour)","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Arabinoxylan
     (Rye Flour)","sssom_rows":[{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan
@@ -216,8 +230,8 @@ evidence:
 - evidence_id: ev-b5e76ede4ab3bfdb
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2633]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2632]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -226,7 +240,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Arabinoxylan_Rye_Flour; data-row positions=[418]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan
     (Rye Flour)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Arabinoxylan_Rye_Flour","validation_method":"manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"}]'
@@ -234,10 +248,10 @@ evidence:
 - evidence_id: ev-9e3443bdec402629
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2635]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2634]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2635,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2634,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan
     (Rye Flour)","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-9a6abf8f4782c94f
@@ -294,7 +308,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[274,1420]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf","finding_id":"SEM:5efa69d40115ca620297","kind":"existing_record_review","resolution_reason":"The
     named rye-derived arabinoxylan material is not rye flour FOODON:03302492. A manufacturer
@@ -307,12 +321,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2632],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","line":2634,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","preferred_term":"Arabinoxylan
+    (Rye Flour)"}],"identifier":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","ontology_label":"Arabinoxylan
+    (Rye Flour)","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Arabinoxylan
+    (Rye Flour)","sssom_rows":[{"data_row":418,"object_id":"kgmicrobe.ingredient:arabinoxylan_rye_flour","object_label":"Arabinoxylan
+    (Rye Flour)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Arabinoxylan_Rye_Flour","synonym_count":0}'
   snapshot_sha256: eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf
 - evidence_id: ev-318d237af64078db
   kind: prior_review

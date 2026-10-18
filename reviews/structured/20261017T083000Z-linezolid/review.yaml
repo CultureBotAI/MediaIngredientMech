@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-ec2129db9f13687f
+  evidence_ids:
+  - ev-7d7ac844a05bf9c2
+  - ev-5f8efa5a9665cfaf
+  - ev-8c7f3715fafb7985
+  - ev-e1eb30c8e395be39
+  - ev-70236f786edfd67b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-ec2129db9f13687f
+  evidence_ids:
+  - ev-7d7ac844a05bf9c2
+  - ev-c3ceec767daa60bf
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-ec2129db9f13687f
+  evidence_ids:
+  - ev-6d14d83759ee24d5
+  - ev-c3ceec767daa60bf
+  - ev-cc0aef96eed04d5d
 evidence:
 - evidence_id: ev-7d7ac844a05bf9c2
   kind: record_content
   reference: data/ingredients/mapped/Linezolid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1307],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63607","line":1309,"mapping_status":"MAPPED","ontology_id":"CHEBI:63607","preferred_term":"Linezolid"}],"identifier":"CHEBI:63607","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63607","ontology_label":"linezolid","ontology_source":"CHEBI"},"preferred_term":"Linezolid","sssom_rows":[{"data_row":1700,"object_id":"CHEBI:63607","object_label":"linezolid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Linezolid","synonym_count":1}'
   snapshot_sha256: 0990f379168e3a24d50a3e950038c2a676874be9486cc43942586598e44d428a
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1307]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Linezolid; data-row positions=[1700]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1700,"object_id":"CHEBI:63607","object_label":"linezolid","other":"N-({(5S)-3-[3-fluoro-4-(morpholin-4-yl)phenyl]-2-oxo-1,3-oxazolidin-5-yl}methyl)acetamide|CAS:165800-03-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Linezolid","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1309]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:63607","line":1309,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:63607","preferred_term":"Linezolid","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -145,7 +158,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[865,1581]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0990f379168e3a24d50a3e950038c2a676874be9486cc43942586598e44d428a","finding_id":"SEM:95430a1b7e70d4a9066b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0990f379168e3a24d50a3e950038c2a676874be9486cc43942586598e44d428a","finding_id":"SEM:1697f30b43364fe69e60","kind":"role_evidence","resolution_reason":"Historical
@@ -155,12 +168,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Linezolid.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1307],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63607","line":1309,"mapping_status":"MAPPED","ontology_id":"CHEBI:63607","preferred_term":"Linezolid"}],"identifier":"CHEBI:63607","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:63607","ontology_label":"linezolid","ontology_source":"CHEBI"},"preferred_term":"Linezolid","sssom_rows":[{"data_row":1700,"object_id":"CHEBI:63607","object_label":"linezolid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Linezolid","synonym_count":1}'
   snapshot_sha256: 0990f379168e3a24d50a3e950038c2a676874be9486cc43942586598e44d428a
 - evidence_id: ev-cc0aef96eed04d5d
   kind: prior_review

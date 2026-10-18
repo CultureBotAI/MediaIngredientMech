@@ -89,7 +89,7 @@ Reassess prediction-only role support: Meat peptone
 | ev-a90558f76dbf627e | docs/data/mapped_ingredients.csv; CSV lines=[1357] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000176","line":1357,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"90","ontology_id":"MICRO:0000176","preferred_term":"Meat peptone","total_occurrences":"90"}] |
 | ev-3176f758b4adf686 | reports/yaml_record_review/Meat_peptone.md; &#96;data/ingredients/mapped/Meat_peptone.yaml&#96;:2; Verdict:4; Identity:12; Validation:21; Evidence:30; Completeness:43; Recommended Edits:49 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-237340aca3817e13 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[910,1927] | context_only | [{"current_record_sha256":"7156098dfa9cfb64185d3d9d27d8e3e150ba1440fee24438ac6192726438c966","finding_id":"SEM:a43b639c8fb26ffc87b5","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7156098dfa9cfb64185d3d9d27d8e3e150ba1440fee24438ac6192726438c966","finding_id":"SEM:aa8782a0aed38794bfc5","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-bd5b407a2afba9b9 | data/ingredients/mapped/Meat_peptone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-bd5b407a2afba9b9 | data/ingredients/mapped/Meat_peptone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1355],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000176","line":1357,"mapping_status":"MAPPED","ontology_id":"MICRO:0000176","preferred_term":"Meat peptone"}],"identifier":"MICRO:0000176","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":90,"edge_count":90,"occurrences":90},"occurrence_statistics":{"media_count":90,"total_occurrences":90},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000176","ontology_label":"meat peptone","ontology_source":"MICRO"},"preferred_term":"Meat peptone","sssom_rows":[{"data_row":1797,"object_id":"MICRO:0000176","object_label":"meat peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Meat_peptone","synonym_count":0} |
 | ev-8cfd8b47f5a6ca80 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-d47f2839a0f11da6] | context_only | Predecessor structured review finding f-d47f2839a0f11da6 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c9cba2600c4669f4
+  evidence_ids:
+  - ev-f30a7cc99efff0d2
+  - ev-74db41d6f0033aea
+  - ev-22ec83aa9c2f1c08
+  - ev-a90558f76dbf627e
+  - ev-bd5b407a2afba9b9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-c9cba2600c4669f4
+  evidence_ids:
+  - ev-f30a7cc99efff0d2
+  - ev-237340aca3817e13
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c9cba2600c4669f4
+  evidence_ids:
+  - ev-3176f758b4adf686
+  - ev-237340aca3817e13
+  - ev-8cfd8b47f5a6ca80
 evidence:
 - evidence_id: ev-f30a7cc99efff0d2
   kind: record_content
   reference: data/ingredients/mapped/Meat_peptone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1355],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000176","line":1357,"mapping_status":"MAPPED","ontology_id":"MICRO:0000176","preferred_term":"Meat
     peptone"}],"identifier":"MICRO:0000176","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":90,"edge_count":90,"occurrences":90},"occurrence_statistics":{"media_count":90,"total_occurrences":90},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000176","ontology_label":"meat
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1355]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Meat_peptone; data-row positions=[1797]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1797,"object_id":"MICRO:0000176","object_label":"meat
     peptone","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Meat_peptone","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1357]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000176","line":1357,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"90","ontology_id":"MICRO:0000176","preferred_term":"Meat
     peptone","total_occurrences":"90"}]'
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[910,1927]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"7156098dfa9cfb64185d3d9d27d8e3e150ba1440fee24438ac6192726438c966","finding_id":"SEM:a43b639c8fb26ffc87b5","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"7156098dfa9cfb64185d3d9d27d8e3e150ba1440fee24438ac6192726438c966","finding_id":"SEM:aa8782a0aed38794bfc5","kind":"role_evidence","resolution_reason":"Historical
@@ -262,12 +275,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Meat_peptone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1355],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000176","line":1357,"mapping_status":"MAPPED","ontology_id":"MICRO:0000176","preferred_term":"Meat
+    peptone"}],"identifier":"MICRO:0000176","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":90,"edge_count":90,"occurrences":90},"occurrence_statistics":{"media_count":90,"total_occurrences":90},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000176","ontology_label":"meat
+    peptone","ontology_source":"MICRO"},"preferred_term":"Meat peptone","sssom_rows":[{"data_row":1797,"object_id":"MICRO:0000176","object_label":"meat
+    peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Meat_peptone","synonym_count":0}'
   snapshot_sha256: 7156098dfa9cfb64185d3d9d27d8e3e150ba1440fee24438ac6192726438c966
 - evidence_id: ev-8cfd8b47f5a6ca80
   kind: prior_review

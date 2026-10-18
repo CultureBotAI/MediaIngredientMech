@@ -85,11 +85,11 @@ Reassess prediction-only role support: L-Rhamnose monohydrate
 | --- | --- | --- | --- |
 | ev-3110895804027ad6 | data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1232],"raw_equal":true},"docs_rows":[{"identifier":"cas:10030-85-0","line":1234,"mapping_status":"MAPPED","ontology_id":"CHEBI:62345","preferred_term":"L-Rhamnose monohydrate"}],"identifier":"cas:10030-85-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:62345","ontology_label":"L-rhamnose","ontology_source":"CHEBI"},"preferred_term":"L-Rhamnose monohydrate","sssom_rows":[{"data_row":1587,"object_id":"CHEBI:62345","object_label":"L-rhamnose","predicate_id":"skos:closeMatch"},{"data_row":1588,"object_id":"cas:10030-85-0","object_label":"L-Rhamnose monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Rhamnose_Monohydrate","synonym_count":0} |
 | ev-2b5f5f641d8a930d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1232] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-528b888c01c82eae | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Rhamnose_Monohydrate; data-row positions=[1587,1588] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1587,"object_id":"CHEBI:62345","object_label":"L-rhamnose","other":"CAS:10030-85-0","predicate_id":"skos:closeMatch","subject_id":"MIM:L-Rhamnose_Monohydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":1588,"object_id":"cas:10030-85-0","object_label":"L-Rhamnose monohydrate","other":"CAS:10030-85-0","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Rhamnose_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-528b888c01c82eae | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-Rhamnose_Monohydrate; data-row positions=[1587, 1588] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1587,"object_id":"CHEBI:62345","object_label":"L-rhamnose","other":"CAS:10030-85-0","predicate_id":"skos:closeMatch","subject_id":"MIM:L-Rhamnose_Monohydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":1588,"object_id":"cas:10030-85-0","object_label":"L-Rhamnose monohydrate","other":"CAS:10030-85-0","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Rhamnose_Monohydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-936a81360c044517 | docs/data/mapped_ingredients.csv; CSV lines=[1234] | supports | Published identity and count rows inspected: [{"identifier":"cas:10030-85-0","line":1234,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62345","preferred_term":"L-Rhamnose monohydrate","total_occurrences":"0"}] |
 | ev-723a4822b80a6792 | reports/yaml_record_review/L-Rhamnose_Monohydrate.md; &#96;data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:32; Completeness:57; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a83b20303367fb17 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[798,2081] | context_only | [{"current_record_sha256":"eb05ee0a45c1a49feb004fdded1ec8490ee6e8d3689ff70fe850737aac78133f","finding_id":"SEM:1ea7b42dd9aa6388aa7f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"eb05ee0a45c1a49feb004fdded1ec8490ee6e8d3689ff70fe850737aac78133f","finding_id":"SEM:8de0e184a4a9e57bcb14","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-04f1860589fd7fd8 | data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-04f1860589fd7fd8 | data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1232],"raw_equal":true},"docs_rows":[{"identifier":"cas:10030-85-0","line":1234,"mapping_status":"MAPPED","ontology_id":"CHEBI:62345","preferred_term":"L-Rhamnose monohydrate"}],"identifier":"cas:10030-85-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:62345","ontology_label":"L-rhamnose","ontology_source":"CHEBI"},"preferred_term":"L-Rhamnose monohydrate","sssom_rows":[{"data_row":1587,"object_id":"CHEBI:62345","object_label":"L-rhamnose","predicate_id":"skos:closeMatch"},{"data_row":1588,"object_id":"cas:10030-85-0","object_label":"L-Rhamnose monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Rhamnose_Monohydrate","synonym_count":0} |
 | ev-1f3c275d00afc793 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-a5547e7ec28d850d] | context_only | Predecessor structured review finding f-a5547e7ec28d850d in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-dd0f65adc920f236
+  evidence_ids:
+  - ev-3110895804027ad6
+  - ev-2b5f5f641d8a930d
+  - ev-528b888c01c82eae
+  - ev-936a81360c044517
+  - ev-04f1860589fd7fd8
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-dd0f65adc920f236
+  evidence_ids:
+  - ev-3110895804027ad6
+  - ev-a83b20303367fb17
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-dd0f65adc920f236
+  evidence_ids:
+  - ev-723a4822b80a6792
+  - ev-a83b20303367fb17
+  - ev-1f3c275d00afc793
 evidence:
 - evidence_id: ev-3110895804027ad6
   kind: record_content
   reference: data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1232],"raw_equal":true},"docs_rows":[{"identifier":"cas:10030-85-0","line":1234,"mapping_status":"MAPPED","ontology_id":"CHEBI:62345","preferred_term":"L-Rhamnose
     monohydrate"}],"identifier":"cas:10030-85-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:62345","ontology_label":"L-rhamnose","ontology_source":"CHEBI"},"preferred_term":"L-Rhamnose
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1232]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,8 +233,8 @@ evidence:
 - evidence_id: ev-528b888c01c82eae
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:L-Rhamnose_Monohydrate; data-row positions=[1587,1588]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:L-Rhamnose_Monohydrate; data-row positions=[1587, 1588]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1587,"object_id":"CHEBI:62345","object_label":"L-rhamnose","other":"CAS:10030-85-0","predicate_id":"skos:closeMatch","subject_id":"MIM:L-Rhamnose_Monohydrate","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"},{"data_row":1588,"object_id":"cas:10030-85-0","object_label":"L-Rhamnose
     monohydrate","other":"CAS:10030-85-0","predicate_id":"skos:exactMatch","subject_id":"MIM:L-Rhamnose_Monohydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1234]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:10030-85-0","line":1234,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62345","preferred_term":"L-Rhamnose
     monohydrate","total_occurrences":"0"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[798,2081]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"eb05ee0a45c1a49feb004fdded1ec8490ee6e8d3689ff70fe850737aac78133f","finding_id":"SEM:1ea7b42dd9aa6388aa7f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"eb05ee0a45c1a49feb004fdded1ec8490ee6e8d3689ff70fe850737aac78133f","finding_id":"SEM:8de0e184a4a9e57bcb14","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1232],"raw_equal":true},"docs_rows":[{"identifier":"cas:10030-85-0","line":1234,"mapping_status":"MAPPED","ontology_id":"CHEBI:62345","preferred_term":"L-Rhamnose
+    monohydrate"}],"identifier":"cas:10030-85-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:62345","ontology_label":"L-rhamnose","ontology_source":"CHEBI"},"preferred_term":"L-Rhamnose
+    monohydrate","sssom_rows":[{"data_row":1587,"object_id":"CHEBI:62345","object_label":"L-rhamnose","predicate_id":"skos:closeMatch"},{"data_row":1588,"object_id":"cas:10030-85-0","object_label":"L-Rhamnose
+    monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-Rhamnose_Monohydrate","synonym_count":0}'
   snapshot_sha256: eb05ee0a45c1a49feb004fdded1ec8490ee6e8d3689ff70fe850737aac78133f
 - evidence_id: ev-1f3c275d00afc793
   kind: prior_review

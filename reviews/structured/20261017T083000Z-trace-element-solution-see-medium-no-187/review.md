@@ -83,16 +83,16 @@ Disposition: Token presence remains reproducible, but the earlier pattern-based 
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-753ef5c747a186c7 | data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1979,"mapping_status":"MAPPED","ontology_id":"NCIT:C896","preferred_term":"Trace element solution see Medium No. 187"}],"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C896","ontology_label":"Trace Element","ontology_source":"NCIT"},"preferred_term":"Trace element solution see Medium No. 187","sssom_rows":[{"data_row":2802,"object_id":"NCIT:C896","object_label":"Trace Element","predicate_id":"skos:closeMatch"},{"data_row":2803,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace element solution see Medium No. 187","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Element_Solution_See_Medium_No_187","synonym_count":2} |
-| ev-8e46a74b1dac68f4 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1977] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-1ae06c3a3a72a5b0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Element_Solution_See_Medium_No_187; data-row positions=[2802,2803] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2802,"object_id":"NCIT:C896","object_label":"Trace Element","other":"Trace element solution (see Medium No. 187","predicate_id":"skos:closeMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2803,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace element solution see Medium No. 187","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-a2bd3ce860643b37 | docs/data/mapped_ingredients.csv; CSV lines=[1979] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1979,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C896","preferred_term":"Trace element solution see Medium No. 187","total_occurrences":"0"}] |
+| ev-753ef5c747a186c7 | data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1976],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1978,"mapping_status":"MAPPED","ontology_id":"NCIT:C896","preferred_term":"Trace element solution see Medium No. 187"}],"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C896","ontology_label":"Trace Element","ontology_source":"NCIT"},"preferred_term":"Trace element solution see Medium No. 187","sssom_rows":[{"data_row":2804,"object_id":"NCIT:C896","object_label":"Trace Element","predicate_id":"skos:closeMatch"},{"data_row":2805,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace element solution see Medium No. 187","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Element_Solution_See_Medium_No_187","synonym_count":2} |
+| ev-8e46a74b1dac68f4 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1976] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-1ae06c3a3a72a5b0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Element_Solution_See_Medium_No_187; data-row positions=[2804, 2805] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2804,"object_id":"NCIT:C896","object_label":"Trace Element","other":"Trace element solution (see Medium No. 187","predicate_id":"skos:closeMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2805,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace element solution see Medium No. 187","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-a2bd3ce860643b37 | docs/data/mapped_ingredients.csv; CSV lines=[1978] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1978,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C896","preferred_term":"Trace element solution see Medium No. 187","total_occurrences":"0"}] |
 | ev-e9a77a2c0d4af0d8 | reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md; &#96;data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml&#96;:2; Verdict:4; Identity:10; Validation:27; Evidence:38; Issues:48; Major: a malformed recipe-reference alias reaches final SSSOM:50; Major: the named stock solution is still missing components:57; Completeness:64; Recommended Edits:71 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2f14d4cac1c6c91a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1297] | context_only | [{"current_record_sha256":"eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d","finding_id":"SEM:e9655eed6080855b4387","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-61509143d0ecf84a | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-3b7b7b7cd4c70ace] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-cb42f25983a0ad30 | data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace element solution (see Medium No. 187", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1886); no CAS-RN or CHEBI/NCIT match. Curator review needed.", "curator": "audit_import_ingredients[mim-queue]", "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"}, {"action": "CLASSIFY_AS_STOCK_SOLUTION", "changes": "name pattern 'see Medium No.' indicates pre-mixed defined solution", "curator": "auto_classify_stock_solution", "llm_assisted": false, "timestamp": "2026-05-01T19:58:06.857978+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Trace element')", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:19.961419+00:00"}, {"action": "AUTO_UPGRADE_TO_NCIT", "changes": "primary UNMAPPED_0549 \u2192 NCIT:C896 (strategy=stem-match)", "curator": "resolve_unmapped_v2", "llm_assisted": false, "timestamp": "2026-05-02T03:18:21.989902+00:00"}, {"action": "CORRECTED", "changes": "Changed identifier from NCIT:C896 to kgmicrobe.ingredient:trace_element_solution_see_medium_no_187 and retained NCIT:C896 only as CLOSE_MATCH. Named trace element solution is a formulation, not identical to the generic trace element class.", "curator": "ingredient_mapping_review_2026_05_05", "llm_assisted": false, "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-05-05T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Trace element solution (see Medium No. 187' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier": "kgmicrobe.ingredient:trace_element_solution_see_medium_no_187", "mapping": {"evidence": [{"evidence_type": "CURATOR_JUDGMENT", "notes": "Named trace element solution is a formulation, not identical to the generic trace element class.", "source": "ingredient_mapping_review_2026-05-05"}], "mapping_quality": "CLOSE_MATCH", "ontology_id": "NCIT:C896", "ontology_label": "Trace Element", "ontology_source": "NCIT"}} |
-| ev-775e49cc5333c85a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Element_Solution_See_Medium_No_187 | supports | [{"comment": "", "confidence": "0.9", "data_row": 2802, "mapping_date": "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "NCIT:C896", "object_label": "Trace Element", "object_source": "obo:ncit.owl", "other": "Trace element solution (see Medium No. 187", "predicate_id": "skos:closeMatch", "source": "MIM:ingredient_mapping_review_2026-05-05&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Trace_Element_Solution_See_Medium_No_187", "subject_label": "Trace element solution see Medium No. 187", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}, {"comment": "Registry/identity row preserving kgmicrobe.ingredient:trace_element_solution_see_medium_no_187 alongside parent NCIT:C896.", "confidence": "0.99", "data_row": 2803, "mapping_date": "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:trace_element_solution_see_medium_no_187", "object_label": "Trace element solution see Medium No. 187", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:ingredient_mapping_review_2026-05-05&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Trace_Element_Solution_See_Medium_No_187", "subject_label": "Trace element solution see Medium No. 187", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-cb42f25983a0ad30 | data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1976],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1978,"mapping_status":"MAPPED","ontology_id":"NCIT:C896","preferred_term":"Trace element solution see Medium No. 187"}],"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C896","ontology_label":"Trace Element","ontology_source":"NCIT"},"preferred_term":"Trace element solution see Medium No. 187","sssom_rows":[{"data_row":2804,"object_id":"NCIT:C896","object_label":"Trace Element","predicate_id":"skos:closeMatch"},{"data_row":2805,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace element solution see Medium No. 187","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Element_Solution_See_Medium_No_187","synonym_count":2} |
+| ev-775e49cc5333c85a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Element_Solution_See_Medium_No_187; data-row positions=[2804, 2805] | supports | Current exact-subject rows, including complete other payload: [{"data_row":2804,"object_id":"NCIT:C896","object_label":"Trace Element","other":"Trace element solution (see Medium No. 187","predicate_id":"skos:closeMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2805,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace element solution see Medium No. 187","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-a18de57ffdc5d750 | reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-08c59b670ba15baf | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-3b7b7b7cd4c70ace] | context_only | Predecessor structured review finding scope-f-3b7b7b7cd4c70ace in 20261011T030852Z-mim-token-scope-reassessment |
 
@@ -190,6 +190,13 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-341efa75278b5e50
+  evidence_ids:
+  - ev-753ef5c747a186c7
+  - ev-8e46a74b1dac68f4
+  - ev-1ae06c3a3a72a5b0
+  - ev-a2bd3ce860643b37
+  - ev-cb42f25983a0ad30
+  - ev-775e49cc5333c85a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -198,6 +205,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-341efa75278b5e50
+  evidence_ids:
+  - ev-753ef5c747a186c7
+  - ev-2f14d4cac1c6c91a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -206,26 +216,32 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-341efa75278b5e50
+  evidence_ids:
+  - ev-e9a77a2c0d4af0d8
+  - ev-2f14d4cac1c6c91a
+  - ev-61509143d0ecf84a
+  - ev-a18de57ffdc5d750
+  - ev-08c59b670ba15baf
 evidence:
 - evidence_id: ev-753ef5c747a186c7
   kind: record_content
   reference: data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1979,"mapping_status":"MAPPED","ontology_id":"NCIT:C896","preferred_term":"Trace
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1976],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1978,"mapping_status":"MAPPED","ontology_id":"NCIT:C896","preferred_term":"Trace
     element solution see Medium No. 187"}],"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C896","ontology_label":"Trace
     Element","ontology_source":"NCIT"},"preferred_term":"Trace element solution see
-    Medium No. 187","sssom_rows":[{"data_row":2802,"object_id":"NCIT:C896","object_label":"Trace
-    Element","predicate_id":"skos:closeMatch"},{"data_row":2803,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace
+    Medium No. 187","sssom_rows":[{"data_row":2804,"object_id":"NCIT:C896","object_label":"Trace
+    Element","predicate_id":"skos:closeMatch"},{"data_row":2805,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace
     element solution see Medium No. 187","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Element_Solution_See_Medium_No_187","synonym_count":2}'
   snapshot_sha256: eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d
 - evidence_id: ev-8e46a74b1dac68f4
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1977]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1976]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -233,20 +249,21 @@ evidence:
 - evidence_id: ev-1ae06c3a3a72a5b0
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trace_Element_Solution_See_Medium_No_187; data-row positions=[2802,2803]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Trace_Element_Solution_See_Medium_No_187; data-row positions=[2804,
+    2805]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2802,"object_id":"NCIT:C896","object_label":"Trace
-    Element","other":"Trace element solution (see Medium No. 187","predicate_id":"skos:closeMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2803,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2804,"object_id":"NCIT:C896","object_label":"Trace
+    Element","other":"Trace element solution (see Medium No. 187","predicate_id":"skos:closeMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2805,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace
     element solution see Medium No. 187","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-a2bd3ce860643b37
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1979]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1978]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1979,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C896","preferred_term":"Trace
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1978,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C896","preferred_term":"Trace
     element solution see Medium No. 187","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-e9a77a2c0d4af0d8
@@ -278,7 +295,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1297]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d","finding_id":"SEM:e9655eed6080855b4387","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
@@ -320,59 +337,25 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
-    "synonym_text": "Trace element solution (see Medium No. 187", "synonym_type":
-    "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported
-    from mim-queue (source_id=mediadive.ingredient:1886); no CAS-RN or CHEBI/NCIT
-    match. Curator review needed.", "curator": "audit_import_ingredients[mim-queue]",
-    "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"},
-    {"action": "CLASSIFY_AS_STOCK_SOLUTION", "changes": "name pattern ''see Medium
-    No.'' indicates pre-mixed defined solution", "curator": "auto_classify_stock_solution",
-    "llm_assisted": false, "timestamp": "2026-05-01T19:58:06.857978+00:00"}, {"action":
-    "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=STOCK_SOLUTION
-    (name matches solution pattern ''Trace element'')", "curator": "auto_classify_ingredient_type",
-    "llm_assisted": false, "timestamp": "2026-05-02T03:12:19.961419+00:00"}, {"action":
-    "AUTO_UPGRADE_TO_NCIT", "changes": "primary UNMAPPED_0549 \u2192 NCIT:C896 (strategy=stem-match)",
-    "curator": "resolve_unmapped_v2", "llm_assisted": false, "timestamp": "2026-05-02T03:18:21.989902+00:00"},
-    {"action": "CORRECTED", "changes": "Changed identifier from NCIT:C896 to kgmicrobe.ingredient:trace_element_solution_see_medium_no_187
-    and retained NCIT:C896 only as CLOSE_MATCH. Named trace element solution is a
-    formulation, not identical to the generic trace element class.", "curator": "ingredient_mapping_review_2026_05_05",
-    "llm_assisted": false, "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp":
-    "2026-05-05T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1
-    CultureMech recipe surface form(s) that folded onto this record''s published label
-    but were absent from MIM''s label index, so CultureMech could not resolve them:
-    ''Trace element solution (see Medium No. 187'' (x1 CultureMech mentions). Source:
-    culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill",
-    "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier":
-    "kgmicrobe.ingredient:trace_element_solution_see_medium_no_187", "mapping": {"evidence":
-    [{"evidence_type": "CURATOR_JUDGMENT", "notes": "Named trace element solution
-    is a formulation, not identical to the generic trace element class.", "source":
-    "ingredient_mapping_review_2026-05-05"}], "mapping_quality": "CLOSE_MATCH", "ontology_id":
-    "NCIT:C896", "ontology_label": "Trace Element", "ontology_source": "NCIT"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1976],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1978,"mapping_status":"MAPPED","ontology_id":"NCIT:C896","preferred_term":"Trace
+    element solution see Medium No. 187"}],"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C896","ontology_label":"Trace
+    Element","ontology_source":"NCIT"},"preferred_term":"Trace element solution see
+    Medium No. 187","sssom_rows":[{"data_row":2804,"object_id":"NCIT:C896","object_label":"Trace
+    Element","predicate_id":"skos:closeMatch"},{"data_row":2805,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace
+    element solution see Medium No. 187","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Element_Solution_See_Medium_No_187","synonym_count":2}'
   snapshot_sha256: eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d
 - evidence_id: ev-775e49cc5333c85a
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Trace_Element_Solution_See_Medium_No_187
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Trace_Element_Solution_See_Medium_No_187; data-row positions=[2804,
+    2805]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.9", "data_row": 2802, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
-    "NCIT:C896", "object_label": "Trace Element", "object_source": "obo:ncit.owl",
-    "other": "Trace element solution (see Medium No. 187", "predicate_id": "skos:closeMatch",
-    "source": "MIM:ingredient_mapping_review_2026-05-05|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Trace_Element_Solution_See_Medium_No_187", "subject_label":
-    "Trace element solution see Medium No. 187", "validation_method": "none|UNKNOWN_TERM|2026-07-07"},
-    {"comment": "Registry/identity row preserving kgmicrobe.ingredient:trace_element_solution_see_medium_no_187
-    alongside parent NCIT:C896.", "confidence": "0.99", "data_row": 2803, "mapping_date":
-    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
-    "kgmicrobe.ingredient:trace_element_solution_see_medium_no_187", "object_label":
-    "Trace element solution see Medium No. 187", "object_source": "kgm:ingredient",
-    "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:ingredient_mapping_review_2026-05-05|MIM:curator=claude_culturemech_alias_backfill",
-    "subject_id": "MIM:Trace_Element_Solution_See_Medium_No_187", "subject_label":
-    "Trace element solution see Medium No. 187", "validation_method": "none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2804,"object_id":"NCIT:C896","object_label":"Trace
+    Element","other":"Trace element solution (see Medium No. 187","predicate_id":"skos:closeMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2805,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace
+    element solution see Medium No. 187","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-a18de57ffdc5d750
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: HOMOPIPES
 | ev-3b622bdd686f40e0 | docs/data/mapped_ingredients.csv; CSV lines=[1108] | supports | Published identity and count rows inspected: [{"identifier":"cas:202185-84-0","line":1108,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"5","ontology_id":"cas:202185-84-0","preferred_term":"HOMOPIPES","total_occurrences":"5"}] |
 | ev-df6374dc387333c6 | reports/yaml_record_review/HOMOPIPES.md; &#96;data/ingredients/mapped/HOMOPIPES.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:35; Completeness:52; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-358c857f9e4ed9fa | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[721,1835] | context_only | [{"current_record_sha256":"1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7","finding_id":"SEM:e278775d6d7d49491a53","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7","finding_id":"SEM:769762b8307d614aea15","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-8537c2d0aaf82815 | data/ingredients/mapped/HOMOPIPES.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-8537c2d0aaf82815 | data/ingredients/mapped/HOMOPIPES.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1106],"raw_equal":true},"docs_rows":[{"identifier":"cas:202185-84-0","line":1108,"mapping_status":"MAPPED","ontology_id":"cas:202185-84-0","preferred_term":"HOMOPIPES"}],"identifier":"cas:202185-84-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:202185-84-0","ontology_label":"HOMOPIPES","ontology_source":"CAS"},"preferred_term":"HOMOPIPES","sssom_rows":[{"data_row":1399,"object_id":"cas:202185-84-0","object_label":"HOMOPIPES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:HOMOPIPES","synonym_count":3} |
 | ev-b3b94854c2bbe8d9 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-b5acf211da9251bf] | context_only | Predecessor structured review finding f-b5acf211da9251bf in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-dd28c55a7efde5a3
+  evidence_ids:
+  - ev-3bf08b10842622cb
+  - ev-ef6ac4bf92028214
+  - ev-4778c4da0a226768
+  - ev-3b622bdd686f40e0
+  - ev-8537c2d0aaf82815
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-dd28c55a7efde5a3
+  evidence_ids:
+  - ev-3bf08b10842622cb
+  - ev-358c857f9e4ed9fa
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-dd28c55a7efde5a3
+  evidence_ids:
+  - ev-df6374dc387333c6
+  - ev-358c857f9e4ed9fa
+  - ev-b3b94854c2bbe8d9
 evidence:
 - evidence_id: ev-3bf08b10842622cb
   kind: record_content
   reference: data/ingredients/mapped/HOMOPIPES.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1106],"raw_equal":true},"docs_rows":[{"identifier":"cas:202185-84-0","line":1108,"mapping_status":"MAPPED","ontology_id":"cas:202185-84-0","preferred_term":"HOMOPIPES"}],"identifier":"cas:202185-84-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:202185-84-0","ontology_label":"HOMOPIPES","ontology_source":"CAS"},"preferred_term":"HOMOPIPES","sssom_rows":[{"data_row":1399,"object_id":"cas:202185-84-0","object_label":"HOMOPIPES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:HOMOPIPES","synonym_count":3}'
   snapshot_sha256: 1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1106]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:HOMOPIPES; data-row positions=[1399]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1399,"object_id":"cas:202185-84-0","object_label":"HOMOPIPES","other":"homopiperazine-1,4-bis(2-ethanesulfonic
     acid), HOMO-PIPES|Homo-PIPES|Homo-PIPES (SIGMA)|CAS:202185-84-0","predicate_id":"skos:exactMatch","subject_id":"MIM:HOMOPIPES","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1108]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:202185-84-0","line":1108,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"5","ontology_id":"cas:202185-84-0","preferred_term":"HOMOPIPES","total_occurrences":"5"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[721,1835]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7","finding_id":"SEM:e278775d6d7d49491a53","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7","finding_id":"SEM:769762b8307d614aea15","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/HOMOPIPES.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1106],"raw_equal":true},"docs_rows":[{"identifier":"cas:202185-84-0","line":1108,"mapping_status":"MAPPED","ontology_id":"cas:202185-84-0","preferred_term":"HOMOPIPES"}],"identifier":"cas:202185-84-0","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:202185-84-0","ontology_label":"HOMOPIPES","ontology_source":"CAS"},"preferred_term":"HOMOPIPES","sssom_rows":[{"data_row":1399,"object_id":"cas:202185-84-0","object_label":"HOMOPIPES","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:HOMOPIPES","synonym_count":3}'
   snapshot_sha256: 1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7
 - evidence_id: ev-b3b94854c2bbe8d9
   kind: prior_review

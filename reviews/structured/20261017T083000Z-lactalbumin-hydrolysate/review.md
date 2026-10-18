@@ -89,7 +89,7 @@ Reassess prediction-only role support: Lactalbumin hydrolysate
 | ev-fd72db2c5eaba426 | docs/data/mapped_ingredients.csv; CSV lines=[1275] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001365","line":1275,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"MICRO:0001365","preferred_term":"Lactalbumin hydrolysate","total_occurrences":"1"}] |
 | ev-4ba6f7fdf407b49a | reports/yaml_record_review/Lactalbumin_Hydrolysate.md; &#96;data/ingredients/mapped/Lactalbumin_Hydrolysate.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:29; Completeness:49; Recommended Edits:56 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c170bb47887581fb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[842,2086] | context_only | [{"current_record_sha256":"24416a2a9fe69c14ca1a8f57098750a9a4fb8b3055ba267a4e19cf10626f8213","finding_id":"SEM:6c3ebaa5818cf8afbe04","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"24416a2a9fe69c14ca1a8f57098750a9a4fb8b3055ba267a4e19cf10626f8213","finding_id":"SEM:4c02728f3047fb0c5074","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-724ee82af9da4887 | data/ingredients/mapped/Lactalbumin_Hydrolysate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-724ee82af9da4887 | data/ingredients/mapped/Lactalbumin_Hydrolysate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1273],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001365","line":1275,"mapping_status":"MAPPED","ontology_id":"MICRO:0001365","preferred_term":"Lactalbumin hydrolysate"}],"identifier":"MICRO:0001365","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001365","ontology_label":"lactalbumin hydrolysate","ontology_source":"MICRO"},"preferred_term":"Lactalbumin hydrolysate","sssom_rows":[{"data_row":1652,"object_id":"MICRO:0001365","object_label":"lactalbumin hydrolysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactalbumin_Hydrolysate","synonym_count":1} |
 | ev-4fa7db5bf8e53f91 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-e00d8b6cf5d4bf08] | context_only | Predecessor structured review finding f-e00d8b6cf5d4bf08 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-72bbf2e48efda1fe
+  evidence_ids:
+  - ev-1b9269126896693e
+  - ev-e3984687b603d989
+  - ev-589e9c8f727381bf
+  - ev-fd72db2c5eaba426
+  - ev-724ee82af9da4887
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-72bbf2e48efda1fe
+  evidence_ids:
+  - ev-1b9269126896693e
+  - ev-c170bb47887581fb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-72bbf2e48efda1fe
+  evidence_ids:
+  - ev-4ba6f7fdf407b49a
+  - ev-c170bb47887581fb
+  - ev-4fa7db5bf8e53f91
 evidence:
 - evidence_id: ev-1b9269126896693e
   kind: record_content
   reference: data/ingredients/mapped/Lactalbumin_Hydrolysate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1273],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001365","line":1275,"mapping_status":"MAPPED","ontology_id":"MICRO:0001365","preferred_term":"Lactalbumin
     hydrolysate"}],"identifier":"MICRO:0001365","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001365","ontology_label":"lactalbumin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1273]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Lactalbumin_Hydrolysate; data-row positions=[1652]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1652,"object_id":"MICRO:0001365","object_label":"lactalbumin
     hydrolysate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Lactalbumin_Hydrolysate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1275]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001365","line":1275,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"MICRO:0001365","preferred_term":"Lactalbumin
     hydrolysate","total_occurrences":"1"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[842,2086]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"24416a2a9fe69c14ca1a8f57098750a9a4fb8b3055ba267a4e19cf10626f8213","finding_id":"SEM:6c3ebaa5818cf8afbe04","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"24416a2a9fe69c14ca1a8f57098750a9a4fb8b3055ba267a4e19cf10626f8213","finding_id":"SEM:4c02728f3047fb0c5074","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lactalbumin_Hydrolysate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1273],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001365","line":1275,"mapping_status":"MAPPED","ontology_id":"MICRO:0001365","preferred_term":"Lactalbumin
+    hydrolysate"}],"identifier":"MICRO:0001365","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001365","ontology_label":"lactalbumin
+    hydrolysate","ontology_source":"MICRO"},"preferred_term":"Lactalbumin hydrolysate","sssom_rows":[{"data_row":1652,"object_id":"MICRO:0001365","object_label":"lactalbumin
+    hydrolysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactalbumin_Hydrolysate","synonym_count":1}'
   snapshot_sha256: 24416a2a9fe69c14ca1a8f57098750a9a4fb8b3055ba267a4e19cf10626f8213
 - evidence_id: ev-4fa7db5bf8e53f91
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sodium Potassium phosphate buffer
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-3e294255e8a97faa | data/ingredients/mapped/Sodium_Potassium_Phosphate_Buffer.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1867],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1869,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Sodium Potassium phosphate buffer"}],"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Sodium Potassium phosphate buffer","sssom_rows":[{"data_row":2597,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:closeMatch"},{"data_row":2598,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium Potassium phosphate buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Potassium_Phosphate_Buffer","synonym_count":1} |
-| ev-6e1b511a7011e275 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1867] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-f269c873cef6f7d7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Potassium_Phosphate_Buffer; data-row positions=[2597,2598] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2597,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Sodium_Potassium_Phosphate_Buffer","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2598,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium Potassium phosphate buffer","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Potassium_Phosphate_Buffer","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-0d8be211a1ecdbe9 | docs/data/mapped_ingredients.csv; CSV lines=[1869] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1869,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"NCIT:C29321","preferred_term":"Sodium Potassium phosphate buffer","total_occurrences":"6"}] |
+| ev-3e294255e8a97faa | data/ingredients/mapped/Sodium_Potassium_Phosphate_Buffer.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1866],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1868,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Sodium Potassium phosphate buffer"}],"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Sodium Potassium phosphate buffer","sssom_rows":[{"data_row":2599,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:closeMatch"},{"data_row":2600,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium Potassium phosphate buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Potassium_Phosphate_Buffer","synonym_count":1} |
+| ev-6e1b511a7011e275 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1866] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-f269c873cef6f7d7 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Potassium_Phosphate_Buffer; data-row positions=[2599, 2600] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2599,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Sodium_Potassium_Phosphate_Buffer","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2600,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium Potassium phosphate buffer","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Potassium_Phosphate_Buffer","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-0d8be211a1ecdbe9 | docs/data/mapped_ingredients.csv; CSV lines=[1868] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1868,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"NCIT:C29321","preferred_term":"Sodium Potassium phosphate buffer","total_occurrences":"6"}] |
 | ev-e097f1348537f88d | reports/yaml_record_review/Sodium_Potassium_Phosphate_Buffer.md; &#96;data/ingredients/mapped/Sodium_Potassium_Phosphate_Buffer.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:31; Completeness:42; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-86fa3db584d6ed66 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1230,1878] | context_only | [{"current_record_sha256":"344cddfb85f088be99aff9cf75731b2c5fcdeb926f022a0f5633451816fb2c7a","finding_id":"SEM:4c7c2bfd1cbe793dd5e3","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"344cddfb85f088be99aff9cf75731b2c5fcdeb926f022a0f5633451816fb2c7a","finding_id":"SEM:6c1818470495576c2984","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-6e8aa39e9aaa974e | data/ingredients/mapped/Sodium_Potassium_Phosphate_Buffer.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-6e8aa39e9aaa974e | data/ingredients/mapped/Sodium_Potassium_Phosphate_Buffer.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1866],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1868,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Sodium Potassium phosphate buffer"}],"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate Buffer","ontology_source":"NCIT"},"preferred_term":"Sodium Potassium phosphate buffer","sssom_rows":[{"data_row":2599,"object_id":"NCIT:C29321","object_label":"Phosphate Buffer","predicate_id":"skos:closeMatch"},{"data_row":2600,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium Potassium phosphate buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Potassium_Phosphate_Buffer","synonym_count":1} |
 | ev-a372c7d2bfef3e3f | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-e58237438ddd557c] | context_only | Predecessor structured review finding f-e58237438ddd557c in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0509b5e92c9606a2
+  evidence_ids:
+  - ev-3e294255e8a97faa
+  - ev-6e1b511a7011e275
+  - ev-f269c873cef6f7d7
+  - ev-0d8be211a1ecdbe9
+  - ev-6e8aa39e9aaa974e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0509b5e92c9606a2
+  evidence_ids:
+  - ev-3e294255e8a97faa
+  - ev-86fa3db584d6ed66
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,26 +204,30 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0509b5e92c9606a2
+  evidence_ids:
+  - ev-e097f1348537f88d
+  - ev-86fa3db584d6ed66
+  - ev-a372c7d2bfef3e3f
 evidence:
 - evidence_id: ev-3e294255e8a97faa
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Potassium_Phosphate_Buffer.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1867],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1869,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1866],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1868,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Sodium
     Potassium phosphate buffer"}],"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
     Buffer","ontology_source":"NCIT"},"preferred_term":"Sodium Potassium phosphate
-    buffer","sssom_rows":[{"data_row":2597,"object_id":"NCIT:C29321","object_label":"Phosphate
-    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2598,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium
+    buffer","sssom_rows":[{"data_row":2599,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2600,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium
     Potassium phosphate buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Potassium_Phosphate_Buffer","synonym_count":1}'
   snapshot_sha256: 344cddfb85f088be99aff9cf75731b2c5fcdeb926f022a0f5633451816fb2c7a
 - evidence_id: ev-6e1b511a7011e275
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1867]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1866]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,20 +235,21 @@ evidence:
 - evidence_id: ev-f269c873cef6f7d7
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_Potassium_Phosphate_Buffer; data-row positions=[2597,2598]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_Potassium_Phosphate_Buffer; data-row positions=[2599,
+    2600]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2597,"object_id":"NCIT:C29321","object_label":"Phosphate
-    Buffer","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Sodium_Potassium_Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2598,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2599,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","other":"","predicate_id":"skos:closeMatch","subject_id":"MIM:Sodium_Potassium_Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2600,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium
     Potassium phosphate buffer","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Potassium_Phosphate_Buffer","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-0d8be211a1ecdbe9
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1869]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1868]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1869,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"NCIT:C29321","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1868,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"6","ontology_id":"NCIT:C29321","preferred_term":"Sodium
     Potassium phosphate buffer","total_occurrences":"6"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-e097f1348537f88d
@@ -256,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1230,1878]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"344cddfb85f088be99aff9cf75731b2c5fcdeb926f022a0f5633451816fb2c7a","finding_id":"SEM:4c7c2bfd1cbe793dd5e3","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"344cddfb85f088be99aff9cf75731b2c5fcdeb926f022a0f5633451816fb2c7a","finding_id":"SEM:6c1818470495576c2984","kind":"role_evidence","resolution_reason":"Historical
@@ -266,12 +280,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Potassium_Phosphate_Buffer.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1866],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","line":1868,"mapping_status":"MAPPED","ontology_id":"NCIT:C29321","preferred_term":"Sodium
+    Potassium phosphate buffer"}],"identifier":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C29321","ontology_label":"Phosphate
+    Buffer","ontology_source":"NCIT"},"preferred_term":"Sodium Potassium phosphate
+    buffer","sssom_rows":[{"data_row":2599,"object_id":"NCIT:C29321","object_label":"Phosphate
+    Buffer","predicate_id":"skos:closeMatch"},{"data_row":2600,"object_id":"kgmicrobe.ingredient:sodium_potassium_phosphate_buffer","object_label":"Sodium
+    Potassium phosphate buffer","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Potassium_Phosphate_Buffer","synonym_count":1}'
   snapshot_sha256: 344cddfb85f088be99aff9cf75731b2c5fcdeb926f022a0f5633451816fb2c7a
 - evidence_id: ev-a372c7d2bfef3e3f
   kind: prior_review

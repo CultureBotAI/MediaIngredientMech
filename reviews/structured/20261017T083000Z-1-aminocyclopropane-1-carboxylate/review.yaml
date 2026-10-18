@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0293ba5001da7e72
+  evidence_ids:
+  - ev-d99d3ba76f893615
+  - ev-f0939a1c5a0796bf
+  - ev-bc4251f866b66bbd
+  - ev-d150df8533755ddb
+  - ev-402402c2d841f50c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0293ba5001da7e72
+  evidence_ids:
+  - ev-d99d3ba76f893615
+  - ev-05369a0347bd8cd9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0293ba5001da7e72
+  evidence_ids:
+  - ev-3faff95fa2d84c6a
+  - ev-05369a0347bd8cd9
+  - ev-61dcf09422c3623e
 evidence:
 - evidence_id: ev-d99d3ba76f893615
   kind: record_content
   reference: data/ingredients/mapped/1-aminocyclopropane-1-carboxylate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[285],"raw_equal":false},"docs_rows":[{"identifier":"CHEBI:18053","line":287,"mapping_status":"MAPPED","ontology_id":"CHEBI:18053","preferred_term":"1-aminocyclopropane-1-carboxylate"}],"identifier":"CHEBI:18053","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18053","ontology_label":"1-aminocyclopropanecarboxylic
     acid","ontology_source":"CHEBI"},"preferred_term":"1-aminocyclopropane-1-carboxylate","sssom_rows":[{"data_row":13,"object_id":"CHEBI:18053","object_label":"1-aminocyclopropanecarboxylic
@@ -106,7 +119,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [285]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=False.
@@ -115,7 +128,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:1-aminocyclopropane-1-carboxylate; data-row positions=[13]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":13,"object_id":"CHEBI:18053","object_label":"1-aminocyclopropanecarboxylic
     acid","other":"1-Aminocyclopropane-1-carboxylic acid|CAS:22059-21-8","predicate_id":"skos:exactMatch","subject_id":"MIM:1-aminocyclopropane-1-carboxylate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -124,7 +137,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[287]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:18053","line":287,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:18053","preferred_term":"1-aminocyclopropane-1-carboxylate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -150,7 +163,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[14,1792]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"1e651391a3c74fff1a3bde0312bfd657542ab61b4c83407f4c1450115037234c","finding_id":"SEM:cb472d716d5549ebb82f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"1e651391a3c74fff1a3bde0312bfd657542ab61b4c83407f4c1450115037234c","finding_id":"SEM:103981bb3e79d4ddf03c","kind":"role_evidence","resolution_reason":"Historical
@@ -160,12 +173,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/1-aminocyclopropane-1-carboxylate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[285],"raw_equal":false},"docs_rows":[{"identifier":"CHEBI:18053","line":287,"mapping_status":"MAPPED","ontology_id":"CHEBI:18053","preferred_term":"1-aminocyclopropane-1-carboxylate"}],"identifier":"CHEBI:18053","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:18053","ontology_label":"1-aminocyclopropanecarboxylic
+    acid","ontology_source":"CHEBI"},"preferred_term":"1-aminocyclopropane-1-carboxylate","sssom_rows":[{"data_row":13,"object_id":"CHEBI:18053","object_label":"1-aminocyclopropanecarboxylic
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:1-aminocyclopropane-1-carboxylate","synonym_count":1}'
   snapshot_sha256: 1e651391a3c74fff1a3bde0312bfd657542ab61b4c83407f4c1450115037234c
 - evidence_id: ev-61dcf09422c3623e
   kind: prior_review

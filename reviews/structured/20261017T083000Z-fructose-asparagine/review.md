@@ -89,7 +89,7 @@ Reassess prediction-only role support: Fructose-asparagine
 | ev-bfaad1ea0b46a5e7 | docs/data/mapped_ingredients.csv; CSV lines=[1027] | supports | Published identity and count rows inspected: [{"identifier":"cas:34393-27-6","line":1027,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:34393-27-6","preferred_term":"Fructose-asparagine","total_occurrences":"0"}] |
 | ev-9e7e04f5335f73dc | reports/yaml_record_review/Fructose-asparagine.md; &#96;data/ingredients/mapped/Fructose-asparagine.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:34; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f936225f0046ae94 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[635,1483,2022] | context_only | [{"current_record_sha256":"aece85a59ac14d00da388ff55e8d5e162fb3c92fdc6b28177ebecb481b7a862c","finding_id":"SEM:eccce2b6c30002f7ec4b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aece85a59ac14d00da388ff55e8d5e162fb3c92fdc6b28177ebecb481b7a862c","finding_id":"SEM:6760c1c6be5e813a54ed","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aece85a59ac14d00da388ff55e8d5e162fb3c92fdc6b28177ebecb481b7a862c","finding_id":"SEM:2c05f57e2cea08e6dc3f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c06429b8cb51ce1f | data/ingredients/mapped/Fructose-asparagine.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-c06429b8cb51ce1f | data/ingredients/mapped/Fructose-asparagine.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1025],"raw_equal":true},"docs_rows":[{"identifier":"cas:34393-27-6","line":1027,"mapping_status":"MAPPED","ontology_id":"cas:34393-27-6","preferred_term":"Fructose-asparagine"}],"identifier":"cas:34393-27-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:34393-27-6","ontology_label":"Fructose-asparagine","ontology_source":"CAS"},"preferred_term":"Fructose-asparagine","sssom_rows":[{"data_row":1248,"object_id":"cas:34393-27-6","object_label":"Fructose-asparagine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fructose-asparagine","synonym_count":0} |
 | ev-aa7626f6e021999f | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-17de92d397dfbb52] | context_only | Predecessor structured review finding f-17de92d397dfbb52 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-fb775397a2680eea
+  evidence_ids:
+  - ev-e2e589d6ec2ca794
+  - ev-b6c70c728507d9ee
+  - ev-5373acab54139a07
+  - ev-bfaad1ea0b46a5e7
+  - ev-c06429b8cb51ce1f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-fb775397a2680eea
+  evidence_ids:
+  - ev-e2e589d6ec2ca794
+  - ev-f936225f0046ae94
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-fb775397a2680eea
+  evidence_ids:
+  - ev-9e7e04f5335f73dc
+  - ev-f936225f0046ae94
+  - ev-aa7626f6e021999f
 evidence:
 - evidence_id: ev-e2e589d6ec2ca794
   kind: record_content
   reference: data/ingredients/mapped/Fructose-asparagine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1025],"raw_equal":true},"docs_rows":[{"identifier":"cas:34393-27-6","line":1027,"mapping_status":"MAPPED","ontology_id":"cas:34393-27-6","preferred_term":"Fructose-asparagine"}],"identifier":"cas:34393-27-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:34393-27-6","ontology_label":"Fructose-asparagine","ontology_source":"CAS"},"preferred_term":"Fructose-asparagine","sssom_rows":[{"data_row":1248,"object_id":"cas:34393-27-6","object_label":"Fructose-asparagine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fructose-asparagine","synonym_count":0}'
   snapshot_sha256: aece85a59ac14d00da388ff55e8d5e162fb3c92fdc6b28177ebecb481b7a862c
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1025]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Fructose-asparagine; data-row positions=[1248]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1248,"object_id":"cas:34393-27-6","object_label":"Fructose-asparagine","other":"CAS:34393-27-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Fructose-asparagine","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1027]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:34393-27-6","line":1027,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:34393-27-6","preferred_term":"Fructose-asparagine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -252,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[635,1483,2022]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"aece85a59ac14d00da388ff55e8d5e162fb3c92fdc6b28177ebecb481b7a862c","finding_id":"SEM:eccce2b6c30002f7ec4b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"aece85a59ac14d00da388ff55e8d5e162fb3c92fdc6b28177ebecb481b7a862c","finding_id":"SEM:6760c1c6be5e813a54ed","kind":"role_evidence","resolution_reason":"Historical
@@ -263,14 +276,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Fructose-asparagine.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1025],"raw_equal":true},"docs_rows":[{"identifier":"cas:34393-27-6","line":1027,"mapping_status":"MAPPED","ontology_id":"cas:34393-27-6","preferred_term":"Fructose-asparagine"}],"identifier":"cas:34393-27-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:34393-27-6","ontology_label":"Fructose-asparagine","ontology_source":"CAS"},"preferred_term":"Fructose-asparagine","sssom_rows":[{"data_row":1248,"object_id":"cas:34393-27-6","object_label":"Fructose-asparagine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fructose-asparagine","synonym_count":0}'
   snapshot_sha256: aece85a59ac14d00da388ff55e8d5e162fb3c92fdc6b28177ebecb481b7a862c
 - evidence_id: ev-aa7626f6e021999f
   kind: prior_review

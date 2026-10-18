@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cephradine
 | ev-4d6d3a83cdc57027 | docs/data/mapped_ingredients.csv; CSV lines=[696] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:3547","line":696,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3547","preferred_term":"Cephradine","total_occurrences":"0"}] |
 | ev-a95ea3948ef000fd | reports/yaml_record_review/Cephradine.md; &#96;data/ingredients/mapped/Cephradine.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:39; Completeness:54; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d739a0d9f0aa1d21 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[397,1725] | context_only | [{"current_record_sha256":"f29903b3d0f60c4f16e2a66ac9100fc8aff513d399f020b94652b6f72d8fdfd7","finding_id":"SEM:5a7c4ee1b2b83d50aa1d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f29903b3d0f60c4f16e2a66ac9100fc8aff513d399f020b94652b6f72d8fdfd7","finding_id":"SEM:7a96abd6b04e77f80883","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d06e31dec447df68 | data/ingredients/mapped/Cephradine.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-d06e31dec447df68 | data/ingredients/mapped/Cephradine.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[694],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3547","line":696,"mapping_status":"MAPPED","ontology_id":"CHEBI:3547","preferred_term":"Cephradine"}],"identifier":"CHEBI:3547","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3547","ontology_label":"cephradine","ontology_source":"CHEBI"},"preferred_term":"Cephradine","sssom_rows":[{"data_row":721,"object_id":"CHEBI:3547","object_label":"cephradine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cephradine","synonym_count":1} |
 | ev-72c1e34e125ee8f1 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-db8517b0ee6ed3d2] | context_only | Predecessor structured review finding f-db8517b0ee6ed3d2 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-1e7a49720e66d677
+  evidence_ids:
+  - ev-f999ecfa09a02a30
+  - ev-1fa763920bfba2cf
+  - ev-c967b4e7c40e6466
+  - ev-4d6d3a83cdc57027
+  - ev-d06e31dec447df68
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-1e7a49720e66d677
+  evidence_ids:
+  - ev-f999ecfa09a02a30
+  - ev-d739a0d9f0aa1d21
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1e7a49720e66d677
+  evidence_ids:
+  - ev-a95ea3948ef000fd
+  - ev-d739a0d9f0aa1d21
+  - ev-72c1e34e125ee8f1
 evidence:
 - evidence_id: ev-f999ecfa09a02a30
   kind: record_content
   reference: data/ingredients/mapped/Cephradine.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[694],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3547","line":696,"mapping_status":"MAPPED","ontology_id":"CHEBI:3547","preferred_term":"Cephradine"}],"identifier":"CHEBI:3547","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3547","ontology_label":"cephradine","ontology_source":"CHEBI"},"preferred_term":"Cephradine","sssom_rows":[{"data_row":721,"object_id":"CHEBI:3547","object_label":"cephradine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cephradine","synonym_count":1}'
   snapshot_sha256: f29903b3d0f60c4f16e2a66ac9100fc8aff513d399f020b94652b6f72d8fdfd7
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [694]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cephradine; data-row positions=[721]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":721,"object_id":"CHEBI:3547","object_label":"cephradine","other":"7beta-[(2R)-2-(cyclohexa-1,4-dienyl)-2-phenylacetamido]-3-methyl-3,4-didehydrocepham-4-carboxylic
     acid|CAS:38821-53-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Cephradine","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -227,7 +240,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[696]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:3547","line":696,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3547","preferred_term":"Cephradine","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[397,1725]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f29903b3d0f60c4f16e2a66ac9100fc8aff513d399f020b94652b6f72d8fdfd7","finding_id":"SEM:5a7c4ee1b2b83d50aa1d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f29903b3d0f60c4f16e2a66ac9100fc8aff513d399f020b94652b6f72d8fdfd7","finding_id":"SEM:7a96abd6b04e77f80883","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cephradine.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[694],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3547","line":696,"mapping_status":"MAPPED","ontology_id":"CHEBI:3547","preferred_term":"Cephradine"}],"identifier":"CHEBI:3547","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3547","ontology_label":"cephradine","ontology_source":"CHEBI"},"preferred_term":"Cephradine","sssom_rows":[{"data_row":721,"object_id":"CHEBI:3547","object_label":"cephradine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cephradine","synonym_count":1}'
   snapshot_sha256: f29903b3d0f60c4f16e2a66ac9100fc8aff513d399f020b94652b6f72d8fdfd7
 - evidence_id: ev-72c1e34e125ee8f1
   kind: prior_review

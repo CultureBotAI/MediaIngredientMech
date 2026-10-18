@@ -89,7 +89,7 @@ Reassess prediction-only role support: Casein hydrolysate
 | ev-618b9f8c842114cf | docs/data/mapped_ingredients.csv; CSV lines=[666] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001366","line":666,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"54","ontology_id":"MICRO:0001366","preferred_term":"Casein hydrolysate","total_occurrences":"54"}] |
 | ev-d0d73cd62c6351e2 | reports/yaml_record_review/Casein_hydrolysate.md; &#96;data/ingredients/mapped/Casein_hydrolysate.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:46; Completeness:61; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-37c01559215e327c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[368,1916] | context_only | [{"current_record_sha256":"a61d7e5378b52c5798f9161e8a6a75d1d76da1e5af96275d6207ad15b8199e49","finding_id":"SEM:052910925e7c2f06dcd9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a61d7e5378b52c5798f9161e8a6a75d1d76da1e5af96275d6207ad15b8199e49","finding_id":"SEM:b2d96b9bda2a2008e9a0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a9790757794bbc90 | data/ingredients/mapped/Casein_hydrolysate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-a9790757794bbc90 | data/ingredients/mapped/Casein_hydrolysate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[664],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001366","line":666,"mapping_status":"MAPPED","ontology_id":"MICRO:0001366","preferred_term":"Casein hydrolysate"}],"identifier":"MICRO:0001366","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":54,"edge_count":54,"occurrences":54},"occurrence_statistics":{"media_count":54,"total_occurrences":54},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001366","ontology_label":"casein hydrolysate","ontology_source":"MICRO"},"preferred_term":"Casein hydrolysate","sssom_rows":[{"data_row":660,"object_id":"MICRO:0001366","object_label":"casein hydrolysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casein_hydrolysate","synonym_count":1} |
 | ev-eb71639fcca8fd15 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-8894f7771f457ca5] | context_only | Predecessor structured review finding f-8894f7771f457ca5 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-53320d6c9c0582a1
+  evidence_ids:
+  - ev-dae0b70695983ca0
+  - ev-05348f8d800faad5
+  - ev-4f2644e86fff8e5d
+  - ev-618b9f8c842114cf
+  - ev-a9790757794bbc90
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-53320d6c9c0582a1
+  evidence_ids:
+  - ev-dae0b70695983ca0
+  - ev-37c01559215e327c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-53320d6c9c0582a1
+  evidence_ids:
+  - ev-d0d73cd62c6351e2
+  - ev-37c01559215e327c
+  - ev-eb71639fcca8fd15
 evidence:
 - evidence_id: ev-dae0b70695983ca0
   kind: record_content
   reference: data/ingredients/mapped/Casein_hydrolysate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[664],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001366","line":666,"mapping_status":"MAPPED","ontology_id":"MICRO:0001366","preferred_term":"Casein
     hydrolysate"}],"identifier":"MICRO:0001366","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":54,"edge_count":54,"occurrences":54},"occurrence_statistics":{"media_count":54,"total_occurrences":54},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001366","ontology_label":"casein
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [664]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Casein_hydrolysate; data-row positions=[660]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":660,"object_id":"MICRO:0001366","object_label":"casein
     hydrolysate","other":"Acid hydrolysate of casein","predicate_id":"skos:exactMatch","subject_id":"MIM:Casein_hydrolysate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[666]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001366","line":666,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"54","ontology_id":"MICRO:0001366","preferred_term":"Casein
     hydrolysate","total_occurrences":"54"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[368,1916]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a61d7e5378b52c5798f9161e8a6a75d1d76da1e5af96275d6207ad15b8199e49","finding_id":"SEM:052910925e7c2f06dcd9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a61d7e5378b52c5798f9161e8a6a75d1d76da1e5af96275d6207ad15b8199e49","finding_id":"SEM:b2d96b9bda2a2008e9a0","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Casein_hydrolysate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[664],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001366","line":666,"mapping_status":"MAPPED","ontology_id":"MICRO:0001366","preferred_term":"Casein
+    hydrolysate"}],"identifier":"MICRO:0001366","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":54,"edge_count":54,"occurrences":54},"occurrence_statistics":{"media_count":54,"total_occurrences":54},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001366","ontology_label":"casein
+    hydrolysate","ontology_source":"MICRO"},"preferred_term":"Casein hydrolysate","sssom_rows":[{"data_row":660,"object_id":"MICRO:0001366","object_label":"casein
+    hydrolysate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casein_hydrolysate","synonym_count":1}'
   snapshot_sha256: a61d7e5378b52c5798f9161e8a6a75d1d76da1e5af96275d6207ad15b8199e49
 - evidence_id: ev-eb71639fcca8fd15
   kind: prior_review

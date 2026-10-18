@@ -83,13 +83,13 @@ Reassess prediction-only role support: NH4-oxalate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-558fe703b6d3a6d8 | data/ingredients/mapped/Nh4-oxalate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1543],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91241","line":1545,"mapping_status":"MAPPED","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate"}],"identifier":"CHEBI:91241","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91241","ontology_label":"ammonium oxalate","ontology_source":"CHEBI"},"preferred_term":"NH4-oxalate","sssom_rows":[{"data_row":2063,"object_id":"CHEBI:91241","object_label":"ammonium oxalate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh4-oxalate","synonym_count":5} |
-| ev-310320df76bfc806 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1543] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-fe55ad34612641cd | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nh4-oxalate; data-row positions=[2063] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2063,"object_id":"CHEBI:91241","object_label":"ammonium oxalate","other":"Diammonium oxalate&#124;Ethanedioic acid diammonium salt&#124;Oxalic acid, diammonium salt&#124;bisammonium ethanedioate&#124;CAS:1113-38-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Nh4-oxalate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-d04aa2f89e0d11a4 | docs/data/mapped_ingredients.csv; CSV lines=[1545] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91241","line":1545,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate","total_occurrences":"5"}] |
+| ev-558fe703b6d3a6d8 | data/ingredients/mapped/Nh4-oxalate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1542],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91241","line":1544,"mapping_status":"MAPPED","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate"}],"identifier":"CHEBI:91241","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91241","ontology_label":"ammonium oxalate","ontology_source":"CHEBI"},"preferred_term":"NH4-oxalate","sssom_rows":[{"data_row":2065,"object_id":"CHEBI:91241","object_label":"ammonium oxalate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh4-oxalate","synonym_count":5} |
+| ev-310320df76bfc806 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1542] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-fe55ad34612641cd | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Nh4-oxalate; data-row positions=[2065] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2065,"object_id":"CHEBI:91241","object_label":"ammonium oxalate","other":"Diammonium oxalate&#124;Ethanedioic acid diammonium salt&#124;Oxalic acid, diammonium salt&#124;bisammonium ethanedioate&#124;CAS:1113-38-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Nh4-oxalate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-d04aa2f89e0d11a4 | docs/data/mapped_ingredients.csv; CSV lines=[1544] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:91241","line":1544,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate","total_occurrences":"5"}] |
 | ev-012f7ecc3cc0aa35 | reports/yaml_record_review/Nh4-oxalate.md; &#96;data/ingredients/mapped/Nh4-oxalate.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:26; Completeness:40; Recommended Edits:47 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-fbe576780274d37e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1041,1922] | context_only | [{"current_record_sha256":"3de7f672a69bd4971d23f8b7dd45e730ae5d56cdf7927cd6e4733c984aebb83f","finding_id":"SEM:d4cfba5a9b3c683b02ca","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"3de7f672a69bd4971d23f8b7dd45e730ae5d56cdf7927cd6e4733c984aebb83f","finding_id":"SEM:9b383bf38daf6d3f8b59","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-6a9c16da31ff39b5 | data/ingredients/mapped/Nh4-oxalate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"NITROGEN_SOURCE"}}] |
+| ev-6a9c16da31ff39b5 | data/ingredients/mapped/Nh4-oxalate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1542],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91241","line":1544,"mapping_status":"MAPPED","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate"}],"identifier":"CHEBI:91241","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91241","ontology_label":"ammonium oxalate","ontology_source":"CHEBI"},"preferred_term":"NH4-oxalate","sssom_rows":[{"data_row":2065,"object_id":"CHEBI:91241","object_label":"ammonium oxalate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh4-oxalate","synonym_count":5} |
 | ev-82a053561fdd1efa | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-c8c644bd462efa3d] | context_only | Predecessor structured review finding f-c8c644bd462efa3d in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f11402bf57f0a3cf
+  evidence_ids:
+  - ev-558fe703b6d3a6d8
+  - ev-310320df76bfc806
+  - ev-fe55ad34612641cd
+  - ev-d04aa2f89e0d11a4
+  - ev-6a9c16da31ff39b5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f11402bf57f0a3cf
+  evidence_ids:
+  - ev-558fe703b6d3a6d8
+  - ev-fbe576780274d37e
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f11402bf57f0a3cf
+  evidence_ids:
+  - ev-012f7ecc3cc0aa35
+  - ev-fbe576780274d37e
+  - ev-82a053561fdd1efa
 evidence:
 - evidence_id: ev-558fe703b6d3a6d8
   kind: record_content
   reference: data/ingredients/mapped/Nh4-oxalate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1543],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91241","line":1545,"mapping_status":"MAPPED","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate"}],"identifier":"CHEBI:91241","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91241","ontology_label":"ammonium
-    oxalate","ontology_source":"CHEBI"},"preferred_term":"NH4-oxalate","sssom_rows":[{"data_row":2063,"object_id":"CHEBI:91241","object_label":"ammonium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1542],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91241","line":1544,"mapping_status":"MAPPED","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate"}],"identifier":"CHEBI:91241","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91241","ontology_label":"ammonium
+    oxalate","ontology_source":"CHEBI"},"preferred_term":"NH4-oxalate","sssom_rows":[{"data_row":2065,"object_id":"CHEBI:91241","object_label":"ammonium
     oxalate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh4-oxalate","synonym_count":5}'
   snapshot_sha256: 3de7f672a69bd4971d23f8b7dd45e730ae5d56cdf7927cd6e4733c984aebb83f
 - evidence_id: ev-310320df76bfc806
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1543]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1542]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-fe55ad34612641cd
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Nh4-oxalate; data-row positions=[2063]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Nh4-oxalate; data-row positions=[2065]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2063,"object_id":"CHEBI:91241","object_label":"ammonium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2065,"object_id":"CHEBI:91241","object_label":"ammonium
     oxalate","other":"Diammonium oxalate|Ethanedioic acid diammonium salt|Oxalic acid,
     diammonium salt|bisammonium ethanedioate|CAS:1113-38-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Nh4-oxalate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-d04aa2f89e0d11a4
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1545]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1544]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91241","line":1545,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate","total_occurrences":"5"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:91241","line":1544,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate","total_occurrences":"5"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-012f7ecc3cc0aa35
   kind: prior_review
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1041,1922]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"3de7f672a69bd4971d23f8b7dd45e730ae5d56cdf7927cd6e4733c984aebb83f","finding_id":"SEM:d4cfba5a9b3c683b02ca","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"3de7f672a69bd4971d23f8b7dd45e730ae5d56cdf7927cd6e4733c984aebb83f","finding_id":"SEM:9b383bf38daf6d3f8b59","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Nh4-oxalate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"NITROGEN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1542],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:91241","line":1544,"mapping_status":"MAPPED","ontology_id":"CHEBI:91241","preferred_term":"NH4-oxalate"}],"identifier":"CHEBI:91241","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:91241","ontology_label":"ammonium
+    oxalate","ontology_source":"CHEBI"},"preferred_term":"NH4-oxalate","sssom_rows":[{"data_row":2065,"object_id":"CHEBI:91241","object_label":"ammonium
+    oxalate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Nh4-oxalate","synonym_count":5}'
   snapshot_sha256: 3de7f672a69bd4971d23f8b7dd45e730ae5d56cdf7927cd6e4733c984aebb83f
 - evidence_id: ev-82a053561fdd1efa
   kind: prior_review

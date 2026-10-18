@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na2EDTA·2H2O
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-174897fb046eecb2 | data/ingredients/mapped/Na2edta2h2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1486],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1488,"mapping_status":"MAPPED","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":139,"total_occurrences":140},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2EDTA\u00b72H2O","sssom_rows":[{"data_row":1991,"object_id":"CHEBI:64758","object_label":"EDTA disodium salt dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2edta2h2o","synonym_count":17} |
-| ev-7ad2d69c620719f3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1486] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-6fdc10b1ef96a092 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2edta2h2o; data-row positions=[1991] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1991,"object_id":"CHEBI:64758","object_label":"EDTA disodium salt dihydrate","other":"EDTA disodium dihydrate&#124;Na2EDTA . 2H2O&#124;Na2EDTA \u00b7 2H2O&#124;Na2EDTA.2H2O&#124;Na2EDTA\u00b7 2H2O&#124;Na2H2EDTA.2H2O&#124;disodium (ethylenedinitrilo)tetraacetate dihydrate&#124;disodium EDTA dihydrate&#124;disodium edetate dihydrate&#124;ethylenediaminetetraacetic acid disodium salt dihydrate&#124;Na2EDTA\u20222H2O&#124;Na2EDTA\u20222H2O(Sigma ED255)&#124;disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate--water (1/2)&#124;Na2-EDTA x 2 H2O&#124;CAS:6381-92-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2edta2h2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-72461ba8d03be2b8 | docs/data/mapped_ingredients.csv; CSV lines=[1488] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:64758","line":1488,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"139","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O","total_occurrences":"140"}] |
+| ev-174897fb046eecb2 | data/ingredients/mapped/Na2edta2h2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1485],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1487,"mapping_status":"MAPPED","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":139,"total_occurrences":140},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2EDTA\u00b72H2O","sssom_rows":[{"data_row":1993,"object_id":"CHEBI:64758","object_label":"EDTA disodium salt dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2edta2h2o","synonym_count":17} |
+| ev-7ad2d69c620719f3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1485] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6fdc10b1ef96a092 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na2edta2h2o; data-row positions=[1993] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1993,"object_id":"CHEBI:64758","object_label":"EDTA disodium salt dihydrate","other":"EDTA disodium dihydrate&#124;Na2EDTA . 2H2O&#124;Na2EDTA \u00b7 2H2O&#124;Na2EDTA.2H2O&#124;Na2EDTA\u00b7 2H2O&#124;Na2H2EDTA.2H2O&#124;disodium (ethylenedinitrilo)tetraacetate dihydrate&#124;disodium EDTA dihydrate&#124;disodium edetate dihydrate&#124;ethylenediaminetetraacetic acid disodium salt dihydrate&#124;Na2EDTA\u20222H2O&#124;Na2EDTA\u20222H2O(Sigma ED255)&#124;disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate--water (1/2)&#124;Na2-EDTA x 2 H2O&#124;CAS:6381-92-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na2edta2h2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-72461ba8d03be2b8 | docs/data/mapped_ingredients.csv; CSV lines=[1487] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:64758","line":1487,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"139","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O","total_occurrences":"140"}] |
 | ev-1787279f11d26d40 | reports/yaml_record_review/Na2edta2h2o.md; &#96;data/ingredients/mapped/Na2edta2h2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:29; Completeness:48; Recommended Edits:55 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5c1b6603085003e9 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[992,1648] | context_only | [{"current_record_sha256":"9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d","finding_id":"SEM:07c2d9f8ba538af3ac6b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d","finding_id":"SEM:27ada2bf3dcab970c342","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9cd6cf357721ccf2 | data/ingredients/mapped/Na2edta2h2o.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:38161 (chelator (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}] |
+| ev-9cd6cf357721ccf2 | data/ingredients/mapped/Na2edta2h2o.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1485],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1487,"mapping_status":"MAPPED","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":139,"total_occurrences":140},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2EDTA\u00b72H2O","sssom_rows":[{"data_row":1993,"object_id":"CHEBI:64758","object_label":"EDTA disodium salt dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2edta2h2o","synonym_count":17} |
 | ev-2bbf5013edf4ae1c | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-3e2b9974207e4e65] | context_only | Predecessor structured review finding f-3e2b9974207e4e65 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-bcfb2c5a4216de6d
+  evidence_ids:
+  - ev-174897fb046eecb2
+  - ev-7ad2d69c620719f3
+  - ev-6fdc10b1ef96a092
+  - ev-72461ba8d03be2b8
+  - ev-9cd6cf357721ccf2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-bcfb2c5a4216de6d
+  evidence_ids:
+  - ev-174897fb046eecb2
+  - ev-5c1b6603085003e9
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-bcfb2c5a4216de6d
+  evidence_ids:
+  - ev-1787279f11d26d40
+  - ev-5c1b6603085003e9
+  - ev-2bbf5013edf4ae1c
 evidence:
 - evidence_id: ev-174897fb046eecb2
   kind: record_content
   reference: data/ingredients/mapped/Na2edta2h2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1486],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1488,"mapping_status":"MAPPED","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":139,"total_occurrences":140},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA
-    disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2EDTA\u00b72H2O","sssom_rows":[{"data_row":1991,"object_id":"CHEBI:64758","object_label":"EDTA
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1485],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1487,"mapping_status":"MAPPED","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":139,"total_occurrences":140},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA
+    disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2EDTA\u00b72H2O","sssom_rows":[{"data_row":1993,"object_id":"CHEBI:64758","object_label":"EDTA
     disodium salt dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2edta2h2o","synonym_count":17}'
   snapshot_sha256: 9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d
 - evidence_id: ev-7ad2d69c620719f3
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1486]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1485]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,10 +232,10 @@ evidence:
 - evidence_id: ev-6fdc10b1ef96a092
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na2edta2h2o; data-row positions=[1991]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na2edta2h2o; data-row positions=[1993]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1991,"object_id":"CHEBI:64758","object_label":"EDTA
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1993,"object_id":"CHEBI:64758","object_label":"EDTA
     disodium salt dihydrate","other":"EDTA disodium dihydrate|Na2EDTA . 2H2O|Na2EDTA
     \u00b7 2H2O|Na2EDTA.2H2O|Na2EDTA\u00b7 2H2O|Na2H2EDTA.2H2O|disodium (ethylenedinitrilo)tetraacetate
     dihydrate|disodium EDTA dihydrate|disodium edetate dihydrate|ethylenediaminetetraacetic
@@ -233,10 +246,10 @@ evidence:
 - evidence_id: ev-72461ba8d03be2b8
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1488]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1487]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:64758","line":1488,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"139","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O","total_occurrences":"140"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:64758","line":1487,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"139","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O","total_occurrences":"140"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-1787279f11d26d40
   kind: prior_review
@@ -259,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[992,1648]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d","finding_id":"SEM:07c2d9f8ba538af3ac6b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d","finding_id":"SEM:27ada2bf3dcab970c342","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +282,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na2edta2h2o.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:38161 (chelator (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CHELATOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1485],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:64758","line":1487,"mapping_status":"MAPPED","ontology_id":"CHEBI:64758","preferred_term":"Na2EDTA\u00b72H2O"}],"identifier":"CHEBI:64758","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":139,"edge_count":139,"occurrences":140},"occurrence_statistics":{"media_count":139,"total_occurrences":140},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:64758","ontology_label":"EDTA
+    disodium salt dihydrate","ontology_source":"CHEBI"},"preferred_term":"Na2EDTA\u00b72H2O","sssom_rows":[{"data_row":1993,"object_id":"CHEBI:64758","object_label":"EDTA
+    disodium salt dihydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na2edta2h2o","synonym_count":17}'
   snapshot_sha256: 9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d
 - evidence_id: ev-2bbf5013edf4ae1c
   kind: prior_review

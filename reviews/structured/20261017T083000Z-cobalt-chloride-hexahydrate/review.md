@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cobalt chloride hexahydrate
 | ev-090f0290016c03e2 | docs/data/mapped_ingredients.csv; CSV lines=[744] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:53503","line":744,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"2636","ontology_id":"CHEBI:53503","preferred_term":"Cobalt chloride hexahydrate","total_occurrences":"2638"}] |
 | ev-7c3ef400f19ca46b | reports/yaml_record_review/Cobalt_chloride_hexahydrate.md; &#96;data/ingredients/mapped/Cobalt_chloride_hexahydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:28; Evidence:48; Completeness:69; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c8ae09ee189612b4 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[430,1600] | context_only | [{"current_record_sha256":"f32ab49c0fa30ca998c07a039503ff4f943b1cb428fb994da6906be8349247dc","finding_id":"SEM:fb7bde6c0dcac86f65a5","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f32ab49c0fa30ca998c07a039503ff4f943b1cb428fb994da6906be8349247dc","finding_id":"SEM:7aa99c3fc33f337b24ea","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f55febd79e451c02 | data/ingredients/mapped/Cobalt_chloride_hexahydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-f55febd79e451c02 | data/ingredients/mapped/Cobalt_chloride_hexahydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[742],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53503","line":744,"mapping_status":"MAPPED","ontology_id":"CHEBI:53503","preferred_term":"Cobalt chloride hexahydrate"}],"identifier":"CHEBI:53503","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2636,"edge_count":2636,"occurrences":2638},"occurrence_statistics":{"media_count":2636,"total_occurrences":2638},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:53503","ontology_label":"cobalt chloride hexahydrate","ontology_source":"CHEBI"},"preferred_term":"Cobalt chloride hexahydrate","sssom_rows":[{"data_row":795,"object_id":"CHEBI:53503","object_label":"cobalt chloride hexahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cobalt_chloride_hexahydrate","synonym_count":7} |
 | ev-43c0562a0f44b2de | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-46a0cf617c770d22] | context_only | Predecessor structured review finding f-46a0cf617c770d22 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-f9db6fc3a8d2618f
+  evidence_ids:
+  - ev-beaf3eea521ad334
+  - ev-9af2719fee58a2ab
+  - ev-59300f2f598ea9e8
+  - ev-090f0290016c03e2
+  - ev-f55febd79e451c02
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-f9db6fc3a8d2618f
+  evidence_ids:
+  - ev-beaf3eea521ad334
+  - ev-c8ae09ee189612b4
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-f9db6fc3a8d2618f
+  evidence_ids:
+  - ev-7c3ef400f19ca46b
+  - ev-c8ae09ee189612b4
+  - ev-43c0562a0f44b2de
 evidence:
 - evidence_id: ev-beaf3eea521ad334
   kind: record_content
   reference: data/ingredients/mapped/Cobalt_chloride_hexahydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[742],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53503","line":744,"mapping_status":"MAPPED","ontology_id":"CHEBI:53503","preferred_term":"Cobalt
     chloride hexahydrate"}],"identifier":"CHEBI:53503","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2636,"edge_count":2636,"occurrences":2638},"occurrence_statistics":{"media_count":2636,"total_occurrences":2638},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:53503","ontology_label":"cobalt
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [742]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +235,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cobalt_chloride_hexahydrate; data-row positions=[795]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":795,"object_id":"CHEBI:53503","object_label":"cobalt
     chloride hexahydrate","other":"Cobalt dichloride hexahydrate|Cobalt(II) chloride
@@ -233,7 +246,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[744]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:53503","line":744,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"2636","ontology_id":"CHEBI:53503","preferred_term":"Cobalt
     chloride hexahydrate","total_occurrences":"2638"}]'
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[430,1600]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f32ab49c0fa30ca998c07a039503ff4f943b1cb428fb994da6906be8349247dc","finding_id":"SEM:fb7bde6c0dcac86f65a5","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f32ab49c0fa30ca998c07a039503ff4f943b1cb428fb994da6906be8349247dc","finding_id":"SEM:7aa99c3fc33f337b24ea","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cobalt_chloride_hexahydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[742],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53503","line":744,"mapping_status":"MAPPED","ontology_id":"CHEBI:53503","preferred_term":"Cobalt
+    chloride hexahydrate"}],"identifier":"CHEBI:53503","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2636,"edge_count":2636,"occurrences":2638},"occurrence_statistics":{"media_count":2636,"total_occurrences":2638},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:53503","ontology_label":"cobalt
+    chloride hexahydrate","ontology_source":"CHEBI"},"preferred_term":"Cobalt chloride
+    hexahydrate","sssom_rows":[{"data_row":795,"object_id":"CHEBI:53503","object_label":"cobalt
+    chloride hexahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cobalt_chloride_hexahydrate","synonym_count":7}'
   snapshot_sha256: f32ab49c0fa30ca998c07a039503ff4f943b1cb428fb994da6906be8349247dc
 - evidence_id: ev-43c0562a0f44b2de
   kind: prior_review

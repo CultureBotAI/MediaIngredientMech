@@ -83,14 +83,14 @@ Reassess prediction-only role support: Poly(3-hydroxybutyric acid)
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-7a3af97044a0dea6 | data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1675],"raw_equal":true},"docs_rows":[{"identifier":"cas:29435-48-1","line":1677,"mapping_status":"MAPPED","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric acid)"}],"identifier":"cas:29435-48-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:20067","ontology_label":"3-hydroxybutyric acid","ontology_source":"CHEBI"},"preferred_term":"Poly(3-hydroxybutyric acid)","sssom_rows":[{"data_row":2284,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric acid","predicate_id":"skos:broadMatch"},{"data_row":2285,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric acid)","predicate_id":"skos:exactMatch"},{"data_row":2286,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric acid)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Poly_3-hydroxybutyric_Acid","synonym_count":1} |
-| ev-f6df2dbe19fc1622 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1675] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-7173063e5fb0506f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Poly_3-hydroxybutyric_Acid; data-row positions=[2284,2285,2286] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2284,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2285,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric acid)","other":"CAS:29435-48-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2286,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric acid)","other":"CAS:29435-48-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-9fc5f7e9eb33c3de | docs/data/mapped_ingredients.csv; CSV lines=[1677] | supports | Published identity and count rows inspected: [{"identifier":"cas:29435-48-1","line":1677,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric acid)","total_occurrences":"0"}] |
+| ev-7a3af97044a0dea6 | data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1674],"raw_equal":true},"docs_rows":[{"identifier":"cas:29435-48-1","line":1676,"mapping_status":"MAPPED","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric acid)"}],"identifier":"cas:29435-48-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:20067","ontology_label":"3-hydroxybutyric acid","ontology_source":"CHEBI"},"preferred_term":"Poly(3-hydroxybutyric acid)","sssom_rows":[{"data_row":2286,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric acid","predicate_id":"skos:broadMatch"},{"data_row":2287,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric acid)","predicate_id":"skos:exactMatch"},{"data_row":2288,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric acid)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Poly_3-hydroxybutyric_Acid","synonym_count":1} |
+| ev-f6df2dbe19fc1622 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1674] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-7173063e5fb0506f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Poly_3-hydroxybutyric_Acid; data-row positions=[2286, 2287, 2288] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2286,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2287,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric acid)","other":"CAS:29435-48-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2288,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric acid)","other":"CAS:29435-48-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-9fc5f7e9eb33c3de | docs/data/mapped_ingredients.csv; CSV lines=[1676] | supports | Published identity and count rows inspected: [{"identifier":"cas:29435-48-1","line":1676,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric acid)","total_occurrences":"0"}] |
 | ev-590318d6fa15ef24 | reports/yaml_record_review/20261001T050309Z-Poly_3-hydroxybutyric_Acid.md; YAML Record Review: Poly(3-hydroxybutyric acid):2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5612a08ff776cea9 | reports/yaml_record_review/Poly_3-hydroxybutyric_Acid.md; &#96;data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-f40df26c33af12b8 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1125,1675] | context_only | [{"current_record_sha256":"9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848","finding_id":"SEM:2d7f1f6e968e4fcdab19","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848","finding_id":"SEM:fbc9a32871fc823f900c","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-33951119fa4ea50a | data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-33951119fa4ea50a | data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1674],"raw_equal":true},"docs_rows":[{"identifier":"cas:29435-48-1","line":1676,"mapping_status":"MAPPED","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric acid)"}],"identifier":"cas:29435-48-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:20067","ontology_label":"3-hydroxybutyric acid","ontology_source":"CHEBI"},"preferred_term":"Poly(3-hydroxybutyric acid)","sssom_rows":[{"data_row":2286,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric acid","predicate_id":"skos:broadMatch"},{"data_row":2287,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric acid)","predicate_id":"skos:exactMatch"},{"data_row":2288,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric acid)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Poly_3-hydroxybutyric_Acid","synonym_count":1} |
 | ev-2973e51b1f6a6923 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-91668becea8fd466] | context_only | Predecessor structured review finding f-91668becea8fd466 in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b39f2508e9b15e70
+  evidence_ids:
+  - ev-7a3af97044a0dea6
+  - ev-f6df2dbe19fc1622
+  - ev-7173063e5fb0506f
+  - ev-9fc5f7e9eb33c3de
+  - ev-33951119fa4ea50a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b39f2508e9b15e70
+  evidence_ids:
+  - ev-7a3af97044a0dea6
+  - ev-f40df26c33af12b8
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,26 +208,31 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b39f2508e9b15e70
+  evidence_ids:
+  - ev-590318d6fa15ef24
+  - ev-5612a08ff776cea9
+  - ev-f40df26c33af12b8
+  - ev-2973e51b1f6a6923
 evidence:
 - evidence_id: ev-7a3af97044a0dea6
   kind: record_content
   reference: data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1675],"raw_equal":true},"docs_rows":[{"identifier":"cas:29435-48-1","line":1677,"mapping_status":"MAPPED","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1674],"raw_equal":true},"docs_rows":[{"identifier":"cas:29435-48-1","line":1676,"mapping_status":"MAPPED","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric
     acid)"}],"identifier":"cas:29435-48-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:20067","ontology_label":"3-hydroxybutyric
-    acid","ontology_source":"CHEBI"},"preferred_term":"Poly(3-hydroxybutyric acid)","sssom_rows":[{"data_row":2284,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric
-    acid","predicate_id":"skos:broadMatch"},{"data_row":2285,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric
-    acid)","predicate_id":"skos:exactMatch"},{"data_row":2286,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric
+    acid","ontology_source":"CHEBI"},"preferred_term":"Poly(3-hydroxybutyric acid)","sssom_rows":[{"data_row":2286,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric
+    acid","predicate_id":"skos:broadMatch"},{"data_row":2287,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric
+    acid)","predicate_id":"skos:exactMatch"},{"data_row":2288,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric
     acid)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Poly_3-hydroxybutyric_Acid","synonym_count":1}'
   snapshot_sha256: 9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848
 - evidence_id: ev-f6df2dbe19fc1622
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1675]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1674]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -226,21 +240,22 @@ evidence:
 - evidence_id: ev-7173063e5fb0506f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Poly_3-hydroxybutyric_Acid; data-row positions=[2284,2285,2286]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Poly_3-hydroxybutyric_Acid; data-row positions=[2286, 2287,
+    2288]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2284,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric
-    acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2285,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric
-    acid)","other":"CAS:29435-48-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2286,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2286,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric
+    acid","other":"","predicate_id":"skos:broadMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2287,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric
+    acid)","other":"CAS:29435-48-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2288,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric
     acid)","other":"CAS:29435-48-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Poly_3-hydroxybutyric_Acid","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-9fc5f7e9eb33c3de
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1677]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1676]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"cas:29435-48-1","line":1677,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:29435-48-1","line":1676,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric
     acid)","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-590318d6fa15ef24
@@ -286,7 +301,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1125,1675]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848","finding_id":"SEM:2d7f1f6e968e4fcdab19","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848","finding_id":"SEM:fbc9a32871fc823f900c","kind":"role_evidence","resolution_reason":"Historical
@@ -296,12 +311,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1674],"raw_equal":true},"docs_rows":[{"identifier":"cas:29435-48-1","line":1676,"mapping_status":"MAPPED","ontology_id":"CHEBI:20067","preferred_term":"Poly(3-hydroxybutyric
+    acid)"}],"identifier":"cas:29435-48-1","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:20067","ontology_label":"3-hydroxybutyric
+    acid","ontology_source":"CHEBI"},"preferred_term":"Poly(3-hydroxybutyric acid)","sssom_rows":[{"data_row":2286,"object_id":"CHEBI:20067","object_label":"3-hydroxybutyric
+    acid","predicate_id":"skos:broadMatch"},{"data_row":2287,"object_id":"cas:29435-48-1","object_label":"Poly(3-hydroxybutyric
+    acid)","predicate_id":"skos:exactMatch"},{"data_row":2288,"object_id":"kgmicrobe.compound:poly_3-hydroxybutyric_acid","object_label":"Poly(3-hydroxybutyric
+    acid)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Poly_3-hydroxybutyric_Acid","synonym_count":1}'
   snapshot_sha256: 9e0e563c06141faa41510a655cc3e1821d7a225c09236b309e2a2c1d541b7848
 - evidence_id: ev-2973e51b1f6a6923
   kind: prior_review

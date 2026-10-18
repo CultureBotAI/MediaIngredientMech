@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-05f06581682e2b5c
+  evidence_ids:
+  - ev-8d28f61762dd90db
+  - ev-5f7e4dcc646d4879
+  - ev-89513754ce070b52
+  - ev-7ec1dc62f696052d
+  - ev-14f2c706bf52019d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-05f06581682e2b5c
+  evidence_ids:
+  - ev-8d28f61762dd90db
+  - ev-7ec2c50f5ab34417
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-05f06581682e2b5c
+  evidence_ids:
+  - ev-d2b6de4d211a69d1
+  - ev-7ec2c50f5ab34417
+  - ev-03645faf2a2a42a9
 evidence:
 - evidence_id: ev-8d28f61762dd90db
   kind: record_content
   reference: data/ingredients/mapped/Achromoviromycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[445],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:achromoviromycin","line":447,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:achromoviromycin","preferred_term":"Achromoviromycin"}],"identifier":"kgmicrobe.compound:achromoviromycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:achromoviromycin","ontology_label":"Achromoviromycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Achromoviromycin","sssom_rows":[{"data_row":289,"object_id":"kgmicrobe.compound:achromoviromycin","object_label":"Achromoviromycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Achromoviromycin","synonym_count":0}'
   snapshot_sha256: d6d488697656261cb8807a251449d55226dd6d0571b46762d0b0a0dd84c94b6f
@@ -104,7 +117,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [445]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +126,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Achromoviromycin; data-row positions=[289]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":289,"object_id":"kgmicrobe.compound:achromoviromycin","object_label":"Achromoviromycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Achromoviromycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +134,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[447]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:achromoviromycin","line":447,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:achromoviromycin","preferred_term":"Achromoviromycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -145,7 +158,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[201,1967]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d6d488697656261cb8807a251449d55226dd6d0571b46762d0b0a0dd84c94b6f","finding_id":"SEM:c9c5c23204991c121e73","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d6d488697656261cb8807a251449d55226dd6d0571b46762d0b0a0dd84c94b6f","finding_id":"SEM:992ca8aff01756edd6f1","kind":"role_evidence","resolution_reason":"Historical
@@ -155,12 +168,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Achromoviromycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[445],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:achromoviromycin","line":447,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:achromoviromycin","preferred_term":"Achromoviromycin"}],"identifier":"kgmicrobe.compound:achromoviromycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:achromoviromycin","ontology_label":"Achromoviromycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Achromoviromycin","sssom_rows":[{"data_row":289,"object_id":"kgmicrobe.compound:achromoviromycin","object_label":"Achromoviromycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Achromoviromycin","synonym_count":0}'
   snapshot_sha256: d6d488697656261cb8807a251449d55226dd6d0571b46762d0b0a0dd84c94b6f
 - evidence_id: ev-03645faf2a2a42a9
   kind: prior_review

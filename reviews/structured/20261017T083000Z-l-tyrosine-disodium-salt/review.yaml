@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2867ade943ecebb4
+  evidence_ids:
+  - ev-61ffea236a0ecf50
+  - ev-4b284561b7053f7d
+  - ev-c88c40ef21f60033
+  - ev-fcbdde0d8cd9dc4f
+  - ev-880c911ee4595793
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-2867ade943ecebb4
+  evidence_ids:
+  - ev-61ffea236a0ecf50
+  - ev-6f454615a4110e21
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2867ade943ecebb4
+  evidence_ids:
+  - ev-04bb4ecee8089394
+  - ev-6f454615a4110e21
+  - ev-c5a734a191d95ada
 evidence:
 - evidence_id: ev-61ffea236a0ecf50
   kind: record_content
   reference: data/ingredients/mapped/L-tyrosine_Disodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1271],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53696","line":1273,"mapping_status":"MAPPED","ontology_id":"CHEBI:53696","preferred_term":"L-tyrosine
     disodium salt"}],"identifier":"CHEBI:53696","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:53696","ontology_label":"disodium
@@ -108,7 +121,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1271]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -117,7 +130,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-tyrosine_Disodium_Salt; data-row positions=[1644]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1644,"object_id":"CHEBI:53696","object_label":"disodium
     L-tyrosinate","other":"L-Tyrosine sodium salt (1:2)|CAS:69847-45-6","predicate_id":"skos:exactMatch","subject_id":"MIM:L-tyrosine_Disodium_Salt","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -126,7 +139,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1273]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:53696","line":1273,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"6","ontology_id":"CHEBI:53696","preferred_term":"L-tyrosine
     disodium salt","total_occurrences":"6"}]'
@@ -151,7 +164,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[838,1643]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0553aec6fa9d36613a4aade51c62815f2c277e1097608d5549b6fcb53b687662","finding_id":"SEM:cff3ee4eca310ccf433a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0553aec6fa9d36613a4aade51c62815f2c277e1097608d5549b6fcb53b687662","finding_id":"SEM:26207e8c7802bd601278","kind":"role_evidence","resolution_reason":"Historical
@@ -161,12 +174,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-tyrosine_Disodium_Salt.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1271],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:53696","line":1273,"mapping_status":"MAPPED","ontology_id":"CHEBI:53696","preferred_term":"L-tyrosine
+    disodium salt"}],"identifier":"CHEBI:53696","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":6,"edge_count":6,"occurrences":6},"occurrence_statistics":{"media_count":6,"total_occurrences":6},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:53696","ontology_label":"disodium
+    L-tyrosinate","ontology_source":"CHEBI"},"preferred_term":"L-tyrosine disodium
+    salt","sssom_rows":[{"data_row":1644,"object_id":"CHEBI:53696","object_label":"disodium
+    L-tyrosinate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-tyrosine_Disodium_Salt","synonym_count":2}'
   snapshot_sha256: 0553aec6fa9d36613a4aade51c62815f2c277e1097608d5549b6fcb53b687662
 - evidence_id: ev-c5a734a191d95ada
   kind: prior_review

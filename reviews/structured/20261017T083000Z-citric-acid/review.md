@@ -90,7 +90,7 @@ Reassess prediction-only role support: Citric acid
 | ev-e382458c59024153 | reports/yaml_record_review/20261001T050154Z-Citric_Acid.md; YAML Record Review: Citric acid:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-336ac9c039f7b225 | reports/yaml_record_review/Citric_Acid.md; &#96;data/ingredients/mapped/Citric_Acid.yaml&#96;:2; Verdict:4; Identity:13; Validation:27; Evidence:44; Completeness:72; Recommended Edits:80 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-02f9cba384d7f730 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[420,1689,1691] | context_only | [{"current_record_sha256":"c205278f6660c87cf3f7d986ff58f9a9be68c393d71bfd6fc15095ca74c36fd5","finding_id":"SEM:eb51e3e78d43ccaafaee","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c205278f6660c87cf3f7d986ff58f9a9be68c393d71bfd6fc15095ca74c36fd5","finding_id":"SEM:46ca57eaf43846e2d009","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c205278f6660c87cf3f7d986ff58f9a9be68c393d71bfd6fc15095ca74c36fd5","finding_id":"SEM:460640be4649008b1fee","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f0c38d20d55db6c2 | data/ingredients/mapped/Citric_Acid.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-f0c38d20d55db6c2 | data/ingredients/mapped/Citric_Acid.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[731],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30769","line":733,"mapping_status":"MAPPED","ontology_id":"CHEBI:30769","preferred_term":"Citric acid"}],"identifier":"CHEBI:30769","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":110,"edge_count":110,"occurrences":113},"occurrence_statistics":{"media_count":110,"total_occurrences":113},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30769","ontology_label":"citric acid","ontology_source":"CHEBI"},"preferred_term":"Citric acid","sssom_rows":[{"data_row":779,"object_id":"CHEBI:30769","object_label":"citric acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Citric_Acid","synonym_count":15} |
 | ev-a9233ee72e76d1f4 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-91fcb4b6f2f0e185] | context_only | Predecessor structured review finding f-91fcb4b6f2f0e185 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -183,6 +183,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a67361429864cdbf
+  evidence_ids:
+  - ev-56aadddc28f0b88f
+  - ev-6a191bd8b49fe6d1
+  - ev-8e5dbab50fcac38f
+  - ev-31cd0c6d1dd62d7c
+  - ev-f0c38d20d55db6c2
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -191,6 +197,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-a67361429864cdbf
+  evidence_ids:
+  - ev-56aadddc28f0b88f
+  - ev-02f9cba384d7f730
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -199,13 +208,18 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a67361429864cdbf
+  evidence_ids:
+  - ev-e382458c59024153
+  - ev-336ac9c039f7b225
+  - ev-02f9cba384d7f730
+  - ev-a9233ee72e76d1f4
 evidence:
 - evidence_id: ev-56aadddc28f0b88f
   kind: record_content
   reference: data/ingredients/mapped/Citric_Acid.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[731],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30769","line":733,"mapping_status":"MAPPED","ontology_id":"CHEBI:30769","preferred_term":"Citric
     acid"}],"identifier":"CHEBI:30769","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":110,"edge_count":110,"occurrences":113},"occurrence_statistics":{"media_count":110,"total_occurrences":113},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30769","ontology_label":"citric
@@ -216,7 +230,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [731]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -225,7 +239,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Citric_Acid; data-row positions=[779]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":779,"object_id":"CHEBI:30769","object_label":"citric
     acid","other":"2-Hydroxy-1,2,3-propanetricarboxylic acid|2-Hydroxytricarballylic
@@ -236,7 +250,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[733]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30769","line":733,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"110","ontology_id":"CHEBI:30769","preferred_term":"Citric
     acid","total_occurrences":"113"}]'
@@ -293,7 +307,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[420,1689,1691]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c205278f6660c87cf3f7d986ff58f9a9be68c393d71bfd6fc15095ca74c36fd5","finding_id":"SEM:eb51e3e78d43ccaafaee","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c205278f6660c87cf3f7d986ff58f9a9be68c393d71bfd6fc15095ca74c36fd5","finding_id":"SEM:46ca57eaf43846e2d009","kind":"role_evidence","resolution_reason":"Historical
@@ -304,14 +318,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Citric_Acid.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[731],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30769","line":733,"mapping_status":"MAPPED","ontology_id":"CHEBI:30769","preferred_term":"Citric
+    acid"}],"identifier":"CHEBI:30769","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":110,"edge_count":110,"occurrences":113},"occurrence_statistics":{"media_count":110,"total_occurrences":113},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:30769","ontology_label":"citric
+    acid","ontology_source":"CHEBI"},"preferred_term":"Citric acid","sssom_rows":[{"data_row":779,"object_id":"CHEBI:30769","object_label":"citric
+    acid","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Citric_Acid","synonym_count":15}'
   snapshot_sha256: c205278f6660c87cf3f7d986ff58f9a9be68c393d71bfd6fc15095ca74c36fd5
 - evidence_id: ev-a9233ee72e76d1f4
   kind: prior_review

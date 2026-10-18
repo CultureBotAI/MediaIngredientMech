@@ -83,13 +83,13 @@ Reassess prediction-only role support: Sodium Dodecyl Sulfate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-497bd4220eeba7cd | data/ingredients/mapped/Sodium_Dodecyl_Sulfate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1833],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8984","line":1835,"mapping_status":"MAPPED","ontology_id":"CHEBI:8984","preferred_term":"Sodium Dodecyl Sulfate"}],"identifier":"CHEBI:8984","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8984","ontology_label":"sodium dodecyl sulfate","ontology_source":"CHEBI"},"preferred_term":"Sodium Dodecyl Sulfate","sssom_rows":[{"data_row":2556,"object_id":"CHEBI:8984","object_label":"sodium dodecyl sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dodecyl_Sulfate","synonym_count":1} |
-| ev-778c82bf1cf30f4f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1833] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-a1df2825833f0977 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Dodecyl_Sulfate; data-row positions=[2556] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2556,"object_id":"CHEBI:8984","object_label":"sodium dodecyl sulfate","other":"SDS&#124;CAS:151-21-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Dodecyl_Sulfate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-6531aee94ad3fea5 | docs/data/mapped_ingredients.csv; CSV lines=[1835] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:8984","line":1835,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8984","preferred_term":"Sodium Dodecyl Sulfate","total_occurrences":"0"}] |
+| ev-497bd4220eeba7cd | data/ingredients/mapped/Sodium_Dodecyl_Sulfate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8984","line":1834,"mapping_status":"MAPPED","ontology_id":"CHEBI:8984","preferred_term":"Sodium Dodecyl Sulfate"}],"identifier":"CHEBI:8984","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8984","ontology_label":"sodium dodecyl sulfate","ontology_source":"CHEBI"},"preferred_term":"Sodium Dodecyl Sulfate","sssom_rows":[{"data_row":2558,"object_id":"CHEBI:8984","object_label":"sodium dodecyl sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dodecyl_Sulfate","synonym_count":1} |
+| ev-778c82bf1cf30f4f | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1832] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a1df2825833f0977 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sodium_Dodecyl_Sulfate; data-row positions=[2558] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2558,"object_id":"CHEBI:8984","object_label":"sodium dodecyl sulfate","other":"SDS&#124;CAS:151-21-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Dodecyl_Sulfate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-6531aee94ad3fea5 | docs/data/mapped_ingredients.csv; CSV lines=[1834] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:8984","line":1834,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8984","preferred_term":"Sodium Dodecyl Sulfate","total_occurrences":"0"}] |
 | ev-779507f6c9e65d44 | reports/yaml_record_review/Sodium_Dodecyl_Sulfate.md; &#96;data/ingredients/mapped/Sodium_Dodecyl_Sulfate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2db1b0dabdd7ed48 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1215,1468] | context_only | [{"current_record_sha256":"0d32474dddfc4ef67d0932b9d586e27293d71ccef3c0ed68dd8f2bca225b0aa7","finding_id":"SEM:c0c9c6c468a3da43e15e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0d32474dddfc4ef67d0932b9d586e27293d71ccef3c0ed68dd8f2bca225b0aa7","finding_id":"SEM:3d5a27f785a23a1ae682","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-56a61bb2d6a9583d | data/ingredients/mapped/Sodium_Dodecyl_Sulfate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}] |
+| ev-56a61bb2d6a9583d | data/ingredients/mapped/Sodium_Dodecyl_Sulfate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8984","line":1834,"mapping_status":"MAPPED","ontology_id":"CHEBI:8984","preferred_term":"Sodium Dodecyl Sulfate"}],"identifier":"CHEBI:8984","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8984","ontology_label":"sodium dodecyl sulfate","ontology_source":"CHEBI"},"preferred_term":"Sodium Dodecyl Sulfate","sssom_rows":[{"data_row":2558,"object_id":"CHEBI:8984","object_label":"sodium dodecyl sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dodecyl_Sulfate","synonym_count":1} |
 | ev-6c13621891397804 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-ec3b08e7f3517cec] | context_only | Predecessor structured review finding f-ec3b08e7f3517cec in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-b794f9b46aa55b33
+  evidence_ids:
+  - ev-497bd4220eeba7cd
+  - ev-778c82bf1cf30f4f
+  - ev-a1df2825833f0977
+  - ev-6531aee94ad3fea5
+  - ev-56a61bb2d6a9583d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-b794f9b46aa55b33
+  evidence_ids:
+  - ev-497bd4220eeba7cd
+  - ev-2db1b0dabdd7ed48
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,24 +204,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-b794f9b46aa55b33
+  evidence_ids:
+  - ev-779507f6c9e65d44
+  - ev-2db1b0dabdd7ed48
+  - ev-6c13621891397804
 evidence:
 - evidence_id: ev-497bd4220eeba7cd
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Dodecyl_Sulfate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1833],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8984","line":1835,"mapping_status":"MAPPED","ontology_id":"CHEBI:8984","preferred_term":"Sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8984","line":1834,"mapping_status":"MAPPED","ontology_id":"CHEBI:8984","preferred_term":"Sodium
     Dodecyl Sulfate"}],"identifier":"CHEBI:8984","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8984","ontology_label":"sodium
-    dodecyl sulfate","ontology_source":"CHEBI"},"preferred_term":"Sodium Dodecyl Sulfate","sssom_rows":[{"data_row":2556,"object_id":"CHEBI:8984","object_label":"sodium
+    dodecyl sulfate","ontology_source":"CHEBI"},"preferred_term":"Sodium Dodecyl Sulfate","sssom_rows":[{"data_row":2558,"object_id":"CHEBI:8984","object_label":"sodium
     dodecyl sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dodecyl_Sulfate","synonym_count":1}'
   snapshot_sha256: 0d32474dddfc4ef67d0932b9d586e27293d71ccef3c0ed68dd8f2bca225b0aa7
 - evidence_id: ev-778c82bf1cf30f4f
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1833]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1832]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,19 +233,19 @@ evidence:
 - evidence_id: ev-a1df2825833f0977
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Sodium_Dodecyl_Sulfate; data-row positions=[2556]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Sodium_Dodecyl_Sulfate; data-row positions=[2558]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2556,"object_id":"CHEBI:8984","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2558,"object_id":"CHEBI:8984","object_label":"sodium
     dodecyl sulfate","other":"SDS|CAS:151-21-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Dodecyl_Sulfate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-6531aee94ad3fea5
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1835]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1834]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:8984","line":1835,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8984","preferred_term":"Sodium
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:8984","line":1834,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:8984","preferred_term":"Sodium
     Dodecyl Sulfate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-779507f6c9e65d44
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1215,1468]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0d32474dddfc4ef67d0932b9d586e27293d71ccef3c0ed68dd8f2bca225b0aa7","finding_id":"SEM:c0c9c6c468a3da43e15e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0d32474dddfc4ef67d0932b9d586e27293d71ccef3c0ed68dd8f2bca225b0aa7","finding_id":"SEM:3d5a27f785a23a1ae682","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Sodium_Dodecyl_Sulfate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1832],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:8984","line":1834,"mapping_status":"MAPPED","ontology_id":"CHEBI:8984","preferred_term":"Sodium
+    Dodecyl Sulfate"}],"identifier":"CHEBI:8984","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:8984","ontology_label":"sodium
+    dodecyl sulfate","ontology_source":"CHEBI"},"preferred_term":"Sodium Dodecyl Sulfate","sssom_rows":[{"data_row":2558,"object_id":"CHEBI:8984","object_label":"sodium
+    dodecyl sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Dodecyl_Sulfate","synonym_count":1}'
   snapshot_sha256: 0d32474dddfc4ef67d0932b9d586e27293d71ccef3c0ed68dd8f2bca225b0aa7
 - evidence_id: ev-6c13621891397804
   kind: prior_review

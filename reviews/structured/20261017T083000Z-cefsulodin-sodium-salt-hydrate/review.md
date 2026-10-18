@@ -85,11 +85,11 @@ Reassess prediction-only role support: Cefsulodin sodium salt hydrate
 | --- | --- | --- | --- |
 | ev-936346912759a99d | data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[680],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","line":682,"mapping_status":"MAPPED","ontology_id":"CHEBI:31380","preferred_term":"Cefsulodin sodium salt hydrate"}],"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:31380","ontology_label":"Cefsulodin sodium","ontology_source":"CHEBI"},"preferred_term":"Cefsulodin sodium salt hydrate","sssom_rows":[{"data_row":696,"object_id":"CHEBI:31380","object_label":"Cefsulodin sodium","predicate_id":"skos:closeMatch"},{"data_row":697,"object_id":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","object_label":"Cefsulodin sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cefsulodin_Sodium_Salt_Hydrate","synonym_count":0} |
 | ev-86867bfb38b4a6db | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [680] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-645848f6382b81fe | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cefsulodin_Sodium_Salt_Hydrate; data-row positions=[696,697] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":696,"object_id":"CHEBI:31380","object_label":"Cefsulodin sodium","other":"CAS:52152-93-9","predicate_id":"skos:closeMatch","subject_id":"MIM:Cefsulodin_Sodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":697,"object_id":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","object_label":"Cefsulodin sodium salt hydrate","other":"CAS:52152-93-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Cefsulodin_Sodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-645848f6382b81fe | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cefsulodin_Sodium_Salt_Hydrate; data-row positions=[696, 697] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":696,"object_id":"CHEBI:31380","object_label":"Cefsulodin sodium","other":"CAS:52152-93-9","predicate_id":"skos:closeMatch","subject_id":"MIM:Cefsulodin_Sodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":697,"object_id":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","object_label":"Cefsulodin sodium salt hydrate","other":"CAS:52152-93-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Cefsulodin_Sodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
 | ev-d03804ad64e23077 | docs/data/mapped_ingredients.csv; CSV lines=[682] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","line":682,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:31380","preferred_term":"Cefsulodin sodium salt hydrate","total_occurrences":"0"}] |
 | ev-a7b4dcd3a77925e0 | reports/yaml_record_review/Cefsulodin_Sodium_Salt_Hydrate.md; &#96;data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:26; Evidence:41; Completeness:66; Recommended Edits:74 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-167faa1ab3f8807b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[382,1847] | context_only | [{"current_record_sha256":"248a200989082e5f3786f45ddf9f1492b58eb5a728f0696040b12e8e1bad0939","finding_id":"SEM:a3268454c6af37ae095d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"248a200989082e5f3786f45ddf9f1492b58eb5a728f0696040b12e8e1bad0939","finding_id":"SEM:7d0213447cba714f472a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-26cf31413f4662e4 | data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-26cf31413f4662e4 | data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[680],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","line":682,"mapping_status":"MAPPED","ontology_id":"CHEBI:31380","preferred_term":"Cefsulodin sodium salt hydrate"}],"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:31380","ontology_label":"Cefsulodin sodium","ontology_source":"CHEBI"},"preferred_term":"Cefsulodin sodium salt hydrate","sssom_rows":[{"data_row":696,"object_id":"CHEBI:31380","object_label":"Cefsulodin sodium","predicate_id":"skos:closeMatch"},{"data_row":697,"object_id":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","object_label":"Cefsulodin sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cefsulodin_Sodium_Salt_Hydrate","synonym_count":0} |
 | ev-f857a56b83abe4d3 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-92badfa05adc693c] | context_only | Predecessor structured review finding f-92badfa05adc693c in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2751c8c165d776f5
+  evidence_ids:
+  - ev-936346912759a99d
+  - ev-86867bfb38b4a6db
+  - ev-645848f6382b81fe
+  - ev-d03804ad64e23077
+  - ev-26cf31413f4662e4
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-2751c8c165d776f5
+  evidence_ids:
+  - ev-936346912759a99d
+  - ev-167faa1ab3f8807b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2751c8c165d776f5
+  evidence_ids:
+  - ev-a7b4dcd3a77925e0
+  - ev-167faa1ab3f8807b
+  - ev-f857a56b83abe4d3
 evidence:
 - evidence_id: ev-936346912759a99d
   kind: record_content
   reference: data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[680],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","line":682,"mapping_status":"MAPPED","ontology_id":"CHEBI:31380","preferred_term":"Cefsulodin
     sodium salt hydrate"}],"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:31380","ontology_label":"Cefsulodin
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [680]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,8 +234,9 @@ evidence:
 - evidence_id: ev-645848f6382b81fe
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Cefsulodin_Sodium_Salt_Hydrate; data-row positions=[696,697]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Cefsulodin_Sodium_Salt_Hydrate; data-row positions=[696,
+    697]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":696,"object_id":"CHEBI:31380","object_label":"Cefsulodin
     sodium","other":"CAS:52152-93-9","predicate_id":"skos:closeMatch","subject_id":"MIM:Cefsulodin_Sodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":697,"object_id":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","object_label":"Cefsulodin
@@ -232,7 +246,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[682]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","line":682,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:31380","preferred_term":"Cefsulodin
     sodium salt hydrate","total_occurrences":"0"}]'
@@ -260,7 +274,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[382,1847]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"248a200989082e5f3786f45ddf9f1492b58eb5a728f0696040b12e8e1bad0939","finding_id":"SEM:a3268454c6af37ae095d","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"248a200989082e5f3786f45ddf9f1492b58eb5a728f0696040b12e8e1bad0939","finding_id":"SEM:7d0213447cba714f472a","kind":"role_evidence","resolution_reason":"Historical
@@ -270,12 +284,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[680],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","line":682,"mapping_status":"MAPPED","ontology_id":"CHEBI:31380","preferred_term":"Cefsulodin
+    sodium salt hydrate"}],"identifier":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:31380","ontology_label":"Cefsulodin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Cefsulodin sodium salt hydrate","sssom_rows":[{"data_row":696,"object_id":"CHEBI:31380","object_label":"Cefsulodin
+    sodium","predicate_id":"skos:closeMatch"},{"data_row":697,"object_id":"kgmicrobe.compound:cefsulodin_sodium_salt_hydrate","object_label":"Cefsulodin
+    sodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cefsulodin_Sodium_Salt_Hydrate","synonym_count":0}'
   snapshot_sha256: 248a200989082e5f3786f45ddf9f1492b58eb5a728f0696040b12e8e1bad0939
 - evidence_id: ev-f857a56b83abe4d3
   kind: prior_review

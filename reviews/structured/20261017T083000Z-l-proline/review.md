@@ -89,7 +89,7 @@ Reassess prediction-only role support: L-Proline
 | ev-2977f48750d461c3 | docs/data/mapped_ingredients.csv; CSV lines=[1259] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17203","line":1259,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"113","ontology_id":"CHEBI:17203","preferred_term":"L-Proline","total_occurrences":"113"}] |
 | ev-f419a3c4e04b0af9 | reports/yaml_record_review/L-proline.md; &#96;data/ingredients/mapped/L-proline.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:28; Completeness:50; Recommended Edits:57 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-a7929c43d59f49a5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[832,1986] | context_only | [{"current_record_sha256":"5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8","finding_id":"SEM:3cc5522733c8752fa8d0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8","finding_id":"SEM:eb28d7661492ca41e646","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-509a52ac14c8fc45 | data/ingredients/mapped/L-proline.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}] |
+| ev-509a52ac14c8fc45 | data/ingredients/mapped/L-proline.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1257],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17203","line":1259,"mapping_status":"MAPPED","ontology_id":"CHEBI:17203","preferred_term":"L-Proline"}],"identifier":"CHEBI:17203","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":113,"edge_count":113,"occurrences":113},"occurrence_statistics":{"media_count":113,"total_occurrences":113},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17203","ontology_label":"L-proline","ontology_source":"CHEBI"},"preferred_term":"L-Proline","sssom_rows":[{"data_row":1634,"object_id":"CHEBI:17203","object_label":"L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-proline","synonym_count":15} |
 | ev-c86fa876f79d7ccf | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-0a97f4a354566738] | context_only | Predecessor structured review finding f-0a97f4a354566738 in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0806e77ca1e3e3cd
+  evidence_ids:
+  - ev-df134c8eaa55aec9
+  - ev-7df8ba217c30e3ca
+  - ev-35c7c467d6908917
+  - ev-2977f48750d461c3
+  - ev-509a52ac14c8fc45
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0806e77ca1e3e3cd
+  evidence_ids:
+  - ev-df134c8eaa55aec9
+  - ev-a7929c43d59f49a5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0806e77ca1e3e3cd
+  evidence_ids:
+  - ev-f419a3c4e04b0af9
+  - ev-a7929c43d59f49a5
+  - ev-c86fa876f79d7ccf
 evidence:
 - evidence_id: ev-df134c8eaa55aec9
   kind: record_content
   reference: data/ingredients/mapped/L-proline.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1257],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17203","line":1259,"mapping_status":"MAPPED","ontology_id":"CHEBI:17203","preferred_term":"L-Proline"}],"identifier":"CHEBI:17203","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":113,"edge_count":113,"occurrences":113},"occurrence_statistics":{"media_count":113,"total_occurrences":113},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17203","ontology_label":"L-proline","ontology_source":"CHEBI"},"preferred_term":"L-Proline","sssom_rows":[{"data_row":1634,"object_id":"CHEBI:17203","object_label":"L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-proline","synonym_count":15}'
   snapshot_sha256: 5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1257]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:L-proline; data-row positions=[1634]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1634,"object_id":"CHEBI:17203","object_label":"L-proline","other":"(-)-(S)-proline|(-)-2-pyrrolidinecarboxylic
     acid|(-)-proline|(2S)-pyrrolidine-2-carboxylic acid|(S)-2-carboxypyrrolidine|(S)-2-pyrrolidinecarboxylic
@@ -229,7 +242,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1259]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17203","line":1259,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"113","ontology_id":"CHEBI:17203","preferred_term":"L-Proline","total_occurrences":"113"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -253,7 +266,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[832,1986]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8","finding_id":"SEM:3cc5522733c8752fa8d0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8","finding_id":"SEM:eb28d7661492ca41e646","kind":"role_evidence","resolution_reason":"Historical
@@ -263,12 +276,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/L-proline.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1257],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17203","line":1259,"mapping_status":"MAPPED","ontology_id":"CHEBI:17203","preferred_term":"L-Proline"}],"identifier":"CHEBI:17203","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":113,"edge_count":113,"occurrences":113},"occurrence_statistics":{"media_count":113,"total_occurrences":113},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17203","ontology_label":"L-proline","ontology_source":"CHEBI"},"preferred_term":"L-Proline","sssom_rows":[{"data_row":1634,"object_id":"CHEBI:17203","object_label":"L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-proline","synonym_count":15}'
   snapshot_sha256: 5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8
 - evidence_id: ev-c86fa876f79d7ccf
   kind: prior_review

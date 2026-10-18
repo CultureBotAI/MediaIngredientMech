@@ -85,11 +85,11 @@ Reassess prediction-only role support: Ceftazidime hydrate
 | --- | --- | --- | --- |
 | ev-b8d81df3a0a582bc | data/ingredients/mapped/Ceftazidime_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[681],"raw_equal":true},"docs_rows":[{"identifier":"cas:120618-65-7","line":683,"mapping_status":"MAPPED","ontology_id":"CHEBI:3508","preferred_term":"Ceftazidime hydrate"}],"identifier":"cas:120618-65-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:3508","ontology_label":"ceftazidime","ontology_source":"CHEBI"},"preferred_term":"Ceftazidime hydrate","sssom_rows":[{"data_row":699,"object_id":"CHEBI:3508","object_label":"ceftazidime","predicate_id":"skos:closeMatch"},{"data_row":700,"object_id":"cas:120618-65-7","object_label":"Ceftazidime hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ceftazidime_Hydrate","synonym_count":0} |
 | ev-98968ae417591d30 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [681] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-8b7d6b89a59b997f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ceftazidime_Hydrate; data-row positions=[699,700] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":699,"object_id":"CHEBI:3508","object_label":"ceftazidime","other":"CAS:120618-65-7","predicate_id":"skos:closeMatch","subject_id":"MIM:Ceftazidime_Hydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":700,"object_id":"cas:120618-65-7","object_label":"Ceftazidime hydrate","other":"CAS:120618-65-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Ceftazidime_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-8b7d6b89a59b997f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ceftazidime_Hydrate; data-row positions=[699, 700] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":699,"object_id":"CHEBI:3508","object_label":"ceftazidime","other":"CAS:120618-65-7","predicate_id":"skos:closeMatch","subject_id":"MIM:Ceftazidime_Hydrate","validation_method":"OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-09-02"},{"data_row":700,"object_id":"cas:120618-65-7","object_label":"Ceftazidime hydrate","other":"CAS:120618-65-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Ceftazidime_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-671e850a4c09589b | docs/data/mapped_ingredients.csv; CSV lines=[683] | supports | Published identity and count rows inspected: [{"identifier":"cas:120618-65-7","line":683,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3508","preferred_term":"Ceftazidime hydrate","total_occurrences":"0"}] |
 | ev-99ff40a156eef7a3 | reports/yaml_record_review/Ceftazidime_Hydrate.md; &#96;data/ingredients/mapped/Ceftazidime_Hydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:39; Completeness:67; Recommended Edits:75 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-de3c7d6c62cfbe55 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[383,2105] | context_only | [{"current_record_sha256":"405c394375f6df48a0b77acc3d01c6c24e6fce844cf7470ef838792b8f9895cb","finding_id":"SEM:6a6bb860c3c8175f89b9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"405c394375f6df48a0b77acc3d01c6c24e6fce844cf7470ef838792b8f9895cb","finding_id":"SEM:7244f717e65283340193","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-80dfb0015ea336c5 | data/ingredients/mapped/Ceftazidime_Hydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-80dfb0015ea336c5 | data/ingredients/mapped/Ceftazidime_Hydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[681],"raw_equal":true},"docs_rows":[{"identifier":"cas:120618-65-7","line":683,"mapping_status":"MAPPED","ontology_id":"CHEBI:3508","preferred_term":"Ceftazidime hydrate"}],"identifier":"cas:120618-65-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:3508","ontology_label":"ceftazidime","ontology_source":"CHEBI"},"preferred_term":"Ceftazidime hydrate","sssom_rows":[{"data_row":699,"object_id":"CHEBI:3508","object_label":"ceftazidime","predicate_id":"skos:closeMatch"},{"data_row":700,"object_id":"cas:120618-65-7","object_label":"Ceftazidime hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ceftazidime_Hydrate","synonym_count":0} |
 | ev-32f237edaf3dcf46 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-6f9738b2517ff20c] | context_only | Predecessor structured review finding f-6f9738b2517ff20c in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-53b2b7722b584ebb
+  evidence_ids:
+  - ev-b8d81df3a0a582bc
+  - ev-98968ae417591d30
+  - ev-8b7d6b89a59b997f
+  - ev-671e850a4c09589b
+  - ev-80dfb0015ea336c5
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-53b2b7722b584ebb
+  evidence_ids:
+  - ev-b8d81df3a0a582bc
+  - ev-de3c7d6c62cfbe55
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-53b2b7722b584ebb
+  evidence_ids:
+  - ev-99ff40a156eef7a3
+  - ev-de3c7d6c62cfbe55
+  - ev-32f237edaf3dcf46
 evidence:
 - evidence_id: ev-b8d81df3a0a582bc
   kind: record_content
   reference: data/ingredients/mapped/Ceftazidime_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[681],"raw_equal":true},"docs_rows":[{"identifier":"cas:120618-65-7","line":683,"mapping_status":"MAPPED","ontology_id":"CHEBI:3508","preferred_term":"Ceftazidime
     hydrate"}],"identifier":"cas:120618-65-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:3508","ontology_label":"ceftazidime","ontology_source":"CHEBI"},"preferred_term":"Ceftazidime
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [681]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,8 +233,8 @@ evidence:
 - evidence_id: ev-8b7d6b89a59b997f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Ceftazidime_Hydrate; data-row positions=[699,700]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Ceftazidime_Hydrate; data-row positions=[699, 700]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":699,"object_id":"CHEBI:3508","object_label":"ceftazidime","other":"CAS:120618-65-7","predicate_id":"skos:closeMatch","subject_id":"MIM:Ceftazidime_Hydrate","validation_method":"OLS:chebi|SYNONYM_ENRICH|2026-09-02"},{"data_row":700,"object_id":"cas:120618-65-7","object_label":"Ceftazidime
     hydrate","other":"CAS:120618-65-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Ceftazidime_Hydrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[683]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:120618-65-7","line":683,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3508","preferred_term":"Ceftazidime
     hydrate","total_occurrences":"0"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[383,2105]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"405c394375f6df48a0b77acc3d01c6c24e6fce844cf7470ef838792b8f9895cb","finding_id":"SEM:6a6bb860c3c8175f89b9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"405c394375f6df48a0b77acc3d01c6c24e6fce844cf7470ef838792b8f9895cb","finding_id":"SEM:7244f717e65283340193","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Ceftazidime_Hydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[681],"raw_equal":true},"docs_rows":[{"identifier":"cas:120618-65-7","line":683,"mapping_status":"MAPPED","ontology_id":"CHEBI:3508","preferred_term":"Ceftazidime
+    hydrate"}],"identifier":"cas:120618-65-7","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:3508","ontology_label":"ceftazidime","ontology_source":"CHEBI"},"preferred_term":"Ceftazidime
+    hydrate","sssom_rows":[{"data_row":699,"object_id":"CHEBI:3508","object_label":"ceftazidime","predicate_id":"skos:closeMatch"},{"data_row":700,"object_id":"cas:120618-65-7","object_label":"Ceftazidime
+    hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ceftazidime_Hydrate","synonym_count":0}'
   snapshot_sha256: 405c394375f6df48a0b77acc3d01c6c24e6fce844cf7470ef838792b8f9895cb
 - evidence_id: ev-32f237edaf3dcf46
   kind: prior_review

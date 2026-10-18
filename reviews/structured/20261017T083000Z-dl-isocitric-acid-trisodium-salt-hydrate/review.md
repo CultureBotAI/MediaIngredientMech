@@ -85,11 +85,11 @@ Reassess prediction-only role support: DL-Isocitric acid trisodium salt hydrate
 | --- | --- | --- | --- |
 | ev-ce7ad0e00cabd67d | data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[856],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","line":858,"mapping_status":"MAPPED","ontology_id":"CHEBI:172950","preferred_term":"DL-Isocitric acid trisodium salt hydrate"}],"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:172950","ontology_label":"Isocitric acid, DL-","ontology_source":"CHEBI"},"preferred_term":"DL-Isocitric acid trisodium salt hydrate","sssom_rows":[{"data_row":987,"object_id":"CHEBI:172950","object_label":"Isocitric acid, DL-","predicate_id":"skos:closeMatch"},{"data_row":988,"object_id":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","object_label":"DL-Isocitric acid trisodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate","synonym_count":1} |
 | ev-14c4164bf7e09ed2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [856] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-e4f808f993eecd1a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate; data-row positions=[987,988] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":987,"object_id":"CHEBI:172950","object_label":"Isocitric acid, DL-","other":"trisodium;1-hydroxypropane-1,2,3-tricarboxylate&#124;CAS:1637-73-6","predicate_id":"skos:closeMatch","subject_id":"MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":988,"object_id":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","object_label":"DL-Isocitric acid trisodium salt hydrate","other":"CAS:1637-73-6","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-e4f808f993eecd1a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate; data-row positions=[987, 988] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":987,"object_id":"CHEBI:172950","object_label":"Isocitric acid, DL-","other":"trisodium;1-hydroxypropane-1,2,3-tricarboxylate&#124;CAS:1637-73-6","predicate_id":"skos:closeMatch","subject_id":"MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":988,"object_id":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","object_label":"DL-Isocitric acid trisodium salt hydrate","other":"CAS:1637-73-6","predicate_id":"skos:exactMatch","subject_id":"MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
 | ev-d220d72a62ccc4c7 | docs/data/mapped_ingredients.csv; CSV lines=[858] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","line":858,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:172950","preferred_term":"DL-Isocitric acid trisodium salt hydrate","total_occurrences":"0"}] |
 | ev-b288c6d6ea14a354 | reports/yaml_record_review/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.md; &#96;data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:27; Evidence:45; Completeness:66; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-65cc8b969e753ef6 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[517,1479] | context_only | [{"current_record_sha256":"16bd796338866619728e5c0c5594a67d4c1f65598774e9f79f2f6c06b6149e7d","finding_id":"SEM:17e6ec8864828056fbe4","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"16bd796338866619728e5c0c5594a67d4c1f65598774e9f79f2f6c06b6149e7d","finding_id":"SEM:c045a29c664e65df7fc0","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-de5372920c182c8b | data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-de5372920c182c8b | data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[856],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","line":858,"mapping_status":"MAPPED","ontology_id":"CHEBI:172950","preferred_term":"DL-Isocitric acid trisodium salt hydrate"}],"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:172950","ontology_label":"Isocitric acid, DL-","ontology_source":"CHEBI"},"preferred_term":"DL-Isocitric acid trisodium salt hydrate","sssom_rows":[{"data_row":987,"object_id":"CHEBI:172950","object_label":"Isocitric acid, DL-","predicate_id":"skos:closeMatch"},{"data_row":988,"object_id":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","object_label":"DL-Isocitric acid trisodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate","synonym_count":1} |
 | ev-b69b6fbde6be3c4a | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-a842e879c775b357] | context_only | Predecessor structured review finding f-a842e879c775b357 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -180,6 +180,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-2d8b0da78556d9ab
+  evidence_ids:
+  - ev-ce7ad0e00cabd67d
+  - ev-14c4164bf7e09ed2
+  - ev-e4f808f993eecd1a
+  - ev-d220d72a62ccc4c7
+  - ev-de5372920c182c8b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -188,6 +194,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-2d8b0da78556d9ab
+  evidence_ids:
+  - ev-ce7ad0e00cabd67d
+  - ev-65cc8b969e753ef6
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,13 +205,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-2d8b0da78556d9ab
+  evidence_ids:
+  - ev-b288c6d6ea14a354
+  - ev-65cc8b969e753ef6
+  - ev-b69b6fbde6be3c4a
 evidence:
 - evidence_id: ev-ce7ad0e00cabd67d
   kind: record_content
   reference: data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[856],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","line":858,"mapping_status":"MAPPED","ontology_id":"CHEBI:172950","preferred_term":"DL-Isocitric
     acid trisodium salt hydrate"}],"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:172950","ontology_label":"Isocitric
@@ -215,7 +228,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [856]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -223,8 +236,9 @@ evidence:
 - evidence_id: ev-e4f808f993eecd1a
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate; data-row positions=[987,988]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate; data-row positions=[987,
+    988]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":987,"object_id":"CHEBI:172950","object_label":"Isocitric
     acid, DL-","other":"trisodium;1-hydroxypropane-1,2,3-tricarboxylate|CAS:1637-73-6","predicate_id":"skos:closeMatch","subject_id":"MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"},{"data_row":988,"object_id":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","object_label":"DL-Isocitric
@@ -234,7 +248,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[858]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","line":858,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:172950","preferred_term":"DL-Isocitric
     acid trisodium salt hydrate","total_occurrences":"0"}]'
@@ -266,7 +280,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[517,1479]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"16bd796338866619728e5c0c5594a67d4c1f65598774e9f79f2f6c06b6149e7d","finding_id":"SEM:17e6ec8864828056fbe4","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"16bd796338866619728e5c0c5594a67d4c1f65598774e9f79f2f6c06b6149e7d","finding_id":"SEM:c045a29c664e65df7fc0","kind":"role_evidence","resolution_reason":"Historical
@@ -276,12 +290,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[856],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","line":858,"mapping_status":"MAPPED","ontology_id":"CHEBI:172950","preferred_term":"DL-Isocitric
+    acid trisodium salt hydrate"}],"identifier":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:172950","ontology_label":"Isocitric
+    acid, DL-","ontology_source":"CHEBI"},"preferred_term":"DL-Isocitric acid trisodium
+    salt hydrate","sssom_rows":[{"data_row":987,"object_id":"CHEBI:172950","object_label":"Isocitric
+    acid, DL-","predicate_id":"skos:closeMatch"},{"data_row":988,"object_id":"kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate","object_label":"DL-Isocitric
+    acid trisodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:DL-Isocitric_Acid_Trisodium_Salt_Hydrate","synonym_count":1}'
   snapshot_sha256: 16bd796338866619728e5c0c5594a67d4c1f65598774e9f79f2f6c06b6149e7d
 - evidence_id: ev-b69b6fbde6be3c4a
   kind: prior_review

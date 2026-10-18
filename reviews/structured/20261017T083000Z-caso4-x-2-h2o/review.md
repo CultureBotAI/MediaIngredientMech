@@ -89,7 +89,6 @@ Reassess prediction-only or empty role support: Caso4_X_2_H2o
 | ev-5cfd01ca5911a1fd | docs/data/mapped_ingredients.csv; CSV lines=[669] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:32583","line":669,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"158","ontology_id":"CHEBI:32583","preferred_term":"CaSO4 x 2 H2O","total_occurrences":"158"}] |
 | ev-6742f827be299930 | reports/yaml_record_review/Caso4_X_2_H2o.md; &#96;data/ingredients/mapped/Caso4_X_2_H2o.yaml&#96;:2; Verdict:4; Identity:10; Validation:26; Evidence:41; Completeness:55; Recommended Edits:61 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-2c57c7923b9899d5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[372,1793] | context_only | [{"current_record_sha256":"4cc423aef35c4897c90464aeef3d58467556ca3b12ffa25b70a57817581c6977","finding_id":"SEM:1905268196be592526b7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4cc423aef35c4897c90464aeef3d58467556ca3b12ffa25b70a57817581c6977","finding_id":"SEM:a0838203ea18770fa603","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-42ab2d816d8816d8 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/Caso4_X_2_H2o.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -178,6 +177,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-82e48b7fb01661f9
+  evidence_ids:
+  - ev-cda75278b54727dc
+  - ev-70d48337b1edc4e2
+  - ev-226fc77a4c08c65e
+  - ev-5cfd01ca5911a1fd
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -186,6 +190,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-82e48b7fb01661f9
+  evidence_ids:
+  - ev-cda75278b54727dc
+  - ev-2c57c7923b9899d5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,13 +201,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-82e48b7fb01661f9
+  evidence_ids:
+  - ev-6742f827be299930
+  - ev-2c57c7923b9899d5
 evidence:
 - evidence_id: ev-cda75278b54727dc
   kind: record_content
   reference: data/ingredients/mapped/Caso4_X_2_H2o.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[667],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:32583","line":669,"mapping_status":"MAPPED","ontology_id":"CHEBI:32583","preferred_term":"CaSO4
     x 2 H2O"}],"identifier":"CHEBI:32583","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":158,"edge_count":158,"occurrences":158},"occurrence_statistics":{"media_count":158,"total_occurrences":158},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:32583","ontology_label":"calcium
@@ -211,7 +221,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [667]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +230,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Caso4_X_2_H2o; data-row positions=[665]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":665,"object_id":"CHEBI:32583","object_label":"calcium
     sulfate dihydrate","other":"CaSO4 . 2H2O|CaSO4 x 2H2O|CaSO4 x2H2O|CaSO4 \u00b7
@@ -233,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[669]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:32583","line":669,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"158","ontology_id":"CHEBI:32583","preferred_term":"CaSO4
     x 2 H2O","total_occurrences":"158"}]'
@@ -257,19 +267,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[372,1793]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4cc423aef35c4897c90464aeef3d58467556ca3b12ffa25b70a57817581c6977","finding_id":"SEM:1905268196be592526b7","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4cc423aef35c4897c90464aeef3d58467556ca3b12ffa25b70a57817581c6977","finding_id":"SEM:a0838203ea18770fa603","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-42ab2d816d8816d8
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Caso4_X_2_H2o.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-573f294aa1c85033
@@ -337,7 +339,7 @@ assessments:
   - record-82e48b7fb01661f9
   evidence_ids:
   - ev-cda75278b54727dc
-  - ev-42ab2d816d8816d8
+  - ev-2c57c7923b9899d5
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -345,7 +347,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-cda75278b54727dc
-    - ev-42ab2d816d8816d8
+    - ev-2c57c7923b9899d5
 findings:
 - finding_id: rec-f-role-82e48b7fb01661f9
   issue_key: mim-reconciliation-role-support-82e48b7fb01661f9
@@ -361,7 +363,7 @@ findings:
   - record-82e48b7fb01661f9
   evidence_ids:
   - ev-cda75278b54727dc
-  - ev-42ab2d816d8816d8
+  - ev-2c57c7923b9899d5
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Caso4_X_2_H2o.yaml

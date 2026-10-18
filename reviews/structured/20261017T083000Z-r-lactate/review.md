@@ -30,7 +30,7 @@ Working-tree hashes do not imply those bytes were committed.
 
 | Check | Status | Required | Targets | Result |
 | --- | --- | --- | --- | --- |
-| Current record and published surface consistency | passed | True | record-1b12eab882a87e59 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Current record and published surface consistency | failed | True | record-1b12eab882a87e59 | Explain curation-history timestamp order: (R)-lactate |
 | Role evidence and plausibility check | passed | True | record-1b12eab882a87e59 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
 | Predecessor structured review and semantic disposition reconciliation | passed | True | record-1b12eab882a87e59 | Reconciled against predecessor batch review 20261011T024630Z-mim-reconcile-all-batch-02 and semantic review dispositions on HEAD. |
 
@@ -83,10 +83,10 @@ Explain curation-history timestamp order: (R)-lactate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-db804ac2554d80de | data/ingredients/mapped/(R)-lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2096],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16004","line":2098,"mapping_status":"MAPPED","ontology_id":"CHEBI:16004","preferred_term":"(R)-lactate"}],"identifier":"CHEBI:16004","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":19,"source":"microbedecoder","source_columns":"BacDive_Metabolite_production&#124;BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16004","ontology_label":"(R)-lactate","ontology_source":"CHEBI"},"preferred_term":"(R)-lactate","sssom_rows":[{"data_row":5,"object_id":"CHEBI:16004","object_label":"(R)-lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~28R~29-lactate","synonym_count":1} |
-| ev-efc10ef882f6d263 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2096] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-483b95638148e1e0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:~28R~29-lactate; data-row positions=[5] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":5,"object_id":"CHEBI:16004","object_label":"(R)-lactate","other":"D-lactate","predicate_id":"skos:exactMatch","subject_id":"MIM:~28R~29-lactate","validation_method":"OLS:chebi&#124;CONFIRMED&#124;2026-09-02"}] |
-| ev-20b118e4de347468 | docs/data/mapped_ingredients.csv; CSV lines=[2098] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16004","line":2098,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16004","preferred_term":"(R)-lactate","total_occurrences":"0"}] |
+| ev-db804ac2554d80de | data/ingredients/mapped/(R)-lactate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2095],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16004","line":2097,"mapping_status":"MAPPED","ontology_id":"CHEBI:16004","preferred_term":"(R)-lactate"}],"identifier":"CHEBI:16004","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16004","ontology_label":"(R)-lactate","ontology_source":"CHEBI"},"preferred_term":"(R)-lactate","sssom_rows":[],"sssom_subject":"MIM:(R)-lactate","synonym_count":1} |
+| ev-efc10ef882f6d263 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2095] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-483b95638148e1e0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:(R)-lactate; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-20b118e4de347468 | docs/data/mapped_ingredients.csv; CSV lines=[2097] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16004","line":2097,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16004","preferred_term":"(R)-lactate","total_occurrences":"0"}] |
 | ev-cf9aa5c14e5766a7 | reports/yaml_record_review/(R)-lactate.md; &#96;data/ingredients/mapped/(R)-lactate.yaml&#96;:2; Verdict:4; Identity:11; Validation:31; Evidence:45; Completeness:76; Recommended Edits:90 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-1f72aa82b2211be2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[6] | context_only | [{"current_record_sha256":"5ecdb54c8474811127e8bb01b8d7753004065329b1574864c8140d635c6ae93d","finding_id":"SEM:c34d7b8854b455ca38bf","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
 | ev-68cb732dc553c3e0 | reviews/structured/20261011T024630Z-mim-reconcile-all-batch-02/review.yaml; findings[finding_id=f-d55db516999a041d] | context_only | Predecessor structured review finding f-d55db516999a041d in 20261011T024630Z-mim-reconcile-all-batch-02 |
@@ -172,12 +172,16 @@ scope:
 checks:
 - check_id: surface-consistency
   name: Current record and published surface consistency
-  status: passed
+  status: failed
   required: true
-  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
-    rows, and published CSV exports.
+  summary: 'Explain curation-history timestamp order: (R)-lactate'
   target_ids:
   - record-1b12eab882a87e59
+  evidence_ids:
+  - ev-db804ac2554d80de
+  - ev-efc10ef882f6d263
+  - ev-483b95638148e1e0
+  - ev-20b118e4de347468
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -186,6 +190,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-1b12eab882a87e59
+  evidence_ids:
+  - ev-db804ac2554d80de
+  - ev-1f72aa82b2211be2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -194,21 +201,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-1b12eab882a87e59
+  evidence_ids:
+  - ev-cf9aa5c14e5766a7
+  - ev-1f72aa82b2211be2
+  - ev-68cb732dc553c3e0
 evidence:
 - evidence_id: ev-db804ac2554d80de
   kind: record_content
   reference: data/ingredients/mapped/(R)-lactate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2096],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16004","line":2098,"mapping_status":"MAPPED","ontology_id":"CHEBI:16004","preferred_term":"(R)-lactate"}],"identifier":"CHEBI:16004","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":19,"source":"microbedecoder","source_columns":"BacDive_Metabolite_production|BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16004","ontology_label":"(R)-lactate","ontology_source":"CHEBI"},"preferred_term":"(R)-lactate","sssom_rows":[{"data_row":5,"object_id":"CHEBI:16004","object_label":"(R)-lactate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:~28R~29-lactate","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2095],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16004","line":2097,"mapping_status":"MAPPED","ontology_id":"CHEBI:16004","preferred_term":"(R)-lactate"}],"identifier":"CHEBI:16004","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16004","ontology_label":"(R)-lactate","ontology_source":"CHEBI"},"preferred_term":"(R)-lactate","sssom_rows":[],"sssom_subject":"MIM:(R)-lactate","synonym_count":1}'
   snapshot_sha256: 5ecdb54c8474811127e8bb01b8d7753004065329b1574864c8140d635c6ae93d
 - evidence_id: ev-efc10ef882f6d263
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2096]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2095]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -216,18 +227,18 @@ evidence:
 - evidence_id: ev-483b95638148e1e0
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:~28R~29-lactate; data-row positions=[5]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:(R)-lactate; data-row positions=[]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":5,"object_id":"CHEBI:16004","object_label":"(R)-lactate","other":"D-lactate","predicate_id":"skos:exactMatch","subject_id":"MIM:~28R~29-lactate","validation_method":"OLS:chebi|CONFIRMED|2026-09-02"}]'
+  summary: 'Current exact-subject rows, including complete other payload: []'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-20b118e4de347468
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2098]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2097]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16004","line":2098,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16004","preferred_term":"(R)-lactate","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16004","line":2097,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16004","preferred_term":"(R)-lactate","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-cf9aa5c14e5766a7
   kind: prior_review
@@ -254,7 +265,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[6]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5ecdb54c8474811127e8bb01b8d7753004065329b1574864c8140d635c6ae93d","finding_id":"SEM:c34d7b8854b455ca38bf","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'

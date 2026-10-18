@@ -83,13 +83,13 @@ Reassess prediction-only role support: Xylotetraose
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-3fe47dd7730aa53f | data/ingredients/mapped/Xylotetraose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2071],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62972","line":2073,"mapping_status":"MAPPED","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose"}],"identifier":"CHEBI:62972","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62972","ontology_label":"xylotetraose","ontology_source":"CHEBI"},"preferred_term":"Xylotetraose","sssom_rows":[{"data_row":2944,"object_id":"CHEBI:62972","object_label":"xylotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotetraose","synonym_count":1} |
-| ev-8d10e6986b3c99d2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2071] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-ae50072e8bacbe39 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Xylotetraose; data-row positions=[2944] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2944,"object_id":"CHEBI:62972","object_label":"xylotetraose","other":"beta-D-xylopyranosyl-(1-&gt;4)-beta-D-xylopyranosyl-(1-&gt;4)-beta-D-xylopyranosyl-(1-&gt;4)-D-xylopyranose&#124;CAS:22416-58-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylotetraose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-21004293ac2f201b | docs/data/mapped_ingredients.csv; CSV lines=[2073] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62972","line":2073,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose","total_occurrences":"0"}] |
+| ev-3fe47dd7730aa53f | data/ingredients/mapped/Xylotetraose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2070],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62972","line":2072,"mapping_status":"MAPPED","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose"}],"identifier":"CHEBI:62972","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62972","ontology_label":"xylotetraose","ontology_source":"CHEBI"},"preferred_term":"Xylotetraose","sssom_rows":[{"data_row":2946,"object_id":"CHEBI:62972","object_label":"xylotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotetraose","synonym_count":1} |
+| ev-8d10e6986b3c99d2 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2070] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-ae50072e8bacbe39 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Xylotetraose; data-row positions=[2946] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2946,"object_id":"CHEBI:62972","object_label":"xylotetraose","other":"beta-D-xylopyranosyl-(1-&gt;4)-beta-D-xylopyranosyl-(1-&gt;4)-beta-D-xylopyranosyl-(1-&gt;4)-D-xylopyranose&#124;CAS:22416-58-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylotetraose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-21004293ac2f201b | docs/data/mapped_ingredients.csv; CSV lines=[2072] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:62972","line":2072,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose","total_occurrences":"0"}] |
 | ev-18164b39e6809b73 | reports/yaml_record_review/Xylotetraose.md; &#96;data/ingredients/mapped/Xylotetraose.yaml&#96;:2; Verdict:4; Identity:10; Validation:23; Evidence:32; Issues:40; Completeness:46; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-6f44c51ded8750fc | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1356,2049] | context_only | [{"current_record_sha256":"3b8a12f4212c4d43d4080f6165180714de5e896c5d028b18c0a4361d95dfba6d","finding_id":"SEM:2c8e9c4adbbfcdf42451","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"3b8a12f4212c4d43d4080f6165180714de5e896c5d028b18c0a4361d95dfba6d","finding_id":"SEM:381ad2829fa7c458efbe","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c4dfbadbd9ff8217 | data/ingredients/mapped/Xylotetraose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-c4dfbadbd9ff8217 | data/ingredients/mapped/Xylotetraose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2070],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62972","line":2072,"mapping_status":"MAPPED","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose"}],"identifier":"CHEBI:62972","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62972","ontology_label":"xylotetraose","ontology_source":"CHEBI"},"preferred_term":"Xylotetraose","sssom_rows":[{"data_row":2946,"object_id":"CHEBI:62972","object_label":"xylotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotetraose","synonym_count":1} |
 | ev-561b06afa4018b84 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-2f3078e6846ebed6] | context_only | Predecessor structured review finding f-2f3078e6846ebed6 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-54f6f58f46276f0c
+  evidence_ids:
+  - ev-3fe47dd7730aa53f
+  - ev-8d10e6986b3c99d2
+  - ev-ae50072e8bacbe39
+  - ev-21004293ac2f201b
+  - ev-c4dfbadbd9ff8217
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-54f6f58f46276f0c
+  evidence_ids:
+  - ev-3fe47dd7730aa53f
+  - ev-6f44c51ded8750fc
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-54f6f58f46276f0c
+  evidence_ids:
+  - ev-18164b39e6809b73
+  - ev-6f44c51ded8750fc
+  - ev-561b06afa4018b84
 evidence:
 - evidence_id: ev-3fe47dd7730aa53f
   kind: record_content
   reference: data/ingredients/mapped/Xylotetraose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2071],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62972","line":2073,"mapping_status":"MAPPED","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose"}],"identifier":"CHEBI:62972","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62972","ontology_label":"xylotetraose","ontology_source":"CHEBI"},"preferred_term":"Xylotetraose","sssom_rows":[{"data_row":2944,"object_id":"CHEBI:62972","object_label":"xylotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotetraose","synonym_count":1}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2070],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62972","line":2072,"mapping_status":"MAPPED","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose"}],"identifier":"CHEBI:62972","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62972","ontology_label":"xylotetraose","ontology_source":"CHEBI"},"preferred_term":"Xylotetraose","sssom_rows":[{"data_row":2946,"object_id":"CHEBI:62972","object_label":"xylotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotetraose","synonym_count":1}'
   snapshot_sha256: 3b8a12f4212c4d43d4080f6165180714de5e896c5d028b18c0a4361d95dfba6d
 - evidence_id: ev-8d10e6986b3c99d2
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2071]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2070]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-ae50072e8bacbe39
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Xylotetraose; data-row positions=[2944]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Xylotetraose; data-row positions=[2946]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2944,"object_id":"CHEBI:62972","object_label":"xylotetraose","other":"beta-D-xylopyranosyl-(1->4)-beta-D-xylopyranosyl-(1->4)-beta-D-xylopyranosyl-(1->4)-D-xylopyranose|CAS:22416-58-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylotetraose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2946,"object_id":"CHEBI:62972","object_label":"xylotetraose","other":"beta-D-xylopyranosyl-(1->4)-beta-D-xylopyranosyl-(1->4)-beta-D-xylopyranosyl-(1->4)-D-xylopyranose|CAS:22416-58-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylotetraose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-21004293ac2f201b
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2073]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2072]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62972","line":2073,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62972","line":2072,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-18164b39e6809b73
   kind: prior_review
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1356,2049]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"3b8a12f4212c4d43d4080f6165180714de5e896c5d028b18c0a4361d95dfba6d","finding_id":"SEM:2c8e9c4adbbfcdf42451","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"3b8a12f4212c4d43d4080f6165180714de5e896c5d028b18c0a4361d95dfba6d","finding_id":"SEM:381ad2829fa7c458efbe","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Xylotetraose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2070],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62972","line":2072,"mapping_status":"MAPPED","ontology_id":"CHEBI:62972","preferred_term":"Xylotetraose"}],"identifier":"CHEBI:62972","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62972","ontology_label":"xylotetraose","ontology_source":"CHEBI"},"preferred_term":"Xylotetraose","sssom_rows":[{"data_row":2946,"object_id":"CHEBI:62972","object_label":"xylotetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylotetraose","synonym_count":1}'
   snapshot_sha256: 3b8a12f4212c4d43d4080f6165180714de5e896c5d028b18c0a4361d95dfba6d
 - evidence_id: ev-561b06afa4018b84
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Na-propionate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-7945412a2c83da3b | data/ingredients/mapped/Na-propionate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1471],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132106","line":1473,"mapping_status":"MAPPED","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate"}],"identifier":"CHEBI:132106","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":49,"edge_count":49,"occurrences":49},"occurrence_statistics":{"media_count":49,"total_occurrences":49},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132106","ontology_label":"sodium propionate","ontology_source":"CHEBI"},"preferred_term":"Na-propionate","sssom_rows":[{"data_row":1975,"object_id":"CHEBI:132106","object_label":"sodium propionate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-propionate","synonym_count":9} |
-| ev-33a2f18222813312 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1471] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-44d7b2156dd73270 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-propionate; data-row positions=[1975] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1975,"object_id":"CHEBI:132106","object_label":"sodium propionate","other":"E281&#124;Natriumpropionat&#124;Propanoic acid, sodium salt&#124;Propionic acid sodium salt&#124;sodium propanoate&#124;Propionate (sodium salt)&#124;CAS:137-40-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-propionate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-342e586d9a1d80b5 | docs/data/mapped_ingredients.csv; CSV lines=[1473] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:132106","line":1473,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"49","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate","total_occurrences":"49"}] |
+| ev-7945412a2c83da3b | data/ingredients/mapped/Na-propionate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1470],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132106","line":1472,"mapping_status":"MAPPED","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate"}],"identifier":"CHEBI:132106","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":49,"edge_count":49,"occurrences":49},"occurrence_statistics":{"media_count":49,"total_occurrences":49},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132106","ontology_label":"sodium propionate","ontology_source":"CHEBI"},"preferred_term":"Na-propionate","sssom_rows":[{"data_row":1977,"object_id":"CHEBI:132106","object_label":"sodium propionate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-propionate","synonym_count":9} |
+| ev-33a2f18222813312 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1470] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-44d7b2156dd73270 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-propionate; data-row positions=[1977] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1977,"object_id":"CHEBI:132106","object_label":"sodium propionate","other":"E281&#124;Natriumpropionat&#124;Propanoic acid, sodium salt&#124;Propionic acid sodium salt&#124;sodium propanoate&#124;Propionate (sodium salt)&#124;CAS:137-40-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-propionate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-342e586d9a1d80b5 | docs/data/mapped_ingredients.csv; CSV lines=[1472] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:132106","line":1472,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"49","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate","total_occurrences":"49"}] |
 | ev-51427c2c9f0f78cf | reports/yaml_record_review/Na-propionate.md; &#96;data/ingredients/mapped/Na-propionate.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:27; Completeness:41; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-8559e352fa5d3981 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[978,1548] | context_only | [{"current_record_sha256":"e9cdae79b0b7e874f0ec9aa5fcd13b8149e3f6f56b200187124e23670eca4208","finding_id":"SEM:5f834966f2d801d6e190","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e9cdae79b0b7e874f0ec9aa5fcd13b8149e3f6f56b200187124e23670eca4208","finding_id":"SEM:44b1ce4f29718b25efd8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ca71e41ffa8db34b | data/ingredients/mapped/Na-propionate.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-ca71e41ffa8db34b | data/ingredients/mapped/Na-propionate.yaml; nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1470],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132106","line":1472,"mapping_status":"MAPPED","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate"}],"identifier":"CHEBI:132106","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":49,"edge_count":49,"occurrences":49},"occurrence_statistics":{"media_count":49,"total_occurrences":49},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132106","ontology_label":"sodium propionate","ontology_source":"CHEBI"},"preferred_term":"Na-propionate","sssom_rows":[{"data_row":1977,"object_id":"CHEBI:132106","object_label":"sodium propionate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-propionate","synonym_count":9} |
 | ev-d5ec1d884b5b05f4 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-1c47b1f1ac7a5361] | context_only | Predecessor structured review finding f-1c47b1f1ac7a5361 in 20261011T024637Z-mim-reconcile-all-batch-09 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-fe9c0b800ff7053b
+  evidence_ids:
+  - ev-7945412a2c83da3b
+  - ev-33a2f18222813312
+  - ev-44d7b2156dd73270
+  - ev-342e586d9a1d80b5
+  - ev-ca71e41ffa8db34b
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-fe9c0b800ff7053b
+  evidence_ids:
+  - ev-7945412a2c83da3b
+  - ev-8559e352fa5d3981
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,23 +204,27 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-fe9c0b800ff7053b
+  evidence_ids:
+  - ev-51427c2c9f0f78cf
+  - ev-8559e352fa5d3981
+  - ev-d5ec1d884b5b05f4
 evidence:
 - evidence_id: ev-7945412a2c83da3b
   kind: record_content
   reference: data/ingredients/mapped/Na-propionate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1471],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132106","line":1473,"mapping_status":"MAPPED","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate"}],"identifier":"CHEBI:132106","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":49,"edge_count":49,"occurrences":49},"occurrence_statistics":{"media_count":49,"total_occurrences":49},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132106","ontology_label":"sodium
-    propionate","ontology_source":"CHEBI"},"preferred_term":"Na-propionate","sssom_rows":[{"data_row":1975,"object_id":"CHEBI:132106","object_label":"sodium
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1470],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132106","line":1472,"mapping_status":"MAPPED","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate"}],"identifier":"CHEBI:132106","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":49,"edge_count":49,"occurrences":49},"occurrence_statistics":{"media_count":49,"total_occurrences":49},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132106","ontology_label":"sodium
+    propionate","ontology_source":"CHEBI"},"preferred_term":"Na-propionate","sssom_rows":[{"data_row":1977,"object_id":"CHEBI:132106","object_label":"sodium
     propionate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-propionate","synonym_count":9}'
   snapshot_sha256: e9cdae79b0b7e874f0ec9aa5fcd13b8149e3f6f56b200187124e23670eca4208
 - evidence_id: ev-33a2f18222813312
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1471]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1470]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -219,20 +232,20 @@ evidence:
 - evidence_id: ev-44d7b2156dd73270
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Na-propionate; data-row positions=[1975]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Na-propionate; data-row positions=[1977]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1975,"object_id":"CHEBI:132106","object_label":"sodium
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1977,"object_id":"CHEBI:132106","object_label":"sodium
     propionate","other":"E281|Natriumpropionat|Propanoic acid, sodium salt|Propionic
     acid sodium salt|sodium propanoate|Propionate (sodium salt)|CAS:137-40-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-propionate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-342e586d9a1d80b5
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1473]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1472]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:132106","line":1473,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"49","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate","total_occurrences":"49"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:132106","line":1472,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"49","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate","total_occurrences":"49"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-51427c2c9f0f78cf
   kind: prior_review
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[978,1548]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e9cdae79b0b7e874f0ec9aa5fcd13b8149e3f6f56b200187124e23670eca4208","finding_id":"SEM:5f834966f2d801d6e190","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e9cdae79b0b7e874f0ec9aa5fcd13b8149e3f6f56b200187124e23670eca4208","finding_id":"SEM:44b1ce4f29718b25efd8","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Na-propionate.yaml
   locator: nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1470],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:132106","line":1472,"mapping_status":"MAPPED","ontology_id":"CHEBI:132106","preferred_term":"Na-propionate"}],"identifier":"CHEBI:132106","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":49,"edge_count":49,"occurrences":49},"occurrence_statistics":{"media_count":49,"total_occurrences":49},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:132106","ontology_label":"sodium
+    propionate","ontology_source":"CHEBI"},"preferred_term":"Na-propionate","sssom_rows":[{"data_row":1977,"object_id":"CHEBI:132106","object_label":"sodium
+    propionate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-propionate","synonym_count":9}'
   snapshot_sha256: e9cdae79b0b7e874f0ec9aa5fcd13b8149e3f6f56b200187124e23670eca4208
 - evidence_id: ev-d5ec1d884b5b05f4
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cellohexaose
 | ev-0967cae9f15b65b7 | docs/data/mapped_ingredients.csv; CSV lines=[687] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:49533","line":687,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:49533","preferred_term":"Cellohexaose","total_occurrences":"0"}] |
 | ev-2099957087a446f3 | reports/yaml_record_review/Cellohexaose.md; &#96;data/ingredients/mapped/Cellohexaose.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:41; Completeness:58; Recommended Edits:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-224c427adb75bca5 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[387,1645] | context_only | [{"current_record_sha256":"2a9b6769a99eb01213ea7e489906c22e4a9a530b98a174523040059789c88e2b","finding_id":"SEM:e2ee951a9e10f9496dd2","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2a9b6769a99eb01213ea7e489906c22e4a9a530b98a174523040059789c88e2b","finding_id":"SEM:0f3c0db2db6ec324603e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-661d389aebf4afee | data/ingredients/mapped/Cellohexaose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-661d389aebf4afee | data/ingredients/mapped/Cellohexaose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[685],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:49533","line":687,"mapping_status":"MAPPED","ontology_id":"CHEBI:49533","preferred_term":"Cellohexaose"}],"identifier":"CHEBI:49533","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:49533","ontology_label":"beta-D-cellohexaose","ontology_source":"CHEBI"},"preferred_term":"Cellohexaose","sssom_rows":[{"data_row":708,"object_id":"CHEBI:49533","object_label":"beta-D-cellohexaose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cellohexaose","synonym_count":2} |
 | ev-95410c8aceb76366 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-37e01959d8f231de] | context_only | Predecessor structured review finding f-37e01959d8f231de in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-87f777b57e2a0b37
+  evidence_ids:
+  - ev-2127c96617c03dfd
+  - ev-63278776a3033da6
+  - ev-dd2159c7eae9d2dc
+  - ev-0967cae9f15b65b7
+  - ev-661d389aebf4afee
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-87f777b57e2a0b37
+  evidence_ids:
+  - ev-2127c96617c03dfd
+  - ev-224c427adb75bca5
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-87f777b57e2a0b37
+  evidence_ids:
+  - ev-2099957087a446f3
+  - ev-224c427adb75bca5
+  - ev-95410c8aceb76366
 evidence:
 - evidence_id: ev-2127c96617c03dfd
   kind: record_content
   reference: data/ingredients/mapped/Cellohexaose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[685],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:49533","line":687,"mapping_status":"MAPPED","ontology_id":"CHEBI:49533","preferred_term":"Cellohexaose"}],"identifier":"CHEBI:49533","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:49533","ontology_label":"beta-D-cellohexaose","ontology_source":"CHEBI"},"preferred_term":"Cellohexaose","sssom_rows":[{"data_row":708,"object_id":"CHEBI:49533","object_label":"beta-D-cellohexaose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cellohexaose","synonym_count":2}'
   snapshot_sha256: 2a9b6769a99eb01213ea7e489906c22e4a9a530b98a174523040059789c88e2b
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [685]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cellohexaose; data-row positions=[708]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":708,"object_id":"CHEBI:49533","object_label":"beta-D-cellohexaose","other":"Glc(b1-4)Glc(b1-4)Glc(b1-4)Glc(b1-4)Glc(b1-4)b-Glc|beta-D-glucopyranosyl-(1->4)-beta-D-glucopyranosyl-(1->4)-beta-D-glucopyranosyl-(1->4)-beta-D-glucopyranosyl-(1->4)-beta-D-glucopyranosyl-(1->4)-beta-D-glucopyranose|CAS:2478-35-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Cellohexaose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[687]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:49533","line":687,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:49533","preferred_term":"Cellohexaose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[387,1645]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2a9b6769a99eb01213ea7e489906c22e4a9a530b98a174523040059789c88e2b","finding_id":"SEM:e2ee951a9e10f9496dd2","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2a9b6769a99eb01213ea7e489906c22e4a9a530b98a174523040059789c88e2b","finding_id":"SEM:0f3c0db2db6ec324603e","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cellohexaose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[685],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:49533","line":687,"mapping_status":"MAPPED","ontology_id":"CHEBI:49533","preferred_term":"Cellohexaose"}],"identifier":"CHEBI:49533","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:49533","ontology_label":"beta-D-cellohexaose","ontology_source":"CHEBI"},"preferred_term":"Cellohexaose","sssom_rows":[{"data_row":708,"object_id":"CHEBI:49533","object_label":"beta-D-cellohexaose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cellohexaose","synonym_count":2}'
   snapshot_sha256: 2a9b6769a99eb01213ea7e489906c22e4a9a530b98a174523040059789c88e2b
 - evidence_id: ev-95410c8aceb76366
   kind: prior_review

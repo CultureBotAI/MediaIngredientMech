@@ -89,7 +89,7 @@ Reassess prediction-only role support: Dicloxacillin sodium salt monohydrate
 | ev-80377322877d9542 | docs/data/mapped_ingredients.csv; CSV lines=[889] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:52019","line":889,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:52019","preferred_term":"Dicloxacillin sodium salt monohydrate","total_occurrences":"0"}] |
 | ev-478ef2200b0e82d0 | reports/yaml_record_review/Dicloxacillin_Sodium_Salt_Monohydrate.md; &#96;data/ingredients/mapped/Dicloxacillin_Sodium_Salt_Monohydrate.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:44; Completeness:71; Recommended Edits:79 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ad9bab5d5892d44a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[537,2092] | context_only | [{"current_record_sha256":"638bde6709ddcebdd6c37e01e8c02dd4ae64429bc44f6c53015d8c5f1f802914","finding_id":"SEM:9751308138908a84fe40","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"638bde6709ddcebdd6c37e01e8c02dd4ae64429bc44f6c53015d8c5f1f802914","finding_id":"SEM:a1b6d089885d08ac1aaa","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-403f7c413a492dd3 | data/ingredients/mapped/Dicloxacillin_Sodium_Salt_Monohydrate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-403f7c413a492dd3 | data/ingredients/mapped/Dicloxacillin_Sodium_Salt_Monohydrate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[887],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:52019","line":889,"mapping_status":"MAPPED","ontology_id":"CHEBI:52019","preferred_term":"Dicloxacillin sodium salt monohydrate"}],"identifier":"CHEBI:52019","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:52019","ontology_label":"dicloxacillin sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Dicloxacillin sodium salt monohydrate","sssom_rows":[{"data_row":1036,"object_id":"CHEBI:52019","object_label":"dicloxacillin sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dicloxacillin_Sodium_Salt_Monohydrate","synonym_count":1} |
 | ev-ed22e79d87e4a9eb | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-e986768a5bf4a5b5] | context_only | Predecessor structured review finding f-e986768a5bf4a5b5 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a2f105bcec59d864
+  evidence_ids:
+  - ev-a4080acae53f5c95
+  - ev-ee784a889acc23ee
+  - ev-dd1618a05967a079
+  - ev-80377322877d9542
+  - ev-403f7c413a492dd3
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a2f105bcec59d864
+  evidence_ids:
+  - ev-a4080acae53f5c95
+  - ev-ad9bab5d5892d44a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a2f105bcec59d864
+  evidence_ids:
+  - ev-478ef2200b0e82d0
+  - ev-ad9bab5d5892d44a
+  - ev-ed22e79d87e4a9eb
 evidence:
 - evidence_id: ev-a4080acae53f5c95
   kind: record_content
   reference: data/ingredients/mapped/Dicloxacillin_Sodium_Salt_Monohydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[887],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:52019","line":889,"mapping_status":"MAPPED","ontology_id":"CHEBI:52019","preferred_term":"Dicloxacillin
     sodium salt monohydrate"}],"identifier":"CHEBI:52019","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:52019","ontology_label":"dicloxacillin
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [887]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +235,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Dicloxacillin_Sodium_Salt_Monohydrate; data-row positions=[1036]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1036,"object_id":"CHEBI:52019","object_label":"dicloxacillin
     sodium monohydrate","other":"sodium 6beta-{[3-(2,6-dichlorophenyl)-5-methyl-1,2-oxazol-4-yl]carboxamido}-2,2-dimethylpenam-3alpha-carboxylate--water
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[889]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:52019","line":889,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:52019","preferred_term":"Dicloxacillin
     sodium salt monohydrate","total_occurrences":"0"}]'
@@ -257,7 +270,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[537,2092]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"638bde6709ddcebdd6c37e01e8c02dd4ae64429bc44f6c53015d8c5f1f802914","finding_id":"SEM:9751308138908a84fe40","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"638bde6709ddcebdd6c37e01e8c02dd4ae64429bc44f6c53015d8c5f1f802914","finding_id":"SEM:a1b6d089885d08ac1aaa","kind":"role_evidence","resolution_reason":"Historical
@@ -267,12 +280,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Dicloxacillin_Sodium_Salt_Monohydrate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[887],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:52019","line":889,"mapping_status":"MAPPED","ontology_id":"CHEBI:52019","preferred_term":"Dicloxacillin
+    sodium salt monohydrate"}],"identifier":"CHEBI:52019","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:52019","ontology_label":"dicloxacillin
+    sodium monohydrate","ontology_source":"CHEBI"},"preferred_term":"Dicloxacillin
+    sodium salt monohydrate","sssom_rows":[{"data_row":1036,"object_id":"CHEBI:52019","object_label":"dicloxacillin
+    sodium monohydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dicloxacillin_Sodium_Salt_Monohydrate","synonym_count":1}'
   snapshot_sha256: 638bde6709ddcebdd6c37e01e8c02dd4ae64429bc44f6c53015d8c5f1f802914
 - evidence_id: ev-ed22e79d87e4a9eb
   kind: prior_review

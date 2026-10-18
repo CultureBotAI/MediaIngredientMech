@@ -89,7 +89,7 @@ Reassess prediction-only role support: Cefoxitin sodium salt
 | ev-00f2f68f55cd92ca | docs/data/mapped_ingredients.csv; CSV lines=[681] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:3501","line":681,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3501","preferred_term":"Cefoxitin sodium salt","total_occurrences":"0"}] |
 | ev-aadd2d2f878427b5 | reports/yaml_record_review/Cefoxitin_Sodium_Salt.md; &#96;data/ingredients/mapped/Cefoxitin_Sodium_Salt.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:39; Completeness:54; Recommended Edits:62 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-65767513c3a7d4af | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[381,1473] | context_only | [{"current_record_sha256":"c42368a68a9bb96a8ca994ac1ce506257bbb72d03f79c08bad794b72b92d9cdd","finding_id":"SEM:46773517097ad211849f","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c42368a68a9bb96a8ca994ac1ce506257bbb72d03f79c08bad794b72b92d9cdd","finding_id":"SEM:b2a707715250bbf07ae1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-512495c1fe232f0c | data/ingredients/mapped/Cefoxitin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-512495c1fe232f0c | data/ingredients/mapped/Cefoxitin_Sodium_Salt.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[679],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3501","line":681,"mapping_status":"MAPPED","ontology_id":"CHEBI:3501","preferred_term":"Cefoxitin sodium salt"}],"identifier":"CHEBI:3501","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:3501","ontology_label":"Cefoxitin sodium","ontology_source":"CHEBI"},"preferred_term":"Cefoxitin sodium salt","sssom_rows":[{"data_row":693,"object_id":"CHEBI:3501","object_label":"Cefoxitin sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cefoxitin_Sodium_Salt","synonym_count":0} |
 | ev-69272b0e1f5b72f2 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-0e8cff303dea6cdc] | context_only | Predecessor structured review finding f-0e8cff303dea6cdc in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-32b6898e40544f12
+  evidence_ids:
+  - ev-4e69fbec5cad60f0
+  - ev-aa5988713d8ed7eb
+  - ev-40b2b13daec76634
+  - ev-00f2f68f55cd92ca
+  - ev-512495c1fe232f0c
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-32b6898e40544f12
+  evidence_ids:
+  - ev-4e69fbec5cad60f0
+  - ev-65767513c3a7d4af
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-32b6898e40544f12
+  evidence_ids:
+  - ev-aadd2d2f878427b5
+  - ev-65767513c3a7d4af
+  - ev-69272b0e1f5b72f2
 evidence:
 - evidence_id: ev-4e69fbec5cad60f0
   kind: record_content
   reference: data/ingredients/mapped/Cefoxitin_Sodium_Salt.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[679],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3501","line":681,"mapping_status":"MAPPED","ontology_id":"CHEBI:3501","preferred_term":"Cefoxitin
     sodium salt"}],"identifier":"CHEBI:3501","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:3501","ontology_label":"Cefoxitin
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [679]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cefoxitin_Sodium_Salt; data-row positions=[693]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":693,"object_id":"CHEBI:3501","object_label":"Cefoxitin
     sodium","other":"CAS:33564-30-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Cefoxitin_Sodium_Salt","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[681]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:3501","line":681,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:3501","preferred_term":"Cefoxitin
     sodium salt","total_occurrences":"0"}]'
@@ -254,7 +267,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[381,1473]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c42368a68a9bb96a8ca994ac1ce506257bbb72d03f79c08bad794b72b92d9cdd","finding_id":"SEM:46773517097ad211849f","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c42368a68a9bb96a8ca994ac1ce506257bbb72d03f79c08bad794b72b92d9cdd","finding_id":"SEM:b2a707715250bbf07ae1","kind":"role_evidence","resolution_reason":"Historical
@@ -264,12 +277,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cefoxitin_Sodium_Salt.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[679],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3501","line":681,"mapping_status":"MAPPED","ontology_id":"CHEBI:3501","preferred_term":"Cefoxitin
+    sodium salt"}],"identifier":"CHEBI:3501","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:3501","ontology_label":"Cefoxitin
+    sodium","ontology_source":"CHEBI"},"preferred_term":"Cefoxitin sodium salt","sssom_rows":[{"data_row":693,"object_id":"CHEBI:3501","object_label":"Cefoxitin
+    sodium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cefoxitin_Sodium_Salt","synonym_count":0}'
   snapshot_sha256: c42368a68a9bb96a8ca994ac1ce506257bbb72d03f79c08bad794b72b92d9cdd
 - evidence_id: ev-69272b0e1f5b72f2
   kind: prior_review

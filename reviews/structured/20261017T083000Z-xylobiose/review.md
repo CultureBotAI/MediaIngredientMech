@@ -83,13 +83,13 @@ Reassess prediction-only role support: Xylobiose
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-81034ed7fc7e468c | data/ingredients/mapped/Xylobiose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2068],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28309","line":2070,"mapping_status":"MAPPED","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose"}],"identifier":"CHEBI:28309","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28309","ontology_label":"xylobiose","ontology_source":"CHEBI"},"preferred_term":"Xylobiose","sssom_rows":[{"data_row":2941,"object_id":"CHEBI:28309","object_label":"xylobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylobiose","synonym_count":2} |
-| ev-0552420fd2b619ed | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2068] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-86086adca8facfe9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Xylobiose; data-row positions=[2941] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2941,"object_id":"CHEBI:28309","object_label":"xylobiose","other":"1-4-D-Xylobiose&#124;beta-D-xylopyranosyl-(1-&gt;4)-D-xylopyranose&#124;CAS:6860-47-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylobiose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
-| ev-43dfb4245b8b7085 | docs/data/mapped_ingredients.csv; CSV lines=[2070] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28309","line":2070,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose","total_occurrences":"0"}] |
+| ev-81034ed7fc7e468c | data/ingredients/mapped/Xylobiose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2067],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28309","line":2069,"mapping_status":"MAPPED","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose"}],"identifier":"CHEBI:28309","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28309","ontology_label":"xylobiose","ontology_source":"CHEBI"},"preferred_term":"Xylobiose","sssom_rows":[{"data_row":2943,"object_id":"CHEBI:28309","object_label":"xylobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylobiose","synonym_count":2} |
+| ev-0552420fd2b619ed | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2067] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-86086adca8facfe9 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Xylobiose; data-row positions=[2943] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2943,"object_id":"CHEBI:28309","object_label":"xylobiose","other":"1-4-D-Xylobiose&#124;beta-D-xylopyranosyl-(1-&gt;4)-D-xylopyranose&#124;CAS:6860-47-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylobiose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-43dfb4245b8b7085 | docs/data/mapped_ingredients.csv; CSV lines=[2069] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:28309","line":2069,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose","total_occurrences":"0"}] |
 | ev-4b452be07e9a5f15 | reports/yaml_record_review/Xylobiose.md; &#96;data/ingredients/mapped/Xylobiose.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:33; Issues:40; Completeness:46; Recommended Edits:51 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-d6526c22e42370f2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1353,2057] | context_only | [{"current_record_sha256":"c0329daf6d1496687c90f0c8c1c4d27fec6629a14e2e86ca21127cb488a26e0e","finding_id":"SEM:e94de7bee51fccf6049a","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c0329daf6d1496687c90f0c8c1c4d27fec6629a14e2e86ca21127cb488a26e0e","finding_id":"SEM:104e1baec1ee67c20c5f","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-9ca15131f288004a | data/ingredients/mapped/Xylobiose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-9ca15131f288004a | data/ingredients/mapped/Xylobiose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2067],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28309","line":2069,"mapping_status":"MAPPED","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose"}],"identifier":"CHEBI:28309","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28309","ontology_label":"xylobiose","ontology_source":"CHEBI"},"preferred_term":"Xylobiose","sssom_rows":[{"data_row":2943,"object_id":"CHEBI:28309","object_label":"xylobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylobiose","synonym_count":2} |
 | ev-c1c3006f57e29d85 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-a14d2c02d009e682] | context_only | Predecessor structured review finding f-a14d2c02d009e682 in 20261011T024639Z-mim-reconcile-all-batch-12 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a1e5f5e4e87c449b
+  evidence_ids:
+  - ev-81034ed7fc7e468c
+  - ev-0552420fd2b619ed
+  - ev-86086adca8facfe9
+  - ev-43dfb4245b8b7085
+  - ev-9ca15131f288004a
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a1e5f5e4e87c449b
+  evidence_ids:
+  - ev-81034ed7fc7e468c
+  - ev-d6526c22e42370f2
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a1e5f5e4e87c449b
+  evidence_ids:
+  - ev-4b452be07e9a5f15
+  - ev-d6526c22e42370f2
+  - ev-c1c3006f57e29d85
 evidence:
 - evidence_id: ev-81034ed7fc7e468c
   kind: record_content
   reference: data/ingredients/mapped/Xylobiose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2068],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28309","line":2070,"mapping_status":"MAPPED","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose"}],"identifier":"CHEBI:28309","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28309","ontology_label":"xylobiose","ontology_source":"CHEBI"},"preferred_term":"Xylobiose","sssom_rows":[{"data_row":2941,"object_id":"CHEBI:28309","object_label":"xylobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylobiose","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2067],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28309","line":2069,"mapping_status":"MAPPED","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose"}],"identifier":"CHEBI:28309","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28309","ontology_label":"xylobiose","ontology_source":"CHEBI"},"preferred_term":"Xylobiose","sssom_rows":[{"data_row":2943,"object_id":"CHEBI:28309","object_label":"xylobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylobiose","synonym_count":2}'
   snapshot_sha256: c0329daf6d1496687c90f0c8c1c4d27fec6629a14e2e86ca21127cb488a26e0e
 - evidence_id: ev-0552420fd2b619ed
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [2068]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [2067]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-86086adca8facfe9
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Xylobiose; data-row positions=[2941]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Xylobiose; data-row positions=[2943]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2941,"object_id":"CHEBI:28309","object_label":"xylobiose","other":"1-4-D-Xylobiose|beta-D-xylopyranosyl-(1->4)-D-xylopyranose|CAS:6860-47-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylobiose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2943,"object_id":"CHEBI:28309","object_label":"xylobiose","other":"1-4-D-Xylobiose|beta-D-xylopyranosyl-(1->4)-D-xylopyranose|CAS:6860-47-5","predicate_id":"skos:exactMatch","subject_id":"MIM:Xylobiose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-43dfb4245b8b7085
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[2070]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[2069]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28309","line":2070,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose","total_occurrences":"0"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:28309","line":2069,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-4b452be07e9a5f15
   kind: prior_review
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1353,2057]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c0329daf6d1496687c90f0c8c1c4d27fec6629a14e2e86ca21127cb488a26e0e","finding_id":"SEM:e94de7bee51fccf6049a","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c0329daf6d1496687c90f0c8c1c4d27fec6629a14e2e86ca21127cb488a26e0e","finding_id":"SEM:104e1baec1ee67c20c5f","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Xylobiose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:16646 (carbohydrate)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2067],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:28309","line":2069,"mapping_status":"MAPPED","ontology_id":"CHEBI:28309","preferred_term":"Xylobiose"}],"identifier":"CHEBI:28309","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:28309","ontology_label":"xylobiose","ontology_source":"CHEBI"},"preferred_term":"Xylobiose","sssom_rows":[{"data_row":2943,"object_id":"CHEBI:28309","object_label":"xylobiose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Xylobiose","synonym_count":2}'
   snapshot_sha256: c0329daf6d1496687c90f0c8c1c4d27fec6629a14e2e86ca21127cb488a26e0e
 - evidence_id: ev-c1c3006f57e29d85
   kind: prior_review

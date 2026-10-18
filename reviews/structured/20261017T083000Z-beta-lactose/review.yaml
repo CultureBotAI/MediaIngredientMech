@@ -74,6 +74,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c9541151dd71c170
+  evidence_ids:
+  - ev-70a9a71a117b20d1
+  - ev-6b7b088b6f99d1c3
+  - ev-1dafd4a52d1a0488
+  - ev-ae6f0803e22ac2d9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +87,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-c9541151dd71c170
+  evidence_ids:
+  - ev-70a9a71a117b20d1
+  - ev-ebf41b2a9c8d8ea4
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +98,16 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c9541151dd71c170
+  evidence_ids:
+  - ev-aa860ecacb5e7c9c
+  - ev-ebf41b2a9c8d8ea4
 evidence:
 - evidence_id: ev-70a9a71a117b20d1
   kind: record_content
   reference: data/ingredients/mapped/Beta-lactose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[581],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:36218","line":583,"mapping_status":"MAPPED","ontology_id":"CHEBI:36218","preferred_term":"Beta-Lactose"}],"identifier":"CHEBI:36218","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:36218","ontology_label":"beta-lactose","ontology_source":"CHEBI"},"preferred_term":"Beta-Lactose","sssom_rows":[{"data_row":533,"object_id":"CHEBI:36218","object_label":"beta-lactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Beta-lactose","synonym_count":3}'
   snapshot_sha256: f1c39640418e71ea7999184bcb97d44bb238c7eef405a5ff7c80864e7a7bad86
@@ -104,7 +115,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [581]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -113,7 +124,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Beta-lactose; data-row positions=[533]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":533,"object_id":"CHEBI:36218","object_label":"beta-lactose","other":"lactose|beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranose|CAS:5965-66-2","predicate_id":"skos:exactMatch","subject_id":"MIM:Beta-lactose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -121,7 +132,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[583]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:36218","line":583,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:36218","preferred_term":"Beta-Lactose","total_occurrences":"1"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -143,19 +154,11 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1816,2075]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"f1c39640418e71ea7999184bcb97d44bb238c7eef405a5ff7c80864e7a7bad86","finding_id":"SEM:d6cc98d35dfaefbbf93a","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f1c39640418e71ea7999184bcb97d44bb238c7eef405a5ff7c80864e7a7bad86","finding_id":"SEM:8d6fcb779bc4dbc067ad","kind":"role_evidence","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-f8fbe80886685f73
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/Beta-lactose.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-106d41be3255ef94
@@ -216,7 +219,7 @@ assessments:
   - record-c9541151dd71c170
   evidence_ids:
   - ev-70a9a71a117b20d1
-  - ev-f8fbe80886685f73
+  - ev-ebf41b2a9c8d8ea4
   dimensions:
   - name: legacy-disposition
     value: still_present
@@ -224,7 +227,7 @@ assessments:
       only; not whole-record approval.
     evidence_ids:
     - ev-70a9a71a117b20d1
-    - ev-f8fbe80886685f73
+    - ev-ebf41b2a9c8d8ea4
 findings:
 - finding_id: rec-f-role-c9541151dd71c170
   issue_key: mim-reconciliation-role-support-c9541151dd71c170
@@ -240,7 +243,7 @@ findings:
   - record-c9541151dd71c170
   evidence_ids:
   - ev-70a9a71a117b20d1
-  - ev-f8fbe80886685f73
+  - ev-ebf41b2a9c8d8ea4
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/Beta-lactose.yaml

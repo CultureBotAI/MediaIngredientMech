@@ -85,11 +85,11 @@ Reassess prediction-only role support: D-Fructose 6-phosphate disodium salt hydr
 | --- | --- | --- | --- |
 | ev-5faa642fbc4acdeb | data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[808],"raw_equal":true},"docs_rows":[{"identifier":"cas:26177-86-6","line":810,"mapping_status":"MAPPED","ontology_id":"CHEBI:190546","preferred_term":"D-Fructose 6-phosphate disodium salt hydrate"}],"identifier":"cas:26177-86-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:190546","ontology_label":"D-Fructose 6-Phosphate-Disodium Salt","ontology_source":"CHEBI"},"preferred_term":"D-Fructose 6-phosphate disodium salt hydrate","sssom_rows":[{"data_row":879,"object_id":"CHEBI:190546","object_label":"D-Fructose 6-Phosphate-Disodium Salt","predicate_id":"skos:closeMatch"},{"data_row":880,"object_id":"cas:26177-86-6","object_label":"D-Fructose 6-phosphate disodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate","synonym_count":1} |
 | ev-2eadcb431ca22fc5 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [808] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-ec53cc64ef973838 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate; data-row positions=[879,880] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":879,"object_id":"CHEBI:190546","object_label":"D-Fructose 6-Phosphate-Disodium Salt","other":"disodium;[(2R,3R,4S)-2,3,4,6-tetrahydroxy-5-oxohexyl] phosphate&#124;CAS:26177-86-6","predicate_id":"skos:closeMatch","subject_id":"MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":880,"object_id":"cas:26177-86-6","object_label":"D-Fructose 6-phosphate disodium salt hydrate","other":"CAS:26177-86-6","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-ec53cc64ef973838 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate; data-row positions=[879, 880] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":879,"object_id":"CHEBI:190546","object_label":"D-Fructose 6-Phosphate-Disodium Salt","other":"disodium;[(2R,3R,4S)-2,3,4,6-tetrahydroxy-5-oxohexyl] phosphate&#124;CAS:26177-86-6","predicate_id":"skos:closeMatch","subject_id":"MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"},{"data_row":880,"object_id":"cas:26177-86-6","object_label":"D-Fructose 6-phosphate disodium salt hydrate","other":"CAS:26177-86-6","predicate_id":"skos:exactMatch","subject_id":"MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-d9f7b1b8d8f8b1b2 | docs/data/mapped_ingredients.csv; CSV lines=[810] | supports | Published identity and count rows inspected: [{"identifier":"cas:26177-86-6","line":810,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:190546","preferred_term":"D-Fructose 6-phosphate disodium salt hydrate","total_occurrences":"0"}] |
 | ev-3b6f51f88b98efa8 | reports/yaml_record_review/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.md; &#96;data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml&#96;:2; Verdict:4; Identity:12; Validation:29; Evidence:48; Completeness:70; Recommended Edits:78 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ef5934593709409a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[464,1402] | context_only | [{"current_record_sha256":"2244062bcf003bedc31752d4b5b370a062b488c426fd025f86ce7cecc154a565","finding_id":"SEM:64755858d701807bb86e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2244062bcf003bedc31752d4b5b370a062b488c426fd025f86ce7cecc154a565","finding_id":"SEM:6e34ae0ed0d8378189ed","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c8886643c5a0207d | data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-c8886643c5a0207d | data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[808],"raw_equal":true},"docs_rows":[{"identifier":"cas:26177-86-6","line":810,"mapping_status":"MAPPED","ontology_id":"CHEBI:190546","preferred_term":"D-Fructose 6-phosphate disodium salt hydrate"}],"identifier":"cas:26177-86-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:190546","ontology_label":"D-Fructose 6-Phosphate-Disodium Salt","ontology_source":"CHEBI"},"preferred_term":"D-Fructose 6-phosphate disodium salt hydrate","sssom_rows":[{"data_row":879,"object_id":"CHEBI:190546","object_label":"D-Fructose 6-Phosphate-Disodium Salt","predicate_id":"skos:closeMatch"},{"data_row":880,"object_id":"cas:26177-86-6","object_label":"D-Fructose 6-phosphate disodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate","synonym_count":1} |
 | ev-20347d34f2766b97 | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-4f532c5c8515e98b] | context_only | Predecessor structured review finding f-4f532c5c8515e98b in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -181,6 +181,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-17c23f81cba8deb8
+  evidence_ids:
+  - ev-5faa642fbc4acdeb
+  - ev-2eadcb431ca22fc5
+  - ev-ec53cc64ef973838
+  - ev-d9f7b1b8d8f8b1b2
+  - ev-c8886643c5a0207d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -189,6 +195,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-17c23f81cba8deb8
+  evidence_ids:
+  - ev-5faa642fbc4acdeb
+  - ev-ef5934593709409a
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -197,13 +206,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-17c23f81cba8deb8
+  evidence_ids:
+  - ev-3b6f51f88b98efa8
+  - ev-ef5934593709409a
+  - ev-20347d34f2766b97
 evidence:
 - evidence_id: ev-5faa642fbc4acdeb
   kind: record_content
   reference: data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[808],"raw_equal":true},"docs_rows":[{"identifier":"cas:26177-86-6","line":810,"mapping_status":"MAPPED","ontology_id":"CHEBI:190546","preferred_term":"D-Fructose
     6-phosphate disodium salt hydrate"}],"identifier":"cas:26177-86-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:190546","ontology_label":"D-Fructose
@@ -216,7 +229,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [808]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -224,8 +237,9 @@ evidence:
 - evidence_id: ev-ec53cc64ef973838
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate; data-row positions=[879,880]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate; data-row positions=[879,
+    880]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":879,"object_id":"CHEBI:190546","object_label":"D-Fructose
     6-Phosphate-Disodium Salt","other":"disodium;[(2R,3R,4S)-2,3,4,6-tetrahydroxy-5-oxohexyl]
@@ -236,7 +250,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[810]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:26177-86-6","line":810,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:190546","preferred_term":"D-Fructose
     6-phosphate disodium salt hydrate","total_occurrences":"0"}]'
@@ -264,7 +278,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[464,1402]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"2244062bcf003bedc31752d4b5b370a062b488c426fd025f86ce7cecc154a565","finding_id":"SEM:64755858d701807bb86e","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"2244062bcf003bedc31752d4b5b370a062b488c426fd025f86ce7cecc154a565","finding_id":"SEM:6e34ae0ed0d8378189ed","kind":"role_evidence","resolution_reason":"Historical
@@ -274,12 +288,14 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[808],"raw_equal":true},"docs_rows":[{"identifier":"cas:26177-86-6","line":810,"mapping_status":"MAPPED","ontology_id":"CHEBI:190546","preferred_term":"D-Fructose
+    6-phosphate disodium salt hydrate"}],"identifier":"cas:26177-86-6","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"CHEBI:190546","ontology_label":"D-Fructose
+    6-Phosphate-Disodium Salt","ontology_source":"CHEBI"},"preferred_term":"D-Fructose
+    6-phosphate disodium salt hydrate","sssom_rows":[{"data_row":879,"object_id":"CHEBI:190546","object_label":"D-Fructose
+    6-Phosphate-Disodium Salt","predicate_id":"skos:closeMatch"},{"data_row":880,"object_id":"cas:26177-86-6","object_label":"D-Fructose
+    6-phosphate disodium salt hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-Fructose_6-phosphate_Disodium_Salt_Hydrate","synonym_count":1}'
   snapshot_sha256: 2244062bcf003bedc31752d4b5b370a062b488c426fd025f86ce7cecc154a565
 - evidence_id: ev-20347d34f2766b97
   kind: prior_review

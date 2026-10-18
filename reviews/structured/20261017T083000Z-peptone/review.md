@@ -103,17 +103,17 @@ Reassess prediction-only role support: Peptone
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-29958f2b2d850993 | data/ingredients/mapped/Peptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1631],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1633,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"source_occurrences":[{"count":48,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2220,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2} |
-| ev-95f4aaeab9502835 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1631] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-4f5362bb32478943 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Peptone; data-row positions=[2220] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2220,"object_id":"MICRO:0000178","object_label":"peptone","other":"Peptones&#124;Peptone (0.01 %","predicate_id":"skos:exactMatch","subject_id":"MIM:Peptone","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
-| ev-82b3d1ac7f7ed235 | docs/data/mapped_ingredients.csv; CSV lines=[1633] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000178","line":1633,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2251","ontology_id":"MICRO:0000178","preferred_term":"Peptone","total_occurrences":"2255"}] |
+| ev-29958f2b2d850993 | data/ingredients/mapped/Peptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1630],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1632,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2} |
+| ev-95f4aaeab9502835 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1630] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-4f5362bb32478943 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Peptone; data-row positions=[2222] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","other":"Peptones&#124;Peptone (0.01 %","predicate_id":"skos:exactMatch","subject_id":"MIM:Peptone","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-82b3d1ac7f7ed235 | docs/data/mapped_ingredients.csv; CSV lines=[1632] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000178","line":1632,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2251","ontology_id":"MICRO:0000178","preferred_term":"Peptone","total_occurrences":"2255"}] |
 | ev-8ead32467e428cda | reports/yaml_record_review/Peptone.md; &#96;data/ingredients/mapped/Peptone.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:31; Completeness:41; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-baae2c83720d0326 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1100,2006] | context_only | [{"current_record_sha256":"e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa","finding_id":"SEM:1f30f809b03bd31d6829","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa","finding_id":"SEM:71c103427247b8ffb5a9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ece21da382f39a41 | data/ingredients/mapped/Peptone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-ece21da382f39a41 | data/ingredients/mapped/Peptone.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1630],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1632,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2} |
 | ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
 | ev-54e6930eaaa55145 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-5982691d4b3d176b] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
-| ev-0bdc1c0fd578d2ef | data/ingredients/mapped/Peptone.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "microbedecoder", "synonym_text": "Peptone (0.01 %", "synonym_type": "RAW_TEXT"}], "history": [{"action": "AUTO_CREATE_FROM_MICRO", "changes": "created with primary MICRO:0000178", "curator": "foodon_pass", "llm_assisted": false, "timestamp": "2026-05-01T19:55:09.679469+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Peptone')", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:17.686332+00:00"}, {"action": "ANNOTATED", "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.80)", "curator": "infer_roles_from_name_lists", "timestamp": "2026-06-03T02:06:01.747135+00:00"}, {"action": "CORRECTED", "changes": "Backfilled missing occurrence_statistics (0/0): ontology-derived record with no tracked media occurrences.", "curator": "audit_occurrence_stats", "timestamp": "2026-06-08T23:23:58.335580+00:00"}, {"action": "ANNOTATED", "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -&gt; nutritional_roles.PROTEIN_SOURCE", "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"}, {"action": "MERGED_FROM_UNMAPPED_DUPLICATE", "changes": "Absorbed UNMAPPED_0718 'Peptones' as a RAW_TEXT synonym -- plural of the already-mapped peptone record. No new SSSOM row; MICRO:0000178 is already mapped. Source: kgmicrobe.compound:peptones.", "curator": "microbedecoder-residual-dispositions", "llm_assisted": true, "timestamp": "2026-08-05T00:01:30.894952+00:00"}, {"action": "MERGED_FROM_UNMAPPED_DUPLICATE", "changes": "Absorbed UNMAPPED_0835 'Peptone (0.01 %' as a RAW_TEXT synonym -- concentration-truncated duplicate of peptone. No new SSSOM row; MICRO:0000178 is already mapped. Source: kgmicrobe.trait:peptone_0_01.", "curator": "microbedecoder-residual-dispositions", "llm_assisted": true, "timestamp": "2026-08-05T00:01:30.894952+00:00"}, {"action": "CORRECTED", "changes": "occurrence_statistics 0/0 -&gt; 2251/2255 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics", "timestamp": "2026-08-27T03:16:39.519680+00:00"}], "identifier": "MICRO:0000178", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-created from foodon_pass; label-exact (micro)", "source": "MICRO via OLS search"}], "mapping_quality": "EXACT_MATCH", "ontology_id": "MICRO:0000178", "ontology_label": "peptone", "ontology_source": "MICRO"}} |
-| ev-a926e5411d840793 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Peptone | supports | [{"comment": "", "confidence": "0.99", "data_row": 2220, "mapping_date": "2026-08-27", "mapping_justification": "semapv:LexicalMatching", "object_id": "MICRO:0000178", "object_label": "peptone", "object_source": "obo:micro.owl", "other": "Peptones&#124;Peptone (0.01 %", "predicate_id": "skos:exactMatch", "source": "MIM:MICRO via OLS search&#124;MIM:curator=refresh_occurrence_statistics", "subject_id": "MIM:Peptone", "subject_label": "Peptone", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-0bdc1c0fd578d2ef | data/ingredients/mapped/Peptone.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1630],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1632,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2} |
+| ev-a926e5411d840793 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Peptone; data-row positions=[2222] | supports | Current exact-subject rows, including complete other payload: [{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","other":"Peptones&#124;Peptone (0.01 %","predicate_id":"skos:exactMatch","subject_id":"MIM:Peptone","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-f56ebea344bcd264 | reports/yaml_record_review/Peptone.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
 | ev-70359e49b8727eb7 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-75efffd02df09b2e] | context_only | Predecessor structured review finding f-75efffd02df09b2e in 20261011T024637Z-mim-reconcile-all-batch-09 |
 | ev-13e8a6e9a40472fb | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-5982691d4b3d176b] | context_only | Predecessor structured review finding scope-f-5982691d4b3d176b in 20261011T030852Z-mim-token-scope-reassessment |
@@ -211,6 +211,14 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-62f485f9f7517526
+  evidence_ids:
+  - ev-29958f2b2d850993
+  - ev-95f4aaeab9502835
+  - ev-4f5362bb32478943
+  - ev-82b3d1ac7f7ed235
+  - ev-ece21da382f39a41
+  - ev-0bdc1c0fd578d2ef
+  - ev-a926e5411d840793
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -219,6 +227,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-62f485f9f7517526
+  evidence_ids:
+  - ev-29958f2b2d850993
+  - ev-baae2c83720d0326
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -227,21 +238,28 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-62f485f9f7517526
+  evidence_ids:
+  - ev-8ead32467e428cda
+  - ev-baae2c83720d0326
+  - ev-54e6930eaaa55145
+  - ev-f56ebea344bcd264
+  - ev-70359e49b8727eb7
+  - ev-13e8a6e9a40472fb
 evidence:
 - evidence_id: ev-29958f2b2d850993
   kind: record_content
   reference: data/ingredients/mapped/Peptone.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1631],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1633,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"source_occurrences":[{"count":48,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2220,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1630],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1632,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2}'
   snapshot_sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
 - evidence_id: ev-95f4aaeab9502835
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1631]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1630]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -249,19 +267,19 @@ evidence:
 - evidence_id: ev-4f5362bb32478943
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Peptone; data-row positions=[2220]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Peptone; data-row positions=[2222]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2220,"object_id":"MICRO:0000178","object_label":"peptone","other":"Peptones|Peptone
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","other":"Peptones|Peptone
     (0.01 %","predicate_id":"skos:exactMatch","subject_id":"MIM:Peptone","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-82b3d1ac7f7ed235
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1633]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1632]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000178","line":1633,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2251","ontology_id":"MICRO:0000178","preferred_term":"Peptone","total_occurrences":"2255"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000178","line":1632,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2251","ontology_id":"MICRO:0000178","preferred_term":"Peptone","total_occurrences":"2255"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-8ead32467e428cda
   kind: prior_review
@@ -283,7 +301,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1100,2006]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa","finding_id":"SEM:1f30f809b03bd31d6829","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa","finding_id":"SEM:71c103427247b8ffb5a9","kind":"role_evidence","resolution_reason":"Historical
@@ -293,12 +311,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Peptone.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1630],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1632,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2}'
   snapshot_sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
 - evidence_id: ev-823412d1eacb6795
   kind: record_content
@@ -336,54 +351,18 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Peptone.yaml
   locator: identifier, ontology_mapping, synonyms and curation_history
-  accessed_at: '2026-10-11T03:08:52Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"candidate_labels": [{"source": "microbedecoder", "synonym_text": "Peptone
-    (0.01 %", "synonym_type": "RAW_TEXT"}], "history": [{"action": "AUTO_CREATE_FROM_MICRO",
-    "changes": "created with primary MICRO:0000178", "curator": "foodon_pass", "llm_assisted":
-    false, "timestamp": "2026-05-01T19:55:09.679469+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
-    "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern
-    ''Peptone'')", "curator": "auto_classify_ingredient_type", "llm_assisted": false,
-    "timestamp": "2026-05-02T03:12:17.686332+00:00"}, {"action": "ANNOTATED", "changes":
-    "Added media role: PROTEIN_SOURCE (confidence: 0.80)", "curator": "infer_roles_from_name_lists",
-    "timestamp": "2026-06-03T02:06:01.747135+00:00"}, {"action": "CORRECTED", "changes":
-    "Backfilled missing occurrence_statistics (0/0): ontology-derived record with
-    no tracked media occurrences.", "curator": "audit_occurrence_stats", "timestamp":
-    "2026-06-08T23:23:58.335580+00:00"}, {"action": "ANNOTATED", "changes": "Migrated
-    legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE",
-    "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"},
-    {"action": "MERGED_FROM_UNMAPPED_DUPLICATE", "changes": "Absorbed UNMAPPED_0718
-    ''Peptones'' as a RAW_TEXT synonym -- plural of the already-mapped peptone record.
-    No new SSSOM row; MICRO:0000178 is already mapped. Source: kgmicrobe.compound:peptones.",
-    "curator": "microbedecoder-residual-dispositions", "llm_assisted": true, "timestamp":
-    "2026-08-05T00:01:30.894952+00:00"}, {"action": "MERGED_FROM_UNMAPPED_DUPLICATE",
-    "changes": "Absorbed UNMAPPED_0835 ''Peptone (0.01 %'' as a RAW_TEXT synonym --
-    concentration-truncated duplicate of peptone. No new SSSOM row; MICRO:0000178
-    is already mapped. Source: kgmicrobe.trait:peptone_0_01.", "curator": "microbedecoder-residual-dispositions",
-    "llm_assisted": true, "timestamp": "2026-08-05T00:01:30.894952+00:00"}, {"action":
-    "CORRECTED", "changes": "occurrence_statistics 0/0 -> 2251/2255 (media_count/total_occurrences),
-    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-    prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
-    "timestamp": "2026-08-27T03:16:39.519680+00:00"}], "identifier": "MICRO:0000178",
-    "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-created
-    from foodon_pass; label-exact (micro)", "source": "MICRO via OLS search"}], "mapping_quality":
-    "EXACT_MATCH", "ontology_id": "MICRO:0000178", "ontology_label": "peptone", "ontology_source":
-    "MICRO"}}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1630],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1632,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2}'
   snapshot_sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
 - evidence_id: ev-a926e5411d840793
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Peptone
-  accessed_at: '2026-10-11T03:08:52Z'
+  locator: subject_id=MIM:Peptone; data-row positions=[2222]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: '[{"comment": "", "confidence": "0.99", "data_row": 2220, "mapping_date":
-    "2026-08-27", "mapping_justification": "semapv:LexicalMatching", "object_id":
-    "MICRO:0000178", "object_label": "peptone", "object_source": "obo:micro.owl",
-    "other": "Peptones|Peptone (0.01 %", "predicate_id": "skos:exactMatch", "source":
-    "MIM:MICRO via OLS search|MIM:curator=refresh_occurrence_statistics", "subject_id":
-    "MIM:Peptone", "subject_label": "Peptone", "validation_method": "none|UNKNOWN_TERM|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2222,"object_id":"MICRO:0000178","object_label":"peptone","other":"Peptones|Peptone
+    (0.01 %","predicate_id":"skos:exactMatch","subject_id":"MIM:Peptone","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-f56ebea344bcd264
   kind: prior_review

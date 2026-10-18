@@ -85,11 +85,11 @@ Reassess prediction-only role support: Lacto-N-tetraose
 | --- | --- | --- | --- |
 | ev-a73b46c20848f822 | data/ingredients/mapped/Lacto-N-tetraose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1280],"raw_equal":true},"docs_rows":[{"identifier":"cas:14116-68-8","line":1282,"mapping_status":"MAPPED","ontology_id":"CHEBI:30248","preferred_term":"Lacto-N-tetraose"}],"identifier":"cas:14116-68-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30248","ontology_label":"beta-D-Gal-(1-&gt;3)-beta-D-GlcNAc-(1-&gt;3)-beta-D-Gal-(1-&gt;4)-D-Glc","ontology_source":"CHEBI"},"preferred_term":"Lacto-N-tetraose","sssom_rows":[{"data_row":1663,"object_id":"CHEBI:30248","object_label":"beta-D-Gal-(1-&gt;3)-beta-D-GlcNAc-(1-&gt;3)-beta-D-Gal-(1-&gt;4)-D-Glc","predicate_id":"skos:exactMatch"},{"data_row":1664,"object_id":"cas:14116-68-8","object_label":"Lacto-N-tetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lacto-N-tetraose","synonym_count":1} |
 | ev-9d363b4460ea8564 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1280] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-354a393f4c318bc5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Lacto-N-tetraose; data-row positions=[1663,1664] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1663,"object_id":"CHEBI:30248","object_label":"beta-D-Gal-(1-&gt;3)-beta-D-GlcNAc-(1-&gt;3)-beta-D-Gal-(1-&gt;4)-D-Glc","other":"beta-D-galactopyranosyl-(1-&gt;3)-2-acetamido-2-deoxy-beta-D-glucopyranosyl-(1-&gt;3)-beta-D-galactopyranosyl-(1-&gt;4)-D-glucopyranose&#124;CAS:14116-68-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-tetraose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"},{"data_row":1664,"object_id":"cas:14116-68-8","object_label":"Lacto-N-tetraose","other":"CAS:14116-68-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-tetraose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-354a393f4c318bc5 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Lacto-N-tetraose; data-row positions=[1663, 1664] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1663,"object_id":"CHEBI:30248","object_label":"beta-D-Gal-(1-&gt;3)-beta-D-GlcNAc-(1-&gt;3)-beta-D-Gal-(1-&gt;4)-D-Glc","other":"beta-D-galactopyranosyl-(1-&gt;3)-2-acetamido-2-deoxy-beta-D-glucopyranosyl-(1-&gt;3)-beta-D-galactopyranosyl-(1-&gt;4)-D-glucopyranose&#124;CAS:14116-68-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-tetraose","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"},{"data_row":1664,"object_id":"cas:14116-68-8","object_label":"Lacto-N-tetraose","other":"CAS:14116-68-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-tetraose","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
 | ev-054be0cb98562b99 | docs/data/mapped_ingredients.csv; CSV lines=[1282] | supports | Published identity and count rows inspected: [{"identifier":"cas:14116-68-8","line":1282,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:30248","preferred_term":"Lacto-N-tetraose","total_occurrences":"0"}] |
 | ev-19e7a98a3bc1e203 | reports/yaml_record_review/Lacto-N-tetraose.md; &#96;data/ingredients/mapped/Lacto-N-tetraose.yaml&#96;:2; Verdict:4; Identity:10; Validation:21; Evidence:29; Completeness:47; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3a5775c0f8465361 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[849,1767] | context_only | [{"current_record_sha256":"b7a73255b1615fc39beb8a126f306dd4c504706482864408a2d9fde96f050e9c","finding_id":"SEM:39587ff77e841af5062b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b7a73255b1615fc39beb8a126f306dd4c504706482864408a2d9fde96f050e9c","finding_id":"SEM:0c8561eda02f83b003c2","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-f627955212127c25 | data/ingredients/mapped/Lacto-N-tetraose.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-f627955212127c25 | data/ingredients/mapped/Lacto-N-tetraose.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1280],"raw_equal":true},"docs_rows":[{"identifier":"cas:14116-68-8","line":1282,"mapping_status":"MAPPED","ontology_id":"CHEBI:30248","preferred_term":"Lacto-N-tetraose"}],"identifier":"cas:14116-68-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30248","ontology_label":"beta-D-Gal-(1-&gt;3)-beta-D-GlcNAc-(1-&gt;3)-beta-D-Gal-(1-&gt;4)-D-Glc","ontology_source":"CHEBI"},"preferred_term":"Lacto-N-tetraose","sssom_rows":[{"data_row":1663,"object_id":"CHEBI:30248","object_label":"beta-D-Gal-(1-&gt;3)-beta-D-GlcNAc-(1-&gt;3)-beta-D-Gal-(1-&gt;4)-D-Glc","predicate_id":"skos:exactMatch"},{"data_row":1664,"object_id":"cas:14116-68-8","object_label":"Lacto-N-tetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lacto-N-tetraose","synonym_count":1} |
 | ev-31d48517d1c29e40 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-9ffce1c41e8d002d] | context_only | Predecessor structured review finding f-9ffce1c41e8d002d in 20261011T024635Z-mim-reconcile-all-batch-07 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-0bd86fd49afdabe0
+  evidence_ids:
+  - ev-a73b46c20848f822
+  - ev-9d363b4460ea8564
+  - ev-354a393f4c318bc5
+  - ev-054be0cb98562b99
+  - ev-f627955212127c25
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-0bd86fd49afdabe0
+  evidence_ids:
+  - ev-a73b46c20848f822
+  - ev-3a5775c0f8465361
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-0bd86fd49afdabe0
+  evidence_ids:
+  - ev-19e7a98a3bc1e203
+  - ev-3a5775c0f8465361
+  - ev-31d48517d1c29e40
 evidence:
 - evidence_id: ev-a73b46c20848f822
   kind: record_content
   reference: data/ingredients/mapped/Lacto-N-tetraose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1280],"raw_equal":true},"docs_rows":[{"identifier":"cas:14116-68-8","line":1282,"mapping_status":"MAPPED","ontology_id":"CHEBI:30248","preferred_term":"Lacto-N-tetraose"}],"identifier":"cas:14116-68-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30248","ontology_label":"beta-D-Gal-(1->3)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc","ontology_source":"CHEBI"},"preferred_term":"Lacto-N-tetraose","sssom_rows":[{"data_row":1663,"object_id":"CHEBI:30248","object_label":"beta-D-Gal-(1->3)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc","predicate_id":"skos:exactMatch"},{"data_row":1664,"object_id":"cas:14116-68-8","object_label":"Lacto-N-tetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lacto-N-tetraose","synonym_count":1}'
   snapshot_sha256: b7a73255b1615fc39beb8a126f306dd4c504706482864408a2d9fde96f050e9c
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1280]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,8 +230,8 @@ evidence:
 - evidence_id: ev-354a393f4c318bc5
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Lacto-N-tetraose; data-row positions=[1663,1664]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Lacto-N-tetraose; data-row positions=[1663, 1664]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1663,"object_id":"CHEBI:30248","object_label":"beta-D-Gal-(1->3)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc","other":"beta-D-galactopyranosyl-(1->3)-2-acetamido-2-deoxy-beta-D-glucopyranosyl-(1->3)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose|CAS:14116-68-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-tetraose","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"},{"data_row":1664,"object_id":"cas:14116-68-8","object_label":"Lacto-N-tetraose","other":"CAS:14116-68-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Lacto-N-tetraose","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1282]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:14116-68-8","line":1282,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:30248","preferred_term":"Lacto-N-tetraose","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[849,1767]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"b7a73255b1615fc39beb8a126f306dd4c504706482864408a2d9fde96f050e9c","finding_id":"SEM:39587ff77e841af5062b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"b7a73255b1615fc39beb8a126f306dd4c504706482864408a2d9fde96f050e9c","finding_id":"SEM:0c8561eda02f83b003c2","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Lacto-N-tetraose.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1280],"raw_equal":true},"docs_rows":[{"identifier":"cas:14116-68-8","line":1282,"mapping_status":"MAPPED","ontology_id":"CHEBI:30248","preferred_term":"Lacto-N-tetraose"}],"identifier":"cas:14116-68-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30248","ontology_label":"beta-D-Gal-(1->3)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc","ontology_source":"CHEBI"},"preferred_term":"Lacto-N-tetraose","sssom_rows":[{"data_row":1663,"object_id":"CHEBI:30248","object_label":"beta-D-Gal-(1->3)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc","predicate_id":"skos:exactMatch"},{"data_row":1664,"object_id":"cas:14116-68-8","object_label":"Lacto-N-tetraose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lacto-N-tetraose","synonym_count":1}'
   snapshot_sha256: b7a73255b1615fc39beb8a126f306dd4c504706482864408a2d9fde96f050e9c
 - evidence_id: ev-31d48517d1c29e40
   kind: prior_review

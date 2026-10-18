@@ -83,13 +83,13 @@ Reassess prediction-only role support: Surfactant
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-6538154dd1323b7d | data/ingredients/mapped/Surfactant.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1926],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35195","line":1928,"mapping_status":"MAPPED","ontology_id":"CHEBI:35195","preferred_term":"Surfactant"}],"identifier":"CHEBI:35195","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35195","ontology_label":"surfactant","ontology_source":"CHEBI"},"preferred_term":"Surfactant","sssom_rows":[{"data_row":2699,"object_id":"CHEBI:35195","object_label":"surfactant","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Surfactant","synonym_count":0} |
-| ev-0d085c6e40810ef1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1926] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-f4dd408db8eaec12 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Surfactant; data-row positions=[2699] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2699,"object_id":"CHEBI:35195","object_label":"surfactant","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Surfactant","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-67c91965aa887f10 | docs/data/mapped_ingredients.csv; CSV lines=[1928] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35195","line":1928,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35195","preferred_term":"Surfactant","total_occurrences":"3"}] |
+| ev-6538154dd1323b7d | data/ingredients/mapped/Surfactant.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1925],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35195","line":1927,"mapping_status":"MAPPED","ontology_id":"CHEBI:35195","preferred_term":"Surfactant"}],"identifier":"CHEBI:35195","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35195","ontology_label":"surfactant","ontology_source":"CHEBI"},"preferred_term":"Surfactant","sssom_rows":[{"data_row":2701,"object_id":"CHEBI:35195","object_label":"surfactant","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Surfactant","synonym_count":0} |
+| ev-0d085c6e40810ef1 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1925] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-f4dd408db8eaec12 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Surfactant; data-row positions=[2701] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2701,"object_id":"CHEBI:35195","object_label":"surfactant","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Surfactant","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-67c91965aa887f10 | docs/data/mapped_ingredients.csv; CSV lines=[1927] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:35195","line":1927,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35195","preferred_term":"Surfactant","total_occurrences":"3"}] |
 | ev-2778eccb9f9585af | reports/yaml_record_review/Surfactant.md; &#96;data/ingredients/mapped/Surfactant.yaml&#96;:2; Verdict:4; Identity:11; Validation:20; Evidence:29; Completeness:43; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-bc087d7cea7e9beb | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1264,1906] | context_only | [{"current_record_sha256":"4ae85133118ce09bc36ea6b188ddb559b61f13e9a35b5a57bbed451d726a5666","finding_id":"SEM:6e7e3bbba3c338993b24","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4ae85133118ce09bc36ea6b188ddb559b61f13e9a35b5a57bbed451d726a5666","finding_id":"SEM:104bc0d2fe3a3340f5df","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c26b3c97081fc92d | data/ingredients/mapped/Surfactant.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}] |
+| ev-c26b3c97081fc92d | data/ingredients/mapped/Surfactant.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1925],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35195","line":1927,"mapping_status":"MAPPED","ontology_id":"CHEBI:35195","preferred_term":"Surfactant"}],"identifier":"CHEBI:35195","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35195","ontology_label":"surfactant","ontology_source":"CHEBI"},"preferred_term":"Surfactant","sssom_rows":[{"data_row":2701,"object_id":"CHEBI:35195","object_label":"surfactant","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Surfactant","synonym_count":0} |
 | ev-1ec9358784436134 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-a509b89b93f5890c] | context_only | Predecessor structured review finding f-a509b89b93f5890c in 20261011T024638Z-mim-reconcile-all-batch-11 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-dd2dc2e7ede18d19
+  evidence_ids:
+  - ev-6538154dd1323b7d
+  - ev-0d085c6e40810ef1
+  - ev-f4dd408db8eaec12
+  - ev-67c91965aa887f10
+  - ev-c26b3c97081fc92d
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-dd2dc2e7ede18d19
+  evidence_ids:
+  - ev-6538154dd1323b7d
+  - ev-bc087d7cea7e9beb
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-dd2dc2e7ede18d19
+  evidence_ids:
+  - ev-2778eccb9f9585af
+  - ev-bc087d7cea7e9beb
+  - ev-1ec9358784436134
 evidence:
 - evidence_id: ev-6538154dd1323b7d
   kind: record_content
   reference: data/ingredients/mapped/Surfactant.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1926],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35195","line":1928,"mapping_status":"MAPPED","ontology_id":"CHEBI:35195","preferred_term":"Surfactant"}],"identifier":"CHEBI:35195","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35195","ontology_label":"surfactant","ontology_source":"CHEBI"},"preferred_term":"Surfactant","sssom_rows":[{"data_row":2699,"object_id":"CHEBI:35195","object_label":"surfactant","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Surfactant","synonym_count":0}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1925],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35195","line":1927,"mapping_status":"MAPPED","ontology_id":"CHEBI:35195","preferred_term":"Surfactant"}],"identifier":"CHEBI:35195","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35195","ontology_label":"surfactant","ontology_source":"CHEBI"},"preferred_term":"Surfactant","sssom_rows":[{"data_row":2701,"object_id":"CHEBI:35195","object_label":"surfactant","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Surfactant","synonym_count":0}'
   snapshot_sha256: 4ae85133118ce09bc36ea6b188ddb559b61f13e9a35b5a57bbed451d726a5666
 - evidence_id: ev-0d085c6e40810ef1
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1926]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1925]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-f4dd408db8eaec12
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Surfactant; data-row positions=[2699]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Surfactant; data-row positions=[2701]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2699,"object_id":"CHEBI:35195","object_label":"surfactant","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Surfactant","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2701,"object_id":"CHEBI:35195","object_label":"surfactant","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Surfactant","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-67c91965aa887f10
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1928]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1927]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35195","line":1928,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35195","preferred_term":"Surfactant","total_occurrences":"3"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35195","line":1927,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"3","ontology_id":"CHEBI:35195","preferred_term":"Surfactant","total_occurrences":"3"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-2778eccb9f9585af
   kind: prior_review
@@ -250,7 +263,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1264,1906]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4ae85133118ce09bc36ea6b188ddb559b61f13e9a35b5a57bbed451d726a5666","finding_id":"SEM:6e7e3bbba3c338993b24","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4ae85133118ce09bc36ea6b188ddb559b61f13e9a35b5a57bbed451d726a5666","finding_id":"SEM:104bc0d2fe3a3340f5df","kind":"role_evidence","resolution_reason":"Historical
@@ -260,12 +273,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Surfactant.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
-    from CHEBI ancestry: subclass/has_role of CHEBI:35195 (surfactant (role))","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SURFACTANT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1925],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35195","line":1927,"mapping_status":"MAPPED","ontology_id":"CHEBI:35195","preferred_term":"Surfactant"}],"identifier":"CHEBI:35195","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":3,"edge_count":3,"occurrences":3},"occurrence_statistics":{"media_count":3,"total_occurrences":3},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35195","ontology_label":"surfactant","ontology_source":"CHEBI"},"preferred_term":"Surfactant","sssom_rows":[{"data_row":2701,"object_id":"CHEBI:35195","object_label":"surfactant","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Surfactant","synonym_count":0}'
   snapshot_sha256: 4ae85133118ce09bc36ea6b188ddb559b61f13e9a35b5a57bbed451d726a5666
 - evidence_id: ev-1ec9358784436134
   kind: prior_review

@@ -71,14 +71,13 @@ Disposition: Expansion/interpretation is retained as an assertion, but the exact
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-d29e084b822b370a | data/ingredients/mapped/TYGVS_Glucose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[64],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:tygvs_glucose","line":66,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","preferred_term":"TYGVS + Glucose"}],"identifier":"kgmicrobe.ingredient:tygvs_glucose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","ontology_label":"TYGVS + Glucose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"TYGVS + Glucose","sssom_rows":[{"data_row":2710,"object_id":"kgmicrobe.ingredient:tygvs_glucose","object_label":"TYGVS + Glucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TYGVS_Glucose","synonym_count":1} |
+| ev-d29e084b822b370a | data/ingredients/mapped/TYGVS_Glucose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[64],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:tygvs_glucose","line":66,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","preferred_term":"TYGVS + Glucose"}],"identifier":"kgmicrobe.ingredient:tygvs_glucose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","ontology_label":"TYGVS + Glucose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"TYGVS + Glucose","sssom_rows":[{"data_row":2712,"object_id":"kgmicrobe.ingredient:tygvs_glucose","object_label":"TYGVS + Glucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TYGVS_Glucose","synonym_count":1} |
 | ev-520c93b4efdf119d | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [64] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-f8a9df3cf3e58d5f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:TYGVS_Glucose; data-row positions=[2710] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2710,"object_id":"kgmicrobe.ingredient:tygvs_glucose","object_label":"TYGVS + Glucose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:TYGVS_Glucose","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
+| ev-f8a9df3cf3e58d5f | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:TYGVS_Glucose; data-row positions=[2712] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2712,"object_id":"kgmicrobe.ingredient:tygvs_glucose","object_label":"TYGVS + Glucose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:TYGVS_Glucose","validation_method":"manual:move_mapped_out_of_unmapped_collection&#124;MOVED&#124;2026-08-15"}] |
 | ev-040fb70ab3fc8a0f | docs/data/mapped_ingredients.csv; CSV lines=[66] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:tygvs_glucose","line":66,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","preferred_term":"TYGVS + Glucose","total_occurrences":"0"}] |
 | ev-cea20c2c8fdbb593 | reports/yaml_record_review/20261001T050339Z-TYGVS_Glucose.md; YAML Record Review: TYGVS + Glucose:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:60; Additional Notes:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-e8cde39fe1a8a7aa | reports/yaml_record_review/TYGVS_Glucose.md; &#96;data/ingredients/mapped/TYGVS_Glucose.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:33; Completeness:46; Recommended Edits:58 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-c26e4e71bcec3d02 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1387,1476,1631,1748] | context_only | [{"current_record_sha256":"0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e","finding_id":"SEM:d4aee62995713389feb5","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e","finding_id":"SEM:1c002b94f688721ee57c","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e","finding_id":"SEM:1cfec4460ef0ccb1e1d7","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e","finding_id":"SEM:6f0c9d492dbd45eff5db","kind":"component_source_scope","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-d7045ec30595bfc6 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; current_record=data/ingredients/mapped/TYGVS_Glucose.yaml | context_only | Semantic review finding dispositions ledger |
 
 ## Limits And Additional Notes
 
@@ -170,6 +169,11 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-c80915d86df9e111
+  evidence_ids:
+  - ev-d29e084b822b370a
+  - ev-520c93b4efdf119d
+  - ev-f8a9df3cf3e58d5f
+  - ev-040fb70ab3fc8a0f
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: passed
@@ -178,6 +182,9 @@ checks:
     or no role array defects were detected.
   target_ids:
   - record-c80915d86df9e111
+  evidence_ids:
+  - ev-d29e084b822b370a
+  - ev-c26e4e71bcec3d02
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -186,25 +193,29 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-c80915d86df9e111
+  evidence_ids:
+  - ev-cea20c2c8fdbb593
+  - ev-e8cde39fe1a8a7aa
+  - ev-c26e4e71bcec3d02
 evidence:
 - evidence_id: ev-d29e084b822b370a
   kind: record_content
   reference: data/ingredients/mapped/TYGVS_Glucose.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[64],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:tygvs_glucose","line":66,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","preferred_term":"TYGVS
-    + Glucose"}],"identifier":"kgmicrobe.ingredient:tygvs_glucose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"bergey:substrates"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","ontology_label":"TYGVS
+    + Glucose"}],"identifier":"kgmicrobe.ingredient:tygvs_glucose","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","ontology_label":"TYGVS
     + Glucose","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"TYGVS +
-    Glucose","sssom_rows":[{"data_row":2710,"object_id":"kgmicrobe.ingredient:tygvs_glucose","object_label":"TYGVS
+    Glucose","sssom_rows":[{"data_row":2712,"object_id":"kgmicrobe.ingredient:tygvs_glucose","object_label":"TYGVS
     + Glucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TYGVS_Glucose","synonym_count":1}'
   snapshot_sha256: 0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e
 - evidence_id: ev-520c93b4efdf119d
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [64]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -212,17 +223,17 @@ evidence:
 - evidence_id: ev-f8a9df3cf3e58d5f
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:TYGVS_Glucose; data-row positions=[2710]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:TYGVS_Glucose; data-row positions=[2712]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2710,"object_id":"kgmicrobe.ingredient:tygvs_glucose","object_label":"TYGVS
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2712,"object_id":"kgmicrobe.ingredient:tygvs_glucose","object_label":"TYGVS
     + Glucose","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:TYGVS_Glucose","validation_method":"manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-040fb70ab3fc8a0f
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[66]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:tygvs_glucose","line":66,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.ingredient:tygvs_glucose","preferred_term":"TYGVS
     + Glucose","total_occurrences":"0"}]'
@@ -265,21 +276,13 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1387,1476,1631,1748]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e","finding_id":"SEM:d4aee62995713389feb5","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e","finding_id":"SEM:1c002b94f688721ee57c","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e","finding_id":"SEM:1cfec4460ef0ccb1e1d7","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e","finding_id":"SEM:6f0c9d492dbd45eff5db","kind":"component_source_scope","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
-  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
-- evidence_id: ev-d7045ec30595bfc6
-  kind: prior_review
-  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
-  locator: current_record=data/ingredients/mapped/TYGVS_Glucose.yaml
-  accessed_at: '2026-10-17T08:30:00Z'
-  support: context_only
-  summary: Semantic review finding dispositions ledger
   snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
 assessments:
 - assessment_id: a-88a0f35e36079304
@@ -358,7 +361,7 @@ findings:
   - record-c80915d86df9e111
   evidence_ids:
   - ev-d29e084b822b370a
-  - ev-d7045ec30595bfc6
+  - ev-c26e4e71bcec3d02
   owner_paths:
   - repository: CultureBotAI/MediaIngredientMech
     path: data/ingredients/mapped/TYGVS_Glucose.yaml

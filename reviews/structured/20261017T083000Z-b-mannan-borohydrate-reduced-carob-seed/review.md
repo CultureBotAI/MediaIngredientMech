@@ -89,7 +89,7 @@ Reassess prediction-only role support: b-Mannan borohydrate reduced carob seed
 | ev-f13cf40d64a4860c | docs/data/mapped_ingredients.csv; CSV lines=[542] | supports | Published identity and count rows inspected: [{"identifier":"cas:9036-88-8","line":542,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:9036-88-8","preferred_term":"b-Mannan borohydrate reduced carob seed","total_occurrences":"0"}] |
 | ev-95e7e9d17041e8a7 | reports/yaml_record_review/B-Mannan_Borohydrate_Reduced_Carob_Seed.md; &#96;data/ingredients/mapped/B-Mannan_Borohydrate_Reduced_Carob_Seed.yaml&#96;:2; Verdict:4; Identity:11; Validation:28; Evidence:44; Completeness:59; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-5b6b44570a132188 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[288,1947] | context_only | [{"current_record_sha256":"5fac547527ee432196f47f58cb33131108624b43449be8346f8ad37514965499","finding_id":"SEM:910f76feca50c487fd60","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5fac547527ee432196f47f58cb33131108624b43449be8346f8ad37514965499","finding_id":"SEM:2164db6e72e159c5e665","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a383801d6c52c39e | data/ingredients/mapped/B-Mannan_Borohydrate_Reduced_Carob_Seed.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-a383801d6c52c39e | data/ingredients/mapped/B-Mannan_Borohydrate_Reduced_Carob_Seed.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[540],"raw_equal":true},"docs_rows":[{"identifier":"cas:9036-88-8","line":542,"mapping_status":"MAPPED","ontology_id":"cas:9036-88-8","preferred_term":"b-Mannan borohydrate reduced carob seed"}],"identifier":"cas:9036-88-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:9036-88-8","ontology_label":"b-Mannan borohydrate reduced carob seed","ontology_source":"CAS"},"preferred_term":"b-Mannan borohydrate reduced carob seed","sssom_rows":[{"data_row":470,"object_id":"cas:9036-88-8","object_label":"b-Mannan borohydrate reduced carob seed","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:B-Mannan_Borohydrate_Reduced_Carob_Seed","synonym_count":0} |
 | ev-13addc779c4fd350 | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-75d6fcd57f3f8499] | context_only | Predecessor structured review finding f-75d6fcd57f3f8499 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -180,6 +180,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-99ff921fd495a24c
+  evidence_ids:
+  - ev-76945188546e1e2d
+  - ev-a89eb0a02c96404e
+  - ev-b7f087d496277f56
+  - ev-f13cf40d64a4860c
+  - ev-a383801d6c52c39e
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -188,6 +194,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-99ff921fd495a24c
+  evidence_ids:
+  - ev-76945188546e1e2d
+  - ev-5b6b44570a132188
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -196,13 +205,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-99ff921fd495a24c
+  evidence_ids:
+  - ev-95e7e9d17041e8a7
+  - ev-5b6b44570a132188
+  - ev-13addc779c4fd350
 evidence:
 - evidence_id: ev-76945188546e1e2d
   kind: record_content
   reference: data/ingredients/mapped/B-Mannan_Borohydrate_Reduced_Carob_Seed.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[540],"raw_equal":true},"docs_rows":[{"identifier":"cas:9036-88-8","line":542,"mapping_status":"MAPPED","ontology_id":"cas:9036-88-8","preferred_term":"b-Mannan
     borohydrate reduced carob seed"}],"identifier":"cas:9036-88-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:9036-88-8","ontology_label":"b-Mannan
@@ -214,7 +227,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [540]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -223,7 +236,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:B-Mannan_Borohydrate_Reduced_Carob_Seed; data-row positions=[470]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":470,"object_id":"cas:9036-88-8","object_label":"b-Mannan
     borohydrate reduced carob seed","other":"CAS:9036-88-8","predicate_id":"skos:exactMatch","subject_id":"MIM:B-Mannan_Borohydrate_Reduced_Carob_Seed","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -232,7 +245,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[542]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"cas:9036-88-8","line":542,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"0","ontology_id":"cas:9036-88-8","preferred_term":"b-Mannan
     borohydrate reduced carob seed","total_occurrences":"0"}]'
@@ -260,7 +273,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[288,1947]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"5fac547527ee432196f47f58cb33131108624b43449be8346f8ad37514965499","finding_id":"SEM:910f76feca50c487fd60","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5fac547527ee432196f47f58cb33131108624b43449be8346f8ad37514965499","finding_id":"SEM:2164db6e72e159c5e665","kind":"role_evidence","resolution_reason":"Historical
@@ -270,12 +283,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/B-Mannan_Borohydrate_Reduced_Carob_Seed.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[540],"raw_equal":true},"docs_rows":[{"identifier":"cas:9036-88-8","line":542,"mapping_status":"MAPPED","ontology_id":"cas:9036-88-8","preferred_term":"b-Mannan
+    borohydrate reduced carob seed"}],"identifier":"cas:9036-88-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:9036-88-8","ontology_label":"b-Mannan
+    borohydrate reduced carob seed","ontology_source":"CAS"},"preferred_term":"b-Mannan
+    borohydrate reduced carob seed","sssom_rows":[{"data_row":470,"object_id":"cas:9036-88-8","object_label":"b-Mannan
+    borohydrate reduced carob seed","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:B-Mannan_Borohydrate_Reduced_Carob_Seed","synonym_count":0}'
   snapshot_sha256: 5fac547527ee432196f47f58cb33131108624b43449be8346f8ad37514965499
 - evidence_id: ev-13addc779c4fd350
   kind: prior_review

@@ -83,13 +83,13 @@ Reassess prediction-only role support: Colistin Sulfate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-b777cb8511c23621 | data/ingredients/mapped/Colistin_Sulfate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[185],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C386","line":187,"mapping_status":"MAPPED","ontology_id":"NCIT:C386","preferred_term":"Colistin Sulfate"}],"identifier":"NCIT:C386","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"BacDive_Antibiotic_resistance"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C386","ontology_label":"Colistin Sulfate","ontology_source":"NCIT"},"preferred_term":"Colistin Sulfate","sssom_rows":[{"data_row":803,"object_id":"NCIT:C386","object_label":"Colistin Sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Colistin_Sulfate","synonym_count":1} |
+| ev-b777cb8511c23621 | data/ingredients/mapped/Colistin_Sulfate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[185],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C386","line":187,"mapping_status":"MAPPED","ontology_id":"NCIT:C386","preferred_term":"Colistin Sulfate"}],"identifier":"NCIT:C386","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C386","ontology_label":"Colistin Sulfate","ontology_source":"NCIT"},"preferred_term":"Colistin Sulfate","sssom_rows":[{"data_row":803,"object_id":"NCIT:C386","object_label":"Colistin Sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Colistin_Sulfate","synonym_count":1} |
 | ev-b01f8f5a37e7fea8 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [185] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
 | ev-d2d61acdd1167e22 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Colistin_Sulfate; data-row positions=[803] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":803,"object_id":"NCIT:C386","object_label":"Colistin Sulfate","other":"CAS:1264-72-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Colistin_Sulfate","validation_method":"manual:promote_resolved_unmapped&#124;PROMOTED&#124;2026-08-06"}] |
 | ev-3678ba7c15febe65 | docs/data/mapped_ingredients.csv; CSV lines=[187] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C386","line":187,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C386","preferred_term":"Colistin Sulfate","total_occurrences":"0"}] |
 | ev-a897e7510f960f2d | reports/yaml_record_review/Colistin_Sulfate.md; &#96;data/ingredients/mapped/Colistin_Sulfate.yaml&#96;:2; Verdict:4; Identity:13; Validation:30; Evidence:50; Completeness:73; Recommended Edits:80 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-786ccb9ccd8c98ca | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[436,1384] | context_only | [{"current_record_sha256":"d55c2086f97b62ff286a82f392677987389ce0ec44a39cceb6dced86efacb423","finding_id":"SEM:00559fbbea1a6b1faad6","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d55c2086f97b62ff286a82f392677987389ce0ec44a39cceb6dced86efacb423","finding_id":"SEM:dd87a5741603b350bee7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-517bc29b6c6c2bd9 | data/ingredients/mapped/Colistin_Sulfate.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-517bc29b6c6c2bd9 | data/ingredients/mapped/Colistin_Sulfate.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[185],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C386","line":187,"mapping_status":"MAPPED","ontology_id":"NCIT:C386","preferred_term":"Colistin Sulfate"}],"identifier":"NCIT:C386","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C386","ontology_label":"Colistin Sulfate","ontology_source":"NCIT"},"preferred_term":"Colistin Sulfate","sssom_rows":[{"data_row":803,"object_id":"NCIT:C386","object_label":"Colistin Sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Colistin_Sulfate","synonym_count":1} |
 | ev-98e5ff17597fd9f3 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-963d1bb4b2bdce76] | context_only | Predecessor structured review finding f-963d1bb4b2bdce76 in 20261011T024632Z-mim-reconcile-all-batch-04 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-220a9e6c482cec19
+  evidence_ids:
+  - ev-b777cb8511c23621
+  - ev-b01f8f5a37e7fea8
+  - ev-d2d61acdd1167e22
+  - ev-3678ba7c15febe65
+  - ev-517bc29b6c6c2bd9
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-220a9e6c482cec19
+  evidence_ids:
+  - ev-b777cb8511c23621
+  - ev-786ccb9ccd8c98ca
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,16 +204,20 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-220a9e6c482cec19
+  evidence_ids:
+  - ev-a897e7510f960f2d
+  - ev-786ccb9ccd8c98ca
+  - ev-98e5ff17597fd9f3
 evidence:
 - evidence_id: ev-b777cb8511c23621
   kind: record_content
   reference: data/ingredients/mapped/Colistin_Sulfate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[185],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C386","line":187,"mapping_status":"MAPPED","ontology_id":"NCIT:C386","preferred_term":"Colistin
-    Sulfate"}],"identifier":"NCIT:C386","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":2,"source":"microbedecoder","source_columns":"BacDive_Antibiotic_resistance"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C386","ontology_label":"Colistin
+    Sulfate"}],"identifier":"NCIT:C386","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C386","ontology_label":"Colistin
     Sulfate","ontology_source":"NCIT"},"preferred_term":"Colistin Sulfate","sssom_rows":[{"data_row":803,"object_id":"NCIT:C386","object_label":"Colistin
     Sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Colistin_Sulfate","synonym_count":1}'
   snapshot_sha256: d55c2086f97b62ff286a82f392677987389ce0ec44a39cceb6dced86efacb423
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [185]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Colistin_Sulfate; data-row positions=[803]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":803,"object_id":"NCIT:C386","object_label":"Colistin
     Sulfate","other":"CAS:1264-72-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Colistin_Sulfate","validation_method":"manual:promote_resolved_unmapped|PROMOTED|2026-08-06"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[187]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C386","line":187,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C386","preferred_term":"Colistin
     Sulfate","total_occurrences":"0"}]'
@@ -255,7 +268,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[436,1384]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"d55c2086f97b62ff286a82f392677987389ce0ec44a39cceb6dced86efacb423","finding_id":"SEM:00559fbbea1a6b1faad6","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d55c2086f97b62ff286a82f392677987389ce0ec44a39cceb6dced86efacb423","finding_id":"SEM:dd87a5741603b350bee7","kind":"role_evidence","resolution_reason":"Historical
@@ -265,12 +278,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Colistin_Sulfate.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[185],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C386","line":187,"mapping_status":"MAPPED","ontology_id":"NCIT:C386","preferred_term":"Colistin
+    Sulfate"}],"identifier":"NCIT:C386","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C386","ontology_label":"Colistin
+    Sulfate","ontology_source":"NCIT"},"preferred_term":"Colistin Sulfate","sssom_rows":[{"data_row":803,"object_id":"NCIT:C386","object_label":"Colistin
+    Sulfate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Colistin_Sulfate","synonym_count":1}'
   snapshot_sha256: d55c2086f97b62ff286a82f392677987389ce0ec44a39cceb6dced86efacb423
 - evidence_id: ev-98e5ff17597fd9f3
   kind: prior_review

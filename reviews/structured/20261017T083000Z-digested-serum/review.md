@@ -89,7 +89,7 @@ Reassess prediction-only role support: Digested serum
 | ev-4e084e3dae3395e7 | docs/data/mapped_ingredients.csv; CSV lines=[892] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0001362","line":892,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0001362","preferred_term":"Digested serum","total_occurrences":"2"}] |
 | ev-5f400ae29b8702f4 | reports/yaml_record_review/Digested_Serum.md; &#96;data/ingredients/mapped/Digested_Serum.yaml&#96;:2; Verdict:4; Identity:12; Validation:22; Evidence:43; Completeness:68; Recommended Edits:79 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-3d080a34fcf0b42d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[540,2017] | context_only | [{"current_record_sha256":"66c9d7b79fe966263a397f01b2fd82162b70b171611ba6e271ce9f938b813e35","finding_id":"SEM:1e027cea93ff296833ce","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"66c9d7b79fe966263a397f01b2fd82162b70b171611ba6e271ce9f938b813e35","finding_id":"SEM:835c368f848fef6c04ec","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-5e4d7c46afe5eb80 | data/ingredients/mapped/Digested_Serum.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-5e4d7c46afe5eb80 | data/ingredients/mapped/Digested_Serum.yaml; nutritional_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[890],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001362","line":892,"mapping_status":"MAPPED","ontology_id":"MICRO:0001362","preferred_term":"Digested serum"}],"identifier":"MICRO:0001362","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001362","ontology_label":"digested serum","ontology_source":"MICRO"},"preferred_term":"Digested serum","sssom_rows":[{"data_row":1040,"object_id":"MICRO:0001362","object_label":"digested serum","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Digested_Serum","synonym_count":1} |
 | ev-f3468ce76370858e | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-34cc160dc2428183] | context_only | Predecessor structured review finding f-34cc160dc2428183 in 20261011T024633Z-mim-reconcile-all-batch-05 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-51035fd4e49c26bb
+  evidence_ids:
+  - ev-89e56a775e990648
+  - ev-6e0ca01ac2ee95c7
+  - ev-82feb04ed7004921
+  - ev-4e084e3dae3395e7
+  - ev-5e4d7c46afe5eb80
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-51035fd4e49c26bb
+  evidence_ids:
+  - ev-89e56a775e990648
+  - ev-3d080a34fcf0b42d
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-51035fd4e49c26bb
+  evidence_ids:
+  - ev-5f400ae29b8702f4
+  - ev-3d080a34fcf0b42d
+  - ev-f3468ce76370858e
 evidence:
 - evidence_id: ev-89e56a775e990648
   kind: record_content
   reference: data/ingredients/mapped/Digested_Serum.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[890],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001362","line":892,"mapping_status":"MAPPED","ontology_id":"MICRO:0001362","preferred_term":"Digested
     serum"}],"identifier":"MICRO:0001362","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001362","ontology_label":"digested
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [890]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Digested_Serum; data-row positions=[1040]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1040,"object_id":"MICRO:0001362","object_label":"digested
     serum","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Digested_Serum","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
@@ -230,7 +243,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[892]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0001362","line":892,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"MICRO:0001362","preferred_term":"Digested
     serum","total_occurrences":"2"}]'
@@ -259,7 +272,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[540,2017]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"66c9d7b79fe966263a397f01b2fd82162b70b171611ba6e271ce9f938b813e35","finding_id":"SEM:1e027cea93ff296833ce","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"66c9d7b79fe966263a397f01b2fd82162b70b171611ba6e271ce9f938b813e35","finding_id":"SEM:835c368f848fef6c04ec","kind":"role_evidence","resolution_reason":"Historical
@@ -269,12 +282,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Digested_Serum.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[890],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0001362","line":892,"mapping_status":"MAPPED","ontology_id":"MICRO:0001362","preferred_term":"Digested
+    serum"}],"identifier":"MICRO:0001362","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0001362","ontology_label":"digested
+    serum","ontology_source":"MICRO"},"preferred_term":"Digested serum","sssom_rows":[{"data_row":1040,"object_id":"MICRO:0001362","object_label":"digested
+    serum","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Digested_Serum","synonym_count":1}'
   snapshot_sha256: 66c9d7b79fe966263a397f01b2fd82162b70b171611ba6e271ce9f938b813e35
 - evidence_id: ev-f3468ce76370858e
   kind: prior_review

@@ -89,7 +89,7 @@ Reassess prediction-only role support: Flavensomycin
 | ev-b1314d27c9cc89cb | docs/data/mapped_ingredients.csv; CSV lines=[1011] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:flavensomycin","line":1011,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:flavensomycin","preferred_term":"Flavensomycin","total_occurrences":"0"}] |
 | ev-b805a290b661ad07 | reports/yaml_record_review/Flavensomycin.md; &#96;data/ingredients/mapped/Flavensomycin.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:36; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-30b6d33bd4ebf59b | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[620,1467] | context_only | [{"current_record_sha256":"a26badaf8b7012b2d2bb02895c1350dccd9b6b3eedd947f9bc2eb26a64d9f382","finding_id":"SEM:44a3f407cf648eff5c2b","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a26badaf8b7012b2d2bb02895c1350dccd9b6b3eedd947f9bc2eb26a64d9f382","finding_id":"SEM:5d3f94edadfb0efe4cc7","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-a8bdf537d1e6ab14 | data/ingredients/mapped/Flavensomycin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-a8bdf537d1e6ab14 | data/ingredients/mapped/Flavensomycin.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1009],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:flavensomycin","line":1011,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:flavensomycin","preferred_term":"Flavensomycin"}],"identifier":"kgmicrobe.compound:flavensomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:flavensomycin","ontology_label":"Flavensomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Flavensomycin","sssom_rows":[{"data_row":1215,"object_id":"kgmicrobe.compound:flavensomycin","object_label":"Flavensomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Flavensomycin","synonym_count":0} |
 | ev-6d6915057a39386d | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-0cd13d5e29b5bfc7] | context_only | Predecessor structured review finding f-0cd13d5e29b5bfc7 in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-79137a63046012e5
+  evidence_ids:
+  - ev-1ea5ad991c91e351
+  - ev-ccd12b5880d5c193
+  - ev-850013e3946b985e
+  - ev-b1314d27c9cc89cb
+  - ev-a8bdf537d1e6ab14
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-79137a63046012e5
+  evidence_ids:
+  - ev-1ea5ad991c91e351
+  - ev-30b6d33bd4ebf59b
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-79137a63046012e5
+  evidence_ids:
+  - ev-b805a290b661ad07
+  - ev-30b6d33bd4ebf59b
+  - ev-6d6915057a39386d
 evidence:
 - evidence_id: ev-1ea5ad991c91e351
   kind: record_content
   reference: data/ingredients/mapped/Flavensomycin.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1009],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:flavensomycin","line":1011,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:flavensomycin","preferred_term":"Flavensomycin"}],"identifier":"kgmicrobe.compound:flavensomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:flavensomycin","ontology_label":"Flavensomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Flavensomycin","sssom_rows":[{"data_row":1215,"object_id":"kgmicrobe.compound:flavensomycin","object_label":"Flavensomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Flavensomycin","synonym_count":0}'
   snapshot_sha256: a26badaf8b7012b2d2bb02895c1350dccd9b6b3eedd947f9bc2eb26a64d9f382
@@ -209,7 +222,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1009]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -218,7 +231,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Flavensomycin; data-row positions=[1215]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1215,"object_id":"kgmicrobe.compound:flavensomycin","object_label":"Flavensomycin","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Flavensomycin","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
@@ -226,7 +239,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1011]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:flavensomycin","line":1011,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:flavensomycin","preferred_term":"Flavensomycin","total_occurrences":"0"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -249,7 +262,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[620,1467]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"a26badaf8b7012b2d2bb02895c1350dccd9b6b3eedd947f9bc2eb26a64d9f382","finding_id":"SEM:44a3f407cf648eff5c2b","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"a26badaf8b7012b2d2bb02895c1350dccd9b6b3eedd947f9bc2eb26a64d9f382","finding_id":"SEM:5d3f94edadfb0efe4cc7","kind":"role_evidence","resolution_reason":"Historical
@@ -259,12 +272,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Flavensomycin.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1009],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:flavensomycin","line":1011,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:flavensomycin","preferred_term":"Flavensomycin"}],"identifier":"kgmicrobe.compound:flavensomycin","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:flavensomycin","ontology_label":"Flavensomycin","ontology_source":"kgmicrobe.compound"},"preferred_term":"Flavensomycin","sssom_rows":[{"data_row":1215,"object_id":"kgmicrobe.compound:flavensomycin","object_label":"Flavensomycin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Flavensomycin","synonym_count":0}'
   snapshot_sha256: a26badaf8b7012b2d2bb02895c1350dccd9b6b3eedd947f9bc2eb26a64d9f382
 - evidence_id: ev-6d6915057a39386d
   kind: prior_review

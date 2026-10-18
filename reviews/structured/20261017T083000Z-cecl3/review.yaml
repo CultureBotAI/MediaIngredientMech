@@ -74,6 +74,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-a220ec1a5729adb6
+  evidence_ids:
+  - ev-bc66ddfb2edff9ed
+  - ev-fe2abc593e72c44b
+  - ev-73e1d0a78c9d25fc
+  - ev-8b0a5ed90b62c293
+  - ev-ece096173801b356
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -82,6 +88,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-a220ec1a5729adb6
+  evidence_ids:
+  - ev-bc66ddfb2edff9ed
+  - ev-d14b7458cf523e02
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -90,13 +99,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-a220ec1a5729adb6
+  evidence_ids:
+  - ev-a41b34222f61f126
+  - ev-d14b7458cf523e02
+  - ev-9d0b1d2ccc73388a
 evidence:
 - evidence_id: ev-bc66ddfb2edff9ed
   kind: record_content
   reference: data/ingredients/mapped/Cecl3.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[670],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35458","line":672,"mapping_status":"MAPPED","ontology_id":"CHEBI:35458","preferred_term":"CeCl3"}],"identifier":"CHEBI:35458","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35458","ontology_label":"cerium
     trichloride","ontology_source":"CHEBI"},"preferred_term":"CeCl3","sssom_rows":[{"data_row":670,"object_id":"CHEBI:35458","object_label":"cerium
@@ -106,7 +119,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [670]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -115,7 +128,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Cecl3; data-row positions=[670]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":670,"object_id":"CHEBI:35458","object_label":"cerium
     trichloride","other":"CeCl3 x 7 H2O|[CeCl3]|cerium chloride|cerium(3+) chloride|cerium(III)
@@ -125,7 +138,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[672]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:35458","line":672,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:35458","preferred_term":"CeCl3","total_occurrences":"4"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
@@ -148,7 +161,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[375,1564]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"22476283b23378e01e0c388acd5d0ee23721928bc71b122765370b8fb914e1f4","finding_id":"SEM:5cc5e053c9251f548e50","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"22476283b23378e01e0c388acd5d0ee23721928bc71b122765370b8fb914e1f4","finding_id":"SEM:ef6cce24d364c2439fdc","kind":"role_evidence","resolution_reason":"Historical
@@ -158,12 +171,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Cecl3.yaml
   locator: nutritional_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[670],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:35458","line":672,"mapping_status":"MAPPED","ontology_id":"CHEBI:35458","preferred_term":"CeCl3"}],"identifier":"CHEBI:35458","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:35458","ontology_label":"cerium
+    trichloride","ontology_source":"CHEBI"},"preferred_term":"CeCl3","sssom_rows":[{"data_row":670,"object_id":"CHEBI:35458","object_label":"cerium
+    trichloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cecl3","synonym_count":8}'
   snapshot_sha256: 22476283b23378e01e0c388acd5d0ee23721928bc71b122765370b8fb914e1f4
 - evidence_id: ev-9d0b1d2ccc73388a
   kind: prior_review

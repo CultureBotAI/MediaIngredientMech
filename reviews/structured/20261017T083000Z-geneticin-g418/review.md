@@ -89,7 +89,7 @@ Reassess prediction-only role support: Geneticin G418
 | ev-1abdb41de7a3f50d | docs/data/mapped_ingredients.csv; CSV lines=[1047] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:42768","line":1047,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:42768","preferred_term":"Geneticin G418","total_occurrences":"0"}] |
 | ev-29c416cd6e5f100b | reports/yaml_record_review/Geneticin_G418.md; &#96;data/ingredients/mapped/Geneticin_G418.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:33; Completeness:52; Recommended Edits:59 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-54ce0d026a60385c | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[655,1421] | context_only | [{"current_record_sha256":"94d2a28ec4de8a7ab984c0b2b830580651cf0c43d5a2a382c2ceeda9f886bf8b","finding_id":"SEM:e7274aec7248d0237dd4","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"94d2a28ec4de8a7ab984c0b2b830580651cf0c43d5a2a382c2ceeda9f886bf8b","finding_id":"SEM:ef4ff6558048bb387f0d","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-006fd79cf1448613 | data/ingredients/mapped/Geneticin_G418.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-006fd79cf1448613 | data/ingredients/mapped/Geneticin_G418.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1045],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:42768","line":1047,"mapping_status":"MAPPED","ontology_id":"CHEBI:42768","preferred_term":"Geneticin G418"}],"identifier":"CHEBI:42768","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:42768","ontology_label":"geneticin","ontology_source":"CHEBI"},"preferred_term":"Geneticin G418","sssom_rows":[{"data_row":1288,"object_id":"CHEBI:42768","object_label":"geneticin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Geneticin_G418","synonym_count":1} |
 | ev-b1d4b12404573188 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-76a3cdeb2981c8bc] | context_only | Predecessor structured review finding f-76a3cdeb2981c8bc in 20261011T024634Z-mim-reconcile-all-batch-06 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-e06492d933196bbf
+  evidence_ids:
+  - ev-775367679dcb9e75
+  - ev-8688f11c2c3acfc1
+  - ev-227a7e08e2233834
+  - ev-1abdb41de7a3f50d
+  - ev-006fd79cf1448613
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-e06492d933196bbf
+  evidence_ids:
+  - ev-775367679dcb9e75
+  - ev-54ce0d026a60385c
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-e06492d933196bbf
+  evidence_ids:
+  - ev-29c416cd6e5f100b
+  - ev-54ce0d026a60385c
+  - ev-b1d4b12404573188
 evidence:
 - evidence_id: ev-775367679dcb9e75
   kind: record_content
   reference: data/ingredients/mapped/Geneticin_G418.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1045],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:42768","line":1047,"mapping_status":"MAPPED","ontology_id":"CHEBI:42768","preferred_term":"Geneticin
     G418"}],"identifier":"CHEBI:42768","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:42768","ontology_label":"geneticin","ontology_source":"CHEBI"},"preferred_term":"Geneticin
@@ -211,7 +224,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1045]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -220,7 +233,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Geneticin_G418; data-row positions=[1288]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1288,"object_id":"CHEBI:42768","object_label":"geneticin","other":"(1R,2S,3S,4R,6S)-4,6-diamino-3-[3-deoxy-4-C-methyl-3-(methylamino)-beta-L-arabinopyranosyloxy]-2-hydroxycyclohexyl
     2-amino-2,7-dideoxy-D-glycero-alpha-D-gluco-heptopyranoside|CAS:49863-47-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Geneticin_G418","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
@@ -229,7 +242,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1047]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:42768","line":1047,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:42768","preferred_term":"Geneticin
     G418","total_occurrences":"0"}]'
@@ -251,7 +264,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[655,1421]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"94d2a28ec4de8a7ab984c0b2b830580651cf0c43d5a2a382c2ceeda9f886bf8b","finding_id":"SEM:e7274aec7248d0237dd4","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"94d2a28ec4de8a7ab984c0b2b830580651cf0c43d5a2a382c2ceeda9f886bf8b","finding_id":"SEM:ef4ff6558048bb387f0d","kind":"role_evidence","resolution_reason":"Historical
@@ -261,12 +274,11 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Geneticin_G418.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1045],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:42768","line":1047,"mapping_status":"MAPPED","ontology_id":"CHEBI:42768","preferred_term":"Geneticin
+    G418"}],"identifier":"CHEBI:42768","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:42768","ontology_label":"geneticin","ontology_source":"CHEBI"},"preferred_term":"Geneticin
+    G418","sssom_rows":[{"data_row":1288,"object_id":"CHEBI:42768","object_label":"geneticin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Geneticin_G418","synonym_count":1}'
   snapshot_sha256: 94d2a28ec4de8a7ab984c0b2b830580651cf0c43d5a2a382c2ceeda9f886bf8b
 - evidence_id: ev-b1d4b12404573188
   kind: prior_review

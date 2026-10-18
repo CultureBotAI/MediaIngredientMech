@@ -89,7 +89,7 @@ Reassess prediction-only role support: Methylene blue
 | ev-14ff594f6d94f980 | docs/data/mapped_ingredients.csv; CSV lines=[1387] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:6872","line":1387,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:6872","preferred_term":"Methylene blue","total_occurrences":"4"}] |
 | ev-7686a4f7ec258fda | reports/yaml_record_review/Methylene_Blue.md; &#96;data/ingredients/mapped/Methylene_Blue.yaml&#96;:2; Verdict:4; Identity:13; Validation:24; Evidence:32; Completeness:48; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-0aa68021a4686a56 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[923,2005] | context_only | [{"current_record_sha256":"183a12717e7501d1dfeec554635d73ab1bdd1084724763c92b74fc9fc4faee67","finding_id":"SEM:76cf76adcc861669e458","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"183a12717e7501d1dfeec554635d73ab1bdd1084724763c92b74fc9fc4faee67","finding_id":"SEM:34f29a7889d7297918b1","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-ef544e8f8c6eac32 | data/ingredients/mapped/Methylene_Blue.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDOX_INDICATOR"}}] |
+| ev-ef544e8f8c6eac32 | data/ingredients/mapped/Methylene_Blue.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1385],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6872","line":1387,"mapping_status":"MAPPED","ontology_id":"CHEBI:6872","preferred_term":"Methylene blue"}],"identifier":"CHEBI:6872","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:6872","ontology_label":"methylene blue","ontology_source":"CHEBI"},"preferred_term":"Methylene blue","sssom_rows":[{"data_row":1847,"object_id":"CHEBI:6872","object_label":"methylene blue","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Methylene_Blue","synonym_count":13} |
 | ev-21a5be8bb61e98f3 | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-0f314f23d5e11486] | context_only | Predecessor structured review finding f-0f314f23d5e11486 in 20261011T024636Z-mim-reconcile-all-batch-08 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-24259db5b94c3364
+  evidence_ids:
+  - ev-b5ceceb9e243b1af
+  - ev-4686ad03a6d418c8
+  - ev-abe94cb7e7341262
+  - ev-14ff594f6d94f980
+  - ev-ef544e8f8c6eac32
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-24259db5b94c3364
+  evidence_ids:
+  - ev-b5ceceb9e243b1af
+  - ev-0aa68021a4686a56
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-24259db5b94c3364
+  evidence_ids:
+  - ev-7686a4f7ec258fda
+  - ev-0aa68021a4686a56
+  - ev-21a5be8bb61e98f3
 evidence:
 - evidence_id: ev-b5ceceb9e243b1af
   kind: record_content
   reference: data/ingredients/mapped/Methylene_Blue.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1385],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6872","line":1387,"mapping_status":"MAPPED","ontology_id":"CHEBI:6872","preferred_term":"Methylene
     blue"}],"identifier":"CHEBI:6872","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:6872","ontology_label":"methylene
@@ -212,7 +225,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [1385]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -221,7 +234,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Methylene_Blue; data-row positions=[1847]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1847,"object_id":"CHEBI:6872","object_label":"methylene
     blue","other":"3,7-bis(dimethylamino)phenothiazin-5-ium chloride|Basic Blue 9|C.I.
@@ -233,7 +246,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[1387]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:6872","line":1387,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:6872","preferred_term":"Methylene
     blue","total_occurrences":"4"}]'
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[923,2005]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"183a12717e7501d1dfeec554635d73ab1bdd1084724763c92b74fc9fc4faee67","finding_id":"SEM:76cf76adcc861669e458","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"183a12717e7501d1dfeec554635d73ab1bdd1084724763c92b74fc9fc4faee67","finding_id":"SEM:34f29a7889d7297918b1","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,12 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Methylene_Blue.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
-    in-session LLM role assignment; review recommended.","reference_text":"Assigned
-    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"REDOX_INDICATOR"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1385],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:6872","line":1387,"mapping_status":"MAPPED","ontology_id":"CHEBI:6872","preferred_term":"Methylene
+    blue"}],"identifier":"CHEBI:6872","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:6872","ontology_label":"methylene
+    blue","ontology_source":"CHEBI"},"preferred_term":"Methylene blue","sssom_rows":[{"data_row":1847,"object_id":"CHEBI:6872","object_label":"methylene
+    blue","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Methylene_Blue","synonym_count":13}'
   snapshot_sha256: 183a12717e7501d1dfeec554635d73ab1bdd1084724763c92b74fc9fc4faee67
 - evidence_id: ev-21a5be8bb61e98f3
   kind: prior_review

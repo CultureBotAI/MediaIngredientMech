@@ -89,7 +89,7 @@ Reassess prediction-only role support: Anhydrotetracycline hydrochloride
 | ev-101224c7a9d18fea | docs/data/mapped_ingredients.csv; CSV lines=[500] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:201752","line":500,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:201752","preferred_term":"Anhydrotetracycline hydrochloride","total_occurrences":"0"}] |
 | ev-201e40dca31b4684 | reports/yaml_record_review/Anhydrotetracycline_Hydrochloride.md; &#96;data/ingredients/mapped/Anhydrotetracycline_Hydrochloride.yaml&#96;:2; Verdict:4; Identity:11; Validation:24; Evidence:42; Completeness:62; Recommended Edits:71 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-68a461b486db3043 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[262,1537] | context_only | [{"current_record_sha256":"4037be5e7c99f85848d2e6eeda124db7d173b1ae96e5c577304370686299511b","finding_id":"SEM:788588009d8ef5a335d9","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4037be5e7c99f85848d2e6eeda124db7d173b1ae96e5c577304370686299511b","finding_id":"SEM:47573cb4f0f560f6669a","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-43754c8f82a2dc63 | data/ingredients/mapped/Anhydrotetracycline_Hydrochloride.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-43754c8f82a2dc63 | data/ingredients/mapped/Anhydrotetracycline_Hydrochloride.yaml; physicochemical_roles[0] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[498],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201752","line":500,"mapping_status":"MAPPED","ontology_id":"CHEBI:201752","preferred_term":"Anhydrotetracycline hydrochloride"}],"identifier":"CHEBI:201752","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201752","ontology_label":"Anhydrotetracycline hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Anhydrotetracycline hydrochloride","sssom_rows":[{"data_row":385,"object_id":"CHEBI:201752","object_label":"Anhydrotetracycline hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Anhydrotetracycline_Hydrochloride","synonym_count":1} |
 | ev-38f54a527e5e2d4d | reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml; findings[finding_id=f-97e77bb1906ae181] | context_only | Predecessor structured review finding f-97e77bb1906ae181 in 20261011T024631Z-mim-reconcile-all-batch-03 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-6bdc0e52a5eae375
+  evidence_ids:
+  - ev-55bb1f6505c742bd
+  - ev-693881b6a5b326e8
+  - ev-c02d403cb37626bc
+  - ev-101224c7a9d18fea
+  - ev-43754c8f82a2dc63
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     or empty evidence.
   target_ids:
   - record-6bdc0e52a5eae375
+  evidence_ids:
+  - ev-55bb1f6505c742bd
+  - ev-68a461b486db3043
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,13 +204,17 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-6bdc0e52a5eae375
+  evidence_ids:
+  - ev-201e40dca31b4684
+  - ev-68a461b486db3043
+  - ev-38f54a527e5e2d4d
 evidence:
 - evidence_id: ev-55bb1f6505c742bd
   kind: record_content
   reference: data/ingredients/mapped/Anhydrotetracycline_Hydrochloride.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
   summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[498],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201752","line":500,"mapping_status":"MAPPED","ontology_id":"CHEBI:201752","preferred_term":"Anhydrotetracycline
     hydrochloride"}],"identifier":"CHEBI:201752","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201752","ontology_label":"Anhydrotetracycline
@@ -213,7 +226,7 @@ evidence:
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
   locator: 'ingredients positions (zero-based): [498]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -222,7 +235,7 @@ evidence:
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
   locator: subject_id=MIM:Anhydrotetracycline_Hydrochloride; data-row positions=[385]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: 'Current exact-subject rows, including complete other payload: [{"data_row":385,"object_id":"CHEBI:201752","object_label":"Anhydrotetracycline
     hydrochloride","other":"(4S,4aS,12aR)-4-(dimethylamino)-1,10,11,12a-tetrahydroxy-6-methyl-3,12-dioxo-4a,5-dihydro-4H-tetracene-2-carboxamide;hydrochloride|CAS:13803-65-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Anhydrotetracycline_Hydrochloride","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
@@ -231,7 +244,7 @@ evidence:
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
   locator: CSV lines=[500]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:201752","line":500,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:201752","preferred_term":"Anhydrotetracycline
     hydrochloride","total_occurrences":"0"}]'
@@ -258,7 +271,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[262,1537]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"4037be5e7c99f85848d2e6eeda124db7d173b1ae96e5c577304370686299511b","finding_id":"SEM:788588009d8ef5a335d9","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"4037be5e7c99f85848d2e6eeda124db7d173b1ae96e5c577304370686299511b","finding_id":"SEM:47573cb4f0f560f6669a","kind":"role_evidence","resolution_reason":"Historical
@@ -268,12 +281,13 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Anhydrotetracycline_Hydrochloride.yaml
   locator: physicochemical_roles[0]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[498],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:201752","line":500,"mapping_status":"MAPPED","ontology_id":"CHEBI:201752","preferred_term":"Anhydrotetracycline
+    hydrochloride"}],"identifier":"CHEBI:201752","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:201752","ontology_label":"Anhydrotetracycline
+    hydrochloride","ontology_source":"CHEBI"},"preferred_term":"Anhydrotetracycline
+    hydrochloride","sssom_rows":[{"data_row":385,"object_id":"CHEBI:201752","object_label":"Anhydrotetracycline
+    hydrochloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Anhydrotetracycline_Hydrochloride","synonym_count":1}'
   snapshot_sha256: 4037be5e7c99f85848d2e6eeda124db7d173b1ae96e5c577304370686299511b
 - evidence_id: ev-38f54a527e5e2d4d
   kind: prior_review

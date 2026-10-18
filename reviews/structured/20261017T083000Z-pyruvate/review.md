@@ -83,13 +83,13 @@ Reassess prediction-only role support: Pyruvate
 
 | Evidence | Reference / locator | Support | Observation |
 | --- | --- | --- | --- |
-| ev-82daa9cde6c28d1f | data/ingredients/mapped/Pyruvate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1734],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15361","line":1736,"mapping_status":"MAPPED","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate"}],"identifier":"CHEBI:15361","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":30,"edge_count":30,"occurrences":30},"occurrence_statistics":{"media_count":30,"total_occurrences":30},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15361","ontology_label":"pyruvate","ontology_source":"CHEBI"},"preferred_term":"Pyruvate","sssom_rows":[{"data_row":2394,"object_id":"CHEBI:15361","object_label":"pyruvate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pyruvate","synonym_count":2} |
-| ev-22bfcfd327e73248 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1734] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
-| ev-91bc7cf132e5ef74 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Pyruvate; data-row positions=[2394] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2394,"object_id":"CHEBI:15361","object_label":"pyruvate","other":"2-oxopropanoate&#124;CAS:57-60-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Pyruvate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
-| ev-4ed6cef692505e5d | docs/data/mapped_ingredients.csv; CSV lines=[1736] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15361","line":1736,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"30","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate","total_occurrences":"30"}] |
+| ev-82daa9cde6c28d1f | data/ingredients/mapped/Pyruvate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1733],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15361","line":1735,"mapping_status":"MAPPED","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate"}],"identifier":"CHEBI:15361","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":30,"edge_count":30,"occurrences":30},"occurrence_statistics":{"media_count":30,"total_occurrences":30},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15361","ontology_label":"pyruvate","ontology_source":"CHEBI"},"preferred_term":"Pyruvate","sssom_rows":[{"data_row":2396,"object_id":"CHEBI:15361","object_label":"pyruvate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pyruvate","synonym_count":2} |
+| ev-22bfcfd327e73248 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1733] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-91bc7cf132e5ef74 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Pyruvate; data-row positions=[2396] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2396,"object_id":"CHEBI:15361","object_label":"pyruvate","other":"2-oxopropanoate&#124;CAS:57-60-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Pyruvate","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-4ed6cef692505e5d | docs/data/mapped_ingredients.csv; CSV lines=[1735] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:15361","line":1735,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"30","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate","total_occurrences":"30"}] |
 | ev-7d43e51903c19783 | reports/yaml_record_review/Pyruvate.md; &#96;data/ingredients/mapped/Pyruvate.yaml&#96;:2 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
 | ev-ea3eedeea74a21e0 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1157,1758,1929] | context_only | [{"current_record_sha256":"c1cb5e1036729676abf5b6a7e0b6d2a0bb2f62c2dc8c0e662c082488986322e1","finding_id":"SEM:808e8ab3bff2a49506d0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c1cb5e1036729676abf5b6a7e0b6d2a0bb2f62c2dc8c0e662c082488986322e1","finding_id":"SEM:e6fa84352d4865488611","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c1cb5e1036729676abf5b6a7e0b6d2a0bb2f62c2dc8c0e662c082488986322e1","finding_id":"SEM:4668380336897bcad7ec","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
-| ev-c6c425793a4e8c48 | data/ingredients/mapped/Pyruvate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-c6c425793a4e8c48 | data/ingredients/mapped/Pyruvate.yaml; nutritional_roles[0], nutritional_roles[1] | supports | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1733],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15361","line":1735,"mapping_status":"MAPPED","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate"}],"identifier":"CHEBI:15361","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":30,"edge_count":30,"occurrences":30},"occurrence_statistics":{"media_count":30,"total_occurrences":30},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15361","ontology_label":"pyruvate","ontology_source":"CHEBI"},"preferred_term":"Pyruvate","sssom_rows":[{"data_row":2396,"object_id":"CHEBI:15361","object_label":"pyruvate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pyruvate","synonym_count":2} |
 | ev-b5849c35ff0487ac | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-10/review.yaml; findings[finding_id=f-8695f8c1be2e183f] | context_only | Predecessor structured review finding f-8695f8c1be2e183f in 20261011T024638Z-mim-reconcile-all-batch-10 |
 
 ## Limits And Additional Notes
@@ -179,6 +179,12 @@ checks:
     rows, and published CSV exports.
   target_ids:
   - record-16de1463f5ba062b
+  evidence_ids:
+  - ev-82daa9cde6c28d1f
+  - ev-22bfcfd327e73248
+  - ev-91bc7cf132e5ef74
+  - ev-4ed6cef692505e5d
+  - ev-c6c425793a4e8c48
 - check_id: role-evidence-audit
   name: Role evidence and plausibility check
   status: failed
@@ -187,6 +193,9 @@ checks:
     on COMPUTATIONAL_PREDICTION or empty evidence.
   target_ids:
   - record-16de1463f5ba062b
+  evidence_ids:
+  - ev-82daa9cde6c28d1f
+  - ev-ea3eedeea74a21e0
 - check_id: predecessor-reconciliation
   name: Predecessor structured review and semantic disposition reconciliation
   status: passed
@@ -195,21 +204,25 @@ checks:
     and semantic review dispositions on HEAD.
   target_ids:
   - record-16de1463f5ba062b
+  evidence_ids:
+  - ev-7d43e51903c19783
+  - ev-ea3eedeea74a21e0
+  - ev-b5849c35ff0487ac
 evidence:
 - evidence_id: ev-82daa9cde6c28d1f
   kind: record_content
   reference: data/ingredients/mapped/Pyruvate.yaml
   locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
     optional payloads inspected by bounded checks.
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: partial
-  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1734],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15361","line":1736,"mapping_status":"MAPPED","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate"}],"identifier":"CHEBI:15361","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":30,"edge_count":30,"occurrences":30},"occurrence_statistics":{"media_count":30,"total_occurrences":30},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15361","ontology_label":"pyruvate","ontology_source":"CHEBI"},"preferred_term":"Pyruvate","sssom_rows":[{"data_row":2394,"object_id":"CHEBI:15361","object_label":"pyruvate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pyruvate","synonym_count":2}'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1733],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15361","line":1735,"mapping_status":"MAPPED","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate"}],"identifier":"CHEBI:15361","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":30,"edge_count":30,"occurrences":30},"occurrence_statistics":{"media_count":30,"total_occurrences":30},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15361","ontology_label":"pyruvate","ontology_source":"CHEBI"},"preferred_term":"Pyruvate","sssom_rows":[{"data_row":2396,"object_id":"CHEBI:15361","object_label":"pyruvate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pyruvate","synonym_count":2}'
   snapshot_sha256: c1cb5e1036729676abf5b6a7e0b6d2a0bb2f62c2dc8c0e662c082488986322e1
 - evidence_id: ev-22bfcfd327e73248
   kind: validation
   reference: data/curated/mapped_ingredients.yaml
-  locator: 'ingredients positions (zero-based): [1734]'
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: 'ingredients positions (zero-based): [1733]'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
   summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
     only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
@@ -217,18 +230,18 @@ evidence:
 - evidence_id: ev-91bc7cf132e5ef74
   kind: record_content
   reference: mappings/ingredient_mappings.sssom.tsv
-  locator: subject_id=MIM:Pyruvate; data-row positions=[2394]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: subject_id=MIM:Pyruvate; data-row positions=[2396]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
-  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2394,"object_id":"CHEBI:15361","object_label":"pyruvate","other":"2-oxopropanoate|CAS:57-60-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Pyruvate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2396,"object_id":"CHEBI:15361","object_label":"pyruvate","other":"2-oxopropanoate|CAS:57-60-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Pyruvate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
   snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
 - evidence_id: ev-4ed6cef692505e5d
   kind: record_content
   reference: docs/data/mapped_ingredients.csv
-  locator: CSV lines=[1736]
-  accessed_at: '2026-10-11T02:46:28Z'
+  locator: CSV lines=[1735]
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15361","line":1736,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"30","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate","total_occurrences":"30"}]'
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:15361","line":1735,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"30","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate","total_occurrences":"30"}]'
   snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
 - evidence_id: ev-7d43e51903c19783
   kind: prior_review
@@ -244,7 +257,7 @@ evidence:
   kind: prior_review
   reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
   locator: lines=[1157,1758,1929]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: context_only
   summary: '[{"current_record_sha256":"c1cb5e1036729676abf5b6a7e0b6d2a0bb2f62c2dc8c0e662c082488986322e1","finding_id":"SEM:808e8ab3bff2a49506d0","kind":"existing_record_review","resolution_reason":"Historical
     finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"c1cb5e1036729676abf5b6a7e0b6d2a0bb2f62c2dc8c0e662c082488986322e1","finding_id":"SEM:e6fa84352d4865488611","kind":"role_evidence","resolution_reason":"Historical
@@ -255,14 +268,9 @@ evidence:
   kind: record_content
   reference: data/ingredients/mapped/Pyruvate.yaml
   locator: nutritional_roles[0], nutritional_roles[1]
-  accessed_at: '2026-10-11T02:46:28Z'
+  accessed_at: '2026-10-17T08:30:00Z'
   support: supports
-  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
-    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
-    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
-    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}},{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
-    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
-    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1733],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:15361","line":1735,"mapping_status":"MAPPED","ontology_id":"CHEBI:15361","preferred_term":"Pyruvate"}],"identifier":"CHEBI:15361","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":30,"edge_count":30,"occurrences":30},"occurrence_statistics":{"media_count":30,"total_occurrences":30},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:15361","ontology_label":"pyruvate","ontology_source":"CHEBI"},"preferred_term":"Pyruvate","sssom_rows":[{"data_row":2396,"object_id":"CHEBI:15361","object_label":"pyruvate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Pyruvate","synonym_count":2}'
   snapshot_sha256: c1cb5e1036729676abf5b6a7e0b6d2a0bb2f62c2dc8c0e662c082488986322e1
 - evidence_id: ev-b5849c35ff0487ac
   kind: prior_review
