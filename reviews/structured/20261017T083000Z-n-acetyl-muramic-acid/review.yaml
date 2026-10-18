@@ -1,0 +1,316 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-n-acetyl-muramic-acid
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: N-acetyl-muramic_Acid (data/ingredients/mapped/N-acetyl-muramic_Acid.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=REJECTED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for N-acetyl-muramic_Acid (data/ingredients/mapped/N-acetyl-muramic_Acid.yaml,
+  record-ddeb567db07067be, mapping_status=REJECTED). Records 0 open finding(s) and
+  1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+    sha256: b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0
+    role: target
+  - path: reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml
+    sha256: f87124785da2057286555db743ccdb92b70dd4dc359294bde474b4beeb816e48
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/N-acetyl-muramic_Acid.md
+    sha256: 1f202ad2343776dae63702b76262beaf912ef5321881991e1ef295d9ab520375
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-ddeb567db07067be
+  path: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+  label: N-acetyl-muramic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/N-acetyl-muramic_Acid.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-ddeb567db07067be
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-ddeb567db07067be
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-ddeb567db07067be
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024629Z-mim-reconcile-all-batch-01
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-ddeb567db07067be
+evidence:
+- evidence_id: ev-61519568b4ae0cf4
+  kind: record_content
+  reference: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2086],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:47965","line":2088,"mapping_status":"REJECTED","ontology_id":"CHEBI:47965","preferred_term":"n-Acetyl-muramic
+    acid"}],"identifier":"CHEBI:47965","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":12,"edge_count":12,"occurrences":12},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CAS_RN_LOOKUP","ontology_id":"CHEBI:47965","ontology_label":"N-acetylmuramic
+    acid","ontology_source":"CHEBI"},"preferred_term":"n-Acetyl-muramic acid","sssom_rows":[],"sssom_subject":"MIM:N-acetyl-muramic_Acid","synonym_count":3}'
+  snapshot_sha256: b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0
+- evidence_id: ev-686c63a5f3e94bd4
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2086]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-4fbcd5fcb4f52d5d
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:N-acetyl-muramic_Acid; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-a481814e89030983
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2088]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:47965","line":2088,"mapping_quality":"CAS_RN_LOOKUP","mapping_status":"REJECTED","media_count":"0","ontology_id":"CHEBI:47965","preferred_term":"n-Acetyl-muramic
+    acid","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-8ca709a7e5d1b923
+  kind: prior_review
+  reference: reports/yaml_record_review/N-acetyl-muramic_Acid.md
+  locator: '`data/ingredients/mapped/N-acetyl-muramic_Acid.yaml`:2; Verdict:4; Identity:12;
+    Validation:23; Evidence:31; Completeness:43; Recommended Edits:54'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1f202ad2343776dae63702b76262beaf912ef5321881991e1ef295d9ab520375
+  quote: "Recommended Edits:\n- Minor: in `data/ingredients/mapped/N-acetyl-muramic_Acid.yaml`,\
+    \ simplify the\n  rejected tombstone during a dedicated tombstone-cleanup pass\
+    \ by preserving\n  the old `CHEBI:47966` details as provenance and removing any\
+    \ live-looking\n  type or structure fields that are no longer active assertions."
+- evidence_id: ev-796e72f599168446
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[965]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0","finding_id":"SEM:8c807384318d18621c79","kind":"existing_record_review","resolution_reason":"Source
+    record is explicitly rejected and absent from active graph.","resolution_status":"EXCLUDED_REJECTED"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-961c3b8d254446f2
+  kind: record_content
+  reference: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+  locator: identifier; ontology_mapping.ontology_id; mapping_status; curation_history
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Current loser points to CHEBI:47965; old pointer CHEBI:47966 survives
+    only as historical/inert payload where retained. Live survivors=["data/ingredients/mapped/N-acetylmuramic_Acid.yaml"];
+    explicit events=[{"action":"MERGED_INTO","changes":"Merged into CHEBI:47965 ''N-acetylmuramic
+    acid''; occurrences transferred. Absorbed ''n-Acetyl-muramic acid'' (CHEBI:47966
+    aldehydo- form) into CHEBI:47965 (#398). Both records name the same substance
+    \u2014 the muramic pair carry an identical CAS and formula \u2014 split across
+    a ChEBI class term and its open-chain aldehydo- form. The class term wins because
+    the identifier optimises for how the node READS in the knowledge graph: no catalogue
+    sells an ''aldehydo-'' tautomer, and MIM is kg-microbe''s naming authority, so
+    grounding here would rename the ChEBI node after a minor solution-equilibrium
+    component. ChEBI does hang the commercial CAS (10597-89-4) on the aldehydo- term,
+    which is why the earlier reading of the orderability rule pointed the other way;
+    that CAS is now carried in supplied_form and republished as a synonym, so nothing
+    purchasable is lost from the identity. Tombstoned REJECTED so a lookup on this
+    label still resolves, SSSOM rows dropped.","curator":"merge_aldehydo_duplicates","llm_assisted":false,"timestamp":"2026-08-18T00:00:00+00:00"},{"action":"REFRESHED_TOMBSTONE_ONTOLOGY_ID","changes":"ontology_id
+    CHEBI:47966 -> CHEBI:47965 (#799). The merge set identifier and status but left
+    ontology_mapping untouched, so this tombstone kept advertising a term it no longer
+    asserts \u2014 anything indexing by ontology_id routed through it. Now agrees
+    with the merge target ''N-acetylmuramic acid''. Provenance is unaffected: what
+    the record used to assert is in this history.","curator":"fix_tombstone_pointers","llm_assisted":false,"timestamp":"2026-10-05T04:09:33.941715+00:00"}]'
+  snapshot_sha256: b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0
+assessments:
+- assessment_id: a-19268bcd5bd8844d
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-ddeb567db07067be
+  evidence_ids:
+  - ev-61519568b4ae0cf4
+  - ev-686c63a5f3e94bd4
+  - ev-4fbcd5fcb4f52d5d
+  - ev-a481814e89030983
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-ebf9edc1260abe6d
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-ddeb567db07067be
+  evidence_ids:
+  - ev-8ca709a7e5d1b923
+  - ev-61519568b4ae0cf4
+  - ev-796e72f599168446
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T04:33:25Z;
+    reviewed SHA-256=b811a769cfd626a77805afc736bc8432009858e75c81c8636552dca3e9a2aca4;
+    current SHA-256=b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0;
+    hash_changed=True. Reports=["reports/yaml_record_review/N-acetyl-muramic_Acid.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The rejected
+    aldehydo N-acetylmuramic acid tombstone is correctly absent from final SSSOM,
+    but still carries stale pre-merge live-shape fields.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8ca709a7e5d1b923
+    - ev-61519568b4ae0cf4
+  - name: legacy-native-ids
+    value: '["SEM:8c807384318d18621c79"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-61519568b4ae0cf4
+    - ev-8ca709a7e5d1b923
+    - ev-796e72f599168446
+- assessment_id: a-11ce595ee3a203b9
+  area: identity
+  topic: Retired wrong mapping / stale tombstone ontology pointer
+  outcome: supported
+  summary: 'The narrow exported-mapping/pointer defect is already fixed: REJECTED
+    tombstone, no own-subject SSSOM rows, identifier and ontology_id agree with a
+    live merge target. This does not retire source-count, inert chemistry, role, or
+    synonym questions.'
+  target_ids:
+  - record-ddeb567db07067be
+  evidence_ids:
+  - ev-8ca709a7e5d1b923
+  - ev-961c3b8d254446f2
+  - ev-61519568b4ae0cf4
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8ca709a7e5d1b923
+    - ev-961c3b8d254446f2
+    - ev-61519568b4ae0cf4
+findings:
+- finding_id: rec-f-21a0f03c62b19113
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-ddeb567db07067be
+  category: provenance
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: N-acetyl-muramic_Acid'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T04:33:25Z;
+    reviewed SHA-256=b811a769cfd626a77805afc736bc8432009858e75c81c8636552dca3e9a2aca4;
+    current SHA-256=b32f871b07672ad5de9cce21c4b139ca8c1c7cd784a04470815f3fe9a445b8d0;
+    hash_changed=True. Reports=["reports/yaml_record_review/N-acetyl-muramic_Acid.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The rejected
+    aldehydo N-acetylmuramic acid tombstone is correctly absent from final SSSOM,
+    but still carries stale pre-merge live-shape fields.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-ddeb567db07067be
+  evidence_ids:
+  - ev-8ca709a7e5d1b923
+  - ev-61519568b4ae0cf4
+  - ev-796e72f599168446
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/N-acetyl-muramic_Acid.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024629Z-mim-reconcile-all-batch-01.

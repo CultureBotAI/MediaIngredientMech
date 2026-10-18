@@ -1,0 +1,356 @@
+# Per-record structured review: Oatmeal (data/ingredients/mapped/Oatmeal.yaml)
+
+- Review: 20261017T083000Z-oatmeal
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Oatmeal (data/ingredients/mapped/Oatmeal.yaml, record-bb80df62f1998e1c, mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Oatmeal.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Oatmeal.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-bb80df62f1998e1c | data/ingredients/mapped/Oatmeal.yaml | maintained | Oatmeal |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-bb80df62f1998e1c | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-bb80df62f1998e1c | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-bb80df62f1998e1c | Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-bb80df62f1998e1c.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-bb80df62f1998e1c.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T07:31:15Z; reviewed SHA-256=c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6; current SHA-256=c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6; hash_changed=False. Reports=["reports/yaml_record_review/Oatmeal.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact NCIT:C29298 oatmeal identity passes, but the final SSSOM validation stamp still says UNKNOWN_TERM.
+
+## Findings
+
+### rec-f-bfe8d3e0efc96fa9: Historical review coverage and residual narrative: Oatmeal
+
+minor / deferred / provisional; issue key: mim-reconciliation-historical-review-coverage-and-r-bb80df62f1998e1c.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment. Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T07:31:15Z; reviewed SHA-256=c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6; current SHA-256=c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6; hash_changed=False. Reports=["reports/yaml_record_review/Oatmeal.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact NCIT:C29298 oatmeal identity passes, but the final SSSOM validation stamp still says UNKNOWN_TERM.
+
+Disposition: The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-1a8868c0a1c06ba4 | data/ingredients/mapped/Oatmeal.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1587],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C29298","line":1589,"mapping_status":"MAPPED","ontology_id":"NCIT:C29298","preferred_term":"Oatmeal"}],"identifier":"NCIT:C29298","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":18,"edge_count":18,"occurrences":18},"occurrence_statistics":{"media_count":18,"total_occurrences":18},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C29298","ontology_label":"Oatmeal Powder","ontology_source":"NCIT"},"preferred_term":"Oatmeal","sssom_rows":[{"data_row":2135,"object_id":"NCIT:C29298","object_label":"Oatmeal Powder","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Oatmeal","synonym_count":2} |
+| ev-0621453caa505d39 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1587] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-03045591ddfcd1f4 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Oatmeal; data-row positions=[2135] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2135,"object_id":"NCIT:C29298","object_label":"Oatmeal Powder","other":"Oatmeal (Quaker White Oats)","predicate_id":"skos:exactMatch","subject_id":"MIM:Oatmeal","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-9bccbbc76454e863 | docs/data/mapped_ingredients.csv; CSV lines=[1589] | supports | Published identity and count rows inspected: [{"identifier":"NCIT:C29298","line":1589,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"18","ontology_id":"NCIT:C29298","preferred_term":"Oatmeal","total_occurrences":"18"}] |
+| ev-0b68a07640413433 | reports/yaml_record_review/Oatmeal.md; &#96;data/ingredients/mapped/Oatmeal.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:29; Completeness:43; Recommended Edits:50 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-767f581800b78ca2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1076] | context_only | [{"current_record_sha256":"c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6","finding_id":"SEM:4aad908c39bf7cdc8d00","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024637Z-mim-reconcile-all-batch-09.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-oatmeal
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Oatmeal (data/ingredients/mapped/Oatmeal.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Oatmeal (data/ingredients/mapped/Oatmeal.yaml,
+  record-bb80df62f1998e1c, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Oatmeal.yaml
+    sha256: c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6
+    role: target
+  - path: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+    sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Oatmeal.md
+    sha256: 82f0c97431163b0809310a98e4c699228ee8e0ddce69282951ad597a6a92658a
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-bb80df62f1998e1c
+  path: data/ingredients/mapped/Oatmeal.yaml
+  label: Oatmeal
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Oatmeal.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Oatmeal.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Oatmeal.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-bb80df62f1998e1c
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-bb80df62f1998e1c
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-bb80df62f1998e1c
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-bb80df62f1998e1c
+evidence:
+- evidence_id: ev-1a8868c0a1c06ba4
+  kind: record_content
+  reference: data/ingredients/mapped/Oatmeal.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1587],"raw_equal":true},"docs_rows":[{"identifier":"NCIT:C29298","line":1589,"mapping_status":"MAPPED","ontology_id":"NCIT:C29298","preferred_term":"Oatmeal"}],"identifier":"NCIT:C29298","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":18,"edge_count":18,"occurrences":18},"occurrence_statistics":{"media_count":18,"total_occurrences":18},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"NCIT:C29298","ontology_label":"Oatmeal
+    Powder","ontology_source":"NCIT"},"preferred_term":"Oatmeal","sssom_rows":[{"data_row":2135,"object_id":"NCIT:C29298","object_label":"Oatmeal
+    Powder","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Oatmeal","synonym_count":2}'
+  snapshot_sha256: c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6
+- evidence_id: ev-0621453caa505d39
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1587]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-03045591ddfcd1f4
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Oatmeal; data-row positions=[2135]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2135,"object_id":"NCIT:C29298","object_label":"Oatmeal
+    Powder","other":"Oatmeal (Quaker White Oats)","predicate_id":"skos:exactMatch","subject_id":"MIM:Oatmeal","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-9bccbbc76454e863
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1589]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"NCIT:C29298","line":1589,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"18","ontology_id":"NCIT:C29298","preferred_term":"Oatmeal","total_occurrences":"18"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-0b68a07640413433
+  kind: prior_review
+  reference: reports/yaml_record_review/Oatmeal.md
+  locator: '`data/ingredients/mapped/Oatmeal.yaml`:2; Verdict:4; Identity:10; Validation:22;
+    Evidence:29; Completeness:43; Recommended Edits:50'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 82f0c97431163b0809310a98e4c699228ee8e0ddce69282951ad597a6a92658a
+  quote: "Recommended Edits:\n- Refresh the final SSSOM validation stamp for `MIM:Oatmeal`\
+    \ now that\n  `NCIT:C29298` resolves under the active term validator, or add the\
+    \ NCIT row\n  to `mappings/ingredient_mappings_unknown_term_triage.tsv` if the\
+    \ SSSOM\n  synonym-review dispatcher still intentionally skips NCIT."
+- evidence_id: ev-767f581800b78ca2
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1076]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6","finding_id":"SEM:4aad908c39bf7cdc8d00","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-718d77b55d752383
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-bb80df62f1998e1c
+  evidence_ids:
+  - ev-1a8868c0a1c06ba4
+  - ev-0621453caa505d39
+  - ev-03045591ddfcd1f4
+  - ev-9bccbbc76454e863
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-8c328b5906b6078f
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-bb80df62f1998e1c
+  evidence_ids:
+  - ev-0b68a07640413433
+  - ev-1a8868c0a1c06ba4
+  - ev-767f581800b78ca2
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T07:31:15Z;
+    reviewed SHA-256=c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6;
+    current SHA-256=c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6;
+    hash_changed=False. Reports=["reports/yaml_record_review/Oatmeal.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The exact NCIT:C29298 oatmeal
+    identity passes, but the final SSSOM validation stamp still says UNKNOWN_TERM.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-0b68a07640413433
+    - ev-1a8868c0a1c06ba4
+  - name: legacy-native-ids
+    value: '["SEM:4aad908c39bf7cdc8d00"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-1a8868c0a1c06ba4
+    - ev-0b68a07640413433
+    - ev-767f581800b78ca2
+findings:
+- finding_id: rec-f-bfe8d3e0efc96fa9
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-bb80df62f1998e1c
+  category: provenance
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Oatmeal'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-17T07:31:15Z;
+    reviewed SHA-256=c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6;
+    current SHA-256=c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6;
+    hash_changed=False. Reports=["reports/yaml_record_review/Oatmeal.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The exact NCIT:C29298 oatmeal
+    identity passes, but the final SSSOM validation stamp still says UNKNOWN_TERM.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-bb80df62f1998e1c
+  evidence_ids:
+  - ev-0b68a07640413433
+  - ev-1a8868c0a1c06ba4
+  - ev-767f581800b78ca2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Oatmeal.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024637Z-mim-reconcile-all-batch-09.
+```

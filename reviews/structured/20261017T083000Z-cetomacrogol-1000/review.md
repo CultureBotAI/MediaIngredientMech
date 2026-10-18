@@ -1,0 +1,365 @@
+# Per-record structured review: Cetomacrogol_1000 (data/ingredients/mapped/Cetomacrogol_1000.yaml)
+
+- Review: 20261017T083000Z-cetomacrogol-1000
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Cetomacrogol_1000 (data/ingredients/mapped/Cetomacrogol_1000.yaml, record-1cbceb2bb343256b, mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Cetomacrogol_1000.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Cetomacrogol_1000.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-1cbceb2bb343256b | data/ingredients/mapped/Cetomacrogol_1000.yaml | maintained | Cetomacrogol_1000 |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-1cbceb2bb343256b | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-1cbceb2bb343256b | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-1cbceb2bb343256b | Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-1cbceb2bb343256b.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-1cbceb2bb343256b.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T11:42:54Z; reviewed SHA-256=e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd; current SHA-256=e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd; hash_changed=False. Reports=["reports/yaml_record_review/Cetomacrogol_1000.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The fallback MeSH parent and registry rows are coherent, but an active exact CHEBI cetomacrogol 1000 term now exists and should replace the stale fallback.
+
+## Findings
+
+### rec-f-bfce211b65a853e6: Historical review coverage and residual narrative: Cetomacrogol_1000
+
+major / deferred / provisional; issue key: mim-reconciliation-historical-review-coverage-and-r-1cbceb2bb343256b.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment. Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T11:42:54Z; reviewed SHA-256=e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd; current SHA-256=e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd; hash_changed=False. Reports=["reports/yaml_record_review/Cetomacrogol_1000.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The fallback MeSH parent and registry rows are coherent, but an active exact CHEBI cetomacrogol 1000 term now exists and should replace the stale fallback.
+
+Disposition: The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-9af22a297dab1b85 | data/ingredients/mapped/Cetomacrogol_1000.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[698],"raw_equal":true},"docs_rows":[{"identifier":"cas:9004-95-9","line":700,"mapping_status":"MAPPED","ontology_id":"mesh:D002592","preferred_term":"Cetomacrogol 1000"}],"identifier":"cas:9004-95-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:D002592","ontology_label":"Cetomacrogol","ontology_source":"MESH"},"preferred_term":"Cetomacrogol 1000","sssom_rows":[{"data_row":725,"object_id":"mesh:D002592","object_label":"Cetomacrogol","predicate_id":"skos:broadMatch"},{"data_row":726,"object_id":"cas:9004-95-9","object_label":"Cetomacrogol 1000","predicate_id":"skos:exactMatch"},{"data_row":727,"object_id":"kgmicrobe.compound:cetomacrogol_1000","object_label":"Cetomacrogol 1000","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cetomacrogol_1000","synonym_count":1} |
+| ev-6e7cd30824c8e606 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [698] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-dab5318eb463c19c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Cetomacrogol_1000; data-row positions=[725,726,727] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":725,"object_id":"mesh:D002592","object_label":"Cetomacrogol","other":"Polyethylene glycol hexadecyl ether","predicate_id":"skos:broadMatch","subject_id":"MIM:Cetomacrogol_1000","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":726,"object_id":"cas:9004-95-9","object_label":"Cetomacrogol 1000","other":"CAS:9004-95-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Cetomacrogol_1000","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":727,"object_id":"kgmicrobe.compound:cetomacrogol_1000","object_label":"Cetomacrogol 1000","other":"CAS:9004-95-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Cetomacrogol_1000","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-f9779555e4196086 | docs/data/mapped_ingredients.csv; CSV lines=[700] | supports | Published identity and count rows inspected: [{"identifier":"cas:9004-95-9","line":700,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:D002592","preferred_term":"Cetomacrogol 1000","total_occurrences":"0"}] |
+| ev-14b45228aa09504e | reports/yaml_record_review/Cetomacrogol_1000.md; &#96;data/ingredients/mapped/Cetomacrogol_1000.yaml&#96;:2; Verdict:4; Identity:12; Validation:27; Evidence:45; Completeness:65; Recommended Edits:75 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-15d45b0222d38659 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[399] | context_only | [{"current_record_sha256":"e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd","finding_id":"SEM:e6564362c4121bf40c8c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-cetomacrogol-1000
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Cetomacrogol_1000 (data/ingredients/mapped/Cetomacrogol_1000.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Cetomacrogol_1000 (data/ingredients/mapped/Cetomacrogol_1000.yaml,
+  record-1cbceb2bb343256b, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Cetomacrogol_1000.yaml
+    sha256: e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd
+    role: target
+  - path: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+    sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Cetomacrogol_1000.md
+    sha256: b74f663cdbdbbd7bf71e8e35ec4f870ef7353f1731918d23af4276bf2634906a
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-1cbceb2bb343256b
+  path: data/ingredients/mapped/Cetomacrogol_1000.yaml
+  label: Cetomacrogol_1000
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cetomacrogol_1000.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Cetomacrogol_1000.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Cetomacrogol_1000.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-1cbceb2bb343256b
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-1cbceb2bb343256b
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-1cbceb2bb343256b
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-1cbceb2bb343256b
+evidence:
+- evidence_id: ev-9af22a297dab1b85
+  kind: record_content
+  reference: data/ingredients/mapped/Cetomacrogol_1000.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[698],"raw_equal":true},"docs_rows":[{"identifier":"cas:9004-95-9","line":700,"mapping_status":"MAPPED","ontology_id":"mesh:D002592","preferred_term":"Cetomacrogol
+    1000"}],"identifier":"cas:9004-95-9","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"mesh:D002592","ontology_label":"Cetomacrogol","ontology_source":"MESH"},"preferred_term":"Cetomacrogol
+    1000","sssom_rows":[{"data_row":725,"object_id":"mesh:D002592","object_label":"Cetomacrogol","predicate_id":"skos:broadMatch"},{"data_row":726,"object_id":"cas:9004-95-9","object_label":"Cetomacrogol
+    1000","predicate_id":"skos:exactMatch"},{"data_row":727,"object_id":"kgmicrobe.compound:cetomacrogol_1000","object_label":"Cetomacrogol
+    1000","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cetomacrogol_1000","synonym_count":1}'
+  snapshot_sha256: e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd
+- evidence_id: ev-6e7cd30824c8e606
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [698]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-dab5318eb463c19c
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Cetomacrogol_1000; data-row positions=[725,726,727]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":725,"object_id":"mesh:D002592","object_label":"Cetomacrogol","other":"Polyethylene
+    glycol hexadecyl ether","predicate_id":"skos:broadMatch","subject_id":"MIM:Cetomacrogol_1000","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":726,"object_id":"cas:9004-95-9","object_label":"Cetomacrogol
+    1000","other":"CAS:9004-95-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Cetomacrogol_1000","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":727,"object_id":"kgmicrobe.compound:cetomacrogol_1000","object_label":"Cetomacrogol
+    1000","other":"CAS:9004-95-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Cetomacrogol_1000","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-f9779555e4196086
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[700]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:9004-95-9","line":700,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"mesh:D002592","preferred_term":"Cetomacrogol
+    1000","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-14b45228aa09504e
+  kind: prior_review
+  reference: reports/yaml_record_review/Cetomacrogol_1000.md
+  locator: '`data/ingredients/mapped/Cetomacrogol_1000.yaml`:2; Verdict:4; Identity:12;
+    Validation:27; Evidence:45; Completeness:65; Recommended Edits:75'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: b74f663cdbdbbd7bf71e8e35ec4f870ef7353f1731918d23af4276bf2634906a
+  quote: "Recommended Edits:\n- Major: reground `data/ingredients/mapped/Cetomacrogol_1000.yaml`\
+    \ from\n  `mesh:D002592` to `CHEBI:753915` `cetomacrogol 1000`, update\n  `ontology_source`,\
+    \ `mapping_quality`, mapping evidence, and curation history\n  accordingly, and\
+    \ keep the CAS and kg-microbe identity rows required by Rule\n  B1.\n- Regenerate\
+    \ synchronized outputs and rerun strict validation, Engine A term\n  validation,\
+    \ SSSOM QC, aggregate roundtrip, and `git diff --check`."
+- evidence_id: ev-15d45b0222d38659
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[399]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd","finding_id":"SEM:e6564362c4121bf40c8c","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-accaf71a1a31500f
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-1cbceb2bb343256b
+  evidence_ids:
+  - ev-9af22a297dab1b85
+  - ev-6e7cd30824c8e606
+  - ev-dab5318eb463c19c
+  - ev-f9779555e4196086
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-292ad02c91806f84
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-1cbceb2bb343256b
+  evidence_ids:
+  - ev-14b45228aa09504e
+  - ev-9af22a297dab1b85
+  - ev-15d45b0222d38659
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T11:42:54Z;
+    reviewed SHA-256=e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd;
+    current SHA-256=e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd;
+    hash_changed=False. Reports=["reports/yaml_record_review/Cetomacrogol_1000.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The fallback
+    MeSH parent and registry rows are coherent, but an active exact CHEBI cetomacrogol
+    1000 term now exists and should replace the stale fallback.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-14b45228aa09504e
+    - ev-9af22a297dab1b85
+  - name: legacy-native-ids
+    value: '["SEM:e6564362c4121bf40c8c"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-9af22a297dab1b85
+    - ev-14b45228aa09504e
+    - ev-15d45b0222d38659
+findings:
+- finding_id: rec-f-bfce211b65a853e6
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-1cbceb2bb343256b
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Cetomacrogol_1000'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T11:42:54Z;
+    reviewed SHA-256=e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd;
+    current SHA-256=e993a2e19d35902e3ec7aee624ab0133a3689ae105135159a10f5ae6000b76dd;
+    hash_changed=False. Reports=["reports/yaml_record_review/Cetomacrogol_1000.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The fallback
+    MeSH parent and registry rows are coherent, but an active exact CHEBI cetomacrogol
+    1000 term now exists and should replace the stale fallback.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-1cbceb2bb343256b
+  evidence_ids:
+  - ev-14b45228aa09504e
+  - ev-9af22a297dab1b85
+  - ev-15d45b0222d38659
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cetomacrogol_1000.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.
+```

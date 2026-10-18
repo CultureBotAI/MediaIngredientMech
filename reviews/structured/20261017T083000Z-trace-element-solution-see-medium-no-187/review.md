@@ -1,0 +1,608 @@
+# Per-record structured review: Trace_Element_Solution_See_Medium_No_187 (data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml)
+
+- Review: 20261017T083000Z-trace-element-solution-see-medium-no-187
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Trace_Element_Solution_See_Medium_No_187 (data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml, record-341efa75278b5e50, mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-341efa75278b5e50 | data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml | maintained | Trace_Element_Solution_See_Medium_No_187 |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-341efa75278b5e50 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-341efa75278b5e50 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-341efa75278b5e50 | Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-341efa75278b5e50.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-341efa75278b5e50.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T19:13:37Z; reviewed SHA-256=eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d; current SHA-256=eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d; hash_changed=False. Reports=["reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The local stock identity passes, but components are absent and a malformed see-Medium alias leaks into final SSSOM other.
+
+### Unresolved recipe-reference or truncated-concentration synonyms
+
+nomenclature: concern. Targets: record-341efa75278b5e50.
+
+Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"unresolved recipe cross-reference in a resolving synonym","token":"Trace element solution (see Medium No. 187"}]. Truncated concentration strings and context-dependent instructions need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as a class.
+
+### Certainty correction for the exact token observation
+
+nomenclature: unknown. Targets: record-341efa75278b5e50.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. A damaged spelling is observable, but the mapping contract permits damaged raw source forms when they still resolve to the same substance; malformed punctuation alone does not settle identity scope.
+
+## Findings
+
+### rec-scope-f-3b7b7b7cd4c70ace: Adjudicate source scope of exported tokens: Trace element solution see Medium No. 187
+
+major / deferred / provisional; issue key: mim-reconciliation-exported-context-tokens-341efa75278b5e50.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. A damaged spelling is observable, but the mapping contract permits damaged raw source forms when they still resolve to the same substance; malformed punctuation alone does not settle identity scope.
+
+Disposition: Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. A damaged spelling is observable, but the mapping contract permits damaged raw source forms when they still resolve to the same substance; malformed punctuation alone does not settle identity scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-753ef5c747a186c7 | data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1979,"mapping_status":"MAPPED","ontology_id":"NCIT:C896","preferred_term":"Trace element solution see Medium No. 187"}],"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C896","ontology_label":"Trace Element","ontology_source":"NCIT"},"preferred_term":"Trace element solution see Medium No. 187","sssom_rows":[{"data_row":2802,"object_id":"NCIT:C896","object_label":"Trace Element","predicate_id":"skos:closeMatch"},{"data_row":2803,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace element solution see Medium No. 187","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Element_Solution_See_Medium_No_187","synonym_count":2} |
+| ev-8e46a74b1dac68f4 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1977] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-1ae06c3a3a72a5b0 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Element_Solution_See_Medium_No_187; data-row positions=[2802,2803] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2802,"object_id":"NCIT:C896","object_label":"Trace Element","other":"Trace element solution (see Medium No. 187","predicate_id":"skos:closeMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2803,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace element solution see Medium No. 187","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-a2bd3ce860643b37 | docs/data/mapped_ingredients.csv; CSV lines=[1979] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1979,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C896","preferred_term":"Trace element solution see Medium No. 187","total_occurrences":"0"}] |
+| ev-e9a77a2c0d4af0d8 | reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md; &#96;data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml&#96;:2; Verdict:4; Identity:10; Validation:27; Evidence:38; Issues:48; Major: a malformed recipe-reference alias reaches final SSSOM:50; Major: the named stock solution is still missing components:57; Completeness:64; Recommended Edits:71 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-2f14d4cac1c6c91a | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1297] | context_only | [{"current_record_sha256":"eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d","finding_id":"SEM:e9655eed6080855b4387","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
+| ev-61509143d0ecf84a | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-3b7b7b7cd4c70ace] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
+| ev-cb42f25983a0ad30 | data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Trace element solution (see Medium No. 187", "synonym_type": "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1886); no CAS-RN or CHEBI/NCIT match. Curator review needed.", "curator": "audit_import_ingredients[mim-queue]", "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"}, {"action": "CLASSIFY_AS_STOCK_SOLUTION", "changes": "name pattern 'see Medium No.' indicates pre-mixed defined solution", "curator": "auto_classify_stock_solution", "llm_assisted": false, "timestamp": "2026-05-01T19:58:06.857978+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Trace element')", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:19.961419+00:00"}, {"action": "AUTO_UPGRADE_TO_NCIT", "changes": "primary UNMAPPED_0549 \u2192 NCIT:C896 (strategy=stem-match)", "curator": "resolve_unmapped_v2", "llm_assisted": false, "timestamp": "2026-05-02T03:18:21.989902+00:00"}, {"action": "CORRECTED", "changes": "Changed identifier from NCIT:C896 to kgmicrobe.ingredient:trace_element_solution_see_medium_no_187 and retained NCIT:C896 only as CLOSE_MATCH. Named trace element solution is a formulation, not identical to the generic trace element class.", "curator": "ingredient_mapping_review_2026_05_05", "llm_assisted": false, "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-05-05T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Trace element solution (see Medium No. 187' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill", "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier": "kgmicrobe.ingredient:trace_element_solution_see_medium_no_187", "mapping": {"evidence": [{"evidence_type": "CURATOR_JUDGMENT", "notes": "Named trace element solution is a formulation, not identical to the generic trace element class.", "source": "ingredient_mapping_review_2026-05-05"}], "mapping_quality": "CLOSE_MATCH", "ontology_id": "NCIT:C896", "ontology_label": "Trace Element", "ontology_source": "NCIT"}} |
+| ev-775e49cc5333c85a | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Trace_Element_Solution_See_Medium_No_187 | supports | [{"comment": "", "confidence": "0.9", "data_row": 2802, "mapping_date": "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "NCIT:C896", "object_label": "Trace Element", "object_source": "obo:ncit.owl", "other": "Trace element solution (see Medium No. 187", "predicate_id": "skos:closeMatch", "source": "MIM:ingredient_mapping_review_2026-05-05&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Trace_Element_Solution_See_Medium_No_187", "subject_label": "Trace element solution see Medium No. 187", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}, {"comment": "Registry/identity row preserving kgmicrobe.ingredient:trace_element_solution_see_medium_no_187 alongside parent NCIT:C896.", "confidence": "0.99", "data_row": 2803, "mapping_date": "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:trace_element_solution_see_medium_no_187", "object_label": "Trace element solution see Medium No. 187", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:ingredient_mapping_review_2026-05-05&#124;MIM:curator=claude_culturemech_alias_backfill", "subject_id": "MIM:Trace_Element_Solution_See_Medium_No_187", "subject_label": "Trace element solution see Medium No. 187", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-a18de57ffdc5d750 | reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
+| ev-08c59b670ba15baf | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-3b7b7b7cd4c70ace] | context_only | Predecessor structured review finding scope-f-3b7b7b7cd4c70ace in 20261011T030852Z-mim-token-scope-reassessment |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024638Z-mim-reconcile-all-batch-11, 20261011T030852Z-mim-token-scope-reassessment.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-trace-element-solution-see-medium-no-187
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Trace_Element_Solution_See_Medium_No_187 (data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Trace_Element_Solution_See_Medium_No_187
+  (data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml, record-341efa75278b5e50,
+  mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound
+  to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
+    sha256: eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d
+    role: target
+  - path: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+    sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+    role: context
+  - path: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+    sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md
+    sha256: 9d6913d60ca5135c4cd8074f78886386638a460bae5393725ce8f4aa35fc2f55
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+    role: context
+targets:
+- target_id: record-341efa75278b5e50
+  path: data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
+  label: Trace_Element_Solution_See_Medium_No_187
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-341efa75278b5e50
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-341efa75278b5e50
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-341efa75278b5e50
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-341efa75278b5e50
+evidence:
+- evidence_id: ev-753ef5c747a186c7
+  kind: record_content
+  reference: data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1977],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1979,"mapping_status":"MAPPED","ontology_id":"NCIT:C896","preferred_term":"Trace
+    element solution see Medium No. 187"}],"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"NCIT:C896","ontology_label":"Trace
+    Element","ontology_source":"NCIT"},"preferred_term":"Trace element solution see
+    Medium No. 187","sssom_rows":[{"data_row":2802,"object_id":"NCIT:C896","object_label":"Trace
+    Element","predicate_id":"skos:closeMatch"},{"data_row":2803,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace
+    element solution see Medium No. 187","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Trace_Element_Solution_See_Medium_No_187","synonym_count":2}'
+  snapshot_sha256: eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d
+- evidence_id: ev-8e46a74b1dac68f4
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1977]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-1ae06c3a3a72a5b0
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Trace_Element_Solution_See_Medium_No_187; data-row positions=[2802,2803]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2802,"object_id":"NCIT:C896","object_label":"Trace
+    Element","other":"Trace element solution (see Medium No. 187","predicate_id":"skos:closeMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2803,"object_id":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","object_label":"Trace
+    element solution see Medium No. 187","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Trace_Element_Solution_See_Medium_No_187","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-a2bd3ce860643b37
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1979]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:trace_element_solution_see_medium_no_187","line":1979,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C896","preferred_term":"Trace
+    element solution see Medium No. 187","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-e9a77a2c0d4af0d8
+  kind: prior_review
+  reference: reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md
+  locator: '`data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml`:2;
+    Verdict:4; Identity:10; Validation:27; Evidence:38; Issues:48; Major: a malformed
+    recipe-reference alias reaches final SSSOM:50; Major: the named stock solution
+    is still missing components:57; Completeness:64; Recommended Edits:71'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 9d6913d60ca5135c4cd8074f78886386638a460bae5393725ce8f4aa35fc2f55
+  quote: "Issues:\n\n\nMajor: a malformed recipe-reference alias reaches final SSSOM:\n\
+    `Trace element solution (see Medium No. 187` is a raw CultureMech source\nsurface\
+    \ with the parenthetical still open. It is a recipe cross-reference, not\na real\
+    \ synonym of either the NCIT trace-element category or the local stock\nidentity,\
+    \ so it should not be emitted as a final `other` token.\n\nMajor: the named stock\
+    \ solution is still missing components:\nThe record is deliberately minted as\
+    \ a local stock-solution identity, but there\nis no `components` block or `component_assertion`.\
+    \ The `see Medium No. 187`\nsurface points at a source recipe that should be transcribed\
+    \ before this can\nbehave like a complete trace-metal stock record.\n\nRecommended\
+    \ Edits:\n- Transcribe the Medium No. 187 trace-element solution into reviewed\n\
+    \  components, and mark the raw `see Medium` alias so the SSSOM exporter filters\n\
+    \  it out of final `other`."
+- evidence_id: ev-2f14d4cac1c6c91a
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1297]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d","finding_id":"SEM:e9655eed6080855b4387","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-823412d1eacb6795
+  kind: record_content
+  reference: MAPPING_SEMANTICS.md
+  locator: Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: supports
+  summary: Raw spellings may remain resolvable when they denote the same substance.
+    Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not
+    adjudicate that distinction.
+  snapshot_sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+- evidence_id: ev-61509143d0ecf84a
+  kind: prior_review
+  reference: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+  locator: findings[finding_id=f-3b7b7b7cd4c70ace]
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Exact earlier occurrence has open/confirmed status, based on exported-token
+    presence and historical report text.
+  snapshot_sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+  quote: '{"category": "nomenclature", "certainty": "confirmed", "description": "Historical
+    tokens are still present on the exact-subject SSSOM rows: [{\"reason\":\"unresolved
+    recipe cross-reference in a resolving synonym\",\"token\":\"Trace element solution
+    (see Medium No. 187\"}]. Truncated concentration strings and context-dependent
+    instructions need scoped curation. This check does not reject catalog/RAW_TEXT
+    synonyms as a class.", "evidence_ids": ["ev-e9a77a2c0d4af0d8", "ev-1ae06c3a3a72a5b0"],
+    "external_issues": ["https://github.com/CultureBotAI/MediaIngredientMech/issues/718"],
+    "field_paths": ["synonyms", "SSSOM.other"], "finding_id": "f-3b7b7b7cd4c70ace",
+    "issue_key": "mim-reconciliation-exported-context-tokens-341efa75278b5e50", "owner_paths":
+    [{"path": "data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml",
+    "repository": "CultureBotAI/MediaIngredientMech", "role": "maintained ingredient"}],
+    "severity": "major", "status": "open", "tags": ["reconciliation", "bundle-by-owner",
+    "exported-context-tokens"], "target_ids": ["record-341efa75278b5e50"], "title":
+    "Review nonportable exported tokens: Trace element solution see Medium No. 187"}'
+- evidence_id: ev-cb42f25983a0ad30
+  kind: record_content
+  reference: data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
+  locator: identifier, ontology_mapping, synonyms and curation_history
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: partial
+  summary: '{"candidate_labels": [{"source": "culturemech:output/ingredient_occurrences.tsv",
+    "synonym_text": "Trace element solution (see Medium No. 187", "synonym_type":
+    "RAW_TEXT"}], "history": [{"action": "CREATED_AS_UNMAPPED", "changes": "Imported
+    from mim-queue (source_id=mediadive.ingredient:1886); no CAS-RN or CHEBI/NCIT
+    match. Curator review needed.", "curator": "audit_import_ingredients[mim-queue]",
+    "llm_assisted": false, "new_status": "UNMAPPED", "timestamp": "2026-04-30T18:43:03.698454+00:00"},
+    {"action": "CLASSIFY_AS_STOCK_SOLUTION", "changes": "name pattern ''see Medium
+    No.'' indicates pre-mixed defined solution", "curator": "auto_classify_stock_solution",
+    "llm_assisted": false, "timestamp": "2026-05-01T19:58:06.857978+00:00"}, {"action":
+    "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=STOCK_SOLUTION
+    (name matches solution pattern ''Trace element'')", "curator": "auto_classify_ingredient_type",
+    "llm_assisted": false, "timestamp": "2026-05-02T03:12:19.961419+00:00"}, {"action":
+    "AUTO_UPGRADE_TO_NCIT", "changes": "primary UNMAPPED_0549 \u2192 NCIT:C896 (strategy=stem-match)",
+    "curator": "resolve_unmapped_v2", "llm_assisted": false, "timestamp": "2026-05-02T03:18:21.989902+00:00"},
+    {"action": "CORRECTED", "changes": "Changed identifier from NCIT:C896 to kgmicrobe.ingredient:trace_element_solution_see_medium_no_187
+    and retained NCIT:C896 only as CLOSE_MATCH. Named trace element solution is a
+    formulation, not identical to the generic trace element class.", "curator": "ingredient_mapping_review_2026_05_05",
+    "llm_assisted": false, "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp":
+    "2026-05-05T00:00:00+00:00"}, {"action": "ADDED_SYNONYMS", "changes": "Added 1
+    CultureMech recipe surface form(s) that folded onto this record''s published label
+    but were absent from MIM''s label index, so CultureMech could not resolve them:
+    ''Trace element solution (see Medium No. 187'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.", "curator": "claude_culturemech_alias_backfill",
+    "llm_assisted": false, "timestamp": "2026-08-30T04:48:06.233536+00:00"}], "identifier":
+    "kgmicrobe.ingredient:trace_element_solution_see_medium_no_187", "mapping": {"evidence":
+    [{"evidence_type": "CURATOR_JUDGMENT", "notes": "Named trace element solution
+    is a formulation, not identical to the generic trace element class.", "source":
+    "ingredient_mapping_review_2026-05-05"}], "mapping_quality": "CLOSE_MATCH", "ontology_id":
+    "NCIT:C896", "ontology_label": "Trace Element", "ontology_source": "NCIT"}}'
+  snapshot_sha256: eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d
+- evidence_id: ev-775e49cc5333c85a
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Trace_Element_Solution_See_Medium_No_187
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: supports
+  summary: '[{"comment": "", "confidence": "0.9", "data_row": 2802, "mapping_date":
+    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "NCIT:C896", "object_label": "Trace Element", "object_source": "obo:ncit.owl",
+    "other": "Trace element solution (see Medium No. 187", "predicate_id": "skos:closeMatch",
+    "source": "MIM:ingredient_mapping_review_2026-05-05|MIM:curator=claude_culturemech_alias_backfill",
+    "subject_id": "MIM:Trace_Element_Solution_See_Medium_No_187", "subject_label":
+    "Trace element solution see Medium No. 187", "validation_method": "none|UNKNOWN_TERM|2026-07-07"},
+    {"comment": "Registry/identity row preserving kgmicrobe.ingredient:trace_element_solution_see_medium_no_187
+    alongside parent NCIT:C896.", "confidence": "0.99", "data_row": 2803, "mapping_date":
+    "2026-08-30", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:trace_element_solution_see_medium_no_187", "object_label":
+    "Trace element solution see Medium No. 187", "object_source": "kgm:ingredient",
+    "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:ingredient_mapping_review_2026-05-05|MIM:curator=claude_culturemech_alias_backfill",
+    "subject_id": "MIM:Trace_Element_Solution_See_Medium_No_187", "subject_label":
+    "Trace element solution see Medium No. 187", "validation_method": "none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-a18de57ffdc5d750
+  kind: prior_review
+  reference: reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md
+  locator: Complete historical report, including Verdict and Recommended Edits
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Historical interpretation was read in full; it is not fresh source adjudication.
+  snapshot_sha256: 9d6913d60ca5135c4cd8074f78886386638a460bae5393725ce8f4aa35fc2f55
+  quote: "# `data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml`\n\
+    \n## Verdict\n\nNeeds curation, major. The local stock-solution identity and NCIT\
+    \ close match\nare synchronized, but the record has no component transcription\
+    \ and the final\nSSSOM close row exports a malformed recipe-reference alias.\n\
+    \n## Identity\n\n- Reviewed record:\n  `data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml`.\n\
+    - Identifier and grounding: `identifier:\n  kgmicrobe.ingredient:trace_element_solution_see_medium_no_187`,\
+    \ close parent\n  `ontology_mapping.ontology_id: NCIT:C896`, label `Trace Element`,\
+    \ source\n  `NCIT`, `mapping_quality: CLOSE_MATCH`, `mapping_status: MAPPED`,\n\
+    \  `kg_microbe_node_id:\n  kgmicrobe.ingredient:trace_element_solution_see_medium_no_187`,\
+    \ and\n  `ingredient_type: STOCK_SOLUTION`.\n- Synonyms: raw mim-queue source\
+    \ form plus malformed raw CultureMech source\n  form `Trace element solution (see\
+    \ Medium No. 187`.\n- Occurrences: no CultureMech recipe occurrences in the split\
+    \ occurrence\n  snapshot.\n- Components: none.\n\n## Validation\n\n- `uv run --frozen\
+    \ python scripts/validate_strict.py` on the 5-file batch from\n  `Trace_Element_Solution_SL-10`\
+    \ through `Trace_Metals_Solution`: exited 0 and\n  wrote zero ERROR rows.\n- Direct\
+    \ old Engine A/OBO term validation was skipped for this row because\n  `NCIT`\
+    \ and `kgmicrobe.ingredient` are outside the CHEBI-focused OBO term\n  subset.\n\
+    - Local aggregate comparison found this per-record file synchronized with its\n\
+    \  keyed row in `data/curated/mapped_ingredients.yaml`.\n\n## Evidence\n\n- Fresh\
+    \ exact OLS4 search for `Trace Element` returns `NCIT:C896` with label\n  `Trace\
+    \ Element`; the May review correctly keeps it as a close category\n  rather than\
+    \ as the exact identity.\n- The final SSSOM has a close row to `NCIT:C896` and\
+    \ an exact identity row for\n  `kgmicrobe.ingredient:trace_element_solution_see_medium_no_187`.\n\
+    - The NCIT close row exports `Trace element solution (see Medium No. 187` in\n\
+    \  `other`.\n\n## Issues\n\n### Major: a malformed recipe-reference alias reaches\
+    \ final SSSOM\n\n`Trace element solution (see Medium No. 187` is a raw CultureMech\
+    \ source\nsurface with the parenthetical still open. It is a recipe cross-reference,\
+    \ not\na real synonym of either the NCIT trace-element category or the local stock\n\
+    identity, so it should not be emitted as a final `other` token.\n\n### Major:\
+    \ the named stock solution is still missing components\n\nThe record is deliberately\
+    \ minted as a local stock-solution identity, but there\nis no `components` block\
+    \ or `component_assertion`. The `see Medium No. 187`\nsurface points at a source\
+    \ recipe that should be transcribed before this can\nbehave like a complete trace-metal\
+    \ stock record.\n\n## Completeness\n\n- The local identity, close NCIT parent,\
+    \ aggregate copy, and final SSSOM rows\n  are synchronized.\n- The raw cross-reference\
+    \ synonym and missing stock composition remain\n  unresolved.\n\n## Recommended\
+    \ Edits\n\n- Transcribe the Medium No. 187 trace-element solution into reviewed\n\
+    \  components, and mark the raw `see Medium` alias so the SSSOM exporter filters\n\
+    \  it out of final `other`.\n"
+- evidence_id: ev-08c59b670ba15baf
+  kind: prior_review
+  reference: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+  locator: findings[finding_id=scope-f-3b7b7b7cd4c70ace]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding scope-f-3b7b7b7cd4c70ace in 20261011T030852Z-mim-token-scope-reassessment
+  snapshot_sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+assessments:
+- assessment_id: a-3bd486c4fcb08e11
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-341efa75278b5e50
+  evidence_ids:
+  - ev-753ef5c747a186c7
+  - ev-8e46a74b1dac68f4
+  - ev-1ae06c3a3a72a5b0
+  - ev-a2bd3ce860643b37
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-34c8c482bc8b42ff
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-341efa75278b5e50
+  evidence_ids:
+  - ev-e9a77a2c0d4af0d8
+  - ev-753ef5c747a186c7
+  - ev-2f14d4cac1c6c91a
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T19:13:37Z;
+    reviewed SHA-256=eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d;
+    current SHA-256=eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d;
+    hash_changed=False. Reports=["reports/yaml_record_review/Trace_Element_Solution_See_Medium_No_187.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The local
+    stock identity passes, but components are absent and a malformed see-Medium alias
+    leaks into final SSSOM other.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e9a77a2c0d4af0d8
+    - ev-753ef5c747a186c7
+  - name: legacy-native-ids
+    value: '["SEM:e9655eed6080855b4387"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-753ef5c747a186c7
+    - ev-e9a77a2c0d4af0d8
+    - ev-2f14d4cac1c6c91a
+- assessment_id: a-541cc6bcae2e8bd3
+  area: nomenclature
+  topic: Unresolved recipe-reference or truncated-concentration synonyms
+  outcome: concern
+  summary: 'Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"unresolved
+    recipe cross-reference in a resolving synonym","token":"Trace element solution
+    (see Medium No. 187"}]. Truncated concentration strings and context-dependent
+    instructions need scoped curation. This check does not reject catalog/RAW_TEXT
+    synonyms as a class.'
+  target_ids:
+  - record-341efa75278b5e50
+  evidence_ids:
+  - ev-e9a77a2c0d4af0d8
+  - ev-1ae06c3a3a72a5b0
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e9a77a2c0d4af0d8
+    - ev-1ae06c3a3a72a5b0
+- assessment_id: scope-f-3b7b7b7cd4c70ace
+  area: nomenclature
+  topic: Certainty correction for the exact token observation
+  outcome: unknown
+  summary: Token presence remains reproducible, but the earlier pattern-based observation
+    did not establish whether the exact source label denotes this subject or a different
+    preparation. Fresh source-context adjudication is required before a confirmed
+    defect or label removal. This successor corrects certainty only; it does not establish
+    that the token is valid or that another identity allegation is fixed. A damaged
+    spelling is observable, but the mapping contract permits damaged raw source forms
+    when they still resolve to the same substance; malformed punctuation alone does
+    not settle identity scope.
+  target_ids:
+  - record-341efa75278b5e50
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-61509143d0ecf84a
+  - ev-cb42f25983a0ad30
+  - ev-775e49cc5333c85a
+  - ev-a18de57ffdc5d750
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Source-scope question only, not a disposition of the complete historical
+      report.
+    evidence_ids:
+    - ev-823412d1eacb6795
+    - ev-61509143d0ecf84a
+    - ev-cb42f25983a0ad30
+    - ev-775e49cc5333c85a
+    - ev-a18de57ffdc5d750
+findings:
+- finding_id: rec-scope-f-3b7b7b7cd4c70ace
+  issue_key: mim-reconciliation-exported-context-tokens-341efa75278b5e50
+  category: nomenclature
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Adjudicate source scope of exported tokens: Trace element solution see Medium
+    No. 187'
+  description: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed. A damaged spelling is observable, but the mapping contract permits damaged
+    raw source forms when they still resolve to the same substance; malformed punctuation
+    alone does not settle identity scope.
+  target_ids:
+  - record-341efa75278b5e50
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-61509143d0ecf84a
+  - ev-cb42f25983a0ad30
+  - ev-775e49cc5333c85a
+  - ev-a18de57ffdc5d750
+  - ev-08c59b670ba15baf
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml
+    role: maintained ingredient
+  field_paths:
+  - synonyms
+  - SSSOM.other
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - exported-context-tokens
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/861
+  disposition_reason: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed. A damaged spelling is observable, but the mapping contract permits damaged
+    raw source forms when they still resolve to the same substance; malformed punctuation
+    alone does not settle identity scope.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T030852Z-mim-token-scope-reassessment
+    finding_id: scope-f-3b7b7b7cd4c70ace
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024638Z-mim-reconcile-all-batch-11, 20261011T030852Z-mim-token-scope-reassessment.
+```

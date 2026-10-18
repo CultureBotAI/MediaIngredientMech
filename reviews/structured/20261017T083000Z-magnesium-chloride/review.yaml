@@ -1,0 +1,270 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-magnesium-chloride
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Magnesium_Chloride (data/ingredients/mapped/Magnesium_Chloride.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Magnesium_Chloride (data/ingredients/mapped/Magnesium_Chloride.yaml,
+  record-3582eeaa93fde829, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Magnesium_Chloride.yaml
+    sha256: 80426d9af40689814be985f73e7d6949f4d5e10b77679cb5b56e73e52533a549
+    role: target
+  - path: reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml
+    sha256: 4dd969b7020555cc2250a236d6fded134bedf3add1e1c5c72d269e98f9ae001b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Magnesium_Chloride.md
+    sha256: d9b17b6e28f6aba20306b6351485ba388151c63a464d15634cdc6220986a31e6
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-3582eeaa93fde829
+  path: data/ingredients/mapped/Magnesium_Chloride.yaml
+  label: Magnesium_Chloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Magnesium_Chloride.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Magnesium_Chloride.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Magnesium_Chloride.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-3582eeaa93fde829
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-3582eeaa93fde829
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-3582eeaa93fde829
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024636Z-mim-reconcile-all-batch-08
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-3582eeaa93fde829
+evidence:
+- evidence_id: ev-4d51316c7168d592
+  kind: record_content
+  reference: data/ingredients/mapped/Magnesium_Chloride.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1326],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86345","line":1328,"mapping_status":"MAPPED","ontology_id":"CHEBI:86345","preferred_term":"Magnesium
+    chloride"}],"identifier":"CHEBI:86345","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4019,"edge_count":4019,"occurrences":4026},"occurrence_statistics":{"media_count":4019,"total_occurrences":4026},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:86345","ontology_label":"magnesium
+    dichloride hexahydrate","ontology_source":"CHEBI"},"preferred_term":"Magnesium
+    chloride","sssom_rows":[{"data_row":1743,"object_id":"CHEBI:86345","object_label":"magnesium
+    dichloride hexahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Magnesium_Chloride","synonym_count":13}'
+  snapshot_sha256: 80426d9af40689814be985f73e7d6949f4d5e10b77679cb5b56e73e52533a549
+- evidence_id: ev-ae812075563d20a4
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1326]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-ac6e5bbd09e1e66b
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Magnesium_Chloride; data-row positions=[1743]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1743,"object_id":"CHEBI:86345","object_label":"magnesium
+    dichloride hexahydrate","other":"MgCl2 x 6 H2O|CCRIS 3494|MgCl*6H2O|MgCl2\u22196H2O|magnesium
+    dichloride--water (1/6)|MgCl 2|MgCl2 . 6H2O|MgCl2 x 6 H2O (200 g/l stock solution)|MgCl2x
+    6H2O|MgCl2x6H2O|MgCl2\u00b76 H2O|magnesium dichloride--water (1/2)|CAS:7791-18-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Magnesium_Chloride","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-128be330b423e87a
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1328]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86345","line":1328,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"4019","ontology_id":"CHEBI:86345","preferred_term":"Magnesium
+    chloride","total_occurrences":"4026"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-512e920e64c87e90
+  kind: prior_review
+  reference: reports/yaml_record_review/Magnesium_Chloride.md
+  locator: '`data/ingredients/mapped/Magnesium_Chloride.yaml`:2; Verdict:4; Identity:12;
+    Validation:24; Evidence:32; Completeness:43; Recommended Edits:52'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: d9b17b6e28f6aba20306b6351485ba388151c63a464d15634cdc6220986a31e6
+  quote: "Recommended Edits:\n- Mark the dihydrate, anhydrous, and concentration-qualified\
+    \ stock text as\n  `REJECTED_LABEL` or otherwise exclude them from the final SSSOM\
+    \ `other`\n  field for the hexahydrate record."
+- evidence_id: ev-0d81766960921549
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[881]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"f078c02120e5b3865c2799fdb2c67c450c5ca28249f29b9080ffcce1e9e548e6","finding_id":"SEM:4df932d370af1e3effd6","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-2095215e9d06f6f7
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-3582eeaa93fde829
+  evidence_ids:
+  - ev-4d51316c7168d592
+  - ev-ae812075563d20a4
+  - ev-ac6e5bbd09e1e66b
+  - ev-128be330b423e87a
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-62cd8ebdf427a21e
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-3582eeaa93fde829
+  evidence_ids:
+  - ev-512e920e64c87e90
+  - ev-4d51316c7168d592
+  - ev-0d81766960921549
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T01:12:46Z;
+    reviewed SHA-256=f078c02120e5b3865c2799fdb2c67c450c5ca28249f29b9080ffcce1e9e548e6;
+    current SHA-256=80426d9af40689814be985f73e7d6949f4d5e10b77679cb5b56e73e52533a549;
+    hash_changed=True. Reports=["reports/yaml_record_review/Magnesium_Chloride.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The hexahydrate
+    identity and mineral role pass, but final SSSOM still exports a dihydrate label,
+    an anhydrous formula, and stock-solution text as other synonyms.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-512e920e64c87e90
+    - ev-4d51316c7168d592
+  - name: legacy-native-ids
+    value: '["SEM:4df932d370af1e3effd6"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-4d51316c7168d592
+    - ev-512e920e64c87e90
+    - ev-0d81766960921549
+findings:
+- finding_id: rec-f-d8519a1a36a5e954
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-3582eeaa93fde829
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Magnesium_Chloride'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T01:12:46Z;
+    reviewed SHA-256=f078c02120e5b3865c2799fdb2c67c450c5ca28249f29b9080ffcce1e9e548e6;
+    current SHA-256=80426d9af40689814be985f73e7d6949f4d5e10b77679cb5b56e73e52533a549;
+    hash_changed=True. Reports=["reports/yaml_record_review/Magnesium_Chloride.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The hexahydrate
+    identity and mineral role pass, but final SSSOM still exports a dihydrate label,
+    an anhydrous formula, and stock-solution text as other synonyms.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-3582eeaa93fde829
+  evidence_ids:
+  - ev-512e920e64c87e90
+  - ev-4d51316c7168d592
+  - ev-0d81766960921549
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Magnesium_Chloride.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024636Z-mim-reconcile-all-batch-08.

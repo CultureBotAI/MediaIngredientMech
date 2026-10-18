@@ -1,0 +1,272 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-ammonium-acetate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Ammonium_Acetate (data/ingredients/mapped/Ammonium_Acetate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Ammonium_Acetate (data/ingredients/mapped/Ammonium_Acetate.yaml,
+  record-c0b003356ab9448e, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Ammonium_Acetate.yaml
+    sha256: 305a573110b96e4aeaf08330ecdbcfe93b3fa862c3efdc66ba0789d803a44078
+    role: target
+  - path: reviews/structured/20261011T024631Z-mim-reconcile-all-batch-03/review.yaml
+    sha256: 6b3844c17bf3608ea8f73f824efec195e906ab8d2703fef4cd97fda04f0e65bf
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Ammonium_Acetate.md
+    sha256: 51c72248706e0e8e611b1909a0f6f6f641fef7da32f49c5177f2d85a93af5158
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-c0b003356ab9448e
+  path: data/ingredients/mapped/Ammonium_Acetate.yaml
+  label: Ammonium_Acetate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ammonium_Acetate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Ammonium_Acetate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Ammonium_Acetate.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-c0b003356ab9448e
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-c0b003356ab9448e
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-c0b003356ab9448e
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024631Z-mim-reconcile-all-batch-03
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-c0b003356ab9448e
+evidence:
+- evidence_id: ev-93b1d0288b85fa7e
+  kind: record_content
+  reference: data/ingredients/mapped/Ammonium_Acetate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[480],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:62947","line":482,"mapping_status":"MAPPED","ontology_id":"CHEBI:62947","preferred_term":"Ammonium
+    acetate"}],"identifier":"CHEBI:62947","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":67,"edge_count":67,"occurrences":67},"occurrence_statistics":{"media_count":67,"total_occurrences":67},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:62947","ontology_label":"ammonium
+    acetate","ontology_source":"CHEBI"},"preferred_term":"Ammonium acetate","sssom_rows":[{"data_row":358,"object_id":"CHEBI:62947","object_label":"ammonium
+    acetate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ammonium_Acetate","synonym_count":13}'
+  snapshot_sha256: 305a573110b96e4aeaf08330ecdbcfe93b3fa862c3efdc66ba0789d803a44078
+- evidence_id: ev-258706ae29f10c57
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [480]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-704a1c41c27caf0e
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Ammonium_Acetate; data-row positions=[358]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":358,"object_id":"CHEBI:62947","object_label":"ammonium
+    acetate","other":"AcONH4|CH3CO2NH4|CH3COONH4|E 264|E-264|E264|INS No. 264|NH4OAc|acetic
+    acid, ammonium salt|ammonium ethanoate|azanium acetate|CAS:631-61-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Ammonium_Acetate","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-7ef0080f7a69e42b
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[482]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:62947","line":482,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"67","ontology_id":"CHEBI:62947","preferred_term":"Ammonium
+    acetate","total_occurrences":"67"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-aba26902d84e9e39
+  kind: prior_review
+  reference: reports/yaml_record_review/Ammonium_Acetate.md
+  locator: '`data/ingredients/mapped/Ammonium_Acetate.yaml`:2; Verdict:4; Identity:11;
+    Validation:22; Evidence:40; Completeness:58; Recommended Edits:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 51c72248706e0e8e611b1909a0f6f6f641fef7da32f49c5177f2d85a93af5158
+  quote: "Recommended Edits:\n- Remove the two `Role: Nitrogen source; Properties:\
+    \ ...` entries from\n  `data/ingredients/mapped/Ammonium_Acetate.yaml` `synonyms`;\
+    \ they are\n  CultureMech metadata already represented by `nutritional_roles`,\
+    \ not source\n  labels.\n- Regenerate synchronized products, then rerun\n  `uv\
+    \ run --frozen python scripts/validate_strict.py`, `uv run --frozen linkml-term-validator\
+    \ validate-data data/ingredients/mapped/Ammonium_Acetate.yaml -s src/mediaingredientmech/schema/mediaingredientmech.yaml\
+    \ -t IngredientRecord --labels`,\n  and `uv run --frozen python scripts/validate_sssom_invariants.py`."
+- evidence_id: ev-3874bfa8e438f0b2
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[248]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"305a573110b96e4aeaf08330ecdbcfe93b3fa862c3efdc66ba0789d803a44078","finding_id":"SEM:8f9a7e1176215b21a9b9","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-62edf132031dcae4
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-c0b003356ab9448e
+  evidence_ids:
+  - ev-93b1d0288b85fa7e
+  - ev-258706ae29f10c57
+  - ev-704a1c41c27caf0e
+  - ev-7ef0080f7a69e42b
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-84a5ab48d60c278f
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-c0b003356ab9448e
+  evidence_ids:
+  - ev-aba26902d84e9e39
+  - ev-93b1d0288b85fa7e
+  - ev-3874bfa8e438f0b2
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T08:03:44Z;
+    reviewed SHA-256=305a573110b96e4aeaf08330ecdbcfe93b3fa862c3efdc66ba0789d803a44078;
+    current SHA-256=305a573110b96e4aeaf08330ecdbcfe93b3fa862c3efdc66ba0789d803a44078;
+    hash_changed=False. Reports=["reports/yaml_record_review/Ammonium_Acetate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    CHEBI identity, CAS, chemistry, nitrogen role, 67 CultureMech memberships, SSSOM
+    row, and aggregate pass, but CultureMech role/property metadata remains in synonyms.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-aba26902d84e9e39
+    - ev-93b1d0288b85fa7e
+  - name: legacy-native-ids
+    value: '["SEM:8f9a7e1176215b21a9b9"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-93b1d0288b85fa7e
+    - ev-aba26902d84e9e39
+    - ev-3874bfa8e438f0b2
+findings:
+- finding_id: rec-f-36a47bc97e8ff935
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-c0b003356ab9448e
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Ammonium_Acetate'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T08:03:44Z;
+    reviewed SHA-256=305a573110b96e4aeaf08330ecdbcfe93b3fa862c3efdc66ba0789d803a44078;
+    current SHA-256=305a573110b96e4aeaf08330ecdbcfe93b3fa862c3efdc66ba0789d803a44078;
+    hash_changed=False. Reports=["reports/yaml_record_review/Ammonium_Acetate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    CHEBI identity, CAS, chemistry, nitrogen role, 67 CultureMech memberships, SSSOM
+    row, and aggregate pass, but CultureMech role/property metadata remains in synonyms.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-c0b003356ab9448e
+  evidence_ids:
+  - ev-aba26902d84e9e39
+  - ev-93b1d0288b85fa7e
+  - ev-3874bfa8e438f0b2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ammonium_Acetate.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024631Z-mim-reconcile-all-batch-03.

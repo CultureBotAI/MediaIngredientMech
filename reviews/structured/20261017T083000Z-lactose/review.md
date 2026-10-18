@@ -1,0 +1,427 @@
+# Per-record structured review: Lactose (data/ingredients/mapped/Lactose.yaml)
+
+- Review: 20261017T083000Z-lactose
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Lactose (data/ingredients/mapped/Lactose.yaml, record-8bc1ef9597d14954, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Lactose.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Lactose.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-8bc1ef9597d14954 | data/ingredients/mapped/Lactose.yaml | maintained | Lactose |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-8bc1ef9597d14954 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-8bc1ef9597d14954 | Role assertions on nutritional_roles[1] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-8bc1ef9597d14954 | Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-8bc1ef9597d14954.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-8bc1ef9597d14954.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T23:54:51Z; reviewed SHA-256=03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec; current SHA-256=03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec; hash_changed=False. Reports=["reports/yaml_record_review/Lactose.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact CHEBI:17716 identity, CAS value, PubChem structure, CultureMech carbon-source role, and occurrence count pass, but final SSSOM exports beta-specific and parse-artifact synonyms and ENERGY_SOURCE is provisional.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-8bc1ef9597d14954.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-e3a6c9cc4da5bebc: Reassess prediction-only role support: Lactose
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-8bc1ef9597d14954.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-e3a6c9cc4da5bebc
+
+Reassess prediction-only role support: Lactose
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-556eae5da906702c | data/ingredients/mapped/Lactose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1281],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17716","line":1283,"mapping_status":"MAPPED","ontology_id":"CHEBI:17716","preferred_term":"Lactose"}],"identifier":"CHEBI:17716","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":55,"edge_count":55,"occurrences":55},"occurrence_statistics":{"media_count":55,"total_occurrences":55},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17716","ontology_label":"lactose","ontology_source":"CHEBI"},"preferred_term":"Lactose","sssom_rows":[{"data_row":1666,"object_id":"CHEBI:17716","object_label":"lactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactose","synonym_count":29} |
+| ev-026a10b4407fca86 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1281] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-8243f3ffc7bbc007 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Lactose; data-row positions=[1666] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1666,"object_id":"CHEBI:17716","object_label":"lactose","other":"(+)-lactose&#124;1-beta-D-Galactopyranosyl-4-D-glucopyranose&#124;4-(beta-D-galactosido)-D-glucose&#124;4-O-beta-D-galactopyranosyl-D-glucose&#124;4-O-beta-D-galactopyranosyl-beta-D-glucopyranose&#124;D-lactose&#124;D-lactose (lactose)&#124;Galb1-4Glcb&#124;Galbeta1-4Glc&#124;Galbeta1-4Glcbeta&#124;Lac&#124;Laktobiose&#124;Laktose&#124;Milchzucker&#124;beta lactose&#124;beta-D-Gal-(1-&gt;4)-D-Glc&#124;beta-D-Galp-(1-&gt;4)-D-Glcp&#124;beta-D-Galp-(1-&gt;4)-beta-D-Glcp&#124;beta-D-galactopyranosyl-(1-&gt;4)-D-glucopyranose&#124;(2)-D-lactose&#124;beta-D-Lactose&#124;beta-D-galactopyranosyl-(1-&gt;4)-beta-D-glucose&#124;beta-D-glucopyranose, 4-O-beta-D-galactopyranosyl-&#124;CAS:63-42-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Lactose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-fd8e43b23f260cb3 | docs/data/mapped_ingredients.csv; CSV lines=[1283] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17716","line":1283,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"55","ontology_id":"CHEBI:17716","preferred_term":"Lactose","total_occurrences":"55"}] |
+| ev-46b040883d6a5522 | reports/yaml_record_review/Lactose.md; &#96;data/ingredients/mapped/Lactose.yaml&#96;:2; Verdict:4; Identity:12; Validation:22; Evidence:30; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-c90134d64f467a12 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[850,1429] | context_only | [{"current_record_sha256":"03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec","finding_id":"SEM:8b7edc68bc7d21bb5b48","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec","finding_id":"SEM:af79c21780cd7dca0c94","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-685f2f02932aa2cb | data/ingredients/mapped/Lactose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-a4fb50e347dd9283 | reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml; findings[finding_id=f-e3a6c9cc4da5bebc] | context_only | Predecessor structured review finding f-e3a6c9cc4da5bebc in 20261011T024635Z-mim-reconcile-all-batch-07 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-lactose
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Lactose (data/ingredients/mapped/Lactose.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Lactose (data/ingredients/mapped/Lactose.yaml,
+  record-8bc1ef9597d14954, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Lactose.yaml
+    sha256: 03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec
+    role: target
+  - path: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+    sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Lactose.md
+    sha256: 92389ccbdbb57312420684b8bc7472fc42ec5f804ff617d5169c5e6edd59220f
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-8bc1ef9597d14954
+  path: data/ingredients/mapped/Lactose.yaml
+  label: Lactose
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Lactose.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Lactose.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Lactose.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-8bc1ef9597d14954
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-8bc1ef9597d14954
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[1] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-8bc1ef9597d14954
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-8bc1ef9597d14954
+evidence:
+- evidence_id: ev-556eae5da906702c
+  kind: record_content
+  reference: data/ingredients/mapped/Lactose.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1281],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17716","line":1283,"mapping_status":"MAPPED","ontology_id":"CHEBI:17716","preferred_term":"Lactose"}],"identifier":"CHEBI:17716","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":55,"edge_count":55,"occurrences":55},"occurrence_statistics":{"media_count":55,"total_occurrences":55},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17716","ontology_label":"lactose","ontology_source":"CHEBI"},"preferred_term":"Lactose","sssom_rows":[{"data_row":1666,"object_id":"CHEBI:17716","object_label":"lactose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Lactose","synonym_count":29}'
+  snapshot_sha256: 03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec
+- evidence_id: ev-026a10b4407fca86
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1281]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-8243f3ffc7bbc007
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Lactose; data-row positions=[1666]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1666,"object_id":"CHEBI:17716","object_label":"lactose","other":"(+)-lactose|1-beta-D-Galactopyranosyl-4-D-glucopyranose|4-(beta-D-galactosido)-D-glucose|4-O-beta-D-galactopyranosyl-D-glucose|4-O-beta-D-galactopyranosyl-beta-D-glucopyranose|D-lactose|D-lactose
+    (lactose)|Galb1-4Glcb|Galbeta1-4Glc|Galbeta1-4Glcbeta|Lac|Laktobiose|Laktose|Milchzucker|beta
+    lactose|beta-D-Gal-(1->4)-D-Glc|beta-D-Galp-(1->4)-D-Glcp|beta-D-Galp-(1->4)-beta-D-Glcp|beta-D-galactopyranosyl-(1->4)-D-glucopyranose|(2)-D-lactose|beta-D-Lactose|beta-D-galactopyranosyl-(1->4)-beta-D-glucose|beta-D-glucopyranose,
+    4-O-beta-D-galactopyranosyl-|CAS:63-42-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Lactose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-fd8e43b23f260cb3
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1283]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17716","line":1283,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"55","ontology_id":"CHEBI:17716","preferred_term":"Lactose","total_occurrences":"55"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-46b040883d6a5522
+  kind: prior_review
+  reference: reports/yaml_record_review/Lactose.md
+  locator: '`data/ingredients/mapped/Lactose.yaml`:2; Verdict:4; Identity:12; Validation:22;
+    Evidence:30; Completeness:57; Recommended Edits:64'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 92389ccbdbb57312420684b8bc7472fc42ec5f804ff617d5169c5e6edd59220f
+  quote: "Recommended Edits:\n- Major: remove beta-lactose-specific labels from active\
+    \ synonyms in\n  `data/ingredients/mapped/Lactose.yaml` or move any true beta-lactose\
+    \ aliases\n  to `data/ingredients/mapped/Beta-lactose.yaml`.\n- Major: retag `(2)-D-lactose`\
+    \ as provenance-only parse noise so it no longer\n  reaches final SSSOM.\n- Major:\
+    \ either replace `nutritional_roles.ENERGY_SOURCE` with inspected source\n  evidence\
+    \ for exact generic lactose use, or remove the provisional role.\n- Minor: move\
+    \ or remove the auto-proposed PMID `15915565` entry from\n  `ontology_mapping.evidence`.\n\
+    - Sync the aggregate copy and regenerate final SSSOM after the YAML changes;\n\
+    \  rerun strict, term, product, component, and SSSOM validation."
+- evidence_id: ev-c90134d64f467a12
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[850,1429]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec","finding_id":"SEM:8b7edc68bc7d21bb5b48","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec","finding_id":"SEM:af79c21780cd7dca0c94","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-685f2f02932aa2cb
+  kind: record_content
+  reference: data/ingredients/mapped/Lactose.yaml
+  locator: nutritional_roles[1]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
+    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
+    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  snapshot_sha256: 03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec
+- evidence_id: ev-a4fb50e347dd9283
+  kind: prior_review
+  reference: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+  locator: findings[finding_id=f-e3a6c9cc4da5bebc]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-e3a6c9cc4da5bebc in 20261011T024635Z-mim-reconcile-all-batch-07
+  snapshot_sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+assessments:
+- assessment_id: a-45dc8257c721c3d7
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-8bc1ef9597d14954
+  evidence_ids:
+  - ev-556eae5da906702c
+  - ev-026a10b4407fca86
+  - ev-8243f3ffc7bbc007
+  - ev-fd8e43b23f260cb3
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-51ad1c3fa881fb2b
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-8bc1ef9597d14954
+  evidence_ids:
+  - ev-46b040883d6a5522
+  - ev-556eae5da906702c
+  - ev-c90134d64f467a12
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T23:54:51Z;
+    reviewed SHA-256=03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec;
+    current SHA-256=03c3f8147a4b0529118abe4afca35b7ac28fd3a815c2cc5cf465cf3b6fce4dec;
+    hash_changed=False. Reports=["reports/yaml_record_review/Lactose.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The exact CHEBI:17716 identity,
+    CAS value, PubChem structure, CultureMech carbon-source role, and occurrence count
+    pass, but final SSSOM exports beta-specific and parse-artifact synonyms and ENERGY_SOURCE
+    is provisional.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-46b040883d6a5522
+    - ev-556eae5da906702c
+  - name: legacy-native-ids
+    value: '["SEM:8b7edc68bc7d21bb5b48","SEM:af79c21780cd7dca0c94"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-556eae5da906702c
+    - ev-46b040883d6a5522
+    - ev-c90134d64f467a12
+- assessment_id: a-685f2f02932aa2cb
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-8bc1ef9597d14954
+  evidence_ids:
+  - ev-46b040883d6a5522
+  - ev-685f2f02932aa2cb
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-46b040883d6a5522
+    - ev-685f2f02932aa2cb
+findings:
+- finding_id: rec-f-e3a6c9cc4da5bebc
+  issue_key: mim-reconciliation-role-support-8bc1ef9597d14954
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Lactose'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-8bc1ef9597d14954
+  evidence_ids:
+  - ev-46b040883d6a5522
+  - ev-685f2f02932aa2cb
+  - ev-a4fb50e347dd9283
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Lactose.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[1]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024635Z-mim-reconcile-all-batch-07
+    finding_id: f-e3a6c9cc4da5bebc
+actions:
+- action_id: rec-action-e3a6c9cc4da5bebc
+  description: 'Reassess prediction-only role support: Lactose'
+  finding_ids:
+  - rec-f-e3a6c9cc4da5bebc
+  target_ids:
+  - record-8bc1ef9597d14954
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Lactose.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+```

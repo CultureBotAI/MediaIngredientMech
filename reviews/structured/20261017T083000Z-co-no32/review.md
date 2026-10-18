@@ -1,0 +1,423 @@
+# Per-record structured review: Co_No32 (data/ingredients/mapped/Co_No32.yaml)
+
+- Review: 20261017T083000Z-co-no32
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Co_No32 (data/ingredients/mapped/Co_No32.yaml, record-796a6ace4fb45575, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Co_No32.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Co_No32.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-796a6ace4fb45575 | data/ingredients/mapped/Co_No32.yaml | maintained | Co_No32 |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-796a6ace4fb45575 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-796a6ace4fb45575 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-796a6ace4fb45575 | Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-796a6ace4fb45575.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-796a6ace4fb45575.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T12:21:40Z; reviewed SHA-256=40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39; current SHA-256=40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39; hash_changed=False. Reports=["reports/yaml_record_review/Co_No32.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact CHEBI cobalt dinitrate identity and 18/18 count pass, but its trace-element role is only computationally supported.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-796a6ace4fb45575.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-ffe4d121df3eb171: Reassess prediction-only role support: Co(NO3)2
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-796a6ace4fb45575.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-ffe4d121df3eb171
+
+Reassess prediction-only role support: Co(NO3)2
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-e5f8a8b2dcf46485 | data/ingredients/mapped/Co_No32.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[739],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86209","line":741,"mapping_status":"MAPPED","ontology_id":"CHEBI:86209","preferred_term":"Co(NO3)2"}],"identifier":"CHEBI:86209","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":18,"edge_count":18,"occurrences":18},"occurrence_statistics":{"media_count":18,"total_occurrences":18},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86209","ontology_label":"cobalt dinitrate","ontology_source":"CHEBI"},"preferred_term":"Co(NO3)2","sssom_rows":[{"data_row":792,"object_id":"CHEBI:86209","object_label":"cobalt dinitrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Co_No32","synonym_count":7} |
+| ev-07a3c58566f903a9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [739] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-86b5697c9189474d | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Co_No32; data-row positions=[792] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":792,"object_id":"CHEBI:86209","object_label":"cobalt dinitrate","other":"Cobalt bis(nitrate)&#124;Cobalt nitrate&#124;Cobalt(2+) nitrate&#124;Cobalt(II) nitrate&#124;Cobaltous nitrate&#124;cobalt(2+) dinitrate&#124;CAS:10141-05-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Co_No32","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-fc7b11de578fef4f | docs/data/mapped_ingredients.csv; CSV lines=[741] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86209","line":741,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"18","ontology_id":"CHEBI:86209","preferred_term":"Co(NO3)2","total_occurrences":"18"}] |
+| ev-24654717de811118 | reports/yaml_record_review/Co_No32.md; &#96;data/ingredients/mapped/Co_No32.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:41; Completeness:58; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-ccd5e6f89f93ad4f | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[428,1507] | context_only | [{"current_record_sha256":"40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39","finding_id":"SEM:c0948e02ad6ed359fa2d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39","finding_id":"SEM:7355aa7e7cca63808ebc","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-34a852bb1c4479d2 | data/ingredients/mapped/Co_No32.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-46ddfe9f5ed03d79 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-ffe4d121df3eb171] | context_only | Predecessor structured review finding f-ffe4d121df3eb171 in 20261011T024632Z-mim-reconcile-all-batch-04 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-co-no32
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Co_No32 (data/ingredients/mapped/Co_No32.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Co_No32 (data/ingredients/mapped/Co_No32.yaml,
+  record-796a6ace4fb45575, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Co_No32.yaml
+    sha256: 40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39
+    role: target
+  - path: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+    sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Co_No32.md
+    sha256: 93a732e29cc9f497242f1f5422bea72232acfe32f8b4425424197eda59f242da
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-796a6ace4fb45575
+  path: data/ingredients/mapped/Co_No32.yaml
+  label: Co_No32
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Co_No32.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Co_No32.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-796a6ace4fb45575
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-796a6ace4fb45575
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-796a6ace4fb45575
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-796a6ace4fb45575
+evidence:
+- evidence_id: ev-e5f8a8b2dcf46485
+  kind: record_content
+  reference: data/ingredients/mapped/Co_No32.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[739],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86209","line":741,"mapping_status":"MAPPED","ontology_id":"CHEBI:86209","preferred_term":"Co(NO3)2"}],"identifier":"CHEBI:86209","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":18,"edge_count":18,"occurrences":18},"occurrence_statistics":{"media_count":18,"total_occurrences":18},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86209","ontology_label":"cobalt
+    dinitrate","ontology_source":"CHEBI"},"preferred_term":"Co(NO3)2","sssom_rows":[{"data_row":792,"object_id":"CHEBI:86209","object_label":"cobalt
+    dinitrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Co_No32","synonym_count":7}'
+  snapshot_sha256: 40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39
+- evidence_id: ev-07a3c58566f903a9
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [739]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-86b5697c9189474d
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Co_No32; data-row positions=[792]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":792,"object_id":"CHEBI:86209","object_label":"cobalt
+    dinitrate","other":"Cobalt bis(nitrate)|Cobalt nitrate|Cobalt(2+) nitrate|Cobalt(II)
+    nitrate|Cobaltous nitrate|cobalt(2+) dinitrate|CAS:10141-05-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Co_No32","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-fc7b11de578fef4f
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[741]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86209","line":741,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"18","ontology_id":"CHEBI:86209","preferred_term":"Co(NO3)2","total_occurrences":"18"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-24654717de811118
+  kind: prior_review
+  reference: reports/yaml_record_review/Co_No32.md
+  locator: '`data/ingredients/mapped/Co_No32.yaml`:2; Verdict:4; Identity:12; Validation:24;
+    Evidence:41; Completeness:58; Recommended Edits:64'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 93a732e29cc9f497242f1f5422bea72232acfe32f8b4425424197eda59f242da
+  quote: "Recommended Edits:\n- Major: in `data/ingredients/mapped/Co_No32.yaml`,\
+    \ either replace\n  `nutritional_roles.TRACE_ELEMENT` with inspected evidence\
+    \ for cobalt\n  dinitrate as a trace element in this media scope, or remove the\
+    \ role.\n- Regenerate synchronized products and rerun strict validation, SSSOM\
+    \ QC,\n  aggregate roundtrip, and `git diff --check`."
+- evidence_id: ev-ccd5e6f89f93ad4f
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[428,1507]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39","finding_id":"SEM:c0948e02ad6ed359fa2d","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39","finding_id":"SEM:7355aa7e7cca63808ebc","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-34a852bb1c4479d2
+  kind: record_content
+  reference: data/ingredients/mapped/Co_No32.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
+    in-session LLM role assignment; review recommended.","reference_text":"Assigned
+    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  snapshot_sha256: 40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39
+- evidence_id: ev-46ddfe9f5ed03d79
+  kind: prior_review
+  reference: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+  locator: findings[finding_id=f-ffe4d121df3eb171]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-ffe4d121df3eb171 in 20261011T024632Z-mim-reconcile-all-batch-04
+  snapshot_sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+assessments:
+- assessment_id: a-37f2e6048f2211df
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-796a6ace4fb45575
+  evidence_ids:
+  - ev-e5f8a8b2dcf46485
+  - ev-07a3c58566f903a9
+  - ev-86b5697c9189474d
+  - ev-fc7b11de578fef4f
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-ca1d89060fc3fc38
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-796a6ace4fb45575
+  evidence_ids:
+  - ev-24654717de811118
+  - ev-e5f8a8b2dcf46485
+  - ev-ccd5e6f89f93ad4f
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T12:21:40Z;
+    reviewed SHA-256=40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39;
+    current SHA-256=40e67ba4d0760876255130f94d3f4d1ce89401b7bba78a36264b10adebd13b39;
+    hash_changed=False. Reports=["reports/yaml_record_review/Co_No32.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The exact CHEBI cobalt
+    dinitrate identity and 18/18 count pass, but its trace-element role is only computationally
+    supported.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-24654717de811118
+    - ev-e5f8a8b2dcf46485
+  - name: legacy-native-ids
+    value: '["SEM:c0948e02ad6ed359fa2d","SEM:7355aa7e7cca63808ebc"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-e5f8a8b2dcf46485
+    - ev-24654717de811118
+    - ev-ccd5e6f89f93ad4f
+- assessment_id: a-34a852bb1c4479d2
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-796a6ace4fb45575
+  evidence_ids:
+  - ev-24654717de811118
+  - ev-34a852bb1c4479d2
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-24654717de811118
+    - ev-34a852bb1c4479d2
+findings:
+- finding_id: rec-f-ffe4d121df3eb171
+  issue_key: mim-reconciliation-role-support-796a6ace4fb45575
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Co(NO3)2'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-796a6ace4fb45575
+  evidence_ids:
+  - ev-24654717de811118
+  - ev-34a852bb1c4479d2
+  - ev-46ddfe9f5ed03d79
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024632Z-mim-reconcile-all-batch-04
+    finding_id: f-ffe4d121df3eb171
+actions:
+- action_id: rec-action-ffe4d121df3eb171
+  description: 'Reassess prediction-only role support: Co(NO3)2'
+  finding_ids:
+  - rec-f-ffe4d121df3eb171
+  target_ids:
+  - record-796a6ace4fb45575
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.
+```

@@ -1,0 +1,471 @@
+# Per-record structured review: Urea (data/ingredients/mapped/Urea.yaml)
+
+- Review: 20261017T083000Z-urea
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Urea (data/ingredients/mapped/Urea.yaml, record-eab77be8c94bdfda, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Urea.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Urea.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-eab77be8c94bdfda | data/ingredients/mapped/Urea.yaml | maintained | Urea |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-eab77be8c94bdfda | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-eab77be8c94bdfda | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-eab77be8c94bdfda | Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-eab77be8c94bdfda.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-eab77be8c94bdfda.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:03:50Z; reviewed SHA-256=f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f; current SHA-256=f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050350Z-Urea.md","reports/yaml_record_review/Urea.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Urea.md&#96; after the record changed from 5f780acdf16ce14dda581cda79fe876de3b05a18efed77b1f44181ca8a1fb7c1 to f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f; preserved the previous major finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-eab77be8c94bdfda.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-72f1672fe104a275: Reassess prediction-only role support: Urea
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-eab77be8c94bdfda.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-72f1672fe104a275
+
+Reassess prediction-only role support: Urea
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-864437a0d47f9596 | data/ingredients/mapped/Urea.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2025],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16199","line":2027,"mapping_status":"MAPPED","ontology_id":"CHEBI:16199","preferred_term":"Urea"}],"identifier":"CHEBI:16199","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":71,"edge_count":71,"occurrences":72},"occurrence_statistics":{"media_count":71,"total_occurrences":72},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16199","ontology_label":"urea","ontology_source":"CHEBI"},"preferred_term":"Urea","sssom_rows":[{"data_row":2872,"object_id":"CHEBI:16199","object_label":"urea","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Urea","synonym_count":16} |
+| ev-39e87e0110df5210 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2025] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-dc0110a4b569fd29 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Urea; data-row positions=[2872] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2872,"object_id":"CHEBI:16199","object_label":"urea","other":"1728&#124;Carbamide&#124;E927b&#124;H2NC(O)NH2&#124;Harnstoff&#124;Karbamid&#124;carbonyldiamide&#124;ur&#124;uree&#124;Urea (Sigma U5218)&#124;CAS:57-13-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Urea","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-767555e23afe54c4 | docs/data/mapped_ingredients.csv; CSV lines=[2027] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:16199","line":2027,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"71","ontology_id":"CHEBI:16199","preferred_term":"Urea","total_occurrences":"72"}] |
+| ev-c54ecab521bc6d74 | reports/yaml_record_review/20261001T050350Z-Urea.md; YAML Record Review: Urea:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-3a37214cdea69bea | reports/yaml_record_review/Urea.md; &#96;data/ingredients/mapped/Urea.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:34; Issues:43; Major: final &#96;other&#96; exports process-qualified text:45; Major: &#96;NITROGEN_SOURCE&#96; is provisional in-session LLM evidence:51; Completeness:68; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-cda1dcf208514ff2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1332,1596] | context_only | [{"current_record_sha256":"f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f","finding_id":"SEM:959f5afc865660bbea4d","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f","finding_id":"SEM:5649f8c39ee34f76a6c8","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-8b3ed752e3a23a39 | data/ingredients/mapped/Urea.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"NITROGEN_SOURCE"}}] |
+| ev-66cf6bf8c7fd05f2 | reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml; findings[finding_id=f-72f1672fe104a275] | context_only | Predecessor structured review finding f-72f1672fe104a275 in 20261011T024639Z-mim-reconcile-all-batch-12 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+````yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-urea
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Urea (data/ingredients/mapped/Urea.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Urea (data/ingredients/mapped/Urea.yaml,
+  record-eab77be8c94bdfda, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Urea.yaml
+    sha256: f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f
+    role: target
+  - path: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+    sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/20261001T050350Z-Urea.md
+    sha256: 4e0dd056dacb922ae0fd80c9c7661d616e9d40aca4e2c2750528229248bc75b6
+    role: context
+  - path: reports/yaml_record_review/Urea.md
+    sha256: 70ac2e7054adca12dc5e534422aa68eb6d84a9fe204d9dc8b0ed93c2ef10aa31
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-eab77be8c94bdfda
+  path: data/ingredients/mapped/Urea.yaml
+  label: Urea
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Urea.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Urea.yaml covering
+    current record state, role evidence support, published surfaces, and residual
+    historical review claims.
+  selection: Single record data/ingredients/mapped/Urea.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-eab77be8c94bdfda
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-eab77be8c94bdfda
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-eab77be8c94bdfda
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-eab77be8c94bdfda
+evidence:
+- evidence_id: ev-864437a0d47f9596
+  kind: record_content
+  reference: data/ingredients/mapped/Urea.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2025],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16199","line":2027,"mapping_status":"MAPPED","ontology_id":"CHEBI:16199","preferred_term":"Urea"}],"identifier":"CHEBI:16199","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":71,"edge_count":71,"occurrences":72},"occurrence_statistics":{"media_count":71,"total_occurrences":72},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:16199","ontology_label":"urea","ontology_source":"CHEBI"},"preferred_term":"Urea","sssom_rows":[{"data_row":2872,"object_id":"CHEBI:16199","object_label":"urea","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Urea","synonym_count":16}'
+  snapshot_sha256: f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f
+- evidence_id: ev-39e87e0110df5210
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2025]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-dc0110a4b569fd29
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Urea; data-row positions=[2872]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2872,"object_id":"CHEBI:16199","object_label":"urea","other":"1728|Carbamide|E927b|H2NC(O)NH2|Harnstoff|Karbamid|carbonyldiamide|ur|uree|Urea
+    (Sigma U5218)|CAS:57-13-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Urea","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-767555e23afe54c4
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2027]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16199","line":2027,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"71","ontology_id":"CHEBI:16199","preferred_term":"Urea","total_occurrences":"72"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-c54ecab521bc6d74
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050350Z-Urea.md
+  locator: 'YAML Record Review: Urea:2; Target:10; Validation:20; Identity and Grounding:27;
+    Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61;
+    Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 4e0dd056dacb922ae0fd80c9c7661d616e9d40aca4e2c2750528229248bc75b6
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/Urea.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The exact
+    CHEBI identity passes, but final SSSOM other exports process-qualified hydrolysis
+    text and NITROGEN_SOURCE is provisional.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Urea.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Urea.yaml`,
+    `just validate-terms data/ingredients/mapped/Urea.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-3a37214cdea69bea
+  kind: prior_review
+  reference: reports/yaml_record_review/Urea.md
+  locator: '`data/ingredients/mapped/Urea.yaml`:2; Verdict:4; Identity:11; Validation:25;
+    Evidence:34; Issues:43; Major: final `other` exports process-qualified text:45;
+    Major: `NITROGEN_SOURCE` is provisional in-session LLM evidence:51; Completeness:68;
+    Recommended Edits:76'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 70ac2e7054adca12dc5e534422aa68eb6d84a9fe204d9dc8b0ed93c2ef10aa31
+  quote: "Issues:\n\n\nMajor: final `other` exports process-qualified text:\n`hydrolysis:\
+    \ urea` describes a process-specific import context, not an exact\nsynonym for\
+    \ the urea compound. It should not be present in the final published\nSSSOM synonym\
+    \ surface.\n\nMajor: `NITROGEN_SOURCE` is provisional in-session LLM evidence:\n\
+    The only role assertion is:\n\n```yaml\nnutritional_roles:\n- role: NITROGEN_SOURCE\n\
+    \  confidence: 0.6\n  evidence:\n  - reference_type: COMPUTATIONAL_PREDICTION\n\
+    \    reference_text: Assigned by in-session Claude reasoning (no external API)\n\
+    \    curator_note: Provisional in-session LLM role assignment; review recommended.\n\
+    ```\n\nThe exact CHEBI identity does not independently curate the nitrogen-source\n\
+    role.\n\nRecommended Edits:\n- Mark `hydrolysis: urea` as non-exportable provenance\
+    \ so final SSSOM `other`\n  keeps only true urea synonyms, the Sigma catalog variant,\
+    \ and `CAS:57-13-6`.\n- Replace the `NITROGEN_SOURCE` computational prediction\
+    \ with curated\n  database/literature evidence, or remove `nutritional_roles`\
+    \ until such\n  support is added."
+- evidence_id: ev-cda1dcf208514ff2
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1332,1596]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f","finding_id":"SEM:959f5afc865660bbea4d","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f","finding_id":"SEM:5649f8c39ee34f76a6c8","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-8b3ed752e3a23a39
+  kind: record_content
+  reference: data/ingredients/mapped/Urea.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
+    in-session LLM role assignment; review recommended.","reference_text":"Assigned
+    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"NITROGEN_SOURCE"}}]'
+  snapshot_sha256: f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f
+- evidence_id: ev-66cf6bf8c7fd05f2
+  kind: prior_review
+  reference: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+  locator: findings[finding_id=f-72f1672fe104a275]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-72f1672fe104a275 in 20261011T024639Z-mim-reconcile-all-batch-12
+  snapshot_sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+assessments:
+- assessment_id: a-cb66759523ec5c97
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-eab77be8c94bdfda
+  evidence_ids:
+  - ev-864437a0d47f9596
+  - ev-39e87e0110df5210
+  - ev-dc0110a4b569fd29
+  - ev-767555e23afe54c4
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-5a0cd49a0ac4dede
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-eab77be8c94bdfda
+  evidence_ids:
+  - ev-c54ecab521bc6d74
+  - ev-3a37214cdea69bea
+  - ev-864437a0d47f9596
+  - ev-cda1dcf208514ff2
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:03:50Z;
+    reviewed SHA-256=f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f;
+    current SHA-256=f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050350Z-Urea.md","reports/yaml_record_review/Urea.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Urea.md` after the record changed from 5f780acdf16ce14dda581cda79fe876de3b05a18efed77b1f44181ca8a1fb7c1
+    to f8ad526286f1ad552a71d5022f9a4869ad739a0e2f1f494d5c9bbb65f0b1e11f; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-c54ecab521bc6d74
+    - ev-3a37214cdea69bea
+    - ev-864437a0d47f9596
+  - name: legacy-native-ids
+    value: '["SEM:959f5afc865660bbea4d","SEM:5649f8c39ee34f76a6c8"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-864437a0d47f9596
+    - ev-c54ecab521bc6d74
+    - ev-3a37214cdea69bea
+    - ev-cda1dcf208514ff2
+- assessment_id: a-8b3ed752e3a23a39
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-eab77be8c94bdfda
+  evidence_ids:
+  - ev-c54ecab521bc6d74
+  - ev-3a37214cdea69bea
+  - ev-8b3ed752e3a23a39
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-c54ecab521bc6d74
+    - ev-3a37214cdea69bea
+    - ev-8b3ed752e3a23a39
+findings:
+- finding_id: rec-f-72f1672fe104a275
+  issue_key: mim-reconciliation-role-support-eab77be8c94bdfda
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Urea'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-eab77be8c94bdfda
+  evidence_ids:
+  - ev-c54ecab521bc6d74
+  - ev-3a37214cdea69bea
+  - ev-8b3ed752e3a23a39
+  - ev-66cf6bf8c7fd05f2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Urea.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024639Z-mim-reconcile-all-batch-12
+    finding_id: f-72f1672fe104a275
+actions:
+- action_id: rec-action-72f1672fe104a275
+  description: 'Reassess prediction-only role support: Urea'
+  finding_ids:
+  - rec-f-72f1672fe104a275
+  target_ids:
+  - record-eab77be8c94bdfda
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Urea.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+````

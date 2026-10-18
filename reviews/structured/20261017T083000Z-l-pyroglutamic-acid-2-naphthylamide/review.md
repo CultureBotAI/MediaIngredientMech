@@ -1,0 +1,447 @@
+# Per-record structured review: L-pyroglutamic_Acid_2-naphthylamide (data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml)
+
+- Review: 20261017T083000Z-l-pyroglutamic-acid-2-naphthylamide
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for L-pyroglutamic_Acid_2-naphthylamide (data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml, record-25c354a478a9d782, mapping_status=MAPPED). Records 0 open finding(s) and 2 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-25c354a478a9d782 | data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml | maintained | L-pyroglutamic_Acid_2-naphthylamide |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-25c354a478a9d782 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-25c354a478a9d782 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-25c354a478a9d782 | Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-25c354a478a9d782.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-25c354a478a9d782.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T23:22:10Z; reviewed SHA-256=188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a; current SHA-256=188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a; hash_changed=False. Reports=["reports/yaml_record_review/L-pyroglutamic_Acid_2-naphthylamide.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The manual CHEBI:90601 identity, PubChem structure, source occurrence count, empty final other field, and SSSOM row pass, but stale importer notes still say curator review is needed.
+
+### Legacy field-missing triage rows
+
+provenance: unknown. Targets: record-25c354a478a9d782.
+
+The field-missing premise is stale for the named fields, but whether this historical TSV should be refreshed as a live queue is a separate ownership/policy question. No blanket issue closure is justified.
+
+## Findings
+
+### rec-f-803e2f1fbdb159b2: Historical review coverage and residual narrative: L-pyroglutamic_Acid_2-naphthylamide
+
+minor / deferred / provisional; issue key: mim-reconciliation-historical-review-coverage-and-r-25c354a478a9d782.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment. Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T23:22:10Z; reviewed SHA-256=188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a; current SHA-256=188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a; hash_changed=False. Reports=["reports/yaml_record_review/L-pyroglutamic_Acid_2-naphthylamide.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The manual CHEBI:90601 identity, PubChem structure, source occurrence count, empty final other field, and SSSOM row pass, but stale importer notes still say curator review is needed.
+
+Disposition: The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+### rec-f-4cd4e374689be107: Legacy field-missing triage rows: L-pyroglutamic_Acid_2-naphthylamide
+
+minor / deferred / provisional; issue key: mim-reconciliation-legacy-field-missing-triage-rows-25c354a478a9d782.
+
+The field-missing premise is stale for the named fields, but whether this historical TSV should be refreshed as a live queue is a separate ownership/policy question. No blanket issue closure is justified.
+
+Disposition: The field-missing premise is stale for the named fields, but whether this historical TSV should be refreshed as a live queue is a separate ownership/policy question. No blanket issue closure is justified.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-5c8506df689cbb5e | data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[205],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:90601","line":207,"mapping_status":"MAPPED","ontology_id":"CHEBI:90601","preferred_term":"L-pyroglutamic Acid 2-naphthylamide"}],"identifier":"CHEBI:90601","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:90601","ontology_label":"5-oxo-L-proline 2-naphthylamide","ontology_source":"CHEBI"},"preferred_term":"L-pyroglutamic Acid 2-naphthylamide","sssom_rows":[{"data_row":1636,"object_id":"CHEBI:90601","object_label":"5-oxo-L-proline 2-naphthylamide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-pyroglutamic_Acid_2-naphthylamide","synonym_count":1} |
+| ev-9d51fee4af0797c7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [205] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-3d86a41ead08e518 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:L-pyroglutamic_Acid_2-naphthylamide; data-row positions=[1636] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1636,"object_id":"CHEBI:90601","object_label":"5-oxo-L-proline 2-naphthylamide","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:L-pyroglutamic_Acid_2-naphthylamide","validation_method":"manual:promote_resolved_unmapped&#124;PROMOTED&#124;2026-08-06"}] |
+| ev-5426c9f2f162edde | docs/data/mapped_ingredients.csv; CSV lines=[207] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:90601","line":207,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:90601","preferred_term":"L-pyroglutamic Acid 2-naphthylamide","total_occurrences":"0"}] |
+| ev-f1c491939ad77785 | reports/yaml_record_review/L-pyroglutamic_Acid_2-naphthylamide.md; &#96;data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml&#96;:2; Verdict:4; Identity:10; Validation:22; Evidence:29; Completeness:46; Recommended Edits:53 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-d860d0fbe22297aa | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[833] | context_only | [{"current_record_sha256":"188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a","finding_id":"SEM:6b6893506e085d9c5a99","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-438c8b628c7a6a8f | mappings/record_research_validation.tsv; lines=[875] | partial | FIELD_MISSING entries conflict with populated current fields: [{"field":"chemical_properties","row":{"detail":"'chemical_properties' is unset; report supplies a value","documented_rationale":"yes","evidence":"formula &#96;C15H14N2O2&#96;; charge &#96;0&#96;; average mass &#96;254.289&#96;; monoisotopic mass &#96;254.10553&#96;; SMILES &#96;O=C1CC[C@@H](C(=O)Nc2ccc3ccccc3c2)N1&#96;; InChIKey &#96;BZEPQNMASTUAMY-ZDUSSCGKSA-N&#96;; CAS-RN &#96;22155-91-5&#96;; PubChem CID 6950551","identifier":"CHEBI:90601","kind":"FIELD_MISSING","lane":"claude","line":875,"mapping_quality":"SYNONYM_MATCH","preferred_term":"L-pyroglutamic Acid 2-naphthylamide","priority":"P3","promoted_by":"promote_resolved_unmapped","recorded":"CHEBI:90601","slug":"L-pyroglutamic_Acid_2-naphthylamide","status_dir":"mapped"}}] |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-l-pyroglutamic-acid-2-naphthylamide
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: L-pyroglutamic_Acid_2-naphthylamide (data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=2
+scientific_review: false
+summary: Per-record structured review for L-pyroglutamic_Acid_2-naphthylamide (data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml,
+  record-25c354a478a9d782, mapping_status=MAPPED). Records 0 open finding(s) and 2
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml
+    sha256: 188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a
+    role: target
+  - path: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+    sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/L-pyroglutamic_Acid_2-naphthylamide.md
+    sha256: 1df6b1b4fd67b140f81f8d55901ab8f74e127cbbb350c7ca5cd6858904e683c5
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+  - path: mappings/record_research_validation.tsv
+    sha256: 7e1b339c20eb07c163d4bacf36fe4f45b6e2132b83359932683ad6dddf467799
+    role: context
+targets:
+- target_id: record-25c354a478a9d782
+  path: data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml
+  label: L-pyroglutamic_Acid_2-naphthylamide
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-25c354a478a9d782
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-25c354a478a9d782
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-25c354a478a9d782
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-25c354a478a9d782
+evidence:
+- evidence_id: ev-5c8506df689cbb5e
+  kind: record_content
+  reference: data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[205],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:90601","line":207,"mapping_status":"MAPPED","ontology_id":"CHEBI:90601","preferred_term":"L-pyroglutamic
+    Acid 2-naphthylamide"}],"identifier":"CHEBI:90601","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":1,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:90601","ontology_label":"5-oxo-L-proline
+    2-naphthylamide","ontology_source":"CHEBI"},"preferred_term":"L-pyroglutamic Acid
+    2-naphthylamide","sssom_rows":[{"data_row":1636,"object_id":"CHEBI:90601","object_label":"5-oxo-L-proline
+    2-naphthylamide","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-pyroglutamic_Acid_2-naphthylamide","synonym_count":1}'
+  snapshot_sha256: 188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a
+- evidence_id: ev-9d51fee4af0797c7
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [205]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-3d86a41ead08e518
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:L-pyroglutamic_Acid_2-naphthylamide; data-row positions=[1636]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1636,"object_id":"CHEBI:90601","object_label":"5-oxo-L-proline
+    2-naphthylamide","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:L-pyroglutamic_Acid_2-naphthylamide","validation_method":"manual:promote_resolved_unmapped|PROMOTED|2026-08-06"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-5426c9f2f162edde
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[207]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:90601","line":207,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:90601","preferred_term":"L-pyroglutamic
+    Acid 2-naphthylamide","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-f1c491939ad77785
+  kind: prior_review
+  reference: reports/yaml_record_review/L-pyroglutamic_Acid_2-naphthylamide.md
+  locator: '`data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml`:2;
+    Verdict:4; Identity:10; Validation:22; Evidence:29; Completeness:46; Recommended
+    Edits:53'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1df6b1b4fd67b140f81f8d55901ab8f74e127cbbb350c7ca5cd6858904e683c5
+  quote: "Recommended Edits:\n- Minor: remove the stale unmapped-import `notes` value\
+    \ from\n  `data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml` the\
+    \ next\n  time this record is touched."
+- evidence_id: ev-d860d0fbe22297aa
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[833]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a","finding_id":"SEM:6b6893506e085d9c5a99","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-438c8b628c7a6a8f
+  kind: record_content
+  reference: mappings/record_research_validation.tsv
+  locator: lines=[875]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: 'FIELD_MISSING entries conflict with populated current fields: [{"field":"chemical_properties","row":{"detail":"''chemical_properties''
+    is unset; report supplies a value","documented_rationale":"yes","evidence":"formula
+    `C15H14N2O2`; charge `0`; average mass `254.289`; monoisotopic mass `254.10553`;
+    SMILES `O=C1CC[C@@H](C(=O)Nc2ccc3ccccc3c2)N1`; InChIKey `BZEPQNMASTUAMY-ZDUSSCGKSA-N`;
+    CAS-RN `22155-91-5`; PubChem CID 6950551","identifier":"CHEBI:90601","kind":"FIELD_MISSING","lane":"claude","line":875,"mapping_quality":"SYNONYM_MATCH","preferred_term":"L-pyroglutamic
+    Acid 2-naphthylamide","priority":"P3","promoted_by":"promote_resolved_unmapped","recorded":"CHEBI:90601","slug":"L-pyroglutamic_Acid_2-naphthylamide","status_dir":"mapped"}}]'
+  snapshot_sha256: 7e1b339c20eb07c163d4bacf36fe4f45b6e2132b83359932683ad6dddf467799
+assessments:
+- assessment_id: a-f770d2a2820c9bfc
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-25c354a478a9d782
+  evidence_ids:
+  - ev-5c8506df689cbb5e
+  - ev-9d51fee4af0797c7
+  - ev-3d86a41ead08e518
+  - ev-5426c9f2f162edde
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-3ad0b6f218cd04ce
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-25c354a478a9d782
+  evidence_ids:
+  - ev-f1c491939ad77785
+  - ev-5c8506df689cbb5e
+  - ev-d860d0fbe22297aa
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T23:22:10Z;
+    reviewed SHA-256=188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a;
+    current SHA-256=188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a;
+    hash_changed=False. Reports=["reports/yaml_record_review/L-pyroglutamic_Acid_2-naphthylamide.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The manual
+    CHEBI:90601 identity, PubChem structure, source occurrence count, empty final
+    other field, and SSSOM row pass, but stale importer notes still say curator review
+    is needed.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-f1c491939ad77785
+    - ev-5c8506df689cbb5e
+  - name: legacy-native-ids
+    value: '["SEM:6b6893506e085d9c5a99"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-5c8506df689cbb5e
+    - ev-f1c491939ad77785
+    - ev-d860d0fbe22297aa
+- assessment_id: a-438c8b628c7a6a8f
+  area: provenance
+  topic: Legacy field-missing triage rows
+  outcome: unknown
+  summary: The field-missing premise is stale for the named fields, but whether this
+    historical TSV should be refreshed as a live queue is a separate ownership/policy
+    question. No blanket issue closure is justified.
+  target_ids:
+  - record-25c354a478a9d782
+  evidence_ids:
+  - ev-f1c491939ad77785
+  - ev-5c8506df689cbb5e
+  - ev-438c8b628c7a6a8f
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-f1c491939ad77785
+    - ev-5c8506df689cbb5e
+    - ev-438c8b628c7a6a8f
+findings:
+- finding_id: rec-f-803e2f1fbdb159b2
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-25c354a478a9d782
+  category: provenance
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: L-pyroglutamic_Acid_2-naphthylamide'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T23:22:10Z;
+    reviewed SHA-256=188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a;
+    current SHA-256=188210aa9576a09b9758f68b76693c3e533a2cc7ddca9749366bffe2e2aaf58a;
+    hash_changed=False. Reports=["reports/yaml_record_review/L-pyroglutamic_Acid_2-naphthylamide.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The manual
+    CHEBI:90601 identity, PubChem structure, source occurrence count, empty final
+    other field, and SSSOM row pass, but stale importer notes still say curator review
+    is needed.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-25c354a478a9d782
+  evidence_ids:
+  - ev-f1c491939ad77785
+  - ev-5c8506df689cbb5e
+  - ev-d860d0fbe22297aa
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+- finding_id: rec-f-4cd4e374689be107
+  issue_key: mim-reconciliation-legacy-field-missing-triage-rows-25c354a478a9d782
+  category: provenance
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Legacy field-missing triage rows: L-pyroglutamic_Acid_2-naphthylamide'
+  description: The field-missing premise is stale for the named fields, but whether
+    this historical TSV should be refreshed as a live queue is a separate ownership/policy
+    question. No blanket issue closure is justified.
+  disposition_reason: The field-missing premise is stale for the named fields, but
+    whether this historical TSV should be refreshed as a live queue is a separate
+    ownership/policy question. No blanket issue closure is justified.
+  target_ids:
+  - record-25c354a478a9d782
+  evidence_ids:
+  - ev-f1c491939ad77785
+  - ev-5c8506df689cbb5e
+  - ev-438c8b628c7a6a8f
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-pyroglutamic_Acid_2-naphthylamide.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - legacy-field-missing-triage-rows
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+```

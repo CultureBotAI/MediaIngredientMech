@@ -1,0 +1,271 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-d-glucarate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: D-glucarate (data/ingredients/mapped/D-glucarate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for D-glucarate (data/ingredients/mapped/D-glucarate.yaml,
+  record-44d978578bb0eb3f, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/D-glucarate.yaml
+    sha256: 205706134a4af37beb9ceb148edfcec2fc25af8ab62c6ef7e6047de47979b91f
+    role: target
+  - path: reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml
+    sha256: 7549030a5b50ed98868ff3497507fdfbfecd07cd858c76738f734521fa9d3603
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/D-glucarate.md
+    sha256: 850a47d21fdad2e51bb564a3213fec2f882dda5c8ce670e73693cc85cebe434d
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-44d978578bb0eb3f
+  path: data/ingredients/mapped/D-glucarate.yaml
+  label: D-glucarate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucarate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/D-glucarate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/D-glucarate.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-44d978578bb0eb3f
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-44d978578bb0eb3f
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-44d978578bb0eb3f
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024633Z-mim-reconcile-all-batch-05
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-44d978578bb0eb3f
+evidence:
+- evidence_id: ev-f2aa5f184b8eccff
+  kind: record_content
+  reference: data/ingredients/mapped/D-glucarate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[252],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30612","line":254,"mapping_status":"MAPPED","ontology_id":"CHEBI:30612","preferred_term":"D-glucarate"}],"identifier":"CHEBI:30612","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1,"edge_count":1,"occurrences":1},"occurrence_statistics":{"media_count":1,"source_occurrences":[{"count":25,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":1},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30612","ontology_label":"D-glucarate(2-)","ontology_source":"CHEBI"},"preferred_term":"D-glucarate","sssom_rows":[{"data_row":934,"object_id":"CHEBI:30612","object_label":"D-glucarate(2-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:D-glucarate","synonym_count":2}'
+  snapshot_sha256: 205706134a4af37beb9ceb148edfcec2fc25af8ab62c6ef7e6047de47979b91f
+- evidence_id: ev-3f007fecb24120fd
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [252]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-b6d12bb7c7ae8cc7
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:D-glucarate; data-row positions=[934]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":934,"object_id":"CHEBI:30612","object_label":"D-glucarate(2-)","other":"D-saccharate","predicate_id":"skos:exactMatch","subject_id":"MIM:D-glucarate","validation_method":"manual:promote_resolved_unmapped|PROMOTED|2026-08-04"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-a06a662c91243111
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[254]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30612","line":254,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"1","ontology_id":"CHEBI:30612","preferred_term":"D-glucarate","total_occurrences":"1"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-ec7b48f4c17925a9
+  kind: prior_review
+  reference: reports/yaml_record_review/D-glucarate.md
+  locator: '`data/ingredients/mapped/D-glucarate.yaml`:2; Verdict:4; Identity:12;
+    Validation:25; Evidence:40; Completeness:62; Recommended Edits:74'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 850a47d21fdad2e51bb564a3213fec2f882dda5c8ce670e73693cc85cebe434d
+  quote: "Recommended Edits:\n- In `data/ingredients/mapped/D-glucarate.yaml`, update\n\
+    \  `source_occurrences` so the absorbed `D-saccharate` MicrobeDecoder count is\n\
+    \  traceable, either as a 41-count aggregate for the BacDive utilization column\n\
+    \  or as a separate raw-label-aware provenance entry if the schema grows one.\n\
+    - Remove or refresh the stale top-level `notes` field.\n- Regenerate synchronized\
+    \ curated and SSSOM products, then rerun\n  `uv run --frozen python scripts/validate_strict.py`,\n\
+    \  `uv run --frozen linkml-term-validator validate-data data/ingredients/mapped/D-glucarate.yaml\
+    \ -s src/mediaingredientmech/schema/mediaingredientmech.yaml -t IngredientRecord\
+    \ --labels`,\n  `uv run --frozen python scripts/validate_id_label_correspondence.py\
+    \ -c conf/id_label_targets.yaml`,\n  and `uv run --frozen python scripts/validate_sssom_invariants.py`."
+- evidence_id: ev-e19e947d32e27537
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[495]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"205706134a4af37beb9ceb148edfcec2fc25af8ab62c6ef7e6047de47979b91f","finding_id":"SEM:0cfd5fe6c06c08ae201f","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-3cfd5982ae9cc03f
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-44d978578bb0eb3f
+  evidence_ids:
+  - ev-f2aa5f184b8eccff
+  - ev-3f007fecb24120fd
+  - ev-b6d12bb7c7ae8cc7
+  - ev-a06a662c91243111
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-6becbfad62e0b699
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-44d978578bb0eb3f
+  evidence_ids:
+  - ev-ec7b48f4c17925a9
+  - ev-f2aa5f184b8eccff
+  - ev-e19e947d32e27537
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T13:43:33Z;
+    reviewed SHA-256=205706134a4af37beb9ceb148edfcec2fc25af8ab62c6ef7e6047de47979b91f;
+    current SHA-256=205706134a4af37beb9ceb148edfcec2fc25af8ab62c6ef7e6047de47979b91f;
+    hash_changed=False. Reports=["reports/yaml_record_review/D-glucarate.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The CHEBI dianion
+    identity, 1/1 CultureMech count, and final SSSOM payload pass, but source_occurrences
+    omits the absorbed D-saccharate BacDive count and the top-level import note is
+    stale.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ec7b48f4c17925a9
+    - ev-f2aa5f184b8eccff
+  - name: legacy-native-ids
+    value: '["SEM:0cfd5fe6c06c08ae201f"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-f2aa5f184b8eccff
+    - ev-ec7b48f4c17925a9
+    - ev-e19e947d32e27537
+findings:
+- finding_id: rec-f-7dd841e20ae2f5c3
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-44d978578bb0eb3f
+  category: provenance
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: D-glucarate'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T13:43:33Z;
+    reviewed SHA-256=205706134a4af37beb9ceb148edfcec2fc25af8ab62c6ef7e6047de47979b91f;
+    current SHA-256=205706134a4af37beb9ceb148edfcec2fc25af8ab62c6ef7e6047de47979b91f;
+    hash_changed=False. Reports=["reports/yaml_record_review/D-glucarate.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The CHEBI dianion
+    identity, 1/1 CultureMech count, and final SSSOM payload pass, but source_occurrences
+    omits the absorbed D-saccharate BacDive count and the top-level import note is
+    stale.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-44d978578bb0eb3f
+  evidence_ids:
+  - ev-ec7b48f4c17925a9
+  - ev-f2aa5f184b8eccff
+  - ev-e19e947d32e27537
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-glucarate.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024633Z-mim-reconcile-all-batch-05.

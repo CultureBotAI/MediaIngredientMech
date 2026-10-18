@@ -1,0 +1,268 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-dihydro-azathymidine
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Dihydro_Azathymidine (data/ingredients/mapped/Dihydro_Azathymidine.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Dihydro_Azathymidine (data/ingredients/mapped/Dihydro_Azathymidine.yaml,
+  record-b332f330557c7b31, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Dihydro_Azathymidine.yaml
+    sha256: 52c0e7eb536cff956438cc4cf6029b797bd37ee82a1dbdb01dfecdf37f353f9a
+    role: target
+  - path: reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml
+    sha256: 7549030a5b50ed98868ff3497507fdfbfecd07cd858c76738f734521fa9d3603
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Dihydro_Azathymidine.md
+    sha256: f42a57dcae4124df65c0f7c0d04a0630b1e2721f0cfb1147d875f01e590779cb
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-b332f330557c7b31
+  path: data/ingredients/mapped/Dihydro_Azathymidine.yaml
+  label: Dihydro_Azathymidine
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Dihydro_Azathymidine.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Dihydro_Azathymidine.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Dihydro_Azathymidine.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-b332f330557c7b31
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-b332f330557c7b31
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-b332f330557c7b31
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024633Z-mim-reconcile-all-batch-05
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-b332f330557c7b31
+evidence:
+- evidence_id: ev-e3931367584d454f
+  kind: record_content
+  reference: data/ingredients/mapped/Dihydro_Azathymidine.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[892],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.compound:dihydro_azathymidine","line":894,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.compound:dihydro_azathymidine","preferred_term":"Dihydro
+    Azathymidine"}],"identifier":"kgmicrobe.compound:dihydro_azathymidine","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"PLACEHOLDER","ontology_id":"kgmicrobe.compound:dihydro_azathymidine","ontology_label":"Dihydro
+    Azathymidine","ontology_source":"kgmicrobe.compound"},"preferred_term":"Dihydro
+    Azathymidine","sssom_rows":[{"data_row":1043,"object_id":"kgmicrobe.compound:dihydro_azathymidine","object_label":"Dihydro
+    Azathymidine","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Dihydro_Azathymidine","synonym_count":0}'
+  snapshot_sha256: 52c0e7eb536cff956438cc4cf6029b797bd37ee82a1dbdb01dfecdf37f353f9a
+- evidence_id: ev-8398a01c102477cb
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [892]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-8c6b31986b697b92
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Dihydro_Azathymidine; data-row positions=[1043]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1043,"object_id":"kgmicrobe.compound:dihydro_azathymidine","object_label":"Dihydro
+    Azathymidine","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Dihydro_Azathymidine","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-b8a190de8e6fa3d8
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[894]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.compound:dihydro_azathymidine","line":894,"mapping_quality":"PLACEHOLDER","mapping_status":"MAPPED","media_count":"0","ontology_id":"kgmicrobe.compound:dihydro_azathymidine","preferred_term":"Dihydro
+    Azathymidine","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-b1d50354a5f413e4
+  kind: prior_review
+  reference: reports/yaml_record_review/Dihydro_Azathymidine.md
+  locator: '`data/ingredients/mapped/Dihydro_Azathymidine.yaml`:2; Verdict:4; Identity:13;
+    Validation:25; Evidence:41; Completeness:60; Recommended Edits:69'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: f42a57dcae4124df65c0f7c0d04a0630b1e2721f0cfb1147d875f01e590779cb
+  quote: "Recommended Edits:\n- Minor: review whether\n  `data/ingredients/mapped/56-dihydro-5-azathymidine.yaml`\
+    \ and\n  `data/ingredients/mapped/Dihydro_Azathymidine.yaml` are intentionally\n\
+    \  separate despite sharing the `kgmicrobe.compound:dihydro_azathymidine`\n  source\
+    \ ID in import provenance; if they came from the same upstream\n  compound, merge\
+    \ or cross-reference through the maintained YAML and\n  regenerated SSSOM surfaces."
+- evidence_id: ev-60593934e1c7b713
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[541]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"52c0e7eb536cff956438cc4cf6029b797bd37ee82a1dbdb01dfecdf37f353f9a","finding_id":"SEM:6bf8bb1a2ab002ea783c","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-909ac138bdf1b412
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-b332f330557c7b31
+  evidence_ids:
+  - ev-e3931367584d454f
+  - ev-8398a01c102477cb
+  - ev-8c6b31986b697b92
+  - ev-b8a190de8e6fa3d8
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-10e2294df9814def
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-b332f330557c7b31
+  evidence_ids:
+  - ev-b1d50354a5f413e4
+  - ev-e3931367584d454f
+  - ev-60593934e1c7b713
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T14:48:50Z;
+    reviewed SHA-256=52c0e7eb536cff956438cc4cf6029b797bd37ee82a1dbdb01dfecdf37f353f9a;
+    current SHA-256=52c0e7eb536cff956438cc4cf6029b797bd37ee82a1dbdb01dfecdf37f353f9a;
+    hash_changed=False. Reports=["reports/yaml_record_review/Dihydro_Azathymidine.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The expected
+    local placeholder passes, but another record mentions the same source ID in provenance.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-b1d50354a5f413e4
+    - ev-e3931367584d454f
+  - name: legacy-native-ids
+    value: '["SEM:6bf8bb1a2ab002ea783c"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-e3931367584d454f
+    - ev-b1d50354a5f413e4
+    - ev-60593934e1c7b713
+findings:
+- finding_id: rec-f-654949b690e11f81
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-b332f330557c7b31
+  category: provenance
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Dihydro_Azathymidine'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T14:48:50Z;
+    reviewed SHA-256=52c0e7eb536cff956438cc4cf6029b797bd37ee82a1dbdb01dfecdf37f353f9a;
+    current SHA-256=52c0e7eb536cff956438cc4cf6029b797bd37ee82a1dbdb01dfecdf37f353f9a;
+    hash_changed=False. Reports=["reports/yaml_record_review/Dihydro_Azathymidine.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The expected
+    local placeholder passes, but another record mentions the same source ID in provenance.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-b332f330557c7b31
+  evidence_ids:
+  - ev-b1d50354a5f413e4
+  - ev-e3931367584d454f
+  - ev-60593934e1c7b713
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Dihydro_Azathymidine.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024633Z-mim-reconcile-all-batch-05.

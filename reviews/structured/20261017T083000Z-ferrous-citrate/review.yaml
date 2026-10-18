@@ -1,0 +1,268 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-ferrous-citrate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Ferrous_Citrate (data/ingredients/mapped/Ferrous_Citrate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Ferrous_Citrate (data/ingredients/mapped/Ferrous_Citrate.yaml,
+  record-548bdab3be9027e3, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Ferrous_Citrate.yaml
+    sha256: 1f1148f75e74f4373678cff847fa711b2be25cf5a6d861aa60a3d390e520686d
+    role: target
+  - path: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+    sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Ferrous_Citrate.md
+    sha256: 805265dbd0d6be9f9c5884c431625ea255345d9387066a378e35340cf78204a5
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-548bdab3be9027e3
+  path: data/ingredients/mapped/Ferrous_Citrate.yaml
+  label: Ferrous_Citrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ferrous_Citrate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Ferrous_Citrate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Ferrous_Citrate.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-548bdab3be9027e3
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-548bdab3be9027e3
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-548bdab3be9027e3
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-548bdab3be9027e3
+evidence:
+- evidence_id: ev-18f511e014aafb8d
+  kind: record_content
+  reference: data/ingredients/mapped/Ferrous_Citrate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[994],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C016600","line":996,"mapping_status":"MAPPED","ontology_id":"mesh:C016600","preferred_term":"Ferrous
+    citrate"}],"identifier":"mesh:C016600","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":5,"edge_count":5,"occurrences":5},"occurrence_statistics":{"media_count":5,"total_occurrences":5},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C016600","ontology_label":"monoferrous
+    acid citrate","ontology_source":"MESH"},"preferred_term":"Ferrous citrate","sssom_rows":[{"data_row":1192,"object_id":"mesh:C016600","object_label":"monoferrous
+    acid citrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ferrous_Citrate","synonym_count":1}'
+  snapshot_sha256: 1f1148f75e74f4373678cff847fa711b2be25cf5a6d861aa60a3d390e520686d
+- evidence_id: ev-3f1725b8467d3208
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [994]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-607138a390d99e7f
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Ferrous_Citrate; data-row positions=[1192]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1192,"object_id":"mesh:C016600","object_label":"monoferrous
+    acid citrate","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Ferrous_Citrate","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-c2c3d2d96f11f188
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[996]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C016600","line":996,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"5","ontology_id":"mesh:C016600","preferred_term":"Ferrous
+    citrate","total_occurrences":"5"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-299c7414a4aa4776
+  kind: prior_review
+  reference: reports/yaml_record_review/Ferrous_Citrate.md
+  locator: '`data/ingredients/mapped/Ferrous_Citrate.yaml`:2; Verdict:4; Identity:11;
+    Validation:21; Evidence:28; Completeness:51; Recommended Edits:58'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 805265dbd0d6be9f9c5884c431625ea255345d9387066a378e35340cf78204a5
+  quote: "Recommended Edits:\n- Minor: set `ingredient_type: SINGLE_INGREDIENT` and\
+    \ replace the stale\n  top-level `notes` in `data/ingredients/mapped/Ferrous_Citrate.yaml`,\
+    \ sync\n  `data/curated/mapped_ingredients.yaml`, and rerun strict validation\
+    \ plus the\n  roundtrip gate."
+- evidence_id: ev-89c6821a84b9a574
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[601]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"1f1148f75e74f4373678cff847fa711b2be25cf5a6d861aa60a3d390e520686d","finding_id":"SEM:bc7260a8a2f3e8445f67","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-c48452396a7bba4c
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-548bdab3be9027e3
+  evidence_ids:
+  - ev-18f511e014aafb8d
+  - ev-3f1725b8467d3208
+  - ev-607138a390d99e7f
+  - ev-c2c3d2d96f11f188
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-640cd9957ca4a064
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-548bdab3be9027e3
+  evidence_ids:
+  - ev-299c7414a4aa4776
+  - ev-18f511e014aafb8d
+  - ev-89c6821a84b9a574
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T16:23:27Z;
+    reviewed SHA-256=1f1148f75e74f4373678cff847fa711b2be25cf5a6d861aa60a3d390e520686d;
+    current SHA-256=1f1148f75e74f4373678cff847fa711b2be25cf5a6d861aa60a3d390e520686d;
+    hash_changed=False. Reports=["reports/yaml_record_review/Ferrous_Citrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    MeSH ferrous citrate mapping passes, but stale notes and a missing ingredient_type
+    need minor cleanup.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-299c7414a4aa4776
+    - ev-18f511e014aafb8d
+  - name: legacy-native-ids
+    value: '["SEM:bc7260a8a2f3e8445f67"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-18f511e014aafb8d
+    - ev-299c7414a4aa4776
+    - ev-89c6821a84b9a574
+findings:
+- finding_id: rec-f-32696a983b14ddfc
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-548bdab3be9027e3
+  category: provenance
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Ferrous_Citrate'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T16:23:27Z;
+    reviewed SHA-256=1f1148f75e74f4373678cff847fa711b2be25cf5a6d861aa60a3d390e520686d;
+    current SHA-256=1f1148f75e74f4373678cff847fa711b2be25cf5a6d861aa60a3d390e520686d;
+    hash_changed=False. Reports=["reports/yaml_record_review/Ferrous_Citrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    MeSH ferrous citrate mapping passes, but stale notes and a missing ingredient_type
+    need minor cleanup.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-548bdab3be9027e3
+  evidence_ids:
+  - ev-299c7414a4aa4776
+  - ev-18f511e014aafb8d
+  - ev-89c6821a84b9a574
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ferrous_Citrate.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024634Z-mim-reconcile-all-batch-06.

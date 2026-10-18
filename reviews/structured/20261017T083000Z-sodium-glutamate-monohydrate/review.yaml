@@ -1,0 +1,267 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-sodium-glutamate-monohydrate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Sodium_Glutamate_Monohydrate (data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Sodium_Glutamate_Monohydrate (data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml,
+  record-9888a73414cf3543, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml
+    sha256: 1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca
+    role: target
+  - path: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+    sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Sodium_Glutamate_Monohydrate.md
+    sha256: 0972b160be27f331b090167126230ed860931708623d5006dbb60f7ab38f526e
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-9888a73414cf3543
+  path: data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml
+  label: Sodium_Glutamate_Monohydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-9888a73414cf3543
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-9888a73414cf3543
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-9888a73414cf3543
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-9888a73414cf3543
+evidence:
+- evidence_id: ev-fd3d9157d2713868
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1840],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:232425","line":1842,"mapping_status":"MAPPED","ontology_id":"CHEBI:232425","preferred_term":"Sodium
+    glutamate monohydrate"}],"identifier":"CHEBI:232425","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":16,"edge_count":16,"occurrences":16},"occurrence_statistics":{"media_count":16,"total_occurrences":16},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:232425","ontology_label":"monosodium
+    L-glutamate hydrate","ontology_source":"CHEBI"},"preferred_term":"Sodium glutamate
+    monohydrate","sssom_rows":[{"data_row":2563,"object_id":"CHEBI:232425","object_label":"monosodium
+    L-glutamate hydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Sodium_Glutamate_Monohydrate","synonym_count":14}'
+  snapshot_sha256: 1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca
+- evidence_id: ev-8f7f0ac4a641b770
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1840]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-bcb2f4ab5d010276
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Sodium_Glutamate_Monohydrate; data-row positions=[2563]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2563,"object_id":"CHEBI:232425","object_label":"monosodium
+    L-glutamate hydrate","other":"sodium (2S)-2-azaniumylpentanedioate|Glutamate Sodium|Glutamate
+    monosodium salt|Glutamic acid, monosodium salt|Glutammato monosodico|L(+) Sodium
+    glutamate|MSG|Monosodioglutammato|Natrium L-hydrogenglutamat|Natriumglutaminat|Sodium
+    hydrogen glutamate|sodium (2S)-2-ammoniopentanedioate|CAS:6106-04-3","predicate_id":"skos:exactMatch","subject_id":"MIM:Sodium_Glutamate_Monohydrate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-b30cb702511d619a
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1842]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:232425","line":1842,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"16","ontology_id":"CHEBI:232425","preferred_term":"Sodium
+    glutamate monohydrate","total_occurrences":"16"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-9e9ec8e108457295
+  kind: prior_review
+  reference: reports/yaml_record_review/Sodium_Glutamate_Monohydrate.md
+  locator: '`data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml`:2'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 0972b160be27f331b090167126230ed860931708623d5006dbb60f7ab38f526e
+- evidence_id: ev-3301fa0a2e5722e1
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1217]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca","finding_id":"SEM:81a3bd5c7c4738e422fc","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-c86f6af824d2fb4f
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-9888a73414cf3543
+  evidence_ids:
+  - ev-fd3d9157d2713868
+  - ev-8f7f0ac4a641b770
+  - ev-bcb2f4ab5d010276
+  - ev-b30cb702511d619a
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-7adf274f5fab69bc
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-9888a73414cf3543
+  evidence_ids:
+  - ev-9e9ec8e108457295
+  - ev-fd3d9157d2713868
+  - ev-3301fa0a2e5722e1
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T15:12:21Z;
+    reviewed SHA-256=1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca;
+    current SHA-256=1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca;
+    hash_changed=False. Reports=["reports/yaml_record_review/Sodium_Glutamate_Monohydrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    CHEBI:232425 hydrate identity passes, but structure fields and final SSSOM synonyms
+    still cross the anhydrous boundary.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-9e9ec8e108457295
+    - ev-fd3d9157d2713868
+  - name: legacy-native-ids
+    value: '["SEM:81a3bd5c7c4738e422fc"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-fd3d9157d2713868
+    - ev-9e9ec8e108457295
+    - ev-3301fa0a2e5722e1
+findings:
+- finding_id: rec-f-4a8652365c73a901
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-9888a73414cf3543
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Sodium_Glutamate_Monohydrate'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T15:12:21Z;
+    reviewed SHA-256=1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca;
+    current SHA-256=1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca;
+    hash_changed=False. Reports=["reports/yaml_record_review/Sodium_Glutamate_Monohydrate.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    CHEBI:232425 hydrate identity passes, but structure fields and final SSSOM synonyms
+    still cross the anhydrous boundary.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-9888a73414cf3543
+  evidence_ids:
+  - ev-9e9ec8e108457295
+  - ev-fd3d9157d2713868
+  - ev-3301fa0a2e5722e1
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024638Z-mim-reconcile-all-batch-11.

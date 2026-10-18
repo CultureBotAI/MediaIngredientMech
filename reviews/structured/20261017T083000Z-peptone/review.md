@@ -1,0 +1,683 @@
+# Per-record structured review: Peptone (data/ingredients/mapped/Peptone.yaml)
+
+- Review: 20261017T083000Z-peptone
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Peptone (data/ingredients/mapped/Peptone.yaml, record-62f485f9f7517526, mapping_status=MAPPED). Records 1 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Peptone.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Peptone.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-62f485f9f7517526 | data/ingredients/mapped/Peptone.yaml | maintained | Peptone |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-62f485f9f7517526 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-62f485f9f7517526 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-62f485f9f7517526 | Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-62f485f9f7517526.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-62f485f9f7517526.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T08:54:18Z; reviewed SHA-256=e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa; current SHA-256=e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa; hash_changed=False. Reports=["reports/yaml_record_review/Peptone.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact MICRO:0000178 identity passes, but PROTEIN_SOURCE is provisional and final other exports truncated concentration text.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-62f485f9f7517526.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### Unresolved recipe-reference or truncated-concentration synonyms
+
+nomenclature: concern. Targets: record-62f485f9f7517526.
+
+Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"truncated concentration-qualified label with unbalanced parentheses","token":"Peptone (0.01 %"}]. Truncated concentration strings and context-dependent instructions need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as a class.
+
+### Certainty correction for the exact token observation
+
+nomenclature: unknown. Targets: record-62f485f9f7517526.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. A damaged spelling is observable, but the mapping contract permits damaged raw source forms when they still resolve to the same substance; malformed punctuation alone does not settle identity scope.
+
+## Findings
+
+### rec-f-75efffd02df09b2e: Reassess prediction-only role support: Peptone
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-62f485f9f7517526.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+### rec-scope-f-5982691d4b3d176b: Adjudicate source scope of exported tokens: Peptone
+
+major / deferred / provisional; issue key: mim-reconciliation-exported-context-tokens-62f485f9f7517526.
+
+Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. A damaged spelling is observable, but the mapping contract permits damaged raw source forms when they still resolve to the same substance; malformed punctuation alone does not settle identity scope.
+
+Disposition: Token presence remains reproducible, but the earlier pattern-based observation did not establish whether the exact source label denotes this subject or a different preparation. Fresh source-context adjudication is required before a confirmed defect or label removal. This successor corrects certainty only; it does not establish that the token is valid or that another identity allegation is fixed. A damaged spelling is observable, but the mapping contract permits damaged raw source forms when they still resolve to the same substance; malformed punctuation alone does not settle identity scope.
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-75efffd02df09b2e
+
+Reassess prediction-only role support: Peptone
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-29958f2b2d850993 | data/ingredients/mapped/Peptone.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1631],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1633,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"source_occurrences":[{"count":48,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2220,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2} |
+| ev-95f4aaeab9502835 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1631] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-4f5362bb32478943 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Peptone; data-row positions=[2220] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2220,"object_id":"MICRO:0000178","object_label":"peptone","other":"Peptones&#124;Peptone (0.01 %","predicate_id":"skos:exactMatch","subject_id":"MIM:Peptone","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-82b3d1ac7f7ed235 | docs/data/mapped_ingredients.csv; CSV lines=[1633] | supports | Published identity and count rows inspected: [{"identifier":"MICRO:0000178","line":1633,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2251","ontology_id":"MICRO:0000178","preferred_term":"Peptone","total_occurrences":"2255"}] |
+| ev-8ead32467e428cda | reports/yaml_record_review/Peptone.md; &#96;data/ingredients/mapped/Peptone.yaml&#96;:2; Verdict:4; Identity:10; Validation:20; Evidence:31; Completeness:41; Recommended Edits:48 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-baae2c83720d0326 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1100,2006] | context_only | [{"current_record_sha256":"e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa","finding_id":"SEM:1f30f809b03bd31d6829","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa","finding_id":"SEM:71c103427247b8ffb5a9","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-ece21da382f39a41 | data/ingredients/mapped/Peptone.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-823412d1eacb6795 | MAPPING_SEMANTICS.md; Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out | supports | Raw spellings may remain resolvable when they denote the same substance. Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not adjudicate that distinction. |
+| ev-54e6930eaaa55145 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-5982691d4b3d176b] | context_only | Exact earlier occurrence has open/confirmed status, based on exported-token presence and historical report text. |
+| ev-0bdc1c0fd578d2ef | data/ingredients/mapped/Peptone.yaml; identifier, ontology_mapping, synonyms and curation_history | partial | {"candidate_labels": [{"source": "microbedecoder", "synonym_text": "Peptone (0.01 %", "synonym_type": "RAW_TEXT"}], "history": [{"action": "AUTO_CREATE_FROM_MICRO", "changes": "created with primary MICRO:0000178", "curator": "foodon_pass", "llm_assisted": false, "timestamp": "2026-05-01T19:55:09.679469+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE", "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Peptone')", "curator": "auto_classify_ingredient_type", "llm_assisted": false, "timestamp": "2026-05-02T03:12:17.686332+00:00"}, {"action": "ANNOTATED", "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.80)", "curator": "infer_roles_from_name_lists", "timestamp": "2026-06-03T02:06:01.747135+00:00"}, {"action": "CORRECTED", "changes": "Backfilled missing occurrence_statistics (0/0): ontology-derived record with no tracked media occurrences.", "curator": "audit_occurrence_stats", "timestamp": "2026-06-08T23:23:58.335580+00:00"}, {"action": "ANNOTATED", "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -&gt; nutritional_roles.PROTEIN_SOURCE", "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"}, {"action": "MERGED_FROM_UNMAPPED_DUPLICATE", "changes": "Absorbed UNMAPPED_0718 'Peptones' as a RAW_TEXT synonym -- plural of the already-mapped peptone record. No new SSSOM row; MICRO:0000178 is already mapped. Source: kgmicrobe.compound:peptones.", "curator": "microbedecoder-residual-dispositions", "llm_assisted": true, "timestamp": "2026-08-05T00:01:30.894952+00:00"}, {"action": "MERGED_FROM_UNMAPPED_DUPLICATE", "changes": "Absorbed UNMAPPED_0835 'Peptone (0.01 %' as a RAW_TEXT synonym -- concentration-truncated duplicate of peptone. No new SSSOM row; MICRO:0000178 is already mapped. Source: kgmicrobe.trait:peptone_0_01.", "curator": "microbedecoder-residual-dispositions", "llm_assisted": true, "timestamp": "2026-08-05T00:01:30.894952+00:00"}, {"action": "CORRECTED", "changes": "occurrence_statistics 0/0 -&gt; 2251/2255 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics", "timestamp": "2026-08-27T03:16:39.519680+00:00"}], "identifier": "MICRO:0000178", "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-created from foodon_pass; label-exact (micro)", "source": "MICRO via OLS search"}], "mapping_quality": "EXACT_MATCH", "ontology_id": "MICRO:0000178", "ontology_label": "peptone", "ontology_source": "MICRO"}} |
+| ev-a926e5411d840793 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Peptone | supports | [{"comment": "", "confidence": "0.99", "data_row": 2220, "mapping_date": "2026-08-27", "mapping_justification": "semapv:LexicalMatching", "object_id": "MICRO:0000178", "object_label": "peptone", "object_source": "obo:micro.owl", "other": "Peptones&#124;Peptone (0.01 %", "predicate_id": "skos:exactMatch", "source": "MIM:MICRO via OLS search&#124;MIM:curator=refresh_occurrence_statistics", "subject_id": "MIM:Peptone", "subject_label": "Peptone", "validation_method": "none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-f56ebea344bcd264 | reports/yaml_record_review/Peptone.md; Complete historical report, including Verdict and Recommended Edits | context_only | Historical interpretation was read in full; it is not fresh source adjudication. |
+| ev-70359e49b8727eb7 | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-75efffd02df09b2e] | context_only | Predecessor structured review finding f-75efffd02df09b2e in 20261011T024637Z-mim-reconcile-all-batch-09 |
+| ev-13e8a6e9a40472fb | reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml; findings[finding_id=scope-f-5982691d4b3d176b] | context_only | Predecessor structured review finding scope-f-5982691d4b3d176b in 20261011T030852Z-mim-token-scope-reassessment |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024637Z-mim-reconcile-all-batch-09, 20261011T030852Z-mim-token-scope-reassessment.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-peptone
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Peptone (data/ingredients/mapped/Peptone.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=1
+scientific_review: false
+summary: Per-record structured review for Peptone (data/ingredients/mapped/Peptone.yaml,
+  record-62f485f9f7517526, mapping_status=MAPPED). Records 1 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Peptone.yaml
+    sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
+    role: target
+  - path: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+    sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+    role: context
+  - path: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+    sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Peptone.md
+    sha256: ff7ee8ae08e2406bcca09345d75c8024a56f48457839ff026e9bf007b4f2e4fe
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+    role: context
+targets:
+- target_id: record-62f485f9f7517526
+  path: data/ingredients/mapped/Peptone.yaml
+  label: Peptone
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Peptone.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Peptone.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-62f485f9f7517526
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-62f485f9f7517526
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-62f485f9f7517526
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-62f485f9f7517526
+evidence:
+- evidence_id: ev-29958f2b2d850993
+  kind: record_content
+  reference: data/ingredients/mapped/Peptone.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1631],"raw_equal":true},"docs_rows":[{"identifier":"MICRO:0000178","line":1633,"mapping_status":"MAPPED","ontology_id":"MICRO:0000178","preferred_term":"Peptone"}],"identifier":"MICRO:0000178","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2251,"edge_count":2251,"occurrences":2255},"occurrence_statistics":{"media_count":2251,"source_occurrences":[{"count":48,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":2255},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"MICRO:0000178","ontology_label":"peptone","ontology_source":"MICRO"},"preferred_term":"Peptone","sssom_rows":[{"data_row":2220,"object_id":"MICRO:0000178","object_label":"peptone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Peptone","synonym_count":2}'
+  snapshot_sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
+- evidence_id: ev-95f4aaeab9502835
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1631]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-4f5362bb32478943
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Peptone; data-row positions=[2220]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2220,"object_id":"MICRO:0000178","object_label":"peptone","other":"Peptones|Peptone
+    (0.01 %","predicate_id":"skos:exactMatch","subject_id":"MIM:Peptone","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-82b3d1ac7f7ed235
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1633]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"MICRO:0000178","line":1633,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2251","ontology_id":"MICRO:0000178","preferred_term":"Peptone","total_occurrences":"2255"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-8ead32467e428cda
+  kind: prior_review
+  reference: reports/yaml_record_review/Peptone.md
+  locator: '`data/ingredients/mapped/Peptone.yaml`:2; Verdict:4; Identity:10; Validation:20;
+    Evidence:31; Completeness:41; Recommended Edits:48'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: ff7ee8ae08e2406bcca09345d75c8024a56f48457839ff026e9bf007b4f2e4fe
+  quote: "Recommended Edits:\n- Major: in `data/ingredients/mapped/Peptone.yaml`,\
+    \ retype or suppress\n  `Peptone (0.01 %` so it remains occurrence provenance\
+    \ only and no longer\n  appears in `mappings/ingredient_mappings.sssom.tsv`.\n\
+    - Major: replace `nutritional_roles.PROTEIN_SOURCE` with source-backed\n  evidence\
+    \ or remove the provisional role facet until it is curated."
+- evidence_id: ev-baae2c83720d0326
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1100,2006]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa","finding_id":"SEM:1f30f809b03bd31d6829","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa","finding_id":"SEM:71c103427247b8ffb5a9","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-ece21da382f39a41
+  kind: record_content
+  reference: data/ingredients/mapped/Peptone.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  snapshot_sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
+- evidence_id: ev-823412d1eacb6795
+  kind: record_content
+  reference: MAPPING_SEMANTICS.md
+  locator: Sections on REJECTED_LABEL and the damaged-label RAW_TEXT carve-out
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: supports
+  summary: Raw spellings may remain resolvable when they denote the same substance.
+    Wrong-identity labels must not resolve. A recipe-pointer pattern alone does not
+    adjudicate that distinction.
+  snapshot_sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+- evidence_id: ev-54e6930eaaa55145
+  kind: prior_review
+  reference: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+  locator: findings[finding_id=f-5982691d4b3d176b]
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Exact earlier occurrence has open/confirmed status, based on exported-token
+    presence and historical report text.
+  snapshot_sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+  quote: '{"category": "nomenclature", "certainty": "confirmed", "description": "Historical
+    tokens are still present on the exact-subject SSSOM rows: [{\"reason\":\"truncated
+    concentration-qualified label with unbalanced parentheses\",\"token\":\"Peptone
+    (0.01 %\"}]. Truncated concentration strings and context-dependent instructions
+    need scoped curation. This check does not reject catalog/RAW_TEXT synonyms as
+    a class.", "evidence_ids": ["ev-8ead32467e428cda", "ev-4f5362bb32478943"], "external_issues":
+    ["https://github.com/CultureBotAI/MediaIngredientMech/issues/718"], "field_paths":
+    ["synonyms", "SSSOM.other"], "finding_id": "f-5982691d4b3d176b", "issue_key":
+    "mim-reconciliation-exported-context-tokens-62f485f9f7517526", "owner_paths":
+    [{"path": "data/ingredients/mapped/Peptone.yaml", "repository": "CultureBotAI/MediaIngredientMech",
+    "role": "maintained ingredient"}], "severity": "major", "status": "open", "tags":
+    ["reconciliation", "bundle-by-owner", "exported-context-tokens"], "target_ids":
+    ["record-62f485f9f7517526"], "title": "Review nonportable exported tokens: Peptone"}'
+- evidence_id: ev-0bdc1c0fd578d2ef
+  kind: record_content
+  reference: data/ingredients/mapped/Peptone.yaml
+  locator: identifier, ontology_mapping, synonyms and curation_history
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: partial
+  summary: '{"candidate_labels": [{"source": "microbedecoder", "synonym_text": "Peptone
+    (0.01 %", "synonym_type": "RAW_TEXT"}], "history": [{"action": "AUTO_CREATE_FROM_MICRO",
+    "changes": "created with primary MICRO:0000178", "curator": "foodon_pass", "llm_assisted":
+    false, "timestamp": "2026-05-01T19:55:09.679469+00:00"}, {"action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+    "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern
+    ''Peptone'')", "curator": "auto_classify_ingredient_type", "llm_assisted": false,
+    "timestamp": "2026-05-02T03:12:17.686332+00:00"}, {"action": "ANNOTATED", "changes":
+    "Added media role: PROTEIN_SOURCE (confidence: 0.80)", "curator": "infer_roles_from_name_lists",
+    "timestamp": "2026-06-03T02:06:01.747135+00:00"}, {"action": "CORRECTED", "changes":
+    "Backfilled missing occurrence_statistics (0/0): ontology-derived record with
+    no tracked media occurrences.", "curator": "audit_occurrence_stats", "timestamp":
+    "2026-06-08T23:23:58.335580+00:00"}, {"action": "ANNOTATED", "changes": "Migrated
+    legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE",
+    "curator": "migrate_media_roles_to_facets", "timestamp": "2026-07-20T00:00:00+00:00"},
+    {"action": "MERGED_FROM_UNMAPPED_DUPLICATE", "changes": "Absorbed UNMAPPED_0718
+    ''Peptones'' as a RAW_TEXT synonym -- plural of the already-mapped peptone record.
+    No new SSSOM row; MICRO:0000178 is already mapped. Source: kgmicrobe.compound:peptones.",
+    "curator": "microbedecoder-residual-dispositions", "llm_assisted": true, "timestamp":
+    "2026-08-05T00:01:30.894952+00:00"}, {"action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+    "changes": "Absorbed UNMAPPED_0835 ''Peptone (0.01 %'' as a RAW_TEXT synonym --
+    concentration-truncated duplicate of peptone. No new SSSOM row; MICRO:0000178
+    is already mapped. Source: kgmicrobe.trait:peptone_0_01.", "curator": "microbedecoder-residual-dispositions",
+    "llm_assisted": true, "timestamp": "2026-08-05T00:01:30.894952+00:00"}, {"action":
+    "CORRECTED", "changes": "occurrence_statistics 0/0 -> 2251/2255 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]", "curator": "refresh_occurrence_statistics",
+    "timestamp": "2026-08-27T03:16:39.519680+00:00"}], "identifier": "MICRO:0000178",
+    "mapping": {"evidence": [{"evidence_type": "DATABASE_MATCH", "notes": "Auto-created
+    from foodon_pass; label-exact (micro)", "source": "MICRO via OLS search"}], "mapping_quality":
+    "EXACT_MATCH", "ontology_id": "MICRO:0000178", "ontology_label": "peptone", "ontology_source":
+    "MICRO"}}'
+  snapshot_sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
+- evidence_id: ev-a926e5411d840793
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Peptone
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: supports
+  summary: '[{"comment": "", "confidence": "0.99", "data_row": 2220, "mapping_date":
+    "2026-08-27", "mapping_justification": "semapv:LexicalMatching", "object_id":
+    "MICRO:0000178", "object_label": "peptone", "object_source": "obo:micro.owl",
+    "other": "Peptones|Peptone (0.01 %", "predicate_id": "skos:exactMatch", "source":
+    "MIM:MICRO via OLS search|MIM:curator=refresh_occurrence_statistics", "subject_id":
+    "MIM:Peptone", "subject_label": "Peptone", "validation_method": "none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-f56ebea344bcd264
+  kind: prior_review
+  reference: reports/yaml_record_review/Peptone.md
+  locator: Complete historical report, including Verdict and Recommended Edits
+  accessed_at: '2026-10-11T03:08:52Z'
+  support: context_only
+  summary: Historical interpretation was read in full; it is not fresh source adjudication.
+  snapshot_sha256: ff7ee8ae08e2406bcca09345d75c8024a56f48457839ff026e9bf007b4f2e4fe
+  quote: "# `data/ingredients/mapped/Peptone.yaml`\n\n## Verdict\n\nNeeds curation;\
+    \ major. The generic Peptone identity resolves to\n`MICRO:0000178`, but the `PROTEIN_SOURCE`\
+    \ role is only a provisional name-list\nprediction and final SSSOM exports a concentration-truncated\
+    \ raw synonym.\n\n## Identity\n\n- Reviewed record: `data/ingredients/mapped/Peptone.yaml`.\n\
+    - Identifier and grounding: `identifier: MICRO:0000178` with\n  `ontology_mapping.ontology_id:\
+    \ MICRO:0000178`, label `peptone`, source\n  `MICRO`, `mapping_quality: EXACT_MATCH`,\
+    \ `mapping_status: MAPPED`, and\n  `ingredient_type: UNDEFINED_MIXTURE`.\n- Occurrences:\
+    \ 2,255 total occurrences across 2,251 CultureMech recipes, plus\n  48 MicrobeDecoder\
+    \ `BacDive_Metabolite_utilization` occurrences.\n\n## Validation\n\n- `uv run\
+    \ --frozen python scripts/validate_strict.py` exited 0 across this\n  five-record\
+    \ batch and wrote zero ERROR rows.\n- A fresh prefix-specific OLS4 search resolves\
+    \ `MICRO:0000178` to `peptone`.\n- `mappings/ingredient_mappings_unknown_term_triage.tsv`\
+    \ classifies the final\n  SSSOM `UNKNOWN_TERM` grade as a missing-prefix validator\
+    \ coverage issue, not\n  as a bad term.\n- The final SSSOM row was inspected directly\
+    \ and maps `MIM:Peptone` exactly to\n  `MICRO:0000178`.\n\n## Evidence\n\n- The\
+    \ MICRO primary identifier and mapping target denote peptone.\n- `Peptones` is\
+    \ a harmless plural raw synonym from a reviewed MicrobeDecoder\n  duplicate merge.\n\
+    - Major: `Peptone (0.01 %` is a concentration-truncated source string, not a\n\
+    \  real peptone synonym, but final SSSOM exports it in `other`.\n- Major: the\
+    \ `PROTEIN_SOURCE` role is supported only by\n  `COMPUTATIONAL_PREDICTION` evidence\
+    \ from `infer_roles_from_name_lists`.\n\n## Completeness\n\n- The exact MICRO\
+    \ identity is complete enough.\n- Role evidence and the final synonym surface\
+    \ remain incomplete while the\n  provisional nutritional role and concentration-truncated\
+    \ `other` token are\n  still present.\n\n## Recommended Edits\n\n- Major: in `data/ingredients/mapped/Peptone.yaml`,\
+    \ retype or suppress\n  `Peptone (0.01 %` so it remains occurrence provenance\
+    \ only and no longer\n  appears in `mappings/ingredient_mappings.sssom.tsv`.\n\
+    - Major: replace `nutritional_roles.PROTEIN_SOURCE` with source-backed\n  evidence\
+    \ or remove the provisional role facet until it is curated.\n"
+- evidence_id: ev-70359e49b8727eb7
+  kind: prior_review
+  reference: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+  locator: findings[finding_id=f-75efffd02df09b2e]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-75efffd02df09b2e in 20261011T024637Z-mim-reconcile-all-batch-09
+  snapshot_sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+- evidence_id: ev-13e8a6e9a40472fb
+  kind: prior_review
+  reference: reviews/structured/20261011T030852Z-mim-token-scope-reassessment/review.yaml
+  locator: findings[finding_id=scope-f-5982691d4b3d176b]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding scope-f-5982691d4b3d176b in 20261011T030852Z-mim-token-scope-reassessment
+  snapshot_sha256: 42a76b000bcbd07b426f6bad61b124b11ec08d8977783a67b732b01754f7c609
+assessments:
+- assessment_id: a-6b7c6ca0e333f9a0
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-62f485f9f7517526
+  evidence_ids:
+  - ev-29958f2b2d850993
+  - ev-95f4aaeab9502835
+  - ev-4f5362bb32478943
+  - ev-82b3d1ac7f7ed235
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-2b2c390a19949869
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-62f485f9f7517526
+  evidence_ids:
+  - ev-8ead32467e428cda
+  - ev-29958f2b2d850993
+  - ev-baae2c83720d0326
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T08:54:18Z;
+    reviewed SHA-256=e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa;
+    current SHA-256=e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa;
+    hash_changed=False. Reports=["reports/yaml_record_review/Peptone.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The exact MICRO:0000178
+    identity passes, but PROTEIN_SOURCE is provisional and final other exports truncated
+    concentration text.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8ead32467e428cda
+    - ev-29958f2b2d850993
+  - name: legacy-native-ids
+    value: '["SEM:1f30f809b03bd31d6829","SEM:71c103427247b8ffb5a9"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-29958f2b2d850993
+    - ev-8ead32467e428cda
+    - ev-baae2c83720d0326
+- assessment_id: a-ece21da382f39a41
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-62f485f9f7517526
+  evidence_ids:
+  - ev-8ead32467e428cda
+  - ev-ece21da382f39a41
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8ead32467e428cda
+    - ev-ece21da382f39a41
+- assessment_id: a-317b9181b04d7e0e
+  area: nomenclature
+  topic: Unresolved recipe-reference or truncated-concentration synonyms
+  outcome: concern
+  summary: 'Historical tokens are still present on the exact-subject SSSOM rows: [{"reason":"truncated
+    concentration-qualified label with unbalanced parentheses","token":"Peptone (0.01
+    %"}]. Truncated concentration strings and context-dependent instructions need
+    scoped curation. This check does not reject catalog/RAW_TEXT synonyms as a class.'
+  target_ids:
+  - record-62f485f9f7517526
+  evidence_ids:
+  - ev-8ead32467e428cda
+  - ev-4f5362bb32478943
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-8ead32467e428cda
+    - ev-4f5362bb32478943
+- assessment_id: scope-f-5982691d4b3d176b
+  area: nomenclature
+  topic: Certainty correction for the exact token observation
+  outcome: unknown
+  summary: Token presence remains reproducible, but the earlier pattern-based observation
+    did not establish whether the exact source label denotes this subject or a different
+    preparation. Fresh source-context adjudication is required before a confirmed
+    defect or label removal. This successor corrects certainty only; it does not establish
+    that the token is valid or that another identity allegation is fixed. A damaged
+    spelling is observable, but the mapping contract permits damaged raw source forms
+    when they still resolve to the same substance; malformed punctuation alone does
+    not settle identity scope.
+  target_ids:
+  - record-62f485f9f7517526
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-54e6930eaaa55145
+  - ev-0bdc1c0fd578d2ef
+  - ev-a926e5411d840793
+  - ev-f56ebea344bcd264
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Source-scope question only, not a disposition of the complete historical
+      report.
+    evidence_ids:
+    - ev-823412d1eacb6795
+    - ev-54e6930eaaa55145
+    - ev-0bdc1c0fd578d2ef
+    - ev-a926e5411d840793
+    - ev-f56ebea344bcd264
+findings:
+- finding_id: rec-f-75efffd02df09b2e
+  issue_key: mim-reconciliation-role-support-62f485f9f7517526
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Peptone'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-62f485f9f7517526
+  evidence_ids:
+  - ev-8ead32467e428cda
+  - ev-ece21da382f39a41
+  - ev-70359e49b8727eb7
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024637Z-mim-reconcile-all-batch-09
+    finding_id: f-75efffd02df09b2e
+- finding_id: rec-scope-f-5982691d4b3d176b
+  issue_key: mim-reconciliation-exported-context-tokens-62f485f9f7517526
+  category: nomenclature
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Adjudicate source scope of exported tokens: Peptone'
+  description: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed. A damaged spelling is observable, but the mapping contract permits damaged
+    raw source forms when they still resolve to the same substance; malformed punctuation
+    alone does not settle identity scope.
+  target_ids:
+  - record-62f485f9f7517526
+  evidence_ids:
+  - ev-823412d1eacb6795
+  - ev-54e6930eaaa55145
+  - ev-0bdc1c0fd578d2ef
+  - ev-a926e5411d840793
+  - ev-f56ebea344bcd264
+  - ev-13e8a6e9a40472fb
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone.yaml
+    role: maintained ingredient
+  field_paths:
+  - synonyms
+  - SSSOM.other
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - exported-context-tokens
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/861
+  disposition_reason: Token presence remains reproducible, but the earlier pattern-based
+    observation did not establish whether the exact source label denotes this subject
+    or a different preparation. Fresh source-context adjudication is required before
+    a confirmed defect or label removal. This successor corrects certainty only; it
+    does not establish that the token is valid or that another identity allegation
+    is fixed. A damaged spelling is observable, but the mapping contract permits damaged
+    raw source forms when they still resolve to the same substance; malformed punctuation
+    alone does not settle identity scope.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T030852Z-mim-token-scope-reassessment
+    finding_id: scope-f-5982691d4b3d176b
+actions:
+- action_id: rec-action-75efffd02df09b2e
+  description: 'Reassess prediction-only role support: Peptone'
+  finding_ids:
+  - rec-f-75efffd02df09b2e
+  target_ids:
+  - record-62f485f9f7517526
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024637Z-mim-reconcile-all-batch-09, 20261011T030852Z-mim-token-scope-reassessment.
+```

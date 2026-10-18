@@ -1,0 +1,462 @@
+# Per-record structured review: Fe_Iii-edta (data/ingredients/mapped/Fe_Iii-edta.yaml)
+
+- Review: 20261017T083000Z-fe-iii-edta
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Fe_Iii-edta (data/ingredients/mapped/Fe_Iii-edta.yaml, record-41f4535c09a79d8e, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Fe_Iii-edta.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Fe_Iii-edta.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-41f4535c09a79d8e | data/ingredients/mapped/Fe_Iii-edta.yaml | maintained | Fe_Iii-edta |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-41f4535c09a79d8e | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-41f4535c09a79d8e | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-41f4535c09a79d8e | Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-41f4535c09a79d8e.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-41f4535c09a79d8e.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:16Z; reviewed SHA-256=583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2; current SHA-256=583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050216Z-Fe_Iii-edta.md","reports/yaml_record_review/Fe_Iii-edta.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Fe_Iii-edta.md&#96; after the record changed from 6fd48cb9ab4ab7062b205222b458240a731ede878f63f337662dca652d6ee352 to 583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2; preserved the previous major finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-41f4535c09a79d8e.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-1f5215a32f6321e4: Reassess prediction-only role support: Fe(III)-EDTA
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-41f4535c09a79d8e.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-1f5215a32f6321e4
+
+Reassess prediction-only role support: Fe(III)-EDTA
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-d85f0328f8e40e01 | data/ingredients/mapped/Fe_Iii-edta.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[978],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30729","line":980,"mapping_status":"MAPPED","ontology_id":"CHEBI:30729","preferred_term":"Fe(III)-EDTA"}],"identifier":"CHEBI:30729","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":58,"edge_count":58,"occurrences":58},"occurrence_statistics":{"media_count":58,"total_occurrences":58},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30729","ontology_label":"ethylenediaminetetraacetatoferrate(1-)","ontology_source":"CHEBI"},"preferred_term":"Fe(III)-EDTA","sssom_rows":[{"data_row":1169,"object_id":"CHEBI:30729","object_label":"ethylenediaminetetraacetatoferrate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe_Iii-edta","synonym_count":13} |
+| ev-74214f979b505d4a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [978] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-03d572775c61a22b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Fe_Iii-edta; data-row positions=[1169] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1169,"object_id":"CHEBI:30729","object_label":"ethylenediaminetetraacetatoferrate(1-)","other":"(ethane-1,2-diyldinitrilo)tetraacetatoferrate(III)&#124;Fe(III)\u00b7EDTA&#124;Ferric EDTA&#124;FE EDTA&#124;Iron(III)-edta&#124;ethylenediaminetetraacetatoferrate&#124;(ethane-1,2-diyldinitrilo)tetraacetatoferrate(1-)&#124;Fe(III)\u30fbEDTA&#124;Fe(III)-EDTA (0.66% [wt/vol] in water)&#124;Fe\u00b7EDTA&#124;CAS:15275-07-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Fe_Iii-edta","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-a37f622390cd1e39 | docs/data/mapped_ingredients.csv; CSV lines=[980] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:30729","line":980,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"58","ontology_id":"CHEBI:30729","preferred_term":"Fe(III)-EDTA","total_occurrences":"58"}] |
+| ev-c77288b83b9dc91b | reports/yaml_record_review/20261001T050216Z-Fe_Iii-edta.md; YAML Record Review: Fe(III)-EDTA:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-c15eac1b267c8444 | reports/yaml_record_review/Fe_Iii-edta.md; &#96;data/ingredients/mapped/Fe_Iii-edta.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:30; Completeness:58; Recommended Edits:65 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-66e0151834e2306e | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[586,1983] | context_only | [{"current_record_sha256":"583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2","finding_id":"SEM:d80aa2af505c76f5f11c","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2","finding_id":"SEM:3f459286406b52c30097","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-588677f948bf8ce7 | data/ingredients/mapped/Fe_Iii-edta.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}] |
+| ev-b0f071ce1ec9fd78 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-1f5215a32f6321e4] | context_only | Predecessor structured review finding f-1f5215a32f6321e4 in 20261011T024634Z-mim-reconcile-all-batch-06 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024634Z-mim-reconcile-all-batch-06.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-fe-iii-edta
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Fe_Iii-edta (data/ingredients/mapped/Fe_Iii-edta.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Fe_Iii-edta (data/ingredients/mapped/Fe_Iii-edta.yaml,
+  record-41f4535c09a79d8e, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Fe_Iii-edta.yaml
+    sha256: 583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2
+    role: target
+  - path: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+    sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/20261001T050216Z-Fe_Iii-edta.md
+    sha256: 5208f6d2ff3a5e6afc3c047c8d69aebad3ba9efaecf15f2fef664ea91a0fa530
+    role: context
+  - path: reports/yaml_record_review/Fe_Iii-edta.md
+    sha256: c92644eafca670a88a1b35b852831b8be2115545ec6f178f2f1d3afa073784b3
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-41f4535c09a79d8e
+  path: data/ingredients/mapped/Fe_Iii-edta.yaml
+  label: Fe_Iii-edta
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fe_Iii-edta.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Fe_Iii-edta.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Fe_Iii-edta.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-41f4535c09a79d8e
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-41f4535c09a79d8e
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-41f4535c09a79d8e
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-41f4535c09a79d8e
+evidence:
+- evidence_id: ev-d85f0328f8e40e01
+  kind: record_content
+  reference: data/ingredients/mapped/Fe_Iii-edta.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[978],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:30729","line":980,"mapping_status":"MAPPED","ontology_id":"CHEBI:30729","preferred_term":"Fe(III)-EDTA"}],"identifier":"CHEBI:30729","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":58,"edge_count":58,"occurrences":58},"occurrence_statistics":{"media_count":58,"total_occurrences":58},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:30729","ontology_label":"ethylenediaminetetraacetatoferrate(1-)","ontology_source":"CHEBI"},"preferred_term":"Fe(III)-EDTA","sssom_rows":[{"data_row":1169,"object_id":"CHEBI:30729","object_label":"ethylenediaminetetraacetatoferrate(1-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Fe_Iii-edta","synonym_count":13}'
+  snapshot_sha256: 583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2
+- evidence_id: ev-74214f979b505d4a
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [978]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-03d572775c61a22b
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Fe_Iii-edta; data-row positions=[1169]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1169,"object_id":"CHEBI:30729","object_label":"ethylenediaminetetraacetatoferrate(1-)","other":"(ethane-1,2-diyldinitrilo)tetraacetatoferrate(III)|Fe(III)\u00b7EDTA|Ferric
+    EDTA|FE EDTA|Iron(III)-edta|ethylenediaminetetraacetatoferrate|(ethane-1,2-diyldinitrilo)tetraacetatoferrate(1-)|Fe(III)\u30fbEDTA|Fe(III)-EDTA
+    (0.66% [wt/vol] in water)|Fe\u00b7EDTA|CAS:15275-07-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Fe_Iii-edta","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-a37f622390cd1e39
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[980]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:30729","line":980,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"58","ontology_id":"CHEBI:30729","preferred_term":"Fe(III)-EDTA","total_occurrences":"58"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-c77288b83b9dc91b
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050216Z-Fe_Iii-edta.md
+  locator: 'YAML Record Review: Fe(III)-EDTA:2; Target:10; Validation:20; Identity
+    and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56;
+    Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 5208f6d2ff3a5e6afc3c047c8d69aebad3ba9efaecf15f2fef664ea91a0fa530
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/Fe_Iii-edta.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The exact
+    Fe(III)-EDTA identity passes, but TRACE_ELEMENT is computational and role/preparation
+    strings still export as SSSOM synonyms.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Fe_Iii-edta.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Fe_Iii-edta.yaml`,
+    `just validate-terms data/ingredients/mapped/Fe_Iii-edta.yaml` where applicable,
+    and `just qc-sssom`.'
+- evidence_id: ev-c15eac1b267c8444
+  kind: prior_review
+  reference: reports/yaml_record_review/Fe_Iii-edta.md
+  locator: '`data/ingredients/mapped/Fe_Iii-edta.yaml`:2; Verdict:4; Identity:12;
+    Validation:23; Evidence:30; Completeness:58; Recommended Edits:65'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: c92644eafca670a88a1b35b852831b8be2115545ec6f178f2f1d3afa073784b3
+  quote: "Recommended Edits:\n- Major: remove or filter role-prefixed and concentration-specific\
+    \ strings from\n  exact final SSSOM `other` export.\n- Major: either replace the\
+    \ provisional `TRACE_ELEMENT` inference with\n  source-backed evidence or remove\
+    \ the role facet.\n- Sync `data/curated/mapped_ingredients.yaml`, regenerate\n\
+    \  `mappings/ingredient_mappings.sssom.tsv`, and rerun strict validation plus\n\
+    \  the final SSSOM invariant gates."
+- evidence_id: ev-66e0151834e2306e
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[586,1983]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2","finding_id":"SEM:d80aa2af505c76f5f11c","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2","finding_id":"SEM:3f459286406b52c30097","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-588677f948bf8ce7
+  kind: record_content
+  reference: data/ingredients/mapped/Fe_Iii-edta.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
+    in-session LLM role assignment; review recommended.","reference_text":"Assigned
+    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"TRACE_ELEMENT"}}]'
+  snapshot_sha256: 583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2
+- evidence_id: ev-b0f071ce1ec9fd78
+  kind: prior_review
+  reference: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+  locator: findings[finding_id=f-1f5215a32f6321e4]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-1f5215a32f6321e4 in 20261011T024634Z-mim-reconcile-all-batch-06
+  snapshot_sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+assessments:
+- assessment_id: a-cab634a46268b6e8
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-41f4535c09a79d8e
+  evidence_ids:
+  - ev-d85f0328f8e40e01
+  - ev-74214f979b505d4a
+  - ev-03d572775c61a22b
+  - ev-a37f622390cd1e39
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-f4c303f10246a298
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-41f4535c09a79d8e
+  evidence_ids:
+  - ev-c77288b83b9dc91b
+  - ev-c15eac1b267c8444
+  - ev-d85f0328f8e40e01
+  - ev-66e0151834e2306e
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:16Z;
+    reviewed SHA-256=583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2;
+    current SHA-256=583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050216Z-Fe_Iii-edta.md","reports/yaml_record_review/Fe_Iii-edta.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Fe_Iii-edta.md` after the record changed from 6fd48cb9ab4ab7062b205222b458240a731ede878f63f337662dca652d6ee352
+    to 583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-c77288b83b9dc91b
+    - ev-c15eac1b267c8444
+    - ev-d85f0328f8e40e01
+  - name: legacy-native-ids
+    value: '["SEM:d80aa2af505c76f5f11c","SEM:3f459286406b52c30097"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-d85f0328f8e40e01
+    - ev-c77288b83b9dc91b
+    - ev-c15eac1b267c8444
+    - ev-66e0151834e2306e
+- assessment_id: a-588677f948bf8ce7
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-41f4535c09a79d8e
+  evidence_ids:
+  - ev-c77288b83b9dc91b
+  - ev-c15eac1b267c8444
+  - ev-588677f948bf8ce7
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-c77288b83b9dc91b
+    - ev-c15eac1b267c8444
+    - ev-588677f948bf8ce7
+findings:
+- finding_id: rec-f-1f5215a32f6321e4
+  issue_key: mim-reconciliation-role-support-41f4535c09a79d8e
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Fe(III)-EDTA'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-41f4535c09a79d8e
+  evidence_ids:
+  - ev-c77288b83b9dc91b
+  - ev-c15eac1b267c8444
+  - ev-588677f948bf8ce7
+  - ev-b0f071ce1ec9fd78
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fe_Iii-edta.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024634Z-mim-reconcile-all-batch-06
+    finding_id: f-1f5215a32f6321e4
+actions:
+- action_id: rec-action-1f5215a32f6321e4
+  description: 'Reassess prediction-only role support: Fe(III)-EDTA'
+  finding_ids:
+  - rec-f-1f5215a32f6321e4
+  target_ids:
+  - record-41f4535c09a79d8e
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fe_Iii-edta.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024634Z-mim-reconcile-all-batch-06.
+```

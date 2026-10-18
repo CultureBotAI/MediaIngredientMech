@@ -1,0 +1,260 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-cis-aconitate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Cis-aconitate (data/ingredients/mapped/Cis-aconitate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Cis-aconitate (data/ingredients/mapped/Cis-aconitate.yaml,
+  record-740b1e4c5ef636ab, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Cis-aconitate.yaml
+    sha256: 147f55b3445fd57dcdaa2192ab2d60f29bc6f64a64111dd4e25e44e509e059b4
+    role: target
+  - path: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+    sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Cis-aconitate.md
+    sha256: ac5f610d83e67cc6853f9c520125f0944d60b15b82f9454ad515dd08bc2894bc
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-740b1e4c5ef636ab
+  path: data/ingredients/mapped/Cis-aconitate.yaml
+  label: Cis-aconitate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cis-aconitate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Cis-aconitate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Cis-aconitate.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-740b1e4c5ef636ab
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-740b1e4c5ef636ab
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-740b1e4c5ef636ab
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-740b1e4c5ef636ab
+evidence:
+- evidence_id: ev-d335244c51d01bf0
+  kind: record_content
+  reference: data/ingredients/mapped/Cis-aconitate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[239],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:16383","line":241,"mapping_status":"MAPPED","ontology_id":"CHEBI:16383","preferred_term":"Cis-aconitate"}],"identifier":"CHEBI:16383","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"source_occurrences":[{"count":58,"source":"microbedecoder","source_columns":"BacDive_Metabolite_utilization"}],"total_occurrences":0},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:16383","ontology_label":"cis-aconitate(3-)","ontology_source":"CHEBI"},"preferred_term":"Cis-aconitate","sssom_rows":[{"data_row":773,"object_id":"CHEBI:16383","object_label":"cis-aconitate(3-)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Cis-aconitate","synonym_count":1}'
+  snapshot_sha256: 147f55b3445fd57dcdaa2192ab2d60f29bc6f64a64111dd4e25e44e509e059b4
+- evidence_id: ev-35cd358004732b1c
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [239]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-76e7eecd4bfea90b
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Cis-aconitate; data-row positions=[773]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":773,"object_id":"CHEBI:16383","object_label":"cis-aconitate(3-)","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Cis-aconitate","validation_method":"manual:promote_resolved_unmapped|PROMOTED|2026-08-05"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-649730ab3ba77407
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[241]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:16383","line":241,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:16383","preferred_term":"Cis-aconitate","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-a79a0cda6f31f104
+  kind: prior_review
+  reference: reports/yaml_record_review/Cis-aconitate.md
+  locator: '`data/ingredients/mapped/Cis-aconitate.yaml`:2; Verdict:4; Identity:12;
+    Validation:28; Evidence:45; Completeness:64; Recommended Edits:70'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: ac5f610d83e67cc6853f9c520125f0944d60b15b82f9454ad515dd08bc2894bc
+  quote: "Recommended Edits:\n- Minor: in `data/ingredients/mapped/Cis-aconitate.yaml`,\
+    \ replace the stale\n  top-level `notes` with current provenance that summarizes\
+    \ the\n  `CHEBI:16383` trianion promotion."
+- evidence_id: ev-27127c3e631303ed
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[416]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"147f55b3445fd57dcdaa2192ab2d60f29bc6f64a64111dd4e25e44e509e059b4","finding_id":"SEM:2c6f10441ab64fc8690e","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-812721493f03ec85
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-740b1e4c5ef636ab
+  evidence_ids:
+  - ev-d335244c51d01bf0
+  - ev-35cd358004732b1c
+  - ev-76e7eecd4bfea90b
+  - ev-649730ab3ba77407
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-2cd9217e8ec4cfdb
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-740b1e4c5ef636ab
+  evidence_ids:
+  - ev-a79a0cda6f31f104
+  - ev-d335244c51d01bf0
+  - ev-27127c3e631303ed
+  details: 'Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T12:08:33Z;
+    reviewed SHA-256=147f55b3445fd57dcdaa2192ab2d60f29bc6f64a64111dd4e25e44e509e059b4;
+    current SHA-256=147f55b3445fd57dcdaa2192ab2d60f29bc6f64a64111dd4e25e44e509e059b4;
+    hash_changed=False. Reports=["reports/yaml_record_review/Cis-aconitate.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The CHEBI cis-aconitate(3-)
+    identity passes, but the top-level notes still repeat stale unmapped-import prose.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-a79a0cda6f31f104
+    - ev-d335244c51d01bf0
+  - name: legacy-native-ids
+    value: '["SEM:2c6f10441ab64fc8690e"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-d335244c51d01bf0
+    - ev-a79a0cda6f31f104
+    - ev-27127c3e631303ed
+findings:
+- finding_id: rec-f-8d34c4d39393ed7a
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-740b1e4c5ef636ab
+  category: provenance
+  severity: minor
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Cis-aconitate'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=pass_with_minor_issues; severity=minor; reviewed_at=2026-09-16T12:08:33Z;
+    reviewed SHA-256=147f55b3445fd57dcdaa2192ab2d60f29bc6f64a64111dd4e25e44e509e059b4;
+    current SHA-256=147f55b3445fd57dcdaa2192ab2d60f29bc6f64a64111dd4e25e44e509e059b4;
+    hash_changed=False. Reports=["reports/yaml_record_review/Cis-aconitate.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The CHEBI cis-aconitate(3-)
+    identity passes, but the top-level notes still repeat stale unmapped-import prose.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-740b1e4c5ef636ab
+  evidence_ids:
+  - ev-a79a0cda6f31f104
+  - ev-d335244c51d01bf0
+  - ev-27127c3e631303ed
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cis-aconitate.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.

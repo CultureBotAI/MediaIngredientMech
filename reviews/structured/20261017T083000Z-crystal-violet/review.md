@@ -1,0 +1,426 @@
+# Per-record structured review: Crystal_Violet (data/ingredients/mapped/Crystal_Violet.yaml)
+
+- Review: 20261017T083000Z-crystal-violet
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Crystal_Violet (data/ingredients/mapped/Crystal_Violet.yaml, record-2bc1f50c860b8c12, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Crystal_Violet.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Crystal_Violet.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-2bc1f50c860b8c12 | data/ingredients/mapped/Crystal_Violet.yaml | maintained | Crystal_Violet |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-2bc1f50c860b8c12 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-2bc1f50c860b8c12 | Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-2bc1f50c860b8c12 | Reconciled against predecessor batch review 20261011T024633Z-mim-reconcile-all-batch-05 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-2bc1f50c860b8c12.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-2bc1f50c860b8c12.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T12:45:08Z; reviewed SHA-256=8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc; current SHA-256=8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc; hash_changed=False. Reports=["reports/yaml_record_review/Crystal_Violet.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact CHEBI crystal violet identity, 4/4 count, and SSSOM row pass, but the selective-agent role is only computationally supported.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-2bc1f50c860b8c12.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-75b7012ea6f99f9e: Reassess prediction-only role support: Crystal Violet
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-2bc1f50c860b8c12.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-75b7012ea6f99f9e
+
+Reassess prediction-only role support: Crystal Violet
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-6fa93b0ee70b1148 | data/ingredients/mapped/Crystal_Violet.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[771],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41688","line":773,"mapping_status":"MAPPED","ontology_id":"CHEBI:41688","preferred_term":"Crystal Violet"}],"identifier":"CHEBI:41688","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41688","ontology_label":"crystal violet","ontology_source":"CHEBI"},"preferred_term":"Crystal Violet","sssom_rows":[{"data_row":836,"object_id":"CHEBI:41688","object_label":"crystal violet","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Crystal_Violet","synonym_count":1} |
+| ev-92dd10f9ea834f9b | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [771] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-24e405ef94427d54 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Crystal_Violet; data-row positions=[836] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":836,"object_id":"CHEBI:41688","object_label":"crystal violet","other":"4-{bis[4-(dimethylamino)phenyl]methylene}-N,N-dimethylcyclohexa-2,5-dien-1-iminium chloride&#124;CAS:548-62-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Crystal_Violet","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-bdff1dc4616fee81 | docs/data/mapped_ingredients.csv; CSV lines=[773] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:41688","line":773,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:41688","preferred_term":"Crystal Violet","total_occurrences":"4"}] |
+| ev-c2ed742ae5160e87 | reports/yaml_record_review/Crystal_Violet.md; &#96;data/ingredients/mapped/Crystal_Violet.yaml&#96;:2; Verdict:4; Identity:10; Validation:24; Evidence:44; Completeness:59; Recommended Edits:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-fccfb121892d3ca1 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[446,1821] | context_only | [{"current_record_sha256":"8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc","finding_id":"SEM:a69b5bb3b845ab0c96b7","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc","finding_id":"SEM:e51715db28ed77003a09","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-f16881996ed6f0b6 | data/ingredients/mapped/Crystal_Violet.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-e8b711f1bf35b2ed | reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml; findings[finding_id=f-75b7012ea6f99f9e] | context_only | Predecessor structured review finding f-75b7012ea6f99f9e in 20261011T024633Z-mim-reconcile-all-batch-05 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024633Z-mim-reconcile-all-batch-05.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-crystal-violet
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Crystal_Violet (data/ingredients/mapped/Crystal_Violet.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Crystal_Violet (data/ingredients/mapped/Crystal_Violet.yaml,
+  record-2bc1f50c860b8c12, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Crystal_Violet.yaml
+    sha256: 8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc
+    role: target
+  - path: reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml
+    sha256: 7549030a5b50ed98868ff3497507fdfbfecd07cd858c76738f734521fa9d3603
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Crystal_Violet.md
+    sha256: adc20a33aac2d4aa01145ecbd2501a5a7057bed88582fbb0ea51aca3c3cc8c02
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-2bc1f50c860b8c12
+  path: data/ingredients/mapped/Crystal_Violet.yaml
+  label: Crystal_Violet
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Crystal_Violet.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Crystal_Violet.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Crystal_Violet.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-2bc1f50c860b8c12
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-2bc1f50c860b8c12
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-2bc1f50c860b8c12
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024633Z-mim-reconcile-all-batch-05
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-2bc1f50c860b8c12
+evidence:
+- evidence_id: ev-6fa93b0ee70b1148
+  kind: record_content
+  reference: data/ingredients/mapped/Crystal_Violet.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[771],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:41688","line":773,"mapping_status":"MAPPED","ontology_id":"CHEBI:41688","preferred_term":"Crystal
+    Violet"}],"identifier":"CHEBI:41688","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":4,"edge_count":4,"occurrences":4},"occurrence_statistics":{"media_count":4,"total_occurrences":4},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:41688","ontology_label":"crystal
+    violet","ontology_source":"CHEBI"},"preferred_term":"Crystal Violet","sssom_rows":[{"data_row":836,"object_id":"CHEBI:41688","object_label":"crystal
+    violet","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Crystal_Violet","synonym_count":1}'
+  snapshot_sha256: 8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc
+- evidence_id: ev-92dd10f9ea834f9b
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [771]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-24e405ef94427d54
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Crystal_Violet; data-row positions=[836]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":836,"object_id":"CHEBI:41688","object_label":"crystal
+    violet","other":"4-{bis[4-(dimethylamino)phenyl]methylene}-N,N-dimethylcyclohexa-2,5-dien-1-iminium
+    chloride|CAS:548-62-9","predicate_id":"skos:exactMatch","subject_id":"MIM:Crystal_Violet","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-bdff1dc4616fee81
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[773]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:41688","line":773,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"4","ontology_id":"CHEBI:41688","preferred_term":"Crystal
+    Violet","total_occurrences":"4"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-c2ed742ae5160e87
+  kind: prior_review
+  reference: reports/yaml_record_review/Crystal_Violet.md
+  locator: '`data/ingredients/mapped/Crystal_Violet.yaml`:2; Verdict:4; Identity:10;
+    Validation:24; Evidence:44; Completeness:59; Recommended Edits:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: adc20a33aac2d4aa01145ecbd2501a5a7057bed88582fbb0ea51aca3c3cc8c02
+  quote: "Recommended Edits:\n- Major: either replace the provisional `SELECTIVE_AGENT`\
+    \ evidence in\n  `data/ingredients/mapped/Crystal_Violet.yaml` with a source-backed\n\
+    \  `DATABASE_ENTRY`, or drop the role if the CultureBotHT/CultureMech rows do\n\
+    \  not actually support using crystal violet as a selective agent.\n- Regenerate\
+    \ synchronized products and rerun strict validation, SSSOM QC,\n  aggregate roundtrip,\
+    \ and `git diff --check`."
+- evidence_id: ev-fccfb121892d3ca1
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[446,1821]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc","finding_id":"SEM:a69b5bb3b845ab0c96b7","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc","finding_id":"SEM:e51715db28ed77003a09","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-f16881996ed6f0b6
+  kind: record_content
+  reference: data/ingredients/mapped/Crystal_Violet.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"physicochemical_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
+    in-session LLM role assignment; review recommended.","reference_text":"Assigned
+    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  snapshot_sha256: 8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc
+- evidence_id: ev-e8b711f1bf35b2ed
+  kind: prior_review
+  reference: reviews/structured/20261011T024633Z-mim-reconcile-all-batch-05/review.yaml
+  locator: findings[finding_id=f-75b7012ea6f99f9e]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-75b7012ea6f99f9e in 20261011T024633Z-mim-reconcile-all-batch-05
+  snapshot_sha256: 7549030a5b50ed98868ff3497507fdfbfecd07cd858c76738f734521fa9d3603
+assessments:
+- assessment_id: a-c834971be1594471
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-2bc1f50c860b8c12
+  evidence_ids:
+  - ev-6fa93b0ee70b1148
+  - ev-92dd10f9ea834f9b
+  - ev-24e405ef94427d54
+  - ev-bdff1dc4616fee81
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-6b1f98178e540215
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-2bc1f50c860b8c12
+  evidence_ids:
+  - ev-c2ed742ae5160e87
+  - ev-6fa93b0ee70b1148
+  - ev-fccfb121892d3ca1
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T12:45:08Z;
+    reviewed SHA-256=8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc;
+    current SHA-256=8a6bc6866a2ecd4c5d197251dac8a201143261f179dd41badbc1fd61213035fc;
+    hash_changed=False. Reports=["reports/yaml_record_review/Crystal_Violet.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    CHEBI crystal violet identity, 4/4 count, and SSSOM row pass, but the selective-agent
+    role is only computationally supported.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-c2ed742ae5160e87
+    - ev-6fa93b0ee70b1148
+  - name: legacy-native-ids
+    value: '["SEM:a69b5bb3b845ab0c96b7","SEM:e51715db28ed77003a09"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-6fa93b0ee70b1148
+    - ev-c2ed742ae5160e87
+    - ev-fccfb121892d3ca1
+- assessment_id: a-f16881996ed6f0b6
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-2bc1f50c860b8c12
+  evidence_ids:
+  - ev-c2ed742ae5160e87
+  - ev-f16881996ed6f0b6
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-c2ed742ae5160e87
+    - ev-f16881996ed6f0b6
+findings:
+- finding_id: rec-f-75b7012ea6f99f9e
+  issue_key: mim-reconciliation-role-support-2bc1f50c860b8c12
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Crystal Violet'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-2bc1f50c860b8c12
+  evidence_ids:
+  - ev-c2ed742ae5160e87
+  - ev-f16881996ed6f0b6
+  - ev-e8b711f1bf35b2ed
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Crystal_Violet.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024633Z-mim-reconcile-all-batch-05
+    finding_id: f-75b7012ea6f99f9e
+actions:
+- action_id: rec-action-75b7012ea6f99f9e
+  description: 'Reassess prediction-only role support: Crystal Violet'
+  finding_ids:
+  - rec-f-75b7012ea6f99f9e
+  target_ids:
+  - record-2bc1f50c860b8c12
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Crystal_Violet.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024633Z-mim-reconcile-all-batch-05.
+```

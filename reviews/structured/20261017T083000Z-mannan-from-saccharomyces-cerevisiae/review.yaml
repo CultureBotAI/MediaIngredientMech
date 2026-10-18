@@ -1,0 +1,324 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-mannan-from-saccharomyces-cerevisiae
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Mannan_From_Saccharomyces_Cerevisiae (data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Mannan_From_Saccharomyces_Cerevisiae (data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml,
+  record-7fdf10bfa8b9a5ce, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+    sha256: d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f
+    role: target
+  - path: reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml
+    sha256: 4dd969b7020555cc2250a236d6fded134bedf3add1e1c5c72d269e98f9ae001b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Mannan_From_Saccharomyces_Cerevisiae.md
+    sha256: 5fa94754294f23622c8e13c36868b1d1736556be3dbfda83a81ddc2b3be56b8a
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-7fdf10bfa8b9a5ce
+  path: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+  label: Mannan_From_Saccharomyces_Cerevisiae
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-7fdf10bfa8b9a5ce
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-7fdf10bfa8b9a5ce
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-7fdf10bfa8b9a5ce
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024636Z-mim-reconcile-all-batch-08
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-7fdf10bfa8b9a5ce
+evidence:
+- evidence_id: ev-4bb82dec6dae3786
+  kind: record_content
+  reference: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1347],"raw_equal":true},"docs_rows":[{"identifier":"cas:9036-88-8","line":1349,"mapping_status":"MAPPED","ontology_id":"NCIT:C14271","preferred_term":"Mannan
+    from Saccharomyces cerevisiae"}],"identifier":"cas:9036-88-8","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"NCIT:C14271","ontology_label":"Saccharomyces
+    cerevisiae","ontology_source":"NCIT"},"preferred_term":"Mannan from Saccharomyces
+    cerevisiae","sssom_rows":[{"data_row":1778,"object_id":"NCIT:C14271","object_label":"Saccharomyces
+    cerevisiae","predicate_id":"skos:broadMatch"},{"data_row":1779,"object_id":"cas:9036-88-8","object_label":"Mannan
+    from Saccharomyces cerevisiae","predicate_id":"skos:exactMatch"},{"data_row":1780,"object_id":"kgmicrobe.compound:mannan_from_saccharomyces_cerevisiae","object_label":"Mannan
+    from Saccharomyces cerevisiae","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Mannan_From_Saccharomyces_Cerevisiae","synonym_count":1}'
+  snapshot_sha256: d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f
+- evidence_id: ev-396a20808d2d70f3
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1347]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-196370d79bff926f
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Mannan_From_Saccharomyces_Cerevisiae; data-row positions=[1778,1779,1780]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1778,"object_id":"NCIT:C14271","object_label":"Saccharomyces
+    cerevisiae","other":"filtered, Mannan from Saccharomyces cerevisiae","predicate_id":"skos:broadMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":1779,"object_id":"cas:9036-88-8","object_label":"Mannan
+    from Saccharomyces cerevisiae","other":"CAS:9036-88-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":1780,"object_id":"kgmicrobe.compound:mannan_from_saccharomyces_cerevisiae","object_label":"Mannan
+    from Saccharomyces cerevisiae","other":"CAS:9036-88-8","predicate_id":"skos:exactMatch","subject_id":"MIM:Mannan_From_Saccharomyces_Cerevisiae","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-d87892b7f9c3e429
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1349]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:9036-88-8","line":1349,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"NCIT:C14271","preferred_term":"Mannan
+    from Saccharomyces cerevisiae","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-0b76f574aad4e79a
+  kind: prior_review
+  reference: reports/yaml_record_review/Mannan_From_Saccharomyces_Cerevisiae.md
+  locator: '`data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml`:2;
+    Verdict:4; Identity:14; Validation:26; Evidence:33; Completeness:50; Recommended
+    Edits:63'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 5fa94754294f23622c8e13c36868b1d1736556be3dbfda83a81ddc2b3be56b8a
+  quote: "Recommended Edits:\n- Remove the `NCIT:C14271` parent mapping unless a true\
+    \ source-organism\n  qualifier model is added.\n- Remove the incorrect PubChem\
+    \ CID 870 formula/SMILES/InChI payload.\n- Reject or filter `filtered, Mannan\
+    \ from Saccharomyces cerevisiae` from final\n  SSSOM.\n- Remove `CARBON_SOURCE`\
+    \ unless source-backed evidence can be attached."
+- evidence_id: ev-9f3c6246d3ead19c
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[900,1777]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f","finding_id":"SEM:8540d8cdc89bb1398494","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f","finding_id":"SEM:7e6d87702cf71494a1c3","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-243931d51505f659
+  kind: record_content
+  reference: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  snapshot_sha256: d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f
+- evidence_id: ev-1ec7f5147daa0185
+  kind: prior_review
+  reference: reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml
+  locator: findings[finding_id=f-81f8be7e39a05b8c]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-81f8be7e39a05b8c in 20261011T024636Z-mim-reconcile-all-batch-08
+  snapshot_sha256: 4dd969b7020555cc2250a236d6fded134bedf3add1e1c5c72d269e98f9ae001b
+assessments:
+- assessment_id: a-d80381d34b87e3b5
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-7fdf10bfa8b9a5ce
+  evidence_ids:
+  - ev-4bb82dec6dae3786
+  - ev-396a20808d2d70f3
+  - ev-196370d79bff926f
+  - ev-d87892b7f9c3e429
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-56b985682599927d
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-7fdf10bfa8b9a5ce
+  evidence_ids:
+  - ev-0b76f574aad4e79a
+  - ev-4bb82dec6dae3786
+  - ev-9f3c6246d3ead19c
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T01:36:18Z;
+    reviewed SHA-256=d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f;
+    current SHA-256=d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f;
+    hash_changed=False. Reports=["reports/yaml_record_review/Mannan_From_Saccharomyces_Cerevisiae.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The exact
+    CAS and local registry rows exist, but the record has an organism parent, bad
+    PubChem structure, raw exported other text, and provisional CARBON_SOURCE evidence.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-0b76f574aad4e79a
+    - ev-4bb82dec6dae3786
+  - name: legacy-native-ids
+    value: '["SEM:8540d8cdc89bb1398494","SEM:7e6d87702cf71494a1c3"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-4bb82dec6dae3786
+    - ev-0b76f574aad4e79a
+    - ev-9f3c6246d3ead19c
+- assessment_id: a-243931d51505f659
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-7fdf10bfa8b9a5ce
+  evidence_ids:
+  - ev-0b76f574aad4e79a
+  - ev-243931d51505f659
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-0b76f574aad4e79a
+    - ev-243931d51505f659
+findings:
+- finding_id: rec-f-81f8be7e39a05b8c
+  issue_key: mim-reconciliation-role-support-7fdf10bfa8b9a5ce
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Mannan from Saccharomyces cerevisiae'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-7fdf10bfa8b9a5ce
+  evidence_ids:
+  - ev-0b76f574aad4e79a
+  - ev-243931d51505f659
+  - ev-1ec7f5147daa0185
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024636Z-mim-reconcile-all-batch-08
+    finding_id: f-81f8be7e39a05b8c
+actions:
+- action_id: rec-action-81f8be7e39a05b8c
+  description: 'Reassess prediction-only role support: Mannan from Saccharomyces cerevisiae'
+  finding_ids:
+  - rec-f-81f8be7e39a05b8c
+  target_ids:
+  - record-7fdf10bfa8b9a5ce
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024636Z-mim-reconcile-all-batch-08.

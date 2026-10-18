@@ -1,0 +1,267 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-hcl
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Hcl (data/ingredients/mapped/Hcl.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Hcl (data/ingredients/mapped/Hcl.yaml, record-ae7709e8263f9c8c,
+  mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound
+  to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Hcl.yaml
+    sha256: 396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e
+    role: target
+  - path: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+    sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Hcl.md
+    sha256: 1b0347e12b5ade728b89c2a1fb5c2646532efc9ebf2f9a2e71a2a8b31e910e7a
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-ae7709e8263f9c8c
+  path: data/ingredients/mapped/Hcl.yaml
+  label: Hcl
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Hcl.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Hcl.yaml covering
+    current record state, role evidence support, published surfaces, and residual
+    historical review claims.
+  selection: Single record data/ingredients/mapped/Hcl.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-ae7709e8263f9c8c
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-ae7709e8263f9c8c
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-ae7709e8263f9c8c
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-ae7709e8263f9c8c
+evidence:
+- evidence_id: ev-2561754e110ee608
+  kind: record_content
+  reference: data/ingredients/mapped/Hcl.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1115],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17883","line":1117,"mapping_status":"MAPPED","ontology_id":"CHEBI:17883","preferred_term":"HCl"}],"identifier":"CHEBI:17883","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1208,"edge_count":1208,"occurrences":1208},"occurrence_statistics":{"media_count":1208,"total_occurrences":1208},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17883","ontology_label":"hydrogen
+    chloride","ontology_source":"CHEBI"},"preferred_term":"HCl","sssom_rows":[{"data_row":1410,"object_id":"CHEBI:17883","object_label":"hydrogen
+    chloride","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Hcl","synonym_count":25}'
+  snapshot_sha256: 396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e
+- evidence_id: ev-649d7e1f85b3c891
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1115]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-3b421df42a1d278a
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Hcl; data-row positions=[1410]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1410,"object_id":"CHEBI:17883","object_label":"hydrogen
+    chloride","other":"Chlorwasserstoff|HCl.|Hydrochloride|Hydrogenchlorid|Wasserstoffchlorid|[HCl]|chlorane|chloridohydrogen|chlorure
+    d''hydrogene|cloruro de hidrogeno|hydrochloric acid|HCl (25%; 7.7 M)|HCl (25%)|HCl
+    (35%)|HCl (25%, v/v)|HCl (32%)|HCl (25% or 7.7 M)|HCl (25% v/ v)|HCl (25%, 7.7
+    M)|CAS:7647-01-0","predicate_id":"skos:exactMatch","subject_id":"MIM:Hcl","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-74010b339e235857
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1117]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17883","line":1117,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"1208","ontology_id":"CHEBI:17883","preferred_term":"HCl","total_occurrences":"1208"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-c8b6dee4bdd4bf23
+  kind: prior_review
+  reference: reports/yaml_record_review/Hcl.md
+  locator: '`data/ingredients/mapped/Hcl.yaml`:2; Verdict:4; Identity:10; Validation:21;
+    Evidence:29; Completeness:44; Recommended Edits:52'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1b0347e12b5ade728b89c2a1fb5c2646532efc9ebf2f9a2e71a2a8b31e910e7a
+  quote: "Recommended Edits:\n- Major: suppress or retype `HCl.` and all `HCl (...)`\
+    \ concentration labels so\n  they no longer appear in final SSSOM as exact synonyms."
+- evidence_id: ev-38baaaa7faa2a5b2
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[724]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e","finding_id":"SEM:710802002aed092a049d","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-d6ca75939165b3bc
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-ae7709e8263f9c8c
+  evidence_ids:
+  - ev-2561754e110ee608
+  - ev-649d7e1f85b3c891
+  - ev-3b421df42a1d278a
+  - ev-74010b339e235857
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-f5b814b372f0a377
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-ae7709e8263f9c8c
+  evidence_ids:
+  - ev-c8b6dee4bdd4bf23
+  - ev-2561754e110ee608
+  - ev-38baaaa7faa2a5b2
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T19:09:40Z;
+    reviewed SHA-256=396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e;
+    current SHA-256=396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e;
+    hash_changed=False. Reports=["reports/yaml_record_review/Hcl.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The exact hydrogen-chloride
+    identity passes, but final SSSOM exports punctuation and concentration-specific
+    HCl labels as exact synonyms.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-c8b6dee4bdd4bf23
+    - ev-2561754e110ee608
+  - name: legacy-native-ids
+    value: '["SEM:710802002aed092a049d"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-2561754e110ee608
+    - ev-c8b6dee4bdd4bf23
+    - ev-38baaaa7faa2a5b2
+findings:
+- finding_id: rec-f-b1ffc4a327fcb70c
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-ae7709e8263f9c8c
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Hcl'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T19:09:40Z;
+    reviewed SHA-256=396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e;
+    current SHA-256=396ba5bf8b51c29cda96c771312bb42536b0b4a23b3462377e5059fbe9bb665e;
+    hash_changed=False. Reports=["reports/yaml_record_review/Hcl.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The exact hydrogen-chloride
+    identity passes, but final SSSOM exports punctuation and concentration-specific
+    HCl labels as exact synonyms.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-ae7709e8263f9c8c
+  evidence_ids:
+  - ev-c8b6dee4bdd4bf23
+  - ev-2561754e110ee608
+  - ev-38baaaa7faa2a5b2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Hcl.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.

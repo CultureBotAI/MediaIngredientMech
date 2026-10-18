@@ -1,0 +1,423 @@
+# Per-record structured review: Na-benzoate (data/ingredients/mapped/Na-benzoate.yaml)
+
+- Review: 20261017T083000Z-na-benzoate
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Na-benzoate (data/ingredients/mapped/Na-benzoate.yaml, record-d1d515c33fd06c57, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Na-benzoate.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Na-benzoate.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-d1d515c33fd06c57 | data/ingredients/mapped/Na-benzoate.yaml | maintained | Na-benzoate |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-d1d515c33fd06c57 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-d1d515c33fd06c57 | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-d1d515c33fd06c57 | Reconciled against predecessor batch review 20261011T024636Z-mim-reconcile-all-batch-08 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-d1d515c33fd06c57.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-d1d515c33fd06c57.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T04:50:08Z; reviewed SHA-256=efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464; current SHA-256=efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464; hash_changed=False. Reports=["reports/yaml_record_review/Na-benzoate.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact CHEBI:113455 sodium benzoate identity, CAS-backed structure, occurrence count, synonyms, and final exact row pass, but CARBON_SOURCE is provisional.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-d1d515c33fd06c57.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-cbceae0847877627: Reassess prediction-only role support: Na-benzoate
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-d1d515c33fd06c57.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-cbceae0847877627
+
+Reassess prediction-only role support: Na-benzoate
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-bd5ac1642330f6b3 | data/ingredients/mapped/Na-benzoate.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1461],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113455","line":1463,"mapping_status":"MAPPED","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate"}],"identifier":"CHEBI:113455","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113455","ontology_label":"sodium benzoate","ontology_source":"CHEBI"},"preferred_term":"Na-benzoate","sssom_rows":[{"data_row":1963,"object_id":"CHEBI:113455","object_label":"sodium benzoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-benzoate","synonym_count":7} |
+| ev-7477e3556b36a4de | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1461] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-6fa0c0c6020f932b | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Na-benzoate; data-row positions=[1963] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1963,"object_id":"CHEBI:113455","object_label":"sodium benzoate","other":"Benzoic acid, sodium salt&#124;E211&#124;Sodiumbenzoate&#124;CAS:532-32-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-benzoate","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-9e26101ae1328cc8 | docs/data/mapped_ingredients.csv; CSV lines=[1463] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:113455","line":1463,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate","total_occurrences":"50"}] |
+| ev-d703b9322750baa1 | reports/yaml_record_review/Na-benzoate.md; &#96;data/ingredients/mapped/Na-benzoate.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:26; Completeness:39; Recommended Edits:46 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-27034661bc4cc319 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[970,1923] | context_only | [{"current_record_sha256":"efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464","finding_id":"SEM:65bdfc7402f778ffc8c0","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464","finding_id":"SEM:68398a7e85f2f7212029","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-9ae6ce943f593235 | data/ingredients/mapped/Na-benzoate.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional in-session LLM role assignment; review recommended.","reference_text":"Assigned by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}] |
+| ev-afc33a0932b42aea | reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml; findings[finding_id=f-cbceae0847877627] | context_only | Predecessor structured review finding f-cbceae0847877627 in 20261011T024636Z-mim-reconcile-all-batch-08 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024636Z-mim-reconcile-all-batch-08.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-na-benzoate
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Na-benzoate (data/ingredients/mapped/Na-benzoate.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Na-benzoate (data/ingredients/mapped/Na-benzoate.yaml,
+  record-d1d515c33fd06c57, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Na-benzoate.yaml
+    sha256: efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464
+    role: target
+  - path: reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml
+    sha256: 4dd969b7020555cc2250a236d6fded134bedf3add1e1c5c72d269e98f9ae001b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Na-benzoate.md
+    sha256: 1f72ea268939325b4f2d0b54313ee5d0207a0b9caf55b0c11cabe9e206a6b520
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-d1d515c33fd06c57
+  path: data/ingredients/mapped/Na-benzoate.yaml
+  label: Na-benzoate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na-benzoate.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Na-benzoate.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Na-benzoate.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-d1d515c33fd06c57
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-d1d515c33fd06c57
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-d1d515c33fd06c57
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024636Z-mim-reconcile-all-batch-08
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-d1d515c33fd06c57
+evidence:
+- evidence_id: ev-bd5ac1642330f6b3
+  kind: record_content
+  reference: data/ingredients/mapped/Na-benzoate.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1461],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:113455","line":1463,"mapping_status":"MAPPED","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate"}],"identifier":"CHEBI:113455","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":50,"edge_count":50,"occurrences":50},"occurrence_statistics":{"media_count":50,"total_occurrences":50},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:113455","ontology_label":"sodium
+    benzoate","ontology_source":"CHEBI"},"preferred_term":"Na-benzoate","sssom_rows":[{"data_row":1963,"object_id":"CHEBI:113455","object_label":"sodium
+    benzoate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Na-benzoate","synonym_count":7}'
+  snapshot_sha256: efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464
+- evidence_id: ev-7477e3556b36a4de
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1461]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-6fa0c0c6020f932b
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Na-benzoate; data-row positions=[1963]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1963,"object_id":"CHEBI:113455","object_label":"sodium
+    benzoate","other":"Benzoic acid, sodium salt|E211|Sodiumbenzoate|CAS:532-32-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Na-benzoate","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-9e26101ae1328cc8
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1463]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:113455","line":1463,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"50","ontology_id":"CHEBI:113455","preferred_term":"Na-benzoate","total_occurrences":"50"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-d703b9322750baa1
+  kind: prior_review
+  reference: reports/yaml_record_review/Na-benzoate.md
+  locator: '`data/ingredients/mapped/Na-benzoate.yaml`:2; Verdict:4; Identity:10;
+    Validation:19; Evidence:26; Completeness:39; Recommended Edits:46'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1f72ea268939325b4f2d0b54313ee5d0207a0b9caf55b0c11cabe9e206a6b520
+  quote: "Recommended Edits:\n- Major: in `data/ingredients/mapped/Na-benzoate.yaml`,\
+    \ either remove\n  `nutritional_roles.CARBON_SOURCE` or replace its computational\
+    \ placeholder\n  with source-backed evidence from the maintained CultureMech occurrence\
+    \ or\n  literature input that specifically says sodium benzoate serves as a carbon\n\
+    \  source. Rerun strict validation and the role/output SSSOM checks after the\n\
+    \  role facet changes."
+- evidence_id: ev-27034661bc4cc319
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[970,1923]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464","finding_id":"SEM:65bdfc7402f778ffc8c0","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464","finding_id":"SEM:68398a7e85f2f7212029","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-9ae6ce943f593235
+  kind: record_content
+  reference: data/ingredients/mapped/Na-benzoate.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.6,"evidence":[{"curator_note":"Provisional
+    in-session LLM role assignment; review recommended.","reference_text":"Assigned
+    by in-session Claude reasoning (no external API)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"CARBON_SOURCE"}}]'
+  snapshot_sha256: efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464
+- evidence_id: ev-afc33a0932b42aea
+  kind: prior_review
+  reference: reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml
+  locator: findings[finding_id=f-cbceae0847877627]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-cbceae0847877627 in 20261011T024636Z-mim-reconcile-all-batch-08
+  snapshot_sha256: 4dd969b7020555cc2250a236d6fded134bedf3add1e1c5c72d269e98f9ae001b
+assessments:
+- assessment_id: a-45ccd9d114aaef2a
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-d1d515c33fd06c57
+  evidence_ids:
+  - ev-bd5ac1642330f6b3
+  - ev-7477e3556b36a4de
+  - ev-6fa0c0c6020f932b
+  - ev-9e26101ae1328cc8
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-f6e43bac4a6950a9
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-d1d515c33fd06c57
+  evidence_ids:
+  - ev-d703b9322750baa1
+  - ev-bd5ac1642330f6b3
+  - ev-27034661bc4cc319
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T04:50:08Z;
+    reviewed SHA-256=efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464;
+    current SHA-256=efeb30f2a87c84be383f750cc18a7dc6d544b1add6841e831bf72f19fa5f9464;
+    hash_changed=False. Reports=["reports/yaml_record_review/Na-benzoate.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The exact CHEBI:113455
+    sodium benzoate identity, CAS-backed structure, occurrence count, synonyms, and
+    final exact row pass, but CARBON_SOURCE is provisional.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-d703b9322750baa1
+    - ev-bd5ac1642330f6b3
+  - name: legacy-native-ids
+    value: '["SEM:65bdfc7402f778ffc8c0","SEM:68398a7e85f2f7212029"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-bd5ac1642330f6b3
+    - ev-d703b9322750baa1
+    - ev-27034661bc4cc319
+- assessment_id: a-9ae6ce943f593235
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-d1d515c33fd06c57
+  evidence_ids:
+  - ev-d703b9322750baa1
+  - ev-9ae6ce943f593235
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-d703b9322750baa1
+    - ev-9ae6ce943f593235
+findings:
+- finding_id: rec-f-cbceae0847877627
+  issue_key: mim-reconciliation-role-support-d1d515c33fd06c57
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Na-benzoate'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-d1d515c33fd06c57
+  evidence_ids:
+  - ev-d703b9322750baa1
+  - ev-9ae6ce943f593235
+  - ev-afc33a0932b42aea
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na-benzoate.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024636Z-mim-reconcile-all-batch-08
+    finding_id: f-cbceae0847877627
+actions:
+- action_id: rec-action-cbceae0847877627
+  description: 'Reassess prediction-only role support: Na-benzoate'
+  finding_ids:
+  - rec-f-cbceae0847877627
+  target_ids:
+  - record-d1d515c33fd06c57
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na-benzoate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024636Z-mim-reconcile-all-batch-08.
+```

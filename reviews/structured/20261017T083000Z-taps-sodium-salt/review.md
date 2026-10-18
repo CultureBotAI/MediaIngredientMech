@@ -1,0 +1,431 @@
+# Per-record structured review: TAPS_Sodium_Salt (data/ingredients/mapped/TAPS_Sodium_Salt.yaml)
+
+- Review: 20261017T083000Z-taps-sodium-salt
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for TAPS_Sodium_Salt (data/ingredients/mapped/TAPS_Sodium_Salt.yaml, record-d51b3cb278de0aa9, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/TAPS_Sodium_Salt.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/TAPS_Sodium_Salt.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-d51b3cb278de0aa9 | data/ingredients/mapped/TAPS_Sodium_Salt.yaml | maintained | TAPS_Sodium_Salt |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-d51b3cb278de0aa9 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-d51b3cb278de0aa9 | Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-d51b3cb278de0aa9 | Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-d51b3cb278de0aa9.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-d51b3cb278de0aa9.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T17:34:58Z; reviewed SHA-256=8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6; current SHA-256=8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6; hash_changed=False. Reports=["reports/yaml_record_review/TAPS_Sodium_Salt.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The CAS sodium-salt identity passes, but BUFFER is provisional and the CHEBI parent SSSOM row publishes bare TAPS.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-d51b3cb278de0aa9.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-50c214ef030cff62: Reassess prediction-only role support: TAPS sodium salt
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-d51b3cb278de0aa9.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-50c214ef030cff62
+
+Reassess prediction-only role support: TAPS sodium salt
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-69e149b325ea7ee9 | data/ingredients/mapped/TAPS_Sodium_Salt.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1931],"raw_equal":true},"docs_rows":[{"identifier":"cas:91000-53-2","line":1933,"mapping_status":"MAPPED","ontology_id":"CHEBI:191055","preferred_term":"TAPS sodium salt"}],"identifier":"cas:91000-53-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:191055","ontology_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","ontology_source":"CHEBI"},"preferred_term":"TAPS sodium salt","sssom_rows":[{"data_row":2707,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","predicate_id":"skos:broadMatch"},{"data_row":2708,"object_id":"cas:91000-53-2","object_label":"TAPS sodium salt","predicate_id":"skos:exactMatch"},{"data_row":2709,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TAPS_Sodium_Salt","synonym_count":1} |
+| ev-62fed400e1bb0a6a | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1931] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-e9a32d6ba9c88079 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:TAPS_Sodium_Salt; data-row positions=[2707,2708,2709] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2707,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid","other":"TAPS","predicate_id":"skos:broadMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"manual:reconcile_sssom&#124;PREDICATE&#124;2026-09-20"},{"data_row":2708,"object_id":"cas:91000-53-2","object_label":"TAPS sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"},{"data_row":2709,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-07-07"}] |
+| ev-9101df8977c4fe24 | docs/data/mapped_ingredients.csv; CSV lines=[1933] | supports | Published identity and count rows inspected: [{"identifier":"cas:91000-53-2","line":1933,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:191055","preferred_term":"TAPS sodium salt","total_occurrences":"8"}] |
+| ev-727aea1d6eba8e41 | reports/yaml_record_review/TAPS_Sodium_Salt.md; &#96;data/ingredients/mapped/TAPS_Sodium_Salt.yaml&#96;:2; Verdict:4; Identity:12; Validation:24; Evidence:34; Completeness:52; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-08fa23f763826348 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1266,1883] | context_only | [{"current_record_sha256":"8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6","finding_id":"SEM:9b1e1626df5abe4247d3","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6","finding_id":"SEM:58dd0dd15c4fcf3672f2","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-978d3b9b37714158 | data/ingredients/mapped/TAPS_Sodium_Salt.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}] |
+| ev-6b2a3c0677ae73a5 | reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml; findings[finding_id=f-50c214ef030cff62] | context_only | Predecessor structured review finding f-50c214ef030cff62 in 20261011T024638Z-mim-reconcile-all-batch-11 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024638Z-mim-reconcile-all-batch-11.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-taps-sodium-salt
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: TAPS_Sodium_Salt (data/ingredients/mapped/TAPS_Sodium_Salt.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for TAPS_Sodium_Salt (data/ingredients/mapped/TAPS_Sodium_Salt.yaml,
+  record-d51b3cb278de0aa9, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
+    sha256: 8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6
+    role: target
+  - path: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+    sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/TAPS_Sodium_Salt.md
+    sha256: ae2080221b6ac6e31aca30b468c6664db4c3c21aea361a02584380d9fd991e3a
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-d51b3cb278de0aa9
+  path: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
+  label: TAPS_Sodium_Salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/TAPS_Sodium_Salt.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/TAPS_Sodium_Salt.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-d51b3cb278de0aa9
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-d51b3cb278de0aa9
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-d51b3cb278de0aa9
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-d51b3cb278de0aa9
+evidence:
+- evidence_id: ev-69e149b325ea7ee9
+  kind: record_content
+  reference: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1931],"raw_equal":true},"docs_rows":[{"identifier":"cas:91000-53-2","line":1933,"mapping_status":"MAPPED","ontology_id":"CHEBI:191055","preferred_term":"TAPS
+    sodium salt"}],"identifier":"cas:91000-53-2","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":8,"edge_count":8,"occurrences":8},"occurrence_statistics":{"media_count":8,"total_occurrences":8},"ontology_mapping":{"mapping_quality":"NARROW_MATCH","ontology_id":"CHEBI:191055","ontology_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+    acid","ontology_source":"CHEBI"},"preferred_term":"TAPS sodium salt","sssom_rows":[{"data_row":2707,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+    acid","predicate_id":"skos:broadMatch"},{"data_row":2708,"object_id":"cas:91000-53-2","object_label":"TAPS
+    sodium salt","predicate_id":"skos:exactMatch"},{"data_row":2709,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS
+    sodium salt","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:TAPS_Sodium_Salt","synonym_count":1}'
+  snapshot_sha256: 8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6
+- evidence_id: ev-62fed400e1bb0a6a
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1931]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-e9a32d6ba9c88079
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:TAPS_Sodium_Salt; data-row positions=[2707,2708,2709]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2707,"object_id":"CHEBI:191055","object_label":"N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+    acid","other":"TAPS","predicate_id":"skos:broadMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"manual:reconcile_sssom|PREDICATE|2026-09-20"},{"data_row":2708,"object_id":"cas:91000-53-2","object_label":"TAPS
+    sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"},{"data_row":2709,"object_id":"kgmicrobe.compound:taps_sodium_salt","object_label":"TAPS
+    sodium salt","other":"CAS:91000-53-2","predicate_id":"skos:exactMatch","subject_id":"MIM:TAPS_Sodium_Salt","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-9101df8977c4fe24
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1933]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"cas:91000-53-2","line":1933,"mapping_quality":"NARROW_MATCH","mapping_status":"MAPPED","media_count":"8","ontology_id":"CHEBI:191055","preferred_term":"TAPS
+    sodium salt","total_occurrences":"8"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-727aea1d6eba8e41
+  kind: prior_review
+  reference: reports/yaml_record_review/TAPS_Sodium_Salt.md
+  locator: '`data/ingredients/mapped/TAPS_Sodium_Salt.yaml`:2; Verdict:4; Identity:12;
+    Validation:24; Evidence:34; Completeness:52; Recommended Edits:64'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: ae2080221b6ac6e31aca30b468c6664db4c3c21aea361a02584380d9fd991e3a
+  quote: "Recommended Edits:\n- Major: remove bare `TAPS` as an active synonym from\n\
+    \  `data/ingredients/mapped/TAPS_Sodium_Salt.yaml`, or retype it as provenance\n\
+    \  that the SSSOM builder will not export for the sodium-salt subject.\n- Major:\
+    \ replace the provisional name-pattern `BUFFER` role with source-backed\n  evidence\
+    \ for TAPS sodium salt as a buffer, or remove the role if no maintained\n  source\
+    \ supports it.\n- Major: regenerate `mappings/ingredient_mappings.sssom.tsv` so\
+    \ the\n  `CHEBI:191055` parent row no longer publishes `TAPS` in `other` while\
+    \ the\n  exact CAS and KG-Microbe sibling rows continue to preserve `CAS:91000-53-2`."
+- evidence_id: ev-08fa23f763826348
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1266,1883]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6","finding_id":"SEM:9b1e1626df5abe4247d3","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6","finding_id":"SEM:58dd0dd15c4fcf3672f2","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-978d3b9b37714158
+  kind: record_content
+  reference: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"BUFFER"}}]'
+  snapshot_sha256: 8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6
+- evidence_id: ev-6b2a3c0677ae73a5
+  kind: prior_review
+  reference: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+  locator: findings[finding_id=f-50c214ef030cff62]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-50c214ef030cff62 in 20261011T024638Z-mim-reconcile-all-batch-11
+  snapshot_sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+assessments:
+- assessment_id: a-1479deabc93f755f
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-d51b3cb278de0aa9
+  evidence_ids:
+  - ev-69e149b325ea7ee9
+  - ev-62fed400e1bb0a6a
+  - ev-e9a32d6ba9c88079
+  - ev-9101df8977c4fe24
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-55d7de2c0f593a9c
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-d51b3cb278de0aa9
+  evidence_ids:
+  - ev-727aea1d6eba8e41
+  - ev-69e149b325ea7ee9
+  - ev-08fa23f763826348
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T17:34:58Z;
+    reviewed SHA-256=8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6;
+    current SHA-256=8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6;
+    hash_changed=False. Reports=["reports/yaml_record_review/TAPS_Sodium_Salt.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The CAS
+    sodium-salt identity passes, but BUFFER is provisional and the CHEBI parent SSSOM
+    row publishes bare TAPS.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-727aea1d6eba8e41
+    - ev-69e149b325ea7ee9
+  - name: legacy-native-ids
+    value: '["SEM:9b1e1626df5abe4247d3","SEM:58dd0dd15c4fcf3672f2"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-69e149b325ea7ee9
+    - ev-727aea1d6eba8e41
+    - ev-08fa23f763826348
+- assessment_id: a-978d3b9b37714158
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-d51b3cb278de0aa9
+  evidence_ids:
+  - ev-727aea1d6eba8e41
+  - ev-978d3b9b37714158
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-727aea1d6eba8e41
+    - ev-978d3b9b37714158
+findings:
+- finding_id: rec-f-50c214ef030cff62
+  issue_key: mim-reconciliation-role-support-d51b3cb278de0aa9
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: TAPS sodium salt'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-d51b3cb278de0aa9
+  evidence_ids:
+  - ev-727aea1d6eba8e41
+  - ev-978d3b9b37714158
+  - ev-6b2a3c0677ae73a5
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024638Z-mim-reconcile-all-batch-11
+    finding_id: f-50c214ef030cff62
+actions:
+- action_id: rec-action-50c214ef030cff62
+  description: 'Reassess prediction-only role support: TAPS sodium salt'
+  finding_ids:
+  - rec-f-50c214ef030cff62
+  target_ids:
+  - record-d51b3cb278de0aa9
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/TAPS_Sodium_Salt.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024638Z-mim-reconcile-all-batch-11.
+```

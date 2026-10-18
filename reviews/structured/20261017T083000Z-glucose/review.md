@@ -1,0 +1,461 @@
+# Per-record structured review: Glucose (data/ingredients/mapped/Glucose.yaml)
+
+- Review: 20261017T083000Z-glucose
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Glucose (data/ingredients/mapped/Glucose.yaml, record-4f86e647500357d8, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Glucose.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Glucose.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-4f86e647500357d8 | data/ingredients/mapped/Glucose.yaml | maintained | Glucose |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-4f86e647500357d8 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-4f86e647500357d8 | Role assertions on nutritional_roles[1] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-4f86e647500357d8 | Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-4f86e647500357d8.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-4f86e647500357d8.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:23Z; reviewed SHA-256=5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb; current SHA-256=5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb; hash_changed=False. Reports=["reports/yaml_record_review/20261001T050223Z-Glucose.md","reports/yaml_record_review/Glucose.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Refreshed &#96;reports/yaml_record_review/Glucose.md&#96; after the record changed from 215b731f3f37b4eaa43751f930d9709fff85ea34319efdeeac2d8f4712e744e9 to 5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb; preserved the previous major finding floor pending targeted retirement.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-4f86e647500357d8.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-a03c70964c4d8d8e: Reassess prediction-only role support: Glucose
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-4f86e647500357d8.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-a03c70964c4d8d8e
+
+Reassess prediction-only role support: Glucose
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-952c50503824443e | data/ingredients/mapped/Glucose.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1058],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17234","line":1060,"mapping_status":"MAPPED","ontology_id":"CHEBI:17234","preferred_term":"Glucose"}],"identifier":"CHEBI:17234","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2675,"edge_count":2675,"occurrences":2752},"occurrence_statistics":{"media_count":2675,"total_occurrences":2752},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17234","ontology_label":"glucose","ontology_source":"CHEBI"},"preferred_term":"Glucose","sssom_rows":[{"data_row":1307,"object_id":"CHEBI:17234","object_label":"glucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glucose","synonym_count":16} |
+| ev-c4f6b112960660cd | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1058] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-59a60d44737e6985 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Glucose; data-row positions=[1307] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1307,"object_id":"CHEBI:17234","object_label":"glucose","other":"(2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal&#124;D-GLUCOSE IN LINEAR FORM&#124;DL-glucose&#124;D\u00adglucose&#124;Glc&#124;Glukose&#124;aldehydo-D-gluco-hexose&#124;gluco-hexose&#124;CAS:50-99-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Glucose","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-c099bcfaffd2996e | docs/data/mapped_ingredients.csv; CSV lines=[1060] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:17234","line":1060,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2675","ontology_id":"CHEBI:17234","preferred_term":"Glucose","total_occurrences":"2752"}] |
+| ev-e3745f3cbed80f43 | reports/yaml_record_review/20261001T050223Z-Glucose.md; YAML Record Review: Glucose:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61; Additional Notes:67 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-373977c5a2fadcab | reports/yaml_record_review/Glucose.md; &#96;data/ingredients/mapped/Glucose.yaml&#96;:2; Verdict:4; Identity:12; Validation:23; Evidence:35; Completeness:68; Recommended Edits:76 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-b6a7c834ed2bcf2d | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[666,1448] | context_only | [{"current_record_sha256":"5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb","finding_id":"SEM:1e0998c208c8629e7ea1","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb","finding_id":"SEM:0870710d7ebc2f2d5351","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-a6e25047c6f02294 | data/ingredients/mapped/Glucose.yaml; nutritional_roles[1] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}] |
+| ev-55cea40206bb9315 | reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml; findings[finding_id=f-a03c70964c4d8d8e] | context_only | Predecessor structured review finding f-a03c70964c4d8d8e in 20261011T024634Z-mim-reconcile-all-batch-06 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024634Z-mim-reconcile-all-batch-06.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-glucose
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Glucose (data/ingredients/mapped/Glucose.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Glucose (data/ingredients/mapped/Glucose.yaml,
+  record-4f86e647500357d8, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Glucose.yaml
+    sha256: 5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb
+    role: target
+  - path: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+    sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/20261001T050223Z-Glucose.md
+    sha256: 9bd379b5dd721e24a9230efe377733b2785e8d6c943d183a70dc9019bcae86f2
+    role: context
+  - path: reports/yaml_record_review/Glucose.md
+    sha256: a73391d1847e6c1c62b281b61b96ab65f480b9cb09bfb5f62e29d8291a8111a0
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-4f86e647500357d8
+  path: data/ingredients/mapped/Glucose.yaml
+  label: Glucose
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glucose.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Glucose.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Glucose.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-4f86e647500357d8
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-4f86e647500357d8
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[1] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-4f86e647500357d8
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024634Z-mim-reconcile-all-batch-06
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-4f86e647500357d8
+evidence:
+- evidence_id: ev-952c50503824443e
+  kind: record_content
+  reference: data/ingredients/mapped/Glucose.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1058],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17234","line":1060,"mapping_status":"MAPPED","ontology_id":"CHEBI:17234","preferred_term":"Glucose"}],"identifier":"CHEBI:17234","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2675,"edge_count":2675,"occurrences":2752},"occurrence_statistics":{"media_count":2675,"total_occurrences":2752},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17234","ontology_label":"glucose","ontology_source":"CHEBI"},"preferred_term":"Glucose","sssom_rows":[{"data_row":1307,"object_id":"CHEBI:17234","object_label":"glucose","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Glucose","synonym_count":16}'
+  snapshot_sha256: 5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb
+- evidence_id: ev-c4f6b112960660cd
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1058]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-59a60d44737e6985
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Glucose; data-row positions=[1307]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1307,"object_id":"CHEBI:17234","object_label":"glucose","other":"(2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanal|D-GLUCOSE
+    IN LINEAR FORM|DL-glucose|D\u00adglucose|Glc|Glukose|aldehydo-D-gluco-hexose|gluco-hexose|CAS:50-99-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Glucose","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-c099bcfaffd2996e
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1060]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17234","line":1060,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"2675","ontology_id":"CHEBI:17234","preferred_term":"Glucose","total_occurrences":"2752"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-e3745f3cbed80f43
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050223Z-Glucose.md
+  locator: 'YAML Record Review: Glucose:2; Target:10; Validation:20; Identity and
+    Grounding:27; Evidence:36; Completeness:46; Findings:52; Recommended Edits:56;
+    Follow-up Checks:61; Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 9bd379b5dd721e24a9230efe377733b2785e8d6c943d183a70dc9019bcae86f2
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/Glucose.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The exact
+    glucose identity and source-backed carbon role pass, but final SSSOM synonyms
+    and ENERGY_SOURCE need curation.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Glucose.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Glucose.yaml`,
+    `just validate-terms data/ingredients/mapped/Glucose.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-373977c5a2fadcab
+  kind: prior_review
+  reference: reports/yaml_record_review/Glucose.md
+  locator: '`data/ingredients/mapped/Glucose.yaml`:2; Verdict:4; Identity:12; Validation:23;
+    Evidence:35; Completeness:68; Recommended Edits:76'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: a73391d1847e6c1c62b281b61b96ab65f480b9cb09bfb5f62e29d8291a8111a0
+  quote: "Recommended Edits:\n- Major: remove or retag the open-chain/D-form synonyms\
+    \ and\n  `fermentation: glucose` so final SSSOM exports only real `CHEBI:17234`\n\
+    \  glucose synonyms, then regenerate final SSSOM and rerun SSSOM invariants.\n\
+    - Major: replace `ENERGY_SOURCE` with source-backed evidence or remove the role.\n\
+    - Minor: remove or rewrite the auto-proposed PubMed evidence item so the exact\n\
+    \  ChEBI mapping is supported only by relevant provenance."
+- evidence_id: ev-b6a7c834ed2bcf2d
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[666,1448]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb","finding_id":"SEM:1e0998c208c8629e7ea1","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb","finding_id":"SEM:0870710d7ebc2f2d5351","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-a6e25047c6f02294
+  kind: record_content
+  reference: data/ingredients/mapped/Glucose.yaml
+  locator: nutritional_roles[1]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[1]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
+    ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.","reference_text":"Canonical
+    energy substrate (catabolised for energy)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"ENERGY_SOURCE"}}]'
+  snapshot_sha256: 5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb
+- evidence_id: ev-55cea40206bb9315
+  kind: prior_review
+  reference: reviews/structured/20261011T024634Z-mim-reconcile-all-batch-06/review.yaml
+  locator: findings[finding_id=f-a03c70964c4d8d8e]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-a03c70964c4d8d8e in 20261011T024634Z-mim-reconcile-all-batch-06
+  snapshot_sha256: 14c3200be95fdc87fca16bb71628432f3c9aaf8a65356ed494efc776ebe8aa11
+assessments:
+- assessment_id: a-f2fcf4ff10ff4e45
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-4f86e647500357d8
+  evidence_ids:
+  - ev-952c50503824443e
+  - ev-c4f6b112960660cd
+  - ev-59a60d44737e6985
+  - ev-c099bcfaffd2996e
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-57d65e28dcbc31b2
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-4f86e647500357d8
+  evidence_ids:
+  - ev-e3745f3cbed80f43
+  - ev-373977c5a2fadcab
+  - ev-952c50503824443e
+  - ev-b6a7c834ed2bcf2d
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:02:23Z;
+    reviewed SHA-256=5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb;
+    current SHA-256=5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050223Z-Glucose.md","reports/yaml_record_review/Glucose.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Glucose.md` after the record changed from 215b731f3f37b4eaa43751f930d9709fff85ea34319efdeeac2d8f4712e744e9
+    to 5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e3745f3cbed80f43
+    - ev-373977c5a2fadcab
+    - ev-952c50503824443e
+  - name: legacy-native-ids
+    value: '["SEM:1e0998c208c8629e7ea1","SEM:0870710d7ebc2f2d5351"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-952c50503824443e
+    - ev-e3745f3cbed80f43
+    - ev-373977c5a2fadcab
+    - ev-b6a7c834ed2bcf2d
+- assessment_id: a-a6e25047c6f02294
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-4f86e647500357d8
+  evidence_ids:
+  - ev-e3745f3cbed80f43
+  - ev-373977c5a2fadcab
+  - ev-a6e25047c6f02294
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-e3745f3cbed80f43
+    - ev-373977c5a2fadcab
+    - ev-a6e25047c6f02294
+findings:
+- finding_id: rec-f-a03c70964c4d8d8e
+  issue_key: mim-reconciliation-role-support-4f86e647500357d8
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Glucose'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-4f86e647500357d8
+  evidence_ids:
+  - ev-e3745f3cbed80f43
+  - ev-373977c5a2fadcab
+  - ev-a6e25047c6f02294
+  - ev-55cea40206bb9315
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glucose.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[1]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024634Z-mim-reconcile-all-batch-06
+    finding_id: f-a03c70964c4d8d8e
+actions:
+- action_id: rec-action-a03c70964c4d8d8e
+  description: 'Reassess prediction-only role support: Glucose'
+  finding_ids:
+  - rec-f-a03c70964c4d8d8e
+  target_ids:
+  - record-4f86e647500357d8
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glucose.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024634Z-mim-reconcile-all-batch-06.
+```

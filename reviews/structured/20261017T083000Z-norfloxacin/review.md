@@ -1,0 +1,417 @@
+# Per-record structured review: Norfloxacin (data/ingredients/mapped/Norfloxacin.yaml)
+
+- Review: 20261017T083000Z-norfloxacin
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Norfloxacin (data/ingredients/mapped/Norfloxacin.yaml, record-7caea8741d1f4870, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Norfloxacin.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Norfloxacin.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-7caea8741d1f4870 | data/ingredients/mapped/Norfloxacin.yaml | maintained | Norfloxacin |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-7caea8741d1f4870 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-7caea8741d1f4870 | Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-7caea8741d1f4870 | Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-7caea8741d1f4870.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-7caea8741d1f4870.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T07:09:33Z; reviewed SHA-256=604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12; current SHA-256=604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12; hash_changed=False. Reports=["reports/yaml_record_review/Norfloxacin.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The exact CHEBI:100246 norfloxacin identity passes, but SELECTIVE_AGENT is only provisional.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-7caea8741d1f4870.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-4f419b68000b4a90: Reassess prediction-only role support: Norfloxacin
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-7caea8741d1f4870.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-4f419b68000b4a90
+
+Reassess prediction-only role support: Norfloxacin
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-a8ab21e066c51e23 | data/ingredients/mapped/Norfloxacin.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1579],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:100246","line":1581,"mapping_status":"MAPPED","ontology_id":"CHEBI:100246","preferred_term":"Norfloxacin"}],"identifier":"CHEBI:100246","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:100246","ontology_label":"norfloxacin","ontology_source":"CHEBI"},"preferred_term":"Norfloxacin","sssom_rows":[{"data_row":2118,"object_id":"CHEBI:100246","object_label":"norfloxacin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Norfloxacin","synonym_count":1} |
+| ev-8fad0c32e16b9433 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1579] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-a3e2d8aababaae62 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Norfloxacin; data-row positions=[2118] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":2118,"object_id":"CHEBI:100246","object_label":"norfloxacin","other":"1-ethyl-6-fluoro-4-oxo-7-(piperazin-1-yl)-1,4-dihydroquinoline-3-carboxylic acid&#124;CAS:70458-96-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Norfloxacin","validation_method":"OAK+OLS:chebi&#124;CONFIRMED&#124;2026-07-07"}] |
+| ev-bc789ff393ed4314 | docs/data/mapped_ingredients.csv; CSV lines=[1581] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:100246","line":1581,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:100246","preferred_term":"Norfloxacin","total_occurrences":"0"}] |
+| ev-0f15bd422296e85a | reports/yaml_record_review/Norfloxacin.md; &#96;data/ingredients/mapped/Norfloxacin.yaml&#96;:2; Verdict:4; Identity:10; Validation:19; Evidence:26; Completeness:38; Recommended Edits:45 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-ffe7ba009034c927 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[1072,1551] | context_only | [{"current_record_sha256":"604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12","finding_id":"SEM:097a4092eaa1b9f1014e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12","finding_id":"SEM:7f23bd8accc207a80b6e","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-e462b155ad2862de | data/ingredients/mapped/Norfloxacin.yaml; physicochemical_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}] |
+| ev-9fa93ea0c6bd910e | reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml; findings[finding_id=f-4f419b68000b4a90] | context_only | Predecessor structured review finding f-4f419b68000b4a90 in 20261011T024637Z-mim-reconcile-all-batch-09 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024637Z-mim-reconcile-all-batch-09.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-norfloxacin
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Norfloxacin (data/ingredients/mapped/Norfloxacin.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Norfloxacin (data/ingredients/mapped/Norfloxacin.yaml,
+  record-7caea8741d1f4870, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Norfloxacin.yaml
+    sha256: 604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12
+    role: target
+  - path: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+    sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Norfloxacin.md
+    sha256: 568942e35b17b12644b1279e6da24793e68e9782c49bd9070a2755474b7f6767
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-7caea8741d1f4870
+  path: data/ingredients/mapped/Norfloxacin.yaml
+  label: Norfloxacin
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Norfloxacin.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Norfloxacin.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Norfloxacin.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-7caea8741d1f4870
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-7caea8741d1f4870
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on physicochemical_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-7caea8741d1f4870
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-7caea8741d1f4870
+evidence:
+- evidence_id: ev-a8ab21e066c51e23
+  kind: record_content
+  reference: data/ingredients/mapped/Norfloxacin.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1579],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:100246","line":1581,"mapping_status":"MAPPED","ontology_id":"CHEBI:100246","preferred_term":"Norfloxacin"}],"identifier":"CHEBI:100246","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:100246","ontology_label":"norfloxacin","ontology_source":"CHEBI"},"preferred_term":"Norfloxacin","sssom_rows":[{"data_row":2118,"object_id":"CHEBI:100246","object_label":"norfloxacin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Norfloxacin","synonym_count":1}'
+  snapshot_sha256: 604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12
+- evidence_id: ev-8fad0c32e16b9433
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1579]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-a3e2d8aababaae62
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Norfloxacin; data-row positions=[2118]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2118,"object_id":"CHEBI:100246","object_label":"norfloxacin","other":"1-ethyl-6-fluoro-4-oxo-7-(piperazin-1-yl)-1,4-dihydroquinoline-3-carboxylic
+    acid|CAS:70458-96-7","predicate_id":"skos:exactMatch","subject_id":"MIM:Norfloxacin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-bc789ff393ed4314
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1581]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:100246","line":1581,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:100246","preferred_term":"Norfloxacin","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-0f15bd422296e85a
+  kind: prior_review
+  reference: reports/yaml_record_review/Norfloxacin.md
+  locator: '`data/ingredients/mapped/Norfloxacin.yaml`:2; Verdict:4; Identity:10;
+    Validation:19; Evidence:26; Completeness:38; Recommended Edits:45'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 568942e35b17b12644b1279e6da24793e68e9782c49bd9070a2755474b7f6767
+  quote: "Recommended Edits:\n- Major: in `data/ingredients/mapped/Norfloxacin.yaml`,\
+    \ replace the\n  `SELECTIVE_AGENT` role evidence with inspected source-backed\
+    \ evidence, or\n  remove the role until that evidence exists."
+- evidence_id: ev-ffe7ba009034c927
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1072,1551]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12","finding_id":"SEM:097a4092eaa1b9f1014e","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12","finding_id":"SEM:7f23bd8accc207a80b6e","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-e462b155ad2862de
+  kind: record_content
+  reference: data/ingredients/mapped/Norfloxacin.yaml
+  locator: physicochemical_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"physicochemical_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"SELECTIVE_AGENT"}}]'
+  snapshot_sha256: 604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12
+- evidence_id: ev-9fa93ea0c6bd910e
+  kind: prior_review
+  reference: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+  locator: findings[finding_id=f-4f419b68000b4a90]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-4f419b68000b4a90 in 20261011T024637Z-mim-reconcile-all-batch-09
+  snapshot_sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+assessments:
+- assessment_id: a-3d5d33e77a803477
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-7caea8741d1f4870
+  evidence_ids:
+  - ev-a8ab21e066c51e23
+  - ev-8fad0c32e16b9433
+  - ev-a3e2d8aababaae62
+  - ev-bc789ff393ed4314
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-238cd13163eab6bc
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-7caea8741d1f4870
+  evidence_ids:
+  - ev-0f15bd422296e85a
+  - ev-a8ab21e066c51e23
+  - ev-ffe7ba009034c927
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T07:09:33Z;
+    reviewed SHA-256=604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12;
+    current SHA-256=604fe55d9df4ff896b096e86596c3f3031208c10cbaa4524f25866500902af12;
+    hash_changed=False. Reports=["reports/yaml_record_review/Norfloxacin.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The exact CHEBI:100246
+    norfloxacin identity passes, but SELECTIVE_AGENT is only provisional.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-0f15bd422296e85a
+    - ev-a8ab21e066c51e23
+  - name: legacy-native-ids
+    value: '["SEM:097a4092eaa1b9f1014e","SEM:7f23bd8accc207a80b6e"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-a8ab21e066c51e23
+    - ev-0f15bd422296e85a
+    - ev-ffe7ba009034c927
+- assessment_id: a-e462b155ad2862de
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-7caea8741d1f4870
+  evidence_ids:
+  - ev-0f15bd422296e85a
+  - ev-e462b155ad2862de
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-0f15bd422296e85a
+    - ev-e462b155ad2862de
+findings:
+- finding_id: rec-f-4f419b68000b4a90
+  issue_key: mim-reconciliation-role-support-7caea8741d1f4870
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Norfloxacin'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-7caea8741d1f4870
+  evidence_ids:
+  - ev-0f15bd422296e85a
+  - ev-e462b155ad2862de
+  - ev-9fa93ea0c6bd910e
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Norfloxacin.yaml
+    role: maintained ingredient
+  field_paths:
+  - physicochemical_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024637Z-mim-reconcile-all-batch-09
+    finding_id: f-4f419b68000b4a90
+actions:
+- action_id: rec-action-4f419b68000b4a90
+  description: 'Reassess prediction-only role support: Norfloxacin'
+  finding_ids:
+  - rec-f-4f419b68000b4a90
+  target_ids:
+  - record-7caea8741d1f4870
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Norfloxacin.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024637Z-mim-reconcile-all-batch-09.
+```

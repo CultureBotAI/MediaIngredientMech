@@ -1,0 +1,316 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-l-proline
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: L-proline (data/ingredients/mapped/L-proline.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for L-proline (data/ingredients/mapped/L-proline.yaml,
+  record-0806e77ca1e3e3cd, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/L-proline.yaml
+    sha256: 5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8
+    role: target
+  - path: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+    sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/L-proline.md
+    sha256: 4908947ef118c15c6ee4ad3b2d75dab1ea8aa7f6acb835cf1401d3d5a56f02e7
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-0806e77ca1e3e3cd
+  path: data/ingredients/mapped/L-proline.yaml
+  label: L-proline
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-proline.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/L-proline.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/L-proline.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-0806e77ca1e3e3cd
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-0806e77ca1e3e3cd
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-0806e77ca1e3e3cd
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-0806e77ca1e3e3cd
+evidence:
+- evidence_id: ev-df134c8eaa55aec9
+  kind: record_content
+  reference: data/ingredients/mapped/L-proline.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1257],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:17203","line":1259,"mapping_status":"MAPPED","ontology_id":"CHEBI:17203","preferred_term":"L-Proline"}],"identifier":"CHEBI:17203","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":113,"edge_count":113,"occurrences":113},"occurrence_statistics":{"media_count":113,"total_occurrences":113},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:17203","ontology_label":"L-proline","ontology_source":"CHEBI"},"preferred_term":"L-Proline","sssom_rows":[{"data_row":1634,"object_id":"CHEBI:17203","object_label":"L-proline","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:L-proline","synonym_count":15}'
+  snapshot_sha256: 5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8
+- evidence_id: ev-7df8ba217c30e3ca
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1257]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-35c7c467d6908917
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:L-proline; data-row positions=[1634]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1634,"object_id":"CHEBI:17203","object_label":"L-proline","other":"(-)-(S)-proline|(-)-2-pyrrolidinecarboxylic
+    acid|(-)-proline|(2S)-pyrrolidine-2-carboxylic acid|(S)-2-carboxypyrrolidine|(S)-2-pyrrolidinecarboxylic
+    acid|(S)-pyrrolidine-2-carboxylic acid|2-Pyrrolidinecarboxylic acid|L-(-)-proline|L-Prolin|L-alpha-pyrrolidinecarboxylic
+    acid|L-pyrrolidine-2-carboxylic acid|prolinum|PROLINE|CAS:147-85-3","predicate_id":"skos:exactMatch","subject_id":"MIM:L-proline","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-2977f48750d461c3
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1259]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:17203","line":1259,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"113","ontology_id":"CHEBI:17203","preferred_term":"L-Proline","total_occurrences":"113"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-f419a3c4e04b0af9
+  kind: prior_review
+  reference: reports/yaml_record_review/L-proline.md
+  locator: '`data/ingredients/mapped/L-proline.yaml`:2; Verdict:4; Identity:10; Validation:20;
+    Evidence:28; Completeness:50; Recommended Edits:57'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 4908947ef118c15c6ee4ad3b2d75dab1ea8aa7f6acb835cf1401d3d5a56f02e7
+  quote: "Recommended Edits:\n- Major: either replace `nutritional_roles.AMINO_ACID_SOURCE`\
+    \ in\n  `data/ingredients/mapped/L-proline.yaml` with inspected source evidence\
+    \ for\n  exact L-proline use, or remove the provisional role.\n- Sync the aggregate\
+    \ copy and regenerate derived products after the YAML\n  changes; rerun strict,\
+    \ term, round-trip, component, and SSSOM validation."
+- evidence_id: ev-a7929c43d59f49a5
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[832,1986]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8","finding_id":"SEM:3cc5522733c8752fa8d0","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8","finding_id":"SEM:eb28d7661492ca41e646","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-509a52ac14c8fc45
+  kind: record_content
+  reference: data/ingredients/mapped/L-proline.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.7,"evidence":[{"curator_note":"Provisional
+    role inferred from CHEBI is_a/has_role closure; review recommended.","reference_text":"Inferred
+    from CHEBI ancestry: subclass/has_role of CHEBI:33709 (amino acid)","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"AMINO_ACID_SOURCE"}}]'
+  snapshot_sha256: 5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8
+- evidence_id: ev-c86fa876f79d7ccf
+  kind: prior_review
+  reference: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+  locator: findings[finding_id=f-0a97f4a354566738]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-0a97f4a354566738 in 20261011T024635Z-mim-reconcile-all-batch-07
+  snapshot_sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+assessments:
+- assessment_id: a-4055d4adc7a42594
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-0806e77ca1e3e3cd
+  evidence_ids:
+  - ev-df134c8eaa55aec9
+  - ev-7df8ba217c30e3ca
+  - ev-35c7c467d6908917
+  - ev-2977f48750d461c3
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-c23dfa271a04dfe0
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-0806e77ca1e3e3cd
+  evidence_ids:
+  - ev-f419a3c4e04b0af9
+  - ev-df134c8eaa55aec9
+  - ev-a7929c43d59f49a5
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T23:16:44Z;
+    reviewed SHA-256=5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8;
+    current SHA-256=5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8;
+    hash_changed=False. Reports=["reports/yaml_record_review/L-proline.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The exact CHEBI:17203
+    identity, CAS value, PubChem structure, occurrence count, synonyms, and final
+    SSSOM row pass, but AMINO_ACID_SOURCE is provisional.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-f419a3c4e04b0af9
+    - ev-df134c8eaa55aec9
+  - name: legacy-native-ids
+    value: '["SEM:3cc5522733c8752fa8d0","SEM:eb28d7661492ca41e646"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-df134c8eaa55aec9
+    - ev-f419a3c4e04b0af9
+    - ev-a7929c43d59f49a5
+- assessment_id: a-509a52ac14c8fc45
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-0806e77ca1e3e3cd
+  evidence_ids:
+  - ev-f419a3c4e04b0af9
+  - ev-509a52ac14c8fc45
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-f419a3c4e04b0af9
+    - ev-509a52ac14c8fc45
+findings:
+- finding_id: rec-f-0a97f4a354566738
+  issue_key: mim-reconciliation-role-support-0806e77ca1e3e3cd
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: L-Proline'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-0806e77ca1e3e3cd
+  evidence_ids:
+  - ev-f419a3c4e04b0af9
+  - ev-509a52ac14c8fc45
+  - ev-c86fa876f79d7ccf
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-proline.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024635Z-mim-reconcile-all-batch-07
+    finding_id: f-0a97f4a354566738
+actions:
+- action_id: rec-action-0a97f4a354566738
+  description: 'Reassess prediction-only role support: L-Proline'
+  finding_ids:
+  - rec-f-0a97f4a354566738
+  target_ids:
+  - record-0806e77ca1e3e3cd
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-proline.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.

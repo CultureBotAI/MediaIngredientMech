@@ -1,0 +1,623 @@
+# Per-record structured review: Ca_No32_X_4_H2o (data/ingredients/mapped/Ca_No32_X_4_H2o.yaml)
+
+- Review: 20261017T083000Z-ca-no32-x-4-h2o
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Ca_No32_X_4_H2o (data/ingredients/mapped/Ca_No32_X_4_H2o.yaml, record-428f0a67e2ef5305, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Ca_No32_X_4_H2o.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Ca_No32_X_4_H2o.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-428f0a67e2ef5305 | data/ingredients/mapped/Ca_No32_X_4_H2o.yaml | maintained | Ca_No32_X_4_H2o |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-428f0a67e2ef5305 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-428f0a67e2ef5305 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-428f0a67e2ef5305 | Reconciled against predecessor batch review 20261011T024629Z-mim-reconcile-all-batch-01 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-428f0a67e2ef5305.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-428f0a67e2ef5305.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T10:32:41Z; reviewed SHA-256=efe13cbdbfcfb0d5da686a6b2ca032f3492ed50a55a790aa39fa9d135919a2c1; current SHA-256=ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907; hash_changed=True. Reports=["reports/yaml_record_review/Ca_No32_X_4_H2o.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The calcium nitrate tetrahydrate identity, SSSOM row, and aggregate copy pass, but an exact CAS-qualified label remains unmapped as Ca.
+
+### CAS-qualified hydrate label and three-occurrence transfer
+
+provenance: supported. Targets: record-428f0a67e2ef5305.
+
+The specific stranded-label/3-occurrence defect is already fixed: resolving synonym is on CHEBI:86159 and in its SSSOM row; the active record and pinned membership count are 202/202; Ca is a zero-count REJECTED tombstone without a final row. This says nothing about additional occurrences in a newer sibling snapshot.
+
+### Additional unqualified hydrate occurrence conjecture
+
+quantity: unknown. Targets: record-428f0a67e2ef5305.
+
+The historical report conjectured an additional non-CAS-qualified occurrence beyond the three transferred occurrences. Agreement with the checked membership snapshot does not prove whether that separate source occurrence was included. Reconcile the exact old source row and snapshot before changing the 202 count.
+
+### Historical hydrate-review queue complaint
+
+provenance: unknown. Targets: record-428f0a67e2ef5305.
+
+The labels are represented, but NOT_IN_MIM rows explicitly say no exact preferred-term row. Decide whether this frozen table is a live synonym-inclusive queue before calling those entries incorrect; its original complaint is not automatically retired or re-opened.
+
+### Correction-receipt identity typo
+
+provenance: concern. Targets: record-428f0a67e2ef5305.
+
+The receipt prose names CHEBI:31348, whereas the actual record and changed SSSOM row name CHEBI:86159. This is a provenance-text defect, not evidence that the active hydrate mapping is wrong.
+
+## Findings
+
+### rec-f-5b1b1ab939d20218: Correct calcium nitrate correction-receipt identity text
+
+minor / open / confirmed; issue key: mim-reconciliation-receipt-id-428f0a67e2ef5305.
+
+The receipt records[].change describes the transfer as targeting CHEBI:31348; current YAML and the receipt changed-row content target CHEBI:86159. Correct the receipt through its native provenance workflow, preserving the historical chain.
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-5b1b1ab939d20218
+
+Correct calcium nitrate correction-receipt identity text
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-5f1c4a27fd8956b2 | data/ingredients/mapped/Ca_No32_X_4_H2o.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[619],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86159","line":621,"mapping_status":"MAPPED","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2 x 4 H2O"}],"identifier":"CHEBI:86159","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":202,"edge_count":202,"occurrences":202},"occurrence_statistics":{"media_count":202,"total_occurrences":202},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86159","ontology_label":"calcium nitrate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"Ca(NO3)2 x 4 H2O","sssom_rows":[{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium nitrate tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ca_No32_X_4_H2o","synonym_count":16} |
+| ev-ffef65ad416c1ff9 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [619] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-9bf82673c3b69690 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Ca_No32_X_4_H2o; data-row positions=[600] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium nitrate tetrahydrate","other":"(1)  Ca(NO3)2.4H2O&#124;Ca(NO3)2 x 4 H2O (0.1% w/v)&#124;Ca(NO3)2 \u00b7 4H2O&#124;Ca(NO3)2.4H2O&#124;Ca(NO3)2x4H2O&#124;Ca(NO3)2\u00b74H2O&#124;Ca(NO3)2\u30fb4H2O&#124;Calcium dinitrate tetrahydrate&#124;calcium nitrate--water (1/4)&#124;Ca(NO3)2\u20224H2O&#124;Ca(NO3)2\u20224H2O(CAS: 13477-34-4)&#124;(1)  Ca(NO3)2&#124;CAS:13477-34-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Ca_No32_X_4_H2o","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-a52bcd08a58f3db2 | docs/data/mapped_ingredients.csv; CSV lines=[621] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:86159","line":621,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"202","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2 x 4 H2O","total_occurrences":"202"}] |
+| ev-ae225a452b755e57 | reports/yaml_record_review/Ca_No32_X_4_H2o.md; &#96;data/ingredients/mapped/Ca_No32_X_4_H2o.yaml&#96;:2; Verdict:4; Identity:11; Validation:25; Evidence:40; Completeness:62; Recommended Edits:70 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-6ae334a969568123 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[342] | context_only | [{"current_record_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","finding_id":"SEM:c30d84c4be1132e43a6e","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-ac8cc401220219c7 | reports/yaml_record_review/20261001T044704Z-Ca.md; YAML Record Review: Ca:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60; Additional Notes:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-10708f98b4caeee4 | data/ingredients/unmapped/Ca.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[48],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0049","line":50,"mapping_status":"REJECTED","ontology_id":"","preferred_term":"Ca"}],"identifier":"UNMAPPED_0049","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Ca","sssom_rows":[],"sssom_subject":"MIM:Ca","synonym_count":0} |
+| ev-298e818e08d3065c | mappings/culturemech_recipe_membership.tsv; mim_identifier=CHEBI:86159; scoped_identity_corrections=2026-10-03 | supports | 202 distinct recipe edges and 202 occurrences, matching the live YAML/aggregate. The explicit three-recipe correction uses CultureMech:000171, CultureMech:000174, CultureMech:000238. |
+| ev-67fdd37d6271d0a7 | mappings/hydrate_review.tsv; lines=[345,376,486,688,778,865] | partial | Labels present in current synonyms yet tagged NOT_IN_MIM: [[345,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u30fb4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"9","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[376,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u00b74H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"6","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[486,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Calcium nitrate tetrahydrate","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"3","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[688,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2 \u00b7 4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[778,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u20224H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[865,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate; trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate; tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2.4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}]]. The table notes define these using preferred-term-only matching, so table semantics must be distinguished from current synonym coverage. |
+| ev-2a70b8383c990302 | reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json; records[source_record=data/ingredients/mapped/Ca_No32_X_4_H2o.yaml].change | supports | {"after_yaml_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","before_yaml_sha256":"efe13cbdbfcfb0d5da686a6b2ca032f3492ed50a55a790aa39fa9d135919a2c1","change":"Merged the missing CultureMech calcium nitrate tetrahydrate source occurrence/synonym into the reviewed CHEBI:31348 identity and its published SSSOM other column.","shape":"review_record_issue_resolution","source_record":"data/ingredients/mapped/Ca_No32_X_4_H2o.yaml","verification":"The review-record fix preserved the exact calcium nitrate tetrahydrate grounding and added only the raw CAS-bearing synonym and source occurrence count from the duplicate stale record."} |
+| ev-c069d52eb03ea9a2 | reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml; findings[finding_id=f-5b1b1ab939d20218] | context_only | Predecessor structured review finding f-5b1b1ab939d20218 in 20261011T024629Z-mim-reconcile-all-batch-01 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024629Z-mim-reconcile-all-batch-01.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-ca-no32-x-4-h2o
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Ca_No32_X_4_H2o (data/ingredients/mapped/Ca_No32_X_4_H2o.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Ca_No32_X_4_H2o (data/ingredients/mapped/Ca_No32_X_4_H2o.yaml,
+  record-428f0a67e2ef5305, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+    sha256: ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907
+    role: target
+  - path: reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml
+    sha256: f87124785da2057286555db743ccdb92b70dd4dc359294bde474b4beeb816e48
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Ca_No32_X_4_H2o.md
+    sha256: 98df3417ee84630599b14b0a8e6499d16aa8856773ede25a5bf6125a2fa9115d
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+  - path: reports/yaml_record_review/20261001T044704Z-Ca.md
+    sha256: 744e7c6079668fb0d1afb7c6d8241ff89b2005ef163ebfc715b59fff780624d8
+    role: context
+  - path: data/ingredients/unmapped/Ca.yaml
+    sha256: 30536efdb26bcaaa5729c3e61ca9ea9cd7372cd3ed7106834895ee8da38b14af
+    role: context
+  - path: mappings/culturemech_recipe_membership.tsv
+    sha256: ab3f3905303c2b7e78192d1006ba2f157331ef0c27774aa51099e97f140ff929
+    role: context
+  - path: mappings/hydrate_review.tsv
+    sha256: 21cfcd3f66e28cf4a5a76492266eb1c6d91751208a2652430b8d4079942c0ea0
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+    sha256: 7d0a5b847e1a28bf890c10d753a93a27798fb2273355fc669bed58ef8b679d93
+    role: context
+targets:
+- target_id: record-428f0a67e2ef5305
+  path: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+  label: Ca_No32_X_4_H2o
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Ca_No32_X_4_H2o.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-428f0a67e2ef5305
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-428f0a67e2ef5305
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-428f0a67e2ef5305
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024629Z-mim-reconcile-all-batch-01
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-428f0a67e2ef5305
+evidence:
+- evidence_id: ev-5f1c4a27fd8956b2
+  kind: record_content
+  reference: data/ingredients/mapped/Ca_No32_X_4_H2o.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[619],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:86159","line":621,"mapping_status":"MAPPED","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2
+    x 4 H2O"}],"identifier":"CHEBI:86159","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":202,"edge_count":202,"occurrences":202},"occurrence_statistics":{"media_count":202,"total_occurrences":202},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:86159","ontology_label":"calcium
+    nitrate tetrahydrate","ontology_source":"CHEBI"},"preferred_term":"Ca(NO3)2 x
+    4 H2O","sssom_rows":[{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium
+    nitrate tetrahydrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Ca_No32_X_4_H2o","synonym_count":16}'
+  snapshot_sha256: ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907
+- evidence_id: ev-ffef65ad416c1ff9
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [619]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-9bf82673c3b69690
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Ca_No32_X_4_H2o; data-row positions=[600]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":600,"object_id":"CHEBI:86159","object_label":"calcium
+    nitrate tetrahydrate","other":"(1)  Ca(NO3)2.4H2O|Ca(NO3)2 x 4 H2O (0.1% w/v)|Ca(NO3)2
+    \u00b7 4H2O|Ca(NO3)2.4H2O|Ca(NO3)2x4H2O|Ca(NO3)2\u00b74H2O|Ca(NO3)2\u30fb4H2O|Calcium
+    dinitrate tetrahydrate|calcium nitrate--water (1/4)|Ca(NO3)2\u20224H2O|Ca(NO3)2\u20224H2O(CAS:
+    13477-34-4)|(1)  Ca(NO3)2|CAS:13477-34-4","predicate_id":"skos:exactMatch","subject_id":"MIM:Ca_No32_X_4_H2o","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-a52bcd08a58f3db2
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[621]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:86159","line":621,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"202","ontology_id":"CHEBI:86159","preferred_term":"Ca(NO3)2
+    x 4 H2O","total_occurrences":"202"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-ae225a452b755e57
+  kind: prior_review
+  reference: reports/yaml_record_review/Ca_No32_X_4_H2o.md
+  locator: '`data/ingredients/mapped/Ca_No32_X_4_H2o.yaml`:2; Verdict:4; Identity:11;
+    Validation:25; Evidence:40; Completeness:62; Recommended Edits:70'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 98df3417ee84630599b14b0a8e6499d16aa8856773ede25a5bf6125a2fa9115d
+  quote: "Recommended Edits:\n- Major: merge the calcium nitrate tetrahydrate raw\
+    \ label and three occurrences\n  from `data/ingredients/unmapped/Ca.yaml` into\n\
+    \  `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml`, retire or update the stale\n\
+    \  `UNMAPPED_0049` placeholder, refresh occurrence statistics, and regenerate\n\
+    \  `mappings/ingredient_mappings.sssom.tsv` and `docs/data/label_index.csv`.\n\
+    - Minor: refresh the hydrate-review report so the calcium nitrate tetrahydrate\n\
+    \  spellings now carried by this record no longer appear as `NOT_IN_MIM`."
+- evidence_id: ev-6ae334a969568123
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[342]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","finding_id":"SEM:c30d84c4be1132e43a6e","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-ac8cc401220219c7
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T044704Z-Ca.md
+  locator: 'YAML Record Review: Ca:2; Target:10; Validation:20; Identity and Grounding:27;
+    Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60;
+    Additional Notes:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 744e7c6079668fb0d1afb7c6d8241ff89b2005ef163ebfc715b59fff780624d8
+  quote: 'Findings:
+
+    - **major**: `data/ingredients/unmapped/Ca.yaml` remains `UNMAPPED`; no exact
+    ontology term or independently supported registry identity is recorded. Do not
+    exact-match it to a broader parent, component, hydrate, salt, or lookalike label.
+
+
+    Recommended Edits:
+
+    - Curate an exact same-form identity or decomposition for `data/ingredients/unmapped/Ca.yaml`
+    before mapping it.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/unmapped/Ca.yaml`,
+    `just validate-terms data/ingredients/unmapped/Ca.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-10708f98b4caeee4
+  kind: record_content
+  reference: data/ingredients/unmapped/Ca.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[48],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0049","line":50,"mapping_status":"REJECTED","ontology_id":"","preferred_term":"Ca"}],"identifier":"UNMAPPED_0049","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"REJECTED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Ca","sssom_rows":[],"sssom_subject":"MIM:Ca","synonym_count":0}'
+  snapshot_sha256: 30536efdb26bcaaa5729c3e61ca9ea9cd7372cd3ed7106834895ee8da38b14af
+- evidence_id: ev-298e818e08d3065c
+  kind: record_content
+  reference: mappings/culturemech_recipe_membership.tsv
+  locator: mim_identifier=CHEBI:86159; scoped_identity_corrections=2026-10-03
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 202 distinct recipe edges and 202 occurrences, matching the live YAML/aggregate.
+    The explicit three-recipe correction uses CultureMech:000171, CultureMech:000174,
+    CultureMech:000238.
+  snapshot_sha256: ab3f3905303c2b7e78192d1006ba2f157331ef0c27774aa51099e97f140ff929
+- evidence_id: ev-67fdd37d6271d0a7
+  kind: record_content
+  reference: mappings/hydrate_review.tsv
+  locator: lines=[345,376,486,688,778,865]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: 'Labels present in current synonyms yet tagged NOT_IN_MIM: [[345,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u30fb4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"9","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[376,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u00b74H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"6","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[486,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Calcium
+    nitrate tetrahydrate","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"3","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[688,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2
+    \u00b7 4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[778,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2\u20224H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}],[865,{"action":"OK","cas_correct_or_UNKNOWN":"13477-34-4","cas_rn_current":"UNKNOWN","cas_verdict":"NO_CAS_PROVIDED","confidence":"high","defect_origin":"NONE","grounding_verdict":"NOT_APPLICABLE(unmapped)","hydration_valid":"TRUE","identifier":"NOT_IN_MIM","known_hydrates":"dihydrate;
+    trihydrate; tetrahydrate","mediadive_compound_id":"NA","notes":"The stated tetrahydrate
+    is an established form of calcium nitrate; known hydrates are dihydrate; trihydrate;
+    tetrahydrate. No exact MIM preferred-term row exists; this CultureMech-only label
+    should be checked against its source recipe before ingestion.","occurrences":"0","ontology_label":"NA","preferred_term":"Ca(NO3)2.4H2O","recommended_target_curie":"CHEBI:86159","source_rows_in_culturemech":"1","sssom_predicate_published":"NOT_FOUND","stated_hydration":"tetrahydrate"}]].
+    The table notes define these using preferred-term-only matching, so table semantics
+    must be distinguished from current synonym coverage.'
+  snapshot_sha256: 21cfcd3f66e28cf4a5a76492266eb1c6d91751208a2652430b8d4079942c0ea0
+- evidence_id: ev-2a70b8383c990302
+  kind: record_content
+  reference: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+  locator: records[source_record=data/ingredients/mapped/Ca_No32_X_4_H2o.yaml].change
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: '{"after_yaml_sha256":"ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907","before_yaml_sha256":"efe13cbdbfcfb0d5da686a6b2ca032f3492ed50a55a790aa39fa9d135919a2c1","change":"Merged
+    the missing CultureMech calcium nitrate tetrahydrate source occurrence/synonym
+    into the reviewed CHEBI:31348 identity and its published SSSOM other column.","shape":"review_record_issue_resolution","source_record":"data/ingredients/mapped/Ca_No32_X_4_H2o.yaml","verification":"The
+    review-record fix preserved the exact calcium nitrate tetrahydrate grounding and
+    added only the raw CAS-bearing synonym and source occurrence count from the duplicate
+    stale record."}'
+  snapshot_sha256: 7d0a5b847e1a28bf890c10d753a93a27798fb2273355fc669bed58ef8b679d93
+- evidence_id: ev-c069d52eb03ea9a2
+  kind: prior_review
+  reference: reviews/structured/20261011T024629Z-mim-reconcile-all-batch-01/review.yaml
+  locator: findings[finding_id=f-5b1b1ab939d20218]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-5b1b1ab939d20218 in 20261011T024629Z-mim-reconcile-all-batch-01
+  snapshot_sha256: f87124785da2057286555db743ccdb92b70dd4dc359294bde474b4beeb816e48
+assessments:
+- assessment_id: a-65d87e315b164b65
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-5f1c4a27fd8956b2
+  - ev-ffef65ad416c1ff9
+  - ev-9bf82673c3b69690
+  - ev-a52bcd08a58f3db2
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-63eb3277e948b033
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-5f1c4a27fd8956b2
+  - ev-6ae334a969568123
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T10:32:41Z;
+    reviewed SHA-256=efe13cbdbfcfb0d5da686a6b2ca032f3492ed50a55a790aa39fa9d135919a2c1;
+    current SHA-256=ac99b7e60c6d2f38dfb9299f5ba6ea70e07e6aeddbedf8e8254d19b694f4c907;
+    hash_changed=True. Reports=["reports/yaml_record_review/Ca_No32_X_4_H2o.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The calcium
+    nitrate tetrahydrate identity, SSSOM row, and aggregate copy pass, but an exact
+    CAS-qualified label remains unmapped as Ca.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-5f1c4a27fd8956b2
+  - name: legacy-native-ids
+    value: '["SEM:c30d84c4be1132e43a6e"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-5f1c4a27fd8956b2
+    - ev-ae225a452b755e57
+    - ev-6ae334a969568123
+- assessment_id: a-09e7e0a7b42a393a
+  area: provenance
+  topic: CAS-qualified hydrate label and three-occurrence transfer
+  outcome: supported
+  summary: 'The specific stranded-label/3-occurrence defect is already fixed: resolving
+    synonym is on CHEBI:86159 and in its SSSOM row; the active record and pinned membership
+    count are 202/202; Ca is a zero-count REJECTED tombstone without a final row.
+    This says nothing about additional occurrences in a newer sibling snapshot.'
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-ac8cc401220219c7
+  - ev-5f1c4a27fd8956b2
+  - ev-10708f98b4caeee4
+  - ev-298e818e08d3065c
+  dimensions:
+  - name: legacy-disposition
+    value: already_fixed
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-ac8cc401220219c7
+    - ev-5f1c4a27fd8956b2
+    - ev-10708f98b4caeee4
+    - ev-298e818e08d3065c
+- assessment_id: a-4aeebb5d4668eb30
+  area: quantity
+  topic: Additional unqualified hydrate occurrence conjecture
+  outcome: unknown
+  summary: The historical report conjectured an additional non-CAS-qualified occurrence
+    beyond the three transferred occurrences. Agreement with the checked membership
+    snapshot does not prove whether that separate source occurrence was included.
+    Reconcile the exact old source row and snapshot before changing the 202 count.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-ac8cc401220219c7
+  - ev-5f1c4a27fd8956b2
+  - ev-10708f98b4caeee4
+  - ev-298e818e08d3065c
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-ac8cc401220219c7
+    - ev-5f1c4a27fd8956b2
+    - ev-10708f98b4caeee4
+    - ev-298e818e08d3065c
+- assessment_id: a-a637885dfb44804e
+  area: provenance
+  topic: Historical hydrate-review queue complaint
+  outcome: unknown
+  summary: The labels are represented, but NOT_IN_MIM rows explicitly say no exact
+    preferred-term row. Decide whether this frozen table is a live synonym-inclusive
+    queue before calling those entries incorrect; its original complaint is not automatically
+    retired or re-opened.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-ae225a452b755e57
+  - ev-ac8cc401220219c7
+  - ev-5f1c4a27fd8956b2
+  - ev-10708f98b4caeee4
+  - ev-298e818e08d3065c
+  - ev-67fdd37d6271d0a7
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-ae225a452b755e57
+    - ev-ac8cc401220219c7
+    - ev-5f1c4a27fd8956b2
+    - ev-10708f98b4caeee4
+    - ev-298e818e08d3065c
+    - ev-67fdd37d6271d0a7
+- assessment_id: a-69a6790475f4be01
+  area: provenance
+  topic: Correction-receipt identity typo
+  outcome: concern
+  summary: The receipt prose names CHEBI:31348, whereas the actual record and changed
+    SSSOM row name CHEBI:86159. This is a provenance-text defect, not evidence that
+    the active hydrate mapping is wrong.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-2a70b8383c990302
+  - ev-5f1c4a27fd8956b2
+findings:
+- finding_id: rec-f-5b1b1ab939d20218
+  issue_key: mim-reconciliation-receipt-id-428f0a67e2ef5305
+  category: provenance
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Correct calcium nitrate correction-receipt identity text
+  description: The receipt records[].change describes the transfer as targeting CHEBI:31348;
+    current YAML and the receipt changed-row content target CHEBI:86159. Correct the
+    receipt through its native provenance workflow, preserving the historical chain.
+  target_ids:
+  - record-428f0a67e2ef5305
+  evidence_ids:
+  - ev-2a70b8383c990302
+  - ev-5f1c4a27fd8956b2
+  - ev-c069d52eb03ea9a2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+    role: native correction receipt
+  field_paths:
+  - records[].change
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - receipt-id
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024629Z-mim-reconcile-all-batch-01
+    finding_id: f-5b1b1ab939d20218
+actions:
+- action_id: rec-action-5b1b1ab939d20218
+  description: Correct calcium nitrate correction-receipt identity text
+  finding_ids:
+  - rec-f-5b1b1ab939d20218
+  target_ids:
+  - record-428f0a67e2ef5305
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+    role: native correction receipt
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024629Z-mim-reconcile-all-batch-01.
+```

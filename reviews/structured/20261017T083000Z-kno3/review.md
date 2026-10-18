@@ -1,0 +1,362 @@
+# Per-record structured review: Kno3 (data/ingredients/mapped/Kno3.yaml)
+
+- Review: 20261017T083000Z-kno3
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Kno3 (data/ingredients/mapped/Kno3.yaml, record-edb691a1e006ef78, mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Kno3.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Kno3.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-edb691a1e006ef78 | data/ingredients/mapped/Kno3.yaml | maintained | Kno3 |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-edb691a1e006ef78 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-edb691a1e006ef78 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-edb691a1e006ef78 | Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-edb691a1e006ef78.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-edb691a1e006ef78.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T21:49:17Z; reviewed SHA-256=7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa; current SHA-256=7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa; hash_changed=False. Reports=["reports/yaml_record_review/Kno3.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The corrected potassium nitrate identity, CAS value, structure fields, occurrence count, and mineral-source role pass, but final SSSOM exports stale Renilla luciferyl sulfate aliases and KNO.
+
+## Findings
+
+### rec-f-598725923978a9a7: Historical review coverage and residual narrative: Kno3
+
+major / deferred / provisional; issue key: mim-reconciliation-historical-review-coverage-and-r-edb691a1e006ef78.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment. Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T21:49:17Z; reviewed SHA-256=7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa; current SHA-256=7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa; hash_changed=False. Reports=["reports/yaml_record_review/Kno3.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The corrected potassium nitrate identity, CAS value, structure fields, occurrence count, and mineral-source role pass, but final SSSOM exports stale Renilla luciferyl sulfate aliases and KNO.
+
+Disposition: The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-d00ba5b52e605437 | data/ingredients/mapped/Kno3.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1207],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63043","line":1209,"mapping_status":"MAPPED","ontology_id":"CHEBI:63043","preferred_term":"KNO3"}],"identifier":"CHEBI:63043","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":589,"edge_count":589,"occurrences":591},"occurrence_statistics":{"media_count":589,"total_occurrences":591},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:63043","ontology_label":"potassium nitrate","ontology_source":"CHEBI"},"preferred_term":"KNO3","sssom_rows":[{"data_row":1552,"object_id":"CHEBI:63043","object_label":"potassium nitrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Kno3","synonym_count":14} |
+| ev-efc18ba935cbbab3 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [1207] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-9796fb2ed72906d3 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Kno3; data-row positions=[1552] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1552,"object_id":"CHEBI:63043","object_label":"potassium nitrate","other":"2,8-dibenzyl-6-(4-hydroxyphenyl)imidazo[1,2-a]pyrazin-3-yl sulfate&#124;Renilla luciferyl sulfate anion&#124;KNO&#124;Kaliumnitrat&#124;Nitrate of potash&#124;Nitre&#124;Nitric acid, potassium salt&#124;Salt peter&#124;saltpetre&#124;CAS:7757-79-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Kno3","validation_method":"OAK+OLS:chebi&#124;SYNONYM_ENRICH&#124;2026-07-07"}] |
+| ev-98efb0c703445c9b | docs/data/mapped_ingredients.csv; CSV lines=[1209] | supports | Published identity and count rows inspected: [{"identifier":"CHEBI:63043","line":1209,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"589","ontology_id":"CHEBI:63043","preferred_term":"KNO3","total_occurrences":"591"}] |
+| ev-b2fe28230586afc4 | reports/yaml_record_review/Kno3.md; &#96;data/ingredients/mapped/Kno3.yaml&#96;:2; Verdict:4; Identity:11; Validation:21; Evidence:32; Completeness:61; Recommended Edits:68 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-379bcebc329a5ef2 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[779] | context_only | [{"current_record_sha256":"7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa","finding_id":"SEM:54e6d2392cef1d4732d4","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-kno3
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Kno3 (data/ingredients/mapped/Kno3.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Kno3 (data/ingredients/mapped/Kno3.yaml,
+  record-edb691a1e006ef78, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Kno3.yaml
+    sha256: 7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa
+    role: target
+  - path: reviews/structured/20261011T024635Z-mim-reconcile-all-batch-07/review.yaml
+    sha256: 408ad5bf1e58ddc25c06da54ed69bc719d6d61336a106fc7534b0954417618be
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Kno3.md
+    sha256: 8b01360394ce0487168ec58d468073786648fad10363ec335b592eeb1f03c187
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-edb691a1e006ef78
+  path: data/ingredients/mapped/Kno3.yaml
+  label: Kno3
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Kno3.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Kno3.yaml covering
+    current record state, role evidence support, published surfaces, and residual
+    historical review claims.
+  selection: Single record data/ingredients/mapped/Kno3.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-edb691a1e006ef78
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-edb691a1e006ef78
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-edb691a1e006ef78
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024635Z-mim-reconcile-all-batch-07
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-edb691a1e006ef78
+evidence:
+- evidence_id: ev-d00ba5b52e605437
+  kind: record_content
+  reference: data/ingredients/mapped/Kno3.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1207],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:63043","line":1209,"mapping_status":"MAPPED","ontology_id":"CHEBI:63043","preferred_term":"KNO3"}],"identifier":"CHEBI:63043","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":589,"edge_count":589,"occurrences":591},"occurrence_statistics":{"media_count":589,"total_occurrences":591},"ontology_mapping":{"mapping_quality":"SYNONYM_MATCH","ontology_id":"CHEBI:63043","ontology_label":"potassium
+    nitrate","ontology_source":"CHEBI"},"preferred_term":"KNO3","sssom_rows":[{"data_row":1552,"object_id":"CHEBI:63043","object_label":"potassium
+    nitrate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Kno3","synonym_count":14}'
+  snapshot_sha256: 7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa
+- evidence_id: ev-efc18ba935cbbab3
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1207]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-9796fb2ed72906d3
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Kno3; data-row positions=[1552]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1552,"object_id":"CHEBI:63043","object_label":"potassium
+    nitrate","other":"2,8-dibenzyl-6-(4-hydroxyphenyl)imidazo[1,2-a]pyrazin-3-yl sulfate|Renilla
+    luciferyl sulfate anion|KNO|Kaliumnitrat|Nitrate of potash|Nitre|Nitric acid,
+    potassium salt|Salt peter|saltpetre|CAS:7757-79-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Kno3","validation_method":"OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-98efb0c703445c9b
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1209]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:63043","line":1209,"mapping_quality":"SYNONYM_MATCH","mapping_status":"MAPPED","media_count":"589","ontology_id":"CHEBI:63043","preferred_term":"KNO3","total_occurrences":"591"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-b2fe28230586afc4
+  kind: prior_review
+  reference: reports/yaml_record_review/Kno3.md
+  locator: '`data/ingredients/mapped/Kno3.yaml`:2; Verdict:4; Identity:11; Validation:21;
+    Evidence:32; Completeness:61; Recommended Edits:68'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 8b01360394ce0487168ec58d468073786648fad10363ec335b592eeb1f03c187
+  quote: "Recommended Edits:\n- Major: remove or demote the Renilla luciferyl sulfate\
+    \ aliases and `KNO` in\n  `data/ingredients/mapped/Kno3.yaml`, then regenerate\
+    \ the aggregate and final\n  SSSOM so they disappear from `mappings/ingredient_mappings.sssom.tsv`;\
+    \ rerun\n  strict, term, round-trip, component, and SSSOM validation."
+- evidence_id: ev-379bcebc329a5ef2
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[779]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa","finding_id":"SEM:54e6d2392cef1d4732d4","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-58c7f39679dfe50b
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-edb691a1e006ef78
+  evidence_ids:
+  - ev-d00ba5b52e605437
+  - ev-efc18ba935cbbab3
+  - ev-9796fb2ed72906d3
+  - ev-98efb0c703445c9b
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-359166651a8c0e02
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-edb691a1e006ef78
+  evidence_ids:
+  - ev-b2fe28230586afc4
+  - ev-d00ba5b52e605437
+  - ev-379bcebc329a5ef2
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T21:49:17Z;
+    reviewed SHA-256=7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa;
+    current SHA-256=7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa;
+    hash_changed=False. Reports=["reports/yaml_record_review/Kno3.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The corrected potassium
+    nitrate identity, CAS value, structure fields, occurrence count, and mineral-source
+    role pass, but final SSSOM exports stale Renilla luciferyl sulfate aliases and
+    KNO.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-b2fe28230586afc4
+    - ev-d00ba5b52e605437
+  - name: legacy-native-ids
+    value: '["SEM:54e6d2392cef1d4732d4"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-d00ba5b52e605437
+    - ev-b2fe28230586afc4
+    - ev-379bcebc329a5ef2
+findings:
+- finding_id: rec-f-598725923978a9a7
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-edb691a1e006ef78
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Kno3'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T21:49:17Z;
+    reviewed SHA-256=7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa;
+    current SHA-256=7b9e2018a10cd1dc22417eeb0cd6c21c91d4126a5c06d6193bf5955555ff94aa;
+    hash_changed=False. Reports=["reports/yaml_record_review/Kno3.md"]. Full reports,
+    including older originals behind refresh floors, are hashed inputs. Repeated refresh
+    allegations are not counted as new defects. The narrative group is not a count
+    of distinct scientific findings. Latest manifest note: The corrected potassium
+    nitrate identity, CAS value, structure fields, occurrence count, and mineral-source
+    role pass, but final SSSOM exports stale Renilla luciferyl sulfate aliases and
+    KNO.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-edb691a1e006ef78
+  evidence_ids:
+  - ev-b2fe28230586afc4
+  - ev-d00ba5b52e605437
+  - ev-379bcebc329a5ef2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Kno3.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024635Z-mim-reconcile-all-batch-07.
+```

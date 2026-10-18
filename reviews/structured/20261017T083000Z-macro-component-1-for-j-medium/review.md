@@ -1,0 +1,360 @@
+# Per-record structured review: Macro_Component_1_For_J_Medium (data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml)
+
+- Review: 20261017T083000Z-macro-component-1-for-j-medium
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Macro_Component_1_For_J_Medium (data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml, record-c9dabb9a7883be77, mapping_status=MAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-c9dabb9a7883be77 | data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml | maintained | Macro_Component_1_For_J_Medium |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-c9dabb9a7883be77 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-c9dabb9a7883be77 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-c9dabb9a7883be77 | Reconciled against predecessor batch review 20261011T024636Z-mim-reconcile-all-batch-08 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-c9dabb9a7883be77.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-c9dabb9a7883be77.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T01:02:08Z; reviewed SHA-256=1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c; current SHA-256=1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c; hash_changed=False. Reports=["reports/yaml_record_review/Macro_Component_1_For_J_Medium.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The local fallback identity and final SSSOM row pass, but this named J medium stock still lacks component-level curation.
+
+## Findings
+
+### rec-f-1c6915de2d86c5ed: Historical review coverage and residual narrative: Macro_Component_1_For_J_Medium
+
+major / deferred / provisional; issue key: mim-reconciliation-historical-review-coverage-and-r-c9dabb9a7883be77.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment. Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T01:02:08Z; reviewed SHA-256=1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c; current SHA-256=1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c; hash_changed=False. Reports=["reports/yaml_record_review/Macro_Component_1_For_J_Medium.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The local fallback identity and final SSSOM row pass, but this named J medium stock still lacks component-level curation.
+
+Disposition: The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-a544425e293ae2ee | data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[100],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:macro_component_1_for_j_medium","line":102,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","preferred_term":"Macro Component 1 for J Medium"}],"identifier":"kgmicrobe.ingredient:macro_component_1_for_j_medium","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","ontology_label":"Macro Component 1 for J Medium","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Macro Component 1 for J Medium","sssom_rows":[{"data_row":1737,"object_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","object_label":"Macro Component 1 for J Medium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Macro_Component_1_For_J_Medium","synonym_count":1} |
+| ev-2b6dc8053447eb02 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [100] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-8f46a8dff3c097f2 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Macro_Component_1_For_J_Medium; data-row positions=[1737] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":1737,"object_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","object_label":"Macro Component 1 for J Medium","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Macro_Component_1_For_J_Medium","validation_method":"none&#124;UNKNOWN_TERM&#124;2026-09-02"}] |
+| ev-1e4ad3c27f8f77cc | docs/data/mapped_ingredients.csv; CSV lines=[102] | supports | Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:macro_component_1_for_j_medium","line":102,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"1","ontology_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","preferred_term":"Macro Component 1 for J Medium","total_occurrences":"1"}] |
+| ev-379ee7ec2567f1b8 | reports/yaml_record_review/Macro_Component_1_For_J_Medium.md; &#96;data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml&#96;:2; Verdict:4; Identity:12; Validation:26; Evidence:34; Completeness:45; Recommended Edits:54 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-60ad6af13f138849 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[878] | context_only | [{"current_record_sha256":"1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c","finding_id":"SEM:a6e0edae74af20ae4ad3","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024636Z-mim-reconcile-all-batch-08.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-macro-component-1-for-j-medium
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Macro_Component_1_For_J_Medium (data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Macro_Component_1_For_J_Medium (data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml,
+  record-c9dabb9a7883be77, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml
+    sha256: 1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c
+    role: target
+  - path: reviews/structured/20261011T024636Z-mim-reconcile-all-batch-08/review.yaml
+    sha256: 4dd969b7020555cc2250a236d6fded134bedf3add1e1c5c72d269e98f9ae001b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Macro_Component_1_For_J_Medium.md
+    sha256: e10919cbbd1ad2dff1e13e21688691de1f9c9e1a766c53fb8642fb9c0bf5d86f
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-c9dabb9a7883be77
+  path: data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml
+  label: Macro_Component_1_For_J_Medium
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-c9dabb9a7883be77
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-c9dabb9a7883be77
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-c9dabb9a7883be77
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024636Z-mim-reconcile-all-batch-08
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-c9dabb9a7883be77
+evidence:
+- evidence_id: ev-a544425e293ae2ee
+  kind: record_content
+  reference: data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[100],"raw_equal":true},"docs_rows":[{"identifier":"kgmicrobe.ingredient:macro_component_1_for_j_medium","line":102,"mapping_status":"MAPPED","ontology_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","preferred_term":"Macro
+    Component 1 for J Medium"}],"identifier":"kgmicrobe.ingredient:macro_component_1_for_j_medium","ingredient_type":"STOCK_SOLUTION","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":1,"total_occurrences":1},"ontology_mapping":{"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","ontology_label":"Macro
+    Component 1 for J Medium","ontology_source":"kgmicrobe.ingredient"},"preferred_term":"Macro
+    Component 1 for J Medium","sssom_rows":[{"data_row":1737,"object_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","object_label":"Macro
+    Component 1 for J Medium","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Macro_Component_1_For_J_Medium","synonym_count":1}'
+  snapshot_sha256: 1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c
+- evidence_id: ev-2b6dc8053447eb02
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [100]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-8f46a8dff3c097f2
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Macro_Component_1_For_J_Medium; data-row positions=[1737]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":1737,"object_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","object_label":"Macro
+    Component 1 for J Medium","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Macro_Component_1_For_J_Medium","validation_method":"none|UNKNOWN_TERM|2026-09-02"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-1e4ad3c27f8f77cc
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[102]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"kgmicrobe.ingredient:macro_component_1_for_j_medium","line":102,"mapping_quality":"FALLBACK_REGISTRY","mapping_status":"MAPPED","media_count":"1","ontology_id":"kgmicrobe.ingredient:macro_component_1_for_j_medium","preferred_term":"Macro
+    Component 1 for J Medium","total_occurrences":"1"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-379ee7ec2567f1b8
+  kind: prior_review
+  reference: reports/yaml_record_review/Macro_Component_1_For_J_Medium.md
+  locator: '`data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml`:2; Verdict:4;
+    Identity:12; Validation:26; Evidence:34; Completeness:45; Recommended Edits:54'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: e10919cbbd1ad2dff1e13e21688691de1f9c9e1a766c53fb8642fb9c0bf5d86f
+  quote: "Recommended Edits:\n- Transcribe the `Macro Component 1 for J Medium` stock\
+    \ recipe into\n  `components` and add a `component_assertion` with source-backed\
+    \ completeness,\n  or record why the source recipe is unavailable."
+- evidence_id: ev-60ad6af13f138849
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[878]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c","finding_id":"SEM:a6e0edae74af20ae4ad3","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-1d3b914c59283ec9
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-c9dabb9a7883be77
+  evidence_ids:
+  - ev-a544425e293ae2ee
+  - ev-2b6dc8053447eb02
+  - ev-8f46a8dff3c097f2
+  - ev-1e4ad3c27f8f77cc
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-0cb5cb5dbb087664
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-c9dabb9a7883be77
+  evidence_ids:
+  - ev-379ee7ec2567f1b8
+  - ev-a544425e293ae2ee
+  - ev-60ad6af13f138849
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T01:02:08Z;
+    reviewed SHA-256=1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c;
+    current SHA-256=1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c;
+    hash_changed=False. Reports=["reports/yaml_record_review/Macro_Component_1_For_J_Medium.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The local
+    fallback identity and final SSSOM row pass, but this named J medium stock still
+    lacks component-level curation.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-379ee7ec2567f1b8
+    - ev-a544425e293ae2ee
+  - name: legacy-native-ids
+    value: '["SEM:a6e0edae74af20ae4ad3"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-a544425e293ae2ee
+    - ev-379ee7ec2567f1b8
+    - ev-60ad6af13f138849
+findings:
+- finding_id: rec-f-1c6915de2d86c5ed
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-c9dabb9a7883be77
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Macro_Component_1_For_J_Medium'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T01:02:08Z;
+    reviewed SHA-256=1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c;
+    current SHA-256=1768592bc9c0cdac4563e4756b2c1c109ef90aa3ffcbefa8e4f4d695a699437c;
+    hash_changed=False. Reports=["reports/yaml_record_review/Macro_Component_1_For_J_Medium.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The local
+    fallback identity and final SSSOM row pass, but this named J medium stock still
+    lacks component-level curation.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-c9dabb9a7883be77
+  evidence_ids:
+  - ev-379ee7ec2567f1b8
+  - ev-a544425e293ae2ee
+  - ev-60ad6af13f138849
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Macro_Component_1_For_J_Medium.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024636Z-mim-reconcile-all-batch-08.
+```

@@ -1,0 +1,263 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-naringenin
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Naringenin (data/ingredients/mapped/Naringenin.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Naringenin (data/ingredients/mapped/Naringenin.yaml,
+  record-4240bd5055e90773, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Naringenin.yaml
+    sha256: 4288fe4632f4e057249a19b4352d1743fe238269910a653ddde235385ecaeb27
+    role: target
+  - path: reviews/structured/20261011T024637Z-mim-reconcile-all-batch-09/review.yaml
+    sha256: cf46750874f1303863883723934bbe8b09ece8d62b1785ceab64bb0342a3cf11
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Naringenin.md
+    sha256: 9e30f647b31449cde5bcbe8e3a19c7856b2e9bdac7f1e2fc73b9a9a722e0d327
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-4240bd5055e90773
+  path: data/ingredients/mapped/Naringenin.yaml
+  label: Naringenin
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Naringenin.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Naringenin.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Naringenin.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-4240bd5055e90773
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-4240bd5055e90773
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-4240bd5055e90773
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024637Z-mim-reconcile-all-batch-09
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-4240bd5055e90773
+evidence:
+- evidence_id: ev-cb32829b346d71ce
+  kind: record_content
+  reference: data/ingredients/mapped/Naringenin.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1534],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:50202","line":1536,"mapping_status":"MAPPED","ontology_id":"CHEBI:50202","preferred_term":"Naringenin"}],"identifier":"CHEBI:50202","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:50202","ontology_label":"naringenin","ontology_source":"CHEBI"},"preferred_term":"Naringenin","sssom_rows":[{"data_row":2046,"object_id":"CHEBI:50202","object_label":"naringenin","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Naringenin","synonym_count":1}'
+  snapshot_sha256: 4288fe4632f4e057249a19b4352d1743fe238269910a653ddde235385ecaeb27
+- evidence_id: ev-8ba2e4caa792c92c
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1534]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-5daab609d2f7e97a
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Naringenin; data-row positions=[2046]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2046,"object_id":"CHEBI:50202","object_label":"naringenin","other":"5,7-dihydroxy-2-(4-hydroxyphenyl)-2,3-dihydro-4H-chromen-4-one|CAS:480-41-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Naringenin","validation_method":"OAK+OLS:chebi|CONFIRMED|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-53c65ecaf17902b5
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1536]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:50202","line":1536,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"0","ontology_id":"CHEBI:50202","preferred_term":"Naringenin","total_occurrences":"0"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-79be7e9422ebc4ac
+  kind: prior_review
+  reference: reports/yaml_record_review/Naringenin.md
+  locator: '`data/ingredients/mapped/Naringenin.yaml`:2; Verdict:4; Identity:11; Validation:21;
+    Evidence:29; Completeness:42; Recommended Edits:49'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 9e30f647b31449cde5bcbe8e3a19c7856b2e9bdac7f1e2fc73b9a9a722e0d327
+  quote: "Recommended Edits:\n- Major: verify the CultureBotHT source row for CAS\
+    \ `480-41-1`; either remove\n  the CAS from this generic `CHEBI:50202` record\
+    \ or re-ground the record to the\n  appropriate stereospecific ChEBI term before\
+    \ rebuilding final SSSOM."
+- evidence_id: ev-3776a28c02d94f65
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1034]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"4288fe4632f4e057249a19b4352d1743fe238269910a653ddde235385ecaeb27","finding_id":"SEM:36e84a0e413a3a1b635e","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-0dc7338b726bde50
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-4240bd5055e90773
+  evidence_ids:
+  - ev-cb32829b346d71ce
+  - ev-8ba2e4caa792c92c
+  - ev-5daab609d2f7e97a
+  - ev-53c65ecaf17902b5
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-8108aac751e3a354
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-4240bd5055e90773
+  evidence_ids:
+  - ev-79be7e9422ebc4ac
+  - ev-cb32829b346d71ce
+  - ev-3776a28c02d94f65
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T06:06:13Z;
+    reviewed SHA-256=4288fe4632f4e057249a19b4352d1743fe238269910a653ddde235385ecaeb27;
+    current SHA-256=4288fe4632f4e057249a19b4352d1743fe238269910a653ddde235385ecaeb27;
+    hash_changed=False. Reports=["reports/yaml_record_review/Naringenin.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The generic CHEBI:50202
+    naringenin identity passes, but stored CAS 480-41-1 resolves to a stereospecific
+    PubChem structure.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-79be7e9422ebc4ac
+    - ev-cb32829b346d71ce
+  - name: legacy-native-ids
+    value: '["SEM:36e84a0e413a3a1b635e"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-cb32829b346d71ce
+    - ev-79be7e9422ebc4ac
+    - ev-3776a28c02d94f65
+findings:
+- finding_id: rec-f-5a103cd1e9ec0e9c
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-4240bd5055e90773
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Naringenin'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T06:06:13Z;
+    reviewed SHA-256=4288fe4632f4e057249a19b4352d1743fe238269910a653ddde235385ecaeb27;
+    current SHA-256=4288fe4632f4e057249a19b4352d1743fe238269910a653ddde235385ecaeb27;
+    hash_changed=False. Reports=["reports/yaml_record_review/Naringenin.md"]. Full
+    reports, including older originals behind refresh floors, are hashed inputs. Repeated
+    refresh allegations are not counted as new defects. The narrative group is not
+    a count of distinct scientific findings. Latest manifest note: The generic CHEBI:50202
+    naringenin identity passes, but stored CAS 480-41-1 resolves to a stereospecific
+    PubChem structure.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-4240bd5055e90773
+  evidence_ids:
+  - ev-79be7e9422ebc4ac
+  - ev-cb32829b346d71ce
+  - ev-3776a28c02d94f65
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Naringenin.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024637Z-mim-reconcile-all-batch-09.

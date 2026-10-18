@@ -1,0 +1,276 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-zmb-als
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: ZMB_ALS (data/ingredients/unmapped/ZMB_ALS.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=UNMAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for ZMB_ALS (data/ingredients/unmapped/ZMB_ALS.yaml,
+  record-ffe16e229f348803, mapping_status=UNMAPPED). Records 0 open finding(s) and
+  1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/unmapped/ZMB_ALS.yaml
+    sha256: 43cfafcde49b6e5b65dcb7809fc086ade6bd9573cef4ab97cd4abd4792b0f6d3
+    role: target
+  - path: reviews/structured/20261011T024640Z-mim-reconcile-all-batch-13/review.yaml
+    sha256: 59cac14400d959b07cc323af966582e4f2dc3bafb95a044f47b6752bb4c20dbb
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/unmapped_ingredients.csv
+    sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+    role: context
+  - path: reports/yaml_record_review/20261001T045040Z-ZMB_ALS.md
+    sha256: b9199fb4d516a6b3f4d2a80b58b9df09146c30f8113e8a566d4b46b5a1573561
+    role: context
+targets:
+- target_id: record-ffe16e229f348803
+  path: data/ingredients/unmapped/ZMB_ALS.yaml
+  label: ZMB_ALS
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/ZMB_ALS.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/unmapped/ZMB_ALS.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/unmapped/ZMB_ALS.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-ffe16e229f348803
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-ffe16e229f348803
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-ffe16e229f348803
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024640Z-mim-reconcile-all-batch-13
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-ffe16e229f348803
+evidence:
+- evidence_id: ev-0c6bbea6b537443c
+  kind: record_content
+  reference: data/ingredients/unmapped/ZMB_ALS.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[256],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0272","line":258,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"ZMB_ALS"}],"identifier":"UNMAPPED_0272","ingredient_type":"NAMED_MEDIUM","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":33,"total_occurrences":33},"ontology_mapping":{},"preferred_term":"ZMB_ALS","sssom_rows":[],"sssom_subject":"MIM:ZMB_ALS","synonym_count":1}'
+  snapshot_sha256: 43cfafcde49b6e5b65dcb7809fc086ade6bd9573cef4ab97cd4abd4792b0f6d3
+- evidence_id: ev-47373a28a84e8285
+  kind: validation
+  reference: data/curated/unmapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [256]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+- evidence_id: ev-59606b4ad5193954
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:ZMB_ALS; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-f53f0595529e08ee
+  kind: record_content
+  reference: docs/data/unmapped_ingredients.csv
+  locator: CSV lines=[258]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0272","line":258,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"33","ontology_id":"","preferred_term":"ZMB_ALS","total_occurrences":"33"}]'
+  snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+- evidence_id: ev-91b3729449ed6610
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T045040Z-ZMB_ALS.md
+  locator: 'YAML Record Review: ZMB_ALS:2; Target:10; Validation:20; Identity and
+    Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55;
+    Follow-up Checks:60; Additional Notes:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: b9199fb4d516a6b3f4d2a80b58b9df09146c30f8113e8a566d4b46b5a1573561
+  quote: 'Findings:
+
+    - **major**: `data/ingredients/unmapped/ZMB_ALS.yaml` remains `UNMAPPED`; the
+    label denotes a named medium or formulation rather than one exact chemical substance.
+    Do not exact-match it to a broader parent, component, hydrate, salt, or lookalike
+    label.
+
+
+    Recommended Edits:
+
+    - Curate an exact same-form identity or decomposition for `data/ingredients/unmapped/ZMB_ALS.yaml`
+    before mapping it.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/unmapped/ZMB_ALS.yaml`,
+    `just validate-terms data/ingredients/unmapped/ZMB_ALS.yaml` where applicable,
+    and `just qc-sssom`.'
+assessments:
+- assessment_id: a-796959c5a7b31bd8
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-ffe16e229f348803
+  evidence_ids:
+  - ev-0c6bbea6b537443c
+  - ev-47373a28a84e8285
+  - ev-59606b4ad5193954
+  - ev-f53f0595529e08ee
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-88284cd35c4fd3c0
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-ffe16e229f348803
+  evidence_ids:
+  - ev-91b3729449ed6610
+  - ev-0c6bbea6b537443c
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:50:40Z;
+    reviewed SHA-256=43cfafcde49b6e5b65dcb7809fc086ade6bd9573cef4ab97cd4abd4792b0f6d3;
+    current SHA-256=43cfafcde49b6e5b65dcb7809fc086ade6bd9573cef4ab97cd4abd4792b0f6d3;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T045040Z-ZMB_ALS.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Named medium/formulation
+    is intentionally left unmapped until a recipe-level CultureMech representation
+    owns the formulation.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-91b3729449ed6610
+    - ev-0c6bbea6b537443c
+  - name: legacy-native-ids
+    value: '[]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-0c6bbea6b537443c
+    - ev-91b3729449ed6610
+- assessment_id: a-80646187adc2d1cf
+  area: identity
+  topic: Unresolved exact identity or preparation
+  outcome: unknown
+  summary: Current status=UNMAPPED; no supported promotion is established by this
+    reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  target_ids:
+  - record-ffe16e229f348803
+  evidence_ids:
+  - ev-91b3729449ed6610
+  - ev-0c6bbea6b537443c
+  - ev-59606b4ad5193954
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-91b3729449ed6610
+    - ev-0c6bbea6b537443c
+    - ev-59606b4ad5193954
+findings:
+- finding_id: rec-f-unmapped-ffe16e229f348803
+  issue_key: mim-reconciliation-unresolved-identity-ffe16e229f348803
+  category: identity
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Unresolved exact identity or preparation: ZMB_ALS'
+  description: Current status=UNMAPPED; no supported promotion is established by this
+    reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  disposition_reason: Current status=UNMAPPED; no supported promotion is established
+    by this reconciliation. Preserve the unresolved source boundary; source-backed
+    identity/decomposition review is still required.
+  target_ids:
+  - record-ffe16e229f348803
+  evidence_ids:
+  - ev-91b3729449ed6610
+  - ev-0c6bbea6b537443c
+  - ev-59606b4ad5193954
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/ZMB_ALS.yaml
+    role: maintained ingredient
+  field_paths:
+  - mapping_status
+  - ontology_id
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - unresolved-identity
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024640Z-mim-reconcile-all-batch-13.

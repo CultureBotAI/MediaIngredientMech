@@ -1,0 +1,308 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-caco3
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Caco3 (data/ingredients/mapped/Caco3.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Caco3 (data/ingredients/mapped/Caco3.yaml,
+  record-29b6d9b1869e330b, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Caco3.yaml
+    sha256: 1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba
+    role: target
+  - path: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+    sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/20261001T050141Z-Caco3.md
+    sha256: 887e7ab5378772971ec7beb755dfa7b9c3e4fbca812485f2f063d4e96e8c64e3
+    role: context
+  - path: reports/yaml_record_review/Caco3.md
+    sha256: 5c4ab64d4932db91ca9c2b38b640096477fd55b5c093be961e00778a6d2dced0
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-29b6d9b1869e330b
+  path: data/ingredients/mapped/Caco3.yaml
+  label: Caco3
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Caco3.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Caco3.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Caco3.yaml selected from full-corpus
+    review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-29b6d9b1869e330b
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-29b6d9b1869e330b
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-29b6d9b1869e330b
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-29b6d9b1869e330b
+evidence:
+- evidence_id: ev-a386c2154fba0962
+  kind: record_content
+  reference: data/ingredients/mapped/Caco3.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[625],"raw_equal":true},"docs_rows":[{"identifier":"CHEBI:3311","line":627,"mapping_status":"MAPPED","ontology_id":"CHEBI:3311","preferred_term":"CaCO3"}],"identifier":"CHEBI:3311","ingredient_type":"SINGLE_INGREDIENT","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":320,"edge_count":320,"occurrences":320},"occurrence_statistics":{"media_count":320,"total_occurrences":320},"ontology_mapping":{"mapping_quality":"EXACT_MATCH","ontology_id":"CHEBI:3311","ontology_label":"calcium
+    carbonate","ontology_source":"CHEBI"},"preferred_term":"CaCO3","sssom_rows":[{"data_row":606,"object_id":"CHEBI:3311","object_label":"calcium
+    carbonate","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Caco3","synonym_count":20}'
+  snapshot_sha256: 1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba
+- evidence_id: ev-5461729095700fbf
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [625]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-8d055a6ae948dfc8
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Caco3; data-row positions=[606]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":606,"object_id":"CHEBI:3311","object_label":"calcium
+    carbonate","other":"CaCO3(Fisher C 64)|CaCO3(optional) (Fisher C 64)|CaCO3(optional)(Fisher
+    C 64)|Calciumcarbonat|E 170|Kalziumkarbonat|Precipitated calcium carbonate|calcium
+    carbonate (1:1)|calcium trioxidocarbonate|carbonate de calcium|carbonato de calcio|carbonic
+    acid calcium salt (1:1)|kohlensaurer Kalk|CAS:471-34-1","predicate_id":"skos:exactMatch","subject_id":"MIM:Caco3","validation_method":"manual:retire_wrong_form_names|OTHER|2026-09-23"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-165d3df27ab27dbd
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[627]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"CHEBI:3311","line":627,"mapping_quality":"EXACT_MATCH","mapping_status":"MAPPED","media_count":"320","ontology_id":"CHEBI:3311","preferred_term":"CaCO3","total_occurrences":"320"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-7b1c6c1f3719dc30
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T050141Z-Caco3.md
+  locator: 'YAML Record Review: CaCO3:2; Target:10; Validation:20; Identity and Grounding:27;
+    Evidence:36; Completeness:46; Findings:52; Recommended Edits:56; Follow-up Checks:61;
+    Additional Notes:67'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 887e7ab5378772971ec7beb755dfa7b9c3e4fbca812485f2f063d4e96e8c64e3
+  quote: 'Findings:
+
+    - **major**: The previous finding set in `reports/yaml_record_review/Caco3.md`
+    was tied to the prior record content; carry it forward as an unresolved curation
+    floor until a targeted current review retires it. Previous summary: The exact
+    CHEBI calcium carbonate identity passes, but Optional ingredient remains a published
+    generic synonym.
+
+
+    Recommended Edits:
+
+    - Resolve or explicitly retire the findings provisionally carried forward from
+    `reports/yaml_record_review/Caco3.md`.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/Caco3.yaml`,
+    `just validate-terms data/ingredients/mapped/Caco3.yaml` where applicable, and
+    `just qc-sssom`.'
+- evidence_id: ev-af14a7590e8d5876
+  kind: prior_review
+  reference: reports/yaml_record_review/Caco3.md
+  locator: '`data/ingredients/mapped/Caco3.yaml`:2; Verdict:4; Identity:10; Validation:23;
+    Evidence:38; Completeness:53; Recommended Edits:62'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 5c4ab64d4932db91ca9c2b38b640096477fd55b5c093be961e00778a6d2dced0
+  quote: "Recommended Edits:\n- Major: convert `Optional ingredient` and `(if required)`\
+    \ from resolving\n  `RAW_TEXT` synonyms into non-resolving provenance on\n  `data/ingredients/mapped/Caco3.yaml`,\
+    \ regenerate the SSSOM/docs exports so\n  `Optional ingredient` is removed from\
+    \ `MIM:Caco3`, then run\n  `just sync-curated`, focused strict/term validation,\
+    \ `just qc-sssom`, and\n  `just qc-flat-coverage`."
+- evidence_id: ev-4b66d79f90d8235f
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[345]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba","finding_id":"SEM:bc87e02d8c82a0f2e3ff","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-ace83c174919ba23
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-29b6d9b1869e330b
+  evidence_ids:
+  - ev-a386c2154fba0962
+  - ev-5461729095700fbf
+  - ev-8d055a6ae948dfc8
+  - ev-165d3df27ab27dbd
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-3417cc8b7430f3ca
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-29b6d9b1869e330b
+  evidence_ids:
+  - ev-7b1c6c1f3719dc30
+  - ev-af14a7590e8d5876
+  - ev-a386c2154fba0962
+  - ev-4b66d79f90d8235f
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:01:41Z;
+    reviewed SHA-256=1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba;
+    current SHA-256=1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050141Z-Caco3.md","reports/yaml_record_review/Caco3.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Caco3.md` after the record changed from 4c316a9a10351cb3104f3f9fb0d5a628644893c54360ae3f6120eb9d1819b646
+    to 1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba; preserved
+    the previous major finding floor pending targeted retirement.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-7b1c6c1f3719dc30
+    - ev-af14a7590e8d5876
+    - ev-a386c2154fba0962
+  - name: legacy-native-ids
+    value: '["SEM:bc87e02d8c82a0f2e3ff"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-a386c2154fba0962
+    - ev-7b1c6c1f3719dc30
+    - ev-af14a7590e8d5876
+    - ev-4b66d79f90d8235f
+findings:
+- finding_id: rec-f-025c0af928249b2c
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-29b6d9b1869e330b
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Caco3'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T05:01:41Z;
+    reviewed SHA-256=1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba;
+    current SHA-256=1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T050141Z-Caco3.md","reports/yaml_record_review/Caco3.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Refreshed
+    `reports/yaml_record_review/Caco3.md` after the record changed from 4c316a9a10351cb3104f3f9fb0d5a628644893c54360ae3f6120eb9d1819b646
+    to 1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba; preserved
+    the previous major finding floor pending targeted retirement.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-29b6d9b1869e330b
+  evidence_ids:
+  - ev-7b1c6c1f3719dc30
+  - ev-af14a7590e8d5876
+  - ev-a386c2154fba0962
+  - ev-4b66d79f90d8235f
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Caco3.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.

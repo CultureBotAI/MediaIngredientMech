@@ -1,0 +1,428 @@
+# Per-record structured review: Casamino_Acids (data/ingredients/mapped/Casamino_Acids.yaml)
+
+- Review: 20261017T083000Z-casamino-acids
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Casamino_Acids (data/ingredients/mapped/Casamino_Acids.yaml, record-b11acdd5f7b4d43a, mapping_status=MAPPED). Records 1 open finding(s) and 0 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/mapped/Casamino_Acids.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/mapped/Casamino_Acids.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-b11acdd5f7b4d43a | data/ingredients/mapped/Casamino_Acids.yaml | maintained | Casamino_Acids |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-b11acdd5f7b4d43a | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | failed | True | record-b11acdd5f7b4d43a | Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION or empty evidence. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-b11acdd5f7b4d43a | Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-b11acdd5f7b4d43a.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-b11acdd5f7b4d43a.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T11:04:30Z; reviewed SHA-256=d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068; current SHA-256=d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068; hash_changed=False. Reports=["reports/yaml_record_review/Casamino_Acids.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: The FOODON casein-hydrolysate identity passes, but stale heptacosanoate kg_microbe_node_id/synonym assertions and a provisional PROTEIN_SOURCE role remain.
+
+### Historical provisional-role concern
+
+evidence: concern. Targets: record-b11acdd5f7b4d43a.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Findings
+
+### rec-f-b2e7a70fe1b9a3c8: Reassess prediction-only role support: Casamino acids
+
+major / open / confirmed; issue key: mim-reconciliation-role-support-b11acdd5f7b4d43a.
+
+Prediction-only payloads remain on the named current role assertions. This confirms the local evidence gap, not that the biological role is false. Native positive context receipts=[].
+
+## Recommended Actions And Acceptance Checks
+
+### rec-action-b2e7a70fe1b9a3c8
+
+Reassess prediction-only role support: Casamino acids
+
+- Address the exact fields/tokens and evidence gap described in this finding; preserve unrelated source labels and audit history.
+- Inspect the original preparation, organism, or mapping evidence where needed; do not promote a label/name-pattern inference to proof.
+- For an authorized fix, synchronize maintained surfaces, run focused validation, and save an evidence-backed successor citing this finding.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-85b0bddb74e215d6 | data/ingredients/mapped/Casamino_Acids.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2490],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315719","line":2492,"mapping_status":"MAPPED","ontology_id":"FOODON:03315719","preferred_term":"Casamino acids"}],"identifier":"FOODON:03315719","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1247,"edge_count":1247,"occurrences":1313},"occurrence_statistics":{"media_count":1247,"total_occurrences":1313},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315719","ontology_label":"mammalian milk protein (hydrolyzed)","ontology_source":"FOODON"},"preferred_term":"Casamino acids","sssom_rows":[{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian milk protein (hydrolyzed)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids","synonym_count":8} |
+| ev-96725b3a2e18c3f7 | data/curated/mapped_ingredients.yaml; ingredients positions (zero-based): [2490] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-38deabfebb14e96c | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Casamino_Acids; data-row positions=[656] | context_only | Current exact-subject rows, including complete other payload: [{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian milk protein (hydrolyzed)","other":"Casamino Acid&#124;Casaminoacids&#124;Casmino Acid&#124;Casmino acids&#124;carbocerate&#124;Casamino Acids (0.01 %&#124;CAS:65072-00-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Casamino_Acids","validation_method":"manual:reconcile_sssom&#124;REMAPPED&#124;2026-08-06"}] |
+| ev-65386795fe7e0687 | docs/data/mapped_ingredients.csv; CSV lines=[2492] | supports | Published identity and count rows inspected: [{"identifier":"FOODON:03315719","line":2492,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1247","ontology_id":"FOODON:03315719","preferred_term":"Casamino acids","total_occurrences":"1313"}] |
+| ev-be1a1bee4ba367fd | reports/yaml_record_review/Casamino_Acids.md; &#96;data/ingredients/mapped/Casamino_Acids.yaml&#96;:2; Verdict:4; Identity:11; Validation:26; Evidence:44; Completeness:57; Recommended Edits:64 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+| ev-f7a83574d0fdeeb8 | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; lines=[364,1453] | context_only | [{"current_record_sha256":"d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068","finding_id":"SEM:6649b014ab754949c239","kind":"existing_record_review","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068","finding_id":"SEM:1413f69397751bf50743","kind":"role_evidence","resolution_reason":"Historical finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}] |
+| ev-e7fbaa0f244ce00e | data/ingredients/mapped/Casamino_Acids.yaml; nutritional_roles[0] | supports | Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION: [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional role from a curated name-pattern rule; review recommended.","reference_text":"Inferred from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}] |
+| ev-fe1cf07d6be8d8b2 | reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml; findings[finding_id=f-b2e7a70fe1b9a3c8] | context_only | Predecessor structured review finding f-b2e7a70fe1b9a3c8 in 20261011T024632Z-mim-reconcile-all-batch-04 |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-casamino-acids
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Casamino_Acids (data/ingredients/mapped/Casamino_Acids.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=1; deferred=0
+scientific_review: false
+summary: Per-record structured review for Casamino_Acids (data/ingredients/mapped/Casamino_Acids.yaml,
+  record-b11acdd5f7b4d43a, mapping_status=MAPPED). Records 1 open finding(s) and 0
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Casamino_Acids.yaml
+    sha256: d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068
+    role: target
+  - path: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+    sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Casamino_Acids.md
+    sha256: 4fd83c3f69e7bff34ef60f69e88174dbbe4fe850d2e9a713a08152f32d583d95
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-b11acdd5f7b4d43a
+  path: data/ingredients/mapped/Casamino_Acids.yaml
+  label: Casamino_Acids
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Casamino_Acids.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Casamino_Acids.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Casamino_Acids.yaml selected from
+    full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-b11acdd5f7b4d43a
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-b11acdd5f7b4d43a
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: failed
+  required: true
+  summary: Role assertions on nutritional_roles[0] rely only on COMPUTATIONAL_PREDICTION
+    or empty evidence.
+  target_ids:
+  - record-b11acdd5f7b4d43a
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024632Z-mim-reconcile-all-batch-04
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-b11acdd5f7b4d43a
+evidence:
+- evidence_id: ev-85b0bddb74e215d6
+  kind: record_content
+  reference: data/ingredients/mapped/Casamino_Acids.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[2490],"raw_equal":true},"docs_rows":[{"identifier":"FOODON:03315719","line":2492,"mapping_status":"MAPPED","ontology_id":"FOODON:03315719","preferred_term":"Casamino
+    acids"}],"identifier":"FOODON:03315719","ingredient_type":"UNDEFINED_MIXTURE","mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":1247,"edge_count":1247,"occurrences":1313},"occurrence_statistics":{"media_count":1247,"total_occurrences":1313},"ontology_mapping":{"mapping_quality":"CLOSE_MATCH","ontology_id":"FOODON:03315719","ontology_label":"mammalian
+    milk protein (hydrolyzed)","ontology_source":"FOODON"},"preferred_term":"Casamino
+    acids","sssom_rows":[{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian
+    milk protein (hydrolyzed)","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Casamino_Acids","synonym_count":8}'
+  snapshot_sha256: d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068
+- evidence_id: ev-96725b3a2e18c3f7
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [2490]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-38deabfebb14e96c
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Casamino_Acids; data-row positions=[656]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":656,"object_id":"FOODON:03315719","object_label":"mammalian
+    milk protein (hydrolyzed)","other":"Casamino Acid|Casaminoacids|Casmino Acid|Casmino
+    acids|carbocerate|Casamino Acids (0.01 %|CAS:65072-00-6","predicate_id":"skos:exactMatch","subject_id":"MIM:Casamino_Acids","validation_method":"manual:reconcile_sssom|REMAPPED|2026-08-06"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-65386795fe7e0687
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[2492]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"FOODON:03315719","line":2492,"mapping_quality":"CLOSE_MATCH","mapping_status":"MAPPED","media_count":"1247","ontology_id":"FOODON:03315719","preferred_term":"Casamino
+    acids","total_occurrences":"1313"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-be1a1bee4ba367fd
+  kind: prior_review
+  reference: reports/yaml_record_review/Casamino_Acids.md
+  locator: '`data/ingredients/mapped/Casamino_Acids.yaml`:2; Verdict:4; Identity:11;
+    Validation:26; Evidence:44; Completeness:57; Recommended Edits:64'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 4fd83c3f69e7bff34ef60f69e88174dbbe4fe850d2e9a713a08152f32d583d95
+  quote: "Recommended Edits:\n- Major: update or remove the stale `kg_microbe_node_id:\
+    \ CHEBI:78020` in\n  `data/ingredients/mapped/Casamino_Acids.yaml`, then rerun\n\
+    \  `qc-kg-microbe-node-ids` and the standard strict, SSSOM, roundtrip, and diff\n\
+    \  checks.\n- Major: remove `carbocerate` as an exact synonym, or move the rejected\n\
+    \  heptacosanoate label into a non-live review/audit note.\n- Major: either replace\
+    \ the provisional\n  `nutritional_roles.PROTEIN_SOURCE` evidence with inspected\
+    \ evidence for this\n  acid casein hydrolysate scope, or remove the role."
+- evidence_id: ev-f7a83574d0fdeeb8
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[364,1453]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068","finding_id":"SEM:6649b014ab754949c239","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"},{"current_record_sha256":"d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068","finding_id":"SEM:1413f69397751bf50743","kind":"role_evidence","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+- evidence_id: ev-e7fbaa0f244ce00e
+  kind: record_content
+  reference: data/ingredients/mapped/Casamino_Acids.yaml
+  locator: nutritional_roles[0]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Every evidence entry on these current assertions is COMPUTATIONAL_PREDICTION:
+    [{"field":"nutritional_roles[0]","role":{"confidence":0.8,"evidence":[{"curator_note":"Provisional
+    role from a curated name-pattern rule; review recommended.","reference_text":"Inferred
+    from curated media-role name pattern","reference_type":"COMPUTATIONAL_PREDICTION"}],"role":"PROTEIN_SOURCE"}}]'
+  snapshot_sha256: d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068
+- evidence_id: ev-fe1cf07d6be8d8b2
+  kind: prior_review
+  reference: reviews/structured/20261011T024632Z-mim-reconcile-all-batch-04/review.yaml
+  locator: findings[finding_id=f-b2e7a70fe1b9a3c8]
+  accessed_at: '2026-10-17T08:30:00Z'
+  support: context_only
+  summary: Predecessor structured review finding f-b2e7a70fe1b9a3c8 in 20261011T024632Z-mim-reconcile-all-batch-04
+  snapshot_sha256: 304aa2f246d52fcfef2fb5165e9b4c0995c263df5e818c23b30e9d76e3ec55e3
+assessments:
+- assessment_id: a-4b19bd43f4ff3928
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-b11acdd5f7b4d43a
+  evidence_ids:
+  - ev-85b0bddb74e215d6
+  - ev-96725b3a2e18c3f7
+  - ev-38deabfebb14e96c
+  - ev-65386795fe7e0687
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-728c47c702b7c1db
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-b11acdd5f7b4d43a
+  evidence_ids:
+  - ev-be1a1bee4ba367fd
+  - ev-85b0bddb74e215d6
+  - ev-f7a83574d0fdeeb8
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-16T11:04:30Z;
+    reviewed SHA-256=d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068;
+    current SHA-256=d08907d668d6a9b05ca4562d5c878887f18ebdd7fbfd4412a4a1e334e2e1b068;
+    hash_changed=False. Reports=["reports/yaml_record_review/Casamino_Acids.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The FOODON
+    casein-hydrolysate identity passes, but stale heptacosanoate kg_microbe_node_id/synonym
+    assertions and a provisional PROTEIN_SOURCE role remain.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-be1a1bee4ba367fd
+    - ev-85b0bddb74e215d6
+  - name: legacy-native-ids
+    value: '["SEM:6649b014ab754949c239","SEM:1413f69397751bf50743"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-85b0bddb74e215d6
+    - ev-be1a1bee4ba367fd
+    - ev-f7a83574d0fdeeb8
+- assessment_id: a-e7fbaa0f244ce00e
+  area: evidence
+  topic: Historical provisional-role concern
+  outcome: concern
+  summary: Prediction-only payloads remain on the named current role assertions. This
+    confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-b11acdd5f7b4d43a
+  evidence_ids:
+  - ev-be1a1bee4ba367fd
+  - ev-e7fbaa0f244ce00e
+  dimensions:
+  - name: legacy-disposition
+    value: still_open
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-be1a1bee4ba367fd
+    - ev-e7fbaa0f244ce00e
+findings:
+- finding_id: rec-f-b2e7a70fe1b9a3c8
+  issue_key: mim-reconciliation-role-support-b11acdd5f7b4d43a
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: 'Reassess prediction-only role support: Casamino acids'
+  description: Prediction-only payloads remain on the named current role assertions.
+    This confirms the local evidence gap, not that the biological role is false. Native
+    positive context receipts=[].
+  target_ids:
+  - record-b11acdd5f7b4d43a
+  evidence_ids:
+  - ev-be1a1bee4ba367fd
+  - ev-e7fbaa0f244ce00e
+  - ev-fe1cf07d6be8d8b2
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Casamino_Acids.yaml
+    role: maintained ingredient
+  field_paths:
+  - nutritional_roles[0]
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - role-support
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261011T024632Z-mim-reconcile-all-batch-04
+    finding_id: f-b2e7a70fe1b9a3c8
+actions:
+- action_id: rec-action-b2e7a70fe1b9a3c8
+  description: 'Reassess prediction-only role support: Casamino acids'
+  finding_ids:
+  - rec-f-b2e7a70fe1b9a3c8
+  target_ids:
+  - record-b11acdd5f7b4d43a
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Casamino_Acids.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - Address the exact fields/tokens and evidence gap described in this finding; preserve
+    unrelated source labels and audit history.
+  - Inspect the original preparation, organism, or mapping evidence where needed;
+    do not promote a label/name-pattern inference to proof.
+  - For an authorized fix, synchronize maintained surfaces, run focused validation,
+    and save an evidence-backed successor citing this finding.
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024632Z-mim-reconcile-all-batch-04.
+```

@@ -1,0 +1,273 @@
+schema_version: 1.0.0
+review_id: 20261017T083000Z-toray-silicone-sh-5535
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Toray_Silicone_SH_5535 (data/ingredients/mapped/Toray_Silicone_SH_5535.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=MAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Toray_Silicone_SH_5535 (data/ingredients/mapped/Toray_Silicone_SH_5535.yaml,
+  record-609ac3565ceb96bb, mapping_status=MAPPED). Records 0 open finding(s) and 1
+  deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/mapped/Toray_Silicone_SH_5535.yaml
+    sha256: fad816f40678c2bed3f2e51532e1ebfaba7c057ac8d2d5dd3c30d53f62f001ae
+    role: target
+  - path: reviews/structured/20261011T024638Z-mim-reconcile-all-batch-11/review.yaml
+    sha256: a417d1bfc777756925990a4ecae1a6b539746c3606d042df7e1c29a218c62f8b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+    role: context
+  - path: reports/yaml_record_review/Toray_Silicone_SH_5535.md
+    sha256: 1c2510d7e426058c03653243e6dd87f8820ff3e13b4716d998e1afa76c536975
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+    role: context
+targets:
+- target_id: record-609ac3565ceb96bb
+  path: data/ingredients/mapped/Toray_Silicone_SH_5535.yaml
+  label: Toray_Silicone_SH_5535
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Toray_Silicone_SH_5535.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/mapped/Toray_Silicone_SH_5535.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/mapped/Toray_Silicone_SH_5535.yaml selected
+    from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-609ac3565ceb96bb
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-609ac3565ceb96bb
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-609ac3565ceb96bb
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024638Z-mim-reconcile-all-batch-11
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-609ac3565ceb96bb
+evidence:
+- evidence_id: ev-5895123ea422b3a3
+  kind: record_content
+  reference: data/ingredients/mapped/Toray_Silicone_SH_5535.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/mapped_ingredients.yaml","positions":[1975],"raw_equal":true},"docs_rows":[{"identifier":"mesh:C069668","line":1977,"mapping_status":"MAPPED","ontology_id":"mesh:C069668","preferred_term":"Toray
+    silicone SH 5535"}],"identifier":"mesh:C069668","ingredient_type":null,"mapping_status":"MAPPED","membership_by_identifier":{"distinct_recipes":2,"edge_count":2,"occurrences":2},"occurrence_statistics":{"media_count":2,"total_occurrences":2},"ontology_mapping":{"mapping_quality":"LEXICAL_MATCH","ontology_id":"mesh:C069668","ontology_label":"Toray
+    Silicone","ontology_source":"MESH"},"preferred_term":"Toray silicone SH 5535","sssom_rows":[{"data_row":2795,"object_id":"mesh:C069668","object_label":"Toray
+    Silicone","predicate_id":"skos:exactMatch"}],"sssom_subject":"MIM:Toray_Silicone_SH_5535","synonym_count":1}'
+  snapshot_sha256: fad816f40678c2bed3f2e51532e1ebfaba7c057ac8d2d5dd3c30d53f62f001ae
+- evidence_id: ev-cc1bd58e2caf37c3
+  kind: validation
+  reference: data/curated/mapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [1975]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+- evidence_id: ev-0bf2db242c369560
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Toray_Silicone_SH_5535; data-row positions=[2795]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: [{"data_row":2795,"object_id":"mesh:C069668","object_label":"Toray
+    Silicone","other":"","predicate_id":"skos:exactMatch","subject_id":"MIM:Toray_Silicone_SH_5535","validation_method":"none|UNKNOWN_TERM|2026-07-07"}]'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-f67c2269d8270751
+  kind: record_content
+  reference: docs/data/mapped_ingredients.csv
+  locator: CSV lines=[1977]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"mesh:C069668","line":1977,"mapping_quality":"LEXICAL_MATCH","mapping_status":"MAPPED","media_count":"2","ontology_id":"mesh:C069668","preferred_term":"Toray
+    silicone SH 5535","total_occurrences":"2"}]'
+  snapshot_sha256: c15ebf8ca7ab0fe780c57cb696337c454c9232bafccd57cd9bf2abd582290474
+- evidence_id: ev-10baa0eaea843d52
+  kind: prior_review
+  reference: reports/yaml_record_review/Toray_Silicone_SH_5535.md
+  locator: '`data/ingredients/mapped/Toray_Silicone_SH_5535.yaml`:2; Verdict:4; Identity:10;
+    Validation:19; Evidence:29; Issues:41; Major: SH 5535 is not verified as MeSH
+    Toray Silicone:43; Completeness:50; Recommended Edits:57'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: 1c2510d7e426058c03653243e6dd87f8820ff3e13b4716d998e1afa76c536975
+  quote: "Issues:\n\n\nMajor: SH 5535 is not verified as MeSH Toray Silicone:\nThe\
+    \ grounding came from `resolve_unmapped_v2 strategy=stem-match`; the live\nMeSH\
+    \ concept resolves as `Toray Silicone` with `SH 792` synonyms, not `SH\n5535`.\
+    \ Without product-specific evidence, the exact row can collapse a\ndistinct Toray\
+    \ silicone formulation into the wrong MeSH supplementary concept.\n\nRecommended\
+    \ Edits:\n- Verify whether SH 5535 and MeSH `mesh:C069668` denote the same Toray\n\
+    \  silicone formulation. If not, demote this record to a local registry\n  fallback\
+    \ or a broader non-exact relation."
+- evidence_id: ev-6a92ee802b793676
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: lines=[1296]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: '[{"current_record_sha256":"fad816f40678c2bed3f2e51532e1ebfaba7c057ac8d2d5dd3c30d53f62f001ae","finding_id":"SEM:eb9c19534dbfed824189","kind":"existing_record_review","resolution_reason":"Historical
+    finding remains unresolved; no blanket approval.","resolution_status":"OPEN"}]'
+  snapshot_sha256: abc3299188d9e666ca7f0df1fad03ece80827c4e007634a41ced296e6bdc5989
+assessments:
+- assessment_id: a-0680eeef909f35eb
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-609ac3565ceb96bb
+  evidence_ids:
+  - ev-5895123ea422b3a3
+  - ev-cc1bd58e2caf37c3
+  - ev-0bf2db242c369560
+  - ev-f67c2269d8270751
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-e6defdabbf21acdd
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-609ac3565ceb96bb
+  evidence_ids:
+  - ev-10baa0eaea843d52
+  - ev-5895123ea422b3a3
+  - ev-6a92ee802b793676
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T19:09:25Z;
+    reviewed SHA-256=fad816f40678c2bed3f2e51532e1ebfaba7c057ac8d2d5dd3c30d53f62f001ae;
+    current SHA-256=fad816f40678c2bed3f2e51532e1ebfaba7c057ac8d2d5dd3c30d53f62f001ae;
+    hash_changed=False. Reports=["reports/yaml_record_review/Toray_Silicone_SH_5535.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The MeSH
+    CURIE exists, but the Toray silicone SH 5535 exact match is only a stem-substring
+    match to broader Toray Silicone.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-10baa0eaea843d52
+    - ev-5895123ea422b3a3
+  - name: legacy-native-ids
+    value: '["SEM:eb9c19534dbfed824189"]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-5895123ea422b3a3
+    - ev-10baa0eaea843d52
+    - ev-6a92ee802b793676
+findings:
+- finding_id: rec-f-2c436012d9817b7d
+  issue_key: mim-reconciliation-historical-review-coverage-and-r-609ac3565ceb96bb
+  category: provenance
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Historical review coverage and residual narrative: Toray_Silicone_SH_5535'
+  description: 'The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+    Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-09-17T19:09:25Z;
+    reviewed SHA-256=fad816f40678c2bed3f2e51532e1ebfaba7c057ac8d2d5dd3c30d53f62f001ae;
+    current SHA-256=fad816f40678c2bed3f2e51532e1ebfaba7c057ac8d2d5dd3c30d53f62f001ae;
+    hash_changed=False. Reports=["reports/yaml_record_review/Toray_Silicone_SH_5535.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: The MeSH
+    CURIE exists, but the Toray silicone SH 5535 exact match is only a stem-substring
+    match to broader Toray Silicone.'
+  disposition_reason: The legacy concern set remains only partially reconciled. Specific
+    dispositions below apply solely to their named subclaims; other identity, source,
+    component, synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-609ac3565ceb96bb
+  evidence_ids:
+  - ev-10baa0eaea843d52
+  - ev-5895123ea422b3a3
+  - ev-6a92ee802b793676
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Toray_Silicone_SH_5535.yaml
+    role: maintained ingredient
+  field_paths:
+  - curation_history
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - historical-review-coverage-and-r
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024638Z-mim-reconcile-all-batch-11.

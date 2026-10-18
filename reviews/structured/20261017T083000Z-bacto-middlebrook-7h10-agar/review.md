@@ -1,0 +1,376 @@
+# Per-record structured review: Bacto_Middlebrook_7H10_Agar (data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml)
+
+- Review: 20261017T083000Z-bacto-middlebrook-7h10-agar
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-10-17T08:25:00Z
+- Finished UTC: 2026-10-17T08:30:00Z
+- Reviewer: Antigravity (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+Per-record structured review for Bacto_Middlebrook_7H10_Agar (data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml, record-fbc126273c265fd9, mapping_status=UNMAPPED). Records 0 open finding(s) and 1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+
+## Scope And Provenance
+
+Per-record structured review of data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml covering current record state, role evidence support, published surfaces, and residual historical review claims.
+
+Selection: Single record data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml selected from full-corpus review of all 2,953 ingredient records on HEAD.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 3751d80fbd916de878be918aa481371020cc75bb.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-fbc126273c265fd9 | data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml | maintained | Bacto_Middlebrook_7H10_Agar |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Current record and published surface consistency | passed | True | record-fbc126273c265fd9 | Verified current YAML against maintained aggregates, exact-subject SSSOM rows, and published CSV exports. |
+| Role evidence and plausibility check | passed | True | record-fbc126273c265fd9 | All populated role assertions on this record carry non-prediction evidence or no role array defects were detected. |
+| Predecessor structured review and semantic disposition reconciliation | passed | True | record-fbc126273c265fd9 | Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12 and semantic review dispositions on HEAD. |
+
+## Scientific And Domain Assessments
+
+### Current record and published surfaces
+
+consistency: supported. Targets: record-fbc126273c265fd9.
+
+Current YAML and its maintained aggregate agree under the documented overlay exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export gates pass within their stated limits.
+
+Membership summaries are keyed by identifier, not record address: duplicate records and tombstones may share an identity. They are not evidence that counts should be copied between records.
+
+### Historical review coverage and residual narrative
+
+provenance: unknown. Targets: record-fbc126273c265fd9.
+
+The legacy concern set remains only partially reconciled. Specific dispositions below apply solely to their named subclaims; other identity, source, component, synonym, and conditional recommendations still need targeted reassessment.
+
+Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:46:46Z; reviewed SHA-256=f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4; current SHA-256=f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4; hash_changed=False. Reports=["reports/yaml_record_review/20261001T044646Z-Bacto_Middlebrook_7H10_Agar.md"]. Full reports, including older originals behind refresh floors, are hashed inputs. Repeated refresh allegations are not counted as new defects. The narrative group is not a count of distinct scientific findings. Latest manifest note: Named medium/formulation is intentionally left unmapped until a recipe-level CultureMech representation owns the formulation.
+
+### Unresolved exact identity or preparation
+
+identity: unknown. Targets: record-fbc126273c265fd9.
+
+Current status=UNMAPPED; no supported promotion is established by this reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition review is still required.
+
+## Findings
+
+### rec-f-unmapped-fbc126273c265fd9: Unresolved exact identity or preparation: Bacto_Middlebrook_7H10_Agar
+
+major / deferred / provisional; issue key: mim-reconciliation-unresolved-identity-fbc126273c265fd9.
+
+Current status=UNMAPPED; no supported promotion is established by this reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition review is still required.
+
+Disposition: Current status=UNMAPPED; no supported promotion is established by this reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition review is still required.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ev-20dab5717ef0e03e | data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml; Complete YAML parsed; identity, roles, synonyms, occurrences, history and optional payloads inspected by bounded checks. | partial | {"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[32],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0115","line":34,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"Bacto Middlebrook 7H10 agar"}],"identifier":"UNMAPPED_0115","ingredient_type":"NAMED_MEDIUM","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Bacto Middlebrook 7H10 agar","sssom_rows":[],"sssom_subject":"MIM:Bacto_Middlebrook_7H10_Agar","synonym_count":2} |
+| ev-3f0aa9141963558c | data/curated/unmapped_ingredients.yaml; ingredients positions (zero-based): [32] | supports | Exactly one (identifier, preferred_term) row; semantic equality after excluding only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True. |
+| ev-89cb61b428aed850 | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Bacto_Middlebrook_7H10_Agar; data-row positions=[] | context_only | Current exact-subject rows, including complete other payload: [] |
+| ev-ef2feb6f570c273f | docs/data/unmapped_ingredients.csv; CSV lines=[34] | supports | Published identity and count rows inspected: [{"identifier":"UNMAPPED_0115","line":34,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"Bacto Middlebrook 7H10 agar","total_occurrences":"0"}] |
+| ev-94c9c8427749f21e | reports/yaml_record_review/20261001T044646Z-Bacto_Middlebrook_7H10_Agar.md; YAML Record Review: Bacto Middlebrook 7H10 agar:2; Target:10; Validation:20; Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended Edits:55; Follow-up Checks:60; Additional Notes:66 | context_only | Whole historical report loaded, including evidence, caveats and follow-up sections. Original allegations and recommendations below are historical, not new instructions or verified conclusions. |
+
+## Limits And Additional Notes
+
+- Read-only per-record structured review (scientific_review: false); no ingredient YAML, curated aggregate, or SSSOM files were modified.
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded remediation actions; historical or source-context claims requiring primary recipe/literature verification remain deferred (provisional).
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb) with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261017T083000Z-bacto-middlebrook-7h10-agar
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Per-record structured review: Bacto_Middlebrook_7H10_Agar (data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml)'
+started_at: '2026-10-17T08:25:00Z'
+finished_at: '2026-10-17T08:30:00Z'
+reviewer:
+  identity: Antigravity
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Independent per-record structured review and reconciliation
+    against current HEAD and historical review inputs.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+native_verdict: mapping_status=UNMAPPED; open=0; deferred=1
+scientific_review: false
+summary: Per-record structured review for Bacto_Middlebrook_7H10_Agar (data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml,
+  record-fbc126273c265fd9, mapping_status=UNMAPPED). Records 0 open finding(s) and
+  1 deferred finding(s) bound to current HEAD (3751d80fbd916de878be918aa481371020cc75bb).
+source:
+  git_revision: 3751d80fbd916de878be918aa481371020cc75bb
+  state: working_tree
+  inputs:
+  - path: data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml
+    sha256: f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4
+    role: target
+  - path: reviews/structured/20261011T024639Z-mim-reconcile-all-batch-12/review.yaml
+    sha256: 20e55e956f704a8c90164bf2749b9ddf6c35d94cdcbab538776d0675aa150899
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: context
+  - path: docs/data/unmapped_ingredients.csv
+    sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+    role: context
+  - path: reports/yaml_record_review/20261001T044646Z-Bacto_Middlebrook_7H10_Agar.md
+    sha256: a8dd385b3aa8866587129a557d9bcbad6b50f947a048b8b19e088b832afaef41
+    role: context
+targets:
+- target_id: record-fbc126273c265fd9
+  path: data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml
+  label: Bacto_Middlebrook_7H10_Agar
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml
+    role: maintained ingredient
+scope:
+  description: Per-record structured review of data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml
+    covering current record state, role evidence support, published surfaces, and
+    residual historical review claims.
+  selection: Single record data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml
+    selected from full-corpus review of all 2,953 ingredient records on HEAD.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - record-fbc126273c265fd9
+checks:
+- check_id: surface-consistency
+  name: Current record and published surface consistency
+  status: passed
+  required: true
+  summary: Verified current YAML against maintained aggregates, exact-subject SSSOM
+    rows, and published CSV exports.
+  target_ids:
+  - record-fbc126273c265fd9
+- check_id: role-evidence-audit
+  name: Role evidence and plausibility check
+  status: passed
+  required: true
+  summary: All populated role assertions on this record carry non-prediction evidence
+    or no role array defects were detected.
+  target_ids:
+  - record-fbc126273c265fd9
+- check_id: predecessor-reconciliation
+  name: Predecessor structured review and semantic disposition reconciliation
+  status: passed
+  required: true
+  summary: Reconciled against predecessor batch review 20261011T024639Z-mim-reconcile-all-batch-12
+    and semantic review dispositions on HEAD.
+  target_ids:
+  - record-fbc126273c265fd9
+evidence:
+- evidence_id: ev-20dab5717ef0e03e
+  kind: record_content
+  reference: data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml
+  locator: Complete YAML parsed; identity, roles, synonyms, occurrences, history and
+    optional payloads inspected by bounded checks.
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: partial
+  summary: '{"aggregate":{"equal":true,"excluded_overlay_fields":["discussions"],"matching_rows":1,"path":"data/curated/unmapped_ingredients.yaml","positions":[32],"raw_equal":true},"docs_rows":[{"identifier":"UNMAPPED_0115","line":34,"mapping_status":"UNMAPPED","ontology_id":"","preferred_term":"Bacto
+    Middlebrook 7H10 agar"}],"identifier":"UNMAPPED_0115","ingredient_type":"NAMED_MEDIUM","mapping_status":"UNMAPPED","membership_by_identifier":{"distinct_recipes":0,"edge_count":0,"occurrences":0},"occurrence_statistics":{"media_count":0,"total_occurrences":0},"ontology_mapping":{},"preferred_term":"Bacto
+    Middlebrook 7H10 agar","sssom_rows":[],"sssom_subject":"MIM:Bacto_Middlebrook_7H10_Agar","synonym_count":2}'
+  snapshot_sha256: f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4
+- evidence_id: ev-3f0aa9141963558c
+  kind: validation
+  reference: data/curated/unmapped_ingredients.yaml
+  locator: 'ingredients positions (zero-based): [32]'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: Exactly one (identifier, preferred_term) row; semantic equality after excluding
+    only exporter-declared PER_RECORD_AUTHORED_FIELDS=["discussions"]. Raw equality=True.
+  snapshot_sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+- evidence_id: ev-89cb61b428aed850
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  locator: subject_id=MIM:Bacto_Middlebrook_7H10_Agar; data-row positions=[]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: 'Current exact-subject rows, including complete other payload: []'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: ev-ef2feb6f570c273f
+  kind: record_content
+  reference: docs/data/unmapped_ingredients.csv
+  locator: CSV lines=[34]
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: supports
+  summary: 'Published identity and count rows inspected: [{"identifier":"UNMAPPED_0115","line":34,"mapping_quality":"","mapping_status":"UNMAPPED","media_count":"0","ontology_id":"","preferred_term":"Bacto
+    Middlebrook 7H10 agar","total_occurrences":"0"}]'
+  snapshot_sha256: 58a51002c62583df7dd2c667a003f2644c84fa8e2cb549c7d7ec3ecdc163b1f7
+- evidence_id: ev-94c9c8427749f21e
+  kind: prior_review
+  reference: reports/yaml_record_review/20261001T044646Z-Bacto_Middlebrook_7H10_Agar.md
+  locator: 'YAML Record Review: Bacto Middlebrook 7H10 agar:2; Target:10; Validation:20;
+    Identity and Grounding:27; Evidence:36; Completeness:45; Findings:51; Recommended
+    Edits:55; Follow-up Checks:60; Additional Notes:66'
+  accessed_at: '2026-10-11T02:46:28Z'
+  support: context_only
+  summary: Whole historical report loaded, including evidence, caveats and follow-up
+    sections. Original allegations and recommendations below are historical, not new
+    instructions or verified conclusions.
+  snapshot_sha256: a8dd385b3aa8866587129a557d9bcbad6b50f947a048b8b19e088b832afaef41
+  quote: 'Findings:
+
+    - **major**: `data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml` remains
+    `UNMAPPED`; the label denotes a named medium or formulation rather than one exact
+    chemical substance. Do not exact-match it to a broader parent, component, hydrate,
+    salt, or lookalike label.
+
+
+    Recommended Edits:
+
+    - Curate an exact same-form identity or decomposition for `data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml`
+    before mapping it.
+
+    - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml`,
+    `just validate-terms data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml`
+    where applicable, and `just qc-sssom`.'
+assessments:
+- assessment_id: a-845656cbbd5f05e5
+  area: consistency
+  topic: Current record and published surfaces
+  outcome: supported
+  summary: Current YAML and its maintained aggregate agree under the documented overlay
+    exclusion. Exact-subject SSSOM and published CSV rows were inspected; corpus structural/export
+    gates pass within their stated limits.
+  target_ids:
+  - record-fbc126273c265fd9
+  evidence_ids:
+  - ev-20dab5717ef0e03e
+  - ev-3f0aa9141963558c
+  - ev-89cb61b428aed850
+  - ev-ef2feb6f570c273f
+  details: 'Membership summaries are keyed by identifier, not record address: duplicate
+    records and tombstones may share an identity. They are not evidence that counts
+    should be copied between records.'
+- assessment_id: a-e2d6aa4081a20133
+  area: provenance
+  topic: Historical review coverage and residual narrative
+  outcome: unknown
+  summary: The legacy concern set remains only partially reconciled. Specific dispositions
+    below apply solely to their named subclaims; other identity, source, component,
+    synonym, and conditional recommendations still need targeted reassessment.
+  target_ids:
+  - record-fbc126273c265fd9
+  evidence_ids:
+  - ev-94c9c8427749f21e
+  - ev-20dab5717ef0e03e
+  details: 'Latest manifest verdict=needs_curation; severity=major; reviewed_at=2026-10-01T04:46:46Z;
+    reviewed SHA-256=f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4;
+    current SHA-256=f25d976b381c87a91bc9932b822b3839dcaf40d75f985148b880b864a20124f4;
+    hash_changed=False. Reports=["reports/yaml_record_review/20261001T044646Z-Bacto_Middlebrook_7H10_Agar.md"].
+    Full reports, including older originals behind refresh floors, are hashed inputs.
+    Repeated refresh allegations are not counted as new defects. The narrative group
+    is not a count of distinct scientific findings. Latest manifest note: Named medium/formulation
+    is intentionally left unmapped until a recipe-level CultureMech representation
+    owns the formulation.'
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-94c9c8427749f21e
+    - ev-20dab5717ef0e03e
+  - name: legacy-native-ids
+    value: '[]'
+    definition: Existing SEM ledger identities retained for handoff, not common structured
+      previous_occurrences.
+    evidence_ids:
+    - ev-20dab5717ef0e03e
+    - ev-94c9c8427749f21e
+- assessment_id: a-331932295b5c3b6c
+  area: identity
+  topic: Unresolved exact identity or preparation
+  outcome: unknown
+  summary: Current status=UNMAPPED; no supported promotion is established by this
+    reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  target_ids:
+  - record-fbc126273c265fd9
+  evidence_ids:
+  - ev-94c9c8427749f21e
+  - ev-20dab5717ef0e03e
+  - ev-89cb61b428aed850
+  dimensions:
+  - name: legacy-disposition
+    value: needs_reassessment
+    definition: Disposition of this explicitly bounded allegation or narrative group
+      only; not whole-record approval.
+    evidence_ids:
+    - ev-94c9c8427749f21e
+    - ev-20dab5717ef0e03e
+    - ev-89cb61b428aed850
+findings:
+- finding_id: rec-f-unmapped-fbc126273c265fd9
+  issue_key: mim-reconciliation-unresolved-identity-fbc126273c265fd9
+  category: identity
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: 'Unresolved exact identity or preparation: Bacto_Middlebrook_7H10_Agar'
+  description: Current status=UNMAPPED; no supported promotion is established by this
+    reconciliation. Preserve the unresolved source boundary; source-backed identity/decomposition
+    review is still required.
+  disposition_reason: Current status=UNMAPPED; no supported promotion is established
+    by this reconciliation. Preserve the unresolved source boundary; source-backed
+    identity/decomposition review is still required.
+  target_ids:
+  - record-fbc126273c265fd9
+  evidence_ids:
+  - ev-94c9c8427749f21e
+  - ev-20dab5717ef0e03e
+  - ev-89cb61b428aed850
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Bacto_Middlebrook_7H10_Agar.yaml
+    role: maintained ingredient
+  field_paths:
+  - mapping_status
+  - ontology_id
+  tags:
+  - reconciliation
+  - bundle-by-owner
+  - unresolved-identity
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions: []
+limitations:
+- 'Read-only per-record structured review (scientific_review: false); no ingredient
+  YAML, curated aggregate, or SSSOM files were modified.'
+- Confirmed local evidence gaps and structural issues are recorded as open with bounded
+  remediation actions; historical or source-context claims requiring primary recipe/literature
+  verification remain deferred (provisional).
+tags:
+- record-review
+- per-record
+- reconciliation
+- bundle-by-owner
+notes:
+- Derived from full-corpus review on HEAD (3751d80fbd916de878be918aa481371020cc75bb)
+  with lineage to 20261011T024639Z-mim-reconcile-all-batch-12.
+```
