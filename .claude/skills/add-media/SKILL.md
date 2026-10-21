@@ -275,8 +275,8 @@ record_curation_event(
 )
 
 write_validated_ingredient(
-    Path("data/ingredients/mapped/Example_Medium.yaml"),  # <!-- refcheck: ignore -->
     record,
+    Path("data/ingredients/mapped/Example_Medium.yaml"),  # <!-- refcheck: ignore -->
 )
 ```
 
