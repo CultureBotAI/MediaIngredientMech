@@ -10,18 +10,18 @@ summary: Reviewed all 2,953 individual IngredientRecord YAML files and 7 collect
 source_revision: 348a59b7d81150184486d15d545d320d82be2900
 artifacts:
 - path: reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-04/revision-0001/review_report.md
-  sha256: d355112fe52c5b0cbfb9c587137d72c806678f0726dc2c7857f8f1f160aa54fc
+  sha256: 6397472ae5a4381df5f8befe0ab8b522c92970472a144eef6df17117f53a6609
   kind: review_report
 - path: reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-04/revision-0001/review_findings.md
-  sha256: 318932a207afdfe2be0168e77ac949a122d3c4e142a95d50d5c4e6c13a2047b2
+  sha256: 926fb14a4a2cafdee331ed8ac7ac595c21fd0c5e6f5d3c12eed4ecb094b29420
   kind: review_findings
 findings:
 - finding_id: mim-c01-s04-f001
   status: open
-  summary: Reconcile missing direct MicrobeDecoder occurrence on data/ingredients/mapped/(2)-D-lyxose.yaml (CHEBI:16993; native finding rec-f-444b73747dddc915)
+  summary: Reconcile missing direct MicrobeDecoder occurrence on data/ingredients/mapped/(2)-D-lyxose.yaml (CHEBI:62318; native finding rec-f-444b73747dddc915)
 - finding_id: mim-c01-s04-f002
   status: open
-  summary: Correct calcium nitrate correction-receipt identity text (CHEBI:31348 -> CHEBI:86159) in data/curation/unmapped_llm_assisted_curation_receipt.yaml for data/ingredients/mapped/Ca_No32_X_4_H2o.yaml (native finding rec-f-5b1b1ab939d20218)
+  summary: Correct calcium nitrate correction-receipt identity text (CHEBI:31348 -> CHEBI:86159) in reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json for data/ingredients/mapped/Ca_No32_X_4_H2o.yaml (native finding rec-f-5b1b1ab939d20218)
 - finding_id: mim-c01-s04-f003
   status: open
   summary: Normalize non-monotonic curation_history timestamp order across 19 mapped ingredient records
@@ -33,7 +33,7 @@ findings:
   summary: Adjudicate prediction-only or empty secondary physicochemical role assertions lacking literature citations across 29 mapped records (17 single-role + 12 multi-role; issue #718)
 - finding_id: mim-c01-s04-f006
   status: open
-  summary: Resolve exact chemical identity, preparation form, or complex parent scope across 266 unmapped/ambiguous records (261 unmapped identity + 4 complex parent scope + 1 ambiguous PYGS; issue #718)
+  summary: Resolve exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (266 findings across 261 unmapped identity + 4 complex parent scope + 1 ambiguous PYGS; issue #718)
 - finding_id: mim-c01-s04-f007
   status: open
   summary: Adjudicate context-dependent exported synonym/CAS token scope and component source scope across 31 records (17 nomenclature token scope + 13 component source scope + 1 Furaltadone CAS alias; issues #718, #861)

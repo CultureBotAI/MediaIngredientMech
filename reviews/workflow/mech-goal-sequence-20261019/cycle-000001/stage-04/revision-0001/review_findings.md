@@ -12,19 +12,19 @@
 
 | Workflow Finding ID | Category | Severity | Per-Record Count | Repair Owner Skill | Existing Issue Link(s) | Summary |
 | --- | --- | --- | ---: | --- | --- | --- |
-| `mim-c01-s04-f001` | `quantity` | `major` | 1 | `.claude/skills/curate-yaml-record/SKILL.md` | (to file/link in Stage 5) | Reconcile missing direct MicrobeDecoder occurrence on `data/ingredients/mapped/(2)-D-lyxose.yaml` (`CHEBI:16993`) |
-| `mim-c01-s04-f002` | `provenance` | `minor` | 1 | `.claude/skills/curate-yaml-record/SKILL.md` | (to file/link in Stage 5) | Correct calcium nitrate correction-receipt identity text (`CHEBI:31348` -> `CHEBI:86159`) for `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` |
+| `mim-c01-s04-f001` | `quantity` | `major` | 1 | `.claude/skills/curate-yaml-record/SKILL.md` | (to file/link in Stage 5) | Reconcile missing direct MicrobeDecoder occurrence on `data/ingredients/mapped/(2)-D-lyxose.yaml` (`CHEBI:62318`) |
+| `mim-c01-s04-f002` | `provenance` | `minor` | 1 | `.claude/skills/curate-yaml-record/SKILL.md` | (to file/link in Stage 5) | Correct calcium nitrate correction-receipt identity text (`CHEBI:31348` -> `CHEBI:86159`) in `reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json` for `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` |
 | `mim-c01-s04-f003` | `provenance` | `minor` | 19 | `.claude/skills/curate-yaml-record/SKILL.md` | (to file/link in Stage 5) | Normalize non-monotonic `curation_history` timestamp order across 19 mapped ingredient records |
 | `mim-c01-s04-f004` | `evidence` | `major` | 624 | `.claude/skills/ingredient-roles/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | Adjudicate prediction-only or empty primary nutritional/cellular role assertions across 624 mapped records |
 | `mim-c01-s04-f005` | `evidence` | `minor` | 29 | `.claude/skills/ingredient-roles/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | Adjudicate prediction-only or empty secondary physicochemical role assertions across 29 mapped records |
-| `mim-c01-s04-f006` | `identity` / `grounding` | `major` | 266 | `.claude/skills/map-media-ingredients/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | Resolve exact chemical identity, preparation form, or complex parent scope across 266 unmapped/ambiguous records |
+| `mim-c01-s04-f006` | `identity` / `grounding` | `major` | 266 | `.claude/skills/map-media-ingredients/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | Resolve exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (266 findings) |
 | `mim-c01-s04-f007` | `nomenclature` / `representation` / `identity` | `major` / `minor` | 31 | `.claude/skills/curate-yaml-record/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718), [#861](https://github.com/CultureBotAI/MediaIngredientMech/issues/861) | Adjudicate context-dependent exported synonym/CAS token scope and component source scope across 31 records |
 
 ---
 
 ## Detailed Cohort Inventory
 
-### 1. `mim-c01-s04-f001` — Direct MicrobeDecoder occurrence reconciliation for D-(-)-lyxose (`CHEBI:16993`)
+### 1. `mim-c01-s04-f001` — Direct MicrobeDecoder occurrence reconciliation for D-lyxose (`CHEBI:62318`)
 
 - **Status:** `open`
 - **Category / Severity:** `quantity` / `major`
@@ -37,10 +37,10 @@
 
 - **Status:** `open`
 - **Category / Severity:** `provenance` / `minor`
-- **Field Path:** `records[].change` in `data/curation/unmapped_llm_assisted_curation_receipt.yaml`
+- **Field Path:** `records[].change` in `reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json`
 - **Target Record:**
   - `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` — structured review `reviews/structured/20261017T083000Z-ca-no32-x-4-h2o/review.yaml` (`rec-f-5b1b1ab939d20218`, issue key `mim-reconciliation-receipt-id-428f0a67e2ef5305`)
-- **Observation:** The record itself is accurately grounded to `CHEBI:86159` (`calcium dinitrate tetrahydrate`), but the historical receipt entry in `data/curation/unmapped_llm_assisted_curation_receipt.yaml` still mentions `CHEBI:31348` in its free-text `change` narrative.
+- **Observation:** The record itself is accurately grounded to `CHEBI:86159` (`calcium dinitrate tetrahydrate`), but the historical receipt entry in `reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json` (`records[0].change`) still mentions `CHEBI:31348` in its free-text `change` narrative.
 
 ### 3. `mim-c01-s04-f003` — Non-monotonic `curation_history` timestamp order across 19 mapped ingredient records
 
@@ -96,20 +96,20 @@
   - `17` single-role physicochemical findings (`data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml`, `data/ingredients/mapped/Citric_Acidh2o.yaml`, `data/ingredients/mapped/Colistin_Sulfate_Salt.yaml`, `data/ingredients/mapped/D-_-lyxose.yaml`, `data/ingredients/mapped/D-Sucrose.yaml`, `data/ingredients/mapped/Edta_Acid_Form.yaml`, `data/ingredients/mapped/Edta_Chelating_Agent.yaml`, `data/ingredients/mapped/Glycylglycine.yaml`, `data/ingredients/mapped/Α-lipoic_Acid.yaml`, `data/ingredients/mapped/M-inositol.yaml`, `data/ingredients/mapped/Mnso4_X_1_H2o.yaml`, `data/ingredients/mapped/Na2-edta_X_2_H2o.yaml`, `data/ingredients/mapped/Na2s2o4.yaml`, `data/ingredients/mapped/Niso4_X_6_H2o.yaml`, `data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml`, `data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml`, `data/ingredients/mapped/Thioctic_Acid.yaml`).
   - `12` multi-role physicochemical findings (`data/ingredients/mapped/Aces.yaml`, `data/ingredients/mapped/Acetate_Carbon_Source.yaml`, `data/ingredients/mapped/Ammonium_Chloride_Nitrogen_Source.yaml`, `data/ingredients/mapped/Calcium_D-Pantothenate.yaml`, `data/ingredients/mapped/Glucose_2.yaml`, `data/ingredients/mapped/Glycerol_2.yaml`, `data/ingredients/mapped/L-cysteine_Hydrochloride_Monohydrate.yaml`, `data/ingredients/mapped/Maltose_2.yaml`, `data/ingredients/mapped/Mgso47h2o_2.yaml`, `data/ingredients/mapped/Mgso47h2o.yaml`, `data/ingredients/mapped/Sodium_Acetate.yaml`, `data/ingredients/mapped/Sodium_L-lactate.yaml`).
 
-### 6. `mim-c01-s04-f006` — Unresolved exact chemical identity, preparation form, or complex parent scope across 266 unmapped/ambiguous records
+### 6. `mim-c01-s04-f006` — Unresolved exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (266 findings)
 
 - **Status:** `open`
 - **Category / Severity:** `identity` & `grounding` / `major`
 - **Field Paths:** `mapping_status`, `ontology_id`, `preferred_term`
 - **Tracked In:** [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718)
-- **Sub-cohorts (266 findings across 266 records):**
-  - `261` unmapped ingredient records under `data/ingredients/unmapped/*.yaml` (`Unresolved exact identity or preparation: <term>`, e.g., `data/ingredients/unmapped/2-Carene-3-One.yaml`, `data/ingredients/unmapped/2-methyladeninyl_Cobamide.yaml`).
-  - `4` unmapped complex parent-scope records under `data/ingredients/unmapped/*.yaml`:
+- **Sub-cohorts (266 findings across 262 records; 4 unmapped records carry both an unresolved-identity finding and an unmapped-parent-scope finding):**
+  - `261` unmapped/ambiguous ingredient records under `data/ingredients/unmapped/*.yaml` (`Unresolved exact identity or preparation: <term>`, e.g., `data/ingredients/unmapped/2-Carene-3-One.yaml`, `data/ingredients/unmapped/2-methyladeninyl_Cobamide.yaml`).
+  - `4` unmapped complex parent-scope findings on records under `data/ingredients/unmapped/*.yaml`:
     - `data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml` (`reviews/structured/20261017T083000Z-inorganic-salts-starch-agar/review.yaml`, `rec-f-db0057fd92fe4a5e`)
     - `data/ingredients/unmapped/Iron_As_Fecl3_In_Edta.yaml` (`reviews/structured/20261017T083000Z-iron-as-fecl3-in-edta/review.yaml`, `rec-f-a82fd6f60ae904bd`)
     - `data/ingredients/unmapped/Khayasin_C.yaml` (`reviews/structured/20261017T083000Z-khayasin-c/review.yaml`, `rec-f-63745f40d17b8fdf`)
     - `data/ingredients/unmapped/Xyloglucan_Heptaoctanona_Saccharides.yaml` (`reviews/structured/20261017T083000Z-xyloglucan-heptaoctanona-saccharides/review.yaml`, `rec-f-3369303f7d065baa`)
-  - `1` ambiguous formulation abbreviation record:
+  - `1` ambiguous formulation abbreviation finding on a mapped record:
     - `data/ingredients/mapped/PYGS.yaml` (`reviews/structured/20261017T083000Z-pygs/review.yaml`, `rec-f-8c2aaaf16e546640`)
 
 ### 7. `mim-c01-s04-f007` — Context-dependent exported synonym/CAS token scope and component source-scope adjudication across 31 records
