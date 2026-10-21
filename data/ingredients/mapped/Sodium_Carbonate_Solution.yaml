@@ -81,6 +81,13 @@ curation_history:
     anoxic media.
   llm_assisted: true
   llm_model: gpt-5
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_SOLUTE_CHEMICAL_PROPERTIES
+  changes: Removed pure-solute chemical_properties (molecular_formula, inchi, smiles,
+    molecular_weight) from STOCK_SOLUTION record
+  notes: 'Stock solutions must not inherit pure-solute chemical properties (#268,
+    #871).'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:797); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -93,11 +100,6 @@ ontology_mapping:
     source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0523; matched via 'Sodium carbonate solution';
       stem-substring
-chemical_properties:
-  molecular_formula: CO3.2Na
-  inchi: InChI=1S/CH2O3.2Na/c2-1(3)4;;/h(H2,2,3,4);;/q;2*+1/p-2
-  smiles: O=C([O-])[O-].[Na+].[Na+]
-  data_source: CHEBI sqlite (oaklib)
 kg_microbe_node_id: CHEBI:29377
 ingredient_type: STOCK_SOLUTION
 physicochemical_roles:

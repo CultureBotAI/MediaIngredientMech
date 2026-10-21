@@ -216,13 +216,17 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_ANHYDROUS_INCHI_SMILES
+  changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+    hydrate formula/CAS-RN)
+  notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
 chemical_properties:
   cas_rn: 10102-40-6
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:45.478291+00:00'
   molecular_formula: MoO4.2Na.2H2O
-  inchi: InChI=1S/Mo.2Na.4O/q;2*+1;;;2*-1
-  smiles: '[Na+].[Na+].[O]=[Mo](=[O])([O-])[O-]'
 kg_microbe_node_id: CHEBI:75213
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:

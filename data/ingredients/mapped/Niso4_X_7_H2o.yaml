@@ -152,12 +152,16 @@ curation_history:
     Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym
     claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_ANHYDROUS_INCHI_SMILES
+  changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+    hydrate formula/CAS-RN)
+  notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
 chemical_properties:
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: Ni.O4S.7H2O
-  inchi: InChI=1S/Ni.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-  smiles: O=S(=O)([O-])[O-].[Ni+2]
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: TRACE_ELEMENT

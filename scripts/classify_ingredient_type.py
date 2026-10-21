@@ -114,12 +114,20 @@ def structural_chebi_terms(db_path: Path) -> set[str]:
         db.close()
 
 
+SOLUTION_RE = re.compile(
+    r"(?:^\s*\d+(?:\.\d+)?\s*%\s+|\(\s*\d+(?:\.\d+)?\s*m\s*stock\))",
+    re.IGNORECASE,
+)
+
+
 def classify(rec: dict, structural: set[str]) -> tuple[str | None, str]:
     """Return (ingredient_type, reason). A None type means 'leave it unset'."""
     name = str(rec.get("preferred_term") or "")
     ident = str(rec.get("identifier") or "")
     prefix = ident.split(":")[0].lower()
 
+    if (m := SOLUTION_RE.search(name)):
+        return "STOCK_SOLUTION", f"name matches concentration/stock pattern {m.group(0)!r}"
     if (p := word_match(SOLUTION, name)):
         return "STOCK_SOLUTION", f"name matches solution pattern {p!r}"
     if (p := word_match(COMPLEX, name)):

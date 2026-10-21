@@ -26,19 +26,19 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: 3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-4-methyl-1,3-thiazol-3-ium
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: 3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-[2-(diphosphooxy)ethyl]-4-methyl-1,3-thiazol-3-ium
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ThDP
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ThPP
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: thiamine-pyrophosphate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
@@ -96,15 +96,26 @@ curation_history:
   changes: identifier/ontology_id CHEBI:9532 -> kgmicrobe.ingredient:0_2_thiamine_pyrophosphate
     (#288/#320); a 0.2% stock solution is not the pure compound.
   llm_assisted: false
-chemical_properties:
-  cas_rn: 154-87-0
-  data_source: NCI CACTUS Chemical Identifier Resolver
-  retrieval_date: '2026-04-05T21:52:09.127416+00:00'
-  molecular_formula: C12H19N4O7P2S
-  inchi: InChI=1S/C12H18N4O7P2S/c1-8-11(3-4-22-25(20,21)23-24(17,18)19)26-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7H,3-4,6H2,1-2H3,(H4-,13,14,15,17,18,19,20,21)/p+1
-  smiles: Cc1ncc(C[n+]2csc(CCOP(=O)(O)OP(=O)(O)O)c2C)c(N)n1
-kg_microbe_node_id: CHEBI:9532
-ingredient_type: SINGLE_INGREDIENT
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_STALE_KG_MICROBE_NODE_ID
+  changes: 'Removed stale kg_microbe_node_id CHEBI:9532 (current identifier: kgmicrobe.ingredient:0_2_thiamine_pyrophosphate)'
+  notes: Cross-prefix kg_microbe_node_id cleanup (#870).
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped 5 non-identity synonym(s) to REJECTED_LABEL: 3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-4-methyl-1,3-thiazol-3-ium,
+    3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-[2-(diphosphooxy)ethyl]-4-methyl-1,3-thiazol-3-ium,
+    ThDP, ThPP, thiamine-pyrophosphate'
+  notes: Prevent parent/wrong-form synonyms from leaking into SSSOM `other` (#268).
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_SOLUTE_CHEMICAL_PROPERTIES
+  changes: Set ingredient_type=STOCK_SOLUTION and removed solute CHEBI:9532 chemical_properties
+    (cas_rn 154-87-0, formula, InChI, SMILES)
+  notes: 0.2% aqueous stock solution must not carry pure solute chemical properties
+    (#268).
+ingredient_type: STOCK_SOLUTION
 nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0

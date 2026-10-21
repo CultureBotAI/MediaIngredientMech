@@ -125,14 +125,18 @@ def main():
     collection = load_mapped_ingredients()
     all_ingredients = collection.get("ingredients", []) or []
 
-    # Filter for CHEBI terms
+    from mediaingredientmech.curation.ingredient_curator import (
+        can_inherit_chebi_chemical_properties,
+    )
+
+    # Filter for CHEBI terms eligible to inherit chemical properties directly
     chebi_ingredients = [
         ing
         for ing in all_ingredients
-        if (ing.get("ontology_mapping") or {}).get("ontology_id", "").startswith("CHEBI:")
+        if can_inherit_chebi_chemical_properties(ing)
     ]
 
-    console.print(f"Found {len(chebi_ingredients)} CHEBI-mapped ingredients")
+    console.print(f"Found {len(chebi_ingredients)} eligible CHEBI-mapped ingredients")
 
     # Load checkpoint if resuming
     checkpoint = load_checkpoint() if args.resume else {"completed": [], "last_index": 0}

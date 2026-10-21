@@ -15,7 +15,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
 - synonym_text: Phenethylamine Hydrochloride
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: relabelled
 - synonym_text: Beta-phenylethylamine
   synonym_type: RAW_TEXT
@@ -78,6 +78,11 @@ curation_history:
     ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
     under Rule D (#438), independently of mapping quality.
   llm_assisted: false
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped 1 non-identity synonym(s) to REJECTED_LABEL: Phenethylamine Hydrochloride'
+  notes: Prevent parent/wrong-form synonyms from leaking into SSSOM `other` (#235).
 chemical_properties:
   cas_rn: 64-04-0
   data_source: CultureBotHT compounds_to_cas.csv

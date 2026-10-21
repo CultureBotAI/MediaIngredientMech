@@ -103,6 +103,57 @@ DOI_PATTERN = re.compile(r"^10\.\d{4,}/[-._;()/:A-Za-z0-9]+$")
 # Backwards-compatible alias: prefer ``now_iso`` from the curate package.
 _now_iso = now_iso
 
+NON_EXACT_CHEMISTRY_QUALITIES = frozenset({
+    "CLOSE_MATCH",
+    "NARROW_MATCH",
+    "BROAD_MATCH",
+    "RELATED_MATCH",
+    "FALLBACK_REGISTRY",
+})
+
+_CONCENTRATION_OR_STOCK_RE = re.compile(
+    r"(?:^\s*\d+(?:\.\d+)?\s*%\s+|\(\s*\d+(?:\.\d+)?\s*m\s*stock\)|\b(?:solution|stock|buffer)\b)",
+    re.IGNORECASE,
+)
+
+
+def can_inherit_chebi_chemical_properties(record: dict[str, Any]) -> bool:
+    """Return True iff `record` is a defined single chemical identically grounded to CHEBI.
+
+    Guards against two failure classes:
+    - #268: Stock solutions and undefined mixtures mapped to their solute/component
+      CHEBI term must not inherit the pure solute's CAS-RN, formula, SMILES, InChI,
+      or molecular weight.
+    - #871: Hydrate or salt records whose primary `identifier` is a specific `cas:*`
+      or `kgmicrobe.compound:*` CURIE (or whose `mapping_quality` is `CLOSE_MATCH` /
+      `NARROW_MATCH` to an anhydrous parent `CHEBI:*` term) must not inherit the
+      anhydrous parent's InChI, SMILES, or formula.
+    """
+    if record.get("mapping_status") == "REJECTED":
+        return False
+    ing_type = str(record.get("ingredient_type") or "").strip()
+    if ing_type in ("STOCK_SOLUTION", "UNDEFINED_MIXTURE"):
+        return False
+    name = str(record.get("preferred_term") or "")
+    if not ing_type and _CONCENTRATION_OR_STOCK_RE.search(name):
+        return False
+
+    om = record.get("ontology_mapping") or {}
+    ont_id = str(om.get("ontology_id") or "").strip()
+    ont_src = str(om.get("ontology_source") or "").strip()
+    if not ont_id.startswith("CHEBI:") or (ont_src and ont_src != "CHEBI"):
+        return False
+
+    qual = str(om.get("mapping_quality") or "").strip()
+    if qual in NON_EXACT_CHEMISTRY_QUALITIES:
+        return False
+
+    ident = str(record.get("identifier") or "").strip()
+    if ident and ident != ont_id:
+        return False
+
+    return True
+
 
 class IngredientCurator:
     """Manages the curation workflow for ingredient records."""
@@ -317,16 +368,15 @@ class IngredientCurator:
             logger.debug("Record already has chemical_properties, skipping enrichment")
             return record
 
-        # Check if mapped to CHEBI
-        ontology_mapping = record.get("ontology_mapping")
-        if not ontology_mapping:
-            logger.debug("Record has no ontology_mapping, skipping enrichment")
+        if not can_inherit_chebi_chemical_properties(record):
+            logger.debug(
+                "Record %s is not eligible to inherit CHEBI chemical_properties, skipping enrichment",
+                record.get("preferred_term") or record.get("identifier"),
+            )
             return record
 
+        ontology_mapping = record.get("ontology_mapping") or {}
         ontology_source = ontology_mapping.get("ontology_source")
-        if ontology_source != "CHEBI":
-            logger.debug("Record is not mapped to CHEBI (%s), skipping enrichment", ontology_source)
-            return record
 
         # Import here to avoid circular dependency
         from mediaingredientmech.utils.chemical_properties_client import (

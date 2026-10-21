@@ -137,14 +137,16 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_SOLUTE_CHEMICAL_PROPERTIES
+  changes: Removed pure-solute chemical_properties (molecular_formula, inchi, smiles,
+    molecular_weight) from STOCK_SOLUTION record
+  notes: 'Stock solutions must not inherit pure-solute chemical properties (#268,
+    #871).'
 ingredient_type: STOCK_SOLUTION
 notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:131825 exact
   mapping. Disodium phosphate heptahydrate (0.02 M stock) is a stock solution ingredient;
   retain a kgmicrobe.ingredient identity and use CHEBI:34683 as a broader disodium
   hydrogenphosphate solute parent.'
 kg_microbe_node_id: kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29
-chemical_properties:
-  inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-  molecular_weight: 141.958
-  data_source: ChEBI+PubChem
-  retrieval_date: '2026-05-23T08:30:57.822010+00:00'

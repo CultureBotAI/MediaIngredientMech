@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:31346
   ontology_label: calcium sulfate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -23,6 +23,11 @@ ontology_mapping:
       but no exact ontology term or CAS has been verified for that stated hydration
       count. CHEBI:31346 (calcium sulfate) is retained only as the closest anhydrous
       parent while the source label keeps its local kgmicrobe.compound identity.
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (CaSO4 x 7 H2O, identifier kgmicrobe.compound:caso4_x_7_h2o)
+      is narrower than parent CHEBI:31346 (calcium sulfate); updated mapping_quality
+      CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 synonyms:
 - synonym_text: CaSO4・7H2O
   synonym_type: HYDRATE_FORM
@@ -148,6 +153,12 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:31346)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:

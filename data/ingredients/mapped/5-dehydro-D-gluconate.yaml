@@ -11,7 +11,7 @@ ontology_mapping:
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:5_dehydro_d_gluconate; '
 synonyms:
 - synonym_text: 5-didehydro-D-gluconate
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
@@ -60,6 +60,11 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped 1 non-identity synonym(s) to REJECTED_LABEL: 5-didehydro-D-gluconate'
+  notes: Prevent parent/wrong-form synonyms from leaking into SSSOM `other` (#313).
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C6H9O7

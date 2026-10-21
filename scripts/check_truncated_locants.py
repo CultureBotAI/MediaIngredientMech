@@ -94,6 +94,8 @@ def main(argv: list[str] | None = None) -> int:
     for status in ("mapped", "unmapped"):
         for path in sorted((INGREDIENTS / status).glob("*.yaml")):
             rec = yaml.safe_load(path.read_text(encoding="utf-8", errors="replace")) or {}
+            if rec.get("mapping_status") == "REJECTED":
+                continue
             om = rec.get("ontology_mapping") or {}
             label = str(rec.get("preferred_term") or path.stem)
             hits = scan_label(label)

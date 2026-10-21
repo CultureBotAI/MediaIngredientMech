@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:cu_no32_x_3_h2o
+identifier: cas:10031-43-3
 preferred_term: Cu(NO3)2 x 3 H2O
 ontology_mapping:
   ontology_id: CHEBI:78036
   ontology_label: copper(II) nitrate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -37,12 +37,17 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (Cu(NO3)2 x 3 H2O, identifier cas:10031-43-3) is
+      narrower than parent CHEBI:78036 (copper(II) nitrate); updated mapping_quality
+      CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 synonyms:
 - synonym_text: copper(II) nitrate (anhydrous)
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: copper(2+) dinitrate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -125,11 +130,32 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REMOVED_ANHYDROUS_INCHI_SMILES
+  changes: Removed anhydrous parent inchi, smiles from chemical_properties (retained
+    hydrate formula/CAS-RN)
+  notes: Hydrate record must not carry anhydrous parent InChI/SMILES (#871).
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped 1 non-identity synonym(s) to REJECTED_LABEL: copper(2+) dinitrate'
+  notes: Prevent parent/wrong-form synonyms from leaking into SSSOM `other` (#901).
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: PROMOTED_TO_CAS_IDENTIFIER
+  changes: 'identifier: kgmicrobe.compound:cu_no32_x_3_h2o -> cas:10031-43-3'
+  notes: Promoted copper(II) nitrate trihydrate to its specific hydrate CAS-RN 10031-43-3
+    (#901).
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:78036)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 chemical_properties:
   cas_rn: 10031-43-3
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: Cu.2NO3.3H2O
-  inchi: InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1
-  smiles: O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
 ingredient_type: SINGLE_INGREDIENT

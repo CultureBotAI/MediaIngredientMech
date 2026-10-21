@@ -84,6 +84,7 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("Tetramethyl ammonium"): TETRAMETHYL_AMMONIUM_ID,
     _source_label_key("Trace element solution"): TRACE_ELEMENT_SOLUTION_ID,
     _source_label_key("Trace element solution SL-10"): TRACE_ELEMENT_SOLUTION_SL_10_ID,
+    _source_label_key("WC Trace Elements Solution"): "kgmicrobe.ingredient:wc_trace_elements_solution",
     _source_label_key("Zeikus trace element solution"): ZEIKUS_TRACE_ELEMENT_SOLUTION_ID,
     _source_label_key("Calcium"): CALCIUM_2_ID,
     _source_label_key("CaSO4 x 7 H2O"): CALCIUM_SULFATE_HEPTAHYDRATE_ID,

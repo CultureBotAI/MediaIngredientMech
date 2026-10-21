@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:18024
   ontology_label: D-galacturonic acid
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -33,6 +33,11 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:18024's
       ChEBI formula ('C6H10O7') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (D-Galacturonic Acid monohydrate, identifier cas:91510-62-2)
+      is narrower than parent CHEBI:18024 (D-galacturonic acid); updated mapping_quality
+      CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 synonyms:
 - synonym_text: D-galacturonate
   synonym_type: REJECTED_LABEL
@@ -93,6 +98,12 @@ curation_history:
     Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym
     claim was adjudicated.'
   llm_assisted: true
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:18024)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 chemical_properties:
   cas_rn: 91510-62-2
   data_source: CultureBotHT compounds_to_cas.csv

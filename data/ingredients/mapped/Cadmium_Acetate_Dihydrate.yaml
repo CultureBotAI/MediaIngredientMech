@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:232796
   ontology_label: cadmium acetate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -34,6 +34,11 @@ ontology_mapping:
       ChEBI formula ('2C2H3O2.Cd') — the mark of a value inherited from the parent
       rather than measured for this record. Water appended in ChEBI's own dot-separated
       notation.
+  - evidence_type: MANUAL_CURATION
+    source: MIM hydrate review (#901)
+    notes: Specific hydrate record (Cadmium acetate dihydrate, identifier cas:5743-04-4)
+      is narrower than parent CHEBI:232796 (cadmium acetate); updated mapping_quality
+      CLOSE_MATCH -> NARROW_MATCH (SSSOM skos:broadMatch).
 synonyms:
 - synonym_text: cadmium(2+);diacetate
   synonym_type: EXACT_SYNONYM
@@ -85,6 +90,12 @@ curation_history:
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
   llm_assisted: false
+- timestamp: '2026-10-18T14:40:00Z'
+  curator: curate-yaml-record
+  action: UPDATED_MAPPING_QUALITY
+  changes: 'ontology_mapping.mapping_quality: CLOSE_MATCH -> NARROW_MATCH (parent
+    CHEBI:232796)'
+  notes: Hydrate record is narrower than its anhydrous/parent ontology term (#901).
 chemical_properties:
   cas_rn: 5743-04-4
   data_source: CultureBotHT compounds_to_cas.csv

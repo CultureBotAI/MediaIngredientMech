@@ -158,15 +158,18 @@ def main() -> int:
     print(f"{len(rows)} kg_microbe_node_id mismatch(es)")
     print(f"  {len(same_prefix)} same-prefix mismatch(es)")
     print(f"  {len(cross_prefix)} cross-prefix mismatch(es)")
-    for row in same_prefix:
+    for row in rows:
         print(
             "  "
-            f"{row['collection']}\t{row['preferred_term']}\t"
+            f"[{row['mismatch_type']}]\t{row['collection']}\t{row['preferred_term']}\t"
             f"{row['kg_microbe_node_id']} -> {row['identifier']}"
         )
 
-    if args.check and same_prefix:
-        print(f"ERROR: {len(same_prefix)} same-prefix kg_microbe_node_id mismatch(es)")
+    if args.check and rows:
+        print(
+            f"ERROR: {len(rows)} kg_microbe_node_id mismatch(es) "
+            f"({len(same_prefix)} same-prefix, {len(cross_prefix)} cross-prefix)"
+        )
         return 2
     return 0
 
