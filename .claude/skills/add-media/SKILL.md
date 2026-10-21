@@ -23,10 +23,12 @@ follows strict boundaries:
    target primary `identifier`, add the new surface form as a synonym on that
    record rather than creating a second YAML file on a held CURIE.
 2. **Granularity and `ingredient_type`** — Classify the entry as `NAMED_MEDIUM`
-   (a whole named medium formulation such as Marine agar 2216 or R2A agar),
+   (a whole named medium formulation such as BG-11 Medium in `data/ingredients/mapped/Bg-11_Medium.yaml` or Middlebrook 7H10 Agar in `data/ingredients/mapped/Middlebrook_7H10_Agar.yaml`),
    `STOCK_SOLUTION` (a defined pre-mix such as Wolfe's mineral mix or trace
    vitamin solution, paired with `solution_type`), `UNDEFINED_MIXTURE` (peptone,
-   yeast extract, soil extract, or source-specific blend), or `SINGLE_INGREDIENT`.
+   yeast extract, soil extract, or source-specific multi-component formulations
+   stored as undefined mixtures such as `data/ingredients/mapped/Marine_agar_2216.yaml` or `data/ingredients/mapped/GYPS.yaml`),
+   or `SINGLE_INGREDIENT`.
 3. **Identifier policy (`MAPPING_SEMANTICS.md` §3)** — Use an exact ontology CURIE
    (`MICRO:`, `FOODON:`, `ENVO:`, `CHEBI:`, `NCIT:`) when one denotes the exact
    formulation; otherwise mint `kgmicrobe.ingredient:<slug>` (for media, stock
@@ -138,7 +140,7 @@ When verifiable constituent information exists for a `NAMED_MEDIUM`,
   7. A record cannot reference its own `identifier` or parent labels as a component (`SELF_REFERENCE`, `SELF_REFERENCE_NAME`), nor repeat `component_id` or `component_name` within the same `components` list (`DUPLICATE_COMPONENT_ID`, `DUPLICATE_COMPONENT_NAME`).
   8. `concentration_value` and `concentration_unit` must either both be present or both be omitted (`INCOMPLETE_CONCENTRATION`).
 
-Example (`data/ingredients/mapped/Marine_agar_2216.yaml` pattern):
+Example (abridged excerpt — 5 of 18 components shown from `data/ingredients/mapped/Marine_agar_2216.yaml`):
 
 ```yaml
 components:
@@ -216,16 +218,18 @@ When a MIM medium or stock record corresponds to a recipe in CultureMech:
 
 ### Step 5 — Write Through the Guarded Curation Path
 
-Always write individual records via `write_validated_ingredient` and record a
+Always write individual records via `write_validated_ingredient` from
+`src/mediaingredientmech/validation/write_validated.py` and record a
 `CurationEvent` via `record_curation_event` from
-`src/mediaingredientmech/curation/ingredient_curator.py` (which validates against
-`IngredientRecord` in `src/mediaingredientmech/schema/mediaingredientmech.yaml`
-before touching disk and preserves field ordering with `sort_keys=False`):
+`src/mediaingredientmech/curate/curation_event.py` (`write_validated_ingredient`
+validates against `IngredientRecord` in
+`src/mediaingredientmech/schema/mediaingredientmech.yaml` before touching disk
+and preserves field ordering with `sort_keys=False`):
 
 ```python
 from pathlib import Path
-from mediaingredientmech.curation.ingredient_curator import (
-    record_curation_event,
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.validation.write_validated import (
     write_validated_ingredient,
 )
 
@@ -277,9 +281,11 @@ write_validated_ingredient(
 ```
 
 For batch creation from reviewed TSV groundings or CultureMech gap tables, use the
-existing guarded scripts instead of ad-hoc writers:
-- `scripts/create_records_from_groundings.py` (`--groundings`, `--candidates`, `--curator`, `--action`, `--dry-run`)
-- `scripts/add_culturemech_gap_labels.py` (`--occurrences`, `--dry-run`)
+existing batch scripts (both default to dry-run preview unless `--apply` is
+passed), and then run `just sync-curated` and `just validate-strict` / `just qc`
+to validate all written records against the LinkML schema:
+- `scripts/create_records_from_groundings.py` (`--groundings`, `--apply`, `--limit`, `--sssom-only`, `--date`)
+- `scripts/add_culturemech_gap_labels.py` (`--apply`)
 
 ---
 
