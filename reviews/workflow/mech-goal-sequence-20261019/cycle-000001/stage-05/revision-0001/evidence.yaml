@@ -1,0 +1,120 @@
+schema_version: 1.0.0
+repository_key: mediaingredientmech
+github_repository: CultureBotAI/MediaIngredientMech
+run_id: mech-goal-sequence-20261019
+cycle: 1
+stage: 5
+revision: 1
+outcome: completed
+summary: Consumed all 7 accepted Stage 4 review findings from 4d81bb6763c9c382558ddc6a9180d127349ee8f6ab3d9459989bbe29c2d71045, grouped them into 4 root-cause and repair-ownership cohorts mapped to real GitHub issues (#921, #922, #923, #718), resolved mim-c01-s04-f002 (#922) in review-record-issues-20261003.json and synchronized dependent review manifests, saved and validated the linked successor structured review bundle 20261021T120500Z-ca-no32-x-4-h2o, updated reviews/workflow/latest.yaml from verified-evidence-index.json, and carried forward the 6 remaining findings (#921, #923, #718).
+source_revision: 515a8cca2a1590a31b0fbf947b178fe8a6bbedc1
+scope_frozen_at: '2026-10-21T12:00:00Z'
+previous_evidence:
+  path: reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-04/revision-0001/evidence.yaml
+  sha256: 4d81bb6763c9c382558ddc6a9180d127349ee8f6ab3d9459989bbe29c2d71045
+artifacts:
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-05/revision-0001/issue_map.md
+  sha256: 9bf3c061068644f4cfc8874ead7b5fb857e3a906330e79f10debea7ab09ead32
+  kind: issue_map
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-05/revision-0001/validation.md
+  sha256: c57dce0065646c61287c31b3b6e626fb036e99bdb0090e594cebe43af87515fc
+  kind: validation
+findings:
+- finding_id: mim-c01-s04-f001
+  carried_from: mim-c01-s04-f001
+  status: deferred
+  summary: Reconcile missing direct MicrobeDecoder occurrence on data/ingredients/mapped/(2)-D-lyxose.yaml (CHEBI:62318; native finding rec-f-444b73747dddc915)
+  group_id: mim-c01-s05-g001
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/921
+  disposition: Deferred and carried forward under #921; data/ingredients/mapped/(2)-D-lyxose.yaml is byte-bound in reports/sssom_completion_20260921/nonmapping_cohorts.json and reports/semantic_review_20260921/resolution/current-review.json and co-located with open role-evidence finding SEM:cd74f8ddafa04d7e9a9a (#718).
+- finding_id: mim-c01-s04-f002
+  carried_from: mim-c01-s04-f002
+  status: resolved
+  summary: Correct calcium nitrate correction-receipt identity text (CHEBI:31348 -> CHEBI:86159) in reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json for data/ingredients/mapped/Ca_No32_X_4_H2o.yaml (native finding rec-f-5b1b1ab939d20218)
+  group_id: mim-c01-s05-g002
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/922
+  disposition: Resolved under #922 by updating records[0].change in reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json to CHEBI:86159 (calcium nitrate tetrahydrate), synchronizing dependent review manifests, and saving validated successor review bundle reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.yaml.
+- finding_id: mim-c01-s04-f003
+  carried_from: mim-c01-s04-f003
+  status: deferred
+  summary: Normalize non-monotonic curation_history timestamp order across 19 mapped ingredient records
+  group_id: mim-c01-s05-g003
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/923
+  disposition: Deferred and carried forward under #923; 17 of the 19 affected mapped records hold byte-bound SUPPORTED approvals in reports/sssom_completion_20260921/review.json (including 3 in nonmapping_cohorts.json) and require a coordinated non-semantic receipt refresh.
+- finding_id: mim-c01-s04-f004
+  carried_from: mim-c01-s04-f004
+  status: deferred
+  summary: Adjudicate prediction-only or empty primary nutritional/cellular role assertions lacking literature citations across 624 mapped records (595 single-role + 29 multi-role; issue #718)
+  group_id: mim-c01-s05-g004
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition: Deferred and carried forward under existing semantic review backlog tracker #718; requires primary literature curation for 624 mapped records.
+- finding_id: mim-c01-s04-f005
+  carried_from: mim-c01-s04-f005
+  status: deferred
+  summary: Adjudicate prediction-only or empty secondary physicochemical role assertions lacking literature citations across 29 mapped records (17 single-role + 12 multi-role; issue #718)
+  group_id: mim-c01-s05-g004
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition: Deferred and carried forward under existing semantic review backlog tracker #718; requires primary literature curation for 29 mapped records.
+- finding_id: mim-c01-s04-f006
+  carried_from: mim-c01-s04-f006
+  status: deferred
+  summary: Resolve exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (266 findings across 261 unmapped identity + 4 complex parent scope + 1 ambiguous PYGS; issue #718)
+  group_id: mim-c01-s05-g004
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition: Deferred and carried forward under existing semantic review backlog tracker #718; requires source-backed chemical identity and recipe-form verification across 262 records.
+- finding_id: mim-c01-s04-f007
+  carried_from: mim-c01-s04-f007
+  status: deferred
+  summary: Adjudicate context-dependent exported synonym/CAS token scope and component source scope across 31 records (17 nomenclature token scope + 13 component source scope + 1 Furaltadone CAS alias; issues #718, #861)
+  group_id: mim-c01-s05-g004
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition: Deferred and carried forward under existing semantic review backlog tracker #718; requires source-recipe verification and coordinated SSSOM/component receipt updates across 31 records.
+groups:
+- group_id: mim-c01-s05-g001
+  finding_ids:
+  - mim-c01-s04-f001
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/921
+  status: deferred
+  summary: Reconcile missing direct MicrobeDecoder occurrence on (2)-D-lyxose.yaml (CHEBI:62318) with canonical D-(-)-lyxose target
+  resolution_evidence:
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-05/revision-0001/issue_map.md
+  disposition: Tracked in #921 and carried forward; requires coordinated semantic review and nonmapping_cohorts.json re-binding alongside SEM:cd74f8ddafa04d7e9a9a.
+- group_id: mim-c01-s05-g002
+  finding_ids:
+  - mim-c01-s04-f002
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/922
+  status: resolved
+  summary: Correct calcium nitrate correction-receipt identity text (CHEBI:31348 -> CHEBI:86159) in review-record-issues-20261003.json for Ca_No32_X_4_H2o.yaml
+  resolution_evidence:
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-05/revision-0001/issue_map.md
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-05/revision-0001/validation.md
+  disposition: Resolved in review-record-issues-20261003.json and dependent review manifests, and verified by fresh structured review bundle 20261021T120500Z-ca-no32-x-4-h2o.
+- group_id: mim-c01-s05-g003
+  finding_ids:
+  - mim-c01-s04-f003
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/923
+  status: deferred
+  summary: Normalize non-monotonic curation_history timestamp order across 19 mapped ingredient records
+  resolution_evidence:
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-05/revision-0001/issue_map.md
+  disposition: Tracked in #923 and carried forward; 17 of 19 affected records hold byte-bound SUPPORTED approvals in reports/sssom_completion_20260921/review.json.
+- group_id: mim-c01-s05-g004
+  finding_ids:
+  - mim-c01-s04-f004
+  - mim-c01-s04-f005
+  - mim-c01-s04-f006
+  - mim-c01-s04-f007
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  status: deferred
+  summary: Open semantic review finding backlog across role-evidence, unmapped/ambiguous identity, and exported token/component source scope cohorts
+  resolution_evidence:
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000001/stage-05/revision-0001/issue_map.md
+  disposition: Reused existing open tracker #718 and carried forward mim-c01-s04-f004..f007 with explicit dispositions preserved in finding-dispositions.tsv and per-record structured review bundles.
+carry_forward_ids:
+- mim-c01-s04-f001
+- mim-c01-s04-f003
+- mim-c01-s04-f004
+- mim-c01-s04-f005
+- mim-c01-s04-f006
+- mim-c01-s04-f007
+infra_tasks: []
