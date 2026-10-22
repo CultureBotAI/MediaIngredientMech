@@ -38,7 +38,7 @@
 
 - **Status:** `resolved` in Cycle 1 Stage 5 ([#922](https://github.com/CultureBotAI/MediaIngredientMech/issues/922))
 - **Target Record:** `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml`
-- **Verification:** Successor structured review bundle `reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.yaml` confirms `records[0].change` in `reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json` now accurately states `CHEBI:86159` (`calcium nitrate tetrahydrate`) with `outcome: accept` and `0` open findings. Not carried forward in `carry_forward_ids`.
+- **Verification:** Successor structured review bundle `reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.yaml` confirms `records[0].change` in `reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json` now accurately states `CHEBI:86159` (`calcium nitrate tetrahydrate`) with `verdict: pass_with_limitations`, `native_verdict: mapping_status=MAPPED; open=0; deferred=0; resolved=1`, `findings[0].status: resolved` (`rec-f-b6fa9d9b4f15850a`), and `0` open findings. Not carried forward in `carry_forward_ids`.
 
 ### 3. `mim-c01-s04-f003` — Non-monotonic `curation_history` timestamp order across 19 mapped ingredient records
 
