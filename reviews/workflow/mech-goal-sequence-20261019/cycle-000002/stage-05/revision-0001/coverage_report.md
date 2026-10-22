@@ -14,7 +14,7 @@
 
 | Metric | Value | Notes |
 | --- | ---: | --- |
-| Total individual `IngredientRecord` YAML files in corpus | `2,953` | `2,692` mapped (`data/ingredients/mapped/*.yaml`) + `261` unmapped (`data/ingredients/unmapped/*.yaml`) |
+| Total individual `IngredientRecord` YAML files in corpus | `2,953` | `2,680` files in `data/ingredients/mapped/*.yaml` (`2,611` `MAPPED` + `69` `REJECTED`) + `273` files in `data/ingredients/unmapped/*.yaml` (`260` `UNMAPPED` + `1` `AMBIGUOUS` + `12` `REJECTED`); by `mapping_status`: `2,611` `MAPPED` + `260` `UNMAPPED` + `1` `AMBIGUOUS` + `81` `REJECTED` |
 | Records passing with `0` active findings | `1,993` | Includes `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` resolved in Cycle 1 Stage 5 under [#922](https://github.com/CultureBotAI/MediaIngredientMech/issues/922) |
 | Consumed Cycle 2 Stage 4 root-cause finding cohorts | `6` | `mim-c01-s04-f001`, `mim-c01-s04-f003`, `mim-c01-s04-f004`, `mim-c01-s04-f005`, `mim-c01-s04-f006`, `mim-c01-s04-f007` |
 | Consumed active per-record findings across `960` records | `970` | `1` (`f001`) + `19` (`f003`) + `624` (`f004`) + `29` (`f005`) + `266` (`f006`) + `31` (`f007`) |
