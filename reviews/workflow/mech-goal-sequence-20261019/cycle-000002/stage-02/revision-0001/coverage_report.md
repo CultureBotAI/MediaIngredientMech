@@ -155,8 +155,8 @@ Running `.venv/bin/python scripts/score_causal_graph_readiness.py --ingredients-
 | 6 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Cows_Milk.yaml` | `FOODON:02020891` | `Cow's milk` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 2 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
 | 7 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Bacto_Tryptic_Soy_Agar.yaml` | `MICRO:0000114` | `Bacto Tryptic Soy Agar` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 0 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
 | 8 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml` | `MICRO:0000113` | `Bacto Tryptic Soy Broth` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 0 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
-| 9 | `10.000` | `10.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Trace_Element_Solution_Sl-10.yaml` | `kgmicrobe.ingredient:trace_element_solution_sl_10` | `Trace element solution SL-10` | `FALLBACK_REGISTRY` | `STOCK_SOLUTION` | 645 | 0 | `0.000` | `weak_mapping_quality:FALLBACK_REGISTRY;no_ingredient_roles;no_component_edges` |
-| 10 | `10.000` | `10.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Beef_Extract.yaml` | `NCIT:C896` | `Beef extract` | `FALLBACK_REGISTRY` | `UNDEFINED_MIXTURE` | 620 | 0 | `0.000` | `weak_mapping_quality:FALLBACK_REGISTRY;no_ingredient_roles;no_component_edges` |
+| 9 | `10.000` | `10.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Artificial_Sea_Salt.yaml` | `kgmicrobe.ingredient:artificial_sea_salt` | `Artificial Sea Salt` | `FALLBACK_REGISTRY` | `UNDEFINED_MIXTURE` | 12 | 0 | `0.000` | `weak_mapping_quality:FALLBACK_REGISTRY;no_ingredient_roles;no_component_edges` |
+| 10 | `10.000` | `10.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Na2HPO4-NaH2PO4_Buffer.yaml` | `kgmicrobe.ingredient:na2hpo4-nah2po4_buffer` | `Na2HPO4-NaH2PO4 buffer` | `FALLBACK_REGISTRY` | `STOCK_SOLUTION` | 7 | 0 | `0.000` | `weak_mapping_quality:FALLBACK_REGISTRY;no_ingredient_roles;no_component_edges` |
 
 ### 5.2 Highest-Scoring Mapped Records in the Full `2,611`-Record Ranking (`/tmp/cg_readiness_all.tsv`, Ranks `2,592`–`2,611`)
 
@@ -164,16 +164,16 @@ At the high-readiness end of `/tmp/cg_readiness_all.tsv`, Rank `2,611` is `Miner
 
 | `rank` | `readiness_score` | `identity_score` | `role_content_score` | `role_evidence_score` | `component_score` | `path` | `identifier` | `preferred_term` | `mapping_quality` | `ingredient_type` | `total_occurrences` | `role_count` | `best_role_evidence` | `issues` |
 |---:|---:|---:|---:|---:|---:|---|---|---|---|---|---:|---:|---:|---|
-| 2592 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nacl.yaml` | `CHEBI:26710` | `NaCl` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 6,796 | 1 | `0.750` | — |
-| 2593 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Kh2po4.yaml` | `CHEBI:63036` | `KH2PO4` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 5,971 | 1 | `0.750` | — |
-| 2594 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/K2hpo4.yaml` | `CHEBI:32031` | `K2HPO4` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 5,112 | 1 | `0.750` | — |
-| 2595 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/H3bo3.yaml` | `CHEBI:33118` | `H3BO3` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 4,132 | 1 | `0.750` | — |
-| 2596 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Kcl.yaml` | `CHEBI:32588` | `KCl` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 3,904 | 1 | `0.750` | — |
-| 2597 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Resazurin.yaml` | `CHEBI:8806` | `Resazurin` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 3,005 | 1 | `0.750` | — |
-| 2598 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nahco3.yaml` | `CHEBI:32139` | `NaHCO3` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,970 | 1 | `0.750` | — |
+| 2592 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nacl.yaml` | `CHEBI:26710` | `NaCl` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 8,191 | 1 | `0.750` | — |
+| 2593 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Kh2po4.yaml` | `CHEBI:63036` | `KH2PO4` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 5,649 | 1 | `0.750` | — |
+| 2594 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/K2hpo4.yaml` | `CHEBI:131527` | `K2HPO4` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 4,555 | 1 | `0.750` | — |
+| 2595 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/H3bo3.yaml` | `CHEBI:33118` | `H3BO3` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 4,216 | 1 | `0.750` | — |
+| 2596 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Kcl.yaml` | `CHEBI:32588` | `KCl` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 3,958 | 1 | `0.750` | — |
+| 2597 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Resazurin.yaml` | `CHEBI:8806` | `Resazurin` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 3,671 | 1 | `0.750` | — |
+| 2598 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nahco3.yaml` | `CHEBI:32139` | `NaHCO3` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 3,168 | 1 | `0.750` | — |
 | 2599 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Biotin.yaml` | `CHEBI:15956` | `Biotin` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,829 | 1 | `0.750` | — |
-| 2600 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/P-aminobenzoic_Acid.yaml` | `CHEBI:30753` | `p-Aminobenzoic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,523 | 1 | `0.750` | — |
-| 2601 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nicotinic_Acid.yaml` | `CHEBI:15940` | `Nicotinic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,331 | 1 | `0.750` | — |
+| 2600 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/P-aminobenzoic_Acid.yaml` | `CHEBI:30753` | `p-Aminobenzoic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,270 | 1 | `0.750` | — |
+| 2601 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nicotinic_Acid.yaml` | `CHEBI:15940` | `Nicotinic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,222 | 1 | `0.750` | — |
 | 2602 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Riboflavin.yaml` | `CHEBI:17015` | `Riboflavin` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,123 | 1 | `0.750` | — |
 | 2603 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Folic_Acid.yaml` | `CHEBI:27470` | `Folic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,111 | 1 | `0.750` | — |
 | 2604 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Pyridoxine_Hydrochloride.yaml` | `CHEBI:30961` | `Pyridoxine hydrochloride` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,029 | 1 | `0.750` | — |
