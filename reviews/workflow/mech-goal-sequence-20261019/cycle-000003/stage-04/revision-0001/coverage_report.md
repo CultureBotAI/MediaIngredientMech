@@ -1,52 +1,25 @@
-# Cycle 3 Stage 4 Coverage & Provenance Report (`record_review`)
+# MediaIngredientMech Cycle 3 Stage 4 Coverage Report
 
-- **Run ID**: `mech-goal-sequence-20261019`
-- **Cycle**: `3` (`cycle-000003`)
-- **Stage**: `4` (`stage-04` / `record_review` / `review_yaml_records`)
-- **Revision**: `revision-0001`
-- **Source Revision (`main`)**: `524fa44d989b3e272cb3bff9d68e53d02407dac7`
-- **Scope Frozen At**: `2026-10-23T12:15:00Z`
+- **Run ID:** `mech-goal-sequence-20261019`
+- **Cycle / Stage / Revision:** `cycle-000003` / `stage-04` (`record_review`) / `revision-0001`
+- **Reviewed Baseline Commit:** `524fa44d989b3e272cb3bff9d68e53d02407dac7`
 
----
+## 1. Frozen Inventory Coverage Summary
 
-## 1. Corpus Coverage Accounting (`100%`)
+| Corpus Segment | Path Pattern | Document Count | Reviewed Count | Records with Active Findings | Clean Records (`0` Active Findings) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Mapped individual records (`mapping_status: MAPPED`) | `data/ingredients/mapped/*.yaml` | 2,611 | 2,611 | 699 (705 findings) | 1,912 |
+| Unmapped / ambiguous individual records (`UNMAPPED`: 260, `AMBIGUOUS`: 1) | `data/ingredients/unmapped/*.yaml` | 261 | 261 | 261 (265 findings) | 0 |
+| Rejected tombstones (`mapping_status: REJECTED`; 69 in `mapped/`, 12 in `unmapped/`) | `data/ingredients/mapped/*.yaml`, `data/ingredients/unmapped/*.yaml` | 81 | 81 | 0 (0 findings) | 81 |
+| Individual `IngredientRecord` total | `data/ingredients/mapped/*.yaml` (2,680), `data/ingredients/unmapped/*.yaml` (273) | **2,953** | **2,953** | **960 (970 findings)** | **1,993** |
+| Active collection YAML files | `data/curated/*.yaml` | **7** | **7** | (covered via per-record & aggregate checks) | - |
+| **Total validated YAML corpus** | `data/ingredients/*/*.yaml` + `data/curated/*.yaml` | **2,960** | **2,960** | **960 (970 findings)** | **1,993** |
 
-| Inventory Slice | Eligible Count | Reviewed Count | Coverage | Pass (`0` Active Findings) | Active Finding Records | Active Finding Count |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `data/ingredients/mapped/*.yaml` (`MAPPED`) | `2,609` | `2,609` | `100.0%` | `1,910` | `699` | `705` |
-| `data/ingredients/mapped/*.yaml` (`REJECTED`) | `71` | `71` | `100.0%` | `71` | `0` | `0` |
-| `data/ingredients/unmapped/*.yaml` (`MAPPED`) | `2` | `2` | `100.0%` | `2` | `0` | `0` |
-| `data/ingredients/unmapped/*.yaml` (`UNMAPPED`) | `260` | `260` | `100.0%` | `0` | `260` | `264` |
-| `data/ingredients/unmapped/*.yaml` (`AMBIGUOUS`) | `1` | `1` | `100.0%` | `0` | `1` | `1` |
-| `data/ingredients/unmapped/*.yaml` (`REJECTED`) | `10` | `10` | `100.0%` | `10` | `0` | `0` |
-| **Total Individual `IngredientRecord` YAMLs** | **`2,953`** | **`2,953`** | **`100.0%`** | **`1,993`** | **`960`** | **`970`** |
-| Active collection YAMLs (`data/curated/*.yaml`) | `3` | `3` | `100.0%` | `3` | `0` | `0` |
-| Historical collection snapshots (`data/curated/*pre_reclassify.yaml`, `*.bak`) | `4` | `4` | `100.0%` | `4` | `0` | `0` |
-| **Total YAML Documents Audited** | **`2,960`** | **`2,960`** | **`100.0%`** | **`2,000`** | **`960`** | **`970`** |
+## 2. Native Structured Review Bundle Breakdown (`976` Bundles)
 
----
-
-## 2. Native Structured Review Bundle Accounting (`976` Bundles)
-
-All `976` structured review bundles in `reviews/structured/` (`1,952` `review.yaml` + `review.md` files; manifest `sha256: 17c962c558829428cc5c6df8c8be66afa4791c20b781b60a846e6695d038bb6f`) are validated by `.venv/bin/python scripts/record_review.py check`:
-
-| Bundle Cohort | Bundle Count | Scope Type | Verdict Distribution |
-| --- | ---: | --- | --- |
-| Initial per-record review bundles (`20261017T083000Z-*`) | `961` | `record` (`1` record per bundle) | `960` active (`needs_follow_up`), `1` superseded (`20261017T083000Z-ca-no32-x-4-h2o`) |
-| Post-remediation successor bundle (`20261021T120500Z-ca-no32-x-4-h2o`) | `1` | `record` (`data/ingredients/mapped/Ca_No32_X_4_H2o.yaml`) | `1` `pass` (`0` active findings; supersedes `20261017T083000Z-ca-no32-x-4-h2o` & `20261011T211000Z-mim-ca-no32-x-4-h2o-occurrence-total`) |
-| Corpus-wide & cohort reconciliation bundles (`20261011T*-mim-*`) | `14` | `category` (`2,953` individual records + `7` collection files) | `8` `pass`, `6` `needs_follow_up` |
-| **Total Native Structured Review Bundles** | **`976`** | — | **`valid_reviews: 976` (`0` stale `source_sha256`)** |
-
----
-
-## 3. Overlap Matrix Across Active Finding Cohorts (`960` Unique Records, `970` Active Findings)
-
-| Cohort Pair / Combination | Record Count | Affected Records |
-| --- | ---: | --- |
-| `mim-c01-s04-f001` + `mim-c01-s04-f004` | `1` | `data/ingredients/mapped/(2)-D-lyxose.yaml` |
-| `mim-c01-s04-f003` + `mim-c01-s04-f004` | `3` | `data/ingredients/mapped/H3bo4.yaml`, `data/ingredients/mapped/Magnesium_Chloride_Anhydrous.yaml`, `data/ingredients/mapped/Mnso4_X_7_H2o.yaml` |
-| `mim-c01-s04-f003` + `mim-c01-s04-f006` | `1` | `data/ingredients/mapped/Modified_Pfennig_Medium_Sl-8_Solution_B_Medium_28.yaml` |
-| `mim-c01-s04-f003` + `mim-c01-s04-f007` | `1` | `data/ingredients/mapped/Trace_Element_Solution_Sl-8_Medium_192.yaml` |
-| `mim-c01-s04-f006` (`2` findings in same cohort on same record) | `4` | `data/ingredients/unmapped/Buffer.yaml`, `data/ingredients/unmapped/Mineral_salt_solution.yaml`, `data/ingredients/unmapped/Salt_solution.yaml`, `data/ingredients/unmapped/Standard_vitamin_solution.yaml` |
-| Single-finding records across `mim-c01-s04-f003` .. `mim-c01-s04-f007` | `950` | `14` (`f003`-only) + `620` (`f004`-only) + `29` (`f005`-only) + `257` (`f006`-only) + `30` (`f007`-only) |
-| **Total Unique Records with Active Findings** | **`960`** | **`970` total active findings** |
+| Bundle Series | Pattern | Bundle Count | Scope Covered | Notes |
+| --- | --- | ---: | --- | --- |
+| Initial per-record review bundles | `reviews/structured/20261017T083000Z-*/review.{yaml,md}` | `961` | `961` individual records (`960` with active findings + `1` superseded by `20261021T120500Z-ca-no32-x-4-h2o`) | Merged in PR `#908` |
+| Successor per-record review bundle | `reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.{yaml,md}` | `1` | `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` (`verdict: pass_with_limitations`, `native_verdict: mapping_status=MAPPED; open=0; deferred=0; resolved=1`, `0` open findings) | Merged in Cycle 1 Stage 5 (Issue `#922`, `mim-c01-s04-f002`) |
+| Corpus-wide reconciliation batch bundles | `reviews/structured/20261011T*-mim-*/review.{yaml,md}` | `14` | `13` disjoint batches (`20261011T024629Z-mim-reconcile-all-batch-01` .. `20261011T024640Z-mim-reconcile-all-batch-13`) covering all `2,953` individual records + `1` token-scope reassessment successor | Indexed in `reviews/reconciliation/20261011T023739Z-all-mim/README.md` |
+| **Total validated structured bundles** | `reviews/structured/**/review.{yaml,md}` | **`976`** | **`2,953 / 2,953` (`100.0%`) individual records** | Verified via `.venv/bin/python scripts/record_review.py check` (`exit_code: 0`) |

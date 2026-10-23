@@ -1,132 +1,89 @@
-# Cycle 3 Stage 4 Record & Cohort Review Report (`record_review`)
+# MediaIngredientMech Cycle 3 Stage 4 Record Review Report
 
-- **Run ID**: `mech-goal-sequence-20261019`
-- **Cycle**: `3` (`cycle-000003`)
-- **Stage**: `4` (`stage-04` / `record_review` / `review_yaml_records`)
-- **Revision**: `revision-0001`
-- **Source Revision (`main`)**: `524fa44d989b3e272cb3bff9d68e53d02407dac7`
-- **Scope Frozen At**: `2026-10-23T12:15:00Z`
-- **Previous Evidence**: `reviews/workflow/mech-goal-sequence-20261019/cycle-000002/stage-05/revision-0001/evidence.yaml` (`sha256: ad70008f1b7348a8da9abea22a245585f32fc764a99869942b03f8baab955840`)
-- **Repository-Local Skills Applied**:
+- **Repository:** `CultureBotAI/MediaIngredientMech` (`mediaingredientmech`)
+- **Run ID:** `mech-goal-sequence-20261019`
+- **Cycle:** `3` (`cycle-000003`)
+- **Stage:** `4` (`stage-04` / `record_review`)
+- **Revision:** `1` (`revision-0001`)
+- **Reviewed Source Revision:** `524fa44d989b3e272cb3bff9d68e53d02407dac7`
+- **Previous Review Evidence:** `reviews/workflow/mech-goal-sequence-20261019/cycle-000002/stage-05/revision-0001/evidence.yaml` (`sha256: ad70008f1b7348a8da9abea22a245585f32fc764a99869942b03f8baab955840`)
+- **Workflow Profile:** `workflow/mech-workflow.yaml` (`mediaingredientmech-goal-cycle` v1.0.0)
+- **Native Review Skills Executed:**
   - `.claude/skills/review-yaml-record/SKILL.md`
   - `.claude/skills/review-yaml-category/SKILL.md`
-  - `.claude/skills/mediaingredientmech-evolve-workflow/SKILL.md`
-  - `docs/record-reviews.md` & `docs/record-review-profile.md`
+  - `.claude/skills/review-ingredients/SKILL.md`
+  - `.claude/skills/review-sssom-output/SKILL.md`
+  - `.claude/skills/reconcile-review-records/SKILL.md`
+- **Outcome:** `completed`
 
----
+## 1. Frozen Inventory and Coverage
 
-## 1. Frozen Inventory & Provenance Digests
+The Cycle 3 Stage 4 record review evaluated the complete frozen MediaIngredientMech YAML corpus at `524fa44d989b3e272cb3bff9d68e53d02407dac7` (`2,953` individual `IngredientRecord` YAML files + `7` active collection YAML documents in `data/curated/*.yaml` = `2,960` total validated YAML documents):
 
-The Cycle 3 Stage 4 record review froze the authoritative corpus at `main` commit `524fa44d989b3e272cb3bff9d68e53d02407dac7` (merged PR `#937` from Cycle 3 Stage 3). Between the Cycle 2 Stage 4 frozen revision (`88a0a15a3e340068d442b7e25bfa0ced637e0bcd`) / Cycle 2 Stage 5 frozen revision (`7f56a13130d8d220efa48cef78559e80351c5a46`) and `524fa44d989b3e272cb3bff9d68e53d02407dac7`, `git diff` across `data/ingredients/`, `data/curated/`, and `reviews/structured/` is empty (`0` modified, added, or deleted YAML records or structured review bundles), because Cycle 2 Stages 5–6 and Cycle 3 Stages 1–3 were non-mutating assessment, remediation-reconciliation, and frontier-exhaustion stages.
-
-| Corpus Slice | Path Pattern | File / Record Count | Digest Type | SHA-256 Digest |
-| --- | --- | ---: | --- | --- |
-| All individual `IngredientRecord` YAML files | `data/ingredients/**/*.yaml` | `2,953` | `sha256sum` manifest (`LC_ALL=C sort`) | `3b760eeec31525e7bdf8e45623ec53fb4ac521866d9ab5bafeea9160a4d2d99f` |
-| All individual `IngredientRecord` YAML files | `data/ingredients/**/*.yaml` | `2,953` | `path:sha256` manifest (`LC_ALL=C sort`) | `4a44101e2fb6199658c0fcced12a4cbd2f6624b60afd520a197e3049ccf502c7` |
-| Mapped directory individual YAML files | `data/ingredients/mapped/*.yaml` | `2,680` (`2,609` `MAPPED`, `71` `REJECTED`) | `sha256sum` manifest (`LC_ALL=C sort`) | `3cdce1d4d3ca11f92c6c96604bc57052ec841791e58f38ac5ea0070df33e61d8` |
-| Unmapped directory individual YAML files | `data/ingredients/unmapped/*.yaml` | `273` (`2` `MAPPED`, `260` `UNMAPPED`, `1` `AMBIGUOUS`, `10` `REJECTED`) | `sha256sum` manifest (`LC_ALL=C sort`) | `c5b8261298412767b8ebdd953819c2891235d8bf397d51f7efd55a8efe43ed99` |
-| Active collection file — mapped | `data/curated/mapped_ingredients.yaml` | `1` (`2,680` records) | Single-file SHA-256 | `4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b` |
-| Active collection file — unmapped | `data/curated/unmapped_ingredients.yaml` | `1` (`273` records) | Single-file SHA-256 | `8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2` |
-| Active collection file — complex media | `data/curated/complex_ingredients.yaml` | `1` (`4` records) | Single-file SHA-256 | `a1cb7ca74c6731e02f36d025cc53de16f715d0efcd405d1c0c563a0808dfcb3c` |
-| Historical snapshot — mapped pre-reclassify | `data/curated/mapped_ingredients_pre_reclassify.yaml` | `1` | Single-file SHA-256 | `7323ef988a5e0815b8c04d3ab1f185ef2b1d707f83f2f308155a9bbfe455a44d` |
-| Historical snapshot — unmapped pre-reclassify | `data/curated/unmapped_ingredients_pre_reclassify.yaml` | `1` | Single-file SHA-256 | `5df035de8f491a7a5c5f9b87d7bb9e0e5fd0178a945fb45ddcb163281d590b08` |
-| Historical snapshot — mapped backup | `data/curated/mapped_ingredients.yaml.bak` | `1` | Single-file SHA-256 | `45de160a8a327b7999a9c2ba72a0400ca34ff519263869fb1d7d768ac663d02f` |
-| Historical snapshot — unmapped backup | `data/curated/unmapped_ingredients.yaml.bak` | `1` | Single-file SHA-256 | `8542a04da0e1dc6a0b6c0fd2d50f16fc2752bd2e897bc3c5ec39b433c3b07de9` |
-| Native structured review bundles | `reviews/structured/**/review.{yaml,md}` | `976` bundles (`1,952` files) | `sha256sum` manifest (`LC_ALL=C sort`) | `17c962c558829428cc5c6df8c8be66afa4791c20b781b60a846e6695d038bb6f` |
-| Record review schema | `schema/record_review.yaml` | `1` | Single-file SHA-256 | `229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb` |
-| Ingredient LinkML schema | `src/mediaingredientmech/schema/mediaingredientmech.yaml` | `1` | Single-file SHA-256 | `bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012` |
-| Tracked review latest index | `reviews/workflow/latest.yaml` | `1` (`6` verified entries) | Single-file SHA-256 | `cb3ab020c5b24a1df52bdbbc8b1bc0a2c2108a6949951e316425875d5c3141f9` |
-| Infrastructure task register | `INFRA_TASKS.md` | `1` (`0` pending items) | Single-file SHA-256 | `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` |
-
----
-
-## 2. Corpus Stratification & Review Coverage (`100%`)
-
-Every eligible `IngredientRecord` YAML file (`2,953 / 2,953`) and every collection YAML document (`7 / 7`) in the frozen inventory was audited against:
-1. Closed-schema LinkML validation (`scripts/validate_strict.py`),
-2. Native structured review bundle verification (`scripts/record_review.py check` across all `976` bundles in `reviews/structured/`),
-3. Component partonomy invariants (`scripts/validate_component_partonomy.py` across `83` decomposed mixtures and `502` `StockComponent` assertions),
-4. SSSOM invariant verification (`scripts/validate_sssom_invariants.py`),
-5. Duplicate identifier audit (`scripts/audit_duplicate_identifiers.py --check`),
-6. Semantic review ledger (`reports/semantic_review_20260921/resolution/current-review.json` and `reports/semantic_review_20260921/resolution/finding-dispositions.tsv`).
-
-### 2.1 By Mapping Status and Identifier Family
-
-| Mapping Status | Identifier Prefix | Record Count | Clean Records (`0` Active Findings) | Records with Active Findings | Active Finding Count |
+| Corpus Segment | Path Pattern | Document Count | Reviewed Count | Records with Active Findings | Clean Records (`0` Active Findings) |
 | --- | --- | ---: | ---: | ---: | ---: |
-| `MAPPED` | `CHEBI:` | `2,243` | `1,622` | `621` | `626` |
-| `MAPPED` | `FOODON:` | `87` | `78` | `9` | `10` |
-| `MAPPED` | `UBERON:` | `15` | `14` | `1` | `1` |
-| `MAPPED` | `ENVO:` | `11` | `10` | `1` | `1` |
-| `MAPPED` | `NCIT:` | `7` | `7` | `0` | `0` |
-| `MAPPED` | `MESH:` | `1` | `1` | `0` | `0` |
-| `MAPPED` | `CAS-RN:` | `94` | `61` | `33` | `33` |
-| `MAPPED` | `PUBCHEM.COMPOUND:` | `20` | `8` | `12` | `12` |
-| `MAPPED` | `KEGG.COMPOUND:` | `1` | `1` | `0` | `0` |
-| `MAPPED` | `KEGG.DRUG:` | `1` | `1` | `0` | `0` |
-| `MAPPED` | `DRUGBANK:` | `1` | `1` | `0` | `0` |
-| `MAPPED` | `SIGMA:` | `1` | `0` | `1` | `1` |
-| `MAPPED` | `CONFLICT_` | `6` | `6` | `0` | `0` |
-| `MAPPED` | `kgmicrobe.ingredient:` | `123` | `102` | `21` | `21` |
-| **Subtotal (`MAPPED`)** | — | **`2,611`** | **`1,912`** | **`699`** | **`705`** |
-| `UNMAPPED` | `UNMAPPED_` | `259` | `0` | `259` | `263` |
-| `UNMAPPED` | `CHEBI:` (`unmapped/Water.yaml`) | `1` | `0` | `1` | `1` |
-| `AMBIGUOUS` | `UNMAPPED_0249` (`PYGS.yaml`) | `1` | `0` | `1` | `1` |
-| **Subtotal (`UNMAPPED` + `AMBIGUOUS`)** | — | **`261`** | **`0`** | **`261`** | **`265`** |
-| `REJECTED` | `UNMAPPED_` (`80`) / `CHEBI:` (`1`) | `81` | `81` | `0` | `0` |
-| **Total Individual Records** | — | **`2,953`** | **`1,993`** | **`960`** | **`970`** |
+| Mapped individual records (`mapping_status: MAPPED`) | `data/ingredients/mapped/*.yaml` | 2,611 | 2,611 | 699 (705 findings) | 1,912 |
+| Unmapped / ambiguous individual records (`UNMAPPED`: 260, `AMBIGUOUS`: 1) | `data/ingredients/unmapped/*.yaml` | 261 | 261 | 261 (265 findings) | 0 |
+| Rejected tombstones (`mapping_status: REJECTED`; 69 in `mapped/`, 12 in `unmapped/`) | `data/ingredients/mapped/*.yaml`, `data/ingredients/unmapped/*.yaml` | 81 | 81 | 0 (0 findings) | 81 |
+| Individual `IngredientRecord` total | `data/ingredients/mapped/*.yaml` (2,680), `data/ingredients/unmapped/*.yaml` (273) | **2,953** | **2,953** | **960 (970 findings)** | **1,993** |
+| Active collection YAML files | `data/curated/*.yaml` | **7** | **7** | (covered via per-record & aggregate checks) | - |
+| **Total validated YAML corpus** | `data/ingredients/*/*.yaml` + `data/curated/*.yaml` | **2,960** | **2,960** | **960 (970 findings)** | **1,993** |
 
-> **Historical Resolution Verified (`Ca_No32_X_4_H2o.yaml`)**: In Cycle 1 Stage 5 (PR `#924`, issue `#922`), `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` was remediated (`curation_history` timestamp ordered monotonically and `occurrence_statistics.total_occurrences` reconciled to `42`) and superseded by native review bundle `reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/` (`overall_verdict: pass`, `0` active findings). Thus `1,993` records pass with `0` active findings (`1,912` `MAPPED` + `81` `REJECTED`) and `960` records carry `970` active findings across `6` carry-forward cohorts (`mim-c01-s04-f001` and `mim-c01-s04-f003` .. `mim-c01-s04-f007`).
+### Cycle-Over-Cycle Inventory and Finding Delta (Cycle 1 Stage 4 -> Cycle 2 Stage 5 -> Cycle 3 Stage 4)
 
----
+- **Cycle 1 Stage 4 (`348a59b7d81150184486d15d545d320d82be2900`):** Reviewed all `2,953` individual records and `7` collection files; `1,992` records passed with `0` findings and `961` records (`700` `MAPPED` + `261` `UNMAPPED`/`AMBIGUOUS`) had `971` structured findings across `7` root-cause cohorts (`mim-c01-s04-f001` through `mim-c01-s04-f007`).
+- **Cycle 1 Stage 5 (`515a8cca2a1590a31b0fbf947b178fe8a6bbedc1`):** Resolved `mim-c01-s04-f002` ([Issue #922](https://github.com/CultureBotAI/MediaIngredientMech/issues/922)) on `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` (`CHEBI:86159`) in `reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json` and saved successor structured review bundle `reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.yaml` (`verdict: pass_with_limitations`, `native_verdict: mapping_status=MAPPED; open=0; deferred=0; resolved=1`, `0` open findings), advancing `Ca_No32_X_4_H2o.yaml` into the clean `MAPPED` set (`1,911 -> 1,912` clean `MAPPED` records; `1,992 -> 1,993` total clean records; `961 -> 960` records with active findings; `971 -> 970` active findings across the `6` remaining cohorts `mim-c01-s04-f001` and `mim-c01-s04-f003` .. `mim-c01-s04-f007`).
+- **Cycle 2 Stages 4–6 (`88a0a15a3e340068d442b7e25bfa0ced637e0bcd..40d1358b1077fb0a69d1b07b4315e10d1efe7184`):** Verified all `976` structured review bundles in Stage 4 (`PR #930`), confirmed exact-byte receipt bindings across `mim-c01-s04-f001` and `mim-c01-s04-f003` under `src/mediaingredientmech/record_refresh.py` and deferred the `6` open cohorts in Stage 5 (`PR #932`), and closed Stage 6 with `0` pending infrastructure tasks (`PR #934`).
+- **Cycle 3 Stages 1–3 (`834868d7dc256f71a634413d9b0e464b0671573c..524fa44d989b3e272cb3bff9d68e53d02407dac7`):** Added `0` net new ingredient records and modified `0` files under `data/ingredients/**/*.yaml`, `data/curated/*.yaml`, or `reviews/structured/` (`git diff --name-only 88a0a15a3e340068d442b7e25bfa0ced637e0bcd..524fa44d989b3e272cb3bff9d68e53d02407dac7 -- data/ingredients data/curated reviews/structured` is empty).
 
-## 3. Native Structured Review Bundles (`reviews/structured/`)
+## 2. Native Structured Review Output Bundles (`reviews/structured/`)
 
-All `976` structured review bundles in `reviews/structured/` pass `scripts/record_review.py check` (`valid_reviews: 976`, `0` stale `source_sha256` hashes):
+All `976` native structured review bundles under `reviews/structured/` were verified against the frozen corpus at `524fa44d989b3e272cb3bff9d68e53d02407dac7`:
 
-1. **Corpus-wide & Category Reconciliation Bundles (`14` bundles, `20261011T*-mim-*`)**:
-   - `20261011T091315Z-mim-review-reconcile`: Reconciled legacy review cohorts (`15` resolved findings).
-   - `20261011T105147Z-mim-20260921-1509-chebi-53753-mapping`: Resolved `CHEBI:53753` mapping split (`1` resolved finding).
-   - `20261011T114628Z-mim-corpus-audit-a` (`A–E`, `562` mapped records, `0` findings, `pass`).
-   - `20261011T114629Z-mim-corpus-audit-f` (`F–L`, `493` mapped records, `0` findings, `pass`).
-   - `20261011T114630Z-mim-corpus-audit-m` (`M–R`, `578` mapped records, `0` findings, `pass`).
-   - `20261011T114631Z-mim-corpus-audit-s` (`S–Z`, `978` mapped records, `1` finding on `(2)-D-lyxose.yaml`, `needs_follow_up`).
-   - `20261011T114632Z-mim-corpus-audit-unmapped` (`261` unmapped/ambiguous records, `0` structural errors, `pass`).
-   - `20261011T114633Z-mim-corpus-audit-rejected` (`81` rejected records, `0` findings, `pass`).
-   - `20261011T150500Z-mim-20261011-114631-s-d-lyxose-occurrence`: Detailed trace of `kgmicrobe.trait:d_lyxose` (`159` occurrences) across `(2)-D-lyxose.yaml` (`CHEBI:62318`) and `D-lyxose.yaml` (`CHEBI:17140`).
-   - `20261011T163951Z-mim-curation-history-order-mapped-a` (`A–P`, `9` records with non-monotonic `curation_history` timestamps).
-   - `20261011T163952Z-mim-curation-history-order-mapped-b` (`S–Z`, `11` initial records with non-monotonic `curation_history` timestamps, `1` of which — `Ca_No32_X_4_H2o.yaml` — was resolved in Cycle 1 Stage 5).
-   - `20261011T183500Z-mim-semantic-review-20260921-active-findings` (`944` records carrying `950` active semantic review findings).
-   - `20261011T194500Z-mim-collection-files-audit` (`7` collection YAML files in `data/curated/`).
-   - `20261011T211000Z-mim-ca-no32-x-4-h2o-occurrence-total` (`Ca_No32_X_4_H2o.yaml` occurrence total mismatch, resolved in Cycle 1 Stage 5 and superseded by `20261021T120500Z-ca-no32-x-4-h2o`).
-2. **Per-Record Structured Review Bundles (`962` bundles: `961` initial `20261017T083000Z-*` + `1` successor `20261021T120500Z-ca-no32-x-4-h2o`)**:
-   - Every one of the `960` records with active findings has an up-to-date individual bundle in `reviews/structured/20261017T083000Z-<slug>/review.{yaml,md}` whose `reviewed_paths[0].source_sha256` matches the current file on `main`.
-   - `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` has its historical bundle `20261017T083000Z-ca-no32-x-4-h2o` superseded by `20261021T120500Z-ca-no32-x-4-h2o` (`overall_verdict: pass`, `source_sha256: 7f2aa363d61df3d375b4503ba77c0472ffbc8d0a341b66c55cf88557c1cc11dd`).
+- **Initial per-record review bundles (`reviews/structured/20261017T083000Z-*/review.yaml` and `review.md`):** `961` bundles covering `961` unique target records (`960` records with `970` active open/deferred findings + `1` historical bundle `20261017T083000Z-ca-no32-x-4-h2o` superseded by `20261021T120500Z-ca-no32-x-4-h2o`).
+- **Successor per-record review bundle (`reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.yaml` and `review.md`):** `1` bundle recording the verified resolution of `rec-f-5b1b1ab939d20218` (`mim-c01-s04-f002`, [Issue #922](https://github.com/CultureBotAI/MediaIngredientMech/issues/922)) with `verdict: pass_with_limitations`, `native_verdict: mapping_status=MAPPED; open=0; deferred=0; resolved=1`, `findings[0].status: resolved` (`rec-f-b6fa9d9b4f15850a`), and `0` open findings.
+- **Corpus-wide reconciliation batch bundles (`reviews/structured/20261011T*-mim-*/review.yaml` and `review.md`):** `14` bundles (`13` disjoint batches `20261011T024629Z-mim-reconcile-all-batch-01` .. `20261011T024640Z-mim-reconcile-all-batch-13` covering all `2,953` records + `1` token-scope reassessment successor `20261011T030852Z-mim-token-scope-reassessment`), indexed in `reviews/reconciliation/20261011T023739Z-all-mim/README.md`.
+- **Clean records:** `1,993` individual `IngredientRecord` files (`1,912` `MAPPED` + `81` `REJECTED`) pass all schema, identifier, ontology-label, role-evidence, occurrence-count, and provenance checks with `0` active findings.
 
----
+## 3. Provenance and Input Digests (`524fa44d989b3e272cb3bff9d68e53d02407dac7`)
 
-## 4. Summary of Active Findings Carry-Forward (`6` Root-Cause Cohorts)
+| Input / Artifact Scope | Count | SHA-256 Digest |
+| --- | ---: | --- |
+| `data/ingredients/**/*.yaml` (`sha256sum` manifest) | `2,953` files | `3b760eeec31525e7bdf8e45623ec53fb4ac521866d9ab5bafeea9160a4d2d99f` |
+| `data/ingredients/**/*.yaml` (`path:hash` manifest) | `2,953` files | `4a44101e2fb6199658c0fcced12a4cbd2f6624b60afd520a197e3049ccf502c7` |
+| `data/ingredients/mapped/*.yaml` (`sha256sum` manifest) | `2,680` files | `3cdce1d4d3ca11f92c6c96604bc57052ec841791e58f38ac5ea0070df33e61d8` |
+| `data/ingredients/unmapped/*.yaml` (`sha256sum` manifest) | `273` files | `c5b8261298412767b8ebdd953819c2891235d8bf397d51f7efd55a8efe43ed99` |
+| `reviews/structured/**/review.{yaml,md}` (`sha256sum` manifest) | `1,952` files (`976` bundles) | `17c962c558829428cc5c6df8c8be66afa4791c20b781b60a846e6695d038bb6f` |
+| `data/curated/mapped_ingredients.yaml` | `1` file | `4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b` |
+| `data/curated/unmapped_ingredients.yaml` | `1` file | `8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2` |
+| `src/mediaingredientmech/schema/mediaingredientmech.yaml` | `1` file | `bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012` |
+| `schema/record_review.yaml` | `1` file | `229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb` |
+| `INFRA_TASKS.md` | `1` file | `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` |
+| `reviews/workflow/latest.yaml` | `1` file (`6` verified entries) | `cb3ab020c5b24a1df52bdbbc8b1bc0a2c2108a6949951e316425875d5c3141f9` |
 
-All `970` active per-record findings across `960` records roll up into `6` stable root-cause finding IDs carried forward from `mim-c01-s04-f001` and `mim-c01-s04-f003` .. `mim-c01-s04-f007` (with `mim-c01-s04-f002` resolved in Cycle 1 Stage 5):
+## 4. Validation and Corpus Gate Results
 
-| Finding ID | Carried From |Tracked Issue | Records Affected | Active Findings | Severity / Effort | Disposition for Stage 5 |
-| --- | --- | --- | ---: | ---: | --- | --- |
-| `mim-c01-s04-f001` | `mim-c01-s04-f001` | [#921](https://github.com/CultureBotAI/MediaIngredientMech/issues/921) | `1` | `1` | `warning` / `low` | Preserve for Stage 5 (byte-bound in `nonmapping_cohorts.json` and `current-review.json`; co-located with `SEM:cd74f8ddafa04d7e9a9a`) |
-| `mim-c01-s04-f003` | `mim-c01-s04-f003` | [#923](https://github.com/CultureBotAI/MediaIngredientMech/issues/923) | `19` | `19` | `warning` / `low` | Preserve for Stage 5 (all `19` records are byte-bound in `reports/sssom_completion_20260921/review.json` and `current-review.json`) |
-| `mim-c01-s04-f004` | `mim-c01-s04-f004` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | `624` | `624` | `warning` / `medium` | Preserve for Stage 5 (requires primary `doi`/`pmid` literature citations for nutritional/cellular roles) |
-| `mim-c01-s04-f005` | `mim-c01-s04-f005` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | `29` | `29` | `warning` / `medium` | Preserve for Stage 5 (requires primary literature/formulation citations for physicochemical roles) |
-| `mim-c01-s04-f006` | `mim-c01-s04-f006` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | `262` | `266` | `warning`–`error` / `medium`–`high` | Preserve for Stage 5 (requires source-backed identity or recipe-form resolution across `261` unmapped/ambiguous + `4` complex records) |
-| `mim-c01-s04-f007` | `mim-c01-s04-f007` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | `31` | `31` | `warning`–`error` / `medium` | Preserve for Stage 5 (requires source-recipe verification and coordinated SSSOM/component receipt updates across `17` token-scope + `13` component-scope + `1` CAS alias records) |
+All repository validation and review-contract checks passed at `524fa44d989b3e272cb3bff9d68e53d02407dac7`:
 
-*(Note: `6` records overlap between cohorts: `(2)-D-lyxose.yaml` is in `mim-c01-s04-f001` and `mim-c01-s04-f004`; `H3bo4.yaml`, `Magnesium_Chloride_Anhydrous.yaml`, `Mnso4_X_7_H2o.yaml`, `Modified_Pfennig_Medium_Sl-8_Solution_B_Medium_28.yaml`, and `Trace_Element_Solution_Sl-8_Medium_192.yaml` are in both `mim-c01-s04-f003` and `mim-c01-s04-f004`/`f006`/`f007`, yielding `960` unique records with active findings.)*
+1. **Structured Review Contract Validation:** `.venv/bin/python scripts/record_review.py check` passed across all `976` structured review bundles in `reviews/structured/` (`valid_reviews: 976`, `coverage: "declared_scopes_only"`, `0` stale `source_sha256` digests).
+2. **Strict Closed-Schema YAML Validation:** `.venv/bin/python scripts/validate_strict.py data/ingredients --out /tmp/strict_report.tsv` scanned all `2,953` individual records with `0` `ERROR` rows (`5,897` `WARN` rows on legacy `curation_history` timestamp format).
+3. **Component Partonomy Validation:** `.venv/bin/python scripts/validate_component_partonomy.py` validated `2,953` records (`83` records with `has_parts`, `502` total components) with `0` violations.
+4. **SSSOM Invariant Validation:** `.venv/bin/python scripts/validate_sssom_invariants.py --reject-tsv /tmp/needs_curator_review.tsv` passed with `0` rejects (`OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L`).
+5. **Instruction Reference, Vendored Sync, Duplicate ID, & Skill Contract Validation:**
+   - `.venv/bin/python scripts/check_instruction_refs.py` (`52` instruction files against `88` `just` recipes: `0` errors).
+   - `.venv/bin/python scripts/check_vendored_sync.py` (`24` governed artifacts match pinned claw revision: `0` drift).
+   - `.venv/bin/python scripts/audit_duplicate_identifiers.py --check` (`0` unexpected duplicate groups).
+   - `.venv/bin/python -m pytest -o pythonpath=src -p no:cacheprovider --no-cov -q tests/test_skill_frontmatter.py tests/test_record_review_routes.py tests/test_check_instruction_refs.py` (`128 passed in 2.24s`).
 
----
+## 5. Reviewer Identity, Independence, and Limitations
 
-## 5. Limitations & Guardrails Observed
+- **Primary corpus review and structured bundle verification:** `marcin` (`human` / curator-supervised deterministic + rubric audit via `scripts/record_review.py`).
+- **Independent adversarial PR verification:** Performed in an isolated read-only review context (`research` subagent `c04f3217-6f0a-4b61-b294-d6c89b2971de`).
+- **Limitations:**
+  - Prediction-only role support findings (`mim-c01-s04-f004` and `mim-c01-s04-f005`) flag absence of organism- or literature-backed citation objects on computationally predicted role assertions; they do not assert that the biological or physicochemical roles themselves are scientifically false.
+  - Exported context-dependent synonym tokens (`mim-c01-s04-f007`) require cross-repository CultureMech/CommunityMech recipe consumer adjudication ([#861](https://github.com/CultureBotAI/MediaIngredientMech/issues/861)) rather than blind deletion.
+  - Byte-bound receipt locks in `reports/sssom_completion_20260921/review.json`, `reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json`, and `reports/semantic_review_20260921/resolution/current-review.json` govern `mim-c01-s04-f001` ([#921](https://github.com/CultureBotAI/MediaIngredientMech/issues/921)) and `mim-c01-s04-f003` ([#923](https://github.com/CultureBotAI/MediaIngredientMech/issues/923)), requiring coordinated re-review and receipt refresh during remediation.
 
-1. **Byte-Bound Receipt Invariants (`src/mediaingredientmech/record_refresh.py`)**:
-   - `reports/sssom_completion_20260921/review.json`, `reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json`, and `reports/semantic_review_20260921/resolution/current-review.json` bind reviewed records by exact `owner_record_sha256` / `subject_record_sha256`. Under `src/mediaingredientmech/record_refresh.py`, mechanical edits to those records cannot preserve byte-bound semantic/SSSOM approvals via receipt chains without full re-review of the record's semantic/SSSOM findings.
-2. **Evidence & Grounding Non-Fabrication**:
-   - No synthetic `doi`/`pmid` references, speculative ChEBI/FoodOn/UBERON identifiers, or unverified component assertions were introduced during this review stage.
-3. **Tracked Review Index Verification (`reviews/workflow/latest.yaml`)**:
-   - Verified that `reviews/workflow/latest.yaml` (`sha256: cb3ab020c5b24a1df52bdbbc8b1bc0a2c2108a6949951e316425875d5c3141f9`) already matches all `6` verified evidence entries in `/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/workspace/session-orchestration/20261019/mediaingredientmech/verified-evidence-index.json` (Cycle 1 Stages 4–6 and Cycle 2 Stages 4–6).
+## 6. Summary of Finding Cohorts Carried Forward to Cycle 3 Stage 5
+
+All `970` active per-record findings across `960` records remain consolidated into the `6` open root-cause cohorts (`mim-c01-s04-f001`, `mim-c01-s04-f003`, `mim-c01-s04-f004`, `mim-c01-s04-f005`, `mim-c01-s04-f006`, `mim-c01-s04-f007`) in `review_findings.md` and `evidence.yaml` for Cycle 3 Stage 5 (`resolve_review_findings`) grouping, issue linkage, and remediation/deferral.

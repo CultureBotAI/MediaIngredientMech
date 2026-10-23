@@ -1,108 +1,123 @@
-# Cycle 3 Stage 4 Stable Review Findings (`review_findings`)
+# MediaIngredientMech Cycle 3 Stage 4 Review Findings
 
-- **Run ID**: `mech-goal-sequence-20261019`
-- **Cycle**: `3` (`cycle-000003`)
-- **Stage**: `4` (`stage-04` / `record_review` / `review_yaml_records`)
-- **Revision**: `revision-0001`
-- **Source Revision (`main`)**: `524fa44d989b3e272cb3bff9d68e53d02407dac7`
-- **Previous Evidence**: `reviews/workflow/mech-goal-sequence-20261019/cycle-000002/stage-05/revision-0001/evidence.yaml` (`sha256: ad70008f1b7348a8da9abea22a245585f32fc764a99869942b03f8baab955840`)
+- **Run ID:** `mech-goal-sequence-20261019`
+- **Cycle:** `3` (`cycle-000003`)
+- **Stage:** `4` (`stage-04` / `record_review`)
+- **Revision:** `1` (`revision-0001`)
+- **Reviewed Source Revision:** `524fa44d989b3e272cb3bff9d68e53d02407dac7`
+- **Structured Review Bundles (`reviews/structured/`):** `976` total (`961` initial per-record bundles `20261017T083000Z-*` + `1` successor per-record bundle `20261021T120500Z-ca-no32-x-4-h2o` + `14` corpus-wide reconciliation bundles `20261011T*-mim-*`)
+- **Total Active Per-Record Findings:** `970` across `960` records (`644` open + `326` deferred in native per-record rubrics, carried forward in workflow lineage as `6` open root-cause cohorts `mim-c01-s04-f001` and `mim-c01-s04-f003` .. `mim-c01-s04-f007` for Cycle 3 Stage 5 resolution/deferral; `mim-c01-s04-f002` remains resolved under [#922](https://github.com/CultureBotAI/MediaIngredientMech/issues/922))
 
----
+## Overview Table
 
-## 1. Carry-Forward Summary from Cycle 2 Stage 5
-
-Between Cycle 2 Stage 5 (`7f56a13130d8d220efa48cef78559e80351c5a46`) and Cycle 3 Stage 4 (`524fa44d989b3e272cb3bff9d68e53d02407dac7`), `0` ingredient records or native structured review bundles changed. All `6` open root-cause cohorts (`mim-c01-s04-f001` and `mim-c01-s04-f003` .. `mim-c01-s04-f007`) that were deferred in Cycle 2 Stage 5 (`ad70008f1b7348a8da9abea22a245585f32fc764a99869942b03f8baab955840`) remain open on `main` (`970` active per-record findings across `960` records) and are carried forward with their original stable `finding_id` values (`carried_from: mim-c01-s04-f00*`) for Cycle 3 Stage 5 grouped remediation.
-
-*(Cohort `mim-c01-s04-f002` on `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` was resolved in Cycle 1 Stage 5 under PR `#924` / issue `#922`, verified by successor review bundle `reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.yaml` with `overall_verdict: pass` and `0` active findings.)*
-
-| Finding ID | Carried From | Status | Tracked Issue | Affected Records | Active Findings | Summary |
-| --- | --- | --- | --- | ---: | ---: | --- |
-| `mim-c01-s04-f001` | `mim-c01-s04-f001` | `open` | [#921](https://github.com/CultureBotAI/MediaIngredientMech/issues/921) | `1` | `1` | Reconcile missing direct MicrobeDecoder occurrence on `data/ingredients/mapped/(2)-D-lyxose.yaml` (`CHEBI:62318`; native finding `rec-f-444b73747dddc915`) |
-| `mim-c01-s04-f003` | `mim-c01-s04-f003` | `open` | [#923](https://github.com/CultureBotAI/MediaIngredientMech/issues/923) | `19` | `19` | Normalize non-monotonic `curation_history` timestamp order across `19` mapped ingredient records |
-| `mim-c01-s04-f004` | `mim-c01-s04-f004` | `open` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | `624` | `624` | Adjudicate prediction-only or empty primary nutritional/cellular role assertions lacking literature citations across `624` mapped records (`595` single-role + `29` multi-role; issue `#718`) |
-| `mim-c01-s04-f005` | `mim-c01-s04-f005` | `open` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | `29` | `29` | Adjudicate prediction-only or empty secondary physicochemical role assertions lacking literature citations across `29` mapped records (`17` single-role + `12` multi-role; issue `#718`) |
-| `mim-c01-s04-f006` | `mim-c01-s04-f006` | `open` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | `262` | `266` | Resolve exact chemical identity, preparation form, or complex parent scope across `262` unmapped/ambiguous records (`266` findings across `261` unmapped identity + `4` complex parent scope + `1` ambiguous `PYGS`; issue `#718`) |
-| `mim-c01-s04-f007` | `mim-c01-s04-f007` | `open` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | `31` | `31` | Adjudicate context-dependent exported synonym/CAS token scope and component source scope across `31` records (`17` nomenclature token scope + `13` component source scope + `1` Furaltadone CAS alias; issues `#718`, `#861`) |
+| Workflow Finding ID | Carried From | Status | Category | Severity | Per-Record Count | Repair Owner Skill | Issue Link(s) | Summary |
+| --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| `mim-c01-s04-f001` | `mim-c01-s04-f001` | `open` | `quantity` | `major` | 1 | `.claude/skills/curate-yaml-record/SKILL.md` | [#921](https://github.com/CultureBotAI/MediaIngredientMech/issues/921) | Reconcile missing direct MicrobeDecoder occurrence on `data/ingredients/mapped/(2)-D-lyxose.yaml` (`CHEBI:62318`; native finding `rec-f-444b73747dddc915`) |
+| `mim-c01-s04-f002` | `mim-c01-s04-f002` | `resolved` (Cycle 1 Stage 5) | `provenance` | `minor` | 0 active (1 resolved) | `.claude/skills/curate-yaml-record/SKILL.md` | [#922](https://github.com/CultureBotAI/MediaIngredientMech/issues/922) | Resolved in Cycle 1 Stage 5: corrected calcium nitrate correction-receipt identity text (`CHEBI:31348` -> `CHEBI:86159`) in `reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json` for `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml` and verified in `reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.yaml` |
+| `mim-c01-s04-f003` | `mim-c01-s04-f003` | `open` | `provenance` | `minor` | 19 | `.claude/skills/curate-yaml-record/SKILL.md` | [#923](https://github.com/CultureBotAI/MediaIngredientMech/issues/923) | Normalize non-monotonic `curation_history` timestamp order across 19 mapped ingredient records |
+| `mim-c01-s04-f004` | `mim-c01-s04-f004` | `open` | `evidence` | `major` | 624 | `.claude/skills/ingredient-roles/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | Adjudicate prediction-only or empty primary nutritional/cellular role assertions lacking literature citations across 624 mapped records (`595` single-role + `29` multi-role) |
+| `mim-c01-s04-f005` | `mim-c01-s04-f005` | `open` | `evidence` | `minor` | 29 | `.claude/skills/ingredient-roles/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | Adjudicate prediction-only or empty secondary physicochemical role assertions lacking literature citations across 29 mapped records (`17` single-role + `12` multi-role) |
+| `mim-c01-s04-f006` | `mim-c01-s04-f006` | `open` | `identity` / `grounding` | `major` | 266 (262 records) | `.claude/skills/map-media-ingredients/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) | Resolve exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (`266` findings across `261` unmapped identity + `4` complex parent scope + `1` ambiguous `PYGS`) |
+| `mim-c01-s04-f007` | `mim-c01-s04-f007` | `open` | `nomenclature` / `representation` / `identity` | `major` / `minor` | 31 | `.claude/skills/curate-yaml-record/SKILL.md` | [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718), [#861](https://github.com/CultureBotAI/MediaIngredientMech/issues/861) | Adjudicate context-dependent exported synonym/CAS token scope and component source scope across 31 records (`17` nomenclature token scope + `13` component source scope + `1` Furaltadone CAS alias) |
 
 ---
 
-## 2. Detailed Cohort Specifications
+## Detailed Cohort Inventory
 
-### 2.1 `mim-c01-s04-f001` — Missing Direct MicrobeDecoder Occurrence on `(2)-D-lyxose.yaml`
-- **Status**: `open` (`carried_from: mim-c01-s04-f001`)
-- **Tracked Issue**: [https://github.com/CultureBotAI/MediaIngredientMech/issues/921](https://github.com/CultureBotAI/MediaIngredientMech/issues/921)
-- **Target Record**: `data/ingredients/mapped/(2)-D-lyxose.yaml` (`CHEBI:62318`, `sha256: 62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e`)
-- **Native Structured Review Bundles**:
-  - `reviews/structured/20261017T083000Z-2-d-lyxose/review.yaml` (`finding_id: rec-f-444b73747dddc915`)
-  - `reviews/structured/20261011T114631Z-mim-corpus-audit-s/review.yaml` (`finding_id: mim-20261011-114631-s-d-lyxose-occurrence`)
-  - `reviews/structured/20261011T150500Z-mim-20261011-114631-s-d-lyxose-occurrence/review.yaml`
-- **Evidence & Blocker**:
-  - `data/ingredients/mapped/(2)-D-lyxose.yaml` records `SYNONYM_MERGER` history merging `D-lyxose` (`kgmicrobe.trait:d_lyxose`, `159` occurrences in `D-lyxose.yaml`), yet `occurrence_statistics.total_occurrences` is `4` (`PPLO Broth` recipes) and omits the `159` direct `MicrobeDecoder` occurrences.
-  - `(2)-D-lyxose.yaml` is byte-bound (`owner_record_sha256: 62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e`) in `reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json` and `reports/semantic_review_20260921/resolution/current-review.json` (co-located with open role-evidence finding `SEM:cd74f8ddafa04d7e9a9a`). Under `src/mediaingredientmech/record_refresh.py`, modifying `(2)-D-lyxose.yaml` requires coordinated re-review of `SEM:cd74f8ddafa04d7e9a9a` and re-binding of `nonmapping_cohorts.json`.
+### 1. `mim-c01-s04-f001` — Direct MicrobeDecoder occurrence reconciliation for D-lyxose (`CHEBI:62318`)
 
-### 2.2 `mim-c01-s04-f003` — Non-Monotonic `curation_history` Timestamps (`19` Mapped Records)
-- **Status**: `open` (`carried_from: mim-c01-s04-f003`)
-- **Tracked Issue**: [https://github.com/CultureBotAI/MediaIngredientMech/issues/923](https://github.com/CultureBotAI/MediaIngredientMech/issues/923)
-- **Target Records (`19` mapped records)**:
-  1. `data/ingredients/mapped/Agar.yaml` (`rec-f-2be9d7ca4acbf7ab`)
-  2. `data/ingredients/mapped/Biotin.yaml` (`rec-f-2b60895f56e83539`)
-  3. `data/ingredients/mapped/Disodium_Succinate.yaml` (`rec-f-48999ba19660a70f`)
-  4. `data/ingredients/mapped/Glass_beads.yaml` (`rec-f-69da8cfdf2575034`)
-  5. `data/ingredients/mapped/H3bo4.yaml` (`rec-f-50164a7fc4c9d311`)
-  6. `data/ingredients/mapped/Macroelements_Stock_Solution_Ras.yaml` (`rec-f-2dc4ed776b13bcff`)
-  7. `data/ingredients/mapped/Magnesium_Chloride_Anhydrous.yaml` (`rec-f-ac7b9d257c3a8267`)
-  8. `data/ingredients/mapped/Mnso4_X_7_H2o.yaml` (`rec-f-07d737d09c44533e`)
-  9. `data/ingredients/mapped/Modified_Pfennig_Medium_Sl-8_Solution_B_Medium_28.yaml` (`rec-f-ee0df63c2105ef80`)
-  10. `data/ingredients/mapped/Nicotinic_Acid.yaml` (`rec-f-152d1590b0859d9e`)
-  11. `data/ingredients/mapped/P-Aminobenzoic_Acid.yaml` (`rec-f-ffba74e1eb64b13c`)
-  12. `data/ingredients/mapped/Pancreatic_Digest_Of_Casein.yaml` (`rec-f-184fb8425e1e9363`)
-  13. `data/ingredients/mapped/Peptone.yaml` (`rec-f-d53075a18c448801`)
-  14. `data/ingredients/mapped/Vitamin_B12.yaml` (`rec-f-9979541371a79d15`)
-  15. `data/ingredients/mapped/Salt_Solution_Medium_27.yaml` (`rec-f-a1f6215c749d8bc7`)
-  16. `data/ingredients/mapped/Trace_Element_Solution_Sl-8_Medium_192.yaml` (`rec-f-854bb43eb425a824`)
-  17. `data/ingredients/mapped/Trypticase.yaml` (`rec-f-b8ba84dd125df3c2`)
-  18. `data/ingredients/mapped/Tryptone.yaml` (`rec-f-8a4cfdb7ff098664`)
-  19. `data/ingredients/mapped/Yeast_Extract.yaml` (`rec-f-1f3331cd0fa4fc43`)
-- **Native Structured Review Bundles**:
-  - `reviews/structured/20261011T163951Z-mim-curation-history-order-mapped-a/review.yaml` (`9` records)
-  - `reviews/structured/20261011T163952Z-mim-curation-history-order-mapped-b/review.yaml` (`10` remaining records; `Ca_No32_X_4_H2o.yaml` resolved in Cycle 1 Stage 5)
-  - `19` individual bundles in `reviews/structured/20261017T083000Z-*/review.yaml`
-- **Evidence & Blocker**:
-  - Each of these `19` records contains a `2026-03-09T21:44:22.257115Z` `CURATOR_REVIEW` event inserted before `2026-03-09T06:53:*Z` `LLM_ASSISTED_CURATION` events.
-  - All `19` records are byte-bound in `reports/sssom_completion_20260921/review.json` (`17` `SUPPORTED` + `2` `WITHHOLD`, with `5` also in `reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json`) and `reports/semantic_review_20260921/resolution/current-review.json`. Under `src/mediaingredientmech/record_refresh.py`, `validate_record_refresh` rejects preserving byte-bound approvals through receipt chains when record bytes change.
+- **Status:** `open` (carried forward from `mim-c01-s04-f001`)
+- **Tracked In:** [#921](https://github.com/CultureBotAI/MediaIngredientMech/issues/921)
+- **Category / Severity:** `quantity` / `major`
+- **Field Path:** `occurrence_statistics.source_occurrences`
+- **Target Record:**
+  - `data/ingredients/mapped/(2)-D-lyxose.yaml` — structured review `reviews/structured/20261017T083000Z-2-d-lyxose/review.yaml` (`rec-f-444b73747dddc915`, issue key `mim-reconciliation-source-count-5703779de3d5d6d5`)
+- **Observation & Carry-Forward Basis:** `occurrence_statistics.total_occurrences` (`0`) and synonyms reflect MicrobeDecoder merge provenance (`MERGED_FROM` `#398` absorbing `D-(-)-lyxose` and adding `D-lyxose` as a synonym), while `occurrence_statistics.source_occurrences` records only `{source: microbedecoder, count: 1, source_columns: BacDive_Metabolite_utilization}` (`kgmicrobe.trait:2_d_lyxose`) and omits the `159` direct `D-lyxose` (`kgmicrobe.trait:d_lyxose`) occurrences from `data/custom/microbedecoder/unmapped_labels.tsv`. `data/ingredients/mapped/(2)-D-lyxose.yaml` (`sha256: 8324965913eb03c529a1e3dc8187822300f6e0fd47451b1da3c6a3551f694c5b`) is byte-bound in `reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json` and `reports/semantic_review_20260921/resolution/current-review.json` and co-located with open role-evidence finding `SEM:cd74f8ddafa04d7e9a9a` ([#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718)).
 
-### 2.3 `mim-c01-s04-f004` — Primary Nutritional & Cellular Role Assertions Lacking Literature Citations (`624` Mapped Records)
-- **Status**: `open` (`carried_from: mim-c01-s04-f004`)
-- **Tracked Issue**: [https://github.com/CultureBotAI/MediaIngredientMech/issues/718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718)
-- **Target Scope**: `624` mapped records (`624` active findings: `595` single-role assertions + `29` multi-role assertions across `CARBON_SOURCE`, `NITROGEN_SOURCE`, `MINERAL_SOURCE`, `TRACE_ELEMENT`, `VITAMIN_SOURCE`, `AMINO_ACID_SOURCE`, `ELECTRON_ACCEPTOR`, `ELECTRON_DONOR`, `GROWTH_FACTOR`, `COFACTOR_PROVIDER`, `SELECTIVE_AGENT`, `ANTIBIOTIC`, and `DEFINED_COMPONENT`).
-- **Native Structured Review Bundles**:
-  - `reviews/structured/20261011T183500Z-mim-semantic-review-20260921-active-findings/review.yaml` (`finding_id: mim-20261011-183500-role-evidence-primary`)
-  - `624` individual bundles in `reviews/structured/20261017T083000Z-*/review.yaml`
-- **Disposition**: Requires source-backed primary literature citations (`doi`/`pmid`) or recipe-specific functional validation; tracked in `reports/semantic_review_20260921/resolution/finding-dispositions.tsv` under `#718`.
+### 2. `mim-c01-s04-f002` — Calcium nitrate correction-receipt identity text (`CHEBI:86159`) [RESOLVED]
 
-### 2.4 `mim-c01-s04-f005` — Secondary Physicochemical Role Assertions Lacking Literature Citations (`29` Mapped Records)
-- **Status**: `open` (`carried_from: mim-c01-s04-f005`)
-- **Tracked Issue**: [https://github.com/CultureBotAI/MediaIngredientMech/issues/718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718)
-- **Target Scope**: `29` mapped records (`29` active findings: `17` single-role assertions + `12` multi-role assertions across `BUFFER`, `CHELATOR`, `PH_INDICATOR`, `REDOX_INDICATOR`, `REDUCING_AGENT`, `SURFACTANT`, `SOLIDIFYING_AGENT`, `CRYOPROTECTANT`, `OSMOPROTECTANT`, and `SOLVENT`).
-- **Native Structured Review Bundles**:
-  - `reviews/structured/20261011T183500Z-mim-semantic-review-20260921-active-findings/review.yaml` (`finding_id: mim-20261011-183500-role-evidence-physicochemical`)
-  - `29` individual bundles in `reviews/structured/20261017T083000Z-*/review.yaml`
-- **Disposition**: Requires primary literature or standard media handbook citations (`doi`/`pmid`); tracked in `reports/semantic_review_20260921/resolution/finding-dispositions.tsv` under `#718`.
+- **Status:** `resolved` in Cycle 1 Stage 5 ([#922](https://github.com/CultureBotAI/MediaIngredientMech/issues/922))
+- **Target Record:** `data/ingredients/mapped/Ca_No32_X_4_H2o.yaml`
+- **Verification:** Successor structured review bundle `reviews/structured/20261021T120500Z-ca-no32-x-4-h2o/review.yaml` confirms `records[0].change` in `reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json` now accurately states `CHEBI:86159` (`calcium nitrate tetrahydrate`) with `verdict: pass_with_limitations`, `native_verdict: mapping_status=MAPPED; open=0; deferred=0; resolved=1`, `findings[0].status: resolved` (`rec-f-b6fa9d9b4f15850a`), and `0` open findings. Not carried forward in `carry_forward_ids`.
 
-### 2.5 `mim-c01-s04-f006` — Unmapped/Ambiguous Identity, Preparation Form, & Complex Parent Scope (`262` Records, `266` Findings)
-- **Status**: `open` (`carried_from: mim-c01-s04-f006`)
-- **Tracked Issue**: [https://github.com/CultureBotAI/MediaIngredientMech/issues/718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718)
-- **Target Scope**: `262` records (`266` active findings: `261` unmapped identity/grounding findings across `260` `UNMAPPED` records + `1` `MAPPED` record, `4` complex-parent formulation scope findings, and `1` `AMBIGUOUS` formulation scope finding on `data/ingredients/unmapped/PYGS.yaml`).
-- **Native Structured Review Bundles**:
-  - `reviews/structured/20261011T183500Z-mim-semantic-review-20260921-active-findings/review.yaml` (`finding_id: mim-20261011-183500-unmapped-identity-scope`)
-  - `262` individual bundles in `reviews/structured/20261017T083000Z-*/review.yaml`
-- **Disposition**: Requires upstream recipe verification, authoritative registry grounding, or explicit complex mixture decomposition; tracked under `#718`.
+### 3. `mim-c01-s04-f003` — Non-monotonic `curation_history` timestamp order across 19 mapped ingredient records
 
-### 2.6 `mim-c01-s04-f007` — Context-Dependent Exported Synonym/CAS Token Scope & Component Source Scope (`31` Records, `31` Findings)
-- **Status**: `open` (`carried_from: mim-c01-s04-f007`)
-- **Tracked Issues**: [https://github.com/CultureBotAI/MediaIngredientMech/issues/718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) and [https://github.com/CultureBotAI/MediaIngredientMech/issues/861](https://github.com/CultureBotAI/MediaIngredientMech/issues/861)
-- **Target Scope**: `31` records (`31` active findings: `17` context-dependent nomenclature/token scope findings on mapped records, `13` component assertion source-scope findings on stock/solution records, and `1` CAS alias verification finding on `data/ingredients/mapped/Furaltadone.yaml`).
-- **Native Structured Review Bundles**:
-  - `reviews/structured/20261011T183500Z-mim-semantic-review-20260921-active-findings/review.yaml` (`finding_id: mim-20261011-183500-synonym-component-scope`)
-  - `31` individual bundles in `reviews/structured/20261017T083000Z-*/review.yaml`
-- **Disposition**: Requires upstream CultureMech/TOGO/MediaDive recipe context verification and coordinated SSSOM/component receipt updates; tracked under `#718` and `#861`.
+- **Status:** `open` (carried forward from `mim-c01-s04-f003`)
+- **Tracked In:** [#923](https://github.com/CultureBotAI/MediaIngredientMech/issues/923)
+- **Category / Severity:** `provenance` / `minor`
+- **Field Path:** `curation_history`
+- **Target Records (19):**
+  1. `data/ingredients/mapped/(R)-amygdalin.yaml` — `reviews/structured/20261017T083000Z-r-amygdalin/review.yaml` (`rec-f-1b5c835b0071446e`)
+  2. `data/ingredients/mapped/(R)-lactate.yaml` — `reviews/structured/20261017T083000Z-r-lactate/review.yaml` (`rec-f-d55db516999a041d`)
+  3. `data/ingredients/mapped/(R)-malic_Acid.yaml` — `reviews/structured/20261017T083000Z-r-malic-acid/review.yaml` (`rec-f-fbadd7724d0161a3`)
+  4. `data/ingredients/mapped/(S)-azetidine-2-carboxylic_Acid.yaml` — `reviews/structured/20261017T083000Z-s-azetidine-2-carboxylic-acid/review.yaml` (`rec-f-586cd124536bc61a`)
+  5. `data/ingredients/mapped/(S)-mandelic_Acid.yaml` — `reviews/structured/20261017T083000Z-s-mandelic-acid/review.yaml` (`rec-f-2430dd6d12832bea`)
+  6. `data/ingredients/mapped/1-methylphenanthrene.yaml` — `reviews/structured/20261017T083000Z-1-methylphenanthrene/review.yaml` (`rec-f-8724f3e14c641797`)
+  7. `data/ingredients/mapped/2-aminobenzoate.yaml` — `reviews/structured/20261017T083000Z-2-aminobenzoate/review.yaml` (`rec-f-aef200984b1f0476`)
+  8. `data/ingredients/mapped/2-aminopentanoic_Acid.yaml` — `reviews/structured/20261017T083000Z-2-aminopentanoic-acid/review.yaml` (`rec-f-7f671c54445b7c91`)
+  9. `data/ingredients/mapped/2-dehydro-D-gluconate.yaml` — `reviews/structured/20261017T083000Z-2-dehydro-d-gluconate/review.yaml` (`rec-f-df1e4f6c68d71909`)
+  10. `data/ingredients/mapped/2-deoxyadenosine.yaml` — `reviews/structured/20261017T083000Z-2-deoxyadenosine/review.yaml` (`rec-f-0e7210521e16e8f4`)
+  11. `data/ingredients/mapped/2-dichloroethane.yaml` — `reviews/structured/20261017T083000Z-2-dichloroethane/review.yaml` (`rec-f-ed7078c6b49d144b`)
+  12. `data/ingredients/mapped/2-naphthyl_Dihydrogen_Phosphate.yaml` — `reviews/structured/20261017T083000Z-2-naphthyl-dihydrogen-phosphate/review.yaml` (`rec-f-cd6b4c06175bc72f`)
+  13. `data/ingredients/mapped/2-naphthyl_Tetradecanoate.yaml` — `reviews/structured/20261017T083000Z-2-naphthyl-tetradecanoate/review.yaml` (`rec-f-470e7c790a4e8b31`)
+  14. `data/ingredients/mapped/2-oxobutanoate.yaml` — `reviews/structured/20261017T083000Z-2-oxobutanoate/review.yaml` (`rec-f-53d647fe2cab0af6`)
+  15. `data/ingredients/mapped/2-oxopentanoate.yaml` — `reviews/structured/20261017T083000Z-2-oxopentanoate/review.yaml` (`rec-f-3ef56bb048245b59`)
+  16. `data/ingredients/mapped/3-aminobutyrate.yaml` — `reviews/structured/20261017T083000Z-3-aminobutyrate/review.yaml` (`rec-f-e196a530e349e691`)
+  17. `data/ingredients/mapped/3-dehydro-D-gluconate.yaml` — `reviews/structured/20261017T083000Z-3-dehydro-d-gluconate/review.yaml` (`rec-f-2bcff34b33539abc`)
+  18. `data/ingredients/mapped/3-hydroxybenzoate.yaml` — `reviews/structured/20261017T083000Z-3-hydroxybenzoate/review.yaml` (`rec-f-0f9fc988bb20137c`)
+  19. `data/ingredients/mapped/3-trehalosamine.yaml` — `reviews/structured/20261017T083000Z-3-trehalosamine/review.yaml` (`rec-f-eba9703c056213b5`)
+- **Observation & Carry-Forward Basis:** Imported `CurationEvent` entries in `curation_history` appear out of chronological order (`timestamp` decreases between consecutive events due to historical merge append order). All `19` affected records are byte-bound in `reports/sssom_completion_20260921/review.json` (`17` `SUPPORTED` + `2` `WITHHOLD`, with `5` also in `reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json`) and `reports/semantic_review_20260921/resolution/current-review.json`, requiring coordinated re-review and receipt refresh under `src/mediaingredientmech/record_refresh.py`.
+
+### 4. `mim-c01-s04-f004` — Prediction-only or empty primary nutritional/cellular role support across 624 mapped records
+
+- **Status:** `open` (carried forward from `mim-c01-s04-f004`)
+- **Tracked In:** [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718)
+- **Category / Severity:** `evidence` / `major`
+- **Field Paths:** `nutritional_roles[*]`, `cellular_roles[*]`
+- **Sub-cohorts (624 findings across 624 mapped records):**
+  - `595` single-role prediction-only findings (`Reassess prediction-only role support: <term>`), e.g.:
+    - `data/ingredients/mapped/1-aminocyclopropane-1-carboxylate.yaml` (`reviews/structured/20261017T083000Z-1-aminocyclopropane-1-carboxylate/review.yaml`, `rec-f-cd99e5dd2fa64062`)
+    - `data/ingredients/mapped/1-Kestose.yaml` (`reviews/structured/20261017T083000Z-1-kestose/review.yaml`, `rec-f-9445b49fdf863d47`)
+    - `data/ingredients/mapped/14-B-D-Galactobiose.yaml` (`reviews/structured/20261017T083000Z-14-b-d-galactobiose/review.yaml`, `rec-f-457506125732ca52`)
+  - `29` multi-role prediction-only or empty-evidence findings (`Reassess prediction-only or empty role support: <term>`), e.g.:
+    - `data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml` (`reviews/structured/20261017T083000Z-a-ketoglutaric-acid-disodium-salt-hydrate/review.yaml`, `rec-f-role-97df33f7b4c5ae1c`)
+    - `data/ingredients/mapped/Beef_Extract.yaml` (`reviews/structured/20261017T083000Z-beef-extract/review.yaml`, `rec-f-role-da942f09736a0b84`)
+    - `data/ingredients/mapped/Mgso4_X_7_H2o.yaml` (`reviews/structured/20261017T083000Z-mgso4-x-7-h2o/review.yaml`, `rec-f-role-93db3b16772e96e9`)
+- **Observation:** Primary `nutritional_roles` or `cellular_roles` entries rely solely on `COMPUTATIONAL_PREDICTION` (`evidence: []` or heuristic notes) without organism- or recipe-backed `Citation` objects (`doi` / `pmid`). Full per-record inventory is indexed in `reviews/reconciliation/20261011T023739Z-all-mim/current-findings.tsv` and `reviews/structured/20261017T083000Z-*/review.yaml`.
+
+### 5. `mim-c01-s04-f005` — Prediction-only or empty secondary physicochemical role support across 29 mapped records
+
+- **Status:** `open` (carried forward from `mim-c01-s04-f005`)
+- **Tracked In:** [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718)
+- **Category / Severity:** `evidence` / `minor`
+- **Field Path:** `physicochemical_roles[*]`
+- **Sub-cohorts (29 findings across 29 mapped records):**
+  - `17` single-role physicochemical findings (`data/ingredients/mapped/Ampicillin_Sodium_Salt.yaml`, `data/ingredients/mapped/Citric_Acidh2o.yaml`, `data/ingredients/mapped/Colistin_Sulfate_Salt.yaml`, `data/ingredients/mapped/D-_-lyxose.yaml`, `data/ingredients/mapped/D-Sucrose.yaml`, `data/ingredients/mapped/Edta_Acid_Form.yaml`, `data/ingredients/mapped/Edta_Chelating_Agent.yaml`, `data/ingredients/mapped/Glycylglycine.yaml`, `data/ingredients/mapped/Α-lipoic_Acid.yaml`, `data/ingredients/mapped/M-inositol.yaml`, `data/ingredients/mapped/Mnso4_X_1_H2o.yaml`, `data/ingredients/mapped/Na2-edta_X_2_H2o.yaml`, `data/ingredients/mapped/Na2s2o4.yaml`, `data/ingredients/mapped/Niso4_X_6_H2o.yaml`, `data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml`, `data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml`, `data/ingredients/mapped/Thioctic_Acid.yaml`).
+  - `12` multi-role physicochemical findings (`data/ingredients/mapped/Aces.yaml`, `data/ingredients/mapped/Acetate_Carbon_Source.yaml`, `data/ingredients/mapped/Ammonium_Chloride_Nitrogen_Source.yaml`, `data/ingredients/mapped/Calcium_D-Pantothenate.yaml`, `data/ingredients/mapped/Glucose_2.yaml`, `data/ingredients/mapped/Glycerol_2.yaml`, `data/ingredients/mapped/L-cysteine_Hydrochloride_Monohydrate.yaml`, `data/ingredients/mapped/Maltose_2.yaml`, `data/ingredients/mapped/Mgso47h2o_2.yaml`, `data/ingredients/mapped/Mgso47h2o.yaml`, `data/ingredients/mapped/Sodium_Acetate.yaml`, `data/ingredients/mapped/Sodium_L-lactate.yaml`).
+
+### 6. `mim-c01-s04-f006` — Unresolved exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (266 findings)
+
+- **Status:** `open` (carried forward from `mim-c01-s04-f006`)
+- **Tracked In:** [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718)
+- **Category / Severity:** `identity` & `grounding` / `major`
+- **Field Paths:** `mapping_status`, `ontology_id`, `preferred_term`
+- **Sub-cohorts (266 findings across 262 records; 4 unmapped records carry both an unresolved-identity finding and an unmapped-parent-scope finding):**
+  - `261` unmapped/ambiguous ingredient records under `data/ingredients/unmapped/*.yaml` (`Unresolved exact identity or preparation: <term>`, e.g., `data/ingredients/unmapped/2-Carene-3-One.yaml`, `data/ingredients/unmapped/2-methyladeninyl_Cobamide.yaml`).
+  - `4` unmapped complex parent-scope findings on records under `data/ingredients/unmapped/*.yaml`:
+    - `data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml` (`reviews/structured/20261017T083000Z-inorganic-salts-starch-agar/review.yaml`, `rec-f-db0057fd92fe4a5e`)
+    - `data/ingredients/unmapped/Iron_As_Fecl3_In_Edta.yaml` (`reviews/structured/20261017T083000Z-iron-as-fecl3-in-edta/review.yaml`, `rec-f-a82fd6f60ae904bd`)
+    - `data/ingredients/unmapped/Khayasin_C.yaml` (`reviews/structured/20261017T083000Z-khayasin-c/review.yaml`, `rec-f-63745f40d17b8fdf`)
+    - `data/ingredients/unmapped/Xyloglucan_Heptaoctanona_Saccharides.yaml` (`reviews/structured/20261017T083000Z-xyloglucan-heptaoctanona-saccharides/review.yaml`, `rec-f-3369303f7d065baa`)
+  - `1` ambiguous formulation abbreviation finding on a mapped record:
+    - `data/ingredients/mapped/PYGS.yaml` (`reviews/structured/20261017T083000Z-pygs/review.yaml`, `rec-f-8c2aaaf16e546640`)
+
+### 7. `mim-c01-s04-f007` — Context-dependent exported synonym/CAS token scope and component source-scope adjudication across 31 records
+
+- **Status:** `open` (carried forward from `mim-c01-s04-f007`)
+- **Tracked In:** [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718), [#861](https://github.com/CultureBotAI/MediaIngredientMech/issues/861)
+- **Category / Severity:** `nomenclature` (`major`, 17), `representation` (`major`, 13), `identity` (`minor`, 1)
+- **Field Paths:** `synonyms`, `SSSOM.other`, `occurrence_statistics`, `chemical_properties.cas_rn`
+- **Sub-cohorts (31 findings):**
+  - `17` `nomenclature` findings (`Adjudicate source scope of exported tokens`): `data/ingredients/mapped/4-vinylphenol.yaml`, `data/ingredients/mapped/Artificial_seawater.yaml`, `data/ingredients/mapped/Desulfovibrio_Trace_Elements.yaml`, `data/ingredients/mapped/DL_Vitamins.yaml`, `data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml`, `data/ingredients/mapped/Mineral_Solution_See_Medium_No_976.yaml`, `data/ingredients/mapped/Modified_Trace_Vitamins.yaml`, `data/ingredients/mapped/Peptone.yaml`, `data/ingredients/mapped/Potassium_Phosphate_Buffer.yaml`, `data/ingredients/mapped/Riboflavin.yaml`, `data/ingredients/mapped/Sludge_fluid.yaml`, `data/ingredients/mapped/Soil_Extract.yaml`, `data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml`, `data/ingredients/mapped/Trace_Metal_Mix_A5.yaml`, `data/ingredients/mapped/Trace_Mineral_Solution.yaml`, `data/ingredients/mapped/Trace_Minerals.yaml`, `data/ingredients/mapped/Yeast_Extract.yaml`.
+  - `13` `representation` findings (`Reassess component source scope`): `data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml`, `data/ingredients/mapped/Modified_Cooked_Meat_Medium.yaml`, `data/ingredients/mapped/PY-cellobiose.yaml`, `data/ingredients/mapped/PY-fructose.yaml`, `data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml`, `data/ingredients/mapped/PY-maltose.yaml`, `data/ingredients/mapped/PY-pectin.yaml`, `data/ingredients/mapped/PYEG.yaml`, `data/ingredients/mapped/PYG-002_Tween_80.yaml`, `data/ingredients/mapped/PYG_Rumen_Fluid.yaml`, `data/ingredients/mapped/PYG.yaml`, `data/ingredients/mapped/PYGS.yaml`, `data/ingredients/mapped/TYGVS_Glucose.yaml`.
+  - `1` `identity` finding (`Verify retained Furaltadone CAS alias`): `data/ingredients/mapped/Furaltadone_Hydrochloride.yaml` (`reviews/structured/20261017T083000Z-furaltadone-hydrochloride/review.yaml`, `rec-f-a7e06cacf823b6f9`).
