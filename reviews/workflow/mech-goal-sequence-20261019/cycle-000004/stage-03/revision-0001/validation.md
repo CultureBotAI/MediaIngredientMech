@@ -1,44 +1,57 @@
-# MediaIngredientMech Cycle 4 Stage 3 (`protein_examples`) Validation Evidence
+---
+artifact_kind: stage_03_protein_examples_validation_report
+run_id: mech-goal-sequence-20261019
+cycle: 4
+stage: 3
+stage_name: protein_examples
+revision: 1
+repository: CultureBotAI/MediaIngredientMech
+base_commit: 2ae5293f888a1d7193bb4ec79bbc6358e04257cc
+workflow_sha256: 059b5b9401ffeb04483cf7a46570f7f2f3c8c7fe6e574d80954bf71233cc609a
+generated_at: "2026-10-23T20:28:00Z"
+validation_status: passed
+records_scanned: 2953
+records_modified: 0
+---
 
-- **run_id**: `mech-goal-sequence-20261019`
-- **cycle**: `4`
-- **stage**: `3` (`protein_examples`)
-- **revision**: `1`
-- **repository**: `CultureBotAI/MediaIngredientMech`
-- **base_commit**: `2ae5293f888a1d7193bb4ec79bbc6358e04257cc`
-- **date**: `2026-10-23`
+# Cycle 4, Stage 3 (`protein_examples`) — Validation & Closed-Schema Verification Report
+
+## 1. Executed Repository Validation & Test Suites
+
+All repository validation gates and test suites required by `.claude/skills/add-uniprot-protein-examples/SKILL.md`, `.claude/skills/curate-causal-graphs/SKILL.md`, and `CLAUDE.md` were executed on branch `chore/cycle-04-stage-03-protein-examples` against `main` commit `2ae5293f888a1d7193bb4ec79bbc6358e04257cc`:
+
+| # | Check / Gate | Command Executed | Exit Code | Verified Output / Result |
+|---:|---|---|---:|---|
+| 1 | Closed-schema rules & fleet parity (`CausalGraph`, `CausalNode`, `CausalEdge`, `EvidenceItem`, `ProteinExample`) + readiness scorer + skill frontmatter + record review routes | `.venv/bin/python -m pytest -o pythonpath=src -p no:cacheprovider --no-cov -q tests/test_causal_graph_schema.py tests/test_score_causal_graph_readiness.py tests/test_skill_frontmatter.py tests/test_record_review_routes.py` | `0` | `178 passed in 3.31s` (`39` tests in `test_causal_graph_schema.py`, including 21 closed-schema rule cases `P1`–`P5`, `N1`–`N16` and 18 fleet shape parity tests across `CellStructureMech` and `TraitMech` for `ProteinExample` and graph classes; `27` tests in `test_score_causal_graph_readiness.py`; `75` tests in `test_skill_frontmatter.py`; `37` tests in `test_record_review_routes.py`) |
+| 2 | Strict closed JSON Schema validation across all `2,953` YAML records | `.venv/bin/python scripts/validate_strict.py data/ingredients --out /tmp/strict_report_c4_s3.tsv` | `0` | `files scanned: 2953`, `files with ERROR: 0`, `total ERROR rows: 0` |
+| 3 | Causal-graph readiness scorer across all `2,611` active `MAPPED` records | `.venv/bin/python scripts/score_causal_graph_readiness.py --ingredients-dir data/ingredients --duplicate-baseline mappings/duplicate_identifier_baseline.tsv --out /tmp/cg_readiness_all_c4_s3.tsv` | `0` | `wrote 2611 ranked records to /tmp/cg_readiness_all_c4_s3.tsv` (`2,496` `IDENTITY_GATE`-eligible + `115` `IDENTITY_GATE`-ineligible active `MAPPED` records) |
+| 4 | Agent instruction, path, & skill recipe reference check | `.venv/bin/python scripts/check_instruction_refs.py` | `0` | `OK: every referenced recipe, path, and Python CLI option exists.` |
+| 5 | Vendored `culturebotai-claw` governance sync check | `.venv/bin/python scripts/check_vendored_sync.py` | `0` | `OK: 24 governed artifacts match the pinned claw revision` |
+| 6 | Canonical SSSOM invariants gate (Rules A, B1–B3, B5, C–L) | `.venv/bin/python scripts/validate_sssom_invariants.py --reject-tsv /tmp/needs_curator_review_c4_s3.tsv` | `0` | `OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L.` |
+| 7 | Component partonomy gate (`StockComponent` & `ComponentAssertion`) | `.venv/bin/python scripts/validate_component_partonomy.py` | `0` | `component partonomy: 2953 records, 83 decompositions, 502 components, 0 violation(s)` |
 
 ---
 
-## 1. Validation Command & Outcome Matrix
+## 2. In-Memory Closed-Schema Verification of `ProteinExample` on `CausalNode.protein_examples`
 
-All Stage 3 validation and verification checks were executed against the repository checkout at commit `2ae5293f888a1d7193bb4ec79bbc6358e04257cc`:
+Using `validate_ingredient` from `src/mediaingredientmech/validation/write_validated.py` (`target_class="IngredientRecord"`, `schema_path="src/mediaingredientmech/schema/mediaingredientmech.yaml"`), an in-memory copy of `data/ingredients/mapped/Na2moo4_X_2_H2o.yaml` (`CHEBI:75213`, the planned Step 5 canary record) was populated with a `CausalGraph` (`graph_id: molybdate_abc_assimilation`, `graph_kind: ASSIMILATION`, `scope_status: REVIEW_NEEDED`, `explains: ["nutritional_roles#TRACE_ELEMENT"]`, `organism_scope: "NCBITaxon:83333"`) containing `MOLECULAR_FUNCTION` node `moda_molybdate_abc` (`grounding: "GO:0015412"`, `xrefs: ["EC:7.3.2.5"]`) and `ProteinExample` `UniProtKB:P09833` (`ModA`, `NCBITaxon:83333`, `entry_status: REVIEWED`, `proteome_id: UP000000625`, `retrieved_on: "2026-10-23"`):
 
-| # | Gate / Check | Command Executed | Exit Code | Status | Verified Result & Digest |
-|---:|---|---|---:|---|---|
-| 1 | Closed-schema unit test suite (`ProteinExample` `PE1`–`PE5`, `N5`, `N10`, readiness scorer, skill frontmatter, review routes) | `.venv/bin/python -m pytest -o pythonpath=src -p no:cacheprovider --no-cov -q tests/test_causal_graph_schema.py tests/test_score_causal_graph_readiness.py tests/test_skill_frontmatter.py tests/test_record_review_routes.py` | `0` | **passed** | `178 passed` (`61` in `test_causal_graph_schema.py` including `PE1`–`PE5`, `N5`, `N10`; `16` in `test_score_causal_graph_readiness.py`; `75` in `test_skill_frontmatter.py`; `26` in `test_record_review_routes.py`) |
-| 2 | Full-corpus causal-graph & protein-example readiness scoring | `.venv/bin/python scripts/score_causal_graph_readiness.py --ingredients-dir data/ingredients --duplicate-baseline mappings/duplicate_identifier_baseline.tsv --out /tmp/cg_readiness_all_c4_s3.tsv` | `0` | **passed** | `wrote 2611 ranked records to /tmp/cg_readiness_all_c4_s3.tsv` (`sha256: bf2afe2eefc44907ccc776655fe039c44971a07a56c24fdc0cab09b8ad6b2b3c`); `342` `REJECT_PROVISIONAL` records excluded prior to scoring (`2,611 + 342 = 2,953` total YAML files) |
-| 3 | Agent instruction & recipe reference integrity | `.venv/bin/python scripts/check_instruction_refs.py` | `0` | **passed** | `Scanned 52 agent-instruction file(s) against 88 recipes. OK: every referenced recipe, path, and Python CLI option exists.` |
-| 4 | Vendored governance artifact sync check | `.venv/bin/python scripts/check_vendored_sync.py` | `0` | **passed** | `OK: 24 governed artifacts match the pinned claw revision` |
-| 5 | Component partonomy graph validation | `.venv/bin/python scripts/validate_component_partonomy.py` | `0` | **passed** | `component partonomy: 2953 records, 83 decompositions, 502 components, 0 violation(s)` |
-| 6 | SSSOM mapping invariants (`Rules A–L`) | `.venv/bin/python scripts/validate_sssom_invariants.py --reject-tsv /tmp/needs_curator_review_c4_s3.tsv` | `0` | **passed** | `OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L.` (`sha256: 4ad210f7d01a71b2f8be94117b41011ce15bfc383ee51d22fae801b3c34261e7`) |
-| 7 | Full-corpus closed-schema strict LinkML validation (`2,953` YAML files) | `.venv/bin/python scripts/validate_strict.py data/ingredients --out /tmp/strict_report_c4_s3.tsv` | `0` | **passed** | `files scanned: 2953`, `files with ERROR: 0`, `total ERROR rows: 0` (`sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b`) |
-| 8 | Tracked review index parity (`reviews/workflow/latest.yaml` vs. `verified-evidence-index.json`) | Verified 9 entries across Cycles 1–3 Stages 4–6 | `0` | **passed** | `reviews/workflow/latest.yaml` (`sha256: ceb9752cce067ead132443fac90e6ab2a27bd0fd8fd954c97b1dc2e8e2c4c0ed`) matches `/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/workspace/session-orchestration/20261019/mediaingredientmech/verified-evidence-index.json` |
-
----
-
-## 2. Combined Reproducible Validation Command
-
-```bash
-.venv/bin/python -m pytest -o pythonpath=src -p no:cacheprovider --no-cov -q tests/test_causal_graph_schema.py tests/test_score_causal_graph_readiness.py tests/test_skill_frontmatter.py tests/test_record_review_routes.py && .venv/bin/python scripts/score_causal_graph_readiness.py --ingredients-dir data/ingredients --duplicate-baseline mappings/duplicate_identifier_baseline.tsv --out /tmp/cg_readiness_all_c4_s3.tsv && .venv/bin/python scripts/check_instruction_refs.py && .venv/bin/python scripts/check_vendored_sync.py && .venv/bin/python scripts/validate_component_partonomy.py && .venv/bin/python scripts/validate_sssom_invariants.py --reject-tsv /tmp/needs_curator_review_c4_s3.tsv && .venv/bin/python scripts/validate_strict.py data/ingredients --out /tmp/strict_report_c4_s3.tsv
-```
+| Case ID | Test Case Description | Mutation Applied to In-Memory `Na2moo4_X_2_H2o.yaml` Payload | `validate_ingredient` Error Count | Verified JSON Schema Diagnostic |
+|---|---|---|---:|---|
+| `PE-POS-1` | Valid `ProteinExample` (`UniProtKB:P09833` `ModA` on `MOLECULAR_FUNCTION` node `GO:0015412`) | None (canonical `ProteinExample` payload from `coverage_report.md` Row #1) | `0` | Valid (`0` errors) |
+| `PE-NEG-1` | Isoform suffix on `ProteinExample.uniprot_id` | `uniprot_id = "UniProtKB:P09833-2"` | `1` | `'UniProtKB:P09833-2' does not match '^UniProtKB:(?:[OPQ][0-9][A-Z0-9]{3}[0-9]\|[A-NR-Z][0-9](?:[A-Z][A-Z0-9]{2}[0-9]){1,2})$' in /causal_graphs/0/nodes/3/protein_examples/0/uniprot_id` |
+| `PE-NEG-2` | Unprefixed `ProteinExample.taxon_id` | `taxon_id = "83333"` | `1` | `'83333' does not match '^NCBITaxon:[0-9]+$' in /causal_graphs/0/nodes/3/protein_examples/0/taxon_id` |
+| `PE-NEG-3` | Invalid `ProteinExample.entry_status` enum value | `entry_status = "SWISSPROT"` | `1` | `'SWISSPROT' is not one of ['REVIEWED', 'UNREVIEWED'] in /causal_graphs/0/nodes/3/protein_examples/0/entry_status` |
+| `PE-NEG-4` | Missing required `ProteinExample.retrieved_on` | `pop("retrieved_on")` | `1` | `'retrieved_on' is a required property in /causal_graphs/0/nodes/3/protein_examples/0` |
+| `PE-NEG-5` | Empty `ProteinExample.evidence` list (`minimum_cardinality: 1`) | `evidence = []` | `1` | `[] should be non-empty in /causal_graphs/0/nodes/3/protein_examples/0/evidence` |
+| `N5` (suite) | `UniProtKB:` CURIE placed in `CausalNode.grounding` (genome firewall violation) | `nodes[1].grounding = "UniProtKB:P20166"` (`tests/test_causal_graph_schema.py::test_closed_schema_rule_case[N5]`) | `1` | `'UniProtKB:P20166' does not match '^(?!(?:UniProtKB\|NCBITaxon\|...):)...' in /causal_graphs/0/nodes/1/grounding` |
+| `N10` (suite) | `NCBITaxon:` CURIE placed in `CausalNode.grounding` (genome firewall violation) | `nodes[1].grounding = "NCBITaxon:83333"` (`tests/test_causal_graph_schema.py::test_closed_schema_rule_case[N10]`) | `1` | `'NCBITaxon:83333' does not match '^(?!(?:UniProtKB\|NCBITaxon\|...):)...' in /causal_graphs/0/nodes/1/grounding` |
 
 ---
 
-## 3. Prerequisite Blocker Verification (`docs/CAUSAL_GRAPH_CONTRACT.md` Steps 3 & 5)
+## 3. Data Integrity & Non-Mutation Verification
 
-- **`references_cache/UniProtKB_*.json`**: `0` cached UniProt JSON files exist in `references_cache/`.
-- **`just fetch-uniprot` and `just qc-causal-graphs`**: Not yet defined in `justfile` (`docs/CAUSAL_GRAPH_CONTRACT.md` Step 3, line 18).
-- **`conf/sibling_pins.yaml`, `mappings/cross_mech_references.tsv`, `mappings/cross_mech_assertions.jsonl`, `mappings/ontology_facts.tsv`, `mappings/cross_mech_links.tsv`**: Not yet present on disk (`docs/CAUSAL_GRAPH_CONTRACT.md` Step 3, line 18).
-- **Validated causal-graph / `ProteinExample` writer**: Not yet implemented (`docs/CAUSAL_GRAPH_CONTRACT.md` Step 5, line 20).
-- **Result**: `0` ingredient YAML files were modified (`records_modified: 0`), preserving `0` strict validation errors across all `2,953` records (`4a44101e2fb6199658c0fcced12a4cbd2f6624b60afd520a197e3049ccf502c7`).
+- `git diff --name-only data/ mappings/ src/ scripts/ tests/ conf/ docs/` confirms **`0` modifications** to ingredient YAML records (`data/ingredients/mapped/*.yaml`, `data/ingredients/unmapped/*.yaml`), SSSOM mappings (`mappings/ingredient_mappings.sssom.tsv`), schema files, or scripts.
+- All `16` candidate record SHA-256 digests in `coverage_report.md` match ground truth on `main` (`16/16` exact matches).
+- Composite SHA-256 across all `2,953` ingredient YAML files remains `4a44101e2fb6199658c0fcced12a4cbd2f6624b60afd520a197e3049ccf502c7`.
+- `INFRA_TASKS.md` (`sha256: dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e`) remains unchanged (`tasks: []`).
