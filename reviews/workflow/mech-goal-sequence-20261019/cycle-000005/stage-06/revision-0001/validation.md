@@ -1,47 +1,54 @@
-# MediaIngredientMech Cycle 5 Stage 6 (`infrastructure`) — Validation Report
+# Cycle 5 Stage 6 Infrastructure Validation Report
 
-## 1. Frozen Scope & Artifact Integrity Verification
+- **Run ID:** `mech-goal-sequence-20261019`
+- **Repository:** `CultureBotAI/MediaIngredientMech` (`mediaingredientmech`)
+- **Cycle / Stage / Revision:** Cycle `5`, Stage `6` (`infrastructure`), Revision `1`
+- **Source Revision (`main`):** `c8c9666ccfce390661a454990560c9c80bd5e0ac`
+- **Supervisor-Frozen Scope Cutoff (`scope_frozen_at`):** `2026-10-25T13:27:20Z`
 
-- **Supervisor-Frozen Scope Timestamp (`scope_frozen_at`):** `2026-10-25T13:27:20Z`
-- **`INFRA_TASKS.md` SHA-256:** `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e`
-- **`infra_snapshot.md` SHA-256:** `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` (exact match with supervisor-frozen `infra_scope` in `status.json`)
-- **`implementation_plan.md` SHA-256:** `8893d2118c8de33c04283f6148af6d45208c052a438d67902a241f3e7b725afb`
-- **`reviews/workflow/latest.yaml` SHA-256:** `0d360da57b7f3a6f50768465ebe421e7d47c9b732a4ad7de28c0c60590ec51e1` (synchronized with `verified-evidence-index.json`, 14 verified entries through Cycle 5 Stage 5 PR #951)
+## 1. Artifact Integrity & Frozen Scope Verification
 
-## 2. Validation Commands Executed
+| Artifact | Path | SHA-256 | Verification |
+| --- | --- | --- | --- |
+| `infra_snapshot` | `reviews/workflow/mech-goal-sequence-20261019/cycle-000005/stage-06/revision-0001/infra_snapshot.md` | `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` | Matches `status.json` `infra_scope.sha256` and `INFRA_TASKS.md` byte-for-byte (`tasks: []`). |
+| `implementation_plan` | `reviews/workflow/mech-goal-sequence-20261019/cycle-000005/stage-06/revision-0001/implementation_plan.md` | `1b3a2ebe01de5f688d77ebb832cc3276cb5d7b29dbf8c21f5dd10e5a439293eb` | Documents explicit empty-intake plan (`0` tasks in frozen scope) and `reviews/workflow/latest.yaml` sync. |
+| `latest_index` | `reviews/workflow/latest.yaml` | `0d360da57b7f3a6f50768465ebe421e7d47c9b732a4ad7de28c0c60590ec51e1` | Synchronized from supervisor `verified-evidence-index.json` (`authority: verified_closure`, 14 verified entries: Cycle 1 Stages 4, 5, 6; Cycle 2 Stages 4, 5, 6; Cycle 3 Stages 4, 5, 6; Cycle 4 Stages 4, 5, 6; and Cycle 5 Stages 4, 5). |
+| `infra_tasks` | `INFRA_TASKS.md` | `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` | Validated against `InfrastructureNotebook` schema (`schema_version: '1.0.0'`, `tasks: []`). |
 
-1. **Workflow Profile & Extension Validation:**
+## 2. Validation Gates Executed
+
+1. **Workflow Profile & Parent Schema Validation:**
    ```bash
-   PYTHONPATH=/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/src \
-     /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python \
+   PYTHONPATH="/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/src" \
+     "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python" \
      -m kg_microbe_workflows validate \
-     --profile /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/workflow/mech-workflow.yaml
+     --profile workflow/mech-workflow.yaml \
+     --parent workflow/parent/mech-cycle.yaml \
+     --schema workflow/parent/workflow.yaml
    ```
-   - **Status:** `passed` (`ok: true`, `stage_order: [1, 2, 3, 4, 5, 6]`)
+   - **Result:** `PASS` (`059b5b9401ffeb04483cf7a46570f7f2f3c8c7fe6e574d80954bf71233cc609a`)
 
-2. **Stage 6 Evidence Manifest Validation:**
+2. **Stage 6 GoalEvidence Manifest & Notebook Scope Validation:**
    ```bash
-   PYTHONPATH=/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/src \
-     /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python \
+   PYTHONPATH="/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/src" \
+     "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python" \
      -m kg_microbe_workflows validate-evidence \
+     reviews/workflow/mech-goal-sequence-20261019/cycle-000005/stage-06/revision-0001/evidence.yaml \
      --root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech \
      --required-output infra_snapshot \
      --required-output implementation_plan \
-     --required-output validation \
-     /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/reviews/workflow/mech-goal-sequence-20261019/cycle-000005/stage-06/revision-0001/evidence.yaml
+     --required-output validation
    ```
-   - **Status:** `passed` (`Evidence valid`)
+   - **Result:** `PASS`
 
-3. **Repository Instruction Reference & Record Review Gate Checks:**
+3. **Repository Instruction Reference Gate:**
    ```bash
-   uv run python scripts/check_instruction_refs.py
-   uv run python scripts/record_review.py check --base main
+   .venv/bin/python scripts/check_instruction_refs.py --severity error
    ```
-   - **Status:** `passed` (`OK: checked instruction file(s)` and `OK: no YAML changes under data/ requiring record review`)
+   - **Result:** `PASS` (`Scanned 52 agent-instruction file(s) against 88 recipes. OK: every referenced recipe, path, and Python CLI option exists.`)
 
-## 3. Summary of Outcomes
-
-- **Frozen Task Count:** `0` (`tasks: []`)
-- **Implemented Tasks:** `0`
-- **Deferred / Carried-Forward Tasks:** `0` (`carry_forward_ids: []`)
-- **Stage Outcome:** `no_findings`
+4. **Record Review Route & Diff Gate:**
+   ```bash
+   .venv/bin/python scripts/record_review.py check --base main
+   ```
+   - **Result:** `PASS` (`{"repository": "culturebotai/MediaIngredientMech", "valid_reviews": 976, "coverage": "declared_scopes_only"}`)
