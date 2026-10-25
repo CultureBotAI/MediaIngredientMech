@@ -327,6 +327,18 @@
             font-size: 0.72rem;
             letter-spacing: 0.03em;
         }
+        .site-footer {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem 4.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        .site-footer a {
+            color: var(--primary);
+        }
 
         /* ---- Reduced-motion guard ---- */
         @media (prefers-reduced-motion: reduce){
@@ -426,7 +438,7 @@
                         <li><strong>Unmapped Ingredients:</strong> Complex mixtures (e.g., "Allen Medium", "Biotin Vitamin Solution") without single chemical entity embeddings - shown with synthetic embeddings near cluster center</li>
                         <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes)</li>
                         <li><strong>Hover:</strong> View detailed metadata tooltip</li>
-                        <li><strong>Click:</strong> View detailed information (future: link to detail page)</li>
+                        <li><strong>Click, Enter or Space:</strong> Select a point to show it in the panel under the page header, with a link to that ingredient's record page</li>
                         <li><strong>Zoom/Pan:</strong> Use mouse wheel to zoom, click and drag to pan</li>
                         <li><strong>Search:</strong> Type to highlight matching ingredients</li>
                     </ul>
@@ -840,6 +852,9 @@
             }
         });
     </script>
+    <footer class="site-footer">
+        <p>Project data: <a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE-DATA">CC BY 4.0</a>. Code: <a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE-CODE">BSD-3-Clause</a>. Third-party source material keeps its own terms (<a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE">licence scope</a>).</p>
+    </footer>
     <script src="theme-toggle.js"></script>
 <script src="map-record-navigation.js"></script>
 </body>

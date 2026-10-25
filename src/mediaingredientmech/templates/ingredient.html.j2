@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ path_up }}style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <nav class="breadcrumb" aria-label="Record navigation">
   <a href="{{ path_up }}../index.html">Home</a> &middot;
@@ -54,6 +55,15 @@
     {% endif %}
     <a class="badge" href="{{ path_up }}../text_map.html?q={{ ingredient.identifier | urlencode }}">View in Text Map &rarr;</a>
   </div>
+  {% set status_meaning = enum_meanings.MappingStatusEnum.get(ingredient.mapping_status) %}
+  {% set quality_meaning = enum_meanings.MappingQualityEnum.get(om.mapping_quality) %}
+  {% if status_meaning or quality_meaning %}
+  <p class="status-meaning muted small">
+    {% if status_meaning %}<a href="{{ path_up }}../schema/enumerations-MappingStatusEnum.html">{{ ingredient.mapping_status }}</a>: {{ status_meaning }}{% endif %}
+    {% if status_meaning and quality_meaning %}&middot;{% endif %}
+    {% if quality_meaning %}<a href="{{ path_up }}../schema/enumerations-MappingQualityEnum.html">{{ om.mapping_quality }}</a>: {{ quality_meaning }}{% endif %}
+  </p>
+  {% endif %}
 </header>
 
 <main id="main-content">
@@ -88,7 +98,7 @@
       <code>{{ ingredient.preferred_term }}</code>
       <strong>&rarr; [HAS_COMPONENT] &rarr;</strong>
       <span>{{ comp.component_name or comp.preferred_term or 'Component' }}</span>
-      {% if comp.component_id %} (<code>{{ comp.component_id }}</code>){% endif %}
+      {% if comp.component_id %} (<code>{{ comp.component_id|linked_text }}</code>){% endif %}
     </li>
     {% endfor %}
     {% for role_item in (ingredient.nutritional_roles or []) %}
@@ -119,10 +129,7 @@
 <section id="cross-mech-links">
   <h2>Cross-Mech &amp; External Links</h2>
   <ul>
-    <li><a href="https://culturebotai.github.io/CultureMech/app.html?q={{ ingredient.preferred_term | urlencode }}">Search CultureMech media recipes for {{ ingredient.preferred_term }}</a></li>
-    <li><a href="https://culturebotai.github.io/PathwayMech/?q={{ ingredient.preferred_term | urlencode }}">Search PathwayMech pathways for {{ ingredient.preferred_term }}</a></li>
-    <li><a href="https://culturebotai.github.io/CMMMech/?q={{ ingredient.preferred_term | urlencode }}">Search CMMMech chemical/metabolic mechanisms for {{ ingredient.preferred_term }}</a></li>
-    <li><a href="https://culturebotai.github.io/NaturalProductMech/?q={{ ingredient.preferred_term | urlencode }}">Search NaturalProductMech for {{ ingredient.preferred_term }}</a></li>
+    <li><a href="{{ sibling_search.CultureMech }}{{ ingredient.preferred_term | urlencode }}">Search CultureMech media recipes for {{ ingredient.preferred_term }}</a></li>
     {% set ident_url = curie_to_url(ingredient.identifier) %}
     {% if ident_url %}
     <li><a href="{{ ident_url }}" rel="noreferrer">External Ontology Record ({{ ingredient.identifier }})</a></li>
@@ -132,13 +139,17 @@
 
 </main>
 <footer>
-  <small class="muted">
-    Generated {{ generated_at }} from
-    <code>{{ source_path }}</code> &middot;
+  <p class="record-source">
+    Source record: <a href="{{ source_url }}"><code>{{ source_path }}</code></a>
+    (<a href="{{ source_raw_url }}">raw YAML</a>) &middot;
+    <a href="{{ feedback_url }}">Report a problem with this record</a>
+  </p>
+  <p>
+    Generated {{ generated_at }} &middot;
     <a href="{{ path_up }}../schema/index.html">Schema</a> &middot;
-    <a href="{{ path_up }}build.json">Build Manifest</a> &middot;
-    Licensed under CC BY 4.0 (data) / BSD-3-Clause (code)
-  </small>
+    <a href="{{ path_up }}build.json">Build Manifest</a>
+  </p>
+  <p class="licence">{{ licence_html }}</p>
 </footer>
 
 <script src="{{ path_up }}../theme-toggle.js"></script>

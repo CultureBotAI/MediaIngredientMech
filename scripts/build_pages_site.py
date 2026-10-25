@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import browser_export  # noqa: E402
 
 from mediaingredientmech import render_ingredient_pages as render  # noqa: E402
+from mediaingredientmech import records_export  # noqa: E402
 from mediaingredientmech.schema_site import write_schema_site  # noqa: E402
 
 PACKAGE_ROOT = Path(render.__file__).resolve().parent
@@ -130,6 +131,10 @@ def check_site(repo: Path, output: Path) -> None:
         p.relative_to(output).as_posix() for p in (output / "schema").glob("*.html")
     )
     required_assets.add("map-record-navigation.js")
+    required_assets.update(
+        f"{records_export.DOWNLOADS_DIR}/{name}"
+        for name in (records_export.EXPORT_NAME, records_export.MANIFEST_NAME)
+    )
     if not (output / "schema" / "index.html").exists():
         raise ValueError("Missing rendered schema reference")
     if set(receipt["assets"]) != required_assets:
@@ -137,6 +142,7 @@ def check_site(repo: Path, output: Path) -> None:
     for name, checksum in receipt["assets"].items():
         if digest(output / name) != checksum:
             raise ValueError(f"Changed generated site asset: {name}")
+    records_export.check_records_export(output, set(sources))
 
 
 def build_site(repo: Path, output: Path) -> int:
@@ -182,6 +188,11 @@ def build_site(repo: Path, output: Path) -> int:
         schema_assets = write_schema_site(
             PACKAGE_ROOT / "schema" / "mediaingredientmech.yaml", stage / "schema"
         )
+        # Complete records for bulk download: built here at deploy time and
+        # receipted below, never committed (docs/index.html links them).
+        download_assets = records_export.write_records_export(
+            repo / "data" / "ingredients", files, stage
+        )
         (stage / ".nojekyll").touch()
         optional_assets = tuple(
             name for name in ("404.html", "text_map.html") if (repo / "docs" / name).exists()
@@ -200,7 +211,12 @@ def build_site(repo: Path, output: Path) -> int:
             "records": records,
             "assets": {
                 name: digest(stage / name)
-                for name in (*asset_names, "map-record-navigation.js", *schema_assets)
+                for name in (
+                    *asset_names,
+                    "map-record-navigation.js",
+                    *schema_assets,
+                    *download_assets,
+                )
             },
         }
         (index / "build.json").write_text(json.dumps(receipt, indent=2) + "\n")

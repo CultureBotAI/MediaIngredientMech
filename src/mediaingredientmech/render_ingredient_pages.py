@@ -17,14 +17,16 @@ import argparse
 import datetime as _dt
 import re
 import sys
+from functools import lru_cache
 from html import escape
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlencode
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
+from mediaingredientmech.curie import mim_curie_for_stem
 from mediaingredientmech.micro_source import source_term
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -32,6 +34,30 @@ DEFAULT_INGREDIENTS = REPO_ROOT / "data" / "ingredients"
 DEFAULT_OUT_DIR = REPO_ROOT / "pages" / "ingredient"
 DEFAULT_INDEX_DIR = REPO_ROOT / "pages"
 TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
+SCHEMA_PATH = Path(__file__).resolve().parent / "schema" / "mediaingredientmech.yaml"
+
+GITHUB_REPO = "https://github.com/CultureBotAI/MediaIngredientMech"
+SITE_ROOT = "https://culturebotai.github.io/MediaIngredientMech/"
+
+# Worded from the repository's own LICENSE, which scopes LICENSE-DATA and
+# LICENSE-CODE; every page type carries this line, the hand-written docs/
+# pages included (tests/test_unified_site_features.py holds them to it).
+LICENCE_HTML = Markup(
+    'Project data: <a href="{repo}/blob/main/LICENSE-DATA">CC BY 4.0</a>. '
+    'Code: <a href="{repo}/blob/main/LICENSE-CODE">BSD-3-Clause</a>. '
+    "Third-party source material keeps its own terms "
+    '(<a href="{repo}/blob/main/LICENSE">licence scope</a>).'
+).format(repo=GITHUB_REPO)
+
+# Sibling searches a record page offers, by verified route: each loads with
+# HTTP 200 and restores ?q= (fleet route table, 2026-10-25). A label search is
+# kept only where the sibling answers ingredient names. For 30 randomly drawn
+# preferred terms, CultureMech found recipes for every term whose record
+# occurs in media; PathwayMech matched 0, CMMMech 1 and NaturalProductMech 4,
+# so those three searches were dropped rather than left as dead ends.
+SIBLING_SEARCH = {
+    "CultureMech": "https://culturebotai.github.io/CultureMech/app/browser.html?q=",
+}
 
 
 _CURIE_RESOLVERS = {
@@ -87,12 +113,33 @@ def reference_url(value: str) -> str:
     return curie_to_url(value)
 
 
+_CLOSERS = {")": "(", "]": "[", "}": "{"}
+
+
+def _trim_reference(token: str) -> str:
+    """Drop the sentence punctuation and unbalanced closing bracket ending a token.
+
+    A URL or DOI runs to the next space, so "(doi:10.1/x)" would otherwise link
+    "10.1/x)" and 404 (#889). A closer that has its opener inside the token,
+    as in a Wikipedia-style "Foo_(bar)" URL, belongs to it and is kept.
+    """
+    while token:
+        last = token[-1]
+        if last in ".,;:!?'\"" or (
+            last in _CLOSERS and token.count(last) > token.count(_CLOSERS[last])
+        ):
+            token = token[:-1]
+            continue
+        break
+    return token
+
+
 def linked_text(value: object) -> Markup:
     text = str(value)
     parts = []
     offset = 0
     for match in _REFERENCE.finditer(text):
-        candidate = match.group().rstrip(".,;")
+        candidate = _trim_reference(match.group())
         parts.append(escape(text[offset : match.start()]))
         url = reference_url(candidate)
         parts.append(
@@ -105,6 +152,18 @@ def linked_text(value: object) -> Markup:
     return Markup("".join(parts))
 
 
+def _field_value(key: object, value: object) -> Markup:
+    # A pmid slot holds a bare PubMed number, which has no reference shape for
+    # linked_text to find; its key says what it is (#888).
+    if str(key).lower() == "pmid":
+        number = str(value).strip()
+        if re.fullmatch(r"\d{1,9}", number):
+            return Markup(
+                '<a href="https://pubmed.ncbi.nlm.nih.gov/{0}/" rel="noreferrer">{0}</a>'
+            ).format(number)
+    return structured_value(value)
+
+
 def structured_value(value: object) -> Markup:
     """Render curated structures without Python repr or lost evidence fields."""
     if isinstance(value, dict):
@@ -114,7 +173,7 @@ def structured_value(value: object) -> Markup:
                 "<dt>"
                 + escape(str(k).replace("_", " ").capitalize())
                 + "</dt><dd>"
-                + str(structured_value(v))
+                + str(_field_value(k, v))
                 + "</dd>"
                 for k, v in value.items()
                 if v is not None
@@ -142,6 +201,25 @@ def slug_for(ingredient: dict, source_path: Path) -> str:
     return base
 
 
+@lru_cache(maxsize=1)
+def enum_meanings() -> dict[str, dict[str, str]]:
+    """The schema's own description of each mapping status and quality value.
+
+    Record pages explain a status by quoting these rather than restating what
+    a status means, so the explanation cannot drift from the definition.
+    """
+    from linkml_runtime.utils.schemaview import SchemaView
+
+    view = SchemaView(str(SCHEMA_PATH))
+    return {
+        name: {
+            value: (permissible.description or "").strip()
+            for value, permissible in (view.get_enum(name).permissible_values or {}).items()
+        }
+        for name in ("MappingStatusEnum", "MappingQualityEnum")
+    }
+
+
 def make_env() -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
@@ -150,9 +228,41 @@ def make_env() -> Environment:
         lstrip_blocks=True,
     )
     env.globals["curie_to_url"] = curie_to_url
+    env.globals["licence_html"] = LICENCE_HTML
+    env.globals["sibling_search"] = SIBLING_SEARCH
+    env.globals["enum_meanings"] = enum_meanings()
     env.filters["linked_text"] = linked_text
     env.filters["structured"] = structured_value
     return env
+
+
+def source_links(source_path: Path, slug: str, preferred_term: str) -> dict[str, str]:
+    """GitHub routes for one record: its YAML, the raw file, and a prefilled issue.
+
+    The issue names the record by its stable `MIM:` id (identifiers are shared
+    between records) and carries the page and file, so a report needs no
+    further lookup. There is deliberately no edit link: a per-record edit must
+    also be synchronized into data/curated/ and logged in curation_history,
+    which GitHub's web editor does neither of.
+    """
+    path = source_path.relative_to(REPO_ROOT).as_posix()
+    record_id = mim_curie_for_stem(source_path.stem)
+    issue = urlencode(
+        {
+            "title": f"Record feedback: {preferred_term} ({record_id})",
+            "body": (
+                f"Record page: {SITE_ROOT}records/ingredient/{slug}.html\n"
+                f"Source file: {path}\n\nWhat is wrong or missing?\n"
+            ),
+        },
+        quote_via=quote,
+    )
+    return {
+        "source_path": path,
+        "source_url": f"{GITHUB_REPO}/blob/main/{quote(path)}",
+        "source_raw_url": f"{GITHUB_REPO}/raw/main/{quote(path)}",
+        "feedback_url": f"{GITHUB_REPO}/issues/new?{issue}",
+    }
 
 
 def render_one(
@@ -178,7 +288,7 @@ def render_one(
     depth = len(slug.split("/"))
     html = template.render(
         ingredient=ingredient,
-        source_path=str(source_path.relative_to(REPO_ROOT)),
+        **source_links(source_path, slug, str(ingredient.get("preferred_term") or slug)),
         generated_at=_dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
         path_up=("../" * depth),  # path back to pages/ root
     )
@@ -197,6 +307,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <nav aria-label="Site navigation"><a href="../index.html">Home</a> &middot; <a href="../browser.html">Browse ingredients</a> &middot; <a href="../text_map.html">Text Map</a> &middot; <a href="../ingredient_umap.html">KG PaCMAP</a> &middot; <a href="../ingredient_graph.html">Graph Layout</a> &middot; <a href="../schema/index.html">Schema</a> &middot; <a href="../index.html#downloads">Downloads</a> &middot; <a href="https://culturebotai.github.io/mechs/">All Mech projects</a></nav>
 <header>
 <form class="record-search" action="../browser.html" method="get" role="search">
@@ -207,8 +318,8 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <h1>MIM — Ingredient index</h1>
 <p class="muted">{count:,} ingredients, generated {generated_at}.</p>
 </header>
-<main>{by_prefix}</main>
-<footer>Generated {generated_at} &middot; <a href="build.json">Build provenance (SHA-256 manifest)</a> &middot; <a href="../schema/index.html">LinkML Schema</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></footer>
+<main id="main-content">{by_prefix}</main>
+<footer>Generated {generated_at} &middot; <a href="build.json">Build provenance (SHA-256 manifest)</a> &middot; <a href="../schema/index.html">LinkML Schema</a><br>{licence}</footer>
 <script src="../theme-toggle.js"></script>
 </body>
 </html>
@@ -239,6 +350,7 @@ def write_index(out_dir: Path, all_records: list[dict]) -> None:
     sections = "\n".join(_section(p, items) for p, items in sorted(by_prefix.items()))
     rows_total = sum(len(v) for v in by_prefix.values())
     html = INDEX_TEMPLATE.format(
+        licence=LICENCE_HTML,
         count=rows_total,
         generated_at=_dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
         by_prefix='<nav aria-label="Identifier groups"><ul>'

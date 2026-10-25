@@ -50,6 +50,12 @@
             padding: 2rem;
             text-align: center;
         }
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) header {
+                background: linear-gradient(135deg, #241d33, #14121c);
+                color: #ece9f4;
+            }
+        }
         :root[data-theme="dark"] header {
             background: linear-gradient(135deg, #241d33, #14121c);
             color: #ece9f4;
@@ -101,6 +107,19 @@
             font-weight: 600;
             font-size: 0.9rem;
         }
+        .skip-link {
+            position: absolute;
+            left: 0.5rem;
+            top: -4rem;
+            z-index: 3000;
+            padding: 0.5rem 0.9rem;
+            border-radius: 6px;
+            background: var(--surface);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .skip-link:focus { top: 0.5rem; }
+        footer a { color: var(--primary); }
         footer {
             margin-top: auto;
             text-align: center;
@@ -111,6 +130,7 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header>
         <div style="font-size:1.4rem;font-weight:700;">MediaIngredientMech</div>
         <p>Curated Media Ingredients &amp; Ontology Mappings</p>
@@ -118,25 +138,25 @@
     <main id="main-content">
         <h1>404 — Page Not Found</h1>
         <p>The ingredient record or page you requested could not be found. Search the ingredient catalog below or use one of the recovery links.</p>
-        <form class="search-form" action="browser.html" method="get" role="search">
+        <form class="search-form" action="https://culturebotai.github.io/MediaIngredientMech/browser.html" method="get" role="search">
             <input type="search" name="q" placeholder="Search ingredients, synonyms, or ontology IDs..." aria-label="Search ingredients">
             <button type="submit">Search Catalog</button>
         </form>
         <nav class="recovery-links" aria-label="Recovery navigation">
-            <a href="index.html">Home</a>
-            <a href="browser.html">Ingredient Browser</a>
-            <a href="text_map.html">Text Map</a>
-            <a href="ingredient_umap.html">KG PaCMAP</a>
-            <a href="ingredient_graph.html">Graph Layout</a>
-            <a href="records/index.html">Record Index</a>
-            <a href="schema/index.html">Schema Docs</a>
-            <a href="index.html#downloads">Data Downloads</a>
+            <a href="https://culturebotai.github.io/MediaIngredientMech/index.html">Home</a>
+            <a href="https://culturebotai.github.io/MediaIngredientMech/browser.html">Ingredient Browser</a>
+            <a href="https://culturebotai.github.io/MediaIngredientMech/text_map.html">Text Map</a>
+            <a href="https://culturebotai.github.io/MediaIngredientMech/ingredient_umap.html">KG PaCMAP</a>
+            <a href="https://culturebotai.github.io/MediaIngredientMech/ingredient_graph.html">Graph Layout</a>
+            <a href="https://culturebotai.github.io/MediaIngredientMech/records/index.html">Record Index</a>
+            <a href="https://culturebotai.github.io/MediaIngredientMech/schema/index.html">Schema Docs</a>
+            <a href="https://culturebotai.github.io/MediaIngredientMech/index.html#downloads">Data Downloads</a>
             <a href="https://culturebotai.github.io/mechs/">All Mech Projects</a>
         </nav>
     </main>
     <footer>
-        MediaIngredientMech &middot; Licensed under CC BY 4.0 (data) / BSD-3-Clause (code)
+        MediaIngredientMech &middot; Project data: <a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE-DATA">CC BY 4.0</a>. Code: <a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE-CODE">BSD-3-Clause</a>. Third-party source material keeps its own terms (<a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE">licence scope</a>).
     </footer>
-    <script src="theme-toggle.js"></script>
+    <script src="https://culturebotai.github.io/MediaIngredientMech/theme-toggle.js"></script>
 </body>
 </html>

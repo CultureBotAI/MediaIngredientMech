@@ -14,7 +14,7 @@
 <tr>
   <td>{{ s.synonym_text }}</td>
   <td><span class="badge small">{{ s.synonym_type or '' }}</span></td>
-  <td class="muted">{{ s.source or '' }}</td>
+  <td class="muted">{% if s.source %}{{ s.source|linked_text }}{% endif %}</td>
   <td class="right">{{ s.occurrence_count or '' }}</td>
 </tr>
 {% endfor %}
@@ -35,7 +35,7 @@
 <tr>
   <td>{{ s.synonym_text }}</td>
   <td><span class="badge small">{{ s.synonym_type or '' }}</span></td>
-  <td class="muted">{{ s.source or '' }}</td>
+  <td class="muted">{% if s.source %}{{ s.source|linked_text }}{% endif %}</td>
   <td class="right">{{ s.occurrence_count or '' }}</td>
 </tr>
 {% endfor %}

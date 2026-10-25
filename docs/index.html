@@ -59,6 +59,12 @@
   footer .fam{margin:.2em 0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center}
   footer .fam a{margin:0 .45em;white-space:nowrap}
   footer strong{color:var(--ink)}
+  .skip-link{position:absolute;left:8px;top:-60px;z-index:3000;padding:8px 14px;border-radius:8px;
+             background:var(--card);color:var(--accent);font-weight:600}
+  .skip-link:focus{top:8px}
+  .count-status{margin:18px auto 0;max-width:640px;color:var(--ink)}
+  footer .about{max-width:760px;margin:.6em auto}
+  button.btn{border:0;cursor:pointer;font-family:inherit;margin-left:.4em}
   /* ---- Dark theme (OS default; superseded by the toggle) ---- */
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -110,6 +116,7 @@
 </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="hero">
     <nav class="top-nav" aria-label="Primary navigation">
       <a class="active" href="index.html">Home</a>
@@ -132,9 +139,10 @@
     </form>
     <div class="stats">
       <a class="stat" href="browser.html"><b id="ingredient-count">…</b><span>ingredients</span></a>
-      <a class="stat" href="browser.html#status=MAPPED"><b id="mapped-count">…</b><span>mapped</span></a>
-      <a class="stat" href="browser.html#status=MAPPED"><b id="coverage-count">…</b><span>coverage</span></a>
+      <a class="stat" href="browser.html?status=MAPPED"><b id="mapped-count">…</b><span>mapped</span></a>
+      <a class="stat" href="browser.html?status=MAPPED"><b id="coverage-count">…</b><span>coverage</span></a>
     </div>
+    <p class="count-status" id="count-status" role="alert" hidden></p>
   </header>
   <main class="wrap" id="main-content">
     <div class="cards">
@@ -165,6 +173,13 @@
         </div>
         <h2>Data downloads &amp; exports</h2>
         <p>
+          Complete records:
+          <a href="downloads/mediaingredientmech-records.jsonl.gz" download>all ingredient records (JSON Lines, gzip)</a>,
+          every YAML record in full, one per line, generated from <code>data/ingredients/</code> when the site
+          is deployed; its record count and SHA-256 are in
+          <a href="downloads/manifest.json">manifest.json</a>.
+        </p>
+        <p>
           Bulk exports:
           <a href="data/mapped_ingredients.csv" download>Mapped CSV</a> &middot;
           <a href="data/unmapped_ingredients.csv" download>Unmapped CSV</a> &middot;
@@ -181,7 +196,9 @@
     </div>
   </main>
   <footer>
-    <p><a href="https://culturebotai.github.io/mechs/">All Mech projects</a> &middot; <a href="schema/index.html">Schema Reference</a> &middot; <a href="records/build.json">Build Provenance (SHA-256 Receipt)</a> &middot; Data: CC BY 4.0 / Code: BSD-3-Clause</p>
+    <p><a href="https://culturebotai.github.io/mechs/">All Mech projects</a> &middot; <a href="schema/index.html">Schema Reference</a> &middot; <a href="records/build.json">Build Provenance (SHA-256 Receipt)</a></p>
+    <p class="about">How records are made: MediaIngredientMech is an &ldquo;LLM-assisted curation system for media ingredient ontology mappings&rdquo; that &ldquo;manages the ingredient records aggregated from media recipes in CultureMech&rdquo; (<a href="https://github.com/CultureBotAI/MediaIngredientMech#readme">README</a>). Each record page quotes the schema&rsquo;s definition of its mapping status and lists its curation events, marking those that record LLM assistance.</p>
+    <p class="licence">Project data: <a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE-DATA">CC BY 4.0</a>. Code: <a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE-CODE">BSD-3-Clause</a>. Third-party source material keeps its own terms (<a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE">licence scope</a>).</p>
     <div class="fam"><strong>KG-Microbe Mechs:</strong>
       <a href="https://culturebotai.github.io/CultureMech/">CultureMech</a>&middot;<strong>MediaIngredientMech</strong>&middot;<a href="https://culturebotai.github.io/CommunityMech/">CommunityMech</a>&middot;<a href="https://culturebotai.github.io/TraitMech/">TraitMech</a>&middot;<a href="https://culturebotai.github.io/proteintraitsmech/">ProteinTraitsMech</a>
     </div>
@@ -192,21 +209,38 @@
   <script>
     // export-browser regenerates this catalog during `just build-docs`; derive
     // landing-page counts from record statuses so the page cannot go stale.
-    fetch("data/ingredients.json")
-      .then((response) => response.json())
-      .then((catalog) => {
-        const records = catalog.ingredients || [];
-        const mapped = records.filter((record) => record.mapping_status === "MAPPED").length;
-        const coverage = records.length ? Math.round((mapped / records.length) * 100) : 0;
-        document.getElementById("ingredient-count").textContent = records.length.toLocaleString();
-        document.getElementById("mapped-count").textContent = mapped.toLocaleString();
-        document.getElementById("coverage-count").textContent = `${coverage}%`;
-      })
-      .catch(() => {
-        for (const id of ["ingredient-count", "mapped-count", "coverage-count"]) {
-          document.getElementById(id).textContent = "—";
-        }
-      });
+    // A failed load says so and offers a retry, rather than leaving bare dashes.
+    function loadCounts() {
+      const notice = document.getElementById("count-status");
+      notice.hidden = true;
+      notice.replaceChildren();
+      fetch("data/ingredients.json")
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .then((catalog) => {
+          const records = catalog.ingredients || [];
+          const mapped = records.filter((record) => record.mapping_status === "MAPPED").length;
+          const coverage = records.length ? Math.round((mapped / records.length) * 100) : 0;
+          document.getElementById("ingredient-count").textContent = records.length.toLocaleString();
+          document.getElementById("mapped-count").textContent = mapped.toLocaleString();
+          document.getElementById("coverage-count").textContent = `${coverage}%`;
+        })
+        .catch(() => {
+          for (const id of ["ingredient-count", "mapped-count", "coverage-count"]) {
+            document.getElementById(id).textContent = "—";
+          }
+          const retry = document.createElement("button");
+          retry.type = "button";
+          retry.className = "btn";
+          retry.textContent = "Retry";
+          retry.addEventListener("click", loadCounts);
+          notice.append("Counts unavailable: the ingredient catalog could not be loaded.", retry);
+          notice.hidden = false;
+        });
+    }
+    loadCounts();
   </script>
   <script src="theme-toggle.js"></script>
 </body>
