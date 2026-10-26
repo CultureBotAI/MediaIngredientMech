@@ -8,7 +8,7 @@
     {% if k == 'cas_rn' %}
       <a href="https://commonchemistry.cas.org/detail?cas_rn={{ v }}" rel="nofollow noreferrer">{{ v }}</a>
     {% else %}
-      {{ v }}
+      {{ v|linked_text }}
     {% endif %}
   </dd>
 {% endfor %}

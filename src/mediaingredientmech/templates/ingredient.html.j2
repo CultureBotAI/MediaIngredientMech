@@ -7,18 +7,30 @@
 <link rel="stylesheet" href="{{ path_up }}style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-<nav class="breadcrumb" aria-label="Record navigation">
+<nav class="site-nav" aria-label="Site navigation">
   <a href="{{ path_up }}../index.html">Home</a> &middot;
   <a href="{{ path_up }}../browser.html">Browse ingredients</a> &middot;
+  <a href="{{ path_up }}index.html">Record Index</a> &middot;
   <a href="{{ path_up }}../text_map.html">Text Map</a> &middot;
   <a href="{{ path_up }}../ingredient_umap.html">KG PaCMAP</a> &middot;
   <a href="{{ path_up }}../ingredient_graph.html">Graph Layout</a> &middot;
+  <a href="{{ path_up }}../app/discussions/index.html">Discussions</a> &middot;
   <a href="{{ path_up }}../schema/index.html">Schema</a> &middot;
   <a href="{{ path_up }}../index.html#downloads">Downloads</a> &middot;
-  <a href="https://culturebotai.github.io/mechs/">All Mech projects</a> &middot;
-  <a href="{{ path_up }}index.html">MIM</a> &rsaquo;
-  <span>{{ ingredient.identifier }}</span>
+  <a href="https://culturebotai.github.io/mechs/">All Mech projects</a>
+</nav>
+{# The trail's category is the record's mapping status: a subset of the listing. #}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ path_up }}../index.html">Home</a></li>
+    <li><a href="{{ path_up }}../browser.html">Ingredients</a></li>
+    {% if ingredient.mapping_status %}
+    <li><a href="{{ path_up }}../browser.html?status={{ ingredient.mapping_status | urlencode }}">{{ ingredient.mapping_status }}</a></li>
+    {% endif %}
+    <li><span aria-current="page">{{ ingredient.preferred_term }}</span></li>
+  </ol>
 </nav>
 
 <header>
@@ -54,6 +66,24 @@
     {% endif %}
     <a class="badge" href="{{ path_up }}../text_map.html?q={{ ingredient.identifier | urlencode }}">View in Text Map &rarr;</a>
   </div>
+  {% set status_meaning = status_meanings.get(ingredient.mapping_status) %}
+  {% set quality_meaning = quality_meanings.get(om.mapping_quality) %}
+  {% set history = ingredient.curation_history or [] %}
+  {% if status_meaning or quality_meaning or history %}
+  <details class="status-meaning small">
+    <summary>What this status means</summary>
+    {% if status_meaning %}<p><a href="{{ path_up }}../schema/enumerations-MappingStatusEnum.html">{{ ingredient.mapping_status }}</a>: {{ status_meaning }}</p>{% endif %}
+    {% if quality_meaning and om.mapping_quality in review_claims %}
+    {# The history names who made each change, not whether a person reviewed it. #}
+    <p><a href="{{ path_up }}../schema/enumerations-MappingQualityEnum.html">{{ om.mapping_quality }}</a>: the schema describes this value as &ldquo;{{ quality_meaning }}&rdquo;. This page cannot confirm that: the curation history records each curator as a username or system, and does not say whether a person reviewed the mapping.</p>
+    {% elif quality_meaning %}<p><a href="{{ path_up }}../schema/enumerations-MappingQualityEnum.html">{{ om.mapping_quality }}</a>: {{ quality_meaning }}</p>{% endif %}
+    {% if history %}
+    {% set curators = history | map(attribute='curator') | select | unique | list %}
+    {% set assisted = history | selectattr('llm_assisted') | list %}
+    <p>The <a href="#curation_history">curation history</a> lists {{ history|length }} event{{ 's' if history|length != 1 }} by {{ curators|length }} curator{{ 's' if curators|length != 1 }} ({{ curators|join(', ') }}); {{ assisted|length }} {{ 'is' if assisted|length == 1 else 'are' }} marked LLM-assisted.</p>
+    {% endif %}
+  </details>
+  {% endif %}
 </header>
 
 <main id="main-content">
@@ -88,7 +118,7 @@
       <code>{{ ingredient.preferred_term }}</code>
       <strong>&rarr; [HAS_COMPONENT] &rarr;</strong>
       <span>{{ comp.component_name or comp.preferred_term or 'Component' }}</span>
-      {% if comp.component_id %} (<code>{{ comp.component_id }}</code>){% endif %}
+      {% if comp.component_id %} (<code>{{ comp.component_id|linked_text }}</code>){% endif %}
     </li>
     {% endfor %}
     {% for role_item in (ingredient.nutritional_roles or []) %}
@@ -119,10 +149,7 @@
 <section id="cross-mech-links">
   <h2>Cross-Mech &amp; External Links</h2>
   <ul>
-    <li><a href="https://culturebotai.github.io/CultureMech/app.html?q={{ ingredient.preferred_term | urlencode }}">Search CultureMech media recipes for {{ ingredient.preferred_term }}</a></li>
-    <li><a href="https://culturebotai.github.io/PathwayMech/?q={{ ingredient.preferred_term | urlencode }}">Search PathwayMech pathways for {{ ingredient.preferred_term }}</a></li>
-    <li><a href="https://culturebotai.github.io/CMMMech/?q={{ ingredient.preferred_term | urlencode }}">Search CMMMech chemical/metabolic mechanisms for {{ ingredient.preferred_term }}</a></li>
-    <li><a href="https://culturebotai.github.io/NaturalProductMech/?q={{ ingredient.preferred_term | urlencode }}">Search NaturalProductMech for {{ ingredient.preferred_term }}</a></li>
+    <li><a href="{{ sibling_search.CultureMech }}{{ ingredient.preferred_term | urlencode }}">Search CultureMech media recipes for {{ ingredient.preferred_term }}</a></li>
     {% set ident_url = curie_to_url(ingredient.identifier) %}
     {% if ident_url %}
     <li><a href="{{ ident_url }}" rel="noreferrer">External Ontology Record ({{ ingredient.identifier }})</a></li>
@@ -132,13 +159,18 @@
 
 </main>
 <footer>
-  <small class="muted">
-    Generated {{ generated_at }} from
-    <code>{{ source_path }}</code> &middot;
+  <p class="record-source">
+    Source record: <a href="{{ source_url }}"><code>{{ source_path }}</code></a>
+    (<a href="{{ source_raw_url }}">raw YAML</a>) &middot;
+    <a href="{{ source_edit_url }}">Edit on GitHub</a> &middot;
+    <a href="{{ feedback_url }}">Report a problem with this record</a>
+  </p>
+  <p>
+    Generated {{ generated_at }} &middot;
     <a href="{{ path_up }}../schema/index.html">Schema</a> &middot;
-    <a href="{{ path_up }}build.json">Build Manifest</a> &middot;
-    Licensed under CC BY 4.0 (data) / BSD-3-Clause (code)
-  </small>
+    <a href="{{ path_up }}build.json">Build Manifest</a>
+  </p>
+  <p class="licence">{{ licence_html }}</p>
 </footer>
 
 <script src="{{ path_up }}../theme-toggle.js"></script>

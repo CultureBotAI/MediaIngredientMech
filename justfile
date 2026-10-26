@@ -836,3 +836,8 @@ embed:
 # Project text embeddings with PaCMAP + PCA and render docs/text_map.html
 embed-map: embed
     python3 scripts/embed_map.py
+
+# Re-render docs/text_map.html after a template change, from the committed
+# data/embeddings/corpus_map.json; no embedding or projection is recomputed.
+render-text-map:
+    uv run python scripts/embed_map.py --render-only
