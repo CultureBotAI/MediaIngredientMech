@@ -15,6 +15,7 @@ the record's stable ``MIM:`` id, the same one the browser catalog uses.
 from __future__ import annotations
 
 import argparse
+import datetime
 import gzip
 import hashlib
 import json
@@ -31,11 +32,20 @@ MANIFEST_NAME = "manifest.json"
 REPOSITORY = "https://github.com/CultureBotAI/MediaIngredientMech"
 
 
+def _json_value(value: object) -> str:
+    # YAML reads an unquoted timestamp or date as a datetime or date; JSON has
+    # neither, so it is written in ISO 8601, which is deterministic.
+    if isinstance(value, (datetime.date, datetime.datetime)):
+        return value.isoformat()
+    raise TypeError(f"{type(value).__name__} has no JSON form")
+
+
 def export_lines(ingredient_root: Path, sources: list[Path]) -> bytes:
     """Serialize every source record, sorted by its path under ingredient_root.
 
-    A value with no JSON form raises rather than being stringified: the file
-    claims to hold each record as written.
+    Dates and times are written in ISO 8601; any other value with no JSON form
+    raises rather than being stringified, since the file claims to hold each
+    record as written.
     """
     lines = []
     for source in sorted(sources, key=lambda p: p.relative_to(ingredient_root).as_posix()):
@@ -47,7 +57,15 @@ def export_lines(ingredient_root: Path, sources: list[Path]) -> bytes:
             "record_id": mim_curie_for_stem(source.stem),
             "record": record,
         }
-        lines.append(json.dumps(line, ensure_ascii=False, allow_nan=False, separators=(",", ":")))
+        lines.append(
+            json.dumps(
+                line,
+                ensure_ascii=False,
+                allow_nan=False,
+                separators=(",", ":"),
+                default=_json_value,
+            )
+        )
     return ("\n".join(lines) + "\n").encode("utf-8")
 
 

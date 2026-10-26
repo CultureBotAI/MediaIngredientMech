@@ -234,9 +234,10 @@ def enum_meanings() -> dict[str, dict[str, str]]:
 
 
 # Quality values whose schema description asserts human review ("human-verified",
-# "Manually curated by expert"). A record page never quotes those: curation
-# events name processes and agents rather than people, so no record's history
-# can show that a human reviewed it.
+# "Manually curated by expert"). A curation event records its curator as a
+# username or system, with no mark of who is a person or what was reviewed, so a
+# record page quotes these descriptions as the schema's and says the history
+# cannot confirm them, rather than asserting a review.
 HUMAN_REVIEW_QUALITIES = frozenset({"LLM_ASSISTED", "MANUAL_CURATION"})
 
 
@@ -252,11 +253,8 @@ def make_env() -> Environment:
     env.globals["sibling_search"] = SIBLING_SEARCH
     meanings = enum_meanings()
     env.globals["status_meanings"] = meanings["MappingStatusEnum"]
-    env.globals["quality_meanings"] = {
-        value: text
-        for value, text in meanings["MappingQualityEnum"].items()
-        if value not in HUMAN_REVIEW_QUALITIES
-    }
+    env.globals["quality_meanings"] = meanings["MappingQualityEnum"]
+    env.globals["review_claims"] = HUMAN_REVIEW_QUALITIES
     env.filters["linked_text"] = linked_text
     env.filters["structured"] = structured_value
     return env

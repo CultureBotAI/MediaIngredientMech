@@ -73,11 +73,14 @@
   <details class="status-meaning small">
     <summary>What this status means</summary>
     {% if status_meaning %}<p><a href="{{ path_up }}../schema/enumerations-MappingStatusEnum.html">{{ ingredient.mapping_status }}</a>: {{ status_meaning }}</p>{% endif %}
-    {% if quality_meaning %}<p><a href="{{ path_up }}../schema/enumerations-MappingQualityEnum.html">{{ om.mapping_quality }}</a>: {{ quality_meaning }}</p>{% endif %}
+    {% if quality_meaning and om.mapping_quality in review_claims %}
+    {# The history names who made each change, not whether a person reviewed it. #}
+    <p><a href="{{ path_up }}../schema/enumerations-MappingQualityEnum.html">{{ om.mapping_quality }}</a>: the schema describes this value as &ldquo;{{ quality_meaning }}&rdquo;. This page cannot confirm that: the curation history records each curator as a username or system, and does not say whether a person reviewed the mapping.</p>
+    {% elif quality_meaning %}<p><a href="{{ path_up }}../schema/enumerations-MappingQualityEnum.html">{{ om.mapping_quality }}</a>: {{ quality_meaning }}</p>{% endif %}
     {% if history %}
     {% set curators = history | map(attribute='curator') | select | unique | list %}
     {% set assisted = history | selectattr('llm_assisted') | list %}
-    <p>The <a href="#curation_history">curation history</a> lists {{ history|length }} event{{ 's' if history|length != 1 }} by {{ curators|length }} curator{{ 's' if curators|length != 1 }}; {{ assisted|length }} {{ 'is' if assisted|length == 1 else 'are' }} marked LLM-assisted.</p>
+    <p>The <a href="#curation_history">curation history</a> lists {{ history|length }} event{{ 's' if history|length != 1 }} by {{ curators|length }} curator{{ 's' if curators|length != 1 }} ({{ curators|join(', ') }}); {{ assisted|length }} {{ 'is' if assisted|length == 1 else 'are' }} marked LLM-assisted.</p>
     {% endif %}
   </details>
   {% endif %}

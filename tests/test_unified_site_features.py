@@ -341,19 +341,36 @@ def test_record_breadcrumb_trails_home_listing_status_and_record(tmp_path, monke
     assert '<nav class="site-nav" aria-label="Site navigation">' in page
 
 
-@pytest.mark.parametrize("quality", sorted(render.HUMAN_REVIEW_QUALITIES))
+def status_explanation(page: str) -> str:
+    disclosure = page.split('class="status-meaning', 1)[1].split("</details>", 1)[0]
+    return " ".join(visible_text(disclosure).split())
+
+
+# Literal values, not HUMAN_REVIEW_QUALITIES itself: emptying the set must fail, not skip.
+@pytest.mark.parametrize("quality", ["LLM_ASSISTED", "MANUAL_CURATION"])
 def test_status_explanation_never_claims_human_review(tmp_path, monkeypatch, quality):
+    assert quality in render.HUMAN_REVIEW_QUALITIES
     record = {
         **REFERENCED_RECORD,
         "ontology_mapping": {**REFERENCED_RECORD["ontology_mapping"], "mapping_quality": quality},
     }
-    page = render_record(tmp_path, monkeypatch, record)
-    explanation = page.split('class="status-meaning', 1)[1].split("</details>", 1)[0]
+    text = status_explanation(render_record(tmp_path, monkeypatch, record))
     claim = render.enum_meanings()["MappingQualityEnum"][quality]
-    assert claim and claim not in explanation
-    assert re.search(r"\b(human|expert)", visible_text(explanation), re.IGNORECASE) is None
-    # It still says what the record's own history records.
-    assert "lists 1 event by 1 curator; 0 are marked LLM-assisted" in " ".join(visible_text(explanation).split())
+    # The badge is explained: the schema's words, attributed to it, with the caveat.
+    assert claim and f"{quality}: the schema describes this value as “{claim}”. This page cannot confirm that" in text
+    assert f"{quality}: {claim}" not in text
+    # Outside that quotation, nothing speaks of a human or expert review.
+    assert re.search(r"\b(human|expert)", text.replace(f"“{claim}”", ""), re.IGNORECASE) is None
+
+
+def test_status_explanation_names_the_records_own_curators(tmp_path, monkeypatch):
+    history = [
+        {"timestamp": "2026-01-01T00:00:00Z", "curator": "manual", "action": "CREATED", "llm_assisted": False},
+        {"timestamp": "2026-01-02T00:00:00Z", "curator": "claude", "action": "MAPPED", "llm_assisted": True},
+        {"timestamp": "2026-01-03T00:00:00Z", "curator": "manual", "action": "ANNOTATED", "llm_assisted": False},
+    ]
+    text = status_explanation(render_record(tmp_path, monkeypatch, {**REFERENCED_RECORD, "curation_history": history}))
+    assert "lists 3 events by 2 curators (manual, claude); 1 is marked LLM-assisted" in text
 
 
 # ---------- cross_mech_links ----------
@@ -540,6 +557,27 @@ def test_bulk_download_bytes_do_not_depend_on_build_time(site_repo, tmp_path, mo
     records_export.write_records_export(ingredient_root, list(reversed(sources)), tmp_path / "second")
     for name in (records_export.EXPORT_NAME, records_export.MANIFEST_NAME):
         assert (tmp_path / "first/downloads" / name).read_bytes() == (tmp_path / "second/downloads" / name).read_bytes()
+
+
+def test_bulk_download_writes_unquoted_yaml_dates_as_iso_8601(tmp_path):
+    root = tmp_path / "ingredients"
+    (root / "mapped").mkdir(parents=True)
+    dated = root / "mapped" / "Dated.yaml"
+    dated.write_text(
+        "identifier: CHEBI:1\npreferred_term: Dated\nmapping_status: MAPPED\n"
+        "curation_history:\n- timestamp: 2026-01-02T03:04:05Z\n  curator: fixture\n  action: CREATED\n"
+        "chemical_properties:\n  retrieval_date: 2026-01-02\n"
+    )
+    payload = records_export.export_lines(root, [dated])
+    record = json.loads(payload)["record"]
+    assert record["curation_history"][0]["timestamp"] == "2026-01-02T03:04:05+00:00"
+    assert record["chemical_properties"]["retrieval_date"] == "2026-01-02"
+    assert records_export.export_lines(root, [dated]) == payload
+    # Any other value with no JSON form still fails the build instead of being stringified.
+    odd = root / "mapped" / "Odd.yaml"
+    odd.write_text("identifier: CHEBI:2\nvalues: !!set {a: null}\n")
+    with pytest.raises(TypeError, match="set has no JSON form"):
+        records_export.export_lines(root, [odd])
 
 
 def test_landing_downloads_card_links_the_deploy_time_export():
@@ -905,8 +943,11 @@ const points = [
   {url: 'records/ingredient/unmapped/Moved.html'},
   {url: 'records/ingredient/mapped/Gone.html'},
   {url: 'records/ingredient/mapped/Plain.html'},
+  // Embedded under the current page-name rule, then moved to mapped/.
+  {url: 'records/ingredient/unmapped/_-_-Renamed.html'},
 ];
 const rows = [
+  {source_file: 'mapped/(-)-Renamed.yaml', detail_page: 'records/ingredient/mapped/_-_-Renamed.html', mapping_status: 'MAPPED'},
   {source_file: 'mapped/(-)-anisomycin.yaml', detail_page: 'records/ingredient/mapped/_-_-anisomycin.html', mapping_status: 'MAPPED'},
   {source_file: 'mapped/Moved.yaml', detail_page: 'records/ingredient/mapped/Moved.html', mapping_status: 'MAPPED'},
   {source_file: 'mapped/Plain.yaml', detail_page: 'records/ingredient/mapped/Plain.html', mapping_status: 'MAPPED'},
@@ -928,8 +969,9 @@ def test_text_map_points_open_the_published_record_and_coverage_is_stated(tmp_pa
         "records/ingredient/mapped/Moved.html",  # curation moved the record
         "",  # no longer published: never linked
         "records/ingredient/mapped/Plain.html",
+        "records/ingredient/mapped/_-_-Renamed.html",  # current-rule name, moved record
     ]
-    assert (result["plotted"], result["total"], result["unpublished"]) == (3, 5, 1)
+    assert (result["plotted"], result["total"], result["unpublished"]) == (4, 6, 1)
     assert result["rejected"] == ["mapped/Dead.yaml"] and result["later"] == ["unmapped/New.yaml"]
 
 
@@ -1020,6 +1062,13 @@ def test_committed_discussion_index_matches_the_records(builder, tmp_path):
             ids = {str(d.get("discussion_id", "")) for d in yaml.safe_load(text)["discussions"]}
         pages[f"records/ingredient/{render.slug_for({}, source)}.html"] = ids
     assert builder.publish_discussions(ROOT, tmp_path, pages) == list(builder.DISCUSSION_FILES)
+
+
+def test_pages_redeploy_when_the_discussion_index_or_its_route_changes():
+    workflow = yaml.safe_load((ROOT / ".github/workflows/generate-pages.yaml").read_text(encoding="utf-8"))
+    paths = workflow.get("on", workflow.get(True))["push"]["paths"]
+    assert {"app/discussions/**", "conf/discussions_config.yaml"} <= set(paths)
+    assert workflow["permissions"]["contents"] == "read"
 
 
 def test_navigation_links_the_discussion_index():
