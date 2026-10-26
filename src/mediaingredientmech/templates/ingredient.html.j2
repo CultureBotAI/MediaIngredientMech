@@ -9,17 +9,28 @@
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<nav class="breadcrumb" aria-label="Record navigation">
+<nav class="site-nav" aria-label="Site navigation">
   <a href="{{ path_up }}../index.html">Home</a> &middot;
   <a href="{{ path_up }}../browser.html">Browse ingredients</a> &middot;
+  <a href="{{ path_up }}index.html">Record Index</a> &middot;
   <a href="{{ path_up }}../text_map.html">Text Map</a> &middot;
   <a href="{{ path_up }}../ingredient_umap.html">KG PaCMAP</a> &middot;
   <a href="{{ path_up }}../ingredient_graph.html">Graph Layout</a> &middot;
+  <a href="{{ path_up }}../app/discussions/index.html">Discussions</a> &middot;
   <a href="{{ path_up }}../schema/index.html">Schema</a> &middot;
   <a href="{{ path_up }}../index.html#downloads">Downloads</a> &middot;
-  <a href="https://culturebotai.github.io/mechs/">All Mech projects</a> &middot;
-  <a href="{{ path_up }}index.html">MIM</a> &rsaquo;
-  <span>{{ ingredient.identifier }}</span>
+  <a href="https://culturebotai.github.io/mechs/">All Mech projects</a>
+</nav>
+{# The trail's category is the record's mapping status: a subset of the listing. #}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ path_up }}../index.html">Home</a></li>
+    <li><a href="{{ path_up }}../browser.html">Ingredients</a></li>
+    {% if ingredient.mapping_status %}
+    <li><a href="{{ path_up }}../browser.html?status={{ ingredient.mapping_status | urlencode }}">{{ ingredient.mapping_status }}</a></li>
+    {% endif %}
+    <li><span aria-current="page">{{ ingredient.preferred_term }}</span></li>
+  </ol>
 </nav>
 
 <header>
@@ -55,14 +66,20 @@
     {% endif %}
     <a class="badge" href="{{ path_up }}../text_map.html?q={{ ingredient.identifier | urlencode }}">View in Text Map &rarr;</a>
   </div>
-  {% set status_meaning = enum_meanings.MappingStatusEnum.get(ingredient.mapping_status) %}
-  {% set quality_meaning = enum_meanings.MappingQualityEnum.get(om.mapping_quality) %}
-  {% if status_meaning or quality_meaning %}
-  <p class="status-meaning muted small">
-    {% if status_meaning %}<a href="{{ path_up }}../schema/enumerations-MappingStatusEnum.html">{{ ingredient.mapping_status }}</a>: {{ status_meaning }}{% endif %}
-    {% if status_meaning and quality_meaning %}&middot;{% endif %}
-    {% if quality_meaning %}<a href="{{ path_up }}../schema/enumerations-MappingQualityEnum.html">{{ om.mapping_quality }}</a>: {{ quality_meaning }}{% endif %}
-  </p>
+  {% set status_meaning = status_meanings.get(ingredient.mapping_status) %}
+  {% set quality_meaning = quality_meanings.get(om.mapping_quality) %}
+  {% set history = ingredient.curation_history or [] %}
+  {% if status_meaning or quality_meaning or history %}
+  <details class="status-meaning small">
+    <summary>What this status means</summary>
+    {% if status_meaning %}<p><a href="{{ path_up }}../schema/enumerations-MappingStatusEnum.html">{{ ingredient.mapping_status }}</a>: {{ status_meaning }}</p>{% endif %}
+    {% if quality_meaning %}<p><a href="{{ path_up }}../schema/enumerations-MappingQualityEnum.html">{{ om.mapping_quality }}</a>: {{ quality_meaning }}</p>{% endif %}
+    {% if history %}
+    {% set curators = history | map(attribute='curator') | select | unique | list %}
+    {% set assisted = history | selectattr('llm_assisted') | list %}
+    <p>The <a href="#curation_history">curation history</a> lists {{ history|length }} event{{ 's' if history|length != 1 }} by {{ curators|length }} curator{{ 's' if curators|length != 1 }}; {{ assisted|length }} {{ 'is' if assisted|length == 1 else 'are' }} marked LLM-assisted.</p>
+    {% endif %}
+  </details>
   {% endif %}
 </header>
 
@@ -142,6 +159,7 @@
   <p class="record-source">
     Source record: <a href="{{ source_url }}"><code>{{ source_path }}</code></a>
     (<a href="{{ source_raw_url }}">raw YAML</a>) &middot;
+    <a href="{{ source_edit_url }}">Edit on GitHub</a> &middot;
     <a href="{{ feedback_url }}">Report a problem with this record</a>
   </p>
   <p>

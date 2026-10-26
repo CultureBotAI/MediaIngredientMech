@@ -124,6 +124,7 @@ REFERENCED_RECORD = {
     ],
     "discussions": [
         {
+            "discussion_id": "gap-1",
             "kind": "KNOWLEDGE_GAP",
             "status": "OPEN",
             "prompt": "Is https://example.org/prompt right?",
@@ -203,6 +204,27 @@ def test_reference_links_stop_before_enclosing_brackets_and_punctuation(text, ta
     assert visible_text(linked) == text
 
 
+@pytest.mark.parametrize(
+    ("text", "targets"),
+    [
+        # Curation notes are written in Markdown; its marks are not part of a target.
+        (
+            "[10.1038/x](https://doi.org/10.1038/x)",
+            ["https://doi.org/10.1038/x", "https://doi.org/10.1038/x"],
+        ),
+        ("**10.1099/y**", ["https://doi.org/10.1099/y"]),
+        ("`10.1146/z`", ["https://doi.org/10.1146/z"]),
+        ("see `https://example.org/c`.", ["https://example.org/c"]),
+        ('cited as "https://example.org/q"(quoted)', ["https://example.org/q"]),
+        ("**Recommended:** doi:10.1000/abc: `UNMAPPED`", ["https://doi.org/10.1000/abc"]),
+    ],
+)
+def test_markdown_marks_stay_out_of_reference_links(text, targets):
+    linked = str(render.linked_text(text))
+    assert hrefs(linked) == targets
+    assert visible_text(linked) == text
+
+
 def test_a_pmid_slot_links_its_bare_number_to_pubmed():
     linked = str(
         render.structured_value(
@@ -267,15 +289,53 @@ def test_record_footer_links_its_yaml_and_a_prefilled_issue(tmp_path, monkeypatc
     blob = f"{render.GITHUB_REPO}/blob/main/data/ingredients/mapped/%28-%29-Fixture%20%2B%20mix.yaml"
     assert blob in links
     assert blob.replace("/blob/main/", "/raw/main/") in links
+    assert blob.replace("/blob/main/", "/edit/main/") in links
     issue = next(link for link in links if "/issues/new?" in link)
     parts = urlsplit(issue)
     assert f"{parts.scheme}://{parts.netloc}{parts.path}" == f"{render.GITHUB_REPO}/issues/new"
+    # The fleet template: title "Problem with <record id>", body the page URL.
     query = parse_qs(parts.query)
-    assert query["title"] == ["Record feedback: Fixture mix (MIM:~28-~29-Fixture~20~2B~20mix)"]
+    assert query["title"] == ["Problem with MIM:~28-~29-Fixture~20~2B~20mix"]
     slug = render.slug_for({}, Path("mapped") / name)
-    assert f"{render.SITE_ROOT}records/ingredient/{slug}.html" in query["body"][0]
-    assert "data/ingredients/mapped/(-)-Fixture + mix.yaml" in query["body"][0]
-    assert not any("/edit/" in link for link in links)
+    assert query["body"] == [f"{render.SITE_ROOT}records/ingredient/{slug}.html"]
+
+
+def breadcrumb(page: str) -> str:
+    match = re.search(r'<nav class="breadcrumb" aria-label="Breadcrumb">(.*?)</nav>', page, re.DOTALL)
+    assert match, "record page has no breadcrumb trail"
+    return match.group(1)
+
+
+def test_record_breadcrumb_trails_home_listing_status_and_record(tmp_path, monkeypatch):
+    page = render_record(tmp_path, monkeypatch, {**REFERENCED_RECORD, "mapping_status": "REJECTED"})
+    trail = breadcrumb(page)
+    items = re.findall(r"<li>(.*?)</li>", trail, re.DOTALL)
+    assert [visible_text(item).strip() for item in items] == ["Home", "Ingredients", "REJECTED", "Fixture salt"]
+    # Every crumb but the current page links, relative to records/ingredient/<status>/.
+    assert [hrefs(item) for item in items] == [
+        ["../../../index.html"],
+        ["../../../browser.html"],
+        ["../../../browser.html?status=REJECTED"],
+        [],
+    ]
+    assert 'aria-current="page"' in items[-1]
+    # The site menu stays, as its own navigation.
+    assert '<nav class="site-nav" aria-label="Site navigation">' in page
+
+
+@pytest.mark.parametrize("quality", sorted(render.HUMAN_REVIEW_QUALITIES))
+def test_status_explanation_never_claims_human_review(tmp_path, monkeypatch, quality):
+    record = {
+        **REFERENCED_RECORD,
+        "ontology_mapping": {**REFERENCED_RECORD["ontology_mapping"], "mapping_quality": quality},
+    }
+    page = render_record(tmp_path, monkeypatch, record)
+    explanation = page.split('class="status-meaning', 1)[1].split("</details>", 1)[0]
+    claim = render.enum_meanings()["MappingQualityEnum"][quality]
+    assert claim and claim not in explanation
+    assert re.search(r"\b(human|expert)", visible_text(explanation), re.IGNORECASE) is None
+    # It still says what the record's own history records.
+    assert "lists 1 event by 1 curator; 0 are marked LLM-assisted" in " ".join(visible_text(explanation).split())
 
 
 # ---------- cross_mech_links ----------
@@ -633,7 +693,9 @@ def test_record_header_quotes_the_schema_meaning_of_its_status_and_quality(tmp_p
     enums = yaml.safe_load(render.SCHEMA_PATH.read_text(encoding="utf-8"))["enums"]
     status = enums["MappingStatusEnum"]["permissible_values"]["REJECTED"]["description"]
     quality = enums["MappingQualityEnum"]["permissible_values"]["EXACT_MATCH"]["description"]
-    meaning = " ".join(visible_text(header.split('class="status-meaning', 1)[1]).split())
+    disclosure = header.split('class="status-meaning', 1)[1].split("</details>", 1)[0]
+    assert "<summary>What this status means</summary>" in disclosure
+    meaning = " ".join(visible_text(disclosure).split())
     assert f"REJECTED: {status}" in meaning
     assert f"EXACT_MATCH: {quality}" in meaning
 
@@ -668,9 +730,20 @@ class Focusables(HTMLParser):
             self.main_ids.append(attrs.get("id", ""))
 
 
-def test_landing_listing_and_record_pages_start_with_a_skip_link(tmp_path, monkeypatch):
+def test_landing_listing_record_and_map_pages_start_with_a_skip_link(tmp_path, monkeypatch):
     pages = licence_pages(tmp_path, monkeypatch)
-    for name in ("index.html", "browser.html", "404.html", "record", "records index", "schema index", "schema class"):
+    for name in (
+        "index.html",
+        "browser.html",
+        "404.html",
+        "text_map.html",
+        "ingredient_umap.html",
+        "ingredient_graph.html",
+        "record",
+        "records index",
+        "schema index",
+        "schema class",
+    ):
         dom = Focusables(pages[name])
         tag, attrs = dom.order[0]
         assert tag == "a" and "skip-link" in attrs.get("class", "").split(), name
@@ -678,14 +751,30 @@ def test_landing_listing_and_record_pages_start_with_a_skip_link(tmp_path, monke
         assert dom.main_ids == ["main-content"], name
 
 
+@pytest.mark.parametrize(
+    "page", ["index.html", "browser.html", "text_map.html", "ingredient_umap.html", "ingredient_graph.html"]
+)
+def test_javascript_pages_point_to_the_static_index_without_it(page):
+    # It says plainly that the page needs JavaScript, and where to go instead.
+    blocks = re.findall(r"<noscript>(.*?)</noscript>", (DOCS / page).read_text(encoding="utf-8"), re.DOTALL)
+    assert any("JavaScript" in block and 'href="records/index.html"' in block for block in blocks), page
+
+
 def test_not_found_page_routes_resolve_from_any_depth():
+    # GitHub serves this one file for a missing URL at any depth, so every link
+    # and asset is site-root-absolute; a relative one would 404 again.
     page = (DOCS / "404.html").read_text(encoding="utf-8")
     refs = re.findall(r'(?:href|src|action)="([^"]*)"', page)
+    site = urlsplit(render.SITE_ROOT).path
     for ref in refs:
-        assert ref.startswith(("https://", "#")), f"relative route {ref!r} 404s below the site root"
-    own = [ref for ref in refs if ref.startswith(render.SITE_ROOT)]
-    assert f"{render.SITE_ROOT}browser.html" in own and f"{render.SITE_ROOT}theme-toggle.js" in own
-    assert len(own) >= 10
+        assert ref.startswith((site, "https://", "#")), f"relative route {ref!r} 404s below the site root"
+    own = [ref.split("#", 1)[0] for ref in refs if ref.startswith(site)]
+    assert {f"{site}browser.html", f"{site}theme-toggle.js", f"{site}app/discussions/index.html"} <= set(own)
+    assert len(own) >= 11
+    built_later = {"records/index.html", "schema/index.html", "app/discussions/index.html"}
+    for ref in own:
+        name = ref[len(site):]
+        assert name in built_later or (DOCS / name).is_file(), ref
 
 
 # ---------- maps ----------
@@ -707,3 +796,202 @@ def test_published_text_map_is_current_with_its_template(tmp_path):
         capture_output=True,
     )
     assert rendered.read_text(encoding="utf-8") == (DOCS / "text_map.html").read_text(encoding="utf-8")
+
+
+# ---------- visual_alternative / text_map ----------
+
+
+RECORD_LOOKUP_HARNESS = r"""
+const vm = require('node:vm');
+const source = SOURCE;
+const node = () => ({style: {}, setAttribute() {}, replaceChildren() {}, append() {}, addEventListener() {}});
+const catalog = {ingredients: [
+  {record_id: 'MIM:A', detail_page: 'records/ingredient/mapped/A.html'},
+  {record_id: 'MIM:B', detail_page: 'records/ingredient/mapped/B.html'},
+  {record_id: 'MIM:B', detail_page: 'records/ingredient/unmapped/B.html'},
+  {record_id: 'MIM:C', detail_page: 'javascript:alert(1)'},
+]};
+const context = {window: {}, document: {createElement: node, querySelector: () => ({after() {}})},
+  fetch: async () => ({ok: true, json: async () => catalog})};
+vm.createContext(context);
+vm.runInContext(source, context);
+context.window.MimRecords.pages().then(pages => console.log(JSON.stringify({
+  A: pages.get('MIM:A'), B: pages.get('MIM:B'), C: pages.has('MIM:C')})));
+"""
+
+
+def test_map_record_lookup_is_exposed_for_the_data_tables(tmp_path):
+    source = (DOCS / "map-record-navigation.js").read_text(encoding="utf-8")
+    pages = run_node(tmp_path, RECORD_LOOKUP_HARNESS.replace("SOURCE", json.dumps(source)))
+    assert pages["A"]["detail_page"] == "records/ingredient/mapped/A.html"
+    assert pages["B"] is None and pages["C"] is False
+
+
+MAP_TABLE_HARNESS = r"""
+const vm = require('node:vm');
+const source = SOURCE;
+async function run(pagesResult) {
+  const table = {innerHTML: ''};
+  const details = {open: false, listeners: [], addEventListener(name, fn) { this.listeners.push(fn); }};
+  const context = {
+    ingredientData: [{id: 'MIM:A', name: 'Agar <b>', identifier: 'CHEBI:1'}, {id: 'MIM:B', name: 'Broth'}],
+    document: {getElementById: id => (id === 'data-table' ? details : table)},
+    window: {MimRecords: {pages: async () => { if (pagesResult instanceof Error) throw pagesResult; return pagesResult; }}},
+  };
+  vm.createContext(context);
+  vm.runInContext(source + '\nbuildTable();', context);
+  await new Promise(resolve => setTimeout(resolve, 10));  // any eager render would land now
+  const before = table.innerHTML;
+  details.open = true;
+  details.listeners.forEach(fn => fn());
+  await new Promise(resolve => setTimeout(resolve, 10));
+  return {before, after: table.innerHTML};
+}
+(async () => {
+  console.log(JSON.stringify({
+    linked: await run(new Map([['MIM:A', {detail_page: 'records/ingredient/mapped/A.html'}], ['MIM:B', null]])),
+    failed: await run(new Error('catalog unavailable')),
+  }));
+})().catch(error => { console.error(error); process.exitCode = 1; });
+"""
+
+
+def build_table_source(page: str) -> str:
+    text = (DOCS / page).read_text(encoding="utf-8")
+    start = text.index("        function buildTable() {")
+    return text[start : text.index("\n        }\n", start) + len("\n        }\n")]
+
+
+@pytest.mark.parametrize("page", ["ingredient_umap.html", "ingredient_graph.html"])
+def test_map_data_table_rows_link_their_records_when_opened(tmp_path, page):
+    harness = MAP_TABLE_HARNESS.replace("SOURCE", json.dumps(build_table_source(page)))
+    result = run_node(tmp_path, harness)
+    assert "<tbody>" not in result["linked"]["before"], "rows render only when the table opens"
+    linked = result["linked"]["after"]
+    assert '<a href="records/ingredient/mapped/A.html">Agar &lt;b&gt;</a>' in linked
+    assert "<td>Broth</td>" in linked and "<caption>" not in linked
+    failed = result["failed"]["after"]
+    assert "<a " not in failed and "<caption>Record links are unavailable" in failed
+    wrap = '<div class="data-table-wrap" role="region" aria-label="Map data as a table" tabindex="0">'
+    assert wrap in (DOCS / page).read_text(encoding="utf-8")
+
+
+TEXT_MAP_RECORDS_HARNESS = r"""
+const vm = require('node:vm');
+const context = {window: {}};
+vm.createContext(context);
+vm.runInContext(SOURCE, context);
+const {linkPoints, coverage} = context.window.TextMapRecords;
+const points = [
+  {url: 'records/ingredient/mapped/-_-anisomycin.html'},
+  {url: 'records/ingredient/unmapped/Moved.html'},
+  {url: 'records/ingredient/mapped/Gone.html'},
+  {url: 'records/ingredient/mapped/Plain.html'},
+];
+const rows = [
+  {source_file: 'mapped/(-)-anisomycin.yaml', detail_page: 'records/ingredient/mapped/_-_-anisomycin.html', mapping_status: 'MAPPED'},
+  {source_file: 'mapped/Moved.yaml', detail_page: 'records/ingredient/mapped/Moved.html', mapping_status: 'MAPPED'},
+  {source_file: 'mapped/Plain.yaml', detail_page: 'records/ingredient/mapped/Plain.html', mapping_status: 'MAPPED'},
+  {source_file: 'mapped/Dead.yaml', detail_page: 'records/ingredient/mapped/Dead.html', mapping_status: 'REJECTED'},
+  {source_file: 'unmapped/New.yaml', detail_page: 'records/ingredient/unmapped/New.html', mapping_status: 'UNMAPPED'},
+];
+linkPoints(points, rows);
+const c = coverage(points, rows);
+console.log(JSON.stringify({pages: points.map(p => p.page), plotted: c.plotted, total: c.total,
+  rejected: c.rejected.map(r => r.source_file), later: c.later.map(r => r.source_file), unpublished: c.unpublished}));
+"""
+
+
+def test_text_map_points_open_the_published_record_and_coverage_is_stated(tmp_path):
+    source = (DOCS / "text-map-records.js").read_text(encoding="utf-8")
+    result = run_node(tmp_path, TEXT_MAP_RECORDS_HARNESS.replace("SOURCE", json.dumps(source)))
+    assert result["pages"] == [
+        "records/ingredient/mapped/_-_-anisomycin.html",  # embedded under the old page-name rule
+        "records/ingredient/mapped/Moved.html",  # curation moved the record
+        "",  # no longer published: never linked
+        "records/ingredient/mapped/Plain.html",
+    ]
+    assert (result["plotted"], result["total"], result["unpublished"]) == (3, 5, 1)
+    assert result["rejected"] == ["mapped/Dead.yaml"] and result["later"] == ["unmapped/New.yaml"]
+
+
+def test_text_map_page_states_coverage_and_offers_its_points_as_a_table():
+    page = (DOCS / "text_map.html").read_text(encoding="utf-8")
+    assert page.index('<script src="text-map-records.js"></script>') < page.index("const MAP_DATA")
+    assert '<p class="coverage" id="map-coverage" role="status">' in page
+    assert '<div class="table-scroll" role="region" aria-label="Text map points as a table" tabindex="0">' in page
+    assert 'href="${esc(recordHref(p))}"' in page and 'href="${esc(p.url)}"' not in page
+
+
+def test_text_embedding_names_the_page_the_site_publishes():
+    spec = importlib.util.spec_from_file_location("mim_embed_records", ROOT / "scripts/embed_records.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    for name in ("(-)-anisomycin", "Calcium(2)", "Mix + tea", "Nacl"):
+        path = Path("mapped") / f"{name}.yaml"
+        assert module.slug_for_source("mapped", path) == render.slug_for({}, path), name
+
+
+# ---------- discussions ----------
+
+
+def discussion_data(entries: list[dict]) -> str:
+    return (
+        f"window.searchData = {json.dumps(entries, indent=1)};\n"
+        'window.searchMetrics = {};\nwindow.repoName = "MediaIngredientMech";\n'
+    )
+
+
+def add_discussion_browser(repo: Path, page_url: str) -> None:
+    folder = repo / "app" / "discussions"
+    folder.mkdir(parents=True)
+    shutil.copyfile(ROOT / "app/discussions/index.html", folder / "index.html")
+    (folder / "data.js").write_text(
+        discussion_data([{"discussion_id": "gap-1", "source_file": "Salt.yaml", "page_url": page_url}])
+    )
+
+
+def test_discussion_index_is_published_with_a_way_back_and_the_licence(site_repo, builder, tmp_path):
+    repo, _ = site_repo
+    add_discussion_browser(repo, "../../records/ingredient/mapped/Salt.html#discussions")
+    output = tmp_path / "site"
+    builder.build_site(repo, output)
+    builder.check_site(repo, output)
+    page = (output / "app/discussions/index.html").read_text(encoding="utf-8")
+    nav = page.split('<nav aria-label="Project navigation">', 1)[1].split("</nav>", 1)[0]
+    assert hrefs(nav)[:2] == ["../../index.html", "../../browser.html"]
+    assert LICENCE in footer(page)
+    assert (output / "app/discussions/data.js").read_bytes() == (repo / "app/discussions/data.js").read_bytes()
+    receipt = json.loads((output / "records/build.json").read_text())
+    assert set(builder.DISCUSSION_FILES) <= set(receipt["assets"])
+
+
+@pytest.mark.parametrize(
+    "page_url",
+    [
+        "../../pages/ingredient/mapped/Salt.html#discussions",  # the route the config used to name
+        "../../records/ingredient/mapped/Mud.html#discussions",  # a record without that discussion
+    ],
+)
+def test_build_refuses_a_discussion_index_that_does_not_match_the_records(site_repo, builder, tmp_path, page_url):
+    repo, _ = site_repo
+    add_discussion_browser(repo, page_url)
+    with pytest.raises(ValueError, match="gen-discussions-data"):
+        builder.build_site(repo, tmp_path / "site")
+
+
+def test_committed_discussion_index_matches_the_records(builder, tmp_path):
+    pages: dict[str, set[str]] = {}
+    for source in builder.source_files(ROOT):
+        text = source.read_text(encoding="utf-8")
+        ids = set()
+        if "\ndiscussions:" in text:
+            ids = {str(d.get("discussion_id", "")) for d in yaml.safe_load(text)["discussions"]}
+        pages[f"records/ingredient/{render.slug_for({}, source)}.html"] = ids
+    assert builder.publish_discussions(ROOT, tmp_path, pages) == list(builder.DISCUSSION_FILES)
+
+
+def test_navigation_links_the_discussion_index():
+    for page in ("index.html", "browser.html", "ingredient_umap.html", "ingredient_graph.html", "text_map.html"):
+        header = re.search(r"<header[^>]*>(.*?)</header>", (DOCS / page).read_text(encoding="utf-8"), re.DOTALL)
+        assert "app/discussions/index.html" in hrefs(header.group(1)), page

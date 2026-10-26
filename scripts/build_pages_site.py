@@ -6,6 +6,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import posixpath
+import re
 import shutil
 import sys
 import tempfile
@@ -22,6 +24,8 @@ from mediaingredientmech import records_export  # noqa: E402
 from mediaingredientmech.schema_site import write_schema_site  # noqa: E402
 
 PACKAGE_ROOT = Path(render.__file__).resolve().parent
+# docs/ pages published when present; text-map-records.js serves text_map.html.
+OPTIONAL_DOCS = ("404.html", "text_map.html", "text-map-records.js")
 
 
 def digest(path: Path) -> str:
@@ -71,11 +75,65 @@ def build_inputs(repo: Path) -> dict[str, str]:
             )
         }
     )
-    for optional_doc in ("404.html", "text_map.html"):
+    for optional_doc in OPTIONAL_DOCS:
         opt_path = repo / "docs" / optional_doc
         if opt_path.exists():
             files["docs/" + optional_doc] = opt_path
+    for name in DISCUSSION_FILES:
+        if (repo / name).exists():
+            files[name] = repo / name
     return {name: digest(path) for name, path in sorted(files.items())}
+
+
+# The shared discussion browser that `just gen-discussions-data` writes from the
+# records (claw's kg_microbe_discussions). Published where it is committed.
+DISCUSSION_FILES = ("app/discussions/index.html", "app/discussions/data.js")
+DISCUSSION_NAV = '<nav aria-label="Project navigation">'
+
+
+def publish_discussions(repo: Path, stage: Path, pages: dict[str, set[str]]) -> list[str]:
+    """Publish the discussion index with MIM's way back and licence added.
+
+    The page is claw's template, regenerated verbatim by the recipe, so MIM's
+    links and footer are added here, at anchors the build refuses to guess.
+    `pages` maps each built record page to the discussion ids its record
+    carries; an index whose ids or record links disagree with it is stale.
+    """
+    if not all((repo / name).exists() for name in DISCUSSION_FILES):
+        return []
+    data = (repo / "app/discussions/data.js").read_text(encoding="utf-8")
+    found = re.search(r"window\.searchData = (\[.*?\]);\n", data, re.DOTALL)
+    if not found:
+        raise ValueError("app/discussions/data.js has no window.searchData list")
+    listed: dict[str, set[str]] = {}
+    for entry in json.loads(found.group(1)):
+        target = posixpath.normpath(
+            posixpath.join("app/discussions", entry["page_url"].split("#", 1)[0])
+        )
+        listed.setdefault(target, set()).add(entry["discussion_id"])
+    if listed != {page: ids for page, ids in pages.items() if ids}:
+        raise ValueError(
+            "app/discussions/data.js does not match the records' discussions or pages; "
+            "run `just gen-discussions-data`"
+        )
+    html = (repo / "app/discussions/index.html").read_text(encoding="utf-8")
+    if html.count(DISCUSSION_NAV) != 1 or html.count("</body>") != 1:
+        raise ValueError("app/discussions/index.html no longer has the anchors MIM extends")
+    html = html.replace(
+        DISCUSSION_NAV,
+        DISCUSSION_NAV + '<a href="../../index.html">MediaIngredientMech</a> &middot; '
+        '<a href="../../browser.html">Browse ingredients</a> &middot; ',
+    ).replace(
+        "</body>",
+        '<footer style="max-width:1200px;margin:2rem auto;padding:1rem 1.25rem;'
+        'border-top:1px solid var(--line);color:var(--muted);font-size:.85rem">'
+        f"<p>{render.LICENCE_HTML}</p></footer>\n</body>",
+    )
+    target = stage / "app" / "discussions"
+    target.mkdir(parents=True)
+    (target / "index.html").write_text(html, encoding="utf-8")
+    shutil.copyfile(repo / "app/discussions/data.js", target / "data.js")
+    return list(DISCUSSION_FILES)
 
 
 def check_site(repo: Path, output: Path) -> None:
@@ -124,7 +182,7 @@ def check_site(repo: Path, output: Path) -> None:
         "browser.html",
         "theme-toggle.js",
     }
-    for optional_doc in ("404.html", "text_map.html"):
+    for optional_doc in OPTIONAL_DOCS:
         if (repo / "docs" / optional_doc).exists():
             required_assets.add(optional_doc)
     required_assets.update(
@@ -135,6 +193,8 @@ def check_site(repo: Path, output: Path) -> None:
         f"{records_export.DOWNLOADS_DIR}/{name}"
         for name in (records_export.EXPORT_NAME, records_export.MANIFEST_NAME)
     )
+    if all((repo / name).exists() for name in DISCUSSION_FILES):
+        required_assets.update(DISCUSSION_FILES)
     if not (output / "schema" / "index.html").exists():
         raise ValueError("Missing rendered schema reference")
     if set(receipt["assets"]) != required_assets:
@@ -169,6 +229,7 @@ def build_site(repo: Path, output: Path) -> int:
         index = stage / "records"
         records = {}
         successful = []
+        discussions: dict[str, set[str]] = {}
         for source in files:
             status, ingredient, slug = render.render_one(
                 env, source, index / "ingredient", force=True
@@ -183,6 +244,11 @@ def build_site(repo: Path, output: Path) -> int:
                 "page_sha256": digest(stage / page),
             }
             successful.append({"ingredient": ingredient, "slug": slug})
+            discussions[page] = {
+                str(item.get("discussion_id", ""))
+                for item in (ingredient or {}).get("discussions") or []
+                if isinstance(item, dict)
+            }
         render.write_index(index, successful)
         shutil.copyfile(render.TEMPLATES_DIR / "style.css", index / "style.css")
         schema_assets = write_schema_site(
@@ -193,9 +259,10 @@ def build_site(repo: Path, output: Path) -> int:
         download_assets = records_export.write_records_export(
             repo / "data" / "ingredients", files, stage
         )
+        discussion_assets = publish_discussions(repo, stage, discussions)
         (stage / ".nojekyll").touch()
         optional_assets = tuple(
-            name for name in ("404.html", "text_map.html") if (repo / "docs" / name).exists()
+            name for name in OPTIONAL_DOCS if (repo / "docs" / name).exists()
         )
         asset_names = (
             "data/ingredients.json",
@@ -216,6 +283,7 @@ def build_site(repo: Path, output: Path) -> int:
                     "map-record-navigation.js",
                     *schema_assets,
                     *download_assets,
+                    *discussion_assets,
                 )
             },
         }

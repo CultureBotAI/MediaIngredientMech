@@ -306,6 +306,10 @@
             overflow-y: auto;
             margin-top: 0.75rem;
         }
+        .data-table-wrap:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
         .data-table-wrap table {
             border-collapse: collapse;
             width: 100%;
@@ -326,6 +330,25 @@
             text-transform: uppercase;
             font-size: 0.72rem;
             letter-spacing: 0.03em;
+        }
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -4rem;
+            z-index: 3000;
+            padding: 0.5rem 0.9rem;
+            border-radius: 6px;
+            background: var(--surface);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .skip-link:focus {
+            top: 0.5rem;
+        }
+        .noscript {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
         }
         .site-footer {
             max-width: 1400px;
@@ -372,6 +395,7 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="container">
         <header>
             <h1>Ingredient Graph layout (sfdp)</h1>
@@ -383,6 +407,7 @@
                 <a href="ingredient_umap.html" class="nav-link">KG PaCMAP</a>
                 <a href="ingredient_graph.html" class="nav-link">Graph Layout</a>
                 <a href="records/index.html" class="nav-link">Record Index</a>
+                <a href="app/discussions/index.html" class="nav-link">Discussions</a>
                 <a href="schema/index.html" class="nav-link">Schema</a>
                 <a href="index.html#downloads" class="nav-link">Downloads</a>
                 <a href="https://github.com/CultureBotAI/MediaIngredientMech" class="nav-link">GitHub</a>
@@ -421,13 +446,14 @@
             </aside>
 
             <main class="plot-column" id="main-content">
+                <noscript><p class="noscript">This map needs JavaScript. The <a href="records/index.html">Record Index</a> lists every ingredient record without it.</p></noscript>
                 <div id="umap-plot"></div>
 
                 <div class="legend" id="legend"></div>
 
                 <details class="data-table-details" id="data-table">
                     <summary>View data as table</summary>
-                    <div class="data-table-wrap"><table id="data-table-el"></table></div>
+                    <div class="data-table-wrap" role="region" aria-label="Map data as a table" tabindex="0"><table id="data-table-el"></table></div>
                 </details>
 
                 <div class="info-panel">
@@ -850,10 +876,25 @@
             ];
             const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
             const head = '<thead><tr>' + cols.map(c => `<th>${c[1]}</th>`).join('') + '</tr></thead>';
-            const rows = ingredientData.map(d =>
-                '<tr>' + cols.map(c => `<td>${esc(d[c[0]])}</td>`).join('') + '</tr>'
-            ).join('');
-            el.innerHTML = head + '<tbody>' + rows + '</tbody>';
+            // Rows are drawn when the table is first opened. Each name links its
+            // record through the inspector's exact record-id lookup.
+            const render = async () => {
+                let pages = null;
+                try { pages = await window.MimRecords.pages(); } catch (_) { pages = null; }
+                const cell = (d, key) => {
+                    const row = key === 'name' && pages ? pages.get(d.id) : null;
+                    return row ? `<a href="${esc(row.detail_page)}">${esc(d[key])}</a>` : esc(d[key]);
+                };
+                const rows = ingredientData.map(d =>
+                    '<tr>' + cols.map(c => `<td>${cell(d, c[0])}</td>`).join('') + '</tr>'
+                ).join('');
+                const caption = pages ? '' : '<caption>Record links are unavailable: the ingredient catalog could not be loaded.</caption>';
+                el.innerHTML = caption + head + '<tbody>' + rows + '</tbody>';
+            };
+            el.innerHTML = head;
+            const details = document.getElementById('data-table');
+            if (details.open) render();
+            else details.addEventListener('toggle', () => { if (details.open) render(); }, { once: true });
         }
 
         // Handle window resize

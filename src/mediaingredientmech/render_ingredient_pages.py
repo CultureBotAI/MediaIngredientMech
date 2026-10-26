@@ -91,8 +91,12 @@ def curie_to_url(curie: str | None) -> str:
     return template.format(quote(local, safe=""))
 
 
+# A URL or DOI ends at whitespace, a tag bracket, a double quote or a closing
+# square bracket: curation notes are written in Markdown, and the link text of
+# "[10.1/x](https://doi.org/10.1/x)" must not run into its target.
 _REFERENCE = re.compile(
-    r"https?://[^\s<>]+|(?:doi:|DOI:)?10\.\d{4,9}/[^\s<>]+|(?:[A-Za-z][A-Za-z0-9_.]*):[A-Za-z0-9._-]+"
+    r'https?://[^\s<>"\]]+|(?:doi:|DOI:)?10\.\d{4,9}/[^\s<>"\]]+'
+    r"|(?:[A-Za-z][A-Za-z0-9_.]*):[A-Za-z0-9._-]+"
 )
 
 
@@ -117,15 +121,16 @@ _CLOSERS = {")": "(", "]": "[", "}": "{"}
 
 
 def _trim_reference(token: str) -> str:
-    """Drop the sentence punctuation and unbalanced closing bracket ending a token.
+    """Drop the punctuation, Markdown marks and unbalanced closer ending a token.
 
     A URL or DOI runs to the next space, so "(doi:10.1/x)" would otherwise link
-    "10.1/x)" and 404 (#889). A closer that has its opener inside the token,
-    as in a Wikipedia-style "Foo_(bar)" URL, belongs to it and is kept.
+    "10.1/x)" and 404 (#889), and "**10.1/x**" or "`10.1/x`" would carry the
+    emphasis or code marks into the target. A closer that has its opener
+    inside the token, as in a Wikipedia-style "Foo_(bar)" URL, is kept.
     """
     while token:
         last = token[-1]
-        if last in ".,;:!?'\"" or (
+        if last in ".,;:!?'\"*`" or (
             last in _CLOSERS and token.count(last) > token.count(_CLOSERS[last])
         ):
             token = token[:-1]
@@ -220,6 +225,13 @@ def enum_meanings() -> dict[str, dict[str, str]]:
     }
 
 
+# Quality values whose schema description asserts human review ("human-verified",
+# "Manually curated by expert"). A record page never quotes those: curation
+# events name processes and agents rather than people, so no record's history
+# can show that a human reviewed it.
+HUMAN_REVIEW_QUALITIES = frozenset({"LLM_ASSISTED", "MANUAL_CURATION"})
+
+
 def make_env() -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
@@ -230,30 +242,30 @@ def make_env() -> Environment:
     env.globals["curie_to_url"] = curie_to_url
     env.globals["licence_html"] = LICENCE_HTML
     env.globals["sibling_search"] = SIBLING_SEARCH
-    env.globals["enum_meanings"] = enum_meanings()
+    meanings = enum_meanings()
+    env.globals["status_meanings"] = meanings["MappingStatusEnum"]
+    env.globals["quality_meanings"] = {
+        value: text
+        for value, text in meanings["MappingQualityEnum"].items()
+        if value not in HUMAN_REVIEW_QUALITIES
+    }
     env.filters["linked_text"] = linked_text
     env.filters["structured"] = structured_value
     return env
 
 
-def source_links(source_path: Path, slug: str, preferred_term: str) -> dict[str, str]:
-    """GitHub routes for one record: its YAML, the raw file, and a prefilled issue.
+def source_links(source_path: Path, slug: str) -> dict[str, str]:
+    """GitHub routes for one record: its YAML, raw file, editor and a prefilled issue.
 
-    The issue names the record by its stable `MIM:` id (identifiers are shared
-    between records) and carries the page and file, so a report needs no
-    further lookup. There is deliberately no edit link: a per-record edit must
-    also be synchronized into data/curated/ and logged in curation_history,
-    which GitHub's web editor does neither of.
+    The issue follows the fleet's template and names the record by its stable
+    `MIM:` id, because identifiers are shared between records.
     """
     path = source_path.relative_to(REPO_ROOT).as_posix()
     record_id = mim_curie_for_stem(source_path.stem)
     issue = urlencode(
         {
-            "title": f"Record feedback: {preferred_term} ({record_id})",
-            "body": (
-                f"Record page: {SITE_ROOT}records/ingredient/{slug}.html\n"
-                f"Source file: {path}\n\nWhat is wrong or missing?\n"
-            ),
+            "title": f"Problem with {record_id}",
+            "body": f"{SITE_ROOT}records/ingredient/{slug}.html",
         },
         quote_via=quote,
     )
@@ -261,6 +273,7 @@ def source_links(source_path: Path, slug: str, preferred_term: str) -> dict[str,
         "source_path": path,
         "source_url": f"{GITHUB_REPO}/blob/main/{quote(path)}",
         "source_raw_url": f"{GITHUB_REPO}/raw/main/{quote(path)}",
+        "source_edit_url": f"{GITHUB_REPO}/edit/main/{quote(path)}",
         "feedback_url": f"{GITHUB_REPO}/issues/new?{issue}",
     }
 
@@ -288,7 +301,7 @@ def render_one(
     depth = len(slug.split("/"))
     html = template.render(
         ingredient=ingredient,
-        **source_links(source_path, slug, str(ingredient.get("preferred_term") or slug)),
+        **source_links(source_path, slug),
         generated_at=_dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
         path_up=("../" * depth),  # path back to pages/ root
     )
@@ -308,7 +321,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
-<nav aria-label="Site navigation"><a href="../index.html">Home</a> &middot; <a href="../browser.html">Browse ingredients</a> &middot; <a href="../text_map.html">Text Map</a> &middot; <a href="../ingredient_umap.html">KG PaCMAP</a> &middot; <a href="../ingredient_graph.html">Graph Layout</a> &middot; <a href="../schema/index.html">Schema</a> &middot; <a href="../index.html#downloads">Downloads</a> &middot; <a href="https://culturebotai.github.io/mechs/">All Mech projects</a></nav>
+<nav aria-label="Site navigation"><a href="../index.html">Home</a> &middot; <a href="../browser.html">Browse ingredients</a> &middot; <a href="../text_map.html">Text Map</a> &middot; <a href="../ingredient_umap.html">KG PaCMAP</a> &middot; <a href="../ingredient_graph.html">Graph Layout</a> &middot; <a href="../app/discussions/index.html">Discussions</a> &middot; <a href="../schema/index.html">Schema</a> &middot; <a href="../index.html#downloads">Downloads</a> &middot; <a href="https://culturebotai.github.io/mechs/">All Mech projects</a></nav>
 <header>
 <form class="record-search" action="../browser.html" method="get" role="search">
   <label class="sr-only" for="index-search-input">Search ingredients</label>

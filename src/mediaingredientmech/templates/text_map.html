@@ -308,6 +308,71 @@
         .selected-panel a:hover {
             text-decoration: underline;
         }
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -4rem;
+            z-index: 3000;
+            padding: 0.5rem 0.9rem;
+            border-radius: 6px;
+            background: var(--surface);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .skip-link:focus {
+            top: 0.5rem;
+        }
+        .noscript {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .coverage {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .map-details {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+        }
+        .map-details summary {
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .table-scroll {
+            max-height: 420px;
+            overflow: auto;
+            margin-top: 0.75rem;
+        }
+        .table-scroll:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+        .table-scroll table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.82rem;
+        }
+        .table-scroll th,
+        .table-scroll td {
+            text-align: left;
+            padding: 0.35rem 0.6rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .table-scroll th {
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+            color: var(--text-muted);
+        }
+        .map-details a {
+            color: var(--primary);
+        }
         .site-footer {
             max-width: 1600px;
             margin: 0 auto;
@@ -333,6 +398,7 @@
     <script src="theme-toggle.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header>
         <div class="header-inner">
             <div class="header-brand">
@@ -346,6 +412,7 @@
                 <a href="ingredient_umap.html">KG PaCMAP</a>
                 <a href="ingredient_graph.html">Graph Layout</a>
                 <a href="records/index.html">Record Index</a>
+                <a href="app/discussions/index.html">Discussions</a>
                 <a href="schema/index.html">Schema</a>
                 <a href="index.html#downloads">Downloads</a>
                 <a href="https://github.com/CultureBotAI/MediaIngredientMech">GitHub</a>
@@ -388,6 +455,7 @@
         </aside>
 
         <main class="plot-column" id="main-content">
+            <noscript><p class="noscript">This map needs JavaScript. The <a href="records/index.html">Record Index</a> lists every ingredient record without it.</p></noscript>
             <div class="canvas-card">
                 <canvas id="map-canvas"></canvas>
                 <div class="canvas-toolbar">
@@ -399,6 +467,17 @@
             <div class="selected-panel" id="selected-panel" aria-live="polite">
                 <span>Click any ingredient point to open its record or inspect details.</span>
             </div>
+            <p class="coverage" id="map-coverage" role="status">Checking which ingredient records this map plots…</p>
+            <details class="map-details" id="not-plotted" hidden>
+                <summary>Records not plotted</summary>
+                <ul id="not-plotted-list"></ul>
+            </details>
+            <details class="map-details" id="data-table">
+                <summary>View data as table</summary>
+                <div class="table-scroll" role="region" aria-label="Text map points as a table" tabindex="0">
+                    <table id="data-table-el"></table>
+                </div>
+            </details>
         </main>
     </div>
 
@@ -408,6 +487,7 @@
 
     <div class="tooltip" id="tooltip"></div>
 
+    <script src="text-map-records.js"></script>
     <script>
         const MAP_DATA = __MAP_DATA_JSON__;
         const PALETTE = [
@@ -729,7 +809,7 @@
                     <span style="margin-left:0.5rem;opacity:0.8">(${esc(p.id)} · ${esc(p.identifier)} · ${esc(p.mapping_status)})</span>
                 </div>
                 <div style="display:flex;gap:1rem;">
-                    <a href="${esc(p.url)}">Open Ingredient Page →</a>
+                    ${recordHref(p) ? `<a href="${esc(recordHref(p))}">Open Ingredient Page →</a>` : "<span>This record is no longer published.</span>"}
                     <a href="browser.html?q=${encodeURIComponent(p.title)}">View in Browser →</a>
                 </div>
             `;
@@ -800,6 +880,58 @@
         syncQueryFromUrl();
         renderFacets();
         resizeCanvas();
+
+        // The map is checked against the catalog each deploy publishes, so what
+        // it leaves out is stated rather than silent, and a click never follows
+        // a page name the site no longer has (text-map-records.js).
+        let catalogChecked = false;
+        function recordHref(p) {
+            return catalogChecked ? p.page : p.url;
+        }
+        const coverageEl = document.getElementById("map-coverage");
+        const tableDetails = document.getElementById("data-table");
+        const notPlotted = document.getElementById("not-plotted");
+        let notPlottedRows = [];
+        function renderTable() {
+            const cols = [["title", "Ingredient"], ["identifier", "Identifier"], ["mapping_status", "Mapping status"],
+                ["ontology_source", "Ontology source"], ["ingredient_type", "Ingredient type"], ["media_count", "Media count"]];
+            const head = "<thead><tr>" + cols.map(c => `<th scope="col">${c[1]}</th>`).join("") + "</tr></thead>";
+            const rows = points.map(p => "<tr>" + cols.map(([key]) => {
+                const href = key === "title" ? recordHref(p) : "";
+                return `<td>${href ? `<a href="${esc(href)}">${esc(p[key])}</a>` : esc(p[key])}</td>`;
+            }).join("") + "</tr>").join("");
+            const caption = catalogChecked ? "" : "<caption>Record links could not be checked against the current catalog.</caption>";
+            document.getElementById("data-table-el").innerHTML = caption + head + "<tbody>" + rows + "</tbody>";
+        }
+        tableDetails.addEventListener("toggle", () => { if (tableDetails.open) renderTable(); });
+        notPlotted.addEventListener("toggle", () => {
+            if (!notPlotted.open) return;
+            document.getElementById("not-plotted-list").innerHTML = notPlottedRows.map(row =>
+                `<li><a href="${esc(row.detail_page)}">${esc(row.preferred_term)}</a> (${esc(row.mapping_status)})</li>`
+            ).join("");
+        });
+        fetch("data/ingredients.json")
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                const rows = Array.isArray(data.ingredients) ? data.ingredients : [];
+                TextMapRecords.linkPoints(points, rows);
+                catalogChecked = true;
+                const c = TextMapRecords.coverage(points, rows);
+                const parts = [`This map plots ${c.plotted.toLocaleString()} of the ${c.total.toLocaleString()} ingredient records.`];
+                if (c.rejected.length) parts.push(`${c.rejected.length.toLocaleString()} REJECTED records are not plotted: the text embedding leaves them out by design.`);
+                if (c.later.length) parts.push(`${c.later.length.toLocaleString()} more were added or renamed after these coordinates were computed on ${String(MAP_DATA.generated_at || "").slice(0, 10)}.`);
+                if (c.unpublished) parts.push(`${c.unpublished.toLocaleString()} point${c.unpublished === 1 ? " names a record" : "s name records"} the site no longer publishes.`);
+                coverageEl.textContent = parts.join(" ");
+                notPlottedRows = c.rejected.concat(c.later);
+                notPlotted.hidden = notPlottedRows.length === 0;
+                if (tableDetails.open) renderTable();
+            })
+            .catch(() => {
+                coverageEl.textContent = `This map plots ${points.length.toLocaleString()} points. They could not be checked against the current ingredient catalog.`;
+            });
     </script>
 </body>
 </html>
