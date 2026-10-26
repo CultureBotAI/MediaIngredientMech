@@ -1,0 +1,109 @@
+schema_version: 1.0.0
+repository_key: mediaingredientmech
+github_repository: CultureBotAI/MediaIngredientMech
+run_id: mech-goal-sequence-20261019
+cycle: 6
+stage: 5
+revision: 1
+outcome: completed
+summary: "Consumed Cycle 6 Stage 4 review outputs (6 open root-cause cohorts across 960 records / 970 active findings at c816b996a6942532d34ca2ac827de7d14a7f0d04), synchronized reviews/workflow/latest.yaml from verified-evidence-index.json (16 verified entries including Cycle 6 Stage 4 PR #956), grouped all 6 carried-forward cohorts into 3 root-cause and repair-ownership groups (mim-c06-s05-g001 -> #921, mim-c06-s05-g002 -> #923, mim-c06-s05-g003 -> #718), verified immutable original review bundles and exact-byte approval constraints under src/mediaingredientmech/record_refresh.py, and recorded deferred carry-forward dispositions for all 6 cohorts."
+source_revision: c816b996a6942532d34ca2ac827de7d14a7f0d04
+scope_frozen_at: '2026-10-26T01:22:00Z'
+previous_evidence:
+  path: reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-04/revision-0001/evidence.yaml
+  sha256: 1802417a133635266329530ff632e92f03eae1423aa010e3ddb30ff96122f362
+artifacts:
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/issue_map.md
+  sha256: 29e35ec2c01ce51ff64cfef405e1e9c249aee6972a43ba3d109f5856f4c76d62
+  kind: issue_map
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/validation.md
+  sha256: c25fe324f29229e6a5d1131813d65c84cab398b7b4e5b017ca737c30edc9834d
+  kind: validation
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/coverage_report.md
+  sha256: 2572272396392f06589ac9f4f3a3fd511b407725196d51d66385b67b9a6cc199
+  kind: supporting
+findings:
+- finding_id: mim-c01-s04-f001
+  carried_from: mim-c01-s04-f001
+  status: deferred
+  summary: "Reconcile missing direct MicrobeDecoder occurrence on data/ingredients/mapped/(2)-D-lyxose.yaml (CHEBI:62318; native finding rec-f-444b73747dddc915)"
+  group_id: mim-c06-s05-g001
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/921
+  disposition: "Deferred and carried forward under issue #921; data/ingredients/mapped/(2)-D-lyxose.yaml is byte-bound (owner_record_sha256: 62258c9bdabaf8728fafb6923345fe4b24b9956069113896acb16e9631c1451e) in reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json and reports/semantic_review_20260921/resolution/current-review.json and co-located with open role-evidence finding SEM:cd74f8ddafa04d7e9a9a (issue #718)."
+- finding_id: mim-c01-s04-f003
+  carried_from: mim-c01-s04-f003
+  status: deferred
+  summary: "Normalize non-monotonic curation_history timestamp order across 19 mapped ingredient records"
+  group_id: mim-c06-s05-g002
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/923
+  disposition: "Deferred and carried forward under issue #923; all 19 affected mapped records are byte-bound in reports/sssom_completion_20260921/review.json (17 SUPPORTED + 2 WITHHOLD, with 5 also in reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json) and reports/semantic_review_20260921/resolution/current-review.json, and src/mediaingredientmech/record_refresh.py forbids preserving byte-bound approvals via receipt chains."
+- finding_id: mim-c01-s04-f004
+  carried_from: mim-c01-s04-f004
+  status: deferred
+  summary: "Adjudicate prediction-only or empty primary nutritional/cellular role assertions lacking literature citations across 624 mapped records (595 single-role + 29 multi-role; issue #718)"
+  group_id: mim-c06-s05-g003
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition: "Deferred and carried forward under existing semantic review backlog tracker issue #718; requires primary literature citations (doi/pmid) across 624 mapped records."
+- finding_id: mim-c01-s04-f005
+  carried_from: mim-c01-s04-f005
+  status: deferred
+  summary: "Adjudicate prediction-only or empty secondary physicochemical role assertions lacking literature citations across 29 mapped records (17 single-role + 12 multi-role; issue #718)"
+  group_id: mim-c06-s05-g003
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition: "Deferred and carried forward under existing semantic review backlog tracker issue #718; requires primary literature/formulation citations across 29 mapped records."
+- finding_id: mim-c01-s04-f006
+  carried_from: mim-c01-s04-f006
+  status: deferred
+  summary: "Resolve exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (266 findings across 261 unmapped identity + 4 complex parent scope + 1 ambiguous PYGS; issue #718)"
+  group_id: mim-c06-s05-g003
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition: "Deferred and carried forward under existing semantic review backlog tracker issue #718; requires source-backed chemical identity and recipe-form verification across 262 records."
+- finding_id: mim-c01-s04-f007
+  carried_from: mim-c01-s04-f007
+  status: deferred
+  summary: "Adjudicate context-dependent exported synonym/CAS token scope and component source scope across 31 records (17 nomenclature token scope + 13 component source scope + 1 Furaltadone CAS alias; issues #718, #861)"
+  group_id: mim-c06-s05-g003
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  disposition: "Deferred and carried forward under existing semantic review backlog tracker issue #718; requires source-recipe verification and coordinated SSSOM/component receipt updates across 31 records."
+groups:
+- group_id: mim-c06-s05-g001
+  finding_ids:
+  - mim-c01-s04-f001
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/921
+  status: deferred
+  summary: "Reconcile missing direct MicrobeDecoder D-lyxose occurrence (kgmicrobe.trait:d_lyxose, count 159) on canonical (2)-D-lyxose.yaml (CHEBI:62318)"
+  resolution_evidence:
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/issue_map.md
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/validation.md
+  disposition: "Tracked in issue #921 and carried forward; requires coordinated semantic review and reports/sssom_completion_20260921/mapping_review/nonmapping_cohorts.json re-binding alongside SEM:cd74f8ddafa04d7e9a9a."
+- group_id: mim-c06-s05-g002
+  finding_ids:
+  - mim-c01-s04-f003
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/923
+  status: deferred
+  summary: "Normalize non-monotonic curation_history timestamp order across 19 mapped ingredient records"
+  resolution_evidence:
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/issue_map.md
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/validation.md
+  disposition: "Tracked in issue #923 and carried forward; all 19 affected records are byte-bound in reports/sssom_completion_20260921/review.json and reports/semantic_review_20260921/resolution/current-review.json."
+- group_id: mim-c06-s05-g003
+  finding_ids:
+  - mim-c01-s04-f004
+  - mim-c01-s04-f005
+  - mim-c01-s04-f006
+  - mim-c01-s04-f007
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  status: deferred
+  summary: "Open semantic review finding backlog across role-evidence, unmapped/ambiguous identity, and exported token/component source scope cohorts"
+  resolution_evidence:
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/issue_map.md
+  - reviews/workflow/mech-goal-sequence-20261019/cycle-000006/stage-05/revision-0001/validation.md
+  disposition: "Reused existing open tracker issue #718 and carried forward mim-c01-s04-f004..f007 with explicit dispositions preserved in finding-dispositions.tsv and per-record structured review bundles."
+carry_forward_ids:
+- mim-c01-s04-f001
+- mim-c01-s04-f003
+- mim-c01-s04-f004
+- mim-c01-s04-f005
+- mim-c01-s04-f006
+- mim-c01-s04-f007
+infra_tasks: []
