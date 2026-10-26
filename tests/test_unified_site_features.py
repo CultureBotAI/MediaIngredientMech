@@ -225,6 +225,24 @@ def test_markdown_marks_stay_out_of_reference_links(text, targets):
     assert visible_text(linked) == text
 
 
+@pytest.mark.parametrize(
+    ("text", "targets"),
+    [
+        # A closer with no opener inside the token ends it, and the scan
+        # resumes there, so the second reference is linked on its own.
+        ("(https://a.example/x)-(https://b.example/y)", ["https://a.example/x", "https://b.example/y"]),
+        ("(doi:10.1000/a)/(doi:10.1000/b)", ["https://doi.org/10.1000/a", "https://doi.org/10.1000/b"]),
+        # Balanced parentheses or brackets inside one URL belong to it.
+        ("https://en.wikipedia.org/wiki/Foo_(bar)", ["https://en.wikipedia.org/wiki/Foo_(bar)"]),
+        ("see https://example.org/q?a[0]=1.", ["https://example.org/q?a[0]=1"]),
+    ],
+)
+def test_references_end_at_an_unopened_closer_and_the_next_one_is_found(text, targets):
+    linked = str(render.linked_text(text))
+    assert hrefs(linked) == targets
+    assert visible_text(linked) == text
+
+
 def test_a_pmid_slot_links_its_bare_number_to_pubmed():
     linked = str(
         render.structured_value(
@@ -913,6 +931,19 @@ def test_text_map_points_open_the_published_record_and_coverage_is_stated(tmp_pa
     ]
     assert (result["plotted"], result["total"], result["unpublished"]) == (3, 5, 1)
     assert result["rejected"] == ["mapped/Dead.yaml"] and result["later"] == ["unmapped/New.yaml"]
+
+
+@pytest.mark.parametrize(
+    "page",
+    [render.TEMPLATES_DIR / "text_map.html", DOCS / "ingredient_umap.html", DOCS / "ingredient_graph.html"],
+    ids=lambda path: path.name,
+)
+def test_narrow_map_layout_is_not_widened_by_an_opened_table(page):
+    # A bare 1fr track grows to its content's min-content width: opening the
+    # text map's table widened the page to 1,295 px at 390 px.
+    css = page.read_text(encoding="utf-8")
+    assert "grid-template-columns: 1fr;" not in css
+    assert "grid-template-columns: minmax(0, 1fr);" in css
 
 
 def test_text_map_page_states_coverage_and_offers_its_points_as_a_table():

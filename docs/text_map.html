@@ -386,8 +386,9 @@
             color: var(--primary);
         }
         @media (max-width: 960px) {
+            /* minmax(0, ...): an opened data table must scroll in place, not widen the page. */
             .layout-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
             .facet-sidebar {
                 position: static;

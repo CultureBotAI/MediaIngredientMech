@@ -91,11 +91,11 @@ def curie_to_url(curie: str | None) -> str:
     return template.format(quote(local, safe=""))
 
 
-# A URL or DOI ends at whitespace, a tag bracket, a double quote or a closing
-# square bracket: curation notes are written in Markdown, and the link text of
-# "[10.1/x](https://doi.org/10.1/x)" must not run into its target.
+# A URL or DOI ends at whitespace, a tag bracket or a double quote; then
+# _trim_reference() ends it at a closer it never opened, so the link text of the
+# Markdown "[10.1/x](https://doi.org/10.1/x)" does not run into its target.
 _REFERENCE = re.compile(
-    r'https?://[^\s<>"\]]+|(?:doi:|DOI:)?10\.\d{4,9}/[^\s<>"\]]+'
+    r'https?://[^\s<>"]+|(?:doi:|DOI:)?10\.\d{4,9}/[^\s<>"]+'
     r"|(?:[A-Za-z][A-Za-z0-9_.]*):[A-Za-z0-9._-]+"
 )
 
@@ -118,33 +118,41 @@ def reference_url(value: str) -> str:
 
 
 _CLOSERS = {")": "(", "]": "[", "}": "{"}
+_OPENERS = {opener: closer for closer, opener in _CLOSERS.items()}
 
 
 def _trim_reference(token: str) -> str:
-    """Drop the punctuation, Markdown marks and unbalanced closer ending a token.
+    """End a token at its first unopened closer, then drop trailing punctuation and marks.
 
     A URL or DOI runs to the next space, so "(doi:10.1/x)" would otherwise link
-    "10.1/x)" and 404 (#889), and "**10.1/x**" or "`10.1/x`" would carry the
-    emphasis or code marks into the target. A closer that has its opener
-    inside the token, as in a Wikipedia-style "Foo_(bar)" URL, is kept.
+    "10.1/x)" and 404 (#889), "(https://a/x)-(https://b/y)" would become one
+    link, and "**10.1/x**" or "`10.1/x`" would carry emphasis or code marks into
+    the target. A closer whose opener is inside the token, as in a
+    Wikipedia-style "Foo_(bar)" URL, belongs to it and is kept.
     """
-    while token:
-        last = token[-1]
-        if last in ".,;:!?'\"*`" or (
-            last in _CLOSERS and token.count(last) > token.count(_CLOSERS[last])
-        ):
-            token = token[:-1]
-            continue
-        break
-    return token
+    opened = dict.fromkeys(_CLOSERS, 0)
+    for index, char in enumerate(token):
+        if char in _OPENERS:
+            opened[_OPENERS[char]] += 1
+        elif char in _CLOSERS:
+            if not opened[char]:
+                token = token[:index]
+                break
+            opened[char] -= 1
+    return token.rstrip(".,;:!?'\"*`")
 
 
 def linked_text(value: object) -> Markup:
     text = str(value)
     parts = []
-    offset = 0
-    for match in _REFERENCE.finditer(text):
+    offset = position = 0
+    # search() from the end of each linked token, not finditer(): a token cut
+    # short leaves text where the next reference can start.
+    while match := _REFERENCE.search(text, position):
         candidate = _trim_reference(match.group())
+        if not candidate:
+            position = match.start() + 1
+            continue
         parts.append(escape(text[offset : match.start()]))
         url = reference_url(candidate)
         parts.append(
@@ -152,7 +160,7 @@ def linked_text(value: object) -> Markup:
             if url
             else escape(candidate)
         )
-        offset = match.start() + len(candidate)
+        offset = position = match.start() + len(candidate)
     parts.append(escape(text[offset:]))
     return Markup("".join(parts))
 
