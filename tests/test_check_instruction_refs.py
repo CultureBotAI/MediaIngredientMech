@@ -206,7 +206,7 @@ def test_repo_config_is_enforcing_and_every_exception_has_a_reason():
     cfg = yaml.safe_load((ROOT / "conf" / "instruction_refs.yaml").read_text())
 
     assert cfg["severity"] == "error"
-    assert "CLAUDE.md" in cfg["targets"]
+    assert "AGENTS.md" in cfg["targets"]  # CLAUDE.md is a symlink to it
     assert "docs/*CURATION*.md" in cfg["targets"]
     for key in ("ignore_recipes", "ignore_paths"):
         for entry in cfg.get(key) or []:
