@@ -24,8 +24,8 @@ tasks: []
 
 ### Preceding Cycle 9 Context (Stages 4–5)
 
-- **Cycle 9 Stage 4 (`review_records`, PR #983, merged `2026-10-30T21:49:22Z`, merge commit `36c3e502c16a3eb509bd70eaa45bb0cf6c04c894`):** Reviewed the 5-record cohort `{UNMAPPED_0010, UNMAPPED_0011, UNMAPPED_0012, UNMAPPED_0013, UNMAPPED_0014}` (`Na2S x 9 H2O` to `Na2S2O3 x 5 H2O`, 5 findings). All 5 findings were data-level curation / ontology-grounding / merge gaps; no tooling, validator, or schema infrastructure blockers were discovered or logged to `INFRA_TASKS.md`.
-- **Cycle 9 Stage 5 (`open_issues`, PR #984, merged `2026-10-30T23:15:44Z`, merge commit `90cdaba0105aea02cd7b9f926e7d223a3415ddc0`):** Consolidated the 5 Stage 4 findings into 2 tracked curation issues reused from earlier cycles (`#786` for `UNMAPPED_0010`–`UNMAPPED_0012` and `#982` for `UNMAPPED_0013`–`UNMAPPED_0014`) with updated review-round tracking comments. Neither issue represents a repository infrastructure requirement under `INFRA_TASKS.md`.
+- **Cycle 9 Stage 4 (`record_review`, PR #983, merged `2026-10-30T21:49:22Z`, merge commit `36c3e502c16a3eb509bd70eaa45bb0cf6c04c894`):** Reviewed all `2,953` individual `IngredientRecord` YAML files and `7` collection YAML documents at `d486ad619366a88e4d4e3ed92009e5bfe00840af` across all `976` structured review bundles in `reviews/structured/` (`1,993` clean records and `960` records retaining `970` active findings across the `6` carried-forward root-cause cohorts `mim-c01-s04-f001` and `mim-c01-s04-f003`..`mim-c01-s04-f007`), with `infra_tasks: []`.
+- **Cycle 9 Stage 5 (`resolve_review_findings`, PR #984, merged `2026-10-30T23:15:44Z`, merge commit `90cdaba0105aea02cd7b9f926e7d223a3415ddc0`):** Grouped all `6` carried-forward cohorts (`970` active findings across `960` records) into `3` root-cause and repair-ownership groups (`mim-c09-s05-g001` → `#921`, `mim-c09-s05-g002` → `#923`, `mim-c09-s05-g003` → `#718`), recorded deferred carry-forward dispositions for all `6` cohorts, and recorded `infra_tasks: []`.
 
 ### Task Disposition Summary
 
