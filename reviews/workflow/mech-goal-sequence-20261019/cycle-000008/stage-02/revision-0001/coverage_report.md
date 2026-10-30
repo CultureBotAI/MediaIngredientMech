@@ -1,200 +1,196 @@
-# MediaIngredientMech Causal-Graph Coverage & Readiness Report — Cycle 8, Stage 2 (`causal_graphs`)
+---
+artifact_kind: stage_02_causal_graphs_coverage_report
+run_id: mech-goal-sequence-20261019
+cycle: 8
+stage: 2
+stage_name: causal_graphs
+revision: 1
+repository: CultureBotAI/MediaIngredientMech
+base_commit: 9165e2d9fefa9d0225661d2f8a4933a7e0a74c13
+workflow_sha256: 059b5b9401ffeb04483cf7a46570f7f2f3c8c7fe6e574d80954bf71233cc609a
+generated_at: "2026-10-30T09:12:00Z"
+skills_applied:
+  - .claude/skills/mediaingredientmech-evolve-workflow/SKILL.md
+  - .claude/skills/curate-causal-graphs/SKILL.md
+  - .claude/skills/curate-yaml-record/SKILL.md
+records_scanned: 2953
+mapped_dir_records: 2680
+unmapped_dir_records: 273
+eligible_records_reviewed: 2496
+ineligible_or_excluded_records: 457
+records_currently_carrying_causal_graphs: 0
+records_modified: 0
+tracked_review_latest_index:
+  path: reviews/workflow/latest.yaml
+  sha256: c796d64c158ecf8189fee775fdbf189c4fbe8d3d16759395cefd2188dec06a5e
+  entries_count: 21
+  synchronized_with_verified_evidence_index: true
+---
 
-- **Run ID:** `mech-goal-sequence-20261019`
-- **Cycle / Stage / Revision:** `cycle-000008` / `stage-02` (`causal_graphs`) / `revision-0001`
-- **Goal Instruction ID:** `MECH-WORKFLOW-7d0f20c28584e6e28bf1b5a9` (`/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/workspace/session-orchestration/20261019/mediaingredientmech/instructions/7d0f20c28584e6e28bf1b5a9.json`)
-- **Repository:** `CultureBotAI/MediaIngredientMech`
-- **Baseline `origin/main` Commit:** `9165e2d9fefa9d0225661d2f8a4933a7e0a74c13` (`chore(workflow): record cycle 8 stage 1 add-records review and validation (#974)`)
-- **Skill Contracts Followed:**
-  - `.claude/skills/mediaingredientmech-evolve-workflow/SKILL.md`
-  - `.claude/skills/curate-causal-graphs/SKILL.md`
-  - `.claude/skills/curate-yaml-record/SKILL.md`
-  - `.claude/skills/add-uniprot-protein-examples/SKILL.md`
-- **Governing Normative Specifications:**
-  - `MAPPING_SEMANTICS.md` Section 7 (`Causal Graphs and Cross-Mech Linking`, lines `1051–1288`)
-  - `docs/CAUSAL_GRAPH_CONTRACT.md` (`MediaIngredientMech Causal Graph Contract`, Status table lines `21–32` & Sections 1–11)
-  - `src/mediaingredientmech/schema/mediaingredientmech.yaml` (`IngredientRecord.causal_graphs`, `IngredientCausalGraph`, `CausalNode`, `CausalEdge`, `ProteinExample`, and associated enums)
+# Cycle 8, Stage 2 (`causal_graphs`) — Whole-Corpus Eligibility Inventory, Source-Grounded Claim Review, and Prerequisite Blocker Ledger
+
+## 1. Executive Summary
+
+This report records the Cycle 8, Stage 2 (`causal_graphs`, instruction `MECH-WORKFLOW-7d0f20c28584e6e28bf1b5a9`) whole-corpus review for `CultureBotAI/MediaIngredientMech` at `main` commit `9165e2d9fefa9d0225661d2f8a4933a7e0a74c13` (PR #974 squash merge) under `.claude/skills/curate-causal-graphs/SKILL.md`, `.claude/skills/curate-yaml-record/SKILL.md`, `docs/CAUSAL_GRAPH_CONTRACT.md`, and `MAPPING_SEMANTICS.md` Section 7.
+
+0. **Tracked Review Latest Index Preflight (`reviews/workflow/latest.yaml`):** Verified `/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/workspace/session-orchestration/20261019/mediaingredientmech/verified-evidence-index.json` (`authority: verified_closure`) against `reviews/workflow/latest.yaml` (`sha256: c796d64c158ecf8189fee775fdbf189c4fbe8d3d16759395cefd2188dec06a5e`). Both files contain the exact same 21 verified closure entries (`cycle 1 stage 4` PR #919, `cycle 1 stage 5` PR #924, `cycle 1 stage 6` PR #926, `cycle 2 stage 4` PR #930, `cycle 2 stage 5` PR #932, `cycle 2 stage 6` PR #934, `cycle 3 stage 4` PR #938, `cycle 3 stage 5` PR #939, `cycle 3 stage 6` PR #940, `cycle 4 stage 4` PR #944, `cycle 4 stage 5` PR #945, `cycle 4 stage 6` PR #946, `cycle 5 stage 4` PR #950, `cycle 5 stage 5` PR #951, `cycle 5 stage 6` PR #952, `cycle 6 stage 4` PR #956, `cycle 6 stage 5` PR #958, `cycle 6 stage 6` PR #959, `cycle 7 stage 4` PR #965, `cycle 7 stage 5` PR #972, and `cycle 7 stage 6` PR #973; Cycle 8 Stage 1 PR #974 has `required_outputs: []` so it does not add a `goal_evidence` entry to `verified-evidence-index.json`).
+1. **Whole-Corpus Scope Verified (`2,953` YAML records):** Every YAML record in `data/ingredients/mapped/*.yaml` (`2,680` files: `2,611` `MAPPED` + `69` `REJECTED` tombstones) and `data/ingredients/unmapped/*.yaml` (`273` files: `260` `UNMAPPED` + `1` `AMBIGUOUS` + `12` `REJECTED` tombstones) was inspected and classified under `MAPPING_SEMANTICS.md` Section 7.1 (`A1`–`A7`, `IDENTITY_GATE`) and `docs/CAUSAL_GRAPH_CONTRACT.md` Section 2 & Section 6 (`CausalGraph.explains` role-grounding invariants, `EXPLAINS_UNKNOWN_ROLE`). Currently, **`0` of `2,953` records** carry a populated `causal_graphs` slot (`records_modified: 0`).
+2. **Contract Implementation Status (`docs/CAUSAL_GRAPH_CONTRACT.md` Status Table, Steps 1–7):**
+   - **Implemented (Steps 1–2):**
+     - Step 1: `docs/CAUSAL_GRAPH_CONTRACT.md` (Status + Sections 1–10) and `MAPPING_SEMANTICS.md` Section 7 (`7.1` Identity gate `A1`–`A7`, `7.2` Bridge kinds, `7.3` Link admissibility `L1`–`L6`, `7.4` Delegation `SPECIATION`, `7.5` Reading a failure).
+     - Step 2: LinkML schema definitions (`IngredientRecord.causal_graphs`, `CausalGraph`, `CausalNode`, `CausalEdge`, `ProteinExample`, `EvidenceItem`, `IngredientGraphKindEnum`, `CausalGraphScopeEnum`, `CausalNodeTypeEnum`, `BridgeKindEnum`, `IngredientGraphPredicateEnum`, `SiblingMechEnum`, `AssertionBasisEnum`, `UniProtEntryStatusEnum` in `src/mediaingredientmech/schema/mediaingredientmech.yaml`), fleet parity and closed-schema rule test suite (`tests/test_causal_graph_schema.py`, 39 tests passing: 5 positive fixtures `P1`–`P5` and 16 negative fixtures `N1`–`N16` plus class/enum parity checks), and the readiness scorer (`scripts/score_causal_graph_readiness.py` + `tests/test_score_causal_graph_readiness.py`, 27 tests passing).
+   - **Planned / Unimplemented Prerequisites (`docs/CAUSAL_GRAPH_CONTRACT.md` Status Table, Steps 3–7; note `INFRA_TASKS.md` currently has `tasks: []`):**
+     - Step 3: `conf/sibling_pins.yaml` (absent), `mappings/cross_mech_references.tsv` (absent), `mappings/cross_mech_assertions.jsonl` (absent), `mappings/ontology_facts.tsv` (absent), `mappings/cross_mech_links.tsv` (absent), refresh/fetch recipes (`just refresh-cross-mech-snapshot`, `just refresh-ontology-facts`, `just fetch-uniprot`), and the offline gate `just qc-causal-graphs` (absent from `justfile`).
+     - Step 4: `culturebotai-claw` MIM `causal_graph_coverage` stanza, narrowed record globs, and shared evidence walker extension.
+     - Step 5: Validated native causal-graph writer and one-record canary (`data/ingredients/mapped/Na2moo4_X_2_H2o.yaml`) plus worked examples (`Na2so4.yaml`, `Feso4_X_7_H2o.yaml`, `D-glucose.yaml`, etc.).
+     - Steps 6–7: Readiness-scorer graph columns, ingredient-page panels, `docs/data/cross_mech_links.json`, and batch mechanistic / `SPECIATION` graph rollout.
+3. **Native-Only Preservation Policy Enforced:** Per `.claude/skills/curate-causal-graphs/SKILL.md` ("While prerequisites are absent, complete the useful source-grounded inventory, claim review and proposed native graph/protein candidate table... Preserve generated records and native status") and `docs/CAUSAL_GRAPH_CONTRACT.md` Section 10 ("Complete step 3 of the status table before adding a graph to a maintained ingredient record"), **`0` ingredient YAML files were modified**. Instead, all `2,496` `IDENTITY_GATE`-eligible records and `457` ineligible/excluded records are cataloged with exact dispositions, and 12 representative candidate records spanning all 7 `BridgeKindEnum` values (`HYDRATE_PART`, `ION_PART`, `PROTONATION`, `TAUTOMER`, `STRUCTURAL_FORM`, `FORM_OF_PARENT`, `COMPONENT`) and key `IngredientGraphKindEnum` values (`ASSIMILATION`, `ENERGY_CONSERVATION`, `COFACTOR_FUNCTION`, `SPECIATION`) are reviewed with source-grounded mechanism claims, `ProteinExample` anchors, and exact prerequisite blockers.
 
 ---
 
-## 1. Executive Summary & Disposition Accounting
+## 2. Verified Input Files and SHA-256 Digests
 
-Every record in the MediaIngredientMech YAML corpus (`2,953` total YAML files across `data/ingredients/mapped/*.yaml` and `data/ingredients/unmapped/*.yaml`) was audited against the identity, scope, bridge, cross-Mech linking, and prerequisite-gate rules in `MAPPING_SEMANTICS.md` Section 7, `docs/CAUSAL_GRAPH_CONTRACT.md`, `.claude/skills/curate-causal-graphs/SKILL.md`, and `.claude/skills/add-uniprot-protein-examples/SKILL.md`.
-
-### Corpus-Wide Disposition Summary
-
-| Metric / Disposition | Record Count | Share of Total (`2,953`) | Notes & Contract Basis |
-|---|---:|---:|---|
-| **Total YAML ingredient records inspected** | `2,953` | `100.00%` | `2,680` under `data/ingredients/mapped/*.yaml` + `273` under `data/ingredients/unmapped/*.yaml` |
-| **Ineligible / Excluded (`excluded`)** | `457` | `15.48%` | Fails `MAPPING_SEMANTICS.md` §7.1 A2 (`IDENTITY_GATE`): `273` unmapped folder (`160` `UNMAPPED` non-`NAMED_MEDIUM`, `101` `UNMAPPED` `NAMED_MEDIUM`, `12` `REJECTED`), `69` mapped `REJECTED` tombstones, `26` mapped `NAMED_MEDIUM`, `54` mapped `PLACEHOLDER` quality, `35` mapped duplicate-identifier baseline records (`mappings/duplicate_identifier_baseline.tsv`) |
-| **Eligible under `IDENTITY_GATE` (`checked` + `blocked`)** | `2,496` | `84.52%` | Active `MAPPED` records (`mapping_status: MAPPED`, `ingredient_type != NAMED_MEDIUM`, `mapping_quality != PLACEHOLDER`, not in `mappings/duplicate_identifier_baseline.tsv`) |
-| — *Sub-cohort E1: Eligible + external-locator role evidence (`checked` + `blocked`)* | `248` | `8.40%` | Has $\ge 1$ assigned role (`nutritional_roles`, `physicochemical_roles`, or `cellular_metabolic_roles`) and every assigned role carries $\ge 1$ external locator citation (`PMID:`, `doi:`, `http(s)://`, `ISBN:`, or ontology CURIE); ready for `IngredientCausalGraph` authoring as soon as Step 3 & Step 5 prerequisites land |
-| — *Sub-cohort E2: Eligible + role evidence gap (`checked` + `evidence-limited` + `blocked`)* | `580` | `19.64%` | Has $\ge 1$ assigned role, but `569` have roles backed only by `COMPUTATIONAL_PREDICTION` / `MANUAL_CURATION` without external locators (`role_lacks_external_evidence`) and `11` have a role with empty `evidence: []` (`role_missing_evidence`) |
-| — *Sub-cohort E3: Eligible + no assigned roles yet (`checked` + `evidence-limited` + `blocked`)* | `1,668` | `56.49%` | Passes `IDENTITY_GATE` (`MAPPED` chemical/biological/stock/mixture), but currently has `0` assigned roles (`no_ingredient_roles`); requires role curation before a mechanistic graph can name `<facet>#<ROLE>` in `explains` (`EXPLAINS_UNKNOWN_ROLE`), or can receive a `NONMECHANISTIC` (`SPECIATION`) graph where applicable |
-| **Records currently carrying `causal_graphs` in YAML** | `0` | `0.00%` | Verified across all `2,953` YAML files (`causal_graphs:` count = `0`) |
-| **Records modified in this stage (`records_modified`)** | `0` | `0.00%` | Conformant with `.claude/skills/curate-causal-graphs/SKILL.md` ("Stop and report a prerequisite gap when: the `just qc-causal-graphs` gate or required snapshot inputs in `docs/CAUSAL_GRAPH_CONTRACT.md` are still marked planned and not implemented") and `docs/CAUSAL_GRAPH_CONTRACT.md` §10 ("Complete step 3 of the status table before adding a graph to a maintained ingredient record.") |
+| Input Artifact / Corpus Slice | Path | SHA-256 Digest / Count | Status |
+|---|---|---|---|
+| Causal Graph Contract | `docs/CAUSAL_GRAPH_CONTRACT.md` | `de889fdea9ad18e6cf3502461d779e76ef6e99f923e374b0a5309fe163871d65` | Verified (Steps 1–2 included; Steps 3–7 planned) |
+| Mapping Semantics Contract | `MAPPING_SEMANTICS.md` | `94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805` | Verified (Section 7.1–7.5 anchors, bridges, link admissibility) |
+| LinkML Schema | `src/mediaingredientmech/schema/mediaingredientmech.yaml` | `bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012` | Verified (`CausalGraph`, `CausalNode`, `CausalEdge`, `ProteinExample`) |
+| Duplicate Identifier Baseline | `mappings/duplicate_identifier_baseline.tsv` | `723f613de746bf44b38e19be9786cd1ee7fb719256fbc6195b8b1e20477d5720` | Verified (`15` duplicate identifier groups across `35` mapped records + `2` rejected tombstones) |
+| Canonical SSSOM Mapping File | `mappings/ingredient_mappings.sssom.tsv` | `89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9` | Verified (Rules A, B1–B3, B5, C–L pass; 0 rejects) |
+| Infrastructure Backlog Ledger | `INFRA_TASKS.md` | `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` | Verified (`tasks: []`; causal-graph Steps 3–7 are tracked in `docs/CAUSAL_GRAPH_CONTRACT.md` Status table) |
+| Tracked Review Latest Index | `reviews/workflow/latest.yaml` | `c796d64c158ecf8189fee775fdbf189c4fbe8d3d16759395cefd2188dec06a5e` | Verified (`21` closure entries synchronized with `verified-evidence-index.json`) |
+| Causal Graph Readiness Scorer | `scripts/score_causal_graph_readiness.py` | `32411c33b4c7f10fd1753bfa245872b455ee14293075b76469cdafc713169354` | Verified (scores `2,611` active `MAPPED` records on a 100-point rubric, ascending) |
+| Causal Graph Schema Test Suite | `tests/test_causal_graph_schema.py` | `38b0d02b048ce069bb03d6e3e3475894ed8121d152ea4a7b6211123a82df14f3` | Verified (`39/39` tests pass) |
+| Whole Ingredient Corpus (`2,953` YAML files) | `data/ingredients/{mapped,unmapped}/*.yaml` | Composite SHA-256 (`<path>:<sha256>\n` sorted): `4a44101e2fb6199658c0fcced12a4cbd2f6624b60afd520a197e3049ccf502c7` | Verified (`2,680` in `mapped/`, `273` in `unmapped/`; `0` carry `causal_graphs`) |
 
 ---
 
-## 2. Frozen Input Hashes & Prerequisite Verification (`docs/CAUSAL_GRAPH_CONTRACT.md`)
+## 3. Prerequisite Gate & Snapshot Infrastructure Check (`docs/CAUSAL_GRAPH_CONTRACT.md` Steps 3–7)
 
-### 2.1 Frozen Input Surface Digests (`origin/main` @ `9165e2d9fefa9d0225661d2f8a4933a7e0a74c13`)
-
-| Input Surface | Path | SHA-256 Digest / Count |
-|---|---|---|
-| Causal Graph Contract | `docs/CAUSAL_GRAPH_CONTRACT.md` | `de889fdea9ad18e6cf3502461d779e76ef6e99f923e374b0a5309fe163871d65` |
-| Mapping Semantics Contract | `MAPPING_SEMANTICS.md` | `94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805` |
-| LinkML Schema | `src/mediaingredientmech/schema/mediaingredientmech.yaml` | `bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012` |
-| Duplicate Identifier Baseline | `mappings/duplicate_identifier_baseline.tsv` | `723f613de746bf44b38e19be9786cd1ee7fb719256fbc6195b8b1e20477d5720` (`15` duplicate identifier groups across `37` records: `35` mapped + `2` rejected) |
-| SSSOM Mapping Table | `mappings/ingredient_mappings.sssom.tsv` | `89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9` |
-| Infrastructure Tasks Backlog | `INFRA_TASKS.md` | `dda5707f52661e91f46d96fcbabfc256ac39d4cc865a28a3e5ab6f0536958a5e` (`tasks: []`) |
-| Workflow Latest Pointer | `reviews/workflow/latest.yaml` | `c796d64c158ecf8189fee775fdbf189c4fbe8d3d16759395cefd2188dec06a5e` (`21` verified closure entries through Cycle 7 Stage 6 `PR #973`) |
-| Readiness Scorer Script | `scripts/score_causal_graph_readiness.py` | `32411c33b4c7f10fd1753bfa245872b455ee14293075b76469cdafc713169354` |
-| Causal Graph Schema Tests | `tests/test_causal_graph_schema.py` | `38b0d02b048ce069bb03d6e3e3475894ed8121d152ea4a7b6211123a82df14f3` |
-| All 2,953 Ingredient YAML Files (composite digest of sorted `<sha256>  <relpath>\n`) | `data/ingredients/{mapped,unmapped}/*.yaml` | `3b760eeec31525e7bdf8e45623ec53fb4ac521866d9ab5bafeea9160a4d2d99f` (`2,680` mapped + `273` unmapped = `2,953` files) |
-| Readiness Scorer Output (all 2,611 active mapped records) | `/tmp/cg_readiness_active_c8_s2.tsv` | `bf2afe2eefc44907ccc776655fe039c44971a07a56c24fdc0cab09b8ad6b2b3c` (`2,611` active records ranked) |
-| Readiness Scorer Output (top 25 lowest-readiness records) | `/tmp/cg_readiness_c8_s2_top25.tsv` | `5a3c5bf4f35158627940614670df85af4711e18ed831d6c77938c049e4a21394` (`25` records) |
-
-### 2.2 Prerequisite Gate Status (`docs/CAUSAL_GRAPH_CONTRACT.md` Status Table, Lines 21–32)
-
-Per `.claude/skills/curate-causal-graphs/SKILL.md` ("Check prerequisites in `docs/CAUSAL_GRAPH_CONTRACT.md`: verify which parts of the contract have landed via the status table; check whether `conf/sibling_pins.yaml`, `mappings/cross_mech_references.tsv`, `mappings/cross_mech_assertions.jsonl`, `mappings/ontology_facts.tsv`, and `just qc-causal-graphs` exist"), live inspection of the repository confirms:
-
-| Step | Artifact / Gate | Contract Status (`docs/CAUSAL_GRAPH_CONTRACT.md`) | Live Repository Verification | Impact on Stage 2 Curation |
-|---:|---|---|---|---|
-| **1** | Contract (`docs/CAUSAL_GRAPH_CONTRACT.md`) + `MAPPING_SEMANTICS.md` §7 | `landed` | Present and verified | Governs eligibility, bridge chains, cross-Mech links, and protein examples |
-| **2** | LinkML schema classes & enums (`src/mediaingredientmech/schema/mediaingredientmech.yaml`), rule tests (`tests/test_causal_graph_schema.py`), readiness scorer (`scripts/score_causal_graph_readiness.py`) | `landed` | Present; `66 passed` in `pytest tests/test_causal_graph_schema.py tests/test_score_causal_graph_readiness.py` | Closed-schema validation (`P1–P7`, `N1–N18`) and readiness scoring operational |
-| **3** | `conf/sibling_pins.yaml`, `mappings/cross_mech_references.tsv`, `mappings/cross_mech_assertions.jsonl`, `mappings/ontology_facts.tsv`, `just fetch-sibling-refs`, `just refresh-ontology-facts`, and `just qc-causal-graphs` (blocking in `just qc`) | `planned` | **Absent**: `conf/sibling_pins.yaml` (missing), `mappings/cross_mech_references.tsv` (missing), `mappings/cross_mech_assertions.jsonl` (missing), `mappings/ontology_facts.tsv` (missing), `just qc-causal-graphs` recipe (not in `justfile`) | **Hard prerequisite blocker**: `docs/CAUSAL_GRAPH_CONTRACT.md` §10 mandates *"Complete step 3 of the status table before adding a graph to a maintained ingredient record."* |
-| **4** | `mappings/cross_mech_links.tsv` + `just export-cross-mech-links` + roundtrip freshness check in `just qc-causal-graphs` | `planned` | **Absent**: `mappings/cross_mech_links.tsv` (missing), `just export-cross-mech-links` (not in `justfile`) | Required for cross-Mech link export and roundtrip verification |
-| **5** | First causal-graph canary (`data/ingredients/mapped/Na2moo4_X_2_H2o.yaml`) + browser rendering + native causal-graph writer support | `planned` | `Na2moo4_X_2_H2o.yaml` has no `causal_graphs` slot populated; no causal-graph mutator/writer exists in `src/mediaingredientmech/curate/` | Blocked on Step 3 (`just qc-causal-graphs` and committed snapshots) and Step 5 writer |
-| **6** | Scoped batch curation (`hydrate/salt → ion → transporter/enzyme` for trace-metal salts) | `planned` | Not started | Blocked on Steps 3–5 |
-| **7** | `SPECIATION` graphs on hydrate/salt/stock records delegating to constituent records | `planned` | Not started | Blocked on Steps 3–6 (constituent records must carry `MECHANISTIC` graphs first so `DELEGATION_TARGET_HAS_NO_MECHANISM` does not fire) |
+| Prerequisite Component | Contract Reference | Expected Path / Recipe | Present in Repo? | Impact on Stage 2 Curation (`docs/CAUSAL_GRAPH_CONTRACT.md` §7 & `MAPPING_SEMANTICS.md` §7.5) |
+|---|---|---|---|---|
+| Sibling repository SHA & ontology version pins | Status Step 3 (Section 7, Pins) | `conf/sibling_pins.yaml` | `False` (absent) | Blocks deterministic cross-repo snapshot generation and pin verification (`PIN_MISMATCH`, `SNAPSHOT_INCOMPLETE`). |
+| Cross-Mech reference index | Status Step 3 (Section 7, Committed snapshots) | `mappings/cross_mech_references.tsv` | `False` (absent) | Blocks offline resolution of `ProteinTraitsMech`, `PathwayMech`, `CellStructureMech`, `TraitMech`, and `TaxonMech` target nodes (`SNAPSHOT_INCOMPLETE`, `UNRESOLVED_SIBLING`, `LABEL_DRIFT`). |
+| Cross-Mech assertion snapshot | Status Step 3 (Section 7, Committed snapshots) | `mappings/cross_mech_assertions.jsonl` | `False` (absent) | Blocks `SIBLING_RECORD` and reciprocal-grounding verification (`BASIS_UNVERIFIED`, `RECIPROCAL_GROUNDING_MISMATCH`, `SNAPSHOT_TAMPERED`). |
+| Pinned ontology fact table | Status Step 3 (Section 6 & Section 7, Committed snapshots) | `mappings/ontology_facts.tsv` | `False` (absent) | Blocks `ONTOLOGY_AXIOM` and `CHEMICAL_STRUCTURE` bridge recomputation (`ONTOLOGY_FACT_MISSING`, `BASIS_UNVERIFIED`, `BRIDGE_GUARD_FAILED`, `STOICHIOMETRY_MISMATCH`, `CHARGE_IMBALANCE`). |
+| Derived cross-Mech links ledger | Status Step 3 & Step 6 (Section 7, The links ledger) | `mappings/cross_mech_links.tsv` | `False` (absent) | Blocks ledger diff verification (`LINKS_STALE`) and downstream cross-Mech link publication (`docs/data/cross_mech_links.json`). |
+| Offline causal-graph QC gate & refresh recipes | Status Step 3 (Section 7, Refreshing & The offline gate) | `just qc-causal-graphs`, `just refresh-cross-mech-snapshot`, `just refresh-ontology-facts`, `just fetch-uniprot` | `False` (absent from `justfile`) | Blocks offline semantic enforcement (`IDENTITY_GATE`, `ANCHOR_MISMATCH`, `EXPLAINS_UNKNOWN_ROLE`, `PREDICATE_LABEL_MISMATCH`, `ENDPOINT_TYPE`, `SCOPE_GATE`, `CURATION_EVENT_MISSING`); per `.claude/skills/curate-causal-graphs/SKILL.md` and `docs/CAUSAL_GRAPH_CONTRACT.md` §10, graphs cannot be written onto records before Step 3 lands. |
+| Validated causal-graph writer & canary | Status Step 5 (Status table & Section 10) | Writer script + `data/ingredients/mapped/Na2moo4_X_2_H2o.yaml` canary | `False` (absent) | Blocks native YAML mutation; all candidate graphs remain documented, schema-conformant proposals until Steps 3 and 5 are implemented. |
 
 ---
 
-## 3. Whole-Corpus Eligibility & Readiness Audit (`2,953` Records)
+## 4. Whole-Corpus Causal-Graph Eligibility Inventory (`2,953` Records)
 
-### 3.1 Partition of Ineligible / Excluded Records (`457` Records)
+### 4.1 Mutually Exclusive Corpus Partition under `MAPPING_SEMANTICS.md` §7.1 (`IDENTITY_GATE`) and `docs/CAUSAL_GRAPH_CONTRACT.md` §2 (`EXPLAINS_UNKNOWN_ROLE`)
 
-Under `MAPPING_SEMANTICS.md` §7.1 Rule A2 (`IDENTITY_GATE`), a record may carry a `causal_graphs` entry only when `mapping_status == MAPPED`, `ingredient_type != NAMED_MEDIUM`, `ontology_mapping.mapping_quality != PLACEHOLDER`, and its primary `identifier` is not listed in `mappings/duplicate_identifier_baseline.tsv`. Furthermore, `scripts/score_causal_graph_readiness.py` (`is_active_mapped_record`) excludes `REJECTED` tombstones and non-`MAPPED` records. The `457` ineligible records partition into 8 disjoint cohorts:
+Every record in `data/ingredients/mapped/*.yaml` (`2,680` files: `2,611` `MAPPED` + `69` `REJECTED`) and `data/ingredients/unmapped/*.yaml` (`273` files: `260` `UNMAPPED` + `1` `AMBIGUOUS` + `12` `REJECTED`) falls into exactly one of the following mutually exclusive cohorts:
 
-| Cohort ID | Folder | `mapping_status` | Disqualifying Condition (`MAPPING_SEMANTICS.md` §7.1 A2) | Record Count | Representative Records (Path & Identifier) |
-|---|---|---|---|---:|---|
-| **I1** | `data/ingredients/unmapped/` | `REJECTED` | Unmapped tombstone (`mapping_status: REJECTED`) | `12` | `data/ingredients/unmapped/4_5_Dihydroxy_1_3_Benzenedisulfonic_Acid.yaml` (`UNMAPPED_0151`), `data/ingredients/unmapped/Black_Liquor.yaml` (`UNMAPPED_0142`), `data/ingredients/unmapped/contaminant.yaml` (`UNMAPPED_0209`) |
-| **I2** | `data/ingredients/unmapped/` | `NEEDS_EXPERT_REVIEW` | Unresolved mapping + `ingredient_type: NAMED_MEDIUM` | `0` | *(0 records; `Tiny_Tap_Water_Agar.yaml` was promoted to `data/ingredients/mapped/Tiny_Tap_Water_Agar.yaml` in Cycle 6 Stage 3 PR #966)* |
-| **I3** | `data/ingredients/unmapped/` | `UNMAPPED` | Unmapped + `ingredient_type: NAMED_MEDIUM` (recipe belongs in CultureMech) | `101` | `data/ingredients/unmapped/2x_Yt_Medium.yaml` (`UNMAPPED_0123`), `data/ingredients/unmapped/Agar_Medium.yaml` (`UNMAPPED_0131`), `data/ingredients/unmapped/Bgty_Medium.yaml` (`UNMAPPED_0138`) |
-| **I4** | `data/ingredients/unmapped/` | `NEEDS_EXPERT_REVIEW` | Unresolved identity (`UNMAPPED_NNNN` placeholder, non-`NAMED_MEDIUM`) | `0` | *(0 records; ` Buffer.yaml` and `Original_Main_Sol_382.yaml` were curated in Cycle 6 Stage 3 PR #966)* |
-| **I5** | `data/ingredients/unmapped/` | `UNMAPPED` | Unresolved identity (`UNMAPPED_NNNN` placeholder, non-`NAMED_MEDIUM`: `83` `UNDEFINED_MIXTURE`, `75` `STOCK_SOLUTION`, `2` `BIOLOGICAL_EXTRACT`) | `160` | `data/ingredients/unmapped/1000x_Trace_Elements_Solution.yaml` (`UNMAPPED_0107`), `data/ingredients/unmapped/Acid_Hydrolyzed_Casein.yaml` (`UNMAPPED_0128`), `data/ingredients/unmapped/Allen_Arnon_Solution.yaml` (`UNMAPPED_0134`) |
-| **I6** | `data/ingredients/mapped/` | `REJECTED` | Mapped tombstone (`mapping_status: REJECTED`, merged or retired duplicate/artifact) | `69` | `data/ingredients/mapped/Biotin_2.yaml` (`CHEBI:15956`), `data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml` (`CHEBI:32150`), `data/ingredients/mapped/Buffer.yaml` (`UNMAPPED_0001`), `data/ingredients/mapped/Original_Main_Sol_382.yaml` (`UNMAPPED_0276`) |
-| **I7** | `data/ingredients/mapped/` | `MAPPED` | `ontology_mapping.mapping_quality: PLACEHOLDER` (`kgmicrobe.compound:*` / `kgmicrobe.ingredient:*` unverified placeholders) | `54` | `data/ingredients/mapped/Aburamycin_A.yaml` (`kgmicrobe.compound:aburamycin_a`), `data/ingredients/mapped/Soyton.yaml` (`kgmicrobe.ingredient:soyton`), `data/ingredients/mapped/Actinomycin_C.yaml` (`kgmicrobe.compound:actinomycin_c`) |
-| **I8** | `data/ingredients/mapped/` | `MAPPED` | Primary `identifier` in `mappings/duplicate_identifier_baseline.tsv` (`15` duplicate identifier groups across `35` active mapped records + `2` rejected tombstones in `I6`) | `35` | `data/ingredients/mapped/Mgcl2_X_6_H2o.yaml` & `data/ingredients/mapped/Magnesium_Chloride.yaml` (`CHEBI:86345`, `HYDRATE_FAMILY_UNREVIEWED`); `data/ingredients/mapped/Na2co3.yaml` & `data/ingredients/mapped/Sodium_Carbonate_Solution.yaml` (`CHEBI:29377`, `NEEDS_OWN_ID`); `data/ingredients/mapped/Rhamnogalacturonan_From_Soy_Bean_Pectic_Fibre.yaml` (`cas:39280-21-2`, `NEEDS_OWN_ID`) |
-| **I9** | `data/ingredients/mapped/` | `MAPPED` | `ingredient_type: NAMED_MEDIUM` (recipe-level records in `mapped/`; `MAPPING_SEMANTICS.md` §7.1 A2 forbids `causal_graphs` on `NAMED_MEDIUM`) | `26` | `data/ingredients/mapped/Columbia_Agar_Base.yaml` (`MICRO:0000178`), `data/ingredients/mapped/Marine_Broth_2216.yaml` (`MICRO:0000277`), `data/ingredients/mapped/Tiny_Tap_Water_Agar.yaml` (`kgmicrobe.ingredient:tiny_tap_water_agar`) |
-| **Total Excluded** | | | **All `IDENTITY_GATE`-ineligible records (`273` unmapped + `184` mapped)** | **`457`** | |
+| Cohort ID | Eligibility Class | `MAPPING_SEMANTICS.md` §7.1 / `CAUSAL_GRAPH_CONTRACT.md` Criteria | Record Count | Skill Disposition (`curate-causal-graphs`) | Representative Record (`path` / `identifier`) |
+|---|---|---|---:|---|---|
+| **I1** | Ineligible (`UNMAPPED` non-`NAMED_MEDIUM`) | `mapping_status=UNMAPPED`, `ingredient_type != NAMED_MEDIUM` (`84` `UNDEFINED_MIXTURE`, `74` `STOCK_SOLUTION`, `1` `SINGLE_INGREDIENT`; `IDENTITY_GATE` / closed schema `N2`) | `159` | `excluded` (`not_mapped`) | `data/ingredients/unmapped/Acids.yaml` (`UNMAPPED_0063`) |
+| **I2** | Ineligible (`UNMAPPED` + `NAMED_MEDIUM`) | `mapping_status=UNMAPPED`, `ingredient_type=NAMED_MEDIUM` (`IDENTITY_GATE` / closed schema `N1`, `N2`) | `101` | `excluded` (`not_mapped` + `not_applicable`) | `data/ingredients/unmapped/2x_YT_Broth.yaml` (`UNMAPPED_0146`) |
+| **I3** | Ineligible (`REJECTED` merge tombstones, non-baseline) | `mapping_status=REJECTED` (`67` in `mapped/`, `12` in `unmapped/`), identifier not in `mappings/duplicate_identifier_baseline.tsv` (`IDENTITY_GATE`) | `79` | `excluded` (`rejected_tombstone`) | `data/ingredients/mapped/Agar_Noble.yaml` (`CHEBI:2509`) |
+| **I4** | Ineligible (`REJECTED` merge tombstones in duplicate baseline) | `mapping_status=REJECTED` in `mapped/`, identifier listed in `mappings/duplicate_identifier_baseline.tsv` (`IDENTITY_GATE`) | `2` | `excluded` (`rejected_tombstone`) | `data/ingredients/mapped/Bacto_Soytone.yaml` (`FOODON:03315720`), `data/ingredients/mapped/Mgcl2x_6_H2o.yaml` (`CHEBI:86345`) |
+| **I5** | Ineligible (`AMBIGUOUS`) | `mapping_status=AMBIGUOUS` in `unmapped/` (`IDENTITY_GATE`) | `1` | `excluded` (`ambiguous_identity`) | `data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml` (`UNMAPPED_0740`) |
+| **I6** | Ineligible (`MAPPED` + `NAMED_MEDIUM`) | `mapping_status=MAPPED`, `ingredient_type=NAMED_MEDIUM` (`IDENTITY_GATE` / closed schema `N1`; CultureMech owns medium recipes) | `26` | `not_applicable` | `data/ingredients/mapped/Bg-11_Medium.yaml` (`ENVO:00002030`) |
+| **I7** | Ineligible (`MAPPED` + `PLACEHOLDER` quality) | `mapping_status=MAPPED`, `ontology_mapping.mapping_quality=PLACEHOLDER` (`IDENTITY_GATE`, `MAPPING_SEMANTICS.md` §7.1 A2) | `54` | `excluded` (`placeholder_grounding`) | `data/ingredients/mapped/Aburamycin_A.yaml` (`kgmicrobe.compound:aburamycin_a`) |
+| **I8** | Ineligible (`MAPPED` in duplicate-identifier baseline) | `mapping_status=MAPPED`, identifier shared across >1 non-rejected record in `mappings/duplicate_identifier_baseline.tsv` (`15` identifier groups: `CHEBI:29377`, `CHEBI:86149`, `CHEBI:86345`, `CHEBI:86477`, `ENVO:00001998`, `FOODON:03315719`, `FOODON:03315720`, `MICRO:0000175`, `MICRO:0000178`, `MICRO:0000182`, `MICRO:0000193`, `MICRO:0001363`, `cas:39280-21-2`, `cas:84082-64-4`, `cas:9036-88-8`; `IDENTITY_GATE`) | `35` | `excluded` (`duplicate_identifier_baseline`) | `data/ingredients/mapped/Mgcl2_X_6_H2o.yaml` (`CHEBI:86345`), `data/ingredients/mapped/Na2co3.yaml` (`CHEBI:29377`), `data/ingredients/mapped/Rhamnogalacturonan_From_Soy_Bean_Pectic_Fibre.yaml` (`cas:39280-21-2`) |
+| **Subtotal (Ineligible / Excluded)** | **Fails `IDENTITY_GATE` (`MAPPING_SEMANTICS.md` §7.1 A2)** | **`457` records (`184` in `mapped/` + `273` in `unmapped/` = `457`)** | **`457`** | **`excluded` / `not_applicable`** | — |
+| **E1** | Eligible — Role & External Locator Ready | Passes `IDENTITY_GATE`; has $\ge 1$ typed role assignment; every assigned role has external locator-backed evidence (`DATABASE_ENTRY`, `PEER_REVIEWED_PUBLICATION`, `PREPRINT`, or `TECHNICAL_REPORT` with `doi`, `pmid`, `url`, or `reference_text`) | `248` | `checked` + `blocked` (blocked on `docs/CAUSAL_GRAPH_CONTRACT.md` Steps 3 & 5 prerequisites) | `data/ingredients/mapped/Na2moo4_X_2_H2o.yaml` (`CHEBI:75213`), `data/ingredients/mapped/Feso4_X_7_H2o.yaml` (`CHEBI:75836`), `data/ingredients/mapped/Biotin.yaml` (`CHEBI:15956`) |
+| **E2a** | Eligible — Role Assigned, Computational/Non-External Role Citation | Passes `IDENTITY_GATE`; has $\ge 1$ typed role assignment, but $\ge 1$ role is backed only by `COMPUTATIONAL_PREDICTION` or `MANUAL_CURATION` without an external locator (`role_lacks_external_evidence`, Scope Gate G6 warning) | `569` | `checked` + `evidence-limited` (needs external role citation for `MECHANISTIC` Scope Gate G6) + `blocked` (Steps 3 & 5) | `data/ingredients/mapped/D-glucose.yaml` (`CHEBI:17634`, secondary role `nutritional_roles#ENERGY_SOURCE`), `data/ingredients/mapped/2-Hydroxybutyric_Acid_Sodium_Salt.yaml` (`cas:5094-24-6`, `nutritional_roles#CARBON_SOURCE`) |
+| **E2b** | Eligible — Role Assigned, Empty Role Evidence List | Passes `IDENTITY_GATE`; has $\ge 1$ typed role assignment, and $\ge 1$ assigned role has `evidence: []` (`role_missing_evidence` in `scripts/score_causal_graph_readiness.py`) | `11` | `checked` + `evidence-limited` (needs role evidence item) + `blocked` (Steps 3 & 5) | `data/ingredients/mapped/Na2so4.yaml` (`CHEBI:32149`, secondary role `nutritional_roles#MINERAL_SOURCE` has `evidence: []`), `data/ingredients/mapped/Mgso4_X_7_H2o.yaml` (`CHEBI:31795`) |
+| **E3** | Eligible — Missing Typed Role Assignment (`0` roles on record) | Passes `IDENTITY_GATE`; currently has `0` entries across `nutritional_roles`, `physicochemical_roles`, and `cellular_metabolic_roles` (a mechanistic graph naming a role in `explains` would fail `EXPLAINS_UNKNOWN_ROLE` until the role is curated on the record, unless the record carries a `SPECIATION` graph) | `1,668` | `checked` + `evidence-limited` (needs role curation before `explains` can name a role, or `SPECIATION` delegation) + `blocked` (Steps 3 & 5) | `data/ingredients/mapped/Uracil.yaml` (`CHEBI:17568`), `data/ingredients/mapped/(R)-lactate.yaml` (`CHEBI:16004`) |
+| **Subtotal (Eligible under `IDENTITY_GATE`)** | **Passes `MAPPING_SEMANTICS.md` §7.1 A2** | **All `2,496` eligible records reside in `data/ingredients/mapped/` (`2,680 - 184 = 2,496`)** | **`2,496`** | **`checked` + `blocked` / `evidence-limited`** | — |
+| **Total Corpus** | **All YAML files in `data/ingredients/{mapped,unmapped}`** | **`457 + 2,496 = 2,953` (`2,680` in `mapped/` + `273` in `unmapped/`)** | **`2,953`** | **`100%` accounted for** | — |
 
-### 3.2 Partition of `IDENTITY_GATE`-Eligible Records (`2,496` Records)
+### 4.2 Breakdown of the `2,496` `IDENTITY_GATE`-Eligible Records
 
-All `2,496` eligible records pass `MAPPING_SEMANTICS.md` §7.1 Rule A2 (`mapping_status: MAPPED`, `ingredient_type != NAMED_MEDIUM`, `mapping_quality != PLACEHOLDER`, not in `mappings/duplicate_identifier_baseline.tsv`). Their breakdown by `ingredient_type`, `mapping_quality`, identifier namespace, and role-evidence readiness is:
-
-- **By `ingredient_type` (`2,496` eligible records):**
-  - `CHEMICAL_COMPOUND`: `2,226`
-  - `UNDEFINED_MIXTURE`: `128`
-  - `STOCK_SOLUTION`: `78`
-  - `BIOLOGICAL_EXTRACT`: `64`
-- **By `ontology_mapping.mapping_quality` (`2,496` eligible records):**
-  - `EXACT_MATCH`: `1,517`
-  - `MANUAL_CURATION`: `615`
-  - `SYNONYM_MATCH`: `147`
-  - `FALLBACK_REGISTRY`: `115`
-  - `CLOSE_MATCH`: `71`
-  - `LLM_ASSISTED`: `26`
-  - `PROVISIONAL`: `3`
-  - `LEXICAL_MATCH`: `2`
-- **By Primary `identifier` Namespace (`2,496` eligible records):**
-  - `CHEBI`: `2,175`
-  - `cas`: `134`
-  - `FOODON`: `82`
-  - `kgmicrobe.ingredient`: `72`
-  - `ENVO`: `21`
-  - `UBERON`: `7`
-  - `MICRO`: `3`
-  - `NCIT`: `2`
-
-| Eligible Sub-cohort | Role & Evidence Readiness State | Record Count | Readiness Score Range (`scripts/score_causal_graph_readiness.py`) | Representative Records (Path, Identifier, Rank, Score) |
-|---|---|---:|---|---|
-| **Cohort E1** (`checked` + `blocked`) | $\ge 1$ assigned role; **every** assigned role has $\ge 1$ external locator citation (`PMID:`, `doi:`, `http(s)://`, `ISBN:`, or ontology CURIE); `0` role-evidence warnings (`164` have zero issues of any kind; `84` have only non-blocking `low_average_role_confidence` or `weak_mapping_quality:FALLBACK_REGISTRY` / `CLOSE_MATCH`) | `248` | `51.000 – 79.500` | `data/ingredients/mapped/Biotin.yaml` (`CHEBI:15956`, `rank: 2599`, `score: 79.500`), `data/ingredients/mapped/Na2s2o3_X_5_H2o.yaml` (`CHEBI:32150`, `rank: 2584`, `score: 77.000`), `data/ingredients/mapped/Cyanocobalamin.yaml` (`CHEBI:17439`, `rank: 2574`, `score: 76.500`), `data/ingredients/mapped/Na2moo4_X_2_H2o.yaml` (`CHEBI:75213`, `rank: 2548`, `score: 76.500`), `data/ingredients/mapped/Feso4_X_7_H2o.yaml` (`CHEBI:75836`, `rank: 2542`, `score: 75.500`), `data/ingredients/mapped/ATCC_Wolfes_Mineral_Mix.yaml` (`kgmicrobe.ingredient:atcc_wolfes_mineral_mix`, `rank: 2521`, `score: 71.000`) |
-| **Cohort E2a** (`checked` + `evidence-limited` + `blocked`) | $\ge 1$ assigned role; all roles have non-empty `evidence`, but $\ge 1$ role relies only on `COMPUTATIONAL_PREDICTION` / `MANUAL_CURATION` without an external locator (`role_lacks_external_evidence:<facet>.<ROLE>`, which triggers Scope Gate G6 warning if referenced in `explains`) | `569` | `47.500 – 75.750` | `data/ingredients/mapped/D-glucose.yaml` (`CHEBI:17634`, `rank: 2535`, `score: 73.500`), `data/ingredients/mapped/Glucose.yaml` (`CHEBI:17234`, `rank: 2534`, `score: 73.500`), `data/ingredients/mapped/2-Hydroxybutyric_Acid_Sodium_Salt.yaml` (`cas:5094-24-6`, `rank: 1845`, `score: 54.500`), `data/ingredients/mapped/H3bo3.yaml` (`CHEBI:33118`, `rank: 2475`, `score: 65.500`) |
-| **Cohort E2b** (`checked` + `evidence-limited` + `blocked`) | $\ge 1$ assigned role, but at least one assigned role has empty `evidence: []` (`role_missing_evidence:<facet>.<ROLE>`) | `11` | `64.500 – 75.750` | `data/ingredients/mapped/Na2so4.yaml` (`CHEBI:32149`, `rank: 2515`, `score: 70.250`), `data/ingredients/mapped/Mgso4_X_7_H2o.yaml` (`CHEBI:32599`, `rank: 2545`, `score: 75.750`), `data/ingredients/mapped/Caso4_X_2_H2o.yaml` (`CHEBI:32583`, `rank: 2544`, `score: 75.750`), `data/ingredients/mapped/K2so4.yaml` (`CHEBI:32036`, `rank: 2508`, `score: 69.500`) |
-| **Cohort E3** (`checked` + `evidence-limited` + `blocked`) | Passes `IDENTITY_GATE`, but currently has `0` assigned roles (`no_ingredient_roles`); requires role curation before a mechanistic `IngredientCausalGraph` can populate `explains` (`EXPLAINS_UNKNOWN_ROLE`), or can receive a `SPECIATION` (`NONMECHANISTIC`) graph | `1,668` | `9.000 – 45.000` | `data/ingredients/mapped/Uracil.yaml` (`CHEBI:17568`, `rank: 763`, `score: 27.000`), `data/ingredients/mapped/Thiosulfate.yaml` (`CHEBI:26977`, `rank: 158`, `score: 25.000`), `data/ingredients/mapped/Na2HPO4-NaH2PO4_Buffer.yaml` (`kgmicrobe.ingredient:na2hpo4-nah2po4_buffer`, `rank: 10`, `score: 10.000`) |
-| **Total Eligible** | **All `IDENTITY_GATE`-passing records (`248 + 569 + 11 + 1,668`)** | **`2,496`** | | |
-
----
-
-## 4. Readiness Scorer (`scripts/score_causal_graph_readiness.py`) Summary
-
-Running `.venv/bin/python scripts/score_causal_graph_readiness.py --ingredients-dir data/ingredients --duplicate-baseline mappings/duplicate_identifier_baseline.tsv --limit 3000 --out /tmp/cg_readiness_active_c8_s2.tsv` over the corpus evaluated all `2,611` active mapped records (`2,680` mapped files minus `69` `REJECTED` mapped tombstones).
-
-### 4.1 Score Distribution Across All `2,611` Active Mapped Records
-
-- **Total active mapped records scored:** `2,611` (`2,496` `IDENTITY_GATE`-eligible + `54` `PLACEHOLDER` + `35` duplicate-identifier baseline + `26` mapped `NAMED_MEDIUM`)
-- **Readiness score range:** `min = 7.000`, `median = 25.000`, `max = 90.000`
-- **Issue flag frequencies across `2,611` active mapped records:**
-  - `no_ingredient_roles`: `1,763` (`1,668` eligible in Cohort E3 + `95` in `I7`/`I8`/`I9`)
-  - `role_lacks_external_evidence:*`: `588` (`569` eligible in Cohort E2a + `19` in `I7`/`I8`/`I9`)
-  - `low_average_role_confidence`: `487`
-  - `weak_mapping_quality:FALLBACK_REGISTRY`: `123`
-  - `no_component_edges`: `117`
-  - `weak_mapping_quality:CLOSE_MATCH`: `71`
-  - `weak_mapping_quality:PLACEHOLDER`: `54` (`Cohort I7`)
-  - `duplicate_identifier:*`: `35` (`Cohort I8`: `15` `HYDRATE_FAMILY_UNREVIEWED`, `10` `NEEDS_OWN_ID`, `4` `NEEDS_OWN_ID_MEMBER_UNDECIDED`, `4` `UNREVIEWED`, `2` `MERGE_SAME_SUBSTANCE`)
-  - `weak_mapping_quality:LLM_ASSISTED`: `26`
-  - `role_missing_evidence:*`: `11` (`Cohort E2b`: `Caso4.yaml`, `Caso4_X_2_H2o.yaml`, `Caso4_X_7_H2o.yaml`, `K2so4.yaml`, `K2so4_X_7_H2o.yaml`, `Magnesium_Sulfate.yaml`, `Mgso4_X_6_H2o.yaml`, `Mgso4_X_7_H2o.yaml`, `Mgso4h2o.yaml`, `Na2so4.yaml`, `Na2so4_X_10_H2o.yaml`)
-  - `weak_mapping_quality:LEXICAL_MATCH`: `8`
-  - `weak_mapping_quality:PROVISIONAL`: `3`
-  - **Zero issues (`issues == ""`)**: `164` records (all in `Cohort E1`)
-
-### 4.2 Top 10 Lowest-Readiness Active Records (`--limit 25` excerpt)
-
-| Rank | Readiness Score | Path | Identifier | Preferred Term | Mapping Quality | Ingredient Type | Issues |
-|---:|---:|---|---|---|---|---|---|
-| 1 | `7.000` | `data/ingredients/mapped/Rhamnogalacturonan_From_Soy_Bean_Pectic_Fibre.yaml` | `cas:39280-21-2` | Rhamnogalacturonan from soy bean pectic fibre | `FALLBACK_REGISTRY` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:FALLBACK_REGISTRY;duplicate_identifier:NEEDS_OWN_ID;no_ingredient_roles;no_component_edges` |
-| 2 | `7.000` | `data/ingredients/mapped/Soyton.yaml` | `kgmicrobe.ingredient:soyton` | Soyton | `PLACEHOLDER` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:PLACEHOLDER;no_ingredient_roles;no_component_edges` |
-| 3 | `9.000` | `data/ingredients/mapped/Bovine_Calf_Serum.yaml` | `MICRO:0001709` | Bovine calf serum | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
-| 4 | `9.000` | `data/ingredients/mapped/Bile_Salts.yaml` | `CHEBI:22868` | Bile salts | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
-| 5 | `9.000` | `data/ingredients/mapped/Cooked_Meat_Medium.yaml` | `FOODON:03305103` | Cooked meat medium | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
-| 6 | `9.000` | `data/ingredients/mapped/Cows_Milk.yaml` | `FOODON:02020891` | Cow's milk | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
-| 7 | `9.000` | `data/ingredients/mapped/Bacto_Tryptic_Soy_Agar.yaml` | `MICRO:0000114` | Bacto Tryptic Soy Agar | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
-| 8 | `9.000` | `data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml` | `MICRO:0000113` | Bacto Tryptic Soy Broth | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
-| 9 | `10.000` | `data/ingredients/mapped/Artificial_Sea_Salt.yaml` | `kgmicrobe.ingredient:artificial_sea_salt` | Artificial Sea Salt | `FALLBACK_REGISTRY` | `UNDEFINED_MIXTURE` | `weak_mapping_quality:FALLBACK_REGISTRY;no_ingredient_roles;no_component_edges` |
-| 10 | `10.000` | `data/ingredients/mapped/Na2HPO4-NaH2PO4_Buffer.yaml` | `kgmicrobe.ingredient:na2hpo4-nah2po4_buffer` | Na2HPO4-NaH2PO4 buffer | `FALLBACK_REGISTRY` | `STOCK_SOLUTION` | `weak_mapping_quality:FALLBACK_REGISTRY;no_ingredient_roles;no_component_edges` |
-
-### 4.3 Top 10 Highest-Readiness `IDENTITY_GATE`-Eligible Records (`Cohort E1`, Zero Issues)
-
-| Rank (Ascending) | Readiness Score | Path | Identifier | Preferred Term | Mapping Quality | Ingredient Type | Role Count | Populated Facets | Issues |
-|---:|---:|---|---|---|---|---|---:|---:|---|
-| 2599 | `79.500` | `data/ingredients/mapped/Biotin.yaml` | `CHEBI:15956` | Biotin | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2598 | `79.500` | `data/ingredients/mapped/Thiamine_Hcl.yaml` | `CHEBI:49105` | Thiamine HCl | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2597 | `79.500` | `data/ingredients/mapped/P-Aminobenzoic_Acid.yaml` | `CHEBI:30753` | p-Aminobenzoic acid | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2596 | `79.500` | `data/ingredients/mapped/Ca-Pantothenate.yaml` | `CHEBI:31345` | Ca-pantothenate | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2595 | `79.500` | `data/ingredients/mapped/Pyridoxine_Hcl.yaml` | `CHEBI:30961` | Pyridoxine HCl | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2594 | `79.500` | `data/ingredients/mapped/Nicotinic_Acid.yaml` | `CHEBI:15940` | Nicotinic acid | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2593 | `79.500` | `data/ingredients/mapped/Riboflavin.yaml` | `CHEBI:17015` | Riboflavin | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2592 | `79.500` | `data/ingredients/mapped/Lipoic_Acid.yaml` | `CHEBI:16494` | Lipoic acid | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2591 | `79.500` | `data/ingredients/mapped/Folic_Acid.yaml` | `CHEBI:27470` | Folic acid | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
-| 2590 | `79.500` | `data/ingredients/mapped/Resazurin.yaml` | `CHEBI:8806` | Resazurin | `EXACT_MATCH` | `CHEMICAL_COMPOUND` | `1` | `1` | *(none)* |
+1. **By `ingredient_type` (`2,496` records):**
+   - `SINGLE_INGREDIENT`: `2,037` (`81.61%`)
+   - `None` (untyped mapped records; permitted by closed schema case `P2`): `227` (`9.09%`)
+   - `STOCK_SOLUTION`: `119` (`4.77%`)
+   - `UNDEFINED_MIXTURE`: `113` (`4.53%`)
+2. **By `ontology_mapping.ontology_source` (`2,496` records):**
+   - `CHEBI`: `1,971` (`78.97%`)
+   - `kgmicrobe.ingredient`: `129` (`5.17%`)
+   - `MESH`: `92` (`3.69%`)
+   - `CAS`: `79` (`3.17%`)
+   - `NCIT`: `75` (`3.00%`)
+   - `MICRO`: `59` (`2.36%`)
+   - `FOODON`: `46` (`1.84%`)
+   - `kgmicrobe.compound`: `23` (`0.92%`)
+   - `ENVO`: `17` (`0.68%`)
+   - `UBERON`: `4` (`0.16%`)
+   - `BTO`: `1` (`0.04%`)
+3. **By `ontology_mapping.mapping_quality` (`2,496` records):**
+   - `EXACT_MATCH`: `1,543` (`61.82%`: `1,304` `SINGLE_INGREDIENT`, `113` `STOCK_SOLUTION`, `6` `UNDEFINED_MIXTURE`, `120` `None (untyped)`)
+   - `CAS_RN_LOOKUP`: `250` (`10.02%`: `249` `SINGLE_INGREDIENT`, `1` `None (untyped)`)
+   - `FALLBACK_REGISTRY`: `229` (`9.17%`: `167` `SINGLE_INGREDIENT`, `3` `STOCK_SOLUTION`, `59` `UNDEFINED_MIXTURE`)
+   - `SYNONYM_MATCH`: `196` (`7.85%`: `124` `SINGLE_INGREDIENT`, `1` `STOCK_SOLUTION`, `1` `UNDEFINED_MIXTURE`, `70` `None (untyped)`)
+   - `NARROW_MATCH`: `151` (`6.05%`: `151` `SINGLE_INGREDIENT`)
+   - `CLOSE_MATCH`: `110` (`4.41%`: `31` `SINGLE_INGREDIENT`, `2` `STOCK_SOLUTION`, `47` `UNDEFINED_MIXTURE`, `30` `None (untyped)`)
+   - `LEXICAL_MATCH`: `15` (`0.60%`: `9` `SINGLE_INGREDIENT`, `6` `None (untyped)`)
+   - `MANUAL_CURATION`: `1` (`0.04%`: `1` `SINGLE_INGREDIENT`, `Vitamin_B12.yaml`)
+   - `BROAD_MATCH`: `1` (`0.04%`: `1` `SINGLE_INGREDIENT`, `Disodium_Succinate_Hexahydrate.yaml`)
+4. **By Structural Decomposition Slots (`2,496` records):**
+   - Carrying `components` (`StockComponent` partonomy, eligible for `COMPONENT` bridge edges with `assertion_basis: [RECORD_COMPONENT]`): `59` records (`27` `STOCK_SOLUTION` + `32` `UNDEFINED_MIXTURE`; `24` additional records with `components` lie in the `457` ineligible slice, totaling `83` decomposed records corpus-wide across `502` components).
+   - Carrying `supplied_form` (which is never a graph node per `MAPPING_SEMANTICS.md` §7.1 A6): `7` eligible records.
+5. **By Assigned Role Slot Distribution (`828` of `2,496` eligible records carry $\ge 1$ role):**
+   - `nutritional_roles` only: `593` records
+   - `physicochemical_roles` only: `226` records
+   - `cellular_metabolic_roles` only: `8` eligible records (`data/ingredients/mapped/K2s4o6.yaml`, `Na2s2o3.yaml`, `Na2s2o3_X_5_H2o.yaml`, `Nitrous_Oxide.yaml`, `Sodium_Perchlorate.yaml`, `Sodium_Perchlorate_Monohydrate.yaml`, `Tetrachloroethene.yaml`, `Thiosulfate.yaml`; note `Sodium_Thiosulfate_Pentahydrate.yaml` also carries `cellular_metabolic_roles` but has `mapping_status: REJECTED`)
+   - Both `nutritional_roles` and `physicochemical_roles`: `1` record (`data/ingredients/mapped/Khco3.yaml`, `CHEBI:81862`)
+   - Total with $\ge 1$ role: `828` (`248` Cohort E1 + `569` Cohort E2a + `11` Cohort E2b).
 
 ---
 
-## 5. Native Schema Verification (`src/mediaingredientmech/schema/mediaingredientmech.yaml` & `tests/test_causal_graph_schema.py`)
+## 5. Causal-Graph Readiness Scorer Analysis (`scripts/score_causal_graph_readiness.py`)
 
-In `src/mediaingredientmech/schema/mediaingredientmech.yaml` (`lines 926–1286`), the native causal-graph and protein-example representation is fully defined:
+`scripts/score_causal_graph_readiness.py` scores all `2,611` active (`mapping_status: MAPPED`) records in `data/ingredients/mapped/*.yaml` on a 100-point rubric (`identity_score` max `20.000`, `role_content_score` max `50.000`, `role_evidence_score` max `30.000`, `component_score` max `10.000`) and sorts rows **ascending by `readiness_score`** ("Lower scores need review first") so curators can triage pre-graph enrichment gaps (`weak_mapping_quality`, `duplicate_identifier`, `no_ingredient_roles`, `role_missing_evidence`, `role_lacks_external_evidence`, `no_component_edges`) alongside top-scoring graph-ready candidates.
 
-1. **Slot on `IngredientRecord`:** `causal_graphs` (`range: IngredientCausalGraph`, `multivalued: true`, `inlined_as_list: true`).
-2. **Core Classes:**
-   - `IngredientCausalGraph`: `name`, `description`, `graph_kind` (`IngredientGraphKindEnum`), `explains` (multivalued `<facet>#<ROLE>` string matching `^(nutritional_roles|physicochemical_roles|cellular_metabolic_roles)#[A-Z][A-Z0-9_]*$`), `organism_scope`, `environmental_context`, `scope_status` (`CausalScopeStatusEnum`, required), `scope_notes`, `nodes` (`CausalNode`, required, multivalued), `edges` (`CausalEdge`, required, multivalued), `curation_Status`.
-   - `CausalNode`: `id` (`CURIE`, `identifier: true`), `label` (required), `node_type` (`CausalNodeTypeEnum`, required), `xrefs`, `component_ref`, `protein_examples` (`ProteinExample`, multivalued), `notes`.
-   - `CausalEdge`: `subject`, `predicate`, `predicate_id` (restricted to the 10-URI allowlist), `object`, `bridge_kind` (`BridgeKindEnum`), `stoichiometry`, `assertion_basis` (`AssertionBasisEnum`, required, multivalued), `evidence` (`EvidenceItem`, required, multivalued), `notes`.
-   - `ProteinExample`: `uniprot_id` (`^UniProtKB:([OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}[0-9]){1,2})(-[0-9]+)?$`), `protein_label`, `gene_symbol`, `taxon_id` (`^NCBITaxon:[0-9]+$`), `taxon_label`, `entry_status` (`UniProtEntryStatusEnum`: `REVIEWED` / `UNREVIEWED`), `role`, `evidence` (`EvidenceItem`, required, multivalued), `notes`.
-3. **Closed-Schema & In-Memory Rule Verification (`tests/test_causal_graph_schema.py`):**
-   - `49` unit tests in `tests/test_causal_graph_schema.py` (`7` positive fixtures `P1–P7` covering `ASSIMILATION`, `TOXICITY`, `COFACTOR_FUNCTION`, `SPECIATION`, `ENERGY_CONSERVATION`, `FORM_OF_PARENT`, and `COMPONENT`; `18` negative fixtures `N1–N18` covering every schema and structural invariant) plus `17` unit tests in `tests/test_score_causal_graph_readiness.py` (`66 passed` total).
+### 5.1 Ranks 1–10 (Lowest-Scoring Active Mapped Records Emitted by `--limit 25 --out /tmp/cg_readiness_c8_s2_top25.tsv`)
+
+Running `.venv/bin/python scripts/score_causal_graph_readiness.py --ingredients-dir data/ingredients --duplicate-baseline mappings/duplicate_identifier_baseline.tsv --limit 25 --out /tmp/cg_readiness_c8_s2_top25.tsv` writes the 25 lowest-scoring active mapped records (`readiness_score` `7.000` to `10.000`; first 10 shown below):
+
+| `rank` | `readiness_score` | `identity_score` | `role_content_score` | `role_evidence_score` | `component_score` | `path` | `identifier` | `preferred_term` | `mapping_quality` | `ingredient_type` | `total_occurrences` | `role_count` | `best_role_evidence` | `issues` |
+|---:|---:|---:|---:|---:|---:|---|---|---|---|---|---:|---:|---:|---|
+| 1 | `7.000` | `7.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Rhamnogalacturonan_From_Soy_Bean_Pectic_Fibre.yaml` | `cas:39280-21-2` | `Rhamnogalacturonan from soy bean pectic fibre` | `FALLBACK_REGISTRY` | `UNDEFINED_MIXTURE` | 0 | 0 | `0.000` | `weak_mapping_quality:FALLBACK_REGISTRY;duplicate_identifier:NEEDS_OWN_ID;no_ingredient_roles;no_component_edges` |
+| 2 | `7.000` | `7.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Soyton.yaml` | `kgmicrobe.ingredient:soyton` | `Soyton` | `PLACEHOLDER` | `UNDEFINED_MIXTURE` | 0 | 0 | `0.000` | `weak_mapping_quality:PLACEHOLDER;no_ingredient_roles;no_component_edges` |
+| 3 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Bovine_Calf_Serum.yaml` | `MICRO:0001709` | `Bovine calf serum` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 8 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
+| 4 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Bile_Salts.yaml` | `CHEBI:22868` | `Bile salts` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 4 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
+| 5 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Cooked_Meat_Medium.yaml` | `FOODON:03305103` | `Cooked meat medium` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 2 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
+| 6 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Cows_Milk.yaml` | `FOODON:02020891` | `Cow's milk` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 2 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
+| 7 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Bacto_Tryptic_Soy_Agar.yaml` | `MICRO:0000114` | `Bacto Tryptic Soy Agar` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 0 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
+| 8 | `9.000` | `9.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml` | `MICRO:0000113` | `Bacto Tryptic Soy Broth` | `LEXICAL_MATCH` | `UNDEFINED_MIXTURE` | 0 | 0 | `0.000` | `weak_mapping_quality:LEXICAL_MATCH;no_ingredient_roles;no_component_edges` |
+| 9 | `10.000` | `10.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Artificial_Sea_Salt.yaml` | `kgmicrobe.ingredient:artificial_sea_salt` | `Artificial Sea Salt` | `FALLBACK_REGISTRY` | `UNDEFINED_MIXTURE` | 12 | 0 | `0.000` | `weak_mapping_quality:FALLBACK_REGISTRY;no_ingredient_roles;no_component_edges` |
+| 10 | `10.000` | `10.000` | `0.000` | `0.000` | `0.000` | `data/ingredients/mapped/Na2HPO4-NaH2PO4_Buffer.yaml` | `kgmicrobe.ingredient:na2hpo4-nah2po4_buffer` | `Na2HPO4-NaH2PO4 buffer` | `FALLBACK_REGISTRY` | `STOCK_SOLUTION` | 7 | 0 | `0.000` | `weak_mapping_quality:FALLBACK_REGISTRY;no_ingredient_roles;no_component_edges` |
+
+### 5.2 Highest-Scoring Mapped Records in the Full `2,611`-Record Ranking (`/tmp/cg_readiness_active_c8_s2.tsv`, Ranks `2,592`–`2,611`)
+
+At the high-readiness end of `/tmp/cg_readiness_active_c8_s2.tsv`, Rank `2,611` is `Mineral_3B_Solution.yaml` (`readiness_score: 81.500`), and Ranks `2,592`–`2,610` are 19 `EXACT_MATCH` `SINGLE_INGREDIENT` Cohort E1 records tied at `79.500` with `issues: ""`:
+
+| `rank` | `readiness_score` | `identity_score` | `role_content_score` | `role_evidence_score` | `component_score` | `path` | `identifier` | `preferred_term` | `mapping_quality` | `ingredient_type` | `total_occurrences` | `role_count` | `best_role_evidence` | `issues` |
+|---:|---:|---:|---:|---:|---:|---|---|---|---|---|---:|---:|---:|---|
+| 2592 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nacl.yaml` | `CHEBI:26710` | `NaCl` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 8,191 | 1 | `0.750` | — |
+| 2593 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Kh2po4.yaml` | `CHEBI:63036` | `KH2PO4` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 5,649 | 1 | `0.750` | — |
+| 2594 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/K2hpo4.yaml` | `CHEBI:131527` | `K2HPO4` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 4,555 | 1 | `0.750` | — |
+| 2595 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/H3bo3.yaml` | `CHEBI:33118` | `H3BO3` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 4,216 | 1 | `0.750` | — |
+| 2596 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Kcl.yaml` | `CHEBI:32588` | `KCl` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 3,958 | 1 | `0.750` | — |
+| 2597 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Resazurin.yaml` | `CHEBI:8806` | `Resazurin` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 3,671 | 1 | `0.750` | — |
+| 2598 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nahco3.yaml` | `CHEBI:32139` | `NaHCO3` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 3,168 | 1 | `0.750` | — |
+| 2599 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Biotin.yaml` | `CHEBI:15956` | `Biotin` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,829 | 1 | `0.750` | — |
+| 2600 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/P-aminobenzoic_Acid.yaml` | `CHEBI:30753` | `p-Aminobenzoic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,270 | 1 | `0.750` | — |
+| 2601 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nicotinic_Acid.yaml` | `CHEBI:15940` | `Nicotinic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,222 | 1 | `0.750` | — |
+| 2602 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Riboflavin.yaml` | `CHEBI:17015` | `Riboflavin` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,123 | 1 | `0.750` | — |
+| 2603 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Folic_Acid.yaml` | `CHEBI:27470` | `Folic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,111 | 1 | `0.750` | — |
+| 2604 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Pyridoxine_Hydrochloride.yaml` | `CHEBI:30961` | `Pyridoxine hydrochloride` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,029 | 1 | `0.750` | — |
+| 2605 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Thiamine_Hcl.yaml` | `CHEBI:49105` | `Thiamine HCl` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 2,009 | 1 | `0.750` | — |
+| 2606 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Zncl2.yaml` | `CHEBI:49976` | `ZnCl2` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 1,839 | 1 | `0.750` | — |
+| 2607 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nh42so4.yaml` | `CHEBI:62946` | `(NH4)2SO4` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 1,807 | 1 | `0.750` | — |
+| 2608 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Nitrilotriacetic_Acid.yaml` | `CHEBI:44557` | `Nitrilotriacetic acid` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 1,348 | 1 | `0.750` | — |
+| 2609 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Mnso4_X_H2o.yaml` | `CHEBI:86364` | `MnSO4 x H2O` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 1,183 | 1 | `0.750` | — |
+| 2610 | `79.500` | `20.000` | `27.000` | `22.500` | `10.000` | `data/ingredients/mapped/Na-acetate.yaml` | `CHEBI:32954` | `Na-acetate` | `EXACT_MATCH` | `SINGLE_INGREDIENT` | 1,166 | 1 | `0.750` | — |
+| 2611 | `81.500` | `10.000` | `36.000` | `25.500` | `10.000` | `data/ingredients/mapped/Mineral_3B_Solution.yaml` | `kgmicrobe.ingredient:mineral_3b_solution` | `Mineral 3B solution` | `FALLBACK_REGISTRY` | `STOCK_SOLUTION` | 9 | 5 | `0.850` | `weak_mapping_quality:FALLBACK_REGISTRY` |
 
 ---
 
@@ -225,7 +221,7 @@ To verify that `src/mediaingredientmech/schema/mediaingredientmech.yaml`, `docs/
 |---|---|---|---|---|---|
 | **Unimplemented QC Gate, Snapshots, and Writer** | `SNAPSHOT_INCOMPLETE`, `PIN_MISMATCH`, `SNAPSHOT_TAMPERED`, `ONTOLOGY_FACT_MISSING`, `UNRESOLVED_SIBLING`, `BASIS_UNVERIFIED`, `LINKS_STALE` | `2,496` (all `IDENTITY_GATE`-eligible records) | Steps 3–7 of `docs/CAUSAL_GRAPH_CONTRACT.md` Status table (`conf/sibling_pins.yaml`, `mappings/cross_mech_references.tsv`, `mappings/cross_mech_assertions.jsonl`, `mappings/ontology_facts.tsv`, `mappings/cross_mech_links.tsv`, `just qc-causal-graphs`, and the validated graph writer) are marked `planned` and not yet implemented (`INFRA_TASKS.md` currently has `tasks: []`). | `docs/CAUSAL_GRAPH_CONTRACT.md` Status table (Steps 3–7), Section 7 & Section 10 | Complete Step 3 (`conf/sibling_pins.yaml`, committed snapshots, refresh/fetch recipes, and `just qc-causal-graphs`) and Step 5 (validated writer + `Na2moo4_X_2_H2o.yaml` canary) before writing `causal_graphs` onto maintained records. |
 | **Missing Typed Role Assignments on Eligible Records** | `EXPLAINS_UNKNOWN_ROLE` (`docs/CAUSAL_GRAPH_CONTRACT.md` §7); scorer flag `no_ingredient_roles` | `1,668` (Cohort E3) | Records pass `MAPPING_SEMANTICS.md` §7.1 A2 (`MAPPED`, non-`NAMED_MEDIUM`, non-`PLACEHOLDER`, non-duplicate), but have `0` assigned roles across `nutritional_roles`, `physicochemical_roles`, and `cellular_metabolic_roles`. | `docs/CAUSAL_GRAPH_CONTRACT.md` §2 (`explains`), §6 (Scope Gate G6), §10 Step 2; `.claude/skills/ingredient-roles/SKILL.md` | Curate evidence-backed role assignments on the record before adding a mechanistic graph that names `<facet>#<ROLE>` in `explains` (or use `graph_kind: SPECIATION` for salts/hydrates/stocks delegating to a constituent record). |
-| **Role Assignments Lacking External Locator Citations or Missing Evidence** | `SCOPE_GATE` (Rule G6 warning on computational-only role evidence); scorer flags `role_lacks_external_evidence` (`569`) & `role_missing_evidence` (`11`) | `580` (`569` Cohort E2a + `11` Cohort E2b) | Assigned roles rely solely on `COMPUTATIONAL_PREDICTION` / `MANUAL_CURATION` without external locators (`569` records) or have `evidence: []` (`11` records: `Caso4.yaml`, `Caso4_X_2_H2o.yaml`, `Caso4_X_7_H2o.yaml`, `K2so4.yaml`, `K2so4_X_7_H2o.yaml`, `Magnesium_Sulfate.yaml`, `Mgso4_X_6_H2o.yaml`, `Mgso4_X_7_H2o.yaml`, `Mgso4h2o.yaml`, `Na2so4.yaml`, `Na2so4_X_10_H2o.yaml`). | `docs/CAUSAL_GRAPH_CONTRACT.md` §6 (Scope Gate G6); `.claude/skills/curate-yaml-record/SKILL.md` | Upgrade role `evidence` entries with locator-backed `PEER_REVIEWED_PUBLICATION`, `DATABASE_ENTRY`, or `TECHNICAL_REPORT` citations alongside causal-graph curation. |
+| **Role Assignments Lacking External Locator Citations or Missing Evidence** | `SCOPE_GATE` (Rule G6 warning on computational-only role evidence); scorer flags `role_lacks_external_evidence` (`569`) & `role_missing_evidence` (`11`) | `580` (`569` Cohort E2a + `11` Cohort E2b) | Assigned roles rely solely on `COMPUTATIONAL_PREDICTION` / `MANUAL_CURATION` without external locators (`569` records) or have `evidence: []` on an assigned role (`11` records emitted by `scripts/score_causal_graph_readiness.py` with `role_missing_evidence:nutritional_roles.MINERAL_SOURCE`: `Caso4.yaml` [`CHEBI:31346`, rank `2330`], `Caso4_X_2_H2o.yaml` [`CHEBI:32583`, rank `2328`], `Caso4_X_7_H2o.yaml` [`kgmicrobe.compound:caso4_x_7_h2o`, rank `1878`], `K2so4.yaml` [`CHEBI:32036`, rank `2329`], `K2so4_X_7_H2o.yaml` [`kgmicrobe.compound:k2so4_x_7_h2o`, rank `1879`], `Magnesium_Sulfate.yaml` [`CHEBI:32599`, rank `2356`], `Mgso4_X_6_H2o.yaml` [`kgmicrobe.compound:mgso4_x_6_h2o`, rank `2325`], `Mgso4_X_7_H2o.yaml` [`CHEBI:31795`, rank `2355`], `Mgso4h2o.yaml` [`cas:14168-73-1`, rank `2326`], `Na2so4.yaml` [`CHEBI:32149`, rank `2515`], and `Na2so4_X_10_H2o.yaml` [`CHEBI:32586`, rank `2160`]). | `docs/CAUSAL_GRAPH_CONTRACT.md` §6 (Scope Gate G6); `.claude/skills/curate-yaml-record/SKILL.md` | Upgrade role `evidence` entries with locator-backed `PEER_REVIEWED_PUBLICATION`, `DATABASE_ENTRY`, or `TECHNICAL_REPORT` citations alongside causal-graph curation. |
 | **Duplicate-Identifier Baseline Families** | `IDENTITY_GATE` (`MAPPING_SEMANTICS.md` §7.1 A2); scorer flag `duplicate_identifier:<disposition>` | `35` mapped records (`+ 2` rejected tombstones = `37` total in `15` identifier groups) | Shared primary `identifier` across multiple mapped records in `mappings/duplicate_identifier_baseline.tsv` (e.g., `CHEBI:86345` on `Mgcl2_X_6_H2o.yaml` & `Magnesium_Chloride.yaml`; `CHEBI:29377` on `Na2co3.yaml` & `Sodium_Carbonate_Solution.yaml`; `cas:39280-21-2` on `Rhamnogalacturonan_From_Soy_Bean_Pectic_Fibre.yaml` & `Rhamnogalacturonan_I_From_Potato_Pectic_Fiber.yaml`). | `MAPPING_SEMANTICS.md` §7.1 A2; `mappings/duplicate_identifier_baseline.tsv`; `.claude/skills/merge-ingredients/SKILL.md` | Resolve each duplicate-identifier family (`MERGE_SAME_SUBSTANCE`, `NEEDS_OWN_ID`, `NEEDS_OWN_ID_MEMBER_UNDECIDED`, `HYDRATE_FAMILY_UNREVIEWED`, `UNREVIEWED`) via mapped-to-mapped merge or regrounding before authoring causal graphs on those records. |
 | **Placeholder Grounding on Mapped Records** | `IDENTITY_GATE` (`MAPPING_SEMANTICS.md` §7.1 A2); scorer flag `weak_mapping_quality:PLACEHOLDER` | `54` (`Cohort I7`) | `ontology_mapping.mapping_quality: PLACEHOLDER` (`kgmicrobe.compound:*` / `kgmicrobe.ingredient:*` placeholders such as `Aburamycin_A.yaml` and `Soyton.yaml`). | `MAPPING_SEMANTICS.md` §7.1 A2; `.claude/skills/map-media-ingredients/SKILL.md` | Promote placeholder groundings to verified ChEBI/CAS/FoodOn terms or curated `FALLBACK_REGISTRY` / `MANUAL_CURATION` quality before causal-graph eligibility. |
 | **SSSOM `skos:closeMatch` vs `skos:broadMatch` on Hydrate-on-Anhydrous Registry Fallbacks** | `BASIS_UNVERIFIED` / `BRIDGE_GUARD_FAILED` on `FORM_OF_PARENT` (`MAPPING_SEMANTICS.md` §7.2 line 1104) | `1` verified exemplar (`Sodium_Perchlorate_Monohydrate.yaml`, `cas:7791-07-3`) | `FORM_OF_PARENT` requires `predicate_id: skos:broadMatch` backed by the record's own SSSOM `skos:broadMatch` row (`assertion_basis: [RECORD_SSSOM]`), whereas hydrate-on-anhydrous registry fallbacks emit `skos:closeMatch` in `mappings/ingredient_mappings.sssom.tsv`. | `MAPPING_SEMANTICS.md` §3 & §7.2 (`FORM_OF_PARENT`) | Keep `FORM_OF_PARENT` restricted to `skos:broadMatch` parent rows (such as `2-Hydroxybutyric_Acid_Sodium_Salt.yaml`, `cas:5094-24-6`), or reground hydrate records to a ChEBI hydrate term (`HYDRATE_PART`) when ChEBI adds the hydrate. |
