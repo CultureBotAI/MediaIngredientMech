@@ -1,0 +1,67 @@
+schema_version: 1.0.0
+repository_key: mediaingredientmech
+github_repository: CultureBotAI/MediaIngredientMech
+run_id: mech-goal-sequence-20261019
+cycle: 10
+stage: 4
+revision: 1
+outcome: completed
+summary: "Reviewed all 2,953 individual IngredientRecord YAML files and 7 collection YAML documents at 310ae534a38ef2d4e302a70a03d2cf5de92bcbeb across all 976 structured review bundles in reviews/structured/; 1,993 records passed with 0 active findings (including Ca_No32_X_4_H2o.yaml resolved under mim-c01-s04-f002 / #922 in Cycle 1 Stage 5) and 960 records retain 970 active findings across the 6 carried-forward root-cause cohorts (mim-c01-s04-f001 and mim-c01-s04-f003 .. mim-c01-s04-f007)."
+source_revision: 310ae534a38ef2d4e302a70a03d2cf5de92bcbeb
+scope_frozen_at: '2026-10-31T05:13:00Z'
+previous_evidence:
+  path: reviews/workflow/mech-goal-sequence-20261019/cycle-000009/stage-05/revision-0001/evidence.yaml
+  sha256: 42f2191031eb14eb1ec0027e48fde2b5c8beadf3fcfefb1c42b185b26c3d08a0
+artifacts:
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000010/stage-04/revision-0001/review_report.md
+  sha256: 5cb131489054c07e060b2fd5fab22fe6ca9cda314e594e4f2486d0d59dcb59bd
+  kind: review_report
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000010/stage-04/revision-0001/review_findings.md
+  sha256: d359a56d75492e314f1d51423a9dfb3502df0c850801b4804566fcd34649786a
+  kind: review_findings
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000010/stage-04/revision-0001/coverage_report.md
+  sha256: 3e2ee6627b10c099daedc98d9d699f21b0e5011b731cac93dc6d1572105a166a
+  kind: supporting
+- path: reviews/workflow/mech-goal-sequence-20261019/cycle-000010/stage-04/revision-0001/validation.md
+  sha256: 38d6f9e2af902aff5ed3ae15ea6f3e2140b6d7b36d852dd986ec15023c1c7a06
+  kind: validation
+findings:
+- finding_id: mim-c01-s04-f001
+  carried_from: mim-c01-s04-f001
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/921
+  summary: "Reconcile missing direct MicrobeDecoder occurrence on data/ingredients/mapped/(2)-D-lyxose.yaml (CHEBI:62318; native finding rec-f-444b73747dddc915)"
+- finding_id: mim-c01-s04-f003
+  carried_from: mim-c01-s04-f003
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/923
+  summary: "Normalize non-monotonic curation_history timestamp order across 19 mapped ingredient records"
+- finding_id: mim-c01-s04-f004
+  carried_from: mim-c01-s04-f004
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  summary: "Adjudicate prediction-only or empty primary nutritional/cellular role assertions lacking literature citations across 624 mapped records (595 single-role + 29 multi-role; issue #718)"
+- finding_id: mim-c01-s04-f005
+  carried_from: mim-c01-s04-f005
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  summary: "Adjudicate prediction-only or empty secondary physicochemical role assertions lacking literature citations across 29 mapped records (17 single-role + 12 multi-role; issue #718)"
+- finding_id: mim-c01-s04-f006
+  carried_from: mim-c01-s04-f006
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  summary: "Resolve exact chemical identity, preparation form, or complex parent scope across 262 unmapped/ambiguous records (266 findings across 261 unmapped identity + 4 complex parent scope + 1 ambiguous PYGS; issue #718)"
+- finding_id: mim-c01-s04-f007
+  carried_from: mim-c01-s04-f007
+  status: open
+  issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+  summary: "Adjudicate context-dependent exported synonym/CAS token scope and component source scope across 31 records (17 nomenclature token scope + 13 component source scope + 1 Furaltadone CAS alias; issues #718, #861)"
+groups: []
+carry_forward_ids:
+- mim-c01-s04-f001
+- mim-c01-s04-f003
+- mim-c01-s04-f004
+- mim-c01-s04-f005
+- mim-c01-s04-f006
+- mim-c01-s04-f007
+infra_tasks: []
