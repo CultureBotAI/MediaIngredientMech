@@ -1,0 +1,256 @@
+{
+  "reviewer": "Codex independent agent /root/sssom_adversarial_review",
+  "independence_basis": "This reviewer and date sub-reviewer did not author or modify the branch changes. Only separate probe and report artifacts were written.",
+  "recorded_at": "2026-10-31T23:32:22.433074+00:00",
+  "repository": "CultureBotAI/culturebotai-claw",
+  "base": "18774380e032acb6da0d195214c59368cd47594f",
+  "head": "0d45b0c1d40bec528913e5ff39707174af0b6221",
+  "scope": "Generator B5/K/G changes and all four changed source/test files; bounded offline adversarial review.",
+  "completion": "completed",
+  "verdict": "needs_fix",
+  "scientific_review": false,
+  "inspected_committed_files": [
+    {
+      "path": "scripts/build_mim_ingredient_sssom.py",
+      "sha256": "be52458f59cb841aff266d91735b4b9e0d47e349bf32ed2b74e2f046dbd300cc"
+    },
+    {
+      "path": "tests/test_sssom_identity_row.py",
+      "sha256": "621a01a3624bcad7dcf3c3f1ac7b6892e371debc48fb957ebb24d25a45dd6d13"
+    },
+    {
+      "path": "tests/test_mim_synonym_scope.py",
+      "sha256": "0b6930d2c778ae5743fd3e9d73bd5f18fc4515075e20e3d656327f42c6d7d3a6"
+    },
+    {
+      "path": "tests/test_mim_sssom_header_dates.py",
+      "sha256": "5feca90a048ae292f2114d8b11fb3057eebfaa35ce96188f830472646135b874"
+    }
+  ],
+  "supporting_inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw/AGENTS.md",
+      "sha256": "c7f13df6e99628b5023da5941bf45581b3fdf9addc8cb6b1c5917324b23fde44"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/mim/MAPPING_SEMANTICS.md",
+      "sha256": "94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/mim/scripts/validate_sssom_invariants.py",
+      "sha256": "89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/probe-result.json",
+      "sha256": "30fb2eee6f0d2c8259b4b539b78dcda0f08c78d76f05440731c70eaf988f90cf"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/result.json",
+      "sha256": "855579c14990f7dee3ee355050d6867cf329b474bcf0e94a67fd009331b99ccc"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-result.json",
+      "sha256": "38487c14cd0e5a18487dee1c3d459b542913c5b1446633806366b92f848bea94"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-preservation.json",
+      "sha256": "a23c0d380e76d044b4bebe054f5c8eed8f87e5e00e466c47731e69abd0457f7e"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/mutation-results.json",
+      "sha256": "0b617d1cae50ec5e1e3c07424bd145ece522d11997e46fd402f630f26c02c9ed"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Exact head and source-state verification",
+      "result": "passed",
+      "head": "0d45b0c1d40bec528913e5ff39707174af0b6221",
+      "source_tree_dirty": false
+    },
+    {
+      "name": "Independent native B1/B5/G/K and complete candidate delta probe",
+      "result": "passed",
+      "command_receipt": {
+        "name": "adversarial_probe",
+        "argv": [
+          "uv",
+          "run",
+          "python",
+          "../adversarial-probes/review_probe.py"
+        ],
+        "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw",
+        "started_at": "2026-10-31T23:30:05.550089+00:00",
+        "finished_at": "2026-10-31T23:30:10.257831+00:00",
+        "exit_code": 0,
+        "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/logs/adversarial_probe.log",
+        "log_sha256": "b061c3894338a104deea541c3708dbadecb13aca6238f76f5aa56751f757e8e7"
+      },
+      "rows_before": 2994,
+      "rows_after": 2980,
+      "removed_extra_registry_rows": 14,
+      "added_rows": 0,
+      "changed_retained_fields": {
+        "other": 17
+      },
+      "synthetic_cases": 45
+    },
+    {
+      "name": "Independent committed date regression tests and additional calendar/type probes",
+      "result": "passed",
+      "details": {
+        "head": "0d45b0c1d40bec528913e5ff39707174af0b6221",
+        "builder_sha256": "be52458f59cb841aff266d91735b4b9e0d47e349bf32ed2b74e2f046dbd300cc",
+        "probes": [
+          {
+            "probe": "valid leap-day, ancient date and input-order independence",
+            "passed": true
+          },
+          {
+            "probe": "10 malformed dates rejected before overwriting existing output",
+            "passed": true
+          },
+          {
+            "probe": "header reflects maximum date while row dates remain serialized unchanged",
+            "passed": true
+          }
+        ],
+        "findings": [],
+        "limitations": [
+          "Bounded offline header-date review; no claim of atomicity for unrelated pre-existing I/O failures."
+        ]
+      },
+      "pytest_log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/pytest.log"
+    },
+    {
+      "name": "Unicode-year header guard and preserved-output counterexample",
+      "result": "failed",
+      "details": {
+        "raw_date": "２０２６-10-15",
+        "strptime_result": "2026-10-15T00:00:00",
+        "date_fromisoformat_accepts": false,
+        "native_row_mapping_date": "２０２６-10-15",
+        "mapping_set_version_result": "２０２６-10-15",
+        "sssom_validation": [
+          {
+            "case": "unicode-row-and-header",
+            "argv": [
+              "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/sssom",
+              "validate",
+              "-V",
+              "JsonSchema",
+              "-V",
+              "PrefixMapCompleteness",
+              "-V",
+              "StrictCurieFormat",
+              "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-date.sssom.tsv"
+            ],
+            "exit_code": 1,
+            "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-row-and-header.log",
+            "log_sha256": "73e4164dd2bd5656b708a1ef558d1f80ad9bb081712b7a4e8cbe8d4ca826bb64"
+          },
+          {
+            "case": "unicode-row-old-ascii-header",
+            "argv": [
+              "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/sssom",
+              "validate",
+              "-V",
+              "JsonSchema",
+              "-V",
+              "PrefixMapCompleteness",
+              "-V",
+              "StrictCurieFormat",
+              "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-date-old-header.sssom.tsv"
+            ],
+            "exit_code": 0,
+            "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-row-old-ascii-header.log",
+            "log_sha256": "f1703e85a53378c6506b81855f627c4dc8dfcd6f15e00105fe67ded98c50b8eb"
+          },
+          {
+            "case": "ascii-control",
+            "argv": [
+              "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/sssom",
+              "validate",
+              "-V",
+              "JsonSchema",
+              "-V",
+              "PrefixMapCompleteness",
+              "-V",
+              "StrictCurieFormat",
+              "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/ascii-date.sssom.tsv"
+            ],
+            "exit_code": 0,
+            "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/ascii-control.log",
+            "log_sha256": "187d4d8b0d98cd1e43d7c4feb1532fa9ba6d502959dea2a43849e4b315385821"
+          }
+        ]
+      },
+      "preservation": {
+        "input_date": "２０２６-10-15",
+        "returned_without_error": true,
+        "previous_output_replaced": true,
+        "header_contains_unicode_year": true
+      }
+    },
+    {
+      "name": "Private writer call-site audit",
+      "result": "passed",
+      "scope": "Ignored-inclusive CLAW repository search; only updated main invokes _write_sssom; similarly named test/review helpers are distinct."
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "F1",
+      "issue_key": "mim-sssom-header-unicode-year",
+      "priority": "P3",
+      "severity": "minor",
+      "certainty": "confirmed",
+      "status": "open",
+      "path": "scripts/build_mim_ingredient_sssom.py",
+      "line": 1022,
+      "title": "Unicode year passes the new header-date guard and replaces valid output",
+      "description": "The new shape check uses Unicode-aware \\d and datetime.strptime accepts a fullwidth year. Native _row_from_yaml can emit mapping_date=\"２０２６-10-15\" from curation history; _mapping_set_version returns it and _write_sssom replaces an existing output with that invalid ISO header. Actual sssom validate exits 1 with an invalid /mapping_date error.",
+      "scope_distinction": "Unicode row extraction predates this patch. Propagating the malformed date into the new header and failing the new reject-before-open guard is introduced here. No occurrence in the current curated corpus is claimed.",
+      "recommendation": "Restrict header date shape to ASCII digits or use strict ISO date parsing/roundtrip. Add a native CLI regression that rejects a Unicode-year date and preserves an existing destination.",
+      "acceptance_checks": [
+        "ASCII and leap-day dates still emit unchanged row dates and maximum header date.",
+        "Unicode year is rejected before opening/replacing the output.",
+        "The new regression fails with the prior Unicode-aware shape check and passes after repair."
+      ],
+      "evidence": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode_probe.py",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-result.json",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-preservation.json",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date/unicode-row-and-header.log"
+      ]
+    }
+  ],
+  "positive_assessments": [
+    "B5 removal is limited to the 14 extra compound rows; every curated ingredient primary remains an exactMatch. No predicates or retained row metadata changed in the complete candidate comparison.",
+    "K changes only the other field in 17 retained non-exact rows. Forty-five synthetic namespace/parent/predicate cases preserve primary identities, keep subject-owned aliases, suppress rejected aliases and omit inherited non-exact object aliases.",
+    "Normal header dates derive from emitted curation dates, not the build clock; invalid ASCII dates are rejected before output replacement."
+  ],
+  "remaining_scientific_decisions": [
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669",
+      "scope": "Existing cross-record synonym curation backlog; passing the baseline-aware Rule K is not exhaustive scientific synonym approval."
+    },
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/875",
+      "scope": "Existing Na2HPO4 x7 H2O identity/CAS promotion decision; no namespace or identity is selected in this review."
+    },
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/901",
+      "scope": "Existing hydrate parent closeMatch decisions and pending curation remain separate from generator alias filtering."
+    }
+  ],
+  "limitations": [
+    "Bounded code review and offline probes do not constitute scientific identity approval.",
+    "Existing non-exact mappings and native release holds remain; the diagnostic candidate is not authorized for canonical promotion.",
+    "Full CLAW test-suite execution is owned by the parent and was not claimed complete in this review.",
+    "Native B4 and external ontology coverage were not independently repeated here; parent validation evidence remains separate.",
+    "Existing scientific issue descriptions were read from the current-task preflight snapshots; their scientific merits were not re-curated."
+  ],
+  "source_mutations": [],
+  "remote_mutations": []
+}
