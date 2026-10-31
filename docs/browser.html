@@ -378,6 +378,7 @@
     <header class="header">
         <h1>MediaIngredientMech Browser</h1>
         <p id="subtitle">Explore curated media ingredients with ontology mappings</p>
+<p><a href="text-map/" data-text-map-link hidden>Semantic text map</a></p>
         <a href="index.html" class="nav-link">Home</a>
         <a href="browser.html" class="nav-link">Browse</a>
         <a href="text_map.html" class="nav-link">Text Map</a>
@@ -389,6 +390,10 @@
         <a href="https://github.com/CultureBotAI/MediaIngredientMech" class="nav-link">GitHub</a>
         <a href="https://culturebotai.github.io/mechs/" class="nav-link">All Mech projects</a>
     </header>
+
+    <p id="record-selection-notice" hidden>A specific ingredient is selected.
+        <button type="button" id="clear-record-selection">Show all ingredients</button>
+    </p>
 
     <div class="layout">
         <aside class="sidebar">
@@ -481,38 +486,32 @@
         <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="schema/index.html">Schema Documentation</a> | <a href="index.html#downloads">Data Downloads</a> | <a href="records/build.json">Build Manifest</a></p>
     </footer>
 
+    <script src="record-selection.js"></script>
     <script>
+        let selectedRecord = "";
+        const recordSelection = typeof MIMRecordSelection !== 'undefined' ? MIMRecordSelection : {
+            recordFromHash: hash => new URLSearchParams(String(hash).replace(/^#/, '')).get('record') || '',
+            matches: (ingredient, selected) => !selected || ingredient.source_file === selected,
+            clearRecord: hash => {
+                const parameters = new URLSearchParams(String(hash).replace(/^#/, ''));
+                parameters.delete('record');
+                const remaining = parameters.toString();
+                return remaining ? '#' + remaining : '';
+            }
+        };
         let allIngredients = [];
         let filteredIngredients = [];
-        let dataReady = false;
+        let dataReady = true;
 
         function applyHashFilters() {
+            selectedRecord = recordSelection.recordFromHash(window.location.hash);
+            document.getElementById('record-selection-notice').hidden = !selectedRecord;
             const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
             const status = params.get('status') || '';
             const statusControl = document.getElementById('filter-status');
             const supported = Array.from(statusControl.options)
                 .some(option => option.value === status);
             statusControl.value = supported ? status : '';
-            const queryParams = new URLSearchParams((window.location && window.location.search) || '');
-            const qVal = queryParams.get('q');
-            if (qVal !== null) {
-                const searchControl = document.getElementById('search');
-                if (searchControl) searchControl.value = qVal;
-            }
-            const statusQ = queryParams.get('status');
-            if (statusQ && !status) {
-                const statusSup = Array.from(statusControl.options).some(opt => opt.value === statusQ);
-                if (statusSup) statusControl.value = statusQ;
-            }
-            for (const [paramKey, controlId] of [['source', 'filter-source'], ['quality', 'filter-quality'], ['sort', 'sort-by']]) {
-                const val = queryParams.get(paramKey);
-                if (val !== null) {
-                    const ctrl = document.getElementById(controlId);
-                    if (ctrl && Array.from(ctrl.options || []).some(opt => opt.value === val)) {
-                        ctrl.value = val;
-                    }
-                }
-            }
         }
 
         applyHashFilters();
@@ -521,6 +520,16 @@
             applyFilters();
         });
 
+        document.getElementById('clear-record-selection').addEventListener('click', () => {
+            selectedRecord = '';
+            document.getElementById('record-selection-notice').hidden = true;
+            const hash = recordSelection.clearRecord(window.location.hash);
+            history.replaceState(null, '', window.location.pathname + window.location.search + hash);
+            // Preserve the user's current search/status/source/quality controls.
+            applyFilters();
+        });
+
+        // Load data
         // A failed request is distinct from a valid empty dataset or search.
         async function loadIngredients() {
             dataReady = false;
@@ -603,24 +612,14 @@
             const sortControl = document.getElementById('sort-by');
             const sortBy = sortControl ? sortControl.value : '';
 
-            if (typeof history !== 'undefined' && history && typeof history.replaceState === 'function' && window.location && window.location.pathname) {
-                const qParams = new URLSearchParams(window.location.search || '');
-                if (rawSearch) qParams.set('q', rawSearch); else qParams.delete('q');
-                if (statusFilter) qParams.set('status', statusFilter); else qParams.delete('status');
-                if (sourceFilter) qParams.set('source', sourceFilter); else qParams.delete('source');
-                if (qualityFilter) qParams.set('quality', qualityFilter); else qParams.delete('quality');
-                if (sortBy) qParams.set('sort', sortBy); else qParams.delete('sort');
-                const qs = qParams.toString();
-                history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + (window.location.hash || ''));
-            }
-
             filteredIngredients = allIngredients.filter(ing => {
                 const matchesSearch = !searchTerm || ing.searchable.includes(searchTerm);
                 const matchesStatus = !statusFilter || ing.mapping_status === statusFilter;
                 const matchesSource = !sourceFilter || (ing.ontology_source || '__missing__') === sourceFilter;
                 const matchesQuality = !qualityFilter || (ing.mapping_quality || '__missing__') === qualityFilter;
 
-                return matchesSearch && matchesStatus && matchesSource && matchesQuality;
+                return recordSelection.matches(ing, selectedRecord) &&
+                    matchesSearch && matchesStatus && matchesSource && matchesQuality;
             });
 
             if (sortBy === 'name-asc') {
@@ -636,8 +635,11 @@
             }
 
             document.getElementById('filtered-count').textContent = filteredIngredients.length;
-            document.getElementById('results-status').textContent =
-                `Showing ${filteredIngredients.length} of ${allIngredients.length} ingredients`;
+            const resultsStatus = document.getElementById('results-status');
+            if (resultsStatus) {
+                resultsStatus.textContent =
+                    `Showing ${filteredIngredients.length} of ${allIngredients.length} ingredients`;
+            }
             renderIngredients();
         }
 
@@ -743,5 +745,6 @@
         document.getElementById('sort-by').addEventListener('change', applyFilters);
     </script>
     <script src="theme-toggle.js"></script>
+  <script src="text-map-nav.js"></script>
 </body>
 </html>

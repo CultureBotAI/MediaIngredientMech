@@ -9,9 +9,19 @@ on:
     paths:
       - "docs/**"
       - "data/ingredients/**"
+      - "data/ingredients/mapped/**"
+      - "data/ingredients/unmapped/**"
       - "src/mediaingredientmech/**"
+      - "src/mediaingredientmech/synonym_policy.py"
+      - "data/text_map/**"
+      - "conf/text_map.yaml"
+      - "src/mediaingredientmech/text_map_*.py"
       - "scripts/browser_export.py"
       - "scripts/build_pages_site.py"
+      - "scripts/check_graph_receipts.py"
+      - "src/mediaingredientmech/graph_embedding_receipts.py"
+      - "scripts/stage_text_map.py"
+      - "scripts/embedding_pipeline.py"
       - "uv.lock"
       - "pyproject.toml"
       - ".github/workflows/generate-pages.yaml"
@@ -32,6 +42,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      PAGES_ALLOW_STALE_CORPUS: "1"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -43,9 +55,21 @@ jobs:
       - name: Install locked build dependencies
         run: uv sync --frozen --python 3.13
 
+      - name: Set up Python for map validation
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+
+      - name: Validate both graph maps against the complete current corpus
+        run: python scripts/check_graph_receipts.py
+
+      - name: Validate and stage the configured semantic text map
+        run: |
+          python -m pip install --quiet pyyaml
+          python scripts/stage_text_map.py
+
       - name: Build and verify complete ingredient site
         run: uv run python scripts/build_pages_site.py --output site
-
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
