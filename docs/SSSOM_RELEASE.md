@@ -1,7 +1,7 @@
 # Reviewed MIM SSSOM
 
-The current standalone release has a decision for every one of the 2,987 MIM
-mapping rows: **1,740 supported** and **1,247 withheld**. Use the supported table for
+The current standalone release has a decision for every one of the 2,986 MIM
+mapping rows: **1,740 supported** and **1,246 withheld**. Use the supported table for
 mapping. The withheld table preserves complete source rows for further curation;
 it is not an approved mapping set.
 
@@ -44,6 +44,10 @@ overstated source scope. All supported rows in this snapshot are `skos:exactMatc
 other relations remain in the backlog pending an explicit review of their
 meaning and aliases. A withheld decision can reflect missing evidence rather
 than a false assertion.
+
+The #875 receipt replaces the Na2HPO4·7H2O parent mapping and local registry
+identity with one exact NCIT:C61946 mapping. That row remains withheld pending
+mapping-specific review; its unresolved chemistry and BUFFER claims remain open.
 
 Review is agent-assisted and includes adversarial review; structural validation
 alone is not scientific approval. Source confidence and earlier validation

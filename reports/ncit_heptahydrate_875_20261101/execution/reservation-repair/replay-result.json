@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-11-01T05:33:48.263266+00:00",
+  "scope": "Author replay in an isolated fixture containing only the target owner and full frozen ledger/SSSOM; not independent review or a production reapplication.",
+  "writer_sha256": "f7cd1b46dc464cc8801a73f6b1cbd251bd5c0c7ffdf7241eff0e9cbee6f1c131",
+  "original_application_writer_sha256": "a66389a3379a761ee263aceb08222b6508f57cb9b8e69e996e82af732b59bb85",
+  "native_transaction_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/claw-source/src/kg_microbe_write/transaction.py",
+  "native_transaction_sha256": "aa5b5bd082b14ae094f6decd5dbe3d75343a7436dc95d6b1fcbfb65c56e6f17e",
+  "candidate_sha256": "fc7401ab99f2a6d8f31fc695d74b670dee8f61f63bc4dbcde33797caf3f11136",
+  "source_result": {
+    "phase": "sources",
+    "approval": "NONE: mapping correction only; fresh mapping-specific review is required.",
+    "evidence_sha256": "a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83",
+    "ledger_before_sha256": "82d7d79172a5efd966f0a6a97ead4faae186128f6d6fdb327366f041ad06aba4",
+    "ledger_after_sha256": "717289ca0e45046dcb96f6839b843838a6636fd8e120cf4d9b9ac48de3d9016d",
+    "sssom_before_sha256": "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722",
+    "records": [
+      {
+        "source_record": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+        "shape": "exact_heptahydrate_identity",
+        "before_yaml_sha256": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+        "after_yaml_sha256": "465c1fa71a9767266fbe429927c602611442d6a33b929e45e4cb37be80da8395",
+        "change": "Promoted identifier kgmicrobe.compound:na2hpo4_x_7_h2o to NCIT:C61946; replaced the CHEBI:34683 CLOSE_MATCH grounding with exact NCIT:C61946 and moved the coupled rejection-ledger mim_id. Preserved the earlier evidence and history, accepted hydrate aliases, rejected sibling-form labels, CAS, chemistry, roles and occurrence counts. The inherited anhydrous structure and provisional BUFFER evidence remain unresolved. This correction grants no scientific or release approval. NCI EVS NCIt 26.10d NCIT:C61946 'Sodium Phosphate, Dibasic, Heptahydrate' is active and explicitly records CAS 7782-85-6, formula 2Na.HO4P.7H2O and FDA UNII 70WT22SF4B. Source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full; accessed 2026-11-01; archived at reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json (sha256 a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83). The approved #875 decision uses MAPPING_SEMANTICS section 3 step 1, which precedes the CAS fallback. The anhydrous CHEBI:34683 is not this identity.",
+        "verification": "NCI EVS NCIt 26.10d NCIT:C61946 'Sodium Phosphate, Dibasic, Heptahydrate' is active and explicitly records CAS 7782-85-6, formula 2Na.HO4P.7H2O and FDA UNII 70WT22SF4B. Source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full; accessed 2026-11-01; archived at reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json (sha256 a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83). The approved #875 decision uses MAPPING_SEMANTICS section 3 step 1, which precedes the CAS fallback. The anhydrous CHEBI:34683 is not this identity."
+      }
+    ],
+    "transaction": {
+      "applied": true,
+      "changed": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-reservation-repair/isolated-replay/data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-reservation-repair/isolated-replay/mappings/unified_mapping_rejections.tsv"
+      ],
+      "created": [],
+      "unchanged": [],
+      "journal": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-reservation-repair/isolated-replay/source-journal/write-ofw62lb9.json"
+    },
+    "applied": true,
+    "changed": true
+  },
+  "promotion_result": {
+    "phase": "promote",
+    "approval": "NONE: mapping correction only; fresh mapping-specific review is required.",
+    "records": [
+      {
+        "source_record": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+        "shape": "exact_heptahydrate_identity",
+        "before_yaml_sha256": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+        "after_yaml_sha256": "465c1fa71a9767266fbe429927c602611442d6a33b929e45e4cb37be80da8395",
+        "change": "Promoted identifier kgmicrobe.compound:na2hpo4_x_7_h2o to NCIT:C61946; replaced the CHEBI:34683 CLOSE_MATCH grounding with exact NCIT:C61946 and moved the coupled rejection-ledger mim_id. Preserved the earlier evidence and history, accepted hydrate aliases, rejected sibling-form labels, CAS, chemistry, roles and occurrence counts. The inherited anhydrous structure and provisional BUFFER evidence remain unresolved. This correction grants no scientific or release approval. NCI EVS NCIt 26.10d NCIT:C61946 'Sodium Phosphate, Dibasic, Heptahydrate' is active and explicitly records CAS 7782-85-6, formula 2Na.HO4P.7H2O and FDA UNII 70WT22SF4B. Source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full; accessed 2026-11-01; archived at reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json (sha256 a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83). The approved #875 decision uses MAPPING_SEMANTICS section 3 step 1, which precedes the CAS fallback. The anhydrous CHEBI:34683 is not this identity.",
+        "verification": "NCI EVS NCIt 26.10d NCIT:C61946 'Sodium Phosphate, Dibasic, Heptahydrate' is active and explicitly records CAS 7782-85-6, formula 2Na.HO4P.7H2O and FDA UNII 70WT22SF4B. Source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full; accessed 2026-11-01; archived at reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json (sha256 a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83). The approved #875 decision uses MAPPING_SEMANTICS section 3 step 1, which precedes the CAS fallback. The anhydrous CHEBI:34683 is not this identity."
+      }
+    ],
+    "source_receipt_sha256": "ced097ccece9689daf42e7eae9cec829309559001cde9153e6b64f3ddceeb2fb",
+    "candidate_sha256": "fc7401ab99f2a6d8f31fc695d74b670dee8f61f63bc4dbcde33797caf3f11136",
+    "sssom_before_sha256": "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722",
+    "sssom_after_sha256": "68552edd452d5dccf1262b5d03190a6b668341952a554f349149f269403cca67",
+    "changed_rows": 1,
+    "removed_rows": 1,
+    "preserved_historical_source_tokens": true,
+    "transaction": {
+      "applied": true,
+      "changed": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-reservation-repair/isolated-replay/mappings/ingredient_mappings.sssom.tsv"
+      ],
+      "created": [],
+      "unchanged": [],
+      "journal": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-reservation-repair/isolated-replay/promotion-journal/write-jfl5urae.json"
+    },
+    "applied": true,
+    "changed": true
+  },
+  "source_repeat": {
+    "applied": false,
+    "changed": false,
+    "approval": "NONE: mapping correction only; fresh mapping-specific review is required."
+  },
+  "promotion_repeat": {
+    "applied": false,
+    "changed": false,
+    "approval": "NONE: mapping correction only; fresh mapping-specific review is required."
+  },
+  "ledger_bytes_identical_to_production": true,
+  "canonical_bytes_identical_to_production": true,
+  "source_history_prefix_preserved": true,
+  "fixture_event_timestamp": "2026-11-01T05:33:47.996170+00:00",
+  "fixture_event_note": "New actual replay timestamp; the production event was not copied or rewritten.",
+  "production_inputs_and_historical_receipts_unchanged": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim/data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml": "6e816ef6a1dad8dab9c3ddd711ca84d8a3489bedb175d540ea3cb618c7068873",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim/mappings/unified_mapping_rejections.tsv": "717289ca0e45046dcb96f6839b843838a6636fd8e120cf4d9b9ac48de3d9016d",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim/mappings/ingredient_mappings.sssom.tsv": "68552edd452d5dccf1262b5d03190a6b668341952a554f349149f269403cca67",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/source-apply.before.sssom.tsv": "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/mapping-promotion.json": "6f2688c95739c65106a79c535b7a6513c5ad6d2a6d4a6c0c0251a4d114ac8b41",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/mapping-promotion.before.tsv": "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/source-apply.before.yaml": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/receipt-publication.json": "0d3d1f417d2589f401e0d7d366ac755bcaee9d34e0011733359bb7bae9ac86c6",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/source-apply.json": "b24dab0665d4e2c6508ea13bbf39dc0ebb85b69241dc856a613000bc37944326",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/source-apply.before-ledger.tsv": "82d7d79172a5efd966f0a6a97ead4faae186128f6d6fdb327366f041ad06aba4",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/mapping-promotion-journal/write-mpfz66i9.json": "bd304064f718aece2c8ae06c2d1f19b8ae4d7cc4c0788ce3825117d66d2b8a7e",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-application/source-apply-journal/write-f4b1lkjj.json": "8c750ad8a6b64e532949c75d8437b034b5ebba44b1421fa4027bb8302676fa7f"
+  },
+  "scientific_approval_added": false
+}

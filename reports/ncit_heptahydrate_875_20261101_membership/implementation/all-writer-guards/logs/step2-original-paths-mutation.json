@@ -1,0 +1,27 @@
+{
+  "name": "step2-original-paths-mutation",
+  "argv": [
+    "python",
+    "-c",
+    "import sys; sys.path.insert(0, \"../step2-membership-repair/revision-1033-original-paths\"); import pytest; raise SystemExit(pytest.main(sys.argv[1:]))",
+    "-q",
+    "-o",
+    "addopts=",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "mutation_original_scope",
+    "--basetemp",
+    "../step2-membership-repair/revision-1033-original-paths/mutation-tmp",
+    "tests/test_promote_heptahydrate_ncit.py",
+    "-k",
+    "valid_competing_owner_after_reservation"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+  "started_at": "2026-11-01T06:08:59.871105+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T06:09:01.061555+00:00",
+  "exit_code": 1,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-original-paths-mutation.log",
+  "log_sha256": "cf309d7b539c77b18f5d37e6c60a3a78ac0557e2497fa2ea57653ab0b32469a4"
+}

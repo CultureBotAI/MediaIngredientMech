@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:na2hpo4_x_7_h2o
+identifier: NCIT:C61946
 preferred_term: Na2HPO4 x 7 H2O
 ontology_mapping:
-  ontology_id: CHEBI:34683
-  ontology_label: disodium hydrogenphosphate
-  ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  ontology_id: NCIT:C61946
+  ontology_label: Sodium Phosphate, Dibasic, Heptahydrate
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -38,6 +38,15 @@ ontology_mapping:
       substance containing the anhydrous form, not a specialization of it. closeMatch
       claims similarity without subsumption. The ontology_id and the record''s own
       identifier are unchanged.'
+  - evidence_type: DATABASE_MATCH
+    source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full
+    notes: 'NCI EVS NCIt 26.10d NCIT:C61946 ''Sodium Phosphate, Dibasic, Heptahydrate''
+      is active and explicitly records CAS 7782-85-6, formula 2Na.HO4P.7H2O and FDA
+      UNII 70WT22SF4B. Source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full;
+      accessed 2026-11-01; archived at reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json
+      (sha256 a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83). The
+      approved #875 decision uses MAPPING_SEMANTICS section 3 step 1, which precedes
+      the CAS fallback. The anhydrous CHEBI:34683 is not this identity.'
 synonyms:
 - synonym_text: Na2HPO4 . 12H2O
   synonym_type: REJECTED_LABEL
@@ -198,6 +207,26 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-opus-5-5
+- timestamp: '2026-11-01T05:22:19.112406+00:00'
+  curator: Codex
+  action: REGROUNDED_EXACT_HEPTAHYDRATE
+  changes: 'Promoted identifier kgmicrobe.compound:na2hpo4_x_7_h2o to NCIT:C61946;
+    replaced the CHEBI:34683 CLOSE_MATCH grounding with exact NCIT:C61946 and moved
+    the coupled rejection-ledger mim_id. Preserved the earlier evidence and history,
+    accepted hydrate aliases, rejected sibling-form labels, CAS, chemistry, roles
+    and occurrence counts. The inherited anhydrous structure and provisional BUFFER
+    evidence remain unresolved. This correction grants no scientific or release approval.
+    NCI EVS NCIt 26.10d NCIT:C61946 ''Sodium Phosphate, Dibasic, Heptahydrate'' is
+    active and explicitly records CAS 7782-85-6, formula 2Na.HO4P.7H2O and FDA UNII
+    70WT22SF4B. Source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full;
+    accessed 2026-11-01; archived at reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json
+    (sha256 a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83). The
+    approved #875 decision uses MAPPING_SEMANTICS section 3 step 1, which precedes
+    the CAS fallback. The anhydrous CHEBI:34683 is not this identity.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 7782-85-6
   data_source: CultureBotHT/compounds_to_cas.csv

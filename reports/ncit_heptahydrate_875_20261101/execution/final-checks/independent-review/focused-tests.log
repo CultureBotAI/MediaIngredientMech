@@ -1,0 +1,43 @@
+...................................F.................................... [ 84%]
+.............                                                            [100%]
+=================================== FAILURES ===================================
+___________ test_issue875_committed_surfaces_use_exact_ncit_identity ___________
+
+    def test_issue875_committed_surfaces_use_exact_ncit_identity():
+        """Becomes green only after root applies, synchronizes and regenerates."""
+        record = yaml.safe_load((ROOT / writer.OWNER).read_bytes())
+        before = yaml.safe_load((ROOT / "tests/fixtures/issue875-owner-before.yaml").read_bytes())
+        assert record["identifier"] == record["ontology_mapping"]["ontology_id"] == writer.NEW
+        assert record["ontology_mapping"]["mapping_quality"] == "EXACT_MATCH"
+        assert record["curation_history"][:-1] == before["curation_history"]
+        assert record["chemical_properties"] == before["chemical_properties"]
+        assert record["physicochemical_roles"] == before["physicochemical_roles"]
+        ledger = list(csv.DictReader((ROOT / writer.LEDGER).open(), delimiter="\t"))
+        held = [r for r in ledger if r["ingredient_name"] == writer.NAME]
+        assert len(held) == 1 and held[0]["mim_id"] == writer.NEW and held[0]["rejected_id"] == writer.PARENT
+        _, mappings = writer.table((ROOT / writer.SSSOM).read_bytes())
+        target = [r for r in mappings if r["subject_id"] == writer.SUBJECT]
+        assert len(target) == 1
+        assert (target[0]["predicate_id"], target[0]["object_id"]) == ("skos:exactMatch", writer.NEW)
+        assert target[0]["validation_method"] == ""
+        rows = {r["ingredient_name"]: r for r in csv.DictReader(
+            (ROOT / "UNIFIED_INGREDIENT_MAPPING.tsv").open(), delimiter="\t")}
+        for name in ("Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4·7H2O"):
+            row = rows[name]
+>           assert row["mim_id"] == writer.NEW and row["mapping_status"] == "MAPPED", name
+E           AssertionError: Na2HPO4 x 7 H2O
+E           assert ('kgmicrobe.co...2hpo4_x_7_h2o' == 'NCIT:C61946'
+E             
+E             - NCIT:C61946
+E             + kgmicrobe.compound:na2hpo4_x_7_h2o)
+
+tests/test_promote_heptahydrate_ncit.py:333: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_promote_heptahydrate_ncit.py::test_issue875_committed_surfaces_use_exact_ncit_identity
+1 failed, 84 passed, 12 warnings in 8.96s

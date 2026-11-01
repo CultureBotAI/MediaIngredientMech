@@ -1,0 +1,27 @@
+{
+  "name": "step2-membership-mutation-membership",
+  "argv": [
+    "python",
+    "-c",
+    "import sys; sys.path.insert(0, \"../step2-membership-repair\"); import pytest; raise SystemExit(pytest.main(sys.argv[1:]))",
+    "-q",
+    "-o",
+    "addopts=",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "mutation_controls",
+    "--basetemp",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-membership-repair/mutation-membership-tmp",
+    "tests/test_repair_heptahydrate_membership.py",
+    "-k",
+    "native_repair_preserves_cohort"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+  "started_at": "2026-11-01T06:03:23.356290+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T06:03:24.363453+00:00",
+  "exit_code": 1,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-membership-mutation-membership.log",
+  "log_sha256": "fa41e13f6552265fad647c27cf0220d065188453e656a5762d952a17399c8400"
+}

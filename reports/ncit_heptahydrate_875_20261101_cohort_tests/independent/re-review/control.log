@@ -1,0 +1,40 @@
+.EE                                                                      [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_native_membership_growth_preserves_current_identity_and_dynamic_counts[new_recipe-expected0] _
+
+self = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/test1034-fixed-review/pytest-tmp/control')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/test1034-fixed-review/pytest-tmp/control'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+_ ERROR at setup of test_native_membership_growth_preserves_current_identity_and_dynamic_counts[repeat_listing-expected1] _
+
+self = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/test1034-fixed-review/pytest-tmp/control')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/test1034-fixed-review/pytest-tmp/control'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR ../step2-test-repair-1034/mutations/control/tests/test_repair_heptahydrate_membership.py::test_native_membership_growth_preserves_current_identity_and_dynamic_counts[new_recipe-expected0]
+ERROR ../step2-test-repair-1034/mutations/control/tests/test_repair_heptahydrate_membership.py::test_native_membership_growth_preserves_current_identity_and_dynamic_counts[repeat_listing-expected1]
+1 passed, 63 deselected, 12 warnings, 2 errors in 1.32s

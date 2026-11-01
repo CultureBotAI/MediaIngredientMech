@@ -1,0 +1,92 @@
+uv run --frozen python -m mediaingredientmech.export.supported_kgx --root . --report "$1" --output "$2"
+{
+  "schema_version": 1,
+  "scope": "reviewed_assertion_subset",
+  "release_verdict": "PASS",
+  "full_release_verdict": "FAIL",
+  "full_report": "reports/semantic_review_20260921/resolution/current-review.json",
+  "full_report_sha256": "2bc6fd01874ae295fd8812ff6249ea96e3163623957d51d622c85a398e69cb4a",
+  "full_bundle": "output/mim-kgx-710-full",
+  "full_bundle_manifest_sha256": "ec412470261eaa9576daf1e9eb01985cfb6e1ec387508940a83bcb496ac3ed91",
+  "curie_map": {
+    "BFO": "http://purl.obolibrary.org/obo/BFO_",
+    "BTO": "http://purl.obolibrary.org/obo/BTO_",
+    "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
+    "CultureMech": "https://w3id.org/culturemech/",
+    "ENVO": "http://purl.obolibrary.org/obo/ENVO_",
+    "FOODON": "http://purl.obolibrary.org/obo/FOODON_",
+    "MICRO": "http://purl.obolibrary.org/obo/MICRO_",
+    "MIM": "https://github.com/CultureBotAI/MediaIngredientMech/blob/main/data/ingredients/mapped/",
+    "MIM.assertion": "https://w3id.org/mediaingredientmech/assertion/",
+    "MIM.component": "https://w3id.org/mediaingredientmech/component/",
+    "MIM.role": "https://w3id.org/mediaingredientmech/role/",
+    "MIM.unmapped": "https://w3id.org/mediaingredientmech/unmapped/",
+    "MIM.vocab": "https://w3id.org/mediaingredientmech/vocabulary/",
+    "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
+    "PMID": "http://www.ncbi.nlm.nih.gov/pubmed/",
+    "RO": "http://purl.obolibrary.org/obo/RO_",
+    "UBERON": "http://purl.obolibrary.org/obo/UBERON_",
+    "biolink": "https://w3id.org/biolink/vocab/",
+    "cas": "https://commonchemistry.cas.org/detail?cas_rn=",
+    "cbclaw": "https://github.com/culturebotai/culturebotai-claw/blob/main/",
+    "doi": "https://doi.org/",
+    "kgm": "https://w3id.org/kg-microbe/",
+    "kgmicrobe.compound": "https://w3id.org/kg-microbe/compound/",
+    "kgmicrobe.ingredient": "https://w3id.org/kg-microbe/ingredient/",
+    "mesh": "http://id.nlm.nih.gov/mesh/",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "orcid": "https://orcid.org/",
+    "registry": "https://w3id.org/kg-microbe/registry/",
+    "semapv": "https://w3id.org/semapv/vocab/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "assertion_dispositions": "reports/semantic_review_20260921/resolution/assertion-dispositions.tsv",
+  "assertion_dispositions_sha256": "1fc422a342632befd63d7632002fb95f4c0ee49a42d0baacdff8dbf2a70daa62",
+  "counts": {
+    "nodes": 4742,
+    "edges": 2220,
+    "sssom_rows": 1740,
+    "active_ingredient_record_nodes": 2874,
+    "full_nodes": 5763,
+    "full_edges": 4491,
+    "backlog_raw_nodes": 5763,
+    "backlog_unapproved_edges": 2271
+  },
+  "members": {
+    "mim_nodes.tsv": {
+      "sha256": "8c8eb462f95b17f49835ad5f1683eac676976ea3647bb92158e70f0c43c5ea24",
+      "bytes": 577625
+    },
+    "mim_edges.tsv": {
+      "sha256": "f92c4329f4b81dc4904041532763d8822d89a0bfb6395313b9afbd0746665882",
+      "bytes": 2136435
+    }
+  },
+  "sssom": {
+    "path": "ingredient_mappings.sssom.tsv",
+    "mapping_set_id": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/supported",
+    "rows": 1740,
+    "sha256": "4cf752177006a41fa482d4198146110d8b893dea6b8100a282576f1a8a2d9838",
+    "bytes": 833441
+  },
+  "backlog": {
+    "path": "unsupported-backlog.json",
+    "sha256": "08c5914bb3e0dbafb69682a4da95e46d63afcc785475b453e60e46a7d5fcd52b",
+    "bytes": 18674648
+  },
+  "archive_members": [
+    "manifest.json",
+    "mim_nodes.tsv",
+    "mim_edges.tsv"
+  ],
+  "implementation": {
+    "export/supported_kgx.py": "fcdaf68c3338dd37a0c399185a9da83404cedaaea3b4e22e05797e50dca61d38",
+    "validation/semantic_release.py": "0490b67b9304114ad78ef429ff619268207a39665fd296997fd43d4c64febd90"
+  },
+  "limitations": [
+    "PASS certifies only the explicitly approved assertion subset; the full graph retains its separate verdict.",
+    "Ingredient nodes are source-record references with source labels, not approvals of all ingredient annotations or chemical identity.",
+    "All node categories are NamedThing; chemical identity, roles, components, and hierarchy are asserted only by selected approved edges.",
+    "Excluded assertions and all original raw node annotations are retained in the separate hash-bound backlog, outside the graph archive."
+  ]
+}

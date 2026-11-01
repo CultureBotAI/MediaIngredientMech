@@ -1,0 +1,225 @@
+FFFF.FFFFFFFF....FFFF.FFFFFFFFFFFFF                                      [100%]
+=================================== FAILURES ===================================
+_____________________ test_sources_dry_run_is_nonmutating ______________________
+tests/test_promote_heptahydrate_ncit.py:97: in test_sources_dry_run_is_nonmutating
+    result = writer.apply_sources(root, log)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+____________ test_sources_preserve_history_fields_and_coupled_scope ____________
+tests/test_promote_heptahydrate_ncit.py:105: in test_sources_preserve_history_fields_and_coupled_scope
+    result = writer.apply_sources(root, log, apply=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+______________________ test_source_repeat_is_a_true_noop _______________________
+tests/test_promote_heptahydrate_ncit.py:131: in test_source_repeat_is_a_true_noop
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_________________ test_partial_source_migration_refuses[owner] _________________
+tests/test_promote_heptahydrate_ncit.py:145: in test_partial_source_migration_refuses
+    with pytest.raises(ValueError, match="migrate together"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+___________ test_receipt_collisions_preserve_all_sources[False-None] ___________
+tests/test_promote_heptahydrate_ncit.py:163: in test_receipt_collisions_preserve_all_sources
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_______ test_receipt_collisions_preserve_all_sources[False-.before.yaml] _______
+tests/test_promote_heptahydrate_ncit.py:163: in test_receipt_collisions_preserve_all_sources
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+____ test_receipt_collisions_preserve_all_sources[False-.before-ledger.tsv] ____
+tests/test_promote_heptahydrate_ncit.py:163: in test_receipt_collisions_preserve_all_sources
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+____ test_receipt_collisions_preserve_all_sources[False-.before.sssom.tsv] _____
+tests/test_promote_heptahydrate_ncit.py:163: in test_receipt_collisions_preserve_all_sources
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+___________ test_receipt_collisions_preserve_all_sources[True-None] ____________
+tests/test_promote_heptahydrate_ncit.py:163: in test_receipt_collisions_preserve_all_sources
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_______ test_receipt_collisions_preserve_all_sources[True-.before.yaml] ________
+tests/test_promote_heptahydrate_ncit.py:163: in test_receipt_collisions_preserve_all_sources
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+____ test_receipt_collisions_preserve_all_sources[True-.before-ledger.tsv] _____
+tests/test_promote_heptahydrate_ncit.py:163: in test_receipt_collisions_preserve_all_sources
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_____ test_receipt_collisions_preserve_all_sources[True-.before.sssom.tsv] _____
+tests/test_promote_heptahydrate_ncit.py:163: in test_receipt_collisions_preserve_all_sources
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+________________ test_ignored_nested_destination_owner_refuses _________________
+tests/test_promote_heptahydrate_ncit.py:183: in test_ignored_nested_destination_owner_refuses
+    with pytest.raises(ValueError, match="already held"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'already held'
+E     Actual message: 'Owner and ledger must migrate together; partial state refused'
+__________________ test_input_race_after_reservation_refuses ___________________
+tests/test_promote_heptahydrate_ncit.py:198: in test_input_race_after_reservation_refuses
+    with pytest.raises(ValueError, match="frozen input changed"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'frozen input changed'
+E     Actual message: 'Owner and ledger must migrate together; partial state refused'
+__________ test_changed_content_cannot_hide_in_a_completed_correction __________
+tests/test_promote_heptahydrate_ncit.py:206: in test_changed_content_cannot_hide_in_a_completed_correction
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+____________ test_invalid_prior_correction_timestamp_is_not_a_noop _____________
+tests/test_promote_heptahydrate_ncit.py:215: in test_invalid_prior_correction_timestamp_is_not_a_noop
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_________ test_same_destination_grounding_on_another_identity_refuses __________
+tests/test_promote_heptahydrate_ncit.py:239: in test_same_destination_grounding_on_another_identity_refuses
+    with pytest.raises(ValueError, match="already held"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'already held'
+E     Actual message: 'Owner and ledger must migrate together; partial state refused'
+___ test_native_candidate_promotion_preserves_other_rows_and_source_lineage ____
+tests/test_promote_heptahydrate_ncit.py:246: in test_native_candidate_promotion_preserves_other_rows_and_source_lineage
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+__ test_unreviewed_candidate_payload_is_refused[predicate_id-skos:closeMatch] __
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_____ test_unreviewed_candidate_payload_is_refused[object_id-CHEBI:34683] ______
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_ test_unreviewed_candidate_payload_is_refused[object_label-disodium hydrogenphosphate] _
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+__ test_unreviewed_candidate_payload_is_refused[object_source-obo:chebi.owl] ___
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_ test_unreviewed_candidate_payload_is_refused[validation_method-OAK+OLS:chebi|CONFIRMED|2026-07-07] _
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_____ test_unreviewed_candidate_payload_is_refused[other-Na2HPO4 x 2 H2O] ______
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+____ test_unreviewed_candidate_payload_is_refused[mapping_date-2026-08-27] _____
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+____ test_unreviewed_candidate_payload_is_refused[source-MIM:curator=Codex] ____
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_________ test_unreviewed_candidate_payload_is_refused[confidence-0.9] _________
+tests/test_promote_heptahydrate_ncit.py:280: in test_unreviewed_candidate_payload_is_refused
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+_____________ test_candidate_hash_and_source_receipt_are_required ______________
+tests/test_promote_heptahydrate_ncit.py:289: in test_candidate_hash_and_source_receipt_are_required
+    writer.apply_sources(root, log, apply=True)
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+___________ test_native_transaction_integration_when_claw_available ____________
+tests/test_promote_heptahydrate_ncit.py:306: in test_native_transaction_integration_when_claw_available
+    result = writer.apply_sources(root, log, apply=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/promote_heptahydrate_ncit.py:236: in apply_sources
+    raise ValueError("Owner and ledger must migrate together; partial state refused")
+E   ValueError: Owner and ledger must migrate together; partial state refused
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_promote_heptahydrate_ncit.py::test_sources_dry_run_is_nonmutating
+FAILED tests/test_promote_heptahydrate_ncit.py::test_sources_preserve_history_fields_and_coupled_scope
+FAILED tests/test_promote_heptahydrate_ncit.py::test_source_repeat_is_a_true_noop
+FAILED tests/test_promote_heptahydrate_ncit.py::test_partial_source_migration_refuses[owner]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_receipt_collisions_preserve_all_sources[False-None]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_receipt_collisions_preserve_all_sources[False-.before.yaml]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_receipt_collisions_preserve_all_sources[False-.before-ledger.tsv]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_receipt_collisions_preserve_all_sources[False-.before.sssom.tsv]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_receipt_collisions_preserve_all_sources[True-None]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_receipt_collisions_preserve_all_sources[True-.before.yaml]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_receipt_collisions_preserve_all_sources[True-.before-ledger.tsv]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_receipt_collisions_preserve_all_sources[True-.before.sssom.tsv]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_ignored_nested_destination_owner_refuses
+FAILED tests/test_promote_heptahydrate_ncit.py::test_input_race_after_reservation_refuses
+FAILED tests/test_promote_heptahydrate_ncit.py::test_changed_content_cannot_hide_in_a_completed_correction
+FAILED tests/test_promote_heptahydrate_ncit.py::test_invalid_prior_correction_timestamp_is_not_a_noop
+FAILED tests/test_promote_heptahydrate_ncit.py::test_same_destination_grounding_on_another_identity_refuses
+FAILED tests/test_promote_heptahydrate_ncit.py::test_native_candidate_promotion_preserves_other_rows_and_source_lineage
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[predicate_id-skos:closeMatch]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[object_id-CHEBI:34683]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[object_label-disodium hydrogenphosphate]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[object_source-obo:chebi.owl]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[validation_method-OAK+OLS:chebi|CONFIRMED|2026-07-07]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[other-Na2HPO4 x 2 H2O]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[mapping_date-2026-08-27]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[source-MIM:curator=Codex]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_unreviewed_candidate_payload_is_refused[confidence-0.9]
+FAILED tests/test_promote_heptahydrate_ncit.py::test_candidate_hash_and_source_receipt_are_required
+FAILED tests/test_promote_heptahydrate_ncit.py::test_native_transaction_integration_when_claw_available
+29 failed, 6 passed, 1 deselected, 13 warnings in 1.63s

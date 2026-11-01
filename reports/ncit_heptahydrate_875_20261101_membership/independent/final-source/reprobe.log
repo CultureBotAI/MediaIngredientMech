@@ -1,0 +1,38 @@
+{
+  "captured_at": "2026-11-01T06:09:25.662758+00:00",
+  "input_hashes": {
+    "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml": "6e816ef6a1dad8dab9c3ddd711ca84d8a3489bedb175d540ea3cb618c7068873",
+    "mappings/unified_mapping_rejections.tsv": "717289ca0e45046dcb96f6839b843838a6636fd8e120cf4d9b9ac48de3d9016d",
+    "mappings/ingredient_mappings.sssom.tsv": "68552edd452d5dccf1262b5d03190a6b668341952a554f349149f269403cca67",
+    "mappings/culturemech_recipe_membership.tsv": "6537498d833f45295193865d6cd5f98ad31200c5dbe4a706c6f541dcf30a5064",
+    "scripts/repair_heptahydrate_membership.py": "a3a8af0acfd2daa94a5da70270f0fd0923b7be0da644a4878688cac2c4aaad17",
+    "tests/test_repair_heptahydrate_membership.py": "2aa06a3a6fb9105e4a2cdb7d64ecb482adcf7d1ee0b61c5d02bc2de727031774",
+    "src/mediaingredientmech/utils/culturemech_occurrences.py": "8ecd6beb22527e50524319a0321b6bcd35b4f56607ef71eb78d3740f3f90dbdf",
+    "scripts/promote_heptahydrate_ncit.py": "768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee"
+  },
+  "input_hashes_unchanged": true,
+  "results": [
+    {
+      "case": "real_native_complete_apply_and_noop",
+      "outcome": "PASS",
+      "receipt": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/all-writer-scope-fixed-20261101T060930Z/native-success/evidence/repair.json",
+      "sha256": "27f010c868b7bc1f6f8a6f507ca7cb0ff20ae9a05bce5fc247ae812e7f8d30e2",
+      "transaction": {
+        "applied": true,
+        "changed": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/all-writer-scope-fixed-20261101T060930Z/native-success/mappings/culturemech_recipe_membership.tsv"
+        ],
+        "created": [],
+        "unchanged": [],
+        "journal": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/all-writer-scope-fixed-20261101T060930Z/native-success/evidence/repair-journal/write-115f43vr.json"
+      }
+    },
+    {
+      "case": "destination_owner_introduced_after_reservation",
+      "outcome": "REFUSED",
+      "error": "1 staged change(s) failed validation and nothing was written:\n  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/all-writer-scope-fixed-20261101T060930Z/destination-owner-after-reservation/mappings/culturemech_recipe_membership.tsv: Destination identity already held by /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/all-writer-scope-fixed-20261101T060930Z/destination-owner-after-reservation/data/ingredients/mapped/.ignored-racing-owner/competitor.yaml",
+      "type": "ValidationFailed",
+      "after_sha256": "6537498d833f45295193865d6cd5f98ad31200c5dbe4a706c6f541dcf30a5064"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-11-01T03:19:18.466963+00:00
+Generated: 2026-11-01T06:11:00.463615+00:00
 Total: 2955 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1497,7 +1497,6 @@ Total: 2955 ingredients
 | CHEBI:91258 | CHEBI:91258 | Na2HPO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 312 |
 | kgmicrobe.compound:na2hpo4_x_3_h2o | CHEBI:34683 | Na2HPO4 x 3 H2O | MAPPED | CHEBI | CLOSE_MATCH | 4 |
 | kgmicrobe.compound:na2hpo4_x_6_h2o | CHEBI:34683 | Na2HPO4 x 6 H2O | MAPPED | CHEBI | CLOSE_MATCH | 7 |
-| kgmicrobe.compound:na2hpo4_x_7_h2o | CHEBI:34683 | Na2HPO4 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 32 |
 | CHEBI:75215 | CHEBI:75215 | Na2MoO4 | MAPPED | CHEBI | SYNONYM_MATCH | 216 |
 | CHEBI:75213 | CHEBI:75213 | Na2MoO4·2H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:75213 | CHEBI:75213 | Na2MoO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 4259 |
@@ -2685,6 +2684,7 @@ Total: 2955 ingredients
 | CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 48 |
 | NCIT:C217928 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | CHEBI:32599 | MgSO4·H2O | MAPPED | CHEBI | NARROW_MATCH | 20 |
+| NCIT:C61946 | NCIT:C61946 | Na2HPO4 x 7 H2O | MAPPED | NCIT | EXACT_MATCH | 32 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |

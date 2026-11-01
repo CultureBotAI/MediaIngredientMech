@@ -1,0 +1,34 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_every_published_identifier_is_held_by_active_record ___________
+
+edges = [{'mim_identifier': 'BTO:0004304', 'recipe_id': 'CultureMech:015524', 'occurrences': '1'}, {'mim_identifier': 'BTO:000...', 'occurrences': '1'}, {'mim_identifier': 'CHEBI:113373', 'recipe_id': 'CultureMech:001414', 'occurrences': '1'}, ...]
+records = [{'identifier': 'kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o', 'preferred_term': 'Na2 beta-glycerol PO4 x 5 H2O',...BD--Difco)', 'synonym_type': 'CATALOG_VARIANT', 'source': 'culturemech:output/ingredient_occurrences.tsv'}], ...}, ...]
+
+    def test_every_published_identifier_is_held_by_active_record(edges, records):
+        active = {
+            str(record.get("identifier") or "")
+            for record in records
+            if record.get("mapping_status") != "REJECTED"
+        } - {""}
+        absent = sorted({row["mim_identifier"] for row in edges} - active)
+    
+>       assert absent == []
+E       AssertionError: assert ['kgmicrobe.c...hpo4_x_7_h2o'] == []
+E         
+E         Left contains one more item: 'kgmicrobe.compound:na2hpo4_x_7_h2o'
+E         Use -v to get more diff
+
+tests/test_culturemech_membership.py:155: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_culturemech_membership.py::test_every_published_identifier_is_held_by_active_record
+1 failed, 1 warning in 4.68s

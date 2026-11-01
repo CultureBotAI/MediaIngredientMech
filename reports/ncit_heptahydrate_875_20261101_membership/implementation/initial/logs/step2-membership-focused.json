@@ -1,0 +1,26 @@
+{
+  "name": "step2-membership-focused",
+  "argv": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "-o",
+    "addopts=",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "../step2-membership-repair/pytest-tmp",
+    "tests/test_repair_heptahydrate_membership.py",
+    "-k",
+    "not committed_memberships",
+    "tests/test_semantic_identity_occurrences.py"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+  "started_at": "2026-11-01T06:02:22.251703+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T06:02:23.469266+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-membership-focused.log",
+  "log_sha256": "9283be5498646b0199a74d314214547be53354321490db1b8c95edbd728bfd89"
+}

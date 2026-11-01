@@ -1,0 +1,47 @@
+{
+  "name": "step2-membership-mutation-reservation",
+  "argv": [
+    "python",
+    "-c",
+    "import sys; sys.path.insert(0, \"../step2-membership-repair\"); import pytest; raise SystemExit(pytest.main(sys.argv[1:]))",
+    "-q",
+    "-o",
+    "addopts=",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "mutation_controls",
+    "--basetemp",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-membership-repair/mutation-reservation-tmp",
+    "tests/test_repair_heptahydrate_membership.py",
+    "-k",
+    "native_reservation_races"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-mim",
+  "started_at": "2026-11-01T06:03:24.385341+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T06:03:25.506399+00:00",
+  "exit_code": 1,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step2-membership-mutation-reservation.log",
+  "log_sha256": "92bdb50d65d298bf60815847465aa32d7c76d07cf3a652e245805548955e55e3"
+}
+tml
+=========================== short test summary info ============================
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[reserved-False-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[reserved-False-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[reserved-True-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[reserved-True-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[prepared-False-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[prepared-False-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[prepared-True-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[prepared-True-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[after_commit-False-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[after_commit-False-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[after_commit-True-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[after_commit-True-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[completion-False-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[completion-False-.before-membership.tsv]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[completion-True-None]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_reservation_races_preserve_competitors_and_recovery[completion-True-.before-membership.tsv]
+16 failed, 46 deselected, 13 warnings in 0.74s
+

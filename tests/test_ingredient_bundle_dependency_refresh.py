@@ -12,6 +12,7 @@ import pytest
 import yaml
 
 from mediaingredientmech import ingredient_bundle_refresh as refresh
+from mediaingredientmech.export.reviewed_sssom import load_review
 from mediaingredientmech.ingredient_bundle_contract import (
     _base_table,
     content_sha256,
@@ -176,6 +177,162 @@ def test_only_dependency_hashes_change(cohort):
         "occurrence": 10,
     }
     reviewed_products(successor, current)
+
+
+def relocate_source_rows(prior, sources, order):
+    """Reindex complete rows and their original proofs without approving anything."""
+    result = dict(sources)
+    base = read_json(result[prior["base_review"]])
+    metadata, fields, rows = _base_table(result[SOURCE])
+    evidence = read_json(result[EVIDENCE])
+    decisions = {d["source_position"]: d for d in base["decisions"]}
+    new_rows, new_decisions, entries = [], [], {}
+    for position, old_index in enumerate(order, 1):
+        row = deepcopy(rows[old_index])
+        decision = deepcopy(decisions[old_index + 1])
+        proof = deepcopy(evidence["entries"][decision["evidence_key"]])
+        decision.update(source_position=position, evidence_key=str(position))
+        new_rows.append(row)
+        new_decisions.append(decision)
+        entries[str(position)] = proof
+    latest = max(row["mapping_date"] for row in new_rows)
+    metadata.update(mapping_date=latest, mapping_set_version=latest)
+    base["decisions"] = new_decisions
+    owners = {d["owner_record"] for d in new_decisions}
+    base["record_inputs"] = {path: content_sha256(result[path]) for path in owners}
+    result[SOURCE] = table_bytes(metadata, fields, new_rows)
+    result[EVIDENCE] = refresh.encode({"schema_version": 1, "entries": entries})
+    base["source_sha256"] = content_sha256(result[SOURCE])
+    base["inputs"][EVIDENCE] = content_sha256(result[EVIDENCE])
+    result[prior["base_review"]] = refresh.encode(base)
+    return result
+
+
+def positional_cohort(cohort, operation):
+    prior, original, _, contracts = cohort
+    prior = deepcopy(prior)
+    _, _, rows = _base_table(original[SOURCE])
+    selected = list(range(len(rows) - 1))
+    extra = len(rows) - 1
+    orders = {
+        "remove": ([extra, *selected], selected),
+        "insert": (selected, [extra, *selected]),
+        "reorder": ([extra, *selected], [*reversed(selected), extra]),
+    }
+    old_order, new_order = orders[operation]
+    before = relocate_source_rows(prior, original, old_order)
+    current = relocate_source_rows(prior, original, new_order)
+    prior["base_review_sha256"] = content_sha256(before[prior["base_review"]])
+    for path in (SOURCE, EVIDENCE):
+        prior["inputs"][path] = content_sha256(before[path])
+    return prior, before, current, contracts
+
+
+@pytest.mark.parametrize("operation", ["insert", "remove", "reorder"])
+def test_position_only_changes_preserve_scientific_evidence(cohort, tmp_path, operation):
+    shifted = positional_cohort(cohort, operation)
+    prior, before, current, _ = shifted
+    # Both endpoints are complete native reviews, not merely unchecked hashes.
+    for name, sources in (("before", before), ("after", current)):
+        root = tmp_path / name
+        for path, content in sources.items():
+            destination = root / path
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(content)
+        load_review(root, Path(prior["base_review"]))
+    successor, receipt = verify(shifted)
+    assert successor["decisions"] == prior["decisions"]
+    assert successor["record_inputs"] == prior["record_inputs"]
+    assert receipt["scientific_approval_added"] is False
+    selected = receipt["selected_mapping_evidence_unchanged"]
+    assert len(selected) == 20
+    assert any(
+        entry["base_decision_locations"]["before"] != entry["base_decision_locations"]["after"]
+        for entry in selected
+    )
+    for entry in selected:
+        locations = entry["base_decision_locations"]
+        for sources, location in ((before, locations["before"]), (current, locations["after"])):
+            proof = read_json(sources[EVIDENCE])["entries"][location["evidence_key"]]
+            assert entry["base_evidence"] == proof
+    reviewed_products(successor, current)
+
+
+@pytest.mark.parametrize(
+    "change", ["evidence", "reason", "disposition", "owner", "duplicate", "predicate", "alias"]
+)
+def test_position_shift_does_not_hide_scientific_changes(cohort, change):
+    shifted = positional_cohort(cohort, "remove")
+    prior, _, source, _ = shifted
+    current = dict(source)
+    base = read_json(current[prior["base_review"]])
+    decision = base["decisions"][0]
+    evidence = read_json(current[EVIDENCE])
+    if change == "evidence":
+        evidence["entries"][decision["evidence_key"]]["basis"] = ["changed rationale"]
+    elif change in {"reason", "disposition"}:
+        field = "review_reason" if change == "reason" else "disposition"
+        decision[field] = "changed rationale" if change == "reason" else "WITHHOLD"
+        evidence["entries"][decision["evidence_key"]][field] = decision[field]
+    elif change == "owner":
+        current[decision["owner_record"]] += b"\n"
+    else:
+        metadata, fields, rows = _base_table(current[SOURCE])
+        if change == "duplicate":
+            rows.append(deepcopy(rows[0]))
+        else:
+            rows[0]["predicate_id" if change == "predicate" else "other"] = "changed"
+        current[SOURCE] = table_bytes(metadata, fields, rows)
+    current[EVIDENCE] = refresh.encode(evidence)
+    base["inputs"][EVIDENCE] = content_sha256(current[EVIDENCE])
+    base["source_sha256"] = content_sha256(current[SOURCE])
+    current[prior["base_review"]] = refresh.encode(base)
+    with pytest.raises(ValueError, match="changed|ambiguous"):
+        verify(shifted, current)
+
+
+def stable_evidence_keys(prior, sources):
+    result = dict(sources)
+    base = read_json(result[prior["base_review"]])
+    evidence = read_json(result[EVIDENCE])
+    entries = {}
+    for decision in base["decisions"]:
+        proof = evidence["entries"][decision["evidence_key"]]
+        decision["evidence_key"] = "row:" + decision["row_sha256"]
+        entries[decision["evidence_key"]] = proof
+    result[EVIDENCE] = refresh.encode({"schema_version": 1, "entries": entries})
+    base["inputs"][EVIDENCE] = content_sha256(result[EVIDENCE])
+    result[prior["base_review"]] = refresh.encode(base)
+    return result
+
+
+@pytest.mark.parametrize("mode", ["position_only", "key_only", "wrong_key"])
+def test_independent_position_and_evidence_locators(cohort, mode):
+    prior, before, current, contracts = positional_cohort(cohort, "remove")
+    if mode == "position_only":
+        before = stable_evidence_keys(prior, before)
+        current = stable_evidence_keys(prior, current)
+    else:
+        current = stable_evidence_keys(prior, before)
+    prior["base_review_sha256"] = content_sha256(before[prior["base_review"]])
+    prior["inputs"][EVIDENCE] = content_sha256(before[EVIDENCE])
+    if mode == "wrong_key":
+        base = read_json(current[prior["base_review"]])
+        selected = [d for d in base["decisions"] if d["disposition"] == "SUPPORTED"]
+        selected[0]["evidence_key"] = selected[1]["evidence_key"]
+        current[prior["base_review"]] = refresh.encode(base)
+        with pytest.raises(ValueError, match="Selected original scientific evidence changed"):
+            verify((prior, before, current, contracts))
+        return
+    successor, receipt = verify((prior, before, current, contracts))
+    assert successor["decisions"] == prior["decisions"]
+    assert receipt["scientific_approval_added"] is False
+    for entry in receipt["selected_mapping_evidence_unchanged"]:
+        old, new = (entry["base_decision_locations"][key] for key in ("before", "after"))
+        stable = "evidence_key" if mode == "position_only" else "source_position"
+        moving = "source_position" if mode == "position_only" else "evidence_key"
+        assert old[stable] == new[stable]
+        assert old[moving] != new[moving]
 
 
 @pytest.mark.parametrize("kind", ["owner", "claims", "scope_rulings", "companion_evidence"])

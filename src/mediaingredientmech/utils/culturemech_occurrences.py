@@ -20,6 +20,7 @@ CALCIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:caso4_x_7_h2o"
 CITRIC_ACID_MONOHYDRATE_ID = "CHEBI:31404"
 COPPER_ID = "kgmicrobe.compound:copper"
 DISODIUM_2_OXOGLUTARATE_ID = "kgmicrobe.compound:na2_alpha-ketoglutarate"
+DISODIUM_PHOSPHATE_HEPTAHYDRATE_ID = "NCIT:C61946"
 ELEMENTAL_SULFUR_ID = "CHEBI:33403"
 EMIM_LYSINE_ID = "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine"
 FERROUS_SULFATE_HEXAHYDRATE_ID = "kgmicrobe.compound:feso4_x_6_h2o"
@@ -57,6 +58,11 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("NaNO"): "CHEBI:63005",
     _source_label_key("Sodium phosphate dibasic"): "CHEBI:34683",
     _source_label_key("Sodium dihydrogen phosphate"): "CHEBI:37585",
+    # #875/#1031: preserve the exact accepted heptahydrate labels when an
+    # upstream index still returns the retired local identity or parent.
+    _source_label_key("Na2HPO4 x 7 H2O"): DISODIUM_PHOSPHATE_HEPTAHYDRATE_ID,
+    _source_label_key("Na2HPO4.7H2O"): DISODIUM_PHOSPHATE_HEPTAHYDRATE_ID,
+    _source_label_key("Na2HPO4•7H2O"): DISODIUM_PHOSPHATE_HEPTAHYDRATE_ID,
     _source_label_key(
         "0.5 M Nitrilotriacetic acid, disodium salt"
     ): "kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt",

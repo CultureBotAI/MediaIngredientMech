@@ -1,0 +1,120 @@
+{
+  "at": "2026-11-01T07:06:44.667210+00:00",
+  "source_hashes": {
+    "tests/test_repair_heptahydrate_membership.py": "a615daeb6276bcf32a3d879efa9b09a4c1c379751ee8a9330f66fb9ab7b384b3",
+    "scripts/repair_heptahydrate_membership.py": "a3a8af0acfd2daa94a5da70270f0fd0923b7be0da644a4878688cac2c4aaad17",
+    "scripts/promote_heptahydrate_ncit.py": "768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee",
+    "scripts/build_culturemech_membership.py": "07de538679cce3b9e9bba63ef2ab718297ed5807a83b6469e1e7fe31c5ce43ba",
+    "reports/ncit_heptahydrate_875_20261101_membership/application/apply.before-membership.tsv.gz": "a0833c3a21c9364d4874f7b7ba7217afcd4f87c84244e0284e487c97f3cc42e6",
+    "reports/ncit_heptahydrate_875_20261101_membership/application/apply.json": "1f227990d5b0ecc22d2064110d45c790d0778c92c692e2c5363e2b086996f54c",
+    "reports/sssom_scientific_curation_20261101/audit875/current-culturemech-occurrences.tsv": "2cb9daa815ed97faea50b35b8987a00eb3ca4864995d28a7a08830a9cb00c7c2"
+  },
+  "production_files_unchanged": true,
+  "fresh_python_process_per_case": true,
+  "cases": [
+    {
+      "name": "control",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/control/pytest-tmp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/control/tests/test_repair_heptahydrate_membership.py",
+        "-k",
+        "actual_archived_migration or native_membership_growth"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_summary": "3 passed",
+      "log": "mutation-control.log",
+      "log_sha256": "4cfaf1059483871cc2046350b045c1ba2792b27ae2509ad49aeef5b9c1434d12",
+      "changed_copy": null,
+      "changed_copy_sha256": null
+    },
+    {
+      "name": "restore_live_quota",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/restore_live_quota/pytest-tmp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/restore_live_quota/tests/test_repair_heptahydrate_membership.py",
+        "-k",
+        "native_membership_growth"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_summary": "2 failed",
+      "log": "mutation-restore_live_quota.log",
+      "log_sha256": "54950c79743e70ae4e05a32a09b0cce66c8608c96423ae9c8846c92e6e5cbc90",
+      "changed_copy": "mutations/restore_live_quota/tests/test_repair_heptahydrate_membership.py",
+      "changed_copy_sha256": "0b677ff8b7d7c3792dc8a339bc9056081b8027b8befac069186c4830dea5b16e"
+    },
+    {
+      "name": "discard_repeat_listing",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/discard_repeat_listing/pytest-tmp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/discard_repeat_listing/tests/test_repair_heptahydrate_membership.py",
+        "-k",
+        "native_membership_growth and repeat_listing"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_summary": "1 failed",
+      "log": "mutation-discard_repeat_listing.log",
+      "log_sha256": "aa048fc6c1bce49f7a944875c0a960d7e8918ffd3d24eae7334b082fd0550612",
+      "changed_copy": "mutations/discard_repeat_listing/scripts/build_culturemech_membership.py",
+      "changed_copy_sha256": "6ed165dfd9748898d5730f3db4af937a994151e71ba2831f961ed865d7c407c0"
+    },
+    {
+      "name": "skip_historical_migration",
+      "argv": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/skip_historical_migration/pytest-tmp",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/skip_historical_migration/tests/test_repair_heptahydrate_membership.py",
+        "-k",
+        "actual_archived_migration"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_summary": "1 failed",
+      "log": "mutation-skip_historical_migration.log",
+      "log_sha256": "2ebf2a720825dffd5d48b5502e15c2e31dc6b1d575e79bb1f8566b0174ca1ce9",
+      "changed_copy": "mutations/skip_historical_migration/scripts/repair_heptahydrate_membership.py",
+      "changed_copy_sha256": "aa0677b7e700349a19c86c8d5d97955d5c0c532e5df74ba36b2583fbf6c08079"
+    }
+  ]
+}

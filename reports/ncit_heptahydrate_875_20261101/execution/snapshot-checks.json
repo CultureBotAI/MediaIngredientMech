@@ -1,0 +1,47 @@
+{
+  "captured_at": "2026-11-01T05:31:01.492615+00:00",
+  "method": "Read-only hash and payload checks during evidence packaging, not independent scientific review.",
+  "author": "Codex",
+  "llm_assisted": true,
+  "tables": {
+    "before": {
+      "rows": 2987,
+      "target_rows": 2
+    },
+    "candidate": {
+      "rows": 2979,
+      "target_rows": 1
+    },
+    "canonical": {
+      "rows": 2986,
+      "target_rows": 1
+    }
+  },
+  "unrelated_sssom_data_lines_identical": true,
+  "baseline_table_matches_git_revision": "40b787d37d33d544551389ff019f2d64ad63d7cc",
+  "source_history_prefix_identical": true,
+  "owner_changed_fields": [
+    "curation_history",
+    "identifier",
+    "ontology_mapping"
+  ],
+  "ledger_changes": [
+    {
+      "line": 23,
+      "before": "Na2HPO4 x 7 H2O\tCHEBI:34683\tkgmicrobe.compound:na2hpo4_x_7_h2o\tThe stated heptahydrate is distinct from anhydrous disodium hydrogenphosphate; ChEBI has no term for this hydration state, and the parent survives only as CLOSE_MATCH (#321/#334, #342). The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (#808, culturebotai-claw#571). The record carries its own heptahydrate CAS 7782-85-6, so promotion to cas:7782-85-6 under MAPPING_SEMANTICS §3 step 2 is still open (#875); that change must update this row's mim_id in the same commit. See data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml.",
+      "after": "Na2HPO4 x 7 H2O\tCHEBI:34683\tNCIT:C61946\tThe heptahydrate is exactly NCIT:C61946 'Sodium Phosphate, Dibasic, Heptahydrate' under MAPPING_SEMANTICS section 3 step 1 (#875), supported by NCI EVS CAS 7782-85-6 and formula 2Na.HO4P.7H2O: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full. This supersedes the earlier CAS-only promotion rationale. Keep anhydrous CHEBI:34683 rejected in unified identity columns (#808); the removed parent KG identity is not restored. Source evidence and preserved history: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml. No scientific or release approval is asserted."
+    }
+  ],
+  "all_historical_source_tokens_preserved": true,
+  "historical_source_tokens_are_independent_support_for_ncit": false,
+  "new_comment_equals_native_candidate": true,
+  "inherited_validation_stamp_present": false,
+  "candidate_input_manifests_byte_identical": true,
+  "candidate_label_capture_hashes_verified": true,
+  "native_receipt_sequence": 16,
+  "prior_native_receipts_hashes_verified": 15,
+  "mapping_disposition": "WITHHOLD",
+  "scientific_approval_added": false,
+  "chemistry_and_buffer_resolved": false,
+  "final_qc_or_independent_review_claimed": false
+}

@@ -1,0 +1,373 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_______ test_position_only_changes_preserve_scientific_evidence[insert] ________
+
+cohort = ({'base_review': 'reports/sssom_completion_20260921/review.json', 'base_review_sha256': 'd6798f2ab9aa0eec0ad483be503e9...  "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'})
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8209/test_position_only_changes_pre0')
+operation = 'insert'
+
+    @pytest.mark.parametrize("operation", ["insert", "remove", "reorder"])
+    def test_position_only_changes_preserve_scientific_evidence(cohort, tmp_path, operation):
+        shifted = positional_cohort(cohort, operation)
+        prior, before, current, _ = shifted
+        # Both endpoints are complete native reviews, not merely unchecked hashes.
+        for name, sources in (("before", before), ("after", current)):
+            root = tmp_path / name
+            for path, content in sources.items():
+                destination = root / path
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes(content)
+            load_review(root, Path(prior["base_review"]))
+>       successor, receipt = verify(shifted)
+                             ^^^^^^^^^^^^^^^
+
+tests/test_ingredient_bundle_dependency_refresh.py:245: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ingredient_bundle_dependency_refresh.py:140: in verify
+    return refresh.verify_unchanged_cohort(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+prior = {'base_review': 'reports/sssom_completion_20260921/review.json', 'base_review_sha256': '1665e5f77b3139b6414c40e3f4a3e6...bundle_20260924/claims.json', 'claims_sha256': '52c5c0e9938725524ed9680c736e1015b74dba1c603c2b76da62b7cc17175a8b', ...}
+before = {'reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json': b'{\n  "1T3A50395T": {\n  ...e source has no processing/grade qualifier; no hydrogenated, refined\n  or high-oleic preparation is inferred.\n", ...}
+current = {'reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json': b'{\n  "1T3A50395T": {\n  ...e source has no processing/grade qualifier; no hydrogenated, refined\n  or high-oleic preparation is inferred.\n", ...}
+old_contracts = {'src/mediaingredientmech/profiles/ingredient_scope_v1.yaml': b"profile_id: https://w3id.org/mediaingredientmech/sssom...   "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'}
+new_contracts = {'src/mediaingredientmech/profiles/ingredient_scope_v1.yaml': b"profile_id: https://w3id.org/mediaingredientmech/sssom...   "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'}
+
+    def verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts):
+        """Return a dependency-only successor and complete selected-claim evidence."""
+        if set(old_contracts) != set(CONTRACTS) or old_contracts != new_contracts:
+            raise ValueError("Packaged schema/profile contract changed")
+        if set(before) != source_names(prior) or set(current) != set(before):
+            raise ValueError("Companion source coverage changed")
+        _, old_loaded = reviewed_products(prior, before)
+        old_base = read_json(before[prior["base_review"]])
+        new_base = read_json(current[prior["base_review"]])
+        source = old_base["source_sssom"]
+        if new_base["source_sssom"] != source:
+            raise ValueError("Original SSSOM source path changed")
+        old_meta, old_fields, old_rows = _base_table(before[source])
+        new_meta, new_fields, new_rows = _base_table(current[source])
+        claims = read_json(before[prior["claims_file"]])["claims"]
+        selected_old_decisions = []
+        for claim in claims:
+            if claim["kind"] != "mapping":
+                continue
+            row = {field: claim["payload"][field] for field in old_fields}
+            if old_rows.count(row) != 1:
+                raise ValueError("Selected original row is ambiguous")
+            position = old_rows.index(row) + 1
+            selected_old_decisions.append(
+                next(d for d in old_base["decisions"] if d["source_position"] == position)
+            )
+        # Only the selected base decisions identify global evidence containers.
+        # Other scope/claim evidence and every owner remain byte-immutable.
+        evidence_containers = {d["review_evidence"] for d in selected_old_decisions}
+        allowed = {prior["base_review"], source, *evidence_containers}
+        changed = {p for p in before if before[p] != current[p]}
+        if changed - allowed:
+            raise ValueError(
+                "Non-global input or owner changed: " + ", ".join(sorted(changed - allowed))
+            )
+        for decision in prior["decisions"]:
+            entries = [
+                read_json(sources[decision["review_evidence"]])["entries"][decision["evidence_key"]]
+                for sources in (before, current)
+            ]
+            if entries[0] != entries[1]:
+                raise ValueError("Companion scientific evidence changed")
+        mutable_base = {"source_sha256", "inputs", "record_inputs", "decisions"}
+        if {k: v for k, v in old_base.items() if k not in mutable_base} != {
+            k: v for k, v in new_base.items() if k not in mutable_base
+        }:
+            raise ValueError("Original review scope or contract changed")
+        if old_fields != new_fields:
+            raise ValueError("Original SSSOM column definitions changed")
+        if {k: v for k, v in old_meta.items() if k not in DATE_FIELDS} != {
+            k: v for k, v in new_meta.items() if k not in DATE_FIELDS
+        }:
+            raise ValueError("Original SSSOM semantic metadata changed")
+        for metadata, rows in ((old_meta, old_rows), (new_meta, new_rows)):
+            for key in DATE_FIELDS:
+                value = str(metadata.get(key, ""))
+                if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+                    raise ValueError("Invalid SSSOM date/version")
+                date.fromisoformat(value)
+            if metadata["mapping_date"] != metadata["mapping_set_version"]:
+                raise ValueError("SSSOM date/version disagree")
+            row_dates = []
+            for row in rows:
+                value = row.get("mapping_date", "")
+                if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+                    raise ValueError("Invalid original row mapping_date")
+                row_dates.append(date.fromisoformat(value))
+            if date.fromisoformat(str(metadata["mapping_date"])) != max(row_dates):
+                raise ValueError("SSSOM header date differs from newest row date (Rule G)")
+        selected = []
+        for claim in claims:
+            if claim["kind"] != "mapping":
+                continue
+            row = {field: claim["payload"][field] for field in old_fields}
+            if old_rows.count(row) != 1 or new_rows.count(row) != 1:
+                raise ValueError("Selected complete original row changed or became ambiguous")
+            positions = [old_rows.index(row) + 1, new_rows.index(row) + 1]
+            decisions = [
+                next(d for d in base["decisions"] if d["source_position"] == position)
+                for base, position in zip((old_base, new_base), positions, strict=True)
+            ]
+            if decisions[0] != decisions[1] or decisions[1]["disposition"] != "SUPPORTED":
+>               raise ValueError("Selected original scientific decision changed")
+E               ValueError: Selected original scientific decision changed
+
+../step2-refresh-negative-control/original.py:134: ValueError
+_______ test_position_only_changes_preserve_scientific_evidence[remove] ________
+
+cohort = ({'base_review': 'reports/sssom_completion_20260921/review.json', 'base_review_sha256': 'd6798f2ab9aa0eec0ad483be503e9...  "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'})
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8209/test_position_only_changes_pre1')
+operation = 'remove'
+
+    @pytest.mark.parametrize("operation", ["insert", "remove", "reorder"])
+    def test_position_only_changes_preserve_scientific_evidence(cohort, tmp_path, operation):
+        shifted = positional_cohort(cohort, operation)
+        prior, before, current, _ = shifted
+        # Both endpoints are complete native reviews, not merely unchecked hashes.
+        for name, sources in (("before", before), ("after", current)):
+            root = tmp_path / name
+            for path, content in sources.items():
+                destination = root / path
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes(content)
+            load_review(root, Path(prior["base_review"]))
+>       successor, receipt = verify(shifted)
+                             ^^^^^^^^^^^^^^^
+
+tests/test_ingredient_bundle_dependency_refresh.py:245: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ingredient_bundle_dependency_refresh.py:140: in verify
+    return refresh.verify_unchanged_cohort(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+prior = {'base_review': 'reports/sssom_completion_20260921/review.json', 'base_review_sha256': 'f22c6fe5eeeb531268f374c4513a66...bundle_20260924/claims.json', 'claims_sha256': '52c5c0e9938725524ed9680c736e1015b74dba1c603c2b76da62b7cc17175a8b', ...}
+before = {'reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json': b'{\n  "1T3A50395T": {\n  ...e source has no processing/grade qualifier; no hydrogenated, refined\n  or high-oleic preparation is inferred.\n", ...}
+current = {'reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json': b'{\n  "1T3A50395T": {\n  ...e source has no processing/grade qualifier; no hydrogenated, refined\n  or high-oleic preparation is inferred.\n", ...}
+old_contracts = {'src/mediaingredientmech/profiles/ingredient_scope_v1.yaml': b"profile_id: https://w3id.org/mediaingredientmech/sssom...   "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'}
+new_contracts = {'src/mediaingredientmech/profiles/ingredient_scope_v1.yaml': b"profile_id: https://w3id.org/mediaingredientmech/sssom...   "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'}
+
+    def verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts):
+        """Return a dependency-only successor and complete selected-claim evidence."""
+        if set(old_contracts) != set(CONTRACTS) or old_contracts != new_contracts:
+            raise ValueError("Packaged schema/profile contract changed")
+        if set(before) != source_names(prior) or set(current) != set(before):
+            raise ValueError("Companion source coverage changed")
+        _, old_loaded = reviewed_products(prior, before)
+        old_base = read_json(before[prior["base_review"]])
+        new_base = read_json(current[prior["base_review"]])
+        source = old_base["source_sssom"]
+        if new_base["source_sssom"] != source:
+            raise ValueError("Original SSSOM source path changed")
+        old_meta, old_fields, old_rows = _base_table(before[source])
+        new_meta, new_fields, new_rows = _base_table(current[source])
+        claims = read_json(before[prior["claims_file"]])["claims"]
+        selected_old_decisions = []
+        for claim in claims:
+            if claim["kind"] != "mapping":
+                continue
+            row = {field: claim["payload"][field] for field in old_fields}
+            if old_rows.count(row) != 1:
+                raise ValueError("Selected original row is ambiguous")
+            position = old_rows.index(row) + 1
+            selected_old_decisions.append(
+                next(d for d in old_base["decisions"] if d["source_position"] == position)
+            )
+        # Only the selected base decisions identify global evidence containers.
+        # Other scope/claim evidence and every owner remain byte-immutable.
+        evidence_containers = {d["review_evidence"] for d in selected_old_decisions}
+        allowed = {prior["base_review"], source, *evidence_containers}
+        changed = {p for p in before if before[p] != current[p]}
+        if changed - allowed:
+            raise ValueError(
+                "Non-global input or owner changed: " + ", ".join(sorted(changed - allowed))
+            )
+        for decision in prior["decisions"]:
+            entries = [
+                read_json(sources[decision["review_evidence"]])["entries"][decision["evidence_key"]]
+                for sources in (before, current)
+            ]
+            if entries[0] != entries[1]:
+                raise ValueError("Companion scientific evidence changed")
+        mutable_base = {"source_sha256", "inputs", "record_inputs", "decisions"}
+        if {k: v for k, v in old_base.items() if k not in mutable_base} != {
+            k: v for k, v in new_base.items() if k not in mutable_base
+        }:
+            raise ValueError("Original review scope or contract changed")
+        if old_fields != new_fields:
+            raise ValueError("Original SSSOM column definitions changed")
+        if {k: v for k, v in old_meta.items() if k not in DATE_FIELDS} != {
+            k: v for k, v in new_meta.items() if k not in DATE_FIELDS
+        }:
+            raise ValueError("Original SSSOM semantic metadata changed")
+        for metadata, rows in ((old_meta, old_rows), (new_meta, new_rows)):
+            for key in DATE_FIELDS:
+                value = str(metadata.get(key, ""))
+                if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+                    raise ValueError("Invalid SSSOM date/version")
+                date.fromisoformat(value)
+            if metadata["mapping_date"] != metadata["mapping_set_version"]:
+                raise ValueError("SSSOM date/version disagree")
+            row_dates = []
+            for row in rows:
+                value = row.get("mapping_date", "")
+                if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+                    raise ValueError("Invalid original row mapping_date")
+                row_dates.append(date.fromisoformat(value))
+            if date.fromisoformat(str(metadata["mapping_date"])) != max(row_dates):
+                raise ValueError("SSSOM header date differs from newest row date (Rule G)")
+        selected = []
+        for claim in claims:
+            if claim["kind"] != "mapping":
+                continue
+            row = {field: claim["payload"][field] for field in old_fields}
+            if old_rows.count(row) != 1 or new_rows.count(row) != 1:
+                raise ValueError("Selected complete original row changed or became ambiguous")
+            positions = [old_rows.index(row) + 1, new_rows.index(row) + 1]
+            decisions = [
+                next(d for d in base["decisions"] if d["source_position"] == position)
+                for base, position in zip((old_base, new_base), positions, strict=True)
+            ]
+            if decisions[0] != decisions[1] or decisions[1]["disposition"] != "SUPPORTED":
+>               raise ValueError("Selected original scientific decision changed")
+E               ValueError: Selected original scientific decision changed
+
+../step2-refresh-negative-control/original.py:134: ValueError
+_______ test_position_only_changes_preserve_scientific_evidence[reorder] _______
+
+cohort = ({'base_review': 'reports/sssom_completion_20260921/review.json', 'base_review_sha256': 'd6798f2ab9aa0eec0ad483be503e9...  "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'})
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8209/test_position_only_changes_pre2')
+operation = 'reorder'
+
+    @pytest.mark.parametrize("operation", ["insert", "remove", "reorder"])
+    def test_position_only_changes_preserve_scientific_evidence(cohort, tmp_path, operation):
+        shifted = positional_cohort(cohort, operation)
+        prior, before, current, _ = shifted
+        # Both endpoints are complete native reviews, not merely unchecked hashes.
+        for name, sources in (("before", before), ("after", current)):
+            root = tmp_path / name
+            for path, content in sources.items():
+                destination = root / path
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes(content)
+            load_review(root, Path(prior["base_review"]))
+>       successor, receipt = verify(shifted)
+                             ^^^^^^^^^^^^^^^
+
+tests/test_ingredient_bundle_dependency_refresh.py:245: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_ingredient_bundle_dependency_refresh.py:140: in verify
+    return refresh.verify_unchanged_cohort(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+prior = {'base_review': 'reports/sssom_completion_20260921/review.json', 'base_review_sha256': 'f22c6fe5eeeb531268f374c4513a66...bundle_20260924/claims.json', 'claims_sha256': '52c5c0e9938725524ed9680c736e1015b74dba1c603c2b76da62b7cc17175a8b', ...}
+before = {'reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json': b'{\n  "1T3A50395T": {\n  ...e source has no processing/grade qualifier; no hydrogenated, refined\n  or high-oleic preparation is inferred.\n", ...}
+current = {'reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json': b'{\n  "1T3A50395T": {\n  ...e source has no processing/grade qualifier; no hydrogenated, refined\n  or high-oleic preparation is inferred.\n", ...}
+old_contracts = {'src/mediaingredientmech/profiles/ingredient_scope_v1.yaml': b"profile_id: https://w3id.org/mediaingredientmech/sssom...   "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'}
+new_contracts = {'src/mediaingredientmech/profiles/ingredient_scope_v1.yaml': b"profile_id: https://w3id.org/mediaingredientmech/sssom...   "alternatives",\n        "source_payload",\n        "evidence",\n        "review_status"\n      ]\n    }\n  }\n}\n'}
+
+    def verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts):
+        """Return a dependency-only successor and complete selected-claim evidence."""
+        if set(old_contracts) != set(CONTRACTS) or old_contracts != new_contracts:
+            raise ValueError("Packaged schema/profile contract changed")
+        if set(before) != source_names(prior) or set(current) != set(before):
+            raise ValueError("Companion source coverage changed")
+        _, old_loaded = reviewed_products(prior, before)
+        old_base = read_json(before[prior["base_review"]])
+        new_base = read_json(current[prior["base_review"]])
+        source = old_base["source_sssom"]
+        if new_base["source_sssom"] != source:
+            raise ValueError("Original SSSOM source path changed")
+        old_meta, old_fields, old_rows = _base_table(before[source])
+        new_meta, new_fields, new_rows = _base_table(current[source])
+        claims = read_json(before[prior["claims_file"]])["claims"]
+        selected_old_decisions = []
+        for claim in claims:
+            if claim["kind"] != "mapping":
+                continue
+            row = {field: claim["payload"][field] for field in old_fields}
+            if old_rows.count(row) != 1:
+                raise ValueError("Selected original row is ambiguous")
+            position = old_rows.index(row) + 1
+            selected_old_decisions.append(
+                next(d for d in old_base["decisions"] if d["source_position"] == position)
+            )
+        # Only the selected base decisions identify global evidence containers.
+        # Other scope/claim evidence and every owner remain byte-immutable.
+        evidence_containers = {d["review_evidence"] for d in selected_old_decisions}
+        allowed = {prior["base_review"], source, *evidence_containers}
+        changed = {p for p in before if before[p] != current[p]}
+        if changed - allowed:
+            raise ValueError(
+                "Non-global input or owner changed: " + ", ".join(sorted(changed - allowed))
+            )
+        for decision in prior["decisions"]:
+            entries = [
+                read_json(sources[decision["review_evidence"]])["entries"][decision["evidence_key"]]
+                for sources in (before, current)
+            ]
+            if entries[0] != entries[1]:
+                raise ValueError("Companion scientific evidence changed")
+        mutable_base = {"source_sha256", "inputs", "record_inputs", "decisions"}
+        if {k: v for k, v in old_base.items() if k not in mutable_base} != {
+            k: v for k, v in new_base.items() if k not in mutable_base
+        }:
+            raise ValueError("Original review scope or contract changed")
+        if old_fields != new_fields:
+            raise ValueError("Original SSSOM column definitions changed")
+        if {k: v for k, v in old_meta.items() if k not in DATE_FIELDS} != {
+            k: v for k, v in new_meta.items() if k not in DATE_FIELDS
+        }:
+            raise ValueError("Original SSSOM semantic metadata changed")
+        for metadata, rows in ((old_meta, old_rows), (new_meta, new_rows)):
+            for key in DATE_FIELDS:
+                value = str(metadata.get(key, ""))
+                if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+                    raise ValueError("Invalid SSSOM date/version")
+                date.fromisoformat(value)
+            if metadata["mapping_date"] != metadata["mapping_set_version"]:
+                raise ValueError("SSSOM date/version disagree")
+            row_dates = []
+            for row in rows:
+                value = row.get("mapping_date", "")
+                if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+                    raise ValueError("Invalid original row mapping_date")
+                row_dates.append(date.fromisoformat(value))
+            if date.fromisoformat(str(metadata["mapping_date"])) != max(row_dates):
+                raise ValueError("SSSOM header date differs from newest row date (Rule G)")
+        selected = []
+        for claim in claims:
+            if claim["kind"] != "mapping":
+                continue
+            row = {field: claim["payload"][field] for field in old_fields}
+            if old_rows.count(row) != 1 or new_rows.count(row) != 1:
+                raise ValueError("Selected complete original row changed or became ambiguous")
+            positions = [old_rows.index(row) + 1, new_rows.index(row) + 1]
+            decisions = [
+                next(d for d in base["decisions"] if d["source_position"] == position)
+                for base, position in zip((old_base, new_base), positions, strict=True)
+            ]
+            if decisions[0] != decisions[1] or decisions[1]["disposition"] != "SUPPORTED":
+>               raise ValueError("Selected original scientific decision changed")
+E               ValueError: Selected original scientific decision changed
+
+../step2-refresh-negative-control/original.py:134: ValueError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_ingredient_bundle_dependency_refresh.py::test_position_only_changes_preserve_scientific_evidence[insert]
+FAILED tests/test_ingredient_bundle_dependency_refresh.py::test_position_only_changes_preserve_scientific_evidence[remove]
+FAILED tests/test_ingredient_bundle_dependency_refresh.py::test_position_only_changes_preserve_scientific_evidence[reorder]
+3 failed, 43 deselected, 1 warning in 0.69s

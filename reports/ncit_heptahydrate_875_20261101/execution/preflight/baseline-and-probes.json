@@ -1,0 +1,249 @@
+{
+  "created_at": "2026-11-01T04:19:52.743361+00:00",
+  "kind": "read-only implementation planning, not scientific review or approval",
+  "mim_head": "abf85cd636bd4d0d13be5d62aa0934c39daa5acb",
+  "mim_status": "",
+  "files": {
+    "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+    "mappings/ingredient_mappings.sssom.tsv": "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722",
+    "mappings/unified_mapping_rejections.tsv": "82d7d79172a5efd966f0a6a97ead4faae186128f6d6fdb327366f041ad06aba4",
+    "MAPPING_SEMANTICS.md": "94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805",
+    "scripts/check_unified_rejections.py": "4f7faf1f103f50be1a59e826b0238061d1a9214afcec9d1cf0b029237e71238c",
+    "src/mediaingredientmech/curate/apply_receipt.py": "6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f",
+    "reports/sssom_completion_20260921/mapping_changes/make_receipt.py": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121",
+    "reports/sssom_completion_20260921/assemble_review.py": "64d1816c9a299898e1422b01cff5c5707733e96134942937b08be091434f7f91",
+    "tests/test_mapping_change_receipt.py": "1a85144205f790ecd1a8fe7de84c8233e7baf1b48a002573bbf0e7e5da6f2208",
+    "tests/test_curation_receipt_collisions.py": "a11c251918f21d5d418cf1e443068adb1cb5638faabffca10b430e461738ef12",
+    "tests/test_strict_approval_chain.py": "d28a7da8276a8825154351e6b92201b8b0a019c2b6e6604fce5e3ffbf19b97e1"
+  },
+  "record": {
+    "identifier": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+    "ontology_mapping": {
+      "ontology_id": "CHEBI:34683",
+      "ontology_label": "disodium hydrogenphosphate",
+      "ontology_source": "CHEBI",
+      "mapping_quality": "CLOSE_MATCH"
+    },
+    "history_events": 17,
+    "accepted_synonyms": [
+      {
+        "synonym_text": "Na2HPO4.7H2O",
+        "synonym_type": "HYDRATE_FORM",
+        "source": "kg_microbe"
+      },
+      {
+        "synonym_text": "Na2HPO4•7H2O",
+        "synonym_type": "HYDRATE_FORM",
+        "source": "unmapped_duplicate_review_2026_05_07"
+      }
+    ],
+    "rejected_synonym_count": 10,
+    "chemical_properties": {
+      "cas_rn": "7782-85-6",
+      "data_source": "CultureBotHT/compounds_to_cas.csv",
+      "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+      "molecular_formula": "HO4P.2Na.7H2O",
+      "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+      "smiles": "O=P([O-])([O-])O.[Na+].[Na+]"
+    },
+    "occurrence_statistics": {
+      "total_occurrences": 26,
+      "media_count": 26
+    }
+  },
+  "aggregate_equal": true,
+  "identifier_scan": {
+    "scope": "pathlib.rglob includes ignored and hidden files within data/ingredients",
+    "files_scanned": 2955,
+    "parse_failures": [],
+    "holders": [
+      {
+        "path": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+        "identifier": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+        "cas_rn": "7782-85-6"
+      }
+    ]
+  },
+  "sssom_rows": [
+    {
+      "position": 2005,
+      "row": {
+        "subject_id": "MIM:Na2hpo4_X_7_H2o",
+        "subject_label": "Na2HPO4 x 7 H2O",
+        "predicate_id": "skos:closeMatch",
+        "object_id": "CHEBI:34683",
+        "object_label": "disodium hydrogenphosphate",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Na2HPO4.7H2O|Na2HPO4•7H2O|CAS:7782-85-6",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      }
+    },
+    {
+      "position": 2006,
+      "row": {
+        "subject_id": "MIM:Na2hpo4_X_7_H2o",
+        "subject_label": "Na2HPO4 x 7 H2O",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+        "object_label": "Na2HPO4 x 7 H2O",
+        "object_source": "kgm:compound",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-08-27",
+        "confidence": "0.99",
+        "comment": "Registry/identity row preserving kgmicrobe.compound:na2hpo4_x_7_h2o alongside parent CHEBI:34683.",
+        "other": "CAS:7782-85-6",
+        "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+      }
+    }
+  ],
+  "ledger_rows": [
+    {
+      "ingredient_name": "Na2HPO4 x 7 H2O",
+      "rejected_id": "CHEBI:34683",
+      "mim_id": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+      "reason": "The stated heptahydrate is distinct from anhydrous disodium hydrogenphosphate; ChEBI has no term for this hydration state, and the parent survives only as CLOSE_MATCH (#321/#334, #342). The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (#808, culturebotai-claw#571). The record carries its own heptahydrate CAS 7782-85-6, so promotion to cas:7782-85-6 under MAPPING_SEMANTICS §3 step 2 is still open (#875); that change must update this row's mim_id in the same commit. See data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml."
+    }
+  ],
+  "ledger_count": 90,
+  "current_mapping_dispositions": {
+    "2005": {
+      "row_sha256": "de96c0d046068c6365e51f2213134331baa4a372ea8a5401399b3441045d2b4b",
+      "owner_record": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+      "owner_record_sha256": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+      "disposition": "WITHHOLD",
+      "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The heptahydrate surface is preserved, but exact CAS promotion, chemical structure, and BUFFER evidence need curation.",
+      "basis": {
+        "baseline_position": 2027,
+        "previous_decision": {
+          "assertion_id": "MIM.review:558cea70b027a584d807e4b59cb42ac3340d8e9ddb5ff0a2726de41473b5f389",
+          "source_record": "mappings/ingredient_mappings.sssom.tsv",
+          "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+          "assertion_type": "mapping",
+          "source_position": "2027",
+          "assertion_sha256": "067aad91f6569e6f9783eb688e228c064c2a2faee573dfb49c42912a4a666ecc",
+          "resolution_status": "OPEN",
+          "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+          "review_evidence": ""
+        },
+        "historical_record_review": "reports/yaml_record_review/Na2hpo4_X_7_H2o.md",
+        "scoped_review": {
+          "file": "mapping_review/concern_cohorts.json",
+          "position": 2027
+        },
+        "policy": "Non-exact relations require fresh claim-level review; no inherited whole-record approval."
+      }
+    },
+    "2006": {
+      "row_sha256": "12bc939bd9d06c175ea732162320247a15a5a14fea407e7e6a2c7aa1b3ef3034",
+      "owner_record": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+      "owner_record_sha256": "e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636",
+      "disposition": "WITHHOLD",
+      "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The heptahydrate surface is preserved, but exact CAS promotion, chemical structure, and BUFFER evidence need curation.",
+      "basis": {
+        "baseline_position": 2028,
+        "previous_decision": {
+          "assertion_id": "MIM.review:eed712c95572c74dd2abf0c89711c1b46c0fb32eaf6b1d06a64613a30fe661a2",
+          "source_record": "mappings/ingredient_mappings.sssom.tsv",
+          "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+          "assertion_type": "mapping",
+          "source_position": "2028",
+          "assertion_sha256": "12bc939bd9d06c175ea732162320247a15a5a14fea407e7e6a2c7aa1b3ef3034",
+          "resolution_status": "OPEN",
+          "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+          "review_evidence": ""
+        },
+        "historical_record_review": "reports/yaml_record_review/Na2hpo4_X_7_H2o.md",
+        "scoped_review": {
+          "file": "mapping_review/concern_cohorts.json",
+          "position": 2028
+        }
+      }
+    }
+  },
+  "last_mapping_receipt": {
+    "batch": "issue1014-provenance-restoration",
+    "sequence": 15,
+    "after_sha256": "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722",
+    "path": "reports/sssom_completion_20260921/mapping_changes/issue1014-provenance-restoration.json"
+  },
+  "receipt_chain_tip_matches_canonical": true,
+  "alignment_probe": {
+    "hypothetical_payload_only": true,
+    "changes": [
+      {
+        "kind": "removed",
+        "before_position": 2,
+        "after_position": null,
+        "before": {
+          "subject_id": "MIM:Na2hpo4_X_7_H2o",
+          "subject_label": "Na2HPO4 x 7 H2O",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+          "object_label": "Na2HPO4 x 7 H2O",
+          "object_source": "kgm:compound",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]|kgm:primary_mappings[kegg_compound]",
+          "mapping_date": "2026-08-27",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving kgmicrobe.compound:na2hpo4_x_7_h2o alongside parent CHEBI:34683.",
+          "other": "CAS:7782-85-6",
+          "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+        },
+        "after": null
+      },
+      {
+        "kind": "changed",
+        "before_position": 1,
+        "after_position": 1,
+        "before": {
+          "subject_id": "MIM:Na2hpo4_X_7_H2o",
+          "subject_label": "Na2HPO4 x 7 H2O",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:34683",
+          "object_label": "disodium hydrogenphosphate",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]|kgm:primary_mappings[kegg_compound]",
+          "mapping_date": "2026-08-27",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Na2HPO4.7H2O|Na2HPO4•7H2O|CAS:7782-85-6",
+          "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+        },
+        "after": {
+          "subject_id": "MIM:Na2hpo4_X_7_H2o",
+          "subject_label": "Na2HPO4 x 7 H2O",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "NCIT:C61946",
+          "object_label": "Sodium Phosphate, Dibasic, Heptahydrate",
+          "object_source": "obo:ncit.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]|kgm:primary_mappings[kegg_compound]",
+          "mapping_date": "2026-08-27",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Na2HPO4.7H2O|Na2HPO4•7H2O|CAS:7782-85-6",
+          "validation_method": ""
+        }
+      }
+    ],
+    "position_map": [
+      1,
+      null
+    ]
+  },
+  "ledger_probe": {
+    "stale_ledger_failure": "/virtual-step2-mim/mappings/unified_mapping_rejections.tsv:2: rejection disagrees with MIM identity",
+    "updated_ledger_accepted": true,
+    "published_row_with_parent_source": {
+      "probe_not_run_missing_fixture_key": "'example_media'"
+    }
+  },
+  "notes": "Primary source re-verification belongs to workflow agent; hypothetical NCIT label in probe is not independent source verification."
+}

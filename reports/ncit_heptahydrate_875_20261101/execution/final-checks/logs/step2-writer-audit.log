@@ -1,0 +1,10 @@
+uv run python scripts/audit_writers.py --out reports/pipeline_writers_audit.tsv
+Wrote 121 rows to reports/pipeline_writers_audit.tsv
+
+=== writers audit summary (121 writers) ===
+  target kind:                ingredient=92 mixed=22 report=5 unknown=2
+  appends curation_history:   88 / 121
+  (ingredient writers only) appends curation_history: 87 / 114
+  has --dry-run:              17 / 121
+  validates before write:     55 / 121
+  wired into justfile:        8 / 121

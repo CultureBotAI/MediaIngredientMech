@@ -1,0 +1,219 @@
+FFFFFFFFFFFF....F                                                        [100%]
+=================================== FAILURES ===================================
+_ test_accepted_heptahydrate_labels_route_to_current_identity[kgmicrobe.compound:na2hpo4_x_7_h2o-Na2HPO4 x 7 H2O] _
+
+label = 'Na2HPO4 x 7 H2O', old = 'kgmicrobe.compound:na2hpo4_x_7_h2o'
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert 'kgmicrobe.co...2hpo4_x_7_h2o' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+E         + kgmicrobe.compound:na2hpo4_x_7_h2o
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[kgmicrobe.compound:na2hpo4_x_7_h2o-Na2HPO4.7H2O] _
+
+label = 'Na2HPO4.7H2O', old = 'kgmicrobe.compound:na2hpo4_x_7_h2o'
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert 'kgmicrobe.co...2hpo4_x_7_h2o' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+E         + kgmicrobe.compound:na2hpo4_x_7_h2o
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[kgmicrobe.compound:na2hpo4_x_7_h2o-Na2HPO4\u20227H2O] _
+
+label = 'Na2HPO4•7H2O', old = 'kgmicrobe.compound:na2hpo4_x_7_h2o'
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert 'kgmicrobe.co...2hpo4_x_7_h2o' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+E         + kgmicrobe.compound:na2hpo4_x_7_h2o
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[kgmicrobe.compound:na2hpo4_x_7_h2o-  na2hpo4   x 7 h2o  ] _
+
+label = '  na2hpo4   x 7 h2o  ', old = 'kgmicrobe.compound:na2hpo4_x_7_h2o'
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert 'kgmicrobe.co...2hpo4_x_7_h2o' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+E         + kgmicrobe.compound:na2hpo4_x_7_h2o
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[CHEBI:34683-Na2HPO4 x 7 H2O] _
+
+label = 'Na2HPO4 x 7 H2O', old = 'CHEBI:34683'
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert 'CHEBI:34683' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+E         + CHEBI:34683
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[CHEBI:34683-Na2HPO4.7H2O] _
+
+label = 'Na2HPO4.7H2O', old = 'CHEBI:34683'
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert 'CHEBI:34683' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+E         + CHEBI:34683
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[CHEBI:34683-Na2HPO4\u20227H2O] _
+
+label = 'Na2HPO4•7H2O', old = 'CHEBI:34683'
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert 'CHEBI:34683' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+E         + CHEBI:34683
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[CHEBI:34683-  na2hpo4   x 7 h2o  ] _
+
+label = '  na2hpo4   x 7 h2o  ', old = 'CHEBI:34683'
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert 'CHEBI:34683' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+E         + CHEBI:34683
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[-Na2HPO4 x 7 H2O] _
+
+label = 'Na2HPO4 x 7 H2O', old = ''
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert '' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+__ test_accepted_heptahydrate_labels_route_to_current_identity[-Na2HPO4.7H2O] __
+
+label = 'Na2HPO4.7H2O', old = ''
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert '' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[-Na2HPO4\u20227H2O] _
+
+label = 'Na2HPO4•7H2O', old = ''
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert '' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+_ test_accepted_heptahydrate_labels_route_to_current_identity[-  na2hpo4   x 7 h2o  ] _
+
+label = '  na2hpo4   x 7 h2o  ', old = ''
+
+    @pytest.mark.parametrize("label", ["Na2HPO4 x 7 H2O", "Na2HPO4.7H2O", "Na2HPO4•7H2O", "  na2hpo4   x 7 h2o  "])
+    @pytest.mark.parametrize("old", [guarded.OLD, guarded.PARENT, "", guarded.NEW])
+    def test_accepted_heptahydrate_labels_route_to_current_identity(label, old):
+>       assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": old}) == guarded.NEW
+E       AssertionError: assert '' == 'NCIT:C61946'
+E         
+E         - NCIT:C61946
+
+tests/test_repair_heptahydrate_membership.py:242: AssertionError
+____ test_native_collector_recovers_exact_archived_32_and_effective_counts _____
+
+case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/ste...mapping_rejections.tsv'): b'frozen anchor\n', PosixPath('mappings/ingredient_mappings.sssom.tsv'): b'frozen anchor\n'})
+
+    def test_native_collector_recovers_exact_archived_32_and_effective_counts(case):
+        root, _, before, after, _ = case
+        spec = importlib.util.spec_from_file_location("membership_builder_1031", ROOT / "scripts/build_culturemech_membership.py")
+        producer = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(producer)
+        source = ROOT / "reports/sssom_scientific_curation_20261101/audit875/current-culturemech-occurrences.tsv"
+        edges, unknown = producer.collect(source, {guarded.NEW, guarded.PARENT})
+        selected = {recipe: count for (identity, recipe), count in edges.items() if identity == guarded.NEW}
+>       assert selected == dict.fromkeys(writer.RECIPES, 1)
+E       AssertionError: assert {} == {'CultureMech...0359': 1, ...}
+E         
+E         Right contains 32 more items:
+E         {'CultureMech:000015': 1}
+E         {'CultureMech:000086': 1}
+E         {'CultureMech:000167': 1}
+E         {'CultureMech:000256': 1}
+E         {'CultureMech:000359': 1}...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_repair_heptahydrate_membership.py:260: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[kgmicrobe.compound:na2hpo4_x_7_h2o-Na2HPO4 x 7 H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[kgmicrobe.compound:na2hpo4_x_7_h2o-Na2HPO4.7H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[kgmicrobe.compound:na2hpo4_x_7_h2o-Na2HPO4\u20227H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[kgmicrobe.compound:na2hpo4_x_7_h2o-  na2hpo4   x 7 h2o  ]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[CHEBI:34683-Na2HPO4 x 7 H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[CHEBI:34683-Na2HPO4.7H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[CHEBI:34683-Na2HPO4\u20227H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[CHEBI:34683-  na2hpo4   x 7 h2o  ]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[-Na2HPO4 x 7 H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[-Na2HPO4.7H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[-Na2HPO4\u20227H2O]
+FAILED tests/test_repair_heptahydrate_membership.py::test_accepted_heptahydrate_labels_route_to_current_identity[-  na2hpo4   x 7 h2o  ]
+FAILED tests/test_repair_heptahydrate_membership.py::test_native_collector_recovers_exact_archived_32_and_effective_counts
+13 failed, 4 passed, 45 deselected, 13 warnings in 0.76s
