@@ -1,27 +1,18 @@
 name: QC — evidence reference validation
 
-# Required checks must report for every PR and merge queue candidate.
+# Every PR and queue candidate must report the gate. The quote check is offline:
+# no source fetching, cache repair, research model or provider credit is invoked.
 on:
   pull_request:
   merge_group:
     types: [checks_requested]
   push:
-    branches:
-    - main
-    paths:
-    - data/ingredients/**/*.yaml
-    - references_cache/**
-    - scripts/run_shared_evidence_validator.py
-    - justfile
-    - pyproject.toml
-    - uv.lock
-    - .python-version
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
-# Keep uv commands on the fleet runtime, including --no-project invocations.
 env:
   UV_PYTHON: "3.13"
 
@@ -29,54 +20,67 @@ jobs:
   qc:
     name: qc-evidence
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - name: Checkout MIM
-        uses: actions/checkout@v4
+      - name: Checkout active Mech revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          path: MediaIngredientMech
+          path: mech
+          persist-credentials: false
 
-      - name: Checkout claw (for validator)
-        uses: actions/checkout@v4
+      - name: Read immutable Claw revision
+        id: claw-pin
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -I - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          pin_path = Path("mech/scripts/.vendored_canon_ref")
+          if pin_path.is_symlink() or not pin_path.is_file():
+              raise SystemExit("Canonical pin must be a regular, non-symlink file")
+          with pin_path.open("rb") as stream:
+              pin = stream.read(64)
+          if re.fullmatch(rb"[0-9a-f]{40}\n?", pin) is None:
+              raise SystemExit("Canonical pin must contain one full lowercase commit SHA")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write("ref=" + pin.decode("ascii").strip() + "\n")
+          PY
+
+      - name: Checkout pinned Claw validator
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: CultureBotAI/culturebotai-claw
-          # Reviewed validator code; keep aligned with scripts/.vendored_canon_ref.
-          ref: a5d562962c75a2ad9efd8160b548df5944315422
-          path: culturebotai-claw
-          # No token. culturebotai-claw is PUBLIC, so the default GITHUB_TOKEN
-          # reads it fine. It was private when this job was written, which is why
-          # it used a fine-grained PAT (CLAW_READ_TOKEN) — and that PAT then
-          # expired on 2026-08-14, failing this job at checkout with "Bad
-          # credentials" on every PR, pointing at the claw repo rather than at
-          # the token. Rotating it would have restored the same 90-day fuse.
-          # See #367. If claw ever goes private again, restore
-          # `token: ${{ secrets.CLAW_READ_TOKEN }}` with a fresh PAT.
+          ref: ${{ steps.claw-pin.outputs.ref }}
+          path: claw
+          persist-credentials: false
 
-      - uses: astral-sh/setup-uv@v3
+      - name: Install Python runner
+        uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
         with:
-          enable-cache: true
+          version: "0.12.5"
+          python-version: "3.13"
+          enable-cache: false
 
-      - name: Set up Python and locked dependencies
-        working-directory: MediaIngredientMech
-        run: |
-          uv python install 3.13
-          uv sync --frozen
+      - name: Install pinned validator dependencies
+        run: uv sync --project claw --locked
 
-      - name: Validate evidence references
+      - name: Validate quoted evidence against committed sources
+        working-directory: mech
         env:
-          CLAW_ROOT: ${{ github.workspace }}/culturebotai-claw
-        working-directory: MediaIngredientMech
-        run: |
-          # --strict: an evidence item whose abstract is not in references_cache/
-          # fails, rather than passing as MISSING_CACHE. The cache is committed
-          # (see references_cache/README.md), so every cited PMID is on disk here.
-          uv run --frozen python scripts/run_shared_evidence_validator.py --strict
+          CLAW_ROOT: ${{ github.workspace }}/claw
+        run: uv run --project ../claw --frozen python -I scripts/run_shared_evidence_validator.py --strict
 
-      - name: Upload report
+      - name: Record evidence validation report
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: evidence-validation-${{ github.run_id }}
-          path: |
-            MediaIngredientMech/workspace/reports/evidence_reference_validation.tsv
-            MediaIngredientMech/workspace/reports/evidence_reference_validation.md
-          if-no-files-found: warn
+        shell: bash
+        run: |
+          set -euo pipefail
+          report=mech/workspace/reports/evidence_reference_validation.md
+          if [ -f "$report" ]; then
+            cat "$report" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Evidence validation did not produce a report; inspect the failed preflight step.' >> "$GITHUB_STEP_SUMMARY"
+          fi

@@ -82,10 +82,10 @@ audit-writers:
     uv run python scripts/audit_writers.py --out reports/pipeline_writers_audit.tsv
 
 # Verify literature snippets in evidence claims appear verbatim in cached
-# PubMed abstracts. The adapter resolves the shared claw checkout from
-# CLAW_ROOT, the legacy CLAW_SRC override, or the primary checkout's sibling;
-# it binds both inputs and reports to this active MIM worktree. Exits 2 on
-# SNIPPET_NOT_IN_ABSTRACT (CI blocking). Issue #462.
+# PubMed abstracts. Set CLAW_ROOT to a clean Claw checkout at this worktree's
+# scripts/.vendored_canon_ref; the runner requires that immutable revision.
+# Inputs and reports stay in this active MIM worktree. Quote mismatches exit 2;
+# CI also uses --strict for unsupported sources and missing caches. Claw #687.
 qc-evidence:
     uv run --frozen python scripts/run_shared_evidence_validator.py
 
