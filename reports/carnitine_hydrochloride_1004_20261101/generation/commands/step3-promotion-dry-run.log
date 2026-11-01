@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/merge_carnitine_hydrochloride.py", line 537, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/merge_carnitine_hydrochloride.py", line 530, in main
+    result = promote(target.path, args.candidate, args.source_log, args.log, apply=args.apply,
+                     candidate_sha256=args.candidate_sha256)
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/merge_carnitine_hydrochloride.py", line 483, in promote
+    after = promoted_sssom(before, proposed, {p: current[p] for p in OWNERS})
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/merge_carnitine_hydrochloride.py", line 410, in promoted_sssom
+    raise ValueError(f"Candidate differs from the bounded native claim: {subject}")
+ValueError: Candidate differs from the bounded native claim: MIM:NLDM_metabolites

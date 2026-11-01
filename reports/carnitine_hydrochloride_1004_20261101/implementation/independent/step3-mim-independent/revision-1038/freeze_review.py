@@ -1,0 +1,29 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib
+OUT=Path(__file__).resolve().parent;RUN=OUT.parents[1];MIM=RUN/'step3-mim';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+load=lambda p:json.loads(p.read_bytes())
+old=load(RUN/'step3-mim-independent/implementation-preapplication/receipt.json')
+sources=dict(old['source_hashes'])
+for p,item in load(RUN/'step3-writer-evidence/revision-1038/stable-source.json').items():sources[p]=item['sha256']
+assert all(sha(MIM/p)==h for p,h in sources.items())
+probe=load(OUT/'results.json');assert probe['writer_after_sha256']==sources['scripts/merge_carnitine_hydrochloride.py']
+assert probe['proposed_canonical_sha256']=='d5cd812a8c44c85438d73c68c7a8c3067a505765e4cd54e3a64cef029f2d8ed6' and probe['proposed_canonical_rows']==2982
+logs={}
+for name in ['step3-independent-1038-actual-native-probe','step3-independent-1038-focused-tests']:
+ r=load(RUN/'logs'/f'{name}.json');assert r['exit_code']==0 and sha(Path(r['log']))==r['log_sha256'];logs[name]=r
+assert '37 passed, 95 deselected' in Path(logs['step3-independent-1038-focused-tests']['log']).read_text()
+folder=RUN/'step3-writer-evidence/revision-1038';mut=load(folder/'mutation-results.json');author=[]
+for item in mut['results']:
+ files=[p for p in folder.rglob('*.log') if sha(p)==item['log_sha256']];assert files
+ txt=files[0].read_text();assert item['exit_code']==1 and 'failed' in txt and 'ERROR collecting' not in txt
+ author.append({'name':item['name'],'log':str(files[0]),'log_sha256':item['log_sha256'],'attribution':'author executed; independent hash/failure inspection'})
+assert len(author)==11
+refs=[RUN/'step3-mim-independent/implementation-preapplication/receipt.json',RUN/'step3-mim-independent/actual-source-application/receipt.json',RUN/'step3-mim-independent/actual-source-application/native-candidate-inputs-recheck.json']
+result={'checked_at':datetime.now(timezone.utc).isoformat(),'verdict':'PASS_1038_REPAIR_AND_ACTUAL_CANDIDATE_DRY_RUN','issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1038','source_hashes':sources,'supersedes_promotion_readiness_of':str(refs[0]),'prior_reports_preserved':{str(p):sha(p) for p in refs},'checks':logs,'author_mutation_results_verified':author,'native_probe_sha256':sha(OUT/'results.json'),'expected_canonical_sha256':probe['proposed_canonical_sha256'],'expected_canonical_rows':probe['proposed_canonical_rows'],'current_findings':[],'historical_validation_is_release_approval':False,'final_head_review':False,'production_application_by_reviewer':False,'lock_released_at':logs['step3-independent-1038-actual-native-probe']['finished_at']}
+(OUT/'receipt.json').write_text(json.dumps(result,indent=2)+'\n')
+(OUT/'review.md').write_text('Independent #1038 repair review: PASS on writer 2ec6a4afdd97d580e36471467fa884fe87caa6a76f0a3f7fa9756d00b1fc720e and test 5d3296736e0549371680c5f3847d639015769f766384ac0147d1e3c840e12d34. No remaining confirmed in-scope finding in this re-review. The earlier pre-application review remains immutable and is superseded for promotion readiness by this actual-candidate assessment. Its lower-level row-constructor probe did not exercise prior-stamp replay; root\'s subsequent full generation exposed the missing condition and blocked safely before canonical publication.\n\nThe reviewer independently replayed the actual frozen candidate 02b40e54 through both archived 2598 and repaired 2ec6 writers. The old writer rejects the legitimate NLDM stamp. The repaired native dry-run accepts it and predicts exact canonical d5cd812a8c44c85438d73c68c7a8c3067a505765e4cd54e3a64cef029f2d8ed6, 2,986→2,982 rows, two changed/four removed, with two retired Rule K rows removed. Every unrelated canonical row is preserved; NLDM changes only source and mapping_date. The actual merged 6a native stamp loader/replay returns one unchanged NLDM stamp and one absent NCIT stamp, matching the two selected full-candidate rows. Empty/arbitrary/changed-date NLDM stamps and historical/arbitrary NCIT stamps all reject.\n\nIndependent focused testing passed 37 cases with 95 deselected and 13 warnings, including changed stamp boundaries, promotion and complete no-op/anchor behavior. The other 15 frozen source/test/fixture paths remain unchanged. All 11 author-run mutation controls were independently inspected for exact log hashes and actual assertion failures; these are credited as author executions. The separate source application audit binds the applied 3 owners, 5 source outputs, 7 preimages and 14 recipe pairs. A subsequent independent stream rehash confirms all 2,691 full-candidate inputs, including ontology caches, still matched the generation manifest; no candidate regeneration was required.\n\nThe actual-candidate probe held the configured native MIM lock and released it normally on completion at 09:20:33Z. It performed no production writes and created no promotion receipt. Root\'s concurrent unified attempt correctly refused the lock instead of forcing clearance. Root may now execute the already-authorized guarded promotion using the exact reviewed bytes. Actual publication, receipt 17 and withdrawal of the changed NLDM owner\'s mapping plus 68 component/role approvals, generated output/QC checks, final native review and committed-head audit remain mandatory. The historical validation stamp is not scientific release approval; the new NCIT mapping remains WITHHOLD pending actual mapping review.\n')
+files=[OUT/'probe.py',OUT/'results.json',OUT/'freeze_review.py',OUT/'receipt.json',OUT/'review.md']
+for name in logs:files.extend([RUN/'logs'/f'{name}.json',RUN/'logs'/f'{name}.log'])
+(OUT/'inventory.json').write_text(json.dumps({str(p.relative_to(RUN)):{'sha256':sha(p),'bytes':p.stat().st_size} for p in files},indent=2)+'\n')
+print({p.name:sha(p) for p in [OUT/'review.md',OUT/'receipt.json',OUT/'inventory.json']})

@@ -42,6 +42,30 @@ curation_history:
     nitrogen, sulfur, and phosphate source roles.
   llm_assisted: true
   llm_model: gpt-5
+- timestamp: '2026-11-01T09:12:54.622469+00:00'
+  curator: Codex
+  action: CORRECTED_AND_MERGED_CARNITINE_HYDROCHLORIDE
+  changes: 'Retargeted component position 59 Carnitine Hydrochloride from kgmicrobe.compound:carnitine_hydrochloride
+    to NCIT:C216679; retained MIM_CATALOG, 17.5 UM and every other component/evidence
+    field. This identity reference repair withdraws inherited mapping/component/role
+    approvals through the native receipt chain; no approval is carried. NCI EVS NCIt
+    26.10d NCIT:C216679 ''DL-Carnitine Hydrochloride'' is active, CAS 461-05-2, UNII
+    F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full.
+    PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol:
+    https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct carnitinamide
+    chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601.
+    Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json
+    (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma
+    C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV is
+    a hash-bound local snapshot associated with checkout context, not a commit-attested
+    blob. Direct CAS API returned 401; no CAS Registry verification is claimed. Historical
+    CHEBI/KG source tokens are retained provenance, not independent support for the
+    NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867.
+    No scientific/release approval is asserted.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   10 CultureBot media; samples: NLDM_defined_no_iron, NLDM_defined, NLDM_defined_pH8….
   No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a named metabolite
@@ -338,7 +362,7 @@ components:
   concentration_value: '17.5'
   concentration_unit: UM
 - component_name: Carnitine Hydrochloride
-  component_id: kgmicrobe.compound:carnitine_hydrochloride
+  component_id: NCIT:C216679
   reference_scope: MIM_CATALOG
   concentration_value: '17.5'
   concentration_unit: UM

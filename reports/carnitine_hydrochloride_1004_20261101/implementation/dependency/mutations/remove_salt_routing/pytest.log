@@ -1,0 +1,388 @@
+FFFFFFFFFFFFFFFFFFFF....FFF                                              [100%]
+=================================== FAILURES ===================================
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[kgmicrobe.compound:carnitine_hydrochloride-Carnitine Hydrochloride] _
+
+name = 'Carnitine Hydrochloride'
+upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'kgmicrobe.co...hydrochloride' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + kgmicrobe.compound:carnitine_hydrochloride
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[kgmicrobe.compound:carnitine_hydrochloride-Carnitine (Dl) Hydrochloride] _
+
+name = 'Carnitine (Dl) Hydrochloride'
+upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'kgmicrobe.co...hydrochloride' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + kgmicrobe.compound:carnitine_hydrochloride
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[kgmicrobe.compound:carnitine_hydrochloride- carnitine  HYDROCHLORIDE ] _
+
+name = ' carnitine  HYDROCHLORIDE '
+upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'kgmicrobe.co...hydrochloride' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + kgmicrobe.compound:carnitine_hydrochloride
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[kgmicrobe.compound:carnitine_hydrochloride-CARNITINE (dl)  HYDROCHLORIDE] _
+
+name = 'CARNITINE (dl)  HYDROCHLORIDE'
+upstream = 'kgmicrobe.compound:carnitine_hydrochloride'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'kgmicrobe.co...hydrochloride' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + kgmicrobe.compound:carnitine_hydrochloride
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[cas:461-06-3-Carnitine Hydrochloride] _
+
+name = 'Carnitine Hydrochloride', upstream = 'cas:461-06-3'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'cas:461-06-3' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + cas:461-06-3
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[cas:461-06-3-Carnitine (Dl) Hydrochloride] _
+
+name = 'Carnitine (Dl) Hydrochloride', upstream = 'cas:461-06-3'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'cas:461-06-3' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + cas:461-06-3
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[cas:461-06-3- carnitine  HYDROCHLORIDE ] _
+
+name = ' carnitine  HYDROCHLORIDE ', upstream = 'cas:461-06-3'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'cas:461-06-3' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + cas:461-06-3
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[cas:461-06-3-CARNITINE (dl)  HYDROCHLORIDE] _
+
+name = 'CARNITINE (dl)  HYDROCHLORIDE', upstream = 'cas:461-06-3'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'cas:461-06-3' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + cas:461-06-3
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:91318-Carnitine Hydrochloride] _
+
+name = 'Carnitine Hydrochloride', upstream = 'CHEBI:91318'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'CHEBI:91318' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + CHEBI:91318
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:91318-Carnitine (Dl) Hydrochloride] _
+
+name = 'Carnitine (Dl) Hydrochloride', upstream = 'CHEBI:91318'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'CHEBI:91318' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + CHEBI:91318
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:91318- carnitine  HYDROCHLORIDE ] _
+
+name = ' carnitine  HYDROCHLORIDE ', upstream = 'CHEBI:91318'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'CHEBI:91318' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + CHEBI:91318
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:91318-CARNITINE (dl)  HYDROCHLORIDE] _
+
+name = 'CARNITINE (dl)  HYDROCHLORIDE', upstream = 'CHEBI:91318'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'CHEBI:91318' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + CHEBI:91318
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:48601-Carnitine Hydrochloride] _
+
+name = 'Carnitine Hydrochloride', upstream = 'CHEBI:48601'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'CHEBI:48601' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + CHEBI:48601
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:48601-Carnitine (Dl) Hydrochloride] _
+
+name = 'Carnitine (Dl) Hydrochloride', upstream = 'CHEBI:48601'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'CHEBI:48601' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + CHEBI:48601
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:48601- carnitine  HYDROCHLORIDE ] _
+
+name = ' carnitine  HYDROCHLORIDE ', upstream = 'CHEBI:48601'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'CHEBI:48601' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + CHEBI:48601
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:48601-CARNITINE (dl)  HYDROCHLORIDE] _
+
+name = 'CARNITINE (dl)  HYDROCHLORIDE', upstream = 'CHEBI:48601'
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert 'CHEBI:48601' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+E         + CHEBI:48601
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[-Carnitine Hydrochloride] _
+
+name = 'Carnitine Hydrochloride', upstream = ''
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert '' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[-Carnitine (Dl) Hydrochloride] _
+
+name = 'Carnitine (Dl) Hydrochloride', upstream = ''
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert '' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[- carnitine  HYDROCHLORIDE ] _
+
+name = ' carnitine  HYDROCHLORIDE ', upstream = ''
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert '' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+_ test_only_reviewed_source_labels_follow_exact_salt_identity[-CARNITINE (dl)  HYDROCHLORIDE] _
+
+name = 'CARNITINE (dl)  HYDROCHLORIDE', upstream = ''
+
+    @pytest.mark.parametrize("name", [*NAMES, " carnitine  HYDROCHLORIDE ", "CARNITINE (dl)  HYDROCHLORIDE"])
+    @pytest.mark.parametrize("upstream", [OLD, "cas:461-06-3", "CHEBI:91318", "CHEBI:48601", "", NEW])
+    def test_only_reviewed_source_labels_follow_exact_salt_identity(name, upstream):
+>       assert mim_identifier_for_occurrence({"preferred_term": name, "resolved_identifier": upstream}) == NEW
+E       AssertionError: assert '' == 'NCIT:C216679'
+E         
+E         - NCIT:C216679
+
+tests/test_carnitine_occurrence_routing.py:51: AssertionError
+___ test_native_historical_slice_routes_all_fourteen_pairs_and_free_controls ___
+
+producer = <module 'carnitine_membership_producer' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/build_culturemech_membership.py'>
+frozen_occurrences = [{'recipe_id': 'CultureMech:000962', 'recipe_label': 'omiz_pat_medium_modified', 'recipe_category': 'BACTERIAL', 'sour...ined_novitamin', 'recipe_category': 'SPECIALIZED', 'source_path': 'specialized/nldm_defined_novitamin.yaml', ...}, ...]
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8334/test_native_historical_slice_r0')
+
+    def test_native_historical_slice_routes_all_fourteen_pairs_and_free_controls(producer, frozen_occurrences, tmp_path):
+        path = write_occurrences(tmp_path / "occurrences.tsv", frozen_occurrences)
+        edges, unknown = producer.collect(path, {NEW, "CHEBI:17126"})
+        expected = {(NEW if row["preferred_term"] in NAMES else row["resolved_identifier"], row["recipe_id"]): 1
+                    for row in frozen_occurrences}
+>       assert edges == expected and unknown == {}
+E       AssertionError: assert (defaultdict(<...:012291'): 1}) == {('CHEBI:1712...655'): 1, ...}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Right contains 14 more items:
+E         {('NCIT:C216679', 'CultureMech:015654'): 1}
+E         {('NCIT:C216679', 'CultureMech:015655'): 1}
+E         {('NCIT:C216679', 'CultureMech:015656'): 1}
+E         {('NCIT:C216679', 'CultureMech:015665'): 1}...
+E         
+E         ...Full output truncated, use '-vv' to show)
+
+tests/test_carnitine_occurrence_routing.py:72: AssertionError
+_ test_native_future_membership_growth_is_counted_not_refused[new_recipe-expected0] _
+
+producer = <module 'carnitine_membership_producer' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/build_culturemech_membership.py'>
+frozen_occurrences = [{'recipe_id': 'CultureMech:000962', 'recipe_label': 'omiz_pat_medium_modified', 'recipe_category': 'BACTERIAL', 'sour...ined_novitamin', 'recipe_category': 'SPECIALIZED', 'source_path': 'specialized/nldm_defined_novitamin.yaml', ...}, ...]
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8334/test_native_future_membership_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107179be0>
+growth = 'new_recipe', expected = (15, 15)
+
+    @pytest.mark.parametrize("growth,expected", [("new_recipe", (15, 15)), ("extra_listing", (14, 15))])
+    def test_native_future_membership_growth_is_counted_not_refused(producer, frozen_occurrences, tmp_path, monkeypatch, growth, expected):
+        salt = next(row for row in frozen_occurrences if row["preferred_term"] == NAMES[0])
+        extra = {**salt, "preferred_term": NAMES[1], "resolved_identifier": "cas:461-06-3"}
+        if growth == "new_recipe":
+            extra["recipe_id"] = "CultureMech:999999"
+        path = write_occurrences(tmp_path / "occurrences.tsv", [*frozen_occurrences, extra])
+        edges, unknown = producer.collect(path, {NEW, "CHEBI:17126"})
+>       assert unknown == {} and all(identity != OLD for identity, _ in edges)
+E       AssertionError: assert ({'cas:461-06-...chloride': 14} == {}
+E         
+E         Left contains 2 more items:
+E         {'cas:461-06-3': 1, 'kgmicrobe.compound:carnitine_hydrochloride': 14}
+E         Use -v to get more diff)
+
+tests/test_carnitine_occurrence_routing.py:86: AssertionError
+_ test_native_future_membership_growth_is_counted_not_refused[extra_listing-expected1] _
+
+producer = <module 'carnitine_membership_producer' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/build_culturemech_membership.py'>
+frozen_occurrences = [{'recipe_id': 'CultureMech:000962', 'recipe_label': 'omiz_pat_medium_modified', 'recipe_category': 'BACTERIAL', 'sour...ined_novitamin', 'recipe_category': 'SPECIALIZED', 'source_path': 'specialized/nldm_defined_novitamin.yaml', ...}, ...]
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8334/test_native_future_membership_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10717a740>
+growth = 'extra_listing', expected = (14, 15)
+
+    @pytest.mark.parametrize("growth,expected", [("new_recipe", (15, 15)), ("extra_listing", (14, 15))])
+    def test_native_future_membership_growth_is_counted_not_refused(producer, frozen_occurrences, tmp_path, monkeypatch, growth, expected):
+        salt = next(row for row in frozen_occurrences if row["preferred_term"] == NAMES[0])
+        extra = {**salt, "preferred_term": NAMES[1], "resolved_identifier": "cas:461-06-3"}
+        if growth == "new_recipe":
+            extra["recipe_id"] = "CultureMech:999999"
+        path = write_occurrences(tmp_path / "occurrences.tsv", [*frozen_occurrences, extra])
+        edges, unknown = producer.collect(path, {NEW, "CHEBI:17126"})
+>       assert unknown == {} and all(identity != OLD for identity, _ in edges)
+E       AssertionError: assert ({'cas:461-06-...chloride': 14} == {}
+E         
+E         Left contains 2 more items:
+E         {'cas:461-06-3': 1, 'kgmicrobe.compound:carnitine_hydrochloride': 14}
+E         Use -v to get more diff)
+
+tests/test_carnitine_occurrence_routing.py:86: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[kgmicrobe.compound:carnitine_hydrochloride-Carnitine Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[kgmicrobe.compound:carnitine_hydrochloride-Carnitine (Dl) Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[kgmicrobe.compound:carnitine_hydrochloride- carnitine  HYDROCHLORIDE ]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[kgmicrobe.compound:carnitine_hydrochloride-CARNITINE (dl)  HYDROCHLORIDE]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[cas:461-06-3-Carnitine Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[cas:461-06-3-Carnitine (Dl) Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[cas:461-06-3- carnitine  HYDROCHLORIDE ]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[cas:461-06-3-CARNITINE (dl)  HYDROCHLORIDE]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:91318-Carnitine Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:91318-Carnitine (Dl) Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:91318- carnitine  HYDROCHLORIDE ]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:91318-CARNITINE (dl)  HYDROCHLORIDE]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:48601-Carnitine Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:48601-Carnitine (Dl) Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:48601- carnitine  HYDROCHLORIDE ]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[CHEBI:48601-CARNITINE (dl)  HYDROCHLORIDE]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[-Carnitine Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[-Carnitine (Dl) Hydrochloride]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[- carnitine  HYDROCHLORIDE ]
+FAILED tests/test_carnitine_occurrence_routing.py::test_only_reviewed_source_labels_follow_exact_salt_identity[-CARNITINE (dl)  HYDROCHLORIDE]
+FAILED tests/test_carnitine_occurrence_routing.py::test_native_historical_slice_routes_all_fourteen_pairs_and_free_controls
+FAILED tests/test_carnitine_occurrence_routing.py::test_native_future_membership_growth_is_counted_not_refused[new_recipe-expected0]
+FAILED tests/test_carnitine_occurrence_routing.py::test_native_future_membership_growth_is_counted_not_refused[extra_listing-expected1]
+23 failed, 4 passed, 11 deselected, 1 warning in 0.09s

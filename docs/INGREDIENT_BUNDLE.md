@@ -4,12 +4,12 @@ This opt-in export carries a reviewed scoped cohort, registry claims and source
 occurrences together. It does not replace the complete legacy SSSOM release or
 promote its withheld rows. The initial cohort contains the 20 reviewed
 KG-Microbe cases under issues #769 and #770. The current immutable review
-successor is [the #875 dependency refresh](../reports/ingredient_bundle_20261101_ncit875/README.md);
+successor is [the #1004 dependency refresh](../reports/ingredient_bundle_20261101_carnitine1004/README.md);
 all earlier reviews remain preserved.
 
 ```bash
 python -m mediaingredientmech.export.ingredient_bundle export \
-  --review reports/ingredient_bundle_20261101_ncit875/review.json \
+  --review reports/ingredient_bundle_20261101_carnitine1004/review.json \
   --output output/ingredient-bundle-v1
 python -m mediaingredientmech.export.ingredient_bundle validate \
   output/ingredient-bundle-v1 --manifest-sha256 <exported-manifest-sha256>
@@ -121,7 +121,7 @@ The output parent directories must already exist.
 ```bash
 PYTHONPATH=src python scripts/refresh_unchanged_cohort.py \
   --baseline <commit-containing-prior-inputs> \
-  --prior-review reports/ingredient_bundle_20261101_ncit875/review.json \
+  --prior-review reports/ingredient_bundle_20261101_carnitine1004/review.json \
   --output output/next-companion-review.json \
   --receipt output/next-companion-dependency-refresh.json \
   --prior-copy output/prior-companion-review.json

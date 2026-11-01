@@ -1,0 +1,50 @@
+E731 Do not assign a `lambda` expression, use a `def`
+   --> tests/test_merge_carnitine_hydrochloride.py:248:9
+    |
+246 |         args = promoted_case(case, before)
+247 |         log = args[3]
+248 |         call = lambda: writer.promote(*args, apply=True)
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+249 |     else:
+250 |         call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+    |
+help: Rewrite `call` as a `def`
+
+E731 Do not assign a `lambda` expression, use a `def`
+   --> tests/test_merge_carnitine_hydrochloride.py:250:9
+    |
+248 |         call = lambda: writer.promote(*args, apply=True)
+249 |     else:
+250 |         call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+251 |     snapshots = {p: (root / p).read_bytes() for p in before}
+252 |     if late:
+    |
+help: Rewrite `call` as a `def`
+
+E731 Do not assign a `lambda` expression, use a `def`
+   --> tests/test_merge_carnitine_hydrochloride.py:282:9
+    |
+280 |         args = promoted_case(case, before)
+281 |         log = args[3]
+282 |         call = lambda: writer.promote(*args, apply=True)
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+283 |     else:
+284 |         log = source_log
+    |
+help: Rewrite `call` as a `def`
+
+E731 Do not assign a `lambda` expression, use a `def`
+   --> tests/test_merge_carnitine_hydrochloride.py:285:9
+    |
+283 |     else:
+284 |         log = source_log
+285 |         call = lambda: writer.apply_sources(root, evidence, log, apply=True)
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+286 |     snapshots = {p: (root / p).read_bytes() for p in before}
+287 |     replaced = log if replaced_path is None else writer.backup_paths(log, (replaced_path,))[replaced_path]
+    |
+help: Rewrite `call` as a `def`
+
+Found 4 errors.
+No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option).

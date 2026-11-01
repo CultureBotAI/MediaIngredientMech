@@ -1,0 +1,155 @@
+{
+  "checked_at": "2026-11-01T09:11:38.452250+00:00",
+  "scope": "Independent native execution probes; writes only external fixture roots.\n\nThe source writer/publisher and Claw _row_from_yaml are real, with no mocked\nvalidators or transactions. The documented Python API caller lock is held.\nNo full-corpus producer invocation or scientific approval is claimed.\n",
+  "writer_before_sha256": "cc83d006402bf44db0ea6311f5b341b53e7c8fb8b7bbd35d71cb8533f767cd1c",
+  "writer_fixed_sha256": "2598d9390087071fcff2a188bd4d4312a935576b8ae4fa15a9239dede7529158",
+  "native_sssom_producer_sha256": "cc9c38c1d4922e6b167958daa2ce0bd2618e4c122e2de12c8af4ad13505c6c0e",
+  "production_before_after_identical": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/data/ingredients/mapped/Carnitine_Hydrochloride.yaml": "c03c1c66b9e70436da2e841d1edf2a700f05830674c715fc265ac7fde9705722",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/data/ingredients/mapped/Carnitine_Dl_Hydrochloride.yaml": "8a7e0ac23a72c403bf9cce38a20abe817ee83e0231b558f2ca07ed05d134d190",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/data/ingredients/mapped/NLDM_metabolites.yaml": "7332021e0d760384bc0381f5e00e3a87bd4dfe4b7c5b2eb1140853f7c17d78a0",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/mappings/unified_mapping_rejections.tsv": "717289ca0e45046dcb96f6839b843838a6636fd8e120cf4d9b9ac48de3d9016d",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/mappings/culturemech_recipe_membership.tsv": "55ce5fabd42eb4cc1df628d4fd6a45b813caccbc7d7773105ece5633dd313897",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/mappings/ingredient_mappings.sssom.tsv": "68552edd452d5dccf1262b5d03190a6b668341952a554f349149f269403cca67",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/mappings/other_cross_record_baseline.tsv": "170368983e4105773348122d44da5417745e675dfa9151f72270f19da7a26008",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/scripts/merge_carnitine_hydrochloride.py": "2598d9390087071fcff2a188bd4d4312a935576b8ae4fa15a9239dede7529158",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/tests/test_merge_carnitine_hydrochloride.py": "75c18a469d6056972ee5a60ec3d46d2c219c7980111c85af7bc42b663df20a60",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/src/mediaingredientmech/utils/culturemech_occurrences.py": "d8b5b0ea02bf6c885d9627357dba04c2ba59626ca9bf12062ac70e7d6bed8c68"
+  },
+  "cases": [
+    {
+      "case": "old_control",
+      "initial_receipt_sha256": "48da413088c92fd3fd4c67881476abeeef52641ab9749ab30c1b293def72e3ff",
+      "state": "complete",
+      "original_timestamp": "2026-11-01T09:11:36.076041+00:00",
+      "original_receipt_matches_current_owners": true,
+      "second_result": {
+        "applied": false,
+        "changed": false,
+        "approval": "NONE: source correction only; all changed owners require fresh mapping-specific review."
+      },
+      "failure": null,
+      "second_call_inputs_unchanged": true,
+      "canonical_unchanged": true,
+      "actual_native_candidate_dry_promotion": null
+    },
+    {
+      "case": "fixed_control",
+      "initial_receipt_sha256": "ca7ac329667a9ae7a9ac219946c2c887588d4e9332909d14d352c605f7e8de7b",
+      "state": "complete",
+      "original_timestamp": "2026-11-01T09:11:36.496210+00:00",
+      "original_receipt_matches_current_owners": true,
+      "second_result": {
+        "applied": false,
+        "changed": false,
+        "approval": "NONE: source correction only; all changed owners require fresh mapping-specific review."
+      },
+      "failure": null,
+      "second_call_inputs_unchanged": true,
+      "canonical_unchanged": true,
+      "actual_native_candidate_dry_promotion": {
+        "phase": "promote",
+        "approval": "NONE: source correction only; all changed owners require fresh mapping-specific review.",
+        "records": [
+          {
+            "source_record": "data/ingredients/mapped/Carnitine_Hydrochloride.yaml",
+            "shape": "exact_hydrochloride_merge",
+            "before_yaml_sha256": "c03c1c66b9e70436da2e841d1edf2a700f05830674c715fc265ac7fde9705722",
+            "after_yaml_sha256": "b2bdccb1b62f4dd9a604b710f95d25bffd9c9ec9d03cc14594129cba71975d15",
+            "change": "Corrected kgmicrobe.compound:carnitine_hydrochloride to exact NCIT:C216679; restored correct hydrochloride CAS/chemistry from CID 5970. Merged the duplicate raw source name as RAW_TEXT; retained the amide and free-substance names as attributed REJECTED_LABEL. Explicitly supersedes the 2026-07-05 surface-form non-merge ruling and the old statement that CAS 461-05-2 was erroneous. Preserved all previous history/evidence and 14/14 historical counts. NCI EVS NCIt 26.10d NCIT:C216679 'DL-Carnitine Hydrochloride' is active, CAS 461-05-2, UNII F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full. PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol: https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct carnitinamide chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601. Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV is a hash-bound local snapshot associated with checkout context, not a commit-attested blob. Direct CAS API returned 401; no CAS Registry verification is claimed. Historical CHEBI/KG source tokens are retained provenance, not independent support for the NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867. No scientific/release approval is asserted.",
+            "verification": "NCI EVS NCIt 26.10d NCIT:C216679 'DL-Carnitine Hydrochloride' is active, CAS 461-05-2, UNII F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full. PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol: https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct carnitinamide chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601. Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV is a hash-bound local snapshot associated with checkout context, not a commit-attested blob. Direct CAS API returned 401; no CAS Registry verification is claimed. Historical CHEBI/KG source tokens are retained provenance, not independent support for the NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867. No scientific/release approval is asserted."
+          },
+          {
+            "source_record": "data/ingredients/mapped/Carnitine_Dl_Hydrochloride.yaml",
+            "shape": "exact_hydrochloride_merge",
+            "before_yaml_sha256": "8a7e0ac23a72c403bf9cce38a20abe817ee83e0231b558f2ca07ed05d134d190",
+            "after_yaml_sha256": "4460f8a8c17708b90bf34abb6f67605c5f22eea6f499fec533a898b1357cba33",
+            "change": "Merged into data/ingredients/mapped/Carnitine_Hydrochloride.yaml with corrected identity/representative NCIT:C216679, REJECTED status and zero counts. Rejected the free-substance systematic name; removed active CID 288/free-parent chemistry. Exact prior chemical_properties preserved here and in the immutable preimage: {\"cas_rn\": \"461-06-3\", \"data_source\": \"CultureBotHT compounds_to_cas.csv\", \"inchi\": \"InChI=1S/C7H15NO3/c1-8(2,3)5-6(9)4-7(10)11/h6,9H,4-5H2,1-3H3\", \"molecular_formula\": \"C7H15NO3\", \"pubchem_cid\": 288, \"retrieval_date\": \"2026-04-29T06:51:33.117170+00:00\", \"smiles\": \"C[N+](C)(C)CC(CC(=O)[O-])O\"}. Prior identifier cas:461-06-3 is historical, not current salt identity. Supersedes the 2026-07-05 surface-form non-merge ruling; all prior history and mapping evidence remain. NCI EVS NCIt 26.10d NCIT:C216679 'DL-Carnitine Hydrochloride' is active, CAS 461-05-2, UNII F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full. PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol: https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct carnitinamide chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601. Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV is a hash-bound local snapshot associated with checkout context, not a commit-attested blob. Direct CAS API returned 401; no CAS Registry verification is claimed. Historical CHEBI/KG source tokens are retained provenance, not independent support for the NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867. No scientific/release approval is asserted.",
+            "verification": "NCI EVS NCIt 26.10d NCIT:C216679 'DL-Carnitine Hydrochloride' is active, CAS 461-05-2, UNII F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full. PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol: https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct carnitinamide chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601. Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV is a hash-bound local snapshot associated with checkout context, not a commit-attested blob. Direct CAS API returned 401; no CAS Registry verification is claimed. Historical CHEBI/KG source tokens are retained provenance, not independent support for the NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867. No scientific/release approval is asserted."
+          },
+          {
+            "source_record": "data/ingredients/mapped/NLDM_metabolites.yaml",
+            "shape": "component_reference",
+            "before_yaml_sha256": "7332021e0d760384bc0381f5e00e3a87bd4dfe4b7c5b2eb1140853f7c17d78a0",
+            "after_yaml_sha256": "d0148c23f2c688e1e0afe9c3366a27f0047add3baa024e5597598b282eaa0cff",
+            "change": "Retargeted component position 59 Carnitine Hydrochloride from kgmicrobe.compound:carnitine_hydrochloride to NCIT:C216679; retained MIM_CATALOG, 17.5 UM and every other component/evidence field. This identity reference repair withdraws inherited mapping/component/role approvals through the native receipt chain; no approval is carried. NCI EVS NCIt 26.10d NCIT:C216679 'DL-Carnitine Hydrochloride' is active, CAS 461-05-2, UNII F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full. PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol: https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct carnitinamide chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601. Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV is a hash-bound local snapshot associated with checkout context, not a commit-attested blob. Direct CAS API returned 401; no CAS Registry verification is claimed. Historical CHEBI/KG source tokens are retained provenance, not independent support for the NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867. No scientific/release approval is asserted.",
+            "verification": "NCI EVS NCIt 26.10d NCIT:C216679 'DL-Carnitine Hydrochloride' is active, CAS 461-05-2, UNII F64264D63N: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C216679?include=full. PubChem CID 5970 supplies chloride-bearing C7H16ClNO3 chemistry, 197.66 g/mol: https://pubchem.ncbi.nlm.nih.gov/compound/5970. CHEBI:48601 is the distinct carnitinamide chloride despite its conflicting CAS cross-reference: https://www.ebi.ac.uk/chebi/CHEBI:48601. Inspected 2026-11-01; hash-bound captures and retrieval receipts: reports/carnitine_hydrochloride_1004_20261101/sources/manifest.json (sha256 d5bf100092c4a16d29552e79475b1a8a8891a797c046377365a46f0fb85ce911). Sigma C9500 supplier evidence supports the original racemate. CultureBotHT raw CSV is a hash-bound local snapshot associated with checkout context, not a commit-attested blob. Direct CAS API returned 401; no CAS Registry verification is claimed. Historical CHEBI/KG source tokens are retained provenance, not independent support for the NCIT identity. Approved decision: https://github.com/CultureBotAI/MediaIngredientMech/issues/1004#issuecomment-6555569867. No scientific/release approval is asserted."
+          }
+        ],
+        "source_receipt_sha256": "ca7ac329667a9ae7a9ac219946c2c887588d4e9332909d14d352c605f7e8de7b",
+        "candidate_sha256": "c8b2ed47a5767ca1c53ccfcf7d0e59c51090b881e5f01391e034924d2a0ec762",
+        "sssom_before_sha256": "68552edd452d5dccf1262b5d03190a6b668341952a554f349149f269403cca67",
+        "sssom_after_sha256": "3babc957f75330e9fe6aa006d6f70db67c0918487c911623e3bab58a484575e3",
+        "baseline_before_sha256": "170368983e4105773348122d44da5417745e675dfa9151f72270f19da7a26008",
+        "baseline_after_sha256": "c5b74bd950417baf7f96632f03154e26ef29bb909dfd19560f8460ba5378bfd4",
+        "changed_rows": 2,
+        "removed_rows": 4,
+        "removed_baseline_rows": 2,
+        "preserved_historical_source_tokens": true,
+        "applied": false,
+        "changed": true
+      }
+    },
+    {
+      "case": "old_shifted_timestamps",
+      "initial_receipt_sha256": "000ac88443b61ba501ea683d6f97d30307e600cecba420595ae2076af22e4381",
+      "state": "complete",
+      "original_timestamp": "2026-11-01T09:11:36.995682+00:00",
+      "original_receipt_matches_current_owners": false,
+      "second_result": {
+        "applied": false,
+        "changed": false,
+        "approval": "NONE: source correction only; all changed owners require fresh mapping-specific review."
+      },
+      "failure": null,
+      "second_call_inputs_unchanged": true,
+      "canonical_unchanged": true,
+      "actual_native_candidate_dry_promotion": null
+    },
+    {
+      "case": "fixed_shifted_timestamps",
+      "initial_receipt_sha256": "582ad37fed5f148c0a7f616dceef4dbe2aab25ac81f32cd81b5157d57f8b037d",
+      "state": "complete",
+      "original_timestamp": "2026-11-01T09:11:37.415332+00:00",
+      "original_receipt_matches_current_owners": false,
+      "second_result": null,
+      "failure": {
+        "type": "ValueError",
+        "message": "Completed source receipt does not bind this exact execution and current outputs"
+      },
+      "second_call_inputs_unchanged": true,
+      "canonical_unchanged": true,
+      "actual_native_candidate_dry_promotion": null
+    },
+    {
+      "case": "fixed_bad_transaction",
+      "initial_receipt_sha256": "b4ee743e16a73bd950d3e801936fc63c7fde316364550ed788c95281e98b8963",
+      "state": "complete",
+      "original_timestamp": "2026-11-01T09:11:37.831027+00:00",
+      "original_receipt_matches_current_owners": true,
+      "second_result": null,
+      "failure": {
+        "type": "ValueError",
+        "message": "Completed source receipt does not bind this exact execution and current outputs"
+      },
+      "second_call_inputs_unchanged": true,
+      "canonical_unchanged": true,
+      "actual_native_candidate_dry_promotion": null
+    },
+    {
+      "case": "fixed_bad_input_binding",
+      "initial_receipt_sha256": "6392b1a0a22a228e59ffcb383853f94b7b1d94a2865aa928c607579550b53a47",
+      "state": "complete",
+      "original_timestamp": "2026-11-01T09:11:38.148857+00:00",
+      "original_receipt_matches_current_owners": true,
+      "second_result": null,
+      "failure": {
+        "type": "ValueError",
+        "message": "Completed source receipt does not bind this exact execution and current outputs"
+      },
+      "second_call_inputs_unchanged": true,
+      "canonical_unchanged": true,
+      "actual_native_candidate_dry_promotion": null
+    }
+  ]
+}

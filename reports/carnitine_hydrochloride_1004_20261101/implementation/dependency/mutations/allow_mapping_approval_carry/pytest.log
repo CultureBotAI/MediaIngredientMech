@@ -1,0 +1,59 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_native_owner_only_receipt_withdraws_nldm_mapping_approval ________
+
+proposal = (<module 'carnitine_deps_merge_carnitine_hydrochloride' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngred...ltureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...})
+evidence = {'base_revision': '99fe4b44d78126d78041a69eeb366c52bedf0caa', 'component_disposition': {'change_plan': '', 'current_re...tches', 'llm_assisted': False, ...}], 'identifier': 'CHEBI:233463', 'ingredient_type': 'SINGLE_INGREDIENT', ...}}, ...}
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8338/test_native_owner_only_receipt0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bc010f0>
+
+    def test_native_owner_only_receipt_withdraws_nldm_mapping_approval(proposal, evidence, tmp_path, monkeypatch):
+        assembler, receipt, source, old_owner = mapping_fixture(tmp_path, monkeypatch, proposal, evidence)
+        before = source.read_bytes()
+        document = json.loads(receipt.read_text())
+        assert document["changes"] == [] and document["position_map"] == [1]
+        assert {r["source_record"] for r in document["records"]} == {str(OWNER), str(SURVIVOR), str(TOMBSTONE)}
+        assert document["approval"].startswith("NONE:")
+        products = assembler.assemble()
+        review = json.loads(products["review.json"])
+>       assert review["decisions"][0]["disposition"] == "WITHHOLD"
+E       AssertionError: assert 'SUPPORTED' == 'WITHHOLD'
+E         
+E         - WITHHOLD
+E         + SUPPORTED
+
+tests/test_carnitine_merge_dependencies.py:302: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{
+  "schema_version": 1,
+  "batch": "issue1004-fixture",
+  "sequence": 1,
+  "issue": "1004",
+  "scope": "owner-only dependency replay",
+  "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
+  "before_sha256": "970c8f771bfa71dd890ca42518d12a5ece47f3723a1b0b2304d0e65bdc5735cf",
+  "after_sha256": "970c8f771bfa71dd890ca42518d12a5ece47f3723a1b0b2304d0e65bdc5735cf",
+  "before_row_count": 1,
+  "after_row_count": 1,
+  "changed_rows": 0,
+  "added_rows": 0,
+  "removed_rows": 0,
+  "touched_subjects": []
+}
+wrote reports/sssom_completion_20260921/mapping_changes/issue1004-fixture.json
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+tests/test_carnitine_merge_dependencies.py: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_carnitine_merge_dependencies.py::test_native_owner_only_receipt_withdraws_nldm_mapping_approval
+1 failed, 11 deselected, 13 warnings in 1.29s

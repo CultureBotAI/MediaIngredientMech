@@ -2,7 +2,7 @@
 
 Issue [#729](https://github.com/CultureBotAI/MediaIngredientMech/issues/729)
 finalizes the standalone MIM SSSOM. Every source row has an explicit disposition:
-1,740 supported and 1,246 withheld, out of 2,986. Unsupported claims remain in a
+1,739 supported and 1,243 withheld, out of 2,982. Unsupported claims remain in a
 separate, lossless SSSOM backlog, as requested. Completing disposition coverage
 does not mean every source mapping has been scientifically approved.
 
@@ -46,7 +46,7 @@ above. The earlier published release remains a historical snapshot; these
 decisions supersede it for current SSSOM use.
 
 The complete source SSSOM SHA-256 is
-`68552edd452d5dccf1262b5d03190a6b668341952a554f349149f269403cca67`.
+`d5cd812a8c44c85438d73c68c7a8c3067a505765e4cd54e3a64cef029f2d8ed6`.
 The original negative aromatic-compound review (#724/#725) is retained, with a
 separate, exact source-correction resolution. Removing a hold or rehashing its
 old payload cannot release that unsupported claim.
@@ -54,8 +54,9 @@ old payload cannot release that unsupported claim.
 Receipt `issue669-1003-scoped-alias-corrections` records nine changed rows across
 eight owners, with no added or removed rows and every source position retained.
 The changed carnitine hydrochloride owner withdraws one prior registry-row
-approval; the remaining corrected rows were already withheld. The unresolved
-historical `DL-carnitine` alias stays withheld, without new identity support.
+approval; the remaining corrected rows were already withheld. At that checkpoint
+the historical `DL-carnitine` alias remained withheld without new identity support;
+the later #1004 receipt below removes the salt records' free-substance aliases.
 The proposed melezitose correction was blocked by the existing approval pin
 and restored to its original bytes; its unpublished evidence is retained under
 `reports/sssom_scientific_curation_20261101/audit901/blocked-proposal/` pending
@@ -66,9 +67,20 @@ NCIT:C61946 heptahydrate identity and removes its obsolete local registry row.
 The corrected row remains withheld; all unrelated SSSOM bytes are preserved.
 The chemistry and BUFFER findings remain open.
 
+Receipt `issue1004-carnitine-hydrochloride-merge` changes two rows and removes four:
+the salt's ontology row becomes exact NCIT:C216679, obsolete CAS/parent/registry
+rows disappear, and NLDM's unchanged identity row receives current provenance.
+Historical source tokens are preserved alongside the new source evidence. The
+new NCIT row has no inherited validation stamp; NLDM retains its exact original
+triple-bound stamp as history. Neither stamp nor this receipt grants scientific
+approval. All three changed owners are bound to the receipt; NLDM loses its
+mapping approval and all 68 component/role approvals. The survivor retains the
+duplicate's raw salt name as a synonym; each record retains its own full prior
+history, and the duplicate remains as a rejected tombstone.
+
 Native semantic integrity passes, while the complete graph remains FAIL with
-1,733 blocking findings and 2,271 blocking assertions. The assertion ledger's
-2,986 mapping-source hashes bind the changed canonical table; they are not new
+1,732 blocking findings and 2,336 blocking assertions. The assertion ledger's
+2,982 mapping-source hashes bind the changed canonical table; they are not new
 scientific approvals or cleared backlog findings.
 
 Adversarial review [#730](https://github.com/CultureBotAI/MediaIngredientMech/issues/730)

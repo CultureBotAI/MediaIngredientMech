@@ -1,8 +1,8 @@
 # Mapped Ingredients Index
 **Total Records**: 2680
-**Mapped**: 2611 (97.4%)
+**Mapped**: 2610 (97.4%)
 **Unmapped**: 0 (0.0%)
-**Other statuses**: 69 (2.6%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 70 (2.6%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 222,468
 
 ---
@@ -653,8 +653,6 @@
 | CHEBI:16526 | Carbon dioxide gas | CHEBI:16526 | CHEBI | EXACT_MATCH | 862 |
 | CHEBI:234035 | Carboxymethyl cellulose | CHEBI:234035 | CHEBI | SYNONYM_MATCH | 8 |
 | kgmicrobe.compound:carcinomycin | Carcinomycin | kgmicrobe.compound:carcinomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
-| cas:461-06-3 | Carnitine (Dl) Hydrochloride | CHEBI:17126 | CHEBI | NARROW_MATCH | 0 |
-| kgmicrobe.compound:carnitine_hydrochloride | Carnitine Hydrochloride | CHEBI:17126 | CHEBI | NARROW_MATCH | 14 |
 | CHEBI:65585 | Carnosic Acid | CHEBI:65585 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C72000 | Carrot | NCIT:C72000 | NCIT | EXACT_MATCH | 5 |
 | kgmicrobe.compound:caryomycin | Caryomycin | kgmicrobe.compound:caryomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -2622,6 +2620,7 @@
 | NCIT:C217928 | Furaltadone hydrochloride | NCIT:C217928 | NCIT | EXACT_MATCH | 0 |
 | cas:14168-73-1 | MgSO4·H2O | CHEBI:32599 | CHEBI | NARROW_MATCH | 20 |
 | NCIT:C61946 | Na2HPO4 x 7 H2O | NCIT:C61946 | NCIT | EXACT_MATCH | 32 |
+| NCIT:C216679 | Carnitine Hydrochloride | NCIT:C216679 | NCIT | EXACT_MATCH | 14 |
 
 ## Other Statuses
 
@@ -2696,4 +2695,5 @@
 | CHEBI:18420 | Magnesium | REJECTED | CHEBI:18420 | CHEBI:18420 | 0 |
 | CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:35697 | CHEBI:35697 | 0 |
 | CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:114249 | CHEBI:114249 | 0 |
+| NCIT:C216679 | Carnitine (Dl) Hydrochloride | REJECTED | NCIT:C216679 | NCIT:C216679 | 0 |
 

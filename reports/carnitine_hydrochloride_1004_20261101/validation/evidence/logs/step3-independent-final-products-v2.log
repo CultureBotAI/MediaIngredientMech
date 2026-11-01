@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/final-state/audit_products_v2.py", line 89, in <module>
+    assert read(p)==old(p)
+           ~~~~^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim-independent/final-state/audit_products_v2.py", line 5, in <lambda>
+    sha=lambda b:hashlib.sha256(b).hexdigest();read=lambda p:(MIM/p).read_bytes();load=lambda p:json.loads(read(p));old=lambda p:subprocess.check_output(['git','show',BASE+':'+p],cwd=MIM)
+                                                             ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step3-mim/.vendored_canon_ref'

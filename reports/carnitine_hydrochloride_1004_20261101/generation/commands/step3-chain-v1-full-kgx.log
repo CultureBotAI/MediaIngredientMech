@@ -1,0 +1,37 @@
+uv run --frozen python -m mediaingredientmech.export.kgx --output "$1"
+{
+  "nodes": 5760,
+  "edges": 4487,
+  "unique_triples": 4481,
+  "active_ingredients": 2873,
+  "excluded_rejected_records": 82,
+  "sssom_rows": 2982,
+  "nodes_by_kind": {
+    "external_reference": 2860,
+    "ingredient": 2873,
+    "role": 22,
+    "unresolved_component": 5
+  },
+  "edges_by_assertion_type": {
+    "cellular_metabolic_roles": 8,
+    "component": 502,
+    "environment": 13,
+    "mapping": 2982,
+    "nutritional_roles": 721,
+    "physicochemical_roles": 259,
+    "recipe_reference": 2
+  },
+  "edges_by_predicate": {
+    "MIM.vocab:environmental_context": 13,
+    "MIM.vocab:recipe_candidate_unverified": 1,
+    "MIM.vocab:recipe_similar_composition": 1,
+    "biolink:broad_match": 150,
+    "biolink:close_match": 96,
+    "biolink:exact_match": 2736,
+    "biolink:has_chemical_role": 988,
+    "biolink:has_part": 502
+  },
+  "ingredient_review_status": {
+    "not_reviewed": 2873
+  }
+}

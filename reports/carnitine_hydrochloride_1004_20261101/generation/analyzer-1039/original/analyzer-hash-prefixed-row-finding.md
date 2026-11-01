@@ -1,0 +1,7 @@
+The run-owned final data analyzer prepared for #1004 removes every line beginning with `#` from all TSV inputs. That is correct for SSSOM metadata but wrong for the plain unified TSV, whose ingredient names can begin with `#`.
+
+On the actual regenerated artifact SHA256 `ca62e2f031ebe0f9e6185efc7816207912095beef9799a04634c889cc27196b5`, the supported producer and plain CSV reader report 4,170 rows and 209,330 occurrences. The new analyzer reports 4,166 and 209,323 because it silently omits four legitimate hash-prefixed ingredient rows with seven occurrences. Its raw unrelated-byte comparison still protects those bytes; no artifact was altered, and the original producer/publication checks used a correct plain CSV reader.
+
+Reproduction is retained at `output/approved-plan-20261101T031134Z/step3-application/analyzer-hash-prefixed-row-finding.json` and `logs/step3-final-data-comparison.log`. Analyzer SHA256 `38790edcb9f5a8fb6439827ed74905a7b1aaaa0fda1c3c32ed5749bb5b66958a`. This is an unpublished diagnostic implementation finding, not a defect in the canonical or unified mapping.
+
+Make metadata stripping explicit only for formats that permit it; parse the unified file as plain TSV. Add regressions for hash-prefixed ingredient names, full row/occurrence counts, and changes to those rows, while keeping SSSOM metadata handling intact. Preserve the initial incorrect diagnostic as historical evidence, label it superseded, rerun the analyzer, and independently review the corrected final evidence before publication. Related to #1004.

@@ -1,0 +1,143 @@
+FFFFF.F                                                                  [100%]
+=================================== FAILURES ===================================
+____ test_bad_native_candidate_refuses_before_promotion[other-DL-carnitine] ____
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_cand...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_candidate_refu0/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+field = 'other', value = 'DL-carnitine'
+
+    @pytest.mark.parametrize("field,value", [("other", "DL-carnitine"), ("object_id", "CHEBI:48601"),
+        ("object_id", "cas:461-06-3"), ("predicate_id", "skos:broadMatch"), ("comment", "obsolete registry"),
+        ("source", "MIM:unreviewed"), ("mapping_date", "2020-01-01")])
+    def test_bad_native_candidate_refuses_before_promotion(case, before, field, value):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        rows[0][field] = value
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="Candidate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:394: Failed
+__ test_bad_native_candidate_refuses_before_promotion[object_id-CHEBI:48601] ___
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_cand...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_candidate_refu1/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+field = 'object_id', value = 'CHEBI:48601'
+
+    @pytest.mark.parametrize("field,value", [("other", "DL-carnitine"), ("object_id", "CHEBI:48601"),
+        ("object_id", "cas:461-06-3"), ("predicate_id", "skos:broadMatch"), ("comment", "obsolete registry"),
+        ("source", "MIM:unreviewed"), ("mapping_date", "2020-01-01")])
+    def test_bad_native_candidate_refuses_before_promotion(case, before, field, value):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        rows[0][field] = value
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="Candidate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:394: Failed
+__ test_bad_native_candidate_refuses_before_promotion[object_id-cas:461-06-3] __
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_cand...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_candidate_refu2/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+field = 'object_id', value = 'cas:461-06-3'
+
+    @pytest.mark.parametrize("field,value", [("other", "DL-carnitine"), ("object_id", "CHEBI:48601"),
+        ("object_id", "cas:461-06-3"), ("predicate_id", "skos:broadMatch"), ("comment", "obsolete registry"),
+        ("source", "MIM:unreviewed"), ("mapping_date", "2020-01-01")])
+    def test_bad_native_candidate_refuses_before_promotion(case, before, field, value):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        rows[0][field] = value
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="Candidate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:394: Failed
+_ test_bad_native_candidate_refuses_before_promotion[predicate_id-skos:broadMatch] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_cand...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_candidate_refu3/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+field = 'predicate_id', value = 'skos:broadMatch'
+
+    @pytest.mark.parametrize("field,value", [("other", "DL-carnitine"), ("object_id", "CHEBI:48601"),
+        ("object_id", "cas:461-06-3"), ("predicate_id", "skos:broadMatch"), ("comment", "obsolete registry"),
+        ("source", "MIM:unreviewed"), ("mapping_date", "2020-01-01")])
+    def test_bad_native_candidate_refuses_before_promotion(case, before, field, value):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        rows[0][field] = value
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="Candidate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:394: Failed
+_ test_bad_native_candidate_refuses_before_promotion[comment-obsolete registry] _
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_cand...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_candidate_refu4/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+field = 'comment', value = 'obsolete registry'
+
+    @pytest.mark.parametrize("field,value", [("other", "DL-carnitine"), ("object_id", "CHEBI:48601"),
+        ("object_id", "cas:461-06-3"), ("predicate_id", "skos:broadMatch"), ("comment", "obsolete registry"),
+        ("source", "MIM:unreviewed"), ("mapping_date", "2020-01-01")])
+    def test_bad_native_candidate_refuses_before_promotion(case, before, field, value):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        rows[0][field] = value
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="Candidate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:394: Failed
+_ test_bad_native_candidate_refuses_before_promotion[mapping_date-2020-01-01] __
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_cand...8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8350/test_bad_native_candidate_refu6/receipts/apply.json'))
+before = {PosixPath('data/ingredients/mapped/Carnitine_Hydrochloride.yaml'): b'identifier: kgmicrobe.compound:carnitine_hydroch...ultureBotAI/culturebotai-claw/pull/698. No independently resolved MIM owner; no replacement identity asserted.\n", ...}
+field = 'mapping_date', value = '2020-01-01'
+
+    @pytest.mark.parametrize("field,value", [("other", "DL-carnitine"), ("object_id", "CHEBI:48601"),
+        ("object_id", "cas:461-06-3"), ("predicate_id", "skos:broadMatch"), ("comment", "obsolete registry"),
+        ("source", "MIM:unreviewed"), ("mapping_date", "2020-01-01")])
+    def test_bad_native_candidate_refuses_before_promotion(case, before, field, value):
+        args = promoted_case(case, before)
+        root, candidate, _, log = args
+        fields, rows = writer.table(candidate.read_bytes())
+        rows[0][field] = value
+        candidate.write_bytes(tsv(fields, rows))
+>       with pytest.raises(ValueError, match="Candidate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_merge_carnitine_hydrochloride.py:394: Failed
+=============================== warnings summary ===============================
+../../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../../../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_bad_native_candidate_refuses_before_promotion[other-DL-carnitine]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_bad_native_candidate_refuses_before_promotion[object_id-CHEBI:48601]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_bad_native_candidate_refuses_before_promotion[object_id-cas:461-06-3]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_bad_native_candidate_refuses_before_promotion[predicate_id-skos:broadMatch]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_bad_native_candidate_refuses_before_promotion[comment-obsolete registry]
+FAILED tests/test_merge_carnitine_hydrochloride.py::test_bad_native_candidate_refuses_before_promotion[mapping_date-2020-01-01]
+6 failed, 1 passed, 119 deselected, 13 warnings in 3.09s

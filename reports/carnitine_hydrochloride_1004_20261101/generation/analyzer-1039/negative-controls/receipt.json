@@ -1,0 +1,33 @@
+{
+  "fixed_analyzer_sha256": "fb887535cc5f4e244d1830aa5576e74dc672535fe802fa786f18792e7e29926e",
+  "fixed_source_unchanged": true,
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1039",
+  "logs": {
+    "mutant-tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-tests.stdout": "bb0b7ac5d1c0d483a9ee1f11fd4b66dfedf5f2920618dd8df1b31669c4e867d6",
+    "old-parser-with-current-api.py": "c4dce55394325993b0d7a944b818710ef9879e14d45d5e6112b872800b52b483",
+    "original-parser.stderr": "cac18e2b11b9aa9dedbacfd3df9e9a0ce1880b3f2c8c2f5c85eb5577494310ff",
+    "original-parser.stdout": "7d339f9e680f13f5f5a7e1c39c8625d6dba6795947dfca488819340d0fdf5a94"
+  },
+  "note": "The original raw-byte preservation guard already rejected mutations to excluded lines. The fix repairs population/count reporting and makes those rows visible to parsed semantic checks; it does not repair an altered production artifact.",
+  "old_parser_current_api_mutant": {
+    "failed": 21,
+    "fresh_process": true,
+    "passed": 2,
+    "return_code": 1,
+    "setup_or_api_failure": false,
+    "sha256": "c4dce55394325993b0d7a944b818710ef9879e14d45d5e6112b872800b52b483"
+  },
+  "original_parser": {
+    "counts": {
+      "occurrences": 209323,
+      "rows": 4166
+    },
+    "failure": "assertion on expected full native counts",
+    "fresh_process": true,
+    "return_code": 1,
+    "sha256": "38790edcb9f5a8fb6439827ed74905a7b1aaaa0fda1c3c32ed5749bb5b66958a"
+  },
+  "production_unified_sha256": "ca62e2f031ebe0f9e6185efc7816207912095beef9799a04634c889cc27196b5",
+  "production_unified_unchanged": true
+}
