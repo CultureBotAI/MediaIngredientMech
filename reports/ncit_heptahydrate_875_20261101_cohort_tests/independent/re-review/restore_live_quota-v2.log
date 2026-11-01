@@ -1,0 +1,168 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_native_membership_growth_preserves_current_identity_and_dynamic_counts[new_recipe-expected0] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/test1034-fixed-review/pytest-tmp-v2/restore_live_quota/test_native_membership_growth_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10910fa80>
+producer = <module 'membership_builder_1031' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/restore_live_quota/scripts/build_culturemech_membership.py'>
+growth = 'new_recipe', expected = (33, 33)
+
+    @pytest.mark.parametrize("growth, expected", [("new_recipe", (33, 33)), ("repeat_listing", (32, 33))])
+    def test_native_membership_growth_preserves_current_identity_and_dynamic_counts(
+        tmp_path, monkeypatch, producer, growth, expected,
+    ):
+        """#1034: accepted source additions change effective counts without YAML edits."""
+        archived = ROOT / "reports/sssom_scientific_curation_20261101/audit875/current-culturemech-occurrences.tsv"
+        with archived.open(newline="", encoding="utf-8") as fh:
+            reader = csv.DictReader(fh, delimiter="\t")
+            fields = reader.fieldnames
+            rows = [row for row in reader if mim_identifier_for_occurrence(row) == guarded.NEW]
+        assert len(rows) == 32
+        additional = dict(rows[0])
+        if growth == "new_recipe":
+            additional["recipe_id"] = "CultureMech:999999"
+            assert additional["recipe_id"] not in {row["recipe_id"] for row in rows}
+        else:
+            additional["component_index"] = "99"
+        source = tmp_path / "occurrences.tsv"
+        with source.open("w", newline="", encoding="utf-8") as fh:
+            output = csv.DictWriter(fh, fields, delimiter="\t", lineterminator="\n")
+            output.writeheader()
+            output.writerows([*rows, additional])
+    
+        owner = {"identifier": guarded.NEW, "mapping_status": "MAPPED",
+                 "occurrence_statistics": {"media_count": 26, "total_occurrences": 26}}
+        curated = tmp_path / "mapped.yaml"
+        curated.write_text(yaml.safe_dump({"ingredients": [owner]}))
+        owner_bytes = curated.read_bytes()
+        output = tmp_path / writer.MEMBERSHIP
+        unknown = tmp_path / "unknown.tsv"
+        monkeypatch.setattr(producer, "REPO_ROOT", tmp_path)
+        monkeypatch.setattr(producer, "CURATED", curated)
+        monkeypatch.setattr(producer, "OUTPUT", output)
+        monkeypatch.setattr(producer, "UNKNOWN_REPORT", unknown)
+        assert producer.main(["--occurrences", str(source)]) == 0
+        with unknown.open() as fh:
+            assert list(csv.DictReader((line for line in fh if not line.startswith("#")), delimiter="\t")) == []
+        counts = membership_counts(output)
+        assert counts == {guarded.NEW: expected}
+        assert effective_occurrence_statistics(owner, counts) == expected
+        assert curated.read_bytes() == owner_bytes
+        with output.open() as fh:
+            published = list(csv.DictReader((line for line in fh if not line.startswith("#")), delimiter="\t"))
+        keys = [(row["mim_identifier"], row["recipe_id"]) for row in published]
+        assert keys == sorted(set(keys))
+        monkeypatch.setitem(globals(), "ROOT", tmp_path)
+>       test_committed_memberships_do_not_reuse_retired_identity()
+
+../step2-test-repair-1034/mutations/restore_live_quota/tests/test_repair_heptahydrate_membership.py:392: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def test_committed_memberships_do_not_reuse_retired_identity():
+        """Live membership may grow, but must not revive the retired identity."""
+        content = (ROOT / writer.MEMBERSHIP).read_bytes()
+        rows = list(csv.DictReader((line for line in content.decode().splitlines() if not line.startswith("#")), delimiter="\t"))
+        assert not any(row["mim_identifier"] == guarded.OLD for row in rows)
+>       assert {row["recipe_id"]: row["occurrences"] for row in rows if row["mim_identifier"] == guarded.NEW} == dict.fromkeys(writer.RECIPES, "1")
+E       AssertionError: assert {'CultureMech...56': '1', ...} == {'CultureMech...56': '1', ...}
+E         
+E         Omitting 32 identical items, use -vv to show
+E         Left contains 1 more item:
+E         {'CultureMech:999999': '1'}
+E         Use -v to get more diff
+
+../step2-test-repair-1034/mutations/restore_live_quota/tests/test_repair_heptahydrate_membership.py:343: AssertionError
+----------------------------- Captured stdout call -----------------------------
+source=ingredient_occurrences.tsv culturemech_rev=9559329e edges=33 recipes=33 mim_records=1
+33 membership edge(s) over 1 MIM identifier(s) and 33 recipe(s)
+0 edge(s) list the ingredient more than once in one recipe
+
+wrote mappings/culturemech_recipe_membership.tsv
+_ test_native_membership_growth_preserves_current_identity_and_dynamic_counts[repeat_listing-expected1] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/test1034-fixed-review/pytest-tmp-v2/restore_live_quota/test_native_membership_growth_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x106f5b230>
+producer = <module 'membership_builder_1031' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/restore_live_quota/scripts/build_culturemech_membership.py'>
+growth = 'repeat_listing', expected = (32, 33)
+
+    @pytest.mark.parametrize("growth, expected", [("new_recipe", (33, 33)), ("repeat_listing", (32, 33))])
+    def test_native_membership_growth_preserves_current_identity_and_dynamic_counts(
+        tmp_path, monkeypatch, producer, growth, expected,
+    ):
+        """#1034: accepted source additions change effective counts without YAML edits."""
+        archived = ROOT / "reports/sssom_scientific_curation_20261101/audit875/current-culturemech-occurrences.tsv"
+        with archived.open(newline="", encoding="utf-8") as fh:
+            reader = csv.DictReader(fh, delimiter="\t")
+            fields = reader.fieldnames
+            rows = [row for row in reader if mim_identifier_for_occurrence(row) == guarded.NEW]
+        assert len(rows) == 32
+        additional = dict(rows[0])
+        if growth == "new_recipe":
+            additional["recipe_id"] = "CultureMech:999999"
+            assert additional["recipe_id"] not in {row["recipe_id"] for row in rows}
+        else:
+            additional["component_index"] = "99"
+        source = tmp_path / "occurrences.tsv"
+        with source.open("w", newline="", encoding="utf-8") as fh:
+            output = csv.DictWriter(fh, fields, delimiter="\t", lineterminator="\n")
+            output.writeheader()
+            output.writerows([*rows, additional])
+    
+        owner = {"identifier": guarded.NEW, "mapping_status": "MAPPED",
+                 "occurrence_statistics": {"media_count": 26, "total_occurrences": 26}}
+        curated = tmp_path / "mapped.yaml"
+        curated.write_text(yaml.safe_dump({"ingredients": [owner]}))
+        owner_bytes = curated.read_bytes()
+        output = tmp_path / writer.MEMBERSHIP
+        unknown = tmp_path / "unknown.tsv"
+        monkeypatch.setattr(producer, "REPO_ROOT", tmp_path)
+        monkeypatch.setattr(producer, "CURATED", curated)
+        monkeypatch.setattr(producer, "OUTPUT", output)
+        monkeypatch.setattr(producer, "UNKNOWN_REPORT", unknown)
+        assert producer.main(["--occurrences", str(source)]) == 0
+        with unknown.open() as fh:
+            assert list(csv.DictReader((line for line in fh if not line.startswith("#")), delimiter="\t")) == []
+        counts = membership_counts(output)
+        assert counts == {guarded.NEW: expected}
+        assert effective_occurrence_statistics(owner, counts) == expected
+        assert curated.read_bytes() == owner_bytes
+        with output.open() as fh:
+            published = list(csv.DictReader((line for line in fh if not line.startswith("#")), delimiter="\t"))
+        keys = [(row["mim_identifier"], row["recipe_id"]) for row in published]
+        assert keys == sorted(set(keys))
+        monkeypatch.setitem(globals(), "ROOT", tmp_path)
+>       test_committed_memberships_do_not_reuse_retired_identity()
+
+../step2-test-repair-1034/mutations/restore_live_quota/tests/test_repair_heptahydrate_membership.py:392: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def test_committed_memberships_do_not_reuse_retired_identity():
+        """Live membership may grow, but must not revive the retired identity."""
+        content = (ROOT / writer.MEMBERSHIP).read_bytes()
+        rows = list(csv.DictReader((line for line in content.decode().splitlines() if not line.startswith("#")), delimiter="\t"))
+        assert not any(row["mim_identifier"] == guarded.OLD for row in rows)
+>       assert {row["recipe_id"]: row["occurrences"] for row in rows if row["mim_identifier"] == guarded.NEW} == dict.fromkeys(writer.RECIPES, "1")
+E       AssertionError: assert {'CultureMech...56': '1', ...} == {'CultureMech...56': '1', ...}
+E         
+E         Omitting 31 identical items, use -vv to show
+E         Differing items:
+E         {'CultureMech:000015': '2'} != {'CultureMech:000015': '1'}
+E         Use -v to get more diff
+
+../step2-test-repair-1034/mutations/restore_live_quota/tests/test_repair_heptahydrate_membership.py:343: AssertionError
+----------------------------- Captured stdout call -----------------------------
+source=ingredient_occurrences.tsv culturemech_rev=9559329e edges=32 recipes=32 mim_records=1
+32 membership edge(s) over 1 MIM identifier(s) and 32 recipe(s)
+1 edge(s) list the ingredient more than once in one recipe
+
+wrote mappings/culturemech_recipe_membership.tsv
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step2-test-repair-1034/mutations/restore_live_quota/tests/test_repair_heptahydrate_membership.py::test_native_membership_growth_preserves_current_identity_and_dynamic_counts[new_recipe-expected0]
+FAILED ../step2-test-repair-1034/mutations/restore_live_quota/tests/test_repair_heptahydrate_membership.py::test_native_membership_growth_preserves_current_identity_and_dynamic_counts[repeat_listing-expected1]
+2 failed, 64 deselected, 12 warnings in 1.04s

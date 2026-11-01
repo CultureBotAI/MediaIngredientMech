@@ -1,0 +1,27 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_actual_archived_migration_preserves_exact_cohort_and_receipt_hash ____
+
+    def test_actual_archived_migration_preserves_exact_cohort_and_receipt_hash():
+        """The one-time repair is bound to its immutable preimage, not live counts."""
+        archive = ROOT / "reports/ncit_heptahydrate_875_20261101_membership/application"
+        before = gzip.decompress((archive / "apply.before-membership.tsv.gz").read_bytes())
+        receipt = json.loads((archive / "apply.json").read_text())
+        assert guarded.digest(before) == receipt["before_sha256"] == writer.BEFORE_SHA
+        after = writer.repaired_membership(before)
+>       assert guarded.digest(after) == receipt["after_sha256"] == writer.AFTER_SHA
+E       AssertionError: assert '6537498d833f...541dcf30a5064' == '55ce5fabd42e...e5633dd313897'
+E         
+E         - 55ce5fabd42eb4cc1df628d4fd6a45b813caccbc7d7773105ece5633dd313897
+E         + 6537498d833f45295193865d6cd5f98ad31200c5dbe4a706c6f541dcf30a5064
+
+../step2-test-repair-1034/mutations/skip_historical_migration/tests/test_repair_heptahydrate_membership.py:314: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step2-test-repair-1034/mutations/skip_historical_migration/tests/test_repair_heptahydrate_membership.py::test_actual_archived_migration_preserves_exact_cohort_and_receipt_hash
+1 failed, 65 deselected, 12 warnings in 1.02s

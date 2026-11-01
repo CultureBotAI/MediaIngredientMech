@@ -1,0 +1,70 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_native_membership_growth_preserves_current_identity_and_dynamic_counts[repeat_listing-expected1] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-independent/test1034-fixed-review/pytest-tmp-v2/discard_repeat_listing/test_native_membership_growth_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10719f230>
+producer = <module 'membership_builder_1031' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step2-test-repair-1034/mutations/discard_repeat_listing/scripts/build_culturemech_membership.py'>
+growth = 'repeat_listing', expected = (32, 33)
+
+    @pytest.mark.parametrize("growth, expected", [("new_recipe", (33, 33)), ("repeat_listing", (32, 33))])
+    def test_native_membership_growth_preserves_current_identity_and_dynamic_counts(
+        tmp_path, monkeypatch, producer, growth, expected,
+    ):
+        """#1034: accepted source additions change effective counts without YAML edits."""
+        archived = ROOT / "reports/sssom_scientific_curation_20261101/audit875/current-culturemech-occurrences.tsv"
+        with archived.open(newline="", encoding="utf-8") as fh:
+            reader = csv.DictReader(fh, delimiter="\t")
+            fields = reader.fieldnames
+            rows = [row for row in reader if mim_identifier_for_occurrence(row) == guarded.NEW]
+        assert len(rows) == 32
+        additional = dict(rows[0])
+        if growth == "new_recipe":
+            additional["recipe_id"] = "CultureMech:999999"
+            assert additional["recipe_id"] not in {row["recipe_id"] for row in rows}
+        else:
+            additional["component_index"] = "99"
+        source = tmp_path / "occurrences.tsv"
+        with source.open("w", newline="", encoding="utf-8") as fh:
+            output = csv.DictWriter(fh, fields, delimiter="\t", lineterminator="\n")
+            output.writeheader()
+            output.writerows([*rows, additional])
+    
+        owner = {"identifier": guarded.NEW, "mapping_status": "MAPPED",
+                 "occurrence_statistics": {"media_count": 26, "total_occurrences": 26}}
+        curated = tmp_path / "mapped.yaml"
+        curated.write_text(yaml.safe_dump({"ingredients": [owner]}))
+        owner_bytes = curated.read_bytes()
+        output = tmp_path / writer.MEMBERSHIP
+        unknown = tmp_path / "unknown.tsv"
+        monkeypatch.setattr(producer, "REPO_ROOT", tmp_path)
+        monkeypatch.setattr(producer, "CURATED", curated)
+        monkeypatch.setattr(producer, "OUTPUT", output)
+        monkeypatch.setattr(producer, "UNKNOWN_REPORT", unknown)
+        assert producer.main(["--occurrences", str(source)]) == 0
+        with unknown.open() as fh:
+            assert list(csv.DictReader((line for line in fh if not line.startswith("#")), delimiter="\t")) == []
+        counts = membership_counts(output)
+>       assert counts == {guarded.NEW: expected}
+E       AssertionError: assert {'NCIT:C61946': (32, 32)} == {'NCIT:C61946': (32, 33)}
+E         
+E         Differing items:
+E         {'NCIT:C61946': (32, 32)} != {'NCIT:C61946': (32, 33)}
+E         Use -v to get more diff
+
+../step2-test-repair-1034/mutations/discard_repeat_listing/tests/test_repair_heptahydrate_membership.py:383: AssertionError
+----------------------------- Captured stdout call -----------------------------
+source=ingredient_occurrences.tsv culturemech_rev=9559329e edges=32 recipes=32 mim_records=1
+32 membership edge(s) over 1 MIM identifier(s) and 32 recipe(s)
+0 edge(s) list the ingredient more than once in one recipe
+
+wrote mappings/culturemech_recipe_membership.tsv
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step2-test-repair-1034/mutations/discard_repeat_listing/tests/test_repair_heptahydrate_membership.py::test_native_membership_growth_preserves_current_identity_and_dynamic_counts[repeat_listing-expected1]
+1 failed, 1 passed, 64 deselected, 12 warnings in 1.03s

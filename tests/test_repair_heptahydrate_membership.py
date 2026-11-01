@@ -1,6 +1,7 @@
 """#1031 restores an existing membership cohort without changing its source."""
 
 import csv
+import gzip
 import importlib.util
 import io
 import json
@@ -21,6 +22,14 @@ SPEC = importlib.util.spec_from_file_location("membership_repair", ROOT / "scrip
 writer = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(writer)
 guarded = writer.guarded
+
+
+@pytest.fixture
+def producer():
+    spec = importlib.util.spec_from_file_location("membership_builder_1031", ROOT / "scripts/build_culturemech_membership.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def table(rows):
@@ -279,11 +288,8 @@ def test_sibling_plain_parent_and_unrelated_labels_keep_their_routing(label):
     assert mim_identifier_for_occurrence({"preferred_term": label, "resolved_identifier": guarded.PARENT}) == guarded.PARENT
 
 
-def test_native_collector_recovers_exact_archived_32_and_effective_counts(case):
+def test_native_collector_recovers_exact_archived_32_and_effective_counts(case, producer):
     root, _, before, after, _ = case
-    spec = importlib.util.spec_from_file_location("membership_builder_1031", ROOT / "scripts/build_culturemech_membership.py")
-    producer = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(producer)
     source = ROOT / "reports/sssom_scientific_curation_20261101/audit875/current-culturemech-occurrences.tsv"
     edges, unknown = producer.collect(source, {guarded.NEW, guarded.PARENT})
     selected = {recipe: count for (identity, recipe), count in edges.items() if identity == guarded.NEW}
@@ -298,9 +304,88 @@ def test_native_collector_recovers_exact_archived_32_and_effective_counts(case):
     assert before != after
 
 
-def test_committed_memberships_use_current_owner_and_preserve_exact_cohort():
-    """Published membership retains the frozen cohort under its current identity."""
+def test_actual_archived_migration_preserves_exact_cohort_and_receipt_hash():
+    """The one-time repair is bound to its immutable preimage, not live counts."""
+    archive = ROOT / "reports/ncit_heptahydrate_875_20261101_membership/application"
+    before = gzip.decompress((archive / "apply.before-membership.tsv.gz").read_bytes())
+    receipt = json.loads((archive / "apply.json").read_text())
+    assert guarded.digest(before) == receipt["before_sha256"] == writer.BEFORE_SHA
+    after = writer.repaired_membership(before)
+    assert guarded.digest(after) == receipt["after_sha256"] == writer.AFTER_SHA
+    assert writer.repaired_membership(after) == after
+
+    before_lines, after_lines = before.splitlines(), after.splitlines()
+    assert [line for line in before_lines if line.startswith(b"#")] == [
+        line for line in after_lines if line.startswith(b"#")
+    ]
+    old_prefix, new_prefix = guarded.OLD.encode() + b"\t", guarded.NEW.encode() + b"\t"
+    original = [line for line in before_lines if line.startswith(old_prefix)]
+    migrated = [line for line in after_lines if line.startswith(new_prefix)]
+    assert len(original) == len(migrated) == 32
+    assert {line.split(b"\t", 1)[1] for line in original} == {
+        line.split(b"\t", 1)[1] for line in migrated
+    }
+    assert {line.split(b"\t")[1].decode(): int(line.split(b"\t")[2])
+            for line in migrated} == {
+        row["recipe_id"]: row["occurrences"] for row in receipt["memberships"]
+    } == dict.fromkeys(writer.RECIPES, 1)
+    assert not any(line.startswith(old_prefix) for line in after_lines)
+    assert sorted(line for line in before_lines if not line.startswith(old_prefix)) == sorted(
+        line for line in after_lines if not line.startswith(new_prefix)
+    )
+
+
+def test_committed_memberships_do_not_reuse_retired_identity():
+    """Live membership may grow, but must not revive the retired identity."""
     content = (ROOT / writer.MEMBERSHIP).read_bytes()
     rows = list(csv.DictReader((line for line in content.decode().splitlines() if not line.startswith("#")), delimiter="\t"))
     assert not any(row["mim_identifier"] == guarded.OLD for row in rows)
-    assert {row["recipe_id"]: row["occurrences"] for row in rows if row["mim_identifier"] == guarded.NEW} == dict.fromkeys(writer.RECIPES, "1")
+
+
+@pytest.mark.parametrize("growth, expected", [("new_recipe", (33, 33)), ("repeat_listing", (32, 33))])
+def test_native_membership_growth_preserves_current_identity_and_dynamic_counts(
+    tmp_path, monkeypatch, producer, growth, expected,
+):
+    """#1034: accepted source additions change effective counts without YAML edits."""
+    archived = ROOT / "reports/sssom_scientific_curation_20261101/audit875/current-culturemech-occurrences.tsv"
+    with archived.open(newline="", encoding="utf-8") as fh:
+        reader = csv.DictReader(fh, delimiter="\t")
+        fields = reader.fieldnames
+        rows = [row for row in reader if mim_identifier_for_occurrence(row) == guarded.NEW]
+    assert len(rows) == 32
+    additional = dict(rows[0])
+    if growth == "new_recipe":
+        additional["recipe_id"] = "CultureMech:999999"
+        assert additional["recipe_id"] not in {row["recipe_id"] for row in rows}
+    else:
+        additional["component_index"] = "99"
+    source = tmp_path / "occurrences.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        output = csv.DictWriter(fh, fields, delimiter="\t", lineterminator="\n")
+        output.writeheader()
+        output.writerows([*rows, additional])
+
+    owner = {"identifier": guarded.NEW, "mapping_status": "MAPPED",
+             "occurrence_statistics": {"media_count": 26, "total_occurrences": 26}}
+    curated = tmp_path / "mapped.yaml"
+    curated.write_text(yaml.safe_dump({"ingredients": [owner]}))
+    owner_bytes = curated.read_bytes()
+    output = tmp_path / writer.MEMBERSHIP
+    unknown = tmp_path / "unknown.tsv"
+    monkeypatch.setattr(producer, "REPO_ROOT", tmp_path)
+    monkeypatch.setattr(producer, "CURATED", curated)
+    monkeypatch.setattr(producer, "OUTPUT", output)
+    monkeypatch.setattr(producer, "UNKNOWN_REPORT", unknown)
+    assert producer.main(["--occurrences", str(source)]) == 0
+    with unknown.open() as fh:
+        assert list(csv.DictReader((line for line in fh if not line.startswith("#")), delimiter="\t")) == []
+    counts = membership_counts(output)
+    assert counts == {guarded.NEW: expected}
+    assert effective_occurrence_statistics(owner, counts) == expected
+    assert curated.read_bytes() == owner_bytes
+    with output.open() as fh:
+        published = list(csv.DictReader((line for line in fh if not line.startswith("#")), delimiter="\t"))
+    keys = [(row["mim_identifier"], row["recipe_id"]) for row in published]
+    assert keys == sorted(set(keys))
+    monkeypatch.setitem(globals(), "ROOT", tmp_path)
+    test_committed_memberships_do_not_reuse_retired_identity()

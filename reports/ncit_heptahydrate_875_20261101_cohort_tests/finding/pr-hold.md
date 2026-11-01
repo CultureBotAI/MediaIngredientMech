@@ -1,0 +1,5 @@
+PR #1030 has been removed from the merge queue before merge because independent follow-up review confirmed #1034. No automatic merge request remains.
+
+The 32-pair production repair is valid and unchanged. The defect is the new test's permanent equality assertion against the mutable live membership table: valid native rebuilds with 33/33 or 32/33 recipe/occurrence counts pass normal invariants but fail that assertion. The fix preserves exact migration checks against archived inputs and permits valid ongoing producer evolution.
+
+The prior queue-ready verdict is superseded for merge readiness. The completed PR checks and original evidence remain archived. The superseded integration suite was cancelled; it is not a completed integration pass. After the test fix, this branch will receive a fresh ordinary commit, independent re-review, all required PR checks and a new queue run. No production mapping, membership, YAML, source writer or prior review artifact is being changed by this test repair.
