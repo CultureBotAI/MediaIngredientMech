@@ -1,0 +1,73 @@
+{
+  "baseline": "612860e467aff74ecc1339df7c3c32b1bf940b95",
+  "commands": {
+    "native-export.log": "PYTHONPATH=src python -m mediaingredientmech.export.ingredient_bundle export --review reports/ingredient_bundle_20261101_followup/review.json --output output/mim-reviewed-ingredient-bundle-1013",
+    "native-validate.log": "PYTHONPATH=src python -m mediaingredientmech.export.ingredient_bundle validate output/mim-reviewed-ingredient-bundle-1013 --manifest-sha256 169bc30207fc65485a687f1a03b88f2c6241bdbca9939d459f97619a5192b0d6",
+    "refresh-and-native-tests.log": "PYTHONPATH=src python -m pytest -o addopts='' tests/test_ingredient_bundle_dependency_refresh.py tests/test_ingredient_bundle.py -q",
+    "refresh-ruff.log": "ruff check src/mediaingredientmech/ingredient_bundle_refresh.py scripts/refresh_unchanged_cohort.py tests/test_ingredient_bundle_dependency_refresh.py",
+    "successor-generation.log": "PYTHONPATH=src python scripts/refresh_unchanged_cohort.py --baseline 612860e467aff74ecc1339df7c3c32b1bf940b95 --prior-review reports/ingredient_bundle_20261101/review.json --output reports/ingredient_bundle_20261101_followup/review.json --receipt reports/ingredient_bundle_20261101_followup/dependency-refresh.json --prior-copy reports/ingredient_bundle_20261101_followup/prior-review.json",
+    "successor-replay.log": "PYTHONPATH=src python scripts/refresh_unchanged_cohort.py --baseline 612860e467aff74ecc1339df7c3c32b1bf940b95 --prior-review reports/ingredient_bundle_20261101/review.json --output ../followup-1012-1017/replay-review.json --receipt ../followup-1012-1017/replay-receipt.json --prior-copy ../followup-1012-1017/replay-prior.json"
+  },
+  "execution_head": "612860e467aff74ecc1339df7c3c32b1bf940b95",
+  "exit_codes": {
+    "native-export.log": 0,
+    "native-validate.log": 0,
+    "refresh-and-native-tests.log": 0,
+    "refresh-ruff.log": 0,
+    "successor-generation.log": 0,
+    "successor-replay.log": 0
+  },
+  "focused_tests": "78 passed in 19.22s",
+  "issues": [
+    1012,
+    1013,
+    1016
+  ],
+  "log_sha256": {
+    "native-export.log": "d3303e2ab0535840112306b05c38f373389780f09081898b5023265372bae56d",
+    "native-validate.log": "8ebcd9844e21f9e0ad5cc0502f944f93a87cf7b2dba9d1a7badee02c12269ff5",
+    "refresh-and-native-tests.log": "f77e73dd8cdb4b17a22e7931f8ec9498d4340537de94ebef4d664cb759152da1",
+    "refresh-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "successor-generation.log": "60c8c32c00576bc2f69a627cc4d536ea5ffa31c9556a03a3dcdb99dcca6daaa9",
+    "successor-replay.log": "327f61cdb9ff0ed59564b2d021122f20a2891b154b1e6324fca649f92fa6064f"
+  },
+  "manifest_sha256": "169bc30207fc65485a687f1a03b88f2c6241bdbca9939d459f97619a5192b0d6",
+  "native_counts": {
+    "identifiers": 18,
+    "mappings": 20,
+    "occurrences": 10,
+    "products": 3
+  },
+  "preserved_historical_files_sha256": {
+    "reports/ingredient_bundle_20260924/README.md": "fbc4c9c779ce41159fa47e8ae75ee0c9bfdd4bc36b67c8753f96a893fd509a87",
+    "reports/ingredient_bundle_20260924/claims.json": "52c5c0e9938725524ed9680c736e1015b74dba1c603c2b76da62b7cc17175a8b",
+    "reports/ingredient_bundle_20260924/review-evidence.json": "34e8e6575bb4e80fd09234661a0c6a8db0c061d449b9529bb9dd74aad4a4e6d1",
+    "reports/ingredient_bundle_20260924/review.json": "e0bdc20106e9db70acd72db49bc24a4394f802e3aa8ac1187d3cff7025937dc6",
+    "reports/ingredient_bundle_20260924/scope-rulings.json": "3ae5d5a6a5b82ab6890a110c154cf602701282f25ee18f9a1f0f609869106555",
+    "reports/ingredient_bundle_20261101/README.md": "abf39dfb196f4d1c94ab11938b40a0dbce85e2fa20f98fdaa91ab0b05c77a5b8",
+    "reports/ingredient_bundle_20261101/checks/focused-tests-final.log": "f7b047a0e3a9fbcd5571bf6aa1de0dc16d46b923c289df6adfe9fc89e7c9e20d",
+    "reports/ingredient_bundle_20261101/checks/helper-replay.log": "b534ab23e0606fb35fb7dd9ade741e5d152846f0558af598c724e0ab6ed1a599",
+    "reports/ingredient_bundle_20261101/checks/native-export.log": "9382ee73be40c532667fde74a1c3a6383086865b59f1605f855ff7d64bf7cc40",
+    "reports/ingredient_bundle_20261101/checks/native-validate.log": "dc74f147460b240eaac26a6d2a82925112875162e14a2847fd5588d3fc35bcfb",
+    "reports/ingredient_bundle_20261101/checks/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/ingredient_bundle_20261101/checks/verification.json": "c7a951a2b7282cd4e4d9e485567f9febb352dc5d9042f2de0fec46c925595508",
+    "reports/ingredient_bundle_20261101/dependency-refresh.json": "edf4feea786659a656e6b9f60ce5497cc6962d42272e7b91f89e44d6b20e6d27",
+    "reports/ingredient_bundle_20261101/prior-review.json": "e0bdc20106e9db70acd72db49bc24a4394f802e3aa8ac1187d3cff7025937dc6",
+    "reports/ingredient_bundle_20261101/refresh_unchanged_cohort.py": "78822af3c4f921e37522bfd2559c39112cb7343fd5e277966ef99117b4101384",
+    "reports/ingredient_bundle_20261101/review.json": "84e3572174748d0b801c9da8a0f87541cdfbc01756e10b884da6c4fdb9b23260"
+  },
+  "prior_copy_byte_identical": true,
+  "prior_review_sha256": "84e3572174748d0b801c9da8a0f87541cdfbc01756e10b884da6c4fdb9b23260",
+  "protected_qc_evidence_workflow_and_native_export_guards_unchanged": true,
+  "scientific_approval_added": false,
+  "script_sha256": "40d29bc094aa20fd8d1c4501a30bf5f754e4bc23247762df53ada5541068ecdf",
+  "successor_changed_fields": [
+    "/base_review_sha256",
+    "/inputs/mappings/ingredient_mappings.sssom.tsv",
+    "/inputs/reports/sssom_completion_20260921/mapping-evidence.json"
+  ],
+  "successor_replay_byte_identical": true,
+  "successor_review_sha256": "d391ec9e0dc004494431f76a81c392efef114746e7bf1eca57c7ce4dc7dec14c",
+  "tests_sha256": "5c7827f51de32d059ca0c85f9f41da3887c6a2dc30a9aa0923bf462090431433",
+  "working_tree_producer_sha256": "6c147ce02431683ce876a9b13bf9a025fdafd2d23d1d7b49873dfe01e75e7877"
+}

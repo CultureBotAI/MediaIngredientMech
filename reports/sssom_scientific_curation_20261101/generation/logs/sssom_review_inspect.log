@@ -1,0 +1,103 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "4625afd492b6cf43e3b499d1425d2453d490009d",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": ".github/workflows/qc-evidence.yaml",
+        "sha256": "5814a583a571b3e622a493942dd5483656c7d69531485e560db7c8075e1d7751",
+        "role": "context"
+      },
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805",
+        "role": "context"
+      },
+      {
+        "path": "data/curated/mapped_ingredients.yaml",
+        "sha256": "56e9eae4e0dd282e9c5a5d6d8c972faa99ddda76127bb26a9df5f5934abce09d",
+        "role": "context"
+      },
+      {
+        "path": "mappings/ingredient_mappings.sssom.tsv",
+        "sha256": "f408f36b9de77c2089a07907b40d6a27401087e13528f0597a6cf7b386048ac0",
+        "role": "target"
+      },
+      {
+        "path": "mappings/other_cross_record_baseline.tsv",
+        "sha256": "170368983e4105773348122d44da5417745e675dfa9151f72270f19da7a26008",
+        "role": "context"
+      },
+      {
+        "path": "output/sssom-scientific-audit/ready.sssom.tsv",
+        "sha256": "084fd8cfc300272a0dcb220ebc1ca2076aee83229e3847cf64e0c1ca1c37359b",
+        "role": "target"
+      },
+      {
+        "path": "reports/sssom_completion_20260921/mapping_changes/issue669-1003-scoped-alias-corrections.json",
+        "sha256": "00049aa1d2b19565020d4ecbec999fc723d2cf5954968ec6bf5cebdc0da73f34",
+        "role": "context"
+      },
+      {
+        "path": "reports/sssom_completion_20260921/review.json",
+        "sha256": "0cc2c8742f905458ebb15ed0195aa0744662f29d6019bad03690f8095904ac40",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      },
+      {
+        "path": "workflow/mech-workflow.yaml",
+        "sha256": "45d7c23d67f490cea6b31e336e5d2ac98b7ce8fa4e791bd9d3be092cfdb5a10d",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "canonical",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "label": "Scoped canonical correction, 2987 rows",
+      "kind": "generated",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "Maintained source records; one guarded synonym correction"
+        },
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "scripts/retire_reviewed_generated_aliases.py",
+          "role": "Guarded seven-token retirement, retaining every other row field"
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "Merged d8f95e7 generator, isolated copy"
+        }
+      ]
+    },
+    {
+      "target_id": "candidate",
+      "path": "output/sssom-scientific-audit/ready.sssom.tsv",
+      "label": "Safe-scope raw diagnostic candidate, 2980 rows; not promoted wholesale",
+      "kind": "generated",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/curated/mapped_ingredients.yaml",
+          "role": "Maintained source records after excluding the blocked melezitose proposal"
+        },
+        {
+          "repository": "CultureBotAI/culturebotai-claw",
+          "path": "scripts/build_mim_ingredient_sssom.py",
+          "role": "Merged d8f95e7 generator, isolated copy"
+        }
+      ]
+    }
+  ]
+}

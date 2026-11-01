@@ -12,7 +12,10 @@ first ``after`` and not the baseline.
 
 from __future__ import annotations
 
+import csv
 import importlib.util
+import io
+import json
 import sys
 from pathlib import Path
 
@@ -194,3 +197,93 @@ def test_removed_row_must_leave_the_position_map():
 def test_no_receipts_is_the_identity_walk():
     forward, last, state = _walk([], reviewed="s0")
     assert forward == [1, 2, 3, 4] and last == {} and state == BASE
+
+
+@pytest.mark.parametrize("synonym_corrected,mapping_changed", [(True, True), (True, False), (False, True), (False, False)])
+def test_assembled_evidence_preserves_every_applicable_correction_basis(
+    tmp_path, monkeypatch, synonym_corrected, mapping_changed,
+):
+    """A later mapping receipt must not hide an earlier synonym correction (#1017).
+
+    Exercise the complete assembler on an isolated one-row source, including its
+    native receipt replay and owner hashes. Prior approval must not carry onto a
+    changed row, and a correction that never happened must not be invented.
+    """
+    here = tmp_path / "reports/sssom_completion_20260921"
+    owner = "data/ingredients/mapped/A.yaml"
+
+    def write(path, text):
+        target = tmp_path / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(text)
+
+    def document(name, value):
+        write(str((here / name).relative_to(tmp_path)), json.dumps(value) + "\n")
+
+    def sssom(row):
+        output = io.StringIO()
+        output.write("# mapping_set_id: https://example.org/test\n# predicate_semantics: skos\n")
+        writer = csv.DictWriter(output, fieldnames=list(row), delimiter="\t", lineterminator="\n")
+        writer.writeheader()
+        writer.writerow(row)
+        return output.getvalue()
+
+    write(owner, "identifier: CHEBI:1\npreferred_term: A\nmapping_status: MAPPED\n")
+    owner_sha = assemble.digest(tmp_path / owner)
+    baseline = _row("MIM:A", "CHEBI:1", subject_label="A", object_label="A", other="alias|rejected", comment="")
+    corrected = dict(baseline, other="alias") if synonym_corrected else dict(baseline)
+    current = dict(corrected, comment="Restored source explanation") if mapping_changed else dict(corrected)
+    write(assemble.SOURCE, sssom(current))
+    current_sha = assemble.digest(tmp_path / assemble.SOURCE)
+    parent_sha = receipt_mod.digest(sssom(corrected).encode())
+    document("baseline-mapping-review.json", {
+        "rows": [baseline], "record_inputs": {owner: owner_sha},
+        "decisions": [{"source_position": 1, "resolution_status": "APPROVED",
+                       "review_reason": "Prior exact-payload review", "review_evidence": "prior-review.md"}],
+    })
+    document("trait_synonyms/decisions.json", {"records": []})
+    document("parent_names/decisions.json", {"records": []})
+    document("trait-synonym-refresh.json", {"after_sha256": "trait-sha", "changes": []})
+    document("parent-name-refresh.json", {
+        "before_sha256": "trait-sha", "after_sha256": parent_sha,
+        "changes": [{"source_position": 1, "before": baseline, "after": corrected,
+                     "removed_tokens": ["rejected"]}] if synonym_corrected else [],
+    })
+    if mapping_changed:
+        document("mapping_changes/provenance-repair.json", _receipt(
+            "provenance-repair", 1, parent_sha, current_sha,
+            [{"kind": "changed", "before_position": 1, "after_position": 1,
+              "before": corrected, "after": current}], [1], 1, 1,
+        ))
+    for name in ("concern_cohorts", "nonmapping_cohorts", "changed-owner-review"):
+        document(f"mapping_review/{name}.json", {"rows": []})
+    document("mapping_review/issue-intersections.json", {
+        "issue_669_all_baseline_intersections": [],
+        "issue_232_conflicting_label_intersections": [], "findings": [],
+    })
+    for name in ("adversarial-findings", "synonym-adversarial-findings"):
+        document(f"mapping_review/{name}.json", {"findings": []})
+    document("mapping_review/kgmicrobe-followup.json", {"decisions": []})
+    write("reports/semantic_review_20260921/records.tsv", f"source_record\treview_report\n{owner}\tprior-review.md\n")
+    for path in (
+        "prior-review.md", "MAPPING_SEMANTICS.md",
+        "src/mediaingredientmech/export/reviewed_sssom.py",
+        "src/mediaingredientmech/review_claims.py", "src/mediaingredientmech/synonym_policy.py",
+        "src/mediaingredientmech/record_refresh.py", "scripts/validate_reviewed_sssom_schema.py",
+        "reports/semantic_review_20260921/resolution/historical-review-evidence.json",
+    ):
+        write(path, "fixture context\n")
+    monkeypatch.setattr(assemble, "ROOT", tmp_path)
+    monkeypatch.setattr(assemble, "HERE", here)
+    monkeypatch.setattr(assemble, "REVIEWED_SOURCE", current_sha)
+
+    products = assemble.assemble()
+    entry = json.loads(products["mapping-evidence.json"])["entries"]["1"]
+    basis = entry["basis"]
+    assert basis.get("synonym_correction") == ("parent-name-refresh.json" if synonym_corrected else None)
+    assert basis.get("mapping_change") == ("provenance-repair" if mapping_changed else None)
+    assert entry["disposition"] == ("WITHHOLD" if synonym_corrected or mapping_changed else "SUPPORTED")
+    assert entry["row_sha256"] == assemble.row_sha256(current)
+    assert entry["owner_record_sha256"] == owner_sha
+    if mapping_changed:
+        assert entry["review_reason"].startswith("Mapping corrected by receipt provenance-repair:")

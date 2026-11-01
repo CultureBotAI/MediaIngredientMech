@@ -1,0 +1,35 @@
+
+Aggregate Individual Ingredients to Collections
+Input:  data/ingredients
+Output: data/curated
+
+note: mapped: 69 record(s) are neither MAPPED nor UNMAPPED (REJECTED), so 
+mapped_count + unmapped_count < total_count. This is accurate, not a miscount — 
+the schema has no slot for these.
+note: unmapped: 13 record(s) are neither MAPPED nor UNMAPPED (AMBIGUOUS, 
+REJECTED), so mapped_count + unmapped_count < total_count. This is accurate, not
+a miscount — the schema has no slot for these.
+⠼ mapped: 2680 ingredients 
+⠼ unmapped: 273 ingredients
+
+Summary:
+  Total ingredients aggregated: 2953
+  Collections written to: data/curated
+    ✓ mapped_ingredients.yaml
+    ✓ unmapped_ingredients.yaml
+
+Export Individual Ingredient Records 
+Input:  data/curated
+Output: data/ingredients
+
+Preserving per-record fields (discussions) for 8 record(s)
+⠧ mapped: 2680/2680 files
+⠧ unmapped: 273/273 files
+
+Summary:
+  Total ingredients: 2953
+  Created: 2953 files
+
+Individual files written to: data/ingredients
+  - Mapped: data/ingredients/mapped
+  - Unmapped: data/ingredients/unmapped

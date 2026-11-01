@@ -1,0 +1,76 @@
+{
+  "records": [
+    {
+      "source_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+      "shape": "hydrate_parent_predicate",
+      "before_yaml_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+      "after_yaml_sha256": "ca44550d84099eec9687970cfe2594843785ee82973cac350842e89cfacd5c24",
+      "change": "Corrected CLOSE_MATCH to NARROW_MATCH for the anhydrous melezitose parent CHEBI:6731 under the current form-of ruling (#901); the SSSOM predicate is skos:broadMatch with required B1 local identity kgmicrobe.compound:d-_-melezitose_monohydrate. Retained distinct primary cas:10030-67-8, all chemistry, synonyms and provisional carbon role. Historical #342 reasoning remains provenance; no role or release approval is carried by this correction.",
+      "verification": "PubChem CID 16217716 formula C18H34O17, CAS synonym 10030-67-8 and stereochemical InChI agree with this monohydrate. PubChem parent CID 92817 agrees with anhydrous CHEBI:6731 (C18H32O16). Bounded live OLS and pinned local ChEBI searches found no exact monohydrate term. CHEBI:183824 is anhydrous with different stereochemistry and is not a substitute. Current MAPPING_SEMANTICS section 3 and its form-of ruling require skos:broadMatch plus B1 identity, not subclass projection or exact parent identity. No role approval is implied. Sources: https://pubchem.ncbi.nlm.nih.gov/compound/16217716 ; https://pubchem.ncbi.nlm.nih.gov/compound/92817 ; https://www.ebi.ac.uk/chebi/CHEBI:6731 ."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Carnitine_Hydrochloride.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "c123a3f76cf2277ca68a08c99e58f96845842fd90c75bdd19b90ab8db7bb6780",
+      "after_yaml_sha256": "c03c1c66b9e70436da2e841d1edf2a700f05830674c715fc265ac7fde9705722",
+      "change": "Retyped '4-amino-2-hydroxy-N,N,N-trimethyl-4-oxobutan-1-aminium chloride' from EXACT_SYNONYM to REJECTED_LABEL, preserving its original chebi_synonym_review source (#1003; #669). Official ChEBI:48601 assigns this exact IUPAC name to carnitinamide chloride (C7H17N2O2.Cl), whereas CHEBI:17126 carnitine is C7H15NO3. The amide name survived this record's 2026-07-05 correction of the erroneous CHEBI:48601 mapping. Sources inspected 2026-11-01: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:48601 ; https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17126 . Preserved the current identifier, parent mapping, status and occurrences; unresolved salt/CAS/stereochemistry questions are not adjudicated, and no scientific or release approval is asserted.",
+      "verification": "Official ChEBI:48601 assigns this exact IUPAC name to carnitinamide chloride (C7H17N2O2.Cl), whereas CHEBI:17126 carnitine is C7H15NO3. The amide name survived this record's 2026-07-05 correction of the erroneous CHEBI:48601 mapping. Sources inspected 2026-11-01: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:48601 ; https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17126 . The historical DL-carnitine parent-row alias is deliberately retained pending the unresolved exact salt/stereochemistry decision (#669). Its omission by the raw generator is not scientific evidence for removal. Generated source provenance is not fresh identity support for this retained token; original provenance remains in the receipt before-row and the archived baseline."
+    },
+    {
+      "source_record": "data/ingredients/mapped/4-Methyl-2-oxopentanoic_Acid_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "8d5da3b1c891a79adf823a2ea778b04ef2658cc6bc175469631251c3874a314b",
+      "after_yaml_sha256": "8d5da3b1c891a79adf823a2ea778b04ef2658cc6bc175469631251c3874a314b",
+      "change": "Removed only '4-Methyl-2-oxovaleric acid' from other on MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt / skos:broadMatch / CHEBI:48430; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt."
+    },
+    {
+      "source_record": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+      "after_yaml_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+      "change": "Removed only 'NaHCO3' from other on MIM:84_GL_NaHCO3_Solution / skos:broadMatch / CHEBI:32139; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "77cf04f3fafb04a92080656711b7807ed4e9af7c79f7852ffd31a09fe428f4ac",
+      "after_yaml_sha256": "77cf04f3fafb04a92080656711b7807ed4e9af7c79f7852ffd31a09fe428f4ac",
+      "change": "Removed only 'Betaine x H2O' from other on MIM:Betaine_Hydrochloride / skos:broadMatch / CHEBI:17750; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-Mannose_6-phosphate_Sodium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "280c8b5687a3ccd348984cd3b37518d2d1d298a80d1cd0c2b9a911b06f9a0535",
+      "after_yaml_sha256": "280c8b5687a3ccd348984cd3b37518d2d1d298a80d1cd0c2b9a911b06f9a0535",
+      "change": "Removed only 'Mannose-6-Phosphate' from other on MIM:D-Mannose_6-phosphate_Sodium_Salt / skos:broadMatch / CHEBI:17369; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material."
+    },
+    {
+      "source_record": "data/ingredients/mapped/MES_Hydrat.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "24292497ec7bae482bb3611b8afb9cd1f795332d655be8900f4c59f8d929ebb6",
+      "after_yaml_sha256": "24292497ec7bae482bb3611b8afb9cd1f795332d655be8900f4c59f8d929ebb6",
+      "change": "Removed only 'MES [2-(N-morpholino) ethane sulfonic acid]' from other on MIM:MES_Hydrat / skos:broadMatch / CHEBI:39005; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1",
+      "after_yaml_sha256": "185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1",
+      "change": "Removed only 'Glycerol 3-phosphate' from other on MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt / skos:broadMatch / CHEBI:15978; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Sodium_Perchlorate.yaml",
+      "shape": "generated_synonym_retirement",
+      "before_yaml_sha256": "5b8a68b008ebce2e98c040b9dfff7b5b16f2370b320bb77cf0d3db32e680e0e0",
+      "after_yaml_sha256": "5b8a68b008ebce2e98c040b9dfff7b5b16f2370b320bb77cf0d3db32e680e0e0",
+      "change": "Removed only 'Sodium perchlorate monohydrate' from other on MIM:Sodium_Perchlorate / skos:exactMatch / CHEBI:132103; retired its exact Rule K baseline entry. All YAML and every other row field retained. No approval is asserted (#669).",
+      "verification": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject."
+    }
+  ]
+}

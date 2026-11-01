@@ -1,0 +1,57 @@
+{
+  "body": "Measured while scoping #622.\n\n`other` is merged into the ontology entity's synonym set by kg-microbe, so a token there is a name the subject answers to. **115 tokens across 106 rows are the preferred_term of a *different* MIM record.**\n\n```\nMIM:2-Deoxyadenosine_Monohydrate                      '2-deoxyadenosine'\nMIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate         'alpha-ketoglutaric acid'\nMIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate   '2-Keto-D-gluconic acid hemicalcium salt monohydrate'\nMIM:84_GL_NaHCO3_Solution                             'NaHCO3'\nMIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt          '4-Methyl-2-oxovaleric acid'\nMIM:24-diamino-67-di-iso-propylpteridine_phosphate    'Vibriostat'\n```\n\nEach right-hand name is a record in its own right. So the monohydrate claims the anhydrous compound's name, the disodium salt hydrate claims the free acid's name, and a prepared solution claims the pure compound's name \u2014 which is exactly the hydrate/anhydrous and salt/free-acid conflation MAPPING_SEMANTICS \u00a73 exists to prevent, arriving through the synonym channel instead of through `identifier`.\n\nIt is #232's defect (\"one published label resolves to more than one identifier\") in the column nobody checks. Rule H pins it for `subject_label`; nothing pins it for `other`.\n\n## Where it comes from\n\n`other` is assembled in claw as\n\n```python\ncandidate_alts = [mim_stored_label] + [kgm_name] + kgm_syns + mim_yaml_syns\n```\n\nso most of its content is **kg-microbe's synonyms for the ontology term**, not MIM's. When two MIM records share one CHEBI parent \u2014 which is the norm for a hydrate family \u2014 the parent's synonym list is merged into *each* of them, and each ends up claiming its siblings' names.\n\nThat also means MIM cannot validate `other` currency in general (it does not own most of the content), which is the correction #622 needs: the decidable, MIM-side property is not \"are these synonyms current\" but **\"no record's `other` may contain another record's preferred_term\"**.\n\n## Verified clean alongside it\n\n`other` republishing a token the same record marks `REJECTED_LABEL`: **0**. The builder's `NON_PUBLISHABLE_MIM_SYNONYM_TYPES` filter is holding.\n\n## Suggested disposition\n\nAdd the cross-record check as an SSSOM invariant with a baseline of the 115 known violations, so new ones are blocked while the existing set is triaged \u2014 the pattern `mappings/duplicate_identifier_baseline.tsv` already uses here. Clearing the baseline means a claw rebuild, since `other` is generated there.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01BP6MDZgidgzS79c75Ykhac",
+  "closedAt": null,
+  "comments": [
+    {
+      "id": "IC_kwDORhCjFc8AAAABV-_Epg",
+      "author": {
+        "login": "realmarcin"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "Progress via #699 (merged f6a95295): baseline **115 \u2192 59**. 51 were never violations (merge-target carries, now credited to the target \u2014 #701), 3 were stale, 2 fixed by retiring synonyms. Of the 59 that remain: 40 are kg-microbe round-trips of the shared ontology object's synonyms (ugly here, harmless downstream), 19 are related forms in MIM's own YAML that need a per-record ruling (stereo-vs-generic pairs, Vitamin B12\u2194Cyanocobalamin, cysteine zwitterion, two hydrate pairs in #459's cohort). Separately, 35 synonyms on 13 records that named *unrelated* compounds were retired (#702 root cause). Rule K continues to block new contamination.",
+      "createdAt": "2026-09-22T02:19:48Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-5770298534",
+      "viewerDidAuthor": true
+    },
+    {
+      "id": "IC_kwDORhCjFc8AAAABWSBHEQ",
+      "author": {
+        "login": "realmarcin"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "Re-measured the remaining baseline on main `85dfd987` (after #732 and the four #312 batches): **56 entries**, 26 `HYDRATE_FAMILY_UNREVIEWED` and 30 `UNREVIEWED`.\n\nChecked each hydrate-family entry against the record's YAML and `chebi.db`: in **25 of 26 the token is not a synonym on the record at all** (e.g. `Adenine` publishes `Adenine hydrochloride hydrate`, `Cecl3` publishes `CeCl3 x 7 H2O`). The token reaches `other` only because the two records share one ontology term (`Adenine` and `Adenine_Hydrochloride_Hydrate` are both on CHEBI:16708), so the enrichment builder round-trips the sibling's label through the shared object. Retiring anything in MIM's YAML cannot fix those; they resolve when the hydrate/salt sibling gets its own identity (#459's cohort), or when the builder stops merging sibling labels through a shared term. The one YAML-backed entry (`MgSO4\u00b7H2O` as a HYDRATE_FORM synonym on `Mgso4_X_7_H2o`) is the monohydrate label on the heptahydrate record, the #732 shape, and is left for that cohort too.\n\nThe 30 `UNREVIEWED` are the per-record rulings named above (stereo-vs-generic pairs such as `ASPARAGINE` on L-asparagine, `Vitamin B12` on Cyanocobalamin, `Citrate` on Citric_Acid, the peptone families). Nothing there is mechanical; Rule K keeps them from growing.",
+      "createdAt": "2026-09-23T06:37:15Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-5790254865",
+      "viewerDidAuthor": true
+    },
+    {
+      "id": "IC_kwDORhCjFc8AAAABWl7N-w",
+      "author": {
+        "login": "realmarcin"
+      },
+      "authorAssociation": "MEMBER",
+      "body": "**Mechanical remainder applied (#763).** Of the 30 `UNREVIEWED` entries, the 10 that name a different substance with its own record are now `REJECTED_LABEL` on their records (Bacto peptone's two other peptone products, casein hydrolysate on casein peptone, the zwitterion on L-cysteine, the free base on putrescine dihydrochloride, cyanocobalamin/vitamin B12 across class and member, the anhydrous salt on its hexahydrate, the anion on citric acid, the monomer on FOS). Baseline **56 \u2192 46**.\n\nWhat is left is not mechanical:\n- **7** ChEBI-backed generic names on a specific record (`mannitol` on D-mannitol, `lactose` on beta-lactose, `ASPARAGINE`, `CYSTEINE`, `GLUTAMIC ACID`, `PROLINE`, `Tryptophan` on the L- records): ChEBI lists each as a synonym of the specific term, so retiring them contradicts the source; keeping them means a generic recipe label resolves to the L-form, which is what the corpus already does for 30 bare -ate labels. A policy ruling, one line in MAPPING_SEMANTICS either way.\n- **15 + 25** round-trips (the token is not in MIM's YAML; a sibling sharing the same ontology term feeds it through `other`): resolved by giving the hydrate/salt sibling its own identity (#459's cohort) or by the enrichment builder not merging sibling labels through a shared term.",
+      "createdAt": "2026-09-24T09:02:23Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-5811129851",
+      "viewerDidAuthor": true
+    }
+  ],
+  "createdAt": "2026-09-12T10:40:52Z",
+  "number": 669,
+  "state": "OPEN",
+  "title": "106 SSSOM rows publish another record's preferred_term as their own synonym",
+  "updatedAt": "2026-09-24T09:02:23Z",
+  "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/669"
+}

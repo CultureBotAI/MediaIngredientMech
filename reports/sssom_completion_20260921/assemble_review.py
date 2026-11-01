@@ -25,7 +25,7 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9"
+REVIEWED_SOURCE = "a2b83ccdcaad67d89943ccf0f0e30d796cdbc5e418ead247313631b713e89722"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 
@@ -366,6 +366,12 @@ def assemble():
             "previous_decision": original,
             "historical_record_review": original_records.get(owner, {}).get("review_report"),
         }
+        # Correction history is cumulative, even when the later mapping receipt
+        # determines the current withholding reason (#1017).
+        if position in changed_rows:
+            basis["synonym_correction"] = changed_rows[position]["receipt"]
+        if mapping_change:
+            basis["mapping_change"] = mapping_change["receipt"]
         # These are previously completed scientific reviews, not inference from
         # passing structural checks or matching ontology labels.
         if (
@@ -384,10 +390,8 @@ def assemble():
                 "prior review, which therefore does not carry. The correction's verification is recorded in the receipt; "
                 "preserve the corrected claim pending a mapping-specific decision."
             )
-            basis["mapping_change"] = mapping_change["receipt"]
         elif position in changed_rows:
             reason = "The synonym rejection corrects a token that is not a name of this substance, but does not itself approve the record's remaining identity and aliases. Preserve this changed row pending a complete mapping-specific decision."
-            basis["synonym_correction"] = changed_rows[position]["receipt"]
         if position in concerns:
             entry = concerns[position]
             disposition, reason = "WITHHOLD", entry["reason"]

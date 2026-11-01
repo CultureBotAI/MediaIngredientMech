@@ -1,0 +1,714 @@
+{
+  "scope": "READ_ONLY_INITIAL_SCIENTIFIC_AUDIT_NOT_FINAL_REVIEW",
+  "generated_at": "2026-11-01T00:41:10.281375+00:00",
+  "base_commit": "4625afd492b6cf43e3b499d1425d2453d490009d",
+  "repo": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim",
+  "selection": "Mapped preferred_term containing hydrat or h2o (case-insensitive), primary identifier cas: or kgmicrobe.compound:; current cohort rather than historical issue title count.",
+  "selected_records": 94,
+  "quality_counts": {
+    "NARROW_MATCH": 21,
+    "CLOSE_MATCH": 72,
+    "FALLBACK_REGISTRY": 1
+  },
+  "namespace_quality_counts": {
+    "cas NARROW_MATCH": 14,
+    "kgmicrobe.compound CLOSE_MATCH": 28,
+    "kgmicrobe.compound NARROW_MATCH": 7,
+    "cas CLOSE_MATCH": 44,
+    "cas FALLBACK_REGISTRY": 1
+  },
+  "close_match_records": 72,
+  "close_match_release_decisions": {
+    "WITHHOLD": 132,
+    "SUPPORTED": 12
+  },
+  "canonical_rows": 2987,
+  "canonical_sha256": "89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9",
+  "recommendation_counts": {
+    "defer_owned_PR912": 68,
+    "defer_PR914_and_identity_nuance": 2,
+    "bounded_parent_predicate_correction": 2
+  },
+  "active_prs": {
+    "912": {
+      "number": 912,
+      "state": "OPEN",
+      "headRefOid": "a6ca05d595c537f793aff5a85bafb137e29743b4",
+      "baseRefOid": "f8241bfaa5c0913c8ac0caf5064328d568d54a18",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/pull/912",
+      "title": "fix(curation): resolve hydrate/stock chemistry, node IDs, CAS digits, and narrowMatch (#901, #870, #871, #268, #753, #751, #313, #235)"
+    },
+    "914": {
+      "number": 914,
+      "state": "OPEN",
+      "headRefOid": "8dc2f266ebf72959a5d2f601d1c767c9138db44f",
+      "baseRefOid": "f8241bfaa5c0913c8ac0caf5064328d568d54a18",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/pull/914",
+      "title": "fix(unified-mapping): rebuild unified mapping, restore 9 merge tombstones, and reject stale recipe CHEBIs (#894, #882, #869, #808)"
+    }
+  },
+  "four_records_outside_pr912_source_sha256": {
+    "data/ingredients/mapped/Fecl2_X_7_H2o.yaml": "83d19345b09f00f439ed3d36898c5ada8cf208514a7f9110fafc8e7fa086e491",
+    "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml": "1f39286747eb8f3a2ec3da7919f9e6cb197221fcfef46af69a6784afd8f83ccc",
+    "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml": "35ffa2d129a9e674a6a9fe7a08665e15e18a7c4c570a5ce30105802e3a7df048",
+    "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222"
+  },
+  "source_snapshot_receipts": [
+    "sources/fetch-receipts.json",
+    "sources/followup-fetch-receipts.json",
+    "sources/local-chebi-search-v2.json"
+  ],
+  "policy": "Current MAPPING_SEMANTICS section 3 and settled form-of ruling authorize evidence-supported asymmetric parent mappings. Historical cohort migration and entire issue closure are outside this two-record recommendation.",
+  "ontology_search_limit": "No exact hydrate ChEBI term found in live OLS bounded name/CAS searches and inspected pinned local ChEBI database. This is not proof of absence in all ontologies. CHEBI:183824 is anhydrous and stereochemically different from CHEBI:6731; label similarity is not an identity basis.",
+  "cas_source_limit": "Direct CAS Common Chemistry pages were inaccessible. CAS cross-references and exact structures were checked through PubChem; ChEBI parent data and independent ACS sodium form listing corroborate distinction.",
+  "review_receipt_constraints": [
+    "Preserve and explicitly re-review or rebind the sodium approved cellular role using original assertion evidence; a record byte change invalidates source hash pins even if role object is unchanged.",
+    "Preserve and explicitly re-review or rebind the melezitose supported CAS identity decision; do not allow silent downgrade caused by a stale record binding.",
+    "New broadMatch parent and B1 local identity assertions require explicit scientific dispositions; structural QC alone does not confer release approval.",
+    "Do not carry forward stale validation annotations or counterfeit supported/approved states. Preserve historical bundles and produce successor evidence using native guarded review/assembly paths."
+  ],
+  "deferred": [
+    {
+      "path": "data/ingredients/mapped/Cocl2_X_4_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "CoCl2 x 4 H2O",
+          "rejected_id": "CHEBI:35696",
+          "mim_id": "kgmicrobe.compound:cocl2_x_4_h2o",
+          "reason": "The stated tetrahydrate is distinct from anhydrous cobalt dichloride; the parent survives only as CLOSE_MATCH, following the existing #321/#334 and #342 curation. The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (culturebotai-claw#571). See data/ingredients/mapped/Cocl2_X_4_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/L-Glutamic_Acid_Monopotassium_Salt_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "Na2HPO4 x 3 H2O",
+          "rejected_id": "CHEBI:34683",
+          "mim_id": "kgmicrobe.compound:na2hpo4_x_3_h2o",
+          "reason": "The stated trihydrate is distinct from anhydrous disodium hydrogenphosphate; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Terpene_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Fecl2_X_6_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "FeCl2 x 6 H2O",
+          "rejected_id": "CHEBI:30812",
+          "mim_id": "kgmicrobe.compound:fecl2_x_6_h2o",
+          "reason": "The stated hexahydrate is distinct from anhydrous iron(2+) chloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Fecl2_X_6_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Fecl2_X_7_H2o.yaml",
+      "reason": "defer_PR914_and_identity_nuance",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "FeCl2 x 7 H2O",
+          "rejected_id": "CHEBI:30812",
+          "mim_id": "kgmicrobe.compound:fecl2_x_7_h2o",
+          "reason": "The stated heptahydrate is distinct from anhydrous iron(2+) chloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Fecl2_X_7_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Maltose_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Thiophosphate_Tribasic_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Cadmium_Acetate_Dihydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Neomycin_Trisulfate_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "K2HPO4 x 3 H2O",
+          "rejected_id": "CHEBI:131527",
+          "mim_id": "kgmicrobe.compound:k2hpo4_x_3_h2o",
+          "reason": "The stated trihydrate is distinct from anhydrous dipotassium hydrogen phosphate; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (#808, culturebotai-claw#571). See data/ingredients/mapped/K2hpo4_X_3_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/D-_-melezitose_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Glycerol_Phosphate_Disodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Stachyose_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Beta-Glycerophosphate_Disodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Palatinose_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Cocl2_X_2_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "CoCl2 x 2 H2O",
+          "rejected_id": "CHEBI:35696",
+          "mim_id": "kgmicrobe.compound:cocl2_x_2_h2o",
+          "reason": "The stated dihydrate is distinct from anhydrous cobalt dichloride; the parent survives only as CLOSE_MATCH, following the existing #321/#334 and #342 curation. The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (culturebotai-claw#571). See data/ingredients/mapped/Cocl2_X_2_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Caso4_X_7_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "CaSO4 x 7 H2O",
+          "rejected_id": "CHEBI:31346",
+          "mim_id": "kgmicrobe.compound:caso4_x_7_h2o",
+          "reason": "The stated heptahydrate is distinct from anhydrous calcium sulfate; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Caso4_X_7_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Potassium_Tellurate_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "CeCl3 x 7 H2O",
+          "rejected_id": "CHEBI:35458",
+          "mim_id": "kgmicrobe.compound:cecl3_x_7_h2o",
+          "reason": "The stated heptahydrate is distinct from anhydrous cerium trichloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Cecl3_X_7_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/DL-Glycerol_1-phosphate_Sodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Cefsulodin_Sodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Nicl2_X_2_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "NiCl2 x 2 H2O",
+          "rejected_id": "CHEBI:34887",
+          "mim_id": "kgmicrobe.compound:nicl2_x_2_h2o",
+          "reason": "The stated dihydrate is distinct from anhydrous nickel dichloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (#808, culturebotai-claw#571). See data/ingredients/mapped/Nicl2_X_2_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Potassium_Citramalate_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Ceftazidime_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Gly-Gln_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/CrKSO42_X_12_H2O.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml",
+      "reason": "defer_PR914_and_identity_nuance",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "2-Keto-D-gluconic acid hemicalcium salt monohydrate",
+          "rejected_id": "cas:3470-37-9",
+          "mim_id": "kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate",
+          "reason": "Refine the prior blocker: MP Biomedicals explicitly uses CAS 3470-37-9 for the monohydrate, while the same CAS is used for unhydrated calcium salt. Use a distinct local hydrate identity and preserve the supplier CAS as procurement metadata rather than exact global identity. Withdraw anhydrous CID/SMILES/InChI. Formula follows the certificate hemicalcium unit plus one water, doubled to whole calcium stoichiometry. Existing close match to free acid retained as reviewed in #342, not promoted to subsumption. See reports/semantic_review_20260921/corrections/identity-plan.json."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Adenine_Hydrochloride_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "Adenine hydrochloride hydrate",
+          "rejected_id": "CHEBI:64139",
+          "mim_id": "cas:2922-28-3",
+          "reason": "Adenine hydrochloride hydrate (cas:2922-28-3) is distinct from (2R,3S)-EHNA hydrochloride (CHEBI:64139, an unrelated adenosine deaminase inhibitor); ChEBI has no term for adenine hydrochloride hydrate, so the record uses its CAS identity with adenine hydrochloride (CHEBI:64138) as NARROW_MATCH (#808). Reject the wrong recipe term.id in unified identity columns. See data/ingredients/mapped/Adenine_Hydrochloride_Hydrate.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Cucl2_X_6_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "CuCl2 x 6 H2O",
+          "rejected_id": "CHEBI:49553",
+          "mim_id": "kgmicrobe.compound:cucl2_x_6_h2o",
+          "reason": "The stated hexahydrate is distinct from anhydrous copper(II) chloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Cucl2_X_6_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Cuso4_X_4_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "CuSO4 x 4 H2O",
+          "rejected_id": "CHEBI:23414",
+          "mim_id": "kgmicrobe.compound:cuso4_x_4_h2o",
+          "reason": "The stated tetrahydrate is distinct from anhydrous copper(II) sulfate; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Cuso4_X_4_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Hypophosphite_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Cu_No32_X_3_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "Cu(NO3)2 x 3 H2O",
+          "rejected_id": "CHEBI:78036",
+          "mim_id": "kgmicrobe.compound:cu_no32_x_3_h2o",
+          "reason": "The stated trihydrate is distinct from anhydrous copper(II) nitrate; ChEBI has no term for this hydration state, and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). The record carries its own trihydrate CAS 10031-43-3, so promotion to cas:10031-43-3 under MAPPING_SEMANTICS \u00a73 step 2 is still open (#875); that change must update this row's mim_id in the same commit. See data/ingredients/mapped/Cu_No32_X_3_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Fecl3_X_4_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "FeCl3 x 4 H2O",
+          "rejected_id": "CHEBI:30808",
+          "mim_id": "kgmicrobe.compound:fecl3_x_4_h2o",
+          "reason": "The stated tetrahydrate is distinct from anhydrous iron trichloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Fecl3_X_4_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Cacl2_X_7_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "CaCl2 x 7 H2O",
+          "rejected_id": "CHEBI:3312",
+          "mim_id": "kgmicrobe.compound:cacl2_x_7_h2o",
+          "reason": "The stated heptahydrate is distinct from anhydrous calcium dichloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Cacl2_X_7_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "Na2HPO4 x 6 H2O",
+          "rejected_id": "CHEBI:34683",
+          "mim_id": "kgmicrobe.compound:na2hpo4_x_6_h2o",
+          "reason": "The stated hexahydrate is distinct from anhydrous disodium hydrogenphosphate; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "Na2HPO4 x 7 H2O",
+          "rejected_id": "CHEBI:34683",
+          "mim_id": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+          "reason": "The stated heptahydrate is distinct from anhydrous disodium hydrogenphosphate; ChEBI has no term for this hydration state, and the parent survives only as CLOSE_MATCH (#321/#334, #342). The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (#808, culturebotai-claw#571). The record carries its own heptahydrate CAS 7782-85-6, so promotion to cas:7782-85-6 under MAPPING_SEMANTICS \u00a73 step 2 is still open (#875); that change must update this row's mim_id in the same commit. See data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/L-Cysteic_Acid_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/2-Deoxyadenosine_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "NaH2PO4 x 2 H2O",
+          "rejected_id": "CHEBI:37585",
+          "mim_id": "kgmicrobe.compound:nah2po4_x_2_h2o",
+          "reason": "The stated dihydrate is distinct from anhydrous sodium dihydrogenphosphate; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (#808, culturebotai-claw#571). See data/ingredients/mapped/Nah2po4_X_2_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Cuso4_X_2_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "CuSO4 x 2 H2O",
+          "rejected_id": "CHEBI:23414",
+          "mim_id": "kgmicrobe.compound:cuso4_x_2_h2o",
+          "reason": "The stated dihydrate is distinct from anhydrous copper(II) sulfate; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Cuso4_X_2_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Cholate_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/K2so4_X_7_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "K2SO4 x 7 H2O",
+          "rejected_id": "CHEBI:32036",
+          "mim_id": "kgmicrobe.compound:k2so4_x_7_h2o",
+          "reason": "The stated heptahydrate is distinct from anhydrous dipotassium sulfate; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/K2so4_X_7_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/L-Rhamnose_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Nicl2_X_5_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "NiCl2 x 5 H2O",
+          "rejected_id": "CHEBI:34887",
+          "mim_id": "kgmicrobe.compound:nicl2_x_5_h2o",
+          "reason": "The stated pentahydrate is distinct from anhydrous nickel dichloride; ChEBI has no term for this hydration state, so the record keeps its local identity and the parent survives only as CLOSE_MATCH (#321/#334, #342). Reject the stale recipe term.id in unified identity columns (#808, #869, culturebotai-claw#571). See data/ingredients/mapped/Nicl2_X_5_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/4-Hydroxymandelic_Acid_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "a-Ketoglutaric acid disodium salt hydrate",
+          "rejected_id": "CHEBI:16810",
+          "mim_id": "cas:305-72-6",
+          "reason": "Disodium 2-oxoglutarate hydrate (cas:305-72-6) is distinct from the bare 2-oxoglutarate(2-) dianion (CHEBI:16810); ChEBI has no term for the hydrated disodium salt, so the record uses its CAS identity with 2-oxoglutaric acid (CHEBI:30915) as NARROW_MATCH (#808). Reject the bare-dianion recipe term.id in unified identity columns. See data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/D-Glucuronic_Acid_Sodium_Salt_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "Maltose monohydrate",
+          "rejected_id": "CHEBI:17306",
+          "mim_id": "cas:6363-53-7",
+          "reason": "D-maltose monohydrate (cas:6363-53-7) is distinct from anhydrous maltose (CHEBI:17306); ChEBI has no term for maltose monohydrate, so the record uses its CAS identity with maltose (CHEBI:17306) as NARROW_MATCH (#808). Reject the stale anhydrous recipe term.id in unified identity columns. See data/ingredients/mapped/D-Maltose_Monohydrate.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/5-Fluoroorotic_Acid_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Mgcl2_X_7_H2o.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": [
+        {
+          "ingredient_name": "MgCl2 x 7 H2O",
+          "rejected_id": "CHEBI:6636",
+          "mim_id": "kgmicrobe.compound:mgcl2_x_7_h2o",
+          "reason": "The source hydrate label retains its local identity; anhydrous magnesium dichloride is only the CLOSE_MATCH parent under the existing #321/#334/#344 curation. No exact hydrate term or CAS is asserted. Reject the stale recipe term.id in unified identity columns (culturebotai-claw#571). See data/ingredients/mapped/Mgcl2_X_7_H2o.yaml."
+        },
+        {
+          "ingredient_name": "MgCl2 x 7H2O",
+          "rejected_id": "CHEBI:86345",
+          "mim_id": "kgmicrobe.compound:mgcl2_x_7_h2o",
+          "reason": "The stated heptahydrate is distinct from magnesium dichloride hexahydrate (CHEBI:86345); relocated MgCl2 x 7H2O from tombstone Mgcl2x_6_H2o.yaml to Mgcl2_X_7_H2o.yaml (#882). Reject the stale hexahydrate identity across all heptahydrate rows. See data/ingredients/mapped/Mgcl2_X_7_H2o.yaml."
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/D-Galacturonic_Acid_Monohydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    },
+    {
+      "path": "data/ingredients/mapped/Chlorhexidine_Diacetate_Salt_Hydrate.yaml",
+      "reason": "defer_owned_PR912",
+      "pr914_decisions": []
+    }
+  ],
+  "writes": "Only audit901 artifacts; no maintained source/code/GitHub changes. No paid providers, full QC, generation, or new scientific approval performed in this read-only audit.",
+  "safe_scope_scientific_only": [
+    {
+      "path": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
+      "identifier": "cas:7791-07-3",
+      "target": "CHEBI:132103",
+      "change": "CLOSE_MATCH to NARROW_MATCH; retain exact CAS primary and all existing chemistry; generate skos:broadMatch parent and required B1 local exact identity through native guarded path",
+      "release_decisions": [
+        {
+          "source_position": 2589,
+          "row_sha256": "5ab9176965bbd9a25036df299a43f924a07c4a967ad6517649af8b9d03b0cc67",
+          "owner_record": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
+          "disposition": "WITHHOLD",
+          "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. The report supports the exact hydrate CAS, but the sibling close row attaches that CAS synonym to an anhydrous target. Preserve the pair pending an explicit mapping and alias-scope review.",
+          "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+          "evidence_key": "2589"
+        },
+        {
+          "source_position": 2590,
+          "row_sha256": "0f8f1c5a97527961094a90d567654de633fa46439eb790fbcec036d66c1c5ab9",
+          "owner_record": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
+          "disposition": "WITHHOLD",
+          "review_reason": "The report supports the exact hydrate CAS, but the sibling close row attaches that CAS synonym to an anhydrous target. Preserve the pair pending an explicit mapping and alias-scope review.",
+          "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+          "evidence_key": "2590"
+        }
+      ],
+      "assertion_dispositions": [
+        {
+          "assertion_id": "MIM.review:974e3b0a628cc4a862f6c6c627296973e516266888eed167d36feaf5e8538b79",
+          "source_record": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
+          "source_record_sha256": "1f39286747eb8f3a2ec3da7919f9e6cb197221fcfef46af69a6784afd8f83ccc",
+          "assertion_type": "cellular_metabolic_roles",
+          "source_position": "1",
+          "assertion_sha256": "c16c18a651624855186880bdb324606ec4b1c14c94d657b78068da8a7c9ce772",
+          "resolution_status": "APPROVED",
+          "review_reason": "Primary evidence inspected for the explicit organism and conditions; supplied-hydrate extensions are documented inferences.",
+          "review_evidence": "reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json"
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+      "identifier": "cas:10030-67-8",
+      "target": "CHEBI:6731",
+      "change": "CLOSE_MATCH to NARROW_MATCH; retain exact CAS primary and all existing chemistry; generate skos:broadMatch parent and required B1 local exact identity through native guarded path",
+      "release_decisions": [
+        {
+          "source_position": 918,
+          "row_sha256": "462644d024dde42b341ec747f2c4cfa90f6861fce844ab5bd8ebaccd5a8d9d0e",
+          "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+          "disposition": "WITHHOLD",
+          "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. The historical report validates a parent or nearby target but this focused review has not independently established the actual broadMatch/closeMatch relation with the required supplied-form or material scope. No nonexact relation is promoted from mapping grade or term existence alone.",
+          "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+          "evidence_key": "918"
+        },
+        {
+          "source_position": 919,
+          "row_sha256": "1e5aaffe48b98b5733dc82a8eebaeb64243446731d40be430f2b55f0f169307f",
+          "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+          "disposition": "SUPPORTED",
+          "review_reason": "Mapping-only review supports the exact source identity using the archived target/registry identity evidence quoted here. The complete current other payload was read against the identity, registry and synonym evidence; the quoted sections cover the exported same-subject tokens. Unresolved role, recipe, component, occurrence or curation-metadata findings remain outside this row-scoped decision.",
+          "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+          "evidence_key": "919"
+        }
+      ],
+      "assertion_dispositions": [
+        {
+          "assertion_id": "MIM.review:89de5a38543d419360a1dc4f6c33ee04a688f8c9b6a6563f6f3d50c7a2a3236d",
+          "source_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+          "source_record_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+          "assertion_type": "nutritional_roles",
+          "source_position": "1",
+          "assertion_sha256": "df2072c00c03ccac74a186fad08ecce37b665354626058d581fd7b3f601cd30f",
+          "resolution_status": "OPEN",
+          "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+          "review_evidence": ""
+        }
+      ]
+    }
+  ],
+  "implementation_scope": [],
+  "additional_blocker": {
+    "record": "data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
+    "reason": "Current validate_explicit_plans unconditionally enforces complete approved role-plan after_record and after_sha256, so the scientifically justified mapping correction cannot land through current native checks. Pending PR764 implements the required approval-free supersession mechanism; do not duplicate or bypass it.",
+    "pr764": {
+      "body": "## Why\n\nThe resolution review pins what it approved byte for byte: role and component plans pin a record hash, identity plans pin parsed content, and the frozen release-hold resolution (`MIM.hold:724-aromatic-trait-synonym`) pins an assertion id and KGX edge id that include the SSSOM row position. A verified later correction to a pinned record (#740 Arabinoxylan_Rye_Flour, #748 Cooked_Meat_Medium and its two mixtures, #758 Nah2po4) or any row removal above the held row (#745, every merge) could not land at all. The completion side already chains **mapping-change receipts** (`reports/sssom_completion_20260921/mapping_changes/`, seq 1\u20136); this PR lets the resolution side read the same receipts as explicit, approval-free links.\n\n## What\n\n- **New `src/mediaingredientmech/validation/mapping_change_receipts.py`**: `load_receipts` (sequence contiguity, digest and row-count chaining, `approval: NONE`, complete position maps), `record_chains` / `supersedes` / `supersedes_content` (a pin is superseded only by a gapless chain from the pinned hash, or from the recorded canonical content digest for identity plans, to the current bytes; equal hashes are never a supersession), `forward_map` / `baseline_position` (composed position maps), `hold_lineage` (re-derives a frozen resolution's assertion id and KGX edge id at the baseline position and accepts only an exact reproduction).\n- **`build_review.py`**: `validate_explicit_plans(..., chains=)` returns the superseded record set instead of raising for a documented chain; superseded plans grant nothing (identity, role, component, GYPS and inherited approvals lapse; the findings they closed reopen with that reason); receipts and the module become hashed inputs; report gains `mapping_change_receipts`, `superseded_plans`, `hold_lineage`.\n- **`semantic_release.py`**: `assertion_identity` shared with the lineage; `validate_release_holds(..., lineage=)`; the full gate recomputes the lineage itself from hash-bound receipt inputs and requires the report's receipt list to equal the directory.\n- **`assemble_review.py`**: a cohort or changed-owner SUPPORTED approval whose owner a receipt corrected becomes WITHHOLD with the receipt as basis instead of failing the build (needed for #748's two mixtures).\n- **`make_receipt.py --before-records DIR`** records `before_record_sha256` (canonical digest of the parsed pre-batch record), the only proof an identity-plan supersession accepts.\n- Docs: resolution README \"Superseded pins\"; completion README receipts bullet.\n\n## Effect on current data\n\nNone: `superseded_plans: []`, `hold_lineage: {}`, both disposition TSVs unchanged; `review.json` / `current-review.json` are re-pinned only because the producers changed. Verdict stays FAIL (1733 blocking findings, 2300 blocking assertions, as on main).\n\n## Checks run\n\n- `pytest tests/` full suite in a fresh worktree: 2783 passed, 6 skipped, 1 failed \u2014 `tests/test_unified_freshness.py::test_the_committed_snapshot_is_within_budget`, the known drift-budget failure that also fails on main (#700/#359; CI's shallow checkout skips it).\n- New tests: `tests/test_mapping_change_receipts.py` (13), plus supersession cases in `tests/test_semantic_review_builder.py` and a lineage case in `tests/test_semantic_hold_resolution.py`; the id formulas are pinned to the gate and the exporter by test.\n- Review chain rebuilt from clean output dirs: kgx export \u2192 assemble (write) \u2192 build_review \u2192 assemble `--check` (reproduced: true) \u2192 reviewed_sssom export + validate-only \u2192 schema validation \u2192 supported_kgx export + validate-only \u2192 `semantic_release --report` (integrity PASS).\n- `just format-check`, `just check-instruction-refs`, ruff on `src/` clean.\n\nFollow-ups this unblocks (applied as receipts seq 7+ in a separate PR): #740, #745 (6-deoxy-d-galactose \u2192 D-fucose merge; Angustmycin per #741), #748, #758.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01ShSvr6po5J8sd7Ai4bRW9y\n",
+      "headRefOid": "3e807700a207184a887ee662f43d09f33789c487",
+      "number": 764,
+      "state": "OPEN",
+      "title": "Let mapping-change receipts supersede review pins (#740, #745, #748)",
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/pull/764"
+    },
+    "code": "reports/semantic_review_20260921/resolution/build_review.py:183"
+  },
+  "all_ontology_check": {
+    "receipt": "sources/all-ontology-fetch-receipts.json",
+    "result": "OLS all-ontology exact monohydrate name and CAS queries: zero results; NCIT CAS query zero. Broad NCIT melezitose query returned eleven microbial organism records mentioning sugar utilization, no melezitose substance term."
+  },
+  "release_attempt_blocker": {
+    "file": "assembler-blocker.json",
+    "affected_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+    "error": "Nonmapping-cohort approval has stale owner or row",
+    "current_position": 919,
+    "frozen_cohort_position": 931,
+    "dependency": "https://github.com/CultureBotAI/MediaIngredientMech/pull/764",
+    "old_approval_altered": false,
+    "review_json_rebuilt": false,
+    "followup": "Proposal preserved, exact original melezitose record and two canonical rows restored, proposal-only B1 removed. Publishable batch contains only #669/#1003 corrections."
+  },
+  "proposal_withdrawal_receipt": "melezitose-withdrawal.json"
+}

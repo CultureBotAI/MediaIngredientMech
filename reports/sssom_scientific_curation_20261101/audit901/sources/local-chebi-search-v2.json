@@ -1,0 +1,63 @@
+{
+  "db_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/ontology-cache/oaklib/chebi.db",
+  "size": 4137340928,
+  "accessed_at": "2026-11-01T00:39:16.661074+00:00",
+  "note": "Correct oio prefix verified from actual statements; previous exploratory query used oboInOwl and is not absence evidence.",
+  "queries": {
+    "names": {
+      "sql": "SELECT DISTINCT subject,predicate,value FROM statements WHERE predicate IN ('rdfs:label','oio:hasExactSynonym','oio:hasRelatedSynonym') AND (lower(value) LIKE '%melezitose%' OR lower(value) LIKE '%sodium perchlorate%')",
+      "rows": [
+        [
+          "CHEBI:132103",
+          "oio:hasExactSynonym",
+          "sodium perchlorate"
+        ],
+        [
+          "CHEBI:132103",
+          "oio:hasRelatedSynonym",
+          "sodium perchlorate"
+        ],
+        [
+          "CHEBI:6731",
+          "oio:hasRelatedSynonym",
+          "Melezitose"
+        ],
+        [
+          "CHEBI:132103",
+          "rdfs:label",
+          "sodium perchlorate"
+        ],
+        [
+          "CHEBI:183824",
+          "rdfs:label",
+          "D(+)-Melezitose"
+        ],
+        [
+          "CHEBI:6731",
+          "rdfs:label",
+          "melezitose"
+        ]
+      ]
+    },
+    "cas": {
+      "sql": "SELECT DISTINCT subject,predicate,value FROM statements WHERE predicate='oio:hasDbXref' AND (value LIKE '%7791-07-3%' OR value LIKE '%10030-67-8%')",
+      "rows": []
+    },
+    "positive_cas_controls": {
+      "sql": "SELECT DISTINCT subject,predicate,value FROM statements WHERE predicate='oio:hasDbXref' AND value IN ('cas:7601-89-0','cas:597-12-6')",
+      "rows": [
+        [
+          "CHEBI:132103",
+          "oio:hasDbXref",
+          "cas:7601-89-0"
+        ],
+        [
+          "CHEBI:6731",
+          "oio:hasDbXref",
+          "cas:597-12-6"
+        ]
+      ]
+    }
+  },
+  "db_sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f"
+}

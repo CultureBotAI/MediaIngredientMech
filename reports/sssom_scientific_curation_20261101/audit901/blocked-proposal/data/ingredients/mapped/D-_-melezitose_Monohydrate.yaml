@@ -1,0 +1,118 @@
+identifier: cas:10030-67-8
+preferred_term: D-(+)-melezitose monohydrate
+ontology_mapping:
+  ontology_id: CHEBI:6731
+  ontology_label: melezitose
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 10030-67-8 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: D-(+)-melezitose monohydrate is a hydrate/salt with its own CAS and no
+      exact ChEBI term; anchored to the parent CHEBI:6731 'melezitose' by narrowMatch
+      per MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of melezitose
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:6731 (''melezitose'') — a subsumption ChEBI itself denies: it files
+      hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#901); PubChem CID 16217716; ChEBI:6731
+    notes: 'PubChem CID 16217716 formula C18H34O17, CAS synonym 10030-67-8 and stereochemical
+      InChI agree with this monohydrate. PubChem parent CID 92817 agrees with anhydrous
+      CHEBI:6731 (C18H32O16). Bounded live OLS and pinned local ChEBI searches found
+      no exact monohydrate term. CHEBI:183824 is anhydrous with different stereochemistry
+      and is not a substitute. Current MAPPING_SEMANTICS section 3 and its form-of
+      ruling require skos:broadMatch plus B1 identity, not subclass projection or
+      exact parent identity. No role approval is implied. Sources: https://pubchem.ncbi.nlm.nih.gov/compound/16217716
+      ; https://pubchem.ncbi.nlm.nih.gov/compound/92817 ; https://www.ebi.ac.uk/chebi/CHEBI:6731
+      .'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:10030-67-8 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.052209+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:52:27.613127+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C18H34O17; smiles=C(C1C(C(C(C(O1)OC2C(C(OC2(CO)OC3C(C(C(C(O3)CO)O)O);
+    inchi=InChI=1S/C18H32O16.H2O/c19-1-5-8(23)11(26)13(28)16
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.720274+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.738307+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:6731 ''melezitose'' and
+    registry kgmicrobe.compound:d-_-melezitose_monohydrate. identifier cas:10030-67-8
+    unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of melezitose'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-11-01T00:42:58.933027+00:00'
+  curator: correct_melezitose_parent.py
+  action: CORRECTED_HYDRATE_PARENT_PREDICATE
+  changes: 'Corrected CLOSE_MATCH to NARROW_MATCH for the anhydrous melezitose parent
+    CHEBI:6731 under the current form-of ruling (#901); the SSSOM predicate is skos:broadMatch
+    with required B1 local identity kgmicrobe.compound:d-_-melezitose_monohydrate.
+    Retained distinct primary cas:10030-67-8, all chemistry, synonyms and provisional
+    carbon role. Historical #342 reasoning remains provenance; no role or release
+    approval is carried by this correction.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  cas_rn: 10030-67-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C18H34O17
+  smiles: C(C1C(C(C(C(O1)OC2C(C(OC2(CO)OC3C(C(C(C(O3)CO)O)O)O)CO)O)O)O)O)O.O
+  inchi: InChI=1S/C18H32O16.H2O/c19-1-5-8(23)11(26)13(28)16(30-5)32-15-10(25)7(3-21)33-18(15,4-22)34-17-14(29)12(27)9(24)6(2-20)31-17;/h5-17,19-29H,1-4H2;1H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15+,16-,17-,18+;/m1./s1
+  pubchem_cid: 16217716
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

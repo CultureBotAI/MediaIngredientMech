@@ -1,0 +1,186 @@
+{
+  "record_matches_aggregate": true,
+  "current_culturemech_rows": 35,
+  "distinct_recipes": 35,
+  "occurrence_labels": {
+    "Na2HPO4 x 7 H2O": 28,
+    "Na2HPO4.7H2O": 4,
+    "Na2HPO4\u00b77H2O": 3
+  },
+  "occurrence_raw_identifiers": {
+    "kgmicrobe.compound:na2hpo4_x_7_h2o": 32,
+    "": 2,
+    "CHEBI:34683": 1
+  },
+  "occurrence_native_effective_identifiers": {
+    "kgmicrobe.compound:na2hpo4_x_7_h2o": 32,
+    "": 2,
+    "CHEBI:34683": 1
+  },
+  "identity_matches": [
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+      "identifier": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+      "mapping_status": "MAPPED",
+      "preferred_term": "Na2HPO4 x 7 H2O",
+      "cas_rn": "7782-85-6",
+      "ontology_id": "CHEBI:34683"
+    }
+  ],
+  "label_matches": [
+    {
+      "path": "data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml",
+      "identifier": "kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29",
+      "mapping_status": "MAPPED",
+      "hits": [
+        {
+          "text": "Disodium phosphate heptahydrate (0.02 M stock)",
+          "type": "preferred_term"
+        },
+        {
+          "text": "disodium hydrogen phosphate heptahydrate",
+          "type": "RELATED_SYNONYM"
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4.yaml",
+      "identifier": "CHEBI:34683",
+      "mapping_status": "MAPPED",
+      "hits": [
+        {
+          "text": "Na2HPO4 x 7 H2O",
+          "type": "REJECTED_LABEL"
+        },
+        {
+          "text": "Na2HPO4.7H2O",
+          "type": "REJECTED_LABEL"
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml",
+      "identifier": "CHEBI:91259",
+      "mapping_status": "MAPPED",
+      "hits": [
+        {
+          "text": "Na2HPO4 x 7 H2O",
+          "type": "REJECTED_LABEL"
+        },
+        {
+          "text": "Na2HPO4.7H2O",
+          "type": "REJECTED_LABEL"
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_2_H2o.yaml",
+      "identifier": "CHEBI:91258",
+      "mapping_status": "MAPPED",
+      "hits": [
+        {
+          "text": "Na2HPO4 x 7 H2O",
+          "type": "REJECTED_LABEL"
+        },
+        {
+          "text": "Na2HPO4.7H2O",
+          "type": "REJECTED_LABEL"
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml",
+      "identifier": "kgmicrobe.compound:na2hpo4_x_3_h2o",
+      "mapping_status": "MAPPED",
+      "hits": [
+        {
+          "text": "Na2HPO4 x 7 H2O",
+          "type": "REJECTED_LABEL"
+        },
+        {
+          "text": "Na2HPO4.7H2O",
+          "type": "REJECTED_LABEL"
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml",
+      "identifier": "kgmicrobe.compound:na2hpo4_x_6_h2o",
+      "mapping_status": "MAPPED",
+      "hits": [
+        {
+          "text": "Na2HPO4 x 7 H2O",
+          "type": "REJECTED_LABEL"
+        },
+        {
+          "text": "Na2HPO4.7H2O",
+          "type": "REJECTED_LABEL"
+        }
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+      "identifier": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+      "mapping_status": "MAPPED",
+      "hits": [
+        {
+          "text": "Na2HPO4 x 7 H2O",
+          "type": "preferred_term"
+        },
+        {
+          "text": "Na2HPO4.7H2O",
+          "type": "HYDRATE_FORM"
+        },
+        {
+          "text": "Na2HPO4\u20227H2O",
+          "type": "HYDRATE_FORM"
+        }
+      ]
+    }
+  ],
+  "rejections": [
+    {
+      "ingredient_name": "Na2HPO4 x 7 H2O",
+      "rejected_id": "CHEBI:34683",
+      "mim_id": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+      "reason": "The stated heptahydrate is distinct from anhydrous disodium hydrogenphosphate; ChEBI has no term for this hydration state, and the parent survives only as CLOSE_MATCH (#321/#334, #342). The stale kg_microbe_node_id was withdrawn in the REMOVED_PARENT_IDENTITY event. Reject the stale recipe term.id in unified identity columns (#808, culturebotai-claw#571). The record carries its own heptahydrate CAS 7782-85-6, so promotion to cas:7782-85-6 under MAPPING_SEMANTICS \u00a73 step 2 is still open (#875); that change must update this row's mim_id in the same commit. See data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml."
+    }
+  ],
+  "sssom_rows": [
+    {
+      "subject_id": "MIM:Na2hpo4_X_7_H2o",
+      "subject_label": "Na2HPO4 x 7 H2O",
+      "predicate_id": "skos:closeMatch",
+      "object_id": "CHEBI:34683",
+      "object_label": "disodium hydrogenphosphate",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]|kgm:primary_mappings[kegg_compound]",
+      "mapping_date": "2026-08-27",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "Na2HPO4.7H2O|Na2HPO4\u20227H2O|CAS:7782-85-6",
+      "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+    },
+    {
+      "subject_id": "MIM:Na2hpo4_X_7_H2o",
+      "subject_label": "Na2HPO4 x 7 H2O",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+      "object_label": "Na2HPO4 x 7 H2O",
+      "object_source": "kgm:compound",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:CultureMech|MIM:MIM curation (#321/#334)|MIM:MIM curation (#321)|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=audit_p44_hydration_routing]|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=sssom_synonym_enrich_review_2026_05_10]|kgm:mediaingredientmech_reviewed[curator=unmapped_duplicate_review_2026_05_07]|kgm:primary_mappings[kegg_compound]",
+      "mapping_date": "2026-08-27",
+      "confidence": "0.99",
+      "comment": "Registry/identity row preserving kgmicrobe.compound:na2hpo4_x_7_h2o alongside parent CHEBI:34683.",
+      "other": "CAS:7782-85-6",
+      "validation_method": "none|UNKNOWN_TERM|2026-09-02"
+    }
+  ],
+  "duplicate_search_scope": "All data/ingredients/**/*.yaml via pathlib.rglob including ignored files; independent rg --no-ignore --hidden CAS/NCIT/name scan also performed. Stock solution and REJECTED_LABEL hits are distinguished, not merged.",
+  "revisions": {
+    "mim": "4625afd492b6cf43e3b499d1425d2453d490009d",
+    "culturemech": "a74dd489720c9df96cc073ffd11568d407d3c06c"
+  }
+}

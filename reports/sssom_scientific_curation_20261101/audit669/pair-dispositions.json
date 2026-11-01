@@ -1,0 +1,2699 @@
+{
+  "captured_at": "2026-11-01T00:46:41.973383+00:00",
+  "source_revision": "4625afd492b6cf43e3b499d1425d2453d490009d",
+  "source_inventory": "inventory.json",
+  "scope": "Pre-edit canonical collision inventory. Recommendations only, not whole-record scientific review or release approval. The separately authorized #1003 amide correction is outside these 45 tokens.",
+  "counts": {
+    "defer_active_pr912_family": 23,
+    "defer_identity_or_alias_ruling": 8,
+    "bounded_scientific_removal_candidate": 7,
+    "preserve_seven_policy_cases": 7
+  },
+  "pairs": [
+    {
+      "subject_id": "MIM:2-Deoxyadenosine_Monohydrate",
+      "token": "2-deoxyadenosine",
+      "owned_by": "MIM:2-deoxyadenosine",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "cas:16373-93-6",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "234edb342d3ca2141a1d979722b23e9f4541903cd40df75d1871a864cb515edb",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:2-deoxyadenosine",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/2-deoxyadenosine.yaml",
+          "identifier": "CHEBI:17256",
+          "preferred_term": "2-deoxyadenosine",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17256",
+            "ontology_label": "2'-deoxyadenosine",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "microbedecoder residual free normalized/fuzzy pass (recovered from closed PR #201) + local CHEBI verification",
+                "notes": "2-deoxyadenosine exact match to CHEBI:17256 (2'-deoxyadenosine)."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:2-Deoxyadenosine_Monohydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:17256"
+        }
+      ],
+      "current_kg_target_alias": true,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/2-Deoxyadenosine_Monohydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate",
+      "token": "2-Keto-D-gluconic acid hemicalcium salt monohydrate",
+      "owned_by": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "cas:1040352-40-6",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "5d30ccd4eb4f4148e5f06b6753c37739ebf7d5f678a679b9c5220b5c62bb40e1",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Monohydrate.yaml",
+          "identifier": "kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate",
+          "preferred_term": "2-Keto-D-gluconic acid hemicalcium salt monohydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:27469",
+            "ontology_label": "2-dehydro-D-gluconic acid",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "https://www.mpbio.com/media/document/infor/S/1/1/1/0/100365-S1110.PDF ; https://www.caymanchem.com/product/35622/2-keto-d-gluconic-acid-calcium-salt",
+                "notes": "Refine the prior blocker: MP Biomedicals explicitly uses CAS 3470-37-9 for the monohydrate, while the same CAS is used for unhydrated calcium salt. Use a distinct local hydrate identity and preserve the supplier CAS as procurement metadata rather than exact global identity. Withdraw anhydrous CID/SMILES/InChI. Formula follows the certificate hemicalcium unit plus one water, doubled to whole calcium stoichiometry. Existing close match to free acid retained as reviewed in #342, not promoted to subsumption."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:27469"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/2-Keto-D-gluconic_Acid_Hemicalcium_Salt_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:24-diamino-67-di-iso-propylpteridine_phosphate",
+      "token": "Vibriostat",
+      "owned_by": "MIM:Vibriostat",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "b3b4232dc560571960f15affe792bafdd0bca88866f212ade3de5beab8377108",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Vibriostat",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Vibriostat.yaml",
+          "identifier": "CHEBI:73908",
+          "preferred_term": "Vibriostat",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:73908",
+            "ontology_label": "2,4-diamino-6,7-diisopropylpteridine",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#213)",
+                "notes": "'Vibriostat' is a registered synonym of CHEBI:73908 2,4-diamino-6,7-diisopropylpteridine, whose synonym set includes O/129 and vibriostatic agent O/129 (#213)."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:24-diamino-67-di-iso-propylpteridine_phosphate",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:73908"
+        }
+      ],
+      "current_kg_target_alias": true,
+      "record_overlap": {},
+      "group": "defer_identity_or_alias_ruling",
+      "category": "commercial_alias_scope",
+      "reason": "Vibriostat is a commercial/common reagent label; the current owner is a freebase ChEBI term, but this audit did not verify whether source usage means freebase or phosphate. Do not infer an invalid phosphate alias solely from the separate generic owner.",
+      "recommendation": "Preserve baseline and provenance pending the named identity or alias-scope ruling.",
+      "evidence": [
+        "inventory.json",
+        "generated-alias-chebi-sources.json",
+        "primary-pubchem-cas-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+      "token": "4-Methyl-2-oxovaleric acid",
+      "owned_by": "MIM:4-Methyl-2-oxovaleric_Acid",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "cas:4502-00-5",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "8d5da3b1c891a79adf823a2ea778b04ef2658cc6bc175469631251c3874a314b",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:4-Methyl-2-oxovaleric_Acid",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/4-Methyl-2-oxovaleric_Acid.yaml",
+          "identifier": "CHEBI:48430",
+          "preferred_term": "4-Methyl-2-oxovaleric acid",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:48430",
+            "ontology_label": "4-methyl-2-oxopentanoic acid",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CAS_RN_LOOKUP",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:4-Methyl-2-oxopentanoic_Acid_Sodium_Salt",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:48430"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "bounded_scientific_removal_candidate",
+      "category": "salt_free_acid",
+      "reason": "PubChem CAS 4502-00-5 is sodium 4-methyl-2-oxovalerate, C6H9NaO3; ChEBI:48430 is the acid C6H10O3. The parent preferred name cannot assert exact substance identity for this sodium salt.",
+      "recommendation": "Scientifically supportable removal from resolving unqualified alias publication, with preserved source provenance and native generation/receipt. Not applied in this run; full regeneration is not authorized for promotion.",
+      "evidence": [
+        "sources/PubChem-CAS-4502-00-5.json",
+        "sources/CHEBI_48430.ols.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:84_GL_NaHCO3_Solution",
+      "token": "NaHCO3",
+      "owned_by": "MIM:Nahco3",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "kgmicrobe.ingredient:84_gl_nahco3_solution",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Nahco3",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Nahco3.yaml",
+          "identifier": "CHEBI:32139",
+          "preferred_term": "NaHCO3",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:32139",
+            "ontology_label": "sodium hydrogencarbonate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "LITERATURE",
+                "source": "PubMed search ('NaHCO3')",
+                "pmid": "39954419",
+                "supports": "SUPPORT",
+                "snippet": "The GSH-activated Dox prodrug [Poly(lactic-co-glycolic acid)-disulfide-Dox, PLGA-ss-Dox], GA, and sulfur-terminated D-\u03b1-tocopherol polyethylene glycol succinate (TPGS-SH) are combined to form a nanoemulsion with sodium bicarbonate (NaHCO3) in the aqueous phase.",
+                "explanation": "Auto-proposed; curator should rephrase or remove."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:84_GL_NaHCO3_Solution",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:32139"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "bounded_scientific_removal_candidate",
+      "category": "solution_solute",
+      "reason": "The maintained identity is explicitly a stock solution kgmicrobe.ingredient:84_gl_nahco3_solution, with concentration and solution curation; the owner NaHCO3 is neat sodium hydrogencarbonate CHEBI:32139. This is a mixture/concentration boundary, not merely spelling.",
+      "recommendation": "Scientifically supportable removal from resolving unqualified alias publication, with preserved source provenance and native generation/receipt. Not applied in this run; full regeneration is not authorized for promotion.",
+      "evidence": [
+        "sources/CHEBI_32139.ols.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate",
+      "token": "alpha-ketoglutaric acid",
+      "owned_by": "MIM:Alpha-ketoglutaric_Acid",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "cas:305-72-6",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Alpha-ketoglutaric_Acid",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml",
+          "identifier": "CHEBI:30915",
+          "preferred_term": "alpha-ketoglutaric acid",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:30915",
+            "ontology_label": "2-oxoglutaric acid",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:30915"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Adenine",
+      "token": "Adenine hydrochloride hydrate",
+      "owned_by": "MIM:Adenine_Hydrochloride_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:16708",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "136c82936b276ccb821eda3f31ddde7a1187e2a69fc14a9c4d2ab55821e24f05",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Adenine_Hydrochloride_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Adenine_Hydrochloride_Hydrate.yaml",
+          "identifier": "cas:2922-28-3",
+          "preferred_term": "Adenine hydrochloride hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:16708",
+            "ontology_label": "adenine",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 2922-28-3 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: FEBA_carbon, FEBA_nitrogen. Used in 31 CultureBot media; samples: ZMB ALS GHP, ZMB ALS GLCMD, NLDM_defined_no_iron\u2026. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "anchor_cas_hydrate_records",
+                "notes": "Adenine hydrochloride hydrate is a hydrate/salt with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:16708 'adenine' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hydrochloride hydrate of adenine"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:16708 ('adenine') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Adenine",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:16708"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Adenine_Hydrochloride_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Beta-lactose",
+      "token": "lactose",
+      "owned_by": "MIM:Lactose",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "CHEBI:36218",
+      "yaml_token_present": true,
+      "matching_yaml_synonyms": [
+        {
+          "synonym_text": "lactose",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "merged_from_duplicate_mim_record"
+        }
+      ],
+      "retired_owners": [],
+      "subject_sha256": "f1c39640418e71ea7999184bcb97d44bb238c7eef405a5ff7c80864e7a7bad86",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Lactose",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Lactose.yaml",
+          "identifier": "CHEBI:17716",
+          "preferred_term": "Lactose",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17716",
+            "ontology_label": "lactose",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "LITERATURE",
+                "source": "PubMed search ('Lactose')",
+                "pmid": "15915565",
+                "supports": "SUPPORT",
+                "snippet": "Investigation of factors that affect stability, growth, and induction of T7 expression strains in shaking vessels led to the recognition that sporadic, unintended induction of expression in complex media, previously reported by others, is almost certainly caused by small amounts of lactose.",
+                "explanation": "Auto-proposed; curator should rephrase or remove."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Beta-lactose",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:36218"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "preserve_seven_policy_cases",
+      "reason": "An extant typed YAML alias is also an official ChEBI synonym in at least related scope. Generic preferred-name owner is already first in the current label index. Unqualified SSSOM alias publication still needs an explicit consumer policy; preserve pending that choice.",
+      "recommendation": "No automatic synonym retirement or identity merge; policy options in report and #669 comment.",
+      "evidence": [
+        "seven-generic-policy-pairs.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Betaine_Hydrochloride",
+      "token": "Betaine x H2O",
+      "owned_by": "MIM:Betaine_X_H2o",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "cas:590-46-5",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "77cf04f3fafb04a92080656711b7807ed4e9af7c79f7852ffd31a09fe428f4ac",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Betaine_X_H2o",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Betaine_X_H2o.yaml",
+          "identifier": "CHEBI:91242",
+          "preferred_term": "Betaine x H2O",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:91242",
+            "ontology_label": "glycine betaine hydrate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:17750, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321/#334)",
+                "notes": "identifier CHEBI:17750 -> kgmicrobe.compound:betaine_x_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:17750 ('glycine betaine') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321)",
+                "notes": "molecular_formula 'C5H11NO2' -> 'C5H11NO2.H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 1 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:17750's ChEBI formula ('C5H11NO2') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:17750 ('glycine betaine') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321)",
+                "notes": "Promoted from CHEBI:17750 ('glycine betaine') to the exact ChEBI hydrate term CHEBI:91242 ('glycine betaine hydrate'). The label names a hydrate and ChEBI has a term for that hydrate, so MAPPING_SEMANTICS.md Section 3 step 1 applies."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Betaine_Hydrochloride",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:17750"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "bounded_scientific_removal_candidate",
+      "category": "different_salt_hydrate",
+      "reason": "PubChem CAS 590-46-5 is betaine chloride C5H12ClNO2; the owner ChEBI:91242 is glycine betaine monohydrate C5H11NO2.H2O (CAS 590-47-6). Chloride and hydrate identities differ.",
+      "recommendation": "Scientifically supportable removal from resolving unqualified alias publication, with preserved source provenance and native generation/receipt. Not applied in this run; full regeneration is not authorized for promotion.",
+      "evidence": [
+        "sources/PubChem-CAS-590-46-5.json",
+        "sources/CHEBI_91242.ols.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Carnitine_Dl_Hydrochloride",
+      "token": "DL-carnitine",
+      "owned_by": "MIM:Dl-carnitine",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "cas:461-06-3",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "8a7e0ac23a72c403bf9cce38a20abe817ee83e0231b558f2ca07ed05d134d190",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Dl-carnitine",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Dl-carnitine.yaml",
+          "identifier": "CHEBI:17126",
+          "preferred_term": "DL-carnitine",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17126",
+            "ontology_label": "carnitine",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Carnitine_Dl_Hydrochloride",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:17126"
+        }
+      ],
+      "current_kg_target_alias": true,
+      "record_overlap": {},
+      "group": "defer_identity_or_alias_ruling",
+      "category": "contradictory_primary_identity",
+      "reason": "CAS 461-06-3 and PubChem CID288/ChEBI17126 identify DL-carnitine without chloride, while the preferred name says hydrochloride. Resolve the original material identity first; #1004 tracks this, no guessed CAS or rename.",
+      "recommendation": "Preserve baseline and provenance pending the named identity or alias-scope ruling.",
+      "evidence": [
+        "inventory.json",
+        "generated-alias-chebi-sources.json",
+        "primary-pubchem-cas-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Carnitine_Hydrochloride",
+      "token": "DL-carnitine",
+      "owned_by": "MIM:Dl-carnitine",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "kgmicrobe.compound:carnitine_hydrochloride",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "c123a3f76cf2277ca68a08c99e58f96845842fd90c75bdd19b90ab8db7bb6780",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Dl-carnitine",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Dl-carnitine.yaml",
+          "identifier": "CHEBI:17126",
+          "preferred_term": "DL-carnitine",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17126",
+            "ontology_label": "carnitine",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Carnitine_Hydrochloride",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:17126"
+        }
+      ],
+      "current_kg_target_alias": true,
+      "record_overlap": {},
+      "group": "defer_identity_or_alias_ruling",
+      "category": "unresolved_salt_and_stereo",
+      "reason": "The local primary preserves an unspecified hydrochloride but has no independent exact salt evidence in this bounded audit; DL-carnitine scope needs source adjudication. The different amide alias fixed under #1003 is a separate settled wrong-compound defect and does not settle this baseline token.",
+      "recommendation": "Preserve baseline and provenance pending the named identity or alias-scope ruling.",
+      "evidence": [
+        "inventory.json",
+        "generated-alias-chebi-sources.json",
+        "primary-pubchem-cas-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Cecl3",
+      "token": "CeCl3 x 7 H2O",
+      "owned_by": "MIM:Cecl3_X_7_H2o",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:35458",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "22476283b23378e01e0c388acd5d0ee23721928bc71b122765370b8fb914e1f4",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Cecl3_X_7_H2o",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+          "identifier": "kgmicrobe.compound:cecl3_x_7_h2o",
+          "preferred_term": "CeCl3 x 7 H2O",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:35458",
+            "ontology_label": "cerium trichloride",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:35458, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321/#334)",
+                "notes": "identifier CHEBI:35458 -> kgmicrobe.compound:cecl3_x_7_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:35458 ('cerium trichloride') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321)",
+                "notes": "molecular_formula 'CeCl3' -> 'CeCl3.7H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:35458's ChEBI formula ('CeCl3') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:35458 ('cerium trichloride') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Cecl3",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:35458"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Cecl3_X_7_H2o.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Ceftazidime",
+      "token": "Ceftazidime hydrate",
+      "owned_by": "MIM:Ceftazidime_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:3508",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "02faf5d72f507c1493164eb009fe7b94923238704651f271cbcd64f96822b4a9",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Ceftazidime_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Ceftazidime_Hydrate.yaml",
+          "identifier": "cas:120618-65-7",
+          "preferred_term": "Ceftazidime hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:3508",
+            "ontology_label": "ceftazidime",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 120618-65-7 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: Hans80metals, FEBA_stress. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "anchor_cas_hydrate_records",
+                "notes": "Ceftazidime hydrate is a hydrate/salt with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:3508 'ceftazidime' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. unspecified hydrate of ceftazidime; CHEBI:3509 is specifically the pentahydrate, which the label does not claim"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:3508 ('ceftazidime') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Ceftazidime",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:3508"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Ceftazidime_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Cocl2",
+      "token": "CoCl2 x 4 H2O",
+      "owned_by": "MIM:Cocl2_X_4_H2o",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:35696",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "f77aab99efc51c1fd9a73bb2caec66ec36c4172ae1935a8a4515f84548c42414",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Cocl2_X_4_H2o",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Cocl2_X_4_H2o.yaml",
+          "identifier": "kgmicrobe.compound:cocl2_x_4_h2o",
+          "preferred_term": "CoCl2 x 4 H2O",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:35696",
+            "ontology_label": "cobalt dichloride",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:35696, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321/#334)",
+                "notes": "identifier CHEBI:35696 -> kgmicrobe.compound:cocl2_x_4_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:35696 ('cobalt dichloride') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321)",
+                "notes": "molecular_formula '2Cl.Co' -> '2Cl.Co.4H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 4 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:35696's ChEBI formula ('2Cl.Co') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:35696 ('cobalt dichloride') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Cocl2",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:35696"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Cocl2_X_4_H2o.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:D-Maltose_Monohydrate",
+      "token": "Maltose Hydrate",
+      "owned_by": "MIM:Maltose_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "cas:6363-53-7",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "cda53191390133b9a1059b87938333b4d965e2b9009497dcd7e046af9b1f04d5",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Maltose_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Maltose_Hydrate.yaml",
+          "identifier": "kgmicrobe.compound:maltose_hydrate",
+          "preferred_term": "Maltose Hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17306",
+            "ontology_label": "maltose",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#213)",
+                "notes": "Maltose hydrate is the hydrated form of maltose. CHEBI has anhydrous maltose CHEBI:17306 but no hydrate term; Section 3 mint + narrowMatch, per the hydrate convention in #242 (#213)."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:17306 ('maltose') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:D-Maltose_Monohydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:17306"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+          "data/ingredients/mapped/Maltose_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+      "token": "Mannose-6-Phosphate",
+      "owned_by": "MIM:Mannose-6-Phosphate",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "cas:70442-25-0",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "280c8b5687a3ccd348984cd3b37518d2d1d298a80d1cd0c2b9a911b06f9a0535",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Mannose-6-Phosphate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Mannose-6-Phosphate.yaml",
+          "identifier": "CHEBI:17369",
+          "preferred_term": "Mannose-6-Phosphate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17369",
+            "ontology_label": "D-mannose 6-phosphate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:D-Mannose_6-phosphate_Sodium_Salt",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:17369"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "bounded_scientific_removal_candidate",
+      "category": "salt_free_acid",
+      "reason": "PubChem CAS 70442-25-0 is sodium mannose 6-phosphate C6H12NaO9P; ChEBI:17369 is D-mannose 6-phosphate C6H13O9P. The sodium counterion is chemically material.",
+      "recommendation": "Scientifically supportable removal from resolving unqualified alias publication, with preserved source provenance and native generation/receipt. Not applied in this run; full regeneration is not authorized for promotion.",
+      "evidence": [
+        "sources/PubChem-CAS-70442-25-0.json",
+        "sources/CHEBI_17369.ols.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:D-mannitol",
+      "token": "Mannitol",
+      "owned_by": "MIM:Mannitol",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "CHEBI:16899",
+      "yaml_token_present": true,
+      "matching_yaml_synonyms": [
+        {
+          "synonym_text": "Mannitol",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "chebi_synonym_review"
+        }
+      ],
+      "retired_owners": [],
+      "subject_sha256": "0a04714750dac2e0bec56ab4ee0ba62d29cb4e41cd90fa3f1cacecdcc31c48d9",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Mannitol",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Mannitol.yaml",
+          "identifier": "CHEBI:29864",
+          "preferred_term": "Mannitol",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:29864",
+            "ontology_label": "mannitol",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:D-mannitol",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:16899"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "preserve_seven_policy_cases",
+      "reason": "An extant typed YAML alias is also an official ChEBI synonym in at least related scope. Generic preferred-name owner is already first in the current label index. Unqualified SSSOM alias publication still needs an explicit consumer policy; preserve pending that choice.",
+      "recommendation": "No automatic synonym retirement or identity merge; policy options in report and #669 comment.",
+      "evidence": [
+        "seven-generic-policy-pairs.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock",
+      "token": "Na2HPO4 x 7 H2O",
+      "owned_by": "MIM:Na2hpo4_X_7_H2o",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "cf67a250e7d90ccd5c5dfb55ffe9a68202b25348e2f4851f16a5531cfec84e6f",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Na2hpo4_X_7_H2o",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+          "identifier": "kgmicrobe.compound:na2hpo4_x_7_h2o",
+          "preferred_term": "Na2HPO4 x 7 H2O",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:34683",
+            "ontology_label": "disodium hydrogenphosphate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:34683, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321/#334)",
+                "notes": "identifier CHEBI:34683 -> kgmicrobe.compound:na2hpo4_x_7_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:34683 ('disodium hydrogenphosphate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321)",
+                "notes": "molecular_formula 'HO4P.2Na' -> 'HO4P.2Na.7H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:34683's ChEBI formula ('HO4P.2Na') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:34683 ('disodium hydrogenphosphate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:34683"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml",
+          "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+      "token": "EDTA",
+      "owned_by": "MIM:Edta",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "cas:13235-36-4",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "ebbc88a44ee8920c810e31101fe3a303956c5061f9265b10adea414f40bc0b6d",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Edta",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Edta.yaml",
+          "identifier": "CHEBI:4735",
+          "preferred_term": "EDTA",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:4735",
+            "ontology_label": "ethylenediaminetetraacetic acid",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#319/#320)",
+                "notes": "identifier/ontology_id CHEBI:64755 ('EDTA(2-)') -> CHEBI:4735 ('ethylenediaminetetraacetic acid'); mapping_quality -> SYNONYM_MATCH. ChEBI's live definition of CHEBI:64755 is 'a tetracarboxylic acid anion formed by deprotonation of TWO of the four carboxy groups' \u2014 a specific charge state this record's label never asserts. Under #319's rule a specific definition means descend, unlike the 'at least one' wording that keeps the anion. Absorbed 'EDTA (acid form)', which held the free-acid term with ZERO occurrences and already carried 'EDTA' as a synonym. The corpus keeps separate Na2-EDTA records for the salt, so plain 'EDTA' denoting the free acid is consistent with how the rest of the family is modelled."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:EDTA_Tetrasodium_Tetrahydrate_Salt",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:4735"
+        }
+      ],
+      "current_kg_target_alias": true,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:K2hpo4",
+      "token": "K2HPO4 x 3 H2O",
+      "owned_by": "MIM:K2hpo4_X_3_H2o",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:131527",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "7eb41f8daf7f92610ccd692102fb924cb540c32c68c55de02d1e6d72ad4065e1",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:K2hpo4_X_3_H2o",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+          "identifier": "kgmicrobe.compound:k2hpo4_x_3_h2o",
+          "preferred_term": "K2HPO4 x 3 H2O",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:131527",
+            "ontology_label": "dipotassium hydrogen phosphate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:131527, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321/#334)",
+                "notes": "identifier CHEBI:131527 -> kgmicrobe.compound:k2hpo4_x_3_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:131527 ('dipotassium hydrogen phosphate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321)",
+                "notes": "molecular_formula 'HO4P.2K' -> 'HO4P.2K.3H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 3 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:131527's ChEBI formula ('HO4P.2K') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:131527 ('dipotassium hydrogen phosphate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:K2hpo4",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:131527"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:L-asparagine",
+      "token": "ASPARAGINE",
+      "owned_by": "MIM:Asparagine",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "CHEBI:17196",
+      "yaml_token_present": true,
+      "matching_yaml_synonyms": [
+        {
+          "synonym_text": "ASPARAGINE",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "chebi_synonym_review"
+        }
+      ],
+      "retired_owners": [],
+      "subject_sha256": "c936ac6337e4d867601ba73d3378e7370518a218e34fc41cbf0bdc506d375b7c",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Asparagine",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Asparagine.yaml",
+          "identifier": "CHEBI:22653",
+          "preferred_term": "Asparagine",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:22653",
+            "ontology_label": "asparagine",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:L-asparagine",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:17196"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "preserve_seven_policy_cases",
+      "reason": "An extant typed YAML alias is also an official ChEBI synonym in at least related scope. Generic preferred-name owner is already first in the current label index. Unqualified SSSOM alias publication still needs an explicit consumer policy; preserve pending that choice.",
+      "recommendation": "No automatic synonym retirement or identity merge; policy options in report and #669 comment.",
+      "evidence": [
+        "seven-generic-policy-pairs.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:L-cysteine",
+      "token": "CYSTEINE",
+      "owned_by": "MIM:Cysteine",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "CHEBI:17561",
+      "yaml_token_present": true,
+      "matching_yaml_synonyms": [
+        {
+          "synonym_text": "CYSTEINE",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "chebi_synonym_review"
+        }
+      ],
+      "retired_owners": [],
+      "subject_sha256": "8c24e38f13a5574684dda7aae35813c6f417016f5ce47089070ccb607aed6e79",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Cysteine",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Cysteine.yaml",
+          "identifier": "CHEBI:15356",
+          "preferred_term": "Cysteine",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:15356",
+            "ontology_label": "cysteine",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:L-cysteine",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:17561"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "preserve_seven_policy_cases",
+      "reason": "An extant typed YAML alias is also an official ChEBI synonym in at least related scope. Generic preferred-name owner is already first in the current label index. Unqualified SSSOM alias publication still needs an explicit consumer policy; preserve pending that choice.",
+      "recommendation": "No automatic synonym retirement or identity merge; policy options in report and #669 comment.",
+      "evidence": [
+        "seven-generic-policy-pairs.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:L-glutamic_Acid",
+      "token": "GLUTAMIC ACID",
+      "owned_by": "MIM:Glutamic_Acid",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "CHEBI:16015",
+      "yaml_token_present": true,
+      "matching_yaml_synonyms": [
+        {
+          "synonym_text": "GLUTAMIC ACID",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "chebi_synonym_review"
+        }
+      ],
+      "retired_owners": [],
+      "subject_sha256": "1abbfb5fd04f94d5f684108d4304267a5d8c972a9d9a629d60ba755198c6edbb",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Glutamic_Acid",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Glutamic_Acid.yaml",
+          "identifier": "CHEBI:18237",
+          "preferred_term": "Glutamic acid",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:18237",
+            "ontology_label": "glutamic acid",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:L-glutamic_Acid",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:16015"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "preserve_seven_policy_cases",
+      "reason": "An extant typed YAML alias is also an official ChEBI synonym in at least related scope. Generic preferred-name owner is already first in the current label index. Unqualified SSSOM alias publication still needs an explicit consumer policy; preserve pending that choice.",
+      "recommendation": "No automatic synonym retirement or identity merge; policy options in report and #669 comment.",
+      "evidence": [
+        "seven-generic-policy-pairs.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:L-proline",
+      "token": "PROLINE",
+      "owned_by": "MIM:Proline",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "CHEBI:17203",
+      "yaml_token_present": true,
+      "matching_yaml_synonyms": [
+        {
+          "synonym_text": "PROLINE",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "chebi_synonym_review"
+        }
+      ],
+      "retired_owners": [],
+      "subject_sha256": "5dd10c136db722ba99235189330fb4c539abad17d4a52927f533dd5b1cf440d8",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Proline",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Proline.yaml",
+          "identifier": "CHEBI:26271",
+          "preferred_term": "Proline",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:26271",
+            "ontology_label": "proline",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:L-proline",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:17203"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "preserve_seven_policy_cases",
+      "reason": "An extant typed YAML alias is also an official ChEBI synonym in at least related scope. Generic preferred-name owner is already first in the current label index. Unqualified SSSOM alias publication still needs an explicit consumer policy; preserve pending that choice.",
+      "recommendation": "No automatic synonym retirement or identity merge; policy options in report and #669 comment.",
+      "evidence": [
+        "seven-generic-policy-pairs.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:L-tryptophan",
+      "token": "Tryptophan",
+      "owned_by": "MIM:Tryptophan",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "CHEBI:16828",
+      "yaml_token_present": true,
+      "matching_yaml_synonyms": [
+        {
+          "synonym_text": "Tryptophan",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "chebi_synonym_review"
+        }
+      ],
+      "retired_owners": [],
+      "subject_sha256": "9e95fed47a3744d5ca9420212a63488f02af4050687ee078f892f2a1b17c25e0",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Tryptophan",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Tryptophan.yaml",
+          "identifier": "CHEBI:27897",
+          "preferred_term": "Tryptophan",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:27897",
+            "ontology_label": "tryptophan",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:L-tryptophan",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:16828"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "preserve_seven_policy_cases",
+      "reason": "An extant typed YAML alias is also an official ChEBI synonym in at least related scope. Generic preferred-name owner is already first in the current label index. Unqualified SSSOM alias publication still needs an explicit consumer policy; preserve pending that choice.",
+      "recommendation": "No automatic synonym retirement or identity merge; policy options in report and #669 comment.",
+      "evidence": [
+        "seven-generic-policy-pairs.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Licl",
+      "token": "Lithium chloride hydrate",
+      "owned_by": "MIM:Lithium_Chloride_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:48607",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "870a3eff455850b77496a3495d81683a1fd5a8b3e65eb2b5571023a047f0a1f3",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Lithium_Chloride_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml",
+          "identifier": "cas:85144-11-2",
+          "preferred_term": "Lithium chloride hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:48607",
+            "ontology_label": "lithium chloride",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 85144-11-2 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CHEBI via OLS (stem-substring)",
+                "notes": "Parent class identified via stem-substring; matched_via='Lithium chloride hydrate'"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:48607 ('lithium chloride') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Licl",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:48607"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Lithium_Chloride_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:MES_Hydrat",
+      "token": "MES [2-(N-morpholino) ethane sulfonic acid]",
+      "owned_by": "MIM:Mes_2-_N-morpholino_Ethane_Sulfonic_Acid",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "cas:145224-94-8",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "24292497ec7bae482bb3611b8afb9cd1f795332d655be8900f4c59f8d929ebb6",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Mes_2-_N-morpholino_Ethane_Sulfonic_Acid",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Mes_2-_N-morpholino_Ethane_Sulfonic_Acid.yaml",
+          "identifier": "CHEBI:39005",
+          "preferred_term": "MES [2-(N-morpholino) ethane sulfonic acid]",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:39005",
+            "ontology_label": "2-(N-morpholino)ethanesulfonic acid",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:MES_Hydrat",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:39005"
+        }
+      ],
+      "current_kg_target_alias": true,
+      "record_overlap": {},
+      "group": "bounded_scientific_removal_candidate",
+      "category": "hydrate_anhydrous",
+      "reason": "PubChem CAS 145224-94-8 is MES hydrate C6H15NO5S; ChEBI:39005 is MES C6H13NO4S. This evidence supports a form boundary independent of KG alias availability.",
+      "recommendation": "Scientifically supportable removal from resolving unqualified alias publication, with preserved source provenance and native generation/receipt. Not applied in this run; full regeneration is not authorized for promotion.",
+      "evidence": [
+        "sources/PubChem-CAS-145224-94-8.json",
+        "sources/CHEBI_39005.ols.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Magnesium_Chloride",
+      "token": "MgCl2 x 6 H2O",
+      "owned_by": "MIM:Mgcl2_X_6_H2o",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:86345",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "80426d9af40689814be985f73e7d6949f4d5e10b77679cb5b56e73e52533a549",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Mgcl2_X_6_H2o",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Mgcl2_X_6_H2o.yaml",
+          "identifier": "CHEBI:86345",
+          "preferred_term": "MgCl2 x 6 H2O",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:86345",
+            "ontology_label": "magnesium dichloride hexahydrate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Magnesium_Chloride",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:86345"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "defer_identity_or_alias_ruling",
+      "category": "shared_identity_duplicate_form",
+      "reason": "Both records currently use CHEBI:86345 (magnesium dichloride hexahydrate); the source CAS7791-18-6/formula also indicate hexahydrate. The token may be a valid same-substance alias; resolve duplicate/form identity, do not retire on dictionary absence.",
+      "recommendation": "Preserve baseline and provenance pending the named identity or alias-scope ruling.",
+      "evidence": [
+        "inventory.json",
+        "generated-alias-chebi-sources.json",
+        "primary-pubchem-cas-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Maltose",
+      "token": "Maltose Hydrate",
+      "owned_by": "MIM:Maltose_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:17306",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Maltose_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Maltose_Hydrate.yaml",
+          "identifier": "kgmicrobe.compound:maltose_hydrate",
+          "preferred_term": "Maltose Hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17306",
+            "ontology_label": "maltose",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#213)",
+                "notes": "Maltose hydrate is the hydrated form of maltose. CHEBI has anhydrous maltose CHEBI:17306 but no hydrate term; Section 3 mint + narrowMatch, per the hydrate convention in #242 (#213)."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:17306 ('maltose') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Maltose",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:17306"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Maltose_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Maltotriose",
+      "token": "Maltotriose hydrate",
+      "owned_by": "MIM:Maltotriose_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:61993",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "cfb03cea28df42ee44d4116d04a5aeb7d50f06b8b4d02f434a8ac0aeda833671",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Maltotriose_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Maltotriose_Hydrate.yaml",
+          "identifier": "cas:312693-63-3",
+          "preferred_term": "Maltotriose hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:61993",
+            "ontology_label": "maltotriose",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 312693-63-3 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "anchor_cas_hydrate_records",
+                "notes": "Maltotriose hydrate is a hydrate/salt with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:61993 'maltotriose' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. unspecified hydrate of maltotriose"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:61993 ('maltotriose') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Maltotriose",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:61993"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Maltotriose_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Na2co3",
+      "token": "Sodium carbonate solution",
+      "owned_by": "MIM:Sodium_Carbonate_Solution",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "CHEBI:29377",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Sodium_Carbonate_Solution",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "identifier": "CHEBI:29377",
+          "preferred_term": "Sodium carbonate solution",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:29377",
+            "ontology_label": "sodium carbonate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "LEXICAL_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)",
+                "notes": "Auto-upgraded from UNMAPPED_0523; matched via 'Sodium carbonate solution'; stem-substring"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Na2co3",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:29377"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Na2glycerophosphate5h2o",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "cas:13408-09-8",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "f0ff1f0f5dec48de3f428a419f2f0aba170f8f91ecc614ccbc948b56b3b637ac",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Glycerol_3-phosphate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Glycerol_3-phosphate.yaml",
+          "identifier": "CHEBI:15978",
+          "preferred_term": "Glycerol 3-phosphate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:15978",
+            "ontology_label": "sn-glycerol 3-phosphate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#213)",
+                "notes": "Glycerol 3-phosphate grounded to sn-glycerol 3-phosphate, the biological stereoisomer; CLOSE_MATCH because the term is stereospecific and the label is not (#213)."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Na2glycerophosphate5h2o",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:15978"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "defer_identity_or_alias_ruling",
+      "category": "salt_form_and_positional_identity",
+      "reason": "The salt/pentahydrate label is more specific than the free acid owner, but exact positional/stereochemical grounding and source salt identity were not independently settled here. Do not turn a generator omission into a full scientific ruling.",
+      "recommendation": "Preserve baseline and provenance pending the named identity or alias-scope ruling.",
+      "evidence": [
+        "inventory.json",
+        "generated-alias-chebi-sources.json",
+        "primary-pubchem-cas-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Na2so3",
+      "token": "Na2SO3 x 5 H2O",
+      "owned_by": "MIM:Na2so3_X_5_H2o",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:86477",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "840729f87247e887f68d659f5830bbc4fe695dd907ea07fa7ace0e52dbca5a9a",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Na2so3_X_5_H2o",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Na2so3_X_5_H2o.yaml",
+          "identifier": "CHEBI:86477",
+          "preferred_term": "Na2SO3 x 5 H2O",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:86477",
+            "ontology_label": "sodium sulfite",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#321)",
+                "notes": "molecular_formula '2Na.O3S' -> '2Na.O3S.5H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 5 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:86477's ChEBI formula ('2Na.O3S') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Na2so3",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:86477"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Na2so3_X_5_H2o.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Nh42ni_So42",
+      "token": "(NH4)2Ni(SO4)2 x 6 H2O",
+      "owned_by": "MIM:Nh42ni_So42_X_6_H2o",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:86149",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "3f2bbdbc092c00cfe0b0d1b82996dc7825db1c13b2f11477ea1da7bd56d3474a",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Nh42ni_So42_X_6_H2o",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Nh42ni_So42_X_6_H2o.yaml",
+          "identifier": "CHEBI:86149",
+          "preferred_term": "(NH4)2Ni(SO4)2 x 6 H2O",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:86149",
+            "ontology_label": "ammonium nickel sulfate hexahydrate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Nh42ni_So42",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:86149"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "defer_identity_or_alias_ruling",
+      "category": "shared_identity_duplicate_form",
+      "reason": "Both records use CHEBI:86149, which explicitly denotes ammonium nickel sulfate hexahydrate; source formula is also hexahydrate while its CAS differs. Resolve family/form identity, not a blanket synonym retirement.",
+      "recommendation": "Preserve baseline and provenance pending the named identity or alias-scope ruling.",
+      "evidence": [
+        "inventory.json",
+        "generated-alias-chebi-sources.json",
+        "primary-pubchem-cas-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Palatinose",
+      "token": "palatinose hydrate",
+      "owned_by": "MIM:Palatinose_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:18394",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "e5011f3858a1b333eb0ed0943e023c8e9b278f7f5abf5cfa0b2015bda7e06816",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Palatinose_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Palatinose_Hydrate.yaml",
+          "identifier": "cas:343336-76-5",
+          "preferred_term": "palatinose hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:18394",
+            "ontology_label": "6-O-alpha-D-glucopyranosyl-D-fructofuranose",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 343336-76-5 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "anchor_cas_hydrate_records",
+                "notes": "palatinose hydrate is a hydrate/salt with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:18394 '6-O-alpha-D-glucopyranosyl-D-fructofuranose' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hydrate of palatinose (isomaltulose)"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:18394 ('6-O-alpha-D-glucopyranosyl-D-fructofuranose') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Palatinose",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:18394"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Palatinose_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Phosphorous_Acid",
+      "token": "Sodium phosphite dibasic pentahydrate",
+      "owned_by": "MIM:Sodium_Phosphite_Dibasic_Pentahydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:36361",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "70778911888e967afa6b97025a00657e323a19f6726a60834ff4b63bf10c497b",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Sodium_Phosphite_Dibasic_Pentahydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml",
+          "identifier": "cas:13517-23-2",
+          "preferred_term": "Sodium phosphite dibasic pentahydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:36361",
+            "ontology_label": "phosphorous acid",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 13517-23-2 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: Hans80metals. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "anchor_cas_hydrate_records",
+                "notes": "Sodium phosphite dibasic pentahydrate is a hydrate/salt with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:36361 'phosphorous acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium pentahydrate salt of phosphorous acid"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:36361 ('phosphorous acid') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Phosphorous_Acid",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:36361"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Sn-Glycerol_3-phosphate_Lithium_Salt",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "cas:17989-41-2",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "94fff493bf4b0ddc19144054a44305ea29de113477254be64e1dc86c0f128f51",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Glycerol_3-phosphate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Glycerol_3-phosphate.yaml",
+          "identifier": "CHEBI:15978",
+          "preferred_term": "Glycerol 3-phosphate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:15978",
+            "ontology_label": "sn-glycerol 3-phosphate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#213)",
+                "notes": "Glycerol 3-phosphate grounded to sn-glycerol 3-phosphate, the biological stereoisomer; CLOSE_MATCH because the term is stereospecific and the label is not (#213)."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Sn-Glycerol_3-phosphate_Lithium_Salt",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:15978"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "defer_identity_or_alias_ruling",
+      "category": "contradictory_primary_identity",
+      "reason": "CAS17989-41-2 and PubChem CID439162/ChEBI15978 are the free acid; the preferred label says lithium salt. #1005 requires original-source identity adjudication; previous rejected parent labels did not settle the primary identity.",
+      "recommendation": "Preserve baseline and provenance pending the named identity or alias-scope ruling.",
+      "evidence": [
+        "inventory.json",
+        "generated-alias-chebi-sources.json",
+        "primary-pubchem-cas-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+      "token": "Glycerol 3-phosphate",
+      "owned_by": "MIM:Glycerol_3-phosphate",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "cas:29849-82-9",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "185d299a1d5a117e5ce42e2826e3f9fb83cba57459c5fc7e09f2dcf263a660f1",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Glycerol_3-phosphate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Glycerol_3-phosphate.yaml",
+          "identifier": "CHEBI:15978",
+          "preferred_term": "Glycerol 3-phosphate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:15978",
+            "ontology_label": "sn-glycerol 3-phosphate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#213)",
+                "notes": "Glycerol 3-phosphate grounded to sn-glycerol 3-phosphate, the biological stereoisomer; CLOSE_MATCH because the term is stereospecific and the label is not (#213)."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Sn-glycerol_3-phosphate_Bis_Cyclohexylammonium_Salt",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:15978"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "bounded_scientific_removal_candidate",
+      "category": "salt_free_acid",
+      "reason": "PubChem CAS 29849-82-9 is the bis(cyclohexylammonium) salt C15H35N2O6P; ChEBI:15978 is the free acid C3H9O6P. Removing the unqualified parent alias does not require guessing the salt identity.",
+      "recommendation": "Scientifically supportable removal from resolving unqualified alias publication, with preserved source provenance and native generation/receipt. Not applied in this run; full regeneration is not authorized for promotion.",
+      "evidence": [
+        "sources/PubChem-CAS-29849-82-9.json",
+        "sources/CHEBI_15978.ols.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Sodium_Carbonate_Monohydrate",
+      "token": "Sodium carbonate solution",
+      "owned_by": "MIM:Sodium_Carbonate_Solution",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "cas:5968-11-6",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "6884d4a46259d1e6276a9a83c09079678f0da84c7e468181266115788d316d20",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Sodium_Carbonate_Solution",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "identifier": "CHEBI:29377",
+          "preferred_term": "Sodium carbonate solution",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:29377",
+            "ontology_label": "sodium carbonate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "LEXICAL_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)",
+                "notes": "Auto-upgraded from UNMAPPED_0523; matched via 'Sodium carbonate solution'; stem-substring"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Sodium_Carbonate_Monohydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:29377"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml",
+          "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Sodium_Deoxycholate",
+      "token": "Sodium deoxycholate monohydrate",
+      "owned_by": "MIM:Sodium_Deoxycholate_Monohydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:9177",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "a00fd9952b85d8509a44839a0b064224a679237774648486835eb705b066737c",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Sodium_Deoxycholate_Monohydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml",
+          "identifier": "cas:145224-92-6",
+          "preferred_term": "Sodium deoxycholate monohydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:9177",
+            "ontology_label": "sodium deoxycholate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 145224-92-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: Hans80metals. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CHEBI via OLS (stem-substring)",
+                "notes": "Parent class identified via stem-substring; matched_via='Sodium deoxycholate monohydrate'"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:9177 ('sodium deoxycholate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Sodium_Deoxycholate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:9177"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Sodium_Deoxycholate_Monohydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Sodium_Nitrate_070_M_Stock",
+      "token": "NaNO3",
+      "owned_by": "MIM:Nano3",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "eca7428c811737e50f6146e617e8e6530a96c07d8be51069abf11aaf31aae98c",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Nano3",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Nano3.yaml",
+          "identifier": "CHEBI:63005",
+          "preferred_term": "NaNO3",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:63005",
+            "ontology_label": "sodium nitrate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              },
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "cbclaw_kg_microbe_sweep",
+                "notes": "Corrected from CHEBI:59148 (a phenylsulfonyloxy lactone \u2014 unrelated compound) to CHEBI:63005 (sodium nitrate). CAS-RN 7631-99-4 confirms sodium nitrate."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Sodium_Nitrate_070_M_Stock",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:63005"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Sodium_Nitrate_070_M_Stock.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Sodium_Perchlorate",
+      "token": "Sodium perchlorate monohydrate",
+      "owned_by": "MIM:Sodium_Perchlorate_Monohydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:132103",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "5b8a68b008ebce2e98c040b9dfff7b5b16f2370b320bb77cf0d3db32e680e0e0",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Sodium_Perchlorate_Monohydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Sodium_Perchlorate_Monohydrate.yaml",
+          "identifier": "cas:7791-07-3",
+          "preferred_term": "Sodium perchlorate monohydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:132103",
+            "ontology_label": "sodium perchlorate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 7791-07-3 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: Hans80metals, FEBA_stress. Used in 2 CultureBot media; samples: ALP defined perchlorate, ALP_defined_perchlorate. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CHEBI via OLS (stem-substring)",
+                "notes": "Parent class identified via stem-substring; matched_via='Sodium perchlorate monohydrate'"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:132103 ('sodium perchlorate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Sodium_Perchlorate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:132103"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "bounded_scientific_removal_candidate",
+      "category": "anhydrous_hydrate",
+      "reason": "PubChem CAS 7601-89-0 is sodium perchlorate ClNaO4; CAS 7791-07-3 is monohydrate ClH2NaO5. ChEBI:132103 confirms the anhydrous subject.",
+      "recommendation": "Scientifically supportable removal from resolving unqualified alias publication, with preserved source provenance and native generation/receipt. Not applied in this run; full regeneration is not authorized for promotion.",
+      "evidence": [
+        "sources/PubChem-CAS-7601-89-0.json",
+        "sources/PubChem-CAS-7791-07-3.json",
+        "sources/CHEBI_132103.ols.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Sodium_Succinate_Dibasic",
+      "token": "Sodium succinate",
+      "owned_by": "MIM:Sodium_Succinate",
+      "disposition": "UNREVIEWED",
+      "subject_identifier": "cas:150-90-3",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Sodium_Succinate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Sodium_Succinate.yaml",
+          "identifier": "CHEBI:63675",
+          "preferred_term": "Sodium succinate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:63675",
+            "ontology_label": "sodium succinate (anhydrous)",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "SYNONYM_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Sodium_Succinate_Dibasic",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "CHEBI:63675"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {},
+      "group": "defer_identity_or_alias_ruling",
+      "category": "same_substance_identity",
+      "reason": "Source CAS150-90-3 and ChEBI:63675 both identify anhydrous disodium succinate C4H4Na2O4. The alias is not shown false; investigate duplicate/grounding relationship instead of automatically retiring it.",
+      "recommendation": "Preserve baseline and provenance pending the named identity or alias-scope ruling.",
+      "evidence": [
+        "inventory.json",
+        "generated-alias-chebi-sources.json",
+        "primary-pubchem-cas-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Stachyose_-_70",
+      "token": "Stachyose hydrate",
+      "owned_by": "MIM:Stachyose_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:17164",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "1a8a006b5d391e6b72f240c7e38e59491976b19d65f91216620bb2935d4d5605",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Stachyose_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Stachyose_Hydrate.yaml",
+          "identifier": "cas:54261-98-2",
+          "preferred_term": "Stachyose hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17164",
+            "ontology_label": "stachyose",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 54261-98-2 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "anchor_cas_hydrate_records",
+                "notes": "Stachyose hydrate is a hydrate/salt with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:17164 'stachyose' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. unspecified hydrate of stachyose"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:17164 ('stachyose') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Stachyose_-_70",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:17164"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Stachyose_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    },
+    {
+      "subject_id": "MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis",
+      "token": "Vancomycin Hydrochloride Hydrate",
+      "owned_by": "MIM:Vancomycin_Hydrochloride_Hydrate",
+      "disposition": "HYDRATE_FAMILY_UNREVIEWED",
+      "subject_identifier": "CHEBI:9932",
+      "yaml_token_present": false,
+      "matching_yaml_synonyms": [],
+      "retired_owners": [],
+      "subject_sha256": "1ec3918aaaebfd97d87d712c6539cbdad0a1f063169aed25e7fd0778a438692b",
+      "current_owner_records": [
+        {
+          "subject_id": "MIM:Vancomycin_Hydrochloride_Hydrate",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-curation-20261101T003435Z/mim/data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml",
+          "identifier": "cas:123409-00-7",
+          "preferred_term": "Vancomycin Hydrochloride Hydrate",
+          "mapping_status": "MAPPED",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:9932",
+            "ontology_label": "Vancomycin hydrochloride",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CLOSE_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN 123409-00-7 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: FEBA_stress. Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CHEBI via OLS (stem-substring)",
+                "notes": "Parent class identified via stem-substring; matched_via='Vancomycin Hydrochloride Hydrate'"
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#342)",
+                "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:9932 ('Vancomycin hydrochloride') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+              }
+            ]
+          },
+          "representative": null
+        }
+      ],
+      "row_selectors": [
+        {
+          "subject_id": "MIM:Vancomycin_Hydrochloride_From_Streptomyces_Orientalis",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:9932"
+        }
+      ],
+      "current_kg_target_alias": false,
+      "record_overlap": {
+        "912": [
+          "data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml"
+        ]
+      },
+      "group": "defer_active_pr912_family",
+      "category": "active_hydrate_or_solution_family",
+      "reason": "The subject or preferred-name owner belongs to open PR #912. The exact mapped primary identities, form distinctions, and ontology-owned synonyms require that family decision. Missing today from KG alias dictionary does not decide chemical validity.",
+      "recommendation": "Preserve baseline; defer to coordinated family curation, and do not supersede or edit the overlapping record.",
+      "evidence": [
+        "pr-912-files-all.json",
+        "inventory.json",
+        "generated-alias-chebi-sources.json"
+      ]
+    }
+  ],
+  "full_file_overlap": {
+    "912": [
+      "data/curated/mapped_ingredients.yaml",
+      "data/curated/unmapped_ingredients.yaml",
+      "docs/data/ingredients.json",
+      "docs/data/label_index.csv",
+      "mappings/ingredient_mappings.sssom.tsv"
+    ],
+    "914": [
+      "data/curated/mapped_ingredients.yaml",
+      "data/curated/unmapped_ingredients.yaml",
+      "docs/data/ingredients.json",
+      "docs/data/label_index.csv"
+    ]
+  }
+}

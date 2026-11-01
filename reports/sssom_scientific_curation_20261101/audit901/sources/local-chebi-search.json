@@ -1,0 +1,48 @@
+{
+  "db_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/ontology-cache/oaklib/chebi.db",
+  "size": 4137340928,
+  "accessed_at": "2026-11-01T00:39:02.543030+00:00",
+  "queries": {
+    "names": {
+      "sql": "SELECT DISTINCT subject,predicate,value FROM statements WHERE predicate IN ('rdfs:label','oboInOwl:hasExactSynonym','oboInOwl:hasRelatedSynonym') AND (lower(value) LIKE '%melezitose%' OR lower(value) LIKE '%sodium perchlorate%')",
+      "rows": [
+        [
+          "CHEBI:132103",
+          "rdfs:label",
+          "sodium perchlorate"
+        ],
+        [
+          "CHEBI:183824",
+          "rdfs:label",
+          "D(+)-Melezitose"
+        ],
+        [
+          "CHEBI:6731",
+          "rdfs:label",
+          "melezitose"
+        ]
+      ]
+    },
+    "cas": {
+      "sql": "SELECT DISTINCT subject,predicate,value FROM statements WHERE predicate='oboInOwl:hasDbXref' AND (value LIKE '%7791-07-3%' OR value LIKE '%10030-67-8%')",
+      "rows": []
+    },
+    "parent_labels": {
+      "sql": "SELECT subject,value FROM statements WHERE predicate='rdfs:label' AND subject IN ('CHEBI:132103','CHEBI:6731','CHEBI:183824')",
+      "rows": [
+        [
+          "CHEBI:132103",
+          "sodium perchlorate"
+        ],
+        [
+          "CHEBI:183824",
+          "D(+)-Melezitose"
+        ],
+        [
+          "CHEBI:6731",
+          "melezitose"
+        ]
+      ]
+    }
+  }
+}

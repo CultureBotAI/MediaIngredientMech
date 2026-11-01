@@ -1,0 +1,76 @@
+{
+  "status": "PASS_SCOPED_CURRENT_SOURCE_CHECKS",
+  "source_record_sha256": "e17d80e75cf8794f5f4e2cab65a4cff77c92f921add55e36185549f75aff3222",
+  "closed_schema_errors": 0,
+  "aggregate_exact_equal": true,
+  "mapping_rows": [
+    {
+      "position": 918,
+      "subject_id": "MIM:D-_-melezitose_Monohydrate",
+      "subject_label": "D-(+)-melezitose monohydrate",
+      "predicate_id": "skos:closeMatch",
+      "object_id": "CHEBI:6731",
+      "object_label": "melezitose",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[kegg_compound]",
+      "mapping_date": "2026-08-13",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "CAS:10030-67-8",
+      "validation_method": "OLS:chebi|SYNONYM_ENRICH|2026-09-02"
+    },
+    {
+      "position": 919,
+      "subject_id": "MIM:D-_-melezitose_Monohydrate",
+      "subject_label": "D-(+)-melezitose monohydrate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "cas:10030-67-8",
+      "object_label": "D-(+)-melezitose monohydrate",
+      "object_source": "registry:cas",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[kegg_compound]",
+      "mapping_date": "2026-08-13",
+      "confidence": "0.99",
+      "comment": "Registry/identity row preserving cas:10030-67-8 alongside parent CHEBI:6731.",
+      "other": "CAS:10030-67-8",
+      "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+    }
+  ],
+  "mapping_dispositions": [
+    {
+      "source_position": 918,
+      "row_sha256": "462644d024dde42b341ec747f2c4cfa90f6861fce844ab5bd8ebaccd5a8d9d0e",
+      "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+      "disposition": "WITHHOLD",
+      "review_reason": "The prior record review does not settle this non-exact relation and its complete synonym scope under the current mapping-only release standard. Preserve the precise parent/close claim for explicit relation review. The historical report validates a parent or nearby target but this focused review has not independently established the actual broadMatch/closeMatch relation with the required supplied-form or material scope. No nonexact relation is promoted from mapping grade or term existence alone.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "918"
+    },
+    {
+      "source_position": 919,
+      "row_sha256": "1e5aaffe48b98b5733dc82a8eebaeb64243446731d40be430f2b55f0f169307f",
+      "owner_record": "data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml",
+      "disposition": "SUPPORTED",
+      "review_reason": "Mapping-only review supports the exact source identity using the archived target/registry identity evidence quoted here. The complete current other payload was read against the identity, registry and synonym evidence; the quoted sections cover the exported same-subject tokens. Unresolved role, recipe, component, occurrence or curation-metadata findings remain outside this row-scoped decision.",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "evidence_key": "919"
+    }
+  ],
+  "pubchem_formula_inchi_match": true,
+  "pubchem_parent_matches_active_chebi6731": true,
+  "nutritional_role": [
+    {
+      "role": "CARBON_SOURCE",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "reference_type": "COMPUTATIONAL_PREDICTION",
+          "reference_text": "Inferred from curated media-role name pattern",
+          "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+        }
+      ]
+    }
+  ],
+  "scientific_or_release_approval_granted": false
+}

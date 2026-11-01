@@ -1,0 +1,43 @@
+{
+  "commands": {
+    "issue1018-green.log": "PYTHONPATH=src python -m pytest -o addopts='' tests/test_ingredient_bundle_dependency_refresh.py -k 'reserved_output_replacement or collisions or input_race or duplicate_destinations or symlink_alias' -q",
+    "issue1018-red.log": "PYTHONPATH=src python -m pytest -o addopts='' tests/test_ingredient_bundle_dependency_refresh.py -k reserved_output_replacement -q (before fix)",
+    "post1018-native-export.log": "PYTHONPATH=src python -m mediaingredientmech.export.ingredient_bundle export --review reports/ingredient_bundle_20261101_followup/review.json --output output/mim-reviewed-ingredient-bundle-1018",
+    "post1018-native-validate.log": "PYTHONPATH=src python -m mediaingredientmech.export.ingredient_bundle validate output/mim-reviewed-ingredient-bundle-1018 --manifest-sha256 169bc30207fc65485a687f1a03b88f2c6241bdbca9939d459f97619a5192b0d6",
+    "post1018-replay.log": "PYTHONPATH=src python scripts/refresh_unchanged_cohort.py --baseline 612860e467aff74ecc1339df7c3c32b1bf940b95 --prior-review reports/ingredient_bundle_20261101/review.json --output ../followup-1012-1017/post1018-replay-review.json --receipt ../followup-1012-1017/post1018-replay-receipt.json --prior-copy ../followup-1012-1017/post1018-replay-prior.json",
+    "post1018-ruff.log": "ruff check src/mediaingredientmech/ingredient_bundle_refresh.py scripts/refresh_unchanged_cohort.py tests/test_ingredient_bundle_dependency_refresh.py",
+    "post1018-tests.log": "PYTHONPATH=src python -m pytest -o addopts='' tests/test_ingredient_bundle_dependency_refresh.py tests/test_ingredient_bundle.py -q"
+  },
+  "execution_head": "612860e467aff74ecc1339df7c3c32b1bf940b95",
+  "exit_codes": {
+    "issue1018-green.log": 0,
+    "issue1018-red.log": 1,
+    "post1018-native-export.log": 0,
+    "post1018-native-validate.log": 0,
+    "post1018-replay.log": 0,
+    "post1018-ruff.log": 0,
+    "post1018-tests.log": 0
+  },
+  "final_test_result": "82 passed in 17.30s",
+  "historical_files_unchanged": true,
+  "issue": 1018,
+  "log_sha256": {
+    "issue1018-green.log": "8cc780a5135df44f5ba2175c92c52fe0189d58a80b7855d4104a2208292ee41b",
+    "issue1018-red.log": "397fbe421e5afcc08b820af7d7fb970639d17db0f038150c460ca0e2abf6e3c1",
+    "post1018-native-export.log": "d3303e2ab0535840112306b05c38f373389780f09081898b5023265372bae56d",
+    "post1018-native-validate.log": "8ebcd9844e21f9e0ad5cc0502f944f93a87cf7b2dba9d1a7badee02c12269ff5",
+    "post1018-replay.log": "6aa5da667f6cb6c9249100f38c106e37121d834550124ac4bfa2948f835ce3f8",
+    "post1018-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "post1018-tests.log": "91d03290f586775be4de913cb3fb9fb1e1e9388b935ed7a762451b8031c3428f"
+  },
+  "manifest_sha256": "169bc30207fc65485a687f1a03b88f2c6241bdbca9939d459f97619a5192b0d6",
+  "original_generation_receipt_sha256": "f33432a0b360db6eb24e6dba0bfdecba74ae4348adc8c6ca8f7b4c528c73cedf",
+  "original_producer_sha256": "6c147ce02431683ce876a9b13bf9a025fdafd2d23d1d7b49873dfe01e75e7877",
+  "postfix_replay_receipt_sha256": "75697d58c9fc67b0f45f97098a2d7ae0a93738afbfb2f81200e1569b9653aab1",
+  "protected_workflow_and_native_export_guards_unchanged": true,
+  "replay_successor_and_prior_copy_byte_identical": true,
+  "scientific_claims_and_comparison_payloads_unchanged": true,
+  "successor_sha256": "d391ec9e0dc004494431f76a81c392efef114746e7bf1eca57c7ce4dc7dec14c",
+  "tests_sha256": "024e7630836c23d9d37f1ac215a54ad857084bac0b12c5241f4ad1b291dedc0a",
+  "working_tree_producer_sha256": "032bf984a9a6044b85802ff17989d7ab02003b19fbf81244f032ba63f20b98db"
+}
