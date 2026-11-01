@@ -1,0 +1,108 @@
+{
+  "retrievals": [
+    {
+      "response": "primary/chebi-17754-primary.json",
+      "receipt": "primary/chebi-17754-primary.json.receipt.json",
+      "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17754/",
+      "retrieved_at": "2026-11-01T05:59:19.299804+00:00",
+      "sha256": "ef5963dbacd1d57d743637073cc8d2a12b6f8d940447e5c1bfdba519081e0961"
+    },
+    {
+      "response": "primary/chebi-17270-primary.json",
+      "receipt": "primary/chebi-17270-primary.json.receipt.json",
+      "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17270/",
+      "retrieved_at": "2026-11-01T05:59:19.073820+00:00",
+      "sha256": "0987c2a9344290ae21ee03ed6da268a9d27053e88dfd214fe06b5c3336529e5b"
+    },
+    {
+      "response": "primary/chebi-36218-ols.json",
+      "receipt": "primary/chebi-36218-ols.json.receipt.json",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:36218",
+      "retrieved_at": "2026-11-01T05:59:19.047028+00:00",
+      "sha256": "272e4d7713b9dc10c7c1022f00dfac33ec22d0878b09b870a68c6c968683fe22"
+    },
+    {
+      "response": "primary/pubchem-13408-09-8-properties.json",
+      "receipt": "primary/pubchem-13408-09-8-properties.json.receipt.json",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13408-09-8/property/Title,MolecularFormula,IUPACName,InChI,InChIKey/JSON",
+      "retrieved_at": "2026-11-01T05:59:18.826949+00:00",
+      "sha256": "2cce2d113ebf3ee3d097472b594e0a08e02a20e5b3e74150d05ead45afebab8c"
+    },
+    {
+      "response": "primary/pubchem-2735049-properties.json",
+      "receipt": "primary/pubchem-2735049-properties.json.receipt.json",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2735049/property/Title,MolecularFormula,IUPACName,InChI,InChIKey/JSON",
+      "retrieved_at": "2026-11-01T05:59:18.851793+00:00",
+      "sha256": "2cce2d113ebf3ee3d097472b594e0a08e02a20e5b3e74150d05ead45afebab8c"
+    }
+  ],
+  "glycerol_alias_entries": [
+    {
+      "selector": "names.SYNONYM[15]",
+      "entry": {
+        "name": "glycyl alcohol",
+        "status": "C",
+        "type": "SYNONYM",
+        "source": "NIST Chemistry WebBook",
+        "ascii_name": "glycyl alcohol",
+        "adapted": true,
+        "language_code": "en"
+      }
+    },
+    {
+      "selector": "names.SYNONYM[17]",
+      "entry": {
+        "name": "Gro",
+        "status": "C",
+        "type": "SYNONYM",
+        "source": "JCBN",
+        "ascii_name": "Gro",
+        "adapted": false,
+        "language_code": "en"
+      }
+    },
+    {
+      "selector": "names.INN[2]",
+      "entry": {
+        "name": "glycerolum",
+        "status": "C",
+        "type": "INN",
+        "source": "ChemIDplus",
+        "ascii_name": "glycerolum",
+        "adapted": true,
+        "language_code": "la"
+      }
+    }
+  ],
+  "beta_lactose_entry": {
+    "selector": "_embedded.terms[0].obo_synonym[4]",
+    "entry": {
+      "name": "LACTOSE",
+      "scope": "hasRelatedSynonym",
+      "type": null,
+      "xrefs": [
+        {
+          "database": null,
+          "id": "pdb-ccd",
+          "description": null,
+          "url": null
+        }
+      ]
+    }
+  },
+  "parent": {
+    "chebi_accession": "CHEBI:17270",
+    "ascii_name": "glycerol 2-phosphate",
+    "definition": "A glycerol monophosphate having the phosphate group at the 2-position."
+  },
+  "pubchem": {
+    "CID": 2735049,
+    "MolecularFormula": "C3H17Na2O11P",
+    "InChI": "InChI=1S/C3H9O6P.2Na.5H2O/c4-1-3(2-5)9-10(6,7)8;;;;;;;/h3-5H,1-2H2,(H2,6,7,8);;;5*1H2/q;2*+1;;;;;/p-2",
+    "InChIKey": "PEMUISUYOHQFQH-UHFFFAOYSA-L",
+    "IUPACName": "disodium;1,3-dihydroxypropan-2-yl phosphate;pentahydrate",
+    "Title": "Sodium 2-glycerophosphate pentahydrate"
+  },
+  "pubchem_independence": "Two retrieval receipts, byte-identical payload; one evidence source, not independent scientific confirmations.",
+  "limitations": "Archived successful primary API bytes; no new source calls. CAS query is PubChem resolution, not a direct CAS Registry assertion. Preliminary web transport failure retained separately."
+}

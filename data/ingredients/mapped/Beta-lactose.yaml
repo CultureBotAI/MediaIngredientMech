@@ -12,7 +12,7 @@ ontology_mapping:
     notes: ChEBI ID CHEBI:36218 found via PubChem CAS-RN cross-reference
 synonyms:
 - synonym_text: lactose
-  synonym_type: EXACT_SYNONYM
+  synonym_type: RELATED_SYNONYM
   source: merged_from_duplicate_mim_record
 - synonym_text: 'Role: Carbon source'
   synonym_type: RAW_TEXT
@@ -95,6 +95,18 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-01T14:17:39.163994+00:00'
+  curator: Codex
+  action: CORRECTED_OWNED_NAME_SOURCE
+  changes: '#669: retyped lactose EXACT_SYNONYM to RELATED_SYNONYM, preserving original
+    source. Captured OLS LACTOSE hasRelatedSynonym, pdb-ccd: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:36218
+    sha256=272e4d7713b9dc10c7c1022f00dfac33ec22d0878b09b870a68c6c968683fe22. This
+    source correction is separate from export SUPPRESS. NONE: bounded source/export
+    correction; native reviews remain authoritative. Policy: https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-6559004728'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 notes: Created from FEBA ontology enrichment workflow. Used in 1 FEBA media formulations.
 chemical_properties:
   cas_rn: 5965-66-2

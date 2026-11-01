@@ -1,0 +1,187 @@
+identifier: CHEBI:86149
+preferred_term: (NH4)2Ni(SO4)2 x 6 H2O
+ontology_mapping:
+  ontology_id: CHEBI:86149
+  ontology_label: ammonium nickel sulfate hexahydrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (NH4)2Ni(SO4)2 x 6 H2O (0.1% w/v)
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: (NH4)2Ni(SO4)2.6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: (NH4)2Ni(SO4)2·6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: (NH4)2Ni(SO4)2・6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: Ammonium nickel(2+) sulfate hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Diammonium nickel disulfate hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nickel ammonium sulfate hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nickel diammonium disulfate hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ammonium nickel sulfate hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ammonium nickel(II) sulfate hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (NH4)2Ni(SO4)2•6H2O
+  synonym_type: HYDRATE_FORM
+  source: merged_from_duplicate_mim_record
+- synonym_text: (NH4)2Ni(SO4)2
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: ammonium nickel(2+) sulfate--water (2/1/2/6)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 150
+  media_count: 150
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:46:31.066380+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:680-452-9 from PubChem API (ontology label) via name preprocessing
+    ((NH4)2Ni(SO4)2·6H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:46:34.477481+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:680-452-9 from PubChem API (ontology label) via name preprocessing
+    ((NH4)2Ni(SO4)2•6H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 56110-30-6 from PubChem (via CHEBI:86149)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: (NH4)2Ni(SO4)2 x 6
+    H2O (0.1% w/v), (NH4)2Ni(SO4)2.6H2O, (NH4)2Ni(SO4)2·6H2O, (NH4)2Ni(SO4)2・6H2O,
+    Ammonium nickel(2+) sulfate hexahydrate, ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: (NH4)2Ni(SO4)2 x 6 H2O,
+    (NH4)2Ni(SO4)2 x 6 H2O (0.1% w/v), (NH4)2Ni(SO4)2.6H2O, (NH4)2Ni(SO4)2・6H2O, Ammonium
+    nickel(2+) sulfate hexahydrate, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (NH4)2Ni(SO4)2, ammonium
+    nickel(2+) sulfate--water (2/1/2/6)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:23:20.785693+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 2 duplicate MIM record(s) into this one: Nh42ni_So426h2o.yaml,
+    Nh42ni_So426h2o_2.yaml. Synonyms, curation_history, and occurrence counts were
+    unioned/summed; winner selected by highest occurrence count with preferred_term
+    readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.459171+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.546749+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=6H2O.2H4N.Ni.2O4S; inchi=InChI=1S/2H3N.Ni.2H2O4S.6H2O/c;;;2*1-5(2,3)4;;;;;;;
+    smiles=O.O.O.O.O.O.O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].[N
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.324845+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112396+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.811698+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''(NH4)2Ni(SO4)2 x 6 H2O'' -> ''ammonium nickel sulfate
+    hexahydrate'': synced to canonical CHEBI label (preferred_term ''(NH4)2Ni(SO4)2
+    x 6 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-27T03:16:39.519591+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 64/94 -> 150/150 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-29T04:18:06.718015+00:00'
+  curator: hydrate_family_cas
+  action: CORRECTED
+  changes: cas_rn 56110-30-6 -> 7785-20-8. 56110-30-6 is the ANHYDROUS parent's CAS;
+    this record is grounded to CHEBI:86149 ammonium nickel sulfate hexahydrate, whose
+    ChEBI dbxref is 7785-20-8 (#334).
+- timestamp: '2026-09-24T07:48:22.753683+00:00'
+  curator: claude
+  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''(NH4)2Ni(SO4)2'' (EXACT_SYNONYM): the anhydrous
+    salt''s label on the hexahydrate record (#669). Kept as provenance only; it must
+    not resolve, be exported, or enter the SSSOM other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+chemical_properties:
+  cas_rn: 7785-20-8
+  data_source: PubChem (via CHEBI:86149)
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: 6H2O.2H4N.Ni.2O4S
+  inchi: InChI=1S/2H3N.Ni.2H2O4S.6H2O/c;;;2*1-5(2,3)4;;;;;;/h2*1H3;;2*(H2,1,2,3,4);6*1H2/q;;+2;;;;;;;;/p-2
+  smiles: O.O.O.O.O.O.O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].[NH4+].[NH4+].[Ni+2]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'
