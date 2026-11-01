@@ -131,7 +131,9 @@ _SRC = REPO_ROOT / "src"
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
-from mediaingredientmech.synonym_policy import is_resolving_synonym_text  # noqa: E402
+from mediaingredientmech.synonym_policy import (  # noqa: E402
+    is_resolving_synonym_text, preferred_term_owners,
+)
 
 DEFAULT_SSSOM = REPO_ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 DEFAULT_REJECT_TSV = REPO_ROOT / "mappings" / "needs_curator_review.tsv"
@@ -981,27 +983,7 @@ def _preferred_term_owners() -> dict[str, frozenset[str]]:
             continue
         records.append((subject_id, data))
 
-    def _rejected(data: dict) -> bool:
-        return str(data.get("mapping_status") or "").strip().upper() == "REJECTED"
-
-    live_by_identifier: dict[str, set[str]] = {}
-    for subject_id, data in records:
-        identifier = str(data.get("identifier") or "").strip()
-        if identifier and not _rejected(data):
-            live_by_identifier.setdefault(identifier, set()).add(subject_id)
-
-    owners: dict[str, set[str]] = {}
-    for subject_id, data in records:
-        term = str(data.get("preferred_term") or "").strip()
-        if not term:
-            continue
-        if _rejected(data):
-            target = data.get("representative") if "representative" in data else data.get("identifier")
-            targets = live_by_identifier.get(str(target or "").strip())
-            owners.setdefault(term.casefold(), set()).update(targets or {subject_id})
-        else:
-            owners.setdefault(term.casefold(), set()).add(subject_id)
-    return {term: frozenset(ids) for term, ids in owners.items()}
+    return preferred_term_owners(dict(records))
 
 
 @lru_cache(maxsize=1)

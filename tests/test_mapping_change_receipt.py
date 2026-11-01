@@ -287,6 +287,7 @@ def test_assembled_evidence_preserves_every_applicable_correction_basis(
         "src/mediaingredientmech/review_claims.py", "src/mediaingredientmech/synonym_policy.py",
         "src/mediaingredientmech/record_refresh.py", "scripts/validate_reviewed_sssom_schema.py",
         "src/mediaingredientmech/validation/mapping_change_receipts.py",
+        "src/mediaingredientmech/form_mapping_review.py",
         "reports/semantic_review_20260921/resolution/historical-review-evidence.json",
     ):
         write(path, "fixture context\n")
