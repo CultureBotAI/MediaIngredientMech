@@ -153,13 +153,16 @@ def post_merge(log: list, write: bool) -> None:
             mapping["ontology_id"] = survivor["ontology_id"]
             mapping["ontology_label"] = survivor.get("ontology_label")
             mapping["ontology_source"] = survivor.get("ontology_source")
+        if record.get("representative") != spec.target_identifier:
+            moves.append(f"representative -> {spec.target_identifier}")
+            record["representative"] = spec.target_identifier
         if moves:
             before = _git_head_sha(path)
             record_curation_event(
                 record, curator=CURATOR, action="CORRECTED",
                 changes=("; ".join(moves) + " on the merge tombstone, so the merged name is credited to the live "
                          f"record that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o precedent). {spec.reason}"),
-                previous_status="REJECTED", new_status="REJECTED", llm_assisted=True, llm_model=LLM_MODEL,
+                previous_status="REJECTED", new_status=None, llm_assisted=True, llm_model=LLM_MODEL,
             )
             print(f"TOMBSTONE {spec.source_slug}: {'; '.join(moves)}")
             if write:

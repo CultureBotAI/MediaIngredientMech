@@ -1,0 +1,53 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_second_required_repair_preserves_history_and_then_is_idempotent _____
+
+producer = <module 'tombstone_repair_1021' from '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-mim/scripts/fix_merge_tombstone_resolution.py'>
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8141/test_second_required_repair_pr0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108d1d6e0>
+
+    def test_second_required_repair_preserves_history_and_then_is_idempotent(producer, tmp_path, monkeypatch):
+        """A later repair adds evidence instead of deleting the earlier repair (#1022)."""
+        repair = producer.TARGETS[0]
+        record_path = ROOT / "data/ingredients/mapped" / f"{repair.slug}.yaml"
+        record = yaml.safe_load(record_path.read_text())
+        assert record["curation_history"][-1]["action"] == "REPAIRED_TOMBSTONE_RESOLUTION"
+        history = copy.deepcopy(record["curation_history"])
+        record.pop("representative")
+        source = tmp_path / f"{repair.slug}.yaml"
+        source.write_text(yaml.safe_dump(record, sort_keys=False))
+        target = tmp_path / f"{repair.target_slug}.yaml"
+        target.write_bytes((ROOT / "data/ingredients/mapped" / target.name).read_bytes())
+        monkeypatch.setattr(producer, "MAPPED_DIR", tmp_path)
+        monkeypatch.setattr(producer, "TARGETS", (repair,))
+        monkeypatch.setattr(producer, "UNMAPPED_HYDRATE_SPECS", ())
+    
+        assert producer.main(["--apply"]) == 0
+        repaired = yaml.safe_load(source.read_text())
+>       assert repaired["curation_history"][:-1] == history
+E       AssertionError: assert [{'timestamp'...]', ...}, ...] == [{'timestamp'...]', ...}, ...]
+E         
+E         Right contains one more item: {'timestamp': '2026-10-17T01:47:05.320044+00:00', 'curator': 'claude', 'action': 'REPAIRED_TOMBSTONE_RESOLUTION', 'cha...6H2O with stale anhydrous term.id CHEBI:35696 resolve through label_index.csv to hexahydrate CHEBI:53503 (#882).', ...}
+E         Use -v to get more diff
+
+tests/test_fix_merge_tombstone_resolution.py:73: AssertionError
+----------------------------- Captured stdout call -----------------------------
+REPAIR Cocl2_X_6_H2o -> CHEBI:53503 (Cobalt_chloride_hexahydrate): representative=CHEBI:53503
+
+Applied 1 tombstone repair(s), 0 unmapped hydrate record(s).
+=============================== warnings summary ===============================
+../../../.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+tests/test_fix_merge_tombstone_resolution.py: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_fix_merge_tombstone_resolution.py::test_second_required_repair_preserves_history_and_then_is_idempotent
+1 failed, 3 deselected, 13 warnings in 0.42s

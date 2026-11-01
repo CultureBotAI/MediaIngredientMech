@@ -1,0 +1,58 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1022",
+  "mutation": "restore deletion of the previous repair event",
+  "argv": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_fix_merge_tombstone_resolution.py",
+    "-k",
+    "second_required",
+    "--no-cov",
+    "-q"
+  ],
+  "exit_code": 1,
+  "result": "1 failed, 3 deselected",
+  "mutant_sha256": "44bab095b8eeb496ab42d464f6a919a302e3576acf25f2721740f4cffd711f31",
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-evidence/history-mutant/pytest.log",
+  "log_sha256": "c37a1fa3cee3b4ee86f950996108b8e0440f79038a72deb7645c3b308b5aa873",
+  "red_receipt": {
+    "name": "step1-history-regression-red",
+    "argv": [
+      "python",
+      "-m",
+      "pytest",
+      "tests/test_fix_merge_tombstone_resolution.py",
+      "-k",
+      "second_required",
+      "--no-cov",
+      "-q"
+    ],
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-mim",
+    "started_at": "2026-11-01T03:16:40.165754+00:00",
+    "environment_profile": "generation-and-native-qc",
+    "finished_at": "2026-11-01T03:16:40.991881+00:00",
+    "exit_code": 1,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step1-history-regression-red.log",
+    "log_sha256": "5c148a1362fc7d49049d4d6dfea6a5ad3944b1187d06a0677b21e3ea2062798c"
+  },
+  "green_receipt": {
+    "name": "step1-history-regression-green",
+    "argv": [
+      "python",
+      "-m",
+      "pytest",
+      "tests/test_fix_merge_tombstone_resolution.py",
+      "tests/test_merge_mapped_records.py",
+      "--no-cov",
+      "-q"
+    ],
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step1-mim",
+    "started_at": "2026-11-01T03:16:44.598209+00:00",
+    "environment_profile": "generation-and-native-qc",
+    "finished_at": "2026-11-01T03:16:45.487046+00:00",
+    "exit_code": 0,
+    "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step1-history-regression-green.log",
+    "log_sha256": "19d7e392ece8447629f5f051d37ea702ae67a6da7cb0a97f2c6114b9995fc250"
+  }
+}

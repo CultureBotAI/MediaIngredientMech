@@ -34,7 +34,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Trisodium citrate·3H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Trisodium citrate・2H2O
   synonym_type: HYDRATE_FORM
@@ -169,6 +169,16 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.389732+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:32142 (Na3-citrate_X_2_H2o) so the post-merge
+    REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+    and retype trihydrate HYDRATE_FORM token to REJECTED_LABEL so it does not collapse
+    onto dihydrate CHEBI:32142 (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
 chemical_properties:
   cas_rn: 6132-04-3
   data_source: CultureBotHT compounds_to_cas.csv
@@ -185,3 +195,4 @@ physicochemical_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Buffer'
+representative: CHEBI:32142

@@ -1,4 +1,4 @@
-generation_date: '2026-11-01T00:52:44.815911+00:00'
+generation_date: '2026-11-01T03:18:42.962641+00:00'
 total_count: 2680
 mapped_count: 2611
 unmapped_count: 0
@@ -50429,7 +50429,7 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl22H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: calcium chloride
     synonym_type: EXACT_SYNONYM
@@ -50541,6 +50541,15 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:34:29.402791+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:3312 (Cacl2) so the post-merge REJECTED_WRONG_FORM_SYNONYMS
+      event (#232/#757) no longer blocks _mim_merge_target, and retype dihydrate HYDRATE_FORM
+      token CaCl22H2O to REJECTED_LABEL (held on live Cacl2_X_2_H2o) (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
   chemical_properties:
     cas_rn: 10043-52-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -50561,6 +50570,7 @@ ingredients:
         Simple component'
       curator_note: Widespread use in media formulations (15 occurrences). High confidence
         based on 'Defined component' property.
+  representative: CHEBI:3312
 - identifier: CHEBI:31345
   preferred_term: Calcium D-Pantothenate
   synonyms:
@@ -60460,10 +60470,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: CoCl2 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 x 4 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 x 6H2O
     synonym_type: HYDRATE_FORM
@@ -60495,6 +60505,9 @@ ingredients:
   - synonym_text: cobalt(II) chloride
     synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
+  - synonym_text: CoCl2.6H2O
+    synonym_type: HYDRATE_FORM
+    source: kg_microbe
   mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
@@ -60594,6 +60607,18 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:47:05.320044+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:53503 (Cobalt_chloride_hexahydrate)
+      so the post-merge REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks
+      _mim_merge_target, retype dihydrate/tetrahydrate HYDRATE_FORM tokens to REJECTED_LABEL
+      (already held on live Cocl2_X_2_H2o and Cocl2_X_4_H2o), and add CoCl2.6H2O as
+      HYDRATE_FORM so recipes labeled CoCl2.6H2O with stale anhydrous term.id CHEBI:35696
+      resolve through label_index.csv to hexahydrate CHEBI:53503 (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
   kg_microbe_node_id: CHEBI:53503
   chemical_properties:
     cas_rn: 7791-13-1
@@ -60614,6 +60639,7 @@ ingredients:
         Simple component'
       curator_note: Widespread use in media formulations (2265 occurrences). High
         confidence based on 'Defined component' property.
+  representative: CHEBI:53503
 - identifier: CHEBI:15346
   preferred_term: Coenzyme A
   ontology_mapping:
@@ -119591,22 +119617,22 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2  x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2  x 76 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2 X 6H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: MgCl2 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2 x 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2x7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2 x 6H2O
     synonym_type: HYDRATE_FORM
@@ -119725,6 +119751,16 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:34:29.375385+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:86345 (Mgcl2_X_6_H2o) so the post-merge
+      CORRECTED event (#312/#739) no longer blocks _mim_merge_target, and retype heptahydrate/typo
+      HYDRATE_FORM tokens to REJECTED_LABEL (heptahydrate labels are held on live
+      Mgcl2_X_7_H2o) (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
   chemical_properties:
     cas_rn: 12285-34-6
     data_source: NCI CACTUS Chemical Identifier Resolver
@@ -119745,6 +119781,7 @@ ingredients:
         Simple component'
       curator_note: Widespread use in media formulations (7 occurrences). High confidence
         based on 'Defined component' property.
+  representative: CHEBI:86345
 - identifier: CHEBI:31793
   preferred_term: MgCO3
   ontology_mapping:
@@ -127333,10 +127370,10 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: (2S)-2-aminopentanedioate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: L-glutamic acid dianion
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: L-glutamate
     synonym_type: REJECTED_LABEL
@@ -127428,6 +127465,28 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:34:29.411293+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:64243 (Sodium_L-glutamate) so the post-merge
+      REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+      and retype L-glutamate(2-) CHEBI:29984 dianion EXACT_SYNONYM tokens to REJECTED_LABEL
+      (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
+  - timestamp: '2026-11-01T03:18:16.205445+00:00'
+    curator: Codex
+    action: CORRECTED_PROVENANCE
+    changes: 'Correct the ontology accession in the preserved 2026-10-17 REPAIRED_TOMBSTONE_RESOLUTION
+      rationale (#1023): CHEBI:29988 is L-glutamate(2-), whose IUPAC name is (2S)-2-aminopentanedioate
+      and whose synonyms include L-glutamic acid dianion (https://www.ebi.ac.uk/chebi/CHEBI:29988,
+      accessed 2026-11-01). The earlier CHEBI:29984 citation was incorrect. This corrects
+      the explanation only; the monosodium L-glutamate representative and both REJECTED_LABEL
+      dispositions are unchanged.'
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: GPT-6 (Codex)
   chemical_properties:
     cas_rn: 16177-21-2
     data_source: PubChem API (preprocessed)
@@ -127443,6 +127502,7 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Nitrogen Source'
+  representative: CHEBI:64243
 - identifier: CHEBI:232798
   preferred_term: Na-L-lactate
   ontology_mapping:
@@ -132345,7 +132405,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2MoO4 . H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 x 2 H2O (0.1% w/v)
     synonym_type: HYDRATE_FORM
@@ -132357,7 +132417,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2MoO4 · H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 ⋅ 2H2O
     synonym_type: HYDRATE_FORM
@@ -132366,10 +132426,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2MoO4.H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4xH2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4⋅2H2O
     synonym_type: HYDRATE_FORM
@@ -132508,6 +132568,16 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:34:29.359228+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:75213 (Na2moo4_X_2_H2o) so the post-merge
+      REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+      and retype monohydrate HYDRATE_FORM tokens to REJECTED_LABEL so monohydrate
+      labels do not collapse onto dihydrate CHEBI:75213 (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
   chemical_properties:
     cas_rn: 10102-40-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -132528,6 +132598,7 @@ ingredients:
         Simple component'
       curator_note: Widespread use in media formulations (255 occurrences). High confidence
         based on 'Defined component' property.
+  representative: CHEBI:75213
 - identifier: CHEBI:75213
   preferred_term: Na2MoO4 x 2 H2O
   ontology_mapping:
@@ -162822,7 +162893,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na2citrate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na3Citrate
     synonym_type: EXACT_SYNONYM
@@ -162955,6 +163026,28 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:34:29.423990+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:32142 (Na3-citrate_X_2_H2o) so the
+      post-merge REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+      and retype disodium citrate CHEBI:63041 token Na2citrate to REJECTED_LABEL (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
+  - timestamp: '2026-11-01T03:18:16.317538+00:00'
+    curator: Codex
+    action: CORRECTED_PROVENANCE
+    changes: 'Correct the ontology citation in the preserved 2026-10-17 REPAIRED_TOMBSTONE_RESOLUTION
+      rationale (#1023): CHEBI:63041 denotes manganese(II) chloride, not disodium
+      citrate (https://www.ebi.ac.uk/chebi/CHEBI:63041, accessed 2026-11-01). The
+      rejection of Na2citrate is based on its two-sodium stoichiometry differing from
+      the trisodium citrate dihydrate representative, with no replacement disodium-citrate
+      accession asserted. This corrects the explanation only; the representative and
+      REJECTED_LABEL disposition are unchanged.'
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: GPT-6 (Codex)
   chemical_properties:
     cas_rn: 6132-04-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -162971,6 +163064,7 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Buffer'
+  representative: CHEBI:32142
 - identifier: CHEBI:33192
   preferred_term: Sodium cyanide
   ontology_mapping:
@@ -178372,7 +178466,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Trisodium citrate·3H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Trisodium citrate・2H2O
     synonym_type: HYDRATE_FORM
@@ -178507,6 +178601,16 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:34:29.389732+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:32142 (Na3-citrate_X_2_H2o) so the
+      post-merge REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+      and retype trihydrate HYDRATE_FORM token to REJECTED_LABEL so it does not collapse
+      onto dihydrate CHEBI:32142 (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
   chemical_properties:
     cas_rn: 6132-04-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -178523,6 +178627,7 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Buffer'
+  representative: CHEBI:32142
 - identifier: mesh:C514290
   preferred_term: Trisodium citrate x H2O
   synonyms:
@@ -220095,6 +220200,14 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:34:29.441965+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:35697 (Trans-cinnamic_Acid) so the
+      post-merge CORRECTED event (#312/#755) no longer blocks _mim_merge_target (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
   chemical_properties:
     cas_rn: 140-10-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -220103,6 +220216,7 @@ ingredients:
     inchi: InChI=1S/C9H8O2/c10-9(11)7-6-8-4-2-1-3-5-8/h1-7H,(H,10,11)
     smiles: '[H]C(=Cc1ccccc1)C(=O)O'
   ingredient_type: SINGLE_INGREDIENT
+  representative: CHEBI:35697
 - identifier: CHEBI:114249
   preferred_term: NaH2PO4•H2O
   synonyms:
@@ -220177,6 +220291,15 @@ ingredients:
     new_status: REJECTED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-10-17T01:34:29.433378+00:00'
+    curator: claude
+    action: REPAIRED_TOMBSTONE_RESOLUTION
+    changes: Set explicit representative CHEBI:114249 (Sodium_phosphate_monobasic_monohydrate)
+      so the post-merge CORRECTED event (#312/#755) no longer blocks _mim_merge_target
+      (#882).
+    previous_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-opus-4-6
   notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 and left unmapped
     for hydrate-state curation rather than merging to CHEBI:37585 anhydrous sodium
     dihydrogenphosphate.'
@@ -220195,6 +220318,7 @@ ingredients:
         dbxref is CAS 7558-80-7), so the two are distinct substances -- MAPPING_SEMANTICS.md
         Section 3: the hydrate takes its own cas: identifier with a narrowMatch to
         the anhydrous parent, rather than being folded onto it.'
+  representative: CHEBI:114249
 - identifier: MICRO:0002393
   preferred_term: Proteose peptone no. 2
   synonyms:

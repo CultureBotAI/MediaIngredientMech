@@ -91,6 +91,14 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.441965+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:35697 (Trans-cinnamic_Acid) so the post-merge
+    CORRECTED event (#312/#755) no longer blocks _mim_merge_target (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
 chemical_properties:
   cas_rn: 140-10-3
   data_source: CultureBotHT compounds_to_cas.csv
@@ -99,3 +107,4 @@ chemical_properties:
   inchi: InChI=1S/C9H8O2/c10-9(11)7-6-8-4-2-1-3-5-8/h1-7H,(H,10,11)
   smiles: '[H]C(=Cc1ccccc1)C(=O)O'
 ingredient_type: SINGLE_INGREDIENT
+representative: CHEBI:35697

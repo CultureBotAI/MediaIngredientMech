@@ -1,0 +1,63 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1023",
+  "base_commit": "9e16535f3d35264dfdc0eda058897da5aa5504b1",
+  "cache_verification_sha256": "2ddecbc31901fb660eef70a6380317a277e3a3895f76f5094150f01471eb6e95",
+  "approval": "NONE: provenance correction only; no mapping or synonym disposition changed",
+  "records": [
+    {
+      "path": "data/ingredients/mapped/Na-glutamate.yaml",
+      "before_sha256": "dcaf1304f4c3e04dc2e13dd4500575250357d2cddeed1e91001d03d8b1f29f2a",
+      "after_sha256": "1b54cebe01112e2c8973e78127a1b2eb83a801535ab1967015545bfa137b5f0e",
+      "preserved_history_sha256": "b00a59cfd871fcb0ab524eaf71fc2c834f24d01e1468470019da770337610595",
+      "unchanged_nonhistory_fields": [
+        "identifier",
+        "preferred_term",
+        "ontology_mapping",
+        "synonyms",
+        "mapping_status",
+        "occurrence_statistics",
+        "chemical_properties",
+        "ingredient_type",
+        "nutritional_roles",
+        "representative"
+      ],
+      "event": {
+        "timestamp": "2026-11-01T03:18:16.205445+00:00",
+        "curator": "Codex",
+        "action": "CORRECTED_PROVENANCE",
+        "changes": "Correct the ontology accession in the preserved 2026-10-17 REPAIRED_TOMBSTONE_RESOLUTION rationale (#1023): CHEBI:29988 is L-glutamate(2-), whose IUPAC name is (2S)-2-aminopentanedioate and whose synonyms include L-glutamic acid dianion (https://www.ebi.ac.uk/chebi/CHEBI:29988, accessed 2026-11-01). The earlier CHEBI:29984 citation was incorrect. This corrects the explanation only; the monosodium L-glutamate representative and both REJECTED_LABEL dispositions are unchanged.",
+        "previous_status": "REJECTED",
+        "llm_assisted": true,
+        "llm_model": "GPT-6 (Codex)"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Citrate.yaml",
+      "before_sha256": "a0c628e0200dff60a691a87bcf6f7623258d35a43496d7a0682d2fb3a288ef86",
+      "after_sha256": "8d5931b67aa99c5877679aa2e956234eef16e5c3ba3ea767e03f47c302d5b27e",
+      "preserved_history_sha256": "934c4cdcd2bfd6c3da98fdf22974cfa602c89a86e1492452718ae10386d9f2b9",
+      "unchanged_nonhistory_fields": [
+        "identifier",
+        "preferred_term",
+        "ontology_mapping",
+        "synonyms",
+        "mapping_status",
+        "occurrence_statistics",
+        "chemical_properties",
+        "ingredient_type",
+        "kg_microbe_node_id",
+        "physicochemical_roles",
+        "representative"
+      ],
+      "event": {
+        "timestamp": "2026-11-01T03:18:16.317538+00:00",
+        "curator": "Codex",
+        "action": "CORRECTED_PROVENANCE",
+        "changes": "Correct the ontology citation in the preserved 2026-10-17 REPAIRED_TOMBSTONE_RESOLUTION rationale (#1023): CHEBI:63041 denotes manganese(II) chloride, not disodium citrate (https://www.ebi.ac.uk/chebi/CHEBI:63041, accessed 2026-11-01). The rejection of Na2citrate is based on its two-sodium stoichiometry differing from the trisodium citrate dihydrate representative, with no replacement disodium-citrate accession asserted. This corrects the explanation only; the representative and REJECTED_LABEL disposition are unchanged.",
+        "previous_status": "REJECTED",
+        "llm_assisted": true,
+        "llm_model": "GPT-6 (Codex)"
+      }
+    }
+  ]
+}

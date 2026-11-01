@@ -15,10 +15,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: (2S)-2-aminopentanedioate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: L-glutamic acid dianion
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: L-glutamate
   synonym_type: REJECTED_LABEL
@@ -110,6 +110,28 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.411293+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:64243 (Sodium_L-glutamate) so the post-merge
+    REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+    and retype L-glutamate(2-) CHEBI:29984 dianion EXACT_SYNONYM tokens to REJECTED_LABEL
+    (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
+- timestamp: '2026-11-01T03:18:16.205445+00:00'
+  curator: Codex
+  action: CORRECTED_PROVENANCE
+  changes: 'Correct the ontology accession in the preserved 2026-10-17 REPAIRED_TOMBSTONE_RESOLUTION
+    rationale (#1023): CHEBI:29988 is L-glutamate(2-), whose IUPAC name is (2S)-2-aminopentanedioate
+    and whose synonyms include L-glutamic acid dianion (https://www.ebi.ac.uk/chebi/CHEBI:29988,
+    accessed 2026-11-01). The earlier CHEBI:29984 citation was incorrect. This corrects
+    the explanation only; the monosodium L-glutamate representative and both REJECTED_LABEL
+    dispositions are unchanged.'
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: GPT-6 (Codex)
 chemical_properties:
   cas_rn: 16177-21-2
   data_source: PubChem API (preprocessed)
@@ -125,3 +147,4 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Nitrogen Source'
+representative: CHEBI:64243

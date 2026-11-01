@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-11-01T03:23:51.583489+00:00",
+  "python": "3.13.2 (main, Mar 17 2025, 21:26:38) [Clang 20.1.0 ]",
+  "checks": [
+    {
+      "command": "python ../step1-independent/verify_step1.py .",
+      "exit_code": 0,
+      "output": "frozen-acceptance.json",
+      "output_sha256": "0f9219168d5cfaf799d8928491c263dba7525803c15a5fb1205853d562690844"
+    },
+    {
+      "command": "PYTHONPATH=$PWD/src python -m pytest -q -o addopts='' -p no:cacheprovider tests/test_fix_merge_tombstone_resolution.py tests/test_merge_mapped_records.py tests/test_unified_rejections.py",
+      "exit_code": 0,
+      "output": "frozen-tests.log",
+      "output_sha256": "192b7d35fcd91935951c5403a51dc33072fb3ac2c6f2899c3d2d36482c16e3e7"
+    }
+  ]
+}

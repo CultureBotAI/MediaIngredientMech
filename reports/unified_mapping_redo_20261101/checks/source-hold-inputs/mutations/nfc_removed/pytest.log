@@ -1,0 +1,27 @@
+...........F..................F..                                        [100%]
+=================================== FAILURES ===================================
+_______________ test_source_hold_keys_use_nfc_trim_and_casefold ________________
+tests/test_unified_source_holds.py:111: in test_source_hold_keys_use_nfc_trim_and_casefold
+    assert any("republishes rejected" in problem for problem in problems)
+E   assert False
+E    +  where False = any(<generator object test_source_hold_keys_use_nfc_trim_and_casefold.<locals>.<genexpr> at 0x1074fdcb0>)
+_ test_source_hold_malformed_rows_fail_closed[r\xe9agent\tCHEBI:9\t\tReason\nre\u0301agent\tCHEBI:9\t\tOther reason\n] _
+tests/test_unified_source_holds.py:133: in test_source_hold_malformed_rows_fail_closed
+    assert gate.check(*export(ledger_rows=rows))
+E   AssertionError: assert []
+E    +  where [] = <function check at 0x107817740>(*(PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8176/test_source_hold_mal.../folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8176/test_source_hold_malformed_row12/holds.tsv')))
+E    +    where <function check at 0x107817740> = gate.check
+E    +    and   (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8176/test_source_hold_mal.../folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8176/test_source_hold_malformed_row12/holds.tsv')) = <function export.<locals>.write at 0x1077d7060>(ledger_rows='réagent\tCHEBI:9\t\tReason\nréagent\tCHEBI:9\t\tOther reason\n')
+=============================== warnings summary ===============================
+../../../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_unified_source_holds.py::test_source_hold_keys_use_nfc_trim_and_casefold
+FAILED tests/test_unified_source_holds.py::test_source_hold_malformed_rows_fail_closed[r\xe9agent\tCHEBI:9\t\tReason\nre\u0301agent\tCHEBI:9\t\tOther reason\n]
+2 failed, 31 passed, 1 deselected, 1 warning in 0.04s

@@ -38,7 +38,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Na2citrate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na3Citrate
   synonym_type: EXACT_SYNONYM
@@ -171,6 +171,28 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-10-17T01:34:29.423990+00:00'
+  curator: claude
+  action: REPAIRED_TOMBSTONE_RESOLUTION
+  changes: Set explicit representative CHEBI:32142 (Na3-citrate_X_2_H2o) so the post-merge
+    REJECTED_WRONG_FORM_SYNONYMS event (#232/#757) no longer blocks _mim_merge_target,
+    and retype disodium citrate CHEBI:63041 token Na2citrate to REJECTED_LABEL (#882).
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-opus-4-6
+- timestamp: '2026-11-01T03:18:16.317538+00:00'
+  curator: Codex
+  action: CORRECTED_PROVENANCE
+  changes: 'Correct the ontology citation in the preserved 2026-10-17 REPAIRED_TOMBSTONE_RESOLUTION
+    rationale (#1023): CHEBI:63041 denotes manganese(II) chloride, not disodium citrate
+    (https://www.ebi.ac.uk/chebi/CHEBI:63041, accessed 2026-11-01). The rejection
+    of Na2citrate is based on its two-sodium stoichiometry differing from the trisodium
+    citrate dihydrate representative, with no replacement disodium-citrate accession
+    asserted. This corrects the explanation only; the representative and REJECTED_LABEL
+    disposition are unchanged.'
+  previous_status: REJECTED
+  llm_assisted: true
+  llm_model: GPT-6 (Codex)
 chemical_properties:
   cas_rn: 6132-04-3
   data_source: CultureBotHT compounds_to_cas.csv
@@ -187,3 +209,4 @@ physicochemical_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Buffer'
+representative: CHEBI:32142

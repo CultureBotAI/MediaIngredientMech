@@ -172,7 +172,8 @@ def apply(log: list, write: bool) -> None:
             record, curator=CURATOR, action="REJECTED_WRONG_FORM_SYNONYMS",
             changes=(f"Retyped REJECTED_LABEL: {', '.join(retired)}: {spec.why} ({ISSUE}). The token is kept as "
                      "provenance only; it must not resolve, be exported, or enter the SSSOM other column."),
-            previous_status=status, new_status=status, llm_assisted=True, llm_model=LLM_MODEL,
+            previous_status=status, new_status=None if status == "REJECTED" else status,
+            llm_assisted=True, llm_model=LLM_MODEL,
         )
         print(f"RETIRE {spec.slug} [{status}]: {', '.join(retired)}")
         if write:

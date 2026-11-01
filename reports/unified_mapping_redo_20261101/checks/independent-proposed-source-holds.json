@@ -1,0 +1,1251 @@
+{
+  "observed_at": "2026-11-01T03:29:38.185579+00:00",
+  "source_repository": "CultureBotAI/CultureMech",
+  "source_commit": "a74dd489720c9df96cc073ffd11568d407d3c06c",
+  "proposal_only": true,
+  "rows": [
+    {
+      "ingredient_name": "1 M K2HPO4",
+      "rejected_id": "CHEBI:131527",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1265_Modified_Cellulolytic_Haloarchaea_Medium.yaml",
+          "selector": "$.solutions[3].composition[0]",
+          "sha256": "488f6368205010d831a5cc5ae42b129a24da52d834be658b8cf3e3639bf864d6",
+          "term": {
+            "id": "CHEBI:131527",
+            "label": "dipotassium hydrogen phosphate"
+          },
+          "concentration": {
+            "value": "417.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 574 prepares Potassium phosphate buffer from 83.4 volumes of 1 M K2HPO4, 16.6 volumes of 1 M KH2PO4, and an equal volume of distilled water."
+        },
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1266_Modified_Cellulolytic_Haloarchaea_Medium.yaml",
+          "selector": "$.solutions[3].composition[0]",
+          "sha256": "dfaf5ae9594ef5f1cdc7c48d3c8aa6825df6b583b075750c4fee278069b63543",
+          "term": {
+            "id": "CHEBI:131527",
+            "label": "dipotassium hydrogen phosphate"
+          },
+          "concentration": {
+            "value": "417.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 574 prepares Potassium phosphate buffer from 83.4 volumes of 1 M K2HPO4, 16.6 volumes of 1 M KH2PO4, and an equal volume of distilled water."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 M KH2PO4",
+      "rejected_id": "CHEBI:63036",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1265_Modified_Cellulolytic_Haloarchaea_Medium.yaml",
+          "selector": "$.solutions[3].composition[1]",
+          "sha256": "488f6368205010d831a5cc5ae42b129a24da52d834be658b8cf3e3639bf864d6",
+          "term": {
+            "id": "CHEBI:63036",
+            "label": "potassium dihydrogen phosphate"
+          },
+          "concentration": {
+            "value": "83.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 574 prepares Potassium phosphate buffer from 83.4 volumes of 1 M K2HPO4, 16.6 volumes of 1 M KH2PO4, and an equal volume of distilled water."
+        },
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1266_Modified_Cellulolytic_Haloarchaea_Medium.yaml",
+          "selector": "$.solutions[3].composition[1]",
+          "sha256": "dfaf5ae9594ef5f1cdc7c48d3c8aa6825df6b583b075750c4fee278069b63543",
+          "term": {
+            "id": "CHEBI:63036",
+            "label": "potassium dihydrogen phosphate"
+          },
+          "concentration": {
+            "value": "83.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 574 prepares Potassium phosphate buffer from 83.4 volumes of 1 M K2HPO4, 16.6 volumes of 1 M KH2PO4, and an equal volume of distilled water."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 M Sodium acetate solution",
+      "rejected_id": "CHEBI:32954",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M873_Syfac_Medium.yaml",
+          "selector": "$.solutions[2]",
+          "sha256": "5ade05f5fc44ead6a248549c46305dbe1e343edf61a482f27800b5323dd7f4b2",
+          "term": {
+            "id": "CHEBI:32954",
+            "label": "sodium acetate"
+          },
+          "concentration": {
+            "value": "20.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "TOGO M873 / JCM Medium 837 adds 20.0 ml/L 1 M sodium acetate solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/mediadive_4801_Main_sol_J837.yaml",
+          "selector": "$.composition[5]",
+          "sha256": "a4747e18766bd4398093a06febbc823292937a23aaf74aea4820a754bb51b81a",
+          "term": {
+            "id": "CHEBI:32954",
+            "label": "sodium acetate"
+          },
+          "concentration": {
+            "value": "20.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive solution 4801 / JCM Medium 837 lists 20.0 ml/L 1 M Sodium acetate solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/syfac_medium.yaml",
+          "selector": "$.solutions[2]",
+          "sha256": "d554cbf54710fa4c0fb0cc808fc801f1772d9b78328c538729e5089e485f40b7",
+          "term": {
+            "id": "CHEBI:32954",
+            "label": "sodium acetate"
+          },
+          "concentration": {
+            "value": "20.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive J837 / JCM Medium 837 adds 20.0 ml/L 1 M sodium acetate solution."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 M Tris base (pH 8)",
+      "rejected_id": "CHEBI:9754",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M970_Peat_Medium_2_For_Methanobacteria.yaml",
+          "selector": "$.solutions[2].composition[0]",
+          "sha256": "1d2091333157aa949e71f07b54db82e92d5abe5256286a8ba950111b0f5ae781",
+          "term": {
+            "id": "CHEBI:9754",
+            "label": "tris"
+          },
+          "concentration": {
+            "value": "variable",
+            "unit": "VARIABLE"
+          },
+          "notes": "JCM Medium 923 prints 7.2 ml 1 M Tris base (pH 8) in its 83 mM TiNTA stock; no final stock volume is stated."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 N NaOH",
+      "rejected_id": "CHEBI:32145",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/brucella_blood_agar_with_hemin_menadione.yaml",
+          "selector": "$.solutions[0].composition[1]",
+          "sha256": "ae88462a762018fb042d340b2fe451c148e491d63fc73b51884d4cfe36385246",
+          "term": {
+            "id": "CHEBI:32145",
+            "label": "sodium hydroxide"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": null
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/pyg_medium_k.yaml",
+          "selector": "$.solutions[1].composition[1]",
+          "sha256": "0e8d4a0c9ffd4a9fe4a0033fccdb2f5d6c69b2bd34a01495676b21ba881efcea",
+          "term": {
+            "id": "CHEBI:32145",
+            "label": "sodium hydroxide"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 469 dissolves hemin in 1 ml of 1 N NaOH before adjusting the hemin solution to 100 ml."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M696_Brucella_Blood_Agar_With_Hemin_Menadione.yaml",
+          "selector": "$.solutions[0].composition[1]",
+          "sha256": "713e970067fcf06ff7140d5f8642ca311ad3de4b14c525ee085d83af407258ee",
+          "term": {
+            "id": "CHEBI:32145",
+            "label": "sodium hydroxide"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ingredient_name": "10% Glucose solution",
+      "rejected_id": "CHEBI:17234",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/mediadive_4784_Main_sol_J825.yaml",
+          "selector": "$.composition[12]",
+          "sha256": "9b7b93208859471b987bb893bb2d1f164b5358d05a3c901858c7927a9eee730b",
+          "term": {
+            "id": "CHEBI:17234",
+            "label": "glucose"
+          },
+          "concentration": {
+            "value": "50.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive solution 4784 / JCM Medium 825 lists 50.0 ml/L 10% Glucose solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/koko_medium.yaml",
+          "selector": "$.solutions[3]",
+          "sha256": "cac5d644d310d1aeef376eb6af4e1c28adbac60b8de572401007f6d598c259ec",
+          "term": {
+            "id": "CHEBI:17234",
+            "label": "glucose"
+          },
+          "concentration": {
+            "value": "50.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive J825 / JCM Medium 825 adds 50.0 ml/L sterile anaerobic 10% glucose stock."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M860_KOKO_Medium.yaml",
+          "selector": "$.solutions[3]",
+          "sha256": "599e61396ed4beb1e96127684e1368e6c740f32cddc5d5ab4448e55608e48c5f",
+          "term": {
+            "id": "CHEBI:17234",
+            "label": "glucose"
+          },
+          "concentration": {
+            "value": "50.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "TOGO M860 / JCM Medium 825 adds 50.0 ml/L sterile anaerobic 10% glucose stock."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "25% HCl (7.7 M)",
+      "rejected_id": "CHEBI:17883",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/JCM_J1427_MODIFIED_METHANOBACTERIUM_MEDIUM.yaml",
+          "selector": "$.solutions[0].composition[0]",
+          "sha256": "fb1bf1bdcfb6d790266951c17965a5c40f7594d5e6363ce51686aca583f97f13",
+          "term": {
+            "id": "CHEBI:17883",
+            "label": "hydrogen chloride"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 187 prints this component in its stock solution."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "5% L-Cysteine·HCl·H2O solution",
+      "rejected_id": "CHEBI:91248",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/JCM_J1422_METHANOCORPUSCULUM_AGGREGANS_MEDIUM.yaml",
+          "selector": "$.ingredients[12]",
+          "sha256": "f5ed137811aaf44e06c1a0f8253ab530156f4b4db73df1ba913ce74b58ee2a09",
+          "term": {
+            "id": "CHEBI:91248",
+            "label": "L-cysteine hydrochloride hydrate"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "Autoclaved under N2 and added after autoclaving the base medium."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "5% Na2S·9H2O solution",
+      "rejected_id": "CHEBI:76209",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/JCM_J1422_METHANOCORPUSCULUM_AGGREGANS_MEDIUM.yaml",
+          "selector": "$.ingredients[13]",
+          "sha256": "f5ed137811aaf44e06c1a0f8253ab530156f4b4db73df1ba913ce74b58ee2a09",
+          "term": {
+            "id": "CHEBI:76209",
+            "label": "sodium sulfide nonahydrate"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "Autoclaved under N2 and added after autoclaving the base medium."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "8% NaHCO3 solution",
+      "rejected_id": "CHEBI:32139",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/JCM_J1422_METHANOCORPUSCULUM_AGGREGANS_MEDIUM.yaml",
+          "selector": "$.ingredients[11]",
+          "sha256": "f5ed137811aaf44e06c1a0f8253ab530156f4b4db73df1ba913ce74b58ee2a09",
+          "term": {
+            "id": "CHEBI:32139",
+            "label": "sodium hydrogencarbonate"
+          },
+          "concentration": {
+            "value": "50.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "Filter-sterilized and added after autoclaving under H2-CO2 (4:1, v/v)."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/mj_medium_for_microaerophilic_autotrophs.yaml",
+          "selector": "$.solutions[1]",
+          "sha256": "c4dc9125a1d98d04bef1566288fa4e51a0aba349745982432b5eda52efaa4e41",
+          "term": {
+            "id": "CHEBI:32139",
+            "label": "sodium hydrogencarbonate"
+          },
+          "concentration": {
+            "value": "5.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive J902 / JCM Medium 902 adds 5.0 ml/L 8% NaHCO3 solution after cooling."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M943_MJ_Medium_For_Microaerophilic_Autotrophs.yaml",
+          "selector": "$.solutions[1]",
+          "sha256": "5f5cdbc6653612dd438659b3bfc3b1599db93088c000692b92ed6bdbfe57732b",
+          "term": {
+            "id": "CHEBI:32139",
+            "label": "sodium hydrogencarbonate"
+          },
+          "concentration": {
+            "value": "5.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "TOGO M943 / JCM Medium 902 adds 5.0 ml/L 8% NaHCO3 solution after cooling."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "Cyanocobalamin (Vitamin B12)",
+      "rejected_id": "CHEBI:176843",
+      "proposed_mim_id": "",
+      "category": "vitamer_class_scope",
+      "reason": "The explicit cyanocobalamin label cannot be treated as the broad vitamin B12 class CHEBI:176843; Vitamin_B12.yaml already rejects Cyanocobalamin. Withhold this source pair rather than guessing a new identity.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/algae/yt75s_v.yaml",
+          "selector": "$.solutions[0].composition[0]",
+          "sha256": "f6eb2b5b7b621af8a5ca2e0f76d82646ecef86f71c8875ce0ff0da06c56f992b",
+          "term": {
+            "id": "CHEBI:176843",
+            "label": "vitamin B12"
+          },
+          "concentration": {
+            "value": "0.0005",
+            "unit": "G_PER_L"
+          },
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ingredient_name": "MnSO4·xH2O",
+      "rejected_id": "CHEBI:86360",
+      "proposed_mim_id": "",
+      "category": "hydration_state",
+      "reason": "The raw label states variable hydration, while CHEBI:86360 and CAS 7785-87-7 denote the anhydrous salt; Mnso4.yaml already rejects variable hydrate aliases. Withhold this pair pending a distinct-form identity.",
+      "cohort": "54_changed",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/JCM_J1503_AUTOTROPHIC_NITROBACTER_MEDIUM.yaml",
+          "selector": "$.solutions[1].composition[0]",
+          "sha256": "a7b31ada44322ef1bc788b0b300cbcbb7525e7688eb5335f4b7b96bf9225da4e",
+          "term": {
+            "id": "CHEBI:86360",
+            "label": "manganese(II) sulfate"
+          },
+          "concentration": {
+            "value": "33.8",
+            "unit": "MG_PER_L"
+          },
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 M CaCl2 solution",
+      "rejected_id": "CHEBI:3312",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1265_Modified_Cellulolytic_Haloarchaea_Medium.yaml",
+          "selector": "$.solutions[0].composition[4]",
+          "sha256": "488f6368205010d831a5cc5ae42b129a24da52d834be658b8cf3e3639bf864d6",
+          "term": {
+            "id": "CHEBI:3312",
+            "label": "calcium dichloride"
+          },
+          "concentration": {
+            "value": "5.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 574 adds 5.0 ml/L 1 M CaCl2 solution to MDS salt water."
+        },
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1266_Modified_Cellulolytic_Haloarchaea_Medium.yaml",
+          "selector": "$.solutions[0].composition[4]",
+          "sha256": "dfaf5ae9594ef5f1cdc7c48d3c8aa6825df6b583b075750c4fee278069b63543",
+          "term": {
+            "id": "CHEBI:3312",
+            "label": "calcium dichloride"
+          },
+          "concentration": {
+            "value": "5.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 574 adds 5.0 ml/L 1 M CaCl2 solution to MDS salt water."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M1005_Modified_Growth_Medium_With_23_Total_Salt_Concentration.yaml",
+          "selector": "$.solutions[0].composition[4]",
+          "sha256": "88106e2f9ea75485fb92bf4c4f972020d9d459efe875779956ab5218b80fdf1d",
+          "term": {
+            "id": "CHEBI:3312",
+            "label": "calcium dichloride"
+          },
+          "concentration": {
+            "value": "5.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 574 adds 5 ml/L 1 M CaCl2 solution to MDS salt water."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 M K2HPO4 solution",
+      "rejected_id": "CHEBI:131527",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M1220_Natronospira_Proteinivora_Medium.yaml",
+          "selector": "$.solutions[0].composition[4]",
+          "sha256": "a45369c9989f2cb914ed79c2d2c4b8987b3babc1caffc53409de93282569c178",
+          "term": {
+            "id": "CHEBI:131527",
+            "label": "dipotassium hydrogen phosphate"
+          },
+          "concentration": {
+            "value": "variable",
+            "unit": "VARIABLE"
+          },
+          "notes": "JCM Medium 1139 adjusts Basic mineral salt medium 1 to pH 6.8-6.9 with 1 M K2HPO4; the volume is not specified."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 M MgCl2 solution",
+      "rejected_id": "CHEBI:6636",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1150_Natranaeroarchaeum_Medium.yaml",
+          "selector": "$.solutions[1].composition[8]",
+          "sha256": "db1df4848f160fd4a18fc4a79935f7fc3fa817a2bd61c42178586ef06c117d8e",
+          "term": {
+            "id": "CHEBI:6636",
+            "label": "magnesium dichloride"
+          },
+          "concentration": {
+            "value": "1.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 1081 adds 1.0 ml/L 1 M MgCl2 solution to the soda based mineral medium."
+        },
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1162_Natronolimnobius_AHT32_Medium_B.yaml",
+          "selector": "$.solutions[0].composition[8]",
+          "sha256": "7f44410f46ff48449f306e84ef1c3ea6bf0a70120271ed2b8eea39dec4079e99",
+          "term": {
+            "id": "CHEBI:6636",
+            "label": "magnesium dichloride"
+          },
+          "concentration": {
+            "value": "1.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 1081 adds 1.0 ml/L 1 M MgCl2 solution to the soda based mineral medium."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M1220_Natronospira_Proteinivora_Medium.yaml",
+          "selector": "$.solutions[0].composition[5]",
+          "sha256": "a45369c9989f2cb914ed79c2d2c4b8987b3babc1caffc53409de93282569c178",
+          "term": {
+            "id": "CHEBI:6636",
+            "label": "magnesium dichloride"
+          },
+          "concentration": {
+            "value": "1.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 1139 adds 1.0 ml 1 M MgCl2 solution after autoclaving Basic mineral salt medium 1."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 M Sodium fumarate solution",
+      "rejected_id": "CHEBI:115156",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M873_Syfac_Medium.yaml",
+          "selector": "$.solutions[3]",
+          "sha256": "5ade05f5fc44ead6a248549c46305dbe1e343edf61a482f27800b5323dd7f4b2",
+          "term": {
+            "id": "CHEBI:115156",
+            "label": "disodium fumarate"
+          },
+          "concentration": {
+            "value": "20.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "TOGO M873 / JCM Medium 837 adds 20.0 ml/L 1 M sodium fumarate solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/mediadive_4801_Main_sol_J837.yaml",
+          "selector": "$.composition[6]",
+          "sha256": "a4747e18766bd4398093a06febbc823292937a23aaf74aea4820a754bb51b81a",
+          "term": {
+            "id": "CHEBI:115156",
+            "label": "disodium fumarate"
+          },
+          "concentration": {
+            "value": "20.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive solution 4801 / JCM Medium 837 lists 20.0 ml/L 1 M Sodium fumarate solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/syfac_medium.yaml",
+          "selector": "$.solutions[3]",
+          "sha256": "d554cbf54710fa4c0fb0cc808fc801f1772d9b78328c538729e5089e485f40b7",
+          "term": {
+            "id": "CHEBI:115156",
+            "label": "disodium fumarate"
+          },
+          "concentration": {
+            "value": "20.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive J837 / JCM Medium 837 adds 20.0 ml/L 1 M sodium fumarate solution."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "1 N KOH",
+      "rejected_id": "CHEBI:32035",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/algae/wees.yaml",
+          "selector": "$.solutions[5].composition[2]",
+          "sha256": "a2680abc0f7883ce6c75bb1ac7788c2317049abbce6c7cdab83e4d5cf2deb22d",
+          "term": {
+            "id": "CHEBI:32035",
+            "label": "potassium hydroxide"
+          },
+          "concentration": {
+            "value": "54",
+            "unit": "ML_PER_L"
+          },
+          "notes": "Equivalent to 5.4 mL per source 100 mL stock batch."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "2 M NH4Cl solution",
+      "rejected_id": "CHEBI:31206",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M1220_Natronospira_Proteinivora_Medium.yaml",
+          "selector": "$.solutions[1].composition[5]",
+          "sha256": "a45369c9989f2cb914ed79c2d2c4b8987b3babc1caffc53409de93282569c178",
+          "term": {
+            "id": "CHEBI:31206",
+            "label": "ammonium chloride"
+          },
+          "concentration": {
+            "value": "4.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 1139 adds 4.0 ml/L 2 M NH4Cl solution after Basal medium 2 is autoclaved and decanted."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "3% L-Cysteine HCl x H2O solution",
+      "rejected_id": "CHEBI:91248",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/mediadive_4784_Main_sol_J825.yaml",
+          "selector": "$.composition[14]",
+          "sha256": "9b7b93208859471b987bb893bb2d1f164b5358d05a3c901858c7927a9eee730b",
+          "term": {
+            "id": "CHEBI:91248",
+            "label": "L-cysteine hydrochloride hydrate"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive solution 4784 / JCM Medium 825 lists 10.0 ml/L 3% L-Cysteine HCl x H2O solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/koko_medium.yaml",
+          "selector": "$.solutions[5]",
+          "sha256": "cac5d644d310d1aeef376eb6af4e1c28adbac60b8de572401007f6d598c259ec",
+          "term": {
+            "id": "CHEBI:91248",
+            "label": "L-cysteine hydrochloride hydrate"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive J825 / JCM Medium 825 adds 10.0 ml/L sterile anaerobic 3% L-cysteine HCl x H2O stock."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M860_KOKO_Medium.yaml",
+          "selector": "$.solutions[5]",
+          "sha256": "599e61396ed4beb1e96127684e1368e6c740f32cddc5d5ab4448e55608e48c5f",
+          "term": {
+            "id": "CHEBI:91248",
+            "label": "L-cysteine hydrochloride hydrate"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "TOGO M860 / JCM Medium 825 adds 10.0 ml/L sterile anaerobic 3% L-cysteine HCl x H2O stock."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "3% Na2S x 9 H2O solution",
+      "rejected_id": "CHEBI:76209",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/mediadive_4784_Main_sol_J825.yaml",
+          "selector": "$.composition[15]",
+          "sha256": "9b7b93208859471b987bb893bb2d1f164b5358d05a3c901858c7927a9eee730b",
+          "term": {
+            "id": "CHEBI:76209",
+            "label": "sodium sulfide nonahydrate"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive solution 4784 / JCM Medium 825 lists 10.0 ml/L 3% Na2S x 9 H2O solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/koko_medium.yaml",
+          "selector": "$.solutions[4]",
+          "sha256": "cac5d644d310d1aeef376eb6af4e1c28adbac60b8de572401007f6d598c259ec",
+          "term": {
+            "id": "CHEBI:76209",
+            "label": "sodium sulfide nonahydrate"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive J825 / JCM Medium 825 adds 10.0 ml/L sterile anaerobic 3% Na2S x 9 H2O stock."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M860_KOKO_Medium.yaml",
+          "selector": "$.solutions[4]",
+          "sha256": "599e61396ed4beb1e96127684e1368e6c740f32cddc5d5ab4448e55608e48c5f",
+          "term": {
+            "id": "CHEBI:76209",
+            "label": "sodium sulfide nonahydrate"
+          },
+          "concentration": {
+            "value": "10.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "TOGO M860 / JCM Medium 825 adds 10.0 ml/L sterile anaerobic 3% Na2S x 9 H2O stock."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "4 M NH4Cl solution",
+      "rejected_id": "CHEBI:31206",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1150_Natranaeroarchaeum_Medium.yaml",
+          "selector": "$.solutions[1].composition[5]",
+          "sha256": "db1df4848f160fd4a18fc4a79935f7fc3fa817a2bd61c42178586ef06c117d8e",
+          "term": {
+            "id": "CHEBI:31206",
+            "label": "ammonium chloride"
+          },
+          "concentration": {
+            "value": "1.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 1081 adds 1.0 ml/L 4 M NH4Cl solution to the soda based mineral medium."
+        },
+        {
+          "path": "data/normalized_yaml/archaea/TOGO_M1162_Natronolimnobius_AHT32_Medium_B.yaml",
+          "selector": "$.solutions[0].composition[5]",
+          "sha256": "7f44410f46ff48449f306e84ef1c3ea6bf0a70120271ed2b8eea39dec4079e99",
+          "term": {
+            "id": "CHEBI:31206",
+            "label": "ammonium chloride"
+          },
+          "concentration": {
+            "value": "1.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "JCM Medium 1081 adds 1.0 ml/L 4 M NH4Cl solution to the soda based mineral medium."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "5% Na2S x 9 H2O solution",
+      "rejected_id": "CHEBI:76209",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M873_Syfac_Medium.yaml",
+          "selector": "$.solutions[5]",
+          "sha256": "5ade05f5fc44ead6a248549c46305dbe1e343edf61a482f27800b5323dd7f4b2",
+          "term": {
+            "id": "CHEBI:76209",
+            "label": "sodium sulfide nonahydrate"
+          },
+          "concentration": {
+            "value": "6.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "TOGO M873 / JCM Medium 837 adds 6.0 ml/L 5% Na2S x 9 H2O solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/mediadive_4801_Main_sol_J837.yaml",
+          "selector": "$.composition[9]",
+          "sha256": "a4747e18766bd4398093a06febbc823292937a23aaf74aea4820a754bb51b81a",
+          "term": {
+            "id": "CHEBI:76209",
+            "label": "sodium sulfide nonahydrate"
+          },
+          "concentration": {
+            "value": "6.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive solution 4801 / JCM Medium 837 lists 6.0 ml/L 5% Na2S x 9 H2O solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/syfac_medium.yaml",
+          "selector": "$.solutions[5]",
+          "sha256": "d554cbf54710fa4c0fb0cc808fc801f1772d9b78328c538729e5089e485f40b7",
+          "term": {
+            "id": "CHEBI:76209",
+            "label": "sodium sulfide nonahydrate"
+          },
+          "concentration": {
+            "value": "6.0",
+            "unit": "ML_PER_L"
+          },
+          "notes": "MediaDive J837 / JCM Medium 837 adds 6.0 ml/L 5% Na2S x 9 H2O solution."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "Ethanol (95 %)",
+      "rejected_id": "CHEBI:16236",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/treponema_rectale_medium.yaml",
+          "selector": "$.solutions[0].solutions[3].composition[1]",
+          "sha256": "4bd96d463410ac1460470b03c78abde6357b9232e48dbc929bd6ba612eaec213",
+          "term": {
+            "id": "CHEBI:16236",
+            "label": "ethanol"
+          },
+          "concentration": {
+            "value": "0.02",
+            "unit": "L"
+          },
+          "notes": "Stated liquid input for this preparation stage, not a per-liter receiving-medium rate; no density or percentage inference. Exact batch input: 20.00 ml; stage=Vitamin K1 solution."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "FeSO4 x 7 H2O (0.1% w/v in 0.1 N H2SO4)",
+      "rejected_id": "CHEBI:75836",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/methanofollis_medium.yaml",
+          "selector": "$.ingredients[6]",
+          "sha256": "5447dfa3e11fbefc0ffcf979a5aa7978a42c28377ec2ef8fbf58cf551f111909",
+          "term": {
+            "id": "CHEBI:75836",
+            "label": "iron(2+) sulfate heptahydrate"
+          },
+          "concentration": {
+            "value": "0.002",
+            "unit": "L"
+          },
+          "notes": "Superseded flattening history, not a current amount:  [Merged 2 duplicates: 0.001998, 0.1]\n\nOriginal main formulation input: 2.00 ml per preparation. Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose"
+        }
+      ]
+    },
+    {
+      "ingredient_name": "HEPES buffer pH 7.8",
+      "rejected_id": "CHEBI:42334",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/algae/P49_Medium.yaml",
+          "selector": "$.solutions[1].composition[1]",
+          "sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a",
+          "term": {
+            "id": "CHEBI:42334",
+            "label": "HEPES"
+          },
+          "concentration": {
+            "value": "12",
+            "unit": "G_PER_L"
+          },
+          "notes": "Converted from 2.4 g/200 mL in the UTEX Vitamin B12 stock."
+        },
+        {
+          "path": "data/normalized_yaml/algae/P49_Medium.yaml",
+          "selector": "$.solutions[2].composition[1]",
+          "sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a",
+          "term": {
+            "id": "CHEBI:42334",
+            "label": "HEPES"
+          },
+          "concentration": {
+            "value": "12",
+            "unit": "G_PER_L"
+          },
+          "notes": "Converted from 2.4 g/200 mL in the UTEX biotin stock."
+        },
+        {
+          "path": "data/normalized_yaml/algae/P49_Medium.yaml",
+          "selector": "$.solutions[3].composition[1]",
+          "sha256": "6497fab0474e3db98cd101155d3975e9699e452268fb241686dd43cbd736cd2a",
+          "term": {
+            "id": "CHEBI:42334",
+            "label": "HEPES"
+          },
+          "concentration": {
+            "value": "12",
+            "unit": "G_PER_L"
+          },
+          "notes": "Converted from 2.4 g/200 mL in the UTEX thiamine stock."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "KOH solution",
+      "rejected_id": "CHEBI:32035",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/archaea/methanobacterium_medium_ii_with_formae.yaml",
+          "selector": "$.solutions[0].composition[12]",
+          "sha256": "c415dc9b23ba58cf4b5355cc9be15cbeee9390518aea952386b9e61fb656cacc",
+          "term": {
+            "id": "CHEBI:32035",
+            "label": "potassium hydroxide"
+          },
+          "concentration": {
+            "value": "variable",
+            "unit": "VARIABLE"
+          },
+          "notes": "TOGO M142 trace minerals prints this component in its stock solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/mb_medium_with_formate.yaml",
+          "selector": "$.solutions[0].composition[12]",
+          "sha256": "13c81d10a17baf039613eed933497d1f414462710932fb14c72d3f4cc2feab7e",
+          "term": {
+            "id": "CHEBI:32035",
+            "label": "potassium hydroxide"
+          },
+          "concentration": {
+            "value": "variable",
+            "unit": "VARIABLE"
+          },
+          "notes": "Component of TOGO M142 trace minerals."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M1070_Acidithrix_Ferrooydans_Medium.yaml",
+          "selector": "$.solutions[1].composition[13]",
+          "sha256": "5932e733fdc26a7e3c7bf97e0514f0eb46992cd01890ec4c950926f41cf6cabb",
+          "term": {
+            "id": "CHEBI:32035",
+            "label": "potassium hydroxide"
+          },
+          "concentration": {
+            "value": "variable",
+            "unit": "VARIABLE"
+          },
+          "notes": "TOGO M142 / JCM Medium 151 adjusts nitrilotriacetic acid to pH 6.5 with KOH solution before adding minerals."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "NaOH (1 N)",
+      "rejected_id": "CHEBI:32145",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/taiyang_medium_no_9_prototype.yaml",
+          "selector": "$.solutions[1].composition[1]",
+          "sha256": "36c194c7843dec9b6ffd3c2caba7c5cc6a8e47ac9649da5870aa578bfdfa3522",
+          "term": {
+            "id": "CHEBI:32145",
+            "label": "sodium hydroxide"
+          },
+          "concentration": {
+            "value": "10",
+            "unit": "ML_PER_L"
+          },
+          "notes": "P2 dissolves 50 mg Haemin in 1 ml 1 N NaOH and fills the stock to 100 ml."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/rumen_bacteria_medium.yaml",
+          "selector": "$.solutions[2].composition[1]",
+          "sha256": "b35ac0877f460c2d6a5c8306012129611504954cb8230e8db630a2d3ac0ed27a",
+          "term": {
+            "id": "CHEBI:32145",
+            "label": "sodium hydroxide"
+          },
+          "concentration": {
+            "value": "0.001",
+            "unit": "L"
+          },
+          "notes": "Original haemin stock input: 1.00 ml per preparation. Source input only; not final volume or volume percentage"
+        }
+      ]
+    },
+    {
+      "ingredient_name": "Sulfuric acid (concentrated)",
+      "rejected_id": "CHEBI:26836",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/Bold_Trace_Stock.yaml",
+          "selector": "$.composition[0]",
+          "sha256": "42ab49e7089a42ded0459d9934173827676715feb486f1d18d9da73e3db08e83",
+          "term": {
+            "id": "CHEBI:26836",
+            "label": "sulfuric acid"
+          },
+          "concentration": {
+            "value": "10",
+            "unit": "ML_PER_L"
+          },
+          "notes": null
+        }
+      ]
+    },
+    {
+      "ingredient_name": "Tricine (pH 8)",
+      "rejected_id": "CHEBI:46760",
+      "proposed_mim_id": "",
+      "category": "preparation_scope",
+      "reason": "The raw label explicitly qualifies a preparation, concentration, solvent, or pH, while fallback selects the neat reagent identity without a reviewed scoped MIM label. Withhold this source pair pending preparation-scope review under MAPPING_SEMANTICS section 0; do not guess a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/DAS_Vitamin_Cocktail.yaml",
+          "selector": "$.composition[0]",
+          "sha256": "a9a04bb1818744b936752d1e5c9bd18ac068e6748da6b51c59f564654f3d2a7d",
+          "term": {
+            "id": "CHEBI:46760",
+            "label": "tricine"
+          },
+          "concentration": {
+            "value": "9.0",
+            "unit": "G_PER_L"
+          },
+          "notes": "Buffer adjusted to pH 8.0"
+        }
+      ]
+    },
+    {
+      "ingredient_name": "MnSO4 x xH2O",
+      "rejected_id": "CHEBI:86360",
+      "proposed_mim_id": "",
+      "category": "hydration_state",
+      "reason": "The raw label states variable hydration, while CHEBI:86360 and CAS 7785-87-7 denote the anhydrous salt; Mnso4.yaml already rejects variable hydrate aliases. Withhold this pair pending a distinct-form identity.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/freshwater_thiosulfate_oxidizing_bacteria_medium.yaml",
+          "selector": "$.solutions[1].composition[2]",
+          "sha256": "3e83c478b7f612fd4cc24987c4ac6f18666415fcf027cd5970fb253878f0edc2",
+          "term": {
+            "id": "CHEBI:86360",
+            "label": "manganese(II) sulfate"
+          },
+          "concentration": {
+            "value": "0.5",
+            "unit": "G_PER_L"
+          },
+          "notes": "TOGO M142 / JCM Medium 151 lists 0.5 g/L MnSO4 x xH2O."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M1138_Microaerophilic_Lutibacter_Medium.yaml",
+          "selector": "$.solutions[1].composition[2]",
+          "sha256": "60256be00b7d7413878a45595a90cae8a8676df18c41c71e095abc3b44d529e4",
+          "term": {
+            "id": "CHEBI:86360",
+            "label": "manganese(II) sulfate"
+          },
+          "concentration": {
+            "value": "0.5",
+            "unit": "G_PER_L"
+          },
+          "notes": "JCM Medium 151 lists 0.5 g/L MnSO4 x xH2O."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M1137_Saltwater_Iron-Oxidizing_Bacteria_Medium-II.yaml",
+          "selector": "$.solutions[1].composition[2]",
+          "sha256": "4195fbb60fc66c04574b82137b25bb2ecc505d69822ca75648722d64b23b60ab",
+          "term": {
+            "id": "CHEBI:86360",
+            "label": "manganese(II) sulfate"
+          },
+          "concentration": {
+            "value": "0.5",
+            "unit": "G_PER_L"
+          },
+          "notes": "JCM Medium 151 lists 0.5 g/L MnSO4 x xH2O."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "MnSO4.xH2O",
+      "rejected_id": "CHEBI:86360",
+      "proposed_mim_id": "",
+      "category": "hydration_state",
+      "reason": "The raw label states variable hydration, while CHEBI:86360 and CAS 7785-87-7 denote the anhydrous salt; Mnso4.yaml already rejects variable hydrate aliases. Withhold this pair pending a distinct-form identity.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M332_PE_Medium_pH_7.2.yaml",
+          "selector": "$.solutions[3].composition[0]",
+          "sha256": "0a3960f81bb29032cb545db919852531f54d3c9b7668e1ffd662fd80c7a8617e",
+          "term": {
+            "id": "CHEBI:86360",
+            "label": "manganese(II) sulfate"
+          },
+          "concentration": {
+            "value": "11.16",
+            "unit": "G_PER_L"
+          },
+          "notes": "JCM Medium 303 adds 10 mL Trace elements solution per liter of Basal salts solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M331_PE_Medium_pH_6.8.yaml",
+          "selector": "$.solutions[3].composition[0]",
+          "sha256": "84f03528eeeef9281184bb7f5eb5c224ed8482eaa40fb94ce4d898ea3627553f",
+          "term": {
+            "id": "CHEBI:86360",
+            "label": "manganese(II) sulfate"
+          },
+          "concentration": {
+            "value": "11.16",
+            "unit": "G_PER_L"
+          },
+          "notes": "JCM Medium 303 adds 10 mL Trace elements solution per liter of Basal salts solution."
+        },
+        {
+          "path": "data/normalized_yaml/bacterial/TOGO_M298_PE_Medium.yaml",
+          "selector": "$.solutions[3].composition[0]",
+          "sha256": "3452951cae36a1babf07a751e00485720d32dc0658a667d21e4d5206f0284cfa",
+          "term": {
+            "id": "CHEBI:86360",
+            "label": "manganese(II) sulfate"
+          },
+          "concentration": {
+            "value": "11.16",
+            "unit": "G_PER_L"
+          },
+          "notes": "JCM Medium 303 adds 10 mL Trace elements solution per liter of Basal salts solution."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "Cyanocobalamin (B12)",
+      "rejected_id": "CHEBI:176843",
+      "proposed_mim_id": "",
+      "category": "vitamer_class_scope",
+      "reason": "The explicit cyanocobalamin label cannot be treated as the broad vitamin B12 class CHEBI:176843; Vitamin_B12.yaml already rejects Cyanocobalamin. Withhold this source pair rather than guessing a new identity.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/rs_medium_nutrient_medium_nm_component.yaml",
+          "selector": "$.solutions[2].solutions[2].composition[0]",
+          "sha256": "cb5a972f2d1da8e1c0f822b4f7a1f5a90e5b8062ef67b8413ef97e8a9f9b6cba",
+          "term": {
+            "id": "CHEBI:176843",
+            "label": "vitamin B12"
+          },
+          "concentration": {
+            "value": "1",
+            "unit": "G_PER_L"
+          },
+          "notes": "Move Cyanocobalamin (B12) from a flattened mix contribution into its single stock. Source 0.0010 g/ml = 1 g/L stock. 0.0000045 L stock / 0.05 L mix explains the former 0.00009 g/L direct contribution. NNM carrier constituents, where present, are separate and not included in this solute-only rate."
+        }
+      ]
+    },
+    {
+      "ingredient_name": "Vitamin B12 (Cobalamin)",
+      "rejected_id": "CHEBI:176843",
+      "proposed_mim_id": "",
+      "category": "vitamer_class_scope",
+      "reason": "The source combines vitamin B12 and the narrower cobalamin name. CHEBI:30411 cobalamin is a subclass through CHEBI:23334 of vitamin B12 CHEBI:176843; the generic class is not an established exact identity for the explicitly qualified source. Withhold pending scope clarification without selecting a replacement.",
+      "cohort": "290_added",
+      "source_contexts": [
+        {
+          "path": "data/normalized_yaml/bacterial/DAS_Vitamin_Cocktail.yaml",
+          "selector": "$.composition[3]",
+          "sha256": "a9a04bb1818744b936752d1e5c9bd18ac068e6748da6b51c59f564654f3d2a7d",
+          "term": {
+            "id": "CHEBI:176843",
+            "label": "vitamin B12"
+          },
+          "concentration": {
+            "value": "0.008",
+            "unit": "G_PER_L"
+          },
+          "notes": "UTEX recipe table specifies 0.0008 g per 100 mL stock (0.008 g/L; 5.9 µM). Note sterilization protocol discrepancy on UTEX source page: the table component cell notes '(add after autoclaving)', whereas the UTEX Directions specify filter-sterilizing the entire 100 mL vitamin cocktail through a 0.45 µm Millipore filter without autoclaving."
+        }
+      ]
+    }
+  ],
+  "count": 33,
+  "additional_count": 21,
+  "scan_scope": "All 290 added rows mechanically screened; current per-record and label-index ownership inspected for all 155 MAPPED rows; 18 source-only rows checked; 117 UNMAPPED rows contain no identity promotion. Source context search used rg -uu including ignored files."
+}

@@ -1,0 +1,120 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_________ test_source_hold_withholds_lookup_and_raw_publication[True] __________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8161/test_source_hold_withholds_loo0')
+indexed = True
+
+    @pytest.mark.parametrize("indexed", [True, False])
+    def test_source_hold_withholds_lookup_and_raw_publication(tmp_path, indexed):
+        if indexed:
+            record(tmp_path, "Reagent", "CHEBI:9", "Reagent", ("borrowed synonym",))
+        ledger(tmp_path, "1 M reagent\tCHEBI:9\t\tReviewed preparation scope\n")
+>       row = build(tmp_path, {"1 M reagent": "CHEBI:9"})["1 M reagent"]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_unified_mapping_source_holds.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_unified_mapping_source_holds.py:40: in build
+    rejections = b.load_mapping_rejections(root, indexes[0], label_index=labels, live=b.live_records(*indexes))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mim_root = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8161/test_source_hold_withholds_loo0')
+name_index = {'reagent': {'mim_id': 'CHEBI:9', 'preferred_term': 'Reagent', 'chebi_id': 'CHEBI:9', 'cas_rn': '123-45-6', 'kg_microb..., 'cas_rn': '123-45-6', 'kg_microbe_node_id': 'CHEBI:9', 'mapping_status': 'MAPPED', 'synonyms': ['borrowed synonym']}}
+label_index = {}
+live = ({'CHEBI:9': {'mim_id': 'CHEBI:9', 'preferred_term': 'Reagent', 'chebi_id': 'CHEBI:9', 'cas_rn': '123-45-6', ...}}, {(...agent'): {'mim_id': 'CHEBI:9', 'preferred_term': 'Reagent', 'chebi_id': 'CHEBI:9', 'cas_rn': '123-45-6', ...}}, {}, {})
+
+    def load_mapping_rejections(
+        mim_root: Path,
+        name_index: dict,
+        *,
+        label_index: Optional[dict] = None,
+        live: Optional[tuple] = None,
+    ) -> dict:
+        """Read reviewed source-ID rejections; never infer them from prefix alone.
+    
+        The ledger preserves the rejected source ID and its curation reason outside
+        the published identity columns. Older MIM checkouts may lack the ledger.
+        A present but malformed or stale ledger must fail rather than silently
+        republish the rejected ID.
+        """
+        path = mim_root / REJECTIONS_PATH
+        if not path.exists():
+            return {}
+        rejections = {}
+        with path.open(encoding='utf-8', newline='') as handle:
+            reader = csv.DictReader(handle, delimiter='\t')
+            columns = ['ingredient_name', 'rejected_id', 'mim_id', 'reason']
+            if reader.fieldnames != columns:
+                raise ValueError(f'{path}: expected columns {columns}')
+            for line, row in enumerate(reader, 2):
+                if None in row or any(not (row.get(c) or '').strip() for c in columns):
+>                   raise ValueError(f'{path}:{line}: incomplete rejection')
+E                   ValueError: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8161/test_source_hold_withholds_loo0/mappings/unified_mapping_rejections.tsv:2: incomplete rejection
+
+scripts/build_unified_ingredient_mapping.py:84: ValueError
+----------------------------- Captured stdout call -----------------------------
+Loading MIM ingredient records...
+  1 MIM records → 2 name entries, 1 CHEBI, 1 ontology IDs
+
+_________ test_source_hold_withholds_lookup_and_raw_publication[False] _________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8161/test_source_hold_withholds_loo1')
+indexed = False
+
+    @pytest.mark.parametrize("indexed", [True, False])
+    def test_source_hold_withholds_lookup_and_raw_publication(tmp_path, indexed):
+        if indexed:
+            record(tmp_path, "Reagent", "CHEBI:9", "Reagent", ("borrowed synonym",))
+        ledger(tmp_path, "1 M reagent\tCHEBI:9\t\tReviewed preparation scope\n")
+>       row = build(tmp_path, {"1 M reagent": "CHEBI:9"})["1 M reagent"]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_unified_mapping_source_holds.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_unified_mapping_source_holds.py:40: in build
+    rejections = b.load_mapping_rejections(root, indexes[0], label_index=labels, live=b.live_records(*indexes))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mim_root = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8161/test_source_hold_withholds_loo1')
+name_index = {}, label_index = {}, live = ({}, {}, {}, {})
+
+    def load_mapping_rejections(
+        mim_root: Path,
+        name_index: dict,
+        *,
+        label_index: Optional[dict] = None,
+        live: Optional[tuple] = None,
+    ) -> dict:
+        """Read reviewed source-ID rejections; never infer them from prefix alone.
+    
+        The ledger preserves the rejected source ID and its curation reason outside
+        the published identity columns. Older MIM checkouts may lack the ledger.
+        A present but malformed or stale ledger must fail rather than silently
+        republish the rejected ID.
+        """
+        path = mim_root / REJECTIONS_PATH
+        if not path.exists():
+            return {}
+        rejections = {}
+        with path.open(encoding='utf-8', newline='') as handle:
+            reader = csv.DictReader(handle, delimiter='\t')
+            columns = ['ingredient_name', 'rejected_id', 'mim_id', 'reason']
+            if reader.fieldnames != columns:
+                raise ValueError(f'{path}: expected columns {columns}')
+            for line, row in enumerate(reader, 2):
+                if None in row or any(not (row.get(c) or '').strip() for c in columns):
+>                   raise ValueError(f'{path}:{line}: incomplete rejection')
+E                   ValueError: /private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8161/test_source_hold_withholds_loo1/mappings/unified_mapping_rejections.tsv:2: incomplete rejection
+
+scripts/build_unified_ingredient_mapping.py:84: ValueError
+----------------------------- Captured stdout call -----------------------------
+Loading MIM ingredient records...
+  0 MIM records → 0 name entries, 0 CHEBI, 0 ontology IDs
+
+=========================== short test summary info ============================
+FAILED tests/test_unified_mapping_source_holds.py::test_source_hold_withholds_lookup_and_raw_publication[True]
+FAILED tests/test_unified_mapping_source_holds.py::test_source_hold_withholds_lookup_and_raw_publication[False]
+2 failed, 29 deselected in 0.15s

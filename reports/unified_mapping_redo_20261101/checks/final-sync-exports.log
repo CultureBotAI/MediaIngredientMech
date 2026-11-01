@@ -1,0 +1,133 @@
+
+Aggregate Individual Ingredients to Collections
+Input:  data/ingredients
+Output: data/curated
+
+note: mapped: 69 record(s) are neither MAPPED nor UNMAPPED (REJECTED), so 
+mapped_count + unmapped_count < total_count. This is accurate, not a miscount — 
+the schema has no slot for these.
+note: unmapped: 13 record(s) are neither MAPPED nor UNMAPPED (AMBIGUOUS, 
+REJECTED), so mapped_count + unmapped_count < total_count. This is accurate, not
+a miscount — the schema has no slot for these.
+⠼ mapped: 2680 ingredients 
+⠼ unmapped: 275 ingredients
+
+Summary:
+  Total ingredients aggregated: 2955
+  Collections written to: data/curated
+    ✓ mapped_ingredients.yaml
+    ✓ unmapped_ingredients.yaml
+
+Export Individual Ingredient Records 
+Input:  data/curated
+Output: data/ingredients
+
+Preserving per-record fields (discussions) for 8 record(s)
+⠴ mapped: 2680/2680 files
+⠴ unmapped: 275/275 files
+
+Summary:
+  Total ingredients: 2955
+  Created: 2955 files
+
+Individual files written to: data/ingredients
+  - Mapped: data/ingredients/mapped
+  - Unmapped: data/ingredients/unmapped
+uv run python scripts/generate_index_files.py
+================================================================================
+GENERATING INDEX FILES
+================================================================================
+
+Loaded 2680 mapped ingredients
+Loaded 275 unmapped ingredients
+
+Total: 2955 ingredients
+
+Generating JSON indexes...
+✓ Created data/curated/mapped_ingredients_index.json (2680 records)
+✓ Created data/curated/unmapped_ingredients_index.json (275 records)
+✓ Created data/curated/all_ingredients_index.json (2955 records)
+
+Generating CSV indexes...
+✓ Created data/curated/mapped_ingredients_index.csv (2680 records)
+✓ Created data/curated/unmapped_ingredients_index.csv (275 records)
+✓ Created data/curated/all_ingredients_index.csv (2955 records)
+
+Generating Markdown indexes...
+✓ Created data/curated/MAPPED_INGREDIENTS.md
+✓ Created data/curated/UNMAPPED_INGREDIENTS.md
+✓ Created data/curated/ALL_INGREDIENTS.md
+
+================================================================================
+✓ ALL INDEX FILES GENERATED
+================================================================================
+
+Files created in data/curated/:
+  JSON: *_index.json (machine-readable)
+  CSV:  *_index.csv (spreadsheet-compatible)
+  MD:   *.md (human-readable)
+uv run python scripts/export_lists.py
+
+Ingredient List Exporter
+
+Loading mapped ingredients from data/curated/mapped_ingredients.yaml...
+  Found 2680 mapped ingredients
+
+Loading unmapped ingredients from data/curated/unmapped_ingredients.yaml...
+  Found 275 unmapped ingredients
+
+Total: 2955 ingredients
+
+Exporting JSON files...
+  ✓ docs/data/mapped_ingredients.json (2680 records)
+  ✓ docs/data/unmapped_ingredients.json (275 records)
+  ✓ docs/data/all_ingredients.json (2955 records)
+
+Exporting CSV files...
+  ✓ docs/data/mapped_ingredients.csv (2680 records)
+  ✓ docs/data/unmapped_ingredients.csv (275 records)
+  ✓ docs/data/all_ingredients.csv (2955 records)
+  ✓ docs/data/label_index.csv (9050 labels)
+
+Exporting MARKDOWN files...
+  ✓ docs/data/mapped_ingredients.md (2680 records)
+  ✓ docs/data/unmapped_ingredients.md (275 records)
+  ✓ docs/data/all_ingredients.md (2955 records)
+
+✅ Export complete!
+
+Files saved to: docs/data
+
+Sample Records:
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃ Identifier           ┃ Ontology ID           ┃ Preferred Term       ┃ Status ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ kgmicrobe.compound:… │ CHEBI:15978           │ Na2 beta-glycerol    │ MAPPED │
+│                      │                       │ PO4 x 5 H2O          │        │
+│ MICRO:0000610        │ MICRO:0000610         │ Ox-bile              │ MAPPED │
+│ MICRO:0001348        │ MICRO:0001348         │ BG-11 Medium         │ MAPPED │
+│ kgmicrobe.ingredien… │ kgmicrobe.ingredient… │ Marine broth 2216    │ MAPPED │
+│ kgmicrobe.ingredien… │ kgmicrobe.ingredient… │ Marine agar 2216     │ MAPPED │
+└──────────────────────┴───────────────────────┴──────────────────────┴────────┘
+
+... and 2950 more
+uv run python scripts/browser_export.py
+
+Browser Export: Ingredients → JSON
+Source: 
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved
+-plan-20261101T031134Z/step1-mim/data/ingredients
+Output: 
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved
+-plan-20261101T031134Z/step1-mim/docs/data/ingredients.json
+
+⠦ Exported 2955 ingredients
+
+Summary:
+  Total ingredients: 2955
+  Mapped: 2611
+  Unmapped: 262
+
+✓ Browser data written to: 
+/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved
+-plan-20261101T031134Z/step1-mim/docs/data/ingredients.json
