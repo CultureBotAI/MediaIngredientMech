@@ -250,36 +250,101 @@ def test_native_reserved_boundary_refuses_scope_change(native_case, monkeypatch,
     assert all((root / p).read_bytes() == w.frozen(p) for p in w.OWNERS)
 
 
-def test_actual_native_producer_rows_and_rejected_kg_alias_boundary(current):
-    pytest.importorskip("kg_microbe_write")
-    if "MIM_OWNED_NAME_PRODUCER_ROOT" not in os.environ:
-        pytest.skip("Separate merged Claw producer source profile is not configured")
-    path = Path(os.environ["MIM_OWNED_NAME_PRODUCER_ROOT"]) / "scripts/build_mim_ingredient_sssom.py"
-    spec = importlib.util.spec_from_file_location("owned_name_draft_native_builder", path)
-    builder = importlib.util.module_from_spec(spec)
-    sys.modules[spec.name] = builder
+_PRODUCER_PROBE = r'''
+import importlib.util, json, sys
+from pathlib import Path
+
+producer = Path(sys.argv[1])
+mode = sys.argv[2]
+if mode == "mixed-origin":
+    pinned = Path(sys.argv[3])
+    sys.path.insert(0, str(pinned / "src"))
+    import kg_microbe_write.registry as registry
+    assert Path(registry.__file__).resolve().is_relative_to(pinned)
+    sys.path.remove(str(pinned / "src"))
+
+path = producer / "scripts/build_mim_ingredient_sssom.py"
+spec = importlib.util.spec_from_file_location("owned_name_native_probe", path)
+builder = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = builder
+try:
     exec(compile(path.read_bytes(), str(path), "exec"), builder.__dict__)
-    records = {p: yaml.safe_load(current.get(Path(p), w.frozen(Path(p)))) for p in w.OWNER_META}
+except ValueError as error:
+    if mode != "mixed-origin":
+        raise
+    print(json.dumps({"refused": str(error)}))
+else:
+    if mode == "mixed-origin":
+        raise AssertionError("Native producer accepted mixed-origin modules")
+    payload = json.load(sys.stdin)
+    records = payload["records"]
     owners = builder.build_owner_index({"MIM:" + Path(p).stem: d for p, d in records.items()})
     labels = {"CHEBI:15978": "sn-glycerol 3-phosphate", "CHEBI:36218": "beta-lactose", "CHEBI:17270": "glycerol 2-phosphate"}
     kg_sources = {k: "fixture" for k in labels}
     rows, events = [], []
-    for p in w.OWNERS:
-        rows.extend(builder._row_from_yaml(w.NATIVE / p, {}, kg_sources,
+    for relative in payload["changed_paths"]:
+        rows.extend(builder._row_from_yaml(Path(payload["mim_root"]) / relative, {}, kg_sources,
             {"CHEBI:15978": ("sn-glycerol 3-phosphate", ["Gro", "glycerolum", "glycyl alcohol"])}, labels,
-            record=records[str(p)], owners=owners, suppressions=events))
-    _, prior = w.table(w.frozen(w.SSSOM))
-    stamps = {(r["subject_id"], r["predicate_id"], r["object_id"]): r["validation_method"] for r in prior if r["validation_method"]}
+            record=records[relative], owners=owners, suppressions=events))
+    stamps = {(r["subject_id"], r["predicate_id"], r["object_id"]): r["validation_method"]
+              for r in payload["prior_rows"] if r["validation_method"]}
     builder.apply_replayed_stamps(rows, stamps)
-    assert rows == w.table(candidate(current))[1]
-    assert project(current, w.tsv(w.table(candidate(current))[0], rows)) == project(current)
     glycerol = {"identifier": "CHEBI:17754", "preferred_term": "glycerol", "mapping_status": "MAPPED",
                 "ontology_mapping": {"ontology_id": "CHEBI:17754", "ontology_label": "glycerol", "mapping_quality": "EXACT_MATCH"},
-                "curation_history": [{"timestamp": STAMP}], "synonyms": []}
+                "curation_history": [{"timestamp": payload["timestamp"]}], "synonyms": []}
     legitimate = builder._row_from_yaml(Path("Glycerol.yaml"), {}, {},
         {"CHEBI:17754": ("glycerol", ["Gro", "glycerolum", "glycyl alcohol"])}, {"CHEBI:17754": "glycerol"},
         record=glycerol, owners={"glycerol": frozenset({"MIM:Glycerol"})})
+    builder._check_producer_bindings()
+    print(json.dumps({"rows": rows, "legitimate": legitimate}))
+'''
+
+
+def producer_probe(payload, *, pinned=None):
+    if "MIM_OWNED_NAME_PRODUCER_ROOT" not in os.environ:
+        pytest.skip("Separate merged Claw producer source profile is not configured")
+    producer = Path(os.environ["MIM_OWNED_NAME_PRODUCER_ROOT"]).resolve()
+    environment = {**os.environ, "PYTHONPATH": os.pathsep.join(map(str, (producer / "src", producer))),
+                   "CLAW_ROOT": str(producer), "CLAW_SRC": str(producer / "src"),
+                   "OPENCLAW_ORCHESTRATION_ROOT": str(producer)}
+    command = [sys.executable, "-c", _PRODUCER_PROBE, str(producer),
+               "mixed-origin" if pinned is not None else "rows"]
+    if pinned is not None:
+        command.append(str(pinned))
+    result = subprocess.run(command, input=json.dumps(payload), capture_output=True,
+                            text=True, env=environment, check=False)
+    assert result.returncode == 0, result.stderr or result.stdout
+    return json.loads(result.stdout)
+
+
+def test_actual_native_producer_rows_and_rejected_kg_alias_boundary(current):
+    # Reproduce #1060's real cached native writer before invoking the other producer.
+    registry = pytest.importorskip("kg_microbe_write.registry")
+    parent_registry = sys.modules["kg_microbe_write.registry"]
+    parent_path = list(sys.path)
+    records = {p: yaml.safe_load(current.get(Path(p), w.frozen(Path(p)))) for p in w.OWNER_META}
+    _, prior = w.table(w.frozen(w.SSSOM))
+    result = producer_probe({"records": records, "changed_paths": [str(p) for p in w.OWNERS],
+                             "prior_rows": prior, "mim_root": str(w.NATIVE), "timestamp": STAMP})
+    assert sys.modules["kg_microbe_write.registry"] is parent_registry is registry
+    assert sys.path == parent_path
+    rows = result["rows"]
+    assert rows == w.table(candidate(current))[1]
+    assert project(current, w.tsv(w.table(candidate(current))[0], rows)) == project(current)
+    legitimate = result["legitimate"]
     assert {"gro", "glycerolum", "glycyl alcohol"} <= {t.casefold() for t in legitimate[0]["other"].split("|")}
+
+
+def test_actual_native_producer_still_refuses_mixed_origin_modules():
+    registry = pytest.importorskip("kg_microbe_write.registry")
+    if "MIM_OWNED_NAME_PRODUCER_ROOT" not in os.environ:
+        pytest.skip("Separate merged Claw producer source profile is not configured")
+    pinned = Path(registry.__file__).resolve().parents[2]
+    producer = Path(os.environ["MIM_OWNED_NAME_PRODUCER_ROOT"]).resolve()
+    if pinned == producer:
+        pytest.skip("Mixed-origin control requires the separate pinned native checkout")
+    result = producer_probe({}, pinned=pinned)
+    assert result["refused"].startswith("Imported producer origin differs from declared source: kg_microbe_write")
 
 
 @pytest.mark.parametrize("field", ["source_yaml_changes_authorized", "affected_receipt_owner"])
