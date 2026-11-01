@@ -3,11 +3,13 @@
 This opt-in export carries a reviewed scoped cohort, registry claims and source
 occurrences together. It does not replace the complete legacy SSSOM release or
 promote its withheld rows. The initial cohort contains the 20 reviewed
-KG-Microbe cases under issues #769 and #770.
+KG-Microbe cases under issues #769 and #770. The current immutable review
+successor is [2026-11-01](../reports/ingredient_bundle_20261101/README.md);
+the original 2026-09-24 review and its scientific claims remain preserved.
 
 ```bash
 python -m mediaingredientmech.export.ingredient_bundle export \
-  --review reports/ingredient_bundle_20260924/review.json \
+  --review reports/ingredient_bundle_20261101/review.json \
   --output output/ingredient-bundle-v1
 python -m mediaingredientmech.export.ingredient_bundle validate \
   output/ingredient-bundle-v1 --manifest-sha256 <exported-manifest-sha256>

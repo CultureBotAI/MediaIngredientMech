@@ -1,0 +1,37 @@
+{
+  "commands": {
+    "focused-tests-final.log": "PYTHONPATH=src python -m pytest -o addopts='' tests/test_ingredient_bundle_dependency_refresh.py tests/test_ingredient_bundle.py -q",
+    "helper-replay.log": "PYTHONPATH=src python reports/ingredient_bundle_20261101/refresh_unchanged_cohort.py --output ../companion-repair/replay-review.json --receipt ../companion-repair/replay-receipt.json --prior-copy ../companion-repair/replay-prior.json",
+    "native-export.log": "PYTHONPATH=src python -m mediaingredientmech.export.ingredient_bundle export --review reports/ingredient_bundle_20261101/review.json --output output/mim-reviewed-ingredient-bundle-1008",
+    "native-validate.log": "PYTHONPATH=src python -m mediaingredientmech.export.ingredient_bundle validate output/mim-reviewed-ingredient-bundle-1008 --manifest-sha256 dd78f1bcf94f069812b7ecad7ab376376f818a6e58488cb949cab839194f1497",
+    "ruff.log": "ruff check reports/ingredient_bundle_20261101/refresh_unchanged_cohort.py tests/test_ingredient_bundle_dependency_refresh.py"
+  },
+  "execution_head": "bf7d514c804670ea3db3e9e75a2c94624554fa26",
+  "exit_codes": {
+    "focused-tests-final.log": 0,
+    "helper-replay.log": 0,
+    "native-export.log": 0,
+    "native-validate.log": 0,
+    "ruff.log": 0
+  },
+  "final_helper_replay_byte_identical": true,
+  "focused_result": "72 passed in 17.86s",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1008",
+  "log_sha256": {
+    "focused-tests-final.log": "f7b047a0e3a9fbcd5571bf6aa1de0dc16d46b923c289df6adfe9fc89e7c9e20d",
+    "helper-replay.log": "b534ab23e0606fb35fb7dd9ade741e5d152846f0558af598c724e0ab6ed1a599",
+    "native-export.log": "9382ee73be40c532667fde74a1c3a6383086865b59f1605f855ff7d64bf7cc40",
+    "native-validate.log": "dc74f147460b240eaac26a6d2a82925112875162e14a2847fd5588d3fc35bcfb",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "native_exporter_and_validator_unchanged": true,
+  "prior_copy_byte_identical": true,
+  "prior_review_sha256": "e0bdc20106e9db70acd72db49bc24a4394f802e3aa8ac1187d3cff7025937dc6",
+  "protected_qc_evidence_workflow_unchanged": true,
+  "review_finding": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1009",
+  "scientific_approval_added": false,
+  "scope": "20 mappings, 18 identifiers, 3 products, 10 occurrences; unchanged scientific claims and decisions",
+  "successor_review_sha256": "84e3572174748d0b801c9da8a0f87541cdfbc01756e10b884da6c4fdb9b23260",
+  "working_tree_helper_sha256": "78822af3c4f921e37522bfd2559c39112cb7343fd5e277966ef99117b4101384",
+  "working_tree_test_sha256": "df746bb961bd97e388ae8bfc0c6f942223a3217dc1db402441a15e268ad7ea1d"
+}

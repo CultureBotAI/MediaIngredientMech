@@ -23,7 +23,7 @@ from mediaingredientmech.ingredient_bundle_contract import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-REVIEW = Path("reports/ingredient_bundle_20260924/review.json")
+REVIEW = Path("reports/ingredient_bundle_20261101/review.json")
 
 
 @pytest.fixture(scope="module")

@@ -35,6 +35,8 @@ to the new whole-file source hash; this is not 2,987 scientific re-reviews.
 | [#901](https://github.com/CultureBotAI/MediaIngredientMech/issues/901) | Current cohort has 72 CLOSE_MATCH records: 68 in PR #912, two with PR #914 ledger overlap, and two source-supported corrections blocked by PR #764's approval supersession dependency. Both melezitose and sodium perchlorate remain unchanged. [Audit and preserved failed attempt](audit901/audit-report.md); [blocked melezitose review](../../reviews/structured/20261101T005659Z-melezitose-formof-blocked-review/review.md). |
 | [#1003](https://github.com/CultureBotAI/MediaIngredientMech/issues/1003) | Reject the verified carnitinamide name left in Carnitine_Hydrochloride after its earlier mapping repair. Official ChEBI48601 versus17126 establishes the amide/carboxylate difference. [Scoped scientific review](../../reviews/structured/20261101T005710Z-carnitine-amide-alias-scientific/review.md). |
 | [#1006](https://github.com/CultureBotAI/MediaIngredientMech/issues/1006) | Independent review found receipt/backup collisions could overwrite evidence or fail after a YAML write. The maintained writer now reserves exclusive outputs before touching the owner, with collision regressions. The blocked melezitose helper and its corresponding fix are archived, not installed as an executable curation step. |
+| [#1008](https://github.com/CultureBotAI/MediaIngredientMech/issues/1008) | CI exposed stale dependency pins in the optional ingredient bundle. A [successor review](../ingredient_bundle_20261101/review.json) preserves the historical review and advances only three container hashes after proving that all 20 owners, 51 claims, selected mapping payloads, complete scientific decisions/evidence, schemas and semantic metadata remain unchanged. Date/version headers alone advance with the canonical curation date. No approval or exporter guard is changed. |
+| [#1009](https://github.com/CultureBotAI/MediaIngredientMech/issues/1009) | Independent review of the companion repair found that identical CLI destinations could collapse before the output writer checked them. The helper validates the ordered resolved destinations before reading inputs or writing files, with no-write regressions for duplicate and aliased paths. |
 
 ## Whole-candidate promotion decision
 
@@ -76,6 +78,13 @@ nonblocking label warnings, six tracked cross-prefix node-ID differences,
 38 Rule K obligations, and 18 non-gating opaque-subject filename warnings.
 The [command receipts](generation/logs/) distinguish successful final checks,
 earlier setup failures and the superseded blocked-proposal checks.
+
+The initial PR CI run additionally exposed the optional companion-bundle
+dependency failure tracked in #1008. Its immutable successor passes native
+export, manifest-pinned replay, 72 focused bundle tests and Ruff. The final
+helper reproduces the successor review byte-for-byte. The historical review
+is preserved; the [successor audit and check receipts](../ingredient_bundle_20261101/README.md)
+distinguish unchanged scientific claims from changed global dependency hashes.
 
 Human scientific decisions remain on [#669](https://github.com/CultureBotAI/MediaIngredientMech/issues/669)
 (generic/stereochemical alias publication policy),
