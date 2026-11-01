@@ -1,0 +1,52 @@
+{
+  "wrapper_sha256": "64e3a3396f61d3892484afb8be1fc748cf6019f422539d196531997d79683717",
+  "issues": [
+    1043,
+    1044
+  ],
+  "fixture_only": true,
+  "cases": {
+    "positive": {
+      "exit_code": 0,
+      "published": true,
+      "audit": true
+    },
+    "audit_collision": {
+      "exit_code": 1,
+      "published": false,
+      "audit": true
+    },
+    "comment_loss": {
+      "exit_code": 1,
+      "published": false,
+      "audit": false
+    },
+    "stamp_loss": {
+      "exit_code": 1,
+      "published": false,
+      "audit": false
+    },
+    "baseline_drift": {
+      "exit_code": 1,
+      "published": false,
+      "audit": false
+    },
+    "missing_promotion": {
+      "exit_code": 1,
+      "published": false,
+      "audit": false
+    },
+    "substituted_promotion": {
+      "exit_code": 1,
+      "published": false,
+      "audit": false
+    },
+    "candidate_substitution": {
+      "exit_code": 1,
+      "published": false,
+      "audit": false
+    }
+  },
+  "verdict": "PASS: positive control publishes jointly; all seven negative controls refuse without a new receipt.",
+  "production_mutations": false
+}

@@ -1,0 +1,2102 @@
+# Approved Step4 lithium glycerophosphate correction: independent bounded final-content review
+
+- Review: 20261101T112115Z-approved-step4-lithium-glycerophosphate-review
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-01T11:18:59.289176Z
+- Finished UTC: 2026-11-01T11:21:15.069656Z
+- Reviewer: Codex independent reviewer /root/step4_design_review (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: false
+
+## Summary
+
+The 11 explicit maintained/generated targets satisfy the approved local lithium-salt identity and bounded publication contract. Exactly 1 of 2955 owners changes; canonical 2981 rows retain 2 changed target mappings and remove 1 false CAS row. Existing holds remain; unified 4170-row output is unchanged and companion 20/51 claims are preserved. All required completed checks and 248 clean-capture integration tests pass. No unresolved in-scope finding remains after #1043–#1047 fixes; scientific and access limits remain explicit.
+
+## Scope And Provenance
+
+Bounded source, SSSOM, guarded-execution, review-hold, unified and unchanged-companion review for approved Step4/#1005.
+
+Selection: All 11 explicitly named targets in the exact staged capture, with 411 hashed target/context inputs; supporting generated surfaces and all unrelated owners receive byte/scope preservation checks, not new scientific review.
+Coverage: full; 11 reviewed / 11 in the declared population.
+Source: working_tree at Git base 838d0c2627552b0094545ebb580b5bb9b1a84d57.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| MIM:Sn-Glycerol_3-phosphate_Lithium_Salt | data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml | maintained | Distinct supplied lithium-salt owner |
+| step4:sssom-parent | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:Sn-Glycerol_3-phosphate_Lithium_Salt; predicate_id=skos:broadMatch; object_id=CHEBI:15978 | snapshot_row | Broader free-acid mapping and retained #390 provenance |
+| step4:sssom-local | mappings/ingredient_mappings.sssom.tsv # subject_id=MIM:Sn-Glycerol_3-phosphate_Lithium_Salt; predicate_id=skos:exactMatch; object_id=kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt | snapshot_row | Exact local identity with procurement CAS display |
+| step4:guarded-writer | scripts/curate_lithium_glycerophosphate.py | maintained | Bounded source and canonical writer |
+| step4:retired-rule-k-pair | mappings/other_cross_record_baseline.tsv # subject_id=MIM:Sn-Glycerol_3-phosphate_Lithium_Salt; token=Glycerol 3-phosphate; expected absence after bounded removal | snapshot_row | Retired target parent-name allowance |
+| step4:open-role | reports/semantic_review_20260921/resolution/assertion-dispositions.tsv # source_record=data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml; assertion_type=nutritional_roles; source_position=1 | snapshot_row | Unchanged provisional carbon role remains OPEN |
+| step4:historical-findings | reports/semantic_review_20260921/resolution/finding-dispositions.tsv # source_record=data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml; finding_id in [SEM:efb20dc38801dfa9e58a,SEM:19e8569ca7ab3c531c7c] | snapshot_row | Mixed historical and role-evidence findings remain OPEN |
+| step4:unified-preservation | UNIFIED_INGREDIENT_MAPPING.tsv | generated | Expected byte-identical unified snapshot |
+| step4:unified-provenance | UNIFIED_INGREDIENT_MAPPING.provenance.json | generated | Fresh input provenance follows actual producer replay |
+| step4:mapping-receipt | reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json | generated | Native approval-free receipt18 |
+| step4:unchanged-companion | reports/ingredient_bundle_20261101_lithium1005/review.json | generated | Unchanged20-owner51-claim companion successor |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native inspect and exact staged capture | passed | True | MIM:Sn-Glycerol_3-phosphate_Lithium_Salt, step4:sssom-parent, step4:sssom-local, step4:guarded-writer, step4:retired-rule-k-pair, step4:open-role, step4:historical-findings, step4:unified-preservation, step4:unified-provenance, step4:mapping-receipt, step4:unchanged-companion | Native inspect captured 411 input hashes and 11 targets at actual working-tree base 838d0c2627552b0094545ebb580b5bb9b1a84d57; staged tree 79b091afb746635ed40b5831930ac08061d242dd matches the feature capture. |
+| Clean capture focused integration tests | passed | True | MIM:Sn-Glycerol_3-phosphate_Lithium_Salt, step4:sssom-parent, step4:sssom-local, step4:guarded-writer, step4:retired-rule-k-pair, step4:open-role, step4:historical-findings, step4:unified-preservation, step4:unified-provenance, step4:mapping-receipt, step4:unchanged-companion | 248 passed; 13 dependency deprecation warnings. No native integration was skipped in this focused run. |
+| Portable evidence and tracked inputs | passed | True | MIM:Sn-Glycerol_3-phosphate_Lithium_Salt, step4:sssom-parent, step4:sssom-local, step4:guarded-writer, step4:retired-rule-k-pair, step4:open-role, step4:historical-findings, step4:unified-preservation, step4:unified-provenance, step4:mapping-receipt, step4:unchanged-companion | 291 archive members / 321 original identities verified, with exact membership and tracked maintained references. |
+| Actual native reviewed and semantic chain | passed | True | MIM:Sn-Glycerol_3-phosphate_Lithium_Salt, step4:sssom-parent, step4:sssom-local, step4:guarded-writer, step4:retired-rule-k-pair, step4:open-role, step4:historical-findings, step4:unified-preservation, step4:unified-provenance, step4:mapping-receipt, step4:unchanged-companion | Independent read-only verification confirms 17 old receipts plus receipt 18, 2979 unchanged unrelated mapping decisions, 2 target holds, unchanged OPEN role/findings and 20/51 companion. |
+| Required repository QC | passed | True | MIM:Sn-Glycerol_3-phosphate_Lithium_Salt, step4:sssom-parent, step4:sssom-local, step4:guarded-writer, step4:retired-rule-k-pair, step4:open-role, step4:historical-findings, step4:unified-preservation, step4:unified-provenance, step4:mapping-receipt, step4:unchanged-companion | Completed just qc passes, including native SSSOM, roundtrip and flat-export gates; separate product, CURIE, unified and writer gates also pass. |
+| Completed full test suite | passed | True | MIM:Sn-Glycerol_3-phosphate_Lithium_Salt, step4:sssom-parent, step4:sssom-local, step4:guarded-writer, step4:retired-rule-k-pair, step4:open-role, step4:historical-findings, step4:unified-preservation, step4:unified-provenance, step4:mapping-receipt, step4:unchanged-companion | 3744 passed, 1 skipped, 27 warnings; no coverage percentage claimed. Full suite was inspected through bound actual receipts and not needlessly repeated in the capture. |
+| Finding fixes and adversarial controls | passed | True | MIM:Sn-Glycerol_3-phosphate_Lithium_Salt, step4:sssom-parent, step4:sssom-local, step4:guarded-writer, step4:retired-rule-k-pair, step4:open-role, step4:historical-findings, step4:unified-preservation, step4:unified-provenance, step4:mapping-receipt, step4:unchanged-companion | #1043–#1047 were filed before fixes and independently re-reviewed. Receipt binding/reservation, Git path scope, optional-runtime tests and rename endpoints pass their bounded controls. |
+| Explicit optional validation limits | unavailable | False | MIM:Sn-Glycerol_3-phosphate_Lithium_Salt, step4:sssom-parent, step4:sssom-local, step4:guarded-writer, step4:retired-rule-k-pair, step4:open-role, step4:historical-findings, step4:unified-preservation, step4:unified-provenance, step4:mapping-receipt, step4:unchanged-companion | Product checks retain 101 non-blocking warnings and 5303 no-adapter pairs; actual-KG B4 coverage lacks BTO/MICRO transformed files. These are not universal label or ontology-membership validations. |
+
+## Scientific And Domain Assessments
+
+### Approved distinct supplied lithium form
+
+identity: supported. Targets: MIM:Sn-Glycerol_3-phosphate_Lithium_Salt.
+
+The exact approved local compound identity and broad free-acid parent are represented conservatively. Sigma procurement CAS is contextual supply metadata. Active free-acid chemistry is removed while the exact old bundle, eight prior events, rejected labels and role evidence remain preserved.
+
+### Bounded three-to-two SSSOM transformation
+
+representation: supported. Targets: step4:sssom-parent, step4:sssom-local, step4:retired-rule-k-pair.
+
+Broad CHEBI:15978 retains the #390 comment and historical stamp. Exact local identity retains its stamp and procurement CAS display. Old source tokens survive; false exact CAS and generic parent alias are removed. All unrelated canonical bytes remain unchanged.
+
+### Guarded source, promotion, receipts and closure controls
+
+provenance: supported. Targets: step4:guarded-writer, step4:mapping-receipt.
+
+Actual writer, native candidate and completed transaction receipts bind the one-owner correction. The final execution package preserves original paths, source identities, failed attempts and re-review evidence. Corrected wrappers refuse receipt collisions, changed promotion inputs and incomplete Git path comparisons; no review result grants scientific approval.
+
+### Unchanged provisional role and mixed historical findings
+
+scope: supported. Targets: step4:open-role, step4:historical-findings.
+
+Both target mappings remain WITHHOLD. The provisional CARBON_SOURCE payload/evidence stays OPEN, as do both mixed/role findings under the new owner hash. Unrelated assertion decisions and the prior NLDM withdrawals remain unchanged; full scientific release remains FAIL.
+
+### Actual zero-change unified producer replay
+
+consistency: supported. Targets: step4:unified-preservation, step4:unified-provenance.
+
+The actual native unified output is byte-identical to baseline/canonical with 4170 names and 209330 occurrences, including hash-prefixed names. Native provenance matches current 2955-owner inputs. Only provenance is published, with zero rejected rows missing identity and zero local-compound ChEBI leaks.
+
+### Unchanged scoped companion and owned selectors
+
+consistency: supported. Targets: step4:unchanged-companion.
+
+The immutable companion preserves 20 owners and 51 complete claims/decisions; 8 mapping locators move after row removal. The target remains excluded. Only the owned workflow/test/documentation selectors advance; historical reviews, qc-evidence and the vendored pin remain intact.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| semantics | MAPPING_SEMANTICS.md; Sections3 and SSSOM registry/predicate rules | supports | Section 3 exact supplied-form identity procedure and SSSOM predicate/registry provenance contract govern this review. |
+| owner | data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml | supports | Full corrected record: exact approved local identity, broad free-acid parent, exact procurement note, no active free-acid chemistry, append-only history and unchanged provisional role. |
+| primary | reports/lithium_glycerophosphate_1005_20261101/sources/manifest.json | supports | Hash-bound inspected Sigma 94124 extracted primary-page text, ChEBI 15978 and PubChem 439162 captures support the lithium-salt versus free-acid distinction. Failed empty Sigma HTTP capture and ignored local CSV are explicitly classified. |
+| sigma | reports/lithium_glycerophosphate_1005_20261101/sources/sigma-94124-web-response.json | supports | Supplier page names the lithium product, variable Li content and free-acid mass basis; it does not settle lithium stoichiometry. |
+| canonical | mappings/ingredient_mappings.sssom.tsv; subject_id=MIM:Sn-Glycerol_3-phosphate_Lithium_Salt | supports | Exactly two surviving target rows: broad CHEBI:15978 and exact local registry; no exact CAS row; #390, original stamps and source tokens preserved. |
+| mapping_receipt | reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json | supports | Native sequence 18 is approval-free and binds one owner plus 2 changed/1 removed/0 added rows; prior 17 links replay unchanged. |
+| semantic | reports/semantic_review_20260921/resolution/current-review.json | supports | Scientific release remains FAIL; existing blocking findings and open assertions remain explicit. |
+| roles | reports/semantic_review_20260921/resolution/assertion-dispositions.tsv; source_record=data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml and target mapping triples | supports | Target provisional role payload/evidence is unchanged and OPEN; surviving mapping assertions are also OPEN. |
+| findings | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; SEM:efb20dc38801dfa9e58a; SEM:19e8569ca7ab3c531c7c | supports | The mixed historical finding and role-evidence finding remain OPEN; current-owner binding changes without blanket retirement. |
+| companion | reports/ingredient_bundle_20261101_lithium1005/dependency-refresh.json | supports | Actual refresh preserves 20 owner hashes and 51 complete claim decisions; 8 base mapping locators move. No target owner enters the cohort and no approval is added. |
+| archive | reports/lithium_glycerophosphate_1005_20261101/execution/manifest.json | supports | Portable verifier passes exact 291-member archive membership, 321 original identities, decoded/raw hashes, command/log bindings and tracked maintained references. |
+| final_checks | reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-final-validation.json; Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-final-validation.json; raw SHA256 2f659fee7519236e9f0a3ebb139e1f16f0f5463425ff61fe455b4a69d4869c74; encoding identity | supports | Completed native chain, full just qc, product/unified/writer gates and full suite: 3744 passed / 1 skipped / 27 warnings are bound to actual command receipts. No coverage percentage is asserted. |
+| actual_surfaces | reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/actual-generated-state.json; Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/actual-generated-state.json; raw SHA256 30966c58db5a92ba5a7bb1bd11198e5a0753831b22c31862811b7e1160f45c6b; encoding identity | supports | Independent actual-output comparison proves bounded aggregate/index/browser/visual changes, preserved graph coordinates and unified byte equality; all 19432 unified input hashes were rechecked. |
+| unified | reports/lithium_glycerophosphate_1005_20261101/execution/unified/unified-generation-receipt.json.gz; Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-unified-evidence/unified-generation-receipt.json; raw SHA256 9ed6ba59e25986d2a21951f8f7b6a0d7b267480b2cc5cf1645acb04f90c37a9a; encoding gzip | supports | Actual native unified rebuild equals the canonical/base bytes: 4170 names and 209330 occurrences. Only provenance is guarded-published; producer and actual unified runtime are Claw 6a717258. |
+| receipt_fixes | reports/lithium_glycerophosphate_1005_20261101/execution/independent/receipt-fix-controls/results.json; Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/receipt-fix-controls/results.json; raw SHA256 e86ff83b69bd941d9d5984b12347817bf479f34a938b963fb328fc279aec70dd; encoding identity | supports | Independent exact-wrapper controls verify #1043 joint receipt/audit reservation and #1044 completed-promotion binding: positive plus seven corruption/collision controls. |
+| git_scope | reports/lithium_glycerophosphate_1005_20261101/execution/independent/chain-1045-actual.json; Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/chain-1045-actual.json; raw SHA256 d802944e379cb1f5790c7f40564ea307cd94ab79e6126a37fb3a492113f24179; encoding identity | supports | Independent actual Git inventory verifies 2955 owner paths and 2954 unchanged non-target records after the NUL-path #1045 repair. |
+| runtime_fix | reports/lithium_glycerophosphate_1005_20261101/execution/independent/preapplication-addendum.json; Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/preapplication-addendum.json; raw SHA256 cb3deb09bc87755c969e93cce5460978f48671e04ecd59383d9b04082de0fe4c; encoding identity | supports | Independent #1046 re-review: native 49/49; hermetic no-Claw: 16 passes / 33 explicitly optional skips, with pure identity/provenance/promotion controls active. |
+| closure_fix | reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/merge-helper-independent-review.json; Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/merge-helper-independent-review.json; raw SHA256 7e33fe35f4dcfc0a1e688578bb65edf35c49db36b322ba23845607b9df534c31; encoding identity | supports | Independent #1045/#1047 closure helper checks preserve all other ownership guards ; 7 real Git regressions and the original rename-resurrection counterexample pass after correction. No production cleanup was executed by this reviewer. |
+| capture_tests | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-capture-integrations-v1.json; Fresh post-freeze capture receipt; bound log /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-capture-integrations-v1.log | supports | Exact staged capture: 248 focused writer, receipt, companion and semantic mapping/review regressions pass, including all 49 native lithium cases. |
+| capture_package | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-portable-package-v1.json; Fresh post-freeze capture receipt; bound log /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-portable-package-v1.log | supports | Exact staged capture: portable package verification with --require-tracked passes. |
+
+## Limits And Additional Notes
+
+- Scientific_review is false: the user-approved identity is checked for faithful evidence-backed representation; provisional role support, salt stoichiometry and full scientific release are not newly approved.
+- Sigma evidence is successful extracted primary-page text. Its separate empty HTTP response timed out; the ignored CultureBotHT CSV is hash-bound local context rather than a commit-attested source. No direct CAS Registry verification or exhaustive ontology-absence claim is made.
+- Product validation retains101 non-blocking warnings and 5303 no-adapter pairs; BTO/MICRO transformed inputs are unavailable for native B4 membership coverage. Six existing cross-prefix KG node warnings remain for the later #870 step.
+- Full suite has 1 skipped test and 27 warnings; hermetic MIM-only tests intentionally skip 33 optional Claw integrations, while all 49 native lithium cases ran in the fresh 248-test capture. No local coverage percentage is claimed.
+- The authoritative package contains pre-freeze checks; fresh capture test/package logs retain their exact standalone RUN paths and hashes. This review attests working-tree bytes at actual durable base 838d, not a fabricated feature commit or supervisor receipt.
+- #1043–#1047 are historical preapplication/runtime findings with retained before/fix/re-review evidence. Empty final findings means no remaining finding in this scope; it neither closes their GitHub issues nor invents structured-finding predecessor bindings.
+- MIM validation used pinned Claw 16fd7c9484d98b14a53aec55616d26dae70a0af7. SSSOM producer and actual unified runtime used 6a7172585eb68da7f4fe01aee75a82458ddd470c. CultureMech input context is a74dd489720c9df96cc073ffd11568d407d3c06c. No paid providers, cycle changes or production cleanup were performed by this reviewer.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261101T112115Z-approved-step4-lithium-glycerophosphate-review
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: 'Approved Step4 lithium glycerophosphate correction: independent bounded final-content
+  review'
+started_at: '2026-11-01T11:18:59.289176Z'
+finished_at: '2026-11-01T11:21:15.069656Z'
+reviewer:
+  identity: Codex independent reviewer /root/step4_design_review
+  kind: agent
+  model: gpt-6
+  independence: independent
+  independence_basis: Separate reviewer; authored no production writer, source record,
+    canonical mapping, native chain, package or closure helper. Changes were limited
+    to isolated diagnostic probes/evidence and this native review pair. Findings were
+    reported before root filed issues and authors fixed them.
+skill: .claude/skills/review-sssom-output/SKILL.md
+completion: completed
+verdict: pass_with_limitations
+scientific_review: false
+summary: 'The 11 explicit maintained/generated targets satisfy the approved local
+  lithium-salt identity and bounded publication contract. Exactly 1 of 2955 owners
+  changes; canonical 2981 rows retain 2 changed target mappings and remove 1 false
+  CAS row. Existing holds remain; unified 4170-row output is unchanged and companion
+  20/51 claims are preserved. All required completed checks and 248 clean-capture
+  integration tests pass. No unresolved in-scope finding remains after #1043–#1047
+  fixes; scientific and access limits remain explicit.'
+source:
+  git_revision: 838d0c2627552b0094545ebb580b5bb9b1a84d57
+  state: working_tree
+  inputs:
+  - path: .claude/skills/curate-yaml-record/references/review-checklist.md
+    sha256: d4df94935abfd922e84c3512e9a9b7735240f8e266d9a3ae23bb4933926b04eb
+    role: context
+  - path: .claude/skills/map-media-ingredients/SKILL.md
+    sha256: 9431c262e190cd57ce05692487a0bc639859c9e877648d3af7612922221f6a1b
+    role: context
+  - path: .claude/skills/mediaingredientmech-evolve-workflow/SKILL.md
+    sha256: 2c563dd9b5b76eacb067b20868c3171af622d6304452ed1318bca51fe3eff05d
+    role: context
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: .claude/skills/review-yaml-record/SKILL.md
+    sha256: 4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1
+    role: context
+  - path: .github/workflows/qc-evidence.yaml
+    sha256: 288ef1795582105763952c4104d1455c1fef273a65528949f1e558d39c7306f3
+    role: context
+  - path: .github/workflows/qc-reviewed-sssom.yaml
+    sha256: c65d70baa6e2ed583e8f9069c47339aa053422093565fc6e465139ee885b01d0
+    role: context
+  - path: .python-version
+    sha256: 02e735b3dfe1c32833eb550b7ff8ffa17f5f2bc3fa1e7bae61a8f5a3883ce398
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+    role: context
+  - path: UNIFIED_INGREDIENT_MAPPING.provenance.json
+    sha256: 894a4bd1ce014e9a78d7abc27d206112c299f971124c5c8a0059c0e84f6973c4
+    role: target
+  - path: UNIFIED_INGREDIENT_MAPPING.tsv
+    sha256: ca62e2f031ebe0f9e6185efc7816207912095beef9799a04634c889cc27196b5
+    role: target
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/curated/ALL_INGREDIENTS.md
+    sha256: 14d5cf32b6ae155ad73807248cd5d5ec650705c9110564d8e5c01bc19bec748b
+    role: context
+  - path: data/curated/MAPPED_INGREDIENTS.md
+    sha256: f4c65d00920b302d5727ff7fa11d521c77a3ca65bdba4312d0dd1007b0369313
+    role: context
+  - path: data/curated/all_ingredients_index.csv
+    sha256: 3ae9822dae6f0f0dc22c622139952da151a1bf73c297ddf673b30f50a79207df
+    role: context
+  - path: data/curated/all_ingredients_index.json
+    sha256: 9900d1c5e4a52c2eb6da1b1c4ec4f7f59478a835322773a9d86e7423890bfa5b
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 17a808bc720de153df54cdb2ec6dbc8d6a772705916a9b7b6087112672dafc3b
+    role: context
+  - path: data/curated/mapped_ingredients_index.csv
+    sha256: b29aed42a8522462ead2be8b79bc6f241fed26a1b4d7a5f5e63e1e926a29dc37
+    role: context
+  - path: data/curated/mapped_ingredients_index.json
+    sha256: 3053aab22c12fb1aab029e27da5c48c5de318fc5eefdce76571a504a05cfacb7
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: 718c1093e6c9f87950dd07d3f282ac65224f5b18cc4fbbc6a4d266ef115040b1
+    role: context
+  - path: data/ingredients/mapped/Glycerol_3-phosphate.yaml
+    sha256: 541136769c3854f039e315c0882f4d8fe5d6b7b0d35e897b1045ef720dc9518f
+    role: context
+  - path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    sha256: 4b9f262ea27e2ad760b43ae9e3fa4af7e30a4f1af88573335e5beef08832e6e4
+    role: target
+  - path: docs/INGREDIENT_BUNDLE.md
+    sha256: 9730deb8d3dad67a942c194536a10ddaf3cc4c3ae3456ee0431c967caaabffa9
+    role: context
+  - path: docs/MERGE_QUEUE.md
+    sha256: 3c6754c7e6db86759b3548a702e15cf004f23a8a31835c55e790d7a12071a996
+    role: context
+  - path: docs/SSSOM_RELEASE.md
+    sha256: 923a4d139ceb03366a9a9895ee3c67169d3890f4b92a2706358a974ad359a4cb
+    role: context
+  - path: docs/data/all_ingredients.csv
+    sha256: 03ed99877899a7c900cbd56676e5c4c9a289e17997cb35aced4b50731c43369d
+    role: context
+  - path: docs/data/all_ingredients.json
+    sha256: e2099726353e48099a701964422f53ef22c5625d97ca9173c732086f1cdfa9e6
+    role: context
+  - path: docs/data/all_ingredients.md
+    sha256: 4b2f4ddee703386237e8f15e0ddc28ac72759f9eaf23090421ae97563b7c3145
+    role: context
+  - path: docs/data/ingredient_graph.json
+    sha256: 1c35c85d12f8e75680d9f298c5bc4bf7178eeb4d1d5a6fa3b38cbb5187955ba6
+    role: context
+  - path: docs/data/ingredient_umap.json
+    sha256: 776f86a27acdbedd72921788f1e4266fe4321ed2628afdec0a7195e59d4ee0b1
+    role: context
+  - path: docs/data/ingredients.json
+    sha256: cbe454bd391d9de7dbe89f86efaf41bf4a933c8fbde91aea497bc4e2c6fca1ae
+    role: context
+  - path: docs/data/label_index.csv
+    sha256: 86bb7d20fb0dd9faa40b254f6b2e5af017ec920732a96bd1299055f60bd22bc9
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: ec36544bc63bf925104995e1938558c375c73aef55000eb0924af7d66abdf01a
+    role: context
+  - path: docs/data/mapped_ingredients.json
+    sha256: b93b756e0f00f6e2da52946880f3bdc342b1ea8d9378ce16b0f2975f3cb95f6c
+    role: context
+  - path: docs/data/mapped_ingredients.md
+    sha256: e99eff6434d167de4ce3d5ad1b0a234f925b821ca3ce4973c9ae12b498561691
+    role: context
+  - path: docs/data/unmapped_ingredients.md
+    sha256: 7680044df4edf1fc163b3da9e51c19a4101557696e3397c03e38f72145128431
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: justfile
+    sha256: a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a
+    role: context
+  - path: mappings/culturemech_recipe_membership.tsv
+    sha256: 777effdf97560aae1f266eb47770b3144947f5ad4f764a6dfe12845b8455ff75
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9
+    role: target
+  - path: mappings/other_cross_record_baseline.tsv
+    sha256: 8305c7f06d05466de1c49bd76c9ddaba17e53ecbd28a5d9dde1d36e59db0e707
+    role: target
+  - path: mappings/unified_mapping_rejections.tsv
+    sha256: 110a0a71c9126348cdb2ed49a210ecf37be46b6492c56329d78ae76bbb5c19e9
+    role: context
+  - path: pyproject.toml
+    sha256: 6f9eebf51774adb8c9ab742f832518ba1682fc43704ad994f73b25829645fef6
+    role: context
+  - path: reports/ingredient_bundle_20261101_carnitine1004/review.json
+    sha256: 1d208eef5d6a250a37df4928d21aea477bec96ddb7cf7ebdacce1e370dcbed4c
+    role: context
+  - path: reports/ingredient_bundle_20261101_lithium1005/README.md
+    sha256: 50a593aef031cad4cc564d91f77772db70b6eb27493327ad3f5cefdabb2877c3
+    role: context
+  - path: reports/ingredient_bundle_20261101_lithium1005/dependency-refresh.json
+    sha256: 9eb57dab26c0101d327b3701361dbe8d31f92af3491000895835a4c3de22899b
+    role: context
+  - path: reports/ingredient_bundle_20261101_lithium1005/prior-review.json
+    sha256: 1d208eef5d6a250a37df4928d21aea477bec96ddb7cf7ebdacce1e370dcbed4c
+    role: context
+  - path: reports/ingredient_bundle_20261101_lithium1005/review.json
+    sha256: bdf372dd1b045b9eb23b3eea69a4dfe1fe112b84b5ad425abf9a41f950ae36cc
+    role: target
+  - path: reports/lithium_glycerophosphate_1005_20261101/README.md
+    sha256: fea7e6284ac641da3b7c32433617c9c741834199059c39c5e0fe9a0a4cd643f7
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/README.md
+    sha256: 9df8c92357a6ef345053025dbdb97801340fd2a51ceefe6e3336b421ce8aedfe
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/actual-application/promotion.json
+    sha256: adccf6a3050c4c6fdbaba043cd07082aed2a6f8de3f24af1542effba7c044ce9
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/actual-application/receipt-publication.json.gz
+    sha256: 81195ce15028213318aabe58eeff3f298360f660e1bcc6131bae15fc65f87682
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/actual-application/source-apply.before-Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    sha256: 94fff493bf4b0ddc19144054a44305ea29de113477254be64e1dc86c0f128f51
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/actual-application/source-apply.before-ingredient_mappings.sssom.tsv.gz
+    sha256: c3e7d80d166b31bb6faf283da51f01751ae97c53717707e409dfcb457f73cdf1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/actual-application/source-apply.before-other_cross_record_baseline.tsv
+    sha256: c5b74bd950417baf7f96632f03154e26ef29bb909dfd19560f8460ba5378bfd4
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/actual-application/source-apply.json
+    sha256: be85aa8209f6a43cf78c1aeadcab5892e5f5ef16a7fbc464d7cc112a5053227b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/canonical-invariants/receipt.json
+    sha256: 11c81e3bae1c491d62cd0d1de79c49cb9b3813f0136b44b05ebe56ed7301e8fe
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/canonical-invariants/rejects.tsv
+    sha256: 9401ca51a25ee4f9a0aadafa73cc8f9266d0ffc60df7f037d1727e482367fc7f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-1046-mim-only.json
+    sha256: ce72ef4d622319e4ae05c2c36b513d08aa45f3e484518218f752029ba78169fa
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-1046-mim-only.log
+    sha256: 8dc760ac46d92c1486d2450a5a45ae07943fec8f66d6af977ce316a2a69257e0
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-1046-native.json
+    sha256: e4bc1063fdb697c557b6813a76c2df26d0030742c6f0c9da4ec4b11f352f2bdf
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-1046-native.log
+    sha256: f12b7f006c76b6bee54094da68152281d869a5465d0408ec941478bc922afd38
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-1046-pure-controls.json
+    sha256: c3b6d788eec65ddfb73085531a35765ff2a2acecce6a018b9ace9ebc5c87af0f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-candidate-curies.json
+    sha256: 53c794f853b95640adc2508728b1a2e6cb96d3cb1cc964940cd0776d3a097352
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-candidate-curies.log
+    sha256: 2de0fe75f90e57625f669281671d3b1a23d08bf73c43d0370f8e3737e874a971
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-candidate-invariants.json
+    sha256: b31c82370648f6ee6029c63d31727702ee4c5447ecb432235b55627cb89661af
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-candidate-invariants.log
+    sha256: e272a7e271dc782a80bb6db2916a46b3a0cc83e099d26b301a9d6fefa4085119
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-candidate-labels.json
+    sha256: fe07579a33b0b36a6284619f503bf15af8cfd335e15e6f868309c4705555c0be
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-candidate-labels.log
+    sha256: 61a8ab3c6ddb8a2198037dfb6925ce4f430ffe5d2c27d34f57ee6e2fb9ff64c3
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-candidate-published-curies.json
+    sha256: ccde343c782b51b1478bb329fbfb06cbe357e8d6773e5f8dbec2b282611f9364
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-candidate-published-curies.log
+    sha256: bbbf08fbf150f9e31fb11d0011b3864f5e9c25f206c4b3e7fee4d7264c2f7e5b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-canonical-actual-kg-invariants.json
+    sha256: 729845126157616c7b66719f917e596cf060c4a735c1a1c685b6b73771168af3
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-canonical-actual-kg-invariants.log
+    sha256: 4b3165cb7dfcab762c5e18f3880c6f02f3b92f90eb0967af66828f66f1725145
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-assemble-review.json
+    sha256: 4c6bf7a511a4cabe5af52b45b6489c13a5ae0fc2e75f14f4a6d017c5102598e7
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-assemble-review.log
+    sha256: 4cad937fbfdb0a60c2b61f0dd5c365e4e0cf53e9aaebce2e326224dd4f8a2fee
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-canonical-qc.json
+    sha256: ca59155dc78a3386a03a8e820cdafdc6be85512fc1a6081a9800761fde8c4477
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-canonical-qc.log
+    sha256: 9d5099bdc133d1f5f4ba5884b8ba485b3e49c6f651c56ef97c0e117cb1671172
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-companion-export.json
+    sha256: 1a108f66554851825127e88e3eeb186a08404a7dd4e13be8691b4005b4c4c223
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-companion-export.log
+    sha256: 93401584814fb34492574a13e62c678b273b2d92e0d5efcb18427ca877f16978
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-companion-refresh.json
+    sha256: 354ad5851f9827f9851bcca39f41e05ee13d923d1e0a4e8d7bb27eac75e06d0e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-companion-refresh.log
+    sha256: 9943710ca5bdf5be34e22cb11d96bf22a5c2edc3de0141c445a8d5ba4a3668ad
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-companion-validate.json
+    sha256: a950c0f8702a63ebfec7fe71fc6de238c187af0a0ac7924e9cb9eb1d6a854ae7
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-companion-validate.log
+    sha256: 745d308897bc8e80abd3004d348d3f08cebb5b805eb5b0df135c80b543efeff1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-full-kgx.json
+    sha256: dec83c39a4544eb4126d65fdb3f7f0d8c63e6035df57a97bb46ce614d4f0a086
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-full-kgx.log
+    sha256: 447373e168688cf44f774d762a8117737231ea7933ededcb00f755524cc9684c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-reviewed-export.json
+    sha256: 2b31eee0358b530d4f0cc2cb62660c44eaeb7fb78050928c4458e88f1f61d959
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-reviewed-export.log
+    sha256: 90b4d556b586fcd87d6c093badc05eb0b4ba116a4883227befab8db7fcdb4a70
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-reviewed-qc.json
+    sha256: 67479f70c558025ff7852d0264c6f47535a9531600672105a0c946ea15dd2ef2
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-reviewed-qc.log
+    sha256: 012a2af2516a6089878eb8e6d8a0cc1890ce10897c2a75c34d37635f5e138493
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-semantic-build.json
+    sha256: 6e3cef3d937ab92cdb7d3c193b80bc3cc688172a431eb3d5086bb2e21d4f2b6f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-semantic-build.log
+    sha256: 06d2d43809bdc085d1939d12933bef4c28b6242ed636c590b0e3eabc6e6da052
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-semantic-integrity.json
+    sha256: e95da46c1fca760f24c3c93f9f79bd167165dec612269561d02ade4c624d3d57
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-semantic-integrity.log
+    sha256: 18b0c8e4d11bcb6d2b54eb80b2d1dfa2d2f98aa8cc8aeae8ea96ad68f3a5a35e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-supported-export.json
+    sha256: ccd69d4e168847657913ecbcd83d97ce6fb55028bb8f9bb1e2261e3a342d98d3
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-supported-export.log
+    sha256: 1590f85dae78a9aec6d685e3533e2565b1ed126d6d96eba3cdccf0969c17c02f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-supported-qc.json
+    sha256: d4a16e5c549eceb95bfc9d98ff26aba2e39489e8b945309423391ea8a810c47e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-supported-qc.log
+    sha256: d42fb4ed214c9cd23da66397bd2e447dd68022b8dd2f56ec49dc55b8257623ab
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-supported-sssom-schema.json
+    sha256: 499f6f76b1246fda0f249a6da0652689f432eab36f3b80013d0c8a730ff2ae23
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-chain-v2-supported-sssom-schema.log
+    sha256: 7aca48c7551a7baca22526c863e489fc5220de00759bc896d122687c0503dfe9
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-corrected-strict-after-sync.json
+    sha256: 520a3abe99a17cea25e3ef9763bd992ff6b6972187140797241c89f6f29c2957
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-corrected-strict-after-sync.log
+    sha256: bbb27cddcab8f718c3930cfb49ba7a6b635d94db537633d5d11b51a503fa3a73
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-corrected-strict.json
+    sha256: 18acb8180a2e87b2058d9019945feb2ce3f8d328ac4e1626a374d6fc96ce1050
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-corrected-strict.log
+    sha256: b698b5ed9267f35d61a39af199c30c71557f39f6e4a66ec3b1cb3d58376a84e1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-corrected-terms.json
+    sha256: d422fda0f2114f225910a86cb652f50669a6727fc6c06169fba1838e0155be32
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-corrected-terms.log
+    sha256: 23acda1c1d3194d12bc947d897d07de83f4a076a9d93c135148885108530e018
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-dispatch-chain-build-fixed.json
+    sha256: 25a8b3f4c1b1e7013d4beb17dfa5c0a73d2a6fbe04f94b9431e59f4103064d0a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-dispatch-chain-build-fixed.log
+    sha256: 75df8d2f113c661112a0d1bf7806837c485fa9c05eee7f4b9371676b895e2447
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-dispatch-exports.json
+    sha256: f6c0081775cbbca18b22ea42751217bac95d02147267e0f40368abebb8005c3f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-dispatch-exports.log
+    sha256: f70fa37072da2e88325c81f6506c927660ea06b5c9217ed4a117aadc963ec3fb
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-dispatch-gates.json
+    sha256: bb121d8a5ded6a0ba5fcea5ef1b42dce8c992f9dc5de7914be5ad379cd6fba41
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-dispatch-gates.log
+    sha256: cd327d2ae41a0e6a1696b459478e684ef7498267b45b0477c6bb468cabbc5e88
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-exports-v1-flat-exports.json
+    sha256: 03f0600bdd6d975cae8d176298b83b83e73f8f05fa8bbf92381f865a764c8496
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-exports-v1-flat-exports.log
+    sha256: b29e422978f6238f0dc65955c26e045c1d66808aba1ffd3b08a554f3a97bcc72
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-exports-v1-visual-currency.json
+    sha256: 0197399b7ba0192a8b372ac844d1a3db03256f02e9d7dc9d865db4af00e29e78
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-exports-v1-visual-currency.log
+    sha256: 5e1313f031cca3e2486e6f092e982a34cb6f7055e9cd2fa2946119856d2ff4a8
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-exports-v1-visual-metadata.json
+    sha256: 66d45d6d281ec5c95d6d701db115c418c7fe93f7b390502c6d326490e8e42c49
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-exports-v1-visual-metadata.log
+    sha256: 43b707c879588b6e3de22422f59d81996e6e8fa558d339707a3c1ef579f7cc2c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-curies-and-products.json
+    sha256: 2373a4b0ebf1fd2026ca6293cfda1461655de4ffaec7af60b4ecd10fe917fea7
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-curies-and-products.log
+    sha256: a7736d0d7696832ff5c53917cc7eb9f9fa0817e7a1932483483623b8858918d6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-focused-regressions.json
+    sha256: 4ffcd4e159b996a95b3b2a44b83bed23881e6a20901a3465108d572e19855f1e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-focused-regressions.log
+    sha256: 76d19d6761c6d0a82d2f89dac5e3d22316227892de05156139d229bd8cfbaea3
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-full-qc.json
+    sha256: d39c53163993653d0512312132df0c370a6bb171d7606baa6dfb87175d43bbdb
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-full-qc.log.gz
+    sha256: 24f9b529f68d24296f8b41d7e41b1e5336d8b19f3428f27c38174695b899dce1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-full-suite.json
+    sha256: 7cf6f256946d348272096f35d1a7152e8021376e4e83ed065d5f7a50592a86f5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-full-suite.log
+    sha256: 2b37863ff9369aac544a94327be6f3fa1ae6c799a8246a198ea3ebc49718cbd3
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-unified-gates.json
+    sha256: a388040e1c2e6d82aecab0788d2e4bf092812fa2016887da68a488fe2a8088dd
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-unified-gates.log
+    sha256: 1b460ced48db7f99a526afe938bf8a09e84af240ffda8ebb7ff5ecac67f7b10a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-writer-audit.json
+    sha256: 9a79b187284635e62ef1afe79301020617320db8350fa0512b218cd0eae9c638
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-gates-v1-writer-audit.log
+    sha256: d31d26ce06162f82bdfcc0da42eeb72a81bd1e14b5afdae25bfeda82098e8552
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-1046-mim-only.json
+    sha256: 6b5f0d0771c54661f7281fcda3e36be9a9fa766f384120bc7f81aebf63dbe47a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-1046-mim-only.log
+    sha256: 51635f970c4f1449ed960f22e3ac14873f6e9185d7a00426785fad6bc035c717
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-1046-native.json
+    sha256: 3789c9d2067de0c210a7ee9bfeb97fc3968593ffdfdd74031f5827910ef5f786
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-1046-native.log
+    sha256: 3493b7b3a6c7f8fee9777ddc28e1d29cd66abad1b8c2a8eb076ee56cf0c44cf7
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-actual-chain-v1.json
+    sha256: 41428b51c7c7172b2593cf96473c950c4fa3cbac47a979a246276ae392879cca
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-actual-chain-v1.log
+    sha256: ac4dfa1a5f2fcadf70908eb21d821dd9e5b1a875c8132683568583d5db318cc4
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-actual-proposal-v1.json
+    sha256: 596c0f6c46f76c0653a6ed2a0ca89d03d8c28cc643bbfacdc28f1acc7e435ce5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-author-focused.json
+    sha256: 2971cccb681ad441ae09e140890f965da050b525dbf6a3426baa51eab5f0215e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-author-focused.log
+    sha256: 7b4b3115faa136fb4fa59d8d44696f544c07bd39baa981a3ca6760e6d185e75e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-chain-1045-actual.json
+    sha256: a2e3cbc58cbd3608001ca625c656a8f3861c473201f40b9442be4fe78b4dfedb
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-chain-1045-v1.json
+    sha256: b4cbd48303c1b9377c87c86d8ff0bd0c175c18d6d6042c606535d015867c5750
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-chain-1045-v1.log
+    sha256: 25c89d43b88750a77bb4e7c7db650969c289f6a60aca7bdf66f2e9318dd97bb8
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-chain-controls-v1.json
+    sha256: 25b1322ba6466bceb7884122689eebb422f469313471ea1d52b84aa5d488be4b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-chain-controls-v1.log
+    sha256: a82d4541a8b70e0f0604adb795662b0ed2bea40bdc054ec3b38792c351be3bb3
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-generated-surfaces-v1.json
+    sha256: 08ea3d45e3f6401d4c178b5821d0d819cebdb7dde2f8f3802bcb1b65f851db2b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-merge-1047-v1.json
+    sha256: 5cd137a2f2e52dd1753f892594508d7e5c1922e961fae883dc7a3eaecc036f99
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-merge-1047-v1.log
+    sha256: e6177b637539a189e3dd1cbb0a9cf6c1706fe13e0d3aecaa772d261891a303b8
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-merge-nul-v1.json
+    sha256: 996b7d68d1226b2ab6403b937e01e26bd056156b94213c08c388bbf19a504be5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-merge-nul-v1.log
+    sha256: 8cf01cb659d1cc66ce333fbffff8f9c66b6ad3fd081edd7c3400ea56b449e697
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-native-contract.json
+    sha256: affe12bf1f299fe9340b2e619cebc5a38ab26522a5aad9ddd5461a413104bed2
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-native-contract.log
+    sha256: c5b232d6f62a1250725aa51c7e1f89866dcc516fada02f6fe1737763018e1682
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-native-gates.json
+    sha256: c89804a02216cb571e968aa32abf0127c2f9aedbebd94ef1615b3ff6080333eb
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-native-gates.log
+    sha256: e5132ba75f24cf603de446dcb1cb0d12b7be3a35f7f1162d7dfbc6008ced0266
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-receipt-fix-v1.json
+    sha256: 867be22e01b5293b80f897283de7676452fac2e4678c70eddc7939e5850d8f19
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-receipt-wrapper-v1.json
+    sha256: c434810a7aef9a6950fc8167fbd542fe64c6db80c165faf6b9e2b38b66cc3037
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-unified-wrapper-v1.json
+    sha256: 83bd7b9d4e1d6971137e1f01089318d640d50e19bedaab8be45cb55891e5917e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-unified-wrapper-v1.log
+    sha256: df9122ec25ded68b6aa43610dc5ba2679191d7dbe3471931a0711b1423b6c8d2
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-unified-wrapper-v2.json
+    sha256: affed1f9f070e14fb59d2341a9b95b43c2bf51bb20c80228c4c147b80dd26ef6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-independent-unified-wrapper-v2.log
+    sha256: 1e034959c1be68402a8b2ac499efb2d96112ed2c34339cdd2bb7b5eb0919aca6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-native-candidate.json
+    sha256: 67ca3ea949602a82a8b06b9161a0e8f3dab7476a72a3aa5bcb48fb4cca2e7e35
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-native-candidate.log
+    sha256: 5959e648f2c6b43a98c3e04f4ca73062007b4582a768565b636e7a90bcc059b1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-post-application-verification.json
+    sha256: acc9cd20f3eb62c6b0242d18ddd4136fcf0bfb73c71713cd6f5015546f41bf03
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-post-application-verification.log
+    sha256: 3a02f67126e0305585d4933ebd99c95dfbe9f4ca86ad70e2d34e99114e5e998a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-promotion-apply.json
+    sha256: f7ef5297054b248d5f3a1391321e6be239c2afb6af0e86318bd785729dd61aae
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-promotion-apply.log
+    sha256: 2f6250a967f3e0df2b9953c32e4e9791e6c0c2365c5989c0213de92e82074296
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-promotion-dry-run-absolute-paths.json
+    sha256: 08325df2c4ec3ef54a7ce62ba599e6f955035e40c2faa0fefd5f70c1be69cd9b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-promotion-dry-run-absolute-paths.log
+    sha256: f2fe303d660b06ff79c703cf169aaaf839be352c8c7ebf35e640679ffee13361
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-promotion-dry-run.json
+    sha256: 28f67d8d11805f5d42182c9f975757a7d36d06db11f311b7f41368e434935175
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-promotion-dry-run.log
+    sha256: dfa73b3d7b095bb5fec938ac923fc543afee3659d73e92fefc101ca83fcfe3e4
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-receipt-publication.json
+    sha256: ecf2e599a4e5b3437ecdadc320265b7b4fbc250a05e9a8911b264331097e969e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-receipt-publication.log
+    sha256: cebab0f031177fa5b03d99884fe6cf1fc2d8cb345acee3b11e7b7a2806e26e67
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-source-apply.json
+    sha256: 5187f9461623b6f240f66bb0194c8aeebf067b58da11a8565b99e7b74cd6f200
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-source-apply.log
+    sha256: 6771c745bacb344889b9b1627a40d0895dfaffd000c68026863374b05066fbf8
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-sync-curated.json
+    sha256: 48fde07fb533a213ecce10a4a50d760e47a03d18e23ac50a0a557d0335e965c9
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-sync-curated.log
+    sha256: 52c9aa1c02e2dc2f4157c089e03346587253e74d369b3a90d6bc5fc63798448e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-unified-generation.json
+    sha256: 3647ee9a6d0d91c0b30edd22c317c596d379ddd993ee3a72d1a080d160350abd
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-unified-generation.log
+    sha256: 9a52af687f72d1685087a677a7598112eed8acdd66d3f4465573710f4f710a08
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-writer-ruff-offline-v3.json
+    sha256: 5da6b0609807c5372796264f1b623caad0721a3e6c8655dd513e91a5b2d65728
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/commands/step4-writer-ruff-offline-v3.log
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/failed-attempts/step4-command-correction-dispositions.json
+    sha256: 06985533757ed3ccf464040cde6a547ae77d03e862a67a6fdf287622baa1aed7
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/failed-attempts/step4-validation-ordering-disposition.json
+    sha256: d8cc895cf9039d215d7db8f64b646d52a746a3408e16b92cc9ae0ba51c3745e5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/final-inputs.json
+    sha256: 65fb2def98135a52a260bcb5875a976c0ab05c04e66f64707ccce3efe27b7a37
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/findings/issue1045-comment6557038706.failed-receipt.json
+    sha256: dad289094c12bd5f5ad9f5498f69527177f79823567664540d8baa3de6c601fa
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/findings/issue1045-comment6557038706.inspected.json
+    sha256: 1bd882f62cf52c8769f9f051a8dd2aa5602c490b9d2943f9ed79a7642790a2be
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/helpers/generate_candidate.py
+    sha256: d8e7a2299eb593c9aa1c341bafd6dcd5d2f6a71c6e4aaeff3f3ce325a04981bc
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/helpers/guarded_unified_lithium.py
+    sha256: b70676c62d8d1e60206a76cd93fe5fc758de7e254ca46db512e3c7516fbc037a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/helpers/make_step4_receipt.py
+    sha256: 64e3a3396f61d3892484afb8be1fc748cf6019f422539d196531997d79683717
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/helpers/original-make_step4_receipt.py
+    sha256: 1b907e603d31b3c7f33582ea43ad6ed443b0981a30febe9d5d71f94ce173b4fe
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/helpers/run_step4_mim.py
+    sha256: b26b81caa928772de928e24ae8cd2a3e340f9f718872e53f53031fa41b3eb5c1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/helpers/validate_candidate.py
+    sha256: bbb919eedc990552445af562ab5cb7b0ea06ce95ab18d614cd5cba80e4b6ca5f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/helpers/verify_mim_merge.py
+    sha256: 29b42215981a3177b6da9b9783ce2ba9b2753dd42164dce1f34f85bfb752a497
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/helpers/verify_mim_merge_nul.py
+    sha256: 856e19d9846085e62b3b9e7e6f1649844a67484cce3298fe6eaa6685cc6d7d87
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/actual-proposal.json
+    sha256: d75e96bf12853693f86bc566675b27ecec4d543cfd74b2d4264b8c9241108825
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/chain-1045-actual.json
+    sha256: d802944e379cb1f5790c7f40564ea307cd94ab79e6126a37fb3a492113f24179
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/check_actual_proposal.py
+    sha256: ecd751d8d44f2d4bb84a50415fc0b53ee60bad8058e99422ad756ecb83dce51e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/finding-audit-reservation.md
+    sha256: d1413d43cfa80efd6db22e5b070bf211c0cc7929656031984cd820754a336d7f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/finding-hermetic-tests.md
+    sha256: 4d3e961aee3fbf3486e7aea5fcf6c83af8d6d6d2cf38ba4026274f24bba1e83e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/finding-promotion-binding.md
+    sha256: 789832abcc69bda4abc812e847a3922609873d43d7f7066f3139e343dbb6a607
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/finding-unicode-inventory.md
+    sha256: 392fca7d26a23ee0f40bc8e1c6109c1c7785dcd9a26ed32fdfe5b93d8bd804a5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/finding-unicode-merge-followup.md
+    sha256: 69f23af6a8e42833be7b42602fe08aace2ed78c96ab5cb43cb3fd682de6c706d
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/lithium-without-claw-runtime.log
+    sha256: 6a4554bdbd6b18c09735eb7592accc78c19cc94e4664bf4464b1844a11eecc23
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/merge-path-quoting-proof.json
+    sha256: 87b94de35cf4767472b316ce28589c9173a1d79f434d0e5c17da5b27c596f1cf
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/merge-path-verifier-tests.log
+    sha256: 571b2d88b94fac6a9d81c74532a2a71eecb9519785808732b28b717bf99b798d
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/preapplication-addendum-index.json
+    sha256: 205d627b5d717ed8a8f908a05c84ec726d8d95637441a7e9a0679a4bd491c61b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/preapplication-addendum.json
+    sha256: cb3deb09bc87755c969e93cce5460978f48671e04ecd59383d9b04082de0fe4c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/preapplication-evidence-index.json
+    sha256: ba908fb30a7e91b68117da49171d09eb5b4b72e64e7621bc835524771d4aa4ec
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/preapplication-review.json
+    sha256: 83e7ff9b8d8735768e1a70088c4d7230d65233fbc1f3942cf99a8a782e5368db
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/probe_merge_path_quoting.py
+    sha256: 40d5b56bdf3c139d6f5c1a15add5710f6e7ca8727b327f658fd8116ce8d41787
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/probe_receipt_fix.py
+    sha256: 865bbee29ae8dc642c83bfb9a328e16852f514b78fdb5273b0a1d7389d2f0ce0
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/probe_receipt_wrapper.py
+    sha256: 201509b5fda2e5ff34e93670bf93b8b06f5b286dce7a60d9b7cd30843cd2a4a5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/probe_unified_wrapper.py
+    sha256: fecfc3c77660e85979af5e6f3de2a9faaa0f1242f93ed26c2a4d341d35e2d76a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/receipt-fix-controls/results.json
+    sha256: e86ff83b69bd941d9d5984b12347817bf479f34a938b963fb328fc279aec70dd
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/receipt-wrapper-results.json
+    sha256: b04910338e67c4b28a3bfd56077f67f8c045fb835249d05a4eb5c22af485f621
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/test_merge_path_verifier.py
+    sha256: c460b29ecda37a16907f6fd5758f1574c573b6e5b38da483fc0bc9bfb82b9f9d
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/independent/unified-wrapper-controls.json
+    sha256: b2d8eaab02bf5afd47d7daf3b740a8a43f90af51d1efd30078af2778bf92b670
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/manifest.json
+    sha256: e13ff8a8701c173bfd2478ae409c4d9ecb8e12cfd3167c5810d4b507e6afaae5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/candidate.sssom.tsv.gz
+    sha256: 0a28be59ee06f9b5827f2645766369b3f055b0a48e4a52ea280bb1b403d2b91d
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/comparison-inputs.json
+    sha256: 37f6b3bb4efecb31ef0932ca1d4c81f31b871d0a1f460bd3b244b8abd382236f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/generation-receipt.json
+    sha256: f80666fac4abb2098492837eb898615295f56f7a55a4067af1ca4da32afee085
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/inputs-after.json.gz
+    sha256: 393aa7d604be31767d3fe6270b829c6d5f1e41aeb4fe7a56ba50abbd96891fcf
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/label-config.yaml
+    sha256: 4b72972bc4bd23f82d4a66192543cdf181fa0c8290d403fbd83f978dccb23295
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/label-input-01.json.gz
+    sha256: 335b49d37bb48340fcf4764673e2c2f94ac7813336ac1abaedb091ae5348eea0
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/label-input-02.json
+    sha256: 4d3898bb5fa81bbff6284a64d0f1089bccf63752b5ce1a0423357bd50f9116e9
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/label-input-03.json
+    sha256: 632ed1421282561aa784325ea5fa6e1c058cdcef67d518790e586cc27cd9cd45
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/label-input-04.json
+    sha256: 2aebd645c12717252b134f9e579846f550da83de64f0aecda096e2a5c0697c84
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/label-report.tsv
+    sha256: 1b8dfc04bcc2e2b0f654c2115bf40d64a3e1fe4830c86afc3bf65a12cc08a691
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/native-invariants/receipt.json
+    sha256: d3c13457f8a3c6d4e507d5711fd01362efbbf9d029c592f902495b67c943e342
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/native-invariants/rejects.tsv
+    sha256: 9912547da4ff594c686b21a13cd11d06997878514645162518fa712f99d13cea
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-candidate/repository-context.json
+    sha256: a07ebe879b8a6dc3f9d35458ec00a477c45a7210b6c6992026a5e8d16af0d4a6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/native_chain.py
+    sha256: ad5cea8d27d789175dcc59d685223360ab5b3adc28cb72c900d155323d982aab
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/preparation-receipt.json
+    sha256: 5c458a3b1d37ff1e14989221a3277b3cde3f7b2425be0db612c6475925bd5475
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/prepared-inputs.json
+    sha256: 6f252116a6ed7cc90d9e7769fdd4311c95a7edfef029486f4077634384b0c774
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-chain-v2-build/commands.jsonl
+    sha256: 6fc8a070b1d7b259aaed5cc5172d96ffaa35a88f02881dee80a99c387b6a9bcd
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-chain-v2-build/complete.json
+    sha256: 15319241b1aec564e47d638acb11370b88532ee51b7f87ef56cb7672b9dddce6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-chain-v2-build/start.json
+    sha256: aeaeeb80d8e032a1c4854c0a0bfa915c45168ffbd78fd5abf3ecb60efc853c52
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-exports-v1-exports/commands.jsonl
+    sha256: 9cf2edb9ae1d518dcf47a85669edc57f11d294bca9614d23b4efa379d3dbcdee
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-exports-v1-exports/complete.json
+    sha256: a9c4274a91a11c6bad72cc0d98c41836e4abe3a9d3cf5c63bc792848f0cdf355
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-exports-v1-exports/start.json
+    sha256: d66b6e272ef45369572bf8a07fb2702aa4c0f8bc32fbce06eda64856ae6610e6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-gates-v1-gates/commands.jsonl
+    sha256: 711c33f154eaa685f4c705d59fbc90e125dcfefb2e4c0a64bd2d21da87328181
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-gates-v1-gates/complete.json
+    sha256: 822cec9e3a47610165559e2d01b8890ebafa24ac218a959d3899ce33d4f30813
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/step4-gates-v1-gates/start.json
+    sha256: ae6092e2c69cd9d5fcd1a16b95742a57cd5a507c0743e50f8fc0cddc33d1e927
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/native-chain/test_native_chain.py
+    sha256: 17b9850baf5cc7872cc3049ff87ba82ce7640d55806317a0f943613bf8862a18
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/product-manifests/companion.json
+    sha256: 69ccc316431534f309c3d545282cd365c3f752b28f1a1da9a273900eb2989b3f
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/product-manifests/complete-kgx.json.gz
+    sha256: f109321169dfed48960758c4fc1c3c03cb12c40d7dd69a043c5f84ca398676db
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/product-manifests/reviewed-sssom.json
+    sha256: b9522ce88aac0ef09d51404e93f35e0d59dcf5ed59f3177dcda5feb72a366076
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/product-manifests/supported-kgx.json
+    sha256: fd58cfb011038c60f11d82071ca27918c4127b967b39f36e492df3adeb21f98c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/approved-plan.txt
+    sha256: 99b7746742f70c7896ed163a833a8b214282dba84567dc3213ec0a2b194e4d90
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/plan-context.json
+    sha256: 7391154055e1d05b6e4353365b2312d2779f3c9d6c910e4990d8d215aae33caa
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/prepare_step4_validation.py
+    sha256: e770d644bb74b4824849ac2d3abe17eb62ceee0212b77fd8b10440f4826796ef
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-application/assemble_review.before.py
+    sha256: e4deb1708ba7dc46ebeb7f6b35dcf685f4d2c7e0758597377329aa1d1b0fad87
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-baseline-inputs-v2.json.gz
+    sha256: 5156f830dc5751f48bdb585244e5cb4cda78213d4a584452edf5bbcf7a6f6d11
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-baseline-inputs.json.gz
+    sha256: 6921d12f33ad52a5901d79d6c08a3aedea5b3512333e5e2ba8b5aad30ee17fd8
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-chain-retry-disposition.json
+    sha256: 762d034730866bbd4cfab7947ca91ff6f2e32575fdd870afdac1b22f96a9c6a4
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-context.json
+    sha256: 957a01d255c1f602bdd47cc038f58c9fb04337d7b2e5296977b87cf80c70b06c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-execution-packaging/prepare_final_selection.py
+    sha256: 069aacbdd5d313277dc386207b205993d19592f3f28a1baabdcba83508044779
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-final-validation.json
+    sha256: 2f659fee7519236e9f0a3ebb139e1f16f0f5463425ff61fe455b4a69d4869c74
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/actual-generated-state.json
+    sha256: 30966c58db5a92ba5a7bb1bd11198e5a0753831b22c31862811b7e1160f45c6b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/check_generated_state.py
+    sha256: 83f8a9303517e7f67842fee53da4d8dc44c3c7d6eb1523d93bdb8b9f60c091e3
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/finding-merge-rename-paths.md
+    sha256: 02573bba74cb665065f55b762d01cb23294e55debc073d28a1dd9faae9d0aa43
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/fresh-base/dependencies.json
+    sha256: 7a02940cbbd0444c8c2e66b593e0115a8e0103dc61a313b4f7764cedb50c1fd2
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/fresh-base/input-context.json
+    sha256: 0dd2dcb13614e39bb458972c27fb2e08fc66b5fabde9f42c88f868dc3f9bf34e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/fresh-base/prior-probe-reuse.json
+    sha256: 0d19ae1a2ef08d54aab13316dd297bdc8df5650b5868e327af300a16cb86c105
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/merge-helper-independent-review.json
+    sha256: 7e33fe35f4dcfc0a1e688578bb65edf35c49db36b322ba23845607b9df534c31
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/merge-rename-proof.json
+    sha256: 4efd1a9997a89a4f1088b19d50af1694e4b42c8956f564ebf2a03080d43a5ae1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/probe_merge_rename.py
+    sha256: 36f36ead92e1297163aaed7cb526735fe2a6cc09fe7047168fe12c7de1ebffd6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/probe_unified_wrapper.v1.py
+    sha256: 65a664a6df54998fa4668bc6670c4132d1677ba5e037551ad28dce75d256dee1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/receipt-audit-collision.log
+    sha256: d14d2bff08c6e4f633f6e6b7d1db4863961bb5d21da4389ed9ddb4e3ba7f1fb4
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/receipt-fix-controls/audit_collision/log.txt
+    sha256: 6256d1dcd552760c482cb3c4521bebbf2dfe3a5b26648af24da83e31a6b98365
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/receipt-fix-controls/candidate_substitution/log.txt
+    sha256: 376932fc4a7b510e833710d015d73852cca4c220aacd992833818cd01a9b7e33
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/receipt-fix-controls/comment_loss/log.txt
+    sha256: 8fe18f1e944901d658d1a0249874fdc358f8de76e5706246a11e1d806f74c0b6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/receipt-fix-controls/missing_promotion/log.txt
+    sha256: fc24195873597497911f89e6423ee759f7b27fe1cd2dcdb9bc8e1f18fca2c439
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/receipt-fix-controls/positive/log.txt
+    sha256: 6a5ecfad67db1e9d1aae46154130a447621001d200bb0011633d071e2a8d99af
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/receipt-positive.log
+    sha256: 0f81ad2f06cf7e1766a8180980143a972b470c4e3054ca6e13354e064b5ef6bb
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/receipt-post-promotion-comment-loss.log
+    sha256: 3798bdaa27cf62a0b8b0ec5732fb642a2c7635ad307b1785d8aaf35cbaa619ca
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/unified-candidate_drift.log
+    sha256: c402c53c0a09f495d061e47cad593eb2f532f4b7e23298c0891656e611ca25eb
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/unified-culture_input_drift.log
+    sha256: 661e67df5940f7316fdd551e4c3192b3c3ed5ba384266b1a7454506833d7274b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/unified-new_input_record.log
+    sha256: 0571f404a23f68bcb542f49113d84aa6228d620bea60489deab99d9b0784c9a0
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/unified-positive.log
+    sha256: 6eff1ae771003dc3abb2897f5a0fe6471047fb068bb24a33082224d1d8e3a2c1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-merge-verifier-1047/receipt.json
+    sha256: 3ca823d948cd69eef928e576e1b262808a3925bf042eb24384a69c0e3536c21b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-merge-verifier-1047/test_merge_path_verifier.before.py
+    sha256: a68a8fd0f92ce8b1ae041370fc928e3c9e1a384fd66dd85e6680c3d5b7c0e7cc
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-merge-verifier-1047/tests.log
+    sha256: 7cbd3cc6c4248d4b310209e74942fee77a2200d36969992e73cbb745bfd179e0
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-merge-verifier-1047/verify_mim_merge_nul.before.py
+    sha256: 869d6925c57402f7867e8ab8f1c6a2b472125b57faa945332472993cea3b080a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/README.md
+    sha256: 9fe3d630290224064d2a4685486c4f1c1c6fbd0b2d4584691ac15965c02cb59b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/actual-inventory.json
+    sha256: bab98888d9c179ac3bf66ace2f99a6916dc60132a06fbc3509f1de1bff4cc35c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/before/README.md
+    sha256: be5986fc7219e340ea4480fe9615eae4cb0e399796b870eaf30ef44691daa70e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/before/evidence-index.json
+    sha256: c032b49f5f71cb83274d49ca264635d05f23a1c259a7a9913711cda63fea639e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/before/native_chain.py
+    sha256: 75c29e50c75fd6ee4acfc5c2b8402da634ee286f7ae8054958e656b368a21a13
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/before/test_native_chain.py
+    sha256: 88281edf71d47a47e54dcdca20713d083ecd560c1c386ec43fd52e1a423a8748
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/check_actual_inventory.py
+    sha256: 29bee541950ac4e8cfc7fc5a760ed2efa7ec7281942c071f256424d46646520b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/checks/step4-chain-1045-actual-readonly.json
+    sha256: 758801b94fc3c2a321b0cb0f1a880aa63d8e98c993c77b25d4956326d51f935c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/checks/step4-chain-1045-green.json
+    sha256: a3248921d8fdd5ca3d4557fbebf2125a6b545753274bc58e0bcbc6176b7dabfa
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/checks/step4-chain-1045-green.log
+    sha256: 3b1cb2a573f67354ded0c5266e0b561063602d23be3aaf26f73799dfcaef9e7d
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/checks/step4-chain-1045-red.json
+    sha256: 4bb1ebe62ef3f83fbaade85a492b318578e73a7c7b221a09ec24968d555ccf49
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/checks/step4-chain-1045-red.log
+    sha256: 6dad2b6d83c90547c3dea30b778dc7d831542332a031621d53beaa27f3107f9c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/checks/step4-dispatch-chain-build.json
+    sha256: e65d6b19ee9126c497860fb7fac4d1e05510f4fc8db734d85ab12e56ebcd2526
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/checks/step4-dispatch-chain-build.log
+    sha256: 3d4f1b110a70aaa4d37ee91a6267df49cfcbae1f3976cb23a91c64f32d3c0241
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/original-freeze.json
+    sha256: c332cae2270be0da2abb61b9c20a31c8ed32154098173f4672b320212b2ef5a9
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/red/native_chain.py
+    sha256: 6ef14ef3da8edb50089366d5e01a3ff1ea66e5de5175e918d2fa2054ca874e62
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/repair-receipt.json
+    sha256: b74aa2d8fd05a3f895d85f28bce4b6d13602348e88bd545c696e091ddd2526f5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/source.patch
+    sha256: 6d83863af8a6f91a5cb79071c076ca0c3307ab4c5244f6becc759b7068ebabd0
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/tests.patch
+    sha256: 2661f7f50ae533b9a11a0a731bbee35c92cd07a33980a4bfccb8f5e9a25a4748
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-native-chain-plan/revision-1045/version-index.json
+    sha256: b2219185a5d1d0b3cf3b5564f6ce9642aaf6a0fb844f4510a6a9f3763bce8f51
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/issue1005.json
+    sha256: 368585b45092eb87f1991a853ecec852fd5f1ab71745540121975e0a36895152
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/issue1043.json
+    sha256: 00185b2cb2d9c6fa0bff7fe52e5147f3da81364cb719bd600e1fec7de6bff79b
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/issue1044.json
+    sha256: 921d7e5bce0e0d7acfb6d68cc1011c98ec25c2f4b79478a4642e442a4f286902
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/issue1045.json
+    sha256: 93cb5bed8faf65e015704ecbaf6789f8e9bf7e3ebc1a5ec8b7d812db73f18270
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/issue1046.json
+    sha256: 8c7e75b59e817dd8e9efd23a0193a141c55f9eb6b6e4f95d047c023d0ccb3361
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/issue1047.json
+    sha256: 99526709ada8a31bfab331170ada1c8ff20a2bdc4a665f2c2f54af02ada32f39
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/main.json.gz
+    sha256: f8c288071db6c34860231426aac1f6c348f6012a1fcc3d6df6ef2ae0888da1d5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/observed-at.txt
+    sha256: b44135336ecf71cbc1ee7daac8720797156efe14843f4e79c82a7a6d2176f6df
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-remote-refresh-1116/prs.json
+    sha256: ab93166787a27dd93df3671482eb459e00ef17c5c45dc96ac0f32400e96e9bfb
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-workflow-context.json
+    sha256: 5efdb2a7dbdf40125c30fced90824e4ccb73a8c16cdefc8b2a61a73bf9d108da
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/workflow-audit.md
+    sha256: a089fad0b55151a2c6ec28a36198cf9e942ca838f013a71b01133c212606e307
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/README.md
+    sha256: bd690a0c46c5cb5571854858c55b0c511c3be040a8960d6cad9ac99d69a8f89e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/controls-receipt.json
+    sha256: 8f683c0772d96819a0f4ab45d4958ca5d9f5ec065434163fa7508c09de5e67e5
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/controls/candidate_guard_removed/stdout.log
+    sha256: 65608db8c0cdb630533bae15738ec00dc5601687e7f8a76f66fc7516454a7552
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/controls/comment_preservation_removed/stdout.log
+    sha256: b07341a1f98f320b116512364ea2102162fb48d1f9cae48f3e7b2d66a6aec3ae
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/controls/control/stderr.log
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/controls/control/stdout.log
+    sha256: 8e4951acb7d67226979c5df4ae807be395a529961746fc8d3b76f1e608cdf09e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/original-test.py
+    sha256: 914f25060dfb2de935466925b82fc8f760e93f0ca168d07f825e35c47c1fa319
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/originals.json
+    sha256: 7ff2ac9321843bfbc22866d67639ad16955fa4e697922ee1b8703845c870ee04
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/receipt.json
+    sha256: a5351903b6597bd8a41a28e8b4f7fe91b7ab0fb1f549aa4d4fd2a384e2b396f9
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/test-runtime-1046/run_pure_controls.py
+    sha256: abc599c88539a45efedd9c087cf5606c49ea3f2343184f8b91615f12641ba969
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/transactions/promotion-journal.json.gz
+    sha256: 0af4043a1b9df5e5770daf46ddfd48b1b4566742ec20612f83a3799ec5e0069e
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/transactions/source-apply-journal.json
+    sha256: 9f993fc7ede00f2908246d7e6afe83cf4c693b831355cbed6c62eb18e28df0fc
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/transactions/unified-generation-receipt-journal.json
+    sha256: 2ebcd720773f731893648da8bfb857fe2c2919e3373601b14ba441a4441a4188
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/unified/unified-candidate.tsv.gz
+    sha256: 4beb7092d54792bc5a52c0a381c3932280036fe7b8909d6e7e55ebfb68ee39fe
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/unified/unified-generation-receipt.json.gz
+    sha256: 5d8c2654fb9ecf51591426be1166c56b9eb2798387000d9c6b806fb740cafdf1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/unified/unified-provenance-before.json
+    sha256: 30449d7221332dd72ce1fcc1d244375bd3ea8f4c6961b7eb7ac6e92b8501c2c6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/unified/unified-provenance-candidate.json
+    sha256: 894a4bd1ce014e9a78d7abc27d206112c299f971124c5c8a0059c0e84f6973c4
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/verify.py
+    sha256: 5e51acca0d42fdde985e2979aeab920b96b265ee56b18ce39576126ccd268230
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-checkpoint/manifest.json
+    sha256: cb474c9c9038bd13828cc712003b6133d8122545038c5a51232a7228dcf46bd6
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-checkpoint/run_mutations.py
+    sha256: 569ae1f39f5b4bce16f68080cff3b0052fd60c417bbad8b3bffba1a866b5cd54
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-checkpoint/verify_application.py
+    sha256: 2bd81536730ad8fe572912ea3a5f23d5cea9d4187c31b0e07bee0d286403abaf
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-controls/candidate_guard_removed/stdout.log
+    sha256: db9efe0985c2d7bd830582a68c84d1689e8bce26a864851bf0a8064af74f5856
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-controls/comment_preservation_removed/stdout.log
+    sha256: c703764d562439e7a496a1c6568150cb11dbff0ef714bb44343363a7c019988d
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-controls/control/stdout.log
+    sha256: 3a58ac779c9c2500e9597a10a4bafbb762c85ea02689004b807c4529ebe6eb98
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-controls/free_acid_retained/stdout.log
+    sha256: da859a95aeb2217206d0c68c73478e8ec43fb2a0c4ecf436fa13d63f5349594c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-controls/receipt.json
+    sha256: 8676b3e33c8909b46c0c25974f50396c4f20f11dcd5df8e13200f12e873f0d6d
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-controls/receipt_check_removed/stdout.log
+    sha256: d2d15d36a7e3904f60eaa0195c28f9d13f932cd1dea67e5fe046b1e6b5e0344c
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/execution/writer-controls/scope_callback_removed/stdout.log
+    sha256: c5e74e1ff0d6e49cddfab7ad1b5b39c1cb2d0906043c7ef19aabc1ed7d4355bd
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/README.md
+    sha256: 2812291a47f33f71d1e9f0169614ae4aef9f3398594cfc0c2cd60d589bcf8ce3
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/approved-decision.md
+    sha256: 8a0c161f31b9732f30f4e9e30725684f7b095e44b3c78cde6927a3a376bc1aab
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/chebi-15978-ols.json
+    sha256: 565d77bfa309af5e1d427dea7d26f7266d815189a470203fd82c4a0cfcf1e3e1
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/chebi-15978-ols.json.receipt.json
+    sha256: 8345c8d7d2ce05fe3a3dd734ae41a66d3c6db3dd982d971fe7c864e7e88680d0
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/chebi-15978-primary.json
+    sha256: a90d99807742daaa58d197735bf51dc3999f8a8f1ef72453470f045c6d0a0c93
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/chebi-15978-primary.json.receipt.json
+    sha256: 2c8f66c3c329b539fb026c9123013020429ecec4a7d2c958951d796e562cd88d
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/compounds_to_cas.csv
+    sha256: 76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/manifest.json
+    sha256: ca89868b74535eb7d4296fbb3cb14cc6da8cb599dd78ab27ef95baff61f1eb24
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/pubchem-17989-41-2-properties.json
+    sha256: 61b65c689e98f884d2bef1c3c59b1bf080a2a9efafc506c95e8f0748069207ef
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/pubchem-17989-41-2-properties.json.receipt.json
+    sha256: 1bcadc8f8e765d73583c0d3a68cc34163f5e653e908330f6c935922262e439be
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/pubchem-439162-properties.json
+    sha256: be387e1a1ea815c6739d36ac9539ba0bacffbe150d25c4db07e1922ee5eee08a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/pubchem-439162-properties.json.receipt.json
+    sha256: 02b4ab8a80f8d89653d055442ea13e744cbd7d492b479a9f6d06bb52614a8842
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/sigma-94124-http.html
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/sigma-94124-http.html.receipt.json
+    sha256: 710f34c5d815e253012467df710d880d7aa697b3dbe5fc1731a0828c36a3fc0a
+    role: context
+  - path: reports/lithium_glycerophosphate_1005_20261101/sources/sigma-94124-web-response.json
+    sha256: 2b1f6c58d9fb226f5692042ba3f230a6ce293bfb0ac2689c48b761c5358c157e
+    role: context
+  - path: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+    sha256: 3a31c61809d01609b6d8fc6995a7a7629b6c15f69273f8660fb68ad27b8d5294
+    role: target
+  - path: reports/semantic_review_20260921/resolution/build_review.py
+    sha256: 84a955e55929c5ae8dc6df6e813aaddd13dc4dfd38d81bc63a8172067c00fd59
+    role: context
+  - path: reports/semantic_review_20260921/resolution/current-review.json
+    sha256: b2ba2ae7ddc2caa23065dbb27ecdff2f135dda9d2f9d1f29349cab16d5d34455
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: e8d8487a96914e3a050b9cb78a951fae173f1fbffb545adf604555866e14a293
+    role: target
+  - path: reports/sssom_completion_20260921/assemble_review.py
+    sha256: 675a6fd38129a4e95de2b3ebaa85b8d5596e2261f11daf511fb0a4f4bcb94def
+    role: context
+  - path: reports/sssom_completion_20260921/baseline-mapping-review.json
+    sha256: eab809b5c7afab824d766f2becccce87ea2ea6f6b46519fd42ac21300ddddc10
+    role: context
+  - path: reports/sssom_completion_20260921/mapping-evidence.json
+    sha256: 371f2353c04069e00bff1b3c21a57aa808dbe0b7fcaa3578b4df4bb476a02f58
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/chemical-scopes-20260923.json
+    sha256: a31d5bae53211a7cdc008008b4eb8dd49d9e2ec3a62773c912dbdab8d0d0b7ae
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/claw571-hydrate-parent-identities.json
+    sha256: 2eeb7e2b9da164403cc715e6cc1b3a8c36f6f35d173bc1d740f8b90f7ce3d762
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/data-license-20261001.json
+    sha256: 6d89e96b3560bb2b237fc9a358b1ef68986f1361dc536a4e5872661aaf459403
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/ingredient-identities-20260924.json
+    sha256: 1cf4c94c4ff4704c642297aafbc48d05b1978fcd67cbe88ff076e4def9c4be5b
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue1004-carnitine-hydrochloride-merge.json
+    sha256: e14ab50d5b981f2e003d755644ffcb98c901519fc0e8324658900ada1ae12e1c
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json
+    sha256: 2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd
+    role: target
+  - path: reports/sssom_completion_20260921/mapping_changes/issue1014-provenance-restoration.json
+    sha256: fbeec3fbfee71be85541353683df135f96dc1d0021c6bfb3877bcc5eca8813d0
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue232-wrong-form-names.json
+    sha256: a94aab0d6d9e5cbf6fec1c6d3829981630bd2c40434b868a8d20526f4a7db985
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue312-batch1.json
+    sha256: 0554d4d32924eec4c9909d3c0ff36c8dd9d44ce426011ba42f0122d9172a41a0
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue312-batch2.json
+    sha256: c10ef0d7f577190f0d97a95c0482011d6abfaaf03fba2c509f98eec66694c373
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue312-batch3.json
+    sha256: aff24cdc08d1cb979795ffad227c03e9622733438ec7f94c5669ea05da6bfe88
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue312-batch4.json
+    sha256: 2779f46e8ff8a2d0429fa382ce67dec6f7b2b43b02be3c316c5a7bdcf2138409
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue669-1003-scoped-alias-corrections.json
+    sha256: 00049aa1d2b19565020d4ecbec999fc723d2cf5954968ec6bf5cebdc0da73f34
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue669-704-rulings.json
+    sha256: 0870e436e4f03a1ef2377a957fedab70b42d201b6f9b8935478c40ac647c90d8
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue759-micro-source.json
+    sha256: 75008d33a173155a6bdccafb64bbee96b0a457f9da5b761bd7ee2aa9b74100aa
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue875-ncit-exact-heptahydrate.json
+    sha256: 28bd529e14104cfbf9160e9532b3d859dbe6259dbac00a9d877bac1daec8a2b8
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue878-hydrate-contradictions.json
+    sha256: cdd362a5f2d34ebf6676a098869995ce41a8059285cbffc2f92bbc3e49c86ec3
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/make_receipt.py
+    sha256: 2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json
+    sha256: 9b578f6c25c1ebabb8e58c5a59d6188b7c1f2dd3c8c70ed021b35144c6da1226
+    role: context
+  - path: reports/sssom_completion_20260921/parent-name-refresh.json
+    sha256: 5b7325076e2c44b55bd35a02224b49c64297f85a5607542d932d1d533860837c
+    role: context
+  - path: reports/sssom_completion_20260921/review.json
+    sha256: e60928fbf3463e0a9e36f73e9588047ff14d85aa6cea8a8c2e73e7316ab607fa
+    role: context
+  - path: reports/sssom_completion_20260921/trait-synonym-refresh.json
+    sha256: 00eb08f04e988859ff76605bf4567114f106f73f314fbd36f66261662c45433c
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/.vendored_canon_ref
+    sha256: ecbdb08d2094917a5ed8147086f46579e976df869eaea3942060c552d2e2015c
+    role: context
+  - path: scripts/bump_sssom_header.py
+    sha256: a99e90f406df70cc23ded23e23ae85ea0e7edcf578be1175fff3bc07861e888a
+    role: context
+  - path: scripts/check_unified_freshness.py
+    sha256: 95efa627ea1cc0e6ee2d055815f54a9e121971b1ac843d4be3453176f13d2c90
+    role: context
+  - path: scripts/check_unified_rejections.py
+    sha256: 4f7faf1f103f50be1a59e826b0238061d1a9214afcec9d1cf0b029237e71238c
+    role: context
+  - path: scripts/curate_lithium_glycerophosphate.py
+    sha256: 0929a16165d47b9fea4cd13ad82172417ec0e7d226700f1840cec8403fcae350
+    role: target
+  - path: scripts/promote_heptahydrate_ncit.py
+    sha256: 768166cfb726e3a751b451a89bebfa30c8dea7e22f05ba085cf4fb9db96550ee
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: scripts/validate_sssom_invariants.py
+    sha256: 89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77
+    role: context
+  - path: src/mediaingredientmech/curate/apply_receipt.py
+    sha256: 6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f
+    role: context
+  - path: src/mediaingredientmech/curate/curation_event.py
+    sha256: 22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34
+    role: context
+  - path: src/mediaingredientmech/ingredient_bundle_refresh.py
+    sha256: 58193f16b7231aba75932bf7316c1bf8394709bc7cff96687accb11eb6963946
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/validation/write_validated.py
+    sha256: 6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9
+    role: context
+  - path: tests/fixtures/issue1005-before/README.md
+    sha256: f9419bb9cc037657b26e14a5a5d68c72b6e927a473a48322e60fe34d580afdca
+    role: context
+  - path: tests/fixtures/issue1005-before/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    sha256: 94fff493bf4b0ddc19144054a44305ea29de113477254be64e1dc86c0f128f51
+    role: context
+  - path: tests/fixtures/issue1005-before/baseline.tsv
+    sha256: 95699a64d4bd2de883776bb70b303d71c317ae14910e9caf913e0ff069655ce5
+    role: context
+  - path: tests/fixtures/issue1005-before/manifest.json
+    sha256: 696d79037f9a2f8b0d75e519bb82ec04ecfaa3f2e72b61b31bfc6a81362b04e6
+    role: context
+  - path: tests/fixtures/issue1005-before/target.sssom.tsv
+    sha256: ca416dfe7653ccd04c56680c3edf7b9bbfdaa80e7d47e247b215166eb6f64e7a
+    role: context
+  - path: tests/test_curate_lithium_glycerophosphate.py
+    sha256: db6cbfc05ef3b4cc4ba773e57c959ab6af6e29854ebe74521183ccc6ccd9894c
+    role: context
+  - path: tests/test_ingredient_bundle.py
+    sha256: 32f74d69b9b9e96a535c8f987dba61188908f9c048034162d35d49c8c84b1062
+    role: context
+  - path: uv.lock
+    sha256: f5ce4325376797ada321c0ffba1e6050355e3185c0a079d2c731d17480aeca1a
+    role: context
+  - path: workflow/mech-workflow.yaml
+    sha256: 45d7c23d67f490cea6b31e336e5d2ac98b7ce8fa4e791bd9d3be092cfdb5a10d
+    role: context
+  - path: workflow/parent/mech-cycle.yaml
+    sha256: 32d499de747333e42ed45d40940bfa06c60f85710814155e0fad5f7c4d2fee82
+    role: context
+  - path: workflow/parent/workflow.yaml
+    sha256: 66194b3aba4540e9ee7adf91bc1fd7fb597aede130ef1603031a92002152e1d8
+    role: context
+scope:
+  description: Bounded source, SSSOM, guarded-execution, review-hold, unified and
+    unchanged-companion review for approved Step4/#1005.
+  selection: All 11 explicitly named targets in the exact staged capture, with 411
+    hashed target/context inputs; supporting generated surfaces and all unrelated
+    owners receive byte/scope preservation checks, not new scientific review.
+  coverage: full
+  population_size: 11
+  reviewed_target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  exclusions:
+  - target: Unrelated ingredient science and later approved-plan steps
+    reason: Only structural/byte preservation was checked outside the one-owner correction;
+      no new identity or role decisions were made.
+  - target: New scientific approvals, final committed head and merge cleanup
+    reason: This is a working-tree content review; approvals remain native holds and
+      committed-head/merge attestations follow separately.
+targets:
+- target_id: MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+  label: Distinct supplied lithium-salt owner
+  kind: maintained
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    role: maintained input
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: synchronized collection entry
+- target_id: step4:sssom-parent
+  path: mappings/ingredient_mappings.sssom.tsv
+  label: 'Broader free-acid mapping and retained #390 provenance'
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    role: maintained input
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/curate_lithium_glycerophosphate.py
+    role: bounded guarded writer
+  selector: subject_id=MIM:Sn-Glycerol_3-phosphate_Lithium_Salt; predicate_id=skos:broadMatch;
+    object_id=CHEBI:15978
+- target_id: step4:sssom-local
+  path: mappings/ingredient_mappings.sssom.tsv
+  label: Exact local identity with procurement CAS display
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    role: maintained input
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/curate_lithium_glycerophosphate.py
+    role: bounded guarded writer
+  selector: subject_id=MIM:Sn-Glycerol_3-phosphate_Lithium_Salt; predicate_id=skos:exactMatch;
+    object_id=kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt
+- target_id: step4:guarded-writer
+  path: scripts/curate_lithium_glycerophosphate.py
+  label: Bounded source and canonical writer
+  kind: maintained
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/curate_lithium_glycerophosphate.py
+    role: maintained input
+- target_id: step4:retired-rule-k-pair
+  path: mappings/other_cross_record_baseline.tsv
+  label: Retired target parent-name allowance
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    role: maintained input
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/curate_lithium_glycerophosphate.py
+    role: bounded guarded writer
+  selector: subject_id=MIM:Sn-Glycerol_3-phosphate_Lithium_Salt; token=Glycerol 3-phosphate;
+    expected absence after bounded removal
+- target_id: step4:open-role
+  path: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+  label: Unchanged provisional carbon role remains OPEN
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    role: maintained input
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/semantic_review_20260921/resolution/build_review.py
+    role: native semantic disposition producer
+  selector: source_record=data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml;
+    assertion_type=nutritional_roles; source_position=1
+- target_id: step4:historical-findings
+  path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  label: Mixed historical and role-evidence findings remain OPEN
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    role: maintained input
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/semantic_review_20260921/resolution/build_review.py
+    role: native semantic disposition producer
+  selector: source_record=data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml;
+    finding_id in [SEM:efb20dc38801dfa9e58a,SEM:19e8569ca7ab3c531c7c]
+- target_id: step4:unified-preservation
+  path: UNIFIED_INGREDIENT_MAPPING.tsv
+  label: Expected byte-identical unified snapshot
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    role: maintained input
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_unified_ingredient_mapping.py
+    role: supported producer
+- target_id: step4:unified-provenance
+  path: UNIFIED_INGREDIENT_MAPPING.provenance.json
+  label: Fresh input provenance follows actual producer replay
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/check_unified_freshness.py
+    role: native provenance stamper
+- target_id: step4:mapping-receipt
+  path: reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json
+  label: Native approval-free receipt18
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/sssom_completion_20260921/mapping_changes/make_receipt.py
+    role: maintained native producer
+- target_id: step4:unchanged-companion
+  path: reports/ingredient_bundle_20261101_lithium1005/review.json
+  label: Unchanged20-owner51-claim companion successor
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/refresh_unchanged_cohort.py
+    role: maintained native producer
+checks:
+- check_id: native_capture
+  name: Native inspect and exact staged capture
+  status: passed
+  required: true
+  summary: Native inspect captured 411 input hashes and 11 targets at actual working-tree
+    base 838d0c2627552b0094545ebb580b5bb9b1a84d57; staged tree 79b091afb746635ed40b5831930ac08061d242dd
+    matches the feature capture.
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  evidence_ids:
+  - archive
+  command: python -B scripts/record_review.py inspect --targets step4-independent/final-native/targets.json
+    --input <411 captured target/context files>
+  exit_code: 0
+- check_id: focused_capture
+  name: Clean capture focused integration tests
+  status: passed
+  required: true
+  summary: 248 passed; 13 dependency deprecation warnings. No native integration was
+    skipped in this focused run.
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  evidence_ids:
+  - capture_tests
+  command: python -B -m pytest -q -o addopts= -p no:cacheprovider tests/test_curate_lithium_glycerophosphate.py
+    tests/test_mapping_change_receipt.py tests/test_ingredient_bundle.py tests/test_ingredient_bundle_dependency_refresh.py
+    tests/test_semantic_mapping_review.py tests/test_reviewed_sssom.py
+  exit_code: 0
+- check_id: portable_package
+  name: Portable evidence and tracked inputs
+  status: passed
+  required: true
+  summary: 291 archive members / 321 original identities verified, with exact membership
+    and tracked maintained references.
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  evidence_ids:
+  - capture_package
+  - archive
+  command: python -B reports/lithium_glycerophosphate_1005_20261101/execution/verify.py
+    verify --package reports/lithium_glycerophosphate_1005_20261101/execution --repository
+    . --require-tracked
+  exit_code: 0
+- check_id: native_chain
+  name: Actual native reviewed and semantic chain
+  status: passed
+  required: true
+  summary: Independent read-only verification confirms 17 old receipts plus receipt
+    18, 2979 unchanged unrelated mapping decisions, 2 target holds, unchanged OPEN
+    role/findings and 20/51 companion.
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  evidence_ids:
+  - mapping_receipt
+  - semantic
+  - companion
+  - actual_surfaces
+  command: python -B ../step4-native-chain-plan/native_chain.py verify --source-log
+    <actual absolute source-apply.json> --mapping-receipt reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json
+  exit_code: 0
+- check_id: full_qc
+  name: Required repository QC
+  status: passed
+  required: true
+  summary: Completed just qc passes, including native SSSOM, roundtrip and flat-export
+    gates; separate product, CURIE, unified and writer gates also pass.
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  evidence_ids:
+  - final_checks
+  command: just qc; just curie-validate validate-products; just check-unified-rejections
+    check-unified-freshness; just audit-writers
+  exit_code: 0
+- check_id: full_suite
+  name: Completed full test suite
+  status: passed
+  required: true
+  summary: 3744 passed, 1 skipped, 27 warnings; no coverage percentage claimed. Full
+    suite was inspected through bound actual receipts and not needlessly repeated
+    in the capture.
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  evidence_ids:
+  - final_checks
+  command: uv run --frozen python -m pytest -q -o addopts= -p no:cacheprovider
+  exit_code: 0
+- check_id: adversarial_controls
+  name: Finding fixes and adversarial controls
+  status: passed
+  required: true
+  summary: '#1043–#1047 were filed before fixes and independently re-reviewed. Receipt
+    binding/reservation, Git path scope, optional-runtime tests and rename endpoints
+    pass their bounded controls.'
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  evidence_ids:
+  - receipt_fixes
+  - git_scope
+  - runtime_fix
+  - closure_fix
+  exit_code: 0
+- check_id: label_coverage
+  name: Explicit optional validation limits
+  status: unavailable
+  required: false
+  summary: Product checks retain 101 non-blocking warnings and 5303 no-adapter pairs;
+    actual-KG B4 coverage lacks BTO/MICRO transformed files. These are not universal
+    label or ontology-membership validations.
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:guarded-writer
+  - step4:retired-rule-k-pair
+  - step4:open-role
+  - step4:historical-findings
+  - step4:unified-preservation
+  - step4:unified-provenance
+  - step4:mapping-receipt
+  - step4:unchanged-companion
+  evidence_ids:
+  - final_checks
+evidence:
+- evidence_id: semantics
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Section 3 exact supplied-form identity procedure and SSSOM predicate/registry
+    provenance contract govern this review.
+  locator: Sections3 and SSSOM registry/predicate rules
+  snapshot_sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+- evidence_id: owner
+  kind: record_content
+  reference: data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Full corrected record: exact approved local identity, broad free-acid
+    parent, exact procurement note, no active free-acid chemistry, append-only history
+    and unchanged provisional role.'
+  snapshot_sha256: 4b9f262ea27e2ad760b43ae9e3fa4af7e30a4f1af88573335e5beef08832e6e4
+- evidence_id: primary
+  kind: primary_source
+  reference: reports/lithium_glycerophosphate_1005_20261101/sources/manifest.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Hash-bound inspected Sigma 94124 extracted primary-page text, ChEBI 15978
+    and PubChem 439162 captures support the lithium-salt versus free-acid distinction.
+    Failed empty Sigma HTTP capture and ignored local CSV are explicitly classified.
+  snapshot_sha256: ca89868b74535eb7d4296fbb3cb14cc6da8cb599dd78ab27ef95baff61f1eb24
+- evidence_id: sigma
+  kind: primary_source
+  reference: reports/lithium_glycerophosphate_1005_20261101/sources/sigma-94124-web-response.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Supplier page names the lithium product, variable Li content and free-acid
+    mass basis; it does not settle lithium stoichiometry.
+  snapshot_sha256: 2b1f6c58d9fb226f5692042ba3f230a6ce293bfb0ac2689c48b761c5358c157e
+- evidence_id: canonical
+  kind: record_content
+  reference: mappings/ingredient_mappings.sssom.tsv
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Exactly two surviving target rows: broad CHEBI:15978 and exact local registry;
+    no exact CAS row; #390, original stamps and source tokens preserved.'
+  locator: subject_id=MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  snapshot_sha256: beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9
+- evidence_id: mapping_receipt
+  kind: record_content
+  reference: reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Native sequence 18 is approval-free and binds one owner plus 2 changed/1
+    removed/0 added rows; prior 17 links replay unchanged.
+  snapshot_sha256: 2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd
+- evidence_id: semantic
+  kind: record_content
+  reference: reports/semantic_review_20260921/resolution/current-review.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Scientific release remains FAIL; existing blocking findings and open assertions
+    remain explicit.
+  snapshot_sha256: b2ba2ae7ddc2caa23065dbb27ecdff2f135dda9d2f9d1f29349cab16d5d34455
+- evidence_id: roles
+  kind: record_content
+  reference: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Target provisional role payload/evidence is unchanged and OPEN; surviving
+    mapping assertions are also OPEN.
+  locator: source_record=data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml
+    and target mapping triples
+  snapshot_sha256: 3a31c61809d01609b6d8fc6995a7a7629b6c15f69273f8660fb68ad27b8d5294
+- evidence_id: findings
+  kind: record_content
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: The mixed historical finding and role-evidence finding remain OPEN; current-owner
+    binding changes without blanket retirement.
+  locator: SEM:efb20dc38801dfa9e58a; SEM:19e8569ca7ab3c531c7c
+  snapshot_sha256: e8d8487a96914e3a050b9cb78a951fae173f1fbffb545adf604555866e14a293
+- evidence_id: companion
+  kind: record_content
+  reference: reports/ingredient_bundle_20261101_lithium1005/dependency-refresh.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Actual refresh preserves 20 owner hashes and 51 complete claim decisions;
+    8 base mapping locators move. No target owner enters the cohort and no approval
+    is added.
+  snapshot_sha256: 9eb57dab26c0101d327b3701361dbe8d31f92af3491000895835a4c3de22899b
+- evidence_id: archive
+  kind: validation
+  reference: reports/lithium_glycerophosphate_1005_20261101/execution/manifest.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Portable verifier passes exact 291-member archive membership, 321 original
+    identities, decoded/raw hashes, command/log bindings and tracked maintained references.
+  snapshot_sha256: e13ff8a8701c173bfd2478ae409c4d9ecb8e12cfd3167c5810d4b507e6afaae5
+- evidence_id: final_checks
+  kind: validation
+  reference: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-final-validation.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Completed native chain, full just qc, product/unified/writer gates and
+    full suite: 3744 passed / 1 skipped / 27 warnings are bound to actual command
+    receipts. No coverage percentage is asserted.'
+  locator: 'Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-final-validation.json;
+    raw SHA256 2f659fee7519236e9f0a3ebb139e1f16f0f5463425ff61fe455b4a69d4869c74; encoding
+    identity'
+  snapshot_sha256: 2f659fee7519236e9f0a3ebb139e1f16f0f5463425ff61fe455b4a69d4869c74
+- evidence_id: actual_surfaces
+  kind: validation
+  reference: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/actual-generated-state.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: Independent actual-output comparison proves bounded aggregate/index/browser/visual
+    changes, preserved graph coordinates and unified byte equality; all 19432 unified
+    input hashes were rechecked.
+  locator: 'Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/actual-generated-state.json;
+    raw SHA256 30966c58db5a92ba5a7bb1bd11198e5a0753831b22c31862811b7e1160f45c6b; encoding
+    identity'
+  snapshot_sha256: 30966c58db5a92ba5a7bb1bd11198e5a0753831b22c31862811b7e1160f45c6b
+- evidence_id: unified
+  kind: validation
+  reference: reports/lithium_glycerophosphate_1005_20261101/execution/unified/unified-generation-receipt.json.gz
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Actual native unified rebuild equals the canonical/base bytes: 4170 names
+    and 209330 occurrences. Only provenance is guarded-published; producer and actual
+    unified runtime are Claw 6a717258.'
+  locator: 'Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-unified-evidence/unified-generation-receipt.json;
+    raw SHA256 9ed6ba59e25986d2a21951f8f7b6a0d7b267480b2cc5cf1645acb04f90c37a9a; encoding
+    gzip'
+  snapshot_sha256: 5d8c2654fb9ecf51591426be1166c56b9eb2798387000d9c6b806fb740cafdf1
+- evidence_id: receipt_fixes
+  kind: validation
+  reference: reports/lithium_glycerophosphate_1005_20261101/execution/independent/receipt-fix-controls/results.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Independent exact-wrapper controls verify #1043 joint receipt/audit reservation
+    and #1044 completed-promotion binding: positive plus seven corruption/collision
+    controls.'
+  locator: 'Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/receipt-fix-controls/results.json;
+    raw SHA256 e86ff83b69bd941d9d5984b12347817bf479f34a938b963fb328fc279aec70dd; encoding
+    identity'
+  snapshot_sha256: e86ff83b69bd941d9d5984b12347817bf479f34a938b963fb328fc279aec70dd
+- evidence_id: git_scope
+  kind: validation
+  reference: reports/lithium_glycerophosphate_1005_20261101/execution/independent/chain-1045-actual.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Independent actual Git inventory verifies 2955 owner paths and 2954 unchanged
+    non-target records after the NUL-path #1045 repair.'
+  locator: 'Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/chain-1045-actual.json;
+    raw SHA256 d802944e379cb1f5790c7f40564ea307cd94ab79e6126a37fb3a492113f24179; encoding
+    identity'
+  snapshot_sha256: d802944e379cb1f5790c7f40564ea307cd94ab79e6126a37fb3a492113f24179
+- evidence_id: runtime_fix
+  kind: validation
+  reference: reports/lithium_glycerophosphate_1005_20261101/execution/independent/preapplication-addendum.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Independent #1046 re-review: native 49/49; hermetic no-Claw: 16 passes
+    / 33 explicitly optional skips, with pure identity/provenance/promotion controls
+    active.'
+  locator: 'Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/preapplication-addendum.json;
+    raw SHA256 cb3deb09bc87755c969e93cce5460978f48671e04ecd59383d9b04082de0fe4c; encoding
+    identity'
+  snapshot_sha256: cb3deb09bc87755c969e93cce5460978f48671e04ecd59383d9b04082de0fe4c
+- evidence_id: closure_fix
+  kind: validation
+  reference: reports/lithium_glycerophosphate_1005_20261101/execution/supplement/step4-independent/merge-helper-independent-review.json
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Independent #1045/#1047 closure helper checks preserve all other ownership
+    guards ; 7 real Git regressions and the original rename-resurrection counterexample
+    pass after correction. No production cleanup was executed by this reviewer.'
+  locator: 'Original: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-independent/merge-helper-independent-review.json;
+    raw SHA256 7e33fe35f4dcfc0a1e688578bb65edf35c49db36b322ba23845607b9df534c31; encoding
+    identity'
+  snapshot_sha256: 7e33fe35f4dcfc0a1e688578bb65edf35c49db36b322ba23845607b9df534c31
+- evidence_id: capture_tests
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-capture-integrations-v1.json
+  locator: Fresh post-freeze capture receipt; bound log /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-capture-integrations-v1.log
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Exact staged capture: 248 focused writer, receipt, companion and semantic
+    mapping/review regressions pass, including all 49 native lithium cases.'
+  snapshot_sha256: 47214e4f143497a231cea84db57115af34a75b8d13066d1c46c236c5f7bf2a93
+- evidence_id: capture_package
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-portable-package-v1.json
+  locator: Fresh post-freeze capture receipt; bound log /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-portable-package-v1.log
+  accessed_at: '2026-11-01T11:21:15.069656Z'
+  support: supports
+  summary: 'Exact staged capture: portable package verification with --require-tracked
+    passes.'
+  snapshot_sha256: d1cb004a7cccb133e80c5d182f2d7a3fce4d53bac679efaf976c91df4e6cbe41
+assessments:
+- assessment_id: supplied_identity
+  area: identity
+  topic: Approved distinct supplied lithium form
+  outcome: supported
+  summary: The exact approved local compound identity and broad free-acid parent are
+    represented conservatively. Sigma procurement CAS is contextual supply metadata.
+    Active free-acid chemistry is removed while the exact old bundle, eight prior
+    events, rejected labels and role evidence remain preserved.
+  target_ids:
+  - MIM:Sn-Glycerol_3-phosphate_Lithium_Salt
+  evidence_ids:
+  - semantics
+  - owner
+  - primary
+  - sigma
+  dimensions:
+  - name: supplied_form_note
+    value: free-acid CAS/FW; Li stoichiometry unstated
+    definition: Exact approved note; no salt formula, structure, molecular mass or
+      fixed Li stoichiometry is inferred.
+    evidence_ids:
+    - owner
+    - sigma
+- assessment_id: sssom_rows
+  area: representation
+  topic: Bounded three-to-two SSSOM transformation
+  outcome: supported
+  summary: 'Broad CHEBI:15978 retains the #390 comment and historical stamp. Exact
+    local identity retains its stamp and procurement CAS display. Old source tokens
+    survive; false exact CAS and generic parent alias are removed. All unrelated canonical
+    bytes remain unchanged.'
+  target_ids:
+  - step4:sssom-parent
+  - step4:sssom-local
+  - step4:retired-rule-k-pair
+  evidence_ids:
+  - canonical
+  - mapping_receipt
+  - actual_surfaces
+  metrics:
+  - name: changed canonical rows
+    value: 2
+    unit: rows
+    definition: Target rows whose payload changes; canonical total after correction
+      is 2981.
+    denominator: 2981
+  - name: removed false identity rows
+    value: 1
+    unit: rows
+    definition: Exact cas:17989-41-2 row removed; no added row.
+- assessment_id: guarded_execution
+  area: provenance
+  topic: Guarded source, promotion, receipts and closure controls
+  outcome: supported
+  summary: Actual writer, native candidate and completed transaction receipts bind
+    the one-owner correction. The final execution package preserves original paths,
+    source identities, failed attempts and re-review evidence. Corrected wrappers
+    refuse receipt collisions, changed promotion inputs and incomplete Git path comparisons;
+    no review result grants scientific approval.
+  target_ids:
+  - step4:guarded-writer
+  - step4:mapping-receipt
+  evidence_ids:
+  - archive
+  - receipt_fixes
+  - git_scope
+  - runtime_fix
+  - closure_fix
+  - capture_tests
+- assessment_id: retained_holds
+  area: scope
+  topic: Unchanged provisional role and mixed historical findings
+  outcome: supported
+  summary: Both target mappings remain WITHHOLD. The provisional CARBON_SOURCE payload/evidence
+    stays OPEN, as do both mixed/role findings under the new owner hash. Unrelated
+    assertion decisions and the prior NLDM withdrawals remain unchanged; full scientific
+    release remains FAIL.
+  target_ids:
+  - step4:open-role
+  - step4:historical-findings
+  evidence_ids:
+  - roles
+  - findings
+  - semantic
+  - final_checks
+- assessment_id: unified_replay
+  area: consistency
+  topic: Actual zero-change unified producer replay
+  outcome: supported
+  summary: The actual native unified output is byte-identical to baseline/canonical
+    with 4170 names and 209330 occurrences, including hash-prefixed names. Native
+    provenance matches current 2955-owner inputs. Only provenance is published, with
+    zero rejected rows missing identity and zero local-compound ChEBI leaks.
+  target_ids:
+  - step4:unified-preservation
+  - step4:unified-provenance
+  evidence_ids:
+  - unified
+  - actual_surfaces
+  metrics:
+  - name: changed unified rows
+    value: 0
+    unit: rows
+    definition: Exact native output versus baseline byte comparison.
+    denominator: 4170
+- assessment_id: companion_refresh
+  area: consistency
+  topic: Unchanged scoped companion and owned selectors
+  outcome: supported
+  summary: The immutable companion preserves 20 owners and 51 complete claims/decisions;
+    8 mapping locators move after row removal. The target remains excluded. Only the
+    owned workflow/test/documentation selectors advance; historical reviews, qc-evidence
+    and the vendored pin remain intact.
+  target_ids:
+  - step4:unchanged-companion
+  evidence_ids:
+  - companion
+  - actual_surfaces
+  - capture_tests
+findings: []
+actions: []
+limitations:
+- 'Scientific_review is false: the user-approved identity is checked for faithful
+  evidence-backed representation; provisional role support, salt stoichiometry and
+  full scientific release are not newly approved.'
+- Sigma evidence is successful extracted primary-page text. Its separate empty HTTP
+  response timed out; the ignored CultureBotHT CSV is hash-bound local context rather
+  than a commit-attested source. No direct CAS Registry verification or exhaustive
+  ontology-absence claim is made.
+- 'Product validation retains101 non-blocking warnings and 5303 no-adapter pairs;
+  BTO/MICRO transformed inputs are unavailable for native B4 membership coverage.
+  Six existing cross-prefix KG node warnings remain for the later #870 step.'
+- Full suite has 1 skipped test and 27 warnings; hermetic MIM-only tests intentionally
+  skip 33 optional Claw integrations, while all 49 native lithium cases ran in the
+  fresh 248-test capture. No local coverage percentage is claimed.
+- The authoritative package contains pre-freeze checks; fresh capture test/package
+  logs retain their exact standalone RUN paths and hashes. This review attests working-tree
+  bytes at actual durable base 838d, not a fabricated feature commit or supervisor
+  receipt.
+notes:
+- '#1043–#1047 are historical preapplication/runtime findings with retained before/fix/re-review
+  evidence. Empty final findings means no remaining finding in this scope; it neither
+  closes their GitHub issues nor invents structured-finding predecessor bindings.'
+- MIM validation used pinned Claw 16fd7c9484d98b14a53aec55616d26dae70a0af7. SSSOM
+  producer and actual unified runtime used 6a7172585eb68da7f4fe01aee75a82458ddd470c.
+  CultureMech input context is a74dd489720c9df96cc073ffd11568d407d3c06c. No paid providers,
+  cycle changes or production cleanup were performed by this reviewer.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1005#issuecomment-6556888392
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1043
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1044
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1045
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1046
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1047
+tags:
+- approved-step4
+- issue1005
+- independent-review
+- no-scientific-approval
+```

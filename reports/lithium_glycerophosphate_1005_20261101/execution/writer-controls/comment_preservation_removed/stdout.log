@@ -1,0 +1,42 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___ test_native_promotion_preserves_unrelated_bytes_comment_stamps_and_noops ___
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8405/test_native_promotio...Y_UNREVIEWED\nMIM:Sn-Glycerol_3-phosphate_Lithium_Salt\tGlycerol 3-phosphate\tMIM:Glycerol_3-phosphate\tUNREVIEWED\n'})
+
+    def test_native_promotion_preserves_unrelated_bytes_comment_stamps_and_noops(case):
+        root, evidence, source, before = case
+        args = promotion(case)
+        result = writer.promote(**args, apply=True)
+        assert (result["changed_rows"], result["removed_rows"], result["removed_baseline_rows"]) == (2, 1, 1)
+        _, rows = writer.table((root / writer.SSSOM).read_bytes())
+        _, prior = writer.table(before[writer.SSSOM])
+        target = [r for r in rows if r["subject_id"] == writer.SUBJECT]
+        assert len(target) == 2 and {r["object_id"] for r in target} == {writer.PARENT, writer.NEW}
+        for row in target:
+            old = next(r for r in prior if r["subject_id"] == writer.SUBJECT and r["object_id"] == row["object_id"])
+            assert row["validation_method"] == old["validation_method"]
+            assert set(old["source"].split("|")) <= set(row["source"].split("|"))
+            if row["object_id"] == writer.PARENT:
+>               assert row["comment"] == old["comment"] and row["comment"].startswith("[#390")
+E               AssertionError: assert ('' == '[#390 2026-0...antics: skos]'
+E                 
+E                 - [#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos])
+
+../step4-writer-controls/comment_preservation_removed/tests/test_curate_lithium_glycerophosphate.py:160: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step4-writer-controls/comment_preservation_removed/tests/test_curate_lithium_glycerophosphate.py::test_native_promotion_preserves_unrelated_bytes_comment_stamps_and_noops
+1 failed, 34 deselected, 13 warnings in 0.55s

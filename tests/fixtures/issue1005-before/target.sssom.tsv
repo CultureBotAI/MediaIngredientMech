@@ -1,0 +1,41 @@
+# curie_map:
+#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"
+#   FOODON: "http://purl.obolibrary.org/obo/FOODON_"
+#   UBERON: "http://purl.obolibrary.org/obo/UBERON_"
+#   ENVO: "http://purl.obolibrary.org/obo/ENVO_"
+#   NCIT: "http://purl.obolibrary.org/obo/NCIT_"
+#   MICRO: "http://purl.obolibrary.org/obo/MICRO_"
+#   mesh: "http://id.nlm.nih.gov/mesh/"
+#   BTO: "http://purl.obolibrary.org/obo/BTO_"
+#   kgmicrobe.compound: "https://w3id.org/kg-microbe/compound/"
+#   kgmicrobe.ingredient: "https://w3id.org/kg-microbe/ingredient/"
+#   cas: "https://commonchemistry.cas.org/detail?cas_rn="
+#   registry: "https://w3id.org/kg-microbe/registry/"
+#   MIM: "https://github.com/CultureBotAI/MediaIngredientMech/blob/main/data/ingredients/mapped/"
+#   obo: "http://purl.obolibrary.org/obo/"
+#   kgm: "https://w3id.org/kg-microbe/"
+#   semapv: "https://w3id.org/semapv/vocab/"
+#   skos: "http://www.w3.org/2004/02/skos/core#"
+#   orcid: "https://orcid.org/"
+#   cbclaw: "https://github.com/culturebotai/culturebotai-claw/blob/main/"
+# license: "https://creativecommons.org/licenses/by/4.0/"
+# mapping_set_id: "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient"
+# mapping_set_version: "2026-11-01"
+# mapping_set_description: "Canonical MediaIngredientMech → ingredient-ontology mappings (CHEBI + FOODON; UBERON/ENVO when populated). One row per mapped MIM ingredient record. Per-row object_source distinguishes ontologies. Predicate is skos:exactMatch by default; narrowMatch/broadMatch/closeMatch where residual-P2.5 triage found a specificity or symmetry difference, or where mapping_quality != EXACT_MATCH. The `source` extension column records the upstream origin (MIM evidence + kg-microbe source pipeline, CHEBI only)."
+# mapping_date: "2026-11-01"
+# predicate_semantics: skos
+# creator_id:
+#   - "orcid:0000-0001-8175-045X"
+# subject_source: "MIM:ingredients"
+# extension_definitions:
+#   - slot_name: source
+#     property: "cbclaw:provenance-source"
+#     type_hint: "xsd:string"
+#   - slot_name: validation_method
+#     property: "cbclaw:validation-method"
+#     type_hint: "xsd:string"
+subject_id	subject_label	predicate_id	object_id	object_label	object_source	mapping_justification	source	mapping_date	confidence	comment	other	validation_method
+MIM:~28-~29-anisomycin	(-)-anisomycin	skos:exactMatch	CHEBI:338412	(-)-anisomycin	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder import via ols-label-exact|MIM:curator=classify_ingredient_type|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_metabolite]|kgm:primary_mappings[kegg_compound]	2026-08-13	0.99			OLS:chebi|CONFIRMED|2026-09-02
+MIM:Sn-Glycerol_3-phosphate_Lithium_Salt	sn-Glycerol 3-phosphate lithium salt	skos:broadMatch	CHEBI:15978	sn-glycerol 3-phosphate	obo:chebi.owl	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]	2026-09-20	0.9	[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]	Glycerol 3-phosphate	manual:reconcile_sssom|PREDICATE|2026-09-20
+MIM:Sn-Glycerol_3-phosphate_Lithium_Salt	sn-Glycerol 3-phosphate lithium salt	skos:exactMatch	cas:17989-41-2	sn-Glycerol 3-phosphate lithium salt	registry:cas	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]	2026-07-20	0.99	Registry/identity row preserving cas:17989-41-2 alongside parent CHEBI:15978.	CAS:17989-41-2	none|UNKNOWN_TERM|2026-07-07
+MIM:Sn-Glycerol_3-phosphate_Lithium_Salt	sn-Glycerol 3-phosphate lithium salt	skos:exactMatch	kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt	sn-Glycerol 3-phosphate lithium salt	kgm:compound	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]	2026-07-20	0.99	Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt alongside parent CHEBI:15978.	CAS:17989-41-2	none|UNKNOWN_TERM|2026-07-07

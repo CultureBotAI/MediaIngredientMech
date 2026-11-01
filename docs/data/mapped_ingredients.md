@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-11-01T09:17:27.047123+00:00
+Generated: 2026-11-01T11:04:35.081415+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1810,7 +1810,6 @@ Total: 2680 ingredients
 | FOODON:03301484 | FOODON:03301484 | Skimmed milk | MAPPED | FOODON | EXACT_MATCH | 24 |
 | ENVO:00002044 | ENVO:00002044 | Sludge | MAPPED | ENVO | EXACT_MATCH | 18 |
 | cas:29849-82-9 | CHEBI:15978 | sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| cas:17989-41-2 | CHEBI:15978 | sn-Glycerol 3-phosphate lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:78074 | CHEBI:78074 | SnCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | cas:4263-52-9 | cas:4263-52-9 | Sodium 2-bromoethanesulfonate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:31824 | CHEBI:31824 | Sodium 2-mercaptoethanesulfonate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -2685,3 +2684,4 @@ Total: 2680 ingredients
 | NCIT:C61946 | NCIT:C61946 | Na2HPO4 x 7 H2O | MAPPED | NCIT | EXACT_MATCH | 32 |
 | NCIT:C216679 | NCIT:C216679 | Carnitine (Dl) Hydrochloride | REJECTED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C216679 | NCIT:C216679 | Carnitine Hydrochloride | MAPPED | NCIT | EXACT_MATCH | 14 |
+| kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt | CHEBI:15978 | sn-Glycerol 3-phosphate lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |

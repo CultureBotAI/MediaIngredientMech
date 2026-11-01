@@ -1,0 +1,63 @@
+Scanning 2680 MIM ingredient YAMLs...
+Fetching rdfs:labels for 1888 CHEBI ids from OAK...
+  resolved 1888 / 1888
+Fetching rdfs:labels for 42 FOODON ids from OLS4...
+  resolved 0 / 42
+Fetching rdfs:labels for 4 UBERON ids from OLS4...
+  resolved 0 / 4
+Fetching rdfs:labels for 12 ENVO ids from OLS4...
+  resolved 0 / 12
+  (no label loader for NCIT:; falling back to MIM-stored labels)
+  (no label loader for MICRO:; falling back to MIM-stored labels)
+  (no label loader for mesh:; falling back to MIM-stored labels)
+  (no label loader for BTO:; falling back to MIM-stored labels)
+  (no label loader for kgmicrobe.compound:; falling back to MIM-stored labels)
+  (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+  (no label loader for cas:; falling back to MIM-stored labels)
+Replayed 2904 validation_method stamps (prior sources: source-apply.before-ingredient_mappings.sssom.tsv=2915; 2915 unique)
+Wrote 2974 rows to /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/output/step4-native-candidate/candidate.sssom.tsv
+  (skipped 70 MIM records without a supported ontology_id prefix: CHEBI:, FOODON:, UBERON:, ENVO:, NCIT:, MICRO:, mesh:, BTO:, kgmicrobe.compound:, kgmicrobe.ingredient:, cas:)
+Predicate breakdown:
+  skos:exactMatch          2728
+  skos:broadMatch          150
+  skos:closeMatch          96
+Object-prefix breakdown:
+  CHEBI:     1976
+  cas:       246
+  kgmicrobe.compound: 230
+  kgmicrobe.ingredient: 202
+  mesh:      92
+  NCIT:      79
+  MICRO:     73
+  FOODON:    52
+  ENVO:      19
+  UBERON:    4
+  BTO:       1
+
+Validating candidate.sssom.tsv...
+  OK
+{
+  "timestamp": "2026-11-01T10:53:56.965316+00:00",
+  "candidate": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/output/step4-native-candidate/candidate.sssom.tsv",
+  "candidate_sha256": "c96267c778bf86af6125b144fc32b3382df7c22883439190f88dc3c15005143a",
+  "prior_stamps": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-application/source-apply.before-ingredient_mappings.sssom.tsv",
+  "prior_sha256": "d5cd812a8c44c85438d73c68c7a8c3067a505765e4cd54e3a64cef029f2d8ed6",
+  "producer_revision": "6a7172585eb68da7f4fe01aee75a82458ddd470c",
+  "producer_sha256": "cc9c38c1d4922e6b167958daa2ce0bd2618e4c122e2de12c8af4ad13505c6c0e",
+  "harness_sha256": "d8e7a2299eb593c9aa1c341bafd6dcd5d2f6a71c6e4aaeff3f3ce325a04981bc",
+  "input_manifest_sha256": "b1918f50ba07a765eea7c54d8b2dd8f36cd9bb4213666da5c67b8083e6e39aa4",
+  "label_maps": {
+    "label-input-01.json": "980efea7c0c48a31a45e637727fb7e7ec2a9df911b8d328386a20fd33d019171",
+    "label-input-02.json": "4d3898bb5fa81bbff6284a64d0f1089bccf63752b5ce1a0423357bd50f9116e9",
+    "label-input-03.json": "632ed1421282561aa784325ea5fa6e1c058cdcef67d518790e586cc27cd9cd45",
+    "label-input-04.json": "2aebd645c12717252b134f9e579846f550da83de64f0aecda096e2a5c0697c84"
+  },
+  "optional_residual": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/claw-cas-guard/workspace/reports/kg_microbe_residual_p25_categorized.json",
+    "present": false
+  },
+  "comparison_input_scope": "CultureMech outputs and Mediadive nodes are not imported by this SSSOM producer.",
+  "input_bytes_unchanged": true,
+  "scientific_approval_added": false,
+  "supervisor_binding": null
+}

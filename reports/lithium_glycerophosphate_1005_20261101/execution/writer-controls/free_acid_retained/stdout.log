@@ -1,0 +1,35 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_proposal_exact_approved_fields_and_all_preserved_science _________
+
+case = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8401/test_proposal_exact_...Y_UNREVIEWED\nMIM:Sn-Glycerol_3-phosphate_Lithium_Salt\tGlycerol 3-phosphate\tMIM:Glycerol_3-phosphate\tUNREVIEWED\n'})
+
+    def test_proposal_exact_approved_fields_and_all_preserved_science(case):
+        _, _, _, before = case
+        old = yaml.safe_load(before[writer.OWNER])
+        result = writer.propose_record(before[writer.OWNER], timestamp=STAMP)
+        new = yaml.safe_load(result)
+        assert new["identifier"] == "kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt"
+        assert new["supplied_form"] == [{"name": "sn-Glycerol 3-phosphate lithium salt", "cas_rn": "17989-41-2",
+                                       "form": "lithium salt", "supplier": "Sigma-Aldrich", "catalog_number": "94124",
+                                       "notes": "free-acid CAS/FW; Li stoichiometry unstated"}]
+>       assert "chemical_properties" not in new
+E       AssertionError: assert 'chemical_properties' not in {'identifier': 'kgmicrobe.compound:sn-glycerol_3-phosphate_lithium_salt', 'preferred_term': 'sn-Glycerol 3-phosphate l...xt': 'sn-glycerol 3-(dihydrogen phosphate)', 'synonym_type': 'REJECTED_LABEL', 'source': 'chebi_synonym_review'}], ...}
+
+../step4-writer-controls/free_acid_retained/tests/test_curate_lithium_glycerophosphate.py:85: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step4-writer-controls/free_acid_retained/tests/test_curate_lithium_glycerophosphate.py::test_proposal_exact_approved_fields_and_all_preserved_science
+1 failed, 34 deselected, 13 warnings in 0.55s

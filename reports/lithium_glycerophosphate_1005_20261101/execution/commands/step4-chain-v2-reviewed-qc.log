@@ -1,0 +1,57 @@
+uv run --frozen python reports/sssom_completion_20260921/assemble_review.py --check
+{
+  "mapping_rows": 2981,
+  "dispositions": {
+    "SUPPORTED": 1739,
+    "WITHHOLD": 1242
+  },
+  "reproduced": true
+}
+uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2" --validate-only
+{
+  "counts": {
+    "source": 2981,
+    "supported": 1739,
+    "withhold": 1242
+  },
+  "files": {
+    "ingredient_mappings.sssom.tsv": "70b4652469a0793e643717b26ae19f124ff4db25fe1b199bbb592851b53a164d",
+    "mapping-dispositions.tsv": "a8a7aef2039268f5f57a6e2350f6ca037afedabb81a902c0e9fb89e1e8a21f51",
+    "withheld_mappings.sssom.tsv": "b5d0d4dcda9d90bdacbb92c3cc07fa9923c72da6cc9ea83ce84f0e3ea49d65f9"
+  },
+  "mapping_set_ids": {
+    "supported": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/reviewed-supported",
+    "withhold": "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient/withheld-backlog"
+  },
+  "review_sha256": "e60928fbf3463e0a9e36f73e9588047ff14d85aa6cea8a8c2e73e7316ab607fa",
+  "schema_version": 1,
+  "scope": "MIM-only reviewed SSSOM; no KGX dependency",
+  "semantic_status": "PASS_SUPPORTED_SUBSET",
+  "source_sha256": "beef5e184ea0895d41d80f1b1b813f6983c5534ea59f9b4585feb71940e7c6f9",
+  "source_sssom": "mappings/ingredient_mappings.sssom.tsv"
+}
+uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$2"
+Metadata key 'predicate_semantics' is not a standard SSSOM mapping set metadata field. See https://mapping-commons.github.io/sssom/spec-model/#non-standard-slots on how to specify additional, non-standard fields in a SSSOM file.
+No attr for source [1739 instances]
+No attr for validation_method [1739 instances]
+WARNING:sssom.parsers:Metadata key 'predicate_semantics' is not a standard SSSOM mapping set metadata field. See https://mapping-commons.github.io/sssom/spec-model/#non-standard-slots on how to specify additional, non-standard fields in a SSSOM file.
+WARNING:sssom.parsers:No attr for source [1242 instances]
+WARNING:sssom.parsers:No attr for validation_method [1242 instances]
+{
+  "partitions": {
+    "ingredient_mappings.sssom.tsv": {
+      "linkml_rows": 1739,
+      "native_rows": 1739,
+      "raw_rows": 1739,
+      "status": "PASS"
+    },
+    "withheld_mappings.sssom.tsv": {
+      "linkml_rows": 1242,
+      "native_rows": 1242,
+      "raw_rows": 1242,
+      "status": "PASS"
+    }
+  },
+  "scope": "Native SSSOM parsing and LinkML schema; exact row count and mapping identity/label/numeric-confidence multiset, including duplicate multiplicity, preserved. Native sorting and other extension-field normalization are permitted; reviewed exporter independently verifies complete output bytes.",
+  "status": "PASS"
+}

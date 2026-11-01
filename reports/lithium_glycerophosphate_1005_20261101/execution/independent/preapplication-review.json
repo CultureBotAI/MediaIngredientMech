@@ -1,0 +1,129 @@
+{
+  "reviewer": "Codex independent agent /root/step4_design_review",
+  "finished_at": "2026-11-01T10:56:21.759556+00:00",
+  "scope": "Independent preapplication writer, actual candidate proposal, native chain and receipt-wrapper controls; not final-head or scientific review.",
+  "base": "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+  "source_writer_sha256": "0929a16165d47b9fea4cd13ad82172417ec0e7d226700f1840cec8403fcae350",
+  "chain_driver_sha256": "75c29e50c75fd6ee4acfc5c2b8402da634ee286f7ae8054958e656b368a21a13",
+  "receipt_wrapper_original_sha256": "1b907e603d31b3c7f33582ea43ad6ed443b0981a30febe9d5d71f94ce173b4fe",
+  "receipt_wrapper_fixed_sha256": "64e3a3396f61d3892484afb8be1fc748cf6019f422539d196531997d79683717",
+  "checks": {
+    "step4-independent-author-focused": {
+      "name": "step4-independent-author-focused",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_curate_lithium_glycerophosphate.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:49:56.538234+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:49:59.252047+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-author-focused.log",
+      "log_sha256": "7b4b3115faa136fb4fa59d8d44696f544c07bd39baa981a3ca6760e6d185e75e"
+    },
+    "step4-independent-chain-controls-v1": {
+      "name": "step4-independent-chain-controls-v1",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "../step4-native-chain-plan/test_native_chain.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:53:57.038351+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:53:57.634391+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-chain-controls-v1.log",
+      "log_sha256": "a82d4541a8b70e0f0604adb795662b0ed2bea40bdc054ec3b38792c351be3bb3"
+    },
+    "step4-independent-receipt-wrapper-v1": {
+      "name": "step4-independent-receipt-wrapper-v1",
+      "argv": [
+        "python",
+        "-B",
+        "../step4-independent/probe_receipt_wrapper.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:52:42.868746+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:52:46.184692+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-receipt-wrapper-v1.log",
+      "log_sha256": "b04910338e67c4b28a3bfd56077f67f8c045fb835249d05a4eb5c22af485f621"
+    },
+    "step4-independent-receipt-fix-v1": {
+      "name": "step4-independent-receipt-fix-v1",
+      "argv": [
+        "python",
+        "-B",
+        "../step4-independent/probe_receipt_fix.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:54:26.353872+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:54:32.582173+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-receipt-fix-v1.log",
+      "log_sha256": "e86ff83b69bd941d9d5984b12347817bf479f34a938b963fb328fc279aec70dd"
+    },
+    "step4-independent-actual-proposal-v1": {
+      "name": "step4-independent-actual-proposal-v1",
+      "argv": [
+        "python",
+        "-B",
+        "../step4-independent/check_actual_proposal.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:54:55.625097+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:54:57.120960+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-actual-proposal-v1.log",
+      "log_sha256": "d75e96bf12853693f86bc566675b27ecec4d543cfd74b2d4264b8c9241108825"
+    }
+  },
+  "findings": [
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1043",
+      "issue_number_source": "root-reported; direct gh read failed due network restriction",
+      "finding": "Audit collision detected only after receipt18 publication",
+      "proof": "receipt-wrapper-results.json",
+      "recheck": "receipt-fix-controls/results.json",
+      "disposition": "Fixed in inspected wrapper; positive and audit-collision controls pass."
+    },
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1044",
+      "issue_number_source": "root-reported; direct gh read failed due network restriction",
+      "finding": "Post-promotion #390 comment loss could be receipted because promotion completion was not bound",
+      "proof": "receipt-wrapper-results.json",
+      "recheck": "receipt-fix-controls/results.json",
+      "disposition": "Fixed by real guarded completed-promotion validation; seven negative controls now refuse without receipt."
+    }
+  ],
+  "actual_proposal": "actual-proposal.json",
+  "limitations": [
+    "No scientific/role/release approval.",
+    "Native full production chain, exports, full QC and final head are pending at this observation.",
+    "Unified wrapper read; component probe review delegated to chain author who did not author that wrapper.",
+    "Candidate label check skips3725 no-adapter pairs; BTO/MICRO KG transform membership unavailable.",
+    "No production writes by this reviewer; isolated fixtures only."
+  ],
+  "supervisor_binding": null,
+  "remaining_blockers_in_reviewed_preapplication_scope": []
+}

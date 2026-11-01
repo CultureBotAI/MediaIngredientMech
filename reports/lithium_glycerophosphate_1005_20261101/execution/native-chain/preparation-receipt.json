@@ -1,0 +1,143 @@
+{
+  "frozen_at": "2026-11-01T10:53:27.650117+00:00",
+  "status": "READY_FOR_INDEPENDENT_IMPLEMENTATION_REVIEW_NOT_PRODUCTION_APPROVAL",
+  "author_role": "Step4 dependency-chain implementation author; not independent final reviewer",
+  "base": "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+  "approved_comment": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1005#issuecomment-6556888392",
+  "files": {
+    "native_chain.py": {
+      "sha256": "75c29e50c75fd6ee4acfc5c2b8402da634ee286f7ae8054958e656b368a21a13",
+      "bytes": 29870
+    },
+    "README.md": {
+      "sha256": "be5986fc7219e340ea4480fe9615eae4cb0e399796b870eaf30ef44691daa70e",
+      "bytes": 11356
+    },
+    "test_native_chain.py": {
+      "sha256": "88281edf71d47a47e54dcdca20713d083ecd560c1c386ec43fd52e1a423a8748",
+      "bytes": 8084
+    },
+    "approved-comment.json": {
+      "sha256": "4f9eac77a0f6180e016a9d97c6750ba676ea3a146c57e2a04292c23b3506c0a7",
+      "bytes": 4570
+    },
+    "prepared-inputs.json": {
+      "sha256": "6f252116a6ed7cc90d9e7769fdd4311c95a7edfef029486f4077634384b0c774",
+      "bytes": 59498
+    }
+  },
+  "protected_inputs_rechecked": 331,
+  "immutable_receipts_verified": 17,
+  "verified_chain_tail": 17,
+  "expected_next_sequence": 18,
+  "checks": {
+    "step4-chain-readonly-preflight-v1": {
+      "receipt": "logs/step4-chain-readonly-preflight-v1.json",
+      "receipt_sha256": "5645dd74fdf2c471e1d0ac17127db47d18f94976e86d418b4833bb79578dc447",
+      "name": "step4-chain-readonly-preflight-v1",
+      "argv": [
+        "python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-native-chain-plan/native_chain.py",
+        "preflight"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:50:56.857115+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:51:00.085415+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-readonly-preflight-v1.log",
+      "log_sha256": "594ccaa3845101a01571a6e6891523f5875bafa2f2ecfe8d5bbc96f1716d6181"
+    },
+    "step4-chain-plan-v1": {
+      "receipt": "logs/step4-chain-plan-v1.json",
+      "receipt_sha256": "d212e09e0c4564c553f329ef51fff2e780c7eedb732bba64653fe955895e18aa",
+      "name": "step4-chain-plan-v1",
+      "argv": [
+        "python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-native-chain-plan/native_chain.py",
+        "plan"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:50:56.857009+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:50:56.892175+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-plan-v1.log",
+      "log_sha256": "1e6bfa5ba3782454adaf0a6f245ff0782c7e166a274ea4a0f06749af15c977f2"
+    },
+    "step4-chain-offline-contract-tests-v1": {
+      "receipt": "logs/step4-chain-offline-contract-tests-v1.json",
+      "receipt_sha256": "e4bde2282ff73aeac724d88f0dffd0bb8927450c962c197cced8bbb39dc4883f",
+      "name": "step4-chain-offline-contract-tests-v1",
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-native-chain-plan/test_native_chain.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:50:51.163102+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:50:51.727792+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-offline-contract-tests-v1.log",
+      "log_sha256": "a72e67674d777a52ae56b46e52baa0953e897fb15be36786d226145fab2ea544"
+    },
+    "step4-chain-plan-v2": {
+      "receipt": "logs/step4-chain-plan-v2.json",
+      "receipt_sha256": "af5b512fd9274de097eea6433813b98d6cf7c621e6f71d9c7a06ce837c47ca16",
+      "name": "step4-chain-plan-v2",
+      "argv": [
+        "python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-native-chain-plan/native_chain.py",
+        "plan"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:52:58.442317+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:52:58.477289+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-plan-v2.log",
+      "log_sha256": "9775a6529d06dd3a1196b0725cb357beff0c94372bc2be721b4ae48e6a2534a4"
+    },
+    "step4-chain-offline-contract-tests-v2": {
+      "receipt": "logs/step4-chain-offline-contract-tests-v2.json",
+      "receipt_sha256": "eab9534c7bb78a55fb5fc77ddec04c15dcfc66f5570e3a0fe6dcb0f31dab9957",
+      "name": "step4-chain-offline-contract-tests-v2",
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-native-chain-plan/test_native_chain.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:52:58.442182+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:52:59.055368+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-offline-contract-tests-v2.log",
+      "log_sha256": "f354d165d4ae32e53b7429bb8d95ad2da2606176f40026b49c685008c92f4ca4"
+    }
+  },
+  "final_source_tests": "34 passed,1warning,0skips; offline bounded refusal controls, no production chain execution",
+  "preflight_scope": "v1 read-only initial-state preflight ran successfully before supervisor source application. Subsequent final-only changes select targeted visualization metadata export and extend execution-time code inventory to schema/profile files; initial-state logic remains unchanged. Root may now have applied the owner independently.",
+  "production_stages_executed_by_author": [],
+  "executions_directory_exists": false,
+  "github_mutations": false,
+  "scientific_approval": false,
+  "limitations": [
+    "No actual mapping/semantic/companion rebuild has run through this prepared driver.",
+    "Root will trigger explicit stages only after reviewed source/promotion and exclusively published native receipt18.",
+    "Independent step4_design_review must assess frozen source and actual execution; author tests are not independent approval."
+  ]
+}

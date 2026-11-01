@@ -1,0 +1,36 @@
+diff --git a/output/approved-plan-20261101T031134Z/step4-native-chain-plan/revision-1045/before/native_chain.py b/output/approved-plan-20261101T031134Z/step4-native-chain-plan/native_chain.py
+index 4d97239d..134c63f9 100644
+--- a/output/approved-plan-20261101T031134Z/step4-native-chain-plan/revision-1045/before/native_chain.py
++++ b/output/approved-plan-20261101T031134Z/step4-native-chain-plan/native_chain.py
+@@ -16,6 +16,7 @@ from functools import lru_cache
+ import hashlib
+ import io
+ import json
++import os
+ from pathlib import Path
+ import re
+ import subprocess
+@@ -263,13 +264,21 @@ def prerequisites(args):
+     require(current["identifier"] == IDENTITY and "chemical_properties" not in current, "Lithium identity/active chemistry contract violated")
+     require(current["nutritional_roles"] == old_record["nutritional_roles"] and current["synonyms"] == old_record["synonyms"], "Unapproved role or rejected-synonym change")
+     require(current["curation_history"][:-1] == old_record["curation_history"], "Old history was changed")
+-    existing = {path for path in git("ls-tree", "-r", "--name-only", BASE, "data/ingredients").decode().splitlines() if path.endswith(".yaml")}
++    individual_record_scope()
++    return {"source_log": str(source_path), "source_sha256": sha(source_path), "mapping_receipt": relative.as_posix(), "mapping_receipt_sha256": sha(receipt_path), "canonical_rows_before": len(old), "canonical_rows_after": len(new), "old_receipts_preserved": len(plan["old_receipts"])}
++
++
++def individual_record_scope():
++    # Git's text format quotes non-ASCII/control characters. NUL output preserves
++    # exact filesystem paths, including newlines, independently of core.quotePath.
++    names = git("ls-tree", "-r", "--name-only", "-z", BASE, "--", "data/ingredients")
++    existing = {os.fsdecode(name) for name in names.split(b"\0") if name.endswith(b".yaml")}
+     actual = {p.relative_to(ROOT).as_posix() for p in (ROOT / "data/ingredients").rglob("*.yaml")}
+     require(actual == existing, "Individual record membership changed, including ignored/nested files")
+     for path in sorted(existing):
+         if path.endswith(".yaml") and path != OWNER:
+             require(payload(ROOT / path) == base(path), "Unrelated individual owner changed: " + path)
+-    return {"source_log": str(source_path), "source_sha256": sha(source_path), "mapping_receipt": relative.as_posix(), "mapping_receipt_sha256": sha(receipt_path), "canonical_rows_before": len(old), "canonical_rows_after": len(new), "old_receipts_preserved": len(plan["old_receipts"])}
++    return existing
+ 
+ 
+ def mapping_by_key(decisions, canonical):

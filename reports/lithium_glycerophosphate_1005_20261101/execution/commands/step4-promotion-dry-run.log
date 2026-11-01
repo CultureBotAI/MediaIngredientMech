@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/scripts/curate_lithium_glycerophosphate.py", line 405, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/scripts/curate_lithium_glycerophosphate.py", line 398, in main
+    result = promote(target.path, args.candidate, args.source_log, args.log, apply=args.apply,
+                     candidate_sha256=args.candidate_sha256)
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/scripts/curate_lithium_glycerophosphate.py", line 341, in promote
+    inputs, source = source_receipt(root, source_log, current)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/scripts/curate_lithium_glycerophosphate.py", line 214, in source_receipt
+    source = json.loads(regular(log))
+                        ~~~~~~~^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/scripts/curate_lithium_glycerophosphate.py", line 71, in regular
+    raise ValueError(f"Input must be a regular original path, not an alias: {path}")
+ValueError: Input must be a regular original path, not an alias: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim/../step4-application/source-apply.json

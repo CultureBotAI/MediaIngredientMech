@@ -1,0 +1,81 @@
+FF....F                                                                  [100%]
+=================================== FAILURES ===================================
+______________ test_real_git_unicode_and_newline_paths_are_exact _______________
+
+record_git = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8410/test_real_git_unicod...mapped/target.yaml', 'data/ingredients/mapped/β-Nicotinamide.yaml'}, <function record_git.<locals>.git at 0x109c49760>)
+
+    def test_real_git_unicode_and_newline_paths_are_exact(record_git):
+        repo, paths, git = record_git
+        legacy = {p for p in git("ls-tree", "-r", "--name-only", c.BASE, "data/ingredients").decode().splitlines() if p.endswith(".yaml")}
+        assert legacy < paths  # Real Git quotes names; this is the original failure mechanism.
+>       assert c.individual_record_scope() == paths
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../step4-native-chain-plan/test_native_chain.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../step4-native-chain-plan/native_chain.py:273: in individual_record_scope
+    require(actual == existing, "Individual record membership changed, including ignored/nested files")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Individual record membership changed, including ignored/nested files'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Individual record membership changed, including ignored/nested files
+
+../step4-native-chain-plan/native_chain.py:55: ValueError
+_____________ test_real_git_only_target_content_change_is_allowed ______________
+
+record_git = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8410/test_real_git_only_t...mapped/target.yaml', 'data/ingredients/mapped/β-Nicotinamide.yaml'}, <function record_git.<locals>.git at 0x109c3f880>)
+
+    def test_real_git_only_target_content_change_is_allowed(record_git):
+        repo, paths, _ = record_git
+        (repo / c.OWNER).write_text("identifier: authorized-target-change\n")
+>       assert c.individual_record_scope() == paths
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../step4-native-chain-plan/test_native_chain.py:180: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../step4-native-chain-plan/native_chain.py:273: in individual_record_scope
+    require(actual == existing, "Individual record membership changed, including ignored/nested files")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Individual record membership changed, including ignored/nested files'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Individual record membership changed, including ignored/nested files
+
+../step4-native-chain-plan/native_chain.py:55: ValueError
+______________ test_real_git_unrelated_content_change_is_refused _______________
+
+record_git = (PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-8410/test_real_git_unrela...mapped/target.yaml', 'data/ingredients/mapped/β-Nicotinamide.yaml'}, <function record_git.<locals>.git at 0x109d82340>)
+
+    def test_real_git_unrelated_content_change_is_refused(record_git):
+        repo, _, _ = record_git
+        (repo / "data/ingredients/mapped/β-Nicotinamide.yaml").write_text("identifier: unexpected\n")
+>       with pytest.raises(ValueError, match="Unrelated individual owner changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unrelated individual owner changed'
+E         Actual message: 'Individual record membership changed, including ignored/nested files'
+
+../step4-native-chain-plan/test_native_chain.py:211: AssertionError
+=============================== warnings summary ===============================
+../envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/envs/mim/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../step4-native-chain-plan/test_native_chain.py::test_real_git_unicode_and_newline_paths_are_exact
+FAILED ../step4-native-chain-plan/test_native_chain.py::test_real_git_only_target_content_change_is_allowed
+FAILED ../step4-native-chain-plan/test_native_chain.py::test_real_git_unrelated_content_change_is_refused
+3 failed, 4 passed, 34 deselected, 1 warning in 0.59s

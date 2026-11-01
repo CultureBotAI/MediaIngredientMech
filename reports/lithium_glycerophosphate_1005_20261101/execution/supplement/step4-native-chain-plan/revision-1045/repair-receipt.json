@@ -1,0 +1,125 @@
+{
+  "frozen_at": "2026-11-01T11:00:16.774257+00:00",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1045",
+  "role": "Step 4 run-owned dependency-chain implementation author; not independent final reviewer",
+  "scope": "Exact Git filename decoding only; original membership and unrelated byte guards retained",
+  "native_chain_executed": false,
+  "production_files_edited_by_author": [],
+  "stable_source": {
+    "native_chain.py": "ad5cea8d27d789175dcc59d685223360ab5b3adc28cb72c900d155323d982aab",
+    "test_native_chain.py": "17b9850baf5cc7872cc3049ff87ba82ce7640d55806317a0f943613bf8862a18"
+  },
+  "original_preserved_files": {
+    "native_chain.py": {
+      "sha256": "75c29e50c75fd6ee4acfc5c2b8402da634ee286f7ae8054958e656b368a21a13",
+      "bytes": 29870
+    },
+    "test_native_chain.py": {
+      "sha256": "88281edf71d47a47e54dcdca20713d083ecd560c1c386ec43fd52e1a423a8748",
+      "bytes": 8084
+    },
+    "README.md": {
+      "sha256": "be5986fc7219e340ea4480fe9615eae4cb0e399796b870eaf30ef44691daa70e",
+      "bytes": 11356
+    },
+    "prepared-inputs.json": {
+      "sha256": "6f252116a6ed7cc90d9e7769fdd4311c95a7edfef029486f4077634384b0c774",
+      "bytes": 59498
+    },
+    "preparation-receipt.json": {
+      "sha256": "5c458a3b1d37ff1e14989221a3277b3cde3f7b2425be0db612c6475925bd5475",
+      "bytes": 7584
+    },
+    "evidence-index.json": {
+      "sha256": "c032b49f5f71cb83274d49ca264635d05f23a1c259a7a9913711cda63fea639e",
+      "bytes": 948
+    }
+  },
+  "root_original_preparation_receipt_and_index_unchanged": true,
+  "checks": {
+    "step4-chain-1045-red": {
+      "name": "step4-chain-1045-red",
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-native-chain-plan/test_native_chain.py",
+        "-k",
+        "real_git"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:59:11.278851+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:59:12.165288+00:00",
+      "exit_code": 1,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-1045-red.log",
+      "log_sha256": "6dad2b6d83c90547c3dea30b778dc7d831542332a031621d53beaa27f3107f9c"
+    },
+    "step4-chain-1045-green": {
+      "name": "step4-chain-1045-green",
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-native-chain-plan/test_native_chain.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:59:21.599047+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:59:22.797402+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-1045-green.log",
+      "log_sha256": "3b1cb2a573f67354ded0c5266e0b561063602d23be3aaf26f73799dfcaef9e7d"
+    },
+    "step4-chain-1045-actual-readonly": {
+      "name": "step4-chain-1045-actual-readonly",
+      "argv": [
+        "python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-native-chain-plan/revision-1045/check_actual_inventory.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+      "started_at": "2026-11-01T10:59:29.986841+00:00",
+      "environment_profile": "generation-and-native-qc",
+      "finished_at": "2026-11-01T10:59:55.162457+00:00",
+      "exit_code": 0,
+      "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-chain-1045-actual-readonly.log",
+      "log_sha256": "bab98888d9c179ac3bf66ace2f99a6916dc60132a06fbc3509f1de1bff4cc35c"
+    }
+  },
+  "red_result": "3 failed, 4 passed, 34 deselected; actual Git quoted-path failure, no collection/import failure",
+  "green_result": "41 passed, zero skips, one existing pytest-plugin warning",
+  "actual_inventory": {
+    "checked_at": "2026-11-01T10:59:55.155935+00:00",
+    "issue": 1045,
+    "source_sha256": "ad5cea8d27d789175dcc59d685223360ab5b3adc28cb72c900d155323d982aab",
+    "base": "838d0c2627552b0094545ebb580b5bb9b1a84d57",
+    "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+    "native_chain_executed": false,
+    "individual_records": 2955,
+    "legacy_parsed_records": 2950,
+    "legacy_missing_paths": [
+      "data/ingredients/mapped/L-α-phosphatidylinositol_From_Glycine_Max_Soybean.yaml",
+      "data/ingredients/mapped/Α-lipoic_Acid.yaml",
+      "data/ingredients/mapped/Α1-Acid_Glycoprotein_From_Bovine_Plasma.yaml",
+      "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+      "data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml"
+    ],
+    "unrelated_records_byte_identical_to_base": 2954,
+    "owner_change_excluded_only": "data/ingredients/mapped/Sn-Glycerol_3-phosphate_Lithium_Salt.yaml",
+    "ignored_and_nested_scan": "Path.rglob includes ignored and nested files",
+    "git_status_unchanged": true,
+    "all_paths_sha256": "db2dbf22f60c104bb7f0fce14a0995d1a8823dc8501be3262be539eb4e6aad0e",
+    "verdict": "PASS"
+  },
+  "status": "Implementation stable, submitted for independent review; production execution remains root-owned"
+}

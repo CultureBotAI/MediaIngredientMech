@@ -1,0 +1,16 @@
+{
+  "name": "step4-independent-chain-1045-actual",
+  "argv": [
+    "python",
+    "-B",
+    "-c",
+    "import importlib.util,json,pathlib,hashlib; p=pathlib.Path(\"../step4-native-chain-plan/native_chain.py\").resolve(); s=importlib.util.spec_from_file_location(\"review_scope1045\",p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); old={n for n in m.git(\"ls-tree\",\"-r\",\"--name-only\",m.BASE,\"data/ingredients\").decode().splitlines() if n.endswith(\".yaml\")}; actual=m.individual_record_scope(); result={\"driver_sha256\":hashlib.sha256(p.read_bytes()).hexdigest(),\"base\":m.BASE,\"old_text_population\":len(old),\"actual_native_population\":len(actual),\"legacy_omitted_paths\":sorted(actual-old),\"native_actual_scope\":\"PASS; membership and every non-target owner byte preserved\",\"production_writes\":False}; pathlib.Path(\"../step4-independent/chain-1045-actual.json\").write_text(json.dumps(result,indent=2)+\"\\n\"); print(json.dumps(result,indent=2))"
+  ],
+  "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step4-mim",
+  "started_at": "2026-11-01T11:00:12.235173+00:00",
+  "environment_profile": "generation-and-native-qc",
+  "finished_at": "2026-11-01T11:00:38.127204+00:00",
+  "exit_code": 0,
+  "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/logs/step4-independent-chain-1045-actual.log",
+  "log_sha256": "d802944e379cb1f5790c7f40564ea307cd94ab79e6126a37fb3a492113f24179"
+}
