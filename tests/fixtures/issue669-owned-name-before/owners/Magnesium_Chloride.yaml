@@ -1,0 +1,188 @@
+identifier: CHEBI:86345
+preferred_term: Magnesium chloride
+ontology_mapping:
+  ontology_id: CHEBI:86345
+  ontology_label: magnesium dichloride hexahydrate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: CCRIS 3494
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MgCl*6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: MgCl2∙6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: magnesium dichloride--water (1/6)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: MgCl 2
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2 . 6H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2 x 6 H2O (200 g/l stock solution)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2x 6H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2x6H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2·6 H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: magnesium dichloride--water (1/2)
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4026
+  media_count: 4019
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:49.777110+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7786-30-3 from PubChem API via name lookup (Magnesium chloride)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.300848+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7791-18-6 from CultureBotHT compounds_to_cas.csv (matched:
+    Magnesium Chloride)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.302634+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7791-18-6 from CultureBotHT compounds_to_cas.csv (matched:
+    magnesium chloride)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: CCRIS 3494, MgCl*6H2O,
+    MgCl2∙6H2O, magnesium dichloride--water (1/6)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 2 duplicate MIM record(s) into this one: Magnesium_Chloride_2.yaml,
+    Magnesium_Chloride_3.yaml. Synonyms, curation_history, and occurrence counts were
+    unioned/summed; winner selected by highest occurrence count with preferred_term
+    readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (7786-30-3|7791-18-6) resolved via
+    OAK canonical xref: 7791-18-6 (match)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.571791+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.604110+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2Cl.6H2O.Mg; inchi=InChI=1S/2ClH.Mg.6H2O/h2*1H;;6*1H2/q;;+2;;;;;;/p-2;
+    smiles=O.O.O.O.O.O.[Cl-].[Cl-].[Mg+2]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.099584+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111742+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'magnesium dichloride hexahydrate'; it
+    matches the ChEBI synonym 'MgCl2.6H2O' on CHEBI:86345. The schema defines EXACT_MATCH
+    as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+    so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+    The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519223+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 53/120 -> 4019/4026 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 7 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''MgCl 2'';
+    ''MgCl2 . 6H2O''; ''MgCl2 x 6 H2O (200 g/l stock solution)''; ''MgCl2x 6H2O'';
+    ''MgCl2x6H2O''; ''MgCl2·6 H2O''; ''magnesium dichloride--water (1/2)''. Tokens
+    already present on the kg-microbe ontology node were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-10-15T02:32:22+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''magnesium dichloride--water (1/2)'' (RAW_TEXT).
+    It names the dihydrate (ChEBI''s name for CHEBI:131394), not this hexahydrate
+    record. Not moved: MgCl2 x 2 H2O carries a reviewed approval that a new synonym
+    would cancel (#899, #900). Kept as provenance only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-opus-5-5
+chemical_properties:
+  cas_rn: 7791-18-6
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'
+  molecular_formula: 2Cl.6H2O.Mg
+  inchi: InChI=1S/2ClH.Mg.6H2O/h2*1H;;6*1H2/q;;+2;;;;;;/p-2
+  smiles: O.O.O.O.O.O.[Cl-].[Cl-].[Mg+2]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (120 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (120 occurrences). High confidence
+      based on 'Defined component' property.

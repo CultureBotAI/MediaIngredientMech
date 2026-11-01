@@ -1,0 +1,105 @@
+{
+  "status": "PREPARED, pending posted consumer decisions and independent writer review",
+  "corrections": [
+    {
+      "issue": 1019,
+      "owner": "data/ingredients/mapped/Glycerol_3-phosphate.yaml",
+      "allowed_fields": [
+        "synonyms[1].synonym_type",
+        "synonyms[2].synonym_type",
+        "synonyms[3].synonym_type",
+        "curation_history[append]"
+      ],
+      "synonyms": [
+        {
+          "text": "Gro",
+          "old_type": "RAW_TEXT",
+          "new_type": "REJECTED_LABEL",
+          "source": "sssom_other_backfill",
+          "preserve_source": true
+        },
+        {
+          "text": "glycerolum",
+          "old_type": "RAW_TEXT",
+          "new_type": "REJECTED_LABEL",
+          "source": "sssom_other_backfill",
+          "preserve_source": true
+        },
+        {
+          "text": "glycyl alcohol",
+          "old_type": "RAW_TEXT",
+          "new_type": "REJECTED_LABEL",
+          "source": "sssom_other_backfill",
+          "preserve_source": true
+        }
+      ],
+      "negative_alias_evidence": {
+        "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17754/",
+        "response_sha256": "ef5963dbacd1d57d743637073cc8d2a12b6f8d940447e5c1bfdba519081e0961"
+      },
+      "history_requirement": "Name all three aliases and their primary source URL/capture hash in a material Codex, llm_assisted=true event with actual timestamp. Preserve every prior history event. Do not add absent synonym fields or add glycerol evidence to the phosphate ontology_mapping."
+    },
+    {
+      "issue": 1020,
+      "owner": "data/ingredients/mapped/Na2glycerophosphate5h2o.yaml",
+      "allowed_fields": [
+        "ontology_mapping.ontology_id",
+        "ontology_mapping.ontology_label",
+        "ontology_mapping.evidence[0].notes",
+        "ontology_mapping.evidence[append]",
+        "curation_history[append]"
+      ],
+      "new_parent": {
+        "ontology_id": "CHEBI:17270",
+        "ontology_label": "glycerol 2-phosphate"
+      },
+      "unchanged": {
+        "identifier": "cas:13408-09-8",
+        "mapping_quality": "NARROW_MATCH",
+        "chemical_properties": "exact preimage",
+        "synonyms": "exact preimage",
+        "occurrence_counts": "exact preimage"
+      },
+      "old_evidence_text_must_survive": "Edison literature research (research/ingredients/Na2glycerophosphate5H2O-edison-literature.md) identifies this as a single chemical salt/hydrate -- disodium glycerophosphate pentahydrate, CAS 13408-09-8 -- rather than a mixture. ChEBI has no term for the disodium pentahydrate, so Section 3 applies: the cas: identifier with a narrowMatch to CHEBI:15978 sn-glycerol 3-phosphate, the parent phosphate.",
+      "old_evidence_qualification": "Explicitly historical/superseded by #1020; original full text follows unchanged. Do not present old Edison/CHEBI15978 support as fresh support for the new parent.",
+      "correction_sources": [
+        "https://www.ebi.ac.uk/chebi/backend/api/public/compound/17270/",
+        "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13408-09-8/property/Title,MolecularFormula,IUPACName,InChI,InChIKey/JSON",
+        "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2735049/property/Title,MolecularFormula,IUPACName,InChI,InChIKey/JSON"
+      ],
+      "published_alias_disposition": {
+        "token": "Glycerol 3-phosphate",
+        "action": "DROP",
+        "yaml_alias_absent": true,
+        "do_not_invent_synonym": true
+      }
+    },
+    {
+      "issue": 669,
+      "owner": "data/ingredients/mapped/Beta-lactose.yaml",
+      "allowed_fields": [
+        "synonyms[0].synonym_type",
+        "curation_history[append]"
+      ],
+      "alias": {
+        "text": "lactose",
+        "old_type": "EXACT_SYNONYM",
+        "new_type": "RELATED_SYNONYM",
+        "source": "merged_from_duplicate_mim_record",
+        "preserve_source": true
+      },
+      "history_evidence": {
+        "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:36218",
+        "response_sha256": "272e4d7713b9dc10c7c1022f00dfac33ec22d0878b09b870a68c6c968683fe22",
+        "selector": "_embedded.terms[0].obo_synonym[4]",
+        "scope": "hasRelatedSynonym",
+        "source_xref": "pdb-ccd"
+      },
+      "boundary": "Separate source correction from export-only SUPPRESS; retain all other aliases/identity/chemistry/roles."
+    }
+  ],
+  "future_event_timestamp": null,
+  "curator": "Codex",
+  "llm_assisted": true,
+  "source_manifest_sha256": "bf267a1ea9f459a56552d57c4aff5defb14d92f14516ed28d71475f558948191"
+}

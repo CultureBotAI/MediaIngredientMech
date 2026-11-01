@@ -359,6 +359,27 @@ synonym exports, or enter the SSSOM `other` column. An upstream
 not be promoted to a synonym by discarding its predicate. The rejected entry is
 kept precisely so the same enrichment candidate cannot silently return later.
 
+**Owned-name exclusivity at export (#669).** Classify published `other` tokens
+as **KEEP**, **SUPPRESS**, **DROP** or **MERGE**. KEEP leaves an otherwise
+admissible token unchanged. SUPPRESS omits a token whose preferred name belongs
+to another resolved record, preserves its sourced YAML synonym and identity,
+and records one subject/token pair in `mappings/suppressed_aliases.tsv` with
+credited owners and provenance. Preferred-name ownership takes precedence over
+another record's synonym; the resolving preferred owner comes first in
+`label_index`. SUPPRESS is an export decision, not a finding that the source
+synonym is scientifically false. DROP and new `REJECTED_LABEL` dispositions
+require cited claim-specific evidence; preserve an existing rejected YAML label
+and its original source as provenance. A generated-only token need not be
+invented as a YAML synonym to document its DROP. MERGE requires a source-backed
+same-substance and supplied-form review under this section; a name collision or
+shared parent ID is insufficient. During the approved staged rollout associated
+with #669 and the replacement of #912, explicitly deferred Rule K baseline
+obligations retain their canonical tokens and allowances. They are unresolved
+obligations, not scientific approvals or completed suppressions, and must not
+appear in the canonical sidecar until actually suppressed. The policy marker
+identifies the sidecar contract; it does not declare a staged canonical file
+globally free of owned-name collisions. Batch reports identify the exact scope.
+
 Sharing the parent's id is the identity-collapse bug of Section 2, arriving by a
 different route. `MgSO4·7H2O` mapped to `CHEBI:32599 magnesium sulfate` does not
 say "a hydrate of magnesium sulfate"; it says "this **is** magnesium sulfate",

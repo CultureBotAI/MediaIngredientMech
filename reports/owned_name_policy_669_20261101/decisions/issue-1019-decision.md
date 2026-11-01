@@ -1,0 +1,7 @@
+The approved plan includes this source correction. The captured [ChEBI glycerol record](https://www.ebi.ac.uk/chebi/backend/api/public/compound/17754/) places `Gro`, `glycerolum` and `glycyl alcohol` on glycerol, not sn-glycerol 3-phosphate. Response SHA-256: `ef5963dbacd1d57d743637073cc8d2a12b6f8d940447e5c1bfdba519081e0961`.
+
+Before editing: change only the three existing `Glycerol_3-phosphate.yaml` synonym types from RAW_TEXT to REJECTED_LABEL, retaining each original text and `source: sssom_other_backfill`. Append a source-cited curation event with the actual timestamp, Codex curator and LLM assistance. No unsupported synonym fields or glycerol evidence will be added as support for the phosphate mapping.
+
+Regenerate with the merged owned-name producer, then remove the three tokens from the existing canonical row through the guarded projection. Preserve its identity, confidence, comments, validation stamp and old source vocabulary; append only the actual new MIM provenance and date. Tests must reject reintroduction from KG aliases. Native receipts, synchronized exports, `just qc` and independent review are required before merge. This is a synonym correction, not a new identity approval.
+
+The prerequisite [Claw PR #709](https://github.com/CultureBotAI/culturebotai-claw/pull/709) is verified merged as `9bd09b2ba163212a65289b91313f98cb0937476f`. This consumer starts from MIM `be7170deb00a7c5490f8ade82facf86d45a852a4` on its own branch.
