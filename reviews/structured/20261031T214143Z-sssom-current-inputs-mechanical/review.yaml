@@ -1,0 +1,1967 @@
+schema_version: 1.0.0
+review_id: 20261031T214143Z-sssom-current-inputs-mechanical
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: 'Current-input SSSOM generation: mechanical review and blocked raw candidate'
+started_at: '2026-10-31T21:40:25Z'
+finished_at: '2026-10-31T21:41:43Z'
+reviewer:
+  identity: Codex validation agent /root/sssom_validation
+  kind: agent
+  independence: not_applicable
+  independence_basis: Mechanical assessment of saved native validator outputs and
+    source ownership. Validation ran separately from the parent raw-builder invocation,
+    but this coordinated run is not claimed as independent scientific review.
+skill: .claude/skills/review-sssom-output/SKILL.md
+completion: completed
+verdict: needs_curation
+native_verdict: Candidate blocked by native B5, G and K; existing reviewed canonical
+  partition reproduced
+scientific_review: false
+summary: 'Four exact output snapshots mechanically assessed: canonical 2,987 rows,
+  raw candidate 2,994 rows, supported canonical partition 1,741 rows and withheld
+  canonical partition 1,246 rows. Candidate retains 41 native rejects grouped into
+  three open findings (two major, one minor), so it is not promoted. Native reviewed
+  export passes against unchanged canonical source and pinned evidence. This completed
+  mechanical review is not scientific approval.'
+source:
+  git_revision: 9559329e836eca4f6086cb0df3158eef991cf19c
+  state: working_tree
+  inputs:
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+    role: context
+  - path: conf/id_label_targets.yaml
+    sha256: 3931943e0f0d4fe9477b946df84aa39348ebaba302c2eeac46becfdea29ff817
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: 8f574be094e741f1d59d55618cc14bf375304644732508bd7a5cd4a817c7fce2
+    role: context
+  - path: data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml
+    sha256: 1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509
+    role: context
+  - path: data/ingredients/mapped/Amylopectin_From_Maize.yaml
+    sha256: e35f6b30ae1fbc8c17847d3b2d3ed6d38bd28e08ec2fef36bddecbf12435e4f7
+    role: context
+  - path: data/ingredients/mapped/B-Glucan_From_Oat.yaml
+    sha256: 6f0bb326a91377a9a0784cac42469d9c347963159b4d59b8c7f5724971e56554
+    role: context
+  - path: data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml
+    sha256: 4a2fcdff99d8afac9b325e4b2f148b91c7cfcfde0fafa4633352dbfe71d435da
+    role: context
+  - path: data/ingredients/mapped/Cholesterol_Lipid_Concentrate.yaml
+    sha256: 568d325ff4ba6d9fa7aafe321d824ee34d1b963702d4772a92f73125b1138ef9
+    role: context
+  - path: data/ingredients/mapped/Cucl2_X_6_H2o.yaml
+    sha256: 617a79e853967c008d7dc62783d291b4189d2d9b5955d9f71b59d6230621b15c
+    role: context
+  - path: data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml
+    sha256: cf67a250e7d90ccd5c5dfb55ffe9a68202b25348e2f4851f16a5531cfec84e6f
+    role: context
+  - path: data/ingredients/mapped/Fecl2_X_6_H2o.yaml
+    sha256: c56b9a20c09865b1d8b36ff05f507120b2439b721431c0b0e8107563c5891a10
+    role: context
+  - path: data/ingredients/mapped/Fecl2_X_7_H2o.yaml
+    sha256: 83d19345b09f00f439ed3d36898c5ada8cf208514a7f9110fafc8e7fa086e491
+    role: context
+  - path: data/ingredients/mapped/Fish-sperm_Dna.yaml
+    sha256: dbaeba33cc325c0d6fc791b9e61ca1db1bcfe490b9b01c5bf6a49999420d034e
+    role: context
+  - path: data/ingredients/mapped/Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa.yaml
+    sha256: bd5b5a096c71a786b9b472151c415114ca3337c94296e827d546c31c118ca173
+    role: context
+  - path: data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml
+    sha256: 9721a556a6f24eee87da35d9a855d057362cb5c6e867502739939570dca56365
+    role: context
+  - path: data/ingredients/mapped/MES_Buffer.yaml
+    sha256: 74ddfe25a63c479e3d2880b2117f91b9a876a980e9b3bb55a49484629d1ae370
+    role: context
+  - path: data/ingredients/mapped/MOPS_2M_pH7.yaml
+    sha256: 02f126ea8cc227721d0ba18c29e6797f1514e85600c3ad8ff9b03b7aef81b943
+    role: context
+  - path: data/ingredients/mapped/Menadione_Solution.yaml
+    sha256: bbeaf74217cf7292062604f493b3c4c9faa397713fb50c10a4e6f92239b6dcb1
+    role: context
+  - path: data/ingredients/mapped/Mgcl2_X_7_H2o.yaml
+    sha256: b7be6c96f9c0db49038f31d4186149cff28469ccdc95c4ddd85dcc38279689cf
+    role: context
+  - path: data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml
+    sha256: 0f9abe1c97efaf92bf135a76edd1a3e4811ecd63369b13f11d869754894c1f1d
+    role: context
+  - path: data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml
+    sha256: e4a2756db9e7876f8766f868af533266acc86bd21db5c1d79559048c717acebf
+    role: context
+  - path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    sha256: e4f20bded8bb984f76d381636cf79b522983413046bf24bc6168e1065c027636
+    role: context
+  - path: data/ingredients/mapped/Natural_Sea_Water.yaml
+    sha256: 925ebc8b60a6019f1a59b643b762d657d6a6cf5a4261043b107f5a0326b8c35b
+    role: context
+  - path: data/ingredients/mapped/PBS.yaml
+    sha256: a48a1b7d25e336fab2f874026e118ecef0568460cc45a3c2d972721621e65692
+    role: context
+  - path: data/ingredients/mapped/PIPES_Buffer.yaml
+    sha256: 922e5db0a551c7b74e42409c70434df417999ec0d4afb530d88241cbeaaee163
+    role: context
+  - path: data/ingredients/mapped/Pasteurized_Seawater.yaml
+    sha256: c8337f3734ed2617318db4a39a71c9ddb9ce015b7a357b5ee5e2e2f721f4559c
+    role: context
+  - path: data/ingredients/mapped/Ribonucleic_Acid_From_Torula_Yeast_Type_VI.yaml
+    sha256: 4b728d5a0a0db8a535eaf63b6bcc982f9f422e370250e3842108c7de288962c6
+    role: context
+  - path: data/ingredients/mapped/Supplemented_Seawater.yaml
+    sha256: a2bd368b550acfd26c3b618150a0f6477203b778b82c2fca041d37e0f5eb3671
+    role: context
+  - path: docs/SSSOM_RELEASE.md
+    sha256: dd726c781166ad45735b65f98ffeee5852e19d99ccfac9b9d53932d48947079e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+    role: target
+  - path: mappings/other_cross_record_baseline.tsv
+    sha256: b717cfa99d0ad0e386fe2dc9d8c93b6b0d902fbfdbd3358f5a149697ee71e41b
+    role: context
+  - path: output/raw-candidate/ingredient_mappings.sssom.tsv
+    sha256: 8e6b9c00b24eb2e4c218a3dbb13c2c186a210859be00a44390c6e58b15f20d1a
+    role: target
+  - path: output/raw-candidate/rejected-rows.tsv
+    sha256: 7edfec3bc117132a641bbb12432827f1d3d5b018e5450fecb5c732c5dd4f362a
+    role: context
+  - path: output/review-evidence/additional-ontology-inputs.json
+    sha256: 25888bf84920e89ec2aa75404cce0c09dd7bb626218fe48ce307d59971cc6510
+    role: context
+  - path: output/review-evidence/baseline-b4-actual.json
+    sha256: ba60fc1a0ebc484346a8fc565f236dda8cbfaa7b43d9fc962e9071d49872ae98
+    role: context
+  - path: output/review-evidence/candidate-b4-actual.json
+    sha256: eebbd5881273893b98ff41dccfd2f0517ff34f969beecf6d33402cbbe3f3ad3d
+    role: context
+  - path: output/review-evidence/candidate-id-label-config.json
+    sha256: 1ef459ad31bec663e4773994d70cc5345949a20ef8b8cf385ca8df0c1d22686b
+    role: context
+  - path: output/review-evidence/candidate-id-label-config.yaml
+    sha256: b00d45d70539fee49750df9ba5ada126efb294b054fd0c5b3a2b40a540430d0d
+    role: context
+  - path: output/review-evidence/check_b4_actual.py
+    sha256: dfa4e60cc5112a725f604a8c2fd4a24026d513c41a16a78404dd6338c63e235d
+    role: context
+  - path: output/review-evidence/inputs.json
+    sha256: c8e80d78110776da9b3f4ec6e4c47f8fd8e6ca0ae75537e0220946020cbf584b
+    role: context
+  - path: output/reviewed-release/ingredient_mappings.sssom.tsv
+    sha256: 017a7669b276d0f85f06b3df5e620ba173ca24ea2b59fcb71d1eda4bb0109832
+    role: target
+  - path: output/reviewed-release/manifest.json
+    sha256: a6c10194b2bf079006fc70fd6e80bf87f4951c3ba68dcc496c874b6dd2c4bcf3
+    role: context
+  - path: output/reviewed-release/mapping-dispositions.tsv
+    sha256: 9c2d5e8fe37c193c6133af57e929b32ed00aef421de42ab19443f515b84b4898
+    role: context
+  - path: output/reviewed-release/withheld_mappings.sssom.tsv
+    sha256: 5d610d6f0c1baba22168165bfe03432195d35a30945e795fefd8596895047df1
+    role: target
+  - path: reports/sssom_completion_20260921/review.json
+    sha256: 6c74c7cc3eb8075ec18e20ab594a9b5eae9910b08b98c9d0746b3374af6c7ac6
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/reconcile_sssom.py
+    sha256: 7a0d1b248a1ae1777a827bde4e795474531db565c17b35beaab66fb2631daba7
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: scripts/validate_id_label_correspondence.py
+    sha256: b5ff41bb52d24f5d7819fb12769e216440f75ec3fb3df3e3cb2c5082fffb40e0
+    role: context
+  - path: scripts/validate_sssom_invariants.py
+    sha256: 89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: Bounded mechanical review of four SSSOM artifact snapshots and exact
+    candidate reject rows, with maintained YAML and external generator ownership.
+  selection: All four named outputs from the current-input generation run; every data
+    row receives applicable native mechanical checks. Population denominator counts
+    artifacts, with row denominators recorded separately.
+  coverage: full
+  population_size: 4
+  reviewed_target_ids:
+  - canonical
+  - candidate
+  - supported
+  - withheld
+  exclusions:
+  - target: Scientific identity/literature reassessment
+    reason: No new primary-source or provider research; deterministic diagnostics
+      cannot approve ingredient identities.
+  - target: CultureMech import and UNIFIED_INGREDIENT_MAPPING.tsv rebuild
+    reason: Comparison inputs only; no bulk import or supersession of separate unified-mapping
+      work.
+  - target: Full repository data-edit composite
+    reason: No maintained data or code changes; applicable SSSOM generation gates
+      ran. This is not PR-ready data curation certification.
+targets:
+- target_id: canonical
+  path: mappings/ingredient_mappings.sssom.tsv
+  label: Current canonical SSSOM
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Maintained ingredient identities, ontology mappings and synonyms; corresponding
+      individual record files are the paired maintained surface.
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: External raw SSSOM generator; do not repair generated rows by hand.
+- target_id: candidate
+  path: output/raw-candidate/ingredient_mappings.sssom.tsv
+  label: Fresh unpromoted raw candidate
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Maintained ingredient identities, ontology mappings and synonyms; corresponding
+      individual record files are the paired maintained surface.
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: External raw SSSOM generator; do not repair generated rows by hand.
+- target_id: supported
+  path: output/reviewed-release/ingredient_mappings.sssom.tsv
+  label: Supported partition of canonical SSSOM
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Maintained ingredient identities, ontology mappings and synonyms; corresponding
+      individual record files are the paired maintained surface.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/sssom_completion_20260921/review.json
+    role: Pinned reviewed-release decisions bound to canonical source; unchanged by
+      this run.
+- target_id: withheld
+  path: output/reviewed-release/withheld_mappings.sssom.tsv
+  label: Withheld partition of canonical SSSOM
+  kind: generated
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Maintained ingredient identities, ontology mappings and synonyms; corresponding
+      individual record files are the paired maintained surface.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: reports/sssom_completion_20260921/review.json
+    role: Pinned reviewed-release decisions bound to canonical source; unchanged by
+      this run.
+checks:
+- check_id: structured_review_inspect
+  name: structured review inspect
+  status: passed
+  required: true
+  summary: Native inspect captured four exact output targets, Git base and 57 distinct
+    input hashes before this assessment.
+  target_ids:
+  - canonical
+  - candidate
+  - supported
+  - withheld
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python scripts/record_review.py inspect --targets /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/provenance/structured-review-targets.json
+    --input AGENTS.md --input MAPPING_SEMANTICS.md --input docs/SSSOM_RELEASE.md --input
+    docs/record-reviews.md --input docs/record-review-profile.md --input conf/record_review.yaml
+    --input conf/id_label_targets.yaml --input src/mediaingredientmech/schema/mediaingredientmech.yaml
+    --input schema/record_review.yaml --input data/curated/mapped_ingredients.yaml
+    --input data/curated/unmapped_ingredients.yaml --input reports/sssom_completion_20260921/review.json
+    --input scripts/validate_sssom_invariants.py --input scripts/reconcile_sssom.py
+    --input scripts/validate_id_label_correspondence.py --input scripts/record_review.py
+    --input mappings/other_cross_record_baseline.tsv --input output/raw-candidate/rejected-rows.tsv
+    --input output/reviewed-release/manifest.json --input output/reviewed-release/mapping-dispositions.tsv
+    --input .claude/skills/review-sssom-output/SKILL.md --input data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml
+    --input data/ingredients/mapped/Amylopectin_From_Maize.yaml --input data/ingredients/mapped/B-Glucan_From_Oat.yaml
+    --input data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml --input data/ingredients/mapped/Cholesterol_Lipid_Concentrate.yaml
+    --input data/ingredients/mapped/Cucl2_X_6_H2o.yaml --input data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml
+    --input data/ingredients/mapped/Fecl2_X_6_H2o.yaml --input data/ingredients/mapped/Fecl2_X_7_H2o.yaml
+    --input data/ingredients/mapped/Fish-sperm_Dna.yaml --input data/ingredients/mapped/Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa.yaml
+    --input data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml --input data/ingredients/mapped/MES_Buffer.yaml
+    --input data/ingredients/mapped/MOPS_2M_pH7.yaml --input data/ingredients/mapped/Menadione_Solution.yaml
+    --input data/ingredients/mapped/Mgcl2_X_7_H2o.yaml --input data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml
+    --input data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml --input data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    --input data/ingredients/mapped/Natural_Sea_Water.yaml --input data/ingredients/mapped/PBS.yaml
+    --input data/ingredients/mapped/PIPES_Buffer.yaml --input data/ingredients/mapped/Pasteurized_Seawater.yaml
+    --input data/ingredients/mapped/Ribonucleic_Acid_From_Torula_Yeast_Type_VI.yaml
+    --input data/ingredients/mapped/Supplemented_Seawater.yaml --input output/review-evidence/additional-ontology-inputs.json
+    --input output/review-evidence/candidate-b4-actual.json --input output/review-evidence/inputs.json
+    --input output/review-evidence/baseline-b4-actual.json --input output/review-evidence/candidate-id-label-config.json
+    --input output/review-evidence/check_b4_actual.py --input output/review-evidence/candidate-id-label-config.yaml
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-structured_review_inspect
+  scope_note: 'Actual execution 2026-10-31T21:40:28.541049+00:00 through 2026-10-31T21:40:29.070286+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/structured_review_inspect.json'
+- check_id: raw_candidate
+  name: raw candidate
+  status: passed
+  required: true
+  summary: External native builder generated 2,994 rows; generation success is separate
+    from subsequent invariant failure.
+  target_ids:
+  - candidate
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/scripts/build_mim_ingredient_sssom.py
+    --output output/raw-candidate/ingredient_mappings.sssom.tsv --prior-stamps-from
+    mappings/ingredient_mappings.sssom.tsv
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-raw_candidate
+  scope_note: 'Actual execution 2026-10-31T21:35:28.539360+00:00 through 2026-10-31T21:37:05.389556+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/raw_candidate.json'
+- check_id: baseline_reconcile
+  name: baseline reconcile
+  status: passed
+  required: true
+  summary: GAP=0, ORPHAN=0, STALE=0, PREDICATE=0, GRADE=0.
+  target_ids:
+  - canonical
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python scripts/reconcile_sssom.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-baseline_reconcile
+  scope_note: 'Actual execution 2026-10-31T21:35:13.704112+00:00 through 2026-10-31T21:35:18.531025+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_reconcile.json'
+- check_id: baseline_qc_sssom
+  name: baseline qc sssom
+  status: passed
+  required: true
+  summary: Canonical 2,987-row source passes native invariant checks; default B4 lacks
+    sibling transforms and supplemental B4 follows.
+  target_ids:
+  - canonical
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && just qc-sssom
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-baseline_qc_sssom
+  scope_note: 'Actual execution 2026-10-31T21:35:13.704110+00:00 through 2026-10-31T21:35:22.000422+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_qc_sssom.json'
+- check_id: baseline_curie_retry
+  name: baseline curie retry
+  status: passed
+  required: true
+  summary: 2,987 rows and 5,974 valid CURIEs; 20 tests passed, one skipped.
+  target_ids:
+  - canonical
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && just curie-validate
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-baseline_curie_retry
+  scope_note: 'Actual execution 2026-10-31T21:36:00.636572+00:00 through 2026-10-31T21:36:01.152422+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_curie_retry.json'
+- check_id: baseline_subjects
+  name: baseline subjects
+  status: passed
+  required: false
+  summary: 18 non-gating opaque-slug mismatches among 2,611 MIM subjects and 2,953
+    ingredient record files; no new filename release gate.
+  target_ids:
+  - canonical
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python scripts/check_sssom_subject_files.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-baseline_subjects
+  scope_note: 'Actual execution 2026-10-31T21:36:00.636390+00:00 through 2026-10-31T21:36:00.686158+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_subjects.json'
+- check_id: validate_products
+  name: validate products
+  status: failed
+  required: false
+  summary: Initial execution failed with missing MESH/BTO adapters because sandbox
+    network prevented real database retrieval; retained as an execution failure subsequently
+    resolved by retry.
+  target_ids:
+  - canonical
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && just validate-products
+  exit_code: 2
+  expected_exit_code: 0
+  evidence_ids:
+  - log-validate_products
+  scope_note: 'Actual execution 2026-10-31T21:36:00.639616+00:00 through 2026-10-31T21:36:50.392495+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/validate_products.json'
+- check_id: validate_products_retry
+  name: validate products retry
+  status: passed
+  required: true
+  summary: 'Native configured full-product label check passes: 6,824 canonical, 4,469
+    ID-only, 20 exceptions, 101 configured nonblocking warnings and 5,314 no-adapter
+    skips.'
+  target_ids:
+  - canonical
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && just validate-products
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-validate_products_retry
+  scope_note: 'Actual execution 2026-10-31T21:37:12.252853+00:00 through 2026-10-31T21:38:04.768342+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/validate_products_retry.json'
+- check_id: candidate_schema
+  name: candidate schema
+  status: passed
+  required: true
+  summary: Fresh candidate passes native SSSOM schema validation.
+  target_ids:
+  - candidate
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && sssom validate -V JsonSchema -V PrefixMapCompleteness -V StrictCurieFormat
+    output/raw-candidate/ingredient_mappings.sssom.tsv
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-candidate_schema
+  scope_note: 'Actual execution 2026-10-31T21:37:15.053282+00:00 through 2026-10-31T21:37:16.597389+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_schema.json'
+- check_id: candidate_curie
+  name: candidate curie
+  status: passed
+  required: true
+  summary: Fresh candidate passes native CURIE validation.
+  target_ids:
+  - candidate
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python scripts/validate_published_curies.py output/raw-candidate/ingredient_mappings.sssom.tsv
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-candidate_curie
+  scope_note: 'Actual execution 2026-10-31T21:37:15.053651+00:00 through 2026-10-31T21:37:15.096775+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_curie.json'
+- check_id: candidate_invariants
+  name: candidate invariants
+  status: failed
+  required: true
+  summary: 'Native invariant validation fails: 41 rejects comprising B5=28, G=2, K=11.
+    Candidate remains unpromoted.'
+  target_ids:
+  - candidate
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python scripts/validate_sssom_invariants.py output/raw-candidate/ingredient_mappings.sssom.tsv
+    --reject-tsv output/raw-candidate/rejected-rows.tsv
+  exit_code: 2
+  expected_exit_code: 0
+  evidence_ids:
+  - log-candidate_invariants
+  scope_note: 'Actual execution 2026-10-31T21:37:15.053368+00:00 through 2026-10-31T21:37:23.285249+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_invariants.json'
+- check_id: candidate_comparison
+  name: candidate comparison
+  status: passed
+  required: true
+  summary: Comparison reports 2,366 changed shared pairs, nine removed, 16 added;
+    612 shared rows have identical payload. Candidate GAP/ORPHAN/STALE/PREDICATE/GRADE
+    all zero; canonical bytes unchanged.
+  target_ids:
+  - canonical
+  - candidate
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/compare_sssom.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-candidate_comparison
+  scope_note: 'Actual execution 2026-10-31T21:37:23.213254+00:00 through 2026-10-31T21:37:27.822190+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_comparison.json'
+- check_id: candidate_validate_products
+  name: candidate validate products
+  status: passed
+  required: true
+  summary: 'Native candidate-only label check passes: 2,216 canonical, four ontology
+    synonyms, four configured exceptions and 3,764 no-adapter skips; same policy and
+    adapters, only target path/scope redirected.'
+  target_ids:
+  - candidate
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python scripts/validate_id_label_correspondence.py --config /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/provenance/candidate-id-label-config.yaml
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-candidate_validate_products
+  scope_note: 'Actual execution 2026-10-31T21:38:12.636671+00:00 through 2026-10-31T21:38:44.365825+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_validate_products.json'
+- check_id: baseline_b4_actual
+  name: baseline b4 actual
+  status: passed
+  required: false
+  summary: Unmodified native B4 on actual read-only KG transforms finds zero defects;
+    missing BTO/MICRO transforms remain skipped.
+  target_ids:
+  - canonical
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/check_b4_actual.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-baseline_b4_actual
+  scope_note: 'Actual execution 2026-10-31T21:36:37.109992+00:00 through 2026-10-31T21:36:37.927684+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_b4_actual.json'
+- check_id: candidate_b4_actual
+  name: candidate b4 actual
+  status: passed
+  required: false
+  summary: Unmodified native B4 on actual read-only KG transforms finds zero defects
+    in 2,994 rows; missing BTO/MICRO transforms remain skipped.
+  target_ids:
+  - candidate
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && uv run python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/check_b4_actual.py
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/output/raw-candidate/ingredient_mappings.sssom.tsv
+    candidate
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-candidate_b4_actual
+  scope_note: 'Actual execution 2026-10-31T21:37:55.194393+00:00 through 2026-10-31T21:37:55.951888+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_b4_actual.json'
+- check_id: reviewed_export
+  name: reviewed export
+  status: passed
+  required: true
+  summary: 'Native reviewed export partitions the existing canonical mapping using
+    unchanged pinned review evidence: 1,741 supported plus 1,246 withheld.'
+  target_ids:
+  - supported
+  - withheld
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && just export-reviewed-sssom reports/sssom_completion_20260921/review.json output/reviewed-release
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-reviewed_export
+  scope_note: 'Actual execution 2026-10-31T21:35:13.704108+00:00 through 2026-10-31T21:35:23.739503+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/reviewed_export.json'
+- check_id: reviewed_qc
+  name: reviewed qc
+  status: passed
+  required: true
+  summary: Native assembler independently reproduces 2,987 dispositions, checks bound
+    source/evidence hashes, and validates both SSSOM partitions.
+  target_ids:
+  - supported
+  - withheld
+  command: cd /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo
+    && just qc-reviewed-sssom reports/sssom_completion_20260921/review.json output/reviewed-release
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - log-reviewed_qc
+  scope_note: 'Actual execution 2026-10-31T21:36:00.636526+00:00 through 2026-10-31T21:36:14.778810+00:00;
+    original command metadata: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/reviewed_qc.json'
+evidence:
+- evidence_id: log-structured_review_inspect
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/structured_review_inspect.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Native inspect captured four exact output targets, Git base and 57 distinct
+    input hashes before this assessment.
+  snapshot_sha256: 12aae1488fac9b17001bf8fedfa74ab7c0d67ea8459483af7c1638c53f65c10c
+- evidence_id: log-raw_candidate
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/raw_candidate.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: External native builder generated 2,994 rows; generation success is separate
+    from subsequent invariant failure.
+  snapshot_sha256: 393eac1ef31900009f74908d832a2dc116a5dfea53ff4ffe155affb9939cf6a7
+- evidence_id: log-baseline_reconcile
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_reconcile.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: GAP=0, ORPHAN=0, STALE=0, PREDICATE=0, GRADE=0.
+  snapshot_sha256: 8bf18010d973e92de327bf8580964cbe3306206d7191c45a7b1731df9c7d61d7
+- evidence_id: log-baseline_qc_sssom
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_qc_sssom.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Canonical 2,987-row source passes native invariant checks; default B4 lacks
+    sibling transforms and supplemental B4 follows.
+  snapshot_sha256: e9f1885a709b1df55b7b2f2817de2cdd218ca8aa32830b03c287b2a7480f4da5
+- evidence_id: log-baseline_curie_retry
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_curie_retry.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 2,987 rows and 5,974 valid CURIEs; 20 tests passed, one skipped.
+  snapshot_sha256: e9845a5693dde19e1fb1bf6da791d6ad6c620ce1458815fb998dc62a3c4e511b
+- evidence_id: log-baseline_subjects
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_subjects.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 18 non-gating opaque-slug mismatches among 2,611 MIM subjects and 2,953
+    ingredient record files; no new filename release gate.
+  snapshot_sha256: a16772841d62c8f1f9be43c85a24d0e9c1e687b6ec493652fd2c5be113da7762
+- evidence_id: log-validate_products
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/validate_products.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: refutes
+  summary: Initial execution failed with missing MESH/BTO adapters because sandbox
+    network prevented real database retrieval; retained as an execution failure subsequently
+    resolved by retry.
+  snapshot_sha256: b4f92fd9cc10cb6dba42fc68bc2fc3becac10dcfc53f307e8d7da69b8e946068
+- evidence_id: log-validate_products_retry
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/validate_products_retry.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 'Native configured full-product label check passes: 6,824 canonical, 4,469
+    ID-only, 20 exceptions, 101 configured nonblocking warnings and 5,314 no-adapter
+    skips.'
+  snapshot_sha256: 1fa143fbbbdb204cfca441d722014ca3b2ab5eda915eb2f6de1b7dc997e1d335
+- evidence_id: log-candidate_schema
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_schema.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Fresh candidate passes native SSSOM schema validation.
+  snapshot_sha256: c48a2e4feba7af82b6705e0e7d6094980429ded7126c9626bf74a5ec7fb073ea
+- evidence_id: log-candidate_curie
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_curie.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Fresh candidate passes native CURIE validation.
+  snapshot_sha256: 778578613be2bbe0307bc72125ad2e6e59f1db884ec54dae2eb8b00cc56b462a
+- evidence_id: log-candidate_invariants
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_invariants.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: refutes
+  summary: 'Native invariant validation fails: 41 rejects comprising B5=28, G=2, K=11.
+    Candidate remains unpromoted.'
+  snapshot_sha256: aa71d5347f721370b709c760dd7e02cceec72e386e0b96552d5bafcdf0cced73
+- evidence_id: log-candidate_comparison
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_comparison.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Comparison reports 2,366 changed shared pairs, nine removed, 16 added;
+    612 shared rows have identical payload. Candidate GAP/ORPHAN/STALE/PREDICATE/GRADE
+    all zero; canonical bytes unchanged.
+  snapshot_sha256: 0b51290143856ec67f6608fec25e2ea17b1dae42c0ffeebcbdf0183b008e87e3
+- evidence_id: log-candidate_validate_products
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_validate_products.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 'Native candidate-only label check passes: 2,216 canonical, four ontology
+    synonyms, four configured exceptions and 3,764 no-adapter skips; same policy and
+    adapters, only target path/scope redirected.'
+  snapshot_sha256: 322b8ac04c1f42604836a02a0a3755f4eadb39aa2d575af723ea6fe18bfdf361
+- evidence_id: log-baseline_b4_actual
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/baseline_b4_actual.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Unmodified native B4 on actual read-only KG transforms finds zero defects;
+    missing BTO/MICRO transforms remain skipped.
+  snapshot_sha256: 2ae239c0c74e732d30e2fdfa8fb1b62ef1bf22945c3a568684fd47d5189bd0c1
+- evidence_id: log-candidate_b4_actual
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/candidate_b4_actual.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Unmodified native B4 on actual read-only KG transforms finds zero defects
+    in 2,994 rows; missing BTO/MICRO transforms remain skipped.
+  snapshot_sha256: 93e61ca9998066ffe9923c3de3700ad5902f4fe36f09e02f49f2a110c2537416
+- evidence_id: log-reviewed_export
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/reviewed_export.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 'Native reviewed export partitions the existing canonical mapping using
+    unchanged pinned review evidence: 1,741 supported plus 1,246 withheld.'
+  snapshot_sha256: 63113bc7c184391f7ddd1488a14ce0c132c80b9f68ce08fa11a2fbc5b62b1719
+- evidence_id: log-reviewed_qc
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/logs/reviewed_qc.log
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Native assembler independently reproduces 2,987 dispositions, checks bound
+    source/evidence hashes, and validates both SSSOM partitions.
+  snapshot_sha256: b245a929692ffd2a1678d2703464f11250e565d599e629fb3d7d1349cc2a9502
+- evidence_id: semantics
+  kind: authority
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/MAPPING_SEMANTICS.md
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Authoritative identity, registry sibling, predicate and synonym contract.
+    NARROW_MATCH uses skos:broadMatch; own-identifier rows are exactMatch.
+  snapshot_sha256: 94aad13ea0fc3df82a37383f388f41432b607b04cac61ae5792ce1a381aef805
+- evidence_id: invariant-code
+  kind: authority
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/scripts/validate_sssom_invariants.py
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Native definitions B5 (one local registry namespace), G (header date equals
+    newest row date), K (other cannot newly publish a name another record owns).
+  snapshot_sha256: 89821559f9cbf999675b163396140c4b035cac7bf3ae23dd709f8b76e149de77
+  locator: evaluate_rule_b5; evaluate_rule_g; evaluate_rule_k
+- evidence_id: rejects
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/output/raw-candidate/rejected-rows.tsv
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Lossless diagnostic TSV containing 39 rejected data rows and two synthetic
+    header rejection rows, exactly grouped below.
+  snapshot_sha256: 7edfec3bc117132a641bbb12432827f1d3d5b018e5450fecb5c732c5dd4f362a
+  locator: subject_id/object_id/predicate_id triples and reject_reason
+- evidence_id: reviewed-manifest
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/output/reviewed-release/manifest.json
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Bound source/review hashes and native supported/withheld counts. This partition
+    applies to canonical input, not the fresh candidate.
+  snapshot_sha256: a6c10194b2bf079006fc70fd6e80bf87f4951c3ba68dcc496c874b6dd2c4bcf3
+- evidence_id: pinned-review
+  kind: prior_review
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/reports/sssom_completion_20260921/review.json
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: context_only
+  summary: Existing completed review consumed by native assembler; historical scientific
+    evidence was not reassessed or rewritten.
+  snapshot_sha256: 6c74c7cc3eb8075ec18e20ab594a9b5eae9910b08b98c9d0746b3374af6c7ac6
+- evidence_id: input-manifest
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/provenance/inputs.json
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: context_only
+  summary: Exact repository revisions and SHA-256 input snapshots including CM comparison
+    outputs, KG Mediadive nodes, KG unified mappings, external builder and cached
+    ontology DBs.
+  snapshot_sha256: c8e80d78110776da9b3f4ec6e4c47f8fd8e6ca0ae75537e0220946020cbf584b
+- evidence_id: candidate-config
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/provenance/candidate-id-label-config.json
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Recorded equivalence of all native label-policy settings; only target list
+    narrowed and candidate path redirected.
+  snapshot_sha256: 1ef459ad31bec663e4773994d70cc5345949a20ef8b8cf385ca8df0c1d22686b
+- evidence_id: ontology-inputs
+  kind: database
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/provenance/additional-ontology-inputs.json
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Real public MESH/BTO SemanticSQL download URLs, sizes and SHA-256 hashes;
+    no fake adapters or labels.
+  snapshot_sha256: 25888bf84920e89ec2aa75404cce0c09dd7bb626218fe48ce307d59971cc6510
+- evidence_id: baseline-b4-inputs
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/provenance/baseline-b4-actual.json
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Actual read-only ontology transforms, their hashes and native B4 skip semantics.
+    BTO/MICRO exact expected files absent.
+  snapshot_sha256: ba60fc1a0ebc484346a8fc565f236dda8cbfaa7b43d9fc962e9071d49872ae98
+  locator: input_transforms; skipped_prefixes_missing_transforms; limitations
+- evidence_id: candidate-b4-inputs
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/provenance/candidate-b4-actual.json
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Actual read-only ontology transforms, their hashes and native B4 skip semantics.
+    BTO/MICRO exact expected files absent.
+  snapshot_sha256: eebbd5881273893b98ff41dccfd2f0517ff34f969beecf6d33402cbbe3f3ad3d
+  locator: input_transforms; skipped_prefixes_missing_transforms; limitations
+- evidence_id: generator
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/scripts/build_mim_ingredient_sssom.py
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Inspected generator emits maintained primary identity and separately backfills
+    a namespace based on parent ontology prefix; header uses current date; synonym
+    production must preserve subject identity.
+  snapshot_sha256: 62fec32826c54257d39daee0ca688f546222a92e730db106cdfd6fbb232cd4d8
+  locator: lines 177-208, 860-935 and version assignment near end of main
+- evidence_id: target-canonical
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/mappings/ingredient_mappings.sssom.tsv
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 'Exact 2987-row canonical snapshot; raw count excludes # metadata and column
+    header.'
+  snapshot_sha256: 89ec9cbd634e958ab07cfae5021594834dfc49a584365f3917da136505e400b9
+- evidence_id: target-candidate
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/output/raw-candidate/ingredient_mappings.sssom.tsv
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 'Exact 2994-row candidate snapshot; raw count excludes # metadata and column
+    header.'
+  snapshot_sha256: 8e6b9c00b24eb2e4c218a3dbb13c2c186a210859be00a44390c6e58b15f20d1a
+- evidence_id: target-supported
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/output/reviewed-release/ingredient_mappings.sssom.tsv
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 'Exact 1741-row supported snapshot; raw count excludes # metadata and column
+    header.'
+  snapshot_sha256: 017a7669b276d0f85f06b3df5e620ba173ca24ea2b59fcb71d1eda4bb0109832
+- evidence_id: target-withheld
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/output/reviewed-release/withheld_mappings.sssom.tsv
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: 'Exact 1246-row withheld snapshot; raw count excludes # metadata and column
+    header.'
+  snapshot_sha256: 5d610d6f0c1baba22168165bfe03432195d35a30945e795fefd8596895047df1
+- evidence_id: maintained-aggregate
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-generation-20261031T213407Z/repo/data/curated/mapped_ingredients.yaml
+  accessed_at: '2026-10-31T21:41:42Z'
+  support: supports
+  summary: Inspected 2,680-entry mapped aggregate and the 25 affected individual records
+    for identifier, ingredient_type, grounding and synonym ownership. Future corrections
+    belong to maintained YAML or external builder, followed by synchronization.
+  snapshot_sha256: 4ff96cd6d6728db6d5d35c03e9adf03ff994de6fe092ae2266a9f7bf13a6886b
+  locator: ingredients; exact per-finding identifier selectors
+assessments:
+- assessment_id: canonical-mechanical
+  area: consistency
+  topic: Published source currency and native gates
+  outcome: supported
+  target_ids:
+  - canonical
+  evidence_ids:
+  - target-canonical
+  - log-baseline_reconcile
+  - log-baseline_qc_sssom
+  - log-baseline_curie_retry
+  - log-validate_products_retry
+  summary: Canonical mapping remains 2,987 rows and passes scoped reconciliation,
+    invariant, schema/CURIE and configured label gates. This is mechanical evidence
+    only; it does not clear scientific release holds.
+  metrics:
+  - name: mapping_rows
+    value: 2987
+    unit: rows
+    definition: TSV data rows, excluding comment metadata and header.
+    minimum: 0
+  - name: currency_defects
+    value: 0
+    unit: diagnostics
+    definition: Sum of GAP, ORPHAN, STALE, PREDICATE and GRADE diagnostics.
+    minimum: 0
+- assessment_id: candidate-promotion
+  area: identity
+  topic: Fresh candidate cannot replace canonical source
+  outcome: concern
+  target_ids:
+  - candidate
+  evidence_ids:
+  - target-candidate
+  - log-candidate_invariants
+  - log-candidate_schema
+  - log-candidate_curie
+  - log-candidate_comparison
+  - log-candidate_validate_products
+  summary: All 2,994 candidate rows were mechanically checked; native B5/K/G produce
+    41 rejects. Passing schema/CURIE/labels and zero reconciliation drift do not remedy
+    these identity/provenance defects. Candidate is not promoted.
+  metrics:
+  - name: mapping_rows
+    value: 2994
+    unit: rows
+    definition: TSV data rows, excluding comment metadata and header.
+    minimum: 0
+  - name: B5_rejects
+    value: 28
+    unit: row diagnostics
+    definition: Two contradictory registry rows per affected subject.
+    minimum: 0
+    denominator: 2994
+  - name: K_rejects
+    value: 11
+    unit: row diagnostics
+    definition: Rows with newly colliding cross-record other tokens.
+    minimum: 0
+    denominator: 2994
+  - name: G_rejects
+    value: 2
+    unit: header diagnostics
+    definition: mapping_date and mapping_set_version mismatches; not ingredient rows.
+    minimum: 0
+- assessment_id: reviewed-supported
+  area: provenance
+  topic: Reproduction of bound supported partition
+  outcome: supported
+  target_ids:
+  - supported
+  evidence_ids:
+  - target-supported
+  - reviewed-manifest
+  - log-reviewed_export
+  - log-reviewed_qc
+  - pinned-review
+  summary: Native exporter and independent assembler reproduce 1,741 supported mappings
+    from the canonical 2,987-row source and its unchanged historical review. This
+    run does not create new scientific approval or apply those decisions to the fresh
+    candidate.
+  metrics:
+  - name: supported_rows
+    value: 1741
+    unit: rows
+    definition: Existing canonical rows assigned SUPPORTED by the pinned review.
+    minimum: 0
+    denominator: 2987
+- assessment_id: reviewed-withheld
+  area: scope
+  topic: Preserved lossless curation backlog
+  outcome: supported
+  target_ids:
+  - withheld
+  evidence_ids:
+  - target-withheld
+  - reviewed-manifest
+  - log-reviewed_export
+  - log-reviewed_qc
+  - pinned-review
+  summary: Native export preserves 1,246 complete canonical rows with WITHHOLD decisions
+    in a distinct backlog. Their successful mechanical validation is not approval
+    for mapping use.
+  metrics:
+  - name: withheld_rows
+    value: 1246
+    unit: rows
+    definition: Existing canonical rows assigned WITHHOLD by the pinned review.
+    minimum: 0
+    denominator: 2987
+- assessment_id: validation-limits
+  area: scope
+  topic: Native best-effort coverage and non-gating warnings
+  outcome: supported
+  target_ids:
+  - canonical
+  - candidate
+  evidence_ids:
+  - log-baseline_subjects
+  - log-validate_products_retry
+  - log-candidate_validate_products
+  - baseline-b4-inputs
+  - candidate-b4-inputs
+  - candidate-config
+  - ontology-inputs
+  summary: 'Validation outcomes preserve native scope: 18 subject-slug warnings are
+    non-gating; full-product check has 101 configured nonblocking warnings and 5,314
+    no-adapter skips; candidate label check has 3,764 no-adapter skips. Actual-path
+    B4 has zero findings but skips missing BTO/MICRO transforms and IDs unavailable
+    to its native lookup.'
+  metrics:
+  - name: full_product_nonblocking_warnings
+    value: 101
+    unit: pair diagnostics
+    definition: 68 implausible labels + 3 lost subscripts + 27 hydrate-on-anhydrous
+      + 2 anhydrous-on-hydrate + 1 hydration mismatch; not unique ingredient count.
+    minimum: 0
+  - name: subject_slug_warnings
+    value: 18
+    unit: subjects
+    definition: Known native non-gating filename/slug lookup diagnostics.
+    minimum: 0
+    denominator: 2611
+- assessment_id: input-boundaries
+  area: provenance
+  topic: Comparison inputs versus generator inputs
+  outcome: supported
+  target_ids:
+  - canonical
+  - candidate
+  - supported
+  - withheld
+  evidence_ids:
+  - input-manifest
+  - generator
+  - log-raw_candidate
+  - pinned-review
+  - log-reviewed_export
+  summary: Current CultureMech outputs are comparison inputs only and were not bulk-imported.
+    The raw builder consumes maintained MIM records and its native KG mapping/residual/ontology
+    inputs; KG Mediadive nodes.tsv is a separate read-only comparison input. The unavailable
+    transformed_last9 default is not fabricated or substituted as if current. Exact
+    revisions and input hashes are retained in the input manifest.
+  details: Historical validation_method stamps replayed from canonical rows remain
+    historical annotations, not a new review. The supported/withheld partitions are
+    derived from canonical mappings/ingredient_mappings.sssom.tsv, never the raw candidate.
+    No maintained data, pinned review, release status or curation history was changed.
+findings:
+- finding_id: F-B5
+  issue_key: sssom-builder-dual-local-namespace
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Builder adds a second incompatible registry identity
+  description: 'The raw builder emits 28 exact-match registry rows across 14 subjects
+    using both kgmicrobe.ingredient and kgmicrobe.compound for the same slug. Maintained
+    primary identifiers already exist; the inspected B1 backfill separately derives
+    compound from the parent ontology prefix and only checks for that exact generated
+    CURIE. This conflicts with native B5 and can collapse prepared or source-qualified
+    ingredients into a compound identity.
+
+
+    Exact native reject selectors and reasons:
+
+    rows[subject_id="MIM:84_GL_NaHCO3_Solution", object_id="kgmicrobe.ingredient:84_gl_nahco3_solution",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:84_GL_NaHCO3_Solution exact-matches
+    both local registry namespaces for slug 84_gl_nahco3_solution: kgmicrobe.compound:84_gl_nahco3_solution,
+    kgmicrobe.ingredient:84_gl_nahco3_solution. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:84_GL_NaHCO3_Solution", object_id="kgmicrobe.compound:84_gl_nahco3_solution",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:84_GL_NaHCO3_Solution exact-matches
+    both local registry namespaces for slug 84_gl_nahco3_solution: kgmicrobe.compound:84_gl_nahco3_solution,
+    kgmicrobe.ingredient:84_gl_nahco3_solution. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Amylopectin_From_Maize", object_id="kgmicrobe.ingredient:amylopectin_from_maize",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Amylopectin_From_Maize exact-matches
+    both local registry namespaces for slug amylopectin_from_maize: kgmicrobe.compound:amylopectin_from_maize,
+    kgmicrobe.ingredient:amylopectin_from_maize. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Amylopectin_From_Maize", object_id="kgmicrobe.compound:amylopectin_from_maize",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Amylopectin_From_Maize exact-matches
+    both local registry namespaces for slug amylopectin_from_maize: kgmicrobe.compound:amylopectin_from_maize,
+    kgmicrobe.ingredient:amylopectin_from_maize. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:B-Glucan_From_Oat", object_id="kgmicrobe.ingredient:b-glucan_from_oat",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:B-Glucan_From_Oat exact-matches
+    both local registry namespaces for slug b-glucan_from_oat: kgmicrobe.compound:b-glucan_from_oat,
+    kgmicrobe.ingredient:b-glucan_from_oat. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:B-Glucan_From_Oat", object_id="kgmicrobe.compound:b-glucan_from_oat",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:B-Glucan_From_Oat exact-matches
+    both local registry namespaces for slug b-glucan_from_oat: kgmicrobe.compound:b-glucan_from_oat,
+    kgmicrobe.ingredient:b-glucan_from_oat. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Casamino_Acids_Vitamin_Assay", object_id="kgmicrobe.ingredient:casamino_acids_vitamin_assay",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Casamino_Acids_Vitamin_Assay exact-matches
+    both local registry namespaces for slug casamino_acids_vitamin_assay: kgmicrobe.compound:casamino_acids_vitamin_assay,
+    kgmicrobe.ingredient:casamino_acids_vitamin_assay. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Casamino_Acids_Vitamin_Assay", object_id="kgmicrobe.compound:casamino_acids_vitamin_assay",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Casamino_Acids_Vitamin_Assay exact-matches
+    both local registry namespaces for slug casamino_acids_vitamin_assay: kgmicrobe.compound:casamino_acids_vitamin_assay,
+    kgmicrobe.ingredient:casamino_acids_vitamin_assay. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Cholesterol_Lipid_Concentrate", object_id="kgmicrobe.ingredient:cholesterol_lipid_concentrate",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Cholesterol_Lipid_Concentrate exact-matches
+    both local registry namespaces for slug cholesterol_lipid_concentrate: kgmicrobe.compound:cholesterol_lipid_concentrate,
+    kgmicrobe.ingredient:cholesterol_lipid_concentrate. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Cholesterol_Lipid_Concentrate", object_id="kgmicrobe.compound:cholesterol_lipid_concentrate",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Cholesterol_Lipid_Concentrate exact-matches
+    both local registry namespaces for slug cholesterol_lipid_concentrate: kgmicrobe.compound:cholesterol_lipid_concentrate,
+    kgmicrobe.ingredient:cholesterol_lipid_concentrate. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Fish-sperm_Dna", object_id="kgmicrobe.ingredient:fish-sperm_dna",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Fish-sperm_Dna exact-matches both
+    local registry namespaces for slug fish-sperm_dna: kgmicrobe.compound:fish-sperm_dna,
+    kgmicrobe.ingredient:fish-sperm_dna. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Fish-sperm_Dna", object_id="kgmicrobe.compound:fish-sperm_dna",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Fish-sperm_Dna exact-matches both
+    local registry namespaces for slug fish-sperm_dna: kgmicrobe.compound:fish-sperm_dna,
+    kgmicrobe.ingredient:fish-sperm_dna. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa", object_id="kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa
+    exact-matches both local registry namespaces for slug heparin_sodium_salt_from_porcine_intestinal_mucosa:
+    kgmicrobe.compound:heparin_sodium_salt_from_porcine_intestinal_mucosa, kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa.
+    kgmicrobe.ingredient and kgmicrobe.compound distinguish prepared ingredients from
+    compounds; pick the namespace that matches the curated ingredient_type and remove
+    the other identity row.
+
+    rows[subject_id="MIM:Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa", object_id="kgmicrobe.compound:heparin_sodium_salt_from_porcine_intestinal_mucosa",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa
+    exact-matches both local registry namespaces for slug heparin_sodium_salt_from_porcine_intestinal_mucosa:
+    kgmicrobe.compound:heparin_sodium_salt_from_porcine_intestinal_mucosa, kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa.
+    kgmicrobe.ingredient and kgmicrobe.compound distinguish prepared ingredients from
+    compounds; pick the namespace that matches the curated ingredient_type and remove
+    the other identity row.
+
+    rows[subject_id="MIM:Lichenan_Icelandic_Moss", object_id="kgmicrobe.ingredient:lichenan_icelandic_moss",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Lichenan_Icelandic_Moss exact-matches
+    both local registry namespaces for slug lichenan_icelandic_moss: kgmicrobe.compound:lichenan_icelandic_moss,
+    kgmicrobe.ingredient:lichenan_icelandic_moss. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Lichenan_Icelandic_Moss", object_id="kgmicrobe.compound:lichenan_icelandic_moss",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Lichenan_Icelandic_Moss exact-matches
+    both local registry namespaces for slug lichenan_icelandic_moss: kgmicrobe.compound:lichenan_icelandic_moss,
+    kgmicrobe.ingredient:lichenan_icelandic_moss. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:MES_Buffer", object_id="kgmicrobe.ingredient:mes_buffer",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:MES_Buffer exact-matches both local
+    registry namespaces for slug mes_buffer: kgmicrobe.compound:mes_buffer, kgmicrobe.ingredient:mes_buffer.
+    kgmicrobe.ingredient and kgmicrobe.compound distinguish prepared ingredients from
+    compounds; pick the namespace that matches the curated ingredient_type and remove
+    the other identity row.
+
+    rows[subject_id="MIM:MES_Buffer", object_id="kgmicrobe.compound:mes_buffer", predicate_id="skos:exactMatch"]:
+    Rule B5: MIM:MES_Buffer exact-matches both local registry namespaces for slug
+    mes_buffer: kgmicrobe.compound:mes_buffer, kgmicrobe.ingredient:mes_buffer. kgmicrobe.ingredient
+    and kgmicrobe.compound distinguish prepared ingredients from compounds; pick the
+    namespace that matches the curated ingredient_type and remove the other identity
+    row.
+
+    rows[subject_id="MIM:MOPS_2M_pH7", object_id="kgmicrobe.ingredient:mops_2m_ph7",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:MOPS_2M_pH7 exact-matches both local
+    registry namespaces for slug mops_2m_ph7: kgmicrobe.compound:mops_2m_ph7, kgmicrobe.ingredient:mops_2m_ph7.
+    kgmicrobe.ingredient and kgmicrobe.compound distinguish prepared ingredients from
+    compounds; pick the namespace that matches the curated ingredient_type and remove
+    the other identity row.
+
+    rows[subject_id="MIM:MOPS_2M_pH7", object_id="kgmicrobe.compound:mops_2m_ph7",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:MOPS_2M_pH7 exact-matches both local
+    registry namespaces for slug mops_2m_ph7: kgmicrobe.compound:mops_2m_ph7, kgmicrobe.ingredient:mops_2m_ph7.
+    kgmicrobe.ingredient and kgmicrobe.compound distinguish prepared ingredients from
+    compounds; pick the namespace that matches the curated ingredient_type and remove
+    the other identity row.
+
+    rows[subject_id="MIM:Menadione_Solution", object_id="kgmicrobe.ingredient:menadione_solution",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Menadione_Solution exact-matches
+    both local registry namespaces for slug menadione_solution: kgmicrobe.compound:menadione_solution,
+    kgmicrobe.ingredient:menadione_solution. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Menadione_Solution", object_id="kgmicrobe.compound:menadione_solution",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Menadione_Solution exact-matches
+    both local registry namespaces for slug menadione_solution: kgmicrobe.compound:menadione_solution,
+    kgmicrobe.ingredient:menadione_solution. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:PBS", object_id="kgmicrobe.ingredient:pbs", predicate_id="skos:exactMatch"]:
+    Rule B5: MIM:PBS exact-matches both local registry namespaces for slug pbs: kgmicrobe.compound:pbs,
+    kgmicrobe.ingredient:pbs. kgmicrobe.ingredient and kgmicrobe.compound distinguish
+    prepared ingredients from compounds; pick the namespace that matches the curated
+    ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:PBS", object_id="kgmicrobe.compound:pbs", predicate_id="skos:exactMatch"]:
+    Rule B5: MIM:PBS exact-matches both local registry namespaces for slug pbs: kgmicrobe.compound:pbs,
+    kgmicrobe.ingredient:pbs. kgmicrobe.ingredient and kgmicrobe.compound distinguish
+    prepared ingredients from compounds; pick the namespace that matches the curated
+    ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:PIPES_Buffer", object_id="kgmicrobe.ingredient:pipes_buffer",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:PIPES_Buffer exact-matches both
+    local registry namespaces for slug pipes_buffer: kgmicrobe.compound:pipes_buffer,
+    kgmicrobe.ingredient:pipes_buffer. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:PIPES_Buffer", object_id="kgmicrobe.compound:pipes_buffer",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:PIPES_Buffer exact-matches both
+    local registry namespaces for slug pipes_buffer: kgmicrobe.compound:pipes_buffer,
+    kgmicrobe.ingredient:pipes_buffer. kgmicrobe.ingredient and kgmicrobe.compound
+    distinguish prepared ingredients from compounds; pick the namespace that matches
+    the curated ingredient_type and remove the other identity row.
+
+    rows[subject_id="MIM:Ribonucleic_Acid_From_Torula_Yeast_Type_VI", object_id="kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Ribonucleic_Acid_From_Torula_Yeast_Type_VI
+    exact-matches both local registry namespaces for slug ribonucleic_acid_from_torula_yeast_type_vi:
+    kgmicrobe.compound:ribonucleic_acid_from_torula_yeast_type_vi, kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi.
+    kgmicrobe.ingredient and kgmicrobe.compound distinguish prepared ingredients from
+    compounds; pick the namespace that matches the curated ingredient_type and remove
+    the other identity row.
+
+    rows[subject_id="MIM:Ribonucleic_Acid_From_Torula_Yeast_Type_VI", object_id="kgmicrobe.compound:ribonucleic_acid_from_torula_yeast_type_vi",
+    predicate_id="skos:exactMatch"]: Rule B5: MIM:Ribonucleic_Acid_From_Torula_Yeast_Type_VI
+    exact-matches both local registry namespaces for slug ribonucleic_acid_from_torula_yeast_type_vi:
+    kgmicrobe.compound:ribonucleic_acid_from_torula_yeast_type_vi, kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi.
+    kgmicrobe.ingredient and kgmicrobe.compound distinguish prepared ingredients from
+    compounds; pick the namespace that matches the curated ingredient_type and remove
+    the other identity row.'
+  target_ids:
+  - candidate
+  field_paths:
+  - rows[subject_id="MIM:84_GL_NaHCO3_Solution", object_id="kgmicrobe.ingredient:84_gl_nahco3_solution",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:84_GL_NaHCO3_Solution", object_id="kgmicrobe.compound:84_gl_nahco3_solution",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Amylopectin_From_Maize", object_id="kgmicrobe.ingredient:amylopectin_from_maize",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Amylopectin_From_Maize", object_id="kgmicrobe.compound:amylopectin_from_maize",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:B-Glucan_From_Oat", object_id="kgmicrobe.ingredient:b-glucan_from_oat",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:B-Glucan_From_Oat", object_id="kgmicrobe.compound:b-glucan_from_oat",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Casamino_Acids_Vitamin_Assay", object_id="kgmicrobe.ingredient:casamino_acids_vitamin_assay",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Casamino_Acids_Vitamin_Assay", object_id="kgmicrobe.compound:casamino_acids_vitamin_assay",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Cholesterol_Lipid_Concentrate", object_id="kgmicrobe.ingredient:cholesterol_lipid_concentrate",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Cholesterol_Lipid_Concentrate", object_id="kgmicrobe.compound:cholesterol_lipid_concentrate",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Fish-sperm_Dna", object_id="kgmicrobe.ingredient:fish-sperm_dna",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Fish-sperm_Dna", object_id="kgmicrobe.compound:fish-sperm_dna",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa", object_id="kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa", object_id="kgmicrobe.compound:heparin_sodium_salt_from_porcine_intestinal_mucosa",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Lichenan_Icelandic_Moss", object_id="kgmicrobe.ingredient:lichenan_icelandic_moss",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Lichenan_Icelandic_Moss", object_id="kgmicrobe.compound:lichenan_icelandic_moss",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:MES_Buffer", object_id="kgmicrobe.ingredient:mes_buffer",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:MES_Buffer", object_id="kgmicrobe.compound:mes_buffer", predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:MOPS_2M_pH7", object_id="kgmicrobe.ingredient:mops_2m_ph7",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:MOPS_2M_pH7", object_id="kgmicrobe.compound:mops_2m_ph7",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Menadione_Solution", object_id="kgmicrobe.ingredient:menadione_solution",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Menadione_Solution", object_id="kgmicrobe.compound:menadione_solution",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:PBS", object_id="kgmicrobe.ingredient:pbs", predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:PBS", object_id="kgmicrobe.compound:pbs", predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:PIPES_Buffer", object_id="kgmicrobe.ingredient:pipes_buffer",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:PIPES_Buffer", object_id="kgmicrobe.compound:pipes_buffer",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Ribonucleic_Acid_From_Torula_Yeast_Type_VI", object_id="kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi",
+    predicate_id="skos:exactMatch"]
+  - rows[subject_id="MIM:Ribonucleic_Acid_From_Torula_Yeast_Type_VI", object_id="kgmicrobe.compound:ribonucleic_acid_from_torula_yeast_type_vi",
+    predicate_id="skos:exactMatch"]
+  evidence_ids:
+  - rejects
+  - log-candidate_invariants
+  - invariant-code
+  - semantics
+  - generator
+  - maintained-aggregate
+  rule_id: B5
+  native_severity: Native exit-2 invariant rejection; no numeric or P1-P4 severity
+    assigned
+  normalization_reason: Major because systemic generator behavior introduces contradictory
+    local identity claims; native validator assigns rule IDs and an exit-2 rejection,
+    not P1-P4 grades.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml
+    role: Maintained owner for MIM:84_GL_NaHCO3_Solution; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:84_gl_nahco3_solution"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Amylopectin_From_Maize.yaml
+    role: Maintained owner for MIM:Amylopectin_From_Maize; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:amylopectin_from_maize"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/B-Glucan_From_Oat.yaml
+    role: Maintained owner for MIM:B-Glucan_From_Oat; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:b-glucan_from_oat"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml
+    role: Maintained owner for MIM:Casamino_Acids_Vitamin_Assay; inspect identifier,
+      ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:casamino_acids_vitamin_assay"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cholesterol_Lipid_Concentrate.yaml
+    role: Maintained owner for MIM:Cholesterol_Lipid_Concentrate; inspect identifier,
+      ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:cholesterol_lipid_concentrate"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fish-sperm_Dna.yaml
+    role: Maintained owner for MIM:Fish-sperm_Dna; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:fish-sperm_dna"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa.yaml
+    role: Maintained owner for MIM:Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa;
+      inspect identifier, ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml
+    role: Maintained owner for MIM:Lichenan_Icelandic_Moss; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:lichenan_icelandic_moss"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/MES_Buffer.yaml
+    role: Maintained owner for MIM:MES_Buffer; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:mes_buffer"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/MOPS_2M_pH7.yaml
+    role: Maintained owner for MIM:MOPS_2M_pH7; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:mops_2m_ph7"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Menadione_Solution.yaml
+    role: Maintained owner for MIM:Menadione_Solution; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:menadione_solution"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PBS.yaml
+    role: Maintained owner for MIM:PBS; inspect identifier, ingredient_type, ontology_mapping
+      and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:pbs"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PIPES_Buffer.yaml
+    role: Maintained owner for MIM:PIPES_Buffer; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:pipes_buffer"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ribonucleic_Acid_From_Torula_Yeast_Type_VI.yaml
+    role: Maintained owner for MIM:Ribonucleic_Acid_From_Torula_Yeast_Type_VI; inspect
+      identifier, ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: 'External builder owner: registry and synonym emission'
+- finding_id: F-K
+  issue_key: sssom-builder-cross-record-synonyms
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Candidate publishes synonyms owned by distinct records
+  description: 'Eleven candidate other fields newly publish another maintained record''s
+    name: CuCl2, FeCl2, MgCl2, Na2HPO4 or sea water. These include hydrate/preparation/source-specific
+    subjects, so publishing the generic name can erase the distinct subject boundary
+    downstream. The native guard confirms the collisions; deciding which source synonym
+    or builder enrichment to change requires scoped curation.
+
+
+    Exact native reject selectors and reasons:
+
+    rows[subject_id="MIM:Cucl2_X_6_H2o", object_id="CHEBI:49553", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''CuCl2'' (owned by MIM:Cucl2)"].
+    kg-microbe merges `other` into the synonym set, so both records would answer to
+    it. Rebuild the SSSOM in claw after fixing the record''s synonyms, or add the
+    pair to mappings/other_cross_record_baseline.tsv with a disposition (#669).
+
+    rows[subject_id="MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock", object_id="CHEBI:34683",
+    predicate_id="skos:closeMatch"]: Rule K: `other` publishes a name another record
+    owns: ["''Na2HPO4'' (owned by MIM:Na2hpo4)"]. kg-microbe merges `other` into the
+    synonym set, so both records would answer to it. Rebuild the SSSOM in claw after
+    fixing the record''s synonyms, or add the pair to mappings/other_cross_record_baseline.tsv
+    with a disposition (#669).
+
+    rows[subject_id="MIM:Fecl2_X_6_H2o", object_id="CHEBI:30812", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''FeCl2'' (owned by MIM:Fecl2)"].
+    kg-microbe merges `other` into the synonym set, so both records would answer to
+    it. Rebuild the SSSOM in claw after fixing the record''s synonyms, or add the
+    pair to mappings/other_cross_record_baseline.tsv with a disposition (#669).
+
+    rows[subject_id="MIM:Fecl2_X_7_H2o", object_id="CHEBI:30812", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''FeCl2'' (owned by MIM:Fecl2)"].
+    kg-microbe merges `other` into the synonym set, so both records would answer to
+    it. Rebuild the SSSOM in claw after fixing the record''s synonyms, or add the
+    pair to mappings/other_cross_record_baseline.tsv with a disposition (#669).
+
+    rows[subject_id="MIM:Mgcl2_X_7_H2o", object_id="CHEBI:6636", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''MgCl2'' (owned by MIM:Mgcl2)"].
+    kg-microbe merges `other` into the synonym set, so both records would answer to
+    it. Rebuild the SSSOM in claw after fixing the record''s synonyms, or add the
+    pair to mappings/other_cross_record_baseline.tsv with a disposition (#669).
+
+    rows[subject_id="MIM:Na2hpo4_X_3_H2o", object_id="CHEBI:34683", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''Na2HPO4'' (owned by
+    MIM:Na2hpo4)"]. kg-microbe merges `other` into the synonym set, so both records
+    would answer to it. Rebuild the SSSOM in claw after fixing the record''s synonyms,
+    or add the pair to mappings/other_cross_record_baseline.tsv with a disposition
+    (#669).
+
+    rows[subject_id="MIM:Na2hpo4_X_6_H2o", object_id="CHEBI:34683", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''Na2HPO4'' (owned by
+    MIM:Na2hpo4)"]. kg-microbe merges `other` into the synonym set, so both records
+    would answer to it. Rebuild the SSSOM in claw after fixing the record''s synonyms,
+    or add the pair to mappings/other_cross_record_baseline.tsv with a disposition
+    (#669).
+
+    rows[subject_id="MIM:Na2hpo4_X_7_H2o", object_id="CHEBI:34683", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''Na2HPO4'' (owned by
+    MIM:Na2hpo4)"]. kg-microbe merges `other` into the synonym set, so both records
+    would answer to it. Rebuild the SSSOM in claw after fixing the record''s synonyms,
+    or add the pair to mappings/other_cross_record_baseline.tsv with a disposition
+    (#669).
+
+    rows[subject_id="MIM:Natural_Sea_Water", object_id="ENVO:00002149", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''sea water'' (owned by
+    MIM:Seawater)"]. kg-microbe merges `other` into the synonym set, so both records
+    would answer to it. Rebuild the SSSOM in claw after fixing the record''s synonyms,
+    or add the pair to mappings/other_cross_record_baseline.tsv with a disposition
+    (#669).
+
+    rows[subject_id="MIM:Pasteurized_Seawater", object_id="ENVO:00002149", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''sea water'' (owned by
+    MIM:Seawater)"]. kg-microbe merges `other` into the synonym set, so both records
+    would answer to it. Rebuild the SSSOM in claw after fixing the record''s synonyms,
+    or add the pair to mappings/other_cross_record_baseline.tsv with a disposition
+    (#669).
+
+    rows[subject_id="MIM:Supplemented_Seawater", object_id="ENVO:00002149", predicate_id="skos:closeMatch"]:
+    Rule K: `other` publishes a name another record owns: ["''sea water'' (owned by
+    MIM:Seawater)"]. kg-microbe merges `other` into the synonym set, so both records
+    would answer to it. Rebuild the SSSOM in claw after fixing the record''s synonyms,
+    or add the pair to mappings/other_cross_record_baseline.tsv with a disposition
+    (#669).'
+  target_ids:
+  - candidate
+  field_paths:
+  - rows[subject_id="MIM:Cucl2_X_6_H2o", object_id="CHEBI:49553", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock", object_id="CHEBI:34683",
+    predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Fecl2_X_6_H2o", object_id="CHEBI:30812", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Fecl2_X_7_H2o", object_id="CHEBI:30812", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Mgcl2_X_7_H2o", object_id="CHEBI:6636", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Na2hpo4_X_3_H2o", object_id="CHEBI:34683", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Na2hpo4_X_6_H2o", object_id="CHEBI:34683", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Na2hpo4_X_7_H2o", object_id="CHEBI:34683", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Natural_Sea_Water", object_id="ENVO:00002149", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Pasteurized_Seawater", object_id="ENVO:00002149", predicate_id="skos:closeMatch"]
+  - rows[subject_id="MIM:Supplemented_Seawater", object_id="ENVO:00002149", predicate_id="skos:closeMatch"]
+  evidence_ids:
+  - rejects
+  - log-candidate_invariants
+  - invariant-code
+  - semantics
+  - generator
+  - maintained-aggregate
+  rule_id: K
+  native_severity: Native exit-2 invariant rejection; no numeric or P1-P4 severity
+    assigned
+  normalization_reason: Major because cross-record synonym publication may create
+    identity conflation; the native gate rejects Rule K without a P1-P4 grade.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cucl2_X_6_H2o.yaml
+    role: Maintained owner for MIM:Cucl2_X_6_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:cucl2_x_6_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml
+    role: Maintained owner for MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock; inspect
+      identifier, ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fecl2_X_6_H2o.yaml
+    role: Maintained owner for MIM:Fecl2_X_6_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:fecl2_x_6_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fecl2_X_7_H2o.yaml
+    role: Maintained owner for MIM:Fecl2_X_7_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:fecl2_x_7_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mgcl2_X_7_H2o.yaml
+    role: Maintained owner for MIM:Mgcl2_X_7_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:mgcl2_x_7_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml
+    role: Maintained owner for MIM:Na2hpo4_X_3_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:na2hpo4_x_3_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml
+    role: Maintained owner for MIM:Na2hpo4_X_6_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:na2hpo4_x_6_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: Maintained owner for MIM:Na2hpo4_X_7_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:na2hpo4_x_7_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Natural_Sea_Water.yaml
+    role: Maintained owner for MIM:Natural_Sea_Water; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:natural_sea_water"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Pasteurized_Seawater.yaml
+    role: Maintained owner for MIM:Pasteurized_Seawater; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:pasteurized_seawater"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Supplemented_Seawater.yaml
+    role: Maintained owner for MIM:Supplemented_Seawater; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:supplemented_seawater"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: 'External builder owner: registry and synonym emission'
+- finding_id: F-G
+  issue_key: sssom-builder-header-date-policy
+  category: provenance
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Generated header dates disagree with newest row date
+  description: 'The generated mapping_date and mapping_set_version headers both equal
+    2026-10-31 while the newest row mapping_date is 2026-10-15. Native Rule G requires
+    equality. The two diagnostics are header findings, not two ingredient rows or
+    invented row triples.
+
+
+    Exact native reject selectors and reasons:
+
+    header.mapping_date: header mapping_date is ''2026-10-31'' but the newest row
+    mapping_date is ''2026-10-15'' — a consumer caching on the version would not see
+    this set as changed (#301). Fix: just bump-sssom-header
+
+    header.mapping_set_version: header mapping_set_version is ''2026-10-31'' but the
+    newest row mapping_date is ''2026-10-15'' — a consumer caching on the version
+    would not see this set as changed (#301). Fix: just bump-sssom-header'
+  target_ids:
+  - candidate
+  field_paths:
+  - header.mapping_date
+  - header.mapping_set_version
+  evidence_ids:
+  - rejects
+  - log-candidate_invariants
+  - invariant-code
+  - semantics
+  - generator
+  - maintained-aggregate
+  rule_id: G
+  native_severity: Native exit-2 invariant rejection; no numeric or P1-P4 severity
+    assigned
+  normalization_reason: Minor because bounded provenance/version metadata is inconsistent
+    while identity rows are unchanged by this defect; native Rule G still blocks promotion
+    and is not waived.
+  owner_paths:
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: 'External builder owner: header/version emission'
+actions:
+- action_id: A-B5
+  description: Repair external registry backfill to respect maintained primary identity
+    and ingredient type; review any necessary owner correction individually without
+    changing existing correct identities. Regenerate and prove one permissible local
+    namespace per subject. Proposed only; no fix applied in this generation task.
+  finding_ids:
+  - F-B5
+  target_ids:
+  - candidate
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml
+    role: Maintained owner for MIM:84_GL_NaHCO3_Solution; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:84_gl_nahco3_solution"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Amylopectin_From_Maize.yaml
+    role: Maintained owner for MIM:Amylopectin_From_Maize; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:amylopectin_from_maize"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/B-Glucan_From_Oat.yaml
+    role: Maintained owner for MIM:B-Glucan_From_Oat; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:b-glucan_from_oat"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Casamino_Acids_Vitamin_Assay.yaml
+    role: Maintained owner for MIM:Casamino_Acids_Vitamin_Assay; inspect identifier,
+      ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:casamino_acids_vitamin_assay"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cholesterol_Lipid_Concentrate.yaml
+    role: Maintained owner for MIM:Cholesterol_Lipid_Concentrate; inspect identifier,
+      ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:cholesterol_lipid_concentrate"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fish-sperm_Dna.yaml
+    role: Maintained owner for MIM:Fish-sperm_Dna; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:fish-sperm_dna"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa.yaml
+    role: Maintained owner for MIM:Heparin_Sodium_Salt_From_Porcine_Intestinal_Mucosa;
+      inspect identifier, ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Lichenan_Icelandic_Moss.yaml
+    role: Maintained owner for MIM:Lichenan_Icelandic_Moss; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:lichenan_icelandic_moss"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/MES_Buffer.yaml
+    role: Maintained owner for MIM:MES_Buffer; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:mes_buffer"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/MOPS_2M_pH7.yaml
+    role: Maintained owner for MIM:MOPS_2M_pH7; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:mops_2m_ph7"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Menadione_Solution.yaml
+    role: Maintained owner for MIM:Menadione_Solution; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:menadione_solution"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PBS.yaml
+    role: Maintained owner for MIM:PBS; inspect identifier, ingredient_type, ontology_mapping
+      and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:pbs"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PIPES_Buffer.yaml
+    role: Maintained owner for MIM:PIPES_Buffer; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:pipes_buffer"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ribonucleic_Acid_From_Torula_Yeast_Type_VI.yaml
+    role: Maintained owner for MIM:Ribonucleic_Acid_From_Torula_Yeast_Type_VI; inspect
+      identifier, ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: 'External builder owner: registry and synonym emission'
+  acceptance_checks:
+  - Regenerate candidate with the supported builder and record exact source revisions/hashes.
+  - Native validate_sssom_invariants.py reports zero B5 rejects and no new failures.
+  - Run SSSOM schema/CURIE, reconciliation and canonical-or-synonym label checks;
+    reassess affected identities before any release.
+  generator: CultureBotAI/culturebotai-claw:scripts/build_mim_ingredient_sssom.py
+- action_id: A-K
+  description: Trace each exact other token to maintained typed synonyms versus builder
+    enrichment, preserve rejected provenance and remove unsafe emitted synonyms at
+    the owning source. Do not blanket-allowlist collisions. Regenerate and rerun native
+    K plus label and identity checks. Proposed only; no fix applied in this generation
+    task.
+  finding_ids:
+  - F-K
+  target_ids:
+  - candidate
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cucl2_X_6_H2o.yaml
+    role: Maintained owner for MIM:Cucl2_X_6_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:cucl2_x_6_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Disodium_Phosphate_Heptahydrate_002_M_Stock.yaml
+    role: Maintained owner for MIM:Disodium_Phosphate_Heptahydrate_002_M_Stock; inspect
+      identifier, ingredient_type, ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fecl2_X_6_H2o.yaml
+    role: Maintained owner for MIM:Fecl2_X_6_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:fecl2_x_6_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fecl2_X_7_H2o.yaml
+    role: Maintained owner for MIM:Fecl2_X_7_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:fecl2_x_7_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mgcl2_X_7_H2o.yaml
+    role: Maintained owner for MIM:Mgcl2_X_7_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:mgcl2_x_7_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml
+    role: Maintained owner for MIM:Na2hpo4_X_3_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:na2hpo4_x_3_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml
+    role: Maintained owner for MIM:Na2hpo4_X_6_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:na2hpo4_x_6_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml
+    role: Maintained owner for MIM:Na2hpo4_X_7_H2o; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.compound:na2hpo4_x_7_h2o"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Natural_Sea_Water.yaml
+    role: Maintained owner for MIM:Natural_Sea_Water; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:natural_sea_water"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Pasteurized_Seawater.yaml
+    role: Maintained owner for MIM:Pasteurized_Seawater; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:pasteurized_seawater"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Supplemented_Seawater.yaml
+    role: Maintained owner for MIM:Supplemented_Seawater; inspect identifier, ingredient_type,
+      ontology_mapping and synonyms.
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Paired maintained entry selector ingredients[identifier="kgmicrobe.ingredient:supplemented_seawater"];
+      synchronize only after an authorized source correction.
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: 'External builder owner: registry and synonym emission'
+  acceptance_checks:
+  - Regenerate candidate with the supported builder and record exact source revisions/hashes.
+  - Native validate_sssom_invariants.py reports zero K rejects and no new failures.
+  - Run SSSOM schema/CURIE, reconciliation and canonical-or-synonym label checks;
+    reassess affected identities before any release.
+  generator: CultureBotAI/culturebotai-claw:scripts/build_mim_ingredient_sssom.py
+- action_id: A-G
+  description: Correct external generator header/version emission to the native newest-row
+    date policy, retaining real row dates. Regenerate and rerun Rule G without disguising
+    generation time as evidence time. Proposed only; no fix applied in this generation
+    task.
+  finding_ids:
+  - F-G
+  target_ids:
+  - candidate
+  owner_paths:
+  - repository: CultureBotAI/culturebotai-claw
+    path: scripts/build_mim_ingredient_sssom.py
+    role: 'External builder owner: header/version emission'
+  acceptance_checks:
+  - Regenerate candidate with the supported builder and record exact source revisions/hashes.
+  - Native validate_sssom_invariants.py reports zero G rejects and no new failures.
+  - Run SSSOM schema/CURIE, reconciliation and canonical-or-synonym label checks;
+    reassess affected identities before any release.
+  generator: CultureBotAI/culturebotai-claw:scripts/build_mim_ingredient_sssom.py
+limitations:
+- No scientific review, new evidence-based identity approval, calibrated confidence,
+  status promotion or curation-history update is claimed.
+- 'Native B4 is best-effort: exact actual transform paths were checked, including
+  ignored files; BTO/MICRO transforms are absent, and native lookup skips absent IDs
+  and unsupported prefixes. Zero findings therefore does not mean full ontology coverage.'
+- Configured label no-adapter skips and 101 full-product warning diagnostics remain
+  visible; passing enforcement does not mean every label/form claim was validated.
+- Eighteen published MIM subject/filename mismatches remain native non-gating warnings
+  under the unresolved subject-semantics contract.
+- Current CM outputs and KG Mediadive ingredient data are comparison surfaces. Their
+  freshness does not convert them into bulk MIM imports or prove all raw-builder upstream
+  mapping files have the same date.
+- Historical review decisions bind only their canonical source and evidence hashes.
+  Candidate rows and replayed validation stamps receive no new scientific authorization.
+- Absolute local evidence references point into this retained run directory; generated
+  ignored inputs must accompany the bundle to reproduce its working-tree snapshot.
+  Hashes attest exact local bytes, not committed publication.
+notes:
+- All three actions are proposed follow-up. No rejected rows were patched, waived,
+  promoted or released.
+- No commits, push, pull requests, merges, mentions or paid provider calls were made
+  by this assessment.
+tags:
+- sssom
+- mechanical-review
+- candidate-blocked
+- current-inputs

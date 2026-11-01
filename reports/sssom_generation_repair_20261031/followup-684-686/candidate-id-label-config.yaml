@@ -1,0 +1,56 @@
+adapters:
+  CHEBI: sqlite:obo:chebi
+  FOODON: sqlite:obo:foodon
+  NCIT: sqlite:obo:ncit
+  MESH: sqlite:obo:mesh
+  UBERON: sqlite:obo:uberon
+  ENVO: sqlite:obo:envo
+  BTO: sqlite:obo:bto
+  PATO: sqlite:obo:pato
+ignored_prefixes:
+- MIM
+- MICRO
+- cas
+- registry
+- kgmicrobe.compound
+- kgmicrobe.ingredient
+- mediadive.ingredient
+- mediadive.solution
+- mediadive.compound
+synonym_scope: exact_related
+plausibility_severity: error
+max_accession:
+  CHEBI: 1000000
+  FOODON: 4000000
+  UBERON: 9000000
+  ENVO: 9000000
+  NCIT: 900000
+x-mesh-scr-exceptions: &id001
+- id: mesh:C000709627
+  label: avocatin B
+  reason: valid MeSH SCR (2020); absent from cached sqlite:obo:mesh; no CHEBI equivalent
+- id: mesh:C000655964
+  label: cholinium lysinate
+  reason: valid MeSH SCR; absent from cached sqlite:obo:mesh; no CHEBI equivalent
+- id: mesh:C000730144
+  label: sodium glutarate
+  reason: valid MeSH SCR (2024); absent from cached sqlite:obo:mesh; no CHEBI equivalent
+- id: mesh:C000730144
+  label: Disodium Glutarate
+  reason: curator label form of the mesh:C000730144 residual above
+- id: mesh:C000633628
+  label: plicacetin
+  reason: valid MeSH SCR; absent from cached sqlite:obo:mesh; no CHEBI equivalent
+targets:
+- name: sssom
+  kind: tabular
+  format: tsv
+  glob: output/sssom-followup-684-686/ingredient_mappings.sssom.tsv
+  required: true
+  policy: canonical_or_synonym
+  exceptions: *id001
+  pairs:
+  - - subject_id
+    - subject_label
+  - - object_id
+    - object_label

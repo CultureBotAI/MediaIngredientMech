@@ -1,0 +1,158 @@
+......FFF..F                                                             [100%]
+=================================== FAILURES ===================================
+________________ test_missing_row_date_is_preserved_for_rule_f _________________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7923/test_missing_row_date_is_prese0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bcbed50>
+
+    def test_missing_row_date_is_preserved_for_rule_f(tmp_path, monkeypatch):
+        path = tmp_path / 'mapping.tsv'
+>       run_builder(tmp_path, monkeypatch,
+                    [{'mapping_date': '2026-10-15'}, {'mapping_date': ''}], path)
+
+tests/test_mim_sssom_header_dates.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_mim_sssom_header_dates.py:39: in run_builder
+    builder.main()
+scripts/build_mim_ingredient_sssom.py:1263: in main
+    _write_sssom(final, args.output)
+scripts/build_mim_ingredient_sssom.py:1061: in _write_sssom
+    version = _mapping_set_version(rows)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'subject_id': 'MIM:record0', 'object_id': 'CHEBI:1', 'predicate_id': 'skos:exactMatch', 'mapping_date': '2026-10-15'}, {'subject_id': 'MIM:record1', 'object_id': 'CHEBI:2', 'predicate_id': 'skos:exactMatch', 'mapping_date': ''}]
+
+    def _mapping_set_version(rows: list[dict]) -> str:
+        """Bind header dates to emitted curation dates (MIM Rule G, #681).
+    
+        Reject unusable dates before opening the output. A build clock cannot
+        supply missing curation provenance, even if another row has a valid date.
+        """
+        from datetime import datetime
+        if not rows:
+            raise ValueError("Cannot derive mapping_date from an empty mapping set")
+        dates = []
+        for row in rows:
+            value = row.get("mapping_date", "")
+            if not isinstance(value, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+>               raise ValueError(f"Invalid mapping_date for {row.get('subject_id')}: {value!r}")
+E               ValueError: Invalid mapping_date for MIM:record1: ''
+
+scripts/build_mim_ingredient_sssom.py:1049: ValueError
+----------------------------- Captured stderr call -----------------------------
+Scanning 1 MIM ingredient YAMLs...
+_______ test_all_dateless_subjects_are_reported_before_replacing_output ________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7923/test_all_dateless_subjects_are0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bcbe210>
+
+    def test_all_dateless_subjects_are_reported_before_replacing_output(tmp_path, monkeypatch):
+        path = tmp_path / 'mapping.tsv'
+        path.write_text('previous output\n')
+        with pytest.raises(ValueError, match='mapping_date') as error:
+            run_builder(tmp_path, monkeypatch, [{'mapping_date': ''}, {}], path)
+        assert 'MIM:record0' in str(error.value)
+>       assert 'MIM:record1' in str(error.value)
+E       assert 'MIM:record1' in "Invalid mapping_date for MIM:record0: ''"
+E        +  where "Invalid mapping_date for MIM:record0: ''" = str(ValueError("Invalid mapping_date for MIM:record0: ''"))
+E        +    where ValueError("Invalid mapping_date for MIM:record0: ''") = <ExceptionInfo ValueError("Invalid mapping_date for MIM:record0: ''") tblen=5>.value
+
+tests/test_mim_sssom_header_dates.py:85: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Scanning 1 MIM ingredient YAMLs...
+______ test_all_malformed_row_dates_are_reported_before_replacing_output _______
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7923/test_all_malformed_row_dates_a0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bd365f0>
+
+    def test_all_malformed_row_dates_are_reported_before_replacing_output(tmp_path, monkeypatch):
+        path = tmp_path / 'mapping.tsv'
+        path.write_text('previous output\n')
+        with pytest.raises(ValueError, match='mapping_date') as error:
+            run_builder(tmp_path, monkeypatch, [
+                {'mapping_date': '2026-10-15'},
+                {'mapping_date': '2026-02-30'},
+                {'mapping_date': '２０２６-10-15'},
+            ], path)
+        assert 'MIM:record1' in str(error.value)
+>       assert 'MIM:record2' in str(error.value)
+E       assert 'MIM:record2' in "Invalid mapping_date for MIM:record1: '2026-02-30'"
+E        +  where "Invalid mapping_date for MIM:record1: '2026-02-30'" = str(ValueError("Invalid mapping_date for MIM:record1: '2026-02-30'"))
+E        +    where ValueError("Invalid mapping_date for MIM:record1: '2026-02-30'") = <ExceptionInfo ValueError("Invalid mapping_date for MIM:record1: '2026-02-30'") tblen=5>.value
+
+tests/test_mim_sssom_header_dates.py:99: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Scanning 1 MIM ingredient YAMLs...
+_____________ test_dateless_record_reaches_rule_f_as_an_empty_cell _____________
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7923/test_dateless_record_reaches_r0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10bd4e690>
+capsys = <_pytest.capture.CaptureFixture object at 0x10bccb380>
+
+    def test_dateless_record_reaches_rule_f_as_an_empty_cell(tmp_path, monkeypatch, capsys):
+        """Native YAML extraction and CLI output keep every dateless record visible."""
+        inputs = tmp_path / 'records'
+        inputs.mkdir()
+        base = (
+            'identifier: CHEBI:15377\n'
+            'mapping_status: MAPPED\n'
+            'ontology_mapping:\n'
+            '  ontology_id: CHEBI:15377\n'
+            '  ontology_label: water\n'
+            '  mapping_quality: EXACT_MATCH\n'
+        )
+        (inputs / 'Dated.yaml').write_text(base + 'preferred_term: Dated\n'
+            'curation_history:\n  - timestamp: "2026-10-15T00:00:00Z"\n')
+        (inputs / 'Dateless.yaml').write_text(base + 'preferred_term: Dateless\n')
+        output = tmp_path / 'mapping.tsv'
+        monkeypatch.setattr(builder, 'MIM_INGREDIENTS_DIR', inputs)
+        monkeypatch.setattr(builder, 'require_mech_roots', lambda *a, **kw: None)
+        monkeypatch.setattr(builder, '_load_residual_categorization', lambda: {})
+        monkeypatch.setattr(builder, '_load_kgm_source_index', lambda: {})
+        monkeypatch.setattr(builder, '_load_kgm_labels', lambda: {})
+        monkeypatch.setattr(builder, '_load_chebi_labels', lambda *a: {'CHEBI:15377': 'water'})
+        monkeypatch.setattr(sys, 'argv', ['builder', '--no-validate', '--no-preserve-validation',
+                                       '--output', str(output)])
+>       builder.main()
+
+tests/test_mim_sssom_header_dates.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_mim_ingredient_sssom.py:1263: in main
+    _write_sssom(final, args.output)
+scripts/build_mim_ingredient_sssom.py:1061: in _write_sssom
+    version = _mapping_set_version(rows)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rows = [{'subject_id': 'MIM:Dated', 'subject_label': 'Dated', 'predicate_id': 'skos:exactMatch', 'object_id': 'CHEBI:15377', ..._id': 'MIM:Dateless', 'subject_label': 'Dateless', 'predicate_id': 'skos:exactMatch', 'object_id': 'CHEBI:15377', ...}]
+
+    def _mapping_set_version(rows: list[dict]) -> str:
+        """Bind header dates to emitted curation dates (MIM Rule G, #681).
+    
+        Reject unusable dates before opening the output. A build clock cannot
+        supply missing curation provenance, even if another row has a valid date.
+        """
+        from datetime import datetime
+        if not rows:
+            raise ValueError("Cannot derive mapping_date from an empty mapping set")
+        dates = []
+        for row in rows:
+            value = row.get("mapping_date", "")
+            if not isinstance(value, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+>               raise ValueError(f"Invalid mapping_date for {row.get('subject_id')}: {value!r}")
+E               ValueError: Invalid mapping_date for MIM:Dateless: ''
+
+scripts/build_mim_ingredient_sssom.py:1049: ValueError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no valid curation_history date in Dateless.yaml; keeping an empty mapping_date for native Rule F review (the writer refuses a set with no dated rows; #686)
+----------------------------- Captured stderr call -----------------------------
+Scanning 2 MIM ingredient YAMLs...
+Fetching rdfs:labels for 1 CHEBI ids from OAK...
+  resolved 1 / 1
+=========================== short test summary info ============================
+FAILED tests/test_mim_sssom_header_dates.py::test_missing_row_date_is_preserved_for_rule_f
+FAILED tests/test_mim_sssom_header_dates.py::test_all_dateless_subjects_are_reported_before_replacing_output
+FAILED tests/test_mim_sssom_header_dates.py::test_all_malformed_row_dates_are_reported_before_replacing_output
+FAILED tests/test_mim_sssom_header_dates.py::test_dateless_record_reaches_rule_f_as_an_empty_cell
+4 failed, 8 passed in 0.09s

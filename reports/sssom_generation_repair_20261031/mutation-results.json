@@ -1,0 +1,86 @@
+{
+  "results": [
+    {
+      "rule": "b5",
+      "mutation": {
+        "from": "and r[\"object_id\"] in registry_ids",
+        "to": "and r[\"object_id\"] == kgm_curie"
+      },
+      "receipt": {
+        "name": "mutation_b5",
+        "argv": [
+          "uv",
+          "run",
+          "python",
+          "-m",
+          "pytest",
+          "-q",
+          "--no-cov",
+          "tests/test_sssom_identity_row.py"
+        ],
+        "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw",
+        "started_at": "2026-10-31T23:24:30.063632+00:00",
+        "finished_at": "2026-10-31T23:24:30.413127+00:00",
+        "exit_code": 1,
+        "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/logs/mutation_b5.log",
+        "log_sha256": "2639b613a9ff20b2cb3dd54f0c710aeb53632786135c27c875a35af953185d31"
+      },
+      "detected": true
+    },
+    {
+      "rule": "k",
+      "mutation": {
+        "from": "if predicate == \"skos:exactMatch\" else []",
+        "to": "if True else []"
+      },
+      "receipt": {
+        "name": "mutation_k",
+        "argv": [
+          "uv",
+          "run",
+          "python",
+          "-m",
+          "pytest",
+          "-q",
+          "--no-cov",
+          "tests/test_mim_synonym_scope.py"
+        ],
+        "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw",
+        "started_at": "2026-10-31T23:24:30.437027+00:00",
+        "finished_at": "2026-10-31T23:24:30.766774+00:00",
+        "exit_code": 1,
+        "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/logs/mutation_k.log",
+        "log_sha256": "93a31111ffd4bd06cd4bbc4bcc9bb08439e6def1f53e739b8acf44388ff9aca1"
+      },
+      "detected": true
+    },
+    {
+      "rule": "g",
+      "mutation": {
+        "from": "return max(dates)\n\n\ndef _write_sssom",
+        "to": "return datetime.now().strftime(\"%Y-%m-%d\")\n\n\ndef _write_sssom"
+      },
+      "receipt": {
+        "name": "mutation_g",
+        "argv": [
+          "uv",
+          "run",
+          "python",
+          "-m",
+          "pytest",
+          "-q",
+          "--no-cov",
+          "tests/test_mim_sssom_header_dates.py"
+        ],
+        "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw",
+        "started_at": "2026-10-31T23:24:47.910098+00:00",
+        "finished_at": "2026-10-31T23:24:48.253625+00:00",
+        "exit_code": 1,
+        "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/logs/mutation_g.log",
+        "log_sha256": "1f0b7371bc695742c5394e164d1f2382abca453e73744e4859c0616dcd0db1c2"
+      },
+      "detected": true
+    }
+  ],
+  "restored_sha256": "fd5e64b686e0b0e5c82a91fb17bf64b3ffedaa7f84284d7642d2fc263368e27a"
+}
