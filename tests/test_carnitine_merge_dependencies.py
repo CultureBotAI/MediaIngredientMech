@@ -268,6 +268,7 @@ def mapping_fixture(tmp_path, monkeypatch, proposal, evidence):
     for name in ("MAPPING_SEMANTICS.md", "src/mediaingredientmech/export/reviewed_sssom.py",
                  "src/mediaingredientmech/review_claims.py", "src/mediaingredientmech/synonym_policy.py",
                  "src/mediaingredientmech/record_refresh.py", "scripts/validate_reviewed_sssom_schema.py",
+                 "src/mediaingredientmech/form_mapping_review.py",
                  "src/mediaingredientmech/validation/mapping_change_receipts.py",
                  "src/mediaingredientmech/validation/semantic_release.py"):
         put(tmp_path, name, (SOURCE_ROOT / name).read_bytes())
@@ -290,6 +291,9 @@ def mapping_fixture(tmp_path, monkeypatch, proposal, evidence):
     monkeypatch.setattr(assembler, "ROOT", tmp_path)
     monkeypatch.setattr(assembler, "HERE", here)
     monkeypatch.setattr(assembler, "REVIEWED_SOURCE", source_sha)
+    # This one-row historical replay has no form-review authorities. Real native
+    # form checkpoints are exercised by test_form_mapping_followup.py instead.
+    monkeypatch.setattr(assembler, "FORM_FOLLOWUP_FILES", ())
     return assembler, receipt, source, before[OWNER]
 
 

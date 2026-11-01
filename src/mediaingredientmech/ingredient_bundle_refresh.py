@@ -15,6 +15,7 @@ import subprocess
 from collections import Counter
 from contextlib import ExitStack
 from copy import deepcopy
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 from typing import BinaryIO
@@ -34,6 +35,248 @@ from mediaingredientmech.ingredient_bundle_contract import (
 
 CONTRACTS = tuple("src/mediaingredientmech/profiles/" + n for n in (PROFILE_NAME, SCHEMA_NAME))
 DATE_FIELDS = {"mapping_date", "mapping_set_version"}
+POLICY_MANIFEST = "mappings/ingredient_mappings.sssom.tsv.manifest.json"
+POLICY_SIDECAR = "mappings/suppressed_aliases.tsv"
+POLICY_BASELINE = "mappings/other_cross_record_baseline.tsv"
+
+
+@dataclass(frozen=True)
+class FormProjectionContext:
+    """Explicit execution context, never a caller-supplied replay result."""
+
+    root: Path
+    baseline: str
+    manifest_sha256: str
+
+
+def _form_require(condition, message):
+    if not condition:
+        raise ValueError("Form projection: " + message)
+
+
+def _form_sha(value):
+    _form_require(isinstance(value, str) and re.fullmatch(r"[0-9a-f]{64}", value), "invalid SHA256")
+    return value
+
+
+def _form_member(root, name):
+    path = safe_member(root, name)
+    _form_require(not any(p.is_symlink() for p in (path, *path.parents)), "aliased proof input")
+    return path
+
+
+def verify_form_projection(prior, before, current, context):
+    """Verify one typed, caller-pinned form update outside the selected cohort.
+
+    Generation/source-receipt attribution is pinned, not independently replayed.
+    Canonical and owner transitions are independently replayed from native receipts.
+    The complete proof input inventory is returned for publication-time rechecking.
+    """
+    from mediaingredientmech.curie import mim_curie_for_stem
+    from mediaingredientmech.validation.mapping_change_receipts import verify_mapping_chain
+
+    _form_require(isinstance(context, FormProjectionContext), "explicit context and pin required")
+    root = context.root.resolve()
+    _form_require(re.fullmatch(r"[0-9a-f]{40}", context.baseline), "durable commit required")
+    _form_require(
+        content_sha256(current[POLICY_MANIFEST]) == _form_sha(context.manifest_sha256),
+        "caller manifest pin differs",
+    )
+    old, new = (read_json(values[POLICY_MANIFEST]) for values in (before, current))
+    fixed = {
+        "schema_version",
+        "policy_version",
+        "approval",
+        "scope",
+        "decisions",
+        "policy_evidence",
+        "producer_revision",
+        "generation_manifest_sha256",
+        "generation_receipt_sha256",
+        "source_receipt_sha256",
+        "sssom_before_sha256",
+        "baseline_before_sha256",
+    }
+    required = fixed | {"artifacts", "source_owner_sha256"}
+    for doc in (old, new):
+        _form_require(
+            isinstance(doc, dict)
+            and set(doc) in (required, required | {"form_projection_updates"}),
+            "unknown manifest shape",
+        )
+        _form_require(
+            type(doc["schema_version"]) is int
+            and doc["schema_version"] == 1
+            and doc["policy_version"] == "owned-name-policy-v1",
+            "unknown policy/schema",
+        )
+    _form_require(all(old[k] == new[k] for k in fixed), "immutable policy/attribution changed")
+    prefix, updates = old.get("form_projection_updates", []), new.get("form_projection_updates")
+    _form_require(
+        isinstance(prefix, list)
+        and isinstance(updates, list)
+        and len(updates) == len(prefix) + 1
+        and updates[:-1] == prefix,
+        "expected exactly one append with preserved history",
+    )
+    update = updates[-1]
+    fields = {
+        "issue",
+        "scope",
+        "approval",
+        "prior_manifest_sha256",
+        "source_record",
+        "owner_before_sha256",
+        "owner_after_sha256",
+        "source_receipt",
+        "source_receipt_sha256",
+        "generation_manifest_sha256",
+        "generation_receipt_sha256",
+        "sssom_before_sha256",
+        "sssom_after_sha256",
+        "sidecar_sha256",
+        "baseline_sha256",
+    }
+    _form_require(isinstance(update, dict) and set(update) == fields, "unknown update shape")
+    for name, value in update.items():
+        if name.endswith("_sha256"):
+            _form_sha(value)
+    _form_require(
+        type(update["issue"]) is int
+        and update["issue"] > 0
+        and isinstance(update["scope"], str)
+        and bool(update["scope"])
+        and isinstance(update["approval"], str)
+        and update["approval"].startswith("NONE:")
+        and isinstance(update["source_receipt"], str)
+        and bool(update["source_receipt"]),
+        "invalid attribution fields",
+    )
+    _form_require(
+        update["prior_manifest_sha256"] == content_sha256(before[POLICY_MANIFEST]),
+        "prior raw manifest hash differs",
+    )
+    source = read_json(before[prior["base_review"]])["source_sssom"]
+    artifacts = {source, POLICY_SIDECAR, POLICY_BASELINE}
+    for doc, values in ((old, before), (new, current)):
+        _form_require(
+            isinstance(doc["artifacts"], dict) and set(doc["artifacts"]) == artifacts,
+            "artifact membership differs",
+        )
+        _form_require(
+            all(doc["artifacts"][p] == content_sha256(values[p]) for p in artifacts),
+            "artifact bytes differ",
+        )
+    for path in artifacts | {POLICY_MANIFEST}:
+        _form_require(
+            _form_member(root, path).read_bytes() == current[path],
+            "context current artifact differs",
+        )
+    _form_require(
+        before[POLICY_SIDECAR] == current[POLICY_SIDECAR]
+        and before[POLICY_BASELINE] == current[POLICY_BASELINE],
+        "policy sidecar/baseline changed",
+    )
+    for field, path in (("sidecar_sha256", POLICY_SIDECAR), ("baseline_sha256", POLICY_BASELINE)):
+        _form_require(update[field] == content_sha256(current[path]), "update policy hash differs")
+    for field, values in (("sssom_before_sha256", before), ("sssom_after_sha256", current)):
+        _form_require(update[field] == content_sha256(values[source]), "canonical endpoint differs")
+    owner = update["source_record"]
+    _form_require(
+        isinstance(owner, str)
+        and owner.startswith("data/ingredients/mapped/")
+        and owner.endswith(".yaml")
+        and owner not in prior["record_inputs"],
+        "owner is invalid or belongs to companion cohort",
+    )
+    current_owner = _form_member(root, owner).read_bytes()
+
+    def historical(path):
+        _form_member(root, path)
+        return subprocess.check_output(["git", "show", context.baseline + ":" + path], cwd=root)
+
+    for path in (source, POLICY_MANIFEST):
+        _form_require(historical(path) == before[path], "baseline input bytes differ")
+    old_owner = historical(owner)
+    _form_require(
+        update["owner_before_sha256"] == content_sha256(old_owner)
+        and update["owner_after_sha256"] == content_sha256(current_owner),
+        "actual owner endpoint differs",
+    )
+    old_owners, new_owners = old["source_owner_sha256"], new["source_owner_sha256"]
+    _form_require(
+        isinstance(old_owners, dict)
+        and isinstance(new_owners, dict)
+        and set(old_owners) == set(new_owners)
+        and owner in old_owners,
+        "owner inventory differs",
+    )
+    for values in (old_owners, new_owners):
+        for digest in values.values():
+            _form_sha(digest)
+    expected_owners = dict(old_owners)
+    _form_require(expected_owners[owner] == update["owner_before_sha256"], "old owner map differs")
+    expected_owners[owner] = update["owner_after_sha256"]
+    _form_require(expected_owners == new_owners, "unaccounted owner change")
+    proof = verify_mapping_chain(root)
+    _form_require(
+        proof["reviewed_sha256"] == update["sssom_after_sha256"], "current native chain differs"
+    )
+    matches = [r for r in proof["receipts"] if r["before_sha256"] == update["sssom_before_sha256"]]
+    _form_require(
+        len(matches) == 1 and matches[0] == proof["receipts"][-1],
+        "update is not the exact final native suffix",
+    )
+    receipt = matches[0]
+    _form_require(
+        receipt["after_sha256"] == update["sssom_after_sha256"]
+        and receipt["issue"]
+        == f"https://github.com/CultureBotAI/MediaIngredientMech/issues/{update['issue']}",
+        "native receipt endpoints/issue differ",
+    )
+    records = receipt["records"]
+    _form_require(
+        len(records) == 1
+        and records[0]["source_record"] == owner
+        and records[0]["before_yaml_sha256"] == update["owner_before_sha256"]
+        and records[0]["after_yaml_sha256"] == update["owner_after_sha256"]
+        and records[0]["shape"] == "hydrate_parent_predicate",
+        "native owner transition differs",
+    )
+    subject = mim_curie_for_stem(Path(owner).stem)
+    _form_require(
+        receipt["touched_subjects"] == [subject]
+        and all(
+            row["subject_id"] == subject
+            for change in receipt["changes"]
+            for row in (change["before"], change["after"])
+            if row is not None
+        ),
+        "unaccounted native subject change",
+    )
+    inputs = dict(proof["input_hashes"])
+    inputs[owner] = content_sha256(current_owner)
+    for path in artifacts | {POLICY_MANIFEST}:
+        inputs[path] = content_sha256(current[path])
+    for path in (
+        "src/mediaingredientmech/ingredient_bundle_refresh.py",
+        "src/mediaingredientmech/validation/mapping_change_receipts.py",
+    ):
+        inputs[path] = content_sha256(_form_member(root, path).read_bytes())
+    return {
+        "manifest_before_sha256": content_sha256(before[POLICY_MANIFEST]),
+        "caller_pinned_manifest_sha256": context.manifest_sha256,
+        "attribution_contract": "Exact caller-pinned attribution; generation/source receipts are not replayed here.",
+        "native_transition_contract": "Full native receipt chain and durable-baseline/current owner bytes verified.",
+        "baseline": context.baseline,
+        "source_record": owner,
+        "appended_update": update,
+        "native_receipt": proof["receipt_paths"][-1],
+        "native_receipt_sha256": proof["receipt_inputs"][proof["receipt_paths"][-1]],
+        "receipt_paths": proof["receipt_paths"],
+        "input_sha256": inputs,
+        "scientific_approval_added": False,
+    }
 
 
 def source_names(review):
@@ -49,7 +292,9 @@ def encode(value):
     return (json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n").encode()
 
 
-def verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts):
+def verify_unchanged_cohort(
+    prior, before, current, old_contracts, new_contracts, *, form_projection=None
+):
     """Return a dependency-only successor and complete selected-claim evidence."""
     if set(old_contracts) != set(CONTRACTS) or old_contracts != new_contracts:
         raise ValueError("Packaged schema/profile contract changed")
@@ -80,6 +325,12 @@ def verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts
     evidence_containers = {d["review_evidence"] for d in selected_old_decisions}
     allowed = {prior["base_review"], source, *evidence_containers}
     changed = {p for p in before if before[p] != current[p]}
+    projection = None
+    if form_projection is not None and POLICY_MANIFEST not in changed:
+        raise ValueError("Form projection requested without a changed policy manifest")
+    if POLICY_MANIFEST in changed and form_projection is not None:
+        projection = verify_form_projection(prior, before, current, form_projection)
+        allowed.add(POLICY_MANIFEST)
     if changed - allowed:
         raise ValueError(
             "Non-global input or owner changed: " + ", ".join(sorted(changed - allowed))
@@ -193,6 +444,8 @@ def verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts
         },
         "native_historical_and_successor_payload_replay": "PASS; all claim payloads equal; only validated header dates differ",
     }
+    if projection is not None:
+        audit["form_projection"] = projection
     return successor, audit
 
 
@@ -260,6 +513,10 @@ def main(argv=None):
     parser.add_argument(
         "--prior-copy", type=Path, required=True, help="New exact prior-review copy path"
     )
+    parser.add_argument(
+        "--form-projection-manifest-sha256",
+        help="Explicit reviewed successor manifest pin; native owner/receipt checks still apply",
+    )
     args = parser.parse_args(argv)
     root = args.root.resolve()
     destinations = [root / args.output, root / args.receipt, root / args.prior_copy]
@@ -291,7 +548,14 @@ def main(argv=None):
     for name in (PROFILE_NAME, SCHEMA_NAME):
         if contract_resource(name) != new_contracts["src/mediaingredientmech/profiles/" + name]:
             raise ValueError("Loaded package differs from current schema/profile")
-    successor, audit = verify_unchanged_cohort(prior, before, current, old_contracts, new_contracts)
+    form_projection = (
+        FormProjectionContext(root, baseline, args.form_projection_manifest_sha256)
+        if args.form_projection_manifest_sha256 is not None
+        else None
+    )
+    successor, audit = verify_unchanged_cohort(
+        prior, before, current, old_contracts, new_contracts, form_projection=form_projection
+    )
     new_bytes = encode(successor)
     audit.update(
         {
@@ -311,11 +575,24 @@ def main(argv=None):
     snapshots = {root / p: content_sha256(b) for p, b in (current | new_contracts).items()}
     snapshots[root / prior_path] = content_sha256(old_bytes)
     snapshots.update(loaded["input_snapshot"])
+    if "form_projection" in audit:
+        for path, expected in audit["form_projection"]["input_sha256"].items():
+            member = _form_member(root, path)
+            if member in snapshots and snapshots[member] != expected:
+                raise ValueError("Projection proof conflicts with captured input: " + path)
+            snapshots[member] = expected
     outputs = list(zip(destinations, (new_bytes, encode(audit), old_bytes), strict=True))
     if any(p.resolve() in {s.resolve() for s in snapshots} for p, _ in outputs):
         raise ValueError("Output collides with a source input")
 
     def verify_snapshot():
+        if "form_projection" in audit:
+            from mediaingredientmech.validation.mapping_change_receipts import receipt_paths
+
+            if receipt_paths(root) != audit["form_projection"]["receipt_paths"]:
+                raise ValueError("Projection receipt inventory changed during verification")
+            for name in audit["form_projection"]["input_sha256"]:
+                _form_member(root, name)
         for path, expected in snapshots.items():
             if content_sha256(path.read_bytes()) != expected:
                 raise ValueError("Input changed during verification: " + str(path))

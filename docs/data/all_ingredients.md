@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-11-01T14:38:41.864045+00:00
+Generated: 2026-11-01T20:21:01.872440+00:00
 Total: 2955 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -803,7 +803,7 @@ Total: 2955 ingredients
 | CHEBI:16217 | CHEBI:16217 | D-(+)-Gluconic acid gamma-lactone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:207511-10-2 | CHEBI:6731 | D-(+)-Melezitose hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:32528 | CHEBI:32528 | D-(+)-Turanose | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:10030-67-8 | CHEBI:6731 | D-(+)-melezitose monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| cas:10030-67-8 | CHEBI:6731 | D-(+)-melezitose monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16719 | CHEBI:16719 | D-(-)-Pantolactone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:62318 | CHEBI:62318 | D-(-)-lyxose | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:4249 | CHEBI:4249 | D-(-)-tagatose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |

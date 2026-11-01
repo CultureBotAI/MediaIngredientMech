@@ -1,0 +1,55 @@
+[
+  {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/claw-owned-name/scripts/kgm_unified_mappings.py",
+    "sha256": "bdcec27470bf7d9ce52ec969fa6cddd35eec966ac7bd9f30def86fa91c36db24",
+    "excerpts": [
+      {
+        "first_line": 75,
+        "last_line": 153,
+        "text": "    \"\"\"\n    path = path or KGM_UNIFIED_SSSOM\n    by_id: dict[str, dict] = {}\n    if not path.exists():\n        return by_id\n\n    for row in _iter_sssom(path):\n        oid = (row.get(\"object_id\") or \"\").strip()\n        if not oid.startswith(prefix):\n            continue\n\n        entry = by_id.get(oid)\n        if entry is None:\n            entry = by_id[oid] = {\n                \"canonical_name\": \"\",\n                \"formula\": \"\",\n                \"synonyms\": set(),\n                \"xrefs\": set(),\n                \"sources\": set(),\n            }\n\n        if not entry[\"canonical_name\"]:\n            olabel = (row.get(\"object_label\") or \"\").strip()\n            # A few rows carry the CURIE itself as the label; that is not a name.\n            entry[\"canonical_name\"] = \"\" if olabel == oid else olabel\n        if not entry[\"formula\"]:\n            entry[\"formula\"] = (row.get(\"object_formula\") or \"\").strip()\n\n        # Only identity rows can contribute synonyms.  The unified mapping also\n        # carries close/narrow/broad matches whose subject labels are useful for\n        # discovery, but are explicitly *not* names for the object.  Treating all\n        # of them as synonyms discarded the SSSOM predicate and let unrelated\n        # labels leak into MIM's published ``other`` column (MIM #464/#470).\n        slabel = (row.get(\"subject_label\") or \"\").strip()\n        predicate = (row.get(\"predicate_id\") or \"\").strip()\n        if (\n            predicate == \"skos:exactMatch\"\n            and slabel\n            and slabel != oid\n            and not _CURIE_RE.match(slabel)\n        ):\n            entry[\"synonyms\"].add(slabel)\n\n        sid = (row.get(\"subject_id\") or \"\").strip()\n        if sid:\n            entry[\"xrefs\"].add(sid)\n\n        for s in (row.get(\"source\") or \"\").split(\"|\"):\n            if s.strip():\n                entry[\"sources\"].add(s.strip())\n\n    for entry in by_id.values():\n        entry[\"sources\"] = \"|\".join(sorted(entry[\"sources\"]))\n        if len(entry[\"synonyms\"]) > POLLUTION_THRESHOLD:\n            entry[\"synonyms\"] = set()\n            entry[\"_polluted\"] = True\n\n    return by_id\n\n\ndef load_kgm_source_index(path: Path | None = None) -> dict[str, str]:\n    \"\"\"CHEBI:X -> pipe-separated kg-microbe `source` string.\"\"\"\n    return {\n        cid: e[\"sources\"]\n        for cid, e in load_kgm_entity_index(path).items()\n        if e[\"sources\"]\n    }\n\n\ndef load_kgm_labels(path: Path | None = None) -> dict[str, tuple[str, list[str]]]:\n    \"\"\"CHEBI:X -> (canonical_name, [synonyms...]).\"\"\"\n    return {\n        cid: (e[\"canonical_name\"], sorted(e[\"synonyms\"]))\n        for cid, e in load_kgm_entity_index(path).items()\n    }\n\n\ndef load_kgm_compound_placeholders(path: Path | None = None) -> list[dict]:\n    \"\"\"Load kgmicrobe.compound:* placeholder entities (no-CHEBI surface forms)."
+      }
+    ]
+  },
+  {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/claw-owned-name/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc",
+    "excerpts": [
+      {
+        "first_line": 736,
+        "last_line": 746,
+        "text": "def _join_sources(mim_ev: list[str], last_curator: str, kgm_src: str) -> str:\n    parts: list[str] = [f\"MIM:{s}\" for s in mim_ev if s]\n    if last_curator:\n        parts.append(f\"MIM:curator={last_curator}\")\n    for s in filter(None, (p.strip() for p in kgm_src.split(\"|\"))):\n        parts.append(f\"kgm:{s}\")\n    return \"|\".join(parts)\n\n\ndef _read_mapped_records(directory: Path, snapshot: dict[Path, bytes | None] | None = None) -> dict[Path, dict]:\n    \"\"\"Parse the complete direct mapped-directory population, including ignored files.\"\"\""
+      },
+      {
+        "first_line": 981,
+        "last_line": 984,
+        "text": "    # kg-microbe cross-source data is CHEBI-only.\n    kgm_name, kgm_syns = kgm_labels.get(obj_id, (\"\", [])) if is_chebi else (\"\", [])\n    kgm_src = kgm_sources.get(obj_id, \"\") if is_chebi else \"\"\n    mim_synonym_rows = ["
+      },
+      {
+        "first_line": 1059,
+        "last_line": 1068,
+        "text": "        \"subject_label\": preferred,\n        \"predicate_id\": predicate,\n        \"object_id\": obj_id,\n        \"object_label\": ont_label,\n        \"object_source\": object_source,\n        \"mapping_justification\": justification,\n        \"source\": _join_sources(evidence, _last_curator(history), kgm_src),\n        \"mapping_date\": _mapping_date(path, history),\n        \"confidence\": confidence,\n        \"comment\": comment,"
+      },
+      {
+        "first_line": 1090,
+        "last_line": 1110,
+        "text": "             if primary_id.startswith(p)), \"\")\n        if primary_prefix:\n            rows.append({\n                \"subject_id\": parent_row[\"subject_id\"],\n                \"subject_label\": preferred,\n                \"predicate_id\": \"skos:exactMatch\",\n                \"object_id\": primary_id,\n                \"object_label\": preferred,  # registry CURIE: label is the MIM term\n                \"object_source\": _OBJECT_SOURCE_BY_PREFIX.get(\n                    primary_prefix, \"\"),\n                \"mapping_justification\": JUST_MANUAL,\n                \"source\": parent_row[\"source\"],\n                \"mapping_date\": parent_row[\"mapping_date\"],\n                \"confidence\": \"0.99\",\n                \"comment\": (f\"Registry/identity row preserving \"\n                            f\"{primary_id} alongside parent {obj_id}.\"),\n                # These minted registry nodes carry no ontology synonyms of\n                # their own, so the CAS is the only orderable handle they get.\n                \"other\": cas_token,\n                \"validation_method\": \"\",\n            })"
+      },
+      {
+        "first_line": 1152,
+        "last_line": 1167,
+        "text": "                \"subject_id\": parent_row[\"subject_id\"],\n                \"subject_label\": preferred,\n                \"predicate_id\": \"skos:exactMatch\",\n                \"object_id\": kgm_curie,\n                \"object_label\": preferred,\n                \"object_source\": _OBJECT_SOURCE_BY_PREFIX.get(kgm_namespace, \"\"),\n                \"mapping_justification\": JUST_MANUAL,\n                \"source\": parent_row[\"source\"],\n                \"mapping_date\": parent_row[\"mapping_date\"],\n                \"confidence\": \"0.99\",\n                # The predicate word comes from the parent row itself. It was\n                # a literal \"narrowMatch\", which went stale on 128 published\n                # rows the moment the parent predicate moved (MIM#390).\n                \"comment\": (f\"Registry/identity row (Rule B1) for \"\n                            f\"{parent_row['predicate_id'].split(':', 1)[-1]} \"\n                            f\"subject; kg-microbe primary id \""
+      }
+    ]
+  },
+  {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/scripts/mim_conservative_refresh.py",
+    "sha256": "ec51a2de8f7c701427ca2b58ce807222e360e15379f51ea5666315eae6d94640",
+    "excerpts": [
+      {
+        "first_line": 678,
+        "last_line": 705,
+        "text": "    mim_source = \"mediaingredientmech_reviewed[manifest=\" + bundle.manifest_sha256 + \"]\"\n    for row in bundle.supported_rows:\n        curie = row[\"object_id\"]\n        if (\n            not ingredient_context_pair_allowed(row[\"subject_id\"], curie)\n            or not ingredient_mapping_allowed(row[\"subject_label\"], curie)\n            or not ingredient_xref_allowed(row[\"subject_id\"], curie)\n        ):\n            raise ValueError(f\"Supported MIM assertion conflicts with current identity policy: {row['subject_id']}\")\n        declared_label = evidence.records.get(curie, _Entity()).label or row[\"object_label\"]\n        if not runtime.ingredient_hydration_compatible(\n            row[\"subject_label\"], declared_label, native_hydrate_names.get(curie, ())\n        ):\n            raise ValueError(f\"Supported MIM assertion changes declared hydration scope: {row['subject_id']}\")\n        evidence.add(\n            curie,\n            row[\"subject_label\"],\n            [row[\"object_label\"], *row.get(\"other\", \"\").split(\"|\")],\n            source=mim_source,\n            priority=110,\n        )\n        evidence.records[curie].xrefs[row[\"subject_id\"]].add(mim_source)\n    date = str(bundle.supported_metadata.get(\"mapping_set_version\") or \"\")\n    if not re.fullmatch(r\"\\d{4}-\\d{2}-\\d{2}\", date):\n        raise ValueError(\"Reviewed release requires an ISO mapping_set_version for deterministic new-row dates\")\n    candidate_metadata = dict(metadata)\n    candidate_metadata.update(\n        curie_map=prefixes,"
+      }
+    ]
+  }
+]

@@ -33,11 +33,13 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "38173b2206a3d60615fca7d6d7861e777bd9905c58ec9d0b55d6a89a8c325b1c"
+REVIEWED_SOURCE = "51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 # Admission is explicit; discovering an arbitrary report never grants authority.
-FORM_FOLLOWUP_FILES = ()
+FORM_FOLLOWUP_FILES = (
+    "reports/sssom_completion_20260921/mapping_review/form_reviews/901-melezitose-v1.json",
+)
 
 
 def read(name):

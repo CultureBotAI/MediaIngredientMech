@@ -1,0 +1,682 @@
+schema_version: 1.0.0
+review_id: 20261101T202408Z-melezitose-901-form-mapping
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Actual melezitose monohydrate mapping triplet at receipt 20
+started_at: '2026-11-01T20:21:56.126239Z'
+finished_at: '2026-11-01T20:24:08.032508Z'
+reviewer:
+  identity: Codex melezitose evidence reviewer
+  kind: agent
+  model: gpt-6
+  independence: self_review
+  independence_basis: This agent prepared the earlier primary-source facts and evidence
+    packet used by the curation writer. It did not author the guarded owner writer
+    or form-review consumer, but its contribution to identity analysis makes this
+    a fresh self-review of actual rows, not an external independent review. A separate
+    adversarial reviewer remains required before activation/merge.
+skill: curate-yaml-record (.claude/skills/curate-yaml-record/SKILL.md), applied to
+  one owner and three exact generated mapping claims
+completion: completed
+verdict: pass_with_limitations
+native_verdict: Three actual mapping claims supported; role and whole-record findings
+  remain open
+scientific_review: true
+summary: Fresh claim-specific assessment supports the actual CAS monohydrate identity,
+  hydrate-of broadMatch to CHEBI:6731 and native B1 compound handle at receipt 20.
+  The old CAS approval was withdrawn before this assessment. No role, component, occurrence,
+  generic-hydrate, human-review or graph-release approval is granted.
+source:
+  git_revision: e568dbf0e0f759431ed317b973675680f031dd1d
+  state: working_tree
+  inputs:
+  - path: .claude/skills/curate-yaml-record/SKILL.md
+    sha256: 4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a
+    role: context
+  - path: .claude/skills/curate-yaml-record/references/review-checklist.md
+    sha256: d4df94935abfd922e84c3512e9a9b7735240f8e266d9a3ae23bb4933926b04eb
+    role: context
+  - path: .gitignore
+    sha256: 14c6eaf962740a06650031c53aa29e2307014d40ca66370bf0999ccd8ef56a0a
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 6b82f7e58c13a0b5b135a8bd4c8ca69d13cf4446e99e949dabf9f73d658b6a48
+    role: context
+  - path: data/ingredients/mapped/D-_-melezitose_Hydrate.yaml
+    sha256: e1b61c883ad813d73b3b508054774699b577fbaa90c8dd6fd4748abfa20bcc59
+    role: context
+  - path: data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
+    sha256: 206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c
+    role: context
+  - path: data/ingredients/mapped/Melezitose.yaml
+    sha256: 968fd84d7af1cc97c9a9cd43b4ae2ca5077cdfcbab35a1ccf66713a3b6a8be3f
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28
+    role: target
+  - path: reports/melezitose_form_901_20261101/README.md
+    sha256: 6809de4c4d3296b2f43131d9623fe7a8ede8d682a6035999d89e48973f05d274
+    role: context
+  - path: reports/melezitose_form_901_20261101/prior-mapping-basis.json
+    sha256: 03dd98a38b78c30c285346a0055da208335dd2cb2df556f172ca9c8a949de995
+    role: context
+  - path: reports/melezitose_form_901_20261101/source-evidence.json
+    sha256: d46a8145e672a83f7a7441e0c22bed2b45a7d402f245fd5db0543bc3282d01d8
+    role: context
+  - path: reports/melezitose_form_901_20261101/sources/culturebotht-melezitose-rows.json
+    sha256: de5b30547f3e1bdbef34c645abe697cd39dc80f29eb563766c017d9837ed0155
+    role: context
+  - path: reports/melezitose_form_901_20261101/sources/ols-chebi-183824.json
+    sha256: 0cce8c9d45bd7013ff6e248888802fff717e0f049d058e1b17dc9c50c673569a
+    role: context
+  - path: reports/melezitose_form_901_20261101/sources/ols-chebi-6731.json
+    sha256: a7457229dfe44a350ff2c1e8df54b98a0415ec2d1c4c0ee35a0e860c1057bf2c
+    role: context
+  - path: reports/melezitose_form_901_20261101/sources/pubchem-16217716-cas.json
+    sha256: 65ce7f31696e30a6547d7108e3d7b496efea349f8d0e62920e832e5f468d39e9
+    role: context
+  - path: reports/melezitose_form_901_20261101/sources/pubchem-16217716-properties.json
+    sha256: 7e7644411dba589d62f9f91fd76073e61dd0cac3282f8544a311761073aba52f
+    role: context
+  - path: reports/melezitose_form_901_20261101/sources/pubchem-92817-properties.json
+    sha256: b0f80140f9c89591a9fcd358af6f88df790c2191ffb74abdb75a7e6f273f6878
+    role: context
+  - path: reports/melezitose_form_901_20261101/sources/retrieval-receipts.json
+    sha256: 81ee040e08021ddcf138965b7681540029023f6cc0b9dfab3b431eb0eb2debb0
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/README.md
+    sha256: ef45ffa59fe85afb145e62698b9a238ee31191ed3469d8877cc27b6f6f4f5aaa
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/captures/kg-MIM_REVIEWED_RELEASE.md
+    sha256: 11ec4ac4580f6de39a83920453851cc4e4a6465d7faaa6d3c5e863f61ba78e97
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/captures/kg-mappings-README.md
+    sha256: 7033cd0d31e8ed66f70334a9c4117e126d9f7ba2b12ebcc96190decd235f8ad6
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/captures/kg-mim-reviewed-release-pin.json
+    sha256: f082c05656a0910c85176eec7b41deeb77c27967aecb80393fddc262819b6d97
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/captures/source-propagation-code-excerpts.json
+    sha256: a30c0f644db31e389b64d45a8158ded73efb4379141b7ee37c24ab8016cb4ed0
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/trace.json
+    sha256: 569693d8d0ef804117f4b70aad0a986ea7e211234ef44ed8fd84c6b3b94eac2e
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/upstream-artifact/github-artifact-metadata.json
+    sha256: f1db2cfc597a070b56a35fa4c9923961036f4b31c0cd0e6405db4229d7a0cfaa
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/upstream-artifact/manifest.json
+    sha256: 9bb29d5605d93dea351be9624d99c5d8ada57d4b9831b22764957b784bd685af
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/upstream-artifact/retrieval-receipt.json
+    sha256: 02e792d775e2f216713a412c85e4af75b752fb1662c276ec21b3cd48eb56c4ab
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/upstream-artifact/selected-historical-dispositions.json
+    sha256: c8d375bb57a7a0e441d7563c749cc510505242c316a370ec605911f7b419ed27
+    role: context
+  - path: reports/melezitose_form_901_20261101/upstream-provenance/upstream-row-extracts.json
+    sha256: fcb3a28c67cb6f2308e9a5e3d3b070f6bd155bfe89fc9b426e2225062b8fa574
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: 5a17b6ba94f42203602135affe20833ea06b04005650a795a8ce2f83bf21efa6
+    role: context
+  - path: reports/semantic_review_20260921/resolution/roles/role-dispositions.tsv
+    sha256: edb21ce57bf0ebb2acd46582fec5be10da86ade5433fb213fe2e454fd3f61206
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json
+    sha256: 019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/adversarial-findings.json
+    sha256: ec28a29c9456f2c6a74e625d8650c059b9648fa4aa1d53b3deb3ef356ec39d62
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/issue-intersections.json
+    sha256: 7f3d9ebcabea3f11d475c839e534f3b69725aedf94d899f50817c7aed354a472
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_review/synonym-adversarial-findings.json
+    sha256: f6e8dd01762c1586df87c2ae472f7255c81f4c43c08db38676a0d994b5d2b8f7
+    role: context
+  - path: reports/sssom_scientific_curation_20261101/audit901/sources/local-chebi-search-v2.json
+    sha256: c09931f27566c3f5ad86ef76f1a2a9f6b604a05b75b3087569f7d5d8eb29b56b
+    role: context
+  - path: reports/sssom_scientific_curation_20261101/audit901/sources/ols-allontologies-10030-67-8.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/sssom_scientific_curation_20261101/audit901/sources/ols-allontologies-melezitose-monohydrate.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/yaml_record_review/D-_-melezitose_Monohydrate.md
+    sha256: 43ebf1701ee64044bacffdd86568342e78a6c80d31344960b2cf26d61b93a027
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/export/reviewed_sssom.py
+    sha256: ab74bae77709ba59623b2aa4612a16b692361c4f46bbb9b5a597f31bd6716ec3
+    role: context
+  - path: src/mediaingredientmech/form_mapping_review.py
+    sha256: c83a7c57839528f99bdb5fe376cd4b4bd7c8ba73530fa7e5e441787237178c4a
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: The complete three-row SSSOM triplet for one corrected D-(+)-melezitose
+    monohydrate owner, including each full row, identifier, form relation, label,
+    source vocabulary, validation stamp and entire other payload.
+  selection: Exactly positions 914, 915 and 2982 at receipt 20 endpoint SHA256 51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28;
+    stable subject/predicate/object selectors and complete-row digests bind targets.
+  coverage: full
+  population_size: 3
+  reviewed_target_ids:
+  - melezitose-parent
+  - melezitose-cas
+  - melezitose-b1
+  exclusions:
+  - target: CARBON_SOURCE and historical SEM:d2e2a0eef35747b36f91 / SEM:3c13edcba734032a4e08
+    reason: Biological/formulation role evidence was not researched. Both historical
+      findings and the role disposition remain OPEN; this review does not supersede
+      them.
+  - target: D-_-melezitose_Hydrate.yaml, Melezitose.yaml and other corpus mappings
+    reason: Read only as identity boundary context; no merge, correction, new scientific
+      approval or extrapolation to those records.
+  - target: Whole-record status, KGX release and unrelated mapping decisions
+    reason: These are separate repository gates; this review supports only the three
+      named mapping claims.
+targets:
+- target_id: melezitose-parent
+  path: mappings/ingredient_mappings.sssom.tsv
+  kind: snapshot_row
+  selector: '{"object_id":"CHEBI:6731","predicate_id":"skos:broadMatch","subject_id":"MIM:D-_-melezitose_Monohydrate"}'
+  label: D-(+)-melezitose monohydrate skos:broadMatch CHEBI:6731
+  semantic_digest:
+    algorithm: mim-sssom-row-sha256-v1
+    sha256: bf4990db504f0338c6ece439092954d1104e4916712ff1227b6d844b68fe0f62
+    description: SHA-256 of json.dumps(full row, sort_keys=True, separators=(',',
+      ':'), ensure_ascii=False).encode('utf-8'); native reviewed_sssom.row_sha256.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
+    role: Exact supplied-form source owner
+- target_id: melezitose-cas
+  path: mappings/ingredient_mappings.sssom.tsv
+  kind: snapshot_row
+  selector: '{"object_id":"cas:10030-67-8","predicate_id":"skos:exactMatch","subject_id":"MIM:D-_-melezitose_Monohydrate"}'
+  label: D-(+)-melezitose monohydrate skos:exactMatch cas:10030-67-8
+  semantic_digest:
+    algorithm: mim-sssom-row-sha256-v1
+    sha256: a644bad003f578f4a63e861ec0ba09cffc2f16459b5b476a275a845c685ed8e5
+    description: SHA-256 of json.dumps(full row, sort_keys=True, separators=(',',
+      ':'), ensure_ascii=False).encode('utf-8'); native reviewed_sssom.row_sha256.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
+    role: Exact supplied-form source owner
+- target_id: melezitose-b1
+  path: mappings/ingredient_mappings.sssom.tsv
+  kind: snapshot_row
+  selector: '{"object_id":"kgmicrobe.compound:d-_-melezitose_monohydrate","predicate_id":"skos:exactMatch","subject_id":"MIM:D-_-melezitose_Monohydrate"}'
+  label: D-(+)-melezitose monohydrate skos:exactMatch kgmicrobe.compound:d-_-melezitose_monohydrate
+  semantic_digest:
+    algorithm: mim-sssom-row-sha256-v1
+    sha256: 4e15d8eb5e7cd78d2e9219b175a32daa9b1a47eb14618b16ae2a157036218447
+    description: SHA-256 of json.dumps(full row, sort_keys=True, separators=(',',
+      ':'), ensure_ascii=False).encode('utf-8'); native reviewed_sssom.row_sha256.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
+    role: Exact supplied-form source owner
+checks:
+- check_id: strict-owner
+  name: Strict single-owner LinkML validation
+  status: passed
+  required: true
+  summary: 'Actual corrected owner: one file, zero ERROR rows.'
+  target_ids:
+  - melezitose-parent
+  - melezitose-cas
+  - melezitose-b1
+  command: python scripts/validate_strict.py data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
+    --out /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-melezitose-native-review-plan/strict.tsv
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-owner
+  - ev-checkpoint
+  scope_note: Focused mapping review only; not a whole-repository integration, human
+    scientific signoff or graph release gate.
+- check_id: terms
+  name: Native ontology ID/label validation
+  status: passed
+  required: true
+  summary: Native validate-terms completed successfully for the actual owner; inspected
+    primary chemistry supplies the separate form identity evidence.
+  target_ids:
+  - melezitose-parent
+  - melezitose-cas
+  - melezitose-b1
+  command: just validate-terms data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-owner
+  - ev-checkpoint
+  scope_note: Focused mapping review only; not a whole-repository integration, human
+    scientific signoff or graph release gate.
+- check_id: actual-claim-bindings
+  name: Actual source, triplet and prior-approval checks
+  status: passed
+  required: true
+  summary: Exact row digests, source formula/InChI comparison, CAS annotations, safe
+    identifiers/tokens, new B1 addition, all-three-WITHHOLD proof, aggregate equality
+    and retained open role findings checked.
+  target_ids:
+  - melezitose-parent
+  - melezitose-cas
+  - melezitose-b1
+  command: python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-melezitose-native-review/check_actual_claims.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-owner
+  - ev-checkpoint
+  scope_note: Focused mapping review only; not a whole-repository integration, human
+    scientific signoff or graph release gate.
+- check_id: aggregate-context
+  name: Individual/aggregate context comparison
+  status: passed
+  required: true
+  summary: Exactly one aggregate entry matches the complete corrected individual owner;
+    both have NARROW_MATCH.
+  target_ids:
+  - melezitose-parent
+  - melezitose-cas
+  - melezitose-b1
+  command: python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/approved-plan-20261101T031134Z/step6-melezitose-native-review-plan/check_aggregate.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - ev-owner
+  - ev-checkpoint
+  scope_note: Focused mapping review only; not a whole-repository integration, human
+    scientific signoff or graph release gate.
+evidence:
+- evidence_id: ev-mono
+  kind: database
+  reference: reports/melezitose_form_901_20261101/sources/pubchem-16217716-properties.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: supports
+  summary: CID 16217716 has formula C18H34O17, mass 522.5 and the exact current owner
+    InChI including one H2O component. Removing that component without changing stereochemistry
+    yields the inspected parent InChI.
+  snapshot_sha256: 7e7644411dba589d62f9f91fd76073e61dd0cac3282f8544a311761073aba52f
+  locator: https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16217716/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON
+    ; original response retrieved 2026-11-01T06:30:16.537638+00:00 ; archived bytes
+    reread for this actual review.
+- evidence_id: ev-cas
+  kind: database
+  reference: reports/melezitose_form_901_20261101/sources/pubchem-16217716-cas.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: supports
+  summary: PubChem record title is Melezitose monohydrate. CAS section annotations
+    2, 3 and 4 all give 10030-67-8, attributed respectively to ChemIDplus, FDA GSRS
+    and NZ EPA. These are inspected PubChem annotations, not direct CAS Registry or
+    three newly read primary experiments.
+  snapshot_sha256: 65ce7f31696e30a6547d7108e3d7b496efea349f8d0e62920e832e5f468d39e9
+  locator: https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/16217716/JSON?heading=CAS
+    ; original response retrieved 2026-11-01T06:30:16.466371+00:00 ; archived bytes
+    reread for this actual review.
+- evidence_id: ev-parent-pubchem
+  kind: database
+  reference: reports/melezitose_form_901_20261101/sources/pubchem-92817-properties.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: supports
+  summary: CID 92817 is C18H32O16 and its stereochemical InChI equals the non-water
+    component of CID 16217716.
+  snapshot_sha256: b0f80140f9c89591a9fcd358af6f88df790c2191ffb74abdb75a7e6f273f6878
+  locator: https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/92817/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON
+    ; original response retrieved 2026-11-01T06:30:16.613366+00:00 ; archived bytes
+    reread for this actual review.
+- evidence_id: ev-parent-chebi
+  kind: database
+  reference: reports/melezitose_form_901_20261101/sources/ols-chebi-6731.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: supports
+  summary: OLS term CHEBI:6731 is active, labelled melezitose, formula C18H32O16,
+    CAS xref 597-12-6; its InChI equals parent CID 92817. It is the anhydrous form
+    parent, not the monohydrate exact identity.
+  snapshot_sha256: a7457229dfe44a350ff2c1e8df54b98a0415ec2d1c4c0ee35a0e860c1057bf2c
+  locator: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:6731
+    ; original response retrieved 2026-11-01T06:30:17.577518+00:00 ; archived bytes
+    reread for this actual review.
+- evidence_id: ev-stereo-near-miss
+  kind: database
+  reference: reports/melezitose_form_901_20261101/sources/ols-chebi-183824.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: refutes
+  summary: CHEBI:183824 is anhydrous C18H32O16 and differs at the stereochemical 10
+    position (10+ versus 10-). Its similar D(+)-Melezitose label does not make it
+    an exact monohydrate term or an interchangeable parent.
+  snapshot_sha256: 0cce8c9d45bd7013ff6e248888802fff717e0f049d058e1b17dc9c50c673569a
+  locator: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:183824
+    ; original response retrieved 2026-11-01T06:30:17.563841+00:00 ; archived bytes
+    reread for this actual review.
+- evidence_id: ev-catalogue
+  kind: database
+  reference: reports/melezitose_form_901_20261101/sources/culturebotht-melezitose-rows.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: supports
+  summary: CultureBotHT physical CSV row 1142 names D-(+)-melezitose monohydrate,
+    CAS 10030-67-8, FW 522.5. Row 1359 separately names hydrate CAS 207511-10-2; its
+    FW 504.44 and shared computed chemistry do not establish an identity merger. Supplier,
+    catalogue and FEBA-role cells are empty.
+  snapshot_sha256: de5b30547f3e1bdbef34c645abe697cd39dc80f29eb563766c017d9837ed0155
+  locator: Exact extraction from raw CSV SHA256 76b70a1836b25de431c4f5cc27c72bb6b06a223ce33911e93b7681d4fcdb28f9;
+    ignored/untracked source is not attested as a Git blob.
+- evidence_id: ev-semantics
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: supports
+  summary: Section 1 defines broadMatch as form-of or kind-of, not identity/subclass;
+    section 2 requires a same-subject B1 handle and compound namespace for pure compounds;
+    section 3 step 2 retains own CAS when no exact ontology term is found, plus parent
+    broadMatch and mandatory handle. Section 3 also defines uppercase CAS tokens as
+    display labels.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+  locator: 'Sections 1 (broadMatch and #245 ruling), 2 (B1 identity and naming), 3
+    (granularity, CAS display token and decision step 2).'
+- evidence_id: ev-ols-names
+  kind: search
+  reference: reports/sssom_scientific_curation_20261101/audit901/sources/ols-allontologies-melezitose-monohydrate.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: The archived exact OLS name queries returned zero hits. Byte-identical
+    empty bodies are reused while each original query URL/time remains in the retrieval
+    receipt. This is bounded negative search evidence, not an exhaustive ontology
+    absence claim.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  locator: Original queries melezitose monohydrate and D-(+)-melezitose monohydrate
+    recorded in source-evidence.json.
+  search_scope: Archived OLS exact queries for these two names across the configured
+    endpoint; local ignored files were included in evidence discovery. No claim that
+    all possible names or all ontologies were searched.
+- evidence_id: ev-ols-cas
+  kind: search
+  reference: reports/sssom_scientific_curation_20261101/audit901/sources/ols-allontologies-10030-67-8.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: The archived exact OLS CAS query returned zero hits; it does not establish
+    universal absence of a form-specific ontology term.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  locator: Original exact CAS 10030-67-8 OLS query URL/time in source-evidence.json.
+  search_scope: One archived exact OLS CAS query; no unperformed searches or new origin
+    fetch are implied.
+- evidence_id: ev-local-chebi
+  kind: search
+  reference: reports/sssom_scientific_curation_20261101/audit901/sources/local-chebi-search-v2.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: The corrected oio query in pinned ChEBI SQLite found melezitose CHEBI:6731
+    and stereochemical near-miss CHEBI:183824, but no exact monohydrate name/CAS in
+    the selected predicates. Positive parent CAS controls succeeded. The earlier wrong-prefix
+    query is expressly excluded as absence evidence.
+  snapshot_sha256: c09931f27566c3f5ad86ef76f1a2a9f6b604a05b75b3087569f7d5d8eb29b56b
+  locator: Original access 2026-11-01T00:39:16.661074+00:00; DB SHA256 26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f.
+  search_scope: Pinned local database rdfs:label/oio:hasExactSynonym/oio:hasRelatedSynonym
+    names containing melezitose plus oio:hasDbXref CAS 10030-67-8; bounded historical
+    search, not global or future absence.
+- evidence_id: ev-retrievals
+  kind: record_content
+  reference: reports/melezitose_form_901_20261101/sources/retrieval-receipts.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: Exact original origin HTTP receipts bind the archived source bodies and
+    retrieval times. Source inspection is current; the origin fetches remain historical.
+  snapshot_sha256: 81ee040e08021ddcf138965b7681540029023f6cc0b9dfab3b431eb0eb2debb0
+  locator: Eight original HTTP responses; original times retained, no new source-fetch
+    claim.
+- evidence_id: ev-owner
+  kind: record_content
+  reference: data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: Actual corrected owner is CAS-primary NARROW_MATCH, SINGLE_INGREDIENT,
+    no YAML synonyms, with source-supported monohydrate chemistry. Its provisional
+    computational CARBON_SOURCE evidence is unchanged and is excluded from these mapping
+    decisions.
+  snapshot_sha256: 206d615a2983b122e8de655c58a7bf1c30845a3d61dadac2ba06b953930f694c
+- evidence_id: ev-checkpoint
+  kind: validation
+  reference: reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: Receipt 20 binds the exact owner change and two changed plus one added
+    SSSOM rows. Its approval is NONE. The separately inspected preapproval assembly
+    withheld all three, proving the old CAS approval was withdrawn. Receipt validation
+    is structural provenance, not scientific support.
+  snapshot_sha256: 019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87
+  locator: Sequence 20; before canonical 38173b2206a3d60615fca7d6d7861e777bd9905c58ec9d0b55d6a89a8c325b1c;
+    after canonical 51b268361cd8e5134eb03d22fbf11ab1dd1cdcee0eee58a1cfd1ada02a193f28.
+- evidence_id: ev-prior
+  kind: prior_review
+  reference: reports/melezitose_form_901_20261101/prior-mapping-basis.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: Immutable old basis preserves withheld parent row 914 and old-owner supported
+    CAS row 915 at owner hash e17d80e7. Neither is reused as fresh positive support;
+    the added B1 row has no predecessor approval.
+  snapshot_sha256: 03dd98a38b78c30c285346a0055da208335dd2cb2df556f172ca9c8a949de995
+- evidence_id: ev-historical-record
+  kind: prior_review
+  reference: reports/yaml_record_review/D-_-melezitose_Monohydrate.md
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: Historical whole-record review remains needs curation because CARBON_SOURCE
+    was inferred from a name pattern. It described the old CLOSE_MATCH relation; this
+    review applies the current explicit form-of semantics to actual corrected rows
+    without rewriting the history.
+  snapshot_sha256: 43ebf1701ee64044bacffdd86568342e78a6c80d31344960b2cf26d61b93a027
+- evidence_id: ev-open-findings
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: SEM:d2e2a0eef35747b36f91 and SEM:3c13edcba734032a4e08 remain OPEN. This
+    mapping-only observation does not retire, supersede or resolve them.
+  snapshot_sha256: 5a17b6ba94f42203602135affe20833ea06b04005650a795a8ce2f83bf21efa6
+  locator: Rows whose source_record is data/ingredients/mapped/D-_-melezitose_Monohydrate.yaml;
+    historical owner hash remains recorded.
+- evidence_id: ev-open-role
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/roles/role-dispositions.tsv
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: The CARBON_SOURCE assertion remains OPEN_REQUIRES_ORIGINAL_SOURCE with
+    provenance NAME_PATTERN and fresh_role_approval=false. No formulation or biological
+    literature was assessed here.
+  snapshot_sha256: edb21ce57bf0ebb2acd46582fec5be10da86ade5433fb213fe2e454fd3f61206
+  locator: Assertion MIM.assertion:986dee551fae01c9db70e6c12d3767f21e744a56cc5a61d16278e20b0a3b9905.
+- evidence_id: ev-upstream-trace
+  kind: record_content
+  reference: reports/melezitose_form_901_20261101/upstream-provenance/trace.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: Eight historical KG loader tokens are replaced by two current upstream
+    tokens, obtained by unioning CHEBI:6731 entity sources and copying the parent
+    source cell to CAS/B1 siblings. The source vocabulary is documented provenance,
+    not independent evidence for these three current claims.
+  snapshot_sha256: 569693d8d0ef804117f4b70aad0a986ea7e211234ef44ed8fd84c6b3b94eac2e
+- evidence_id: ev-upstream-manifest
+  kind: prior_review
+  reference: reports/melezitose_form_901_20261101/upstream-provenance/upstream-artifact/manifest.json
+  accessed_at: '2026-11-01T20:24:08.031179Z'
+  support: context_only
+  summary: Exact original manifest 9bb29d56 was recovered from the original GitHub
+    Actions artifact and matched the committed KG pin. Product hashes and immutable
+    historical source/review Git blobs were verified. Its historical supported subset
+    is not current approval of changed owner/rows.
+  snapshot_sha256: 9bb29d5605d93dea351be9624d99c5d8ada57d4b9831b22764957b784bd685af
+  locator: MIM commit 1848b0fe521bc2462f165912fcf92d09ad9a8cec; run 36109949250; artifact
+    10852467926 created 2026-09-25T07:54:48Z; retrieval metadata separately captured.
+assessments:
+- assessment_id: assessment-melezitose-parent
+  area: grounding
+  topic: form_parent
+  outcome: supported
+  summary: Fresh row-specific assessment supports the monohydrate-to-melezitose form-of
+    relation. The inspected monohydrate InChI minus its one water component equals
+    both PubChem CID 92817 and active CHEBI:6731 exactly, including stereochemistry.
+    MAPPING_SEMANTICS sections 1-3 require NARROW_MATCH to emit skos:broadMatch with
+    a B1 handle; this is neither exact parent identity nor an ontology subclass claim.
+    The actual parent row publishes no other tokens.
+  target_ids:
+  - melezitose-parent
+  evidence_ids:
+  - ev-mono
+  - ev-parent-pubchem
+  - ev-parent-chebi
+  - ev-stereo-near-miss
+  - ev-semantics
+  - ev-ols-names
+  - ev-ols-cas
+  - ev-local-chebi
+  - ev-owner
+  - ev-prior
+  - ev-checkpoint
+  - ev-upstream-trace
+  details: 'CID 16217716 is C18H34O17 with exactly one water component. Its non-water
+    stereochemical component is CID 92817/CHEBI:6731, C18H32O16. CHEBI:183824 is also
+    anhydrous but differs at the InChI stereochemical 10 position and is not a substitute.
+    Generic hydrate CAS 207511-10-2 remains a separate record; shared computed chemistry
+    does not authorize a merge. The one-water supplied form is related to its anhydrous
+    stereochemical component by hydrate-of. Current MAPPING_SEMANTICS explicitly represents
+    form-of with skos:broadMatch and requires biolink:broad_match downstream, never
+    subclass_of or exact identity. Historical #342 reasoning remains in the record
+    as provenance, but its old closeMatch conclusion is superseded by the current
+    explicit form-of contract. No ontology ancestry claim is made. All complete row
+    fields were inspected. Generated 0.9/0.99 confidence values are mapping heuristics,
+    not calibrated scientific probabilities. Historical source tags and validation
+    stamps are not promoted to new approval.'
+- assessment_id: assessment-melezitose-cas
+  area: identity
+  topic: primary_identity
+  outcome: supported
+  summary: Fresh assessment of corrected owner bytes supports exact cas:10030-67-8
+    identity for D-(+)-melezitose monohydrate. PubChem CID 16217716 names this CAS
+    through its ChemIDplus, FDA GSRS and NZ EPA annotations and has the matching monohydrate
+    formula and stereochemical InChI; CultureBotHT row 1142 separately records the
+    same supplied form and CAS. The actual CAS:10030-67-8 other token is a same-subject
+    display label. This conclusion replaces, rather than inherits, the withdrawn old-owner
+    approval.
+  target_ids:
+  - melezitose-cas
+  evidence_ids:
+  - ev-cas
+  - ev-mono
+  - ev-catalogue
+  - ev-semantics
+  - ev-owner
+  - ev-prior
+  - ev-checkpoint
+  - ev-upstream-manifest
+  details: 'The current owner retains primary cas:10030-67-8, preferred term D-(+)-melezitose
+    monohydrate, CID 16217716, molecular formula C18H34O17 and the exact source stereochemical
+    InChI. PubChem CAS annotations and the raw CultureBotHT supplied-form row agree.
+    Direct CAS Registry was not queried; evidence is identified as database assertions,
+    not independent experiments. KEEP: the literal uppercase CAS:10030-67-8 is the
+    documented display synonym, not an expandable CURIE. PubChem CID 16217716 CAS
+    annotations and CultureBotHT row 1142 identify exactly this monohydrate. Its checksum
+    is valid; no sibling-form or preparation token is present. All complete row fields
+    were inspected. Generated 0.9/0.99 confidence values are mapping heuristics, not
+    calibrated scientific probabilities. Historical source tags and validation stamps
+    are not promoted to new approval.'
+- assessment_id: assessment-melezitose-b1
+  area: identity
+  topic: registry_handle
+  outcome: supported
+  summary: Fresh assessment supports the actual native-generated kgmicrobe.compound:d-_-melezitose_monohydrate
+    exact handle for this same CAS-primary supplied-form subject. PubChem chemistry
+    establishes one defined chemical and the owner is SINGLE_INGREDIENT; the handle
+    preserves the subject slug and satisfies the repository section 2/section 3 step
+    2 B1 contract without collapsing the hydrate into CHEBI:6731. Receipt 20 proves
+    this exact full row was newly added. The CAS display token denotes the same monohydrate;
+    no prior handle approval is inherited.
+  target_ids:
+  - melezitose-b1
+  evidence_ids:
+  - ev-mono
+  - ev-cas
+  - ev-semantics
+  - ev-owner
+  - ev-checkpoint
+  - ev-upstream-trace
+  details: This is the local kg-microbe namespace handle for the already resolved
+    cas:10030-67-8 monohydrate, not a newly inferred second chemical or external registry-of-record
+    identity. Pure defined chemical evidence and the SINGLE_INGREDIENT owner support
+    compound rather than ingredient namespace; the native row uses the existing subject
+    slug exactly. The actual B1 row was added by receipt 20 at position 2982 and points
+    to kgmicrobe.compound:d-_-melezitose_monohydrate. It is the subject-owned handle
+    required alongside the CAS identity and parent broadMatch under sections 2 and
+    3 step 2. It does not claim the current upstream KG already contains a separately
+    installed local entity, and it grants no role approval. All complete row fields
+    were inspected. Generated 0.9/0.99 confidence values are mapping heuristics, not
+    calibrated scientific probabilities. Historical source tags and validation stamps
+    are not promoted to new approval.
+findings: []
+actions: []
+limitations:
+- This is an agent self-review with prior source-analysis participation. Independent
+  adversarial review is a separate required subsequent step.
+- Only the three mapping claims are reviewed. Empty findings here does not erase the
+  two historical major role/whole-record findings or approve CARBON_SOURCE.
+- CAS identity was inspected through PubChem database annotations and the actual CultureBotHT
+  source row, not through a direct CAS Registry query or new experimental evidence.
+- No exact monohydrate term was found in the declared archived exact OLS and pinned
+  local ChEBI searches; coverage is bounded and not an assertion of exhaustive or
+  future ontology absence.
+- CHEBI:6731 is supported as the matching anhydrous form parent; broadMatch is not
+  exact identity or subclass_of. CHEBI:183824 is a stereochemical near-miss.
+- The generic hydrate CAS 207511-10-2 record remains separate and uncurated here;
+  its shared computed chemistry is not merge evidence.
+- Source tokens, old validation_method strings and generator confidence values are
+  historical/procedural metadata, not fresh scientific approval. The exact original
+  KG manifest is preserved to explain the source vocabulary change.
+- Source.state=working_tree honestly binds actual inspected bytes in an isolated overlay
+  whose durable Git base is e568dbf0e0f759431ed317b973675680f031dd1d. It is a reviewer
+  byte attestation, not a claim those changed bytes were committed at that base. The
+  producer retains its truthful separate 585b90b4 generation checkpoint.
+- No paid research/provider calls were used, and no new biological literature, supplier
+  certification or graph-wide validity was assessed.
+notes:
+- The native kind is batch because the schema requires one target for kind=record;
+  this bounded batch contains exactly three mapping-row targets owned by one ingredient
+  record.
+- The parent row has an empty other cell. CAS and B1 rows each contain only the literal
+  CAS:10030-67-8 display synonym; both payloads are explicitly supported.
+- No explicit mapping-negative holds occur for these rows in the prior/preapproval
+  mapping bases. Historical role findings are preserved outside this mapping scope;
+  resolved_negative_reviews remains empty.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/901
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1070
+tags:
+- mapping-only
+- hydrate-form
+- melezitose
+- receipt20
+- self-review

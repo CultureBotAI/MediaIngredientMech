@@ -294,6 +294,9 @@ def test_assembled_evidence_preserves_every_applicable_correction_basis(
     monkeypatch.setattr(assemble, "ROOT", tmp_path)
     monkeypatch.setattr(assemble, "HERE", here)
     monkeypatch.setattr(assemble, "REVIEWED_SOURCE", current_sha)
+    # This synthetic cohort has no form-review authority. Real native triplet
+    # assembly/export coverage lives in test_form_mapping_followup.py (#1075).
+    monkeypatch.setattr(assemble, "FORM_FOLLOWUP_FILES", ())
 
     if prepare is not None:
         prepare(here)

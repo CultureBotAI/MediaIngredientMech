@@ -54,6 +54,10 @@ def test_mapping_change_receipt_cannot_renew_corrected_identity_approval(monkeyp
         return original_read_text(path, *args, **kwargs)
 
     with monkeypatch.context() as reads:
+        # Isolate the stale explicit-identity guard. The mock receipt edit would
+        # otherwise trip an unrelated, correctly bound form checkpoint first.
+        # Native form lineage is exercised in test_form_mapping_followup.py.
+        reads.setattr(assembler, "FORM_FOLLOWUP_FILES", ())
         reads.setattr(Path, "read_bytes", read_bytes)
         reads.setattr(Path, "read_text", read_text)
         with pytest.raises(

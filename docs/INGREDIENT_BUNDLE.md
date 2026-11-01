@@ -4,14 +4,14 @@ This opt-in export carries a reviewed scoped cohort, registry claims and source
 occurrences together. It does not replace the complete legacy SSSOM release or
 promote its withheld rows. The initial cohort contains the 20 reviewed
 KG-Microbe cases under issues #769 and #770. The current immutable review
-successor is [the #764 strict-receipt dependency refresh](../reports/ingredient_bundle_20261101_strict_receipts764_types1069/README.md).
-This successor updates only the complete base mapping-review dependency after
-receipt validation code changed. The existing claim decisions, owner bytes,
-owned-name policy metadata and all earlier reviews remain preserved.
+successor is [the #901 melezitose dependency refresh](../reports/ingredient_bundle_20261101_melezitose901_pin1074/README.md).
+It updates global mapping-review, evidence, canonical and manifest dependencies
+after a separately reviewed correction outside this cohort. The existing claim
+decisions, owner bytes, owned-name policy and all earlier reviews remain preserved.
 
 ```bash
 python -m mediaingredientmech.export.ingredient_bundle export \
-  --review reports/ingredient_bundle_20261101_strict_receipts764_types1069/review.json \
+  --review reports/ingredient_bundle_20261101_melezitose901_pin1074/review.json \
   --output output/ingredient-bundle-v1
 python -m mediaingredientmech.export.ingredient_bundle validate \
   output/ingredient-bundle-v1 --manifest-sha256 <exported-manifest-sha256>
@@ -123,7 +123,7 @@ The output parent directories must already exist.
 ```bash
 PYTHONPATH=src python scripts/refresh_unchanged_cohort.py \
   --baseline <commit-containing-prior-inputs> \
-  --prior-review reports/ingredient_bundle_20261101_strict_receipts764_types1069/review.json \
+  --prior-review reports/ingredient_bundle_20261101_melezitose901_pin1074/review.json \
   --output output/next-companion-review.json \
   --receipt output/next-companion-dependency-refresh.json \
   --prior-copy output/prior-companion-review.json
@@ -141,6 +141,14 @@ are rejected before writing; existing artifacts are never overwritten.
 
 This is a deliberate refresh step, not automatic CI approval. Review the receipt,
 export and validate the new companion, and update the release selector explicitly.
+For a reviewed single-owner hydrate-parent projection outside the cohort, the
+command also accepts `--form-projection-manifest-sha256 <reviewed-manifest-sha256>`.
+It independently replays the native receipt chain and verifies the owner and
+canonical transition, preserved manifest history, policy and sidecar. The pin
+binds the reviewed generation attribution; this command does not replay the
+external generator or source-write receipt. An explicit projection request also
+fails when the policy manifest is absent or unchanged. Other manifest changes
+still fail.
 A changed cohort or scientific decision requires new evidence and review rather
 than this command. The report-local helper at
 `reports/ingredient_bundle_20261101/refresh_unchanged_cohort.py` is preserved as
