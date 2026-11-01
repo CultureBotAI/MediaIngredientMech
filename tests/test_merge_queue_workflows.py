@@ -1,6 +1,8 @@
 """Required checks must report on every PR and its actual merge queue candidate."""
 
+import os
 import re
+import subprocess
 from copy import deepcopy
 from pathlib import Path
 
@@ -47,11 +49,14 @@ def _assert_required_workflow(document, expected_jobs):
                 options = step.get("with", {})
                 if options.get("repository") == "CultureBotAI/culturebotai-claw":
                     assert re.fullmatch(r"[0-9a-f]{40}", VALIDATOR_PIN)
-                    assert options.get("ref") == VALIDATOR_PIN, "validator must use reviewed CLAW pin"
-                    assert options.get("path") == "culturebotai-claw", "validator must be separate"
+                    assert options.get("ref") == "${{ steps.claw-pin.outputs.ref }}", "validator must read the consumer pin"
+                    assert options.get("path") == "claw", "validator must be separate"
+                    pin_steps = [other for other in job["steps"] if other.get("id") == "claw-pin"]
+                    assert len(pin_steps) == 1, "validator needs exactly one pin reader"
+                    assert job["steps"].index(pin_steps[0]) < job["steps"].index(step), "read pin before checkout"
                     assert any(
                         other.get("uses", "").startswith("actions/checkout@")
-                        and other.get("with") == {"path": "MediaIngredientMech"}
+                        and other.get("with") == {"path": "mech", "persist-credentials": False}
                         for other in job["steps"]
                     ), "validator requires the separate event-bound MIM candidate"
                 else:
@@ -99,20 +104,57 @@ def test_required_job_names_are_unambiguous():
     assert len(names) == len(set(names)), "different required workflows report the same check"
 
 
-@pytest.mark.parametrize("defect", ["unpinned", "mutable", "overlap", "candidate-ref"])
+@pytest.mark.parametrize("defect", ["unpinned", "mutable", "hardcoded", "overlap", "candidate-ref", "pin-order", "pin-reader"])
 def test_evidence_validator_cannot_drift_or_replace_candidate(defect):
     name = "qc-evidence.yaml"
     document = _load(name)
     _assert_required_workflow(document, REQUIRED_JOBS[name])
     broken = deepcopy(document)
-    candidate, validator = broken["jobs"]["qc"]["steps"][:2]
+    steps = broken["jobs"]["qc"]["steps"]
+    candidate, validator = [step for step in steps if step.get("uses", "").startswith("actions/checkout@")]
     if defect == "unpinned":
         del validator["with"]["ref"]
     elif defect == "mutable":
         validator["with"]["ref"] = "main"
+    elif defect == "hardcoded":
+        validator["with"]["ref"] = VALIDATOR_PIN
     elif defect == "overlap":
         validator["with"]["path"] = candidate["with"]["path"]
+    elif defect in {"pin-order", "pin-reader"}:
+        reader = next(step for step in steps if step.get("id") == "claw-pin")
+        steps.remove(reader)
+        if defect == "pin-order":
+            steps.append(reader)
     else:
         candidate["with"]["ref"] = "main"
     with pytest.raises(AssertionError):
         _assert_required_workflow(broken, REQUIRED_JOBS[name])
+
+
+def _run_evidence_pin_reader(root, pin):
+    path = root / "mech/scripts/.vendored_canon_ref"
+    path.parent.mkdir(parents=True)
+    if pin is not None:
+        path.write_bytes(pin)
+    reader = next(step for step in _load("qc-evidence.yaml")["jobs"]["qc"]["steps"]
+                  if step.get("id") == "claw-pin")
+    output = root / "github-output"
+    result = subprocess.run(
+        ["bash", "-c", reader["run"]], cwd=root, capture_output=True, text=True,
+        env={**os.environ, "GITHUB_OUTPUT": str(output)}, timeout=15,
+    )
+    return result, output
+
+
+def test_evidence_pin_reader_uses_each_actual_consumer_pin(tmp_path):
+    for index, pin in enumerate([b"a" * 40 + b"\n", b"b" * 40]):
+        result, output = _run_evidence_pin_reader(tmp_path / str(index), pin)
+        assert result.returncode == 0, result.stderr
+        assert output.read_text() == "ref=" + pin.decode().strip() + "\n"
+
+
+@pytest.mark.parametrize("pin", [None, b"main\n", b"A" * 40, b"a" * 40 + b"\nother=x"])
+def test_evidence_pin_reader_rejects_missing_mutable_or_malformed_pin(tmp_path, pin):
+    result, output = _run_evidence_pin_reader(tmp_path, pin)
+    assert result.returncode != 0
+    assert not output.exists()
